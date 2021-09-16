@@ -158,7 +158,7 @@ namespace Amazon.S3.Model
         /// A container that describes additional filters for identifying the source objects that
         /// you want to replicate. You can choose to enable or disable the replication of these
         /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects
-        /// created with server-side encryption using a customer master key (CMK) stored in Amazon
+        /// created with server-side encryption using a customer managed key stored in Amazon
         /// Web Services Key Management Service (SSE-KMS).
         /// </para>
         /// </summary>

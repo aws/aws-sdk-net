@@ -599,12 +599,12 @@ namespace Amazon.S3.Model
         /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
         /// If a key id is not specified, the default key will be used for encryption and decryption.
         /// <para>
-        /// Specifies the ID of the symmetric customer managed Amazon Web Services KMS CMK to
-        /// use for object encryption. All GET and PUT requests for an object protected by Amazon
-        /// Web Services KMS will fail if not made via SSL or using SigV4. For information about
-        /// configuring using any of the officially supported Amazon Web Services SDKs and Amazon
-        /// Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-        /// the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
+        /// Specifies the ID of the symmetric customer managed key to use for object encryption.
+        /// All GET and PUT requests for an object protected by Amazon Web Services KMS will fail
+        /// if not made via SSL or using SigV4. For information about configuring using any of
+        /// the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">
+        /// Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId

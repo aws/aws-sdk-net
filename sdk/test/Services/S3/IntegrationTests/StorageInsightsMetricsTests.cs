@@ -38,6 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class StorageInsightsMetricsTests : TestBase<AmazonS3Client>
     {
         public static string bucketName;
+        private const string accessPointArn = "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint";
 
         [TestInitialize]
         public void Init()
@@ -59,6 +60,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BucketMetricsConfigurationsAndFilterTest();
             BucketMetricsConfigurationsPrefixFilterTest();
             BucketMetricssConfigurationsTagFilterTest();
+            BucketMetricsConfigurationAccessPointArnFilterTest();
         }
 
         [TestCategory("S3")]
@@ -69,6 +71,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BucketMetricsConfigurationsAndFilterTest();
             BucketMetricsConfigurationsPrefixFilterTest();
             BucketMetricssConfigurationsTagFilterTest();
+            BucketMetricsConfigurationAccessPointArnFilterTest();
         }
 
         public void BucketMetricssConfigurationsTagFilterTest()
@@ -156,6 +159,46 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             DeleteBucketMetricsAndValidate();
         }
 
+        public void BucketMetricsConfigurationAccessPointArnFilterTest()
+        {
+            PutBucketMetricsConfigurationRequest putBucketMetricsConfigurationRequest = new PutBucketMetricsConfigurationRequest()
+            {
+                BucketName = bucketName,
+                MetricsId = "configId",
+                MetricsConfiguration = new MetricsConfiguration()
+                {
+                    MetricsId = "configId",
+                    MetricsFilter = new MetricsFilter()
+                    {
+                        MetricsFilterPredicate = new MetricsAccessPointArnPredicate(accessPointArn)
+                    }
+                }
+            };
+            var putBucketMetricsConfigurationResponse = Client.PutBucketMetricsConfiguration(putBucketMetricsConfigurationRequest);
+
+            GetBucketMetricsConfigurationRequest getBucketMetricsConfigurationRequest = new GetBucketMetricsConfigurationRequest()
+            {
+                MetricsId = "configId",
+                BucketName = bucketName
+            };
+
+            var getBucketMetricsConfigurationResponse = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetBucketMetricsConfiguration(getBucketMetricsConfigurationRequest);
+                return res.MetricsConfiguration?.MetricsId == getBucketMetricsConfigurationRequest.MetricsId ? res : null;
+            });
+
+            var getMetricsConfiguration = getBucketMetricsConfigurationResponse.MetricsConfiguration;
+            var putMetricsConfiguration = putBucketMetricsConfigurationRequest.MetricsConfiguration;
+            Assert.AreEqual(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
+            Assert.AreEqual(((MetricsAccessPointArnPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).AccessPointArn, accessPointArn);
+
+
+            ListBucketMetrics();
+
+            DeleteBucketMetricsAndValidate();
+        }
+
         public void BucketMetricsConfigurationsAndFilterTest()
         {
             Tag tag = new Tag()
@@ -166,6 +209,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             List<MetricsFilterPredicate> list = new List<MetricsFilterPredicate>();
             list.Add(new MetricsPrefixPredicate("string"));
             list.Add(new MetricsTagPredicate(tag));
+            list.Add(new MetricsAccessPointArnPredicate(accessPointArn));
             PutBucketMetricsConfigurationRequest putBucketMetricsConfigurationRequest = new PutBucketMetricsConfigurationRequest()
             {
                 BucketName = bucketName,
@@ -203,10 +247,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     Assert.AreEqual(((MetricsPrefixPredicate)predicate).Prefix, "string");
                 }
-                else
+                else if (predicate is MetricsTagPredicate)
                 {
                     Assert.AreEqual(((MetricsTagPredicate)predicate).Tag.Key, "tagK");
                     Assert.AreEqual(((MetricsTagPredicate)predicate).Tag.Value, "tagV");
+                }
+                else
+                {
+                    Assert.AreEqual(((MetricsAccessPointArnPredicate)predicate).AccessPointArn, accessPointArn);
                 }
             }
 

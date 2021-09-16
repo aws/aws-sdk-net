@@ -554,10 +554,10 @@ namespace Amazon.S3.Model
         /// <para>
         /// If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>,
         /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetrical customer managed customer master key (CMK) that was
+        /// Web Services KMS) symmetrical customer managed key that was
         /// used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>,
         /// but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon
-        /// S3 uses the Amazon Web Services managed CMK in Amazon Web Services to protect the
+        /// S3 uses the Amazon Web Services managed key to protect the
         /// data. If the KMS key does not exist in the same account issuing the command, you must
         /// use the full ARN and not just the ID. 
         /// </para>

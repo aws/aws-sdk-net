@@ -36,9 +36,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies the AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by
-        /// AWS KMS will fail if not made via SSL or using SigV4. Documentation on configuring any of the officially supported AWS SDKs and CLI can be found at
-        /// http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+        /// <para>If the encryption type is <code>aws:kms</code>, this optional value
+        /// specifies the ID of the symmetric customer managed key to use for encryption
+        /// of job results. Amazon S3 only supports symmetric keys. For more information, see 
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">
+        /// Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</para>
         /// </summary>
         public string KMSKeyId { get; set; }
 

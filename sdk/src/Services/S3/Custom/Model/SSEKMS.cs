@@ -32,8 +32,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services
-        /// KMS) symmetric customer managed customer master key (CMK) to use for encrypting inventory
-        /// reports.
+        /// KMS) symmetric customer managed key to use for encrypting inventory reports.
         /// </para>
         /// </summary>
         public string KeyId

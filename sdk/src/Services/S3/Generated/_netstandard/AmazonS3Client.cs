@@ -2208,21 +2208,22 @@ namespace Amazon.S3
         /// <para>
         /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
         /// automatically moving data to the most cost-effective storage access tier, without
-        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
-        /// by moving data between access tiers, when access patterns change.
+        /// performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic
+        /// cost savings in two low latency and high throughput access tiers. For data that can
+        /// be accessed asynchronously, you can choose to activate automatic archiving capabilities
+        /// within the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
-        /// that you plan to store for at least 30 days. If the size of an object is less than
-        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
-        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
-        /// storage class. 
+        /// The S3 Intelligent-Tiering storage class is the ideal storage class for data with
+        /// unknown, changing, or unpredictable access patterns, independent of object size or
+        /// retention period. If the size of an object is less than 128 KB, it is not eligible
+        /// for auto-tiering. Smaller objects can be stored, but they are always charged at the
+        /// Frequent Access tier rates in the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// If you delete an object before the end of the 30-day minimum storage duration period,
-        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
         /// class for automatically optimizing frequently and infrequently accessed objects</a>.
         /// </para>
         ///  
@@ -3884,21 +3885,22 @@ namespace Amazon.S3
         /// <para>
         /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
         /// automatically moving data to the most cost-effective storage access tier, without
-        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
-        /// by moving data between access tiers, when access patterns change.
+        /// performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic
+        /// cost savings in two low latency and high throughput access tiers. For data that can
+        /// be accessed asynchronously, you can choose to activate automatic archiving capabilities
+        /// within the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
-        /// that you plan to store for at least 30 days. If the size of an object is less than
-        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
-        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
-        /// storage class. 
+        /// The S3 Intelligent-Tiering storage class is the ideal storage class for data with
+        /// unknown, changing, or unpredictable access patterns, independent of object size or
+        /// retention period. If the size of an object is less than 128 KB, it is not eligible
+        /// for auto-tiering. Smaller objects can be stored, but they are always charged at the
+        /// Frequent Access tier rates in the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// If you delete an object before the end of the 30-day minimum storage duration period,
-        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
         /// class for automatically optimizing frequently and infrequently accessed objects</a>.
         /// </para>
         ///  
@@ -5362,10 +5364,9 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-        /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
-        /// you’ll get an HTTP 400 BadRequest error.
+        /// not be sent for GET requests if your object uses server-side encryption with KMS keys
+        /// (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys (SSE-S3).
+        /// If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -5531,7 +5532,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5590,10 +5591,9 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-        /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
-        /// you’ll get an HTTP 400 BadRequest error.
+        /// not be sent for GET requests if your object uses server-side encryption with KMS keys
+        /// (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys (SSE-S3).
+        /// If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -5759,7 +5759,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.  When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">VersionId used to reference a specific version of the object.</param>
         /// <param name="cancellationToken">
@@ -5821,10 +5821,9 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-        /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
-        /// you’ll get an HTTP 400 BadRequest error.
+        /// not be sent for GET requests if your object uses server-side encryption with KMS keys
+        /// (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys (SSE-S3).
+        /// If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  
         /// <para>
@@ -6136,10 +6135,9 @@ namespace Amazon.S3
         ///  <note> <ul> <li> 
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-        /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
-        /// you’ll get an HTTP 400 BadRequest error.
+        /// not be sent for GET requests if your object uses server-side encryption with KMS keys
+        /// (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys (SSE-S3).
+        /// If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6281,10 +6279,9 @@ namespace Amazon.S3
         ///  <note> <ul> <li> 
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-        /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
-        /// you’ll get an HTTP 400 BadRequest error.
+        /// not be sent for GET requests if your object uses server-side encryption with KMS keys
+        /// (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys (SSE-S3).
+        /// If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6429,10 +6426,9 @@ namespace Amazon.S3
         ///  <note> <ul> <li> 
         /// <para>
         /// Encryption request headers, like <code>x-amz-server-side-encryption</code>, should
-        /// not be sent for GET requests if your object uses server-side encryption with CMKs
-        /// stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-        /// S3–managed encryption keys (SSE-S3). If your object does use these types of keys,
-        /// you’ll get an HTTP 400 BadRequest error.
+        /// not be sent for GET requests if your object uses server-side encryption with KMS keys
+        /// (SSE-KMS) or server-side encryption with Amazon S3–managed encryption keys (SSE-S3).
+        /// If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6950,16 +6946,15 @@ namespace Amazon.S3
         /// You can optionally request server-side encryption. For server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts it
         /// when you access it. You can provide your own encryption key, or use Amazon Web Services
-        /// Key Management Service (Amazon Web Services KMS) customer master keys (CMKs) or Amazon
-        /// S3-managed encryption keys. If you choose to provide your own encryption key, the
-        /// request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// KMS keys or Amazon S3-managed encryption keys. If you choose to provide your own encryption
+        /// key, the request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
         /// requests must match the headers you used in the request to initiate the upload by
         /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
-        /// To perform a multipart upload with encryption using an Amazon Web Services KMS CMK,
+        /// To perform a multipart upload with encryption using an Amazon Web Services KMS key,
         /// the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
         /// actions on the key. These permissions are required because Amazon S3 must decrypt
         /// and read data from the encrypted file parts before it completes the multipart upload.
@@ -6969,10 +6964,9 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If your Identity and Access Management (IAM) user or role is in the same Amazon Web
-        /// Services account as the Amazon Web Services KMS CMK, then you must have these permissions
-        /// on the key policy. If your IAM user or role belongs to a different account than the
-        /// key, then you must have the permissions on both the key policy and your IAM user or
-        /// role.
+        /// Services account as the KMS key, then you must have these permissions on the key policy.
+        /// If your IAM user or role belongs to a different account than the key, then you must
+        /// have the permissions on both the key policy and your IAM user or role.
         /// </para>
         ///  
         /// <para>
@@ -7014,10 +7008,10 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you want
-        /// Amazon Web Services to manage the keys used to encrypt data, specify the following
-        /// headers in the request.
+        /// Use encryption keys managed by Amazon S3 or customer managed key stored in Amazon
+        /// Web Services Key Management Service (Amazon Web Services KMS) – If you want Amazon
+        /// Web Services to manage the keys used to encrypt data, specify the following headers
+        /// in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7035,7 +7029,7 @@ namespace Amazon.S3
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
         /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-        /// Web Services managed CMK in Amazon Web Services KMS to protect the data.
+        /// Web Services managed key in Amazon Web Services KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -7044,9 +7038,8 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
-        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
+        /// For more information about server-side encryption with KMS key (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with KMS keys</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7067,9 +7060,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
-        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
+        /// For more information about server-side encryption with KMS keys (SSE-KMS), see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with KMS keys</a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
         /// 
@@ -7284,16 +7277,15 @@ namespace Amazon.S3
         /// You can optionally request server-side encryption. For server-side encryption, Amazon
         /// S3 encrypts your data as it writes it to disks in its data centers and decrypts it
         /// when you access it. You can provide your own encryption key, or use Amazon Web Services
-        /// Key Management Service (Amazon Web Services KMS) customer master keys (CMKs) or Amazon
-        /// S3-managed encryption keys. If you choose to provide your own encryption key, the
-        /// request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+        /// KMS keys or Amazon S3-managed encryption keys. If you choose to provide your own encryption
+        /// key, the request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
         /// requests must match the headers you used in the request to initiate the upload by
         /// using <code>CreateMultipartUpload</code>. 
         /// </para>
         ///  
         /// <para>
-        /// To perform a multipart upload with encryption using an Amazon Web Services KMS CMK,
+        /// To perform a multipart upload with encryption using an Amazon Web Services KMS key,
         /// the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
         /// actions on the key. These permissions are required because Amazon S3 must decrypt
         /// and read data from the encrypted file parts before it completes the multipart upload.
@@ -7303,10 +7295,9 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// If your Identity and Access Management (IAM) user or role is in the same Amazon Web
-        /// Services account as the Amazon Web Services KMS CMK, then you must have these permissions
-        /// on the key policy. If your IAM user or role belongs to a different account than the
-        /// key, then you must have the permissions on both the key policy and your IAM user or
-        /// role.
+        /// Services account as the KMS key, then you must have these permissions on the key policy.
+        /// If your IAM user or role belongs to a different account than the key, then you must
+        /// have the permissions on both the key policy and your IAM user or role.
         /// </para>
         ///  
         /// <para>
@@ -7348,10 +7339,10 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use encryption keys managed by Amazon S3 or customer master keys (CMKs) stored in
-        /// Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you want
-        /// Amazon Web Services to manage the keys used to encrypt data, specify the following
-        /// headers in the request.
+        /// Use encryption keys managed by Amazon S3 or customer managed key stored in Amazon
+        /// Web Services Key Management Service (Amazon Web Services KMS) – If you want Amazon
+        /// Web Services to manage the keys used to encrypt data, specify the following headers
+        /// in the request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7369,7 +7360,7 @@ namespace Amazon.S3
         /// <para>
         /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
         /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-        /// Web Services managed CMK in Amazon Web Services KMS to protect the data.
+        /// Web Services managed key in Amazon Web Services KMS to protect the data.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -7378,9 +7369,8 @@ namespace Amazon.S3
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
-        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
+        /// For more information about server-side encryption with KMS key (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with KMS keys</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7401,9 +7391,9 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about server-side encryption with CMKs stored in Amazon Web Services
-        /// KMS (SSE-KMS), see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-        /// Data Using Server-Side Encryption with CMKs stored in Amazon Web Services KMS</a>.
+        /// For more information about server-side encryption with KMS keys (SSE-KMS), see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+        /// Data Using Server-Side Encryption with KMS keys</a>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
         /// 
@@ -7670,21 +7660,22 @@ namespace Amazon.S3
         /// <para>
         /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
         /// automatically moving data to the most cost-effective storage access tier, without
-        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
-        /// by moving data between access tiers, when access patterns change.
+        /// performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic
+        /// cost savings in two low latency and high throughput access tiers. For data that can
+        /// be accessed asynchronously, you can choose to activate automatic archiving capabilities
+        /// within the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
-        /// that you plan to store for at least 30 days. If the size of an object is less than
-        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
-        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
-        /// storage class. 
+        /// The S3 Intelligent-Tiering storage class is the ideal storage class for data with
+        /// unknown, changing, or unpredictable access patterns, independent of object size or
+        /// retention period. If the size of an object is less than 128 KB, it is not eligible
+        /// for auto-tiering. Smaller objects can be stored, but they are always charged at the
+        /// Frequent Access tier rates in the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// If you delete an object before the end of the 30-day minimum storage duration period,
-        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
         /// class for automatically optimizing frequently and infrequently accessed objects</a>.
         /// </para>
         ///  
@@ -9717,9 +9708,9 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Default encryption for a bucket can use server-side encryption with Amazon S3-managed
-        /// keys (SSE-S3) or Amazon Web Services KMS customer master keys (SSE-KMS). If you specify
-        /// default encryption using SSE-KMS, you can also configure Amazon S3 Bucket Key. For
-        /// information about default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
+        /// keys (SSE-S3) or customer managed keys (SSE-KMS). If you specify default encryption
+        /// using SSE-KMS, you can also configure Amazon S3 Bucket Key. For information about
+        /// default encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
         /// S3 default bucket encryption</a> in the <i>Amazon S3 User Guide</i>. For more information
         /// about S3 Bucket Keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
         /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
@@ -9791,21 +9782,22 @@ namespace Amazon.S3
         /// <para>
         /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
         /// automatically moving data to the most cost-effective storage access tier, without
-        /// additional operational overhead. S3 Intelligent-Tiering delivers automatic cost savings
-        /// by moving data between access tiers, when access patterns change.
+        /// performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic
+        /// cost savings in two low latency and high throughput access tiers. For data that can
+        /// be accessed asynchronously, you can choose to activate automatic archiving capabilities
+        /// within the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB
-        /// that you plan to store for at least 30 days. If the size of an object is less than
-        /// 128 KB, it is not eligible for auto-tiering. Smaller objects can be stored, but they
-        /// are always charged at the frequent access tier rates in the S3 Intelligent-Tiering
-        /// storage class. 
+        /// The S3 Intelligent-Tiering storage class is the ideal storage class for data with
+        /// unknown, changing, or unpredictable access patterns, independent of object size or
+        /// retention period. If the size of an object is less than 128 KB, it is not eligible
+        /// for auto-tiering. Smaller objects can be stored, but they are always charged at the
+        /// Frequent Access tier rates in the S3 Intelligent-Tiering storage class.
         /// </para>
         ///  
         /// <para>
-        /// If you delete an object before the end of the 30-day minimum storage duration period,
-        /// you are charged for 30 days. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
         /// class for automatically optimizing frequently and infrequently accessed objects</a>.
         /// </para>
         ///  
@@ -10190,7 +10182,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html">GetBucketMetricsConfiguration</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -10647,11 +10639,11 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side
-        /// encryption with CMKs stored in Amazon Web Services KMS. To replicate Amazon Web Services
-        /// KMS-encrypted objects, add the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
+        /// encryption with KMS keys. To replicate Amazon Web Services KMS-encrypted objects,
+        /// add the following: <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>,
         /// <code>Status</code>, <code>EncryptionConfiguration</code>, and <code>ReplicaKmsKeyID</code>.
         /// For information about replication configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating
-        /// Objects Created with SSE Using CMKs stored in Amazon Web Services KMS</a>.
+        /// Objects Created with SSE Using KMS keys</a>.
         /// </para>
         ///  
         /// <para>
@@ -14117,10 +14109,9 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and
-        /// customer master keys (CMKs) stored in Amazon Web Services Key Management Service (SSE-KMS),
-        /// server-side encryption is handled transparently, so you don't need to specify anything.
-        /// For more information about server-side encryption, including SSE-S3 and SSE-KMS, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
+        /// Amazon Web Services KMS keys (SSE-KMS), server-side encryption is handled transparently,
+        /// so you don't need to specify anything. For more information about server-side encryption,
+        /// including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -14390,8 +14381,8 @@ namespace Amazon.S3
 
         /// <summary>
         /// Passes transformed objects to a <code>GetObject</code> operation when using Object
-        /// Lambda Access Points. For information about Object Lambda Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
-        /// objects with Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
+        /// Lambda access points. For information about Object Lambda access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming
+        /// objects with Object Lambda access points</a> in the <i>Amazon S3 User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -14417,7 +14408,7 @@ namespace Amazon.S3
         /// S3 Object Lambda to detect and redact personally identifiable information (PII) and
         /// decompress S3 objects. These Lambda functions are available in the Amazon Web Services
         /// Serverless Application Repository, and can be selected through the Amazon Web Services
-        /// Management Console when you create your Object Lambda Access Point.
+        /// Management Console when you create your Object Lambda access point.
         /// </para>
         ///  
         /// <para>

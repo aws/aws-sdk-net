@@ -184,8 +184,8 @@ namespace Amazon.S3.Model
         /// Default is None.
         /// <para>
         /// If you specified server-side encryption either with an Amazon S3-managed encryption
-        /// key or an Amazon Web Services KMS customer master key (CMK) in your initiate multipart
-        /// upload request, the response includes this header. It confirms the encryption algorithm
+        /// key or an Amazon Web Services KMS key in your initiate multipart upload request,
+        /// the response includes this header. It confirms the encryption algorithm
         /// that Amazon S3 used to encrypt the object.
         /// </para>
         /// </summary>
@@ -200,8 +200,7 @@ namespace Amazon.S3.Model
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
         /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed customer master key (CMK) that was used
-        /// for the object.
+        /// Web Services KMS) symmetric customer managed key that was used for the object.
         /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId

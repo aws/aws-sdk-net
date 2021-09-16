@@ -273,7 +273,11 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
+        /// When using an Object Lambda access point the hostname takes the form<i> AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using using this action with Amazon S3 on Outposts, you must direct requests to the
         /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
         /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts bucket ARN in place of the bucket name. For more information

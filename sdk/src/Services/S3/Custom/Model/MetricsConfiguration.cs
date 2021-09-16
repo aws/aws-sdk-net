@@ -27,17 +27,20 @@ namespace Amazon.S3.Model
     /// metrics configuration, note that this is a full replacement of the existing metrics
     /// configuration. If you don't include the elements you want to keep, they are erased.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">
-    /// PUT Bucket metrics</a> in the <i>Amazon S3 API Reference</i>.
+    /// PutBucketMetricsConfiguration</a>.
     /// </summary>
     public class MetricsConfiguration
     {
         private MetricsFilter metricsFilter;
         private string metricsId;
-        
+
         /// <summary>
-        /// Specifies a metrics configuration filter. 
-        /// The metrics configuration will only include objects that meet the filter's criteria. 
-        /// A filter must be a prefix, a tag, or a conjunction (MetricsAndOperator).
+        /// Gets and sets the property MetricsFilter. 
+        /// <para>
+        /// Specifies a metrics configuration filter. The metrics configuration will only include
+        /// objects that meet the filter's criteria. A filter must be a prefix, a tag, an access
+        /// point arn, or a conjunction (MetricsAndOperator).
+        /// </para>
         /// </summary>
         public MetricsFilter MetricsFilter
         {

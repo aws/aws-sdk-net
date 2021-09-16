@@ -68,5 +68,13 @@ namespace Amazon.S3.Model.Internal
                 xmlWriter.WriteEndElement();
             }
         }
+
+        public void visit(MetricsAccessPointArnPredicate metricsAccessPointArnPredicate)
+        {
+            if (metricsAccessPointArnPredicate != null)
+            {
+                xmlWriter.WriteElementString("AccessPointArn", "http://s3.amazonaws.com/doc/2006-03-01/", S3Transforms.ToXmlStringValue(metricsAccessPointArnPredicate.AccessPointArn));
+            }
+        }
     }
 }

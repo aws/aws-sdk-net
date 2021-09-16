@@ -57,8 +57,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The Server-side encryption algorithm used when storing this object in S3.
         /// <para>
-        /// If you specified server-side encryption either with an Amazon Web Services KMS customer
-        /// master key (CMK) or Amazon S3-managed encryption key in your PUT request, the response
+        /// If you specified server-side encryption either with an Amazon Web Services KMS
+        /// key or Amazon S3-managed encryption key in your PUT request, the response
         /// includes this header. It confirms the encryption algorithm that Amazon S3 used to
         /// encrypt the object.
         /// </para>
@@ -107,8 +107,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>,
         /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed customer master key (CMK) that was used
-        /// for the object. 
+        /// Web Services KMS) symmetric customer managed key that was used for the object. 
         /// </para>
         /// </summary>
         public string ServerSideEncryptionKeyManagementServiceKeyId

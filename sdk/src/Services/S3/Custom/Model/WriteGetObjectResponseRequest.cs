@@ -531,8 +531,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property SSEKMSKeyId. 
         /// <para>
         ///  If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed customer master key (CMK) that was used
-        /// for stored in Amazon S3 object. 
+        /// Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. 
         /// </para>
         /// </summary>
         public string SSEKMSKeyId

@@ -51,6 +51,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         continue;
                     }
 
+                    if (context.TestExpression("AccessPointArn", targetDepth))
+                    {
+                        filterPredicateList.Add(new MetricsAccessPointArnPredicate(StringUnmarshaller.Instance.Unmarshall(context)));
+
+                        continue;
+                    }
+                    
                     if (context.TestExpression("And", targetDepth))
                     {
                         filterPredicateList.Add(new MetricsAndOperator(Unmarshall(context)));

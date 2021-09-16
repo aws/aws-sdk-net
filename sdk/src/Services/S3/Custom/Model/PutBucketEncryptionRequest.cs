@@ -75,8 +75,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BucketName. 
         /// <para>
         /// Specifies default encryption for a bucket using server-side encryption with Amazon
-        /// S3-managed keys (SSE-S3) or customer master keys stored in Amazon Web Services KMS
-        /// (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a
+        /// S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS).
+        /// For information about the Amazon S3 default encryption feature, see <a 
         /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
         /// S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
