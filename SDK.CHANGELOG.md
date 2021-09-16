@@ -1,3 +1,14 @@
+### 3.7.118.1 (2021-09-15 23:15 UTC)
+* S3 (3.7.2.6)
+	* Updated to use new Core, version 3.7.3.6
+	* Fixed an issue where AWS-managed prefix lists were not working with Arn class due to Account ID validation.
+* S3Control (3.7.3.7)
+	* Updated to use new Core, version 3.7.3.6
+	* Fixed an issue where AWS-managed prefix lists were not working with Arn class due to Account ID validation.
+* Core 3.7.3.6
+	* Fixed an issue where AWS-managed prefix lists were not working with Arn class due to Account ID validation; Fixes an issue where System.TimeoutException is not retried when using .NET 5.
+	* All services packages updated to require new Core
+
 ### 3.7.118.0 (2021-09-14 20:56 UTC)
 * Chime (3.7.11.0)
 	* Adds support for SipHeaders parameter for CreateSipMediaApplicationCall.
