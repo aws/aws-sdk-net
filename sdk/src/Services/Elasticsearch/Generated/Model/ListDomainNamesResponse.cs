@@ -30,7 +30,7 @@ namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
     /// The result of a <code>ListDomainNames</code> operation. Contains the names of all
-    /// Elasticsearch domains owned by this account.
+    /// domains owned by this account and their respective engine types.
     /// </summary>
     public partial class ListDomainNamesResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DomainNames. 
         /// <para>
-        /// List of Elasticsearch domain names.
+        /// List of domain names and respective engine types.
         /// </para>
         /// </summary>
         public List<DomainInfo> DomainNames

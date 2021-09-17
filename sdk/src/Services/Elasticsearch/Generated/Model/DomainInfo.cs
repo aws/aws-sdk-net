@@ -34,6 +34,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class DomainInfo
     {
         private string _domainName;
+        private EngineType _engineType;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -52,6 +53,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        ///  Specifies the <code>EngineType</code> of the domain.
+        /// </para>
+        /// </summary>
+        public EngineType EngineType
+        {
+            get { return this._engineType; }
+            set { this._engineType = value; }
+        }
+
+        // Check to see if EngineType property is set
+        internal bool IsSetEngineType()
+        {
+            return this._engineType != null;
         }
 
     }

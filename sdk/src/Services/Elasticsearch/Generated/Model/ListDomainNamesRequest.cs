@@ -34,6 +34,26 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class ListDomainNamesRequest : AmazonElasticsearchRequest
     {
+        private EngineType _engineType;
+
+        /// <summary>
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        ///  Optional parameter to filter the output by domain engine type. Acceptable values
+        /// are 'Elasticsearch' and 'OpenSearch'. 
+        /// </para>
+        /// </summary>
+        public EngineType EngineType
+        {
+            get { return this._engineType; }
+            set { this._engineType = value; }
+        }
+
+        // Check to see if EngineType property is set
+        internal bool IsSetEngineType()
+        {
+            return this._engineType != null;
+        }
 
     }
 }

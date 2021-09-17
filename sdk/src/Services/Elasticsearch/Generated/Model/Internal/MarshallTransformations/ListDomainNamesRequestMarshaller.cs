@@ -58,7 +58,11 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";            
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetEngineType())
+                request.Parameters.Add("engineType", StringUtils.FromString(publicRequest.EngineType));
             request.ResourcePath = "/2015-01-01/domain";
+            request.UseQueryString = true;
 
             return request;
         }

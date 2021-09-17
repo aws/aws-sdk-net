@@ -70,6 +70,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EngineType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EngineType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

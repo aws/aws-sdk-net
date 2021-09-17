@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Specifies settings for cold storage.
+    /// Specifies the configuration for cold storage options such as enabled
     /// </summary>
     public partial class ColdStorageOptions
     {
@@ -38,7 +38,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// True to enable cold storage for an Elasticsearch domain.
+        /// Enable cold storage option. Accepted values true or false
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
