@@ -1,3 +1,16 @@
+### 3.7.120.0 (2021-09-17 18:14 UTC)
+* DatabaseMigrationService (3.7.4.0)
+	* Optional flag force-planned-failover added to reboot-replication-instance API call. This flag can be used to test a planned failover scenario used during some maintenance operations.
+* Elasticsearch (3.7.2.0)
+	* This release adds an optional parameter in the ListDomainNames API to filter domains based on the engine type (OpenSearch/Elasticsearch).
+* OpenSearchService (3.7.1.0)
+	* This release adds an optional parameter in the ListDomainNames API to filter domains based on the engine type (OpenSearch/Elasticsearch).
+* Core 3.7.3.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.119.0 (2021-09-16 18:18 UTC)
 * KafkaConnect (3.7.0.0)
 	* This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).
