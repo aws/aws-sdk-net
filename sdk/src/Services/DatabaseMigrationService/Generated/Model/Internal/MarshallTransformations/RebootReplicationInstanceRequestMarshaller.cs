@@ -73,6 +73,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ForceFailover);
                 }
 
+                if(publicRequest.IsSetForcePlannedFailover())
+                {
+                    context.Writer.WritePropertyName("ForcePlannedFailover");
+                    context.Writer.Write(publicRequest.ForcePlannedFailover);
+                }
+
                 if(publicRequest.IsSetReplicationInstanceArn())
                 {
                     context.Writer.WritePropertyName("ReplicationInstanceArn");

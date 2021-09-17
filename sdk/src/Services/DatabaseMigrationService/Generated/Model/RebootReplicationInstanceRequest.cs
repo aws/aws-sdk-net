@@ -36,13 +36,16 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class RebootReplicationInstanceRequest : AmazonDatabaseMigrationServiceRequest
     {
         private bool? _forceFailover;
+        private bool? _forcePlannedFailover;
         private string _replicationInstanceArn;
 
         /// <summary>
         /// Gets and sets the property ForceFailover. 
         /// <para>
         /// If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-        /// failover. (If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>.)
+        /// failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>.
+        /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both
+        /// be set to <code>true</code>.)
         /// </para>
         /// </summary>
         public bool ForceFailover
@@ -55,6 +58,28 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetForceFailover()
         {
             return this._forceFailover.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForcePlannedFailover. 
+        /// <para>
+        /// If this parameter is <code>true</code>, the reboot is conducted through a planned
+        /// Multi-AZ failover where resources are released and cleaned up prior to conducting
+        /// the failover. If the instance isn''t configured for Multi-AZ, then you can't specify
+        /// <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code>
+        /// can't both be set to <code>true</code>.)
+        /// </para>
+        /// </summary>
+        public bool ForcePlannedFailover
+        {
+            get { return this._forcePlannedFailover.GetValueOrDefault(); }
+            set { this._forcePlannedFailover = value; }
+        }
+
+        // Check to see if ForcePlannedFailover property is set
+        internal bool IsSetForcePlannedFailover()
+        {
+            return this._forcePlannedFailover.HasValue; 
         }
 
         /// <summary>

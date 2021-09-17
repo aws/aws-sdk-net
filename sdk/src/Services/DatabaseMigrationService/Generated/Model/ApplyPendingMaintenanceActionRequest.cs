@@ -44,6 +44,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The pending maintenance action to apply to this resource.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ApplyAction

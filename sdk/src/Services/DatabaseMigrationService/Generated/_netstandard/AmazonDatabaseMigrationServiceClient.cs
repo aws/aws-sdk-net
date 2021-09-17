@@ -642,6 +642,13 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates a replication subnet group given a list of the subnet IDs in a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// The VPC needs to have at least one subnet in at least two availability zones in the
+        /// Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+        /// exception.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2506,7 +2513,13 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Reloads the target database table with the source data.
+        /// Reloads the target database table with the source data. 
+        /// 
+        ///  
+        /// <para>
+        /// You can only use this operation with a task in the <code>RUNNING</code> state, otherwise
+        /// the service will throw an <code>InvalidResourceStateFault</code> exception.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReloadTables service method.</param>
         /// <param name="cancellationToken">

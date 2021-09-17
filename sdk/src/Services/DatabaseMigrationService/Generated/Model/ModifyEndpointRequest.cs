@@ -125,9 +125,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// serviceAccessRoleArn - The Identity and Access Management (IAM) role that has permission
-        /// to access the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code>
-        /// action.
+        /// serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM
+        /// role. The role must allow the <code>iam:PassRole</code> action.
         /// </para>
         ///  </li> <li> 
         /// <para>

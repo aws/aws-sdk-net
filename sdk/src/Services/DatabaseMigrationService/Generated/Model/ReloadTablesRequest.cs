@@ -30,7 +30,13 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ReloadTables operation.
-    /// Reloads the target database table with the source data.
+    /// Reloads the target database table with the source data. 
+    /// 
+    ///  
+    /// <para>
+    /// You can only use this operation with a task in the <code>RUNNING</code> state, otherwise
+    /// the service will throw an <code>InvalidResourceStateFault</code> exception.
+    /// </para>
     /// </summary>
     public partial class ReloadTablesRequest : AmazonDatabaseMigrationServiceRequest
     {
