@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the configuration for cold storage options such as enabled
     /// </summary>
     public partial class ColdStorageOptions
     {
         private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Enabled.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Enable cold storage option. Accepted values true or false
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool Enabled

@@ -46,7 +46,10 @@ namespace Amazon.OpenSearchService.Model
         private bool? _zoneAwarenessEnabled;
 
         /// <summary>
-        /// Gets and sets the property ColdStorageOptions.
+        /// Gets and sets the property ColdStorageOptions. 
+        /// <para>
+        /// Specifies the <code>ColdStorageOptions</code> config for a Domain
+        /// </para>
         /// </summary>
         public ColdStorageOptions ColdStorageOptions
         {
