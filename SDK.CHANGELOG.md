@@ -1,3 +1,15 @@
+### 3.7.121.0 (2021-09-21 18:13 UTC)
+* Comprehend (3.7.4.0)
+	* Amazon Comprehend now supports versioning of custom models, improved training with ONE_DOC_PER_FILE text documents for custom entity recognition, ability to provide specific test sets during training, and live migration to new model endpoints.
+* EC2 (3.7.29.0)
+	* This update adds support for downloading configuration templates using new APIs (GetVpnConnectionDeviceTypes and GetVpnConnectionDeviceSampleConfiguration) and Internet Key Exchange version 2 (IKEv2) parameters for many popular CGW devices.
+* ECR (3.7.1.0)
+	* This release adds additional support for repository replication
+* IoT (3.7.6.0)
+	* This release adds support for verifying, viewing and filtering AWS IoT Device Defender detect violations with four verification states.
+* Kafka (3.7.3.0)
+	* Added StateInfo to ClusterInfo
+
 ### 3.7.120.0 (2021-09-17 18:14 UTC)
 * DatabaseMigrationService (3.7.4.0)
 	* Optional flag force-planned-failover added to reboot-replication-instance API call. This flag can be used to test a planned failover scenario used during some maintenance operations.

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.120.0",
+    "ProductVersion" : "3.7.121.0",
     "CoreVersion"    : "3.7.3.8",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.28.3",
+            "Version" : "3.7.29.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.8"
@@ -466,7 +466,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.7.5.3",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.8"
@@ -490,7 +490,7 @@
             "InPreview"               : false
         },
         "ECR"                             : {
-            "Version" : "3.7.0.68",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.8"
@@ -962,7 +962,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.7.3.3",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.8"
@@ -1330,7 +1330,7 @@
             "InPreview"               : false
         },
         "Kafka"                           : {
-            "Version" : "3.7.2.6",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.8"
