@@ -50,6 +50,7 @@ namespace Amazon.IoT.Model
         private string _securityProfileName;
         private DateTime? _startTimeUtc;
         private string _thingName;
+        private VerificationState _verificationState;
 
         /// <summary>
         /// Gets and sets the property BehaviorCriteriaType. 
@@ -198,6 +199,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingName()
         {
             return this._thingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationState. 
+        /// <para>
+        /// The verification state of the violation (detect alarm).
+        /// </para>
+        /// </summary>
+        public VerificationState VerificationState
+        {
+            get { return this._verificationState; }
+            set { this._verificationState = value; }
+        }
+
+        // Check to see if VerificationState property is set
+        internal bool IsSetVerificationState()
+        {
+            return this._verificationState != null;
         }
 
 #region Backwards compatible properties

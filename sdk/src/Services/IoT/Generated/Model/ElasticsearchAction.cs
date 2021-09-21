@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action that writes data to an Amazon Elasticsearch Service domain.
+    /// Describes an action that writes data to an Amazon OpenSearch Service domain.
     /// 
     ///  <note> 
     /// <para>
-    /// This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-    /// action</a> instead.
+    /// The <code>Elasticsearch</code> action can only be used by existing rule actions. To
+    /// create a new rule action or to update an existing rule action, use the <code>OpenSearch</code>
+    /// rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,7 +50,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The endpoint of your Elasticsearch domain.
+        /// The endpoint of your OpenSearch domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +88,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Index. 
         /// <para>
-        /// The Elasticsearch index where you want to store your data.
+        /// The index where you want to store your data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,7 +107,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role ARN that has access to Elasticsearch.
+        /// The IAM role ARN that has access to OpenSearch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -15890,6 +15890,70 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  PutVerificationStateOnViolation
+
+        /// <summary>
+        /// Set a verification state and provide a description of that verification state on a
+        /// violation (detect alarm).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVerificationStateOnViolation service method.</param>
+        /// 
+        /// <returns>The response from the PutVerificationStateOnViolation service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">REST API Reference for PutVerificationStateOnViolation Operation</seealso>
+        public virtual PutVerificationStateOnViolationResponse PutVerificationStateOnViolation(PutVerificationStateOnViolationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVerificationStateOnViolationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVerificationStateOnViolationResponseUnmarshaller.Instance;
+
+            return Invoke<PutVerificationStateOnViolationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutVerificationStateOnViolation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutVerificationStateOnViolation operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutVerificationStateOnViolation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">REST API Reference for PutVerificationStateOnViolation Operation</seealso>
+        public virtual IAsyncResult BeginPutVerificationStateOnViolation(PutVerificationStateOnViolationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVerificationStateOnViolationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVerificationStateOnViolationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutVerificationStateOnViolation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutVerificationStateOnViolation.</param>
+        /// 
+        /// <returns>Returns a  PutVerificationStateOnViolationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">REST API Reference for PutVerificationStateOnViolation Operation</seealso>
+        public virtual PutVerificationStateOnViolationResponse EndPutVerificationStateOnViolation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutVerificationStateOnViolationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterCACertificate
 
         /// <summary>

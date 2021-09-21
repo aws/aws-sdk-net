@@ -12320,6 +12320,50 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  PutVerificationStateOnViolation
+
+        internal virtual PutVerificationStateOnViolationResponse PutVerificationStateOnViolation(PutVerificationStateOnViolationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVerificationStateOnViolationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVerificationStateOnViolationResponseUnmarshaller.Instance;
+
+            return Invoke<PutVerificationStateOnViolationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Set a verification state and provide a description of that verification state on a
+        /// violation (detect alarm).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVerificationStateOnViolation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVerificationStateOnViolation service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutVerificationStateOnViolation">REST API Reference for PutVerificationStateOnViolation Operation</seealso>
+        public virtual Task<PutVerificationStateOnViolationResponse> PutVerificationStateOnViolationAsync(PutVerificationStateOnViolationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutVerificationStateOnViolationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutVerificationStateOnViolationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutVerificationStateOnViolationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterCACertificate
 
         internal virtual RegisterCACertificateResponse RegisterCACertificate(RegisterCACertificateRequest request)

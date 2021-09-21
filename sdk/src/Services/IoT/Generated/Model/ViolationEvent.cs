@@ -37,6 +37,8 @@ namespace Amazon.IoT.Model
         private MetricValue _metricValue;
         private string _securityProfileName;
         private string _thingName;
+        private VerificationState _verificationState;
+        private string _verificationStateDescription;
         private ViolationEventAdditionalInfo _violationEventAdditionalInfo;
         private DateTime? _violationEventTime;
         private ViolationEventType _violationEventType;
@@ -114,6 +116,43 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingName()
         {
             return this._thingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationState. 
+        /// <para>
+        /// The verification state of the violation (detect alarm).
+        /// </para>
+        /// </summary>
+        public VerificationState VerificationState
+        {
+            get { return this._verificationState; }
+            set { this._verificationState = value; }
+        }
+
+        // Check to see if VerificationState property is set
+        internal bool IsSetVerificationState()
+        {
+            return this._verificationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationStateDescription. 
+        /// <para>
+        /// The description of the verification state of the violation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1000)]
+        public string VerificationStateDescription
+        {
+            get { return this._verificationStateDescription; }
+            set { this._verificationStateDescription = value; }
+        }
+
+        // Check to see if VerificationStateDescription property is set
+        internal bool IsSetVerificationStateDescription()
+        {
+            return this._verificationStateDescription != null;
         }
 
         /// <summary>

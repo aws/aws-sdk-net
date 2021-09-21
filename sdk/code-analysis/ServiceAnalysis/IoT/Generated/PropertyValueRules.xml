@@ -2071,6 +2071,16 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.PutVerificationStateOnViolationRequest.VerificationStateDescription</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.PutVerificationStateOnViolationRequest.ViolationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.RegisterCACertificateRequest.CaCertificate</property>
     <min>1</min>
     <max>65536</max>
@@ -2622,6 +2632,10 @@
     <property>Amazon.IoT.Model.ActiveViolation.ThingName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ActiveViolation.VerificationStateDescription</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ActiveViolation.ViolationId</property>
@@ -3522,6 +3536,10 @@
     <property>Amazon.IoT.Model.ViolationEvent.ThingName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ViolationEvent.VerificationStateDescription</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ViolationEvent.ViolationId</property>

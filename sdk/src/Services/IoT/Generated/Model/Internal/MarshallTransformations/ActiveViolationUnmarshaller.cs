@@ -94,6 +94,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.ThingName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("verificationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VerificationState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("verificationStateDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VerificationStateDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("violationEventAdditionalInfo", targetDepth))
                 {
                     var unmarshaller = ViolationEventAdditionalInfoUnmarshaller.Instance;

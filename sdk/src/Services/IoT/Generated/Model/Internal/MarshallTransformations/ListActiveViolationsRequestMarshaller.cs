@@ -76,6 +76,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetThingName())
                 request.Parameters.Add("thingName", StringUtils.FromString(publicRequest.ThingName));
+            
+            if (publicRequest.IsSetVerificationState())
+                request.Parameters.Add("verificationState", StringUtils.FromString(publicRequest.VerificationState));
             request.ResourcePath = "/active-violations";
             request.UseQueryString = true;
 

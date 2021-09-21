@@ -3543,6 +3543,64 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type VerificationState.
+    /// </summary>
+    public class VerificationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BENIGN_POSITIVE for VerificationState
+        /// </summary>
+        public static readonly VerificationState BENIGN_POSITIVE = new VerificationState("BENIGN_POSITIVE");
+        /// <summary>
+        /// Constant FALSE_POSITIVE for VerificationState
+        /// </summary>
+        public static readonly VerificationState FALSE_POSITIVE = new VerificationState("FALSE_POSITIVE");
+        /// <summary>
+        /// Constant TRUE_POSITIVE for VerificationState
+        /// </summary>
+        public static readonly VerificationState TRUE_POSITIVE = new VerificationState("TRUE_POSITIVE");
+        /// <summary>
+        /// Constant UNKNOWN for VerificationState
+        /// </summary>
+        public static readonly VerificationState UNKNOWN = new VerificationState("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationState FindValue(string value)
+        {
+            return FindValue<VerificationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ViolationEventType.
     /// </summary>
     public class ViolationEventType : ConstantClass

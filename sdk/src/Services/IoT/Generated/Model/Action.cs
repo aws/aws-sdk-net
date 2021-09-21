@@ -150,12 +150,13 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Elasticsearch. 
         /// <para>
-        /// Write data to an Amazon Elasticsearch Service domain.
+        /// Write data to an Amazon OpenSearch Service domain.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is deprecated. Use the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearch
-        /// action</a> instead.
+        /// The <code>Elasticsearch</code> action can only be used by existing rule actions. To
+        /// create a new rule action or to update an existing rule action, use the <code>OpenSearch</code>
+        /// rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.
         /// </para>
         ///  </note>
         /// </summary>
