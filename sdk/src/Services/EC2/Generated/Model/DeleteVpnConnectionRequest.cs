@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For certificate-based authentication, delete all AWS Certificate Manager (ACM) private
-    /// certificates used for the AWS-side tunnel endpoints for the VPN connection before
-    /// deleting the VPN connection.
+    /// For certificate-based authentication, delete all Certificate Manager (ACM) private
+    /// certificates used for the Amazon Web Services-side tunnel endpoints for the VPN connection
+    /// before deleting the VPN connection.
     /// </para>
     /// </summary>
     public partial class DeleteVpnConnectionRequest : AmazonEC2Request

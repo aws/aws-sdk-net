@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoteIpv4NetworkCidr. 
         /// <para>
-        /// The IPv4 CIDR on the AWS side of the VPN connection.
+        /// The IPv4 CIDR on the Amazon Web Services side of the VPN connection.
         /// </para>
         ///  
         /// <para>
@@ -133,7 +133,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoteIpv6NetworkCidr. 
         /// <para>
-        /// The IPv6 CIDR on the AWS side of the VPN connection.
+        /// The IPv6 CIDR on the Amazon Web Services side of the VPN connection.
         /// </para>
         ///  
         /// <para>

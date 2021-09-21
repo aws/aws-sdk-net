@@ -311,7 +311,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property RekeyMarginTimeSeconds. 
         /// <para>
         /// The margin time, in seconds, before the phase 2 lifetime expires, during which the
-        /// AWS side of the VPN connection performs an IKE rekey.
+        /// Amazon Web Services side of the VPN connection performs an IKE rekey.
         /// </para>
         /// </summary>
         public int RekeyMarginTimeSeconds

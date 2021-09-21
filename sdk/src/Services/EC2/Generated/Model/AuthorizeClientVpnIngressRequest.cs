@@ -32,7 +32,8 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the AuthorizeClientVpnIngress operation.
     /// Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization
     /// rules act as firewall rules that grant access to networks. You must configure ingress
-    /// authorization rules to enable clients to access resources in AWS or on-premises networks.
+    /// authorization rules to enable clients to access resources in Amazon Web Services or
+    /// on-premises networks.
     /// </summary>
     public partial class AuthorizeClientVpnIngressRequest : AmazonEC2Request
     {
@@ -88,7 +89,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken

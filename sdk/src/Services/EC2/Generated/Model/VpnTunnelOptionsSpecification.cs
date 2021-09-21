@@ -381,8 +381,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property RekeyMarginTimeSeconds. 
         /// <para>
         /// The margin time, in seconds, before the phase 2 lifetime expires, during which the
-        /// AWS side of the VPN connection performs an IKE rekey. The exact time of the rekey
-        /// is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.
+        /// Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time
+        /// of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.
         /// </para>
         ///  
         /// <para>
@@ -436,7 +436,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The action to take when the establishing the tunnel for the VPN connection. By default,
         /// your customer gateway device must initiate the IKE negotiation and bring up the tunnel.
-        /// Specify <code>start</code> for AWS to initiate the IKE negotiation.
+        /// Specify <code>start</code> for Amazon Web Services to initiate the IKE negotiation.
         /// </para>
         ///  
         /// <para>

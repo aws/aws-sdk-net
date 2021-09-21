@@ -34,9 +34,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS
-    /// side do not change, and the tunnel options do not change. Your VPN connection will
-    /// be temporarily unavailable for a brief period while the VPN connection is updated.
+    /// When you modify the VPN connection options, the VPN endpoint IP addresses on the Amazon
+    /// Web Services side do not change, and the tunnel options do not change. Your VPN connection
+    /// will be temporarily unavailable for a brief period while the VPN connection is updated.
     /// </para>
     /// </summary>
     public partial class ModifyVpnConnectionOptionsRequest : AmazonEC2Request
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoteIpv4NetworkCidr. 
         /// <para>
-        /// The IPv4 CIDR on the AWS side of the VPN connection.
+        /// The IPv4 CIDR on the Amazon Web Services side of the VPN connection.
         /// </para>
         ///  
         /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoteIpv6NetworkCidr. 
         /// <para>
-        /// The IPv6 CIDR on the AWS side of the VPN connection.
+        /// The IPv6 CIDR on the Amazon Web Services side of the VPN connection.
         /// </para>
         ///  
         /// <para>

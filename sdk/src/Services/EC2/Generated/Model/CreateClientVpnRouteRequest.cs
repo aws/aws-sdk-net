@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -114,8 +114,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's
-        /// IPv4 CIDR range
+        /// To add a route for an on-premises network, enter the Amazon Web Services Site-to-Site
+        /// VPN connection's IPv4 CIDR range
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -1657,8 +1657,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method.</param>
@@ -1675,8 +1676,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method.</param>
@@ -1696,7 +1698,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization
         /// rules act as firewall rules that grant access to networks. You must configure ingress
-        /// authorization rules to enable clients to access resources in AWS or on-premises networks.
+        /// authorization rules to enable clients to access resources in Amazon Web Services or
+        /// on-premises networks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeClientVpnIngress service method.</param>
         /// 
@@ -1709,7 +1712,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization
         /// rules act as firewall rules that grant access to networks. You must configure ingress
-        /// authorization rules to enable clients to access resources in AWS or on-premises networks.
+        /// authorization rules to enable clients to access resources in Amazon Web Services or
+        /// on-premises networks.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeClientVpnIngress service method.</param>
         /// <param name="cancellationToken">
@@ -2664,11 +2668,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Provides information to AWS about your VPN customer gateway device. The customer gateway
-        /// is the appliance at your end of the VPN connection. (The device on the AWS side of
-        /// the VPN connection is the virtual private gateway.) You must provide the internet-routable
-        /// IP address of the customer gateway's external interface. The IP address must be static
-        /// and can be behind a device performing network address translation (NAT).
+        /// Provides information to Amazon Web Services about your VPN customer gateway device.
+        /// The customer gateway is the appliance at your end of the VPN connection. (The device
+        /// on the Amazon Web Services side of the VPN connection is the virtual private gateway.)
+        /// You must provide the internet-routable IP address of the customer gateway's external
+        /// interface. The IP address must be static and can be behind a device performing network
+        /// address translation (NAT).
         /// 
         ///  
         /// <para>
@@ -2700,8 +2705,9 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2720,11 +2726,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Provides information to AWS about your VPN customer gateway device. The customer gateway
-        /// is the appliance at your end of the VPN connection. (The device on the AWS side of
-        /// the VPN connection is the virtual private gateway.) You must provide the internet-routable
-        /// IP address of the customer gateway's external interface. The IP address must be static
-        /// and can be behind a device performing network address translation (NAT).
+        /// Provides information to Amazon Web Services about your VPN customer gateway device.
+        /// The customer gateway is the appliance at your end of the VPN connection. (The device
+        /// on the Amazon Web Services side of the VPN connection is the virtual private gateway.)
+        /// You must provide the internet-routable IP address of the customer gateway's external
+        /// interface. The IP address must be static and can be behind a device performing network
+        /// address translation (NAT).
         /// 
         ///  
         /// <para>
@@ -2756,8 +2763,9 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -6070,8 +6078,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnection service method.</param>
@@ -6110,8 +6119,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnection service method.</param>
@@ -6135,8 +6145,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method.</param>
@@ -6154,8 +6165,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method.</param>
@@ -6179,8 +6191,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway service method.</param>
@@ -6198,8 +6211,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway service method.</param>
@@ -8090,9 +8104,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For certificate-based authentication, delete all AWS Certificate Manager (ACM) private
-        /// certificates used for the AWS-side tunnel endpoints for the VPN connection before
-        /// deleting the VPN connection.
+        /// For certificate-based authentication, delete all Certificate Manager (ACM) private
+        /// certificates used for the Amazon Web Services-side tunnel endpoints for the VPN connection
+        /// before deleting the VPN connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
@@ -8118,9 +8132,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For certificate-based authentication, delete all AWS Certificate Manager (ACM) private
-        /// certificates used for the AWS-side tunnel endpoints for the VPN connection before
-        /// deleting the VPN connection.
+        /// For certificate-based authentication, delete all Certificate Manager (ACM) private
+        /// certificates used for the Amazon Web Services-side tunnel endpoints for the VPN connection
+        /// before deleting the VPN connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
@@ -9317,8 +9331,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -9332,8 +9347,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways service method.</param>
@@ -9348,8 +9364,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -9367,8 +9384,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways service method.</param>
@@ -14955,8 +14973,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -14970,8 +14989,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections service method.</param>
@@ -14986,8 +15006,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -15005,8 +15026,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections service method.</param>
@@ -15028,8 +15050,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -15043,8 +15066,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways service method.</param>
@@ -15059,8 +15083,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -15078,8 +15103,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
-        /// Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">Amazon
+        /// Web Services Site-to-Site VPN</a> in the <i>Amazon Web Services Site-to-Site VPN User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways service method.</param>
@@ -17498,6 +17524,70 @@ namespace Amazon.EC2
         /// <returns>The response from the GetTransitGatewayRouteTablePropagations service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
         Task<GetTransitGatewayRouteTablePropagationsResponse> GetTransitGatewayRouteTablePropagationsAsync(GetTransitGatewayRouteTablePropagationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetVpnConnectionDeviceSampleConfiguration
+
+
+        /// <summary>
+        /// Download an AWS-provided sample configuration file to be used with the customer gateway
+        /// device specified for your Site-to-Site VPN connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnConnectionDeviceSampleConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetVpnConnectionDeviceSampleConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">REST API Reference for GetVpnConnectionDeviceSampleConfiguration Operation</seealso>
+        GetVpnConnectionDeviceSampleConfigurationResponse GetVpnConnectionDeviceSampleConfiguration(GetVpnConnectionDeviceSampleConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Download an AWS-provided sample configuration file to be used with the customer gateway
+        /// device specified for your Site-to-Site VPN connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnConnectionDeviceSampleConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpnConnectionDeviceSampleConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">REST API Reference for GetVpnConnectionDeviceSampleConfiguration Operation</seealso>
+        Task<GetVpnConnectionDeviceSampleConfigurationResponse> GetVpnConnectionDeviceSampleConfigurationAsync(GetVpnConnectionDeviceSampleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetVpnConnectionDeviceTypes
+
+
+        /// <summary>
+        /// Obtain a list of customer gateway devices for which sample configuration files can
+        /// be provided. The request has no additional parameters. You can also see the list of
+        /// device types with sample configuration files available under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your
+        /// customer gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnConnectionDeviceTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetVpnConnectionDeviceTypes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">REST API Reference for GetVpnConnectionDeviceTypes Operation</seealso>
+        GetVpnConnectionDeviceTypesResponse GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request);
+
+
+
+        /// <summary>
+        /// Obtain a list of customer gateway devices for which sample configuration files can
+        /// be provided. The request has no additional parameters. You can also see the list of
+        /// device types with sample configuration files available under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your
+        /// customer gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnConnectionDeviceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpnConnectionDeviceTypes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">REST API Reference for GetVpnConnectionDeviceTypes Operation</seealso>
+        Task<GetVpnConnectionDeviceTypesResponse> GetVpnConnectionDeviceTypesAsync(GetVpnConnectionDeviceTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -19943,8 +20033,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection.
-        /// To modify the target gateway, the following migration options are available:
+        /// Modifies the customer gateway or the target gateway of an Amazon Web Services Site-to-Site
+        /// VPN connection. To modify the target gateway, the following migration options are
+        /// available:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -19986,15 +20077,14 @@ namespace Amazon.EC2
         /// <para>
         /// After you migrate to the new gateway, you might need to modify your VPC route table.
         /// Use <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
-        /// href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
-        /// Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS Site-to-Site
-        /// VPN User Guide</i>.
+        /// href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">Update
+        /// VPC route tables</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  When the new gateway is a transit gateway, modify the transit gateway route table
-        /// to allow traffic between the VPC and the AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a>
-        /// to add the routes.
+        /// When the new gateway is a transit gateway, modify the transit gateway route table
+        /// to allow traffic between the VPC and the Amazon Web Services Site-to-Site VPN connection.
+        /// Use <a>CreateTransitGatewayRoute</a> to add the routes.
         /// </para>
         ///  
         /// <para>
@@ -20003,9 +20093,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// After you perform this operation, the AWS VPN endpoint's IP addresses on the AWS side
-        /// and the tunnel options remain intact. Your AWS Site-to-Site VPN connection will be
-        /// temporarily unavailable for a brief period while we provision the new endpoints.
+        /// After you perform this operation, the VPN endpoint's IP addresses on the Amazon Web
+        /// Services side and the tunnel options remain intact. Your Amazon Web Services Site-to-Site
+        /// VPN connection will be temporarily unavailable for a brief period while we provision
+        /// the new endpoints.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnection service method.</param>
@@ -20017,8 +20108,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection.
-        /// To modify the target gateway, the following migration options are available:
+        /// Modifies the customer gateway or the target gateway of an Amazon Web Services Site-to-Site
+        /// VPN connection. To modify the target gateway, the following migration options are
+        /// available:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -20060,15 +20152,14 @@ namespace Amazon.EC2
         /// <para>
         /// After you migrate to the new gateway, you might need to modify your VPC route table.
         /// Use <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
-        /// href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
-        /// Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS Site-to-Site
-        /// VPN User Guide</i>.
+        /// href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">Update
+        /// VPC route tables</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  When the new gateway is a transit gateway, modify the transit gateway route table
-        /// to allow traffic between the VPC and the AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a>
-        /// to add the routes.
+        /// When the new gateway is a transit gateway, modify the transit gateway route table
+        /// to allow traffic between the VPC and the Amazon Web Services Site-to-Site VPN connection.
+        /// Use <a>CreateTransitGatewayRoute</a> to add the routes.
         /// </para>
         ///  
         /// <para>
@@ -20077,9 +20168,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// After you perform this operation, the AWS VPN endpoint's IP addresses on the AWS side
-        /// and the tunnel options remain intact. Your AWS Site-to-Site VPN connection will be
-        /// temporarily unavailable for a brief period while we provision the new endpoints.
+        /// After you perform this operation, the VPN endpoint's IP addresses on the Amazon Web
+        /// Services side and the tunnel options remain intact. Your Amazon Web Services Site-to-Site
+        /// VPN connection will be temporarily unavailable for a brief period while we provision
+        /// the new endpoints.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnection service method.</param>
@@ -20101,9 +20193,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS
-        /// side do not change, and the tunnel options do not change. Your VPN connection will
-        /// be temporarily unavailable for a brief period while the VPN connection is updated.
+        /// When you modify the VPN connection options, the VPN endpoint IP addresses on the Amazon
+        /// Web Services side do not change, and the tunnel options do not change. Your VPN connection
+        /// will be temporarily unavailable for a brief period while the VPN connection is updated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnectionOptions service method.</param>
@@ -20119,9 +20211,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS
-        /// side do not change, and the tunnel options do not change. Your VPN connection will
-        /// be temporarily unavailable for a brief period while the VPN connection is updated.
+        /// When you modify the VPN connection options, the VPN endpoint IP addresses on the Amazon
+        /// Web Services side do not change, and the tunnel options do not change. Your VPN connection
+        /// will be temporarily unavailable for a brief period while the VPN connection is updated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpnConnectionOptions service method.</param>
@@ -20167,11 +20259,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can
-        /// modify multiple options for a tunnel in a single request, but you can only modify
-        /// one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
-        /// VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS Site-to-Site
-        /// VPN User Guide</i>.
+        /// Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site VPN connection.
+        /// You can modify multiple options for a tunnel in a single request, but you can only
+        /// modify one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+        /// VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services
+        /// Site-to-Site VPN User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelOptions service method.</param>
         /// 
@@ -20182,11 +20274,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can
-        /// modify multiple options for a tunnel in a single request, but you can only modify
-        /// one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
-        /// VPN Tunnel Options for Your Site-to-Site VPN Connection</a> in the <i>AWS Site-to-Site
-        /// VPN User Guide</i>.
+        /// Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site VPN connection.
+        /// You can modify multiple options for a tunnel in a single request, but you can only
+        /// modify one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site
+        /// VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services
+        /// Site-to-Site VPN User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpnTunnelOptions service method.</param>
         /// <param name="cancellationToken">

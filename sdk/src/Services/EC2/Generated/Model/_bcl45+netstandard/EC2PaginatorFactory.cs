@@ -828,6 +828,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetVpnConnectionDeviceTypes operation
+        ///</summary>
+        public IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request) 
+        {
+            return new GetVpnConnectionDeviceTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchLocalGatewayRoutes operation
         ///</summary>
         public ISearchLocalGatewayRoutesPaginator SearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request) 

@@ -521,6 +521,11 @@ namespace Amazon.EC2.Model
         IGetTransitGatewayRouteTablePropagationsPaginator GetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request);
 
         /// <summary>
+        /// Paginator for GetVpnConnectionDeviceTypes operation
+        ///</summary>
+        IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request);
+
+        /// <summary>
         /// Paginator for SearchLocalGatewayRoutes operation
         ///</summary>
         ISearchLocalGatewayRoutesPaginator SearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request);

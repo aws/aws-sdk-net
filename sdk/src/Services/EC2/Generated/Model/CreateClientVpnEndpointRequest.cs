@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -255,8 +255,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServerCertificateArn. 
         /// <para>
-        /// The ARN of the server certificate. For more information, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>.
+        /// The ARN of the server certificate. For more information, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate
+        /// Manager User Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -275,7 +275,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SplitTunnel. 
         /// <para>
-        /// Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
+        /// Indicates whether split-tunnel is enabled on the Client VPN endpoint.
         /// </para>
         ///  
         /// <para>
@@ -283,8 +283,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-        /// AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+        /// For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+        /// Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.
         /// </para>
         /// </summary>
         public bool SplitTunnel

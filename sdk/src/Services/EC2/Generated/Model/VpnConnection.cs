@@ -49,8 +49,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN
-        /// connection. A value of <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
+        /// The category of the VPN connection. A value of <code>VPN</code> indicates an Amazon
+        /// Web Services VPN connection. A value of <code>VPN-Classic</code> indicates an Amazon
+        /// Web Services Classic VPN connection.
         /// </para>
         /// </summary>
         public string Category
@@ -251,7 +252,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpnGatewayId. 
         /// <para>
-        /// The ID of the virtual private gateway at the AWS side of the VPN connection.
+        /// The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.
         /// </para>
         /// </summary>
         public string VpnGatewayId

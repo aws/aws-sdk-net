@@ -201,7 +201,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ServerCertificateArn. 
         /// <para>
         /// The ARN of the server certificate to be used. The server certificate must be provisioned
-        /// in AWS Certificate Manager (ACM).
+        /// in Certificate Manager (ACM).
         /// </para>
         /// </summary>
         public string ServerCertificateArn
@@ -223,8 +223,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel
-        /// AWS Client VPN Endpoint</a> in the <i>AWS Client VPN Administrator Guide</i>.
+        /// For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-tunnel
+        /// Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.
         /// </para>
         /// </summary>
         public bool SplitTunnel

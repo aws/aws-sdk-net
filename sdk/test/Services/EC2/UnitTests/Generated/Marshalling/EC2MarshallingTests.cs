@@ -8409,6 +8409,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetVpnConnectionDeviceSampleConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVpnConnectionDeviceSampleConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetVpnConnectionDeviceSampleConfigurationRequest>();
+            var marshaller = new GetVpnConnectionDeviceSampleConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetVpnConnectionDeviceSampleConfigurationResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetVpnConnectionDeviceSampleConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetVpnConnectionDeviceTypesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVpnConnectionDeviceTypes");
+
+            var request = InstantiateClassGenerator.Execute<GetVpnConnectionDeviceTypesRequest>();
+            var marshaller = new GetVpnConnectionDeviceTypesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetVpnConnectionDeviceTypesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetVpnConnectionDeviceTypesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ImportClientVpnClientCertificateRevocationListMarshallTest()
         {
             var operation = service_model.FindOperation("ImportClientVpnClientCertificateRevocationList");

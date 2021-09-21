@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Lambda function used for connection authorization.
+        /// The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.
         /// </para>
         /// </summary>
         public string LambdaFunctionArn

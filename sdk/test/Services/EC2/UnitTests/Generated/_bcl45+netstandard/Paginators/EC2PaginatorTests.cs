@@ -3903,6 +3903,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void GetVpnConnectionDeviceTypesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetVpnConnectionDeviceTypesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetVpnConnectionDeviceTypesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetVpnConnectionDeviceTypesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetVpnConnectionDeviceTypes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetVpnConnectionDeviceTypes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetVpnConnectionDeviceTypesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetVpnConnectionDeviceTypesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetVpnConnectionDeviceTypesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetVpnConnectionDeviceTypes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetVpnConnectionDeviceTypes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void SearchLocalGatewayRoutesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<SearchLocalGatewayRoutesRequest>();

@@ -29,29 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about the client certificate to be used for authentication.
+    /// This is the response object from the GetVpnConnectionDeviceSampleConfiguration operation.
     /// </summary>
-    public partial class CertificateAuthenticationRequest
+    public partial class GetVpnConnectionDeviceSampleConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _clientRootCertificateChainArn;
+        private string _vpnConnectionDeviceSampleConfiguration;
 
         /// <summary>
-        /// Gets and sets the property ClientRootCertificateChainArn. 
+        /// Gets and sets the property VpnConnectionDeviceSampleConfiguration. 
         /// <para>
-        /// The ARN of the client certificate. The certificate must be signed by a certificate
-        /// authority (CA) and it must be provisioned in Certificate Manager (ACM).
+        /// Sample configuration file for the specified customer gateway device.
         /// </para>
         /// </summary>
-        public string ClientRootCertificateChainArn
+        public string VpnConnectionDeviceSampleConfiguration
         {
-            get { return this._clientRootCertificateChainArn; }
-            set { this._clientRootCertificateChainArn = value; }
+            get { return this._vpnConnectionDeviceSampleConfiguration; }
+            set { this._vpnConnectionDeviceSampleConfiguration = value; }
         }
 
-        // Check to see if ClientRootCertificateChainArn property is set
-        internal bool IsSetClientRootCertificateChainArn()
+        // Check to see if VpnConnectionDeviceSampleConfiguration property is set
+        internal bool IsSetVpnConnectionDeviceSampleConfiguration()
         {
-            return this._clientRootCertificateChainArn != null;
+            return this._vpnConnectionDeviceSampleConfiguration != null;
         }
 
     }

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describes the authentication methods used by a Client VPN endpoint. For more information,
     /// see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html">Authentication</a>
-    /// in the <i>AWS Client VPN Administrator Guide</i>.
+    /// in the <i>Client VPN Administrator Guide</i>.
     /// </summary>
     public partial class ClientVpnAuthentication
     {
