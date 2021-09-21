@@ -70,6 +70,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TestS3Uri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestS3Uri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

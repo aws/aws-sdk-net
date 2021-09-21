@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateEndpoint Request Marshaller
+    /// ListDocumentClassifierSummaries Request Marshaller
     /// </summary>       
-    public class UpdateEndpointRequestMarshaller : IMarshaller<IRequest, UpdateEndpointRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListDocumentClassifierSummariesRequestMarshaller : IMarshaller<IRequest, ListDocumentClassifierSummariesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateEndpointRequest)input);
+            return this.Marshall((ListDocumentClassifierSummariesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateEndpointRequest publicRequest)
+        public IRequest Marshall(ListDocumentClassifierSummariesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Comprehend");
-            string target = "Comprehend_20171127.UpdateEndpoint";
+            string target = "Comprehend_20171127.ListDocumentClassifierSummaries";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";            
@@ -67,28 +67,16 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDesiredDataAccessRoleArn())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("DesiredDataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DesiredDataAccessRoleArn);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetDesiredInferenceUnits())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("DesiredInferenceUnits");
-                    context.Writer.Write(publicRequest.DesiredInferenceUnits);
-                }
-
-                if(publicRequest.IsSetDesiredModelArn())
-                {
-                    context.Writer.WritePropertyName("DesiredModelArn");
-                    context.Writer.Write(publicRequest.DesiredModelArn);
-                }
-
-                if(publicRequest.IsSetEndpointArn())
-                {
-                    context.Writer.WritePropertyName("EndpointArn");
-                    context.Writer.Write(publicRequest.EndpointArn);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -100,9 +88,9 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateEndpointRequestMarshaller _instance = new UpdateEndpointRequestMarshaller();        
+        private static ListDocumentClassifierSummariesRequestMarshaller _instance = new ListDocumentClassifierSummariesRequestMarshaller();        
 
-        internal static UpdateEndpointRequestMarshaller GetInstance()
+        internal static ListDocumentClassifierSummariesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +98,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateEndpointRequestMarshaller Instance
+        public static ListDocumentClassifierSummariesRequestMarshaller Instance
         {
             get
             {

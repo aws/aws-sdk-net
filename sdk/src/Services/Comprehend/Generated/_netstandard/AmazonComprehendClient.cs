@@ -1899,6 +1899,49 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListDocumentClassifierSummaries
+
+        internal virtual ListDocumentClassifierSummariesResponse ListDocumentClassifierSummaries(ListDocumentClassifierSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassifierSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassifierSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDocumentClassifierSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of summaries of the document classifiers that you have created
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifierSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDocumentClassifierSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries">REST API Reference for ListDocumentClassifierSummaries Operation</seealso>
+        public virtual Task<ListDocumentClassifierSummariesResponse> ListDocumentClassifierSummariesAsync(ListDocumentClassifierSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassifierSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassifierSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDocumentClassifierSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDominantLanguageDetectionJobs
 
         internal virtual ListDominantLanguageDetectionJobsResponse ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request)
@@ -2085,6 +2128,49 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = ListEntityRecognizersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEntityRecognizersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEntityRecognizerSummaries
+
+        internal virtual ListEntityRecognizerSummariesResponse ListEntityRecognizerSummaries(ListEntityRecognizerSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityRecognizerSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityRecognizerSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntityRecognizerSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of summaries for the entity recognizers that you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizerSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityRecognizerSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries">REST API Reference for ListEntityRecognizerSummaries Operation</seealso>
+        public virtual Task<ListEntityRecognizerSummariesResponse> ListEntityRecognizerSummariesAsync(ListEntityRecognizerSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityRecognizerSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityRecognizerSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntityRecognizerSummariesResponse>(request, options, cancellationToken);
         }
 
         #endregion

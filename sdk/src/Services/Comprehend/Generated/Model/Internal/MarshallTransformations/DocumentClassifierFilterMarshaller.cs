@@ -45,6 +45,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentClassifierFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDocumentClassifierName())
+            {
+                context.Writer.WritePropertyName("DocumentClassifierName");
+                context.Writer.Write(requestObject.DocumentClassifierName);
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

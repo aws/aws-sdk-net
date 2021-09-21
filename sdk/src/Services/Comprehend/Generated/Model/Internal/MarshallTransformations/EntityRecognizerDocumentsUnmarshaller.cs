@@ -64,10 +64,22 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("InputFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InputFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TestS3Uri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestS3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

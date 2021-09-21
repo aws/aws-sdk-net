@@ -2041,6 +2041,52 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListDocumentClassifierSummaries
+
+
+        /// <summary>
+        /// Gets a list of summaries of the document classifiers that you have created
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifierSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListDocumentClassifierSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries">REST API Reference for ListDocumentClassifierSummaries Operation</seealso>
+        ListDocumentClassifierSummariesResponse ListDocumentClassifierSummaries(ListDocumentClassifierSummariesRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of summaries of the document classifiers that you have created
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifierSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDocumentClassifierSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries">REST API Reference for ListDocumentClassifierSummaries Operation</seealso>
+        Task<ListDocumentClassifierSummariesResponse> ListDocumentClassifierSummariesAsync(ListDocumentClassifierSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListDominantLanguageDetectionJobs
 
 
@@ -2258,6 +2304,52 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers">REST API Reference for ListEntityRecognizers Operation</seealso>
         Task<ListEntityRecognizersResponse> ListEntityRecognizersAsync(ListEntityRecognizersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListEntityRecognizerSummaries
+
+
+        /// <summary>
+        /// Gets a list of summaries for the entity recognizers that you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizerSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListEntityRecognizerSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries">REST API Reference for ListEntityRecognizerSummaries Operation</seealso>
+        ListEntityRecognizerSummariesResponse ListEntityRecognizerSummaries(ListEntityRecognizerSummariesRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of summaries for the entity recognizers that you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizerSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityRecognizerSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries">REST API Reference for ListEntityRecognizerSummaries Operation</seealso>
+        Task<ListEntityRecognizerSummariesResponse> ListEntityRecognizerSummariesAsync(ListEntityRecognizerSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

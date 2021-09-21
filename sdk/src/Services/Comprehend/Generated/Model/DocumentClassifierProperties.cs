@@ -47,6 +47,7 @@ namespace Amazon.Comprehend.Model
         private DateTime? _submitTime;
         private DateTime? _trainingEndTime;
         private DateTime? _trainingStartTime;
+        private string _versionName;
         private string _volumeKmsKeyId;
         private VpcConfig _vpcConfig;
 
@@ -327,6 +328,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetTrainingStartTime()
         {
             return this._trainingStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The version name that you assigned to the document classifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
         /// <summary>

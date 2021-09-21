@@ -34,9 +34,29 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DocumentClassifierFilter
     {
+        private string _documentClassifierName;
         private ModelStatus _status;
         private DateTime? _submitTimeAfter;
         private DateTime? _submitTimeBefore;
+
+        /// <summary>
+        /// Gets and sets the property DocumentClassifierName. 
+        /// <para>
+        /// The name that you assigned to the document classifier
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string DocumentClassifierName
+        {
+            get { return this._documentClassifierName; }
+            set { this._documentClassifierName = value; }
+        }
+
+        // Check to see if DocumentClassifierName property is set
+        internal bool IsSetDocumentClassifierName()
+        {
+            return this._documentClassifierName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

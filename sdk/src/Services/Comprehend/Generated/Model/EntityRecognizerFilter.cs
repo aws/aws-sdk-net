@@ -34,9 +34,29 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class EntityRecognizerFilter
     {
+        private string _recognizerName;
         private ModelStatus _status;
         private DateTime? _submitTimeAfter;
         private DateTime? _submitTimeBefore;
+
+        /// <summary>
+        /// Gets and sets the property RecognizerName. 
+        /// <para>
+        /// The name that you assigned the entity recognizer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string RecognizerName
+        {
+            get { return this._recognizerName; }
+            set { this._recognizerName = value; }
+        }
+
+        // Check to see if RecognizerName property is set
+        internal bool IsSetRecognizerName()
+        {
+            return this._recognizerName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

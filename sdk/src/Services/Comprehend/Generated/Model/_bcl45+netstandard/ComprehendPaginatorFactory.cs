@@ -52,6 +52,14 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListDocumentClassifierSummaries operation
+        ///</summary>
+        public IListDocumentClassifierSummariesPaginator ListDocumentClassifierSummaries(ListDocumentClassifierSummariesRequest request) 
+        {
+            return new ListDocumentClassifierSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDominantLanguageDetectionJobs operation
         ///</summary>
         public IListDominantLanguageDetectionJobsPaginator ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request) 
@@ -73,6 +81,14 @@ namespace Amazon.Comprehend.Model
         public IListEntityRecognizersPaginator ListEntityRecognizers(ListEntityRecognizersRequest request) 
         {
             return new ListEntityRecognizersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEntityRecognizerSummaries operation
+        ///</summary>
+        public IListEntityRecognizerSummariesPaginator ListEntityRecognizerSummaries(ListEntityRecognizerSummariesRequest request) 
+        {
+            return new ListEntityRecognizerSummariesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -42,6 +42,7 @@ namespace Amazon.Comprehend.Model
         private string _modelKmsKeyId;
         private string _recognizerName;
         private List<Tag> _tags = new List<Tag>();
+        private string _versionName;
         private string _volumeKmsKeyId;
         private VpcConfig _vpcConfig;
 
@@ -197,6 +198,28 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The version name given to the newly created recognizer. Version names can be a maximum
+        /// of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
+        /// The version name must be unique among all models with the same recognizer name in
+        /// the account/ AWS Region.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
         /// <summary>

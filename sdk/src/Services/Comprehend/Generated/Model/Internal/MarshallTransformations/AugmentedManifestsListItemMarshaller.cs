@@ -80,6 +80,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SourceDocumentsS3Uri);
             }
 
+            if(requestObject.IsSetSplit())
+            {
+                context.Writer.WritePropertyName("Split");
+                context.Writer.Write(requestObject.Split);
+            }
+
         }
 
         /// <summary>

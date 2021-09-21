@@ -94,6 +94,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceDocumentsS3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Split", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Split = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

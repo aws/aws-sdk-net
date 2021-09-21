@@ -39,6 +39,7 @@ namespace Amazon.Comprehend.Model
         private AugmentedManifestsDocumentTypeFormat _documentType;
         private string _s3Uri;
         private string _sourceDocumentsS3Uri;
+        private Split _split;
 
         /// <summary>
         /// Gets and sets the property AnnotationDataS3Uri. 
@@ -160,6 +161,35 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetSourceDocumentsS3Uri()
         {
             return this._sourceDocumentsS3Uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Split. 
+        /// <para>
+        /// The purpose of the data you've provided in the augmented manifest. You can either
+        /// train or test this data. If you don't specify, the default is train.
+        /// </para>
+        ///  
+        /// <para>
+        /// TRAIN - all of the documents in the manifest will be used for training. If no test
+        /// documents are provided, Amazon Comprehend will automatically reserve a portion of
+        /// the training documents for testing.
+        /// </para>
+        ///  
+        /// <para>
+        ///  TEST - all of the documents in the manifest will be used for testing.
+        /// </para>
+        /// </summary>
+        public Split Split
+        {
+            get { return this._split; }
+            set { this._split = value; }
+        }
+
+        // Check to see if Split property is set
+        internal bool IsSetSplit()
+        {
+            return this._split != null;
         }
 
     }

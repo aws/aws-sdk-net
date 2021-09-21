@@ -51,6 +51,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.S3Uri);
             }
 
+            if(requestObject.IsSetTestS3Uri())
+            {
+                context.Writer.WritePropertyName("TestS3Uri");
+                context.Writer.Write(requestObject.TestS3Uri);
+            }
+
         }
 
         /// <summary>

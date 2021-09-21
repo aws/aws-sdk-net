@@ -43,6 +43,7 @@ namespace Amazon.Comprehend.Model
         private DocumentClassifierDataFormat _dataFormat;
         private string _labelDelimiter;
         private string _s3Uri;
+        private string _testS3Uri;
 
         /// <summary>
         /// Gets and sets the property AugmentedManifests. 
@@ -161,6 +162,27 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetS3Uri()
         {
             return this._s3Uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestS3Uri. 
+        /// <para>
+        /// The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the same AWS
+        /// Region as the API endpoint that you are calling. The URI can point to a single input
+        /// file or it can provide the prefix for a collection of input files. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string TestS3Uri
+        {
+            get { return this._testS3Uri; }
+            set { this._testS3Uri = value; }
+        }
+
+        // Check to see if TestS3Uri property is set
+        internal bool IsSetTestS3Uri()
+        {
+            return this._testS3Uri != null;
         }
 
     }

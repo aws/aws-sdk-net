@@ -146,6 +146,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVersionName())
+                {
+                    context.Writer.WritePropertyName("VersionName");
+                    context.Writer.Write(publicRequest.VersionName);
+                }
+
                 if(publicRequest.IsSetVolumeKmsKeyId())
                 {
                     context.Writer.WritePropertyName("VolumeKmsKeyId");

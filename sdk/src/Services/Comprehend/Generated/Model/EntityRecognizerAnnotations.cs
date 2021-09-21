@@ -34,6 +34,7 @@ namespace Amazon.Comprehend.Model
     public partial class EntityRecognizerAnnotations
     {
         private string _s3Uri;
+        private string _testS3Uri;
 
         /// <summary>
         /// Gets and sets the property S3Uri. 
@@ -53,6 +54,27 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetS3Uri()
         {
             return this._s3Uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestS3Uri. 
+        /// <para>
+        /// This specifies the Amazon S3 location where the test annotations for an entity recognizer
+        /// are located. The URI must be in the same AWS Region as the API endpoint that you are
+        /// calling.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string TestS3Uri
+        {
+            get { return this._testS3Uri; }
+            set { this._testS3Uri = value; }
+        }
+
+        // Check to see if TestS3Uri property is set
+        internal bool IsSetTestS3Uri()
+        {
+            return this._testS3Uri != null;
         }
 
     }

@@ -2518,6 +2518,69 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListDocumentClassifierSummaries
+
+        /// <summary>
+        /// Gets a list of summaries of the document classifiers that you have created
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifierSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListDocumentClassifierSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries">REST API Reference for ListDocumentClassifierSummaries Operation</seealso>
+        public virtual ListDocumentClassifierSummariesResponse ListDocumentClassifierSummaries(ListDocumentClassifierSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassifierSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassifierSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDocumentClassifierSummariesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentClassifierSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifierSummaries operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDocumentClassifierSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries">REST API Reference for ListDocumentClassifierSummaries Operation</seealso>
+        public virtual IAsyncResult BeginListDocumentClassifierSummaries(ListDocumentClassifierSummariesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDocumentClassifierSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDocumentClassifierSummariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDocumentClassifierSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDocumentClassifierSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListDocumentClassifierSummariesResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries">REST API Reference for ListDocumentClassifierSummaries Operation</seealso>
+        public virtual ListDocumentClassifierSummariesResponse EndListDocumentClassifierSummaries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDocumentClassifierSummariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDominantLanguageDetectionJobs
 
         /// <summary>
@@ -2784,6 +2847,69 @@ namespace Amazon.Comprehend
         public virtual ListEntityRecognizersResponse EndListEntityRecognizers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEntityRecognizersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEntityRecognizerSummaries
+
+        /// <summary>
+        /// Gets a list of summaries for the entity recognizers that you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizerSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListEntityRecognizerSummaries service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries">REST API Reference for ListEntityRecognizerSummaries Operation</seealso>
+        public virtual ListEntityRecognizerSummariesResponse ListEntityRecognizerSummaries(ListEntityRecognizerSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityRecognizerSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityRecognizerSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntityRecognizerSummariesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntityRecognizerSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizerSummaries operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEntityRecognizerSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries">REST API Reference for ListEntityRecognizerSummaries Operation</seealso>
+        public virtual IAsyncResult BeginListEntityRecognizerSummaries(ListEntityRecognizerSummariesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEntityRecognizerSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntityRecognizerSummariesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEntityRecognizerSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEntityRecognizerSummaries.</param>
+        /// 
+        /// <returns>Returns a  ListEntityRecognizerSummariesResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries">REST API Reference for ListEntityRecognizerSummaries Operation</seealso>
+        public virtual ListEntityRecognizerSummariesResponse EndListEntityRecognizerSummaries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEntityRecognizerSummariesResponse>(asyncResult);
         }
 
         #endregion

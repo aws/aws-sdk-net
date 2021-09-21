@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DocumentClassifierInputDataConfig Object
+    /// Response Unmarshaller for DocumentClassifierSummary Object
     /// </summary>  
-    public class DocumentClassifierInputDataConfigUnmarshaller : IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>, IUnmarshaller<DocumentClassifierInputDataConfig, JsonUnmarshallerContext>
+    public class DocumentClassifierSummaryUnmarshaller : IUnmarshaller<DocumentClassifierSummary, XmlUnmarshallerContext>, IUnmarshaller<DocumentClassifierSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DocumentClassifierInputDataConfig IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DocumentClassifierSummary IUnmarshaller<DocumentClassifierSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,45 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DocumentClassifierInputDataConfig Unmarshall(JsonUnmarshallerContext context)
+        public DocumentClassifierSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DocumentClassifierInputDataConfig unmarshalledObject = new DocumentClassifierInputDataConfig();
+            DocumentClassifierSummary unmarshalledObject = new DocumentClassifierSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AugmentedManifests", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
-                    unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DataFormat", targetDepth))
+                if (context.TestExpression("DocumentClassifierName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentClassifierName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LabelDelimiter", targetDepth))
+                if (context.TestExpression("LatestVersionCreatedAt", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LabelDelimiter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LatestVersionCreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3Uri", targetDepth))
+                if (context.TestExpression("LatestVersionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestVersionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TestS3Uri", targetDepth))
+                if (context.TestExpression("LatestVersionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TestS3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestVersionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfVersions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfVersions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +100,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         }
 
 
-        private static DocumentClassifierInputDataConfigUnmarshaller _instance = new DocumentClassifierInputDataConfigUnmarshaller();        
+        private static DocumentClassifierSummaryUnmarshaller _instance = new DocumentClassifierSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DocumentClassifierInputDataConfigUnmarshaller Instance
+        public static DocumentClassifierSummaryUnmarshaller Instance
         {
             get
             {

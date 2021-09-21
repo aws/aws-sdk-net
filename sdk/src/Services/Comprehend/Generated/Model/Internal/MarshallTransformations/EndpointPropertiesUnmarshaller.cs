@@ -82,10 +82,22 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataAccessRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DesiredDataAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DesiredDataAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DesiredInferenceUnits", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.DesiredInferenceUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DesiredModelArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DesiredModelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EndpointArn", targetDepth))

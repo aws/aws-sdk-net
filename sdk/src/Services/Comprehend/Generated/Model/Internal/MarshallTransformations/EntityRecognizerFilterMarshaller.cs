@@ -45,6 +45,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EntityRecognizerFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetRecognizerName())
+            {
+                context.Writer.WritePropertyName("RecognizerName");
+                context.Writer.Write(requestObject.RecognizerName);
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

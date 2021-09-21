@@ -45,10 +45,22 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EntityRecognizerDocuments requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetInputFormat())
+            {
+                context.Writer.WritePropertyName("InputFormat");
+                context.Writer.Write(requestObject.InputFormat);
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
                 context.Writer.Write(requestObject.S3Uri);
+            }
+
+            if(requestObject.IsSetTestS3Uri())
+            {
+                context.Writer.WritePropertyName("TestS3Uri");
+                context.Writer.Write(requestObject.TestS3Uri);
             }
 
         }

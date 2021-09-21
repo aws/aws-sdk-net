@@ -33,7 +33,32 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class EntityRecognizerDocuments
     {
+        private InputFormat _inputFormat;
         private string _s3Uri;
+        private string _testS3Uri;
+
+        /// <summary>
+        /// Gets and sets the property InputFormat. 
+        /// <para>
+        ///  Specifies how the text in an input file should be processed. This is optional, and
+        /// the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate
+        /// document. Use this option when you are processing large documents, such as newspaper
+        /// articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered
+        /// a separate document. Use this option when you are processing many short documents,
+        /// such as text messages.
+        /// </para>
+        /// </summary>
+        public InputFormat InputFormat
+        {
+            get { return this._inputFormat; }
+            set { this._inputFormat = value; }
+        }
+
+        // Check to see if InputFormat property is set
+        internal bool IsSetInputFormat()
+        {
+            return this._inputFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Uri. 
@@ -53,6 +78,27 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetS3Uri()
         {
             return this._s3Uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestS3Uri. 
+        /// <para>
+        ///  Specifies the Amazon S3 location where the test documents for an entity recognizer
+        /// are located. The URI must be in the same AWS Region as the API endpoint that you are
+        /// calling.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string TestS3Uri
+        {
+            get { return this._testS3Uri; }
+            set { this._testS3Uri = value; }
+        }
+
+        // Check to see if TestS3Uri property is set
+        internal bool IsSetTestS3Uri()
+        {
+            return this._testS3Uri != null;
         }
 
     }

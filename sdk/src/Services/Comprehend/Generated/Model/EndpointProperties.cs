@@ -36,7 +36,9 @@ namespace Amazon.Comprehend.Model
         private DateTime? _creationTime;
         private int? _currentInferenceUnits;
         private string _dataAccessRoleArn;
+        private string _desiredDataAccessRoleArn;
         private int? _desiredInferenceUnits;
+        private string _desiredModelArn;
         private string _endpointArn;
         private DateTime? _lastModifiedTime;
         private string _message;
@@ -102,6 +104,26 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DesiredDataAccessRoleArn. 
+        /// <para>
+        /// Data access role ARN to use in case the new model is encrypted with a customer KMS
+        /// key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DesiredDataAccessRoleArn
+        {
+            get { return this._desiredDataAccessRoleArn; }
+            set { this._desiredDataAccessRoleArn = value; }
+        }
+
+        // Check to see if DesiredDataAccessRoleArn property is set
+        internal bool IsSetDesiredDataAccessRoleArn()
+        {
+            return this._desiredDataAccessRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DesiredInferenceUnits. 
         /// <para>
         /// The desired number of inference units to be used by the model using this endpoint.
@@ -119,6 +141,26 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetDesiredInferenceUnits()
         {
             return this._desiredInferenceUnits.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredModelArn. 
+        /// <para>
+        /// ARN of the new model to use for updating an existing endpoint. This ARN is going to
+        /// be different from the model ARN when the update is in progress
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string DesiredModelArn
+        {
+            get { return this._desiredModelArn; }
+            set { this._desiredModelArn = value; }
+        }
+
+        // Check to see if DesiredModelArn property is set
+        internal bool IsSetDesiredModelArn()
+        {
+            return this._desiredModelArn != null;
         }
 
         /// <summary>
