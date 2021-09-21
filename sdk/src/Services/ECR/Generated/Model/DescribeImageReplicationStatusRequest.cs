@@ -29,41 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// An array of objects representing the destination for a replication rule.
+    /// Container for the parameters to the DescribeImageReplicationStatus operation.
+    /// Returns the replication status for a specified image.
     /// </summary>
-    public partial class ReplicationDestination
+    public partial class DescribeImageReplicationStatusRequest : AmazonECRRequest
     {
-        private string _region;
+        private ImageIdentifier _imageId;
         private string _registryId;
+        private string _repositoryName;
 
         /// <summary>
-        /// Gets and sets the property Region. 
-        /// <para>
-        /// The Region to replicate to.
-        /// </para>
+        /// Gets and sets the property ImageId.
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=25)]
-        public string Region
+        [AWSProperty(Required=true)]
+        public ImageIdentifier ImageId
         {
-            get { return this._region; }
-            set { this._region = value; }
+            get { return this._imageId; }
+            set { this._imageId = value; }
         }
 
-        // Check to see if Region property is set
-        internal bool IsSetRegion()
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
         {
-            return this._region != null;
+            return this._imageId != null;
         }
 
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The Amazon Web Services account ID of the Amazon ECR private registry to replicate
-        /// to. When configuring cross-Region replication within your own registry, specify your
-        /// own account ID.
+        /// The Amazon Web Services account ID associated with the registry. If you do not specify
+        /// a registry, the default registry is assumed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string RegistryId
         {
             get { return this._registryId; }
@@ -74,6 +71,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetRegistryId()
         {
             return this._registryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryName. 
+        /// <para>
+        /// The name of the repository that the image is in.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=2, Max=256)]
+        public string RepositoryName
+        {
+            get { return this._repositoryName; }
+            set { this._repositoryName = value; }
+        }
+
+        // Check to see if RepositoryName property is set
+        internal bool IsSetRepositoryName()
+        {
+            return this._repositoryName != null;
         }
 
     }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRepository Request Marshaller
+    /// DescribeImageReplicationStatus Request Marshaller
     /// </summary>       
-    public class CreateRepositoryRequestMarshaller : IMarshaller<IRequest, CreateRepositoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeImageReplicationStatusRequestMarshaller : IMarshaller<IRequest, DescribeImageReplicationStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRepositoryRequest)input);
+            return this.Marshall((DescribeImageReplicationStatusRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRepositoryRequest publicRequest)
+        public IRequest Marshall(DescribeImageReplicationStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECR");
-            string target = "AmazonEC2ContainerRegistry_V20150921.CreateRepository";
+            string target = "AmazonEC2ContainerRegistry_V20150921.DescribeImageReplicationStatus";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-09-21";            
@@ -67,32 +67,15 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEncryptionConfiguration())
+                if(publicRequest.IsSetImageId())
                 {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
+                    context.Writer.WritePropertyName("imageId");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+                    var marshaller = ImageIdentifierMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageId, context);
 
                     context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetImageScanningConfiguration())
-                {
-                    context.Writer.WritePropertyName("imageScanningConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImageScanningConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetImageTagMutability())
-                {
-                    context.Writer.WritePropertyName("imageTagMutability");
-                    context.Writer.Write(publicRequest.ImageTagMutability);
                 }
 
                 if(publicRequest.IsSetRegistryId())
@@ -107,22 +90,6 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RepositoryName);
                 }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -132,9 +99,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRepositoryRequestMarshaller _instance = new CreateRepositoryRequestMarshaller();        
+        private static DescribeImageReplicationStatusRequestMarshaller _instance = new DescribeImageReplicationStatusRequestMarshaller();        
 
-        internal static CreateRepositoryRequestMarshaller GetInstance()
+        internal static DescribeImageReplicationStatusRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +109,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryRequestMarshaller Instance
+        public static DescribeImageReplicationStatusRequestMarshaller Instance
         {
             get
             {

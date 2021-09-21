@@ -61,6 +61,22 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRepositoryFilters())
+            {
+                context.Writer.WritePropertyName("repositoryFilters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRepositoryFiltersListValue in requestObject.RepositoryFilters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RepositoryFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRepositoryFiltersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

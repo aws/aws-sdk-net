@@ -63,6 +63,10 @@
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.CreateRepositoryRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.CreateRepositoryRequest.RepositoryName</property>
     <min>2</min>
     <max>256</max>
@@ -133,6 +137,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeleteRepositoryPolicyResponse.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageReplicationStatusRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageReplicationStatusRequest.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeImageReplicationStatusResponse.RepositoryName</property>
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
@@ -609,6 +629,16 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.ImageReplicationStatus.Region</property>
+    <min>2</min>
+    <max>25</max>
+    <pattern>[0-9a-z-]{2,25}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ImageReplicationStatus.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.InvalidLayerPartException.LastValidByteReceived</property>
     <min>0</min>
   </property-value-rule>
@@ -662,5 +692,11 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.RepositoryFilter.Filter</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>^(?:[a-z0-9]+(?:[._-][a-z0-9]*)*/)*[a-z0-9]*(?:[._-][a-z0-9]*)*$</pattern>
   </property-value-rule>
 </property-value-rules>

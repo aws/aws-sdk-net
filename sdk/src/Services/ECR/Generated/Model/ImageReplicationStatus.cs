@@ -29,20 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// An array of objects representing the destination for a replication rule.
+    /// The status of the replication process for an image.
     /// </summary>
-    public partial class ReplicationDestination
+    public partial class ImageReplicationStatus
     {
+        private string _failureCode;
         private string _region;
         private string _registryId;
+        private ReplicationStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property FailureCode. 
+        /// <para>
+        /// The failure code for a replication that has failed.
+        /// </para>
+        /// </summary>
+        public string FailureCode
+        {
+            get { return this._failureCode; }
+            set { this._failureCode = value; }
+        }
+
+        // Check to see if FailureCode property is set
+        internal bool IsSetFailureCode()
+        {
+            return this._failureCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Region to replicate to.
+        /// The destination Region for the image replication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=25)]
+        [AWSProperty(Min=2, Max=25)]
         public string Region
         {
             get { return this._region; }
@@ -58,12 +78,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RegistryId. 
         /// <para>
-        /// The Amazon Web Services account ID of the Amazon ECR private registry to replicate
-        /// to. When configuring cross-Region replication within your own registry, specify your
-        /// own account ID.
+        /// The AWS account ID associated with the registry to which the image belongs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string RegistryId
         {
             get { return this._registryId; }
@@ -74,6 +91,24 @@ namespace Amazon.ECR.Model
         internal bool IsSetRegistryId()
         {
             return this._registryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The image replication status.
+        /// </para>
+        /// </summary>
+        public ReplicationStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicationRule Object
+    /// Response Unmarshaller for ImageReplicationStatus Object
     /// </summary>  
-    public class ReplicationRuleUnmarshaller : IUnmarshaller<ReplicationRule, XmlUnmarshallerContext>, IUnmarshaller<ReplicationRule, JsonUnmarshallerContext>
+    public class ImageReplicationStatusUnmarshaller : IUnmarshaller<ImageReplicationStatus, XmlUnmarshallerContext>, IUnmarshaller<ImageReplicationStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReplicationRule IUnmarshaller<ReplicationRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImageReplicationStatus IUnmarshaller<ImageReplicationStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReplicationRule Unmarshall(JsonUnmarshallerContext context)
+        public ImageReplicationStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReplicationRule unmarshalledObject = new ReplicationRule();
+            ImageReplicationStatus unmarshalledObject = new ImageReplicationStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("destinations", targetDepth))
+                if (context.TestExpression("failureCode", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReplicationDestination, ReplicationDestinationUnmarshaller>(ReplicationDestinationUnmarshaller.Instance);
-                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("repositoryFilters", targetDepth))
+                if (context.TestExpression("region", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RepositoryFilter, RepositoryFilterUnmarshaller>(RepositoryFilterUnmarshaller.Instance);
-                    unmarshalledObject.RepositoryFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registryId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegistryId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReplicationRuleUnmarshaller _instance = new ReplicationRuleUnmarshaller();        
+        private static ImageReplicationStatusUnmarshaller _instance = new ImageReplicationStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicationRuleUnmarshaller Instance
+        public static ImageReplicationStatusUnmarshaller Instance
         {
             get
             {

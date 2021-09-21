@@ -465,6 +465,106 @@ namespace Amazon.ECR
 
 
     /// <summary>
+    /// Constants used for properties of type ReplicationStatus.
+    /// </summary>
+    public class ReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus COMPLETE = new ReplicationStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus FAILED = new ReplicationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus IN_PROGRESS = new ReplicationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationStatus FindValue(string value)
+        {
+            return FindValue<ReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepositoryFilterType.
+    /// </summary>
+    public class RepositoryFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PREFIX_MATCH for RepositoryFilterType
+        /// </summary>
+        public static readonly RepositoryFilterType PREFIX_MATCH = new RepositoryFilterType("PREFIX_MATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepositoryFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepositoryFilterType FindValue(string value)
+        {
+            return FindValue<RepositoryFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepositoryFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScanStatus.
     /// </summary>
     public class ScanStatus : ConstantClass

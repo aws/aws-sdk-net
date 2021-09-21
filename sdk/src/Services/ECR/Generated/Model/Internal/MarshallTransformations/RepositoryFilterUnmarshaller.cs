@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicationRule Object
+    /// Response Unmarshaller for RepositoryFilter Object
     /// </summary>  
-    public class ReplicationRuleUnmarshaller : IUnmarshaller<ReplicationRule, XmlUnmarshallerContext>, IUnmarshaller<ReplicationRule, JsonUnmarshallerContext>
+    public class RepositoryFilterUnmarshaller : IUnmarshaller<RepositoryFilter, XmlUnmarshallerContext>, IUnmarshaller<RepositoryFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReplicationRule IUnmarshaller<ReplicationRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RepositoryFilter IUnmarshaller<RepositoryFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReplicationRule Unmarshall(JsonUnmarshallerContext context)
+        public RepositoryFilter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReplicationRule unmarshalledObject = new ReplicationRule();
+            RepositoryFilter unmarshalledObject = new RepositoryFilter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("destinations", targetDepth))
+                if (context.TestExpression("filter", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReplicationDestination, ReplicationDestinationUnmarshaller>(ReplicationDestinationUnmarshaller.Instance);
-                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("repositoryFilters", targetDepth))
+                if (context.TestExpression("filterType", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RepositoryFilter, RepositoryFilterUnmarshaller>(RepositoryFilterUnmarshaller.Instance);
-                    unmarshalledObject.RepositoryFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FilterType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReplicationRuleUnmarshaller _instance = new ReplicationRuleUnmarshaller();        
+        private static RepositoryFilterUnmarshaller _instance = new RepositoryFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicationRuleUnmarshaller Instance
+        public static RepositoryFilterUnmarshaller Instance
         {
             get
             {

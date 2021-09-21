@@ -29,18 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// An array of objects representing the replication destinations for a replication configuration.
-    /// A replication configuration may contain only one replication rule but the rule may
-    /// contain one or more replication destinations.
+    /// An array of objects representing the replication destinations and repository filters
+    /// for a replication configuration.
     /// </summary>
     public partial class ReplicationRule
     {
         private List<ReplicationDestination> _destinations = new List<ReplicationDestination>();
+        private List<RepositoryFilter> _repositoryFilters = new List<RepositoryFilter>();
 
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// An array of objects representing the details of a replication destination.
+        /// An array of objects representing the destination for a replication rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=25)]
@@ -54,6 +54,27 @@ namespace Amazon.ECR.Model
         internal bool IsSetDestinations()
         {
             return this._destinations != null && this._destinations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryFilters. 
+        /// <para>
+        /// An array of objects representing the filters for a replication rule. Specifying a
+        /// repository filter for a replication rule provides a method for controlling which repositories
+        /// in a private registry are replicated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<RepositoryFilter> RepositoryFilters
+        {
+            get { return this._repositoryFilters; }
+            set { this._repositoryFilters = value; }
+        }
+
+        // Check to see if RepositoryFilters property is set
+        internal bool IsSetRepositoryFilters()
+        {
+            return this._repositoryFilters != null && this._repositoryFilters.Count > 0; 
         }
 
     }

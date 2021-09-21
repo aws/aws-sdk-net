@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// An object with identifying information for an Amazon ECR image.
+    /// An object with identifying information for an image in an Amazon ECR repository.
     /// </summary>
     public partial class ImageIdentifier
     {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutRegistryPolicy operation
+    /// Response Unmarshaller for DescribeImageReplicationStatus operation
     /// </summary>  
-    public class PutRegistryPolicyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeImageReplicationStatusResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,28 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutRegistryPolicyResponse response = new PutRegistryPolicyResponse();
+            DescribeImageReplicationStatusResponse response = new DescribeImageReplicationStatusResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("policyText", targetDepth))
+                if (context.TestExpression("imageId", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.PolicyText = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ImageIdentifierUnmarshaller.Instance;
+                    response.ImageId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("registryId", targetDepth))
+                if (context.TestExpression("replicationStatuses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ImageReplicationStatus, ImageReplicationStatusUnmarshaller>(ImageReplicationStatusUnmarshaller.Instance);
+                    response.ReplicationStatuses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("repositoryName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RegistryId = unmarshaller.Unmarshall(context);
+                    response.RepositoryName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,9 +92,17 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ImageNotFoundException"))
+                {
+                    return ImageNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNotFoundException"))
+                {
+                    return RepositoryNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
                 {
@@ -102,9 +116,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             return new AmazonECRException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static PutRegistryPolicyResponseUnmarshaller _instance = new PutRegistryPolicyResponseUnmarshaller();        
+        private static DescribeImageReplicationStatusResponseUnmarshaller _instance = new DescribeImageReplicationStatusResponseUnmarshaller();        
 
-        internal static PutRegistryPolicyResponseUnmarshaller GetInstance()
+        internal static DescribeImageReplicationStatusResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +126,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutRegistryPolicyResponseUnmarshaller Instance
+        public static DescribeImageReplicationStatusResponseUnmarshaller Instance
         {
             get
             {

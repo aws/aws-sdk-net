@@ -38,6 +38,7 @@ namespace Amazon.ECR.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTagMutability _imageTagMutability;
+        private string _registryId;
         private string _repositoryName;
         private List<Tag> _tags = new List<Tag>();
 
@@ -98,6 +99,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageTagMutability()
         {
             return this._imageTagMutability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistryId. 
+        /// <para>
+        /// The AWS account ID associated with the registry to create the repository. If you do
+        /// not specify a registry, the default registry is assumed.
+        /// </para>
+        /// </summary>
+        public string RegistryId
+        {
+            get { return this._registryId; }
+            set { this._registryId = value; }
+        }
+
+        // Check to see if RegistryId property is set
+        internal bool IsSetRegistryId()
+        {
+            return this._registryId != null;
         }
 
         /// <summary>

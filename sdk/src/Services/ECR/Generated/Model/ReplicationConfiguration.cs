@@ -38,12 +38,11 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// An array of objects representing the replication rules for a replication configuration.
-        /// A replication configuration may contain only one replication rule but the rule may
-        /// contain one or more replication destinations.
+        /// An array of objects representing the replication destinations and repository filters
+        /// for a replication configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=10)]
         public List<ReplicationRule> Rules
         {
             get { return this._rules; }
