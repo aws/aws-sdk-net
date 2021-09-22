@@ -94,6 +94,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("throughput", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("volumeSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

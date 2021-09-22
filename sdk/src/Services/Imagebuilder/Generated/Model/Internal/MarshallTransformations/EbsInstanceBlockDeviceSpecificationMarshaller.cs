@@ -75,6 +75,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SnapshotId);
             }
 
+            if(requestObject.IsSetThroughput())
+            {
+                context.Writer.WritePropertyName("throughput");
+                context.Writer.Write(requestObject.Throughput);
+            }
+
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("volumeSize");

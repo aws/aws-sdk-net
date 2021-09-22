@@ -38,6 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _clientToken;
         private string _description;
         private string _infrastructureConfigurationArn;
+        private InstanceMetadataOptions _instanceMetadataOptions;
         private string _instanceProfileName;
         private List<string> _instanceTypes = new List<string>();
         private string _keyPair;
@@ -107,6 +108,39 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceMetadataOptions. 
+        /// <para>
+        /// The instance metadata options that you can set for the HTTP requests that pipeline
+        /// builds use to launch EC2 build and test instances. For more information about instance
+        /// metadata options, see one of the following links:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+        /// the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for
+        /// Linux instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
+        /// the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>
+        /// for Windows instances.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InstanceMetadataOptions InstanceMetadataOptions
+        {
+            get { return this._instanceMetadataOptions; }
+            set { this._instanceMetadataOptions = value; }
+        }
+
+        // Check to see if InstanceMetadataOptions property is set
+        internal bool IsSetInstanceMetadataOptions()
+        {
+            return this._instanceMetadataOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceProfileName. 
         /// <para>
         /// The instance profile to associate with the instance used to customize your Amazon
@@ -149,7 +183,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KeyPair. 
         /// <para>
-        /// The key pair of the infrastructure configuration. This can be used to log on to and
+        /// The key pair of the infrastructure configuration. You can use this to log on to and
         /// debug the instance used to create your image.
         /// </para>
         /// </summary>

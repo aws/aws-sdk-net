@@ -31,8 +31,8 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// In addition to your infrastruction configuration, these settings provide an extra
     /// layer of control over your build instances. For instances where Image Builder installs
-    /// the SSM agent, you can choose whether to keep it for the AMI that you create. You
-    /// can also specify commands to run on launch for all of your build instances.
+    /// the Systems Manager agent, you can choose whether to keep it for the AMI that you
+    /// create. You can also specify commands to run on launch for all of your build instances.
     /// </summary>
     public partial class AdditionalInstanceConfiguration
     {
@@ -42,7 +42,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SystemsManagerAgent. 
         /// <para>
-        /// Contains settings for the SSM agent on your build instance.
+        /// Contains settings for the Systems Manager agent on your build instance.
         /// </para>
         /// </summary>
         public SystemsManagerAgent SystemsManagerAgent
@@ -66,9 +66,9 @@ namespace Amazon.Imagebuilder.Model
         ///  <note> 
         /// <para>
         /// The userDataOverride property replaces any commands that Image Builder might have
-        /// added to ensure that SSM is installed on your Linux build instance. If you override
-        /// the user data, make sure that you add commands to install SSM, if it is not pre-installed
-        /// on your source image.
+        /// added to ensure that Systems Manager is installed on your Linux build instance. If
+        /// you override the user data, make sure that you add commands to install Systems Manager,
+        /// if it is not pre-installed on your source image.
         /// </para>
         ///  </note>
         /// </summary>

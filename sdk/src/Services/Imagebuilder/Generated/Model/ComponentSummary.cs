@@ -40,6 +40,7 @@ namespace Amazon.Imagebuilder.Model
         private string _name;
         private string _owner;
         private Platform _platform;
+        private ComponentState _state;
         private List<string> _supportedOsVersions = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ComponentType _type;
@@ -172,6 +173,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Describes the current status of the component.
+        /// </para>
+        /// </summary>
+        public ComponentState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

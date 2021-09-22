@@ -38,6 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private int? _iops;
         private string _kmsKeyId;
         private string _snapshotId;
+        private int? _throughput;
         private int? _volumeSize;
         private EbsVolumeType _volumeType;
 
@@ -83,7 +84,7 @@ namespace Amazon.Imagebuilder.Model
         /// Use to configure device IOPS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=100, Max=10000)]
+        [AWSProperty(Min=100, Max=64000)]
         public int Iops
         {
             get { return this._iops.GetValueOrDefault(); }
@@ -132,6 +133,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        ///  <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=125, Max=1000)]
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
         }
 
         /// <summary>

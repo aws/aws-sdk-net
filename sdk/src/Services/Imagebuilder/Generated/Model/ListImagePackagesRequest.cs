@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the ListImagePackages operation.
     /// List the Packages that are associated with an Image Build Version, as determined by
-    /// Amazon EC2 Systems Manager Inventory at build time.
+    /// Amazon Web Services Systems Manager Inventory at build time.
     /// </summary>
     public partial class ListImagePackagesRequest : AmazonImagebuilderRequest
     {

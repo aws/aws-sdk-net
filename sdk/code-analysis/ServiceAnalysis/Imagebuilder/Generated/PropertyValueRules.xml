@@ -1154,6 +1154,11 @@
     <pattern>^String|Integer|Boolean|StringList$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ComponentState.Reason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentSummary.Arn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|[0-9]+)\.(?:x|[0-9]+)\.(?:x|[0-9]+))(?:/[0-9]+)?)?$</pattern>
   </property-value-rule>
@@ -1306,7 +1311,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.EbsInstanceBlockDeviceSpecification.Iops</property>
     <min>100</min>
-    <max>10000</max>
+    <max>64000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.EbsInstanceBlockDeviceSpecification.KmsKeyId</property>
@@ -1317,6 +1322,11 @@
     <property>Amazon.Imagebuilder.Model.EbsInstanceBlockDeviceSpecification.SnapshotId</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.EbsInstanceBlockDeviceSpecification.Throughput</property>
+    <min>125</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.EbsInstanceBlockDeviceSpecification.VolumeSize</property>
@@ -1544,6 +1554,15 @@
     <property>Amazon.Imagebuilder.Model.InstanceConfiguration.Image</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.InstanceMetadataOptions.HttpPutResponseHopLimit</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.InstanceMetadataOptions.HttpTokens</property>
+    <pattern>optional|required</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.LaunchTemplateConfiguration.AccountId</property>

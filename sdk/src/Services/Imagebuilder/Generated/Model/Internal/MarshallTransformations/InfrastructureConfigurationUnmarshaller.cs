@@ -88,6 +88,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceMetadataOptions", targetDepth))
+                {
+                    var unmarshaller = InstanceMetadataOptionsUnmarshaller.Instance;
+                    unmarshalledObject.InstanceMetadataOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceProfileName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

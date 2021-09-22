@@ -106,6 +106,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("state", targetDepth))
+                {
+                    var unmarshaller = ComponentStateUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("supportedOsVersions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

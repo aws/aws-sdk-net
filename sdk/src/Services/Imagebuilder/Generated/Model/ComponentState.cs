@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteImage operation.
+    /// A group of fields that describe the current status of components that are no longer
+    /// active.
     /// </summary>
-    public partial class DeleteImageResponse : AmazonWebServiceResponse
+    public partial class ComponentState
     {
-        private string _imageBuildVersionArn;
-        private string _requestId;
+        private string _reason;
+        private ComponentStatus _status;
 
         /// <summary>
-        /// Gets and sets the property ImageBuildVersionArn. 
+        /// Gets and sets the property Reason. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
-        /// </para>
-        /// </summary>
-        public string ImageBuildVersionArn
-        {
-            get { return this._imageBuildVersionArn; }
-            set { this._imageBuildVersionArn = value; }
-        }
-
-        // Check to see if ImageBuildVersionArn property is set
-        internal bool IsSetImageBuildVersionArn()
-        {
-            return this._imageBuildVersionArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestId. 
-        /// <para>
-        /// The request ID that uniquely identifies this request.
+        /// Describes how or why the component changed state.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
-        public string RequestId
+        public string Reason
         {
-            get { return this._requestId; }
-            set { this._requestId = value; }
+            get { return this._reason; }
+            set { this._reason = value; }
         }
 
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
         {
-            return this._requestId != null;
+            return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current state of the component.
+        /// </para>
+        /// </summary>
+        public ComponentStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

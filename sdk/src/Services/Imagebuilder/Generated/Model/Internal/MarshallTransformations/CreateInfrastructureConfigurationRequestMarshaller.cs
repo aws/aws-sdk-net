@@ -82,6 +82,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetInstanceMetadataOptions())
+                {
+                    context.Writer.WritePropertyName("instanceMetadataOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceMetadataOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InstanceMetadataOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInstanceProfileName())
                 {
                     context.Writer.WritePropertyName("instanceProfileName");

@@ -37,6 +37,7 @@ namespace Amazon.Imagebuilder.Model
         private string _dateCreated;
         private string _dateUpdated;
         private string _description;
+        private InstanceMetadataOptions _instanceMetadataOptions;
         private string _instanceProfileName;
         private List<string> _instanceTypes = new List<string>();
         private string _keyPair;
@@ -120,6 +121,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataOptions. 
+        /// <para>
+        /// The instance metadata option settings for the infrastructure configuration.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataOptions InstanceMetadataOptions
+        {
+            get { return this._instanceMetadataOptions; }
+            set { this._instanceMetadataOptions = value; }
+        }
+
+        // Check to see if InstanceMetadataOptions property is set
+        internal bool IsSetInstanceMetadataOptions()
+        {
+            return this._instanceMetadataOptions != null;
         }
 
         /// <summary>
