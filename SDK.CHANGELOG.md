@@ -1,3 +1,24 @@
+### 3.7.122.0 (2021-09-22 18:15 UTC)
+* IdentityManagement (3.7.2.49)
+	* Added changes to OIDC API about not using port numbers in the URL.
+* Imagebuilder (3.7.3.0)
+	* This feature adds support for specifying GP3 volume throughput and configuring instance metadata options for instances launched by EC2 Image Builder.
+* LexModelsV2 (3.7.6.0)
+	* This release adds support for utterances statistics for bots built using Lex V2 console and APIs. For details, see: https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html
+* LicenseManager (3.7.4.0)
+	* AWS License Manager now allows customers to change their Windows Server or SQL license types from Bring-Your-Own-License (BYOL) to License Included or vice-versa (using the customer's media).
+* MediaPackageVod (3.7.3.0)
+	* MediaPackage VOD will now return the current processing statuses of an asset's endpoints. The status can be QUEUED, PROCESSING, PLAYABLE, or FAILED.
+* MediaTailor (3.7.5.0)
+	* This release adds support to configure logs for playback configuration.
+* WAFV2 (3.7.6.0)
+	* Added the regex match rule statement, for matching web requests against a single regular expression.
+* Core 3.7.3.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.121.0 (2021-09-21 18:13 UTC)
 * Comprehend (3.7.4.0)
 	* Amazon Comprehend now supports versioning of custom models, improved training with ONE_DOC_PER_FILE text documents for custom entity recognition, ability to provide specific test sets during training, and live migration to new model endpoints.
