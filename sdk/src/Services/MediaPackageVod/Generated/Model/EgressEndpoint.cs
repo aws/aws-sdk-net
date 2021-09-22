@@ -34,6 +34,7 @@ namespace Amazon.MediaPackageVod.Model
     public partial class EgressEndpoint
     {
         private string _packagingConfigurationId;
+        private string _status;
         private string _url;
 
         /// <summary>
@@ -50,6 +51,23 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetPackagingConfigurationId()
         {
             return this._packagingConfigurationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. The current processing status of the asset used
+        /// for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE,
+        /// or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>
