@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details on how frequently reports are generated.
+    /// Details about how frequently reports are generated.
     /// </summary>
     public partial class ReportFrequency
     {
@@ -57,8 +57,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Number of times within the frequency period that a report will be generated. Currently
-        /// only <code>1</code> is supported.
+        /// Number of times within the frequency period that a report is generated. The only supported
+        /// value is <code>1</code>.
         /// </para>
         /// </summary>
         public int Value

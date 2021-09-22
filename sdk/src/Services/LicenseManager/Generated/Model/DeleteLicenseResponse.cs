@@ -39,7 +39,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
-        /// Date on which the license is deleted.
+        /// Date when the license is deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

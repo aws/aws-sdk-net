@@ -29,49 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details about the issuer of a license.
+    /// This is the response object from the ListLicenseConversionTasks operation.
     /// </summary>
-    public partial class Issuer
+    public partial class ListLicenseConversionTasksResponse : AmazonWebServiceResponse
     {
-        private string _name;
-        private string _signKey;
+        private List<LicenseConversionTask> _licenseConversionTasks = new List<LicenseConversionTask>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property LicenseConversionTasks. 
         /// <para>
-        /// Issuer name.
+        /// Information about the license configuration tasks for your account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Name
+        public List<LicenseConversionTask> LicenseConversionTasks
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._licenseConversionTasks; }
+            set { this._licenseConversionTasks = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if LicenseConversionTasks property is set
+        internal bool IsSetLicenseConversionTasks()
         {
-            return this._name != null;
+            return this._licenseConversionTasks != null && this._licenseConversionTasks.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property SignKey. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// Asymmetric KMS key from Key Management Service. The KMS key must have a key usage
-        /// of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.
+        /// Token for the next set of results.
         /// </para>
         /// </summary>
-        public string SignKey
+        public string NextToken
         {
-            get { return this._signKey; }
-            set { this._signKey = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if SignKey property is set
-        internal bool IsSetSignKey()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._signKey != null;
+            return this._nextToken != null;
         }
 
     }

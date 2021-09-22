@@ -140,7 +140,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseManagerReportGeneratorArn. 
         /// <para>
-        /// Amazon Resource Number (ARN) of the report generator.
+        /// Amazon Resource Name (ARN) of the report generator.
         /// </para>
         /// </summary>
         public string LicenseManagerReportGeneratorArn
@@ -158,7 +158,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ReportContext. 
         /// <para>
-        /// License configuration type this generator reports on.
+        /// License configuration type for this generator.
         /// </para>
         /// </summary>
         public ReportContext ReportContext
@@ -176,7 +176,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ReportCreatorAccount. 
         /// <para>
-        /// The AWS account ID used to create the report generator.
+        /// The Amazon Web Services account ID used to create the report generator.
         /// </para>
         /// </summary>
         public string ReportCreatorAccount
@@ -194,7 +194,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ReportFrequency. 
         /// <para>
-        /// Details on how frequently reports are generated.
+        /// Details about how frequently reports are generated.
         /// </para>
         /// </summary>
         public ReportFrequency ReportFrequency

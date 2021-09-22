@@ -29,49 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details about the issuer of a license.
+    /// Information about a license type conversion task.
     /// </summary>
-    public partial class Issuer
+    public partial class LicenseConversionContext
     {
-        private string _name;
-        private string _signKey;
+        private string _usageOperation;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property UsageOperation. 
         /// <para>
-        /// Issuer name.
+        /// The Usage operation value that corresponds to the license type you are converting
+        /// your resource from. For more information about which platforms correspond to which
+        /// usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
+        /// data: usage operation by platform </a> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Name
+        [AWSProperty(Max=50)]
+        public string UsageOperation
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._usageOperation; }
+            set { this._usageOperation = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if UsageOperation property is set
+        internal bool IsSetUsageOperation()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SignKey. 
-        /// <para>
-        /// Asymmetric KMS key from Key Management Service. The KMS key must have a key usage
-        /// of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.
-        /// </para>
-        /// </summary>
-        public string SignKey
-        {
-            get { return this._signKey; }
-            set { this._signKey = value; }
-        }
-
-        // Check to see if SignKey property is set
-        internal bool IsSetSignKey()
-        {
-            return this._signKey != null;
+            return this._usageOperation != null;
         }
 
     }

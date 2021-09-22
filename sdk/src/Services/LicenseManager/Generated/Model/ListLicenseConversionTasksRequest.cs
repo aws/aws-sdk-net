@@ -29,38 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListLicenseConfigurations operation.
-    /// Lists the license configurations for your account.
+    /// Container for the parameters to the ListLicenseConversionTasks operation.
+    /// Lists the license type conversion tasks for your account.
     /// </summary>
-    public partial class ListLicenseConfigurationsRequest : AmazonLicenseManagerRequest
+    public partial class ListLicenseConversionTasksRequest : AmazonLicenseManagerRequest
     {
         private List<Filter> _filters = new List<Filter>();
-        private List<string> _licenseConfigurationArns = new List<string>();
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters to scope the results. The following filters and logical operators are supported:
+        ///  Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
+        /// 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>licenseCountingType</code> - The dimension for which licenses are counted.
-        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code>
-        /// | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license
-        /// enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available
-        /// licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
@@ -72,24 +55,6 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LicenseConfigurationArns. 
-        /// <para>
-        /// Amazon Resource Names (ARN) of the license configurations.
-        /// </para>
-        /// </summary>
-        public List<string> LicenseConfigurationArns
-        {
-            get { return this._licenseConfigurationArns; }
-            set { this._licenseConfigurationArns = value; }
-        }
-
-        // Check to see if LicenseConfigurationArns property is set
-        internal bool IsSetLicenseConfigurationArns()
-        {
-            return this._licenseConfigurationArns != null && this._licenseConfigurationArns.Count > 0; 
         }
 
         /// <summary>

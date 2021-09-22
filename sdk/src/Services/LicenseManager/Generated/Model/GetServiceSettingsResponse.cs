@@ -60,8 +60,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseManagerResourceShareArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the AWS resource share. The License Manager management
-        /// account provides member accounts with access to this share.
+        /// Amazon Resource Name (ARN) of the resource share. The License Manager management account
+        /// provides member accounts with access to this share.
         /// </para>
         /// </summary>
         public string LicenseManagerResourceShareArn
@@ -79,7 +79,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfiguration. 
         /// <para>
-        /// Indicates whether AWS Organizations is integrated with License Manager for cross-account
+        /// Indicates whether Organizations is integrated with License Manager for cross-account
         /// discovery.
         /// </para>
         /// </summary>

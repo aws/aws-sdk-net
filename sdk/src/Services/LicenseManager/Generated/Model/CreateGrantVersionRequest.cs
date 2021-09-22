@@ -155,7 +155,10 @@ namespace Amazon.LicenseManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusReason.
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Grant status reason.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=400)]
         public string StatusReason

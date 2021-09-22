@@ -58,7 +58,10 @@ namespace Amazon.LicenseManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusReason.
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The Status reason for the delete request.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=400)]
         public string StatusReason

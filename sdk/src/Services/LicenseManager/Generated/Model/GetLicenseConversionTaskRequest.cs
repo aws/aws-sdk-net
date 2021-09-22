@@ -29,49 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Details about the issuer of a license.
+    /// Container for the parameters to the GetLicenseConversionTask operation.
+    /// Gets information about the specified license type conversion task.
     /// </summary>
-    public partial class Issuer
+    public partial class GetLicenseConversionTaskRequest : AmazonLicenseManagerRequest
     {
-        private string _name;
-        private string _signKey;
+        private string _licenseConversionTaskId;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property LicenseConversionTaskId. 
         /// <para>
-        /// Issuer name.
+        /// ID of the license type conversion task to retrieve information on.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Name
+        [AWSProperty(Required=true, Max=50)]
+        public string LicenseConversionTaskId
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._licenseConversionTaskId; }
+            set { this._licenseConversionTaskId = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if LicenseConversionTaskId property is set
+        internal bool IsSetLicenseConversionTaskId()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SignKey. 
-        /// <para>
-        /// Asymmetric KMS key from Key Management Service. The KMS key must have a key usage
-        /// of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.
-        /// </para>
-        /// </summary>
-        public string SignKey
-        {
-            get { return this._signKey; }
-            set { this._signKey = value; }
-        }
-
-        // Check to see if SignKey property is set
-        internal bool IsSetSignKey()
-        {
-            return this._signKey != null;
+            return this._licenseConversionTaskId != null;
         }
 
     }

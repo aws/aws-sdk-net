@@ -45,8 +45,8 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>account_id</code> - The ID of the AWS account that owns the resource. Logical
-        /// operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        ///  <code>account_id</code> - The ID of the Amazon Web Services account that owns the
+        /// resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

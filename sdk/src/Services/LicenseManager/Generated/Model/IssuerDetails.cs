@@ -76,8 +76,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property SignKey. 
         /// <para>
-        /// Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage of sign
-        /// and verify, and support the RSASSA-PSS SHA-256 signing algorithm.
+        /// Asymmetric KMS key from Key Management Service. The KMS key must have a key usage
+        /// of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.
         /// </para>
         /// </summary>
         public string SignKey

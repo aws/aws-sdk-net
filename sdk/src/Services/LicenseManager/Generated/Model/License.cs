@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// Software license that is managed in AWS License Manager.
+    /// Software license that is managed in License Manager.
     /// </summary>
     public partial class License
     {

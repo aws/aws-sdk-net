@@ -30,13 +30,13 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLicenseManagerReportGenerator operation.
-    /// Delete an existing report generator.
+    /// Deletes the specified report generator.
     /// 
     ///  
     /// <para>
-    /// This action deletes the report generator, which stops it from generating future reports
-    /// and cannot be reversed. However, the previous reports from this generator will remain
-    /// in your S3 bucket.
+    /// This action deletes the report generator, which stops it from generating future reports.
+    /// The action cannot be reversed. It has no effect on the previous reports from this
+    /// generator.
     /// </para>
     /// </summary>
     public partial class DeleteLicenseManagerReportGeneratorRequest : AmazonLicenseManagerRequest
@@ -46,7 +46,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseManagerReportGeneratorArn. 
         /// <para>
-        /// Amazon Resource Number (ARN) of the report generator that will be deleted.
+        /// Amazon Resource Name (ARN) of the report generator to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

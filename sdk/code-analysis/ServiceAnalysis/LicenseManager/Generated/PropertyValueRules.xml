@@ -104,6 +104,16 @@
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseConversionTaskForResourceRequest.ResourceArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseConversionTaskForResourceResponse.LicenseConversionTaskId</property>
+    <max>50</max>
+    <pattern>^lct-[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateLicenseManagerReportGeneratorRequest.ClientToken</property>
     <min>1</min>
     <max>36</max>
@@ -192,6 +202,16 @@
     <property>Amazon.LicenseManager.Model.GetLicenseRequest.LicenseArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.GetLicenseConversionTaskRequest.LicenseConversionTaskId</property>
+    <max>50</max>
+    <pattern>^lct-[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.GetLicenseConversionTaskResponse.LicenseConversionTaskId</property>
+    <max>50</max>
+    <pattern>^lct-[a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.GetLicenseUsageRequest.LicenseArn</property>
@@ -312,6 +332,15 @@
     <property>Amazon.LicenseManager.Model.License.LicenseArn</property>
     <max>2048</max>
     <pattern>^arn:aws(-(cn|us-gov|iso-b|iso-c|iso-d))?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.LicenseConversionContext.UsageOperation</property>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.LicenseConversionTask.LicenseConversionTaskId</property>
+    <max>50</max>
+    <pattern>^lct-[a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.ReceivedMetadata.ReceivedStatusReason</property>

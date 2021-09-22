@@ -153,7 +153,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceOwnerId. 
         /// <para>
-        /// ID of the AWS account that owns the resource.
+        /// ID of the Amazon Web Services account that owns the resource.
         /// </para>
         /// </summary>
         public string ResourceOwnerId

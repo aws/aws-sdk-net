@@ -30,7 +30,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLicenseManagerReportGenerator operation.
-    /// Creates a new report generator.
+    /// Creates a report generator.
     /// </summary>
     public partial class CreateLicenseManagerReportGeneratorRequest : AmazonLicenseManagerRequest
     {
@@ -163,12 +163,12 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// License configuration report - Reports on the number and details of consumed licenses
+        /// License configuration report - Reports the number and details of consumed licenses
         /// for a license configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Resource report - Reports on the tracked licenses and resource consumption for a license
+        /// Resource report - Reports the tracked licenses and resource consumption for a license
         /// configuration.
         /// </para>
         ///  </li> </ul>

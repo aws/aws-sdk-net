@@ -30,7 +30,7 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLicenseManagerReportGenerator operation.
-    /// Gets information on the specified report generator.
+    /// Gets information about the specified report generator.
     /// </summary>
     public partial class GetLicenseManagerReportGeneratorRequest : AmazonLicenseManagerRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseManagerReportGeneratorArn. 
         /// <para>
-        /// mazon Resource Number (ARN) of the report generator to retrieve information on.
+        /// Amazon Resource Name (ARN) of the report generator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

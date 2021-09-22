@@ -38,7 +38,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseManagerReportGeneratorArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the new report generator.
+        /// The Amazon Resource Name (ARN) of the new report generator.
         /// </para>
         /// </summary>
         public string LicenseManagerReportGeneratorArn

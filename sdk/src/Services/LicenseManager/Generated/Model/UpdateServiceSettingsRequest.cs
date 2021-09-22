@@ -60,7 +60,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfiguration. 
         /// <para>
-        /// Enables integration with AWS Organizations for cross-account discovery.
+        /// Enables integration with Organizations for cross-account discovery.
         /// </para>
         /// </summary>
         public OrganizationConfiguration OrganizationConfiguration

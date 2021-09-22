@@ -57,7 +57,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ReportGenerators. 
         /// <para>
-        /// A report generator that creates periodic reports on your license configurations.
+        /// A report generator that creates periodic reports about your license configurations.
         /// </para>
         /// </summary>
         public List<ReportGenerator> ReportGenerators

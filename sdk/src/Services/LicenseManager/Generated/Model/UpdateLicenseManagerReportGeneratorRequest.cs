@@ -34,8 +34,8 @@ namespace Amazon.LicenseManager.Model
     /// 
     ///  
     /// <para>
-    /// After you make changes to a report generator, it will start generating new reports
-    /// within 60 minutes of being updated.
+    /// After you make changes to a report generator, it starts generating new reports within
+    /// 60 minutes of being updated.
     /// </para>
     /// </summary>
     public partial class UpdateLicenseManagerReportGeneratorRequest : AmazonLicenseManagerRequest
@@ -89,7 +89,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseManagerReportGeneratorArn. 
         /// <para>
-        /// Amazon Resource Number (ARN) of the report generator to update.
+        /// Amazon Resource Name (ARN) of the report generator to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +108,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ReportContext. 
         /// <para>
-        /// ?
+        /// The report context.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,11 +127,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ReportFrequency. 
         /// <para>
-        /// Frequency by which reports are generated. The following options are avaiable:
-        /// </para>
-        ///  
-        /// <para>
-        /// ??? What are the APi value options?
+        /// Frequency by which reports are generated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -169,16 +165,16 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of reports to generate. The following report types an be generated:
+        /// Type of reports to generate. The following report types are supported:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// License configuration report - Reports on the number and details of consumed licenses
+        /// License configuration report - Reports the number and details of consumed licenses
         /// for a license configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Resource report - Reports on the tracked licenses and resource consumption for a license
+        /// Resource report - Reports the tracked licenses and resource consumption for a license
         /// configuration.
         /// </para>
         ///  </li> </ul>

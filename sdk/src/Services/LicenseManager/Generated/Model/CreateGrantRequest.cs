@@ -31,7 +31,7 @@ namespace Amazon.LicenseManager.Model
     /// <summary>
     /// Container for the parameters to the CreateGrant operation.
     /// Creates a grant for the specified license. A grant shares the use of license entitlements
-    /// with specific AWS accounts.
+    /// with specific Amazon Web Services accounts.
     /// </summary>
     public partial class CreateGrantRequest : AmazonLicenseManagerRequest
     {

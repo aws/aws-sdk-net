@@ -31,11 +31,8 @@ namespace Amazon.LicenseManager
     /// <summary>
     /// Interface for accessing LicenseManager
     ///
-    /// AWS License Manager  
-    /// <para>
-    /// AWS License Manager makes it easier to manage licenses from software vendors across
-    /// multiple AWS accounts and on-premises servers.
-    /// </para>
+    /// License Manager makes it easier to manage licenses from software vendors across multiple
+    /// Amazon Web Services accounts and on-premises servers.
     /// </summary>
     public partial interface IAmazonLicenseManager : IAmazonService, IDisposable
     {
@@ -57,8 +54,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -97,8 +94,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
         /// There was a conflict processing the request. Try your request again.
@@ -140,8 +137,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.EntitlementNotAllowedException">
         /// The entitlement is not allowed.
@@ -193,8 +190,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -232,7 +229,7 @@ namespace Amazon.LicenseManager
 
         /// <summary>
         /// Creates a grant for the specified license. A grant shares the use of license entitlements
-        /// with specific AWS accounts.
+        /// with specific Amazon Web Services accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// <param name="cancellationToken">
@@ -244,8 +241,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -284,8 +281,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -324,8 +321,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -374,8 +371,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -394,12 +391,49 @@ namespace Amazon.LicenseManager
 
         #endregion
                 
+        #region  CreateLicenseConversionTaskForResource
+
+
+
+        /// <summary>
+        /// Creates a new license conversion task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseConversionTaskForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLicenseConversionTaskForResource service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConversionTaskForResource">REST API Reference for CreateLicenseConversionTaskForResource Operation</seealso>
+        Task<CreateLicenseConversionTaskForResourceResponse> CreateLicenseConversionTaskForResourceAsync(CreateLicenseConversionTaskForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateLicenseManagerReportGenerator
 
 
 
         /// <summary>
-        /// Creates a new report generator.
+        /// Creates a report generator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLicenseManagerReportGenerator service method.</param>
         /// <param name="cancellationToken">
@@ -411,8 +445,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -454,8 +488,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
         /// There was a conflict processing the request. Try your request again.
@@ -504,8 +538,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
@@ -547,8 +581,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -587,8 +621,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
         /// There was a conflict processing the request. Try your request again.
@@ -635,8 +669,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -657,13 +691,13 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Delete an existing report generator.
+        /// Deletes the specified report generator.
         /// 
         ///  
         /// <para>
-        /// This action deletes the report generator, which stops it from generating future reports
-        /// and cannot be reversed. However, the previous reports from this generator will remain
-        /// in your S3 bucket.
+        /// This action deletes the report generator, which stops it from generating future reports.
+        /// The action cannot be reversed. It has no effect on the previous reports from this
+        /// generator.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseManagerReportGenerator service method.</param>
@@ -676,8 +710,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -719,8 +753,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
@@ -759,8 +793,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -800,8 +834,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
@@ -834,8 +868,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -874,8 +908,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -911,8 +945,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -928,12 +962,46 @@ namespace Amazon.LicenseManager
 
         #endregion
                 
+        #region  GetLicenseConversionTask
+
+
+
+        /// <summary>
+        /// Gets information about the specified license type conversion task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseConversionTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLicenseConversionTask service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConversionTask">REST API Reference for GetLicenseConversionTask Operation</seealso>
+        Task<GetLicenseConversionTaskResponse> GetLicenseConversionTaskAsync(GetLicenseConversionTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetLicenseManagerReportGenerator
 
 
 
         /// <summary>
-        /// Gets information on the specified report generator.
+        /// Gets information about the specified report generator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLicenseManagerReportGenerator service method.</param>
         /// <param name="cancellationToken">
@@ -945,8 +1013,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -988,8 +1056,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1025,8 +1093,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
@@ -1063,8 +1131,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.FilterLimitExceededException">
         /// The request uses too many filters or too many filter values.
@@ -1100,8 +1168,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1140,8 +1208,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1174,8 +1242,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.FilterLimitExceededException">
         /// The request uses too many filters or too many filter values.
@@ -1191,6 +1259,40 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurations">REST API Reference for ListLicenseConfigurations Operation</seealso>
         Task<ListLicenseConfigurationsResponse> ListLicenseConfigurationsAsync(ListLicenseConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListLicenseConversionTasks
+
+
+
+        /// <summary>
+        /// Lists the license type conversion tasks for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseConversionTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLicenseConversionTasks service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConversionTasks">REST API Reference for ListLicenseConversionTasks Operation</seealso>
+        Task<ListLicenseConversionTasksResponse> ListLicenseConversionTasksAsync(ListLicenseConversionTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1211,8 +1313,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1254,8 +1356,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1291,8 +1393,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1325,8 +1427,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1359,8 +1461,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1399,8 +1501,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1439,8 +1541,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.FailedDependencyException">
         /// A dependency required to run the API is missing.
@@ -1479,8 +1581,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1513,8 +1615,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
@@ -1549,8 +1651,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.FilterLimitExceededException">
         /// The request uses too many filters or too many filter values.
@@ -1586,8 +1688,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1626,8 +1728,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1660,8 +1762,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1694,8 +1796,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1723,8 +1825,8 @@ namespace Amazon.LicenseManager
         /// 
         ///  
         /// <para>
-        /// After you make changes to a report generator, it will start generating new reports
-        /// within 60 minutes of being updated.
+        /// After you make changes to a report generator, it starts generating new reports within
+        /// 60 minutes of being updated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseManagerReportGenerator service method.</param>
@@ -1737,8 +1839,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1768,12 +1870,13 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Adds or removes the specified license configurations for the specified AWS resource.
+        /// Adds or removes the specified license configurations for the specified Amazon Web
+        /// Services resource.
         /// 
         ///  
         /// <para>
         /// You can update the license specifications of AMIs, instances, and hosts. You cannot
-        /// update the license specifications for launch templates and AWS CloudFormation templates,
+        /// update the license specifications for launch templates and CloudFormation templates,
         /// as they send license configurations to the operation that creates the resource.
         /// </para>
         /// </summary>
@@ -1787,8 +1890,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
@@ -1833,8 +1936,8 @@ namespace Amazon.LicenseManager
         /// Access to resource denied.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
-        /// The AWS user account does not have permission to perform the action. Check the IAM
-        /// policy associated with this account.
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.

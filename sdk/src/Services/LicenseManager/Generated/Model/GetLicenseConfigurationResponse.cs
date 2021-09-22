@@ -216,7 +216,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property LicenseCountingType. 
         /// <para>
-        /// Dimension on which the licenses are counted.
+        /// Dimension for which the licenses are counted.
         /// </para>
         /// </summary>
         public LicenseCountingType LicenseCountingType

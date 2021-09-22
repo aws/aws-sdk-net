@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
-    /// The AWS user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.
+    /// The Amazon Web Services user account does not have permission to perform the action.
+    /// Check the IAM policy associated with this account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
