@@ -43,6 +43,7 @@ namespace Amazon.WAFV2.Model
         private NotStatement _notStatement;
         private OrStatement _orStatement;
         private RateBasedStatement _rateBasedStatement;
+        private RegexMatchStatement _regexMatchStatement;
         private RegexPatternSetReferenceStatement _regexPatternSetReferenceStatement;
         private RuleGroupReferenceStatement _ruleGroupReferenceStatement;
         private SizeConstraintStatement _sizeConstraintStatement;
@@ -292,6 +293,25 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetRateBasedStatement()
         {
             return this._rateBasedStatement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegexMatchStatement. 
+        /// <para>
+        /// A rule statement used to search web request components for a match against a single
+        /// regular expression. 
+        /// </para>
+        /// </summary>
+        public RegexMatchStatement RegexMatchStatement
+        {
+            get { return this._regexMatchStatement; }
+            set { this._regexMatchStatement = value; }
+        }
+
+        // Check to see if RegexMatchStatement property is set
+        internal bool IsSetRegexMatchStatement()
+        {
+            return this._regexMatchStatement != null;
         }
 
         /// <summary>

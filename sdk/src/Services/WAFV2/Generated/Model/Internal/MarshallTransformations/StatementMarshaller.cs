@@ -144,6 +144,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRegexMatchStatement())
+            {
+                context.Writer.WritePropertyName("RegexMatchStatement");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegexMatchStatementMarshaller.Instance;
+                marshaller.Marshall(requestObject.RegexMatchStatement, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRegexPatternSetReferenceStatement())
             {
                 context.Writer.WritePropertyName("RegexPatternSetReferenceStatement");

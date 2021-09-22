@@ -118,6 +118,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RateBasedStatement = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RegexMatchStatement", targetDepth))
+                {
+                    var unmarshaller = RegexMatchStatementUnmarshaller.Instance;
+                    unmarshalledObject.RegexMatchStatement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RegexPatternSetReferenceStatement", targetDepth))
                 {
                     var unmarshaller = RegexPatternSetReferenceStatementUnmarshaller.Instance;
