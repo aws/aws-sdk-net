@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using AWSSDK_DotNet35.UnitTests.TestTools;
 using System.IO;
 using Amazon;
+using Amazon.S3.Transfer;
 
 namespace AWSSDK.UnitTests
 {
@@ -56,5 +57,18 @@ namespace AWSSDK.UnitTests
             AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata = false;
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MetadataCollectionClearTest()
+        {
+            TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest();
+
+            uploadRequest.Metadata.Add("dummymetadata", "dummyvalue");
+            uploadRequest.Metadata.Add("x-amz-meta-explicitmetadata", "value-explicitmetadata");
+            Assert.AreEqual(2, uploadRequest.Metadata.Count);
+
+            uploadRequest.Metadata.Clear();
+            Assert.AreEqual(0, uploadRequest.Metadata.Count);
+        }
     }
 }

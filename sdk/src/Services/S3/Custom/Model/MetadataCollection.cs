@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 
@@ -64,6 +65,20 @@ namespace Amazon.S3.Model
         public void Add(string name, string value)
         {
             this[name] = value;
+        }
+
+        /// <summary>
+        /// Clears user defined metadata from the collection.
+        /// </summary>
+        public void Clear()
+        {
+            foreach (var key in values.Keys.ToList())
+            {
+                if (key.StartsWith(MetaDataHeaderPrefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    values.Remove(key);
+                }
+            }
         }
 
         /// <summary>
