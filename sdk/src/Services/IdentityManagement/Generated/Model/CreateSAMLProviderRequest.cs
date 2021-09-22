@@ -38,8 +38,8 @@ namespace Amazon.IdentityManagement.Model
     /// The SAML provider resource that you create with this operation can be used as a principal
     /// in an IAM role's trust policy. Such a policy can enable federated users who sign in
     /// using the SAML IdP to assume the role. You can create an IAM role that supports Web-based
-    /// single sign-on (SSO) to the Management Console or one that supports API access to
-    /// Amazon Web Services.
+    /// single sign-on (SSO) to the Amazon Web Services Management Console or one that supports
+    /// API access to Amazon Web Services.
     /// </para>
     ///  
     /// <para>
@@ -57,7 +57,8 @@ namespace Amazon.IdentityManagement.Model
     ///  </note> 
     /// <para>
     ///  For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
-    /// SAML 2.0 federated users to access the Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+    /// SAML 2.0 federated users to access the Amazon Web Services Management Console</a>
+    /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
     /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.
     /// </para>
     /// </summary>

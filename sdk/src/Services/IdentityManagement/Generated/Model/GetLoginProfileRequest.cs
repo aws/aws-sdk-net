@@ -31,9 +31,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetLoginProfile operation.
     /// Retrieves the user name for the specified IAM user. A login profile is created when
-    /// you create a password for the user to access the Management Console. If the user does
-    /// not exist or does not have a password, the operation returns a 404 (<code>NoSuchEntity</code>)
-    /// error.
+    /// you create a password for the user to access the Amazon Web Services Management Console.
+    /// If the user does not exist or does not have a password, the operation returns a 404
+    /// (<code>NoSuchEntity</code>) error.
     /// 
     ///  
     /// <para>
@@ -43,10 +43,10 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// If you create an IAM user with programmatic access, and then later add a password
-    /// for the user to access the Management Console, the <code>CreateDate</code> reflects
-    /// the initial password creation date. A user with programmatic access does not have
-    /// a login profile unless you create a password for the user to access the Management
-    /// Console.
+    /// for the user to access the Amazon Web Services Management Console, the <code>CreateDate</code>
+    /// reflects the initial password creation date. A user with programmatic access does
+    /// not have a login profile unless you create a password for the user to access the Amazon
+    /// Web Services Management Console.
     /// </para>
     /// </summary>
     public partial class GetLoginProfileRequest : AmazonIdentityManagementServiceRequest

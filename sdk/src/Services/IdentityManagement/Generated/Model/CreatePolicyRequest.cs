@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePolicy operation.
-    /// Creates a new managed policy for your account.
+    /// Creates a new managed policy for your Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -108,6 +108,11 @@ namespace Amazon.IdentityManagement.Model
         /// any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>),
         /// including most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot use an asterisk (*) in the path name.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string Path

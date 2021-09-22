@@ -31,14 +31,15 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteLoginProfile operation.
     /// Deletes the password for the specified IAM user, which terminates the user's ability
-    /// to access Amazon Web Services services through the Management Console.
+    /// to access Amazon Web Services services through the Amazon Web Services Management
+    /// Console.
     /// 
     ///  
     /// <para>
     /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
     /// IAM console to delete a password for any IAM user. You can use <a>ChangePassword</a>
     /// to update, but not delete, your own password in the <b>My Security Credentials</b>
-    /// page in the Management Console.
+    /// page in the Amazon Web Services Management Console.
     /// </para>
     ///  <important> 
     /// <para>

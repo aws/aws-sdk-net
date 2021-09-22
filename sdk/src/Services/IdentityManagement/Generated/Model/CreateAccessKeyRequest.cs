@@ -38,9 +38,9 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// If you do not specify a user name, IAM determines the user name implicitly based on
     /// the Amazon Web Services access key ID signing the request. This operation works for
-    /// access keys under the account. Consequently, you can use this operation to manage
-    /// account root user credentials. This is true even if the account has no associated
-    /// users.
+    /// access keys under the Amazon Web Services account. Consequently, you can use this
+    /// operation to manage Amazon Web Services account root user credentials. This is true
+    /// even if the Amazon Web Services account has no associated users.
     /// </para>
     ///  
     /// <para>
@@ -49,10 +49,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// To ensure the security of your account, the secret access key is accessible only during
-    /// key and user creation. You must save the key (for example, in a text file) if you
-    /// want to be able to access it again. If a secret key is lost, you can delete the access
-    /// keys for the associated user and then create new keys.
+    /// To ensure the security of your Amazon Web Services account, the secret access key
+    /// is accessible only during key and user creation. You must save the key (for example,
+    /// in a text file) if you want to be able to access it again. If a secret key is lost,
+    /// you can delete the access keys for the associated user and then create new keys.
     /// </para>
     ///  </important>
     /// </summary>

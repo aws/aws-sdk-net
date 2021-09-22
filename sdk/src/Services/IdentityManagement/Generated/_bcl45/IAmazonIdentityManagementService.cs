@@ -599,8 +599,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Changes the password of the IAM user who is calling this operation. This operation
         /// can be performed using the CLI, the Amazon Web Services API, or the <b>My Security
-        /// Credentials</b> page in the Management Console. The account root user password is
-        /// not affected by this operation.
+        /// Credentials</b> page in the Amazon Web Services Management Console. The Amazon Web
+        /// Services account root user password is not affected by this operation.
         /// 
         ///  
         /// <para>
@@ -645,8 +645,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Changes the password of the IAM user who is calling this operation. This operation
         /// can be performed using the CLI, the Amazon Web Services API, or the <b>My Security
-        /// Credentials</b> page in the Management Console. The account root user password is
-        /// not affected by this operation.
+        /// Credentials</b> page in the Amazon Web Services Management Console. The Amazon Web
+        /// Services account root user password is not affected by this operation.
         /// 
         ///  
         /// <para>
@@ -703,9 +703,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials. This is true even if the account has no associated
-        /// users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials. This is true
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -714,10 +714,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <important> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation. You must save the key (for example, in a text file) if you
-        /// want to be able to access it again. If a secret key is lost, you can delete the access
-        /// keys for the associated user and then create new keys.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys.
         /// </para>
         ///  </important>
         /// </summary>
@@ -747,9 +747,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials. This is true even if the account has no associated
-        /// users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials. This is true
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -758,10 +758,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <important> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation. You must save the key (for example, in a text file) if you
-        /// want to be able to access it again. If a secret key is lost, you can delete the access
-        /// keys for the associated user and then create new keys.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys.
         /// </para>
         ///  </important>
         /// </summary>
@@ -792,9 +792,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials. This is true even if the account has no associated
-        /// users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials. This is true
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -803,10 +803,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <important> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation. You must save the key (for example, in a text file) if you
-        /// want to be able to access it again. If a secret key is lost, you can delete the access
-        /// keys for the associated user and then create new keys.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys.
         /// </para>
         ///  </important>
         /// </summary>
@@ -840,9 +840,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials. This is true even if the account has no associated
-        /// users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials. This is true
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -851,10 +851,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <important> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation. You must save the key (for example, in a text file) if you
-        /// want to be able to access it again. If a secret key is lost, you can delete the access
-        /// keys for the associated user and then create new keys.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation. You must save the key (for example,
+        /// in a text file) if you want to be able to access it again. If a secret key is lost,
+        /// you can delete the access keys for the associated user and then create new keys.
         /// </para>
         ///  </important>
         /// </summary>
@@ -884,9 +884,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates an alias for your account. For information about using an account alias, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Creates an alias for your Amazon Web Services account. For information about using
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
         /// 
@@ -907,9 +907,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates an alias for your account. For information about using an account alias, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Creates an alias for your Amazon Web Services account. For information about using
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1085,14 +1085,14 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates a password for the specified IAM user. A password allows an IAM user to access
-        /// Amazon Web Services services through the Management Console.
+        /// Amazon Web Services services through the Amazon Web Services Management Console.
         /// 
         ///  
         /// <para>
         /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
         /// IAM console to create a password for any IAM user. Use <a>ChangePassword</a> to update
-        /// your own existing password in the <b>My Security Credentials</b> page in the Management
-        /// Console.
+        /// your own existing password in the <b>My Security Credentials</b> page in the Amazon
+        /// Web Services Management Console.
         /// </para>
         ///  
         /// <para>
@@ -1128,14 +1128,14 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates a password for the specified IAM user. A password allows an IAM user to access
-        /// Amazon Web Services services through the Management Console.
+        /// Amazon Web Services services through the Amazon Web Services Management Console.
         /// 
         ///  
         /// <para>
         /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
         /// IAM console to create a password for any IAM user. Use <a>ChangePassword</a> to update
-        /// your own existing password in the <b>My Security Credentials</b> page in the Management
-        /// Console.
+        /// your own existing password in the <b>My Security Credentials</b> page in the Amazon
+        /// Web Services Management Console.
         /// </para>
         ///  
         /// <para>
@@ -1213,7 +1213,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You get all of this information from the OIDC IdP that you want to use to access Amazon
+        /// You get all of this information from the OIDC IdP you want to use to access Amazon
         /// Web Services.
         /// </para>
         ///  <note> 
@@ -1297,7 +1297,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You get all of this information from the OIDC IdP that you want to use to access Amazon
+        /// You get all of this information from the OIDC IdP you want to use to access Amazon
         /// Web Services.
         /// </para>
         ///  <note> 
@@ -1350,7 +1350,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new managed policy for your account.
+        /// Creates a new managed policy for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1401,7 +1401,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new managed policy for your account.
+        /// Creates a new managed policy for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1554,7 +1554,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new role for your account. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
+        /// Creates a new role for your Amazon Web Services account. For more information about
+        /// roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
         /// roles</a>. For information about quotas for role names and the number of roles you
         /// can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
         /// and STS quotas</a> in the <i>IAM User Guide</i>.
@@ -1590,7 +1591,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new role for your account. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
+        /// Creates a new role for your Amazon Web Services account. For more information about
+        /// roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
         /// roles</a>. For information about quotas for role names and the number of roles you
         /// can create, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
         /// and STS quotas</a> in the <i>IAM User Guide</i>.
@@ -1640,8 +1642,8 @@ namespace Amazon.IdentityManagement
         /// The SAML provider resource that you create with this operation can be used as a principal
         /// in an IAM role's trust policy. Such a policy can enable federated users who sign in
         /// using the SAML IdP to assume the role. You can create an IAM role that supports Web-based
-        /// single sign-on (SSO) to the Management Console or one that supports API access to
-        /// Amazon Web Services.
+        /// single sign-on (SSO) to the Amazon Web Services Management Console or one that supports
+        /// API access to Amazon Web Services.
         /// </para>
         ///  
         /// <para>
@@ -1659,7 +1661,8 @@ namespace Amazon.IdentityManagement
         ///  </note> 
         /// <para>
         ///  For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
-        /// SAML 2.0 federated users to access the Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0 federated users to access the Amazon Web Services Management Console</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
         /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -1698,8 +1701,8 @@ namespace Amazon.IdentityManagement
         /// The SAML provider resource that you create with this operation can be used as a principal
         /// in an IAM role's trust policy. Such a policy can enable federated users who sign in
         /// using the SAML IdP to assume the role. You can create an IAM role that supports Web-based
-        /// single sign-on (SSO) to the Management Console or one that supports API access to
-        /// Amazon Web Services.
+        /// single sign-on (SSO) to the Amazon Web Services Management Console or one that supports
+        /// API access to Amazon Web Services.
         /// </para>
         ///  
         /// <para>
@@ -1717,7 +1720,8 @@ namespace Amazon.IdentityManagement
         ///  </note> 
         /// <para>
         ///  For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
-        /// SAML 2.0 federated users to access the Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+        /// SAML 2.0 federated users to access the Amazon Web Services Management Console</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
         /// SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -1932,7 +1936,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new IAM user for your account.
+        /// Creates a new IAM user for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1971,7 +1975,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new IAM user for your account.
+        /// Creates a new IAM user for your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -2016,9 +2020,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new virtual MFA device for the account. After creating the virtual MFA,
-        /// use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information
-        /// about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// Creates a new virtual MFA device for the Amazon Web Services account. After creating
+        /// the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user.
+        /// For more information about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
         /// a virtual MFA device</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
@@ -2063,9 +2067,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Creates a new virtual MFA device for the account. After creating the virtual MFA,
-        /// use <a>EnableMFADevice</a> to attach the MFA device to an IAM user. For more information
-        /// about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
+        /// Creates a new virtual MFA device for the Amazon Web Services account. After creating
+        /// the virtual MFA, use <a>EnableMFADevice</a> to attach the MFA device to an IAM user.
+        /// For more information about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
         /// a virtual MFA device</a> in the <i>IAM User Guide</i>.
         /// 
         ///  
@@ -2198,8 +2202,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials even if the account has no associated users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials even if the
+        /// Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessKey service method.</param>
@@ -2228,8 +2233,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials even if the account has no associated users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials even if the
+        /// Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessKey service method.</param>
@@ -2258,9 +2264,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the specified account alias. For information about using an Amazon Web Services
-        /// account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Deletes the specified Amazon Web Services account alias. For information about using
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias service method.</param>
         /// 
@@ -2282,9 +2288,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the specified account alias. For information about using an Amazon Web Services
-        /// account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Deletes the specified Amazon Web Services account alias. For information about using
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias service method.</param>
         /// <param name="cancellationToken">
@@ -2312,7 +2318,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the password policy for the account. There are no parameters.
+        /// Deletes the password policy for the Amazon Web Services account. There are no parameters.
         /// </summary>
         /// 
         /// <returns>The response from the DeleteAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
@@ -2332,7 +2338,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the password policy for the account. There are no parameters.
+        /// Deletes the password policy for the Amazon Web Services account. There are no parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPasswordPolicy service method.</param>
         /// 
@@ -2353,7 +2359,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the password policy for the account. There are no parameters.
+        /// Deletes the password policy for the Amazon Web Services account. There are no parameters.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2377,7 +2383,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the password policy for the account. There are no parameters.
+        /// Deletes the password policy for the Amazon Web Services account. There are no parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPasswordPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2616,14 +2622,15 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes the password for the specified IAM user, which terminates the user's ability
-        /// to access Amazon Web Services services through the Management Console.
+        /// to access Amazon Web Services services through the Amazon Web Services Management
+        /// Console.
         /// 
         ///  
         /// <para>
         /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
         /// IAM console to delete a password for any IAM user. You can use <a>ChangePassword</a>
         /// to update, but not delete, your own password in the <b>My Security Credentials</b>
-        /// page in the Management Console.
+        /// page in the Amazon Web Services Management Console.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2662,14 +2669,15 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes the password for the specified IAM user, which terminates the user's ability
-        /// to access Amazon Web Services services through the Management Console.
+        /// to access Amazon Web Services services through the Amazon Web Services Management
+        /// Console.
         /// 
         ///  
         /// <para>
         /// You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the
         /// IAM console to delete a password for any IAM user. You can use <a>ChangePassword</a>
         /// to update, but not delete, your own password in the <b>My Security Credentials</b>
-        /// page in the Management Console.
+        /// page in the Amazon Web Services Management Console.
         /// </para>
         ///  <important> 
         /// <para>
@@ -3569,8 +3577,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials even if the account has no associated IAM users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials even if the
+        /// Amazon Web Services account has no associated IAM users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSigningCertificate service method.</param>
@@ -3599,8 +3608,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
         /// the Amazon Web Services access key ID signing the request. This operation works for
-        /// access keys under the account. Consequently, you can use this operation to manage
-        /// account root user credentials even if the account has no associated IAM users.
+        /// access keys under the Amazon Web Services account. Consequently, you can use this
+        /// operation to manage Amazon Web Services account root user credentials even if the
+        /// Amazon Web Services account has no associated IAM users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSigningCertificate service method.</param>
@@ -3681,9 +3691,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the specified IAM user. Unlike the Management Console, when you delete a user
-        /// programmatically, you must delete the items attached to the user manually, or the
-        /// deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
+        /// Deletes the specified IAM user. Unlike the Amazon Web Services Management Console,
+        /// when you delete a user programmatically, you must delete the items attached to the
+        /// user manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
         /// an IAM user</a>. Before attempting to delete a user, remove the following items:
         /// 
         ///  <ul> <li> 
@@ -3752,9 +3762,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the specified IAM user. Unlike the Management Console, when you delete a user
-        /// programmatically, you must delete the items attached to the user manually, or the
-        /// deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
+        /// Deletes the specified IAM user. Unlike the Amazon Web Services Management Console,
+        /// when you delete a user programmatically, you must delete the items attached to the
+        /// user manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting
         /// an IAM user</a>. Before attempting to delete a user, remove the following items:
         /// 
         ///  <ul> <li> 
@@ -4331,8 +4341,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Generates a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Generates a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
@@ -4349,8 +4359,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Generates a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Generates a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateCredentialReport service method.</param>
@@ -4368,8 +4378,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Generates a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Generates a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
@@ -4390,8 +4400,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Generates a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Generates a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateCredentialReport service method.</param>
@@ -4452,12 +4462,13 @@ namespace Amazon.IdentityManagement
         ///  <important> 
         /// <para>
         /// The data includes all attempts to access Amazon Web Services, not just the successful
-        /// ones. This includes all attempts that were made using the Management Console, the
-        /// Amazon Web Services API through any of the SDKs, or any of the command line tools.
-        /// An unexpected entry in the service last accessed data does not mean that an account
-        /// has been compromised, because the request might have been denied. Refer to your CloudTrail
-        /// logs as the authoritative source for information about all API calls and whether they
-        /// were successful or denied access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// ones. This includes all attempts that were made using the Amazon Web Services Management
+        /// Console, the Amazon Web Services API through any of the SDKs, or any of the command
+        /// line tools. An unexpected entry in the service last accessed data does not mean that
+        /// an account has been compromised, because the request might have been denied. Refer
+        /// to your CloudTrail logs as the authoritative source for information about all API
+        /// calls and whether they were successful or denied access. For more information, see <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -4607,12 +4618,13 @@ namespace Amazon.IdentityManagement
         ///  <important> 
         /// <para>
         /// The data includes all attempts to access Amazon Web Services, not just the successful
-        /// ones. This includes all attempts that were made using the Management Console, the
-        /// Amazon Web Services API through any of the SDKs, or any of the command line tools.
-        /// An unexpected entry in the service last accessed data does not mean that an account
-        /// has been compromised, because the request might have been denied. Refer to your CloudTrail
-        /// logs as the authoritative source for information about all API calls and whether they
-        /// were successful or denied access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// ones. This includes all attempts that were made using the Amazon Web Services Management
+        /// Console, the Amazon Web Services API through any of the SDKs, or any of the command
+        /// line tools. An unexpected entry in the service last accessed data does not mean that
+        /// an account has been compromised, because the request might have been denied. Refer
+        /// to your CloudTrail logs as the authoritative source for information about all API
+        /// calls and whether they were successful or denied access. For more information, see <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -4743,12 +4755,12 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// The service last accessed data includes all attempts to access an Amazon Web Services
         /// API, not just the successful ones. This includes all attempts that were made using
-        /// the Management Console, the Amazon Web Services API through any of the SDKs, or any
-        /// of the command line tools. An unexpected entry in the service last accessed data does
-        /// not mean that your account has been compromised, because the request might have been
-        /// denied. Refer to your CloudTrail logs as the authoritative source for information
-        /// about all API calls and whether they were successful or denied access. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// the Amazon Web Services Management Console, the Amazon Web Services API through any
+        /// of the SDKs, or any of the command line tools. An unexpected entry in the service
+        /// last accessed data does not mean that your account has been compromised, because the
+        /// request might have been denied. Refer to your CloudTrail logs as the authoritative
+        /// source for information about all API calls and whether they were successful or denied
+        /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -4831,12 +4843,12 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// The service last accessed data includes all attempts to access an Amazon Web Services
         /// API, not just the successful ones. This includes all attempts that were made using
-        /// the Management Console, the Amazon Web Services API through any of the SDKs, or any
-        /// of the command line tools. An unexpected entry in the service last accessed data does
-        /// not mean that your account has been compromised, because the request might have been
-        /// denied. Refer to your CloudTrail logs as the authoritative source for information
-        /// about all API calls and whether they were successful or denied access. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// the Amazon Web Services Management Console, the Amazon Web Services API through any
+        /// of the SDKs, or any of the command line tools. An unexpected entry in the service
+        /// last accessed data does not mean that your account has been compromised, because the
+        /// request might have been denied. Refer to your CloudTrail logs as the authoritative
+        /// source for information about all API calls and whether they were successful or denied
+        /// access. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
         /// IAM events with CloudTrail</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </important> 
@@ -5022,9 +5034,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the password policy for the account. This tells you the complexity requirements
-        /// and mandatory rotation periods for the IAM user passwords in your account. For more
-        /// information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Retrieves the password policy for the Amazon Web Services account. This tells you
+        /// the complexity requirements and mandatory rotation periods for the IAM user passwords
+        /// in your account. For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM password policy</a>.
         /// </summary>
         /// 
@@ -5041,9 +5053,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the password policy for the account. This tells you the complexity requirements
-        /// and mandatory rotation periods for the IAM user passwords in your account. For more
-        /// information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Retrieves the password policy for the Amazon Web Services account. This tells you
+        /// the complexity requirements and mandatory rotation periods for the IAM user passwords
+        /// in your account. For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM password policy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method.</param>
@@ -5061,9 +5073,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the password policy for the account. This tells you the complexity requirements
-        /// and mandatory rotation periods for the IAM user passwords in your account. For more
-        /// information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Retrieves the password policy for the Amazon Web Services account. This tells you
+        /// the complexity requirements and mandatory rotation periods for the IAM user passwords
+        /// in your account. For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM password policy</a>.
         /// </summary>
         /// <param name="cancellationToken">
@@ -5084,9 +5096,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves the password policy for the account. This tells you the complexity requirements
-        /// and mandatory rotation periods for the IAM user passwords in your account. For more
-        /// information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
+        /// Retrieves the password policy for the Amazon Web Services account. This tells you
+        /// the complexity requirements and mandatory rotation periods for the IAM user passwords
+        /// in your account. For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM password policy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method.</param>
@@ -5571,8 +5583,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Retrieves a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
@@ -5598,8 +5610,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Retrieves a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentialReport service method.</param>
@@ -5626,8 +5638,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Retrieves a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
@@ -5657,8 +5669,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves a credential report for the account. For more information about the credential
-        /// report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
+        /// Retrieves a credential report for the Amazon Web Services account. For more information
+        /// about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
         /// credential reports</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentialReport service method.</param>
@@ -5871,9 +5883,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Retrieves the user name for the specified IAM user. A login profile is created when
-        /// you create a password for the user to access the Management Console. If the user does
-        /// not exist or does not have a password, the operation returns a 404 (<code>NoSuchEntity</code>)
-        /// error.
+        /// you create a password for the user to access the Amazon Web Services Management Console.
+        /// If the user does not exist or does not have a password, the operation returns a 404
+        /// (<code>NoSuchEntity</code>) error.
         /// 
         ///  
         /// <para>
@@ -5883,10 +5895,10 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you create an IAM user with programmatic access, and then later add a password
-        /// for the user to access the Management Console, the <code>CreateDate</code> reflects
-        /// the initial password creation date. A user with programmatic access does not have
-        /// a login profile unless you create a password for the user to access the Management
-        /// Console.
+        /// for the user to access the Amazon Web Services Management Console, the <code>CreateDate</code>
+        /// reflects the initial password creation date. A user with programmatic access does
+        /// not have a login profile unless you create a password for the user to access the Amazon
+        /// Web Services Management Console.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoginProfile service method.</param>
@@ -5906,9 +5918,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Retrieves the user name for the specified IAM user. A login profile is created when
-        /// you create a password for the user to access the Management Console. If the user does
-        /// not exist or does not have a password, the operation returns a 404 (<code>NoSuchEntity</code>)
-        /// error.
+        /// you create a password for the user to access the Amazon Web Services Management Console.
+        /// If the user does not exist or does not have a password, the operation returns a 404
+        /// (<code>NoSuchEntity</code>) error.
         /// 
         ///  
         /// <para>
@@ -5918,10 +5930,10 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you create an IAM user with programmatic access, and then later add a password
-        /// for the user to access the Management Console, the <code>CreateDate</code> reflects
-        /// the initial password creation date. A user with programmatic access does not have
-        /// a login profile unless you create a password for the user to access the Management
-        /// Console.
+        /// for the user to access the Amazon Web Services Management Console, the <code>CreateDate</code>
+        /// reflects the initial password creation date. A user with programmatic access does
+        /// not have a login profile unless you create a password for the user to access the Amazon
+        /// Web Services Management Console.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoginProfile service method.</param>
@@ -7159,13 +7171,14 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7195,13 +7208,14 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7232,13 +7246,14 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7272,13 +7287,14 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
-        /// To ensure the security of your account, the secret access key is accessible only during
-        /// key and user creation.
+        /// To ensure the security of your Amazon Web Services account, the secret access key
+        /// is accessible only during key and user creation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7304,9 +7320,10 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account alias associated with the account (Note: you can have only one).
-        /// For information about using an account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Lists the account alias associated with the Amazon Web Services account (Note: you
+        /// can have only one). For information about using an Amazon Web Services account alias,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
@@ -7318,9 +7335,10 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account alias associated with the account (Note: you can have only one).
-        /// For information about using an account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Lists the account alias associated with the Amazon Web Services account (Note: you
+        /// can have only one). For information about using an Amazon Web Services account alias,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// 
@@ -7333,9 +7351,10 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account alias associated with the account (Note: you can have only one).
-        /// For information about using an account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Lists the account alias associated with the Amazon Web Services account (Note: you
+        /// can have only one). For information about using an Amazon Web Services account alias,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7351,9 +7370,10 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the account alias associated with the account (Note: you can have only one).
-        /// For information about using an account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+        /// Lists the account alias associated with the Amazon Web Services account (Note: you
+        /// can have only one). For information about using an Amazon Web Services account alias,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// <param name="cancellationToken">
@@ -8303,7 +8323,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists information about the IAM OpenID Connect (OIDC) provider resource objects defined
-        /// in the account.
+        /// in the Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -8327,7 +8347,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists information about the IAM OpenID Connect (OIDC) provider resource objects defined
-        /// in the account.
+        /// in the Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -8424,8 +8444,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists all the managed policies that are available in your account, including your
-        /// own customer-defined managed policies and all Amazon Web Services managed policies.
+        /// Lists all the managed policies that are available in your Amazon Web Services account,
+        /// including your own customer-defined managed policies and all Amazon Web Services managed
+        /// policies.
         /// 
         ///  
         /// <para>
@@ -8464,8 +8485,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists all the managed policies that are available in your account, including your
-        /// own customer-defined managed policies and all Amazon Web Services managed policies.
+        /// Lists all the managed policies that are available in your Amazon Web Services account,
+        /// including your own customer-defined managed policies and all Amazon Web Services managed
+        /// policies.
         /// 
         ///  
         /// <para>
@@ -8505,8 +8527,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists all the managed policies that are available in your account, including your
-        /// own customer-defined managed policies and all Amazon Web Services managed policies.
+        /// Lists all the managed policies that are available in your Amazon Web Services account,
+        /// including your own customer-defined managed policies and all Amazon Web Services managed
+        /// policies.
         /// 
         ///  
         /// <para>
@@ -8549,8 +8572,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists all the managed policies that are available in your account, including your
-        /// own customer-defined managed policies and all Amazon Web Services managed policies.
+        /// Lists all the managed policies that are available in your Amazon Web Services account,
+        /// including your own customer-defined managed policies and all Amazon Web Services managed
+        /// policies.
         /// 
         ///  
         /// <para>
@@ -9536,9 +9560,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request for this operation.
-        /// This operation works for access keys under the account. Consequently, you can use
-        /// this operation to manage account root user credentials even if the account has no
-        /// associated users.
+        /// This operation works for access keys under the Amazon Web Services account. Consequently,
+        /// you can use this operation to manage Amazon Web Services account root user credentials
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// 
@@ -9567,9 +9591,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request for this operation.
-        /// This operation works for access keys under the account. Consequently, you can use
-        /// this operation to manage account root user credentials even if the account has no
-        /// associated users.
+        /// This operation works for access keys under the Amazon Web Services account. Consequently,
+        /// you can use this operation to manage Amazon Web Services account root user credentials
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningCertificates service method.</param>
@@ -9599,9 +9623,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request for this operation.
-        /// This operation works for access keys under the account. Consequently, you can use
-        /// this operation to manage account root user credentials even if the account has no
-        /// associated users.
+        /// This operation works for access keys under the Amazon Web Services account. Consequently,
+        /// you can use this operation to manage Amazon Web Services account root user credentials
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -9634,9 +9658,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request for this operation.
-        /// This operation works for access keys under the account. Consequently, you can use
-        /// this operation to manage account root user credentials even if the account has no
-        /// associated users.
+        /// This operation works for access keys under the Amazon Web Services account. Consequently,
+        /// you can use this operation to manage Amazon Web Services account root user credentials
+        /// even if the Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSigningCertificates service method.</param>
@@ -9796,8 +9820,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
-        /// the operation returns all users in the account. If there are none, the operation returns
-        /// an empty list.
+        /// the operation returns all users in the Amazon Web Services account. If there are none,
+        /// the operation returns an empty list.
         /// 
         ///  <note> 
         /// <para>
@@ -9822,8 +9846,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
-        /// the operation returns all users in the account. If there are none, the operation returns
-        /// an empty list.
+        /// the operation returns all users in the Amazon Web Services account. If there are none,
+        /// the operation returns an empty list.
         /// 
         ///  <note> 
         /// <para>
@@ -9849,8 +9873,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
-        /// the operation returns all users in the account. If there are none, the operation returns
-        /// an empty list.
+        /// the operation returns all users in the Amazon Web Services account. If there are none,
+        /// the operation returns an empty list.
         /// 
         ///  <note> 
         /// <para>
@@ -9879,8 +9903,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
-        /// the operation returns all users in the account. If there are none, the operation returns
-        /// an empty list.
+        /// the operation returns all users in the Amazon Web Services account. If there are none,
+        /// the operation returns an empty list.
         /// 
         ///  <note> 
         /// <para>
@@ -9958,9 +9982,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the virtual MFA devices defined in the account by assignment status. If you
-        /// do not specify an assignment status, the operation returns a list of all virtual MFA
-        /// devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
+        /// Lists the virtual MFA devices defined in the Amazon Web Services account by assignment
+        /// status. If you do not specify an assignment status, the operation returns a list of
+        /// all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
         /// or <code>Any</code>.
         /// 
         ///  <note> 
@@ -9983,9 +10007,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the virtual MFA devices defined in the account by assignment status. If you
-        /// do not specify an assignment status, the operation returns a list of all virtual MFA
-        /// devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
+        /// Lists the virtual MFA devices defined in the Amazon Web Services account by assignment
+        /// status. If you do not specify an assignment status, the operation returns a list of
+        /// all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
         /// or <code>Any</code>.
         /// 
         ///  <note> 
@@ -10009,9 +10033,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the virtual MFA devices defined in the account by assignment status. If you
-        /// do not specify an assignment status, the operation returns a list of all virtual MFA
-        /// devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
+        /// Lists the virtual MFA devices defined in the Amazon Web Services account by assignment
+        /// status. If you do not specify an assignment status, the operation returns a list of
+        /// all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
         /// or <code>Any</code>.
         /// 
         ///  <note> 
@@ -10038,9 +10062,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the virtual MFA devices defined in the account by assignment status. If you
-        /// do not specify an assignment status, the operation returns a list of all virtual MFA
-        /// devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
+        /// Lists the virtual MFA devices defined in the Amazon Web Services account by assignment
+        /// status. If you do not specify an assignment status, the operation returns a list of
+        /// all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
         /// or <code>Any</code>.
         /// 
         ///  <note> 
@@ -10994,7 +11018,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Sets the specified version of the global endpoint token as the token version used
-        /// for the account.
+        /// for the Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -11009,11 +11033,12 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you make an STS call to the global endpoint, the resulting session tokens might
         /// be valid in some Regions but not others. It depends on the version that is set in
-        /// this operation. Version 1 tokens are valid only in Regions that are available by default.
-        /// These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong).
-        /// Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and
-        /// might affect systems where you temporarily store tokens. For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
+        /// this operation. Version 1 tokens are valid only in Amazon Web Services Regions that
+        /// are available by default. These tokens do not work in manually enabled Regions, such
+        /// as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version
+        /// 2 tokens are longer and might affect systems where you temporarily store tokens. For
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11034,7 +11059,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Sets the specified version of the global endpoint token as the token version used
-        /// for the account.
+        /// for the Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -11049,11 +11074,12 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If you make an STS call to the global endpoint, the resulting session tokens might
         /// be valid in some Regions but not others. It depends on the version that is set in
-        /// this operation. Version 1 tokens are valid only in Regions that are available by default.
-        /// These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong).
-        /// Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and
-        /// might affect systems where you temporarily store tokens. For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
+        /// this operation. Version 1 tokens are valid only in Amazon Web Services Regions that
+        /// are available by default. These tokens do not work in manually enabled Regions, such
+        /// as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version
+        /// 2 tokens are longer and might affect systems where you temporarily store tokens. For
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -13016,8 +13042,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -13052,8 +13079,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -13087,7 +13115,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Updates the password policy settings for the account.
+        /// Updates the password policy settings for the Amazon Web Services account.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -13126,7 +13154,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Updates the password policy settings for the account.
+        /// Updates the password policy settings for the Amazon Web Services account.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -13166,7 +13194,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Updates the password policy settings for the account.
+        /// Updates the password policy settings for the Amazon Web Services account.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -13209,7 +13237,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Updates the password policy settings for the account.
+        /// Updates the password policy settings for the Amazon Web Services account.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -13427,7 +13455,7 @@ namespace Amazon.IdentityManagement
         /// Changes the password for the specified IAM user. You can use the CLI, the Amazon Web
         /// Services API, or the <b>Users</b> page in the IAM console to change the password for
         /// any IAM user. Use <a>ChangePassword</a> to change your own password in the <b>My Security
-        /// Credentials</b> page in the Management Console.
+        /// Credentials</b> page in the Amazon Web Services Management Console.
         /// 
         ///  
         /// <para>
@@ -13468,7 +13496,7 @@ namespace Amazon.IdentityManagement
         /// Changes the password for the specified IAM user. You can use the CLI, the Amazon Web
         /// Services API, or the <b>Users</b> page in the IAM console to change the password for
         /// any IAM user. Use <a>ChangePassword</a> to change your own password in the <b>My Security
-        /// Credentials</b> page in the Management Console.
+        /// Credentials</b> page in the Amazon Web Services Management Console.
         /// 
         ///  
         /// <para>
@@ -13972,8 +14000,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSigningCertificate service method.</param>
@@ -14004,8 +14033,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSigningCertificate service method.</param>
@@ -14200,9 +14230,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Uploads a server certificate entity for the account. The server certificate entity
-        /// includes a public key certificate, a private key, and an optional certificate chain,
-        /// which should all be PEM-encoded.
+        /// Uploads a server certificate entity for the Amazon Web Services account. The server
+        /// certificate entity includes a public key certificate, a private key, and an optional
+        /// certificate chain, which should all be PEM-encoded.
         /// 
         ///  
         /// <para>
@@ -14272,9 +14302,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Uploads a server certificate entity for the account. The server certificate entity
-        /// includes a public key certificate, a private key, and an optional certificate chain,
-        /// which should all be PEM-encoded.
+        /// Uploads a server certificate entity for the Amazon Web Services account. The server
+        /// certificate entity includes a public key certificate, a private key, and an optional
+        /// certificate chain, which should all be PEM-encoded.
         /// 
         ///  
         /// <para>
@@ -14364,8 +14394,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> is not specified, the IAM user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
@@ -14426,8 +14457,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> is not specified, the IAM user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
-        /// works for access keys under the account. Consequently, you can use this operation
-        /// to manage account root user credentials even if the account has no associated users.
+        /// works for access keys under the Amazon Web Services account. Consequently, you can
+        /// use this operation to manage Amazon Web Services account root user credentials even
+        /// if the Amazon Web Services account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>

@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the SetSecurityTokenServicePreferences operation.
     /// Sets the specified version of the global endpoint token as the token version used
-    /// for the account.
+    /// for the Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -46,11 +46,12 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// If you make an STS call to the global endpoint, the resulting session tokens might
     /// be valid in some Regions but not others. It depends on the version that is set in
-    /// this operation. Version 1 tokens are valid only in Regions that are available by default.
-    /// These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong).
-    /// Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and
-    /// might affect systems where you temporarily store tokens. For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
+    /// this operation. Version 1 tokens are valid only in Amazon Web Services Regions that
+    /// are available by default. These tokens do not work in manually enabled Regions, such
+    /// as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version
+    /// 2 tokens are longer and might affect systems where you temporarily store tokens. For
+    /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -65,15 +66,16 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property GlobalEndpointTokenVersion. 
         /// <para>
-        /// The version of the global endpoint token. Version 1 tokens are valid only in Regions
-        /// that are available by default. These tokens do not work in manually enabled Regions,
-        /// such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However,
-        /// version 2 tokens are longer and might affect systems where you temporarily store tokens.
+        /// The version of the global endpoint token. Version 1 tokens are valid only in Amazon
+        /// Web Services Regions that are available by default. These tokens do not work in manually
+        /// enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all
+        /// Regions. However, version 2 tokens are longer and might affect systems where you temporarily
+        /// store tokens.
         /// </para>
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and deactivating STS in an Region</a> in the <i>IAM User Guide</i>.
+        /// and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

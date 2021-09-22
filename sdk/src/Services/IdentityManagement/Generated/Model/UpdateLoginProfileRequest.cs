@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     /// Changes the password for the specified IAM user. You can use the CLI, the Amazon Web
     /// Services API, or the <b>Users</b> page in the IAM console to change the password for
     /// any IAM user. Use <a>ChangePassword</a> to change your own password in the <b>My Security
-    /// Credentials</b> page in the Management Console.
+    /// Credentials</b> page in the Amazon Web Services Management Console.
     /// 
     ///  
     /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.IdentityManagement.Model
         ///  </li> </ul> 
         /// <para>
         /// However, the format can be further restricted by the account administrator by setting
-        /// a password policy on the account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
+        /// a password policy on the Amazon Web Services account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

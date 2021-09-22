@@ -30,9 +30,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccountAlias operation.
-    /// Creates an alias for your account. For information about using an account alias, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-    /// an alias for your account ID</a> in the <i>IAM User Guide</i>.
+    /// Creates an alias for your Amazon Web Services account. For information about using
+    /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
+    /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class CreateAccountAliasRequest : AmazonIdentityManagementServiceRequest
     {

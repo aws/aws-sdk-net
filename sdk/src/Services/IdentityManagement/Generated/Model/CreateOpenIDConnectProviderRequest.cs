@@ -67,7 +67,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You get all of this information from the OIDC IdP that you want to use to access Amazon
+    /// You get all of this information from the OIDC IdP you want to use to access Amazon
     /// Web Services.
     /// </para>
     ///  <note> 
@@ -97,9 +97,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ClientIDList. 
         /// <para>
-        /// A list of client IDs (also known as audiences). When a mobile or web app registers
+        /// Provides a list of client IDs, also known as audiences. When a mobile or web app registers
         /// with an OpenID Connect provider, they establish a value that identifies the application.
-        /// (This is the value that's sent as the <code>client_id</code> parameter on OAuth requests.)
+        /// This is the value that's sent as the <code>client_id</code> parameter on OAuth requests.
         /// </para>
         ///  
         /// <para>
@@ -173,11 +173,11 @@ namespace Amazon.IdentityManagement.Model
         /// assume that the OIDC provider is <code>server.example.com</code> and the provider
         /// stores its keys at https://keys.server.example.com/openid-connect. In that case, the
         /// thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used
-        /// by https://keys.server.example.com.
+        /// by <code>https://keys.server.example.com.</code> 
         /// </para>
         ///  
         /// <para>
-        /// For more information about obtaining the OIDC provider's thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
+        /// For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
         /// the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -201,13 +201,13 @@ namespace Amazon.IdentityManagement.Model
         /// should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID
         /// tokens. Per the OIDC standard, path components are allowed but query parameters are
         /// not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code>
-        /// or <code>https://example.com</code>.
+        /// or <code>https://example.com</code>. The URL should not contain a port number. 
         /// </para>
         ///  
         /// <para>
-        /// You cannot register the same provider multiple times in a single account. If you try
-        /// to submit a URL that has already been used for an OpenID Connect provider in the account,
-        /// you will get an error.
+        /// You cannot register the same provider multiple times in a single Amazon Web Services
+        /// account. If you try to submit a URL that has already been used for an OpenID Connect
+        /// provider in the Amazon Web Services account, you will get an error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

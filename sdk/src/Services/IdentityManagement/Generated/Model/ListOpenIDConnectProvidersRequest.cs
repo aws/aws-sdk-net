@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListOpenIDConnectProviders operation.
     /// Lists information about the IAM OpenID Connect (OIDC) provider resource objects defined
-    /// in the account.
+    /// in the Amazon Web Services account.
     /// 
     ///  <note> 
     /// <para>
