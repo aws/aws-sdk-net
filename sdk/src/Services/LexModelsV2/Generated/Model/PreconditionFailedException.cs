@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// 
+    /// Your request couldn't be completed because one or more request fields aren't valid.
+    /// Check the fields in your request and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

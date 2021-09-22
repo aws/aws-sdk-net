@@ -248,22 +248,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the BuildBotLocale service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BuildBotLocale">REST API Reference for BuildBotLocale Operation</seealso>
         public virtual BuildBotLocaleResponse BuildBotLocale(BuildBotLocaleRequest request)
@@ -320,22 +324,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateBot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBot">REST API Reference for CreateBot Operation</seealso>
         public virtual CreateBotResponse CreateBot(CreateBotRequest request)
@@ -399,22 +407,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateBotAlias service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotAlias">REST API Reference for CreateBotAlias Operation</seealso>
         public virtual CreateBotAliasResponse CreateBotAlias(CreateBotAliasRequest request)
@@ -473,22 +485,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateBotLocale service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotLocale">REST API Reference for CreateBotLocale Operation</seealso>
         public virtual CreateBotLocaleResponse CreateBotLocale(CreateBotLocaleRequest request)
@@ -553,22 +569,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateBotVersion service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotVersion">REST API Reference for CreateBotVersion Operation</seealso>
         public virtual CreateBotVersionResponse CreateBotVersion(CreateBotVersionRequest request)
@@ -638,22 +658,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateExport service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport">REST API Reference for CreateExport Operation</seealso>
         public virtual CreateExportResponse CreateExport(CreateExportRequest request)
@@ -755,22 +779,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateIntent service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateIntent">REST API Reference for CreateIntent Operation</seealso>
         public virtual CreateIntentResponse CreateIntent(CreateIntentRequest request)
@@ -827,22 +855,25 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateResourcePolicy service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicy">REST API Reference for CreateResourcePolicy Operation</seealso>
         public virtual CreateResourcePolicyResponse CreateResourcePolicy(CreateResourcePolicyRequest request)
@@ -906,25 +937,30 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateResourcePolicyStatement service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">REST API Reference for CreateResourcePolicyStatement Operation</seealso>
         public virtual CreateResourcePolicyStatementResponse CreateResourcePolicyStatement(CreateResourcePolicyStatementRequest request)
@@ -984,22 +1020,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateSlot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateSlot">REST API Reference for CreateSlot Operation</seealso>
         public virtual CreateSlotResponse CreateSlot(CreateSlotRequest request)
@@ -1062,22 +1102,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateSlotType service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateSlotType">REST API Reference for CreateSlotType Operation</seealso>
         public virtual CreateSlotTypeResponse CreateSlotType(CreateSlotTypeRequest request)
@@ -1135,19 +1179,23 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the CreateUploadUrl service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl">REST API Reference for CreateUploadUrl Operation</seealso>
         public virtual CreateUploadUrlResponse CreateUploadUrl(CreateUploadUrlRequest request)
@@ -1218,22 +1266,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteBot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
         public virtual DeleteBotResponse DeleteBot(DeleteBotRequest request)
@@ -1290,22 +1342,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteBotAlias service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
         public virtual DeleteBotAliasResponse DeleteBotAlias(DeleteBotAliasRequest request)
@@ -1368,22 +1424,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteBotLocale service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotLocale">REST API Reference for DeleteBotLocale Operation</seealso>
         public virtual DeleteBotLocaleResponse DeleteBotLocale(DeleteBotLocaleRequest request)
@@ -1441,22 +1501,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteBotVersion service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
         public virtual DeleteBotVersionResponse DeleteBotVersion(DeleteBotVersionRequest request)
@@ -1513,19 +1577,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteExport service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport">REST API Reference for DeleteExport Operation</seealso>
         public virtual DeleteExportResponse DeleteExport(DeleteExportRequest request)
@@ -1582,19 +1648,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteImport service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport">REST API Reference for DeleteImport Operation</seealso>
         public virtual DeleteImportResponse DeleteImport(DeleteImportRequest request)
@@ -1656,22 +1724,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteIntent service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
         public virtual DeleteIntentResponse DeleteIntent(DeleteIntentRequest request)
@@ -1729,16 +1801,18 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
@@ -1798,16 +1872,18 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteResourcePolicyStatement service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicyStatement">REST API Reference for DeleteResourcePolicyStatement Operation</seealso>
         public virtual DeleteResourcePolicyStatementResponse DeleteResourcePolicyStatement(DeleteResourcePolicyStatementRequest request)
@@ -1864,22 +1940,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteSlot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteSlot">REST API Reference for DeleteSlot Operation</seealso>
         public virtual DeleteSlotResponse DeleteSlot(DeleteSlotRequest request)
@@ -1943,22 +2023,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DeleteSlotType service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
         public virtual DeleteSlotTypeResponse DeleteSlotType(DeleteSlotTypeRequest request)
@@ -2006,6 +2090,85 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DeleteUtterances
+
+        /// <summary>
+        /// Deletes stored utterances.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Lex stores the utterances that users send to your bot. Utterances are stored
+        /// for 15 days for use with the operation, and then stored indefinitely for use in improving
+        /// the ability of your bot to respond to user input..
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>DeleteUtterances</code> operation to manually delete utterances for
+        /// a specific session. When you use the <code>DeleteUtterances</code> operation, utterances
+        /// stored for improving your bot's ability to respond to user input are deleted immediately.
+        /// Utterances stored for use with the <code>ListAggregatedUtterances</code> operation
+        /// are deleted after 15 days.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUtterances service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUtterances service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
+        public virtual DeleteUtterancesResponse DeleteUtterances(DeleteUtterancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUtterancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUtterancesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUtterancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUtterances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUtterances operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUtterances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
+        public virtual IAsyncResult BeginDeleteUtterances(DeleteUtterancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUtterancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUtterancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUtterances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUtterances.</param>
+        /// 
+        /// <returns>Returns a  DeleteUtterancesResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
+        public virtual DeleteUtterancesResponse EndDeleteUtterances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUtterancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeBot
 
         /// <summary>
@@ -2015,19 +2178,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeBot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBot">REST API Reference for DescribeBot Operation</seealso>
         public virtual DescribeBotResponse DescribeBot(DescribeBotRequest request)
@@ -2084,19 +2249,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeBotAlias service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotAlias">REST API Reference for DescribeBotAlias Operation</seealso>
         public virtual DescribeBotAliasResponse DescribeBotAlias(DescribeBotAliasRequest request)
@@ -2153,19 +2320,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeBotLocale service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotLocale">REST API Reference for DescribeBotLocale Operation</seealso>
         public virtual DescribeBotLocaleResponse DescribeBotLocale(DescribeBotLocaleRequest request)
@@ -2222,19 +2391,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeBotVersion service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotVersion">REST API Reference for DescribeBotVersion Operation</seealso>
         public virtual DescribeBotVersionResponse DescribeBotVersion(DescribeBotVersionRequest request)
@@ -2291,16 +2462,18 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeExport service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
         public virtual DescribeExportResponse DescribeExport(DescribeExportRequest request)
@@ -2357,16 +2530,18 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeImport service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
         public virtual DescribeImportResponse DescribeImport(DescribeImportRequest request)
@@ -2423,19 +2598,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeIntent service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeIntent">REST API Reference for DescribeIntent Operation</seealso>
         public virtual DescribeIntentResponse DescribeIntent(DescribeIntentRequest request)
@@ -2492,13 +2669,14 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeResourcePolicy service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
         public virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
@@ -2555,19 +2733,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeSlot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeSlot">REST API Reference for DescribeSlot Operation</seealso>
         public virtual DescribeSlotResponse DescribeSlot(DescribeSlotRequest request)
@@ -2624,19 +2804,21 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the DescribeSlotType service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeSlotType">REST API Reference for DescribeSlotType Operation</seealso>
         public virtual DescribeSlotTypeResponse DescribeSlotType(DescribeSlotTypeRequest request)
@@ -2684,6 +2866,109 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListAggregatedUtterances
+
+        /// <summary>
+        /// Provides a list of utterances that users have sent to the bot.
+        /// 
+        ///  
+        /// <para>
+        /// Utterances are aggregated by the text of the utterance. For example, all instances
+        /// where customers used the phrase "I want to order pizza" are aggregated into the same
+        /// line in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can see both detected utterances and missed utterances. A detected utterance is
+        /// where the bot properly recognized the utterance and activated the associated intent.
+        /// A missed utterance was not recognized by the bot and didn't activate an intent.
+        /// </para>
+        ///  
+        /// <para>
+        /// Utterances can be aggregated for a bot alias or for a bot version, but not both at
+        /// the same time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Utterances statistics are not generated under the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>childDirected</code> field was set to true when the bot was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are using slot obfuscation with one or more slots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You opted out of participating in improving Amazon Lex.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregatedUtterances service method.</param>
+        /// 
+        /// <returns>The response from the ListAggregatedUtterances service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">REST API Reference for ListAggregatedUtterances Operation</seealso>
+        public virtual ListAggregatedUtterancesResponse ListAggregatedUtterances(ListAggregatedUtterancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregatedUtterancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregatedUtterancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAggregatedUtterancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAggregatedUtterances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregatedUtterances operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAggregatedUtterances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">REST API Reference for ListAggregatedUtterances Operation</seealso>
+        public virtual IAsyncResult BeginListAggregatedUtterances(ListAggregatedUtterancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAggregatedUtterancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAggregatedUtterancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAggregatedUtterances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAggregatedUtterances.</param>
+        /// 
+        /// <returns>Returns a  ListAggregatedUtterancesResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListAggregatedUtterances">REST API Reference for ListAggregatedUtterances Operation</seealso>
+        public virtual ListAggregatedUtterancesResponse EndListAggregatedUtterances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAggregatedUtterancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListBotAliases
 
         /// <summary>
@@ -2693,16 +2978,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListBotAliases service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliases">REST API Reference for ListBotAliases Operation</seealso>
         public virtual ListBotAliasesResponse ListBotAliases(ListBotAliasesRequest request)
@@ -2759,16 +3045,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListBotLocales service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotLocales">REST API Reference for ListBotLocales Operation</seealso>
         public virtual ListBotLocalesResponse ListBotLocales(ListBotLocalesRequest request)
@@ -2825,16 +3112,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListBots service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBots">REST API Reference for ListBots Operation</seealso>
         public virtual ListBotsResponse ListBots(ListBotsRequest request)
@@ -2904,16 +3192,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListBotVersions service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersions">REST API Reference for ListBotVersions Operation</seealso>
         public virtual ListBotVersionsResponse ListBotVersions(ListBotVersionsRequest request)
@@ -2978,16 +3267,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListBuiltInIntents service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInIntents">REST API Reference for ListBuiltInIntents Operation</seealso>
         public virtual ListBuiltInIntentsResponse ListBuiltInIntents(ListBuiltInIntentsRequest request)
@@ -3044,16 +3334,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListBuiltInSlotTypes service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBuiltInSlotTypes">REST API Reference for ListBuiltInSlotTypes Operation</seealso>
         public virtual ListBuiltInSlotTypesResponse ListBuiltInSlotTypes(ListBuiltInSlotTypesRequest request)
@@ -3110,13 +3401,14 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListExports service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual ListExportsResponse ListExports(ListExportsRequest request)
@@ -3173,13 +3465,14 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListImports service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">REST API Reference for ListImports Operation</seealso>
         public virtual ListImportsResponse ListImports(ListImportsRequest request)
@@ -3236,16 +3529,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListIntents service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntents">REST API Reference for ListIntents Operation</seealso>
         public virtual ListIntentsResponse ListIntents(ListIntentsRequest request)
@@ -3302,16 +3596,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListSlots service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSlots">REST API Reference for ListSlots Operation</seealso>
         public virtual ListSlotsResponse ListSlots(ListSlotsRequest request)
@@ -3368,16 +3663,17 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListSlotTypes service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSlotTypes">REST API Reference for ListSlotTypes Operation</seealso>
         public virtual ListSlotTypesResponse ListSlotTypes(ListSlotTypesRequest request)
@@ -3435,16 +3731,18 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3502,22 +3800,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the StartImport service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">REST API Reference for StartImport Operation</seealso>
         public virtual StartImportResponse StartImport(StartImportRequest request)
@@ -3575,16 +3877,18 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the TagResource service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -3641,16 +3945,18 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UntagResource service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -3707,22 +4013,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateBot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateBot">REST API Reference for UpdateBot Operation</seealso>
         public virtual UpdateBotResponse UpdateBot(UpdateBotRequest request)
@@ -3779,22 +4089,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateBotAlias service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateBotAlias">REST API Reference for UpdateBotAlias Operation</seealso>
         public virtual UpdateBotAliasResponse UpdateBotAlias(UpdateBotAliasRequest request)
@@ -3851,22 +4165,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateBotLocale service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateBotLocale">REST API Reference for UpdateBotLocale Operation</seealso>
         public virtual UpdateBotLocaleResponse UpdateBotLocale(UpdateBotLocaleRequest request)
@@ -3930,22 +4248,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateExport service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">REST API Reference for UpdateExport Operation</seealso>
         public virtual UpdateExportResponse UpdateExport(UpdateExportRequest request)
@@ -4002,22 +4324,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateIntent service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateIntent">REST API Reference for UpdateIntent Operation</seealso>
         public virtual UpdateIntentResponse UpdateIntent(UpdateIntentRequest request)
@@ -4075,22 +4401,25 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateResourcePolicy service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
-        /// 
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateResourcePolicy">REST API Reference for UpdateResourcePolicy Operation</seealso>
         public virtual UpdateResourcePolicyResponse UpdateResourcePolicy(UpdateResourcePolicyRequest request)
@@ -4147,22 +4476,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateSlot service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateSlot">REST API Reference for UpdateSlot Operation</seealso>
         public virtual UpdateSlotResponse UpdateSlot(UpdateSlotRequest request)
@@ -4219,22 +4552,26 @@ namespace Amazon.LexModelsV2
         /// 
         /// <returns>The response from the UpdateSlotType service method, as returned by LexModelsV2.</returns>
         /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
-        /// 
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
-        /// 
+        /// The service encountered an unexpected condition. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
-        /// 
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
-        /// 
+        /// You have reached a quota for your bot.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
-        /// 
+        /// Your request rate is too high. Reduce the frequency of requests.
         /// </exception>
         /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
-        /// 
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateSlotType">REST API Reference for UpdateSlotType Operation</seealso>
         public virtual UpdateSlotTypeResponse UpdateSlotType(UpdateSlotTypeRequest request)

@@ -42,6 +42,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("LexModelsV2")]
+        public void ListAggregatedUtterancesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAggregatedUtterancesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAggregatedUtterancesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAggregatedUtterancesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAggregatedUtterances(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAggregatedUtterances(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LexModelsV2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAggregatedUtterancesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAggregatedUtterancesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAggregatedUtterancesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAggregatedUtterances(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAggregatedUtterances(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LexModelsV2")]
         public void ListBotAliasesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListBotAliasesRequest>();

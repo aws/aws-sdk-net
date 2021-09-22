@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// 
+    /// The service encountered an unexpected condition. Try your request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

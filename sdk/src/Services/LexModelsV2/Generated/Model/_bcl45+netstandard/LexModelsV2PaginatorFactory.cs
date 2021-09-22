@@ -36,6 +36,14 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListAggregatedUtterances operation
+        ///</summary>
+        public IListAggregatedUtterancesPaginator ListAggregatedUtterances(ListAggregatedUtterancesRequest request) 
+        {
+            return new ListAggregatedUtterancesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBotAliases operation
         ///</summary>
         public IListBotAliasesPaginator ListBotAliases(ListBotAliasesRequest request) 

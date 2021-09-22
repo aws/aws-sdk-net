@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// 
+    /// You have reached a quota for your bot.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

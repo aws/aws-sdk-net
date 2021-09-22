@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// 
+    /// Your request rate is too high. Reduce the frequency of requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

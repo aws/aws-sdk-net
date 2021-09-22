@@ -25,6 +25,152 @@ namespace Amazon.LexModelsV2
 {
 
     /// <summary>
+    /// Constants used for properties of type AggregatedUtterancesFilterName.
+    /// </summary>
+    public class AggregatedUtterancesFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Utterance for AggregatedUtterancesFilterName
+        /// </summary>
+        public static readonly AggregatedUtterancesFilterName Utterance = new AggregatedUtterancesFilterName("Utterance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatedUtterancesFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatedUtterancesFilterName FindValue(string value)
+        {
+            return FindValue<AggregatedUtterancesFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatedUtterancesFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AggregatedUtterancesFilterOperator.
+    /// </summary>
+    public class AggregatedUtterancesFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CO for AggregatedUtterancesFilterOperator
+        /// </summary>
+        public static readonly AggregatedUtterancesFilterOperator CO = new AggregatedUtterancesFilterOperator("CO");
+        /// <summary>
+        /// Constant EQ for AggregatedUtterancesFilterOperator
+        /// </summary>
+        public static readonly AggregatedUtterancesFilterOperator EQ = new AggregatedUtterancesFilterOperator("EQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatedUtterancesFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatedUtterancesFilterOperator FindValue(string value)
+        {
+            return FindValue<AggregatedUtterancesFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatedUtterancesFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AggregatedUtterancesSortAttribute.
+    /// </summary>
+    public class AggregatedUtterancesSortAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HitCount for AggregatedUtterancesSortAttribute
+        /// </summary>
+        public static readonly AggregatedUtterancesSortAttribute HitCount = new AggregatedUtterancesSortAttribute("HitCount");
+        /// <summary>
+        /// Constant MissedCount for AggregatedUtterancesSortAttribute
+        /// </summary>
+        public static readonly AggregatedUtterancesSortAttribute MissedCount = new AggregatedUtterancesSortAttribute("MissedCount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatedUtterancesSortAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatedUtterancesSortAttribute FindValue(string value)
+        {
+            return FindValue<AggregatedUtterancesSortAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatedUtterancesSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BotAliasStatus.
     /// </summary>
     public class BotAliasStatus : ConstantClass
@@ -1826,6 +1972,60 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeDimension.
+    /// </summary>
+    public class TimeDimension : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Days for TimeDimension
+        /// </summary>
+        public static readonly TimeDimension Days = new TimeDimension("Days");
+        /// <summary>
+        /// Constant Hours for TimeDimension
+        /// </summary>
+        public static readonly TimeDimension Hours = new TimeDimension("Hours");
+        /// <summary>
+        /// Constant Weeks for TimeDimension
+        /// </summary>
+        public static readonly TimeDimension Weeks = new TimeDimension("Weeks");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeDimension(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeDimension FindValue(string value)
+        {
+            return FindValue<TimeDimension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeDimension(string value)
         {
             return FindValue(value);
         }

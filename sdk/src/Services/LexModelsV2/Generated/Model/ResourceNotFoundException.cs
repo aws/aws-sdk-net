@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// 
+    /// You asked to describe a resource that doesn't exist. Check the resource that you are
+    /// requesting and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -76,7 +76,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Pattern
         {
             get { return this._pattern; }
