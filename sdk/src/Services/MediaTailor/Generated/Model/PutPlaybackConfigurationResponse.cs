@@ -41,6 +41,7 @@ namespace Amazon.MediaTailor.Model
         private DashConfiguration _dashConfiguration;
         private HlsConfiguration _hlsConfiguration;
         private LivePreRollConfiguration _livePreRollConfiguration;
+        private LogConfiguration _logConfiguration;
         private ManifestProcessingRules _manifestProcessingRules;
         private string _name;
         private int? _personalizationThresholdSeconds;
@@ -203,6 +204,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetLivePreRollConfiguration()
         {
             return this._livePreRollConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The Amazon CloudWatch log settings for a playback configuration.
+        /// </para>
+        /// </summary>
+        public LogConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
         }
 
         /// <summary>

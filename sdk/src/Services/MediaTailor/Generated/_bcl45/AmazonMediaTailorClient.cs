@@ -267,6 +267,47 @@ namespace Amazon.MediaTailor
         #endregion
 
 
+        #region  ConfigureLogsForPlaybackConfiguration
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a playback configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForPlaybackConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForPlaybackConfiguration service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">REST API Reference for ConfigureLogsForPlaybackConfiguration Operation</seealso>
+        public virtual ConfigureLogsForPlaybackConfigurationResponse ConfigureLogsForPlaybackConfiguration(ConfigureLogsForPlaybackConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForPlaybackConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ConfigureLogsForPlaybackConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a playback configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForPlaybackConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForPlaybackConfiguration service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">REST API Reference for ConfigureLogsForPlaybackConfiguration Operation</seealso>
+        public virtual Task<ConfigureLogsForPlaybackConfigurationResponse> ConfigureLogsForPlaybackConfigurationAsync(ConfigureLogsForPlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForPlaybackConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForPlaybackConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConfigureLogsForPlaybackConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateChannel
 
 

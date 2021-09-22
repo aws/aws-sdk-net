@@ -57,6 +57,46 @@ namespace Amazon.MediaTailor
 
 
         
+        #region  ConfigureLogsForPlaybackConfiguration
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a playback configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForPlaybackConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForPlaybackConfiguration service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">REST API Reference for ConfigureLogsForPlaybackConfiguration Operation</seealso>
+        ConfigureLogsForPlaybackConfigurationResponse ConfigureLogsForPlaybackConfiguration(ConfigureLogsForPlaybackConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfigureLogsForPlaybackConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForPlaybackConfiguration operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfigureLogsForPlaybackConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">REST API Reference for ConfigureLogsForPlaybackConfiguration Operation</seealso>
+        IAsyncResult BeginConfigureLogsForPlaybackConfiguration(ConfigureLogsForPlaybackConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ConfigureLogsForPlaybackConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfigureLogsForPlaybackConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ConfigureLogsForPlaybackConfigurationResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">REST API Reference for ConfigureLogsForPlaybackConfiguration Operation</seealso>
+        ConfigureLogsForPlaybackConfigurationResponse EndConfigureLogsForPlaybackConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateChannel
 
 
