@@ -51,6 +51,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Alignment);
             }
 
+            if(requestObject.IsSetApplyFontColor())
+            {
+                context.Writer.WritePropertyName("applyFontColor");
+                context.Writer.Write(requestObject.ApplyFontColor);
+            }
+
             if(requestObject.IsSetBackgroundColor())
             {
                 context.Writer.WritePropertyName("backgroundColor");
@@ -61,6 +67,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("backgroundOpacity");
                 context.Writer.Write(requestObject.BackgroundOpacity);
+            }
+
+            if(requestObject.IsSetFallbackFont())
+            {
+                context.Writer.WritePropertyName("fallbackFont");
+                context.Writer.Write(requestObject.FallbackFont);
             }
 
             if(requestObject.IsSetFontColor())
@@ -91,6 +103,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("fontSize");
                 context.Writer.Write(requestObject.FontSize);
+            }
+
+            if(requestObject.IsSetHexFontColor())
+            {
+                context.Writer.WritePropertyName("hexFontColor");
+                context.Writer.Write(requestObject.HexFontColor);
             }
 
             if(requestObject.IsSetOutlineColor())
@@ -127,6 +145,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("shadowYOffset");
                 context.Writer.Write(requestObject.ShadowYOffset);
+            }
+
+            if(requestObject.IsSetStylePassthrough())
+            {
+                context.Writer.WritePropertyName("stylePassthrough");
+                context.Writer.Write(requestObject.StylePassthrough);
             }
 
             if(requestObject.IsSetTeletextSpacing())

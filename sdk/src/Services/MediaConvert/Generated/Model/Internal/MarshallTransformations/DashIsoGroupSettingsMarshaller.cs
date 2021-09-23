@@ -119,6 +119,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageBasedTrickPlay);
             }
 
+            if(requestObject.IsSetImageBasedTrickPlaySettings())
+            {
+                context.Writer.WritePropertyName("imageBasedTrickPlaySettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DashIsoImageBasedTrickPlaySettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImageBasedTrickPlaySettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMinBufferTime())
             {
                 context.Writer.WritePropertyName("minBufferTime");

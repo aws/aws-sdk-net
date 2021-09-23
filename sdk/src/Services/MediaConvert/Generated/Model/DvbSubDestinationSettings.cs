@@ -37,23 +37,27 @@ namespace Amazon.MediaConvert.Model
     public partial class DvbSubDestinationSettings
     {
         private DvbSubtitleAlignment _alignment;
+        private DvbSubtitleApplyFontColor _applyFontColor;
         private DvbSubtitleBackgroundColor _backgroundColor;
         private int? _backgroundOpacity;
         private DvbddsHandling _ddsHandling;
         private int? _ddsXCoordinate;
         private int? _ddsYCoordinate;
+        private DvbSubSubtitleFallbackFont _fallbackFont;
         private DvbSubtitleFontColor _fontColor;
         private int? _fontOpacity;
         private int? _fontResolution;
         private FontScript _fontScript;
         private int? _fontSize;
         private int? _height;
+        private string _hexFontColor;
         private DvbSubtitleOutlineColor _outlineColor;
         private int? _outlineSize;
         private DvbSubtitleShadowColor _shadowColor;
         private int? _shadowOpacity;
         private int? _shadowXOffset;
         private int? _shadowYOffset;
+        private DvbSubtitleStylePassthrough _stylePassthrough;
         private DvbSubtitlingType _subtitlingType;
         private DvbSubtitleTeletextSpacing _teletextSpacing;
         private int? _width;
@@ -80,6 +84,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAlignment()
         {
             return this._alignment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplyFontColor. Ignore this setting unless your input captions
+        /// are STL, any type of 608, teletext, or TTML, and your output captions are DVB-SUB.
+        /// Specify how the service applies the color specified in the setting Font color (DvbSubtitleFontColor).
+        /// By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+        /// the specified font color only for text that is white in the input. When you choose
+        /// ALL_TEXT, the service uses the specified font color for all output captions text.
+        /// If you leave both settings at their default value, your output font color is the same
+        /// as your input font color.
+        /// </summary>
+        public DvbSubtitleApplyFontColor ApplyFontColor
+        {
+            get { return this._applyFontColor; }
+            set { this._applyFontColor = value; }
+        }
+
+        // Check to see if ApplyFontColor property is set
+        internal bool IsSetApplyFontColor()
+        {
+            return this._applyFontColor != null;
         }
 
         /// <summary>
@@ -192,6 +218,28 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FallbackFont. Specify the font that you want the service
+        /// to use for your burn in captions when your input captions specify a font that MediaConvert
+        /// doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert
+        /// uses a supported font that most closely matches the font that your input captions
+        /// specify. When there are multiple unsupported fonts in your input captions, MediaConvert
+        /// matches each font with the supported font that matches best. When you explicitly choose
+        /// a replacement font, MediaConvert uses that font to replace all unsupported fonts from
+        /// your input.
+        /// </summary>
+        public DvbSubSubtitleFallbackFont FallbackFont
+        {
+            get { return this._fallbackFont; }
+            set { this._fallbackFont = value; }
+        }
+
+        // Check to see if FallbackFont property is set
+        internal bool IsSetFallbackFont()
+        {
+            return this._fallbackFont != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FontColor. Specifies the color of the DVB-SUB captions.
         /// This option is not valid for source captions that are STL, 608/embedded or teletext.
         /// These source settings are already pre-defined by the caption stream. All burn-in and
@@ -299,6 +347,26 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HexFontColor. Ignore this setting unless your DvbSubtitleFontColor
+        /// setting is HEX. Format is six or eight hexidecimal digits, representing the red, green,
+        /// and blue components, with the two extra digits used for an optional alpha value. For
+        /// example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue
+        /// value of 0xAA, and an alpha value of 0xBB.
+        /// </summary>
+        [AWSProperty(Min=6, Max=8)]
+        public string HexFontColor
+        {
+            get { return this._hexFontColor; }
+            set { this._hexFontColor = value; }
+        }
+
+        // Check to see if HexFontColor property is set
+        internal bool IsSetHexFontColor()
+        {
+            return this._hexFontColor != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutlineColor. Specifies font outline color. This option
         /// is not valid for source captions that are either 608/embedded or teletext. These source
         /// settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
@@ -403,6 +471,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetShadowYOffset()
         {
             return this._shadowYOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StylePassthrough. Choose which set of style and position
+        /// values the service applies to your output captions. When you choose ENABLED, the service
+        /// uses the input style and position information from your input. When you choose DISABLED,
+        /// the service uses any style values that you specify in your output settings. If you
+        /// don't specify values, the service uses default style and position values. When you
+        /// choose DISABLED, the service ignores all style and position values from your input.
+        /// </summary>
+        public DvbSubtitleStylePassthrough StylePassthrough
+        {
+            get { return this._stylePassthrough; }
+            set { this._stylePassthrough = value; }
+        }
+
+        // Check to see if StylePassthrough property is set
+        internal bool IsSetStylePassthrough()
+        {
+            return this._stylePassthrough != null;
         }
 
         /// <summary>

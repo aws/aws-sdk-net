@@ -158,6 +158,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageBasedTrickPlay);
             }
 
+            if(requestObject.IsSetImageBasedTrickPlaySettings())
+            {
+                context.Writer.WritePropertyName("imageBasedTrickPlaySettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HlsImageBasedTrickPlaySettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImageBasedTrickPlaySettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetManifestCompression())
             {
                 context.Writer.WritePropertyName("manifestCompression");

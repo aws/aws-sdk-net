@@ -2537,6 +2537,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant AUTO for BurninSubtitleAlignment
+        /// </summary>
+        public static readonly BurninSubtitleAlignment AUTO = new BurninSubtitleAlignment("AUTO");
+        /// <summary>
         /// Constant CENTERED for BurninSubtitleAlignment
         /// </summary>
         public static readonly BurninSubtitleAlignment CENTERED = new BurninSubtitleAlignment("CENTERED");
@@ -2581,11 +2585,65 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type BurninSubtitleApplyFontColor.
+    /// </summary>
+    public class BurninSubtitleApplyFontColor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_TEXT for BurninSubtitleApplyFontColor
+        /// </summary>
+        public static readonly BurninSubtitleApplyFontColor ALL_TEXT = new BurninSubtitleApplyFontColor("ALL_TEXT");
+        /// <summary>
+        /// Constant WHITE_TEXT_ONLY for BurninSubtitleApplyFontColor
+        /// </summary>
+        public static readonly BurninSubtitleApplyFontColor WHITE_TEXT_ONLY = new BurninSubtitleApplyFontColor("WHITE_TEXT_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BurninSubtitleApplyFontColor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BurninSubtitleApplyFontColor FindValue(string value)
+        {
+            return FindValue<BurninSubtitleApplyFontColor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BurninSubtitleApplyFontColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BurninSubtitleBackgroundColor.
     /// </summary>
     public class BurninSubtitleBackgroundColor : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for BurninSubtitleBackgroundColor
+        /// </summary>
+        public static readonly BurninSubtitleBackgroundColor AUTO = new BurninSubtitleBackgroundColor("AUTO");
         /// <summary>
         /// Constant BLACK for BurninSubtitleBackgroundColor
         /// </summary>
@@ -2635,11 +2693,77 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type BurninSubtitleFallbackFont.
+    /// </summary>
+    public class BurninSubtitleFallbackFont : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEST_MATCH for BurninSubtitleFallbackFont
+        /// </summary>
+        public static readonly BurninSubtitleFallbackFont BEST_MATCH = new BurninSubtitleFallbackFont("BEST_MATCH");
+        /// <summary>
+        /// Constant MONOSPACED_SANSSERIF for BurninSubtitleFallbackFont
+        /// </summary>
+        public static readonly BurninSubtitleFallbackFont MONOSPACED_SANSSERIF = new BurninSubtitleFallbackFont("MONOSPACED_SANSSERIF");
+        /// <summary>
+        /// Constant MONOSPACED_SERIF for BurninSubtitleFallbackFont
+        /// </summary>
+        public static readonly BurninSubtitleFallbackFont MONOSPACED_SERIF = new BurninSubtitleFallbackFont("MONOSPACED_SERIF");
+        /// <summary>
+        /// Constant PROPORTIONAL_SANSSERIF for BurninSubtitleFallbackFont
+        /// </summary>
+        public static readonly BurninSubtitleFallbackFont PROPORTIONAL_SANSSERIF = new BurninSubtitleFallbackFont("PROPORTIONAL_SANSSERIF");
+        /// <summary>
+        /// Constant PROPORTIONAL_SERIF for BurninSubtitleFallbackFont
+        /// </summary>
+        public static readonly BurninSubtitleFallbackFont PROPORTIONAL_SERIF = new BurninSubtitleFallbackFont("PROPORTIONAL_SERIF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BurninSubtitleFallbackFont(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BurninSubtitleFallbackFont FindValue(string value)
+        {
+            return FindValue<BurninSubtitleFallbackFont>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BurninSubtitleFallbackFont(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BurninSubtitleFontColor.
     /// </summary>
     public class BurninSubtitleFontColor : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for BurninSubtitleFontColor
+        /// </summary>
+        public static readonly BurninSubtitleFontColor AUTO = new BurninSubtitleFontColor("AUTO");
         /// <summary>
         /// Constant BLACK for BurninSubtitleFontColor
         /// </summary>
@@ -2652,6 +2776,10 @@ namespace Amazon.MediaConvert
         /// Constant GREEN for BurninSubtitleFontColor
         /// </summary>
         public static readonly BurninSubtitleFontColor GREEN = new BurninSubtitleFontColor("GREEN");
+        /// <summary>
+        /// Constant HEX for BurninSubtitleFontColor
+        /// </summary>
+        public static readonly BurninSubtitleFontColor HEX = new BurninSubtitleFontColor("HEX");
         /// <summary>
         /// Constant RED for BurninSubtitleFontColor
         /// </summary>
@@ -2706,6 +2834,10 @@ namespace Amazon.MediaConvert
     public class BurninSubtitleOutlineColor : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for BurninSubtitleOutlineColor
+        /// </summary>
+        public static readonly BurninSubtitleOutlineColor AUTO = new BurninSubtitleOutlineColor("AUTO");
         /// <summary>
         /// Constant BLACK for BurninSubtitleOutlineColor
         /// </summary>
@@ -2773,6 +2905,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant AUTO for BurninSubtitleShadowColor
+        /// </summary>
+        public static readonly BurninSubtitleShadowColor AUTO = new BurninSubtitleShadowColor("AUTO");
+        /// <summary>
         /// Constant BLACK for BurninSubtitleShadowColor
         /// </summary>
         public static readonly BurninSubtitleShadowColor BLACK = new BurninSubtitleShadowColor("BLACK");
@@ -2821,11 +2957,65 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type BurnInSubtitleStylePassthrough.
+    /// </summary>
+    public class BurnInSubtitleStylePassthrough : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for BurnInSubtitleStylePassthrough
+        /// </summary>
+        public static readonly BurnInSubtitleStylePassthrough DISABLED = new BurnInSubtitleStylePassthrough("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for BurnInSubtitleStylePassthrough
+        /// </summary>
+        public static readonly BurnInSubtitleStylePassthrough ENABLED = new BurnInSubtitleStylePassthrough("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BurnInSubtitleStylePassthrough(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BurnInSubtitleStylePassthrough FindValue(string value)
+        {
+            return FindValue<BurnInSubtitleStylePassthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BurnInSubtitleStylePassthrough(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BurninSubtitleTeletextSpacing.
     /// </summary>
     public class BurninSubtitleTeletextSpacing : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for BurninSubtitleTeletextSpacing
+        /// </summary>
+        public static readonly BurninSubtitleTeletextSpacing AUTO = new BurninSubtitleTeletextSpacing("AUTO");
         /// <summary>
         /// Constant FIXED_GRID for BurninSubtitleTeletextSpacing
         /// </summary>
@@ -3215,6 +3405,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant ADVANCED for CmafImageBasedTrickPlay
+        /// </summary>
+        public static readonly CmafImageBasedTrickPlay ADVANCED = new CmafImageBasedTrickPlay("ADVANCED");
+        /// <summary>
         /// Constant NONE for CmafImageBasedTrickPlay
         /// </summary>
         public static readonly CmafImageBasedTrickPlay NONE = new CmafImageBasedTrickPlay("NONE");
@@ -3306,6 +3500,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CmafInitializationVectorInManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafIntervalCadence.
+    /// </summary>
+    public class CmafIntervalCadence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOW_CUSTOM for CmafIntervalCadence
+        /// </summary>
+        public static readonly CmafIntervalCadence FOLLOW_CUSTOM = new CmafIntervalCadence("FOLLOW_CUSTOM");
+        /// <summary>
+        /// Constant FOLLOW_IFRAME for CmafIntervalCadence
+        /// </summary>
+        public static readonly CmafIntervalCadence FOLLOW_IFRAME = new CmafIntervalCadence("FOLLOW_IFRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafIntervalCadence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafIntervalCadence FindValue(string value)
+        {
+            return FindValue<CmafIntervalCadence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafIntervalCadence(string value)
         {
             return FindValue(value);
         }
@@ -4729,6 +4973,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant ADVANCED for DashIsoImageBasedTrickPlay
+        /// </summary>
+        public static readonly DashIsoImageBasedTrickPlay ADVANCED = new DashIsoImageBasedTrickPlay("ADVANCED");
+        /// <summary>
         /// Constant NONE for DashIsoImageBasedTrickPlay
         /// </summary>
         public static readonly DashIsoImageBasedTrickPlay NONE = new DashIsoImageBasedTrickPlay("NONE");
@@ -4770,6 +5018,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashIsoImageBasedTrickPlay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DashIsoIntervalCadence.
+    /// </summary>
+    public class DashIsoIntervalCadence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOW_CUSTOM for DashIsoIntervalCadence
+        /// </summary>
+        public static readonly DashIsoIntervalCadence FOLLOW_CUSTOM = new DashIsoIntervalCadence("FOLLOW_CUSTOM");
+        /// <summary>
+        /// Constant FOLLOW_IFRAME for DashIsoIntervalCadence
+        /// </summary>
+        public static readonly DashIsoIntervalCadence FOLLOW_IFRAME = new DashIsoIntervalCadence("FOLLOW_IFRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashIsoIntervalCadence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashIsoIntervalCadence FindValue(string value)
+        {
+            return FindValue<DashIsoIntervalCadence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashIsoIntervalCadence(string value)
         {
             return FindValue(value);
         }
@@ -5547,11 +5845,77 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DvbSubSubtitleFallbackFont.
+    /// </summary>
+    public class DvbSubSubtitleFallbackFont : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEST_MATCH for DvbSubSubtitleFallbackFont
+        /// </summary>
+        public static readonly DvbSubSubtitleFallbackFont BEST_MATCH = new DvbSubSubtitleFallbackFont("BEST_MATCH");
+        /// <summary>
+        /// Constant MONOSPACED_SANSSERIF for DvbSubSubtitleFallbackFont
+        /// </summary>
+        public static readonly DvbSubSubtitleFallbackFont MONOSPACED_SANSSERIF = new DvbSubSubtitleFallbackFont("MONOSPACED_SANSSERIF");
+        /// <summary>
+        /// Constant MONOSPACED_SERIF for DvbSubSubtitleFallbackFont
+        /// </summary>
+        public static readonly DvbSubSubtitleFallbackFont MONOSPACED_SERIF = new DvbSubSubtitleFallbackFont("MONOSPACED_SERIF");
+        /// <summary>
+        /// Constant PROPORTIONAL_SANSSERIF for DvbSubSubtitleFallbackFont
+        /// </summary>
+        public static readonly DvbSubSubtitleFallbackFont PROPORTIONAL_SANSSERIF = new DvbSubSubtitleFallbackFont("PROPORTIONAL_SANSSERIF");
+        /// <summary>
+        /// Constant PROPORTIONAL_SERIF for DvbSubSubtitleFallbackFont
+        /// </summary>
+        public static readonly DvbSubSubtitleFallbackFont PROPORTIONAL_SERIF = new DvbSubSubtitleFallbackFont("PROPORTIONAL_SERIF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbSubSubtitleFallbackFont(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbSubSubtitleFallbackFont FindValue(string value)
+        {
+            return FindValue<DvbSubSubtitleFallbackFont>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbSubSubtitleFallbackFont(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DvbSubtitleAlignment.
     /// </summary>
     public class DvbSubtitleAlignment : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for DvbSubtitleAlignment
+        /// </summary>
+        public static readonly DvbSubtitleAlignment AUTO = new DvbSubtitleAlignment("AUTO");
         /// <summary>
         /// Constant CENTERED for DvbSubtitleAlignment
         /// </summary>
@@ -5597,11 +5961,65 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DvbSubtitleApplyFontColor.
+    /// </summary>
+    public class DvbSubtitleApplyFontColor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_TEXT for DvbSubtitleApplyFontColor
+        /// </summary>
+        public static readonly DvbSubtitleApplyFontColor ALL_TEXT = new DvbSubtitleApplyFontColor("ALL_TEXT");
+        /// <summary>
+        /// Constant WHITE_TEXT_ONLY for DvbSubtitleApplyFontColor
+        /// </summary>
+        public static readonly DvbSubtitleApplyFontColor WHITE_TEXT_ONLY = new DvbSubtitleApplyFontColor("WHITE_TEXT_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbSubtitleApplyFontColor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbSubtitleApplyFontColor FindValue(string value)
+        {
+            return FindValue<DvbSubtitleApplyFontColor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbSubtitleApplyFontColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DvbSubtitleBackgroundColor.
     /// </summary>
     public class DvbSubtitleBackgroundColor : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for DvbSubtitleBackgroundColor
+        /// </summary>
+        public static readonly DvbSubtitleBackgroundColor AUTO = new DvbSubtitleBackgroundColor("AUTO");
         /// <summary>
         /// Constant BLACK for DvbSubtitleBackgroundColor
         /// </summary>
@@ -5657,6 +6075,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant AUTO for DvbSubtitleFontColor
+        /// </summary>
+        public static readonly DvbSubtitleFontColor AUTO = new DvbSubtitleFontColor("AUTO");
+        /// <summary>
         /// Constant BLACK for DvbSubtitleFontColor
         /// </summary>
         public static readonly DvbSubtitleFontColor BLACK = new DvbSubtitleFontColor("BLACK");
@@ -5668,6 +6090,10 @@ namespace Amazon.MediaConvert
         /// Constant GREEN for DvbSubtitleFontColor
         /// </summary>
         public static readonly DvbSubtitleFontColor GREEN = new DvbSubtitleFontColor("GREEN");
+        /// <summary>
+        /// Constant HEX for DvbSubtitleFontColor
+        /// </summary>
+        public static readonly DvbSubtitleFontColor HEX = new DvbSubtitleFontColor("HEX");
         /// <summary>
         /// Constant RED for DvbSubtitleFontColor
         /// </summary>
@@ -5722,6 +6148,10 @@ namespace Amazon.MediaConvert
     public class DvbSubtitleOutlineColor : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for DvbSubtitleOutlineColor
+        /// </summary>
+        public static readonly DvbSubtitleOutlineColor AUTO = new DvbSubtitleOutlineColor("AUTO");
         /// <summary>
         /// Constant BLACK for DvbSubtitleOutlineColor
         /// </summary>
@@ -5789,6 +6219,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant AUTO for DvbSubtitleShadowColor
+        /// </summary>
+        public static readonly DvbSubtitleShadowColor AUTO = new DvbSubtitleShadowColor("AUTO");
+        /// <summary>
         /// Constant BLACK for DvbSubtitleShadowColor
         /// </summary>
         public static readonly DvbSubtitleShadowColor BLACK = new DvbSubtitleShadowColor("BLACK");
@@ -5837,11 +6271,65 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type DvbSubtitleStylePassthrough.
+    /// </summary>
+    public class DvbSubtitleStylePassthrough : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DvbSubtitleStylePassthrough
+        /// </summary>
+        public static readonly DvbSubtitleStylePassthrough DISABLED = new DvbSubtitleStylePassthrough("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DvbSubtitleStylePassthrough
+        /// </summary>
+        public static readonly DvbSubtitleStylePassthrough ENABLED = new DvbSubtitleStylePassthrough("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DvbSubtitleStylePassthrough(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DvbSubtitleStylePassthrough FindValue(string value)
+        {
+            return FindValue<DvbSubtitleStylePassthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DvbSubtitleStylePassthrough(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DvbSubtitleTeletextSpacing.
     /// </summary>
     public class DvbSubtitleTeletextSpacing : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for DvbSubtitleTeletextSpacing
+        /// </summary>
+        public static readonly DvbSubtitleTeletextSpacing AUTO = new DvbSubtitleTeletextSpacing("AUTO");
         /// <summary>
         /// Constant FIXED_GRID for DvbSubtitleTeletextSpacing
         /// </summary>
@@ -10789,6 +11277,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant ADVANCED for HlsImageBasedTrickPlay
+        /// </summary>
+        public static readonly HlsImageBasedTrickPlay ADVANCED = new HlsImageBasedTrickPlay("ADVANCED");
+        /// <summary>
         /// Constant NONE for HlsImageBasedTrickPlay
         /// </summary>
         public static readonly HlsImageBasedTrickPlay NONE = new HlsImageBasedTrickPlay("NONE");
@@ -10880,6 +11372,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HlsInitializationVectorInManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HlsIntervalCadence.
+    /// </summary>
+    public class HlsIntervalCadence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOW_CUSTOM for HlsIntervalCadence
+        /// </summary>
+        public static readonly HlsIntervalCadence FOLLOW_CUSTOM = new HlsIntervalCadence("FOLLOW_CUSTOM");
+        /// <summary>
+        /// Constant FOLLOW_IFRAME for HlsIntervalCadence
+        /// </summary>
+        public static readonly HlsIntervalCadence FOLLOW_IFRAME = new HlsIntervalCadence("FOLLOW_IFRAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsIntervalCadence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsIntervalCadence FindValue(string value)
+        {
+            return FindValue<HlsIntervalCadence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsIntervalCadence(string value)
         {
             return FindValue(value);
         }

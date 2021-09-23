@@ -48,6 +48,7 @@ namespace Amazon.MediaConvert.Model
         private HlsDirectoryStructure _directoryStructure;
         private HlsEncryptionSettings _encryption;
         private HlsImageBasedTrickPlay _imageBasedTrickPlay;
+        private HlsImageBasedTrickPlaySettings _imageBasedTrickPlaySettings;
         private HlsManifestCompression _manifestCompression;
         private HlsManifestDurationFormat _manifestDurationFormat;
         private double? _minFinalSegmentLength;
@@ -295,6 +296,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetImageBasedTrickPlay()
         {
             return this._imageBasedTrickPlay != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageBasedTrickPlaySettings. Tile and thumbnail settings
+        /// applicable when imageBasedTrickPlay is ADVANCED
+        /// </summary>
+        public HlsImageBasedTrickPlaySettings ImageBasedTrickPlaySettings
+        {
+            get { return this._imageBasedTrickPlaySettings; }
+            set { this._imageBasedTrickPlaySettings = value; }
+        }
+
+        // Check to see if ImageBasedTrickPlaySettings property is set
+        internal bool IsSetImageBasedTrickPlaySettings()
+        {
+            return this._imageBasedTrickPlaySettings != null;
         }
 
         /// <summary>

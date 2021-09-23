@@ -37,19 +37,23 @@ namespace Amazon.MediaConvert.Model
     public partial class BurninDestinationSettings
     {
         private BurninSubtitleAlignment _alignment;
+        private BurninSubtitleApplyFontColor _applyFontColor;
         private BurninSubtitleBackgroundColor _backgroundColor;
         private int? _backgroundOpacity;
+        private BurninSubtitleFallbackFont _fallbackFont;
         private BurninSubtitleFontColor _fontColor;
         private int? _fontOpacity;
         private int? _fontResolution;
         private FontScript _fontScript;
         private int? _fontSize;
+        private string _hexFontColor;
         private BurninSubtitleOutlineColor _outlineColor;
         private int? _outlineSize;
         private BurninSubtitleShadowColor _shadowColor;
         private int? _shadowOpacity;
         private int? _shadowXOffset;
         private int? _shadowYOffset;
+        private BurnInSubtitleStylePassthrough _stylePassthrough;
         private BurninSubtitleTeletextSpacing _teletextSpacing;
         private int? _xPosition;
         private int? _yPosition;
@@ -74,6 +78,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAlignment()
         {
             return this._alignment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplyFontColor. Ignore this setting unless your input captions
+        /// are STL, any type of 608, teletext, or TTML, and your output captions are burned in.
+        /// Specify how the service applies the color specified in the setting Font color (BurninSubtitleFontColor).
+        /// By default, this color is white. When you choose WHITE_TEXT_ONLY, the service uses
+        /// the specified font color only for text that is white in the input. When you choose
+        /// ALL_TEXT, the service uses the specified font color for all output captions text.
+        /// If you leave both settings at their default value, your output font color is the same
+        /// as your input font color.
+        /// </summary>
+        public BurninSubtitleApplyFontColor ApplyFontColor
+        {
+            get { return this._applyFontColor; }
+            set { this._applyFontColor = value; }
+        }
+
+        // Check to see if ApplyFontColor property is set
+        internal bool IsSetApplyFontColor()
+        {
+            return this._applyFontColor != null;
         }
 
         /// <summary>
@@ -108,6 +134,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBackgroundOpacity()
         {
             return this._backgroundOpacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FallbackFont. Specify the font that you want the service
+        /// to use for your burn in captions when your input captions specify a font that MediaConvert
+        /// doesn't support. When you keep the default value, Best match (BEST_MATCH), MediaConvert
+        /// uses a supported font that most closely matches the font that your input captions
+        /// specify. When there are multiple unsupported fonts in your input captions, MediaConvert
+        /// matches each font with the supported font that matches best. When you explicitly choose
+        /// a replacement font, MediaConvert uses that font to replace all unsupported fonts from
+        /// your input.
+        /// </summary>
+        public BurninSubtitleFallbackFont FallbackFont
+        {
+            get { return this._fallbackFont; }
+            set { this._fallbackFont = value; }
+        }
+
+        // Check to see if FallbackFont property is set
+        internal bool IsSetFallbackFont()
+        {
+            return this._fallbackFont != null;
         }
 
         /// <summary>
@@ -196,6 +244,26 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFontSize()
         {
             return this._fontSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HexFontColor. Ignore this setting unless your BurninSubtitleFontColor
+        /// setting is HEX. Format is six or eight hexidecimal digits, representing the red, green,
+        /// and blue components, with the two extra digits used for an optional alpha value. For
+        /// example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue
+        /// value of 0xAA, and an alpha value of 0xBB.
+        /// </summary>
+        [AWSProperty(Min=6, Max=8)]
+        public string HexFontColor
+        {
+            get { return this._hexFontColor; }
+            set { this._hexFontColor = value; }
+        }
+
+        // Check to see if HexFontColor property is set
+        internal bool IsSetHexFontColor()
+        {
+            return this._hexFontColor != null;
         }
 
         /// <summary>
@@ -303,6 +371,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetShadowYOffset()
         {
             return this._shadowYOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StylePassthrough. Ignore this setting unless your output
+        /// captions are burned in. Choose which set of style and position values the service
+        /// applies to your output captions. When you choose ENABLED, the service uses the input
+        /// style and position information from your input. When you choose DISABLED, the service
+        /// uses any style values that you specify in your output settings. If you don't specify
+        /// values, the service uses default style and position values. When you choose DISABLED,
+        /// the service ignores all style and position values from your input.
+        /// </summary>
+        public BurnInSubtitleStylePassthrough StylePassthrough
+        {
+            get { return this._stylePassthrough; }
+            set { this._stylePassthrough = value; }
+        }
+
+        // Check to see if StylePassthrough property is set
+        internal bool IsSetStylePassthrough()
+        {
+            return this._stylePassthrough != null;
         }
 
         /// <summary>

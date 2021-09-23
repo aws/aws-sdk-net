@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Alignment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("applyFontColor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApplyFontColor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("backgroundColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.BackgroundOpacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fallbackFont", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FallbackFont = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("fontColor", targetDepth))
@@ -110,6 +122,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.FontSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hexFontColor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HexFontColor = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("outlineColor", targetDepth))
@@ -146,6 +164,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.ShadowYOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stylePassthrough", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StylePassthrough = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("teletextSpacing", targetDepth))

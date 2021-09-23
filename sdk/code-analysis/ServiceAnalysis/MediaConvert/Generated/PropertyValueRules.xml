@@ -199,6 +199,12 @@
     <max>96</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.BurninDestinationSettings.HexFontColor</property>
+    <min>6</min>
+    <max>8</max>
+    <pattern>^[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.BurninDestinationSettings.OutlineSize</property>
     <min>0</min>
     <max>10</max>
@@ -286,6 +292,26 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlaySettings.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlaySettings.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlaySettings.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ColorCorrector.Brightness</property>
     <min>1</min>
     <max>100</max>
@@ -327,6 +353,26 @@
     <property>Amazon.MediaConvert.Model.DashIsoGroupSettings.SegmentLength</property>
     <min>1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlaySettings.ThumbnailHeight</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlaySettings.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlaySettings.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DolbyVisionLevel6Metadata.MaxCll</property>
@@ -402,6 +448,12 @@
     <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.Height</property>
     <min>1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.HexFontColor</property>
+    <min>6</min>
+    <max>8</max>
+    <pattern>^[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DvbSubDestinationSettings.OutlineSize</property>
@@ -824,6 +876,26 @@
     <property>Amazon.MediaConvert.Model.HlsGroupSettings.TimestampDeltaMilliseconds</property>
     <min>-2147483648</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlaySettings.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlaySettings.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlaySettings.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HopDestination.Priority</property>

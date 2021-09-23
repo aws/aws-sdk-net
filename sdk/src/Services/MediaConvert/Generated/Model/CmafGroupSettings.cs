@@ -44,6 +44,7 @@ namespace Amazon.MediaConvert.Model
         private CmafEncryptionSettings _encryption;
         private int? _fragmentLength;
         private CmafImageBasedTrickPlay _imageBasedTrickPlay;
+        private CmafImageBasedTrickPlaySettings _imageBasedTrickPlaySettings;
         private CmafManifestCompression _manifestCompression;
         private CmafManifestDurationFormat _manifestDurationFormat;
         private int? _minBufferTime;
@@ -222,6 +223,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetImageBasedTrickPlay()
         {
             return this._imageBasedTrickPlay != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageBasedTrickPlaySettings. Tile and thumbnail settings
+        /// applicable when imageBasedTrickPlay is ADVANCED
+        /// </summary>
+        public CmafImageBasedTrickPlaySettings ImageBasedTrickPlaySettings
+        {
+            get { return this._imageBasedTrickPlaySettings; }
+            set { this._imageBasedTrickPlaySettings = value; }
+        }
+
+        // Check to see if ImageBasedTrickPlaySettings property is set
+        internal bool IsSetImageBasedTrickPlaySettings()
+        {
+            return this._imageBasedTrickPlaySettings != null;
         }
 
         /// <summary>

@@ -118,6 +118,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageBasedTrickPlay = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageBasedTrickPlaySettings", targetDepth))
+                {
+                    var unmarshaller = CmafImageBasedTrickPlaySettingsUnmarshaller.Instance;
+                    unmarshalledObject.ImageBasedTrickPlaySettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestCompression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
