@@ -67,6 +67,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCutoffBehavior())
+                {
+                    context.Writer.WritePropertyName("CutoffBehavior");
+                    context.Writer.Write(publicRequest.CutoffBehavior);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

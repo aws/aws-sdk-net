@@ -31,6 +31,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetParameterHistory operation.
     /// Retrieves the history of all changes to a parameter.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
+    /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
+    /// <code>GetParameterHistory</code> retrieves whatever the original key alias was referencing.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetParameterHistoryRequest : AmazonSimpleSystemsManagementRequest
     {

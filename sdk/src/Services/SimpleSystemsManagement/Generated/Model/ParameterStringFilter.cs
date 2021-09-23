@@ -50,13 +50,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
-        /// of <code>Label</code>.
+        /// For <code>DescribeActions</code>, all of the listed patterns are valid except <code>Label</code>.
         /// </para>
         ///  
         /// <para>
         /// For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
-        /// aren't valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
+        /// aren't valid: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>,
+        /// and <code>Tier</code>.
         /// </para>
         ///  
         /// <para>

@@ -187,8 +187,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The name of the invocation target. For EC2 instances this is the value for the <code>aws:Name</code>
-        /// tag. For on-premises instances, this is the name of the instance.
+        /// The fully qualified host name of the managed instance.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

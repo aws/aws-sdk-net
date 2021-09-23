@@ -250,9 +250,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates a related resource to a Systems Manager OpsCenter OpsItem. For example,
-        /// you can associate an Incident Manager incident or analysis with an OpsItem. Incident
-        /// Manager is a capability of Amazon Web Services Systems Manager.
+        /// Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you
+        /// can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager
+        /// and OpsCenter are capabilities of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateOpsItemRelatedItem service method.</param>
         /// 
@@ -281,9 +281,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates a related resource to a Systems Manager OpsCenter OpsItem. For example,
-        /// you can associate an Incident Manager incident or analysis with an OpsItem. Incident
-        /// Manager is a capability of Amazon Web Services Systems Manager.
+        /// Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you
+        /// can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager
+        /// and OpsCenter are capabilities of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateOpsItemRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -4643,6 +4643,13 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
+        /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
+        /// <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// 
@@ -4681,6 +4688,13 @@ namespace Amazon.SimpleSystemsManagement
         /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
         /// of results.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
+        /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
+        /// <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
         /// <param name="cancellationToken">
@@ -5017,8 +5031,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the association between an OpsItem and a related resource. For example, this
-        /// API operation can delete an Incident Manager incident from an OpsItem. Incident Manager
+        /// Deletes the association between an OpsItem and a related item. For example, this API
+        /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager
         /// is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateOpsItemRelatedItem service method.</param>
@@ -5044,8 +5058,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the association between an OpsItem and a related resource. For example, this
-        /// API operation can delete an Incident Manager incident from an OpsItem. Incident Manager
+        /// Deletes the association between an OpsItem and a related item. For example, this API
+        /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager
         /// is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateOpsItemRelatedItem service method.</param>
@@ -6259,6 +6273,14 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the history of all changes to a parameter.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
+        /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
+        /// <code>GetParameterHistory</code> retrieves whatever the original key alias was referencing.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory service method.</param>
         /// 
@@ -6282,6 +6304,14 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieves the history of all changes to a parameter.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
+        /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
+        /// <code>GetParameterHistory</code> retrieves whatever the original key alias was referencing.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory service method.</param>
         /// <param name="cancellationToken">
@@ -7943,7 +7973,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists all related-item resources associated with an OpsItem.
+        /// Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem.
+        /// OpsCenter is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsItemRelatedItems service method.</param>
         /// 
@@ -7961,7 +7992,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Lists all related-item resources associated with an OpsItem.
+        /// Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem.
+        /// OpsCenter is a capability of Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsItemRelatedItems service method.</param>
         /// <param name="cancellationToken">
@@ -9447,7 +9479,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Runs commands on one or more managed instances.
         /// </summary>
-        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <note> If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.  </note></param>
         /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
@@ -9591,7 +9623,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Runs commands on one or more managed instances.
         /// </summary>
-        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <note> If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.  </note></param>
         /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

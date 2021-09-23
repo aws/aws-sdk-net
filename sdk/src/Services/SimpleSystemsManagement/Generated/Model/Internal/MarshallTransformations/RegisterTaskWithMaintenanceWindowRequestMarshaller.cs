@@ -78,6 +78,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetCutoffBehavior())
+                {
+                    context.Writer.WritePropertyName("CutoffBehavior");
+                    context.Writer.Write(publicRequest.CutoffBehavior);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

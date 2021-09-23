@@ -82,7 +82,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Status</b>: Specify a valid command status to see a list of all command executions
-        /// with that status. Status values you can specify include:
+        /// with that status. The status choices depend on the API you call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The status values you can specify for <code>ListCommands</code> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -106,11 +110,87 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TimedOut</code> 
+        ///  <code>TimedOut</code> (this includes both Delivery and Execution time outs) 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelling</code> 
+        ///  <code>AccessDenied</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DeliveryTimedOut</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ExecutionTimedOut</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Incomplete</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NoInstancesInTag</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LimitExceeded</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The status values you can specify for <code>ListCommandInvocations</code> are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Pending</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InProgress</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Delayed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Success</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Cancelled</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimedOut</code> (this includes both Delivery and Execution time outs) 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AccessDenied</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DeliveryTimedOut</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ExecutionTimedOut</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Undeliverable</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InvalidPlatform</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Terminated</code> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

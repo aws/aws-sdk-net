@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
-        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <note> If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.  </note></param>
         /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
@@ -159,10 +159,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The name of the Amazon Web Services Systems Manager document (SSM document) to run.
         /// This can be a public document or a custom document. To run a shared document belonging
-        /// to another account, specify the document ARN. For more information about how to use
-        /// shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+        /// to another account, specify the document Amazon Resource Name (ARN). For more information
+        /// about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
         /// shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify a document name or ARN that hasn't been shared with your account, you
+        /// receive an <code>InvalidDocument</code> error. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DocumentName

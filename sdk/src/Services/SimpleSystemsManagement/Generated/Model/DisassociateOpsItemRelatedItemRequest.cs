@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateOpsItemRelatedItem operation.
-    /// Deletes the association between an OpsItem and a related resource. For example, this
-    /// API operation can delete an Incident Manager incident from an OpsItem. Incident Manager
+    /// Deletes the association between an OpsItem and a related item. For example, this API
+    /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager
     /// is a capability of Amazon Web Services Systems Manager.
     /// </summary>
     public partial class DisassociateOpsItemRelatedItemRequest : AmazonSimpleSystemsManagementRequest
@@ -43,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AssociationId. 
         /// <para>
         /// The ID of the association for which you want to delete an association between the
-        /// OpsItem and a related resource.
+        /// OpsItem and a related item.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OpsItemId. 
         /// <para>
         /// The ID of the OpsItem for which you want to delete an association between the OpsItem
-        /// and a related resource.
+        /// and a related item.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

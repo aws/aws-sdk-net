@@ -105,41 +105,45 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SettingValue. 
         /// <para>
-        /// The new value to specify for the service setting. For the <code>/ssm/parameter-store/default-parameter-tier</code>
-        /// setting ID, the setting value can be one of the following.
+        /// The new value to specify for the service setting. The following list specifies the
+        /// available values for each setting.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Standard
+        ///  <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+        /// <code>Advanced</code>, <code>Intelligent-Tiering</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Advanced
+        ///  <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Intelligent-Tiering
+        ///  <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code>
+        /// 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and <code>/ssm/managed-instance/activation-tier</code>
-        /// setting IDs, the setting value can be true or false.
+        ///  <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+        /// 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the
-        /// setting value can be <code>CloudWatch</code>.
+        ///  <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon
+        /// CloudWatch Logs log group
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the
-        /// setting value can be the name of an Amazon CloudWatch Logs log group.
+        ///  <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code>
+        /// or <code>Disable</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID,
-        /// the setting value can be <code>Enable</code> or <code>Disable</code>.
+        ///  <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+        /// 
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
         public string SettingValue

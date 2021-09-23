@@ -89,6 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
     {
+        private MaintenanceWindowTaskCutoffBehavior _cutoffBehavior;
         private string _description;
         private LoggingInfo _loggingInfo;
         private string _maxConcurrency;
@@ -103,6 +104,51 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>();
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property CutoffBehavior. 
+        /// <para>
+        /// Indicates whether tasks should continue to run after the cutoff time specified in
+        /// the maintenance windows is reached. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
+        /// continue. The default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CANCEL_TASK</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any
+        /// task invocations that are already running continue, but no new task invocations are
+        /// started.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a>
+        /// operation that attempts to cancel the command associated with the task. However, there
+        /// is no guarantee that the command will be terminated and the underlying process stopped.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The status for tasks that are not completed is <code>TIMED_OUT</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MaintenanceWindowTaskCutoffBehavior CutoffBehavior
+        {
+            get { return this._cutoffBehavior; }
+            set { this._cutoffBehavior = value; }
+        }
+
+        // Check to see if CutoffBehavior property is set
+        internal bool IsSetCutoffBehavior()
+        {
+            return this._cutoffBehavior != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

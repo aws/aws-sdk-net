@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateMaintenanceWindowTaskResponse : AmazonWebServiceResponse
     {
+        private MaintenanceWindowTaskCutoffBehavior _cutoffBehavior;
         private string _description;
         private LoggingInfo _loggingInfo;
         private string _maxConcurrency;
@@ -46,6 +47,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>();
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property CutoffBehavior. 
+        /// <para>
+        /// The specification for whether tasks should continue to run after the cutoff time specified
+        /// in the maintenance windows is reached. 
+        /// </para>
+        /// </summary>
+        public MaintenanceWindowTaskCutoffBehavior CutoffBehavior
+        {
+            get { return this._cutoffBehavior; }
+            set { this._cutoffBehavior = value; }
+        }
+
+        // Check to see if CutoffBehavior property is set
+        internal bool IsSetCutoffBehavior()
+        {
+            return this._cutoffBehavior != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

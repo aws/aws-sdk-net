@@ -97,13 +97,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For <code>GetParametersByPath</code>, the following filter <code>Key</code> names
-        /// are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and <code>DataType</code>.
+        /// The following <code>Key</code> values are supported for <code>GetParametersByPath</code>:
+        /// <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.
         /// </para>
         ///  
         /// <para>
-        /// The following <code>Key</code> values are not supported for <code>GetParametersByPath</code>:
-        /// <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
+        /// The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>:
+        /// <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and
+        /// <code>Tier</code>.
         /// </para>
         ///  </note>
         /// </summary>

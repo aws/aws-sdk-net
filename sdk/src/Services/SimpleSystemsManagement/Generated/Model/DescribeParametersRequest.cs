@@ -42,6 +42,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// You can specify the <code>NextToken</code> in a subsequent call to get the next set
     /// of results.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you change the KMS key alias for the KMS key used to encrypt a parameter, then
+    /// you must also update the key alias the parameter uses to reference KMS. Otherwise,
+    /// <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DescribeParametersRequest : AmazonSimpleSystemsManagementRequest
     {

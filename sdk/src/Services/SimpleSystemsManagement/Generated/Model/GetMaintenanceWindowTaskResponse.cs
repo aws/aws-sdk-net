@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetMaintenanceWindowTaskResponse : AmazonWebServiceResponse
     {
+        private MaintenanceWindowTaskCutoffBehavior _cutoffBehavior;
         private string _description;
         private LoggingInfo _loggingInfo;
         private string _maxConcurrency;
@@ -47,6 +48,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         private MaintenanceWindowTaskType _taskType;
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property CutoffBehavior. 
+        /// <para>
+        /// The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code>
+        /// means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code>
+        /// means that currently running task invocations continue, but no new task invocations
+        /// are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts
+        /// to stop the task by sending a <code>CancelCommand</code> operation.
+        /// </para>
+        /// </summary>
+        public MaintenanceWindowTaskCutoffBehavior CutoffBehavior
+        {
+            get { return this._cutoffBehavior; }
+            set { this._cutoffBehavior = value; }
+        }
+
+        // Check to see if CutoffBehavior property is set
+        internal bool IsSetCutoffBehavior()
+        {
+            return this._cutoffBehavior != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
