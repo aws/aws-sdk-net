@@ -1,3 +1,16 @@
+### 3.7.123.0 (2021-09-23 18:15 UTC)
+* AppSync (3.7.2.0)
+	* Documented the new OpenSearchServiceDataSourceConfig data type. Added deprecation notes to the ElasticsearchDataSourceConfig data type.
+* MediaConvert (3.7.7.0)
+	* This release adds style and positioning support for caption or subtitle burn-in from rich text sources such as TTML. This release also introduces configurable image-based trick play track generation.
+* SimpleSystemsManagement (3.7.6.0)
+	* Added cutoff behavior support for preventing new task invocations from starting when the maintenance window cutoff time is reached.
+* Core 3.7.3.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.122.0 (2021-09-22 18:15 UTC)
 * IdentityManagement (3.7.2.49)
 	* Added changes to OIDC API about not using port numbers in the URL.
