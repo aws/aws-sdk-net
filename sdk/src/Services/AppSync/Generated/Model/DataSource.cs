@@ -40,6 +40,7 @@ namespace Amazon.AppSync.Model
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
+        private OpenSearchServiceDataSourceConfig _openSearchServiceConfig;
         private RelationalDatabaseDataSourceConfig _relationalDatabaseConfig;
         private string _serviceRoleArn;
         private DataSourceType _type;
@@ -101,7 +102,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchConfig. 
         /// <para>
-        /// Amazon Elasticsearch Service settings.
+        /// Amazon OpenSearch Service settings.
         /// </para>
         /// </summary>
         public ElasticsearchDataSourceConfig ElasticsearchConfig
@@ -172,6 +173,24 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpenSearchServiceConfig. 
+        /// <para>
+        /// Amazon OpenSearch Service settings.
+        /// </para>
+        /// </summary>
+        public OpenSearchServiceDataSourceConfig OpenSearchServiceConfig
+        {
+            get { return this._openSearchServiceConfig; }
+            set { this._openSearchServiceConfig = value; }
+        }
+
+        // Check to see if OpenSearchServiceConfig property is set
+        internal bool IsSetOpenSearchServiceConfig()
+        {
+            return this._openSearchServiceConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RelationalDatabaseConfig. 
         /// <para>
         /// Relational database settings.
@@ -215,15 +234,20 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+        ///  <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda function.
+        ///  <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service
+        /// domain.
         /// </para>
         ///  </li> <li> 
         /// <para>

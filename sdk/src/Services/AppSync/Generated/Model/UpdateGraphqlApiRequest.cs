@@ -102,7 +102,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaAuthorizerConfig. 
         /// <para>
-        /// Configuration for AWS Lambda function authorization.
+        /// Configuration for Amazon Web Services Lambda function authorization.
         /// </para>
         /// </summary>
         public LambdaAuthorizerConfig LambdaAuthorizerConfig

@@ -63,14 +63,14 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthorizerUri. 
         /// <para>
-        /// The ARN of the lambda function to be called for authorization. This may be a standard
+        /// The ARN of the Lambda function to be called for authorization. This may be a standard
         /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. 
         /// </para>
         ///  
         /// <para>
         ///  <i>Note</i>: This Lambda function must have the following resource-based policy assigned
         /// to it. When configuring Lambda authorizers in the Console, this is done for you. To
-        /// do so with the AWS CLI, run the following:
+        /// do so with the Amazon Web Services CLI, run the following:
         /// </para>
         ///  
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property IdentityValidationExpression. 
         /// <para>
-        /// A regular expression for validation of tokens before the Lambda Function is called.
+        /// A regular expression for validation of tokens before the Lambda function is called.
         /// </para>
         /// </summary>
         public string IdentityValidationExpression

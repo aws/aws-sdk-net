@@ -469,6 +469,10 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly DataSourceType AMAZON_ELASTICSEARCH = new DataSourceType("AMAZON_ELASTICSEARCH");
         /// <summary>
+        /// Constant AMAZON_OPENSEARCH_SERVICE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AMAZON_OPENSEARCH_SERVICE = new DataSourceType("AMAZON_OPENSEARCH_SERVICE");
+        /// <summary>
         /// Constant AWS_LAMBDA for DataSourceType
         /// </summary>
         public static readonly DataSourceType AWS_LAMBDA = new DataSourceType("AWS_LAMBDA");

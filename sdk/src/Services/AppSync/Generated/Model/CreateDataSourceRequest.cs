@@ -41,6 +41,7 @@ namespace Amazon.AppSync.Model
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
+        private OpenSearchServiceDataSourceConfig _openSearchServiceConfig;
         private RelationalDatabaseDataSourceConfig _relationalDatabaseConfig;
         private string _serviceRoleArn;
         private DataSourceType _type;
@@ -103,7 +104,13 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchConfig. 
         /// <para>
-        /// Amazon Elasticsearch Service settings.
+        /// Amazon OpenSearch Service settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
+        /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a>
+        /// to create an OpenSearch data source.
         /// </para>
         /// </summary>
         public ElasticsearchDataSourceConfig ElasticsearchConfig
@@ -171,6 +178,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenSearchServiceConfig. 
+        /// <para>
+        /// Amazon OpenSearch Service settings.
+        /// </para>
+        /// </summary>
+        public OpenSearchServiceDataSourceConfig OpenSearchServiceConfig
+        {
+            get { return this._openSearchServiceConfig; }
+            set { this._openSearchServiceConfig = value; }
+        }
+
+        // Check to see if OpenSearchServiceConfig property is set
+        internal bool IsSetOpenSearchServiceConfig()
+        {
+            return this._openSearchServiceConfig != null;
         }
 
         /// <summary>

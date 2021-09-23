@@ -121,6 +121,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOpenSearchServiceConfig())
+                {
+                    context.Writer.WritePropertyName("openSearchServiceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OpenSearchServiceDataSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OpenSearchServiceConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRelationalDatabaseConfig())
                 {
                     context.Writer.WritePropertyName("relationalDatabaseConfig");

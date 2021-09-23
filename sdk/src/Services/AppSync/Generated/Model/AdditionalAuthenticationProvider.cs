@@ -41,8 +41,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication type: API key, Identity and Access Management, OIDC, or Amazon
-        /// Cognito user pools.
+        /// The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito
+        /// user pools, or Amazon Web Services Lambda.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType
@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaAuthorizerConfig. 
         /// <para>
-        /// Configuration for AWS Lambda function authorization.
+        /// Configuration for Amazon Web Services Lambda function authorization.
         /// </para>
         /// </summary>
         public LambdaAuthorizerConfig LambdaAuthorizerConfig
