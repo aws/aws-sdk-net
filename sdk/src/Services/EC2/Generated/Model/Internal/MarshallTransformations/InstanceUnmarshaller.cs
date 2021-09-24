@@ -239,6 +239,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("platformDetails", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PlatformDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("privateDnsName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -342,6 +348,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = TagUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("usageOperation", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UsageOperation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("usageOperationUpdateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.UsageOperationUpdateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("virtualizationType", targetDepth))

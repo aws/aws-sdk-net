@@ -19323,8 +19323,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>,
-        /// or from <code>dedicated</code> to <code>host</code>.
+        /// Change the instance tenancy of an instance.
         /// </para>
         ///  </li> <li> 
         /// <para>

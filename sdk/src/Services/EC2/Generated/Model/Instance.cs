@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         private string _outpostArn;
         private Placement _placement;
         private PlatformValues _platform;
+        private string _platformDetails;
         private string _privateDnsName;
         private string _privateIpAddress;
         private List<ProductCode> _productCodes = new List<ProductCode>();
@@ -80,6 +81,8 @@ namespace Amazon.EC2.Model
         private string _stateTransitionReason;
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
+        private string _usageOperation;
+        private DateTime? _usageOperationUpdateTime;
         private VirtualizationType _virtualizationType;
         private string _vpcId;
 
@@ -505,7 +508,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Licenses. 
         /// <para>
-        /// The license configurations.
+        /// The license configurations for the instance.
         /// </para>
         /// </summary>
         public List<LicenseConfiguration> Licenses
@@ -626,6 +629,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformDetails. 
+        /// <para>
+        /// The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+        /// billing information fields</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string PlatformDetails
+        {
+            get { return this._platformDetails; }
+            set { this._platformDetails = value; }
+        }
+
+        // Check to see if PlatformDetails property is set
+        internal bool IsSetPlatformDetails()
+        {
+            return this._platformDetails != null;
         }
 
         /// <summary>
@@ -950,6 +972,43 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageOperation. 
+        /// <para>
+        /// The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
+        /// billing information fields</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string UsageOperation
+        {
+            get { return this._usageOperation; }
+            set { this._usageOperation = value; }
+        }
+
+        // Check to see if UsageOperation property is set
+        internal bool IsSetUsageOperation()
+        {
+            return this._usageOperation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageOperationUpdateTime. 
+        /// <para>
+        /// The time that the usage operation was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime UsageOperationUpdateTime
+        {
+            get { return this._usageOperationUpdateTime.GetValueOrDefault(); }
+            set { this._usageOperationUpdateTime = value; }
+        }
+
+        // Check to see if UsageOperationUpdateTime property is set
+        internal bool IsSetUsageOperationUpdateTime()
+        {
+            return this._usageOperationUpdateTime.HasValue; 
         }
 
         /// <summary>

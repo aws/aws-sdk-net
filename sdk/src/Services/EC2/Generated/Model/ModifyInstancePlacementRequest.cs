@@ -46,8 +46,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>,
-    /// or from <code>dedicated</code> to <code>host</code>.
+    /// Change the instance tenancy of an instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -196,12 +195,13 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The tenancy for the instance.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         /// For T3 instances, you can't change the tenancy from <code>dedicated</code> to <code>host</code>,
         /// or from <code>host</code> to <code>dedicated</code>. Attempting to make one of these
         /// unsupported tenancy changes results in the <code>InvalidTenancy</code> error code.
         /// </para>
+        ///  </note>
         /// </summary>
         public HostTenancy Tenancy
         {
