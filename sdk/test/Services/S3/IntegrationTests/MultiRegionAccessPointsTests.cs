@@ -1,142 +1,96 @@
 ﻿using Amazon;
-using Amazon.Runtime;
-using Amazon.Runtime.CredentialManagement;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.S3Control;
+using Amazon.S3Control.Model;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.IO;
-using System.Net;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [Ignore]    // Intended for local testing against a manually prepared multi-region access point
     [TestClass]
-    public class MultiRegionAccessPointsTests
+    public class MultiRegionAccessPointsTests : TestBase<AmazonS3Client>
     {
-        private static AmazonS3Client _s3Client;
-        private const string _mrapArn = "<provide MRAP Arn>";
-        private const string _objectKey = "dotnet-sdk-test";
-        private const string _objectContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        private static string _accountId;
+        private static string _bucketName;
+        private static string _mrapName;
+        private static string _mrapArn;
 
         [ClassInitialize]
         public static void Setup(TestContext context)
         {
-            var options = new AmazonS3Config { UseArnRegion = true };
+            _bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            _mrapName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
 
-            _s3Client = new AmazonS3Client(options);
-        }
+            // Look up the account ID for the credentials being used to run the tests
+            _accountId = new AmazonSecurityTokenServiceClient().GetCallerIdentity(new GetCallerIdentityRequest()).Account;
 
-        [TestMethod]
-        public void ListBuckets()
-        {
-            var request = new ListBucketsRequest();
-
-            var response = _s3Client.ListBuckets(request);
-
-            Assert.AreNotEqual(0, response.Buckets.Count);
-        }
-
-        [TestMethod]
-        public void ListObjects()
-        {
-            var request = new ListObjectsRequest()
+            var request = new CreateMultiRegionAccessPointRequest
             {
-                BucketName = _mrapArn
+                AccountId = _accountId,
+                Details = new CreateMultiRegionAccessPointInput
+                {
+                    Name = _mrapName,
+                    Regions = new List<Region>
+                    {
+                        new Region
+                        {
+                            Bucket = _bucketName
+                        }
+                    }
+                }
             };
 
-            var response = _s3Client.ListObjects(request);
+            // All MRAP control plane requests must go to us-west-2 per
+            // https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html
+            var mrapAlias = S3TestUtils.CreateMRAPWithWait(new AmazonS3ControlClient(RegionEndpoint.USWest2), request);
+            _mrapArn = $"arn:aws:s3::{_accountId}:accesspoint/{mrapAlias}";
+        }
 
-            Assert.AreNotEqual(0, response.S3Objects.Count);
+        [ClassCleanup]
+        public static void Cleanup()
+        {
+            var deleteRequest = new DeleteMultiRegionAccessPointRequest
+            { 
+                AccountId = _accountId,
+                Details = new DeleteMultiRegionAccessPointInput { Name = _mrapName }
+            };
+
+            S3TestUtils.DeleteMRAPWithWait(new AmazonS3ControlClient(RegionEndpoint.USWest2), deleteRequest);
+            AmazonS3Util.DeleteS3BucketWithObjects(Client, _bucketName);
         }
 
         [TestMethod]
         public void PutObjectUnchunkedAndUnsigned()
         {
-            var request = new PutObjectRequest()
-            {
-                BucketName = _mrapArn,
-                Key = _objectKey,
-                ContentBody = _objectContent,
-                UseChunkEncoding = false,
-                DisablePayloadSigning = true
-            };
-
-            var response = _s3Client.PutObject(request);
+            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked-unsigned", false, true);
         }
 
         [TestMethod]
         public void PutObjectUnchunked()
         {
-            var request = new PutObjectRequest()
-            {
-                BucketName = _mrapArn,
-                Key = _objectKey,
-                ContentBody = _objectContent,
-                UseChunkEncoding = false
-            };
-
-            var response = _s3Client.PutObject(request);
+            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked", false);
         }
 
         [TestMethod]
         public void PutObjectChunked()
         {
-            var request = new PutObjectRequest()
-            {
-                BucketName = _mrapArn,
-                Key = _objectKey,
-                ContentBody = _objectContent,
-                UseChunkEncoding = true
-            };
-
-            var response = _s3Client.PutObject(request);
-        }
-
-        [TestMethod]
-        public void GetObject()
-        {
-            var request = new GetObjectRequest()
-            {
-                BucketName = _mrapArn,
-                Key = _objectKey
-            };
-
-            var response = _s3Client.GetObject(request);
-
-            StreamReader reader = new StreamReader(response.ResponseStream);
-            Assert.AreEqual(_objectContent, reader.ReadToEnd());
-        }
-
-        [TestMethod]
-        public void TestPresignedUrl()
-        {
-            var getPresignedUrl = _s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
-            {
-                BucketName = _mrapArn,
-                Key = _objectKey,
-                Verb = HttpVerb.GET,
-                Expires = DateTime.UtcNow.AddDays(5)
-            });
-
-            var request = WebRequest.CreateHttp(getPresignedUrl);
-            using (var response = request.GetResponse())
-            using (var reader = new StreamReader(response.GetResponseStream()))
-            {
-                var content = reader.ReadToEnd();
-                Assert.AreEqual(_objectContent, content);
-            }
+            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-chunked");
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestPresigingOver7DaysThrowsException()
         {
-            var getPresignedUrl = _s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
+            _ = Client.GetPreSignedURL(new GetPreSignedUrlRequest
             {
                 BucketName = _mrapArn,
-                Key = _objectKey,
+                Key = "dotnet-sdk-test",
                 Verb = HttpVerb.GET,
                 Expires = DateTime.UtcNow.AddDays(8)    // SigV4a limit is also 7 days
             });
@@ -154,7 +108,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void PutAndGetQuestionableKeys(string keyVariant)
         {
             var keyName = "dotnet-sdk-test-" + keyVariant;
-            KeyNameTests.PutAndGetObjectWithQuestionableKey(_s3Client, _mrapArn, keyName, false);
+            S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, keyName, false);
         }
     }
 }

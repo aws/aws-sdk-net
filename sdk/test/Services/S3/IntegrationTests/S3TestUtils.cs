@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
+﻿using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.S3Control;
+using Amazon.S3Control.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
+using System.Net;
 using System.Threading;
-using Amazon;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -90,6 +90,69 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             UtilityMethods.WaitUntilSuccess(() => { client.GetObject(bucketName, key); }, sleeper, maxSeconds);
         }
 
+        /// <summary>
+        /// Creates an S3 Multi-Region Access Point and waits for it to be ready
+        /// </summary>
+        /// <param name="s3ControlClient">S3Control client to create the MRAP with</param>
+        /// <param name="mrapRequest">Prepared CreateMultiRegionAccessPoint request</param>
+        /// <returns>Alias of the new Multi-Region Access Point</returns>
+        public static string CreateMRAPWithWait(IAmazonS3Control s3ControlClient, CreateMultiRegionAccessPointRequest mrapRequest)
+        {
+            var asyncRequestArn = s3ControlClient.CreateMultiRegionAccessPoint(mrapRequest).RequestTokenARN;
+
+            var mrapAlias = UtilityMethods.WaitUntilSuccess(() =>
+            {
+                var request = new GetMultiRegionAccessPointRequest
+                {
+                    AccountId = mrapRequest.AccountId,
+                    Name = mrapRequest.Details.Name
+                };
+
+                var response = s3ControlClient.GetMultiRegionAccessPoint(request);
+
+                if (response.AccessPoint.Status == MultiRegionAccessPointStatus.READY)
+                {
+                    return response.AccessPoint.Alias;
+                }
+                else
+                {
+                    throw new Exception("S3 Multi-Region Access Point not ready yet, will continue waiting.");
+                }
+            });
+
+            return mrapAlias;
+        }
+
+        /// <summary>
+        /// Deletes an S3 Multi-Region Access Point and waits for the delete to succeed
+        /// </summary>
+        /// <param name="s3ControlClient">S3Control client to delete the MRAP with</param>
+        /// <param name="deleteRequest">Prepared DeleteMultiRegionAccessPoint request</param>
+        public static void DeleteMRAPWithWait(IAmazonS3Control s3ControlClient, DeleteMultiRegionAccessPointRequest deleteRequest)
+        {
+            var asyncRequestArn = s3ControlClient.DeleteMultiRegionAccessPoint(deleteRequest).RequestTokenARN;
+
+            UtilityMethods.WaitUntilSuccess(() =>
+            {
+                var request = new DescribeMultiRegionAccessPointOperationRequest
+                {
+                    AccountId = deleteRequest.AccountId,
+                    RequestTokenARN = asyncRequestArn
+                };
+
+                var response = s3ControlClient.DescribeMultiRegionAccessPointOperation(request);
+
+                if (response.AsyncOperation.RequestStatus == "SUCCEEDED")
+                {
+                    return;
+                }
+                else
+                {
+                    throw new Exception("S3 Multi-Region Access Point not deleted yet, will continue waiting.");
+                }
+            });
+        }
+
         public static T WaitForConsistency<T>(Func<T> loadFunction)
         {                        
             //First try waiting up to 60 seconds.    
@@ -132,7 +195,57 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var lastWaitSeconds = 240; //4 minute wait.
             return UtilityMethods.WaitUntilSuccess(loadFunction, 5, lastWaitSeconds);                        
         }
-        
+
+        /// <summary>
+        /// Test helper that will put an S3 object then verify its content via a both a get and a presigned get
+        /// </summary>
+        /// <param name="s3Client">S3 client to put the object with</param>
+        /// <param name="bucketName">Bucket name to put the object to</param>
+        /// <param name="keyName">Object key</param>
+        /// <param name="useChunkEncoding">Whether to use chunked encoding for the PutObject request</param>
+        /// <param name="disablePayloadSigning">Whether to disable SigV4/V4a payload signing for the PutObject request</param>
+        internal static void PutAndGetObjectTestHelper(IAmazonS3 s3Client, string bucketName, string keyName, bool useChunkEncoding = true, bool disablePayloadSigning = false)
+        {
+            const string testContent = "Some stuff to write as content";
+
+            s3Client.PutObject(new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = keyName,
+                ContentBody = testContent,
+                UseChunkEncoding = useChunkEncoding,
+                DisablePayloadSigning = disablePayloadSigning
+            });
+
+            var response = s3Client.GetObject(new GetObjectRequest
+            {
+                BucketName = bucketName,
+                Key = keyName
+            });
+
+            using (var s = new StreamReader(response.ResponseStream))
+            {
+                var responseContent = s.ReadToEnd();
+                Assert.AreEqual(testContent, responseContent);
+            }
+
+            var presignedUrl = s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName,
+                Key = keyName,
+                Verb = HttpVerb.GET,
+                Expires = DateTime.Now + TimeSpan.FromDays(5)
+            });
+
+            var httpRequest = HttpWebRequest.Create(presignedUrl);
+            using (var httpResponse = httpRequest.GetResponse())
+            using (var reader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var content = reader.ReadToEnd();
+                Assert.AreEqual(testContent, content);
+            }
+        }
+
         public static IDisposable UseSignatureVersion4(bool newValue)
         {
             return new SigV4Disposable(newValue);

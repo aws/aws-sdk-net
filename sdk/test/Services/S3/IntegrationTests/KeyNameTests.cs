@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 foreach (var k in AwkwardKeyNameBases)
                 {
                     var keyName = k + ".SigV2.AWS2.CLRv" + Environment.Version;
-                    PutAndGetObjectWithQuestionableKey(s3Client, bucketName, keyName);
+                    S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
                 }
             }
             finally
@@ -84,53 +84,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 foreach (var k in AwkwardKeyNameBases)
                 {
                     var keyName = k + ".SigV4.AWS2.CLRv" + Environment.Version;
-                    PutAndGetObjectWithQuestionableKey(s3Client, bucketName, keyName);
+                    S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
                 }
             }
             finally
             {
                 AWSConfigsS3.UseSignatureVersion4 = original;
-            }
-        }
-
-        internal static void PutAndGetObjectWithQuestionableKey(IAmazonS3 s3Client, string bucketName, string keyName, bool useChunkEncoding = true)
-        {
-            const string testContent = "Some stuff to write as content";
-
-            s3Client.PutObject(new PutObjectRequest
-            {
-                BucketName = bucketName,
-                Key = keyName,
-                ContentBody = testContent,
-                UseChunkEncoding = useChunkEncoding
-            });
-
-            var response = s3Client.GetObject(new GetObjectRequest
-            {
-                BucketName = bucketName,
-                Key = keyName
-            });
-
-            using (var s = new StreamReader(response.ResponseStream))
-            {
-                var responseContent = s.ReadToEnd();
-                Assert.AreEqual(testContent, responseContent);
-            }
-
-            var presignedUrl = s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
-            {
-                BucketName = bucketName,
-                Key = keyName,
-                Verb = HttpVerb.GET,
-                Expires = DateTime.Now + TimeSpan.FromDays(5)
-            });
-
-            var httpRequest = HttpWebRequest.Create(presignedUrl);
-            using(var httpResponse = httpRequest.GetResponse())
-            using(var reader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var content = reader.ReadToEnd();
-                Assert.AreEqual(testContent, content);
             }
         }
     }
