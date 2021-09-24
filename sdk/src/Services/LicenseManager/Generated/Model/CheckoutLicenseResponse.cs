@@ -37,6 +37,7 @@ namespace Amazon.LicenseManager.Model
         private List<EntitlementData> _entitlementsAllowed = new List<EntitlementData>();
         private string _expiration;
         private string _issuedAt;
+        private string _licenseArn;
         private string _licenseConsumptionToken;
         private string _nodeId;
         private string _signedToken;
@@ -113,6 +114,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetIssuedAt()
         {
             return this._issuedAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the checkout license.
+        /// </para>
+        /// </summary>
+        public string LicenseArn
+        {
+            get { return this._licenseArn; }
+            set { this._licenseArn = value; }
+        }
+
+        // Check to see if LicenseArn property is set
+        internal bool IsSetLicenseArn()
+        {
+            return this._licenseArn != null;
         }
 
         /// <summary>

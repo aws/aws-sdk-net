@@ -75,6 +75,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     response.IssuedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LicenseArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LicenseArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LicenseConsumptionToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
