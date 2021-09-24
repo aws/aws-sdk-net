@@ -1,3 +1,14 @@
+### 3.7.124.0 (2021-09-24 18:23 UTC)
+* EC2 (3.7.30.0)
+	* DescribeInstances now returns Platform Details, Usage Operation, and Usage Operation Update Time.
+* LicenseManager (3.7.5.0)
+	* AWS License Manager now allows customers to get the LicenseArn in the Checkout API Response.
+* Core 3.7.3.11
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.123.0 (2021-09-23 18:15 UTC)
 * AppSync (3.7.2.0)
 	* Documented the new OpenSearchServiceDataSourceConfig data type. Added deprecation notes to the ElasticsearchDataSourceConfig data type.
