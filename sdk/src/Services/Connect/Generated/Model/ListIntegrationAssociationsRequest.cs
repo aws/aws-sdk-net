@@ -30,12 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIntegrationAssociations operation.
-    /// Provides summary information about the AppIntegration associations for the specified
+    /// Provides summary information about the AWS resource associations for the specified
     /// Amazon Connect instance.
     /// </summary>
     public partial class ListIntegrationAssociationsRequest : AmazonConnectRequest
     {
         private string _instanceId;
+        private IntegrationType _integrationType;
         private int? _maxResults;
         private string _nextToken;
 
@@ -57,6 +58,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationType.
+        /// </summary>
+        public IntegrationType IntegrationType
+        {
+            get { return this._integrationType; }
+            set { this._integrationType = value; }
+        }
+
+        // Check to see if IntegrationType property is set
+        internal bool IsSetIntegrationType()
+        {
+            return this._integrationType != null;
         }
 
         /// <summary>

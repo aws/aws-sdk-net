@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUseCase operation.
-    /// Creates a use case for an AppIntegration association.
+    /// Creates a use case for an integration association.
     /// </summary>
     public partial class CreateUseCaseRequest : AmazonConnectRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IntegrationAssociationId. 
         /// <para>
-        /// The identifier for the AppIntegration association.
+        /// The identifier for the integration association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -100,7 +100,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UseCaseType. 
         /// <para>
-        /// The type of use case to associate to the AppIntegration association. Each AppIntegration
+        /// The type of use case to associate to the integration association. Each integration
         /// association can have only one of each use case type.
         /// </para>
         /// </summary>

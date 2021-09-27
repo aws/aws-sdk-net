@@ -51,17 +51,45 @@ namespace Amazon.Connect.Model
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
     /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code>
+    /// = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more
+    /// information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+    /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class StartOutboundVoiceContactRequest : AmazonConnectRequest
     {
+        private AnswerMachineDetectionConfig _answerMachineDetectionConfig;
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _campaignId;
         private string _clientToken;
         private string _contactFlowId;
         private string _destinationPhoneNumber;
         private string _instanceId;
         private string _queueId;
         private string _sourcePhoneNumber;
+        private TrafficType _trafficType;
+
+        /// <summary>
+        /// Gets and sets the property AnswerMachineDetectionConfig. 
+        /// <para>
+        /// Configuration of the answering machine detection for this outbound call. 
+        /// </para>
+        /// </summary>
+        public AnswerMachineDetectionConfig AnswerMachineDetectionConfig
+        {
+            get { return this._answerMachineDetectionConfig; }
+            set { this._answerMachineDetectionConfig = value; }
+        }
+
+        // Check to see if AnswerMachineDetectionConfig property is set
+        internal bool IsSetAnswerMachineDetectionConfig()
+        {
+            return this._answerMachineDetectionConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -86,6 +114,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CampaignId. 
+        /// <para>
+        /// The campaign identifier of the outbound communication.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string CampaignId
+        {
+            get { return this._campaignId; }
+            set { this._campaignId = value; }
+        }
+
+        // Check to see if CampaignId property is set
+        internal bool IsSetCampaignId()
+        {
+            return this._campaignId != null;
         }
 
         /// <summary>
@@ -214,6 +261,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetSourcePhoneNumber()
         {
             return this._sourcePhoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficType. 
+        /// <para>
+        /// Denotes the class of traffic. Calls with different traffic types are handled differently
+        /// by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code>
+        /// if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all
+        /// other cases, use <code>GENERAL</code>. 
+        /// </para>
+        /// </summary>
+        public TrafficType TrafficType
+        {
+            get { return this._trafficType; }
+            set { this._trafficType = value; }
+        }
+
+        // Check to see if TrafficType property is set
+        internal bool IsSetTrafficType()
+        {
+            return this._trafficType != null;
         }
 
     }

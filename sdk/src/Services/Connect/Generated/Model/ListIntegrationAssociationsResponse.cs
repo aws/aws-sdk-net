@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IntegrationAssociationSummaryList. 
         /// <para>
-        /// The AppIntegration associations.
+        /// The associations.
         /// </para>
         /// </summary>
         public List<IntegrationAssociationSummary> IntegrationAssociationSummaryList

@@ -962,6 +962,22 @@ namespace Amazon.Connect
         /// Constant EVENT for IntegrationType
         /// </summary>
         public static readonly IntegrationType EVENT = new IntegrationType("EVENT");
+        /// <summary>
+        /// Constant PINPOINT_APP for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType PINPOINT_APP = new IntegrationType("PINPOINT_APP");
+        /// <summary>
+        /// Constant VOICE_ID for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType VOICE_ID = new IntegrationType("VOICE_ID");
+        /// <summary>
+        /// Constant WISDOM_ASSISTANT for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType WISDOM_ASSISTANT = new IntegrationType("WISDOM_ASSISTANT");
+        /// <summary>
+        /// Constant WISDOM_KNOWLEDGE_BASE for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType WISDOM_KNOWLEDGE_BASE = new IntegrationType("WISDOM_KNOWLEDGE_BASE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2571,6 +2587,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type TrafficType.
+    /// </summary>
+    public class TrafficType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAMPAIGN for TrafficType
+        /// </summary>
+        public static readonly TrafficType CAMPAIGN = new TrafficType("CAMPAIGN");
+        /// <summary>
+        /// Constant GENERAL for TrafficType
+        /// </summary>
+        public static readonly TrafficType GENERAL = new TrafficType("GENERAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrafficType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficType FindValue(string value)
+        {
+            return FindValue<TrafficType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Unit.
     /// </summary>
     public class Unit : ConstantClass
@@ -2630,6 +2696,10 @@ namespace Amazon.Connect
     public class UseCaseType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CONNECT_CAMPAIGNS for UseCaseType
+        /// </summary>
+        public static readonly UseCaseType CONNECT_CAMPAIGNS = new UseCaseType("CONNECT_CAMPAIGNS");
         /// <summary>
         /// Constant RULES_EVALUATION for UseCaseType
         /// </summary>

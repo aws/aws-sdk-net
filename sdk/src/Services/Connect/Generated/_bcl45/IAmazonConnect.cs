@@ -1035,7 +1035,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Create an AppIntegration association with an Amazon Connect instance.
+        /// Creates an AWS resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// 
@@ -1061,7 +1061,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Create an AppIntegration association with an Amazon Connect instance.
+        /// Creates an AWS resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -1313,7 +1313,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a use case for an AppIntegration association.
+        /// Creates a use case for an integration association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUseCase service method.</param>
         /// 
@@ -1339,7 +1339,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a use case for an AppIntegration association.
+        /// Creates a use case for an integration association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUseCase service method.</param>
         /// <param name="cancellationToken">
@@ -1665,7 +1665,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an AppIntegration association from an Amazon Connect instance. The association
+        /// Deletes an AWS resource association from an Amazon Connect instance. The association
         /// must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
@@ -1689,7 +1689,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an AppIntegration association from an Amazon Connect instance. The association
+        /// Deletes an AWS resource association from an Amazon Connect instance. The association
         /// must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
@@ -1777,7 +1777,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a use case from an AppIntegration association.
+        /// Deletes a use case from an integration association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUseCase service method.</param>
         /// 
@@ -1800,7 +1800,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a use case from an AppIntegration association.
+        /// Deletes a use case from an integration association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUseCase service method.</param>
         /// <param name="cancellationToken">
@@ -4105,7 +4105,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the AppIntegration associations for the specified
+        /// Provides summary information about the AWS resource associations for the specified
         /// Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
@@ -4129,7 +4129,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the AppIntegration associations for the specified
+        /// Provides summary information about the AWS resource associations for the specified
         /// Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
@@ -4983,7 +4983,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the use cases.
+        /// Lists the use cases for the integration association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUseCases service method.</param>
         /// 
@@ -5006,7 +5006,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists the use cases.
+        /// Lists the use cases for the integration association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUseCases service method.</param>
         /// <param name="cancellationToken">
@@ -5442,6 +5442,13 @@ namespace Amazon.Connect
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
         /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code>
+        /// = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOutboundVoiceContact service method.</param>
@@ -5493,6 +5500,13 @@ namespace Amazon.Connect
         /// UK numbers with a 447 prefix are not allowed by default. Before you can dial these
         /// UK mobile numbers, you must submit a service quota increase request. For more information,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code>
+        /// = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
         /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         ///  </note>

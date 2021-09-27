@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegrationAssociation operation.
-    /// Create an AppIntegration association with an Amazon Connect instance.
+    /// Creates an AWS resource association with an Amazon Connect instance.
     /// </summary>
     public partial class CreateIntegrationAssociationRequest : AmazonConnectRequest
     {
@@ -103,10 +103,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SourceApplicationName. 
         /// <para>
-        /// The name of the external application.
+        /// The name of the external application. This field is only required for the EVENT integration
+        /// type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string SourceApplicationName
         {
             get { return this._sourceApplicationName; }
@@ -122,10 +123,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SourceApplicationUrl. 
         /// <para>
-        /// The URL for the external application.
+        /// The URL for the external application. This field is only required for the EVENT integration
+        /// type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2000)]
+        [AWSProperty(Min=1, Max=2000)]
         public string SourceApplicationUrl
         {
             get { return this._sourceApplicationUrl; }
@@ -141,10 +143,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The type of the data source.
+        /// The type of the data source. This field is only required for the EVENT integration
+        /// type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SourceType SourceType
         {
             get { return this._sourceType; }

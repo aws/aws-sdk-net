@@ -48,6 +48,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The type of attribute.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature,
+        /// contact AWS Support for allowlisting.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public InstanceAttributeType AttributeType

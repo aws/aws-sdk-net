@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUseCase operation.
-    /// Deletes a use case from an AppIntegration association.
+    /// Deletes a use case from an integration association.
     /// </summary>
     public partial class DeleteUseCaseRequest : AmazonConnectRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IntegrationAssociationId. 
         /// <para>
-        /// The identifier for the AppIntegration association.
+        /// The identifier for the integration association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

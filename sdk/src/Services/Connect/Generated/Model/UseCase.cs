@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property UseCaseType. 
         /// <para>
-        /// The type of use case to associate to the AppIntegration association. Each AppIntegration
+        /// The type of use case to associate to the integration association. Each integration
         /// association can have only one of each use case type.
         /// </para>
         /// </summary>

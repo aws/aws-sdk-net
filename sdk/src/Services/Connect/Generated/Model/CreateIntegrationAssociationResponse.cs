@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IntegrationAssociationId. 
         /// <para>
-        /// The identifier for the association.
+        /// The identifier for the integration association.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

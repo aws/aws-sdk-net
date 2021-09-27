@@ -65,6 +65,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnswerMachineDetectionConfig())
+                {
+                    context.Writer.WritePropertyName("AnswerMachineDetectionConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AnswerMachineDetectionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnswerMachineDetectionConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAttributes())
                 {
                     context.Writer.WritePropertyName("Attributes");
@@ -77,6 +88,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestAttributesValue);
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCampaignId())
+                {
+                    context.Writer.WritePropertyName("CampaignId");
+                    context.Writer.Write(publicRequest.CampaignId);
                 }
 
                 if(publicRequest.IsSetClientToken())
@@ -118,6 +135,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SourcePhoneNumber");
                     context.Writer.Write(publicRequest.SourcePhoneNumber);
+                }
+
+                if(publicRequest.IsSetTrafficType())
+                {
+                    context.Writer.WritePropertyName("TrafficType");
+                    context.Writer.Write(publicRequest.TrafficType);
                 }
 
         

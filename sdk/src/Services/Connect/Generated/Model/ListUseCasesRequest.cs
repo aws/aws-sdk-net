@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUseCases operation.
-    /// Lists the use cases.
+    /// Lists the use cases for the integration association.
     /// </summary>
     public partial class ListUseCasesRequest : AmazonConnectRequest
     {

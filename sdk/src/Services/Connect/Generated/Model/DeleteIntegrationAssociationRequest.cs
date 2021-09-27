@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIntegrationAssociation operation.
-    /// Deletes an AppIntegration association from an Amazon Connect instance. The association
+    /// Deletes an AWS resource association from an Amazon Connect instance. The association
     /// must not have any use cases associated with it.
     /// </summary>
     public partial class DeleteIntegrationAssociationRequest : AmazonConnectRequest
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IntegrationAssociationId. 
         /// <para>
-        /// The identifier for the AppIntegration association.
+        /// The identifier for the integration association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

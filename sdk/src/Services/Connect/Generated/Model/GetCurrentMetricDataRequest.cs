@@ -150,7 +150,11 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// When you use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS.
+        /// When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS.
         /// For example, if you get a response like this:
         /// </para>
         ///  

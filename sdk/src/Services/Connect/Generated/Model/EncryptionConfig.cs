@@ -58,8 +58,13 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the encryption key.
+        /// The full ARN of the encryption key. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Be sure to provide the full ARN of the encryption key, not just the ID.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string KeyId
