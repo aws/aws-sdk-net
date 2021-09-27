@@ -1132,6 +1132,10 @@
       <Project>{0C6C821A-0A1D-4618-A8A8-38752F65113A}</Project>
       <Name>AWSSDK.Translate.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/VoiceID/AWSSDK.VoiceID.CodeAnalysis.csproj">
+      <Project>{0C6BDFBF-3A9E-4E72-8D52-0484B38DC018}</Project>
+      <Name>AWSSDK.VoiceID.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WAF/AWSSDK.WAF.CodeAnalysis.csproj">
       <Project>{010849C1-799E-42A7-B108-984159C002E6}</Project>
       <Name>AWSSDK.WAF.CodeAnalysis</Name>
