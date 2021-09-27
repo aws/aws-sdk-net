@@ -1,3 +1,22 @@
+### 3.7.125.0 (2021-09-27 20:32 UTC)
+* AppIntegrationsService (3.7.1.0)
+	* The Amazon AppIntegrations service enables you to configure and reuse connections to external applications.
+* Connect (3.7.5.0)
+	* This release updates a set of APIs: CreateIntegrationAssociation, ListIntegrationAssociations, CreateUseCase, and StartOutboundVoiceContact. You can use it to create integrations with Amazon Pinpoint for the Amazon Connect Campaigns use case, Amazon Connect Voice ID, and Amazon Connect Wisdom.
+* ConnectWisdomService (3.7.0.0)
+	* Released Amazon Connect Wisdom, a feature of Amazon Connect, which provides real-time recommendations and search functionality in general availability (GA).  For more information, see https://docs.aws.amazon.com/wisdom/latest/APIReference/Welcome.html.
+* ElasticLoadBalancingV2 (3.7.1.0)
+	* Adds new ALB-type target group to facilitate forwarding traffic from NLB to ALB
+* Pinpoint (3.7.3.0)
+	* Added support for journey with contact center activity
+* VoiceID (3.7.0.0)
+	* Released the Amazon Voice ID SDK, for usage with the Amazon Connect Voice ID feature released for Amazon Connect.
+* Core 3.7.3.12
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.124.0 (2021-09-24 18:23 UTC)
 * EC2 (3.7.30.0)
 	* DescribeInstances now returns Platform Details, Usage Operation, and Usage Operation Update Time.
