@@ -46,7 +46,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported if the target type of the target group is <code>instance</code>.
+        /// This parameter is not supported if the target type of the target group is <code>instance</code>
+        /// or <code>alb</code>.
         /// </para>
         ///  
         /// <para>
@@ -83,6 +84,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The ID of the target. If the target type of the target group is <code>instance</code>,
         /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address.
         /// If the target type is <code>lambda</code>, specify the ARN of the Lambda function.
+        /// If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer
+        /// target. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +105,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The port on which the target is listening. If the target group protocol is GENEVE,
-        /// the supported port is 6081. Not used if the target is a Lambda function.
+        /// the supported port is 6081. If the target type is <code>alb</code>, the targeted Application
+        /// Load Balancer must have at least one listener whose port matches the target group
+        /// port. Not used if the target is a Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

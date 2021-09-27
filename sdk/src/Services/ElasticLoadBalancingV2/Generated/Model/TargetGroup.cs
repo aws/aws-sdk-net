@@ -318,8 +318,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The type of target that you must specify when registering targets with this target
         /// group. The possible values are <code>instance</code> (register targets by instance
-        /// ID), <code>ip</code> (register targets by IP address), or <code>lambda</code> (register
-        /// a single Lambda function as a target).
+        /// ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register
+        /// a single Lambda function as a target), or <code>alb</code> (register a single Application
+        /// Load Balancer as a target).
         /// </para>
         /// </summary>
         public TargetTypeEnum TargetType

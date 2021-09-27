@@ -689,6 +689,10 @@ namespace Amazon.ElasticLoadBalancingV2
     {
 
         /// <summary>
+        /// Constant Alb for TargetTypeEnum
+        /// </summary>
+        public static readonly TargetTypeEnum Alb = new TargetTypeEnum("alb");
+        /// <summary>
         /// Constant Instance for TargetTypeEnum
         /// </summary>
         public static readonly TargetTypeEnum Instance = new TargetTypeEnum("instance");
