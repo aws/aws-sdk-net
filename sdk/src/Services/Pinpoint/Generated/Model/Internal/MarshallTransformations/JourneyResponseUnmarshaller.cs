@@ -88,6 +88,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JourneyChannelSettings", targetDepth))
+                {
+                    var unmarshaller = JourneyChannelSettingsUnmarshaller.Instance;
+                    unmarshalledObject.JourneyChannelSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

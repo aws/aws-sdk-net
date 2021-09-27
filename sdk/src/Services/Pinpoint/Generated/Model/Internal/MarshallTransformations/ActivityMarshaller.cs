@@ -56,6 +56,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetContactCenter())
+            {
+                context.Writer.WritePropertyName("ContactCenter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContactCenterActivityMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContactCenter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCUSTOM())
             {
                 context.Writer.WritePropertyName("CUSTOM");

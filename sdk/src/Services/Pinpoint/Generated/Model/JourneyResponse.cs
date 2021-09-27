@@ -37,6 +37,7 @@ namespace Amazon.Pinpoint.Model
         private string _applicationId;
         private string _creationDate;
         private string _id;
+        private JourneyChannelSettings _journeyChannelSettings;
         private string _lastModifiedDate;
         private JourneyLimits _limits;
         private bool? _localTime;
@@ -125,6 +126,24 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JourneyChannelSettings. 
+        /// <para>
+        /// The channel-specific configurations for the journey.
+        /// </para>
+        /// </summary>
+        public JourneyChannelSettings JourneyChannelSettings
+        {
+            get { return this._journeyChannelSettings; }
+            set { this._journeyChannelSettings = value; }
+        }
+
+        // Check to see if JourneyChannelSettings property is set
+        internal bool IsSetJourneyChannelSettings()
+        {
+            return this._journeyChannelSettings != null;
         }
 
         /// <summary>

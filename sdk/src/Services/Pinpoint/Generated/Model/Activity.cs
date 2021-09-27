@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     public partial class Activity
     {
         private ConditionalSplitActivity _conditionalSplit;
+        private ContactCenterActivity _contactCenter;
         private CustomMessageActivity _custom;
         private string _description;
         private EmailMessageActivity _email;
@@ -61,6 +62,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetConditionalSplit()
         {
             return this._conditionalSplit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactCenter. 
+        /// <para>
+        /// The settings for a connect activity. This type of activity initiates a contact center
+        /// call to participants.
+        /// </para>
+        /// </summary>
+        public ContactCenterActivity ContactCenter
+        {
+            get { return this._contactCenter; }
+            set { this._contactCenter = value; }
+        }
+
+        // Check to see if ContactCenter property is set
+        internal bool IsSetContactCenter()
+        {
+            return this._contactCenter != null;
         }
 
         /// <summary>

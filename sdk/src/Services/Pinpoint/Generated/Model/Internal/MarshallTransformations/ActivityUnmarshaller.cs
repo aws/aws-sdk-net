@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConditionalSplit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContactCenter", targetDepth))
+                {
+                    var unmarshaller = ContactCenterActivityUnmarshaller.Instance;
+                    unmarshalledObject.ContactCenter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CUSTOM", targetDepth))
                 {
                     var unmarshaller = CustomMessageActivityUnmarshaller.Instance;
