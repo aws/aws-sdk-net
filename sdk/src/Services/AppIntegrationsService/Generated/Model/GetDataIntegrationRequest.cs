@@ -29,30 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEventIntegration operation.
-    /// Returns information about the event integration.
+    /// Container for the parameters to the GetDataIntegration operation.
+    /// Returns information about the DataIntegration.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You cannot create a DataIntegration association for a DataIntegration that has been
+    /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+    /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+    /// API.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class GetEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class GetDataIntegrationRequest : AmazonAppIntegrationsServiceRequest
     {
-        private string _name;
+        private string _identifier;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name of the event integration. 
+        /// A unique identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        public string Identifier
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._identifier; }
+            set { this._identifier = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Identifier property is set
+        internal bool IsSetIdentifier()
         {
-            return this._name != null;
+            return this._identifier != null;
         }
 
     }

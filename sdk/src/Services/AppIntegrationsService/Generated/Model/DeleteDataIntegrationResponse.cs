@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEventIntegration operation.
-    /// Returns information about the event integration.
+    /// This is the response object from the DeleteDataIntegration operation.
     /// </summary>
-    public partial class GetEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class DeleteDataIntegrationResponse : AmazonWebServiceResponse
     {
-        private string _name;
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the event integration. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
 
     }
 }

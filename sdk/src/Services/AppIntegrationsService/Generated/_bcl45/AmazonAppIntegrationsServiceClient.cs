@@ -45,7 +45,9 @@ namespace Amazon.AppIntegrationsService
     /// <para>
     /// For information about how you can use external applications with Amazon Connect, see
     /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/crm.html">Set up pre-built
-    /// integrations</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// integrations</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-wisdom.html">Deliver
+    /// information to agents using Amazon Connect Wisdom</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonAppIntegrationsServiceClient : AmazonServiceClient, IAmazonAppIntegrationsService
@@ -246,6 +248,99 @@ namespace Amazon.AppIntegrationsService
         #endregion
 
 
+        #region  CreateDataIntegration
+
+
+        /// <summary>
+        /// Creates and persists a DataIntegration resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <code>CreateDataIntegration</code> API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceQuotaExceededException">
+        /// The allowed quota for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegration">REST API Reference for CreateDataIntegration Operation</seealso>
+        public virtual CreateDataIntegrationResponse CreateDataIntegration(CreateDataIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates and persists a DataIntegration resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <code>CreateDataIntegration</code> API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceQuotaExceededException">
+        /// The allowed quota for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegration">REST API Reference for CreateDataIntegration Operation</seealso>
+        public virtual Task<CreateDataIntegrationResponse> CreateDataIntegrationAsync(CreateDataIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDataIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEventIntegration
 
 
@@ -329,6 +424,99 @@ namespace Amazon.AppIntegrationsService
 
         #endregion
         
+        #region  DeleteDataIntegration
+
+
+        /// <summary>
+        /// Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations
+        /// can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow
+        /// flow and service linked role. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteDataIntegration">REST API Reference for DeleteDataIntegration Operation</seealso>
+        public virtual DeleteDataIntegrationResponse DeleteDataIntegration(DeleteDataIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations
+        /// can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow
+        /// flow and service linked role. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteDataIntegration">REST API Reference for DeleteDataIntegration Operation</seealso>
+        public virtual Task<DeleteDataIntegrationResponse> DeleteDataIntegrationAsync(DeleteDataIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDataIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEventIntegration
 
 
@@ -402,11 +590,100 @@ namespace Amazon.AppIntegrationsService
 
         #endregion
         
+        #region  GetDataIntegration
+
+
+        /// <summary>
+        /// Returns information about the DataIntegration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the GetDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetDataIntegration">REST API Reference for GetDataIntegration Operation</seealso>
+        public virtual GetDataIntegrationResponse GetDataIntegration(GetDataIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the DataIntegration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetDataIntegration">REST API Reference for GetDataIntegration Operation</seealso>
+        public virtual Task<GetDataIntegrationResponse> GetDataIntegrationAsync(GetDataIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEventIntegration
 
 
         /// <summary>
-        /// Return information about the event integration.
+        /// Returns information about the event integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventIntegration service method.</param>
         /// 
@@ -438,7 +715,7 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// Return information about the event integration.
+        /// Returns information about the event integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -469,6 +746,178 @@ namespace Amazon.AppIntegrationsService
             options.ResponseUnmarshaller = GetEventIntegrationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetEventIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataIntegrationAssociations
+
+
+        /// <summary>
+        /// Returns a paginated list of DataIntegration associations in the account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationAssociations service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrationAssociations">REST API Reference for ListDataIntegrationAssociations Operation</seealso>
+        public virtual ListDataIntegrationAssociationsResponse ListDataIntegrationAssociations(ListDataIntegrationAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataIntegrationAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of DataIntegration associations in the account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationAssociations service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrationAssociations">REST API Reference for ListDataIntegrationAssociations Operation</seealso>
+        public virtual Task<ListDataIntegrationAssociationsResponse> ListDataIntegrationAssociationsAsync(ListDataIntegrationAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataIntegrationAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataIntegrations
+
+
+        /// <summary>
+        /// Returns a paginated list of DataIntegrations in the account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrations service method.</param>
+        /// 
+        /// <returns>The response from the ListDataIntegrations service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">REST API Reference for ListDataIntegrations Operation</seealso>
+        public virtual ListDataIntegrationsResponse ListDataIntegrations(ListDataIntegrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataIntegrationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of DataIntegrations in the account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataIntegrations service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">REST API Reference for ListDataIntegrations Operation</seealso>
+        public virtual Task<ListDataIntegrationsResponse> ListDataIntegrationsAsync(ListDataIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataIntegrationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -800,6 +1249,95 @@ namespace Amazon.AppIntegrationsService
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataIntegration
+
+
+        /// <summary>
+        /// Updates the description of a DataIntegration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegration">REST API Reference for UpdateDataIntegration Operation</seealso>
+        public virtual UpdateDataIntegrationResponse UpdateDataIntegration(UpdateDataIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the description of a DataIntegration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegration">REST API Reference for UpdateDataIntegration Operation</seealso>
+        public virtual Task<UpdateDataIntegrationResponse> UpdateDataIntegrationAsync(UpdateDataIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDataIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -36,7 +36,9 @@ namespace Amazon.AppIntegrationsService
     /// <para>
     /// For information about how you can use external applications with Amazon Connect, see
     /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/crm.html">Set up pre-built
-    /// integrations</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// integrations</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-wisdom.html">Deliver
+    /// information to agents using Amazon Connect Wisdom</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonAppIntegrationsService : IAmazonService, IDisposable
@@ -45,6 +47,72 @@ namespace Amazon.AppIntegrationsService
 
 
 
+        
+        #region  CreateDataIntegration
+
+
+        /// <summary>
+        /// Creates and persists a DataIntegration resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <code>CreateDataIntegration</code> API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceQuotaExceededException">
+        /// The allowed quota for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegration">REST API Reference for CreateDataIntegration Operation</seealso>
+        CreateDataIntegrationResponse CreateDataIntegration(CreateDataIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataIntegration operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegration">REST API Reference for CreateDataIntegration Operation</seealso>
+        IAsyncResult BeginCreateDataIntegration(CreateDataIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataIntegration.</param>
+        /// 
+        /// <returns>Returns a  CreateDataIntegrationResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegration">REST API Reference for CreateDataIntegration Operation</seealso>
+        CreateDataIntegrationResponse EndCreateDataIntegration(IAsyncResult asyncResult);
+
+        #endregion
         
         #region  CreateEventIntegration
 
@@ -107,6 +175,72 @@ namespace Amazon.AppIntegrationsService
 
         #endregion
         
+        #region  DeleteDataIntegration
+
+
+        /// <summary>
+        /// Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations
+        /// can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow
+        /// flow and service linked role. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteDataIntegration">REST API Reference for DeleteDataIntegration Operation</seealso>
+        DeleteDataIntegrationResponse DeleteDataIntegration(DeleteDataIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataIntegration operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteDataIntegration">REST API Reference for DeleteDataIntegration Operation</seealso>
+        IAsyncResult BeginDeleteDataIntegration(DeleteDataIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataIntegration.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataIntegrationResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteDataIntegration">REST API Reference for DeleteDataIntegration Operation</seealso>
+        DeleteDataIntegrationResponse EndDeleteDataIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteEventIntegration
 
 
@@ -163,11 +297,75 @@ namespace Amazon.AppIntegrationsService
 
         #endregion
         
+        #region  GetDataIntegration
+
+
+        /// <summary>
+        /// Returns information about the DataIntegration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the GetDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetDataIntegration">REST API Reference for GetDataIntegration Operation</seealso>
+        GetDataIntegrationResponse GetDataIntegration(GetDataIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegration operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetDataIntegration">REST API Reference for GetDataIntegration Operation</seealso>
+        IAsyncResult BeginGetDataIntegration(GetDataIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataIntegration.</param>
+        /// 
+        /// <returns>Returns a  GetDataIntegrationResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetDataIntegration">REST API Reference for GetDataIntegration Operation</seealso>
+        GetDataIntegrationResponse EndGetDataIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetEventIntegration
 
 
         /// <summary>
-        /// Return information about the event integration.
+        /// Returns information about the event integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventIntegration service method.</param>
         /// 
@@ -215,6 +413,131 @@ namespace Amazon.AppIntegrationsService
         /// <returns>Returns a  GetEventIntegrationResult from AppIntegrationsService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetEventIntegration">REST API Reference for GetEventIntegration Operation</seealso>
         GetEventIntegrationResponse EndGetEventIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDataIntegrationAssociations
+
+
+        /// <summary>
+        /// Returns a paginated list of DataIntegration associations in the account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationAssociations service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrationAssociations">REST API Reference for ListDataIntegrationAssociations Operation</seealso>
+        ListDataIntegrationAssociationsResponse ListDataIntegrationAssociations(ListDataIntegrationAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataIntegrationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationAssociations operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataIntegrationAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrationAssociations">REST API Reference for ListDataIntegrationAssociations Operation</seealso>
+        IAsyncResult BeginListDataIntegrationAssociations(ListDataIntegrationAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataIntegrationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataIntegrationAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListDataIntegrationAssociationsResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrationAssociations">REST API Reference for ListDataIntegrationAssociations Operation</seealso>
+        ListDataIntegrationAssociationsResponse EndListDataIntegrationAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDataIntegrations
+
+
+        /// <summary>
+        /// Returns a paginated list of DataIntegrations in the account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrations service method.</param>
+        /// 
+        /// <returns>The response from the ListDataIntegrations service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">REST API Reference for ListDataIntegrations Operation</seealso>
+        ListDataIntegrationsResponse ListDataIntegrations(ListDataIntegrationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataIntegrations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrations operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataIntegrations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">REST API Reference for ListDataIntegrations Operation</seealso>
+        IAsyncResult BeginListDataIntegrations(ListDataIntegrationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataIntegrations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataIntegrations.</param>
+        /// 
+        /// <returns>Returns a  ListDataIntegrationsResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">REST API Reference for ListDataIntegrations Operation</seealso>
+        ListDataIntegrationsResponse EndListDataIntegrations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -478,6 +801,70 @@ namespace Amazon.AppIntegrationsService
         /// <returns>Returns a  UntagResourceResult from AppIntegrationsService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDataIntegration
+
+
+        /// <summary>
+        /// Updates the description of a DataIntegration.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot create a DataIntegration association for a DataIntegration that has been
+        /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
+        /// using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a>
+        /// API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataIntegration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataIntegration service method, as returned by AppIntegrationsService.</returns>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegration">REST API Reference for UpdateDataIntegration Operation</seealso>
+        UpdateDataIntegrationResponse UpdateDataIntegration(UpdateDataIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataIntegration operation on AmazonAppIntegrationsServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegration">REST API Reference for UpdateDataIntegration Operation</seealso>
+        IAsyncResult BeginUpdateDataIntegration(UpdateDataIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataIntegration.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataIntegrationResult from AppIntegrationsService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegration">REST API Reference for UpdateDataIntegration Operation</seealso>
+        UpdateDataIntegrationResponse EndUpdateDataIntegration(IAsyncResult asyncResult);
 
         #endregion
         

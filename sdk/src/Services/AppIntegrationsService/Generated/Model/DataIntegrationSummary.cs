@@ -29,20 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEventIntegration operation.
-    /// Returns information about the event integration.
+    /// Summary information about the DataIntegration.
     /// </summary>
-    public partial class GetEventIntegrationRequest : AmazonAppIntegrationsServiceRequest
+    public partial class DataIntegrationSummary
     {
+        private string _arn;
         private string _name;
+        private string _sourceURI;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the DataIntegration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the event integration. 
+        /// The name of the DataIntegration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -53,6 +73,25 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceURI. 
+        /// <para>
+        /// The URI of the data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string SourceURI
+        {
+            get { return this._sourceURI; }
+            set { this._sourceURI = value; }
+        }
+
+        // Check to see if SourceURI property is set
+        internal bool IsSetSourceURI()
+        {
+            return this._sourceURI != null;
         }
 
     }
