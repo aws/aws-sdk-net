@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.125.0",
+    "ProductVersion" : "3.7.125.1",
     "CoreVersion"    : "3.7.3.12",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1258,7 +1258,7 @@
             "InPreview"               : false
         },
         "Transfer"                        : {
-            "Version" : "3.7.3.13",
+            "Version" : "3.7.3.14",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.12"
@@ -1642,7 +1642,7 @@
             "InPreview"               : false
         },
         "Imagebuilder"                    : {
-            "Version" : "3.7.3.3",
+            "Version" : "3.7.3.4",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.12"

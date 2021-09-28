@@ -1,3 +1,9 @@
+### 3.7.125.1 (2021-09-28 18:14 UTC)
+* Imagebuilder (3.7.3.4)
+	* Fix description for AmiDistributionConfiguration Name property, which actually refers to the output AMI name. Also updated for consistent terminology to use "base" image, and another update to fix description text.
+* Transfer (3.7.3.14)
+	* Added changes for managed workflows feature APIs.
+
 ### 3.7.125.0 (2021-09-27 20:32 UTC)
 * AppIntegrationsService (3.7.1.0)
 	* The Amazon AppIntegrations service enables you to configure and reuse connections to external applications.
