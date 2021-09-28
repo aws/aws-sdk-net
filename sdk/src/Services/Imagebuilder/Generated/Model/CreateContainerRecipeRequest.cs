@@ -168,7 +168,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageOsVersionOverride. 
         /// <para>
-        /// Specifies the operating system version for the source image.
+        /// Specifies the operating system version for the base image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -244,7 +244,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ParentImage. 
         /// <para>
-        /// The source image for the container recipe.
+        /// The base image for the container recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -263,7 +263,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PlatformOverride. 
         /// <para>
-        /// Specifies the operating system platform when you use a custom source image.
+        /// Specifies the operating system platform when you use a custom base image.
         /// </para>
         /// </summary>
         public Platform PlatformOverride

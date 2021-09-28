@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Defines a custom source AMI and block device mapping configurations of an instance
-    /// used for building and testing container images.
+    /// Defines a custom base AMI and block device mapping configurations of an instance used
+    /// for building and testing container images.
     /// </summary>
     public partial class InstanceConfiguration
     {

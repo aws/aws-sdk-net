@@ -68,7 +68,7 @@ namespace Amazon.Imagebuilder.Model
         /// The userDataOverride property replaces any commands that Image Builder might have
         /// added to ensure that Systems Manager is installed on your Linux build instance. If
         /// you override the user data, make sure that you add commands to install Systems Manager,
-        /// if it is not pre-installed on your source image.
+        /// if it is not pre-installed on your base image.
         /// </para>
         ///  </note>
         /// </summary>

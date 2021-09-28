@@ -197,7 +197,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property SupportedOsVersions. 
         /// <para>
         /// The operating system (OS) version supported by the component. If the OS information
-        /// is available, a prefix match is performed against the parent image OS version during
+        /// is available, a prefix match is performed against the base image OS version during
         /// image recipe creation.
         /// </para>
         /// </summary>

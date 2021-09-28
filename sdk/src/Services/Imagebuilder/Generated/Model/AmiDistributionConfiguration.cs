@@ -120,7 +120,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the distribution configuration.
+        /// The name of the output AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]

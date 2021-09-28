@@ -136,7 +136,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ParentImage. 
         /// <para>
-        /// The source image for the container recipe.
+        /// The base image for the container recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

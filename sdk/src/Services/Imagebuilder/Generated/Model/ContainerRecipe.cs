@@ -282,7 +282,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ParentImage. 
         /// <para>
-        /// The source image for the container recipe.
+        /// The base image for the container recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -378,7 +378,7 @@ namespace Amazon.Imagebuilder.Model
         ///  
         /// <para>
         ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-        /// (x) to specify the most recent versions or nodes when selecting the source image or
+        /// (x) to specify the most recent versions or nodes when selecting the base image or
         /// components for your recipe. When you use a wildcard in any node, all nodes to the
         /// right of the first wildcard must also be wildcards.
         /// </para>

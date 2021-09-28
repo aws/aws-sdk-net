@@ -130,23 +130,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// The instance metadata options that you can set for the HTTP requests that pipeline
-        /// builds use to launch EC2 build and test instances. For more information about instance
-        /// metadata options, see one of the following links:
+        /// The instance types of the infrastructure configuration. You can specify one or more
+        /// instance types to use for this build. The service will pick one of these instance
+        /// types based on availability.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for
-        /// Linux instances.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-        /// the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>
-        /// for Windows instances.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<string> InstanceTypes
         {

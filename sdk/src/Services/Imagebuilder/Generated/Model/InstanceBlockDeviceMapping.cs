@@ -78,7 +78,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        /// Use to remove a mapping from the parent image.
+        /// Use to remove a mapping from the base image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=0)]
