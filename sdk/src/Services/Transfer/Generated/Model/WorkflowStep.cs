@@ -54,7 +54,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An S3 or EFS location for the destination of the file copy.
+        /// An S3 location for the destination of the file copy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property DeleteStepDetails. 
         /// <para>
-        /// You need to specify the name of the file to be deleted.
+        /// Details for a step that deletes the file.
         /// </para>
         /// </summary>
         public DeleteStepDetails DeleteStepDetails

@@ -40,7 +40,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property EfsFileLocation. 
         /// <para>
-        /// Specifies the details for the Amazon EFS file being copied.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public EfsFileLocation EfsFileLocation

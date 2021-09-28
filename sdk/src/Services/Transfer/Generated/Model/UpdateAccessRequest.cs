@@ -125,8 +125,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf"
-        /// } ]</code> 
+        ///  <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// 
         /// </para>
         ///  
         /// <para>

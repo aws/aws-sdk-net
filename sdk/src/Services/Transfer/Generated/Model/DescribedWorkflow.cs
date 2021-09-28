@@ -81,8 +81,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property OnExceptionSteps. 
         /// <para>
-        /// Specifies the steps (actions) to take if any errors are encountered during execution
-        /// of the workflow.
+        /// Specifies the steps (actions) to take if errors are encountered during execution of
+        /// the workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]

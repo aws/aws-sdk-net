@@ -64,9 +64,16 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property OnExceptionSteps. 
         /// <para>
-        /// Specifies the steps (actions) to take if any errors are encountered during execution
-        /// of the workflow.
+        /// Specifies the steps (actions) to take if errors are encountered during execution of
+        /// the workflow.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
+        /// back API to kick off the exception steps. Additionally, if the lambda does not send
+        /// <code>SUCCESS</code> before it times out, the exception steps are executed.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=8)]
         public List<WorkflowStep> OnExceptionSteps
@@ -107,7 +114,11 @@ namespace Amazon.Transfer.Model
         /// <para>
         ///  <i>Tag</i>: add a tag to the file
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  Currently, copying and tagging are supported only on S3. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  For file location, you specify either the S3 bucket and key, or the EFS filesystem
         /// ID and path. 

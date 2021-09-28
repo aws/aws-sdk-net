@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// The name of the step, used to identify the step that is being deleted.
+    /// The name of the step, used to identify the delete step.
     /// </summary>
     public partial class DeleteStepDetails
     {
