@@ -1000,7 +1000,8 @@ namespace Amazon.Runtime.Internal.Auth
         public static readonly IEnumerable<string> ServicesUsingUnsignedPayload = new HashSet<string>()
         {
             "s3",
-            "s3-object-lambda"
+            "s3-object-lambda",
+            "s3-outposts"
         };
 
         /// <summary>

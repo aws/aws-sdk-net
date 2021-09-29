@@ -16,6 +16,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Transform;
+using AWSSDK_DotNet35.UnitTests.TestTools;
 using static AWSSDK.UnitTests.S3AccessPointTests;
 
 namespace AWSSDK.UnitTests
@@ -327,7 +328,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public void PreSignedUrlTest()
+        public void PreSignedUrlTestBasic()
         {
             var outpostsArn = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
 
@@ -346,6 +347,49 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-west-2.amazonaws.com", uri.Host);
             Assert.AreEqual("/foo.txt", uri.AbsolutePath);
             Assert.IsTrue(uri.Query.Contains("X-Amz-Algorithm=AWS4-HMAC-SHA256"));
+        }
+        
+        [TestMethod]
+        [TestCategory("S3")]
+        [DataTestMethod]
+        [DataRow(
+            "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "obj", "us-west-2", true, "20210827/us-west-2/s3-outposts/aws4_request",
+            "a944fbe2bfbae429f922746546d1c6f890649c88ba7826bd1d258ac13f327e09")]
+        [DataRow(
+            "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "obj", "us-west-2", true, "20210827/us-east-1/s3-outposts/aws4_request",
+            "7f93df0b81f80e590d95442d579bd6cf749a35ff4bbdc6373fa669b89c7fce4e")]
+        public void PreSignedUrlTestAdvanced(string bucketFieldInput, string keyFieldInput, string clientRegion, bool useArnRegion, string aws4Request, string signature)
+        {
+            // All tests assume a datetime of 08-27-2021
+            var signedDate = new DateTime(2021, 08, 27, 0, 0, 0, DateTimeKind.Utc);
+           
+            var config = new AmazonS3Config
+            {
+                UseArnRegion = useArnRegion,
+                RegionEndpoint = RegionEndpoint.GetBySystemName(clientRegion)
+            };
+
+            var client = new AmazonS3Client("ACCESS_KEY_ID", "SECRET_ACCESS_KEY", config);
+            
+            var url = string.Empty;
+            DateFaker.Run(
+                signedDate,
+                () => {
+                    url = client.GetPreSignedURL(new Amazon.S3.Model.GetPreSignedUrlRequest
+                    {
+                        BucketName = bucketFieldInput,
+                        Key = keyFieldInput,
+                        Verb = HttpVerb.GET,
+                        Expires = signedDate.AddMinutes(15)
+                    });
+                });
+
+            Assert.IsNotNull(url);
+
+            Console.WriteLine(url);
+            
+            Assert.IsTrue(url.Contains($"X-Amz-Credential=ACCESS_KEY_ID/{aws4Request}&"), "aws4Request Credential did not match");
+            Assert.IsTrue(url.Contains($"&X-Amz-Signature={signature}"), "signature did not match");
         }
 
         [TestMethod]
