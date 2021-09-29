@@ -30,7 +30,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// A list of details about the email-sending capabilities of your Amazon SES account
-    /// in the current AWS Region.
+    /// in the current Amazon Web Services Region.
     /// </summary>
     public partial class GetAccountResponse : AmazonWebServiceResponse
     {
@@ -117,7 +117,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ProductionAccessEnabled. 
         /// <para>
-        /// Indicates whether or not your account has production access in the current AWS Region.
+        /// Indicates whether or not your account has production access in the current Amazon
+        /// Web Services Region.
         /// </para>
         ///  
         /// <para>
@@ -150,7 +151,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property SendingEnabled. 
         /// <para>
         /// Indicates whether or not email sending is enabled for your Amazon SES account in the
-        /// current AWS Region.
+        /// current Amazon Web Services Region.
         /// </para>
         /// </summary>
         public bool SendingEnabled
@@ -169,7 +170,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property SendQuota. 
         /// <para>
         /// An object that contains information about the per-day and per-second sending limits
-        /// for your Amazon SES account in the current AWS Region.
+        /// for your Amazon SES account in the current Amazon Web Services Region.
         /// </para>
         /// </summary>
         public SendQuota SendQuota
@@ -188,7 +189,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property SuppressionAttributes. 
         /// <para>
         /// An object that contains information about the email address suppression preferences
-        /// for your account in the current AWS Region.
+        /// for your account in the current Amazon Web Services Region.
         /// </para>
         /// </summary>
         public SuppressionAttributes SuppressionAttributes

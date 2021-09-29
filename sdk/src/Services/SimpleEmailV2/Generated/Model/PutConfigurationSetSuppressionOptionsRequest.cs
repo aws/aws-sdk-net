@@ -40,8 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to change the suppression list preferences
-        /// for.
+        /// The name of the configuration set to change the suppression list preferences for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

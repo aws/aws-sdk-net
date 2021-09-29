@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to associate with a dedicated IP pool.
+        /// The name of the configuration set to associate with a dedicated IP pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +61,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SendingPoolName. 
         /// <para>
-        /// The name of the dedicated IP pool that you want to associate with the configuration
-        /// set.
+        /// The name of the dedicated IP pool to associate with the configuration set.
         /// </para>
         /// </summary>
         public string SendingPoolName

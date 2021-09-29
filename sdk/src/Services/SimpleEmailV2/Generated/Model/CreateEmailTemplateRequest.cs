@@ -68,7 +68,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the template you want to create.
+        /// The name of the template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

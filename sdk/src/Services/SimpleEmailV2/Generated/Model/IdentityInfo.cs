@@ -59,21 +59,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// The email identity type. The identity type can be one of the following:
+        /// The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported
+        /// for email identity types.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>EMAIL_ADDRESS</code> – The identity is an email address.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DOMAIN</code> – The identity is a domain.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public IdentityType IdentityType
         {

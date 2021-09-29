@@ -87,8 +87,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
         /// <para>
-        /// The email identity that you want to configure bounce and complaint feedback forwarding
-        /// for.
+        /// The email identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

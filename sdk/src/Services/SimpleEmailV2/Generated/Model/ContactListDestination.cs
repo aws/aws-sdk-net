@@ -39,7 +39,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ContactListImportAction. 
         /// <para>
-        /// &gt;The type of action that you want to perform on the addresses. Acceptable values:
+        /// &gt;The type of action to perform on the addresses. The following are the possible
+        /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

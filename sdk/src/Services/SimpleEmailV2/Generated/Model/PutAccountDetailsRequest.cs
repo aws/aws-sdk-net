@@ -102,7 +102,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property ProductionAccessEnabled. 
         /// <para>
         /// Indicates whether or not your account should have production access in the current
-        /// AWS Region.
+        /// Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>

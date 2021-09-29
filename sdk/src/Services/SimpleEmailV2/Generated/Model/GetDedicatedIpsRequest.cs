@@ -30,7 +30,8 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDedicatedIps operation.
-    /// List the dedicated IP addresses that are associated with your AWS account.
+    /// List the dedicated IP addresses that are associated with your Amazon Web Services
+    /// account.
     /// </summary>
     public partial class GetDedicatedIpsRequest : AmazonSimpleEmailServiceV2Request
     {

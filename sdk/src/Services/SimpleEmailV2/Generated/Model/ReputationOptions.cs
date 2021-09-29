@@ -30,7 +30,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Enable or disable collection of reputation metrics for emails that you send using
-    /// this configuration set in the current AWS Region.
+    /// this configuration set in the current Amazon Web Services Region.
     /// </summary>
     public partial class ReputationOptions
     {

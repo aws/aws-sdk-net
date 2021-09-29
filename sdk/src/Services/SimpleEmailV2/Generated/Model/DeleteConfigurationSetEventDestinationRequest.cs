@@ -49,8 +49,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that contains the event destination that you want
-        /// to delete.
+        /// The name of the configuration set that contains the event destination to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,7 +68,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EventDestinationName. 
         /// <para>
-        /// The name of the event destination that you want to delete.
+        /// The name of the event destination to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

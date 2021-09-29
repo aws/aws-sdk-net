@@ -56,8 +56,8 @@ namespace Amazon.SimpleEmailV2.Model
     /// key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use
     /// BYODKIM, your call to the <code>CreateEmailIdentity</code> operation has to include
     /// the <code>DkimSigningAttributes</code> object. When you specify this object, you provide
-    /// a selector (a component of the DNS record name that identifies the public key that
-    /// you want to use for DKIM authentication) and a private key.
+    /// a selector (a component of the DNS record name that identifies the public key to use
+    /// for DKIM authentication) and a private key.
     /// </para>
     ///  
     /// <para>
@@ -103,8 +103,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property DkimSigningAttributes. 
         /// <para>
         /// If your request includes this object, Amazon SES configures the identity to use Bring
-        /// Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed to the default
-        /// method, <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+        /// Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length
+        /// to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
         /// DKIM</a>.
         /// </para>
         ///  
@@ -128,7 +128,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
         /// <para>
-        /// The email address or domain that you want to verify.
+        /// The email address or domain to verify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -147,8 +147,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of objects that define the tags (keys and values) that you want to associate
-        /// with the email identity.
+        /// An array of objects that define the tags (keys and values) to associate with the email
+        /// identity.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -40,8 +40,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property AutoWarmupEnabled. 
         /// <para>
         /// Enables or disables the automatic warm-up feature for dedicated IP addresses that
-        /// are associated with your Amazon SES account in the current AWS Region. Set to <code>true</code>
-        /// to enable the automatic warm-up feature, or set to <code>false</code> to disable it.
+        /// are associated with your Amazon SES account in the current Amazon Web Services Region.
+        /// Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code>
+        /// to disable it.
         /// </para>
         /// </summary>
         public bool AutoWarmupEnabled

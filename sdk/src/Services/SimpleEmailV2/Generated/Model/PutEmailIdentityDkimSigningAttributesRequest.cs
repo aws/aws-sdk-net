@@ -39,6 +39,10 @@ namespace Amazon.SimpleEmailV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Update the key length that should be used for Easy DKIM.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Change from using no DKIM authentication to using Easy DKIM.
     /// </para>
     ///  </li> <li> 
@@ -64,7 +68,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
         /// <para>
-        /// The email identity that you want to configure DKIM for.
+        /// The email identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -84,8 +88,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property SigningAttributes. 
         /// <para>
         /// An object that contains information about the private key and selector that you want
-        /// to use to configure DKIM for the identity. This object is only required if you want
-        /// to configure Bring Your Own DKIM (BYODKIM) for the identity.
+        /// to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the
+        /// identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+        /// DKIM</a>.
         /// </para>
         /// </summary>
         public DkimSigningAttributes SigningAttributes
@@ -103,8 +108,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SigningAttributesOrigin. 
         /// <para>
-        /// The method that you want to use to configure DKIM for the identity. There are two
-        /// possible values:
+        /// The method to use to configure DKIM for the identity. There are the following possible
+        /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

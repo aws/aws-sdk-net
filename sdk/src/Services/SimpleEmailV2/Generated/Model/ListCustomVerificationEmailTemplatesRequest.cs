@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Container for the parameters to the ListCustomVerificationEmailTemplates operation.
     /// Lists the existing custom verification email templates for your account in the current
-    /// AWS Region.
+    /// Amazon Web Services Region.
     /// 
     ///  
     /// <para>

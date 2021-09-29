@@ -39,8 +39,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property DedicatedIpPools. 
         /// <para>
-        /// A list of all of the dedicated IP pools that are associated with your AWS account
-        /// in the current Region.
+        /// A list of all of the dedicated IP pools that are associated with your Amazon Web Services
+        /// account in the current Region.
         /// </para>
         /// </summary>
         public List<string> DedicatedIpPools

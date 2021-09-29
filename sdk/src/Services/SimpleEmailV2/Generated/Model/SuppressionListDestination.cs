@@ -38,7 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SuppressionListImportAction. 
         /// <para>
-        /// The type of action that you want to perform on the address. Acceptable values:
+        /// The type of action to perform on the address. The following are possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

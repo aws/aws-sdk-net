@@ -30,7 +30,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that contains information about the per-day and per-second sending limits
-    /// for your Amazon SES account in the current AWS Region.
+    /// for your Amazon SES account in the current Amazon Web Services Region.
     /// </summary>
     public partial class SendQuota
     {
@@ -41,8 +41,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Max24HourSend. 
         /// <para>
-        /// The maximum number of emails that you can send in the current AWS Region over a 24-hour
-        /// period. This value is also called your <i>sending quota</i>.
+        /// The maximum number of emails that you can send in the current Amazon Web Services
+        /// Region over a 24-hour period. This value is also called your <i>sending quota</i>.
         /// </para>
         /// </summary>
         public double Max24HourSend
@@ -60,9 +60,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property MaxSendRate. 
         /// <para>
-        /// The maximum number of emails that you can send per second in the current AWS Region.
-        /// This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS
-        /// (transactions per second) rate</i>.
+        /// The maximum number of emails that you can send per second in the current Amazon Web
+        /// Services Region. This value is also called your <i>maximum sending rate</i> or your
+        /// <i>maximum TPS (transactions per second) rate</i>.
         /// </para>
         /// </summary>
         public double MaxSendRate
@@ -80,8 +80,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SentLast24Hours. 
         /// <para>
-        /// The number of emails sent from your Amazon SES account in the current AWS Region over
-        /// the past 24 hours.
+        /// The number of emails sent from your Amazon SES account in the current Amazon Web Services
+        /// Region over the past 24 hours.
         /// </para>
         /// </summary>
         public double SentLast24Hours

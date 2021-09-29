@@ -41,7 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to add a custom tracking domain to.
+        /// The name of the configuration set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property CustomRedirectDomain. 
         /// <para>
-        /// The domain that you want to use to track open and click events.
+        /// The domain to use to track open and click events.
         /// </para>
         /// </summary>
         public string CustomRedirectDomain

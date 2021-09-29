@@ -47,7 +47,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to delete.
+        /// The name of the configuration set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

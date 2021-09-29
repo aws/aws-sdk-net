@@ -44,8 +44,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If AWS paused your account's ability to send email, you can't use this operation to
-        /// resume your account's ability to send email.
+        /// If Amazon Web Services paused your account's ability to send email, you can't use
+        /// this operation to resume your account's ability to send email.
         /// </para>
         ///  </note>
         /// </summary>

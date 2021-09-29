@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Container for the parameters to the GetAccount operation.
     /// Obtain information about the email-sending status and capabilities of your Amazon
-    /// SES account in the current AWS Region.
+    /// SES account in the current Amazon Web Services Region.
     /// </summary>
     public partial class GetAccountRequest : AmazonSimpleEmailServiceV2Request
     {

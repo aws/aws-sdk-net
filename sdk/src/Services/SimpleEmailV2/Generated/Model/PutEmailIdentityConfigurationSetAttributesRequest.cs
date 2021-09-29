@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The configuration set that you want to associate with an email identity.
+        /// The configuration set to associate with an email identity.
         /// </para>
         /// </summary>
         public string ConfigurationSetName
@@ -58,7 +58,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
         /// <para>
-        /// The email address or domain that you want to associate with a configuration set.
+        /// The email address or domain to associate with a configuration set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

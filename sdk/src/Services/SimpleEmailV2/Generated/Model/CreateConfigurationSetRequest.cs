@@ -49,7 +49,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set.
+        /// The name of the configuration set. The name can contain up to 64 alphanumeric characters,
+        /// including letters, numbers, hyphens (-) and underscores (_) only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,8 +141,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of objects that define the tags (keys and values) that you want to associate
-        /// with the configuration set.
+        /// An array of objects that define the tags (keys and values) to associate with the configuration
+        /// set.
         /// </para>
         /// </summary>
         public List<Tag> Tags

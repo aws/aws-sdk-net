@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Container for the parameters to the PutConfigurationSetReputationOptions operation.
     /// Enable or disable collection of reputation metrics for emails that you send using
-    /// a particular configuration set in a specific AWS Region.
+    /// a particular configuration set in a specific Amazon Web Services Region.
     /// </summary>
     public partial class PutConfigurationSetReputationOptionsRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -41,8 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to enable or disable reputation metric
-        /// tracking for.
+        /// The name of the configuration set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

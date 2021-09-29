@@ -55,17 +55,17 @@ namespace Amazon.SimpleEmailV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it in any tag
-    /// keys or values that you define. In addition, you can't edit or remove tag keys or
-    /// values that use this prefix. Tags that use this prefix don’t count against the limit
-    /// of 50 tags per resource.
+    /// The <code>aws:</code> prefix is reserved for use by Amazon Web Services; you can’t
+    /// use it in any tag keys or values that you define. In addition, you can't edit or remove
+    /// tag keys or values that use this prefix. Tags that use this prefix don’t count against
+    /// the limit of 50 tags per resource.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You can associate tags with public or shared resources, but the tags are available
-    /// only for your AWS account, not any other accounts that share the resource. In addition,
-    /// the tags are available only for resources that are located in the specified AWS Region
-    /// for your AWS account.
+    /// only for your Amazon Web Services account, not any other accounts that share the resource.
+    /// In addition, the tags are available only for resources that are located in the specified
+    /// Amazon Web Services Region for your Amazon Web Services account.
     /// </para>
     ///  </li> </ul>
     /// </summary>

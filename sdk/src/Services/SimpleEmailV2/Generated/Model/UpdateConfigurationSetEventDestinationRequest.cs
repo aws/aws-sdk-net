@@ -50,8 +50,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that contains the event destination that you want
-        /// to modify.
+        /// The name of the configuration set that contains the event destination to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +88,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EventDestinationName. 
         /// <para>
-        /// The name of the event destination that you want to modify.
+        /// The name of the event destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

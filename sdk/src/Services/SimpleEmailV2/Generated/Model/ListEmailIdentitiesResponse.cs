@@ -40,7 +40,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentities. 
         /// <para>
-        /// An array that includes all of the email identities associated with your AWS account.
+        /// An array that includes all of the email identities associated with your Amazon Web
+        /// Services account.
         /// </para>
         /// </summary>
         public List<IdentityInfo> EmailIdentities

@@ -57,6 +57,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DomainSigningSelector);
             }
 
+            if(requestObject.IsSetNextSigningKeyLength())
+            {
+                context.Writer.WritePropertyName("NextSigningKeyLength");
+                context.Writer.Write(requestObject.NextSigningKeyLength);
+            }
+
         }
 
         /// <summary>

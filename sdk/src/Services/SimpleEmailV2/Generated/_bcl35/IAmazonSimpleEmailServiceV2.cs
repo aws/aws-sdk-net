@@ -31,39 +31,15 @@ namespace Amazon.SimpleEmailV2
     ///
     /// Amazon SES API v2 
     /// <para>
-    /// Welcome to the Amazon SES API v2 Reference. This guide provides information about
-    /// the Amazon SES API v2, including supported operations, data types, parameters, and
-    /// schemas.
+    ///  <a href="http://aws.amazon.com/ses">Amazon SES</a> is an Amazon Web Services service
+    /// that you can use to send email messages to your customers.
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://aws.amazon.com/pinpoint">Amazon SES</a> is an AWS service that you
-    /// can use to send email messages to your customers.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you're new to Amazon SES API v2, you might find it helpful to also review the <a
-    /// href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon Simple Email
-    /// Service Developer Guide</a>. The <i>Amazon SES Developer Guide</i> provides information
-    /// and code samples that demonstrate how to use Amazon SES API v2 features programmatically.
-    /// </para>
-    ///  
-    /// <para>
-    /// The Amazon SES API v2 is available in several AWS Regions and it provides an endpoint
-    /// for each of these Regions. For a list of all the Regions and endpoints where the API
-    /// is currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region">AWS
-    /// Service Endpoints</a> in the <i>Amazon Web Services General Reference</i>. To learn
-    /// more about AWS Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
-    /// AWS Regions</a> in the <i>Amazon Web Services General Reference</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// In each Region, AWS maintains multiple Availability Zones. These Availability Zones
-    /// are physically isolated from each other, but are united by private, low-latency, high-throughput,
-    /// and highly redundant network connections. These Availability Zones enable us to provide
-    /// very high levels of availability and redundancy, while also minimizing latency. To
-    /// learn more about the number of Availability Zones that are available in each Region,
-    /// see <a href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global Infrastructure</a>.
+    /// If you're new to Amazon SES API v2, you might find it helpful to review the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon
+    /// Simple Email Service Developer Guide</a>. The <i>Amazon SES Developer Guide</i> provides
+    /// information and code samples that demonstrate how to use Amazon SES API v2 features
+    /// programmatically.
     /// </para>
     /// </summary>
     public partial interface IAmazonSimpleEmailServiceV2 : IAmazonService, IDisposable
@@ -380,9 +356,9 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Create a new pool of dedicated IP addresses. A pool can include one or more dedicated
-        /// IP addresses that are associated with your AWS account. You can associate a pool with
-        /// a configuration set. When you send an email that uses that configuration set, the
-        /// message is sent from one of the addresses in the associated pool.
+        /// IP addresses that are associated with your Amazon Web Services account. You can associate
+        /// a pool with a configuration set. When you send an email that uses that configuration
+        /// set, the message is sent from one of the addresses in the associated pool.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDedicatedIpPool service method.</param>
         /// 
@@ -538,8 +514,8 @@ namespace Amazon.SimpleEmailV2
         /// key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use
         /// BYODKIM, your call to the <code>CreateEmailIdentity</code> operation has to include
         /// the <code>DkimSigningAttributes</code> object. When you specify this object, you provide
-        /// a selector (a component of the DNS record name that identifies the public key that
-        /// you want to use for DKIM authentication) and a private key.
+        /// a selector (a component of the DNS record name that identifies the public key to use
+        /// for DKIM authentication) and a private key.
         /// </para>
         ///  
         /// <para>
@@ -1016,7 +992,7 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -1348,7 +1324,7 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Obtain information about the email-sending status and capabilities of your Amazon
-        /// SES account in the current AWS Region.
+        /// SES account in the current Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccount service method.</param>
         /// 
@@ -1768,7 +1744,8 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// List the dedicated IP addresses that are associated with your AWS account.
+        /// List the dedicated IP addresses that are associated with your Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDedicatedIps service method.</param>
         /// 
@@ -1825,9 +1802,10 @@ namespace Amazon.SimpleEmailV2
         ///  
         /// <para>
         /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
-        /// in addition to any other fees that you accrue by using Amazon SES and other AWS services.
-        /// For more information about the features and cost of a Deliverability dashboard subscription,
-        /// see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
+        /// in addition to any other fees that you accrue by using Amazon SES and other Amazon
+        /// Web Services services. For more information about the features and cost of a Deliverability
+        /// dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
+        /// Pricing</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityDashboardOptions service method.</param>
@@ -2450,7 +2428,7 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Lists the existing custom verification email templates for your account in the current
-        /// AWS Region.
+        /// Amazon Web Services Region.
         /// 
         ///  
         /// <para>
@@ -2506,7 +2484,8 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// List all of the dedicated IP pools that exist in your AWS account in the current Region.
+        /// List all of the dedicated IP pools that exist in your Amazon Web Services account
+        /// in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDedicatedIpPools service method.</param>
         /// 
@@ -2654,10 +2633,10 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Returns a list of all of the email identities that are associated with your AWS account.
-        /// An identity can be either an email address or a domain. This operation returns identities
-        /// that are verified as well as those that aren't. This operation returns identities
-        /// that are associated with Amazon SES and Amazon Pinpoint.
+        /// Returns a list of all of the email identities that are associated with your Amazon
+        /// Web Services account. An identity can be either an email address or a domain. This
+        /// operation returns identities that are verified as well as those that aren't. This
+        /// operation returns identities that are associated with Amazon SES and Amazon Pinpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEmailIdentities service method.</param>
         /// 
@@ -2703,7 +2682,8 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Lists the email templates present in your Amazon SES account in the current AWS Region.
+        /// Lists the email templates present in your Amazon SES account in the current Amazon
+        /// Web Services Region.
         /// 
         ///  
         /// <para>
@@ -3140,7 +3120,7 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Enable or disable collection of reputation metrics for emails that you send using
-        /// a particular configuration set in a specific AWS Region.
+        /// a particular configuration set in a specific Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetReputationOptions service method.</param>
         /// 
@@ -3190,7 +3170,7 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Enable or disable email sending for messages that use a particular configuration set
-        /// in a specific AWS Region.
+        /// in a specific Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetSendingOptions service method.</param>
         /// 
@@ -3343,7 +3323,7 @@ namespace Amazon.SimpleEmailV2
         ///  <note> 
         /// <para>
         /// The dedicated IP address that you specify must already exist, and must be associated
-        /// with your AWS account. 
+        /// with your Amazon Web Services account. 
         /// </para>
         ///  
         /// <para>
@@ -3456,9 +3436,10 @@ namespace Amazon.SimpleEmailV2
         ///  
         /// <para>
         /// When you use the Deliverability dashboard, you pay a monthly subscription charge,
-        /// in addition to any other fees that you accrue by using Amazon SES and other AWS services.
-        /// For more information about the features and cost of a Deliverability dashboard subscription,
-        /// see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
+        /// in addition to any other fees that you accrue by using Amazon SES and other Amazon
+        /// Web Services services. For more information about the features and cost of a Deliverability
+        /// dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
+        /// Pricing</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDeliverabilityDashboardOption service method.</param>
@@ -3618,6 +3599,10 @@ namespace Amazon.SimpleEmailV2
         ///  <ul> <li> 
         /// <para>
         /// Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the key length that should be used for Easy DKIM.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3911,8 +3896,8 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Adds an email address to the list of identities for your Amazon SES account in the
-        /// current AWS Region and attempts to verify it. As a result of executing this operation,
-        /// a customized verification email is sent to the specified address.
+        /// current Amazon Web Services Region and attempts to verify it. As a result of executing
+        /// this operation, a customized verification email is sent to the specified address.
         /// 
         ///  
         /// <para>
@@ -3986,7 +3971,8 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Sends an email message. You can use the Amazon SES API v2 to send two types of messages:
+        /// Sends an email message. You can use the Amazon SES API v2 to send the following types
+        /// of messages:
         /// 
         ///  <ul> <li> 
         /// <para>

@@ -60,7 +60,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
         /// <para>
-        /// The email identity for which you want to update policy.
+        /// The email identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

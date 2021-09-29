@@ -44,8 +44,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// A verified domain that’s associated with your AWS account and currently has an active
-        /// Deliverability dashboard subscription.
+        /// A verified domain that’s associated with your Amazon Web Services account and currently
+        /// has an active Deliverability dashboard subscription.
         /// </para>
         /// </summary>
         public string Domain

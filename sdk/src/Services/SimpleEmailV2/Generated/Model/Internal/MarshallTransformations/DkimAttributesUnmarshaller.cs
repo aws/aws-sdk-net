@@ -64,6 +64,24 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CurrentSigningKeyLength", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentSigningKeyLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastKeyGenerationTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastKeyGenerationTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextSigningKeyLength", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NextSigningKeyLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SigningAttributesOrigin", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

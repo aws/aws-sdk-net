@@ -36,7 +36,11 @@ namespace Amazon.SimpleEmailV2.Model
         private List<BulkEmailEntryResult> _bulkEmailEntryResults = new List<BulkEmailEntryResult>();
 
         /// <summary>
-        /// Gets and sets the property BulkEmailEntryResults.
+        /// Gets and sets the property BulkEmailEntryResults. 
+        /// <para>
+        /// One object per intended recipient. Check each response object and retry any messages
+        /// with a failure status.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<BulkEmailEntryResult> BulkEmailEntryResults

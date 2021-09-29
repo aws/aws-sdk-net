@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// A list of configuration sets in your Amazon SES account in the current AWS Region.
+    /// A list of configuration sets in your Amazon SES account in the current Amazon Web
+    /// Services Region.
     /// </summary>
     public partial class ListConfigurationSetsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property ConfigurationSets. 
         /// <para>
         /// An array that contains all of the configuration sets in your Amazon SES account in
-        /// the current AWS Region.
+        /// the current Amazon Web Services Region.
         /// </para>
         /// </summary>
         public List<string> ConfigurationSets

@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
         /// <para>
-        /// The identity (that is, the email address or domain) that you want to delete.
+        /// The identity (that is, the email address or domain) to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

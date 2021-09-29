@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Container for the parameters to the PutConfigurationSetSendingOptions operation.
     /// Enable or disable email sending for messages that use a particular configuration set
-    /// in a specific AWS Region.
+    /// in a specific Amazon Web Services Region.
     /// </summary>
     public partial class PutConfigurationSetSendingOptionsRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -41,8 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to enable or disable email sending
-        /// for.
+        /// The name of the configuration set to enable or disable email sending for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

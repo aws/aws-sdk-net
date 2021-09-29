@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Information about the dedicated IP addresses that are associated with your AWS account.
+    /// Information about the dedicated IP addresses that are associated with your Amazon
+    /// Web Services account.
     /// </summary>
     public partial class GetDedicatedIpsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +40,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property DedicatedIps. 
         /// <para>
-        /// A list of dedicated IP addresses that are associated with your AWS account.
+        /// A list of dedicated IP addresses that are associated with your Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public List<DedicatedIp> DedicatedIps

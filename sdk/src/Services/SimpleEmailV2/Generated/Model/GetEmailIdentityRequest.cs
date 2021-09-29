@@ -41,7 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailIdentity. 
         /// <para>
-        /// The email identity that you want to retrieve details for.
+        /// The email identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

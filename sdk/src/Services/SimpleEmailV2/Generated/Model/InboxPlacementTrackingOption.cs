@@ -30,8 +30,8 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that contains information about the inbox placement data settings for a
-    /// verified domain that’s associated with your AWS account. This data is available only
-    /// if you enabled the Deliverability dashboard for the domain.
+    /// verified domain that’s associated with your Amazon Web Services account. This data
+    /// is available only if you enabled the Deliverability dashboard for the domain.
     /// </summary>
     public partial class InboxPlacementTrackingOption
     {

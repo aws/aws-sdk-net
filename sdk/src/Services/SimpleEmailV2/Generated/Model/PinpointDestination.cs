@@ -42,8 +42,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send
-        /// email events to.
+        /// The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events
+        /// to.
         /// </para>
         /// </summary>
         public string ApplicationArn

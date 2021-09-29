@@ -66,7 +66,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set that you want to use when sending the email.
+        /// The name of the configuration set to use when sending the email.
         /// </para>
         /// </summary>
         public string ConfigurationSetName
@@ -173,8 +173,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property FromEmailAddress. 
         /// <para>
-        /// The email address that you want to use as the "From" address for the email. The address
-        /// that you specify has to be verified.
+        /// The email address to use as the "From" address for the email. The address that you
+        /// specify has to be verified.
         /// </para>
         /// </summary>
         public string FromEmailAddress

@@ -45,15 +45,73 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class DkimAttributes
     {
+        private DkimSigningKeyLength _currentSigningKeyLength;
+        private DateTime? _lastKeyGenerationTimestamp;
+        private DkimSigningKeyLength _nextSigningKeyLength;
         private DkimSigningAttributesOrigin _signingAttributesOrigin;
         private bool? _signingEnabled;
         private DkimStatus _status;
         private List<string> _tokens = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property CurrentSigningKeyLength. 
+        /// <para>
+        /// [Easy DKIM] The key length of the DKIM key pair in use.
+        /// </para>
+        /// </summary>
+        public DkimSigningKeyLength CurrentSigningKeyLength
+        {
+            get { return this._currentSigningKeyLength; }
+            set { this._currentSigningKeyLength = value; }
+        }
+
+        // Check to see if CurrentSigningKeyLength property is set
+        internal bool IsSetCurrentSigningKeyLength()
+        {
+            return this._currentSigningKeyLength != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastKeyGenerationTimestamp. 
+        /// <para>
+        /// [Easy DKIM] The last time a key pair was generated for this identity.
+        /// </para>
+        /// </summary>
+        public DateTime LastKeyGenerationTimestamp
+        {
+            get { return this._lastKeyGenerationTimestamp.GetValueOrDefault(); }
+            set { this._lastKeyGenerationTimestamp = value; }
+        }
+
+        // Check to see if LastKeyGenerationTimestamp property is set
+        internal bool IsSetLastKeyGenerationTimestamp()
+        {
+            return this._lastKeyGenerationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextSigningKeyLength. 
+        /// <para>
+        /// [Easy DKIM] The key length of the future DKIM key pair to be generated. This can be
+        /// changed at most once per day.
+        /// </para>
+        /// </summary>
+        public DkimSigningKeyLength NextSigningKeyLength
+        {
+            get { return this._nextSigningKeyLength; }
+            set { this._nextSigningKeyLength = value; }
+        }
+
+        // Check to see if NextSigningKeyLength property is set
+        internal bool IsSetNextSigningKeyLength()
+        {
+            return this._nextSigningKeyLength != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SigningAttributesOrigin. 
         /// <para>
-        /// A string that indicates how DKIM was configured for the identity. There are two possible
+        /// A string that indicates how DKIM was configured for the identity. These are the possible
         /// values:
         /// </para>
         ///  <ul> <li> 

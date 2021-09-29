@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property Ip. 
         /// <para>
         /// The IP address that you want to obtain more information about. The value you specify
-        /// has to be a dedicated IP address that's assocaited with your AWS account.
+        /// has to be a dedicated IP address that's assocaited with your Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

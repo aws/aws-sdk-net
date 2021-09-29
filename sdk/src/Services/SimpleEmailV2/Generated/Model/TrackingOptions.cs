@@ -36,8 +36,9 @@ namespace Amazon.SimpleEmailV2.Model
     /// 
     ///  
     /// <para>
-    /// These images and links include references to a domain operated by AWS. You can optionally
-    /// configure the Amazon SES to use a domain that you operate for these images and links.
+    /// These images and links include references to a domain operated by Amazon Web Services.
+    /// You can optionally configure the Amazon SES to use a domain that you operate for these
+    /// images and links.
     /// </para>
     /// </summary>
     public partial class TrackingOptions
@@ -47,7 +48,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property CustomRedirectDomain. 
         /// <para>
-        /// The domain that you want to use for tracking open and click events.
+        /// The domain to use for tracking open and click events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
