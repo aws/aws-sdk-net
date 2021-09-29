@@ -1,3 +1,16 @@
+### 3.7.126.0 (2021-09-29 18:15 UTC)
+* Lambda (3.7.4.0)
+	* Adds support for Lambda functions powered by AWS Graviton2 processors. Customers can now select the CPU architecture for their functions.
+* PrometheusService (3.7.2.0)
+	* This release adds alert manager and rule group namespace APIs
+* SimpleEmailV2 (3.7.1.0)
+	* This release includes the ability to use 2048 bits RSA key pairs for DKIM in SES, either with Easy DKIM or Bring Your Own DKIM.
+* Core 3.7.3.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.125.1 (2021-09-28 18:14 UTC)
 * Imagebuilder (3.7.3.4)
 	* Fix description for AmiDistributionConfiguration Name property, which actually refers to the output AMI name. Also updated for consistent terminology to use "base" image, and another update to fix description text.

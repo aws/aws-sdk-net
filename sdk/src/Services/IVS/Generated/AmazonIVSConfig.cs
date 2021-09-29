@@ -32,7 +32,7 @@ namespace Amazon.IVS
     public partial class AmazonIVSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.64");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.65");
 
         private string _userAgent = UserAgentString;
 
