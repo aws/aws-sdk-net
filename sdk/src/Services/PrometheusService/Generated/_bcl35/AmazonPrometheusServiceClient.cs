@@ -237,6 +237,156 @@ namespace Amazon.PrometheusService
         #endregion
 
 
+        #region  CreateAlertManagerDefinition
+
+        /// <summary>
+        /// Create an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
+        public virtual CreateAlertManagerDefinitionResponse CreateAlertManagerDefinition(CreateAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAlertManagerDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlertManagerDefinition operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlertManagerDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
+        public virtual IAsyncResult BeginCreateAlertManagerDefinition(CreateAlertManagerDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAlertManagerDefinition.</param>
+        /// 
+        /// <returns>Returns a  CreateAlertManagerDefinitionResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
+        public virtual CreateAlertManagerDefinitionResponse EndCreateAlertManagerDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAlertManagerDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateRuleGroupsNamespace
+
+        /// <summary>
+        /// Create a rule group namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the CreateRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
+        public virtual CreateRuleGroupsNamespaceResponse CreateRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRuleGroupsNamespaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleGroupsNamespace operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRuleGroupsNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
+        public virtual IAsyncResult BeginCreateRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRuleGroupsNamespace.</param>
+        /// 
+        /// <returns>Returns a  CreateRuleGroupsNamespaceResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
+        public virtual CreateRuleGroupsNamespaceResponse EndCreateRuleGroupsNamespace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRuleGroupsNamespaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateWorkspace
 
         /// <summary>
@@ -309,6 +459,150 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DeleteAlertManagerDefinition
+
+        /// <summary>
+        /// Deletes an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
+        public virtual DeleteAlertManagerDefinitionResponse DeleteAlertManagerDefinition(DeleteAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlertManagerDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlertManagerDefinition operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlertManagerDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAlertManagerDefinition(DeleteAlertManagerDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlertManagerDefinition.</param>
+        /// 
+        /// <returns>Returns a  DeleteAlertManagerDefinitionResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
+        public virtual DeleteAlertManagerDefinitionResponse EndDeleteAlertManagerDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAlertManagerDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRuleGroupsNamespace
+
+        /// <summary>
+        /// Delete a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
+        public virtual DeleteRuleGroupsNamespaceResponse DeleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRuleGroupsNamespaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleGroupsNamespace operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRuleGroupsNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRuleGroupsNamespace.</param>
+        /// 
+        /// <returns>Returns a  DeleteRuleGroupsNamespaceResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
+        public virtual DeleteRuleGroupsNamespaceResponse EndDeleteRuleGroupsNamespace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRuleGroupsNamespaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteWorkspace
 
         /// <summary>
@@ -319,6 +613,9 @@ namespace Amazon.PrometheusService
         /// <returns>The response from the DeleteWorkspace service method, as returned by PrometheusService.</returns>
         /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
         /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -374,6 +671,144 @@ namespace Amazon.PrometheusService
         public virtual DeleteWorkspaceResponse EndDeleteWorkspace(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWorkspaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAlertManagerDefinition
+
+        /// <summary>
+        /// Describes an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
+        public virtual DescribeAlertManagerDefinitionResponse DescribeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlertManagerDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlertManagerDefinition operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlertManagerDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlertManagerDefinition.</param>
+        /// 
+        /// <returns>Returns a  DescribeAlertManagerDefinitionResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
+        public virtual DescribeAlertManagerDefinitionResponse EndDescribeAlertManagerDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAlertManagerDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeRuleGroupsNamespace
+
+        /// <summary>
+        /// Describe a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
+        public virtual DescribeRuleGroupsNamespaceResponse DescribeRuleGroupsNamespace(DescribeRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRuleGroupsNamespaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupsNamespace operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRuleGroupsNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
+        public virtual IAsyncResult BeginDescribeRuleGroupsNamespace(DescribeRuleGroupsNamespaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRuleGroupsNamespace.</param>
+        /// 
+        /// <returns>Returns a  DescribeRuleGroupsNamespaceResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
+        public virtual DescribeRuleGroupsNamespaceResponse EndDescribeRuleGroupsNamespace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeRuleGroupsNamespaceResponse>(asyncResult);
         }
 
         #endregion
@@ -443,6 +878,75 @@ namespace Amazon.PrometheusService
         public virtual DescribeWorkspaceResponse EndDescribeWorkspace(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkspaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRuleGroupsNamespaces
+
+        /// <summary>
+        /// Lists rule groups namespaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleGroupsNamespaces service method.</param>
+        /// 
+        /// <returns>The response from the ListRuleGroupsNamespaces service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
+        public virtual ListRuleGroupsNamespacesResponse ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRuleGroupsNamespacesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRuleGroupsNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleGroupsNamespaces operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRuleGroupsNamespaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
+        public virtual IAsyncResult BeginListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRuleGroupsNamespaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRuleGroupsNamespaces.</param>
+        /// 
+        /// <returns>Returns a  ListRuleGroupsNamespacesResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
+        public virtual ListRuleGroupsNamespacesResponse EndListRuleGroupsNamespaces(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRuleGroupsNamespacesResponse>(asyncResult);
         }
 
         #endregion
@@ -578,6 +1082,156 @@ namespace Amazon.PrometheusService
         public virtual ListWorkspacesResponse EndListWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWorkspacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutAlertManagerDefinition
+
+        /// <summary>
+        /// Update an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the PutAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
+        public virtual PutAlertManagerDefinitionResponse PutAlertManagerDefinition(PutAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<PutAlertManagerDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAlertManagerDefinition operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAlertManagerDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
+        public virtual IAsyncResult BeginPutAlertManagerDefinition(PutAlertManagerDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAlertManagerDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAlertManagerDefinition.</param>
+        /// 
+        /// <returns>Returns a  PutAlertManagerDefinitionResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
+        public virtual PutAlertManagerDefinitionResponse EndPutAlertManagerDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAlertManagerDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutRuleGroupsNamespace
+
+        /// <summary>
+        /// Update a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the PutRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
+        public virtual PutRuleGroupsNamespaceResponse PutRuleGroupsNamespace(PutRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<PutRuleGroupsNamespaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRuleGroupsNamespace operation on AmazonPrometheusServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRuleGroupsNamespace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
+        public virtual IAsyncResult BeginPutRuleGroupsNamespace(PutRuleGroupsNamespaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRuleGroupsNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRuleGroupsNamespace.</param>
+        /// 
+        /// <returns>Returns a  PutRuleGroupsNamespaceResult from PrometheusService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
+        public virtual PutRuleGroupsNamespaceResponse EndPutRuleGroupsNamespace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutRuleGroupsNamespaceResponse>(asyncResult);
         }
 
         #endregion

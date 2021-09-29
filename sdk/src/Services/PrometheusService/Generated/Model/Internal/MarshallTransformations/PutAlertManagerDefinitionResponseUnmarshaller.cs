@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteWorkspace operation
+    /// Response Unmarshaller for PutAlertManagerDefinition operation
     /// </summary>  
-    public class DeleteWorkspaceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutAlertManagerDefinitionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteWorkspaceResponse response = new DeleteWorkspaceResponse();
+            PutAlertManagerDefinitionResponse response = new PutAlertManagerDefinitionResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = AlertManagerDefinitionStatusUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -85,6 +96,10 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -97,9 +112,9 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             return new AmazonPrometheusServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteWorkspaceResponseUnmarshaller _instance = new DeleteWorkspaceResponseUnmarshaller();        
+        private static PutAlertManagerDefinitionResponseUnmarshaller _instance = new PutAlertManagerDefinitionResponseUnmarshaller();        
 
-        internal static DeleteWorkspaceResponseUnmarshaller GetInstance()
+        internal static PutAlertManagerDefinitionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +122,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteWorkspaceResponseUnmarshaller Instance
+        public static PutAlertManagerDefinitionResponseUnmarshaller Instance
         {
             get
             {

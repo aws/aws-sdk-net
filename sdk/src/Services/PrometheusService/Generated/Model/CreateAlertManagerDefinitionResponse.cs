@@ -16,39 +16,43 @@
 /*
  * Do not modify this file. This file is generated from the amp-2020-08-01.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Paginators for the PrometheusService service
-    ///</summary>
-    public class PrometheusServicePaginatorFactory : IPrometheusServicePaginatorFactory
+    /// Represents the output of a CreateAlertManagerDefinition operation.
+    /// </summary>
+    public partial class CreateAlertManagerDefinitionResponse : AmazonWebServiceResponse
     {
-        private readonly IAmazonPrometheusService client;
-
-        internal PrometheusServicePaginatorFactory(IAmazonPrometheusService client) 
-        {
-            this.client = client;
-        }
+        private AlertManagerDefinitionStatus _status;
 
         /// <summary>
-        /// Paginator for ListRuleGroupsNamespaces operation
-        ///</summary>
-        public IListRuleGroupsNamespacesPaginator ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request) 
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of alert manager definition.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public AlertManagerDefinitionStatus Status
         {
-            return new ListRuleGroupsNamespacesPaginator(this.client, request);
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListWorkspaces operation
-        ///</summary>
-        public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return new ListWorkspacesPaginator(this.client, request);
+            return this._status != null;
         }
+
     }
 }

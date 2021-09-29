@@ -25,6 +25,138 @@ namespace Amazon.PrometheusService
 {
 
     /// <summary>
+    /// Constants used for properties of type AlertManagerDefinitionStatusCode.
+    /// </summary>
+    public class AlertManagerDefinitionStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AlertManagerDefinitionStatusCode
+        /// </summary>
+        public static readonly AlertManagerDefinitionStatusCode ACTIVE = new AlertManagerDefinitionStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for AlertManagerDefinitionStatusCode
+        /// </summary>
+        public static readonly AlertManagerDefinitionStatusCode CREATING = new AlertManagerDefinitionStatusCode("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for AlertManagerDefinitionStatusCode
+        /// </summary>
+        public static readonly AlertManagerDefinitionStatusCode CREATION_FAILED = new AlertManagerDefinitionStatusCode("CREATION_FAILED");
+        /// <summary>
+        /// Constant DELETING for AlertManagerDefinitionStatusCode
+        /// </summary>
+        public static readonly AlertManagerDefinitionStatusCode DELETING = new AlertManagerDefinitionStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for AlertManagerDefinitionStatusCode
+        /// </summary>
+        public static readonly AlertManagerDefinitionStatusCode UPDATE_FAILED = new AlertManagerDefinitionStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for AlertManagerDefinitionStatusCode
+        /// </summary>
+        public static readonly AlertManagerDefinitionStatusCode UPDATING = new AlertManagerDefinitionStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlertManagerDefinitionStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlertManagerDefinitionStatusCode FindValue(string value)
+        {
+            return FindValue<AlertManagerDefinitionStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlertManagerDefinitionStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleGroupsNamespaceStatusCode.
+    /// </summary>
+    public class RuleGroupsNamespaceStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RuleGroupsNamespaceStatusCode
+        /// </summary>
+        public static readonly RuleGroupsNamespaceStatusCode ACTIVE = new RuleGroupsNamespaceStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for RuleGroupsNamespaceStatusCode
+        /// </summary>
+        public static readonly RuleGroupsNamespaceStatusCode CREATING = new RuleGroupsNamespaceStatusCode("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for RuleGroupsNamespaceStatusCode
+        /// </summary>
+        public static readonly RuleGroupsNamespaceStatusCode CREATION_FAILED = new RuleGroupsNamespaceStatusCode("CREATION_FAILED");
+        /// <summary>
+        /// Constant DELETING for RuleGroupsNamespaceStatusCode
+        /// </summary>
+        public static readonly RuleGroupsNamespaceStatusCode DELETING = new RuleGroupsNamespaceStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for RuleGroupsNamespaceStatusCode
+        /// </summary>
+        public static readonly RuleGroupsNamespaceStatusCode UPDATE_FAILED = new RuleGroupsNamespaceStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for RuleGroupsNamespaceStatusCode
+        /// </summary>
+        public static readonly RuleGroupsNamespaceStatusCode UPDATING = new RuleGroupsNamespaceStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleGroupsNamespaceStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleGroupsNamespaceStatusCode FindValue(string value)
+        {
+            return FindValue<RuleGroupsNamespaceStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleGroupsNamespaceStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass

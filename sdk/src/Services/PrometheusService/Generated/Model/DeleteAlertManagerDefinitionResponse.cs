@@ -16,23 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the amp-2020-08-01.normal.json service model.
  */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Paginators for the PrometheusService service
-    ///</summary>
-    public interface IPrometheusServicePaginatorFactory
+    /// This is the response object from the DeleteAlertManagerDefinition operation.
+    /// </summary>
+    public partial class DeleteAlertManagerDefinitionResponse : AmazonWebServiceResponse
     {
 
-        /// <summary>
-        /// Paginator for ListRuleGroupsNamespaces operation
-        ///</summary>
-        IListRuleGroupsNamespacesPaginator ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request);
-
-        /// <summary>
-        /// Paginator for ListWorkspaces operation
-        ///</summary>
-        IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
     }
 }

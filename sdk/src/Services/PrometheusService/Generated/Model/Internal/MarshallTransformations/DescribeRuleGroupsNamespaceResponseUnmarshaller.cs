@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteWorkspace operation
+    /// Response Unmarshaller for DescribeRuleGroupsNamespace operation
     /// </summary>  
-    public class DeleteWorkspaceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeRuleGroupsNamespaceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteWorkspaceResponse response = new DeleteWorkspaceResponse();
+            DescribeRuleGroupsNamespaceResponse response = new DescribeRuleGroupsNamespaceResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ruleGroupsNamespace", targetDepth))
+                {
+                    var unmarshaller = RuleGroupsNamespaceDescriptionUnmarshaller.Instance;
+                    response.RuleGroupsNamespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,10 +84,6 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -97,9 +104,9 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             return new AmazonPrometheusServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteWorkspaceResponseUnmarshaller _instance = new DeleteWorkspaceResponseUnmarshaller();        
+        private static DescribeRuleGroupsNamespaceResponseUnmarshaller _instance = new DescribeRuleGroupsNamespaceResponseUnmarshaller();        
 
-        internal static DeleteWorkspaceResponseUnmarshaller GetInstance()
+        internal static DescribeRuleGroupsNamespaceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +114,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteWorkspaceResponseUnmarshaller Instance
+        public static DescribeRuleGroupsNamespaceResponseUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteWorkspace operation
+    /// Response Unmarshaller for DeleteRuleGroupsNamespace operation
     /// </summary>  
-    public class DeleteWorkspaceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteRuleGroupsNamespaceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteWorkspaceResponse response = new DeleteWorkspaceResponse();
+            DeleteRuleGroupsNamespaceResponse response = new DeleteRuleGroupsNamespaceResponse();
 
 
             return response;
@@ -97,9 +97,9 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             return new AmazonPrometheusServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteWorkspaceResponseUnmarshaller _instance = new DeleteWorkspaceResponseUnmarshaller();        
+        private static DeleteRuleGroupsNamespaceResponseUnmarshaller _instance = new DeleteRuleGroupsNamespaceResponseUnmarshaller();        
 
-        internal static DeleteWorkspaceResponseUnmarshaller GetInstance()
+        internal static DeleteRuleGroupsNamespaceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +107,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteWorkspaceResponseUnmarshaller Instance
+        public static DeleteRuleGroupsNamespaceResponseUnmarshaller Instance
         {
             get
             {

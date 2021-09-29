@@ -254,6 +254,172 @@ namespace Amazon.PrometheusService
         #endregion
 
 
+        #region  CreateAlertManagerDefinition
+
+
+        /// <summary>
+        /// Create an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
+        public virtual CreateAlertManagerDefinitionResponse CreateAlertManagerDefinition(CreateAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAlertManagerDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlertManagerDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition">REST API Reference for CreateAlertManagerDefinition Operation</seealso>
+        public virtual Task<CreateAlertManagerDefinitionResponse> CreateAlertManagerDefinitionAsync(CreateAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAlertManagerDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRuleGroupsNamespace
+
+
+        /// <summary>
+        /// Create a rule group namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the CreateRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
+        public virtual CreateRuleGroupsNamespaceResponse CreateRuleGroupsNamespace(CreateRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRuleGroupsNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a rule group namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleGroupsNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace">REST API Reference for CreateRuleGroupsNamespace Operation</seealso>
+        public virtual Task<CreateRuleGroupsNamespaceResponse> CreateRuleGroupsNamespaceAsync(CreateRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleGroupsNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRuleGroupsNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkspace
 
 
@@ -331,6 +497,160 @@ namespace Amazon.PrometheusService
 
         #endregion
         
+        #region  DeleteAlertManagerDefinition
+
+
+        /// <summary>
+        /// Deletes an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
+        public virtual DeleteAlertManagerDefinitionResponse DeleteAlertManagerDefinition(DeleteAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlertManagerDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlertManagerDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition">REST API Reference for DeleteAlertManagerDefinition Operation</seealso>
+        public virtual Task<DeleteAlertManagerDefinitionResponse> DeleteAlertManagerDefinitionAsync(DeleteAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlertManagerDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRuleGroupsNamespace
+
+
+        /// <summary>
+        /// Delete a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
+        public virtual DeleteRuleGroupsNamespaceResponse DeleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRuleGroupsNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleGroupsNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">REST API Reference for DeleteRuleGroupsNamespace Operation</seealso>
+        public virtual Task<DeleteRuleGroupsNamespaceResponse> DeleteRuleGroupsNamespaceAsync(DeleteRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleGroupsNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRuleGroupsNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWorkspace
 
 
@@ -342,6 +662,9 @@ namespace Amazon.PrometheusService
         /// <returns>The response from the DeleteWorkspace service method, as returned by PrometheusService.</returns>
         /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
         /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
         /// Unexpected error during processing of request.
@@ -378,6 +701,9 @@ namespace Amazon.PrometheusService
         /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
         /// User does not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
         /// Unexpected error during processing of request.
         /// </exception>
@@ -398,6 +724,148 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteWorkspaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAlertManagerDefinition
+
+
+        /// <summary>
+        /// Describes an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
+        public virtual DescribeAlertManagerDefinitionResponse DescribeAlertManagerDefinition(DescribeAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlertManagerDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlertManagerDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition">REST API Reference for DescribeAlertManagerDefinition Operation</seealso>
+        public virtual Task<DescribeAlertManagerDefinitionResponse> DescribeAlertManagerDefinitionAsync(DescribeAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAlertManagerDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRuleGroupsNamespace
+
+
+        /// <summary>
+        /// Describe a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
+        public virtual DescribeRuleGroupsNamespaceResponse DescribeRuleGroupsNamespace(DescribeRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRuleGroupsNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describe a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleGroupsNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeRuleGroupsNamespace">REST API Reference for DescribeRuleGroupsNamespace Operation</seealso>
+        public virtual Task<DescribeRuleGroupsNamespaceResponse> DescribeRuleGroupsNamespaceAsync(DescribeRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRuleGroupsNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRuleGroupsNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -469,6 +937,77 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeWorkspaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRuleGroupsNamespaces
+
+
+        /// <summary>
+        /// Lists rule groups namespaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleGroupsNamespaces service method.</param>
+        /// 
+        /// <returns>The response from the ListRuleGroupsNamespaces service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
+        public virtual ListRuleGroupsNamespacesResponse ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRuleGroupsNamespacesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists rule groups namespaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRuleGroupsNamespaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRuleGroupsNamespaces service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListRuleGroupsNamespaces">REST API Reference for ListRuleGroupsNamespaces Operation</seealso>
+        public virtual Task<ListRuleGroupsNamespacesResponse> ListRuleGroupsNamespacesAsync(ListRuleGroupsNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRuleGroupsNamespacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRuleGroupsNamespacesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRuleGroupsNamespacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -605,6 +1144,172 @@ namespace Amazon.PrometheusService
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListWorkspacesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAlertManagerDefinition
+
+
+        /// <summary>
+        /// Update an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlertManagerDefinition service method.</param>
+        /// 
+        /// <returns>The response from the PutAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
+        public virtual PutAlertManagerDefinitionResponse PutAlertManagerDefinition(PutAlertManagerDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<PutAlertManagerDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update an alert manager definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlertManagerDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAlertManagerDefinition service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition">REST API Reference for PutAlertManagerDefinition Operation</seealso>
+        public virtual Task<PutAlertManagerDefinitionResponse> PutAlertManagerDefinitionAsync(PutAlertManagerDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAlertManagerDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlertManagerDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAlertManagerDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutRuleGroupsNamespace
+
+
+        /// <summary>
+        /// Update a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRuleGroupsNamespace service method.</param>
+        /// 
+        /// <returns>The response from the PutRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
+        public virtual PutRuleGroupsNamespaceResponse PutRuleGroupsNamespace(PutRuleGroupsNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<PutRuleGroupsNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update a rule groups namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRuleGroupsNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRuleGroupsNamespace service method, as returned by PrometheusService.</returns>
+        /// <exception cref="Amazon.PrometheusService.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PrometheusService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace">REST API Reference for PutRuleGroupsNamespace Operation</seealso>
+        public virtual Task<PutRuleGroupsNamespaceResponse> PutRuleGroupsNamespaceAsync(PutRuleGroupsNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRuleGroupsNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRuleGroupsNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutRuleGroupsNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion

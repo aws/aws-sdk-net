@@ -42,6 +42,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("PrometheusService")]
+        public void ListRuleGroupsNamespacesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRuleGroupsNamespacesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListRuleGroupsNamespacesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListRuleGroupsNamespacesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListRuleGroupsNamespaces(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListRuleGroupsNamespaces(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("PrometheusService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListRuleGroupsNamespacesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRuleGroupsNamespacesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListRuleGroupsNamespacesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListRuleGroupsNamespaces(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListRuleGroupsNamespaces(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("PrometheusService")]
         public void ListWorkspacesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListWorkspacesRequest>();

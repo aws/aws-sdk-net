@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteWorkspace operation
+    /// Response Unmarshaller for PutRuleGroupsNamespace operation
     /// </summary>  
-    public class DeleteWorkspaceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutRuleGroupsNamespaceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,37 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteWorkspaceResponse response = new DeleteWorkspaceResponse();
+            PutRuleGroupsNamespaceResponse response = new PutRuleGroupsNamespaceResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("arn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = RuleGroupsNamespaceStatusUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -85,6 +114,10 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -97,9 +130,9 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             return new AmazonPrometheusServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteWorkspaceResponseUnmarshaller _instance = new DeleteWorkspaceResponseUnmarshaller();        
+        private static PutRuleGroupsNamespaceResponseUnmarshaller _instance = new PutRuleGroupsNamespaceResponseUnmarshaller();        
 
-        internal static DeleteWorkspaceResponseUnmarshaller GetInstance()
+        internal static PutRuleGroupsNamespaceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +140,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteWorkspaceResponseUnmarshaller Instance
+        public static PutRuleGroupsNamespaceResponseUnmarshaller Instance
         {
             get
             {

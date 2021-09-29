@@ -16,39 +16,44 @@
 /*
  * Do not modify this file. This file is generated from the amp-2020-08-01.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Paginators for the PrometheusService service
-    ///</summary>
-    public class PrometheusServicePaginatorFactory : IPrometheusServicePaginatorFactory
+    /// Container for the parameters to the DescribeAlertManagerDefinition operation.
+    /// Describes an alert manager definition.
+    /// </summary>
+    public partial class DescribeAlertManagerDefinitionRequest : AmazonPrometheusServiceRequest
     {
-        private readonly IAmazonPrometheusService client;
-
-        internal PrometheusServicePaginatorFactory(IAmazonPrometheusService client) 
-        {
-            this.client = client;
-        }
+        private string _workspaceId;
 
         /// <summary>
-        /// Paginator for ListRuleGroupsNamespaces operation
-        ///</summary>
-        public IListRuleGroupsNamespacesPaginator ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request) 
+        /// Gets and sets the property WorkspaceId. 
+        /// <para>
+        /// The ID of the workspace to describe.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string WorkspaceId
         {
-            return new ListRuleGroupsNamespacesPaginator(this.client, request);
+            get { return this._workspaceId; }
+            set { this._workspaceId = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListWorkspaces operation
-        ///</summary>
-        public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 
+        // Check to see if WorkspaceId property is set
+        internal bool IsSetWorkspaceId()
         {
-            return new ListWorkspacesPaginator(this.client, request);
+            return this._workspaceId != null;
         }
+
     }
 }

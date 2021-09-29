@@ -16,23 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the amp-2020-08-01.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Paginators for the PrometheusService service
+    /// Paginator for the ListRuleGroupsNamespaces operation
     ///</summary>
-    public interface IPrometheusServicePaginatorFactory
+    public interface IListRuleGroupsNamespacesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListRuleGroupsNamespacesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListRuleGroupsNamespaces operation
-        ///</summary>
-        IListRuleGroupsNamespacesPaginator ListRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request);
-
-        /// <summary>
-        /// Paginator for ListWorkspaces operation
-        ///</summary>
-        IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
+        /// Enumerable containing all of the RuleGroupsNamespaces
+        /// </summary>
+        IPaginatedEnumerable<RuleGroupsNamespaceSummary> RuleGroupsNamespaces { get; }
     }
 }
