@@ -33,6 +33,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class FunctionConfiguration
     {
+        private List<string> _architectures = new List<string>();
         private string _codeSha256;
         private long? _codeSize;
         private DeadLetterConfig _deadLetterConfig;
@@ -64,6 +65,26 @@ namespace Amazon.Lambda.Model
         private TracingConfigResponse _tracingConfig;
         private string _version;
         private VpcConfigDetail _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property Architectures. 
+        /// <para>
+        /// The instruction set architecture that the function supports. Architecture is a string
+        /// array with one of the valid values. The default architecture value is <code>x86_64</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Architectures
+        {
+            get { return this._architectures; }
+            set { this._architectures = value; }
+        }
+
+        // Check to see if Architectures property is set
+        internal bool IsSetArchitectures()
+        {
+            return this._architectures != null && this._architectures.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CodeSha256. 

@@ -62,6 +62,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field LayerName set");
             request.AddPathResource("{LayerName}", StringUtils.FromString(publicRequest.LayerName));
             
+            if (publicRequest.IsSetCompatibleArchitecture())
+                request.Parameters.Add("CompatibleArchitecture", StringUtils.FromString(publicRequest.CompatibleArchitecture));
+            
             if (publicRequest.IsSetCompatibleRuntime())
                 request.Parameters.Add("CompatibleRuntime", StringUtils.FromString(publicRequest.CompatibleRuntime));
             

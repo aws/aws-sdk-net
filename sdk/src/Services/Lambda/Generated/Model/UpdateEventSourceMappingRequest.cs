@@ -85,7 +85,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BatchSize. 
         /// <para>
-        /// The maximum number of items to retrieve in a single batch.
+        /// The maximum number of records in each batch that Lambda pulls from your stream or
+        /// queue and sends to your function. Lambda passes all of the records in the batch to
+        /// the function in a single call, up to the payload limit for synchronous invocation
+        /// (6 MB).
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -162,7 +165,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If true, the event source mapping is active. Set to false to pause polling and invocation.
+        /// When true, the event source mapping is active. When false, Lambda pauses polling and
+        /// invocation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: True
         /// </para>
         /// </summary>
         public bool Enabled
@@ -241,8 +249,17 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// (Streams and SQS standard queues) The maximum amount of time to gather records before
-        /// invoking the function, in seconds.
+        /// (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that
+        /// Lambda spends gathering records before invoking the function.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 0
+        /// </para>
+        ///  
+        /// <para>
+        /// Related setting: When you set <code>BatchSize</code> to a value greater than 10, you
+        /// must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

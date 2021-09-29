@@ -33,14 +33,35 @@ namespace Amazon.Lambda.Model
     /// Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
     /// layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
     /// identifier</a> to list only versions that indicate that they're compatible with that
-    /// runtime.
+    /// runtime. Specify a compatible architecture to include only layer versions that are
+    /// compatible with that architecture.
     /// </summary>
     public partial class ListLayerVersionsRequest : AmazonLambdaRequest
     {
+        private Architecture _compatibleArchitecture;
         private Runtime _compatibleRuntime;
         private string _layerName;
         private string _marker;
         private int? _maxItems;
+
+        /// <summary>
+        /// Gets and sets the property CompatibleArchitecture. 
+        /// <para>
+        /// The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+        /// set architecture</a>.
+        /// </para>
+        /// </summary>
+        public Architecture CompatibleArchitecture
+        {
+            get { return this._compatibleArchitecture; }
+            set { this._compatibleArchitecture = value; }
+        }
+
+        // Check to see if CompatibleArchitecture property is set
+        internal bool IsSetCompatibleArchitecture()
+        {
+            return this._compatibleArchitecture != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CompatibleRuntime. 

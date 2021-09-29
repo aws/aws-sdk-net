@@ -41,11 +41,32 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class PublishLayerVersionRequest : AmazonLambdaRequest
     {
+        private List<string> _compatibleArchitectures = new List<string>();
         private List<string> _compatibleRuntimes = new List<string>();
         private LayerVersionContentInput _content;
         private string _description;
         private string _layerName;
         private string _licenseInfo;
+
+        /// <summary>
+        /// Gets and sets the property CompatibleArchitectures. 
+        /// <para>
+        /// A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+        /// set architectures</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<string> CompatibleArchitectures
+        {
+            get { return this._compatibleArchitectures; }
+            set { this._compatibleArchitectures = value; }
+        }
+
+        // Check to see if CompatibleArchitectures property is set
+        internal bool IsSetCompatibleArchitectures()
+        {
+            return this._compatibleArchitectures != null && this._compatibleArchitectures.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CompatibleRuntimes. 

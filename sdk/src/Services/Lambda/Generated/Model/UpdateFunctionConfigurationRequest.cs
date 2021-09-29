@@ -214,7 +214,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property ImageConfig. 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
-        /// image configuration values</a> that override the values in the container image Dockerfile.
+        /// image configuration values</a> that override the values in the container image Docker
+        /// file.
         /// </para>
         /// </summary>
         public ImageConfig ImageConfig

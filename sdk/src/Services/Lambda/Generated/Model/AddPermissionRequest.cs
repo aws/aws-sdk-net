@@ -34,6 +34,7 @@ namespace Amazon.Lambda.Model
     /// You can apply the policy at the function level, or specify a qualifier to restrict
     /// access to a single version or alias. If you use a qualifier, the invoker must use
     /// the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
+    /// Note: Lambda does not support adding policies to version $LATEST.
     /// 
     ///  
     /// <para>
@@ -229,6 +230,10 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// For Amazon Web Services services, the ARN of the Amazon Web Services resource that
         /// invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that Lambda configures the comparison using the <code>StringLike</code> operator.
         /// </para>
         /// </summary>
         public string SourceArn

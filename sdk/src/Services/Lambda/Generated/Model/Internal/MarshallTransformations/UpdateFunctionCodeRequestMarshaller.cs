@@ -68,6 +68,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArchitectures())
+                {
+                    context.Writer.WritePropertyName("Architectures");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestArchitecturesListValue in publicRequest.Architectures)
+                    {
+                            context.Writer.Write(publicRequestArchitecturesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");

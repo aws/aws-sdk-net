@@ -68,6 +68,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCompatibleArchitectures())
+                {
+                    context.Writer.WritePropertyName("CompatibleArchitectures");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCompatibleArchitecturesListValue in publicRequest.CompatibleArchitectures)
+                    {
+                            context.Writer.Write(publicRequestCompatibleArchitecturesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetCompatibleRuntimes())
                 {
                     context.Writer.WritePropertyName("CompatibleRuntimes");

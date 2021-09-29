@@ -341,6 +341,7 @@ namespace Amazon.Lambda
         /// You can apply the policy at the function level, or specify a qualifier to restrict
         /// access to a single version or alias. If you use a qualifier, the invoker must use
         /// the full Amazon Resource Name (ARN) of that version or alias to invoke the function.
+        /// Note: Lambda does not support adding policies to version $LATEST.
         /// 
         ///  
         /// <para>
@@ -581,9 +582,7 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// For details about each event source type, see the following topics. In particular,
-        /// each of the topics describes the required and optional parameters for the specific
-        /// event source. 
+        /// For details about each event source type, see the following topics. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -598,7 +597,7 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
-        /// Configuring an SQS queue as an event source</a> 
+        /// Configuring an Amazon SQS queue as an event source</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -733,7 +732,10 @@ namespace Amazon.Lambda
         /// <para>
         /// You set the package type to <code>Zip</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
         /// file archive</a>. For a .zip file archive, the code property specifies the location
-        /// of the .zip file. You must also specify the handler and runtime properties.
+        /// of the .zip file. You must also specify the handler and runtime properties. The code
+        /// in the deployment package must be compatible with the target instruction set architecture
+        /// of the function (<code>x86-64</code> or <code>arm64</code>). If you do not specify
+        /// the architecture, the default value is <code>x86-64</code>.
         /// </para>
         ///  
         /// <para>
@@ -2613,7 +2615,7 @@ namespace Amazon.Lambda
         /// function.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSIOException">
-        /// An error occured when reading from or writing to a connected file system.
+        /// An error occurred when reading from or writing to a connected file system.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EFSMountConnectivityException">
         /// The function couldn't make a network connection to the configured file system.
@@ -3268,10 +3270,12 @@ namespace Amazon.Lambda
         #region  ListLayers
 
         /// <summary>
-        /// Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+        /// Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda
         /// layers</a> and shows information about the latest version of each. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
         /// identifier</a> to list only layers that indicate that they're compatible with that
-        /// runtime.
+        /// runtime. Specify a compatible architecture to include only layers that are compatible
+        /// with that <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
+        /// set architecture</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLayers service method.</param>
         /// 
@@ -3337,7 +3341,8 @@ namespace Amazon.Lambda
         /// Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
         /// layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
         /// identifier</a> to list only versions that indicate that they're compatible with that
-        /// runtime.
+        /// runtime. Specify a compatible architecture to include only layer versions that are
+        /// compatible with that architecture.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLayerVersions service method.</param>
         /// 

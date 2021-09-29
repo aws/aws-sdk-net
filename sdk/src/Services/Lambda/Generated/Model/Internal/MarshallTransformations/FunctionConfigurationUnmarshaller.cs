@@ -64,6 +64,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Architectures", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Architectures = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CodeSha256", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

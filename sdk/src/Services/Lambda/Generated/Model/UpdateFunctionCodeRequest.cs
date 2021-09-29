@@ -49,6 +49,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
     {
+        private List<string> _architectures = new List<string>();
         private bool? _dryRun;
         private string _functionName;
         private string _imageUri;
@@ -58,6 +59,26 @@ namespace Amazon.Lambda.Model
         private string _s3Key;
         private string _s3ObjectVersion;
         private MemoryStream _zipFile;
+
+        /// <summary>
+        /// Gets and sets the property Architectures. 
+        /// <para>
+        /// The instruction set architecture that the function supports. Enter a string array
+        /// with one of the valid values. The default value is <code>x86_64</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Architectures
+        {
+            get { return this._architectures; }
+            set { this._architectures = value; }
+        }
+
+        // Check to see if Architectures property is set
+        internal bool IsSetArchitectures()
+        {
+            return this._architectures != null && this._architectures.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DryRun. 

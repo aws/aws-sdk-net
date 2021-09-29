@@ -190,7 +190,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
-        /// Set to <code>Tail</code> to include the execution log in the response.
+        /// Set to <code>Tail</code> to include the execution log in the response. Applies to
+        /// synchronously invoked functions only.
         /// </para>
         /// </summary>
         public LogType LogType

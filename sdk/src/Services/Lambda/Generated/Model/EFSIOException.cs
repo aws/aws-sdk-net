@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// An error occured when reading from or writing to a connected file system.
+    /// An error occurred when reading from or writing to a connected file system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

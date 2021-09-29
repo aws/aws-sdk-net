@@ -48,7 +48,10 @@ namespace Amazon.Lambda.Model
     /// <para>
     /// You set the package type to <code>Zip</code> if the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
     /// file archive</a>. For a .zip file archive, the code property specifies the location
-    /// of the .zip file. You must also specify the handler and runtime properties.
+    /// of the .zip file. You must also specify the handler and runtime properties. The code
+    /// in the deployment package must be compatible with the target instruction set architecture
+    /// of the function (<code>x86-64</code> or <code>arm64</code>). If you do not specify
+    /// the architecture, the default value is <code>x86-64</code>.
     /// </para>
     ///  
     /// <para>
@@ -103,6 +106,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class CreateFunctionRequest : AmazonLambdaRequest
     {
+        private List<string> _architectures = new List<string>();
         private FunctionCode _code;
         private string _codeSigningConfigArn;
         private DeadLetterConfig _deadLetterConfig;
@@ -123,6 +127,26 @@ namespace Amazon.Lambda.Model
         private int? _timeout;
         private TracingConfig _tracingConfig;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property Architectures. 
+        /// <para>
+        /// The instruction set architecture that the function supports. Enter a string array
+        /// with one of the valid values. The default value is <code>x86_64</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Architectures
+        {
+            get { return this._architectures; }
+            set { this._architectures = value; }
+        }
+
+        // Check to see if Architectures property is set
+        internal bool IsSetArchitectures()
+        {
+            return this._architectures != null && this._architectures.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Code. 

@@ -59,6 +59,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetCompatibleArchitecture())
+                request.Parameters.Add("CompatibleArchitecture", StringUtils.FromString(publicRequest.CompatibleArchitecture));
+            
             if (publicRequest.IsSetCompatibleRuntime())
                 request.Parameters.Add("CompatibleRuntime", StringUtils.FromString(publicRequest.CompatibleRuntime));
             

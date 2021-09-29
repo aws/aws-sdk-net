@@ -40,7 +40,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The function's Amazon Resource Name (ARN).
+        /// The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags
+        /// to aliases or versions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
