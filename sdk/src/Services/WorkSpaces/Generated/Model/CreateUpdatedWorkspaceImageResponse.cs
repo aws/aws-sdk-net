@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the Amazon Web Services accounts that have been granted permission to use
-    /// a shared image. For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
-    /// Share or Unshare a Custom WorkSpaces Image</a>.
+    /// This is the response object from the CreateUpdatedWorkspaceImage operation.
     /// </summary>
-    public partial class ImagePermission
+    public partial class CreateUpdatedWorkspaceImageResponse : AmazonWebServiceResponse
     {
-        private string _sharedAccountId;
+        private string _imageId;
 
         /// <summary>
-        /// Gets and sets the property SharedAccountId. 
+        /// Gets and sets the property ImageId. 
         /// <para>
-        /// The identifier of the Amazon Web Services account that an image has been shared with.
+        /// The identifier of the new updated WorkSpace image.
         /// </para>
         /// </summary>
-        public string SharedAccountId
+        public string ImageId
         {
-            get { return this._sharedAccountId; }
-            set { this._sharedAccountId = value; }
+            get { return this._imageId; }
+            set { this._imageId = value; }
         }
 
-        // Check to see if SharedAccountId property is set
-        internal bool IsSetSharedAccountId()
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
         {
-            return this._sharedAccountId != null;
+            return this._imageId != null;
         }
 
     }

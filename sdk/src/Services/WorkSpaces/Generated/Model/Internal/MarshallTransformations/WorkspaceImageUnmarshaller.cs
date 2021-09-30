@@ -124,6 +124,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Updates", targetDepth))
+                {
+                    var unmarshaller = UpdateResultUnmarshaller.Instance;
+                    unmarshalledObject.Updates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

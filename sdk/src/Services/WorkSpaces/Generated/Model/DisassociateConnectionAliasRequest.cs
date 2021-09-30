@@ -31,8 +31,8 @@ namespace Amazon.WorkSpaces.Model
     /// <summary>
     /// Container for the parameters to the DisassociateConnectionAlias operation.
     /// Disassociates a connection alias from a directory. Disassociating a connection alias
-    /// disables cross-Region redirection between two directories in different AWS Regions.
-    /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+    /// disables cross-Region redirection between two directories in different Regions. For
+    /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
     /// Cross-Region Redirection for Amazon WorkSpaces</a>.
     /// 
     ///  <note> 

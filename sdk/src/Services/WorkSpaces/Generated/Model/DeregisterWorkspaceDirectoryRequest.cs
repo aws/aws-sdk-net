@@ -39,8 +39,8 @@ namespace Amazon.WorkSpaces.Model
     /// Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
     /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory
     /// for 30 consecutive days, this directory will be automatically deregistered for use
-    /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS
-    /// Directory Services pricing terms</a>.
+    /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">Directory
+    /// Service pricing terms</a>.
     /// </para>
     ///  
     /// <para>

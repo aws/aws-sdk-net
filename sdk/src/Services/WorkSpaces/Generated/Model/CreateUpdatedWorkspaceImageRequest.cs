@@ -29,45 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the CopyWorkspaceImage operation.
-    /// Copies the specified image from the specified Region to the current Region. For more
-    /// information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
-    /// Copy a Custom WorkSpaces Image</a>.
+    /// Container for the parameters to the CreateUpdatedWorkspaceImage operation.
+    /// Creates a new updated WorkSpace image based on the specified source image. The new
+    /// updated WorkSpace image has the latest drivers and other updates required by the Amazon
+    /// WorkSpaces components.
     /// 
     ///  
     /// <para>
-    /// In the China (Ningxia) Region, you can copy images only within the same Region.
+    /// To determine which WorkSpace images need to be updated with the latest Amazon WorkSpaces
+    /// requirements, use <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
+    /// DescribeWorkspaceImages</a>.
     /// </para>
-    ///  
+    ///  <note> <ul> <li> 
     /// <para>
-    /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
-    /// Amazon Web Services Support.
+    /// Only Windows 10 WorkSpace images can be programmatically updated at this time.
     /// </para>
-    ///  <important> 
+    ///  </li> <li> 
     /// <para>
-    /// Before copying a shared image, be sure to verify that it has been shared from the
-    /// correct Amazon Web Services account. To determine if an image has been shared and
-    /// to see the ID of the Amazon Web Services account that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
-    /// and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
-    /// API operations. 
+    /// Microsoft Windows updates and other application updates are not included in the update
+    /// process.
     /// </para>
-    ///  </important>
+    ///  </li> <li> 
+    /// <para>
+    /// The source WorkSpace image is not deleted. You can delete the source image after you've
+    /// verified your new updated image and created a new bundle. 
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
-    public partial class CopyWorkspaceImageRequest : AmazonWorkSpacesRequest
+    public partial class CreateUpdatedWorkspaceImageRequest : AmazonWorkSpacesRequest
     {
         private string _description;
         private string _name;
         private string _sourceImageId;
-        private string _sourceRegion;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the image.
+        /// A description of whether updates for the WorkSpace image are available.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -83,7 +85,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the image.
+        /// The name of the new updated WorkSpace image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -102,7 +104,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property SourceImageId. 
         /// <para>
-        /// The identifier of the source image.
+        /// The identifier of the source WorkSpace image.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,29 +121,17 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceRegion. 
-        /// <para>
-        /// The identifier of the source Region.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=31)]
-        public string SourceRegion
-        {
-            get { return this._sourceRegion; }
-            set { this._sourceRegion = value; }
-        }
-
-        // Check to see if SourceRegion property is set
-        internal bool IsSetSourceRegion()
-        {
-            return this._sourceRegion != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the image.
+        /// The tags that you want to add to the new updated WorkSpace image.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To add tags at the same time when you're creating the updated image, you must create
+        /// an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Tag> Tags
         {

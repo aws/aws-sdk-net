@@ -90,7 +90,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the AWS Directory Service directory for the WorkSpace.
+        /// The identifier of the Directory Service directory for the WorkSpace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=65)]
@@ -283,8 +283,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property VolumeEncryptionKey. 
         /// <para>
-        /// The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your
-        /// WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.
+        /// The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces
+        /// does not support asymmetric KMS keys.
         /// </para>
         /// </summary>
         public string VolumeEncryptionKey

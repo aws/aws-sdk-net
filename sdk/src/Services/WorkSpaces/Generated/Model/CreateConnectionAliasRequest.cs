@@ -46,10 +46,10 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// After you create a connection string, it is always associated to your AWS account.
-        /// You cannot recreate the same connection string with a different account, even if you
-        /// delete all instances of it from the original account. The connection string is globally
-        /// reserved for your account.
+        /// After you create a connection string, it is always associated to your Amazon Web Services
+        /// account. You cannot recreate the same connection string with a different account,
+        /// even if you delete all instances of it from the original account. The connection string
+        /// is globally reserved for your account.
         /// </para>
         ///  </important>
         /// </summary>

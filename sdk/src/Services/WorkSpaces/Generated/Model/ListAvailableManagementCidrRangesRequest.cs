@@ -36,8 +36,8 @@ namespace Amazon.WorkSpaces.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be run only by AWS accounts that are enabled for BYOL. If your
-    /// account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+    /// This operation can be run only by Amazon Web Services accounts that are enabled for
+    /// BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
     /// error.
     /// </para>
     ///  

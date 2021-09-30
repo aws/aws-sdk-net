@@ -43,7 +43,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property AssociatedAccountId. 
         /// <para>
-        /// The identifier of the AWS account that associated the connection alias with a directory.
+        /// The identifier of the Amazon Web Services account that associated the connection alias
+        /// with a directory.
         /// </para>
         /// </summary>
         public string AssociatedAccountId

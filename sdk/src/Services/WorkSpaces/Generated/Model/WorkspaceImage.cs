@@ -43,12 +43,14 @@ namespace Amazon.WorkSpaces.Model
         private string _ownerAccountId;
         private WorkspaceImageRequiredTenancy _requiredTenancy;
         private WorkspaceImageState _state;
+        private UpdateResult _updates;
 
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        /// The date when the image was created. If the image has been shared, the AWS account
-        /// that the image has been shared with sees the original creation date of the image.
+        /// The date when the image was created. If the image has been shared, the Amazon Web
+        /// Services account that the image has been shared with sees the original creation date
+        /// of the image.
         /// </para>
         /// </summary>
         public DateTime Created
@@ -176,7 +178,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        /// The identifier of the AWS account that owns the image.
+        /// The identifier of the Amazon Web Services account that owns the image.
         /// </para>
         /// </summary>
         public string OwnerAccountId
@@ -228,6 +230,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Updates. 
+        /// <para>
+        /// The updates (if any) that are available for the specified image.
+        /// </para>
+        /// </summary>
+        public UpdateResult Updates
+        {
+            get { return this._updates; }
+            set { this._updates = value; }
+        }
+
+        // Check to see if Updates property is set
+        internal bool IsSetUpdates()
+        {
+            return this._updates != null;
         }
 
     }

@@ -102,7 +102,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        /// The identifier of the AWS account that owns the connection alias.
+        /// The identifier of the Amazon Web Services account that owns the connection alias.
         /// </para>
         /// </summary>
         public string OwnerAccountId

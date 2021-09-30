@@ -31,7 +31,8 @@ namespace Amazon.WorkSpaces.Model
     /// <summary>
     /// Container for the parameters to the DescribeConnectionAliasPermissions operation.
     /// Describes the permissions that the owner of a connection alias has granted to another
-    /// AWS account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+    /// Amazon Web Services account for the specified connection alias. For more information,
+    /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
     /// Cross-Region Redirection for Amazon WorkSpaces</a>.
     /// </summary>
     public partial class DescribeConnectionAliasPermissionsRequest : AmazonWorkSpacesRequest

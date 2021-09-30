@@ -176,7 +176,7 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property Owner. 
         /// <para>
         /// The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code>
-        /// if the bundle is provided by AWS.
+        /// if the bundle is provided by Amazon Web Services.
         /// </para>
         /// </summary>
         public string Owner

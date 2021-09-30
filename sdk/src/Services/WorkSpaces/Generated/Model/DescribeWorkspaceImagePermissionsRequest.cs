@@ -30,8 +30,8 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspaceImagePermissions operation.
-    /// Describes the permissions that the owner of an image has granted to other AWS accounts
-    /// for an image.
+    /// Describes the permissions that the owner of an image has granted to other Amazon Web
+    /// Services accounts for an image.
     /// </summary>
     public partial class DescribeWorkspaceImagePermissionsRequest : AmazonWorkSpacesRequest
     {

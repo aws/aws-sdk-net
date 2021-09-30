@@ -80,8 +80,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ConnectionAliasPermission. 
         /// <para>
-        /// Indicates whether to share or unshare the connection alias with the specified AWS
-        /// account.
+        /// Indicates whether to share or unshare the connection alias with the specified Amazon
+        /// Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

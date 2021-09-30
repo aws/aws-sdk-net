@@ -58,7 +58,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ImagePermissions. 
         /// <para>
-        /// The identifiers of the AWS accounts that the image has been shared with.
+        /// The identifiers of the Amazon Web Services accounts that the image has been shared
+        /// with.
         /// </para>
         /// </summary>
         public List<ImagePermission> ImagePermissions

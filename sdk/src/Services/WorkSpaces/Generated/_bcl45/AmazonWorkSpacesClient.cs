@@ -523,20 +523,20 @@ namespace Amazon.WorkSpaces
         /// information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
         /// Copy a Custom WorkSpaces Image</a>.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// In the China (Ningxia) Region, you can copy images only within the same Region.
         /// </para>
         ///  
         /// <para>
-        /// In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
-        /// contact AWS Support.
+        /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
+        /// Amazon Web Services Support.
         /// </para>
-        ///  </note> <important> 
+        ///  <important> 
         /// <para>
         /// Before copying a shared image, be sure to verify that it has been shared from the
-        /// correct AWS account. To determine if an image has been shared and to see the AWS account
-        /// ID that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+        /// correct Amazon Web Services account. To determine if an image has been shared and
+        /// to see the ID of the Amazon Web Services account that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
         /// and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
         /// API operations. 
         /// </para>
@@ -582,20 +582,20 @@ namespace Amazon.WorkSpaces
         /// information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
         /// Copy a Custom WorkSpaces Image</a>.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// In the China (Ningxia) Region, you can copy images only within the same Region.
         /// </para>
         ///  
         /// <para>
-        /// In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
-        /// contact AWS Support.
+        /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
+        /// Amazon Web Services Support.
         /// </para>
-        ///  </note> <important> 
+        ///  <important> 
         /// <para>
         /// Before copying a shared image, be sure to verify that it has been shared from the
-        /// correct AWS account. To determine if an image has been shared and to see the AWS account
-        /// ID that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+        /// correct Amazon Web Services account. To determine if an image has been shared and
+        /// to see the ID of the Amazon Web Services account that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
         /// and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
         /// API operations. 
         /// </para>
@@ -879,6 +879,137 @@ namespace Amazon.WorkSpaces
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUpdatedWorkspaceImage
+
+
+        /// <summary>
+        /// Creates a new updated WorkSpace image based on the specified source image. The new
+        /// updated WorkSpace image has the latest drivers and other updates required by the Amazon
+        /// WorkSpaces components.
+        /// 
+        ///  
+        /// <para>
+        /// To determine which WorkSpace images need to be updated with the latest Amazon WorkSpaces
+        /// requirements, use <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
+        /// DescribeWorkspaceImages</a>.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Only Windows 10 WorkSpace images can be programmatically updated at this time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft Windows updates and other application updates are not included in the update
+        /// process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The source WorkSpace image is not deleted. You can delete the source image after you've
+        /// verified your new updated image and created a new bundle. 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUpdatedWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the CreateUpdatedWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">REST API Reference for CreateUpdatedWorkspaceImage Operation</seealso>
+        public virtual CreateUpdatedWorkspaceImageResponse CreateUpdatedWorkspaceImage(CreateUpdatedWorkspaceImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUpdatedWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUpdatedWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUpdatedWorkspaceImageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new updated WorkSpace image based on the specified source image. The new
+        /// updated WorkSpace image has the latest drivers and other updates required by the Amazon
+        /// WorkSpaces components.
+        /// 
+        ///  
+        /// <para>
+        /// To determine which WorkSpace images need to be updated with the latest Amazon WorkSpaces
+        /// requirements, use <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">
+        /// DescribeWorkspaceImages</a>.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Only Windows 10 WorkSpace images can be programmatically updated at this time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft Windows updates and other application updates are not included in the update
+        /// process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The source WorkSpace image is not deleted. You can delete the source image after you've
+        /// verified your new updated image and created a new bundle. 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUpdatedWorkspaceImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUpdatedWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">REST API Reference for CreateUpdatedWorkspaceImage Operation</seealso>
+        public virtual Task<CreateUpdatedWorkspaceImageResponse> CreateUpdatedWorkspaceImageAsync(CreateUpdatedWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUpdatedWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUpdatedWorkspaceImageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUpdatedWorkspaceImageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1413,8 +1544,8 @@ namespace Amazon.WorkSpaces
         /// Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
         /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory
         /// for 30 consecutive days, this directory will be automatically deregistered for use
-        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS
-        /// Directory Services pricing terms</a>.
+        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">Directory
+        /// Service pricing terms</a>.
         /// </para>
         ///  
         /// <para>
@@ -1464,8 +1595,8 @@ namespace Amazon.WorkSpaces
         /// Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
         /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory
         /// for 30 consecutive days, this directory will be automatically deregistered for use
-        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS
-        /// Directory Services pricing terms</a>.
+        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">Directory
+        /// Service pricing terms</a>.
         /// </para>
         ///  
         /// <para>
@@ -1734,7 +1865,8 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Describes the permissions that the owner of a connection alias has granted to another
-        /// AWS account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Amazon Web Services account for the specified connection alias. For more information,
+        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
         /// Cross-Region Redirection for Amazon WorkSpaces</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliasPermissions service method.</param>
@@ -1765,7 +1897,8 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Describes the permissions that the owner of a connection alias has granted to another
-        /// AWS account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Amazon Web Services account for the specified connection alias. For more information,
+        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
         /// Cross-Region Redirection for Amazon WorkSpaces</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliasPermissions service method.</param>
@@ -2086,8 +2219,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the permissions that the owner of an image has granted to other AWS accounts
-        /// for an image.
+        /// Describes the permissions that the owner of an image has granted to other Amazon Web
+        /// Services accounts for an image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImagePermissions service method.</param>
         /// 
@@ -2113,8 +2246,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the permissions that the owner of an image has granted to other AWS accounts
-        /// for an image.
+        /// Describes the permissions that the owner of an image has granted to other Amazon Web
+        /// Services accounts for an image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImagePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -2421,8 +2554,8 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Disassociates a connection alias from a directory. Disassociating a connection alias
-        /// disables cross-Region redirection between two directories in different AWS Regions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// disables cross-Region redirection between two directories in different Regions. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
         /// Cross-Region Redirection for Amazon WorkSpaces</a>.
         /// 
         ///  <note> 
@@ -2464,8 +2597,8 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Disassociates a connection alias from a directory. Disassociating a connection alias
-        /// disables cross-Region redirection between two directories in different AWS Regions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// disables cross-Region redirection between two directories in different Regions. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
         /// Cross-Region Redirection for Amazon WorkSpaces</a>.
         /// 
         ///  <note> 
@@ -2579,9 +2712,9 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed Amazon EC2 image that is in your AWS account,
-        /// and you must own the image. For more information about creating BYOL images, see <a
-        /// href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
+        /// Services account, and you must own the image. For more information about creating
+        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -2618,9 +2751,9 @@ namespace Amazon.WorkSpaces
 
         /// <summary>
         /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed Amazon EC2 image that is in your AWS account,
-        /// and you must own the image. For more information about creating BYOL images, see <a
-        /// href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
+        /// Services account, and you must own the image. For more information about creating
+        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -2669,8 +2802,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// This operation can be run only by AWS accounts that are enabled for BYOL. If your
-        /// account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+        /// This operation can be run only by Amazon Web Services accounts that are enabled for
+        /// BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
         /// error.
         /// </para>
         ///  
@@ -2707,8 +2840,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// This operation can be run only by AWS accounts that are enabled for BYOL. If your
-        /// account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+        /// This operation can be run only by Amazon Web Services accounts that are enabled for
+        /// BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
         /// error.
         /// </para>
         ///  
@@ -3850,8 +3983,8 @@ namespace Amazon.WorkSpaces
         ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact AWS Support before terminating
-        /// the WorkSpace.
+        /// is destroyed. If you need to archive any user data, contact Amazon Web Services Support
+        /// before terminating the WorkSpace.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3872,8 +4005,8 @@ namespace Amazon.WorkSpaces
         /// Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
         /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory
         /// for 30 consecutive days, this directory will be automatically deregistered for use
-        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS
-        /// Directory Services pricing terms</a>.
+        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">Directory
+        /// Service pricing terms</a>.
         /// </para>
         ///  
         /// <para>
@@ -3904,8 +4037,8 @@ namespace Amazon.WorkSpaces
         ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact AWS Support before terminating
-        /// the WorkSpace.
+        /// is destroyed. If you need to archive any user data, contact Amazon Web Services Support
+        /// before terminating the WorkSpace.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3926,8 +4059,8 @@ namespace Amazon.WorkSpaces
         /// Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
         /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory
         /// for 30 consecutive days, this directory will be automatically deregistered for use
-        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS
-        /// Directory Services pricing terms</a>.
+        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">Directory
+        /// Service pricing terms</a>.
         /// </para>
         ///  
         /// <para>
@@ -4243,26 +4376,26 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Shares or unshares an image with one account in the same AWS Region by specifying
-        /// whether that account has permission to copy the image. If the copy image permission
-        /// is granted, the image is shared with that account. If the copy image permission is
-        /// revoked, the image is unshared with the account.
+        /// Shares or unshares an image with one account in the same Amazon Web Services Region
+        /// by specifying whether that account has permission to copy the image. If the copy image
+        /// permission is granted, the image is shared with that account. If the copy image permission
+        /// is revoked, the image is unshared with the account.
         /// 
         ///  
         /// <para>
         /// After an image has been shared, the recipient account can copy the image to other
-        /// AWS Regions as needed.
+        /// Regions as needed.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// In the China (Ningxia) Region, you can copy images only within the same Region.
         /// </para>
         ///  
         /// <para>
-        /// In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
-        /// contact AWS Support.
+        /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
+        /// Amazon Web Services Support.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
         /// Share or Unshare a Custom WorkSpaces Image</a>.
@@ -4274,9 +4407,10 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at
-        /// this time in the AWS GovCloud (US-West) Region. To share BYOL images across accounts
-        /// in the AWS GovCloud (US-West) Region, contact AWS Support.
+        /// Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't
+        /// supported at this time in Amazon Web Services GovCloud (US). To share BYOL images
+        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services
+        /// Support.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -4310,26 +4444,26 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Shares or unshares an image with one account in the same AWS Region by specifying
-        /// whether that account has permission to copy the image. If the copy image permission
-        /// is granted, the image is shared with that account. If the copy image permission is
-        /// revoked, the image is unshared with the account.
+        /// Shares or unshares an image with one account in the same Amazon Web Services Region
+        /// by specifying whether that account has permission to copy the image. If the copy image
+        /// permission is granted, the image is shared with that account. If the copy image permission
+        /// is revoked, the image is unshared with the account.
         /// 
         ///  
         /// <para>
         /// After an image has been shared, the recipient account can copy the image to other
-        /// AWS Regions as needed.
+        /// Regions as needed.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// In the China (Ningxia) Region, you can copy images only within the same Region.
         /// </para>
         ///  
         /// <para>
-        /// In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
-        /// contact AWS Support.
+        /// In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact
+        /// Amazon Web Services Support.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
         /// Share or Unshare a Custom WorkSpaces Image</a>.
@@ -4341,9 +4475,10 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at
-        /// this time in the AWS GovCloud (US-West) Region. To share BYOL images across accounts
-        /// in the AWS GovCloud (US-West) Region, contact AWS Support.
+        /// Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't
+        /// supported at this time in Amazon Web Services GovCloud (US). To share BYOL images
+        /// across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services
+        /// Support.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

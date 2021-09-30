@@ -47,7 +47,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DeviceTypeAndroid. 
         /// <para>
-        /// Indicates whether users can use Android devices to access their WorkSpaces.
+        /// Indicates whether users can use Android and Android-compatible Chrome OS devices to
+        /// access their WorkSpaces.
         /// </para>
         /// </summary>
         public AccessPropertyValue DeviceTypeAndroid
@@ -119,10 +120,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DeviceTypeOsx. 
         /// <para>
-        /// Indicates whether users can use macOS clients to access their WorkSpaces. To restrict
-        /// WorkSpaces access to trusted devices (also known as managed devices) with valid certificates,
-        /// specify a value of <code>TRUST</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-        /// WorkSpaces Access to Trusted Devices</a>. 
+        /// Indicates whether users can use macOS clients to access their WorkSpaces.
         /// </para>
         /// </summary>
         public AccessPropertyValue DeviceTypeOsx
@@ -158,10 +156,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DeviceTypeWindows. 
         /// <para>
-        /// Indicates whether users can use Windows clients to access their WorkSpaces. To restrict
-        /// WorkSpaces access to trusted devices (also known as managed devices) with valid certificates,
-        /// specify a value of <code>TRUST</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/trusted-devices.html">Restrict
-        /// WorkSpaces Access to Trusted Devices</a>. 
+        /// Indicates whether users can use Windows clients to access their WorkSpaces.
         /// </para>
         /// </summary>
         public AccessPropertyValue DeviceTypeWindows

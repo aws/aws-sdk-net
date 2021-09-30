@@ -88,8 +88,8 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  
         /// <para>
-        /// To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe
-        /// the bundles that belong to your account, don't specify a value.
+        /// To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
+        /// To describe the bundles that belong to your account, don't specify a value.
         /// </para>
         /// </summary>
         public string Owner

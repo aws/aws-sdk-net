@@ -41,8 +41,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property AllowAssociation. 
         /// <para>
-        /// Indicates whether the specified AWS account is allowed to associate the connection
-        /// alias with a directory.
+        /// Indicates whether the specified Amazon Web Services account is allowed to associate
+        /// the connection alias with a directory.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property SharedAccountId. 
         /// <para>
-        /// The identifier of the AWS account that the connection alias is shared with.
+        /// The identifier of the Amazon Web Services account that the connection alias is shared
+        /// with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
