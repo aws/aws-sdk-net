@@ -1,3 +1,24 @@
+### 3.7.127.0 (2021-09-30 18:17 UTC)
+* Account (3.7.0.0)
+	* This release of the Account Management API enables customers to manage the alternate contacts for their AWS accounts. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/accounts-welcome.html
+* CloudControlApi (3.7.0.0)
+	* Initial release of the SDK for AWS Cloud Control API
+* DataExchange (3.7.1.0)
+	* This release enables subscribers to set up automatic exports of newly published revisions using the new EventAction API.
+* Macie2 (3.7.5.0)
+	* Amazon S3 bucket metadata now indicates whether an error or a bucket's permissions settings prevented Amazon Macie from retrieving data about the bucket or the bucket's objects.
+* NetworkFirewall (3.7.1.0)
+	* This release adds support for strict ordering for stateful rule groups. Using strict ordering, stateful rules are evaluated in the exact order in which you provide them.
+* WorkMail (3.7.2.0)
+	* This release adds support for mobile device access overrides management in Amazon WorkMail.
+* WorkSpaces (3.7.2.0)
+	* Added CreateUpdatedWorkspaceImage API to update WorkSpace images with latest software and drivers. Updated DescribeWorkspaceImages API to display if there are updates available for WorkSpace images.
+* Core 3.7.3.14
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.126.0 (2021-09-29 18:15 UTC)
 * Lambda (3.7.4.0)
 	* Adds support for Lambda functions powered by AWS Graviton2 processors. Customers can now select the CPU architecture for their functions.
