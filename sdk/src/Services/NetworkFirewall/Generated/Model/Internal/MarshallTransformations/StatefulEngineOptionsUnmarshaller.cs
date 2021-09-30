@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StatefulRuleGroupReference Object
+    /// Response Unmarshaller for StatefulEngineOptions Object
     /// </summary>  
-    public class StatefulRuleGroupReferenceUnmarshaller : IUnmarshaller<StatefulRuleGroupReference, XmlUnmarshallerContext>, IUnmarshaller<StatefulRuleGroupReference, JsonUnmarshallerContext>
+    public class StatefulEngineOptionsUnmarshaller : IUnmarshaller<StatefulEngineOptions, XmlUnmarshallerContext>, IUnmarshaller<StatefulEngineOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StatefulRuleGroupReference IUnmarshaller<StatefulRuleGroupReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StatefulEngineOptions IUnmarshaller<StatefulEngineOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StatefulRuleGroupReference Unmarshall(JsonUnmarshallerContext context)
+        public StatefulEngineOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StatefulRuleGroupReference unmarshalledObject = new StatefulRuleGroupReference();
+            StatefulEngineOptions unmarshalledObject = new StatefulEngineOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("RuleOrder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static StatefulRuleGroupReferenceUnmarshaller _instance = new StatefulRuleGroupReferenceUnmarshaller();        
+        private static StatefulEngineOptionsUnmarshaller _instance = new StatefulEngineOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StatefulRuleGroupReferenceUnmarshaller Instance
+        public static StatefulEngineOptionsUnmarshaller Instance
         {
             get
             {

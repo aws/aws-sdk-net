@@ -67,6 +67,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStatefulRuleOptions())
+            {
+                context.Writer.WritePropertyName("StatefulRuleOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StatefulRuleOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.StatefulRuleOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

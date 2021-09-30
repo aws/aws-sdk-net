@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StatefulRuleGroupReference Marshaller
+    /// StatefulEngineOptions Marshaller
     /// </summary>       
-    public class StatefulRuleGroupReferenceMarshaller : IRequestMarshaller<StatefulRuleGroupReference, JsonMarshallerContext> 
+    public class StatefulEngineOptionsMarshaller : IRequestMarshaller<StatefulEngineOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StatefulRuleGroupReference requestObject, JsonMarshallerContext context)
+        public void Marshall(StatefulEngineOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetPriority())
+            if(requestObject.IsSetRuleOrder())
             {
-                context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
-            }
-
-            if(requestObject.IsSetResourceArn())
-            {
-                context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WritePropertyName("RuleOrder");
+                context.Writer.Write(requestObject.RuleOrder);
             }
 
         }
@@ -62,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static StatefulRuleGroupReferenceMarshaller Instance = new StatefulRuleGroupReferenceMarshaller();
+        public readonly static StatefulEngineOptionsMarshaller Instance = new StatefulEngineOptionsMarshaller();
 
     }
 }

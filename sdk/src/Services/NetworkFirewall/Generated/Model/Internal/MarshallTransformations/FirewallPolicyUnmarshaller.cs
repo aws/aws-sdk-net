@@ -64,6 +64,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("StatefulDefaultActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StatefulDefaultActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatefulEngineOptions", targetDepth))
+                {
+                    var unmarshaller = StatefulEngineOptionsUnmarshaller.Instance;
+                    unmarshalledObject.StatefulEngineOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StatefulRuleGroupReferences", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StatefulRuleGroupReference, StatefulRuleGroupReferenceUnmarshaller>(StatefulRuleGroupReferenceUnmarshaller.Instance);

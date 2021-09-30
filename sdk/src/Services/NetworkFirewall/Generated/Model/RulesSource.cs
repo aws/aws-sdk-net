@@ -71,7 +71,7 @@ namespace Amazon.NetworkFirewall.Model
         /// matches the criteria, so this type of rule group doesn't have a separate action setting.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000000)]
+        [AWSProperty(Min=0, Max=2000000)]
         public string RulesString
         {
             get { return this._rulesString; }
@@ -87,8 +87,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property StatefulRules. 
         /// <para>
-        /// The 5-tuple stateful inspection criteria. This contains an array of individual 5-tuple
-        /// stateful rules to be used together in a stateful rule group. 
+        /// An array of individual stateful rules inspection criteria to be used together in a
+        /// stateful rule group. Use this option to specify simple Suricata rules with protocol,
+        /// source and destination, ports, direction, and rule options. For information about
+        /// the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
+        /// Format</a>. 
         /// </para>
         /// </summary>
         public List<StatefulRule> StatefulRules

@@ -243,7 +243,7 @@ namespace Amazon.NetworkFirewall.Model
         /// object that Network Firewall has populated from your string. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000000)]
+        [AWSProperty(Min=0, Max=2000000)]
         public string Rules
         {
             get { return this._rules; }

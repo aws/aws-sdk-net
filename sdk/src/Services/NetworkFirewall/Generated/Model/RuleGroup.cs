@@ -51,6 +51,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private RulesSource _rulesSource;
         private RuleVariables _ruleVariables;
+        private StatefulRuleOptions _statefulRuleOptions;
 
         /// <summary>
         /// Gets and sets the property RulesSource. 
@@ -88,6 +89,26 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetRuleVariables()
         {
             return this._ruleVariables != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatefulRuleOptions. 
+        /// <para>
+        /// Additional options governing how Network Firewall handles stateful rules. The policies
+        /// where you use your stateful rule group must have stateful rule options settings that
+        /// are compatible with these settings.
+        /// </para>
+        /// </summary>
+        public StatefulRuleOptions StatefulRuleOptions
+        {
+            get { return this._statefulRuleOptions; }
+            set { this._statefulRuleOptions = value; }
+        }
+
+        // Check to see if StatefulRuleOptions property is set
+        internal bool IsSetStatefulRuleOptions()
+        {
+            return this._statefulRuleOptions != null;
         }
 
     }

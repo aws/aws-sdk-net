@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// The 5-tuple criteria for AWS Network Firewall to use to inspect packet headers in
-    /// stateful traffic flow inspection. Traffic flows that match the criteria are a match
+    /// The basic rule criteria for AWS Network Firewall to use to inspect packet headers
+    /// in stateful traffic flow inspection. Traffic flows that match the criteria are a match
     /// for the corresponding <a>StatefulRule</a>.
     /// </summary>
     public partial class Header
@@ -89,7 +89,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property DestinationPort. 
         /// <para>
         /// The destination port to inspect for. You can specify an individual port, for example
-        /// <code>1994</code> and you can specify a port range, for example <code>1990-1994</code>.
+        /// <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>.
         /// To match with any port, specify <code>ANY</code>. 
         /// </para>
         /// </summary>
@@ -195,7 +195,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property SourcePort. 
         /// <para>
         /// The source port to inspect for. You can specify an individual port, for example <code>1994</code>
-        /// and you can specify a port range, for example <code>1990-1994</code>. To match with
+        /// and you can specify a port range, for example <code>1990:1994</code>. To match with
         /// any port, specify <code>ANY</code>. 
         /// </para>
         /// </summary>

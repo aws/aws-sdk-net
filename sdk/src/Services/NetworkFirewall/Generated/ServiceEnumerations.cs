@@ -491,6 +491,56 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type RuleOrder.
+    /// </summary>
+    public class RuleOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT_ACTION_ORDER for RuleOrder
+        /// </summary>
+        public static readonly RuleOrder DEFAULT_ACTION_ORDER = new RuleOrder("DEFAULT_ACTION_ORDER");
+        /// <summary>
+        /// Constant STRICT_ORDER for RuleOrder
+        /// </summary>
+        public static readonly RuleOrder STRICT_ORDER = new RuleOrder("STRICT_ORDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleOrder FindValue(string value)
+        {
+            return FindValue<RuleOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StatefulAction.
     /// </summary>
     public class StatefulAction : ConstantClass

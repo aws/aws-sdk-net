@@ -70,10 +70,22 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConsumedCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConsumedCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfAssociations", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfAssociations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RuleGroupArn", targetDepth))

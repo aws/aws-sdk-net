@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// 
+    /// Unable to change the resource because your account doesn't own it.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

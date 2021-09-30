@@ -64,6 +64,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConsumedStatefulRuleCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConsumedStatefulRuleCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConsumedStatelessRuleCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConsumedStatelessRuleCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +104,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirewallPolicyStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfAssociations", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfAssociations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))

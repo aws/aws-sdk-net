@@ -64,8 +64,9 @@ namespace Amazon.NetworkFirewall
     /// Firewall, you can filter traffic at the perimeter of your VPC. This includes filtering
     /// traffic going to and coming from an internet gateway, NAT gateway, or over VPN or
     /// AWS Direct Connect. Network Firewall uses rules that are compatible with Suricata,
-    /// a free, open source intrusion detection system (IDS) engine. For information about
-    /// Suricata, see the <a href="https://suricata-ids.org/">Suricata website</a>.
+    /// a free, open source intrusion detection system (IDS) engine. AWS Network Firewall
+    /// supports Suricata version 5.0.2. For information about Suricata, see the <a href="https://suricata-ids.org/">Suricata
+    /// website</a>.
     /// </para>
     ///  
     /// <para>
@@ -778,6 +779,9 @@ namespace Amazon.NetworkFirewall
         /// isn't valid in the context of the request.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidResourcePolicyException">
+        /// The policy statement failed validation.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
@@ -1648,7 +1652,7 @@ namespace Amazon.NetworkFirewall
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.InvalidResourcePolicyException">
-        /// 
+        /// The policy statement failed validation.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.
@@ -1870,7 +1874,7 @@ namespace Amazon.NetworkFirewall
         /// Unable to locate a resource using the parameters that you provided.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
-        /// 
+        /// Unable to change the resource because your account doesn't own it.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
         /// Unable to process the request due to throttling limitations.
@@ -2087,7 +2091,7 @@ namespace Amazon.NetworkFirewall
         /// Unable to locate a resource using the parameters that you provided.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
-        /// 
+        /// Unable to change the resource because your account doesn't own it.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
         /// Unable to process the request due to throttling limitations.
@@ -2349,7 +2353,7 @@ namespace Amazon.NetworkFirewall
         /// Unable to locate a resource using the parameters that you provided.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceOwnerCheckException">
-        /// 
+        /// Unable to change the resource because your account doesn't own it.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
         /// Unable to process the request due to throttling limitations.

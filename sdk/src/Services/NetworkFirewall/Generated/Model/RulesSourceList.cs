@@ -44,7 +44,7 @@ namespace Amazon.NetworkFirewall.Model
     /// the CIDR range of the deployment VPC plus the other CIDR ranges. For more information,
     /// see <a>RuleVariables</a> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful
     /// domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall Developer
-    /// Guide</i> 
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class RulesSourceList
@@ -109,7 +109,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property TargetTypes. 
         /// <para>
         /// The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>.
-        /// Specity <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+        /// Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
         /// 
         /// </para>
         /// </summary>

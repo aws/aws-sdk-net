@@ -76,6 +76,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleVariables = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StatefulRuleOptions", targetDepth))
+                {
+                    var unmarshaller = StatefulRuleOptionsUnmarshaller.Instance;
+                    unmarshalledObject.StatefulRuleOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

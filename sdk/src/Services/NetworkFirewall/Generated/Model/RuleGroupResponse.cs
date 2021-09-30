@@ -35,7 +35,9 @@ namespace Amazon.NetworkFirewall.Model
     public partial class RuleGroupResponse
     {
         private int? _capacity;
+        private int? _consumedCapacity;
         private string _description;
+        private int? _numberOfAssociations;
         private string _ruleGroupArn;
         private string _ruleGroupId;
         private string _ruleGroupName;
@@ -71,6 +73,24 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConsumedCapacity. 
+        /// <para>
+        /// The number of capacity units currently consumed by the rule group rules. 
+        /// </para>
+        /// </summary>
+        public int ConsumedCapacity
+        {
+            get { return this._consumedCapacity.GetValueOrDefault(); }
+            set { this._consumedCapacity = value; }
+        }
+
+        // Check to see if ConsumedCapacity property is set
+        internal bool IsSetConsumedCapacity()
+        {
+            return this._consumedCapacity.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the rule group. 
@@ -87,6 +107,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfAssociations. 
+        /// <para>
+        /// The number of firewall policies that use this rule group.
+        /// </para>
+        /// </summary>
+        public int NumberOfAssociations
+        {
+            get { return this._numberOfAssociations.GetValueOrDefault(); }
+            set { this._numberOfAssociations = value; }
+        }
+
+        // Check to see if NumberOfAssociations property is set
+        internal bool IsSetNumberOfAssociations()
+        {
+            return this._numberOfAssociations.HasValue; 
         }
 
         /// <summary>

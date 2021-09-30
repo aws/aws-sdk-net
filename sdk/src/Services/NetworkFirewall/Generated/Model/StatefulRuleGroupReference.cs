@@ -34,7 +34,42 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class StatefulRuleGroupReference
     {
+        private int? _priority;
         private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// An integer setting that indicates the order in which to run the stateful rule groups
+        /// in a single <a>FirewallPolicy</a>. This setting only applies to firewall policies
+        /// that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options
+        /// settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// Network Firewall evalutes each stateful rule group against a packet starting with
+        /// the group that has the lowest priority setting. You must ensure that the priority
+        /// settings are unique within each policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can change the priority settings of your rule groups at any time. To make it easier
+        /// to insert rule groups later, number them so there's a wide range in between, for example
+        /// use 100, 200, and so on. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
+        public int Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 

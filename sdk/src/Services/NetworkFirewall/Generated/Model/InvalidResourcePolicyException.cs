@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// 
+    /// The policy statement failed validation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

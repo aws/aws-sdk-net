@@ -34,12 +34,51 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class FirewallPolicyResponse
     {
+        private int? _consumedStatefulRuleCapacity;
+        private int? _consumedStatelessRuleCapacity;
         private string _description;
         private string _firewallPolicyArn;
         private string _firewallPolicyId;
         private string _firewallPolicyName;
         private ResourceStatus _firewallPolicyStatus;
+        private int? _numberOfAssociations;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ConsumedStatefulRuleCapacity. 
+        /// <para>
+        /// The number of capacity units currently consumed by the policy's stateful rules.
+        /// </para>
+        /// </summary>
+        public int ConsumedStatefulRuleCapacity
+        {
+            get { return this._consumedStatefulRuleCapacity.GetValueOrDefault(); }
+            set { this._consumedStatefulRuleCapacity = value; }
+        }
+
+        // Check to see if ConsumedStatefulRuleCapacity property is set
+        internal bool IsSetConsumedStatefulRuleCapacity()
+        {
+            return this._consumedStatefulRuleCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsumedStatelessRuleCapacity. 
+        /// <para>
+        /// The number of capacity units currently consumed by the policy's stateless rules.
+        /// </para>
+        /// </summary>
+        public int ConsumedStatelessRuleCapacity
+        {
+            get { return this._consumedStatelessRuleCapacity.GetValueOrDefault(); }
+            set { this._consumedStatelessRuleCapacity = value; }
+        }
+
+        // Check to see if ConsumedStatelessRuleCapacity property is set
+        internal bool IsSetConsumedStatelessRuleCapacity()
+        {
+            return this._consumedStatelessRuleCapacity.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -142,6 +181,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetFirewallPolicyStatus()
         {
             return this._firewallPolicyStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfAssociations. 
+        /// <para>
+        /// The number of firewalls that are associated with this firewall policy.
+        /// </para>
+        /// </summary>
+        public int NumberOfAssociations
+        {
+            get { return this._numberOfAssociations.GetValueOrDefault(); }
+            set { this._numberOfAssociations = value; }
+        }
+
+        // Check to see if NumberOfAssociations property is set
+        internal bool IsSetNumberOfAssociations()
+        {
+            return this._numberOfAssociations.HasValue; 
         }
 
         /// <summary>

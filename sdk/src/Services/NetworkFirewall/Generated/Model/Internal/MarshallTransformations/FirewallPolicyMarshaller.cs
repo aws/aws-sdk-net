@@ -45,6 +45,28 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FirewallPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetStatefulDefaultActions())
+            {
+                context.Writer.WritePropertyName("StatefulDefaultActions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStatefulDefaultActionsListValue in requestObject.StatefulDefaultActions)
+                {
+                        context.Writer.Write(requestObjectStatefulDefaultActionsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetStatefulEngineOptions())
+            {
+                context.Writer.WritePropertyName("StatefulEngineOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StatefulEngineOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.StatefulEngineOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStatefulRuleGroupReferences())
             {
                 context.Writer.WritePropertyName("StatefulRuleGroupReferences");
