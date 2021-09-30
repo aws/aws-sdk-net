@@ -167,6 +167,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.
 * [AWSSDK.Cloud9](https://www.nuget.org/packages/AWSSDK.Cloud9/)
 	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
+* [AWSSDK.CloudControlApi](https://www.nuget.org/packages/AWSSDK.CloudControlApi/)
+	* Initial release of the SDK for AWS Cloud Control API
 * [AWSSDK.CloudDirectory](https://www.nuget.org/packages/AWSSDK.CloudDirectory/)
 	* Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.
 * [AWSSDK.CloudFormation](https://www.nuget.org/packages/AWSSDK.CloudFormation/)
