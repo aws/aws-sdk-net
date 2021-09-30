@@ -29,51 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Encryption configuration of the export job. Includes the encryption type in addition
-    /// to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption.
-    /// type.
+    /// Container for the parameters to the UpdateEventAction operation.
+    /// This operation updates the event action.
     /// </summary>
-    public partial class ExportServerSideEncryption
+    public partial class UpdateEventActionRequest : AmazonDataExchangeRequest
     {
-        private string _kmsKeyArn;
-        private ServerSideEncryptionTypes _type;
+        private Action _action;
+        private string _eventActionId;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
+        /// Gets and sets the property Action. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon
-        /// S3 objects. This parameter is required if you choose aws:kms as an encryption type.
+        /// What occurs after a certain event.
         /// </para>
         /// </summary>
-        public string KmsKeyArn
+        public Action Action
         {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._kmsKeyArn != null;
+            return this._action != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property EventActionId. 
         /// <para>
-        /// The type of server side encryption used for encrypting the objects in Amazon S3.
+        /// The unique identifier for the event action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ServerSideEncryptionTypes Type
+        public string EventActionId
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._eventActionId; }
+            set { this._eventActionId = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if EventActionId property is set
+        internal bool IsSetEventActionId()
         {
-            return this._type != null;
+            return this._eventActionId != null;
         }
 
     }

@@ -29,51 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Encryption configuration of the export job. Includes the encryption type in addition
-    /// to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption.
-    /// type.
+    /// Container for the parameters to the CreateEventAction operation.
+    /// This operation creates an event action.
     /// </summary>
-    public partial class ExportServerSideEncryption
+    public partial class CreateEventActionRequest : AmazonDataExchangeRequest
     {
-        private string _kmsKeyArn;
-        private ServerSideEncryptionTypes _type;
+        private Action _action;
+        private Event _event;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
+        /// Gets and sets the property Action. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon
-        /// S3 objects. This parameter is required if you choose aws:kms as an encryption type.
-        /// </para>
-        /// </summary>
-        public string KmsKeyArn
-        {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
-        }
-
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
-        {
-            return this._kmsKeyArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of server side encryption used for encrypting the objects in Amazon S3.
+        /// What occurs after a certain event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ServerSideEncryptionTypes Type
+        public Action Action
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._type != null;
+            return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Event. 
+        /// <para>
+        /// What occurs to start an action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Event Event
+        {
+            get { return this._event; }
+            set { this._event = value; }
+        }
+
+        // Check to see if Event property is set
+        internal bool IsSetEvent()
+        {
+            return this._event != null;
         }
 
     }

@@ -52,6 +52,14 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
+        /// Paginator for ListEventActions operation
+        ///</summary>
+        public IListEventActionsPaginator ListEventActions(ListEventActionsRequest request) 
+        {
+            return new ListEventActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         public IListJobsPaginator ListJobs(ListJobsRequest request) 

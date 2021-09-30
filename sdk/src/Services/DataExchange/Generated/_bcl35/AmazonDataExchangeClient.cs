@@ -403,6 +403,75 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  CreateEventAction
+
+        /// <summary>
+        /// This operation creates an event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">REST API Reference for CreateEventAction Operation</seealso>
+        public virtual CreateEventActionResponse CreateEventAction(CreateEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventAction operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">REST API Reference for CreateEventAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateEventAction(CreateEventActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventAction.</param>
+        /// 
+        /// <returns>Returns a  CreateEventActionResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">REST API Reference for CreateEventAction Operation</seealso>
+        public virtual CreateEventActionResponse EndCreateEventAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEventActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateJob
 
         /// <summary>
@@ -687,6 +756,72 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  DeleteEventAction
+
+        /// <summary>
+        /// This operation deletes the event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">REST API Reference for DeleteEventAction Operation</seealso>
+        public virtual DeleteEventActionResponse DeleteEventAction(DeleteEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventAction operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">REST API Reference for DeleteEventAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEventAction(DeleteEventActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventActionResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">REST API Reference for DeleteEventAction Operation</seealso>
+        public virtual DeleteEventActionResponse EndDeleteEventAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEventActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRevision
 
         /// <summary>
@@ -888,6 +1023,72 @@ namespace Amazon.DataExchange
         public virtual GetDataSetResponse EndGetDataSet(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDataSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetEventAction
+
+        /// <summary>
+        /// This operation retrieves information about an event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventAction service method.</param>
+        /// 
+        /// <returns>The response from the GetEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">REST API Reference for GetEventAction Operation</seealso>
+        public virtual GetEventActionResponse GetEventAction(GetEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventAction operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">REST API Reference for GetEventAction Operation</seealso>
+        public virtual IAsyncResult BeginGetEventAction(GetEventActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventAction.</param>
+        /// 
+        /// <returns>Returns a  GetEventActionResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">REST API Reference for GetEventAction Operation</seealso>
+        public virtual GetEventActionResponse EndGetEventAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEventActionResponse>(asyncResult);
         }
 
         #endregion
@@ -1154,6 +1355,72 @@ namespace Amazon.DataExchange
         public virtual ListDataSetsResponse EndListDataSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDataSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEventActions
+
+        /// <summary>
+        /// This operation lists your event actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventActions service method.</param>
+        /// 
+        /// <returns>The response from the ListEventActions service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">REST API Reference for ListEventActions Operation</seealso>
+        public virtual ListEventActionsResponse ListEventActions(ListEventActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEventActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEventActions operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">REST API Reference for ListEventActions Operation</seealso>
+        public virtual IAsyncResult BeginListEventActions(ListEventActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEventActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventActions.</param>
+        /// 
+        /// <returns>Returns a  ListEventActionsResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">REST API Reference for ListEventActions Operation</seealso>
+        public virtual ListEventActionsResponse EndListEventActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEventActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1663,6 +1930,75 @@ namespace Amazon.DataExchange
         public virtual UpdateDataSetResponse EndUpdateDataSet(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDataSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateEventAction
+
+        /// <summary>
+        /// This operation updates the event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">REST API Reference for UpdateEventAction Operation</seealso>
+        public virtual UpdateEventActionResponse UpdateEventAction(UpdateEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventAction operation on AmazonDataExchangeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEventAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">REST API Reference for UpdateEventAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEventAction(UpdateEventActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEventAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEventAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateEventActionResult from DataExchange.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">REST API Reference for UpdateEventAction Operation</seealso>
+        public virtual UpdateEventActionResponse EndUpdateEventAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEventActionResponse>(asyncResult);
         }
 
         #endregion

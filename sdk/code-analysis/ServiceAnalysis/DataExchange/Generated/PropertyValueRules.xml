@@ -26,6 +26,11 @@
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataExchange.Model.ListEventActionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataExchange.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>

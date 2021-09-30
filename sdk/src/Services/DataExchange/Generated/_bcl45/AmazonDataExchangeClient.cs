@@ -426,6 +426,77 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  CreateEventAction
+
+
+        /// <summary>
+        /// This operation creates an event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">REST API Reference for CreateEventAction Operation</seealso>
+        public virtual CreateEventActionResponse CreateEventAction(CreateEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation creates an event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateEventAction">REST API Reference for CreateEventAction Operation</seealso>
+        public virtual Task<CreateEventActionResponse> CreateEventActionAsync(CreateEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEventActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateJob
 
 
@@ -726,6 +797,71 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  DeleteEventAction
+
+
+        /// <summary>
+        /// This operation deletes the event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">REST API Reference for DeleteEventAction Operation</seealso>
+        public virtual DeleteEventActionResponse DeleteEventAction(DeleteEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation deletes the event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteEventAction">REST API Reference for DeleteEventAction Operation</seealso>
+        public virtual Task<DeleteEventActionResponse> DeleteEventActionAsync(DeleteEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEventActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRevision
 
 
@@ -931,6 +1067,71 @@ namespace Amazon.DataExchange
             options.ResponseUnmarshaller = GetDataSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetDataSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEventAction
+
+
+        /// <summary>
+        /// This operation retrieves information about an event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventAction service method.</param>
+        /// 
+        /// <returns>The response from the GetEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">REST API Reference for GetEventAction Operation</seealso>
+        public virtual GetEventActionResponse GetEventAction(GetEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation retrieves information about an event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetEventAction">REST API Reference for GetEventAction Operation</seealso>
+        public virtual Task<GetEventActionResponse> GetEventActionAsync(GetEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEventActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1195,6 +1396,71 @@ namespace Amazon.DataExchange
             options.ResponseUnmarshaller = ListDataSetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDataSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEventActions
+
+
+        /// <summary>
+        /// This operation lists your event actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventActions service method.</param>
+        /// 
+        /// <returns>The response from the ListEventActions service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">REST API Reference for ListEventActions Operation</seealso>
+        public virtual ListEventActionsResponse ListEventActions(ListEventActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventActionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation lists your event actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventActions service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListEventActions">REST API Reference for ListEventActions Operation</seealso>
+        public virtual Task<ListEventActionsResponse> ListEventActionsAsync(ListEventActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventActionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEventActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1677,6 +1943,77 @@ namespace Amazon.DataExchange
             options.ResponseUnmarshaller = UpdateDataSetResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateDataSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEventAction
+
+
+        /// <summary>
+        /// This operation updates the event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">REST API Reference for UpdateEventAction Operation</seealso>
+        public virtual UpdateEventActionResponse UpdateEventAction(UpdateEventActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation updates the event action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEventAction service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventAction">REST API Reference for UpdateEventAction Operation</seealso>
+        public virtual Task<UpdateEventActionResponse> UpdateEventActionAsync(UpdateEventActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEventActionResponse>(request, options, cancellationToken);
         }
 
         #endregion

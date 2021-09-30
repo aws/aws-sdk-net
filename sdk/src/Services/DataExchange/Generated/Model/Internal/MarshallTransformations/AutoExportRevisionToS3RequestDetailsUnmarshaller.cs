@@ -34,40 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidationException Object
+    /// Response Unmarshaller for AutoExportRevisionToS3RequestDetails Object
     /// </summary>  
-    public class ValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<ValidationException, JsonUnmarshallerContext>
+    public class AutoExportRevisionToS3RequestDetailsUnmarshaller : IUnmarshaller<AutoExportRevisionToS3RequestDetails, XmlUnmarshallerContext>, IUnmarshaller<AutoExportRevisionToS3RequestDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context)
+        AutoExportRevisionToS3RequestDetails IUnmarshaller<AutoExportRevisionToS3RequestDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public AutoExportRevisionToS3RequestDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ValidationException unmarshalledObject = new ValidationException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            AutoExportRevisionToS3RequestDetails unmarshalledObject = new AutoExportRevisionToS3RequestDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExceptionCause", targetDepth))
+                if (context.TestExpression("Encryption", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExceptionCause = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RevisionDestination", targetDepth))
+                {
+                    var unmarshaller = AutoExportRevisionDestinationEntryUnmarshaller.Instance;
+                    unmarshalledObject.RevisionDestination = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,12 +81,13 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ValidationExceptionUnmarshaller _instance = new ValidationExceptionUnmarshaller();        
+
+        private static AutoExportRevisionToS3RequestDetailsUnmarshaller _instance = new AutoExportRevisionToS3RequestDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidationExceptionUnmarshaller Instance
+        public static AutoExportRevisionToS3RequestDetailsUnmarshaller Instance
         {
             get
             {

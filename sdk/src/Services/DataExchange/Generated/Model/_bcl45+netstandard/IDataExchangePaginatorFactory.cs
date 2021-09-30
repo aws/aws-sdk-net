@@ -36,6 +36,11 @@ namespace Amazon.DataExchange.Model
         IListDataSetsPaginator ListDataSets(ListDataSetsRequest request);
 
         /// <summary>
+        /// Paginator for ListEventActions operation
+        ///</summary>
+        IListEventActionsPaginator ListEventActions(ListEventActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);

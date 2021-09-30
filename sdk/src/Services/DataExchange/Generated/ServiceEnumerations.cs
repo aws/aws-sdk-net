@@ -141,6 +141,56 @@ namespace Amazon.DataExchange
 
 
     /// <summary>
+    /// Constants used for properties of type ExceptionCause.
+    /// </summary>
+    public class ExceptionCause : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InsufficientS3BucketPolicy for ExceptionCause
+        /// </summary>
+        public static readonly ExceptionCause InsufficientS3BucketPolicy = new ExceptionCause("InsufficientS3BucketPolicy");
+        /// <summary>
+        /// Constant S3AccessDenied for ExceptionCause
+        /// </summary>
+        public static readonly ExceptionCause S3AccessDenied = new ExceptionCause("S3AccessDenied");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExceptionCause(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExceptionCause FindValue(string value)
+        {
+            return FindValue<ExceptionCause>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExceptionCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobErrorLimitName.
     /// </summary>
     public class JobErrorLimitName : ConstantClass
@@ -200,6 +250,10 @@ namespace Amazon.DataExchange
         /// Constant ASSET for JobErrorResourceTypes
         /// </summary>
         public static readonly JobErrorResourceTypes ASSET = new JobErrorResourceTypes("ASSET");
+        /// <summary>
+        /// Constant DATA_SET for JobErrorResourceTypes
+        /// </summary>
+        public static readonly JobErrorResourceTypes DATA_SET = new JobErrorResourceTypes("DATA_SET");
         /// <summary>
         /// Constant REVISION for JobErrorResourceTypes
         /// </summary>
@@ -263,6 +317,10 @@ namespace Amazon.DataExchange
         /// </summary>
         public static readonly LimitName AssetsPerRevision = new LimitName("Assets per revision");
         /// <summary>
+        /// Constant AutoExportEventActionsPerDataSet for LimitName
+        /// </summary>
+        public static readonly LimitName AutoExportEventActionsPerDataSet = new LimitName("Auto export event actions per data set");
+        /// <summary>
         /// Constant ConcurrentInProgressJobsToExportAssetsToAmazonS3 for LimitName
         /// </summary>
         public static readonly LimitName ConcurrentInProgressJobsToExportAssetsToAmazonS3 = new LimitName("Concurrent in progress jobs to export assets to Amazon S3");
@@ -270,6 +328,10 @@ namespace Amazon.DataExchange
         /// Constant ConcurrentInProgressJobsToExportAssetsToASignedURL for LimitName
         /// </summary>
         public static readonly LimitName ConcurrentInProgressJobsToExportAssetsToASignedURL = new LimitName("Concurrent in progress jobs to export assets to a signed URL");
+        /// <summary>
+        /// Constant ConcurrentInProgressJobsToExportRevisionsToAmazonS3 for LimitName
+        /// </summary>
+        public static readonly LimitName ConcurrentInProgressJobsToExportRevisionsToAmazonS3 = new LimitName("Concurrent in progress jobs to export revisions to Amazon S3");
         /// <summary>
         /// Constant ConcurrentInProgressJobsToImportAssetsFromAmazonS3 for LimitName
         /// </summary>
@@ -286,6 +348,10 @@ namespace Amazon.DataExchange
         /// Constant DataSetsPerProduct for LimitName
         /// </summary>
         public static readonly LimitName DataSetsPerProduct = new LimitName("Data sets per product");
+        /// <summary>
+        /// Constant EventActionsPerAccount for LimitName
+        /// </summary>
+        public static readonly LimitName EventActionsPerAccount = new LimitName("Event actions per account");
         /// <summary>
         /// Constant ProductsPerAccount for LimitName
         /// </summary>
@@ -394,6 +460,10 @@ namespace Amazon.DataExchange
         /// Constant DATA_SET for ResourceType
         /// </summary>
         public static readonly ResourceType DATA_SET = new ResourceType("DATA_SET");
+        /// <summary>
+        /// Constant EVENT_ACTION for ResourceType
+        /// </summary>
+        public static readonly ResourceType EVENT_ACTION = new ResourceType("EVENT_ACTION");
         /// <summary>
         /// Constant JOB for ResourceType
         /// </summary>

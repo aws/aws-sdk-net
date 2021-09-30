@@ -36,6 +36,7 @@ namespace Amazon.DataExchange.Model
     #endif
     public partial class ValidationException : AmazonDataExchangeException
     {
+        private ExceptionCause _exceptionCause;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.DataExchange.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ExceptionCause = (ExceptionCause)info.GetValue("ExceptionCause", typeof(ExceptionCause));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.DataExchange.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ExceptionCause", this.ExceptionCause);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ExceptionCause. 
+        /// <para>
+        /// The message that informs you about what the exception was.
+        /// </para>
+        /// </summary>
+        public ExceptionCause ExceptionCause
+        {
+            get { return this._exceptionCause; }
+            set { this._exceptionCause = value; }
+        }
+
+        // Check to see if ExceptionCause property is set
+        internal bool IsSetExceptionCause()
+        {
+            return this._exceptionCause != null;
+        }
 
     }
 }
