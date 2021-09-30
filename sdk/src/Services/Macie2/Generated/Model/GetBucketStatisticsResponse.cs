@@ -233,9 +233,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// If versioning is enabled for any of the buckets, Macie calculates this value based
-        /// on the size of the latest version of each object in those buckets. This value doesn't
-        /// reflect the storage size of all versions of the objects in the buckets.
+        /// If versioning is enabled for any of the buckets, Amazon Macie calculates this value
+        /// based on the size of the latest version of each object in those buckets. This value
+        /// doesn't reflect the storage size of all versions of the objects in the buckets.
         /// </para>
         /// </summary>
         public long SizeInBytes
@@ -258,10 +258,10 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// If versioning is enabled for any of the buckets, Macie calculates this value based
-        /// on the size of the latest version of each applicable object in those buckets. This
-        /// value doesn't reflect the storage size of all versions of the applicable objects in
-        /// the buckets.
+        /// If versioning is enabled for any of the buckets, Amazon Macie calculates this value
+        /// based on the size of the latest version of each applicable object in those buckets.
+        /// This value doesn't reflect the storage size of all versions of the applicable objects
+        /// in the buckets.
         /// </para>
         /// </summary>
         public long SizeInBytesCompressed

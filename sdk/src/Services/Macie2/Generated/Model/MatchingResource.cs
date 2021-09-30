@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides statistical data and other information about an Amazon Web Services resource
-    /// that Amazon Macie monitors and analyzes.
+    /// that Amazon Macie monitors and analyzes for your account.
     /// </summary>
     public partial class MatchingResource
     {

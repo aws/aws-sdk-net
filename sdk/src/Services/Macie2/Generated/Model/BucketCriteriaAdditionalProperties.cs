@@ -46,7 +46,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Eq. 
         /// <para>
         /// The value for the property matches (equals) the specified value. If you specify multiple
-        /// values, Macie uses OR logic to join the values.
+        /// values, Amazon Macie uses OR logic to join the values.
         /// </para>
         /// </summary>
         public List<string> Eq

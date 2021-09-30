@@ -88,6 +88,18 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClassifiableSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("errorCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("errorMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobDetails", targetDepth))
                 {
                     var unmarshaller = JobDetailsUnmarshaller.Instance;

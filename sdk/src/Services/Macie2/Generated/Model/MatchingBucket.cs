@@ -30,7 +30,10 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides statistical data and other information about an S3 bucket that Amazon Macie
-    /// monitors and analyzes.
+    /// monitors and analyzes for your account. If an error occurs when Macie attempts to
+    /// retrieve and process information about the bucket or the bucket's objects, the value
+    /// for most of these properties is null. Exceptions are accountId and bucketName. To
+    /// identify the cause of the error, refer to the errorCode and errorMessage values.
     /// </summary>
     public partial class MatchingBucket
     {
@@ -38,6 +41,8 @@ namespace Amazon.Macie2.Model
         private string _bucketName;
         private long? _classifiableObjectCount;
         private long? _classifiableSizeInBytes;
+        private BucketMetadataErrorCode _errorCode;
+        private string _errorMessage;
         private JobDetails _jobDetails;
         private long? _objectCount;
         private ObjectCountByEncryptionType _objectCountByEncryptionType;
@@ -129,6 +134,48 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// Specifies the error code for an error that prevented Amazon Macie from retrieving
+        /// and processing information about the bucket and the bucket's objects. If this value
+        /// is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example,
+        /// the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+        /// value is null, Macie was able to retrieve and process the information.
+        /// </para>
+        /// </summary>
+        public BucketMetadataErrorCode ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// A brief description of the error (errorCode) that prevented Amazon Macie from retrieving
+        /// and processing information about the bucket and the bucket's objects. This value is
+        /// null if Macie was able to retrieve and process the information.
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobDetails. 
         /// <para>
         /// Specifies whether any one-time or recurring classification jobs are configured to
@@ -217,9 +264,10 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// If versioning is enabled for the bucket, Macie calculates this value based on the
-        /// size of the latest version of each applicable object in the bucket. This value doesn't
-        /// reflect the storage size of all versions of each applicable object in the bucket.
+        /// If versioning is enabled for the bucket, Amazon Macie calculates this value based
+        /// on the size of the latest version of each applicable object in the bucket. This value
+        /// doesn't reflect the storage size of all versions of each applicable object in the
+        /// bucket.
         /// </para>
         /// </summary>
         public long SizeInBytesCompressed
