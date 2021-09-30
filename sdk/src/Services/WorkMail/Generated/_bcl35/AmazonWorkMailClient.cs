@@ -1276,6 +1276,75 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteMobileDeviceAccessOverride
+
+        /// <summary>
+        /// Deletes the mobile device access override for the given WorkMail organization, user,
+        /// and device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessOverride service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMobileDeviceAccessOverride service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessOverride">REST API Reference for DeleteMobileDeviceAccessOverride Operation</seealso>
+        public virtual DeleteMobileDeviceAccessOverrideResponse DeleteMobileDeviceAccessOverride(DeleteMobileDeviceAccessOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMobileDeviceAccessOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMobileDeviceAccessOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMobileDeviceAccessOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessOverride operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMobileDeviceAccessOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessOverride">REST API Reference for DeleteMobileDeviceAccessOverride Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMobileDeviceAccessOverride(DeleteMobileDeviceAccessOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMobileDeviceAccessOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMobileDeviceAccessOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMobileDeviceAccessOverride.</param>
+        /// 
+        /// <returns>Returns a  DeleteMobileDeviceAccessOverrideResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessOverride">REST API Reference for DeleteMobileDeviceAccessOverride Operation</seealso>
+        public virtual DeleteMobileDeviceAccessOverrideResponse EndDeleteMobileDeviceAccessOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMobileDeviceAccessOverrideResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteMobileDeviceAccessRule
 
         /// <summary>
@@ -2459,6 +2528,78 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetMobileDeviceAccessOverride
+
+        /// <summary>
+        /// Gets the mobile device access override for the given WorkMail organization, user,
+        /// and device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMobileDeviceAccessOverride service method.</param>
+        /// 
+        /// <returns>The response from the GetMobileDeviceAccessOverride service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessOverride">REST API Reference for GetMobileDeviceAccessOverride Operation</seealso>
+        public virtual GetMobileDeviceAccessOverrideResponse GetMobileDeviceAccessOverride(GetMobileDeviceAccessOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMobileDeviceAccessOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<GetMobileDeviceAccessOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMobileDeviceAccessOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMobileDeviceAccessOverride operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMobileDeviceAccessOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessOverride">REST API Reference for GetMobileDeviceAccessOverride Operation</seealso>
+        public virtual IAsyncResult BeginGetMobileDeviceAccessOverride(GetMobileDeviceAccessOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMobileDeviceAccessOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMobileDeviceAccessOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMobileDeviceAccessOverride.</param>
+        /// 
+        /// <returns>Returns a  GetMobileDeviceAccessOverrideResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessOverride">REST API Reference for GetMobileDeviceAccessOverride Operation</seealso>
+        public virtual GetMobileDeviceAccessOverrideResponse EndGetMobileDeviceAccessOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMobileDeviceAccessOverrideResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAccessControlRules
 
         /// <summary>
@@ -2864,6 +3005,75 @@ namespace Amazon.WorkMail
         public virtual ListMailboxPermissionsResponse EndListMailboxPermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMailboxPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMobileDeviceAccessOverrides
+
+        /// <summary>
+        /// Lists all the mobile device access overrides for any given combination of WorkMail
+        /// organization, user, or device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMobileDeviceAccessOverrides service method.</param>
+        /// 
+        /// <returns>The response from the ListMobileDeviceAccessOverrides service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessOverrides">REST API Reference for ListMobileDeviceAccessOverrides Operation</seealso>
+        public virtual ListMobileDeviceAccessOverridesResponse ListMobileDeviceAccessOverrides(ListMobileDeviceAccessOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMobileDeviceAccessOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMobileDeviceAccessOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMobileDeviceAccessOverridesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMobileDeviceAccessOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMobileDeviceAccessOverrides operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMobileDeviceAccessOverrides
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessOverrides">REST API Reference for ListMobileDeviceAccessOverrides Operation</seealso>
+        public virtual IAsyncResult BeginListMobileDeviceAccessOverrides(ListMobileDeviceAccessOverridesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMobileDeviceAccessOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMobileDeviceAccessOverridesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMobileDeviceAccessOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMobileDeviceAccessOverrides.</param>
+        /// 
+        /// <returns>Returns a  ListMobileDeviceAccessOverridesResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessOverrides">REST API Reference for ListMobileDeviceAccessOverrides Operation</seealso>
+        public virtual ListMobileDeviceAccessOverridesResponse EndListMobileDeviceAccessOverrides(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMobileDeviceAccessOverridesResponse>(asyncResult);
         }
 
         #endregion
@@ -3392,6 +3602,79 @@ namespace Amazon.WorkMail
         public virtual PutMailboxPermissionsResponse EndPutMailboxPermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMailboxPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutMobileDeviceAccessOverride
+
+        /// <summary>
+        /// Creates or updates a mobile device access override for the given WorkMail organization,
+        /// user, and device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMobileDeviceAccessOverride service method.</param>
+        /// 
+        /// <returns>The response from the PutMobileDeviceAccessOverride service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on a user, group, or resource that isn't in the expected
+        /// state, such as trying to delete an active user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMobileDeviceAccessOverride">REST API Reference for PutMobileDeviceAccessOverride Operation</seealso>
+        public virtual PutMobileDeviceAccessOverrideResponse PutMobileDeviceAccessOverride(PutMobileDeviceAccessOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMobileDeviceAccessOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<PutMobileDeviceAccessOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMobileDeviceAccessOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMobileDeviceAccessOverride operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMobileDeviceAccessOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMobileDeviceAccessOverride">REST API Reference for PutMobileDeviceAccessOverride Operation</seealso>
+        public virtual IAsyncResult BeginPutMobileDeviceAccessOverride(PutMobileDeviceAccessOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMobileDeviceAccessOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutMobileDeviceAccessOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMobileDeviceAccessOverride.</param>
+        /// 
+        /// <returns>Returns a  PutMobileDeviceAccessOverrideResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMobileDeviceAccessOverride">REST API Reference for PutMobileDeviceAccessOverride Operation</seealso>
+        public virtual PutMobileDeviceAccessOverrideResponse EndPutMobileDeviceAccessOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutMobileDeviceAccessOverrideResponse>(asyncResult);
         }
 
         #endregion

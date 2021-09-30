@@ -246,6 +246,24 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessOverrideRequest.DeviceId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessOverrideRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessOverrideRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteMobileDeviceAccessRuleRequest.MobileDeviceAccessRuleId</property>
     <min>1</min>
     <max>64</max>
@@ -649,6 +667,41 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideRequest.DeviceId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideResponse.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideResponse.DeviceId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetMobileDeviceAccessOverrideResponse.UserId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListAccessControlRulesRequest.OrganizationId</property>
     <min>34</min>
     <max>34</max>
@@ -780,6 +833,41 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListMailboxPermissionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.DeviceId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMobileDeviceAccessOverridesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
@@ -919,6 +1007,30 @@
     <min>34</min>
     <max>34</max>
     <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.DeviceId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutMobileDeviceAccessOverrideRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutRetentionPolicyRequest.Description</property>
@@ -1215,6 +1327,23 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessOverride.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\S\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessOverride.DeviceId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.MobileDeviceAccessOverride.UserId</property>
+    <min>12</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MobileDeviceAccessRule.Description</property>

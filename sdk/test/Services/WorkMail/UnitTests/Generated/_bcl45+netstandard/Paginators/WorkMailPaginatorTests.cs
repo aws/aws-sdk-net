@@ -237,6 +237,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("WorkMail")]
+        public void ListMobileDeviceAccessOverridesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMobileDeviceAccessOverridesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListMobileDeviceAccessOverridesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListMobileDeviceAccessOverridesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListMobileDeviceAccessOverrides(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListMobileDeviceAccessOverrides(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WorkMail")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListMobileDeviceAccessOverridesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMobileDeviceAccessOverridesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListMobileDeviceAccessOverridesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListMobileDeviceAccessOverrides(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListMobileDeviceAccessOverrides(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WorkMail")]
         public void ListOrganizationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListOrganizationsRequest>();

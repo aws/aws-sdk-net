@@ -51,6 +51,11 @@ namespace Amazon.WorkMail.Model
         IListMailboxPermissionsPaginator ListMailboxPermissions(ListMailboxPermissionsRequest request);
 
         /// <summary>
+        /// Paginator for ListMobileDeviceAccessOverrides operation
+        ///</summary>
+        IListMobileDeviceAccessOverridesPaginator ListMobileDeviceAccessOverrides(ListMobileDeviceAccessOverridesRequest request);
+
+        /// <summary>
         /// Paginator for ListOrganizations operation
         ///</summary>
         IListOrganizationsPaginator ListOrganizations(ListOrganizationsRequest request);

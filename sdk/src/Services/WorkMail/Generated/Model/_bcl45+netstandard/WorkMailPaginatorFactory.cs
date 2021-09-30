@@ -76,6 +76,14 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Paginator for ListMobileDeviceAccessOverrides operation
+        ///</summary>
+        public IListMobileDeviceAccessOverridesPaginator ListMobileDeviceAccessOverrides(ListMobileDeviceAccessOverridesRequest request) 
+        {
+            return new ListMobileDeviceAccessOverridesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOrganizations operation
         ///</summary>
         public IListOrganizationsPaginator ListOrganizations(ListOrganizationsRequest request) 
