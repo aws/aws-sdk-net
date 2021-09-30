@@ -56,6 +56,10 @@
       <Project>{64EADE31-1D27-45F4-8887-67121B348CD4}</Project>
       <Name>AWSSDK.AccessAnalyzer.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Account/AWSSDK.Account.CodeAnalysis.csproj">
+      <Project>{CF1AA3FA-47AA-4CA2-ABC3-ECBB3FA38242}</Project>
+      <Name>AWSSDK.Account.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ACMPCA/AWSSDK.ACMPCA.CodeAnalysis.csproj">
       <Project>{1073C7DB-B519-4074-AF6D-3A881198BB67}</Project>
       <Name>AWSSDK.ACMPCA.CodeAnalysis</Name>

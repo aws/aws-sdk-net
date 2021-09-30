@@ -17,6 +17,8 @@
   <Assets>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AccessAnalyzer.CodeAnalysis" Path="|AWSSDK.AccessAnalyzer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AccessAnalyzer.CodeAnalysis" Path="|AWSSDK.AccessAnalyzer.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Account.CodeAnalysis" Path="|AWSSDK.Account.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Account.CodeAnalysis" Path="|AWSSDK.Account.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ACMPCA.CodeAnalysis" Path="|AWSSDK.ACMPCA.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ACMPCA.CodeAnalysis" Path="|AWSSDK.ACMPCA.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AlexaForBusiness.CodeAnalysis" Path="|AWSSDK.AlexaForBusiness.CodeAnalysis|"/>
