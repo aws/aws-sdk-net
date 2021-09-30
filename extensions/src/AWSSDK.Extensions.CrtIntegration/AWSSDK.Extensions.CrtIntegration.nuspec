@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Extensions.CrtIntegration</id>
     <title>AWSSDK - Extensions for AWS Common Runtime Integration</title>
-    <version>3.7.0.0</version>
+    <version>3.7.0.1</version>
     <authors>Amazon Web Services</authors>
     <description>Extensions for the AWS SDK for .NET to integrate with the AWS Common Runtime</description>
     <language>en-US</language>
@@ -14,15 +14,15 @@
     <dependencies>
       <group targetFramework="net35">
         <dependency id="AWSSDK.Core" version="3.7.3" />
-        <dependency id="AWSCRT-AUTH" version="0.3.11" />
+        <dependency id="AWSCRT-AUTH" version="0.3.12" />
       </group>
       <group targetFramework="net45">
         <dependency id="AWSSDK.Core" version="3.7.3" />
-        <dependency id="AWSCRT-AUTH" version="0.3.11" />
+        <dependency id="AWSCRT-AUTH" version="0.3.12" />
       </group>
       <group targetFramework="netstandard2.0">
         <dependency id="AWSSDK.Core" version="3.7.3" />
-        <dependency id="AWSCRT-AUTH" version="0.3.11" />
+        <dependency id="AWSCRT-AUTH" version="0.3.12" />
       </group>
     </dependencies>
 
