@@ -40,6 +40,8 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class UpdateCanaryRequest : AmazonSyntheticsRequest
     {
+        private ArtifactConfigInput _artifactConfig;
+        private string _artifactS3Location;
         private CanaryCodeInput _code;
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
@@ -50,6 +52,46 @@ namespace Amazon.Synthetics.Model
         private int? _successRetentionPeriodInDays;
         private VisualReferenceInput _visualReference;
         private VpcConfigInput _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property ArtifactConfig. 
+        /// <para>
+        /// A structure that contains the configuration for canary artifacts, including the encryption-at-rest
+        /// settings for artifacts that the canary uploads to Amazon S3.
+        /// </para>
+        /// </summary>
+        public ArtifactConfigInput ArtifactConfig
+        {
+            get { return this._artifactConfig; }
+            set { this._artifactConfig = value; }
+        }
+
+        // Check to see if ArtifactConfig property is set
+        internal bool IsSetArtifactConfig()
+        {
+            return this._artifactConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ArtifactS3Location. 
+        /// <para>
+        /// The location in Amazon S3 where Synthetics stores artifacts from the test runs of
+        /// this canary. Artifacts include the log file, screenshots, and HAR files. The name
+        /// of the S3 bucket can't include a period (.).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string ArtifactS3Location
+        {
+            get { return this._artifactS3Location; }
+            set { this._artifactS3Location = value; }
+        }
+
+        // Check to see if ArtifactS3Location property is set
+        internal bool IsSetArtifactS3Location()
+        {
+            return this._artifactS3Location != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Code. 

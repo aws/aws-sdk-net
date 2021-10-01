@@ -141,6 +141,11 @@
     <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.UpdateCanaryRequest.ArtifactS3Location</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.ExecutionRoleArn</property>
     <min>1</min>
     <max>2048</max>
@@ -329,6 +334,12 @@
     <property>Amazon.Synthetics.Model.RuntimeVersion.VersionName</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.S3EncryptionConfig.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:kms:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:key/[\w\-\/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.VisualReferenceInput.BaseCanaryRunId</property>

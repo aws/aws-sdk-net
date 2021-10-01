@@ -68,6 +68,23 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArtifactConfig())
+                {
+                    context.Writer.WritePropertyName("ArtifactConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ArtifactConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ArtifactConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetArtifactS3Location())
+                {
+                    context.Writer.WritePropertyName("ArtifactS3Location");
+                    context.Writer.Write(publicRequest.ArtifactS3Location);
+                }
+
                 if(publicRequest.IsSetCode())
                 {
                     context.Writer.WritePropertyName("Code");

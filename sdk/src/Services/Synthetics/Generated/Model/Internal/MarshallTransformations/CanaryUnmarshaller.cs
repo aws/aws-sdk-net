@@ -64,6 +64,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ArtifactConfig", targetDepth))
+                {
+                    var unmarshaller = ArtifactConfigOutputUnmarshaller.Instance;
+                    unmarshalledObject.ArtifactConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ArtifactS3Location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
