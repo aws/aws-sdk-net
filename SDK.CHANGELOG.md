@@ -1,3 +1,16 @@
+### 3.7.128.0 (2021-10-01 18:21 UTC)
+* AppRunner (3.7.1.0)
+	* This release contains several minor bug fixes.
+* SimpleSystemsManagement (3.7.7.0)
+	* When "AutoApprovable" is true for a Change Template, then specifying --auto-approve (boolean) in Start-Change-Request-Execution will create a change request that bypasses approver review. (except for change calendar restrictions)
+* Synthetics (3.7.2.0)
+	* CloudWatch Synthetics now enables customers to choose a customer managed AWS KMS key or an Amazon S3-managed key instead of an AWS managed key (default) for the encryption of artifacts that the canary stores in Amazon S3. CloudWatch Synthetics also supports artifact S3 location updation now.
+* Core 3.7.3.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.127.0 (2021-09-30 18:17 UTC)
 * Account (3.7.0.0)
 	* This release of the Account Management API enables customers to manage the alternate contacts for their AWS accounts. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/accounts-welcome.html
