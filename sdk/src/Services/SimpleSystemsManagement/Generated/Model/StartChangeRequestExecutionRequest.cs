@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class StartChangeRequestExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
+        private bool? _autoApprove;
         private string _changeDetails;
         private string _changeRequestName;
         private string _clientToken;
@@ -46,6 +47,39 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _scheduledEndTime;
         private DateTime? _scheduledTime;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AutoApprove. 
+        /// <para>
+        /// Indicates whether the change request can be approved automatically without the need
+        /// for manual approvals.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code>
+        /// to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change
+        /// request that bypasses approver review.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Change Calendar restrictions are not bypassed in this scenario. If the state of an
+        /// associated calendar is <code>CLOSED</code>, change freeze approvers must still grant
+        /// permission for this change request to run. If they don't, the change won't be processed
+        /// until the calendar state is again <code>OPEN</code>. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool AutoApprove
+        {
+            get { return this._autoApprove.GetValueOrDefault(); }
+            set { this._autoApprove = value; }
+        }
+
+        // Check to see if AutoApprove property is set
+        internal bool IsSetAutoApprove()
+        {
+            return this._autoApprove.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ChangeDetails. 

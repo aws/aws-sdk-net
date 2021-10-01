@@ -213,7 +213,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The instances targeted by the request to create an association. 
+        /// The instances targeted by the request to create an association. You can target all
+        /// instances in an Amazon Web Services account by specifying the <code>InstanceIds</code>
+        /// key with a value of <code>*</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

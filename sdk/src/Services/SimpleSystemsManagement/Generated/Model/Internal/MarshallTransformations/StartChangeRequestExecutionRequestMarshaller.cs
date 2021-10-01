@@ -67,6 +67,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoApprove())
+                {
+                    context.Writer.WritePropertyName("AutoApprove");
+                    context.Writer.Write(publicRequest.AutoApprove);
+                }
+
                 if(publicRequest.IsSetChangeDetails())
                 {
                     context.Writer.WritePropertyName("ChangeDetails");
