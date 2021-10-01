@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes the runtime configuration of an AWS App Runner service instance (scaling
-    /// unit).
+    /// Describes the runtime configuration of an App Runner service instance (scaling unit).
     /// </summary>
     public partial class InstanceConfiguration
     {
@@ -65,10 +64,11 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App
-        /// Runner service. These are permissions that your code needs when it calls any AWS APIs.
+        /// Runner service. These are permissions that your code needs when it calls any Amazon
+        /// Web Services APIs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=29, Max=102)]
+        [AWSProperty(Min=29, Max=1024)]
         public string InstanceRoleArn
         {
             get { return this._instanceRoleArn; }

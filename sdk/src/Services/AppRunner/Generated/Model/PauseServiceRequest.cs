@@ -30,8 +30,8 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the PauseService operation.
-    /// Pause an active AWS App Runner service. App Runner reduces compute capacity for the
-    /// service to zero and loses state (for example, ephemeral storage is removed).
+    /// Pause an active App Runner service. App Runner reduces compute capacity for the service
+    /// to zero and loses state (for example, ephemeral storage is removed).
     /// 
     ///  
     /// <para>

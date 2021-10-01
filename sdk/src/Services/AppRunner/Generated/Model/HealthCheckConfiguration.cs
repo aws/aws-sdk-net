@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes the settings for the health check that AWS App Runner performs to monitor
-    /// the health of a service.
+    /// Describes the settings for the health check that App Runner performs to monitor the
+    /// health of a service.
     /// </summary>
     public partial class HealthCheckConfiguration
     {
@@ -49,7 +49,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>3</code> 
+        /// Default: <code>1</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -102,7 +102,7 @@ namespace Amazon.AppRunner.Model
         /// Default: <code>"/"</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=51200)]
+        [AWSProperty(Min=1)]
         public string Path
         {
             get { return this._path; }
@@ -173,7 +173,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>3</code> 
+        /// Default: <code>5</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

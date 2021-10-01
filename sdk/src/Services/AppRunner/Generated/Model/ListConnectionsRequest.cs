@@ -30,7 +30,8 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConnections operation.
-    /// Returns a list of AWS App Runner connections that are associated with your AWS account.
+    /// Returns a list of App Runner connections that are associated with your Amazon Web
+    /// Services account.
     /// </summary>
     public partial class ListConnectionsRequest : AmazonAppRunnerRequest
     {

@@ -45,7 +45,7 @@ namespace Amazon.AppRunner.Model
         /// ECR Public repositories).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=29, Max=102)]
+        [AWSProperty(Min=29, Max=1024)]
         public string AccessRoleArn
         {
             get { return this._accessRoleArn; }

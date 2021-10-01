@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Provides summary information for an operation that occurred on an AWS App Runner service.
+    /// Provides summary information for an operation that occurred on an App Runner service.
     /// </summary>
     public partial class OperationSummary
     {

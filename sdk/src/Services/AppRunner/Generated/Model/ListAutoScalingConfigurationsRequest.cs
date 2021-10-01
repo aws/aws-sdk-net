@@ -30,9 +30,9 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAutoScalingConfigurations operation.
-    /// Returns a list of AWS App Runner automatic scaling configurations in your AWS account.
-    /// You can query the revisions for a specific configuration name or the revisions for
-    /// all configurations in your account. You can optionally query only the latest revision
+    /// Returns a list of App Runner automatic scaling configurations in your Amazon Web Services
+    /// account. You can query the revisions for a specific configuration name or the revisions
+    /// for all configurations in your account. You can optionally query only the latest revision
     /// of each requested name.
     /// </summary>
     public partial class ListAutoScalingConfigurationsRequest : AmazonAppRunnerRequest

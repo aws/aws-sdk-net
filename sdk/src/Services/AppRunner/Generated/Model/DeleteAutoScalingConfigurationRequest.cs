@@ -30,9 +30,9 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAutoScalingConfiguration operation.
-    /// Delete an AWS App Runner automatic scaling configuration resource. You can delete
-    /// a specific revision or the latest active revision. You can't delete a configuration
-    /// that's used by one or more App Runner services.
+    /// Delete an App Runner automatic scaling configuration resource. You can delete a specific
+    /// revision or the latest active revision. You can't delete a configuration that's used
+    /// by one or more App Runner services.
     /// </summary>
     public partial class DeleteAutoScalingConfigurationRequest : AmazonAppRunnerRequest
     {

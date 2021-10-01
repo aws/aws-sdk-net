@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConnection operation.
-    /// Create an AWS App Runner connection resource. App Runner requires a connection resource
+    /// Create an App Runner connection resource. App Runner requires a connection resource
     /// when you create App Runner services that access private repositories from certain
     /// third-party providers. You can share a connection across multiple services.
     /// 
@@ -50,7 +50,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property ConnectionName. 
         /// <para>
         /// A name for the new connection. It must be unique across all App Runner connections
-        /// for the AWS account in the AWS Region.
+        /// for the Amazon Web Services account in the Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=32)]

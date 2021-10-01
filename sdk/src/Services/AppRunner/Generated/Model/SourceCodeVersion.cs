@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Identifies a version of code that AWS App Runner refers to within a source code repository.
+    /// Identifies a version of code that App Runner refers to within a source code repository.
     /// </summary>
     public partial class SourceCodeVersion
     {

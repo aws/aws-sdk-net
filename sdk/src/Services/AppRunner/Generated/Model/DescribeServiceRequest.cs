@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeService operation.
-    /// Return a full description of an AWS App Runner service.
+    /// Return a full description of an App Runner service.
     /// </summary>
     public partial class DescribeServiceRequest : AmazonAppRunnerRequest
     {

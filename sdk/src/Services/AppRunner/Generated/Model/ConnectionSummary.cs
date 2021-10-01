@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Provides summary information about an AWS App Runner connection resource.
+    /// Provides summary information about an App Runner connection resource.
     /// </summary>
     public partial class ConnectionSummary
     {

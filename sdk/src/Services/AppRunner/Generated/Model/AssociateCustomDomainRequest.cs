@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateCustomDomain operation.
-    /// Associate your own domain name with the AWS App Runner subdomain URL of your App Runner
+    /// Associate your own domain name with the App Runner subdomain URL of your App Runner
     /// service.
     /// 
     ///  

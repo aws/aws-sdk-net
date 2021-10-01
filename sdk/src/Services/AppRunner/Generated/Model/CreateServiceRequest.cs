@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateService operation.
-    /// Create an AWS App Runner service. After the service is created, the action also automatically
+    /// Create an App Runner service. After the service is created, the action also automatically
     /// starts a deployment.
     /// 
     ///  
@@ -76,7 +76,7 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// An optional custom encryption key that App Runner uses to encrypt the copy of your
         /// source repository that it maintains and your service logs. By default, App Runner
-        /// uses an AWS managed CMK.
+        /// uses an Amazon Web Services managed CMK.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -94,8 +94,8 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property HealthCheckConfiguration. 
         /// <para>
-        /// The settings for the health check that AWS App Runner performs to monitor the health
-        /// of your service.
+        /// The settings for the health check that App Runner performs to monitor the health of
+        /// your service.
         /// </para>
         /// </summary>
         public HealthCheckConfiguration HealthCheckConfiguration
@@ -132,7 +132,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// A name for the new service. It must be unique across all the running App Runner services
-        /// in your AWS account in the AWS Region.
+        /// in your Amazon Web Services account in the Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=40)]

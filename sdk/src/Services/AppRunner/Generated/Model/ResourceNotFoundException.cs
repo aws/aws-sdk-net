@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-    /// account.
+    /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+    /// Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

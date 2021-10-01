@@ -34,8 +34,8 @@ namespace Amazon.AppRunner.Model
     /// 
     ///  
     /// <para>
-    /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-    /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+    /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+    /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

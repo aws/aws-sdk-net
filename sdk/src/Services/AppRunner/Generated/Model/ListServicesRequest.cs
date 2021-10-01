@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServices operation.
-    /// Returns a list of running AWS App Runner services in your AWS account.
+    /// Returns a list of running App Runner services in your Amazon Web Services account.
     /// </summary>
     public partial class ListServicesRequest : AmazonAppRunnerRequest
     {

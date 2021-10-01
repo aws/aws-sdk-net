@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCustomDomains operation.
-    /// Return a description of custom domain names that are associated with an AWS App Runner
+    /// Return a description of custom domain names that are associated with an App Runner
     /// service.
     /// </summary>
     public partial class DescribeCustomDomainsRequest : AmazonAppRunnerRequest

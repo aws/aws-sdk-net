@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes the configuration that AWS App Runner uses to run an App Runner service
-    /// using an image pulled from a source image repository.
+    /// Describes the configuration that App Runner uses to run an App Runner service using
+    /// an image pulled from a source image repository.
     /// </summary>
     public partial class ImageConfiguration
     {

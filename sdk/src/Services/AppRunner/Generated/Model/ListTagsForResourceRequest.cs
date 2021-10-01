@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags that are associated with for an AWS App Runner resource. The response contains
+    /// List tags that are associated with for an App Runner resource. The response contains
     /// a list of tag key-value pairs.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAppRunnerRequest

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes a tag that is applied to an AWS App Runner resource. A tag is a metadata
-    /// item consisting of a key-value pair.
+    /// Describes a tag that is applied to an App Runner resource. A tag is a metadata item
+    /// consisting of a key-value pair.
     /// </summary>
     public partial class Tag
     {

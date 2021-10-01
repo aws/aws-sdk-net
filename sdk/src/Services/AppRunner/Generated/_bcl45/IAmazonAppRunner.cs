@@ -31,12 +31,13 @@ namespace Amazon.AppRunner
     /// <summary>
     /// Interface for accessing AppRunner
     ///
-    /// AWS App Runner 
+    /// App Runner 
     /// <para>
-    /// AWS App Runner is an application service that provides a fast, simple, and cost-effective
+    /// App Runner is an application service that provides a fast, simple, and cost-effective
     /// way to go directly from an existing container image or source code to a running service
-    /// in the AWS cloud in seconds. You don't need to learn new technologies, decide which
-    /// compute service to use, or understand how to provision and configure AWS resources.
+    /// in the Amazon Web Services Cloud in seconds. You don't need to learn new technologies,
+    /// decide which compute service to use, or understand how to provision and configure
+    /// Amazon Web Services resources.
     /// </para>
     ///  
     /// <para>
@@ -46,9 +47,9 @@ namespace Amazon.AppRunner
     /// </para>
     ///  
     /// <para>
-    /// For more information about App Runner, see the <a href="https://docs.aws.amazon.com/apprunner/latest/dg/">AWS
-    /// App Runner Developer Guide</a>. For release information, see the <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/">AWS
-    /// App Runner Release Notes</a>.
+    /// For more information about App Runner, see the <a href="https://docs.aws.amazon.com/apprunner/latest/dg/">App
+    /// Runner Developer Guide</a>. For release information, see the <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/">App
+    /// Runner Release Notes</a>.
     /// </para>
     ///  
     /// <para>
@@ -62,8 +63,8 @@ namespace Amazon.AppRunner
     /// </para>
     ///  
     /// <para>
-    /// For a list of Region-specific endpoints that App Runner supports, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-    /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+    /// For a list of Region-specific endpoints that App Runner supports, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+    /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonAppRunner : IAmazonService, IDisposable
@@ -79,7 +80,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Associate your own domain name with the AWS App Runner subdomain URL of your App Runner
+        /// Associate your own domain name with the App Runner subdomain URL of your App Runner
         /// service.
         /// 
         ///  
@@ -113,7 +114,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Associate your own domain name with the AWS App Runner subdomain URL of your App Runner
+        /// Associate your own domain name with the App Runner subdomain URL of your App Runner
         /// service.
         /// 
         ///  
@@ -153,7 +154,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Create an AWS App Runner automatic scaling configuration resource. App Runner requires
+        /// Create an App Runner automatic scaling configuration resource. App Runner requires
         /// this resource when you create App Runner services that require non-default auto scaling
         /// settings. You can share an auto scaling configuration across multiple services.
         /// 
@@ -167,8 +168,8 @@ namespace Amazon.AppRunner
         ///  
         /// <para>
         /// Configure a higher <code>MinSize</code> to increase the spread of your App Runner
-        /// service over more Availability Zones in the AWS Region. The tradeoff is a higher minimal
-        /// cost.
+        /// service over more Availability Zones in the Amazon Web Services Region. The tradeoff
+        /// is a higher minimal cost.
         /// </para>
         ///  
         /// <para>
@@ -192,8 +193,8 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-        /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">REST API Reference for CreateAutoScalingConfiguration Operation</seealso>
@@ -202,7 +203,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Create an AWS App Runner automatic scaling configuration resource. App Runner requires
+        /// Create an App Runner automatic scaling configuration resource. App Runner requires
         /// this resource when you create App Runner services that require non-default auto scaling
         /// settings. You can share an auto scaling configuration across multiple services.
         /// 
@@ -216,8 +217,8 @@ namespace Amazon.AppRunner
         ///  
         /// <para>
         /// Configure a higher <code>MinSize</code> to increase the spread of your App Runner
-        /// service over more Availability Zones in the AWS Region. The tradeoff is a higher minimal
-        /// cost.
+        /// service over more Availability Zones in the Amazon Web Services Region. The tradeoff
+        /// is a higher minimal cost.
         /// </para>
         ///  
         /// <para>
@@ -244,8 +245,8 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-        /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">REST API Reference for CreateAutoScalingConfiguration Operation</seealso>
@@ -257,7 +258,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Create an AWS App Runner connection resource. App Runner requires a connection resource
+        /// Create an App Runner connection resource. App Runner requires a connection resource
         /// when you create App Runner services that access private repositories from certain
         /// third-party providers. You can share a connection across multiple services.
         /// 
@@ -283,8 +284,8 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-        /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
@@ -293,7 +294,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Create an AWS App Runner connection resource. App Runner requires a connection resource
+        /// Create an App Runner connection resource. App Runner requires a connection resource
         /// when you create App Runner services that access private repositories from certain
         /// third-party providers. You can share a connection across multiple services.
         /// 
@@ -322,8 +323,8 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-        /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
@@ -335,7 +336,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Create an AWS App Runner service. After the service is created, the action also automatically
+        /// Create an App Runner service. After the service is created, the action also automatically
         /// starts a deployment.
         /// 
         ///  
@@ -361,8 +362,8 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-        /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">REST API Reference for CreateService Operation</seealso>
@@ -371,7 +372,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Create an AWS App Runner service. After the service is created, the action also automatically
+        /// Create an App Runner service. After the service is created, the action also automatically
         /// starts a deployment.
         /// 
         ///  
@@ -400,8 +401,8 @@ namespace Amazon.AppRunner
         /// 
         ///  
         /// <para>
-        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">AWS
-        /// App Runner endpoints and quotas</a> in the <i>AWS General Reference</i>.
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">REST API Reference for CreateService Operation</seealso>
@@ -413,9 +414,9 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an AWS App Runner automatic scaling configuration resource. You can delete
-        /// a specific revision or the latest active revision. You can't delete a configuration
-        /// that's used by one or more App Runner services.
+        /// Delete an App Runner automatic scaling configuration resource. You can delete a specific
+        /// revision or the latest active revision. You can't delete a configuration that's used
+        /// by one or more App Runner services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingConfiguration service method.</param>
         /// 
@@ -428,8 +429,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">REST API Reference for DeleteAutoScalingConfiguration Operation</seealso>
         DeleteAutoScalingConfigurationResponse DeleteAutoScalingConfiguration(DeleteAutoScalingConfigurationRequest request);
@@ -437,9 +438,9 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an AWS App Runner automatic scaling configuration resource. You can delete
-        /// a specific revision or the latest active revision. You can't delete a configuration
-        /// that's used by one or more App Runner services.
+        /// Delete an App Runner automatic scaling configuration resource. You can delete a specific
+        /// revision or the latest active revision. You can't delete a configuration that's used
+        /// by one or more App Runner services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -455,8 +456,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">REST API Reference for DeleteAutoScalingConfiguration Operation</seealso>
         Task<DeleteAutoScalingConfigurationResponse> DeleteAutoScalingConfigurationAsync(DeleteAutoScalingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -467,8 +468,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an AWS App Runner connection. You must first ensure that there are no running
-        /// App Runner services that use this connection. If there are any, the <code>DeleteConnection</code>
+        /// Delete an App Runner connection. You must first ensure that there are no running App
+        /// Runner services that use this connection. If there are any, the <code>DeleteConnection</code>
         /// action fails.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
@@ -482,8 +483,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request);
@@ -491,8 +492,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an AWS App Runner connection. You must first ensure that there are no running
-        /// App Runner services that use this connection. If there are any, the <code>DeleteConnection</code>
+        /// Delete an App Runner connection. You must first ensure that there are no running App
+        /// Runner services that use this connection. If there are any, the <code>DeleteConnection</code>
         /// action fails.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
@@ -509,8 +510,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -521,7 +522,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an AWS App Runner service.
+        /// Delete an App Runner service.
         /// 
         ///  
         /// <para>
@@ -544,8 +545,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">REST API Reference for DeleteService Operation</seealso>
         DeleteServiceResponse DeleteService(DeleteServiceRequest request);
@@ -553,7 +554,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Delete an AWS App Runner service.
+        /// Delete an App Runner service.
         /// 
         ///  
         /// <para>
@@ -579,8 +580,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">REST API Reference for DeleteService Operation</seealso>
         Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -591,7 +592,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a full description of an AWS App Runner automatic scaling configuration resource.
+        /// Return a full description of an App Runner automatic scaling configuration resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingConfiguration service method.</param>
         /// 
@@ -604,8 +605,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">REST API Reference for DescribeAutoScalingConfiguration Operation</seealso>
         DescribeAutoScalingConfigurationResponse DescribeAutoScalingConfiguration(DescribeAutoScalingConfigurationRequest request);
@@ -613,7 +614,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a full description of an AWS App Runner automatic scaling configuration resource.
+        /// Return a full description of an App Runner automatic scaling configuration resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -629,8 +630,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">REST API Reference for DescribeAutoScalingConfiguration Operation</seealso>
         Task<DescribeAutoScalingConfigurationResponse> DescribeAutoScalingConfigurationAsync(DescribeAutoScalingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -641,7 +642,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a description of custom domain names that are associated with an AWS App Runner
+        /// Return a description of custom domain names that are associated with an App Runner
         /// service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomDomains service method.</param>
@@ -655,8 +656,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">REST API Reference for DescribeCustomDomains Operation</seealso>
         DescribeCustomDomainsResponse DescribeCustomDomains(DescribeCustomDomainsRequest request);
@@ -664,7 +665,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a description of custom domain names that are associated with an AWS App Runner
+        /// Return a description of custom domain names that are associated with an App Runner
         /// service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomDomains service method.</param>
@@ -681,8 +682,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">REST API Reference for DescribeCustomDomains Operation</seealso>
         Task<DescribeCustomDomainsResponse> DescribeCustomDomainsAsync(DescribeCustomDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -693,7 +694,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a full description of an AWS App Runner service.
+        /// Return a full description of an App Runner service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeService service method.</param>
         /// 
@@ -706,8 +707,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">REST API Reference for DescribeService Operation</seealso>
         DescribeServiceResponse DescribeService(DescribeServiceRequest request);
@@ -715,7 +716,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a full description of an AWS App Runner service.
+        /// Return a full description of an App Runner service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeService service method.</param>
         /// <param name="cancellationToken">
@@ -731,8 +732,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">REST API Reference for DescribeService Operation</seealso>
         Task<DescribeServiceResponse> DescribeServiceAsync(DescribeServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -743,7 +744,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Disassociate a custom domain name from an AWS App Runner service.
+        /// Disassociate a custom domain name from an App Runner service.
         /// 
         ///  
         /// <para>
@@ -768,8 +769,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DisassociateCustomDomain">REST API Reference for DisassociateCustomDomain Operation</seealso>
         DisassociateCustomDomainResponse DisassociateCustomDomain(DisassociateCustomDomainRequest request);
@@ -777,7 +778,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Disassociate a custom domain name from an AWS App Runner service.
+        /// Disassociate a custom domain name from an App Runner service.
         /// 
         ///  
         /// <para>
@@ -805,8 +806,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DisassociateCustomDomain">REST API Reference for DisassociateCustomDomain Operation</seealso>
         Task<DisassociateCustomDomainResponse> DisassociateCustomDomainAsync(DisassociateCustomDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -817,9 +818,9 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Returns a list of AWS App Runner automatic scaling configurations in your AWS account.
-        /// You can query the revisions for a specific configuration name or the revisions for
-        /// all configurations in your account. You can optionally query only the latest revision
+        /// Returns a list of App Runner automatic scaling configurations in your Amazon Web Services
+        /// account. You can query the revisions for a specific configuration name or the revisions
+        /// for all configurations in your account. You can optionally query only the latest revision
         /// of each requested name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAutoScalingConfigurations service method.</param>
@@ -838,9 +839,9 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Returns a list of AWS App Runner automatic scaling configurations in your AWS account.
-        /// You can query the revisions for a specific configuration name or the revisions for
-        /// all configurations in your account. You can optionally query only the latest revision
+        /// Returns a list of App Runner automatic scaling configurations in your Amazon Web Services
+        /// account. You can query the revisions for a specific configuration name or the revisions
+        /// for all configurations in your account. You can optionally query only the latest revision
         /// of each requested name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAutoScalingConfigurations service method.</param>
@@ -865,7 +866,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Returns a list of AWS App Runner connections that are associated with your AWS account.
+        /// Returns a list of App Runner connections that are associated with your Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
         /// 
@@ -883,7 +885,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Returns a list of AWS App Runner connections that are associated with your AWS account.
+        /// Returns a list of App Runner connections that are associated with your Amazon Web
+        /// Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnections service method.</param>
         /// <param name="cancellationToken">
@@ -907,7 +910,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a list of operations that occurred on an AWS App Runner service.
+        /// Return a list of operations that occurred on an App Runner service.
         /// 
         ///  
         /// <para>
@@ -926,8 +929,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         ListOperationsResponse ListOperations(ListOperationsRequest request);
@@ -935,7 +938,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Return a list of operations that occurred on an AWS App Runner service.
+        /// Return a list of operations that occurred on an App Runner service.
         /// 
         ///  
         /// <para>
@@ -957,8 +960,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -969,7 +972,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Returns a list of running AWS App Runner services in your AWS account.
+        /// Returns a list of running App Runner services in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// 
@@ -987,7 +990,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Returns a list of running AWS App Runner services in your AWS account.
+        /// Returns a list of running App Runner services in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// <param name="cancellationToken">
@@ -1011,7 +1014,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// List tags that are associated with for an AWS App Runner resource. The response contains
+        /// List tags that are associated with for an App Runner resource. The response contains
         /// a list of tag key-value pairs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1028,8 +1031,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1037,7 +1040,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// List tags that are associated with for an AWS App Runner resource. The response contains
+        /// List tags that are associated with for an App Runner resource. The response contains
         /// a list of tag key-value pairs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1057,8 +1060,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1069,8 +1072,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Pause an active AWS App Runner service. App Runner reduces compute capacity for the
-        /// service to zero and loses state (for example, ephemeral storage is removed).
+        /// Pause an active App Runner service. App Runner reduces compute capacity for the service
+        /// to zero and loses state (for example, ephemeral storage is removed).
         /// 
         ///  
         /// <para>
@@ -1093,8 +1096,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/PauseService">REST API Reference for PauseService Operation</seealso>
         PauseServiceResponse PauseService(PauseServiceRequest request);
@@ -1102,8 +1105,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Pause an active AWS App Runner service. App Runner reduces compute capacity for the
-        /// service to zero and loses state (for example, ephemeral storage is removed).
+        /// Pause an active App Runner service. App Runner reduces compute capacity for the service
+        /// to zero and loses state (for example, ephemeral storage is removed).
         /// 
         ///  
         /// <para>
@@ -1129,8 +1132,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/PauseService">REST API Reference for PauseService Operation</seealso>
         Task<PauseServiceResponse> PauseServiceAsync(PauseServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1141,8 +1144,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Resume an active AWS App Runner service. App Runner provisions compute capacity for
-        /// the service.
+        /// Resume an active App Runner service. App Runner provisions compute capacity for the
+        /// service.
         /// 
         ///  
         /// <para>
@@ -1165,8 +1168,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">REST API Reference for ResumeService Operation</seealso>
         ResumeServiceResponse ResumeService(ResumeServiceRequest request);
@@ -1174,8 +1177,8 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Resume an active AWS App Runner service. App Runner provisions compute capacity for
-        /// the service.
+        /// Resume an active App Runner service. App Runner provisions compute capacity for the
+        /// service.
         /// 
         ///  
         /// <para>
@@ -1201,8 +1204,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">REST API Reference for ResumeService Operation</seealso>
         Task<ResumeServiceResponse> ResumeServiceAsync(ResumeServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1214,7 +1217,7 @@ namespace Amazon.AppRunner
 
         /// <summary>
         /// Initiate a manual deployment of the latest commit in a source code repository or the
-        /// latest image in a source image repository to an AWS App Runner service.
+        /// latest image in a source image repository to an App Runner service.
         /// 
         ///  
         /// <para>
@@ -1241,8 +1244,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
         StartDeploymentResponse StartDeployment(StartDeploymentRequest request);
@@ -1251,7 +1254,7 @@ namespace Amazon.AppRunner
 
         /// <summary>
         /// Initiate a manual deployment of the latest commit in a source code repository or the
-        /// latest image in a source image repository to an AWS App Runner service.
+        /// latest image in a source image repository to an App Runner service.
         /// 
         ///  
         /// <para>
@@ -1281,8 +1284,8 @@ namespace Amazon.AppRunner
         /// correct the input parameters, and try the action again.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
         Task<StartDeploymentResponse> StartDeploymentAsync(StartDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1310,8 +1313,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -1339,8 +1342,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1367,8 +1370,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -1395,8 +1398,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1407,7 +1410,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Update an AWS App Runner service. You can update the source configuration and instance
+        /// Update an App Runner service. You can update the source configuration and instance
         /// configuration of the service. You can also update the ARN of the auto scaling configuration
         /// resource that's associated with the service. However, you can't change the name or
         /// the encryption configuration of the service. These can be set only when you create
@@ -1439,8 +1442,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateService">REST API Reference for UpdateService Operation</seealso>
         UpdateServiceResponse UpdateService(UpdateServiceRequest request);
@@ -1448,7 +1451,7 @@ namespace Amazon.AppRunner
 
 
         /// <summary>
-        /// Update an AWS App Runner service. You can update the source configuration and instance
+        /// Update an App Runner service. You can update the source configuration and instance
         /// configuration of the service. You can also update the ARN of the auto scaling configuration
         /// resource that's associated with the service. However, you can't change the name or
         /// the encryption configuration of the service. These can be set only when you create
@@ -1483,8 +1486,8 @@ namespace Amazon.AppRunner
         /// You can't perform this action when the resource is in its current state.
         /// </exception>
         /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
-        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your AWS
-        /// account.
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateService">REST API Reference for UpdateService Operation</seealso>
         Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes a custom domain that's associated with an AWS App Runner service.
+    /// Describes a custom domain that's associated with an App Runner service.
     /// </summary>
     public partial class CustomDomain
     {

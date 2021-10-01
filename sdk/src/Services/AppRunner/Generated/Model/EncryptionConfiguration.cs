@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes a custom encryption key that AWS App Runner uses to encrypt copies of the
-    /// source repository and service logs.
+    /// Describes a custom encryption key that App Runner uses to encrypt copies of the source
+    /// repository and service logs.
     /// </summary>
     public partial class EncryptionConfiguration
     {

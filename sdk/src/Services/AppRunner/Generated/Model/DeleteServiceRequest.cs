@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteService operation.
-    /// Delete an AWS App Runner service.
+    /// Delete an App Runner service.
     /// 
     ///  
     /// <para>

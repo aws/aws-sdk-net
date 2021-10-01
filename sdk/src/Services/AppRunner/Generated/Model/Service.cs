@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes an AWS App Runner service. It can describe a service in any state, including
+    /// Describes an App Runner service. It can describe a service in any state, including
     /// deleted services.
     /// 
     ///  
@@ -121,7 +121,7 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// The encryption key that App Runner uses to encrypt the service logs and the copy of
         /// the source repository that App Runner maintains for the service. It can be either
-        /// a customer-provided encryption key or an AWS managed CMK.
+        /// a customer-provided encryption key or an Amazon Web Services managed CMK.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -196,7 +196,8 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// An ID that App Runner generated for this service. It's unique within the AWS Region.
+        /// An ID that App Runner generated for this service. It's unique within the Amazon Web
+        /// Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=32)]

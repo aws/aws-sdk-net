@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingConfiguration operation.
-    /// Return a full description of an AWS App Runner automatic scaling configuration resource.
+    /// Return a full description of an App Runner automatic scaling configuration resource.
     /// </summary>
     public partial class DescribeAutoScalingConfigurationRequest : AmazonAppRunnerRequest
     {

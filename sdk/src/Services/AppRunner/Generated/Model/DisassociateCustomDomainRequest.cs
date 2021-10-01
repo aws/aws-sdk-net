@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateCustomDomain operation.
-    /// Disassociate a custom domain name from an AWS App Runner service.
+    /// Disassociate a custom domain name from an App Runner service.
     /// 
     ///  
     /// <para>

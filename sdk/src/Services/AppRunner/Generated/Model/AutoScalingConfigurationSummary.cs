@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Provides summary information about an AWS App Runner automatic scaling configuration
-    /// resource.
+    /// Provides summary information about an App Runner automatic scaling configuration resource.
     /// 
     ///  
     /// <para>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Describes the source deployed to an AWS App Runner service. It can be a code or an
-    /// image repository.
+    /// Describes the source deployed to an App Runner service. It can be a code or an image
+    /// repository.
     /// </summary>
     public partial class SourceConfiguration
     {
@@ -61,12 +61,16 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property AutoDeploymentsEnabled. 
         /// <para>
         /// If <code>true</code>, continuous integration from the source repository is enabled
-        /// for the App Runner service. Each repository change (source code commit or new image
-        /// version) starts a deployment.
+        /// for the App Runner service. Each repository change (including any source code commit
+        /// or new image version) starts a deployment.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: App Runner sets to <code>false</code> for a source image that uses an ECR
+        /// Public repository or an ECR repository that's in an Amazon Web Services account other
+        /// than the one that the service is in. App Runner sets to <code>true</code> in all other
+        /// cases (which currently include a source code repository or a source image using a
+        /// same-account ECR repository).
         /// </para>
         /// </summary>
         public bool AutoDeploymentsEnabled

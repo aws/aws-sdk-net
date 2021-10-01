@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOperations operation.
-    /// Return a list of operations that occurred on an AWS App Runner service.
+    /// Return a list of operations that occurred on an App Runner service.
     /// 
     ///  
     /// <para>

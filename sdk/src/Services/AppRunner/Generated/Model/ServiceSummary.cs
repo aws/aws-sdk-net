@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
-    /// Provides summary information for an AWS App Runner service.
+    /// Provides summary information for an App Runner service.
     /// 
     ///  
     /// <para>
@@ -92,7 +92,8 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// An ID that App Runner generated for this service. It's unique within the AWS Region.
+        /// An ID that App Runner generated for this service. It's unique within the Amazon Web
+        /// Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=32)]

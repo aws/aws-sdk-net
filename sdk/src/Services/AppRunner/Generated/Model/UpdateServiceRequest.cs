@@ -30,7 +30,7 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
-    /// Update an AWS App Runner service. You can update the source configuration and instance
+    /// Update an App Runner service. You can update the source configuration and instance
     /// configuration of the service. You can also update the ARN of the auto scaling configuration
     /// resource that's associated with the service. However, you can't change the name or
     /// the encryption configuration of the service. These can be set only when you create
@@ -79,8 +79,8 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property HealthCheckConfiguration. 
         /// <para>
-        /// The settings for the health check that AWS App Runner performs to monitor the health
-        /// of your service.
+        /// The settings for the health check that App Runner performs to monitor the health of
+        /// your service.
         /// </para>
         /// </summary>
         public HealthCheckConfiguration HealthCheckConfiguration

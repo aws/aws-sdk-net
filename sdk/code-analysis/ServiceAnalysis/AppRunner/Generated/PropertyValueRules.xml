@@ -323,8 +323,8 @@
   <property-value-rule>
     <property>Amazon.AppRunner.Model.AuthenticationConfiguration.AccessRoleArn</property>
     <min>29</min>
-    <max>102</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
+    <max>1024</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::[0-9]{12}:(role|role\/service-role)\/[\w+=,.@\-/]{1,1000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.AuthenticationConfiguration.ConnectionArn</property>
@@ -433,9 +433,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.HealthCheckConfiguration.Path</property>
-    <min>0</min>
-    <max>51200</max>
-    <pattern>.*</pattern>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.HealthCheckConfiguration.Timeout</property>
@@ -463,7 +461,7 @@
     <property>Amazon.AppRunner.Model.ImageRepository.ImageIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>([0-9]{12}.dkr.ecr.[a-z\-]+-[0-9]{1}.amazonaws.com\/.*)|(^public\.ecr\.aws\/.+\/.+)</pattern>
+    <pattern>([0-9]{12}.dkr.ecr.[a-z\-]+-[0-9]{1}.amazonaws.com\/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(:([\w\d+\-=._:\/@])+|@([\w\d\:]+))?)|(^public\.ecr\.aws\/.+\/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(:([\w\d+\-=._:\/@])+|@([\w\d\:]+))?)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.InstanceConfiguration.Cpu</property>
@@ -474,8 +472,8 @@
   <property-value-rule>
     <property>Amazon.AppRunner.Model.InstanceConfiguration.InstanceRoleArn</property>
     <min>29</min>
-    <max>102</max>
-    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::[0-9]{12}:role/[\w+=,.@-]{1,64}</pattern>
+    <max>1024</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):iam::[0-9]{12}:(role|role\/service-role)\/[\w+=,.@\-/]{1,1000}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.InstanceConfiguration.Memory</property>
