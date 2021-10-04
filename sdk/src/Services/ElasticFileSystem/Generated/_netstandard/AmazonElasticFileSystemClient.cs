@@ -2203,6 +2203,10 @@ namespace Amazon.ElasticFileSystem
         /// </param>
         /// 
         /// <returns>The response from the PutAccountPreferences service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
