@@ -1,3 +1,11 @@
+### 3.7.129.0 (2021-10-04 18:13 UTC)
+* CodeBuild (3.7.7.0)
+	* CodeBuild now allows you to select how batch build statuses are sent to the source provider for a project.
+* ElasticFileSystem (3.7.3.0)
+	* EFS adds a new exception for short identifiers to be thrown after its migration to long resource identifiers.
+* KeyManagementService (3.7.2.20)
+	* Added SDK examples for ConnectCustomKeyStore, CreateCustomKeyStore, CreateKey, DeleteCustomKeyStore, DescribeCustomKeyStores, DisconnectCustomKeyStore, GenerateDataKeyPair, GenerateDataKeyPairWithoutPlaintext, GetPublicKey, ReplicateKey, Sign, UpdateCustomKeyStore and Verify APIs
+
 ### 3.7.128.0 (2021-10-01 18:21 UTC)
 * AppRunner (3.7.1.0)
 	* This release contains several minor bug fixes.
