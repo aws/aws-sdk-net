@@ -45,6 +45,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProjectBuildBatchConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBatchReportMode())
+            {
+                context.Writer.WritePropertyName("batchReportMode");
+                context.Writer.Write(requestObject.BatchReportMode);
+            }
+
             if(requestObject.IsSetCombineArtifacts())
             {
                 context.Writer.WritePropertyName("combineArtifacts");

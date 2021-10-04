@@ -306,7 +306,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondaryArtifacts. 
         /// <para>
-        ///  An array of <code>ProjectSource</code> objects. 
+        ///  An array of <code>ProjectArtifact</code> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]

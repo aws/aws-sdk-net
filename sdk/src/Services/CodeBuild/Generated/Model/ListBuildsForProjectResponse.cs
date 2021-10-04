@@ -39,7 +39,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Ids. 
         /// <para>
-        /// A list of build IDs for the specified build project, with each build ID representing
+        /// A list of build identifiers for the specified build project, with each build ID representing
         /// a single build.
         /// </para>
         /// </summary>

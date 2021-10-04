@@ -83,8 +83,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The order to list results in. The results are sorted by build number, not the build
-        /// identifier.
+        /// The order to sort the results in. The results are sorted by build number, not the
+        /// build identifier. If this is not specified, the results are sorted in descending order.
         /// </para>
         ///  
         /// <para>
@@ -92,11 +92,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASCENDING</code>: List the build IDs in ascending order by build ID.
+        ///  <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESCENDING</code>: List the build IDs in descending order by build ID.
+        ///  <code>DESCENDING</code>: List the build identifiers in descending order, by build
+        /// number.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -33,10 +33,41 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class ProjectBuildBatchConfig
     {
+        private BatchReportModeType _batchReportMode;
         private bool? _combineArtifacts;
         private BatchRestrictions _restrictions;
         private string _serviceRole;
         private int? _timeoutInMins;
+
+        /// <summary>
+        /// Gets and sets the property BatchReportMode. 
+        /// <para>
+        /// Specifies how build status reports are sent to the source provider for the batch build.
+        /// This property is only used when the source provider for your project is Bitbucket,
+        /// GitHub, or GitHub Enterprise, and your project is configured to report build statuses
+        /// to the source provider.
+        /// </para>
+        ///  <dl> <dt>REPORT_AGGREGATED_BATCH</dt> <dd> 
+        /// <para>
+        /// (Default) Aggregate all of the build statuses into a single status report.
+        /// </para>
+        ///  </dd> <dt>REPORT_INDIVIDUAL_BUILDS</dt> <dd> 
+        /// <para>
+        /// Send a separate status report for each individual build.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public BatchReportModeType BatchReportMode
+        {
+            get { return this._batchReportMode; }
+            set { this._batchReportMode = value; }
+        }
+
+        // Check to see if BatchReportMode property is set
+        internal bool IsSetBatchReportMode()
+        {
+            return this._batchReportMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CombineArtifacts. 
