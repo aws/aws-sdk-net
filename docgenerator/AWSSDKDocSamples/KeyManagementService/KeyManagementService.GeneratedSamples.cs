@@ -26,6 +26,20 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceConnectCustomKeyStore()
+        {
+            #region to-connect-a-custom-key-store-to-its-cloudhsm-cluster-1628626947750
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ConnectCustomKeyStore(new ConnectCustomKeyStoreRequest 
+            {
+                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the AWS KMS custom key store.
+            });
+
+
+            #endregion
+        }
+
         public void KeyManagementServiceCreateAlias()
         {
             #region to-create-an-alias-1477505685119
@@ -37,6 +51,24 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 TargetKeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose alias you are creating. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
             });
 
+
+            #endregion
+        }
+
+        public void KeyManagementServiceCreateCustomKeyStore()
+        {
+            #region to-create-an-aws-cloudhsm-custom-key-store-1628627769469
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateCustomKeyStore(new CreateCustomKeyStoreRequest 
+            {
+                CloudHsmClusterId = "cluster-1a23b4cdefg", // The ID of the CloudHSM cluster.
+                CustomKeyStoreName = "ExampleKeyStore", // A friendly name for the custom key store.
+                KeyStorePassword = "kmsPswd", // The password for the kmsuser CU account in the specified cluster.
+                TrustAnchorCertificate = "<certificate-goes-here>" // The content of the customerCA.crt file that you created when you initialized the cluster.
+            });
+
+            string customKeyStoreId = response.CustomKeyStoreId; // The ID of the new custom key store.
 
             #endregion
         }
@@ -69,15 +101,87 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.CreateKey(new CreateKeyRequest 
             {
-                Tags = new List<Tag> {
-                    new Tag {
-                        TagKey = "CreatedBy",
-                        TagValue = "ExampleUser"
-                    }
-                } // One or more tags. Each tag consists of a tag key and a tag value.
             });
 
-            KeyMetadata keyMetadata = response.KeyMetadata; // An object that contains information about the KMS key created by this operation.
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceCreateKey()
+        {
+            #region to-create-an-asymmetric-rsa-kms-key-for-encryption-and-decryption-1630533897833
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateKey(new CreateKeyRequest 
+            {
+                KeySpec = "RSA_4096", // Describes the type of key material in the KMS key.
+                KeyUsage = "ENCRYPT_DECRYPT" // The cryptographic operations for which you can use the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceCreateKey()
+        {
+            #region to-create-an-asymmetric-elliptic-curve-kms-key-for-signing-and-verification-1630541089401
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateKey(new CreateKeyRequest 
+            {
+                KeySpec = "ECC_NIST_P521", // Describes the type of key material in the KMS key.
+                KeyUsage = "SIGN_VERIFY" // The cryptographic operations for which you can use the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceCreateKey()
+        {
+            #region to-create-a-multi-region-primary-kms-key-1630599158567
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateKey(new CreateKeyRequest 
+            {
+                MultiRegion = true // Indicates whether the KMS key is a multi-Region (True) or regional (False) key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceCreateKey()
+        {
+            #region to-create-a-kms-key-for-imported-key-material-1630603607560
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateKey(new CreateKeyRequest 
+            {
+                Origin = "EXTERNAL" // The source of the key material for the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceCreateKey()
+        {
+            #region to-create-a-kms-key-in-a-custom-key-store-1630604382908
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.CreateKey(new CreateKeyRequest 
+            {
+                CustomKeyStoreId = "cks-1234567890abcdef0", // Identifies the custom key store that hosts the KMS key.
+                Origin = "AWS_CLOUDHSM" // Indicates the source of the key material for the KMS key.
+            });
+
+            KeyMetadata keyMetadata = response.KeyMetadata; // Detailed information about the KMS key that this operation creates.
 
             #endregion
         }
@@ -113,6 +217,20 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceDeleteCustomKeyStore()
+        {
+            #region to-delete-a-custom-key-store-from-aws-kms-1628630837145
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DeleteCustomKeyStore(new DeleteCustomKeyStoreRequest 
+            {
+                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the custom key store to be deleted.
+            });
+
+
+            #endregion
+        }
+
         public void KeyManagementServiceDeleteImportedKeyMaterial()
         {
             #region to-delete-imported-key-material-1478561674507
@@ -123,6 +241,35 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose imported key material you are deleting. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
             });
 
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDescribeCustomKeyStores()
+        {
+            #region to-get-detailed-information-about-custom-key-stores-in-the-account-and-region-1628628556811
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DescribeCustomKeyStores(new DescribeCustomKeyStoresRequest 
+            {
+            });
+
+            List<CustomKeyStoresListEntry> customKeyStores = response.CustomKeyStores; // Details about each custom key store in the account and Region.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDescribeCustomKeyStores()
+        {
+            #region to-get-detailed-information-about-a-custom-key-store-associated-with-a-cloudhsm-cluster-1628628885843
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DescribeCustomKeyStores(new DescribeCustomKeyStoresRequest 
+            {
+                CustomKeyStoreName = "ExampleKeyStore" // The friendly name of the custom key store.
+            });
+
+            List<CustomKeyStoresListEntry> customKeyStores = response.CustomKeyStores; // Detailed information about the specified custom key store.
 
             #endregion
         }
@@ -164,6 +311,20 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var response = client.DisableKeyRotation(new DisableKeyRotationRequest 
             {
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key material will no longer be rotated. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+            });
+
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDisconnectCustomKeyStore()
+        {
+            #region to-disconnect-a-custom-key-store-from-its-cloudhsm-cluster-1628627955156
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.DisconnectCustomKeyStore(new DisconnectCustomKeyStoreRequest 
+            {
+                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the custom key store.
             });
 
 
@@ -229,6 +390,45 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data key.
             string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data key.
             MemoryStream plaintext = response.Plaintext; // The unencrypted (plaintext) data key.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGenerateDataKeyPair()
+        {
+            #region to-generate-an-rsa-key-pair-for-encryption-and-decryption-1628619376878
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest 
+            {
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key ID of the symmetric KMS key that encrypts the private RSA key in the data key pair.
+                KeyPairSpec = "RSA_3072" // The requested key spec of the RSA data key pair.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the symmetric KMS key that was used to encrypt the private key.
+            string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
+            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the RSA data key pair.
+            MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // The plaintext private key of the RSA data key pair.
+            MemoryStream publicKey = response.PublicKey; // The public key (plaintext) of the RSA data key pair.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGenerateDataKeyPairWithoutPlaintext()
+        {
+            #region to-generate-an-asymmetric-data-key-pair-without-a-plaintext-key-1628620971564
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GenerateDataKeyPairWithoutPlaintext(new GenerateDataKeyPairWithoutPlaintextRequest 
+            {
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The symmetric KMS key that encrypts the private key of the ECC data key pair.
+                KeyPairSpec = "ECC_NIST_P521" // The requested key spec of the ECC asymmetric data key pair.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the symmetric KMS key that encrypted the private key in the ECC asymmetric data key pair.
+            string keyPairSpec = response.KeyPairSpec; // The actual key spec of the ECC asymmetric data key pair.
+            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the asymmetric ECC data key pair.
+            MemoryStream publicKey = response.PublicKey; // The public key (plaintext).
 
             #endregion
         }
@@ -312,6 +512,25 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             string keyId = response.KeyId; // The ARN of the KMS key for which you are retrieving the public key and import token. This is the same KMS key specified in the request.
             DateTime parametersValidTo = response.ParametersValidTo; // The time at which the import token and public key are no longer valid.
             MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGetPublicKey()
+        {
+            #region to-download-the-public-key-of-an-asymmetric-kms-key-1628621691873
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GetPublicKey(new GetPublicKeyRequest 
+            {
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321" // The key ARN of the asymmetric KMS key.
+            });
+
+            string customerMasterKeySpec = response.CustomerMasterKeySpec; // The key spec of the asymmetric KMS key from which the public key was downloaded.
+            List<string> encryptionAlgorithms = response.EncryptionAlgorithms; // The encryption algorithms supported by the asymmetric KMS key that was downloaded.
+            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key from which the public key was downloaded.
+            string keyUsage = response.KeyUsage; // The key usage of the asymmetric KMS key from which the public key was downloaded.
+            MemoryStream publicKey = response.PublicKey; // The public key (plaintext) of the asymmetric KMS key.
 
             #endregion
         }
@@ -534,6 +753,24 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceReplicateKey()
+        {
+            #region to-replicate-a-multi-region-key-in-a-different-aws-region-1628622402887
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ReplicateKey(new ReplicateKeyRequest 
+            {
+                KeyId = "arn:aws:kms:us-east-1:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab", // The key ID or key ARN of the multi-Region primary key
+                ReplicaRegion = "us-west-2" // The Region of the new replica.
+            });
+
+            KeyMetadata replicaKeyMetadata = response.ReplicaKeyMetadata; // An object that displays detailed information about the replica key.
+            string replicaPolicy = response.ReplicaPolicy; // The key policy of the replica key. If you don't specify a key policy, the replica key gets the default key policy for a KMS key.
+            List<Tag> replicaTags = response.ReplicaTags; // The tags on the replica key, if any.
+
+            #endregion
+        }
+
         public void KeyManagementServiceRetireGrant()
         {
             #region to-retire-a-grant-1481327028297
@@ -577,6 +814,26 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             DateTime deletionDate = response.DeletionDate; // The date and time after which KMS deletes the KMS key.
             string keyId = response.KeyId; // The ARN of the KMS key that is scheduled for deletion.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceSign()
+        {
+            #region to-digitally-sign-a-message-with-an-asymmetric-kms-key-1628631433832
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Sign(new SignRequest 
+            {
+                KeyId = "alias/ECC_signing_key", // The asymmetric KMS key to be used to generate the digital signature. This example uses an alias of the KMS key.
+                Message = new MemoryStream(<message to be signed>), // Message to be signed. Use Base-64 for the CLI.
+                MessageType = "RAW", // Indicates whether the message is RAW or a DIGEST.
+                SigningAlgorithm = "ECDSA_SHA_384" // The requested signing algorithm. This must be an algorithm that the KMS key supports.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to sign the message.
+            MemoryStream signature = response.Signature; // The digital signature of the message.
+            string signingAlgorithm = response.SigningAlgorithm; // The actual signing algorithm that was used to generate the signature.
 
             #endregion
         }
@@ -634,6 +891,51 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceUpdateCustomKeyStore()
+        {
+            #region to-edit-the-properties-of-a-custom-key-store-1628629851834
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            {
+                CustomKeyStoreId = "cks-1234567890abcdef0", // The ID of the custom key store that you are updating.
+                KeyStorePassword = "ExamplePassword" // The password for the kmsuser crypto user in the CloudHSM cluster.
+            });
+
+
+            #endregion
+        }
+
+        public void KeyManagementServiceUpdateCustomKeyStore()
+        {
+            #region to-edit-the-friendly-name-of-a-custom-key-store-1630451340904
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            {
+                CustomKeyStoreId = "cks-1234567890abcdef0", // The ID of the custom key store that you are updating.
+                NewCustomKeyStoreName = "DevelopmentKeys" // A new friendly name for the custom key store.
+            });
+
+
+            #endregion
+        }
+
+        public void KeyManagementServiceUpdateCustomKeyStore()
+        {
+            #region to-associate-the-custom-key-store-with-a-different-but-related-aws-cloudhsm-cluster-1630451842438
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
+            {
+                CloudHsmClusterId = "cluster-1a23b4cdefg", // The ID of the AWS CloudHSM cluster that you want to associate with the custom key store. This cluster must be related to the original CloudHSM cluster for this key store.
+                CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the custom key store that you are updating.
+            });
+
+
+            #endregion
+        }
+
         public void KeyManagementServiceUpdateKeyDescription()
         {
             #region to-update-the-description-of-a-cmk-1481574808619
@@ -645,6 +947,27 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose description you are updating. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
             });
 
+
+            #endregion
+        }
+
+        public void KeyManagementServiceVerify()
+        {
+            #region to-use-an-asymmetric-kms-key-to-verify-a-digital-signature-1628633365663
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Verify(new VerifyRequest 
+            {
+                KeyId = "alias/ECC_signing_key", // The asymmetric KMS key to be used to verify the digital signature. This example uses an alias to identify the KMS key.
+                Message = new MemoryStream(<message to be verified>), // The message that was signed.
+                MessageType = "RAW", // Indicates whether the message is RAW or a DIGEST.
+                Signature = new MemoryStream(<binary data>), // The signature to be verified.
+                SigningAlgorithm = "ECDSA_SHA_384" // The signing algorithm to be used to verify the signature.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to verify the digital signature.
+            bool signatureValid = response.SignatureValid; // Indicates whether the signature was verified (true) or failed verification (false).
+            string signingAlgorithm = response.SigningAlgorithm; // The signing algorithm that was used to verify the signature.
 
             #endregion
         }

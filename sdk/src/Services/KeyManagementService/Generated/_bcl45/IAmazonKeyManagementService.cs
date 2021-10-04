@@ -14065,12 +14065,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Use the parameters of <code>UpdateCustomKeyStore</code> to edit your keystore settings.
+        /// The <code>CustomKeyStoreId</code> parameter is required in all commands. Use the other
+        /// parameters of <code>UpdateCustomKeyStore</code> to edit your key store settings.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <b>NewCustomKeyStoreName</b> parameter to change the friendly name of the
-        /// custom key store to the value that you specify.
+        /// Use the <code>NewCustomKeyStoreName</code> parameter to change the friendly name of
+        /// the custom key store to the value that you specify.
         /// </para>
         ///  
         /// <para>
@@ -14078,8 +14079,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <b>KeyStorePassword</b> parameter tell KMS the current password of the <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// Use the <code>KeyStorePassword</code> parameter tell KMS the current password of the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
         /// <code>kmsuser</code> crypto user (CU)</a> in the associated CloudHSM cluster. You
         /// can use this parameter to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-password">fix
         /// connection failures</a> that occur when KMS cannot log into the associated cluster
@@ -14092,9 +14093,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <b>CloudHsmClusterId</b> parameter to associate the custom key store with
-        /// a different, but related, CloudHSM cluster. You can use this parameter to repair a
-        /// custom key store if its CloudHSM cluster becomes corrupted or is deleted, or when
+        /// Use the <code>CloudHsmClusterId</code> parameter to associate the custom key store
+        /// with a different, but related, CloudHSM cluster. You can use this parameter to repair
+        /// a custom key store if its CloudHSM cluster becomes corrupted or is deleted, or when
         /// you need to create or restore a cluster from a backup. 
         /// </para>
         ///  </li> </ul> 
@@ -14279,12 +14280,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Use the parameters of <code>UpdateCustomKeyStore</code> to edit your keystore settings.
+        /// The <code>CustomKeyStoreId</code> parameter is required in all commands. Use the other
+        /// parameters of <code>UpdateCustomKeyStore</code> to edit your key store settings.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <b>NewCustomKeyStoreName</b> parameter to change the friendly name of the
-        /// custom key store to the value that you specify.
+        /// Use the <code>NewCustomKeyStoreName</code> parameter to change the friendly name of
+        /// the custom key store to the value that you specify.
         /// </para>
         ///  
         /// <para>
@@ -14292,8 +14294,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <b>KeyStorePassword</b> parameter tell KMS the current password of the <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// Use the <code>KeyStorePassword</code> parameter tell KMS the current password of the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
         /// <code>kmsuser</code> crypto user (CU)</a> in the associated CloudHSM cluster. You
         /// can use this parameter to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-password">fix
         /// connection failures</a> that occur when KMS cannot log into the associated cluster
@@ -14306,9 +14308,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <b>CloudHsmClusterId</b> parameter to associate the custom key store with
-        /// a different, but related, CloudHSM cluster. You can use this parameter to repair a
-        /// custom key store if its CloudHSM cluster becomes corrupted or is deleted, or when
+        /// Use the <code>CloudHsmClusterId</code> parameter to associate the custom key store
+        /// with a different, but related, CloudHSM cluster. You can use this parameter to repair
+        /// a custom key store if its CloudHSM cluster becomes corrupted or is deleted, or when
         /// you need to create or restore a cluster from a backup. 
         /// </para>
         ///  </li> </ul> 
