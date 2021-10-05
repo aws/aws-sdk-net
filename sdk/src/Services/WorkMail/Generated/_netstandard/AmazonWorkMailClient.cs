@@ -1442,6 +1442,48 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DescribeInboundDmarcSettings
+
+        internal virtual DescribeInboundDmarcSettingsResponse DescribeInboundDmarcSettings(DescribeInboundDmarcSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInboundDmarcSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the settings in a DMARC policy for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundDmarcSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInboundDmarcSettings service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">REST API Reference for DescribeInboundDmarcSettings Operation</seealso>
+        public virtual Task<DescribeInboundDmarcSettingsResponse> DescribeInboundDmarcSettingsAsync(DescribeInboundDmarcSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInboundDmarcSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMailboxExportJob
 
         internal virtual DescribeMailboxExportJobResponse DescribeMailboxExportJob(DescribeMailboxExportJobRequest request)
@@ -2631,6 +2673,48 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = PutAccessControlRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutAccessControlRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutInboundDmarcSettings
+
+        internal virtual PutInboundDmarcSettingsResponse PutInboundDmarcSettings(PutInboundDmarcSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<PutInboundDmarcSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables or disables a DMARC policy for a given organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInboundDmarcSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutInboundDmarcSettings service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">REST API Reference for PutInboundDmarcSettings Operation</seealso>
+        public virtual Task<PutInboundDmarcSettingsResponse> PutInboundDmarcSettingsAsync(PutInboundDmarcSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutInboundDmarcSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -372,6 +372,12 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.DescribeInboundDmarcSettingsRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.DescribeMailboxExportJobRequest.JobId</property>
     <min>1</min>
     <max>63</max>
@@ -988,6 +994,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.PutAccessControlRuleRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutInboundDmarcSettingsRequest.OrganizationId</property>
     <min>34</min>
     <max>34</max>
     <pattern>^m-[0-9a-f]{32}$</pattern>

@@ -1841,6 +1841,68 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DescribeInboundDmarcSettings
+
+        /// <summary>
+        /// Lists the settings in a DMARC policy for a specified organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundDmarcSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInboundDmarcSettings service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">REST API Reference for DescribeInboundDmarcSettings Operation</seealso>
+        public virtual DescribeInboundDmarcSettingsResponse DescribeInboundDmarcSettings(DescribeInboundDmarcSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInboundDmarcSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInboundDmarcSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInboundDmarcSettings operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInboundDmarcSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">REST API Reference for DescribeInboundDmarcSettings Operation</seealso>
+        public virtual IAsyncResult BeginDescribeInboundDmarcSettings(DescribeInboundDmarcSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInboundDmarcSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInboundDmarcSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeInboundDmarcSettingsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">REST API Reference for DescribeInboundDmarcSettings Operation</seealso>
+        public virtual DescribeInboundDmarcSettingsResponse EndDescribeInboundDmarcSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInboundDmarcSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeMailboxExportJob
 
         /// <summary>
@@ -3530,6 +3592,68 @@ namespace Amazon.WorkMail
         public virtual PutAccessControlRuleResponse EndPutAccessControlRule(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAccessControlRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutInboundDmarcSettings
+
+        /// <summary>
+        /// Enables or disables a DMARC policy for a given organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInboundDmarcSettings service method.</param>
+        /// 
+        /// <returns>The response from the PutInboundDmarcSettings service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">REST API Reference for PutInboundDmarcSettings Operation</seealso>
+        public virtual PutInboundDmarcSettingsResponse PutInboundDmarcSettings(PutInboundDmarcSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<PutInboundDmarcSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutInboundDmarcSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutInboundDmarcSettings operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutInboundDmarcSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">REST API Reference for PutInboundDmarcSettings Operation</seealso>
+        public virtual IAsyncResult BeginPutInboundDmarcSettings(PutInboundDmarcSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutInboundDmarcSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutInboundDmarcSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutInboundDmarcSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutInboundDmarcSettings.</param>
+        /// 
+        /// <returns>Returns a  PutInboundDmarcSettingsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">REST API Reference for PutInboundDmarcSettings Operation</seealso>
+        public virtual PutInboundDmarcSettingsResponse EndPutInboundDmarcSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutInboundDmarcSettingsResponse>(asyncResult);
         }
 
         #endregion
