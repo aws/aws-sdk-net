@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private ConnectionInput _connectionInput;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -74,6 +75,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetConnectionInput()
         {
             return this._connectionInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags you assign to the connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

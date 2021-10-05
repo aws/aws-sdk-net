@@ -83,7 +83,12 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExcludeColumnSchema.
+        /// Gets and sets the property ExcludeColumnSchema. 
+        /// <para>
+        /// When true, specifies not returning the partition column schema. Useful when you are
+        /// interested only in other partition attributes such as partition values or location.
+        /// This approach avoids the problem of a large response by not returning duplicate data.
+        /// </para>
         /// </summary>
         public bool ExcludeColumnSchema
         {
