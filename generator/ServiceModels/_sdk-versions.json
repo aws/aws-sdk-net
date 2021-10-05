@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.129.0",
+    "ProductVersion" : "3.7.130.0",
     "CoreVersion"    : "3.7.3.15",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.30.4",
+            "Version" : "3.7.31.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.15"
@@ -554,7 +554,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.7.1.22",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.15"
@@ -826,7 +826,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.7.7.21",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.15"
@@ -1034,7 +1034,7 @@
             "InPreview"               : false
         },
         "WorkMail"                        : {
-            "Version" : "3.7.2.1",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.15"
@@ -1362,7 +1362,7 @@
             "InPreview"               : false
         },
         "Backup"                          : {
-            "Version" : "3.7.1.21",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.15"
@@ -2042,7 +2042,7 @@
             "InPreview"               : false
         },
         "LocationService"                 : {
-            "Version" : "3.7.3.32",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.15"

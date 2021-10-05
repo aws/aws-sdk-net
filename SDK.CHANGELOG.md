@@ -1,3 +1,17 @@
+### 3.7.130.0 (2021-10-05 18:15 UTC)
+* ApplicationAutoScaling (3.7.2.0)
+	* With this release, Application Auto Scaling adds support for Amazon Neptune. Customers can now automatically add or remove Read Replicas of their Neptune clusters to keep the average CPU Utilization at the target value specified by the customers.
+* Backup (3.7.2.0)
+	* AWS Backup Audit Manager framework report.
+* EC2 (3.7.31.0)
+	* Released Capacity Reservation Fleet, a feature of Amazon EC2 Capacity Reservations, which provides a way to manage reserved capacity across instance types. For more information: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-fleets.html
+* Glue (3.7.8.0)
+	* This release adds tag as an input of CreateConnection
+* LocationService (3.7.4.0)
+	* Add support for PositionFiltering.
+* WorkMail (3.7.3.0)
+	* This release allows customers to change their inbound DMARC settings in Amazon WorkMail.
+
 ### 3.7.129.0 (2021-10-04 18:13 UTC)
 * CodeBuild (3.7.7.0)
 	* CodeBuild now allows you to select how batch build statuses are sent to the source provider for a project.
