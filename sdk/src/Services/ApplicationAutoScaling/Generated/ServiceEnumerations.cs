@@ -269,6 +269,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType LambdaProvisionedConcurrencyUtilization = new MetricType("LambdaProvisionedConcurrencyUtilization");
         /// <summary>
+        /// Constant NeptuneReaderAverageCPUUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType NeptuneReaderAverageCPUUtilization = new MetricType("NeptuneReaderAverageCPUUtilization");
+        /// <summary>
         /// Constant RDSReaderAverageCPUUtilization for MetricType
         /// </summary>
         public static readonly MetricType RDSReaderAverageCPUUtilization = new MetricType("RDSReaderAverageCPUUtilization");
@@ -441,6 +445,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension LambdaFunctionProvisionedConcurrency = new ScalableDimension("lambda:function:ProvisionedConcurrency");
         /// <summary>
+        /// Constant NeptuneClusterReadReplicaCount for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension NeptuneClusterReadReplicaCount = new ScalableDimension("neptune:cluster:ReadReplicaCount");
+        /// <summary>
         /// Constant RdsClusterReadReplicaCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension RdsClusterReadReplicaCount = new ScalableDimension("rds:cluster:ReadReplicaCount");
@@ -600,6 +608,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Lambda for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Lambda = new ServiceNamespace("lambda");
+        /// <summary>
+        /// Constant Neptune for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Neptune = new ServiceNamespace("neptune");
         /// <summary>
         /// Constant Rds for ServiceNamespace
         /// </summary>

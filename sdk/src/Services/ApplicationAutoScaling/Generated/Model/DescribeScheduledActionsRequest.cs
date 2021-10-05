@@ -112,8 +112,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the
-        /// unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier
+        /// is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -142,8 +142,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SageMaker endpoint variant - The resource type is <code>variant</code> and
-        /// the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+        /// SageMaker endpoint variant - The resource type is <code>variant</code> and the unique
+        /// identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -185,6 +185,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Amazon ElastiCache replication group - The resource type is <code>replication-group</code>
         /// and the unique identifier is the replication group name. Example: <code>replication-group/mycluster</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Neptune cluster - The resource type is <code>cluster</code> and the unique identifier
+        /// is the cluster name. Example: <code>cluster:mycluster</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -219,7 +224,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
-        /// Fleet request.
+        /// Fleet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -255,7 +260,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
-        /// for an Amazon SageMaker model endpoint variant.
+        /// for an SageMaker model endpoint variant.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -301,6 +306,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>elasticache:replication-group:Replicas</code> - The number of replicas per
         /// node group for an Amazon ElastiCache replication group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
+        /// Amazon Neptune DB cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>

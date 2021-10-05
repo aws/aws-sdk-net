@@ -120,18 +120,6 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ECS services
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Spot Fleet requests
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EMR clusters
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// AppStream 2.0 fleets
         /// </para>
         ///  </li> <li> 
@@ -140,7 +128,23 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SageMaker endpoint variants
+        /// ECS services
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Neptune clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SageMaker endpoint variants
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Fleets
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -152,23 +156,19 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// DynamoDB tables
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DynamoDB global secondary indexes
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lambda provisioned concurrency
+        /// DynamoDB tables and global secondary indexes
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lambda provisioned concurrency
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -211,18 +211,6 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ECS services
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Spot Fleet requests
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// EMR clusters
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// AppStream 2.0 fleets
         /// </para>
         ///  </li> <li> 
@@ -231,7 +219,23 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SageMaker endpoint variants
+        /// ECS services
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Neptune clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SageMaker endpoint variants
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Fleets
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -243,23 +247,19 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// DynamoDB tables
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DynamoDB global secondary indexes
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lambda provisioned concurrency
+        /// DynamoDB tables and global secondary indexes
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lambda provisioned concurrency
         /// </para>
         ///  </li> <li> 
         /// <para>

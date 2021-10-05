@@ -76,11 +76,15 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon Neptune clusters
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon SageMaker endpoint variants
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Spot Fleet (Amazon EC2) requests
+    /// Spot Fleets (Amazon EC2)
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -634,6 +638,16 @@ namespace Amazon.ApplicationAutoScaling
         /// and namespace. Any parameters that you don't specify are not changed by this update
         /// request. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you call the <code>RegisterScalableTarget</code> API to update an existing scalable
+        /// target, Application Auto Scaling retrieves the current capacity of the resource. If
+        /// it is below the minimum capacity or above the maximum capacity, Application Auto Scaling
+        /// adjusts the capacity of the scalable target to place it within these bounds, even
+        /// if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code> request
+        /// parameters.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterScalableTarget service method.</param>
         /// <param name="cancellationToken">
