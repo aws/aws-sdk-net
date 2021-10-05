@@ -86,8 +86,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing page</a>.
+        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// Location Service pricing</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

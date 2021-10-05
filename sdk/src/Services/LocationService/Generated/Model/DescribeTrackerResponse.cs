@@ -36,6 +36,7 @@ namespace Amazon.LocationService.Model
         private DateTime? _createTime;
         private string _description;
         private string _kmsKeyId;
+        private PositionFiltering _positionFiltering;
         private PricingPlan _pricingPlan;
         private string _pricingPlanDataSource;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -103,14 +104,32 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PositionFiltering. 
+        /// <para>
+        /// The position filtering method of the tracker resource.
+        /// </para>
+        /// </summary>
+        public PositionFiltering PositionFiltering
+        {
+            get { return this._positionFiltering; }
+            set { this._positionFiltering = value; }
+        }
+
+        // Check to see if PositionFiltering property is set
+        internal bool IsSetPositionFiltering()
+        {
+            return this._positionFiltering != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
         /// The pricing plan selected for the specified tracker resource.
         /// </para>
         ///  
         /// <para>
-        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing page</a>.
+        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// Location Service pricing</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

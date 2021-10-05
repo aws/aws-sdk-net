@@ -75,8 +75,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
-        /// Location Service data providers page</a>.
+        /// For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// Location Service data providers</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,8 +137,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing page</a>.
+        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// Location Service pricing</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

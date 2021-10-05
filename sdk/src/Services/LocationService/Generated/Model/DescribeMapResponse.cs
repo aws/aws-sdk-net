@@ -170,8 +170,8 @@ namespace Amazon.LocationService.Model
         /// The pricing plan selected for the specified map resource.
         /// </para>
         ///  <pre><code> &lt;p&gt;For additional details and restrictions on each pricing plan
-        /// option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
-        /// Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code></pre>
+        /// option, see &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon
+        /// Location Service pricing&lt;/a&gt;.&lt;/p&gt; </code></pre>
         /// </summary>
         [AWSProperty(Required=true)]
         public PricingPlan PricingPlan

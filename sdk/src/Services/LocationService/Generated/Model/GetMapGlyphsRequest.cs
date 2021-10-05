@@ -46,7 +46,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+        /// Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
         /// styles: 
         /// </para>
         ///  <ul> <li> 
@@ -78,13 +78,12 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
         /// Technologies</a> styles: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO Bold</code>
-        /// 
+        /// VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

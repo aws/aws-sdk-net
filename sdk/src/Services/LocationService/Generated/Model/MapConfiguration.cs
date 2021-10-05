@@ -38,15 +38,12 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Style. 
         /// <para>
-        /// Specifies the map style selected from an available data provider. For additional information
-        /// on each map style and to preview each map style, see <a href="location/latest/developerguide/esri.html#esri-map-styles">Esri
-        /// map styles</a> and <a href="location/latest/developerguide/HERE.html#HERE-map-styles">HERE
-        /// map styles</a>.
+        /// Specifies the map style selected from an available data provider.
         /// </para>
         ///  
         /// <para>
-        /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
-        /// styles: 
+        /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri
+        /// map styles</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -88,7 +85,7 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul> 
         /// <para>
         /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-        /// Technologies</a> styles: 
+        /// Technologies map styles</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>

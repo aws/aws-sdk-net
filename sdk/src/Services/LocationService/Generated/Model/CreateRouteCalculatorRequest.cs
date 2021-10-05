@@ -92,7 +92,8 @@ namespace Amazon.LocationService.Model
         ///  <note> 
         /// <para>
         /// This field is case-sensitive. Enter the valid values as shown. For example, entering
-        /// <code>HERE</code> returns an error.
+        /// <code>HERE</code> returns an error. Route calculators that use Esri as a data source
+        /// only calculate routes that are shorter than 400 km.
         /// </para>
         ///  </note> 
         /// <para>
@@ -107,7 +108,7 @@ namespace Amazon.LocationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-        /// Technologies</a>'s coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
+        /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
         /// car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
         /// truck routing coverage</a>.
         /// </para>

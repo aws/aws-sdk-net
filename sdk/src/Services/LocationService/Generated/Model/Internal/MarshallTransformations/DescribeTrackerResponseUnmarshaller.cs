@@ -69,6 +69,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     response.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PositionFiltering", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PositionFiltering = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PricingPlan", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

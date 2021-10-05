@@ -80,8 +80,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The route <code>distance</code> can't be greater than 250 km. If the route exceeds
-        /// 250 km, the response returns a <code>400 RoutesValidationException</code> error.
+        /// If Esri is the data source for the route calculator, the route distance can’t be greater
+        /// than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code>
+        /// error.
         /// </para>
         ///  </note>
         /// </summary>
@@ -168,7 +169,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The fourth <code>bbox</code> position is the Y coordinate, or longitude of the upper
+        /// The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper
         /// northeast corner. 
         /// </para>
         ///  </li> </ul>

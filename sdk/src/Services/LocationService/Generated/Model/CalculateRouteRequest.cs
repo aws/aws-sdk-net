@@ -165,7 +165,9 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves
-        /// the position to the nearest road</a>.
+        /// the position to the nearest road</a>. If Esri is the provider for your route calculator,
+        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code>
+        /// error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -380,6 +382,11 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.
+        /// </para>
+        ///  
+        /// <para>
+        /// If Esri is the provider for your route calculator, specifying a route that is longer
+        /// than 400 km returns a <code>400 RoutesValidationException</code> error.
         /// </para>
         ///  </note> 
         /// <para>

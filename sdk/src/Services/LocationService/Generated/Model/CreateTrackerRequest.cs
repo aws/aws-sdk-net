@@ -37,6 +37,7 @@ namespace Amazon.LocationService.Model
     {
         private string _description;
         private string _kmsKeyId;
+        private PositionFiltering _positionFiltering;
         private PricingPlan _pricingPlan;
         private string _pricingPlanDataSource;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -82,14 +83,54 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PositionFiltering. 
+        /// <para>
+        /// Specifies the position filtering for the tracker resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+        /// but not every location update is stored. If your update frequency is more often than
+        /// 30 seconds, only one update per 30 seconds is stored for each unique device ID. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location
+        /// updates are ignored. Location updates within this distance are neither evaluated against
+        /// linked geofence collections, nor stored. This helps control costs by reducing the
+        /// number of geofence evaluations and device positions to retrieve. Distance-based filtering
+        /// can also reduce the jitter effect when displaying device trajectory on a map. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This field is optional. If not specified, the default value is <code>TimeBased</code>.
+        /// </para>
+        /// </summary>
+        public PositionFiltering PositionFiltering
+        {
+            get { return this._positionFiltering; }
+            set { this._positionFiltering = value; }
+        }
+
+        // Check to see if PositionFiltering property is set
+        internal bool IsSetPositionFiltering()
+        {
+            return this._positionFiltering != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
         /// Specifies the pricing plan for the tracker resource.
         /// </para>
         ///  
         /// <para>
-        /// For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon
-        /// Location Service pricing page</a>.
+        /// For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon
+        /// Location Service pricing</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,7 +170,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid Values: <code>Esri</code> | <code>Here</code> 
+        /// Valid values: <code>Esri</code> | <code>Here</code> 
         /// </para>
         /// </summary>
         public string PricingPlanDataSource

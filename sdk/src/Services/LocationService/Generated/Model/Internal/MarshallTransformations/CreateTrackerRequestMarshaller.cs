@@ -77,6 +77,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
+                if(publicRequest.IsSetPositionFiltering())
+                {
+                    context.Writer.WritePropertyName("PositionFiltering");
+                    context.Writer.Write(publicRequest.PositionFiltering);
+                }
+
                 if(publicRequest.IsSetPricingPlan())
                 {
                     context.Writer.WritePropertyName("PricingPlan");
