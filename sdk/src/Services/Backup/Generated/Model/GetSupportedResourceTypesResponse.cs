@@ -42,6 +42,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>Aurora</code> for Amazon Aurora
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DynamoDB</code> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
@@ -58,11 +62,11 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RDS</code> for Amazon Relational Database Service
+        ///  <code>FSX</code> for Amazon FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Aurora</code> for Amazon Aurora
+        ///  <code>RDS</code> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>

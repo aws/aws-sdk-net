@@ -224,8 +224,7 @@ namespace Amazon.Backup
         /// Creates a framework with one or more controls. A framework is a collection of controls
         /// that you can use to evaluate your backup practices. By using pre-built customizable
         /// controls to define your policies, you can evaluate whether your backup practices comply
-        /// with your policies. To get insights into the compliance status of your frameworks,
-        /// you can set up automatic daily reports.
+        /// with your policies and which resources are not yet in compliance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFramework service method.</param>
         /// <param name="cancellationToken">
@@ -2052,6 +2051,9 @@ namespace Amazon.Backup
         /// </param>
         /// 
         /// <returns>The response from the UpdateFramework service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Backup.Model.ConflictException">
         /// Backup can't perform the action that you requested until it finishes performing a
         /// previous action. Try again later.

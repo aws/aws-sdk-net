@@ -128,7 +128,14 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> 
+        ///  <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+        /// | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>,
+        /// this API resource also describes the report coverage by Amazon Web Services Regions
+        /// and frameworks.
         /// </para>
         /// </summary>
         public ReportSetting ReportSetting

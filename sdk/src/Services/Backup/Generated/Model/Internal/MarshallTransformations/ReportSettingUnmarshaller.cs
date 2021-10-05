@@ -64,6 +64,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FrameworkArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FrameworkArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfFrameworks", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfFrameworks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReportTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

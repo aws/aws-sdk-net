@@ -50,8 +50,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceIds. 
         /// <para>
-        /// Describes whether the control scope includes a specific resource identified by its
-        /// unique Amazon Resource Name (ARN).
+        /// The ID of the only Amazon Web Services resource that you want your control scope to
+        /// contain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

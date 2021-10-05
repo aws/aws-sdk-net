@@ -45,6 +45,23 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ReportSetting requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFrameworkArns())
+            {
+                context.Writer.WritePropertyName("FrameworkArns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFrameworkArnsListValue in requestObject.FrameworkArns)
+                {
+                        context.Writer.Write(requestObjectFrameworkArnsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNumberOfFrameworks())
+            {
+                context.Writer.WritePropertyName("NumberOfFrameworks");
+                context.Writer.Write(requestObject.NumberOfFrameworks);
+            }
+
             if(requestObject.IsSetReportTemplate())
             {
                 context.Writer.WritePropertyName("ReportTemplate");

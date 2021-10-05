@@ -33,8 +33,30 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class CreateReportPlanResponse : AmazonWebServiceResponse
     {
+        private DateTime? _creationTime;
         private string _reportPlanArn;
         private string _reportPlanName;
+
+        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The date and time a backup vault is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.
+        /// </para>
+        /// </summary>
+        public DateTime CreationTime
+        {
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
+        }
+
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
+        {
+            return this._creationTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ReportPlanArn. 

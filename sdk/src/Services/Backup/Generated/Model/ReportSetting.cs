@@ -33,7 +33,45 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ReportSetting
     {
+        private List<string> _frameworkArns = new List<string>();
+        private int? _numberOfFrameworks;
         private string _reportTemplate;
+
+        /// <summary>
+        /// Gets and sets the property FrameworkArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the frameworks a report covers.
+        /// </para>
+        /// </summary>
+        public List<string> FrameworkArns
+        {
+            get { return this._frameworkArns; }
+            set { this._frameworkArns = value; }
+        }
+
+        // Check to see if FrameworkArns property is set
+        internal bool IsSetFrameworkArns()
+        {
+            return this._frameworkArns != null && this._frameworkArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfFrameworks. 
+        /// <para>
+        /// The number of frameworks a report covers.
+        /// </para>
+        /// </summary>
+        public int NumberOfFrameworks
+        {
+            get { return this._numberOfFrameworks.GetValueOrDefault(); }
+            set { this._numberOfFrameworks = value; }
+        }
+
+        // Check to see if NumberOfFrameworks property is set
+        internal bool IsSetNumberOfFrameworks()
+        {
+            return this._numberOfFrameworks.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ReportTemplate. 
@@ -43,7 +81,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> 
+        ///  <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
+        /// | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
