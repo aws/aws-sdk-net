@@ -120,6 +120,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void DescribeCapacityReservationFleetsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeCapacityReservationFleetsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeCapacityReservationFleetsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeCapacityReservationFleetsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeCapacityReservationFleets(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeCapacityReservationFleets(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeCapacityReservationFleetsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeCapacityReservationFleetsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeCapacityReservationFleetsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeCapacityReservationFleets(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeCapacityReservationFleets(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void DescribeCapacityReservationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeCapacityReservationsRequest>();

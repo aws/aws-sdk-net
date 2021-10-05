@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZoneId;
         private int? _availableInstanceCount;
         private string _capacityReservationArn;
+        private string _capacityReservationFleetId;
         private string _capacityReservationId;
         private DateTime? _createDate;
         private bool? _ebsOptimized;
@@ -125,6 +126,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetCapacityReservationArn()
         {
             return this._capacityReservationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationFleetId. 
+        /// <para>
+        /// The ID of the Capacity Reservation Fleet to which the Capacity Reservation belongs.
+        /// Only valid for Capacity Reservations that were created by a Capacity Reservation Fleet.
+        /// </para>
+        /// </summary>
+        public string CapacityReservationFleetId
+        {
+            get { return this._capacityReservationFleetId; }
+            set { this._capacityReservationFleetId = value; }
+        }
+
+        // Check to see if CapacityReservationFleetId property is set
+        internal bool IsSetCapacityReservationFleetId()
+        {
+            return this._capacityReservationFleetId != null;
         }
 
         /// <summary>

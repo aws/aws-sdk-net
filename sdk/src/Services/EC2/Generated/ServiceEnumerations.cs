@@ -1531,6 +1531,84 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityReservationFleetState.
+    /// </summary>
+    public class CapacityReservationFleetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Active = new CapacityReservationFleetState("active");
+        /// <summary>
+        /// Constant Cancelled for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Cancelled = new CapacityReservationFleetState("cancelled");
+        /// <summary>
+        /// Constant Cancelling for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Cancelling = new CapacityReservationFleetState("cancelling");
+        /// <summary>
+        /// Constant Expired for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Expired = new CapacityReservationFleetState("expired");
+        /// <summary>
+        /// Constant Expiring for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Expiring = new CapacityReservationFleetState("expiring");
+        /// <summary>
+        /// Constant Failed for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Failed = new CapacityReservationFleetState("failed");
+        /// <summary>
+        /// Constant Modifying for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Modifying = new CapacityReservationFleetState("modifying");
+        /// <summary>
+        /// Constant Partially_fulfilled for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Partially_fulfilled = new CapacityReservationFleetState("partially_fulfilled");
+        /// <summary>
+        /// Constant Submitted for CapacityReservationFleetState
+        /// </summary>
+        public static readonly CapacityReservationFleetState Submitted = new CapacityReservationFleetState("submitted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationFleetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationFleetState FindValue(string value)
+        {
+            return FindValue<CapacityReservationFleetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationFleetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityReservationInstancePlatform.
     /// </summary>
     public class CapacityReservationInstancePlatform : ConstantClass
@@ -3999,6 +4077,52 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FleetCapacityReservationTenancy.
+    /// </summary>
+    public class FleetCapacityReservationTenancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for FleetCapacityReservationTenancy
+        /// </summary>
+        public static readonly FleetCapacityReservationTenancy Default = new FleetCapacityReservationTenancy("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetCapacityReservationTenancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetCapacityReservationTenancy FindValue(string value)
+        {
+            return FindValue<FleetCapacityReservationTenancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetCapacityReservationTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetCapacityReservationUsageStrategy.
     /// </summary>
     public class FleetCapacityReservationUsageStrategy : ConstantClass
@@ -4142,6 +4266,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetExcessCapacityTerminationPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetInstanceMatchCriteria.
+    /// </summary>
+    public class FleetInstanceMatchCriteria : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Open for FleetInstanceMatchCriteria
+        /// </summary>
+        public static readonly FleetInstanceMatchCriteria Open = new FleetInstanceMatchCriteria("open");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetInstanceMatchCriteria(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetInstanceMatchCriteria FindValue(string value)
+        {
+            return FindValue<FleetInstanceMatchCriteria>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetInstanceMatchCriteria(string value)
         {
             return FindValue(value);
         }

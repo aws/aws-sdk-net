@@ -875,6 +875,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CancelCapacityReservationFleetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelCapacityReservationFleets");
+
+            var request = InstantiateClassGenerator.Execute<CancelCapacityReservationFleetsRequest>();
+            var marshaller = new CancelCapacityReservationFleetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CancelCapacityReservationFleetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as CancelCapacityReservationFleetsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CancelConversionTaskMarshallTest()
         {
             var operation = service_model.FindOperation("CancelConversionTask");
@@ -1120,6 +1144,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = CreateCapacityReservationResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateCapacityReservationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateCapacityReservationFleetMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCapacityReservationFleet");
+
+            var request = InstantiateClassGenerator.Execute<CreateCapacityReservationFleetRequest>();
+            var marshaller = new CreateCapacityReservationFleetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateCapacityReservationFleetResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateCapacityReservationFleetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -4144,6 +4192,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeByoipCidrsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeByoipCidrsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeCapacityReservationFleetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeCapacityReservationFleets");
+
+            var request = InstantiateClassGenerator.Execute<DescribeCapacityReservationFleetsRequest>();
+            var marshaller = new DescribeCapacityReservationFleetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeCapacityReservationFleetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeCapacityReservationFleetsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -8664,6 +8736,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyCapacityReservationResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyCapacityReservationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyCapacityReservationFleetMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyCapacityReservationFleet");
+
+            var request = InstantiateClassGenerator.Execute<ModifyCapacityReservationFleetRequest>();
+            var marshaller = new ModifyCapacityReservationFleetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyCapacityReservationFleetResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyCapacityReservationFleetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

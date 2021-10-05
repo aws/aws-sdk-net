@@ -2700,6 +2700,81 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelCapacityReservationFleets
+
+
+        /// <summary>
+        /// Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity Reservation
+        /// Fleet, the following happens:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The Capacity Reservation Fleet's status changes to <code>cancelled</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The individual Capacity Reservations in the Fleet are cancelled. Instances running
+        /// in the Capacity Reservations at the time of cancelling the Fleet continue to run in
+        /// shared capacity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Fleet stops creating new Capacity Reservations.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservationFleets service method.</param>
+        /// 
+        /// <returns>The response from the CancelCapacityReservationFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">REST API Reference for CancelCapacityReservationFleets Operation</seealso>
+        public virtual CancelCapacityReservationFleetsResponse CancelCapacityReservationFleets(CancelCapacityReservationFleetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCapacityReservationFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCapacityReservationFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<CancelCapacityReservationFleetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity Reservation
+        /// Fleet, the following happens:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The Capacity Reservation Fleet's status changes to <code>cancelled</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The individual Capacity Reservations in the Fleet are cancelled. Instances running
+        /// in the Capacity Reservations at the time of cancelling the Fleet continue to run in
+        /// shared capacity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Fleet stops creating new Capacity Reservations.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservationFleets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelCapacityReservationFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">REST API Reference for CancelCapacityReservationFleets Operation</seealso>
+        public virtual Task<CancelCapacityReservationFleetsResponse> CancelCapacityReservationFleetsAsync(CancelCapacityReservationFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelCapacityReservationFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelCapacityReservationFleetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelCapacityReservationFleetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelConversionTask
 
 
@@ -3403,6 +3478,49 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateCapacityReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCapacityReservationFleet
+
+
+        /// <summary>
+        /// Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create
+        /// a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationFleet service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">REST API Reference for CreateCapacityReservationFleet Operation</seealso>
+        public virtual CreateCapacityReservationFleetResponse CreateCapacityReservationFleet(CreateCapacityReservationFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationFleetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityReservationFleetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create
+        /// a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">REST API Reference for CreateCapacityReservationFleet Operation</seealso>
+        public virtual Task<CreateCapacityReservationFleetResponse> CreateCapacityReservationFleetAsync(CreateCapacityReservationFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCapacityReservationFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11546,6 +11664,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeByoipCidrsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCapacityReservationFleets
+
+
+        /// <summary>
+        /// Describes one or more Capacity Reservation Fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationFleets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">REST API Reference for DescribeCapacityReservationFleets Operation</seealso>
+        public virtual DescribeCapacityReservationFleetsResponse DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityReservationFleetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more Capacity Reservation Fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationFleets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">REST API Reference for DescribeCapacityReservationFleets Operation</seealso>
+        public virtual Task<DescribeCapacityReservationFleetsResponse> DescribeCapacityReservationFleetsAsync(DescribeCapacityReservationFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationFleetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeCapacityReservationFleetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -23186,6 +23345,65 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyCapacityReservationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyCapacityReservationFleet
+
+
+        /// <summary>
+        /// Modifies a Capacity Reservation Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// When you modify the total target capacity of a Capacity Reservation Fleet, the Fleet
+        /// automatically creates new Capacity Reservations, or modifies or cancels existing Capacity
+        /// Reservations in the Fleet to meet the new total target capacity. When you modify the
+        /// end date for the Fleet, the end dates for all of the individual Capacity Reservations
+        /// in the Fleet are updated accordingly.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservationFleet service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCapacityReservationFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">REST API Reference for ModifyCapacityReservationFleet Operation</seealso>
+        public virtual ModifyCapacityReservationFleetResponse ModifyCapacityReservationFleet(ModifyCapacityReservationFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCapacityReservationFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCapacityReservationFleetResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCapacityReservationFleetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies a Capacity Reservation Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// When you modify the total target capacity of a Capacity Reservation Fleet, the Fleet
+        /// automatically creates new Capacity Reservations, or modifies or cancels existing Capacity
+        /// Reservations in the Fleet to meet the new total target capacity. When you modify the
+        /// end date for the Fleet, the end dates for all of the individual Capacity Reservations
+        /// in the Fleet are updated accordingly.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservationFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCapacityReservationFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">REST API Reference for ModifyCapacityReservationFleet Operation</seealso>
+        public virtual Task<ModifyCapacityReservationFleetResponse> ModifyCapacityReservationFleetAsync(ModifyCapacityReservationFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCapacityReservationFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCapacityReservationFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyCapacityReservationFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
