@@ -39,6 +39,7 @@ namespace Amazon.FSx.Model
         private FileSystemFailureDetails _failureDetails;
         private string _fileSystemId;
         private FileSystemType _fileSystemType;
+        private string _fileSystemTypeVersion;
         private string _kmsKeyId;
         private FileSystemLifecycle _lifecycle;
         private LustreFileSystemConfiguration _lustreConfiguration;
@@ -163,6 +164,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetFileSystemType()
         {
             return this._fileSystemType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemTypeVersion. 
+        /// <para>
+        /// The version of your Amazon FSx for Lustre file system, either <code>2.10</code> or
+        /// <code>2.12</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string FileSystemTypeVersion
+        {
+            get { return this._fileSystemTypeVersion; }
+            set { this._fileSystemTypeVersion = value; }
+        }
+
+        // Check to see if FileSystemTypeVersion property is set
+        internal bool IsSetFileSystemTypeVersion()
+        {
+            return this._fileSystemTypeVersion != null;
         }
 
         /// <summary>

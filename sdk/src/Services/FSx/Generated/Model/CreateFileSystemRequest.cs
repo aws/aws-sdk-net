@@ -75,6 +75,7 @@ namespace Amazon.FSx.Model
     {
         private string _clientRequestToken;
         private FileSystemType _fileSystemType;
+        private string _fileSystemTypeVersion;
         private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private CreateFileSystemOntapConfiguration _ontapConfiguration;
@@ -124,6 +125,38 @@ namespace Amazon.FSx.Model
         internal bool IsSetFileSystemType()
         {
             return this._fileSystemType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemTypeVersion. 
+        /// <para>
+        /// Sets the version of the Amazon FSx for Lustre file system you're creating. Valid values
+        /// are <code>2.10</code> and <code>2.12</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set the value to <code>2.10</code> to create a Lustre 2.10 file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set the value to <code>2.12</code> to create a Lustre 2.12 file system.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default value is <code>2.10</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string FileSystemTypeVersion
+        {
+            get { return this._fileSystemTypeVersion; }
+            set { this._fileSystemTypeVersion = value; }
+        }
+
+        // Check to see if FileSystemTypeVersion property is set
+        internal bool IsSetFileSystemTypeVersion()
+        {
+            return this._fileSystemTypeVersion != null;
         }
 
         /// <summary>

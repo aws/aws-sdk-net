@@ -84,6 +84,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FileSystemType);
                 }
 
+                if(publicRequest.IsSetFileSystemTypeVersion())
+                {
+                    context.Writer.WritePropertyName("FileSystemTypeVersion");
+                    context.Writer.Write(publicRequest.FileSystemTypeVersion);
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");

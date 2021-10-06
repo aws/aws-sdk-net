@@ -84,6 +84,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetFileSystemTypeVersion())
+                {
+                    context.Writer.WritePropertyName("FileSystemTypeVersion");
+                    context.Writer.Write(publicRequest.FileSystemTypeVersion);
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");

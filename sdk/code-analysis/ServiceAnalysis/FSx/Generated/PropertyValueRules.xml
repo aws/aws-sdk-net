@@ -85,6 +85,12 @@
     <pattern>[A-za-z0-9_.-]{0,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateFileSystemRequest.FileSystemTypeVersion</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[0-9](\.[0-9]*)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -106,6 +112,12 @@
     <min>1</min>
     <max>63</max>
     <pattern>[A-za-z0-9_.-]{0,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.CreateFileSystemFromBackupRequest.FileSystemTypeVersion</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[0-9](\.[0-9]*)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemFromBackupRequest.KmsKeyId</property>
@@ -766,6 +778,12 @@
     <min>11</min>
     <max>21</max>
     <pattern>^(fs-[0-9a-f]{8,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.FileSystem.FileSystemTypeVersion</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[0-9](\.[0-9]*)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.FileSystem.KmsKeyId</property>

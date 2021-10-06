@@ -78,6 +78,7 @@ namespace Amazon.FSx.Model
     {
         private string _backupId;
         private string _clientRequestToken;
+        private string _fileSystemTypeVersion;
         private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private List<string> _securityGroupIds = new List<string>();
@@ -121,6 +122,33 @@ namespace Amazon.FSx.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemTypeVersion. 
+        /// <para>
+        /// Sets the version for the Amazon FSx for Lustre file system you're creating from a
+        /// backup. Valid values are <code>2.10</code> and <code>2.12</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied
+        /// using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify
+        /// <code>FileSystemTypeVersion</code> when creating from backup, the value must match
+        /// the backup's <code>FileSystemTypeVersion</code> setting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string FileSystemTypeVersion
+        {
+            get { return this._fileSystemTypeVersion; }
+            set { this._fileSystemTypeVersion = value; }
+        }
+
+        // Check to see if FileSystemTypeVersion property is set
+        internal bool IsSetFileSystemTypeVersion()
+        {
+            return this._fileSystemTypeVersion != null;
         }
 
         /// <summary>

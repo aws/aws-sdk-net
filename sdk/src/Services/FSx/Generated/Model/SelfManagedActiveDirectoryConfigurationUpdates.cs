@@ -41,7 +41,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DnsIps. 
         /// <para>
-        /// A list of up to two IP addresses of DNS servers or domain controllers in the self-managed
+        /// A list of up to three IP addresses of DNS servers or domain controllers in the self-managed
         /// AD directory.
         /// </para>
         /// </summary>
