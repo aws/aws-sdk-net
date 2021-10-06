@@ -33,12 +33,31 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class GetBackendResponse : AmazonWebServiceResponse
     {
+        private string _amplifyFeatureFlags;
         private string _amplifyMetaConfig;
         private string _appId;
         private string _appName;
         private List<string> _backendEnvironmentList = new List<string>();
         private string _backendEnvironmentName;
         private string _error;
+
+        /// <summary>
+        /// Gets and sets the property AmplifyFeatureFlags. 
+        /// <para>
+        /// A stringified version of the cli.json file for your Amplify project.
+        /// </para>
+        /// </summary>
+        public string AmplifyFeatureFlags
+        {
+            get { return this._amplifyFeatureFlags; }
+            set { this._amplifyFeatureFlags = value; }
+        }
+
+        // Check to see if AmplifyFeatureFlags property is set
+        internal bool IsSetAmplifyFeatureFlags()
+        {
+            return this._amplifyFeatureFlags != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AmplifyMetaConfig. 

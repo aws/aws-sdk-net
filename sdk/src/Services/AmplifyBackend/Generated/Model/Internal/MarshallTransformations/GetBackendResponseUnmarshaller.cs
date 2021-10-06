@@ -51,6 +51,12 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("amplifyFeatureFlags", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AmplifyFeatureFlags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("amplifyMetaConfig", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
