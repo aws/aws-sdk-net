@@ -146,18 +146,7 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingInputMode. 
-        /// <para>
-        /// The input mode used by the algorithm for the training job. For the input modes that
-        /// Amazon SageMaker algorithms support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads
-        /// the training data from S3 to the provisioned ML storage Volume, and mounts the directory
-        /// to docker volume for training container. If an algorithm supports the <code>Pipe</code>
-        /// input mode, Amazon SageMaker streams data directly from S3 to the container.
-        /// </para>
+        /// Gets and sets the property TrainingInputMode.
         /// </summary>
         [AWSProperty(Required=true)]
         public TrainingInputMode TrainingInputMode

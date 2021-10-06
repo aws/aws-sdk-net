@@ -9743,6 +9743,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant FastFile for TrainingInputMode
+        /// </summary>
+        public static readonly TrainingInputMode FastFile = new TrainingInputMode("FastFile");
+        /// <summary>
         /// Constant File for TrainingInputMode
         /// </summary>
         public static readonly TrainingInputMode File = new TrainingInputMode("File");

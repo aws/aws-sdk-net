@@ -30,14 +30,13 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A tag object that consists of a key and an optional value, used to manage metadata
-    /// for Amazon SageMaker Amazon Web Services resources.
+    /// for SageMaker Amazon Web Services resources.
     /// 
     ///  
     /// <para>
     /// You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
     /// batch transform jobs, models, labeling jobs, work teams, endpoint configurations,
-    /// and endpoints. For more information on adding tags to Amazon SageMaker resources,
-    /// see <a>AddTags</a>.
+    /// and endpoints. For more information on adding tags to SageMaker resources, see <a>AddTags</a>.
     /// </para>
     ///  
     /// <para>

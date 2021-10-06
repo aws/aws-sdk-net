@@ -178,7 +178,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastUserActivityTimestamp. 
         /// <para>
-        /// The timestamp of the last user's activity.
+        /// The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code>
+        /// is also updated when SageMaker performs health checks without user activity. As a
+        /// result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.
         /// </para>
         /// </summary>
         public DateTime LastUserActivityTimestamp

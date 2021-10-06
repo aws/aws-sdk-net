@@ -1446,7 +1446,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Option 1: For a full Amazon SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code>
+        /// Option 1: For a full SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code>
         /// policy.
         /// </para>
         ///  </li> <li> 
@@ -1478,8 +1478,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon
-        /// SageMaker API Permissions: Actions, Permissions, and Resources Reference</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">SageMaker
+        /// API Permissions: Actions, Permissions, and Resources Reference</a>.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

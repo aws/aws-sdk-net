@@ -159,31 +159,7 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrainingInputMode. 
-        /// <para>
-        /// The input mode that the algorithm supports. For the input modes that Amazon SageMaker
-        /// algorithms support, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-        /// If an algorithm supports the <code>File</code> input mode, Amazon SageMaker downloads
-        /// the training data from S3 to the provisioned ML storage Volume, and mounts the directory
-        /// to docker volume for training container. If an algorithm supports the <code>Pipe</code>
-        /// input mode, Amazon SageMaker streams data directly from S3 to the container. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  In File mode, make sure you provision ML storage volume with sufficient capacity
-        /// to accommodate the data download from S3. In addition to the training data, the ML
-        /// storage volume also stores the output model. The algorithm container use ML storage
-        /// volume to also store intermediate information, if any. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  For distributed algorithms using File mode, training data is distributed uniformly,
-        /// and your training duration is predictable if the input data objects size is approximately
-        /// same. Amazon SageMaker does not split the files any further for model training. If
-        /// the object sizes are skewed, training won't be optimal as the data distribution is
-        /// also skewed where one host in a training cluster is overloaded, thus becoming bottleneck
-        /// in training. 
-        /// </para>
+        /// Gets and sets the property TrainingInputMode.
         /// </summary>
         [AWSProperty(Required=true)]
         public TrainingInputMode TrainingInputMode

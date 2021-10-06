@@ -120,8 +120,8 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>)
-        /// in your training cluster to get the total compute time Amazon SageMaker will bill
-        /// you if you run distributed training. The formula is as follows: <code>BillableTimeInSeconds
+        /// in your training cluster to get the total compute time SageMaker will bill you if
+        /// you run distributed training. The formula is as follows: <code>BillableTimeInSeconds
         /// * InstanceCount</code> .
         /// </para>
         ///  
