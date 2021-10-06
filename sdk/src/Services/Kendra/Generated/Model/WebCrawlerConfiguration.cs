@@ -278,6 +278,12 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
+        /// You can only crawl websites that use the secure communication protocol, Hypertext
+        /// Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website,
+        /// it could be that the website is blocked from crawling.
+        /// </para>
+        ///  
+        /// <para>
         ///  <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon
         /// Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only
         /// use the Amazon Kendra web crawler to index your own webpages, or webpages that you

@@ -48,7 +48,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A token that you provide to identify the request to create a thesaurus. Multiple calls
         /// to the <code>CreateThesaurus</code> operation with the same client token will create
-        /// only one index. 
+        /// only one thesaurus. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

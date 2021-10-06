@@ -55,9 +55,9 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// If you use more than 10 attribute filters, you receive a <code>ValidationException</code>
-    /// exception with the message "<code>AttributeFilter</code> cannot have a length of more
-    /// than 10".
+    /// If you use more than 10 attribute filters in a given list for <code>AndAllFilters</code>
+    /// or <code>OrAllFilters</code>, you receive a <code>ValidationException</code> with
+    /// the message "<code>AttributeFilter</code> cannot have a length of more than 10".
     /// </para>
     /// </summary>
     public partial class AttributeFilter
@@ -151,7 +151,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property GreaterThan. 
         /// <para>
         /// Performs a greater than operation on two document attributes. Use with a document
-        /// attribute of type <code>Integer</code> or <code>Long</code>.
+        /// attribute of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThan
@@ -170,7 +170,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property GreaterThanOrEquals. 
         /// <para>
         /// Performs a greater or equals than operation on two document attributes. Use with a
-        /// document attribute of type <code>Integer</code> or <code>Long</code>.
+        /// document attribute of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThanOrEquals
@@ -189,7 +189,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property LessThan. 
         /// <para>
         /// Performs a less than operation on two document attributes. Use with a document attribute
-        /// of type <code>Integer</code> or <code>Long</code>.
+        /// of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThan
@@ -208,7 +208,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property LessThanOrEquals. 
         /// <para>
         /// Performs a less than or equals operation on two document attributes. Use with a document
-        /// attribute of type <code>Integer</code> or <code>Long</code>.
+        /// attribute of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThanOrEquals

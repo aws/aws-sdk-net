@@ -41,6 +41,7 @@ namespace Amazon.Kendra.Model
         private string _name;
         private string _roleArn;
         private UserContextPolicy _userContextPolicy;
+        private UserGroupResolutionConfiguration _userGroupResolutionConfiguration;
         private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
 
         /// <summary>
@@ -166,7 +167,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserContextPolicy. 
         /// <para>
-        /// The user user token context policy.
+        /// The user context policy.
         /// </para>
         /// </summary>
         public UserContextPolicy UserContextPolicy
@@ -179,6 +180,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUserContextPolicy()
         {
             return this._userContextPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroupResolutionConfiguration. 
+        /// <para>
+        /// Enables fetching access levels of groups and users from an AWS Single Sign-On identity
+        /// source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// </para>
+        /// </summary>
+        public UserGroupResolutionConfiguration UserGroupResolutionConfiguration
+        {
+            get { return this._userGroupResolutionConfiguration; }
+            set { this._userGroupResolutionConfiguration = value; }
+        }
+
+        // Check to see if UserGroupResolutionConfiguration property is set
+        internal bool IsSetUserGroupResolutionConfiguration()
+        {
+            return this._userGroupResolutionConfiguration != null;
         }
 
         /// <summary>

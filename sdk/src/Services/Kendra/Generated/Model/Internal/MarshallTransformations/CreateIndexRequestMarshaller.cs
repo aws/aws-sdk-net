@@ -135,6 +135,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UserContextPolicy);
                 }
 
+                if(publicRequest.IsSetUserGroupResolutionConfiguration())
+                {
+                    context.Writer.WritePropertyName("UserGroupResolutionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserGroupResolutionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserGroupResolutionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUserTokenConfigurations())
                 {
                     context.Writer.WritePropertyName("UserTokenConfigurations");

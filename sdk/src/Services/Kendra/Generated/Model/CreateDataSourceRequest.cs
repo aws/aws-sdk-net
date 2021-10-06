@@ -30,13 +30,12 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Creates a data source that you use to with an Amazon Kendra index. 
+    /// Creates a data source that you want to use with an Amazon Kendra index. 
     /// 
     ///  
     /// <para>
     /// You specify a name, data source connector type and description for your data source.
-    /// You also specify configuration information such as document metadata (author, source
-    /// URI, and so on) and user context information.
+    /// You also specify configuration information for the data source connector.
     /// </para>
     ///  
     /// <para>

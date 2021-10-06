@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// An array of summary information for one or more thesauruses.
+    /// An array of summary information for a thesaurus or multiple thesauri.
     /// </summary>
     public partial class ThesaurusSummary
     {

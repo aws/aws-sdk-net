@@ -309,7 +309,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserContext. 
         /// <para>
-        /// The user context token.
+        /// The user context token or user and group information.
         /// </para>
         /// </summary>
         public UserContext UserContext

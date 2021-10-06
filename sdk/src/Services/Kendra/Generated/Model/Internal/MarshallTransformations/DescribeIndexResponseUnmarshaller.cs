@@ -135,6 +135,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.UserContextPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserGroupResolutionConfiguration", targetDepth))
+                {
+                    var unmarshaller = UserGroupResolutionConfigurationUnmarshaller.Instance;
+                    response.UserGroupResolutionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserTokenConfigurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<UserTokenConfiguration, UserTokenConfigurationUnmarshaller>(UserTokenConfigurationUnmarshaller.Instance);

@@ -86,6 +86,13 @@ namespace Amazon.Kendra.Model
         /// Your sub groups can contain more than 1000 users, but the list of sub groups that
         /// belong to a group (and/or users) must be no more than 1000.
         /// </para>
+        ///  
+        /// <para>
+        /// You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+        /// S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code>
+        /// is optional. The value of <code>type</code> for a group is always <code>GROUP</code>
+        /// and for a user it is always <code>USER</code>.
+        /// </para>
         /// </summary>
         public S3Path S3PathforGroupMembers
         {

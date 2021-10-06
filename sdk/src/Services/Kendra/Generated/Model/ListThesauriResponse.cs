@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ThesaurusSummaryItems. 
         /// <para>
-        /// An array of summary information for one or more thesauruses.
+        /// An array of summary information for a thesaurus or multiple thesauri.
         /// </para>
         /// </summary>
         public List<ThesaurusSummary> ThesaurusSummaryItems

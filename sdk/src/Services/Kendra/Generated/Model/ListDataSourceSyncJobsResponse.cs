@@ -57,11 +57,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>GetDataSourceSyncJobHistory</code> operation returns a page of vocabularies
-        /// at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter.
-        /// If there are more jobs in the list than the page size, Amazon Kendra returns the NextPage
-        /// token. Include the token in the next request to the <code>GetDataSourceSyncJobHistory</code>
-        /// operation to return in the next page of jobs.
+        /// If the response is truncated, Amazon Kendra returns this token that you can use in
+        /// the subsequent request to retrieve the next set of jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

@@ -47,6 +47,7 @@ namespace Amazon.Kendra.Model
         private IndexStatus _status;
         private DateTime? _updatedAt;
         private UserContextPolicy _userContextPolicy;
+        private UserGroupResolutionConfiguration _userGroupResolutionConfiguration;
         private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
 
         /// <summary>
@@ -315,6 +316,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUserContextPolicy()
         {
             return this._userContextPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroupResolutionConfiguration. 
+        /// <para>
+        /// Shows whether you have enabled the configuration for fetching access levels of groups
+        /// and users from an AWS Single Sign-On identity source.
+        /// </para>
+        /// </summary>
+        public UserGroupResolutionConfiguration UserGroupResolutionConfiguration
+        {
+            get { return this._userGroupResolutionConfiguration; }
+            set { this._userGroupResolutionConfiguration = value; }
+        }
+
+        // Check to see if UserGroupResolutionConfiguration property is set
+        internal bool IsSetUserGroupResolutionConfiguration()
+        {
+            return this._userGroupResolutionConfiguration != null;
         }
 
         /// <summary>

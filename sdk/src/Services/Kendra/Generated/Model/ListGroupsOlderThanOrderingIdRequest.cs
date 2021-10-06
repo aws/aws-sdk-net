@@ -84,8 +84,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum results shown for a list of groups that are mapped to users before a
-        /// given ordering or timestamp identifier. 
+        ///  The maximum number of returned groups that are mapped to users before a given ordering
+        /// or timestamp identifier. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -104,7 +104,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The next items in the list of groups that go beyond the maximum. 
+        ///  If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of groups that are mapped to users before a given ordering
+        /// or timestamp identifier. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

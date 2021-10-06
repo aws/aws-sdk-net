@@ -58,7 +58,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The next items in the list of groups that go beyond the maximum. 
+        ///  If the response is truncated, Amazon Kendra returns this token that you can use in
+        /// the subsequent request to retrieve the next set of groups that are mapped to users
+        /// before a given ordering or timestamp identifier. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

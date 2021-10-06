@@ -57,11 +57,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>ListFaqs</code> operation returns a page of FAQs at a time. The maximum
-        /// size of the page is set by the <code>MaxResults</code> parameter. If there are more
-        /// jobs in the list than the page size, Amazon Kendra returns the <code>NextPage</code>
-        /// token. Include the token in the next request to the <code>ListFaqs</code> operation
-        /// to return the next page of FAQs.
+        /// If the response is truncated, Amazon Kendra returns this token that you can use in
+        /// the subsequent request to retrieve the next set of FAQs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

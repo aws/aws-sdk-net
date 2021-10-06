@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides information about the user context for a Amazon Kendra index.
+    /// Provides information about the user context for an Amazon Kendra index.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// User ID, the groups the user belongs to, and the data sources the groups can access
+    /// User ID, the groups the user belongs to, and any data sources the groups can access.
     /// </para>
     ///  </li> </ul> 
     /// <para>

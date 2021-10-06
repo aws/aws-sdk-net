@@ -51,6 +51,7 @@ namespace Amazon.Kendra.Model
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private List<Tag> _tags = new List<Tag>();
         private UserContextPolicy _userContextPolicy;
+        private UserGroupResolutionConfiguration _userGroupResolutionConfiguration;
         private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
 
         /// <summary>
@@ -211,13 +212,16 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> 
         /// <para>
-        /// All indexed content is searchable and displayable for all users. If there is an access
-        /// control list, it is ignored. You can filter on user and group attributes. 
+        /// All indexed content is searchable and displayable for all users. If you want to filter
+        /// search results on user context, you can use the attribute filters of <code>_user_id</code>
+        /// and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>.
+        /// 
         /// </para>
         ///  </dd> <dt>USER_TOKEN</dt> <dd> 
         /// <para>
-        /// Enables SSO and token-based user access control. All documents with no access control
-        /// and all documents accessible to the user will be searchable and displayable. 
+        /// Enables token-based user access control to filter search results on user context.
+        /// All documents with no access control and all documents accessible to the user will
+        /// be searchable and displayable. 
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -231,6 +235,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUserContextPolicy()
         {
             return this._userContextPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserGroupResolutionConfiguration. 
+        /// <para>
+        /// Enables fetching access levels of groups and users from an AWS Single Sign-On identity
+        /// source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// </para>
+        /// </summary>
+        public UserGroupResolutionConfiguration UserGroupResolutionConfiguration
+        {
+            get { return this._userGroupResolutionConfiguration; }
+            set { this._userGroupResolutionConfiguration = value; }
+        }
+
+        // Check to see if UserGroupResolutionConfiguration property is set
+        internal bool IsSetUserGroupResolutionConfiguration()
+        {
+            return this._userGroupResolutionConfiguration != null;
         }
 
         /// <summary>
