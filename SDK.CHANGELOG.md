@@ -1,3 +1,18 @@
+### 3.7.131.0 (2021-10-06 18:24 UTC)
+* AmplifyBackend (3.7.3.0)
+	* Adding a new field 'AmplifyFeatureFlags' to the response of the GetBackend operation. It will return a stringified version of the cli.json file for the given Amplify project.
+* FSx (3.7.5.0)
+	* This release adds support for Lustre 2.12 to FSx for Lustre.
+* Kendra (3.7.9.0)
+	* Amazon Kendra now supports integration with AWS SSO
+* SageMaker (3.7.16.0)
+	* This release adds a new TrainingInputMode FastFile for SageMaker Training APIs.
+* Core 3.7.3.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.130.0 (2021-10-05 18:15 UTC)
 * ApplicationAutoScaling (3.7.2.0)
 	* With this release, Application Auto Scaling adds support for Amazon Neptune. Customers can now automatically add or remove Read Replicas of their Neptune clusters to keep the average CPU Utilization at the target value specified by the customers.
