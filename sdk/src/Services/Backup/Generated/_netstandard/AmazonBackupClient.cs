@@ -792,6 +792,65 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DeleteBackupVaultLockConfiguration
+
+        internal virtual DeleteBackupVaultLockConfigurationResponse DeleteBackupVaultLockConfiguration(DeleteBackupVaultLockConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupVaultLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupVaultLockConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackupVaultLockConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes Backup Vault Lock from a backup vault specified by a backup vault name.
+        /// 
+        ///  
+        /// <para>
+        /// If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using
+        /// API operations, and you will receive an <code>InvalidRequestException</code> if you
+        /// attempt to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
+        /// Lock</a> in the <i>Backup Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackupVaultLockConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBackupVaultLockConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">REST API Reference for DeleteBackupVaultLockConfiguration Operation</seealso>
+        public virtual Task<DeleteBackupVaultLockConfigurationResponse> DeleteBackupVaultLockConfigurationAsync(DeleteBackupVaultLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackupVaultLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackupVaultLockConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBackupVaultLockConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteBackupVaultNotifications
 
         internal virtual DeleteBackupVaultNotificationsResponse DeleteBackupVaultNotifications(DeleteBackupVaultNotificationsRequest request)
@@ -2738,6 +2797,61 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = PutBackupVaultAccessPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBackupVaultAccessPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutBackupVaultLockConfiguration
+
+        internal virtual PutBackupVaultLockConfigurationResponse PutBackupVaultLockConfiguration(PutBackupVaultLockConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBackupVaultLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBackupVaultLockConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBackupVaultLockConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Applies Backup Vault Lock to a backup vault, preventing attempts to delete any recovery
+        /// point stored in or created in a backup vault. Vault Lock also prevents attempts to
+        /// update the lifecycle policy that controls the retention period of any recovery point
+        /// currently stored in a backup vault. If specified, Vault Lock enforces a minimum and
+        /// maximum retention period for future backup and copy jobs that target a backup vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBackupVaultLockConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBackupVaultLockConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">REST API Reference for PutBackupVaultLockConfiguration Operation</seealso>
+        public virtual Task<PutBackupVaultLockConfigurationResponse> PutBackupVaultLockConfigurationAsync(PutBackupVaultLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutBackupVaultLockConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBackupVaultLockConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBackupVaultLockConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

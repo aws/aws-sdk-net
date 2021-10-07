@@ -38,6 +38,10 @@ namespace Amazon.Backup.Model
         private DateTime? _creationDate;
         private string _creatorRequestId;
         private string _encryptionKeyArn;
+        private DateTime? _lockDate;
+        private bool? _locked;
+        private long? _maxRetentionDays;
+        private long? _minRetentionDays;
         private long? _numberOfRecoveryPoints;
 
         /// <summary>
@@ -136,6 +140,115 @@ namespace Amazon.Backup.Model
         internal bool IsSetEncryptionKeyArn()
         {
             return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LockDate. 
+        /// <para>
+        /// The date and time when Backup Vault Lock configuration cannot be changed or deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you applied Vault Lock to your vault without specifying a lock date, you can change
+        /// any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at
+        /// any time.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds.
+        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.
+        /// </para>
+        /// </summary>
+        public DateTime LockDate
+        {
+            get { return this._lockDate.GetValueOrDefault(); }
+            set { this._lockDate = value; }
+        }
+
+        // Check to see if LockDate property is set
+        internal bool IsSetLockDate()
+        {
+            return this._lockDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locked. 
+        /// <para>
+        /// A Boolean that indicates whether Backup Vault Lock is currently protecting the backup
+        /// vault. <code>True</code> means that Vault Lock causes delete or update operations
+        /// on the recovery points stored in the vault to fail.
+        /// </para>
+        /// </summary>
+        public bool Locked
+        {
+            get { return this._locked.GetValueOrDefault(); }
+            set { this._locked = value; }
+        }
+
+        // Check to see if Locked property is set
+        internal bool IsSetLocked()
+        {
+            return this._locked.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRetentionDays. 
+        /// <para>
+        /// The Backup Vault Lock setting that specifies the maximum retention period that the
+        /// vault retains its recovery points. If this parameter is not specified, Vault Lock
+        /// does not enforce a maximum retention period on the recovery points in the vault (allowing
+        /// indefinite storage).
+        /// </para>
+        ///  
+        /// <para>
+        /// If specified, any backup or copy job to the vault must have a lifecycle policy with
+        /// a retention period equal to or shorter than the maximum retention period. If the job's
+        /// retention period is longer than that maximum retention period, then the vault fails
+        /// the backup or copy job, and you should either modify your lifecycle settings or use
+        /// a different vault. Recovery points already stored in the vault prior to Vault Lock
+        /// are not affected.
+        /// </para>
+        /// </summary>
+        public long MaxRetentionDays
+        {
+            get { return this._maxRetentionDays.GetValueOrDefault(); }
+            set { this._maxRetentionDays = value; }
+        }
+
+        // Check to see if MaxRetentionDays property is set
+        internal bool IsSetMaxRetentionDays()
+        {
+            return this._maxRetentionDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinRetentionDays. 
+        /// <para>
+        /// The Backup Vault Lock setting that specifies the minimum retention period that the
+        /// vault retains its recovery points. If this parameter is not specified, Vault Lock
+        /// does not enforce a minimum retention period.
+        /// </para>
+        ///  
+        /// <para>
+        /// If specified, any backup or copy job to the vault must have a lifecycle policy with
+        /// a retention period equal to or longer than the minimum retention period. If the job's
+        /// retention period is shorter than that minimum retention period, then the vault fails
+        /// the backup or copy job, and you should either modify your lifecycle settings or use
+        /// a different vault. Recovery points already stored in the vault prior to Vault Lock
+        /// are not affected.
+        /// </para>
+        /// </summary>
+        public long MinRetentionDays
+        {
+            get { return this._minRetentionDays.GetValueOrDefault(); }
+            set { this._minRetentionDays = value; }
+        }
+
+        // Check to see if MinRetentionDays property is set
+        internal bool IsSetMinRetentionDays()
+        {
+            return this._minRetentionDays.HasValue; 
         }
 
         /// <summary>

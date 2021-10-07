@@ -632,6 +632,71 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DeleteBackupVaultLockConfiguration
+
+
+        /// <summary>
+        /// Deletes Backup Vault Lock from a backup vault specified by a backup vault name.
+        /// 
+        ///  
+        /// <para>
+        /// If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using
+        /// API operations, and you will receive an <code>InvalidRequestException</code> if you
+        /// attempt to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
+        /// Lock</a> in the <i>Backup Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackupVaultLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBackupVaultLockConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">REST API Reference for DeleteBackupVaultLockConfiguration Operation</seealso>
+        DeleteBackupVaultLockConfigurationResponse DeleteBackupVaultLockConfiguration(DeleteBackupVaultLockConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackupVaultLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackupVaultLockConfiguration operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBackupVaultLockConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">REST API Reference for DeleteBackupVaultLockConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteBackupVaultLockConfiguration(DeleteBackupVaultLockConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBackupVaultLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBackupVaultLockConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBackupVaultLockConfigurationResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupVaultLockConfiguration">REST API Reference for DeleteBackupVaultLockConfiguration Operation</seealso>
+        DeleteBackupVaultLockConfigurationResponse EndDeleteBackupVaultLockConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteBackupVaultNotifications
 
 
@@ -2825,6 +2890,67 @@ namespace Amazon.Backup
         /// <returns>Returns a  PutBackupVaultAccessPolicyResult from Backup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultAccessPolicy">REST API Reference for PutBackupVaultAccessPolicy Operation</seealso>
         PutBackupVaultAccessPolicyResponse EndPutBackupVaultAccessPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBackupVaultLockConfiguration
+
+
+        /// <summary>
+        /// Applies Backup Vault Lock to a backup vault, preventing attempts to delete any recovery
+        /// point stored in or created in a backup vault. Vault Lock also prevents attempts to
+        /// update the lifecycle policy that controls the retention period of any recovery point
+        /// currently stored in a backup vault. If specified, Vault Lock enforces a minimum and
+        /// maximum retention period for future backup and copy jobs that target a backup vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBackupVaultLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBackupVaultLockConfiguration service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">REST API Reference for PutBackupVaultLockConfiguration Operation</seealso>
+        PutBackupVaultLockConfigurationResponse PutBackupVaultLockConfiguration(PutBackupVaultLockConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBackupVaultLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBackupVaultLockConfiguration operation on AmazonBackupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBackupVaultLockConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">REST API Reference for PutBackupVaultLockConfiguration Operation</seealso>
+        IAsyncResult BeginPutBackupVaultLockConfiguration(PutBackupVaultLockConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBackupVaultLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBackupVaultLockConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBackupVaultLockConfigurationResult from Backup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutBackupVaultLockConfiguration">REST API Reference for PutBackupVaultLockConfiguration Operation</seealso>
+        PutBackupVaultLockConfigurationResponse EndPutBackupVaultLockConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

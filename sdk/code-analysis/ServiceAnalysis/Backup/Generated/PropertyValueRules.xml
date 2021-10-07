@@ -46,6 +46,9 @@
     <property>Amazon.Backup.Model.DeleteBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DeleteBackupVaultLockConfigurationRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DeleteBackupVaultNotificationsRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -244,6 +247,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.PutBackupVaultAccessPolicyRequest.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.PutBackupVaultLockConfigurationRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.PutBackupVaultNotificationsRequest.BackupVaultName</property>
