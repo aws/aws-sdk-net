@@ -2041,6 +2041,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly ScoreConfidence MEDIUM = new ScoreConfidence("MEDIUM");
         /// <summary>
+        /// Constant NOT_AVAILABLE for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence NOT_AVAILABLE = new ScoreConfidence("NOT_AVAILABLE");
+        /// <summary>
         /// Constant VERY_HIGH for ScoreConfidence
         /// </summary>
         public static readonly ScoreConfidence VERY_HIGH = new ScoreConfidence("VERY_HIGH");

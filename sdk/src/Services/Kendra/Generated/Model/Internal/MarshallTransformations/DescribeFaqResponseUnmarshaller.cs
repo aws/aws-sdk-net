@@ -87,6 +87,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.IndexId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LanguageCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LanguageCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

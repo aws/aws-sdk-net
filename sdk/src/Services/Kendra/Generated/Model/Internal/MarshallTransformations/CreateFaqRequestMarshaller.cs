@@ -96,6 +96,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IndexId);
                 }
 
+                if(publicRequest.IsSetLanguageCode())
+                {
+                    context.Writer.WritePropertyName("LanguageCode");
+                    context.Writer.Write(publicRequest.LanguageCode);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

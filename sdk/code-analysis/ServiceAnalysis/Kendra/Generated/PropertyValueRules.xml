@@ -48,6 +48,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateDataSourceRequest.LanguageCode</property>
+    <min>2</min>
+    <max>10</max>
+    <pattern>[a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.CreateDataSourceRequest.Name</property>
     <min>1</min>
     <max>1000</max>
@@ -81,6 +87,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateFaqRequest.LanguageCode</property>
+    <min>2</min>
+    <max>10</max>
+    <pattern>[a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.CreateFaqRequest.Name</property>
@@ -313,6 +325,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeDataSourceResponse.LanguageCode</property>
+    <min>2</min>
+    <max>10</max>
+    <pattern>[a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.DescribeDataSourceResponse.Name</property>
     <min>1</min>
     <max>1000</max>
@@ -359,6 +377,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeFaqResponse.LanguageCode</property>
+    <min>2</min>
+    <max>10</max>
+    <pattern>[a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DescribeFaqResponse.Name</property>
@@ -857,6 +881,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateDataSourceRequest.LanguageCode</property>
+    <min>2</min>
+    <max>10</max>
+    <pattern>[a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.UpdateDataSourceRequest.Name</property>
     <min>1</min>
     <max>1000</max>
@@ -1172,6 +1202,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.DataSourceSummary.LanguageCode</property>
+    <min>2</min>
+    <max>10</max>
+    <pattern>[a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.DataSourceSummary.Name</property>
     <min>1</min>
     <max>1000</max>
@@ -1300,6 +1336,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.FaqSummary.LanguageCode</property>
+    <min>2</min>
+    <max>10</max>
+    <pattern>[a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.FaqSummary.Name</property>

@@ -39,6 +39,7 @@ namespace Amazon.Kendra.Model
         private string _errorMessage;
         private string _id;
         private string _indexId;
+        private string _languageCode;
         private string _name;
         private string _roleArn;
         private string _schedule;
@@ -159,6 +160,28 @@ namespace Amazon.Kendra.Model
         internal bool IsSetIndexId()
         {
             return this._indexId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// The code for a language. This shows a supported language for all documents in the
+        /// data source. English is supported by default. For more information on supported languages,
+        /// including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=10)]
+        public string LanguageCode
+        {
+            get { return this._languageCode; }
+            set { this._languageCode = value; }
+        }
+
+        // Check to see if LanguageCode property is set
+        internal bool IsSetLanguageCode()
+        {
+            return this._languageCode != null;
         }
 
         /// <summary>
