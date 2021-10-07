@@ -34,11 +34,31 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class CreateMediaCapturePipelineRequest : AmazonChimeRequest
     {
+        private ChimeSdkMeetingConfiguration _chimeSdkMeetingConfiguration;
         private string _clientRequestToken;
         private string _sinkArn;
         private MediaPipelineSinkType _sinkType;
         private string _sourceArn;
         private MediaPipelineSourceType _sourceType;
+
+        /// <summary>
+        /// Gets and sets the property ChimeSdkMeetingConfiguration. 
+        /// <para>
+        /// The configuration for a specified media capture pipeline. <code>SourceType</code>
+        /// must be <code>ChimeSdkMeeting</code>.
+        /// </para>
+        /// </summary>
+        public ChimeSdkMeetingConfiguration ChimeSdkMeetingConfiguration
+        {
+            get { return this._chimeSdkMeetingConfiguration; }
+            set { this._chimeSdkMeetingConfiguration = value; }
+        }
+
+        // Check to see if ChimeSdkMeetingConfiguration property is set
+        internal bool IsSetChimeSdkMeetingConfiguration()
+        {
+            return this._chimeSdkMeetingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 

@@ -44,7 +44,6 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime Business Calling settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public BusinessCallingSettings BusinessCalling
         {
             get { return this._businessCalling; }
@@ -63,7 +62,6 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime Voice Connector settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public VoiceConnectorSettings VoiceConnector
         {
             get { return this._voiceConnector; }

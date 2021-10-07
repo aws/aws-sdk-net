@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// A media capture pipeline object. A string consisting of an ID, source type, a source
-    /// ARN, a sink type, and a sink ARN.
+    /// A media capture pipeline object consisting of an ID, source type, source ARN, a sink
+    /// type, a sink ARN, and a configuration object.
     /// </summary>
     public partial class MediaCapturePipeline
     {
+        private ChimeSdkMeetingConfiguration _chimeSdkMeetingConfiguration;
         private DateTime? _createdTimestamp;
         private string _mediaPipelineId;
         private string _sinkArn;
@@ -42,6 +43,25 @@ namespace Amazon.Chime.Model
         private MediaPipelineSourceType _sourceType;
         private MediaPipelineStatus _status;
         private DateTime? _updatedTimestamp;
+
+        /// <summary>
+        /// Gets and sets the property ChimeSdkMeetingConfiguration. 
+        /// <para>
+        /// The configuration for a specified media capture pipeline. <code>SourceType</code>
+        /// must be <code>ChimeSdkMeeting</code>.
+        /// </para>
+        /// </summary>
+        public ChimeSdkMeetingConfiguration ChimeSdkMeetingConfiguration
+        {
+            get { return this._chimeSdkMeetingConfiguration; }
+            set { this._chimeSdkMeetingConfiguration = value; }
+        }
+
+        // Check to see if ChimeSdkMeetingConfiguration property is set
+        internal bool IsSetChimeSdkMeetingConfiguration()
+        {
+            return this._chimeSdkMeetingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 

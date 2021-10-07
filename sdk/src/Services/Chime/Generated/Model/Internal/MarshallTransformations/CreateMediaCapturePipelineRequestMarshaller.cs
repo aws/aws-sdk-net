@@ -65,6 +65,17 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChimeSdkMeetingConfiguration())
+                {
+                    context.Writer.WritePropertyName("ChimeSdkMeetingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChimeSdkMeetingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChimeSdkMeetingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");

@@ -84,7 +84,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property EventIngestionUrl. 
         /// <para>
-        /// The URL of the S3 bucket used to store the captured media.
+        /// The event ingestion URL.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

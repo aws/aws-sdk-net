@@ -183,6 +183,106 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type ArtifactsState.
+    /// </summary>
+    public class ArtifactsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ArtifactsState
+        /// </summary>
+        public static readonly ArtifactsState Disabled = new ArtifactsState("Disabled");
+        /// <summary>
+        /// Constant Enabled for ArtifactsState
+        /// </summary>
+        public static readonly ArtifactsState Enabled = new ArtifactsState("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArtifactsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArtifactsState FindValue(string value)
+        {
+            return FindValue<ArtifactsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArtifactsState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AudioMuxType.
+    /// </summary>
+    public class AudioMuxType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AudioOnly for AudioMuxType
+        /// </summary>
+        public static readonly AudioMuxType AudioOnly = new AudioMuxType("AudioOnly");
+        /// <summary>
+        /// Constant AudioWithActiveSpeakerVideo for AudioMuxType
+        /// </summary>
+        public static readonly AudioMuxType AudioWithActiveSpeakerVideo = new AudioMuxType("AudioWithActiveSpeakerVideo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioMuxType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioMuxType FindValue(string value)
+        {
+            return FindValue<AudioMuxType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioMuxType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BotType.
     /// </summary>
     public class BotType : ConstantClass
@@ -580,6 +680,52 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChannelPrivacy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentMuxType.
+    /// </summary>
+    public class ContentMuxType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContentOnly for ContentMuxType
+        /// </summary>
+        public static readonly ContentMuxType ContentOnly = new ContentMuxType("ContentOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentMuxType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentMuxType FindValue(string value)
+        {
+            return FindValue<ContentMuxType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentMuxType(string value)
         {
             return FindValue(value);
         }
@@ -2386,6 +2532,52 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoMuxType.
+    /// </summary>
+    public class VideoMuxType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VideoOnly for VideoMuxType
+        /// </summary>
+        public static readonly VideoMuxType VideoOnly = new VideoMuxType("VideoOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoMuxType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoMuxType FindValue(string value)
+        {
+            return FindValue<VideoMuxType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoMuxType(string value)
         {
             return FindValue(value);
         }

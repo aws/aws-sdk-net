@@ -64,6 +64,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ChimeSdkMeetingConfiguration", targetDepth))
+                {
+                    var unmarshaller = ChimeSdkMeetingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ChimeSdkMeetingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
