@@ -744,6 +744,10 @@
       <Project>{26BEB3CC-1EB9-472C-91F4-F99B549826D9}</Project>
       <Name>AWSSDK.ManagedBlockchain.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ManagedGrafana/AWSSDK.ManagedGrafana.CodeAnalysis.csproj">
+      <Project>{36BCB01F-3F7A-4350-ABA1-74C5D919C04B}</Project>
+      <Name>AWSSDK.ManagedGrafana.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MarketplaceCatalog/AWSSDK.MarketplaceCatalog.CodeAnalysis.csproj">
       <Project>{D694E48F-C80E-4A41-9C1C-B122507B867A}</Project>
       <Name>AWSSDK.MarketplaceCatalog.CodeAnalysis</Name>

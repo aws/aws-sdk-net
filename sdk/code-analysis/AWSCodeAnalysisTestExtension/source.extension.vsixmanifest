@@ -361,6 +361,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Macie2.CodeAnalysis" Path="|AWSSDK.Macie2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ManagedBlockchain.CodeAnalysis" Path="|AWSSDK.ManagedBlockchain.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ManagedBlockchain.CodeAnalysis" Path="|AWSSDK.ManagedBlockchain.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ManagedGrafana.CodeAnalysis" Path="|AWSSDK.ManagedGrafana.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ManagedGrafana.CodeAnalysis" Path="|AWSSDK.ManagedGrafana.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceCatalog.CodeAnalysis" Path="|AWSSDK.MarketplaceCatalog.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceCatalog.CodeAnalysis" Path="|AWSSDK.MarketplaceCatalog.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceEntitlementService.CodeAnalysis" Path="|AWSSDK.MarketplaceEntitlementService.CodeAnalysis|"/>

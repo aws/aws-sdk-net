@@ -435,6 +435,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release introduces a new major version of the Amazon Macie API. You can use this version of the API to develop tools and applications that interact with the new Amazon Macie.
 * [AWSSDK.ManagedBlockchain](https://www.nuget.org/packages/AWSSDK.ManagedBlockchain/)
 	* (New Service) Amazon Managed Blockchain is a fully managed service that makes it easy to create and manage scalable blockchain networks using popular open source frameworks.
+* [AWSSDK.ManagedGrafana](https://www.nuget.org/packages/AWSSDK.ManagedGrafana/)
+	* Initial release of the SDK for Amazon Managed Grafana API.
 * [AWSSDK.MarketplaceCatalog](https://www.nuget.org/packages/AWSSDK.MarketplaceCatalog/)
 	* This is the first release for the AWS Marketplace Catalog service which allows you to list, describe and manage change requests on your published entities on AWS Marketplace. 
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
