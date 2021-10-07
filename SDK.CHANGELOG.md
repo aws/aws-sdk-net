@@ -1,3 +1,22 @@
+### 3.7.132.0 (2021-10-07 18:17 UTC)
+* Backup (3.7.3.0)
+	* Launch of AWS Backup Vault Lock, which protects your backups from malicious and accidental actions, works with existing backup policies, and helps you meet compliance requirements.
+* Chime (3.7.12.0)
+	* This release enables customers to configure Chime MediaCapturePipeline via API.
+* Kendra (3.7.10.0)
+	* Amazon Kendra now supports indexing and querying documents in different languages.
+* KinesisFirehose (3.7.2.0)
+	* Allow support for Amazon Opensearch Service(successor to Amazon Elasticsearch Service) as a Kinesis Data Firehose delivery destination.
+* ManagedGrafana (3.7.0.0)
+	* Initial release of the SDK for Amazon Managed Grafana API.
+* Schemas (3.7.2.0)
+	* Removing unused request/response objects.
+* Core 3.7.3.18
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.131.1 (2021-10-06 23:58 UTC)
 * Core 3.7.3.17
 	* Add support for S3 Outpost Presigner
