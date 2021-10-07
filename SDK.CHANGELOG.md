@@ -1,3 +1,8 @@
+### 3.7.131.1 (2021-10-06 23:58 UTC)
+* Core 3.7.3.17
+	* Add support for S3 Outpost Presigner
+	* All services packages updated to require new Core
+
 ### 3.7.131.0 (2021-10-06 18:24 UTC)
 * AmplifyBackend (3.7.3.0)
 	* Adding a new field 'AmplifyFeatureFlags' to the response of the GetBackend operation. It will return a stringified version of the cli.json file for the given Amplify project.
