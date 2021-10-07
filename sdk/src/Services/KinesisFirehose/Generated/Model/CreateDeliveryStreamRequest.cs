@@ -122,6 +122,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class CreateDeliveryStreamRequest : AmazonKinesisFirehoseRequest
     {
+        private AmazonopensearchserviceDestinationConfiguration _amazonopensearchserviceDestinationConfiguration;
         private DeliveryStreamEncryptionConfigurationInput _deliveryStreamEncryptionConfigurationInput;
         private string _deliveryStreamName;
         private DeliveryStreamType _deliveryStreamType;
@@ -133,6 +134,21 @@ namespace Amazon.KinesisFirehose.Model
         private S3DestinationConfiguration _s3DestinationConfiguration;
         private SplunkDestinationConfiguration _splunkDestinationConfiguration;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AmazonopensearchserviceDestinationConfiguration.
+        /// </summary>
+        public AmazonopensearchserviceDestinationConfiguration AmazonopensearchserviceDestinationConfiguration
+        {
+            get { return this._amazonopensearchserviceDestinationConfiguration; }
+            set { this._amazonopensearchserviceDestinationConfiguration = value; }
+        }
+
+        // Check to see if AmazonopensearchserviceDestinationConfiguration property is set
+        internal bool IsSetAmazonopensearchserviceDestinationConfiguration()
+        {
+            return this._amazonopensearchserviceDestinationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamEncryptionConfigurationInput. 

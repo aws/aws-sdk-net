@@ -73,6 +73,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class UpdateDestinationRequest : AmazonKinesisFirehoseRequest
     {
+        private AmazonopensearchserviceDestinationUpdate _amazonopensearchserviceDestinationUpdate;
         private string _currentDeliveryStreamVersionId;
         private string _deliveryStreamName;
         private string _destinationId;
@@ -82,6 +83,21 @@ namespace Amazon.KinesisFirehose.Model
         private RedshiftDestinationUpdate _redshiftDestinationUpdate;
         private S3DestinationUpdate _s3DestinationUpdate;
         private SplunkDestinationUpdate _splunkDestinationUpdate;
+
+        /// <summary>
+        /// Gets and sets the property AmazonopensearchserviceDestinationUpdate.
+        /// </summary>
+        public AmazonopensearchserviceDestinationUpdate AmazonopensearchserviceDestinationUpdate
+        {
+            get { return this._amazonopensearchserviceDestinationUpdate; }
+            set { this._amazonopensearchserviceDestinationUpdate = value; }
+        }
+
+        // Check to see if AmazonopensearchserviceDestinationUpdate property is set
+        internal bool IsSetAmazonopensearchserviceDestinationUpdate()
+        {
+            return this._amazonopensearchserviceDestinationUpdate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentDeliveryStreamVersionId. 

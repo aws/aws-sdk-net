@@ -25,6 +25,118 @@ namespace Amazon.KinesisFirehose
 {
 
     /// <summary>
+    /// Constants used for properties of type AmazonopensearchserviceIndexRotationPeriod.
+    /// </summary>
+    public class AmazonopensearchserviceIndexRotationPeriod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoRotation for AmazonopensearchserviceIndexRotationPeriod
+        /// </summary>
+        public static readonly AmazonopensearchserviceIndexRotationPeriod NoRotation = new AmazonopensearchserviceIndexRotationPeriod("NoRotation");
+        /// <summary>
+        /// Constant OneDay for AmazonopensearchserviceIndexRotationPeriod
+        /// </summary>
+        public static readonly AmazonopensearchserviceIndexRotationPeriod OneDay = new AmazonopensearchserviceIndexRotationPeriod("OneDay");
+        /// <summary>
+        /// Constant OneHour for AmazonopensearchserviceIndexRotationPeriod
+        /// </summary>
+        public static readonly AmazonopensearchserviceIndexRotationPeriod OneHour = new AmazonopensearchserviceIndexRotationPeriod("OneHour");
+        /// <summary>
+        /// Constant OneMonth for AmazonopensearchserviceIndexRotationPeriod
+        /// </summary>
+        public static readonly AmazonopensearchserviceIndexRotationPeriod OneMonth = new AmazonopensearchserviceIndexRotationPeriod("OneMonth");
+        /// <summary>
+        /// Constant OneWeek for AmazonopensearchserviceIndexRotationPeriod
+        /// </summary>
+        public static readonly AmazonopensearchserviceIndexRotationPeriod OneWeek = new AmazonopensearchserviceIndexRotationPeriod("OneWeek");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AmazonopensearchserviceIndexRotationPeriod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmazonopensearchserviceIndexRotationPeriod FindValue(string value)
+        {
+            return FindValue<AmazonopensearchserviceIndexRotationPeriod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmazonopensearchserviceIndexRotationPeriod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AmazonopensearchserviceS3BackupMode.
+    /// </summary>
+    public class AmazonopensearchserviceS3BackupMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllDocuments for AmazonopensearchserviceS3BackupMode
+        /// </summary>
+        public static readonly AmazonopensearchserviceS3BackupMode AllDocuments = new AmazonopensearchserviceS3BackupMode("AllDocuments");
+        /// <summary>
+        /// Constant FailedDocumentsOnly for AmazonopensearchserviceS3BackupMode
+        /// </summary>
+        public static readonly AmazonopensearchserviceS3BackupMode FailedDocumentsOnly = new AmazonopensearchserviceS3BackupMode("FailedDocumentsOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AmazonopensearchserviceS3BackupMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmazonopensearchserviceS3BackupMode FindValue(string value)
+        {
+            return FindValue<AmazonopensearchserviceS3BackupMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmazonopensearchserviceS3BackupMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CompressionFormat.
     /// </summary>
     public class CompressionFormat : ConstantClass
