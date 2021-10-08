@@ -154,6 +154,10 @@ namespace Amazon.LexRuntimeV2
         /// Constant ElicitSlot for DialogActionType
         /// </summary>
         public static readonly DialogActionType ElicitSlot = new DialogActionType("ElicitSlot");
+        /// <summary>
+        /// Constant None for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType None = new DialogActionType("None");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -258,6 +262,10 @@ namespace Amazon.LexRuntimeV2
         /// Constant Fulfilled for IntentState
         /// </summary>
         public static readonly IntentState Fulfilled = new IntentState("Fulfilled");
+        /// <summary>
+        /// Constant FulfillmentInProgress for IntentState
+        /// </summary>
+        public static readonly IntentState FulfillmentInProgress = new IntentState("FulfillmentInProgress");
         /// <summary>
         /// Constant InProgress for IntentState
         /// </summary>

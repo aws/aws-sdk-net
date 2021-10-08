@@ -50,14 +50,14 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property ContextAttributes. 
         /// <para>
-        /// A lis tof contexts active for the request. A context can be activated when a previous
+        /// A list of contexts active for the request. A context can be activated when a previous
         /// intent is fulfilled, or by including the context in the request.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a list of contexts, Amazon Lex will use the current list of contexts
-        /// for the session. If you specify an empty list, all contexts for the session are cleared.
-        /// 
+        /// If you don't specify a list of contexts, Amazon Lex V2 will use the current list of
+        /// contexts for the session. If you specify an empty list, all contexts for the session
+        /// are cleared. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
