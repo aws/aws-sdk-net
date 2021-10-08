@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.
+    /// Provides settings for a message that is sent to the user when a fulfillment Lambda
+    /// function starts running.
     /// </summary>
-    public partial class PromptSpecification
+    public partial class FulfillmentStartResponseSpecification
     {
         private bool? _allowInterrupt;
-        private int? _maxRetries;
+        private int? _delayInSeconds;
         private List<MessageGroup> _messageGroups = new List<MessageGroup>();
 
         /// <summary>
         /// Gets and sets the property AllowInterrupt. 
         /// <para>
-        /// Indicates whether the user can interrupt a speech prompt from the bot.
+        /// Determines whether the user can interrupt the start message while it is playing.
         /// </para>
         /// </summary>
         public bool AllowInterrupt
@@ -56,30 +57,31 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxRetries. 
+        /// Gets and sets the property DelayInSeconds. 
         /// <para>
-        /// The maximum number of times the bot tries to elicit a response from the user using
-        /// this prompt.
+        /// The delay between when the Lambda fulfillment function starts running and the start
+        /// message is played. If the Lambda function returns before the delay is over, the start
+        /// message isn't played.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=5)]
-        public int MaxRetries
+        [AWSProperty(Required=true, Min=1, Max=900)]
+        public int DelayInSeconds
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
-            set { this._maxRetries = value; }
+            get { return this._delayInSeconds.GetValueOrDefault(); }
+            set { this._delayInSeconds = value; }
         }
 
-        // Check to see if MaxRetries property is set
-        internal bool IsSetMaxRetries()
+        // Check to see if DelayInSeconds property is set
+        internal bool IsSetDelayInSeconds()
         {
-            return this._maxRetries.HasValue; 
+            return this._delayInSeconds.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property MessageGroups. 
         /// <para>
-        /// A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses
-        /// the actual message to send at runtime.
+        /// One to 5 message groups that contain start messages. Amazon Lex chooses one of the
+        /// messages to play to the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Specifies a Lambda function that verifies requests to a bot or fulfilles the user's
+    /// Specifies a Lambda function that verifies requests to a bot or fulfills the user's
     /// request to a bot.
     /// </summary>
     public partial class LambdaCodeHook

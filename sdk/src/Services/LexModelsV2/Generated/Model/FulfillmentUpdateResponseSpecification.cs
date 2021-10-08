@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.
+    /// Provides settings for a message that is sent periodically to the user while a fulfillment
+    /// Lambda function is running.
     /// </summary>
-    public partial class PromptSpecification
+    public partial class FulfillmentUpdateResponseSpecification
     {
         private bool? _allowInterrupt;
-        private int? _maxRetries;
+        private int? _frequencyInSeconds;
         private List<MessageGroup> _messageGroups = new List<MessageGroup>();
 
         /// <summary>
         /// Gets and sets the property AllowInterrupt. 
         /// <para>
-        /// Indicates whether the user can interrupt a speech prompt from the bot.
+        /// Determines whether the user can interrupt an update message while it is playing.
         /// </para>
         /// </summary>
         public bool AllowInterrupt
@@ -56,30 +57,32 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxRetries. 
+        /// Gets and sets the property FrequencyInSeconds. 
         /// <para>
-        /// The maximum number of times the bot tries to elicit a response from the user using
-        /// this prompt.
+        /// The frequency that a message is sent to the user. When the period ends, Amazon Lex
+        /// chooses a message from the message groups and plays it to the user. If the fulfillment
+        /// Lambda returns before the first period ends, an update message is not played to the
+        /// user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=5)]
-        public int MaxRetries
+        [AWSProperty(Required=true, Min=1, Max=900)]
+        public int FrequencyInSeconds
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
-            set { this._maxRetries = value; }
+            get { return this._frequencyInSeconds.GetValueOrDefault(); }
+            set { this._frequencyInSeconds = value; }
         }
 
-        // Check to see if MaxRetries property is set
-        internal bool IsSetMaxRetries()
+        // Check to see if FrequencyInSeconds property is set
+        internal bool IsSetFrequencyInSeconds()
         {
-            return this._maxRetries.HasValue; 
+            return this._frequencyInSeconds.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property MessageGroups. 
         /// <para>
-        /// A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses
-        /// the actual message to send at runtime.
+        /// One to 5 message groups that contain update messages. Amazon Lex chooses one of the
+        /// messages to play to the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

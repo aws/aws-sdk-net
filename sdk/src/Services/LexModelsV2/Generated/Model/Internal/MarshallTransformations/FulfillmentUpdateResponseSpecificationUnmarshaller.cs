@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FulfillmentCodeHookSettings Object
+    /// Response Unmarshaller for FulfillmentUpdateResponseSpecification Object
     /// </summary>  
-    public class FulfillmentCodeHookSettingsUnmarshaller : IUnmarshaller<FulfillmentCodeHookSettings, XmlUnmarshallerContext>, IUnmarshaller<FulfillmentCodeHookSettings, JsonUnmarshallerContext>
+    public class FulfillmentUpdateResponseSpecificationUnmarshaller : IUnmarshaller<FulfillmentUpdateResponseSpecification, XmlUnmarshallerContext>, IUnmarshaller<FulfillmentUpdateResponseSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FulfillmentCodeHookSettings IUnmarshaller<FulfillmentCodeHookSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FulfillmentUpdateResponseSpecification IUnmarshaller<FulfillmentUpdateResponseSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FulfillmentCodeHookSettings Unmarshall(JsonUnmarshallerContext context)
+        public FulfillmentUpdateResponseSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FulfillmentCodeHookSettings unmarshalledObject = new FulfillmentCodeHookSettings();
+            FulfillmentUpdateResponseSpecification unmarshalledObject = new FulfillmentUpdateResponseSpecification();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("allowInterrupt", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowInterrupt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fulfillmentUpdatesSpecification", targetDepth))
+                if (context.TestExpression("frequencyInSeconds", targetDepth))
                 {
-                    var unmarshaller = FulfillmentUpdatesSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.FulfillmentUpdatesSpecification = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FrequencyInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("postFulfillmentStatusSpecification", targetDepth))
+                if (context.TestExpression("messageGroups", targetDepth))
                 {
-                    var unmarshaller = PostFulfillmentStatusSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PostFulfillmentStatusSpecification = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<MessageGroup, MessageGroupUnmarshaller>(MessageGroupUnmarshaller.Instance);
+                    unmarshalledObject.MessageGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static FulfillmentCodeHookSettingsUnmarshaller _instance = new FulfillmentCodeHookSettingsUnmarshaller();        
+        private static FulfillmentUpdateResponseSpecificationUnmarshaller _instance = new FulfillmentUpdateResponseSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FulfillmentCodeHookSettingsUnmarshaller Instance
+        public static FulfillmentUpdateResponseSpecificationUnmarshaller Instance
         {
             get
             {

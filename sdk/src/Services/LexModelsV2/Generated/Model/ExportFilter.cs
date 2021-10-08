@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Filtes the response form the operation
+    /// Filters the response form the operation
     /// </summary>
     public partial class ExportFilter
     {
@@ -81,7 +81,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values to use to fileter the response.
+        /// The values to use to filter the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

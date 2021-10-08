@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FulfillmentCodeHookSettings Marshaller
+    /// FulfillmentUpdatesSpecification Marshaller
     /// </summary>       
-    public class FulfillmentCodeHookSettingsMarshaller : IRequestMarshaller<FulfillmentCodeHookSettings, JsonMarshallerContext> 
+    public class FulfillmentUpdatesSpecificationMarshaller : IRequestMarshaller<FulfillmentUpdatesSpecification, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,32 +43,38 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FulfillmentCodeHookSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(FulfillmentUpdatesSpecification requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEnabled())
+            if(requestObject.IsSetActive())
             {
-                context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.WritePropertyName("active");
+                context.Writer.Write(requestObject.Active);
             }
 
-            if(requestObject.IsSetFulfillmentUpdatesSpecification())
+            if(requestObject.IsSetStartResponse())
             {
-                context.Writer.WritePropertyName("fulfillmentUpdatesSpecification");
+                context.Writer.WritePropertyName("startResponse");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = FulfillmentUpdatesSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.FulfillmentUpdatesSpecification, context);
+                var marshaller = FulfillmentStartResponseSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.StartResponse, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPostFulfillmentStatusSpecification())
+            if(requestObject.IsSetTimeoutInSeconds())
             {
-                context.Writer.WritePropertyName("postFulfillmentStatusSpecification");
+                context.Writer.WritePropertyName("timeoutInSeconds");
+                context.Writer.Write(requestObject.TimeoutInSeconds);
+            }
+
+            if(requestObject.IsSetUpdateResponse())
+            {
+                context.Writer.WritePropertyName("updateResponse");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = PostFulfillmentStatusSpecificationMarshaller.Instance;
-                marshaller.Marshall(requestObject.PostFulfillmentStatusSpecification, context);
+                var marshaller = FulfillmentUpdateResponseSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.UpdateResponse, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -78,7 +84,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static FulfillmentCodeHookSettingsMarshaller Instance = new FulfillmentCodeHookSettingsMarshaller();
+        public readonly static FulfillmentUpdatesSpecificationMarshaller Instance = new FulfillmentUpdatesSpecificationMarshaller();
 
     }
 }

@@ -41,9 +41,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Active. 
         /// <para>
         /// Specifies whether the intent's confirmation is sent to the user. When this field is
-        /// false, confirmation and declination responses aren't sent and processing continues
-        /// as if the responses aren't present. If the <code>active</code> field isn't specified,
-        /// the default is true.
+        /// false, confirmation and declination responses aren't sent. If the <code>active</code>
+        /// field isn't specified, the default is true.
         /// </para>
         /// </summary>
         public bool Active

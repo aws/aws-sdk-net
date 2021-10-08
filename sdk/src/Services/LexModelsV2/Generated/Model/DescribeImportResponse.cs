@@ -65,7 +65,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property FailureReasons. 
         /// <para>
         /// If the <code>importStatus</code> field is <code>Failed</code>, this provides one or
-        /// more reasons for the failture.
+        /// more reasons for the failure.
         /// </para>
         /// </summary>
         public List<string> FailureReasons

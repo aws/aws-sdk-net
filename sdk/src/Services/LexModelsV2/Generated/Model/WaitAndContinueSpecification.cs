@@ -42,9 +42,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Active. 
         /// <para>
         /// Specifies whether the bot will wait for a user to respond. When this field is false,
-        /// wait and continue responses for a slot aren't used and the bot expects an appropriate
-        /// response within the configured timeout. If the <code>active</code> field isn't specified,
-        /// the default is true.
+        /// wait and continue responses for a slot aren't used. If the <code>active</code> field
+        /// isn't specified, the default is true.
         /// </para>
         /// </summary>
         public bool Active

@@ -34,6 +34,8 @@ namespace Amazon.LexModelsV2.Model
     public partial class FulfillmentCodeHookSettings
     {
         private bool? _enabled;
+        private FulfillmentUpdatesSpecification _fulfillmentUpdatesSpecification;
+        private PostFulfillmentStatusSpecification _postFulfillmentStatusSpecification;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -52,6 +54,45 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FulfillmentUpdatesSpecification. 
+        /// <para>
+        /// Provides settings for update messages sent to the user for long-running Lambda fulfillment
+        /// functions. Fulfillment updates can be used only with streaming conversations.
+        /// </para>
+        /// </summary>
+        public FulfillmentUpdatesSpecification FulfillmentUpdatesSpecification
+        {
+            get { return this._fulfillmentUpdatesSpecification; }
+            set { this._fulfillmentUpdatesSpecification = value; }
+        }
+
+        // Check to see if FulfillmentUpdatesSpecification property is set
+        internal bool IsSetFulfillmentUpdatesSpecification()
+        {
+            return this._fulfillmentUpdatesSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostFulfillmentStatusSpecification. 
+        /// <para>
+        /// Provides settings for messages sent to the user for after the Lambda fulfillment function
+        /// completes. Post-fulfillment messages can be sent for both streaming and non-streaming
+        /// conversations.
+        /// </para>
+        /// </summary>
+        public PostFulfillmentStatusSpecification PostFulfillmentStatusSpecification
+        {
+            get { return this._postFulfillmentStatusSpecification; }
+            set { this._postFulfillmentStatusSpecification = value; }
+        }
+
+        // Check to see if PostFulfillmentStatusSpecification property is set
+        internal bool IsSetPostFulfillmentStatusSpecification()
+        {
+            return this._postFulfillmentStatusSpecification != null;
         }
 
     }

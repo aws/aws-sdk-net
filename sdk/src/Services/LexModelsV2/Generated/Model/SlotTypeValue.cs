@@ -58,7 +58,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Synonyms. 
         /// <para>
-        /// Additional values releated to the slot type entry.
+        /// Additional values related to the slot type entry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

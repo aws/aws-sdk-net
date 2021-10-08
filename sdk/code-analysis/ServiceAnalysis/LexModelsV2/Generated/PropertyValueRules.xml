@@ -1940,6 +1940,21 @@
     <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.FulfillmentStartResponseSpecification.DelayInSeconds</property>
+    <min>1</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.FulfillmentUpdateResponseSpecification.FrequencyInSeconds</property>
+    <min>1</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.FulfillmentUpdatesSpecification.TimeoutInSeconds</property>
+    <min>1</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ImageResponseCard.ImageUrl</property>
     <min>1</min>
     <max>250</max>

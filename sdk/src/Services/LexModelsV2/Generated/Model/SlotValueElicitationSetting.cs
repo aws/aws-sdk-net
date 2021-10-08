@@ -44,7 +44,7 @@ namespace Amazon.LexModelsV2.Model
         /// <para>
         /// A list of default values for a slot. Default values are used when Amazon Lex hasn't
         /// determined a value for a slot. You can specify default values from context variables,
-        /// sesion attributes, and defined values.
+        /// session attributes, and defined values.
         /// </para>
         /// </summary>
         public SlotDefaultValueSpecification DefaultValueSpecification
