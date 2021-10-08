@@ -45,6 +45,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsCodeBuildProjectDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetArtifacts())
+            {
+                context.Writer.WritePropertyName("Artifacts");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectArtifactsListValue in requestObject.Artifacts)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsCodeBuildProjectArtifactsDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectArtifactsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEncryptionKey())
             {
                 context.Writer.WritePropertyName("EncryptionKey");
@@ -58,6 +74,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsCodeBuildProjectEnvironmentMarshaller.Instance;
                 marshaller.Marshall(requestObject.Environment, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetLogsConfig())
+            {
+                context.Writer.WritePropertyName("LogsConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCodeBuildProjectLogsConfigDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogsConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }

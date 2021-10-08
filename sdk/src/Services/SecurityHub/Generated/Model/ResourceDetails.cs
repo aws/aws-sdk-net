@@ -69,11 +69,14 @@ namespace Amazon.SecurityHub.Model
         private AwsEc2SubnetDetails _awsEc2Subnet;
         private AwsEc2VolumeDetails _awsEc2Volume;
         private AwsEc2VpcDetails _awsEc2Vpc;
+        private AwsEc2VpcEndpointServiceDetails _awsEc2VpcEndpointService;
         private AwsEc2VpnConnectionDetails _awsEc2VpnConnection;
         private AwsEcrContainerImageDetails _awsEcrContainerImage;
+        private AwsEcrRepositoryDetails _awsEcrRepository;
         private AwsEcsClusterDetails _awsEcsCluster;
         private AwsEcsServiceDetails _awsEcsService;
         private AwsEcsTaskDefinitionDetails _awsEcsTaskDefinition;
+        private AwsEksClusterDetails _awsEksCluster;
         private AwsElasticBeanstalkEnvironmentDetails _awsElasticBeanstalkEnvironment;
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
         private AwsElbLoadBalancerDetails _awsElbLoadBalancer;
@@ -86,6 +89,7 @@ namespace Amazon.SecurityHub.Model
         private AwsKmsKeyDetails _awsKmsKey;
         private AwsLambdaFunctionDetails _awsLambdaFunction;
         private AwsLambdaLayerVersionDetails _awsLambdaLayerVersion;
+        private AwsOpenSearchServiceDomainDetails _awsOpenSearchServiceDomain;
         private AwsRdsDbClusterDetails _awsRdsDbCluster;
         private AwsRdsDbClusterSnapshotDetails _awsRdsDbClusterSnapshot;
         private AwsRdsDbInstanceDetails _awsRdsDbInstance;
@@ -99,7 +103,10 @@ namespace Amazon.SecurityHub.Model
         private AwsSnsTopicDetails _awsSnsTopic;
         private AwsSqsQueueDetails _awsSqsQueue;
         private AwsSsmPatchComplianceDetails _awsSsmPatchCompliance;
+        private AwsWafRateBasedRuleDetails _awsWafRateBasedRule;
+        private AwsWafRegionalRateBasedRuleDetails _awsWafRegionalRateBasedRule;
         private AwsWafWebAclDetails _awsWafWebAcl;
+        private AwsXrayEncryptionConfigDetails _awsXrayEncryptionConfig;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = new Dictionary<string, string>();
 
@@ -446,6 +453,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsEc2VpcEndpointService. 
+        /// <para>
+        /// Details about the service configuration for a VPC endpoint service.
+        /// </para>
+        /// </summary>
+        public AwsEc2VpcEndpointServiceDetails AwsEc2VpcEndpointService
+        {
+            get { return this._awsEc2VpcEndpointService; }
+            set { this._awsEc2VpcEndpointService = value; }
+        }
+
+        // Check to see if AwsEc2VpcEndpointService property is set
+        internal bool IsSetAwsEc2VpcEndpointService()
+        {
+            return this._awsEc2VpcEndpointService != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsEc2VpnConnection. 
         /// <para>
         /// Details about an EC2 VPN connection.
@@ -466,7 +491,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsEcrContainerImage. 
         /// <para>
-        /// information about an Amazon ECR image.
+        /// Information about an Amazon ECR image.
         /// </para>
         /// </summary>
         public AwsEcrContainerImageDetails AwsEcrContainerImage
@@ -479,6 +504,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEcrContainerImage()
         {
             return this._awsEcrContainerImage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEcrRepository. 
+        /// <para>
+        /// Information about an Amazon Elastic Container Registry repository.
+        /// </para>
+        /// </summary>
+        public AwsEcrRepositoryDetails AwsEcrRepository
+        {
+            get { return this._awsEcrRepository; }
+            set { this._awsEcrRepository = value; }
+        }
+
+        // Check to see if AwsEcrRepository property is set
+        internal bool IsSetAwsEcrRepository()
+        {
+            return this._awsEcrRepository != null;
         }
 
         /// <summary>
@@ -534,6 +577,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEcsTaskDefinition()
         {
             return this._awsEcsTaskDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEksCluster. 
+        /// <para>
+        /// Details about an Amazon EKS cluster.
+        /// </para>
+        /// </summary>
+        public AwsEksClusterDetails AwsEksCluster
+        {
+            get { return this._awsEksCluster; }
+            set { this._awsEksCluster = value; }
+        }
+
+        // Check to see if AwsEksCluster property is set
+        internal bool IsSetAwsEksCluster()
+        {
+            return this._awsEksCluster != null;
         }
 
         /// <summary>
@@ -750,6 +811,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsLambdaLayerVersion()
         {
             return this._awsLambdaLayerVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsOpenSearchServiceDomain. 
+        /// <para>
+        /// Details about an Amazon OpenSearch Service domain.
+        /// </para>
+        /// </summary>
+        public AwsOpenSearchServiceDomainDetails AwsOpenSearchServiceDomain
+        {
+            get { return this._awsOpenSearchServiceDomain; }
+            set { this._awsOpenSearchServiceDomain = value; }
+        }
+
+        // Check to see if AwsOpenSearchServiceDomain property is set
+        internal bool IsSetAwsOpenSearchServiceDomain()
+        {
+            return this._awsOpenSearchServiceDomain != null;
         }
 
         /// <summary>
@@ -988,6 +1067,42 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsWafRateBasedRule. 
+        /// <para>
+        /// Details about a rate-based rule for global resources.
+        /// </para>
+        /// </summary>
+        public AwsWafRateBasedRuleDetails AwsWafRateBasedRule
+        {
+            get { return this._awsWafRateBasedRule; }
+            set { this._awsWafRateBasedRule = value; }
+        }
+
+        // Check to see if AwsWafRateBasedRule property is set
+        internal bool IsSetAwsWafRateBasedRule()
+        {
+            return this._awsWafRateBasedRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsWafRegionalRateBasedRule. 
+        /// <para>
+        /// Details about a rate-based rule for Regional resources.
+        /// </para>
+        /// </summary>
+        public AwsWafRegionalRateBasedRuleDetails AwsWafRegionalRateBasedRule
+        {
+            get { return this._awsWafRegionalRateBasedRule; }
+            set { this._awsWafRegionalRateBasedRule = value; }
+        }
+
+        // Check to see if AwsWafRegionalRateBasedRule property is set
+        internal bool IsSetAwsWafRegionalRateBasedRule()
+        {
+            return this._awsWafRegionalRateBasedRule != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AwsWafWebAcl. 
         /// <para>
         /// Details for an WAF WebACL.
@@ -1003,6 +1118,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsWafWebAcl()
         {
             return this._awsWafWebAcl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsXrayEncryptionConfig. 
+        /// <para>
+        /// Information about the encryption configuration for X-Ray.
+        /// </para>
+        /// </summary>
+        public AwsXrayEncryptionConfigDetails AwsXrayEncryptionConfig
+        {
+            get { return this._awsXrayEncryptionConfig; }
+            set { this._awsXrayEncryptionConfig = value; }
+        }
+
+        // Check to see if AwsXrayEncryptionConfig property is set
+        internal bool IsSetAwsXrayEncryptionConfig()
+        {
+            return this._awsXrayEncryptionConfig != null;
         }
 
         /// <summary>

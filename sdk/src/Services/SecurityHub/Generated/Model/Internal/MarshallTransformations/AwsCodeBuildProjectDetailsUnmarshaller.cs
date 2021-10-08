@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Artifacts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsCodeBuildProjectArtifactsDetails, AwsCodeBuildProjectArtifactsDetailsUnmarshaller>(AwsCodeBuildProjectArtifactsDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EncryptionKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsCodeBuildProjectEnvironmentUnmarshaller.Instance;
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogsConfig", targetDepth))
+                {
+                    var unmarshaller = AwsCodeBuildProjectLogsConfigDetailsUnmarshaller.Instance;
+                    unmarshalledObject.LogsConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

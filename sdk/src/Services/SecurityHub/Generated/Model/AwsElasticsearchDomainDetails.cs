@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about an Amazon Elasticsearch Service domain.
+    /// Information about an Elasticsearch domain.
     /// </summary>
     public partial class AwsElasticsearchDomainDetails
     {
@@ -135,7 +135,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchClusterConfig. 
         /// <para>
-        /// Information about an Elasticsearch cluster configuration.
+        /// Information about an OpenSearch cluster configuration.
         /// </para>
         /// </summary>
         public AwsElasticsearchDomainElasticsearchClusterConfigDetails ElasticsearchClusterConfig
@@ -153,7 +153,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchVersion. 
         /// <para>
-        /// Elasticsearch version.
+        /// OpenSearch version.
         /// </para>
         /// </summary>
         public string ElasticsearchVersion
@@ -284,7 +284,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VPCOptions. 
         /// <para>
-        /// Information that Elasticsearch derives based on <code>VPCOptions</code> for the domain.
+        /// Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.
         /// </para>
         /// </summary>
         public AwsElasticsearchDomainVPCOptions VPCOptions

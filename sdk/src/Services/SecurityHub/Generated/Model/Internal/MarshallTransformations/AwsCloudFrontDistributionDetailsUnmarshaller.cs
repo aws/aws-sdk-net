@@ -124,6 +124,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ViewerCertificate", targetDepth))
+                {
+                    var unmarshaller = AwsCloudFrontDistributionViewerCertificateUnmarshaller.Instance;
+                    unmarshalledObject.ViewerCertificate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WebAclId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

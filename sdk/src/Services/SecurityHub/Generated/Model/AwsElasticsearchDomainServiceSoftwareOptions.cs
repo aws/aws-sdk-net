@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property AutomatedUpdateDate. 
         /// <para>
         /// The epoch time when the deployment window closes for required updates. After this
-        /// time, Amazon Elasticsearch Service schedules the software upgrade automatically.
+        /// time, Amazon OpenSearch Service schedules the software upgrade automatically.
         /// </para>
         /// </summary>
         public string AutomatedUpdateDate

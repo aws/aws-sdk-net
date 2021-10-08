@@ -101,6 +101,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreatedAt);
             }
 
+            if(requestObject.IsSetOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("OwnerAccountId");
+                context.Writer.Write(requestObject.OwnerAccountId);
+            }
+
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");

@@ -85,6 +85,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IpAddressType);
             }
 
+            if(requestObject.IsSetLoadBalancerAttributes())
+            {
+                context.Writer.WritePropertyName("LoadBalancerAttributes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLoadBalancerAttributesListValue in requestObject.LoadBalancerAttributes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsElbv2LoadBalancerAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLoadBalancerAttributesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetScheme())
             {
                 context.Writer.WritePropertyName("Scheme");

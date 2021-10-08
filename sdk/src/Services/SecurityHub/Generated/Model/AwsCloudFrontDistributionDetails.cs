@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
         private AwsCloudFrontDistributionOriginGroups _originGroups;
         private AwsCloudFrontDistributionOrigins _origins;
         private string _status;
+        private AwsCloudFrontDistributionViewerCertificate _viewerCertificate;
         private string _webAclId;
 
         /// <summary>
@@ -232,6 +233,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewerCertificate. 
+        /// <para>
+        /// Provides information about the TLS/SSL configuration that the distribution uses to
+        /// communicate with viewers.
+        /// </para>
+        /// </summary>
+        public AwsCloudFrontDistributionViewerCertificate ViewerCertificate
+        {
+            get { return this._viewerCertificate; }
+            set { this._viewerCertificate = value; }
+        }
+
+        // Check to see if ViewerCertificate property is set
+        internal bool IsSetViewerCertificate()
+        {
+            return this._viewerCertificate != null;
         }
 
         /// <summary>

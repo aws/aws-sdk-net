@@ -51,10 +51,32 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Certificate);
             }
 
+            if(requestObject.IsSetEnvironmentVariables())
+            {
+                context.Writer.WritePropertyName("EnvironmentVariables");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEnvironmentVariablesListValue in requestObject.EnvironmentVariables)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEnvironmentVariablesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetImagePullCredentialsType())
             {
                 context.Writer.WritePropertyName("ImagePullCredentialsType");
                 context.Writer.Write(requestObject.ImagePullCredentialsType);
+            }
+
+            if(requestObject.IsSetPrivilegedMode())
+            {
+                context.Writer.WritePropertyName("PrivilegedMode");
+                context.Writer.Write(requestObject.PrivilegedMode);
             }
 
             if(requestObject.IsSetRegistryCredential())

@@ -70,10 +70,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Certificate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnvironmentVariables", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails, AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsUnmarshaller>(AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsUnmarshaller.Instance);
+                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImagePullCredentialsType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImagePullCredentialsType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivilegedMode", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PrivilegedMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RegistryCredential", targetDepth))

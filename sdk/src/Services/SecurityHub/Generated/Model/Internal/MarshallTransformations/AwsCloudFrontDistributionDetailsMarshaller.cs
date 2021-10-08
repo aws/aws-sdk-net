@@ -130,6 +130,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Status);
             }
 
+            if(requestObject.IsSetViewerCertificate())
+            {
+                context.Writer.WritePropertyName("ViewerCertificate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFrontDistributionViewerCertificateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ViewerCertificate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWebAclId())
             {
                 context.Writer.WritePropertyName("WebAclId");

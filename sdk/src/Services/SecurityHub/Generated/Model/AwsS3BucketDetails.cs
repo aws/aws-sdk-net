@@ -39,6 +39,7 @@ namespace Amazon.SecurityHub.Model
         private AwsS3BucketNotificationConfiguration _bucketNotificationConfiguration;
         private AwsS3BucketWebsiteConfiguration _bucketWebsiteConfiguration;
         private string _createdAt;
+        private string _ownerAccountId;
         private string _ownerId;
         private string _ownerName;
         private AwsS3AccountPublicAccessBlockDetails _publicAccessBlockConfiguration;
@@ -156,6 +157,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services account identifier of the account that owns the S3 bucket.
+        /// </para>
+        /// </summary>
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
         /// <summary>

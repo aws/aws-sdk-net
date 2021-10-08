@@ -55,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IndexSlowLogs. 
         /// <para>
-        /// Configures the Elasticsearch index logs publishing.
+        /// Configures the OpenSearch index logs publishing.
         /// </para>
         /// </summary>
         public AwsElasticsearchDomainLogPublishingOptionsLogConfig IndexSlowLogs
@@ -73,7 +73,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SearchSlowLogs. 
         /// <para>
-        /// Configures the Elasticsearch search slow log publishing.
+        /// Configures the OpenSearch search slow log publishing.
         /// </para>
         /// </summary>
         public AwsElasticsearchDomainLogPublishingOptionsLogConfig SearchSlowLogs

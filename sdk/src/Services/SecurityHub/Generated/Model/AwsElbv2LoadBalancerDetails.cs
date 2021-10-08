@@ -38,6 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _createdTime;
         private string _dnsName;
         private string _ipAddressType;
+        private List<AwsElbv2LoadBalancerAttribute> _loadBalancerAttributes = new List<AwsElbv2LoadBalancerAttribute>();
         private string _scheme;
         private List<string> _securityGroups = new List<string>();
         private LoadBalancerState _state;
@@ -140,6 +141,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerAttributes. 
+        /// <para>
+        /// Attributes of the load balancer.
+        /// </para>
+        /// </summary>
+        public List<AwsElbv2LoadBalancerAttribute> LoadBalancerAttributes
+        {
+            get { return this._loadBalancerAttributes; }
+            set { this._loadBalancerAttributes = value; }
+        }
+
+        // Check to see if LoadBalancerAttributes property is set
+        internal bool IsSetLoadBalancerAttributes()
+        {
+            return this._loadBalancerAttributes != null && this._loadBalancerAttributes.Count > 0; 
         }
 
         /// <summary>

@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TLSSecurityPolicy. 
         /// <para>
-        /// The TLS security policy to apply to the HTTPS endpoint of the Elasticsearch domain.
+        /// The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.
         /// </para>
         ///  
         /// <para>

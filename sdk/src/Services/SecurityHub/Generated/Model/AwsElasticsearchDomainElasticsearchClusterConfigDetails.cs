@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// details about the configuration of an Elasticsearch cluster.
+    /// details about the configuration of an OpenSearch cluster.
     /// </summary>
     public partial class AwsElasticsearchDomainElasticsearchClusterConfigDetails
     {
@@ -159,7 +159,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ZoneAwarenessEnabled. 
         /// <para>
         /// Whether to enable zone awareness for the Elasticsearch domain. When zone awareness
-        /// is enabled, Elasticsearch allocates the cluster's nodes and replica index shards across
+        /// is enabled, OpenSearch allocates the cluster's nodes and replica index shards across
         /// Availability Zones in the same Region. This prevents data loss and minimizes downtime
         /// if a node or data center fails.
         /// </para>

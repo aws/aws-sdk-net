@@ -33,12 +33,32 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCodeBuildProjectDetails
     {
+        private List<AwsCodeBuildProjectArtifactsDetails> _artifacts = new List<AwsCodeBuildProjectArtifactsDetails>();
         private string _encryptionKey;
         private AwsCodeBuildProjectEnvironment _environment;
+        private AwsCodeBuildProjectLogsConfigDetails _logsConfig;
         private string _name;
         private string _serviceRole;
         private AwsCodeBuildProjectSource _source;
         private AwsCodeBuildProjectVpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property Artifacts. 
+        /// <para>
+        /// Information about the build artifacts for the CodeBuild project.
+        /// </para>
+        /// </summary>
+        public List<AwsCodeBuildProjectArtifactsDetails> Artifacts
+        {
+            get { return this._artifacts; }
+            set { this._artifacts = value; }
+        }
+
+        // Check to see if Artifacts property is set
+        internal bool IsSetArtifacts()
+        {
+            return this._artifacts != null && this._artifacts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
@@ -79,6 +99,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogsConfig. 
+        /// <para>
+        /// Information about logs for the build project.
+        /// </para>
+        /// </summary>
+        public AwsCodeBuildProjectLogsConfigDetails LogsConfig
+        {
+            get { return this._logsConfig; }
+            set { this._logsConfig = value; }
+        }
+
+        // Check to see if LogsConfig property is set
+        internal bool IsSetLogsConfig()
+        {
+            return this._logsConfig != null;
         }
 
         /// <summary>

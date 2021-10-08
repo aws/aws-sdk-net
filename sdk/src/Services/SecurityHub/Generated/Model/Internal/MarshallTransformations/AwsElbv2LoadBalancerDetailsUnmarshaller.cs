@@ -94,6 +94,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LoadBalancerAttributes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsElbv2LoadBalancerAttribute, AwsElbv2LoadBalancerAttributeUnmarshaller>(AwsElbv2LoadBalancerAttributeUnmarshaller.Instance);
+                    unmarshalledObject.LoadBalancerAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Scheme", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

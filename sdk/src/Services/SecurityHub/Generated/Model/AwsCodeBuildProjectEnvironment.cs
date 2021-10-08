@@ -34,7 +34,9 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsCodeBuildProjectEnvironment
     {
         private string _certificate;
+        private List<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> _environmentVariables = new List<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>();
         private string _imagePullCredentialsType;
+        private bool? _privilegedMode;
         private AwsCodeBuildProjectEnvironmentRegistryCredential _registryCredential;
         private string _type;
 
@@ -54,6 +56,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetCertificate()
         {
             return this._certificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        /// A set of environment variables to make available to builds for the build project.
+        /// </para>
+        /// </summary>
+        public List<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
         }
 
         /// <summary>
@@ -92,6 +112,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetImagePullCredentialsType()
         {
             return this._imagePullCredentialsType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivilegedMode. 
+        /// <para>
+        /// Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code>
+        /// if the build project is used to build Docker images.
+        /// </para>
+        /// </summary>
+        public bool PrivilegedMode
+        {
+            get { return this._privilegedMode.GetValueOrDefault(); }
+            set { this._privilegedMode = value; }
+        }
+
+        // Check to see if PrivilegedMode property is set
+        internal bool IsSetPrivilegedMode()
+        {
+            return this._privilegedMode.HasValue; 
         }
 
         /// <summary>
