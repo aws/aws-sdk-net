@@ -337,7 +337,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationRules. 
         /// <para>
-        /// A structure with the rotation configuration for this secret.
+        /// A structure with the rotation configuration for this secret. This field is only populated
+        /// if rotation is configured.
         /// </para>
         /// </summary>
         public RotationRulesType RotationRules
