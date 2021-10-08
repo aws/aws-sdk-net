@@ -45,7 +45,6 @@ namespace Amazon.EC2.Model
         /// One or more filters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<Filter> Filters
         {
             get { return this._filters; }
