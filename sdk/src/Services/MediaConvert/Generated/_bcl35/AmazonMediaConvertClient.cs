@@ -766,6 +766,81 @@ namespace Amazon.MediaConvert
 
         #endregion
         
+        #region  DeletePolicy
+
+        /// <summary>
+        /// Permanently delete a policy that you created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy operation on AmazonMediaConvertClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeletePolicyResult from MediaConvert.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        public virtual DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePreset
 
         /// <summary>
@@ -1214,6 +1289,81 @@ namespace Amazon.MediaConvert
         public virtual GetJobTemplateResponse EndGetJobTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPolicy
+
+        /// <summary>
+        /// Retrieve the JSON for your policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonMediaConvertClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyResult from MediaConvert.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -1748,6 +1898,82 @@ namespace Amazon.MediaConvert
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutPolicy
+
+        /// <summary>
+        /// Create or change your policy. For more information about policies, see the user guide
+        /// at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        public virtual PutPolicyResponse PutPolicy(PutPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy operation on AmazonMediaConvertClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutPolicy(PutPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutPolicyResult from MediaConvert.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        public virtual PutPolicyResponse EndPutPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutPolicyResponse>(asyncResult);
         }
 
         #endregion

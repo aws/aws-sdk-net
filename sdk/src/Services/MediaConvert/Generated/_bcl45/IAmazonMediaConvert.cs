@@ -540,6 +540,76 @@ namespace Amazon.MediaConvert
 
         #endregion
         
+        #region  DeletePolicy
+
+
+        /// <summary>
+        /// Permanently delete a policy that you created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Permanently delete a policy that you created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePreset
 
 
@@ -961,6 +1031,76 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJobTemplate">REST API Reference for GetJobTemplate Operation</seealso>
         Task<GetJobTemplateResponse> GetJobTemplateAsync(GetJobTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPolicy
+
+
+        /// <summary>
+        /// Retrieve the JSON for your policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        GetPolicyResponse GetPolicy(GetPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve the JSON for your policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1469,6 +1609,78 @@ namespace Amazon.MediaConvert
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutPolicy
+
+
+        /// <summary>
+        /// Create or change your policy. For more information about policies, see the user guide
+        /// at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        PutPolicyResponse PutPolicy(PutPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Create or change your policy. For more information about policies, see the user guide
+        /// at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPolicy service method, as returned by MediaConvert.</returns>
+        /// <exception cref="Amazon.MediaConvert.Model.BadRequestException">
+        /// The service can't process your request because of a problem in the request. Please
+        /// check your request form and syntax.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
+        /// The service couldn't complete your request because there is a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
+        /// You don't have permissions for this action with the credentials you sent.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
+        /// The service encountered an unexpected condition and can't fulfill your request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
+        /// The resource you requested doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
+        /// Too many requests have been sent in too short of a time. The service limits the rate
+        /// at which it will accept requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
+        Task<PutPolicyResponse> PutPolicyAsync(PutPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
