@@ -1,3 +1,22 @@
+### 3.7.133.0 (2021-10-08 18:28 UTC)
+* EC2 (3.7.32.0)
+	* This release removes a requirement for filters on SearchLocalGatewayRoutes operations.
+* LexModelsV2 (3.7.7.0)
+	* Added configuration support for an Amazon Lex bot to provide fulfillment progress updates to users while their requests are being processed. See documentation for more details: https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html
+* LexRuntimeV2 (3.7.2.0)
+	* Added configuration support for an Amazon Lex bot to provide fulfillment progress updates to users while their requests are being processed. See documentation for more details: https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html
+* MediaConvert (3.7.8.0)
+	* AWS Elemental MediaConvert has added the ability to set account policies which control access restrictions for HTTP, HTTPS, and S3 content sources.
+* SecretsManager (3.7.1.32)
+	* Documentation updates for Secrets Manager
+* SecurityHub (3.7.6.0)
+	* Added new resource details objects to ASFF, including resources for WAF rate-based rules, EC2 VPC endpoints, ECR repositories, EKS clusters, X-Ray encryption, and OpenSearch domains. Added additional details for CloudFront distributions, CodeBuild projects, ELB V2 load balancers, and S3 buckets.
+* Core 3.7.3.19
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.132.0 (2021-10-07 18:17 UTC)
 * Backup (3.7.3.0)
 	* Launch of AWS Backup Vault Lock, which protects your backups from malicious and accidental actions, works with existing backup policies, and helps you meet compliance requirements.

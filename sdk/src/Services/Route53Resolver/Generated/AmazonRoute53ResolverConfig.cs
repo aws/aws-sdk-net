@@ -32,7 +32,7 @@ namespace Amazon.Route53Resolver
     public partial class AmazonRoute53ResolverConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.74");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.75");
 
         private string _userAgent = UserAgentString;
 
