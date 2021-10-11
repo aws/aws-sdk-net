@@ -98,23 +98,19 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
-        /// The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises
-        /// IP addresses.
+        /// The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon
+        /// Web Services advertises IP addresses.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code>
-        /// error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-        /// Codes</a>.
+        /// If you provide an incorrect network border group, you receive an <code>InvalidAddress.NotFound</code>
+        /// error.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// You cannot use a network border group with EC2 Classic. If you attempt this operation
-        /// on EC2 classic, you will receive an <code>InvalidParameterCombination</code> error.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-        /// Codes</a>.
+        /// on EC2 classic, you receive an <code>InvalidParameterCombination</code> error.
         /// </para>
-        ///  </note>
         /// </summary>
         public string NetworkBorderGroup
         {

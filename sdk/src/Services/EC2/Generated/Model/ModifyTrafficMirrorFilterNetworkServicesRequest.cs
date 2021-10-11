@@ -41,11 +41,6 @@ namespace Amazon.EC2.Model
     /// services, use <code>RemoveNetworkServices</code> to remove the network services from
     /// the Traffic Mirror filter. 
     /// </para>
-    ///  
-    /// <para>
-    /// For information about filter rule properties, see <a href="https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html">Network
-    /// Services</a> in the <i>Traffic Mirroring User Guide </i>.
-    /// </para>
     /// </summary>
     public partial class ModifyTrafficMirrorFilterNetworkServicesRequest : AmazonEC2Request
     {

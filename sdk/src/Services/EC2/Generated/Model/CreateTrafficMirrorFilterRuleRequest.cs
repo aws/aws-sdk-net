@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrafficMirrorFilterRule operation.
-    /// Creates a Traffic Mirror filter rule. 
+    /// Creates a Traffic Mirror filter rule.
     /// 
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// to ensure idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -156,7 +156,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RuleAction. 
         /// <para>
-        /// The action to take (<code>accept</code> | <code>reject</code>) on the filtered traffic.
+        /// The action to take on the filtered traffic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -233,7 +233,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TrafficDirection. 
         /// <para>
-        /// The type of traffic (<code>ingress</code> | <code>egress</code>).
+        /// The type of traffic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

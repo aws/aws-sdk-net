@@ -194,8 +194,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// The AWS account IDs. This parameter is valid only when modifying the <code>loadPermission</code>
-        /// attribute.
+        /// The Amazon Web Services account IDs. This parameter is valid only when modifying the
+        /// <code>loadPermission</code> attribute.
         /// </para>
         /// </summary>
         public List<string> UserIds

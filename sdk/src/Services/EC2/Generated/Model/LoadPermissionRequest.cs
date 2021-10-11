@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         public string UserId

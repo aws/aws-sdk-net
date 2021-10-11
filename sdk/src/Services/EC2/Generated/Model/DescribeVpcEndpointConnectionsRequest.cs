@@ -50,7 +50,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+        ///  <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that
+        /// owns the endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>

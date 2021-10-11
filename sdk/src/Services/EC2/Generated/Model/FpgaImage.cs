@@ -179,7 +179,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID of the AFI owner.
+        /// The ID of the Amazon Web Services account that owns the AFI.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -251,7 +251,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ShellVersion. 
         /// <para>
-        /// The version of the AWS Shell that was used to create the bitstream.
+        /// The version of the Amazon Web Services Shell that was used to create the bitstream.
         /// </para>
         /// </summary>
         public string ShellVersion

@@ -50,8 +50,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
         /// <para>
-        /// Indicates whether requests from other AWS accounts to create an endpoint to the service
-        /// must first be accepted.
+        /// Indicates whether requests from other Amazon Web Services accounts to create an endpoint
+        /// to the service must first be accepted.
         /// </para>
         /// </summary>
         public bool AcceptanceRequired

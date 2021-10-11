@@ -385,8 +385,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UsageOperation. 
         /// <para>
-        /// The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI
-        /// billing information fields</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing
+        /// options</a> in the <i>VM Import/Export User Guide</i>.
         /// </para>
         /// </summary>
         public string UsageOperation

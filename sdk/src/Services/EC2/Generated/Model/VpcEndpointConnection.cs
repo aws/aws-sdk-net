@@ -153,7 +153,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointOwner. 
         /// <para>
-        /// The AWS account ID of the owner of the VPC endpoint.
+        /// The ID of the Amazon Web Services account that owns the VPC endpoint.
         /// </para>
         /// </summary>
         public string VpcEndpointOwner

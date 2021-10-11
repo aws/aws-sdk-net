@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVpnConnectionDeviceSampleConfiguration operation.
-    /// Download an AWS-provided sample configuration file to be used with the customer gateway
-    /// device specified for your Site-to-Site VPN connection.
+    /// Download an Amazon Web Services-provided sample configuration file to be used with
+    /// the customer gateway device specified for your Site-to-Site VPN connection.
     /// </summary>
     public partial class GetVpnConnectionDeviceSampleConfigurationRequest : AmazonEC2Request
     {

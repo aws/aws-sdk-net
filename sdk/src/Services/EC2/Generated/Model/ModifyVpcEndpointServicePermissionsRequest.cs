@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyVpcEndpointServicePermissions operation.
     /// Modifies the permissions for your <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
     /// endpoint service</a>. You can add or remove permissions for service consumers (IAM
-    /// users, IAM roles, and AWS accounts) to connect to your endpoint service.
+    /// users, IAM roles, and Amazon Web Services accounts) to connect to your endpoint service.
     /// 
     ///  
     /// <para>

@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
         /// The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones
-        /// from which AWS advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
+        /// from which Amazon Web Services advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
         /// </para>
         /// </summary>
         public string NetworkBorderGroup

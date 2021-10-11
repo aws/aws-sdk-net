@@ -41,15 +41,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
-        /// This parameter enables or disables the HTTP metadata endpoint on your instances. If
-        /// the parameter is not specified, the default state is <code>enabled</code>.
+        /// Enables or disables the HTTP metadata endpoint on your instances. If the parameter
+        /// is not specified, the default state is <code>enabled</code>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// If you specify a value of <code>disabled</code>, you will not be able to access your
         /// instance metadata.
         /// </para>
-        ///  </note>
         /// </summary>
         public InstanceMetadataEndpointState HttpEndpoint
         {

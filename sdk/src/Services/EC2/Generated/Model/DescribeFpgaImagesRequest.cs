@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeFpgaImages operation.
     /// Describes the Amazon FPGA Images (AFIs) available to you. These include public AFIs,
-    /// private AFIs that you own, and AFIs owned by other AWS accounts for which you have
-    /// load permissions.
+    /// private AFIs that you own, and AFIs owned by other Amazon Web Services accounts for
+    /// which you have load permissions.
     /// </summary>
     public partial class DescribeFpgaImagesRequest : AmazonEC2Request
     {
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The AWS account ID of the AFI owner.
+        ///  <code>owner-id</code> - The Amazon Web Services account ID of the AFI owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -73,8 +73,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>shell-version</code> - The version of the AWS Shell that was used to create
-        /// the bitstream.
+        ///  <code>shell-version</code> - The version of the Amazon Web Services Shell that was
+        /// used to create the bitstream.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -170,9 +170,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Owners. 
         /// <para>
-        /// Filters the AFI by owner. Specify an AWS account ID, <code>self</code> (owner is the
-        /// sender of the request), or an AWS owner alias (valid values are <code>amazon</code>
-        /// | <code>aws-marketplace</code>).
+        /// Filters the AFI by owner. Specify an Amazon Web Services account ID, <code>self</code>
+        /// (owner is the sender of the request), or an Amazon Web Services owner alias (valid
+        /// values are <code>amazon</code> | <code>aws-marketplace</code>).
         /// </para>
         /// </summary>
         public List<string> Owners

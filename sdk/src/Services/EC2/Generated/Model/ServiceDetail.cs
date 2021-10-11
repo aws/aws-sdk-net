@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The AWS account ID of the service owner.
+        /// The Amazon Web Services account ID of the service owner.
         /// </para>
         /// </summary>
         public string Owner

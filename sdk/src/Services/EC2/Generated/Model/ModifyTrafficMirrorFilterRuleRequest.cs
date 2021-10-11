@@ -224,8 +224,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TrafficDirection. 
         /// <para>
-        /// The type of traffic (<code>ingress</code> | <code>egress</code>) to assign to the
-        /// rule.
+        /// The type of traffic to assign to the rule.
         /// </para>
         /// </summary>
         public TrafficDirection TrafficDirection

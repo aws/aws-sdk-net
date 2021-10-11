@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID that owns the local gateway route table.
+        /// The ID of the Amazon Web Services account that owns the local gateway route table.
         /// </para>
         /// </summary>
         public string OwnerId
