@@ -86,6 +86,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HealthyThresholdCount", StringUtils.FromInt(publicRequest.HealthyThresholdCount));
                 }
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+                }
                 if(publicRequest.IsSetMatcher())
                 {
                     if(publicRequest.Matcher.IsSetGrpcCode())

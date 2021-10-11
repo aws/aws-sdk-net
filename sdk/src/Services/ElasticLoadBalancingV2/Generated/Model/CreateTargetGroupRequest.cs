@@ -66,6 +66,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private ProtocolEnum _healthCheckProtocol;
         private int? _healthCheckTimeoutSeconds;
         private int? _healthyThresholdCount;
+        private TargetGroupIpAddressTypeEnum _ipAddressType;
         private Matcher _matcher;
         private string _name;
         private int? _port;
@@ -234,6 +235,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetHealthyThresholdCount()
         {
             return this._healthyThresholdCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The type of IP address used for this target group. The possible values are <code>ipv4</code>
+        /// and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address
+        /// type defaults to <code>ipv4</code>.
+        /// </para>
+        /// </summary>
+        public TargetGroupIpAddressTypeEnum IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

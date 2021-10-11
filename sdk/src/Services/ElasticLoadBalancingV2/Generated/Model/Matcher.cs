@@ -67,6 +67,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
         /// </para>
+        ///  
+        /// <para>
+        /// Note that when using shorthand syntax, some values such as commas need to be escaped.
+        /// </para>
         /// </summary>
         public string HttpCode
         {
