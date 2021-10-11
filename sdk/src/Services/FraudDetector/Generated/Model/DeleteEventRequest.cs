@@ -40,8 +40,27 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class DeleteEventRequest : AmazonFraudDetectorRequest
     {
+        private bool? _deleteAuditHistory;
         private string _eventId;
         private string _eventTypeName;
+
+        /// <summary>
+        /// Gets and sets the property DeleteAuditHistory. 
+        /// <para>
+        /// Specifies whether or not to delete any predictions associated with the event.
+        /// </para>
+        /// </summary>
+        public bool DeleteAuditHistory
+        {
+            get { return this._deleteAuditHistory.GetValueOrDefault(); }
+            set { this._deleteAuditHistory = value; }
+        }
+
+        // Check to see if DeleteAuditHistory property is set
+        internal bool IsSetDeleteAuditHistory()
+        {
+            return this._deleteAuditHistory.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EventId. 

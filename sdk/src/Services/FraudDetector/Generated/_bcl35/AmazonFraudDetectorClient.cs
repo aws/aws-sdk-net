@@ -376,6 +376,77 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  CancelBatchImportJob
+
+        /// <summary>
+        /// Cancels an in-progress batch import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelBatchImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelBatchImportJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchImportJob">REST API Reference for CancelBatchImportJob Operation</seealso>
+        public virtual CancelBatchImportJobResponse CancelBatchImportJob(CancelBatchImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelBatchImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelBatchImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelBatchImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelBatchImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelBatchImportJob operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelBatchImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchImportJob">REST API Reference for CancelBatchImportJob Operation</seealso>
+        public virtual IAsyncResult BeginCancelBatchImportJob(CancelBatchImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelBatchImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelBatchImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelBatchImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelBatchImportJob.</param>
+        /// 
+        /// <returns>Returns a  CancelBatchImportJobResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchImportJob">REST API Reference for CancelBatchImportJob Operation</seealso>
+        public virtual CancelBatchImportJobResponse EndCancelBatchImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelBatchImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelBatchPredictionJob
 
         /// <summary>
@@ -393,9 +464,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -449,6 +518,77 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  CreateBatchImportJob
+
+        /// <summary>
+        /// Creates a batch import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateBatchImportJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchImportJob">REST API Reference for CreateBatchImportJob Operation</seealso>
+        public virtual CreateBatchImportJobResponse CreateBatchImportJob(CreateBatchImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBatchImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBatchImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchImportJob operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBatchImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchImportJob">REST API Reference for CreateBatchImportJob Operation</seealso>
+        public virtual IAsyncResult BeginCreateBatchImportJob(CreateBatchImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBatchImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBatchImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBatchImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBatchImportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateBatchImportJobResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchImportJob">REST API Reference for CreateBatchImportJob Operation</seealso>
+        public virtual CreateBatchImportJobResponse EndCreateBatchImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBatchImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBatchPredictionJob
 
         /// <summary>
@@ -466,9 +606,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -539,9 +677,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -680,9 +816,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -872,6 +1006,74 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  DeleteBatchImportJob
+
+        /// <summary>
+        /// Deletes data that was batch imported to Amazon Fraud Detector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBatchImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBatchImportJob service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">REST API Reference for DeleteBatchImportJob Operation</seealso>
+        public virtual DeleteBatchImportJobResponse DeleteBatchImportJob(DeleteBatchImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBatchImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBatchImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBatchImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBatchImportJob operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBatchImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">REST API Reference for DeleteBatchImportJob Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBatchImportJob(DeleteBatchImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBatchImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBatchImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBatchImportJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteBatchImportJobResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">REST API Reference for DeleteBatchImportJob Operation</seealso>
+        public virtual DeleteBatchImportJobResponse EndDeleteBatchImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBatchImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteBatchPredictionJob
 
         /// <summary>
@@ -887,11 +1089,6 @@ namespace Amazon.FraudDetector
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
-        /// </exception>
-        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -966,26 +1163,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1063,34 +1241,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -1168,26 +1325,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1318,6 +1456,80 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  DeleteEventsByEventType
+
+        /// <summary>
+        /// Deletes all events of a particular event type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventsByEventType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventsByEventType service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventsByEventType">REST API Reference for DeleteEventsByEventType Operation</seealso>
+        public virtual DeleteEventsByEventTypeResponse DeleteEventsByEventType(DeleteEventsByEventTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventsByEventTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventsByEventTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventsByEventTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventsByEventType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventsByEventType operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventsByEventType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventsByEventType">REST API Reference for DeleteEventsByEventType Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEventsByEventType(DeleteEventsByEventTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventsByEventTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventsByEventTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventsByEventType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventsByEventType.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventsByEventTypeResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventsByEventType">REST API Reference for DeleteEventsByEventType Operation</seealso>
+        public virtual DeleteEventsByEventTypeResponse EndDeleteEventsByEventType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEventsByEventTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEventType
 
         /// <summary>
@@ -1329,7 +1541,7 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  
         /// <para>
-        /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
+        /// When you delete an event type, Amazon Fraud Detector permanently deletes that event
         /// type and the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
@@ -1342,26 +1554,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1439,26 +1632,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1539,26 +1713,7 @@ namespace Amazon.FraudDetector
         /// 
         /// <returns>The response from the DeleteLabel service method, as returned by FraudDetector.</returns>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1640,26 +1795,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1741,26 +1877,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1841,26 +1958,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -1938,26 +2036,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -2043,26 +2122,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -2136,9 +2196,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2210,9 +2268,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2266,6 +2322,82 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  GetBatchImportJobs
+
+        /// <summary>
+        /// Gets all batch import jobs or a specific job of the specified ID. This is a paginated
+        /// API. If you provide a null <code>maxResults</code>, this action retrieves a maximum
+        /// of 50 records per page. If you provide a <code>maxResults</code>, the value must be
+        /// between 1 and 50. To get the next page results, provide the pagination token from
+        /// the <code>GetBatchImportJobsResponse</code> as part of your request. A null pagination
+        /// token fetches the records from the beginning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBatchImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetBatchImportJobs service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchImportJobs">REST API Reference for GetBatchImportJobs Operation</seealso>
+        public virtual GetBatchImportJobsResponse GetBatchImportJobs(GetBatchImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBatchImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBatchImportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBatchImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBatchImportJobs operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBatchImportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchImportJobs">REST API Reference for GetBatchImportJobs Operation</seealso>
+        public virtual IAsyncResult BeginGetBatchImportJobs(GetBatchImportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBatchImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchImportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBatchImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBatchImportJobs.</param>
+        /// 
+        /// <returns>Returns a  GetBatchImportJobsResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchImportJobs">REST API Reference for GetBatchImportJobs Operation</seealso>
+        public virtual GetBatchImportJobsResponse EndGetBatchImportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBatchImportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetBatchPredictionJobs
 
         /// <summary>
@@ -2287,9 +2419,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2343,6 +2473,77 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  GetDeleteEventsByEventTypeStatus
+
+        /// <summary>
+        /// Retrieves the status of a <code>DeleteEventsByEventType</code> action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeleteEventsByEventTypeStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetDeleteEventsByEventTypeStatus service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDeleteEventsByEventTypeStatus">REST API Reference for GetDeleteEventsByEventTypeStatus Operation</seealso>
+        public virtual GetDeleteEventsByEventTypeStatusResponse GetDeleteEventsByEventTypeStatus(GetDeleteEventsByEventTypeStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeleteEventsByEventTypeStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeleteEventsByEventTypeStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeleteEventsByEventTypeStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeleteEventsByEventTypeStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeleteEventsByEventTypeStatus operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeleteEventsByEventTypeStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDeleteEventsByEventTypeStatus">REST API Reference for GetDeleteEventsByEventTypeStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetDeleteEventsByEventTypeStatus(GetDeleteEventsByEventTypeStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeleteEventsByEventTypeStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeleteEventsByEventTypeStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeleteEventsByEventTypeStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeleteEventsByEventTypeStatus.</param>
+        /// 
+        /// <returns>Returns a  GetDeleteEventsByEventTypeStatusResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDeleteEventsByEventTypeStatus">REST API Reference for GetDeleteEventsByEventTypeStatus Operation</seealso>
+        public virtual GetDeleteEventsByEventTypeStatusResponse EndGetDeleteEventsByEventTypeStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDeleteEventsByEventTypeStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDetectors
 
         /// <summary>
@@ -2365,9 +2566,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2438,9 +2637,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2516,9 +2713,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2572,6 +2767,78 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  GetEvent
+
+        /// <summary>
+        /// Retrieves details of events stored with Amazon Fraud Detector. This action does not
+        /// retrieve prediction results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvent service method.</param>
+        /// 
+        /// <returns>The response from the GetEvent service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEvent">REST API Reference for GetEvent Operation</seealso>
+        public virtual GetEventResponse GetEvent(GetEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEvent operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEvent">REST API Reference for GetEvent Operation</seealso>
+        public virtual IAsyncResult BeginGetEvent(GetEventRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEvent.</param>
+        /// 
+        /// <returns>Returns a  GetEventResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEvent">REST API Reference for GetEvent Operation</seealso>
+        public virtual GetEventResponse EndGetEvent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEventResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetEventPrediction
 
         /// <summary>
@@ -2587,34 +2854,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceUnavailableException">
         /// An exception indicating that the attached customer-owned (external) model threw an
@@ -2694,9 +2940,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2772,9 +3016,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2831,8 +3073,8 @@ namespace Amazon.FraudDetector
         #region  GetKMSEncryptionKey
 
         /// <summary>
-        /// Gets the encryption key if a Key Management Service (KMS) customer master key (CMK)
-        /// has been specified to be used to encrypt content in Amazon Fraud Detector.
+        /// Gets the encryption key if a KMS key has been specified to be used to encrypt content
+        /// in Amazon Fraud Detector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKMSEncryptionKey service method.</param>
         /// 
@@ -2846,9 +3088,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -2920,9 +3160,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3005,9 +3243,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3078,9 +3314,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3155,9 +3389,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3239,9 +3471,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3316,9 +3546,7 @@ namespace Amazon.FraudDetector
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3388,9 +3616,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3458,26 +3684,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -3551,26 +3758,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -3646,26 +3834,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -3738,26 +3907,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -3817,8 +3967,7 @@ namespace Amazon.FraudDetector
         #region  PutKMSEncryptionKey
 
         /// <summary>
-        /// Specifies the Key Management Service (KMS) customer master key (CMK) to be used to
-        /// encrypt content in Amazon Fraud Detector.
+        /// Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutKMSEncryptionKey service method.</param>
         /// 
@@ -3829,34 +3978,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -3926,26 +4054,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -4016,26 +4125,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -4092,6 +4182,82 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  SendEvent
+
+        /// <summary>
+        /// Stores events in Amazon Fraud Detector without generating fraud predictions for those
+        /// events. For example, you can use <code>SendEvent</code> to upload a historical dataset,
+        /// which you can then later use to train a model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendEvent service method.</param>
+        /// 
+        /// <returns>The response from the SendEvent service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/SendEvent">REST API Reference for SendEvent Operation</seealso>
+        public virtual SendEventResponse SendEvent(SendEventRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
+
+            return Invoke<SendEventResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendEvent operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendEvent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/SendEvent">REST API Reference for SendEvent Operation</seealso>
+        public virtual IAsyncResult BeginSendEvent(SendEventRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendEvent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendEvent.</param>
+        /// 
+        /// <returns>Returns a  SendEventResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/SendEvent">REST API Reference for SendEvent Operation</seealso>
+        public virtual SendEventResponse EndSendEvent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendEventResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -4106,9 +4272,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4176,9 +4340,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4248,34 +4410,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4344,26 +4485,7 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
@@ -4436,34 +4558,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4517,10 +4618,84 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  UpdateEventLabel
+
+        /// <summary>
+        /// Updates the specified event with a new label.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventLabel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEventLabel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
+        /// An exception indicating the specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateEventLabel">REST API Reference for UpdateEventLabel Operation</seealso>
+        public virtual UpdateEventLabelResponse UpdateEventLabel(UpdateEventLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventLabelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventLabelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEventLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventLabel operation on AmazonFraudDetectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEventLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateEventLabel">REST API Reference for UpdateEventLabel Operation</seealso>
+        public virtual IAsyncResult BeginUpdateEventLabel(UpdateEventLabelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventLabelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEventLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEventLabel.</param>
+        /// 
+        /// <returns>Returns a  UpdateEventLabelResult from FraudDetector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateEventLabel">REST API Reference for UpdateEventLabel Operation</seealso>
+        public virtual UpdateEventLabelResponse EndUpdateEventLabel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateEventLabelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateModel
 
         /// <summary>
-        /// Updates a model. You can update the description attribute using this action.
+        /// Updates model description.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateModel service method.</param>
         /// 
@@ -4531,34 +4706,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4630,34 +4784,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4726,7 +4859,7 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Change <code>ACTIVE</code>to <code>INACTIVE</code>.
+        /// Change <code>ACTIVE</code> to <code>INACTIVE</code>.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -4739,34 +4872,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4834,34 +4946,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -4930,34 +5021,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
@@ -5025,34 +5095,13 @@ namespace Amazon.FraudDetector
         /// specifies a role that is not in your account.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
-        /// An exception indicating there was a conflict during a delete operation. The following
-        /// delete operations can cause a conflict exception:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-        /// or <code>DetectorVersions</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-        /// status is <code>ACTIVE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-        /// </para>
-        ///  </li> </ul>
+        /// An exception indicating there was a conflict during a delete operation.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ResourceNotFoundException">
-        /// An exception indicating the specified resource was not found. This can occur if you
-        /// submit a request, such as <code>CreateBatchPredictionJob</code>, but the detector
-        /// name or version does not exist.
+        /// An exception indicating the specified resource was not found.
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.

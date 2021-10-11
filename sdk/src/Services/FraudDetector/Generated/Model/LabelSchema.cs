@@ -34,6 +34,7 @@ namespace Amazon.FraudDetector.Model
     public partial class LabelSchema
     {
         private Dictionary<string, List<string>> _labelMapper = new Dictionary<string, List<string>>();
+        private UnlabeledEventsTreatment _unlabeledEventsTreatment;
 
         /// <summary>
         /// Gets and sets the property LabelMapper. 
@@ -60,6 +61,24 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetLabelMapper()
         {
             return this._labelMapper != null && this._labelMapper.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnlabeledEventsTreatment. 
+        /// <para>
+        /// The action to take for unlabeled events.
+        /// </para>
+        /// </summary>
+        public UnlabeledEventsTreatment UnlabeledEventsTreatment
+        {
+            get { return this._unlabeledEventsTreatment; }
+            set { this._unlabeledEventsTreatment = value; }
+        }
+
+        // Check to see if UnlabeledEventsTreatment property is set
+        internal bool IsSetUnlabeledEventsTreatment()
+        {
+            return this._unlabeledEventsTreatment != null;
         }
 
     }

@@ -257,6 +257,56 @@ namespace Amazon.FraudDetector
 
 
     /// <summary>
+    /// Constants used for properties of type EventIngestion.
+    /// </summary>
+    public class EventIngestion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EventIngestion
+        /// </summary>
+        public static readonly EventIngestion DISABLED = new EventIngestion("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for EventIngestion
+        /// </summary>
+        public static readonly EventIngestion ENABLED = new EventIngestion("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventIngestion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventIngestion FindValue(string value)
+        {
+            return FindValue<EventIngestion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventIngestion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Language.
     /// </summary>
     public class Language : ConstantClass
@@ -508,6 +558,10 @@ namespace Amazon.FraudDetector
         /// Constant ONLINE_FRAUD_INSIGHTS for ModelTypeEnum
         /// </summary>
         public static readonly ModelTypeEnum ONLINE_FRAUD_INSIGHTS = new ModelTypeEnum("ONLINE_FRAUD_INSIGHTS");
+        /// <summary>
+        /// Constant TRANSACTION_FRAUD_INSIGHTS for ModelTypeEnum
+        /// </summary>
+        public static readonly ModelTypeEnum TRANSACTION_FRAUD_INSIGHTS = new ModelTypeEnum("TRANSACTION_FRAUD_INSIGHTS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -658,6 +712,10 @@ namespace Amazon.FraudDetector
         /// Constant EXTERNAL_EVENTS for TrainingDataSourceEnum
         /// </summary>
         public static readonly TrainingDataSourceEnum EXTERNAL_EVENTS = new TrainingDataSourceEnum("EXTERNAL_EVENTS");
+        /// <summary>
+        /// Constant INGESTED_EVENTS for TrainingDataSourceEnum
+        /// </summary>
+        public static readonly TrainingDataSourceEnum INGESTED_EVENTS = new TrainingDataSourceEnum("INGESTED_EVENTS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -688,6 +746,60 @@ namespace Amazon.FraudDetector
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TrainingDataSourceEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnlabeledEventsTreatment.
+    /// </summary>
+    public class UnlabeledEventsTreatment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRAUD for UnlabeledEventsTreatment
+        /// </summary>
+        public static readonly UnlabeledEventsTreatment FRAUD = new UnlabeledEventsTreatment("FRAUD");
+        /// <summary>
+        /// Constant IGNORE for UnlabeledEventsTreatment
+        /// </summary>
+        public static readonly UnlabeledEventsTreatment IGNORE = new UnlabeledEventsTreatment("IGNORE");
+        /// <summary>
+        /// Constant LEGIT for UnlabeledEventsTreatment
+        /// </summary>
+        public static readonly UnlabeledEventsTreatment LEGIT = new UnlabeledEventsTreatment("LEGIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnlabeledEventsTreatment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnlabeledEventsTreatment FindValue(string value)
+        {
+            return FindValue<UnlabeledEventsTreatment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnlabeledEventsTreatment(string value)
         {
             return FindValue(value);
         }

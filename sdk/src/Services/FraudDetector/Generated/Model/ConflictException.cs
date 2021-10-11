@@ -29,26 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// An exception indicating there was a conflict during a delete operation. The following
-    /// delete operations can cause a conflict exception:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
-    /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
-    /// or <code>DetectorVersions</code>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
-    /// status is <code>ACTIVE</code>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
-    /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
-    /// </para>
-    ///  </li> </ul>
+    /// An exception indicating there was a conflict during a delete operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

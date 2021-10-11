@@ -78,6 +78,17 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIngestedEventsDetail())
+                {
+                    context.Writer.WritePropertyName("ingestedEventsDetail");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IngestedEventsDetailMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IngestedEventsDetail, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMajorVersionNumber())
                 {
                     context.Writer.WritePropertyName("majorVersionNumber");

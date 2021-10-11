@@ -37,7 +37,9 @@ namespace Amazon.FraudDetector.Model
         private string _createdTime;
         private string _description;
         private List<string> _entityTypes = new List<string>();
+        private EventIngestion _eventIngestion;
         private List<string> _eventVariables = new List<string>();
+        private IngestedEventStatistics _ingestedEventStatistics;
         private List<string> _labels = new List<string>();
         private string _lastUpdatedTime;
         private string _name;
@@ -119,6 +121,27 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventIngestion. 
+        /// <para>
+        /// If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate
+        /// a prediction and uses that data to update calculated variables in near real-time.
+        /// Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train
+        /// your model and improve fraud predictions.
+        /// </para>
+        /// </summary>
+        public EventIngestion EventIngestion
+        {
+            get { return this._eventIngestion; }
+            set { this._eventIngestion = value; }
+        }
+
+        // Check to see if EventIngestion property is set
+        internal bool IsSetEventIngestion()
+        {
+            return this._eventIngestion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EventVariables. 
         /// <para>
         /// The event type event variables.
@@ -134,6 +157,24 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetEventVariables()
         {
             return this._eventVariables != null && this._eventVariables.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestedEventStatistics. 
+        /// <para>
+        /// Data about the stored events.
+        /// </para>
+        /// </summary>
+        public IngestedEventStatistics IngestedEventStatistics
+        {
+            get { return this._ingestedEventStatistics; }
+            set { this._ingestedEventStatistics = value; }
+        }
+
+        // Check to see if IngestedEventStatistics property is set
+        internal bool IsSetIngestedEventStatistics()
+        {
+            return this._ingestedEventStatistics != null;
         }
 
         /// <summary>

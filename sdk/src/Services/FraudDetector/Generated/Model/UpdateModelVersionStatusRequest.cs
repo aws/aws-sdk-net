@@ -42,7 +42,7 @@ namespace Amazon.FraudDetector.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Change <code>ACTIVE</code>to <code>INACTIVE</code>.
+    /// Change <code>ACTIVE</code> to <code>INACTIVE</code>.
     /// </para>
     ///  </li> </ol>
     /// </summary>

@@ -124,7 +124,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property EventTimestamp. 
         /// <para>
-        /// Timestamp that defines when the event under evaluation occurred.
+        /// Timestamp that defines when the event under evaluation occurred. The timestamp must
+        /// be specified using ISO 8601 standard in UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=30)]
@@ -165,19 +166,14 @@ namespace Amazon.FraudDetector.Model
         /// Names of the event type's variables you defined in Amazon Fraud Detector to represent
         /// data elements and their corresponding values for the event you are sending for evaluation.
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  <important> 
         /// <para>
         /// You must provide at least one eventVariable
         /// </para>
-        ///  </li> <li> 
+        ///  </important> 
         /// <para>
-        /// If detectorVersion is associated with a modelVersion, you must provide at least one
-        /// associated eventVariable
-        /// </para>
-        ///  </li> </ul> </important> 
-        /// <para>
-        /// To ensure highest possible fraud prediction and to simplify your data preparation,
-        /// Amazon Fraud Detector will replace all missing variables or values as follows:
+        /// To ensure most accurate fraud prediction and to simplify your data preparation, Amazon
+        /// Fraud Detector will replace all missing variables or values as follows:
         /// </para>
         ///  
         /// <para>
@@ -192,7 +188,7 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>For External models ( for example, imported SageMaker):</b> 
+        ///  <b>For imported SageMaker models:</b> 
         /// </para>
         ///  
         /// <para>

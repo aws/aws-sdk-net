@@ -71,7 +71,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// Timestamp of when the batch prediction job comleted.
+        /// Timestamp of when the batch prediction job completed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=11, Max=30)]

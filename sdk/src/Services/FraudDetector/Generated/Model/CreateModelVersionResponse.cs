@@ -81,7 +81,7 @@ namespace Amazon.FraudDetector.Model
         /// The model version number of the model version created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=3, Max=7)]
         public string ModelVersionNumber
         {
             get { return this._modelVersionNumber; }

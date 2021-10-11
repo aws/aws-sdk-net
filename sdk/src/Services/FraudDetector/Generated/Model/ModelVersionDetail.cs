@@ -36,6 +36,7 @@ namespace Amazon.FraudDetector.Model
         private string _arn;
         private string _createdTime;
         private ExternalEventsDetail _externalEventsDetail;
+        private IngestedEventsDetail _ingestedEventsDetail;
         private string _lastUpdatedTime;
         private string _modelId;
         private ModelTypeEnum _modelType;
@@ -86,7 +87,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ExternalEventsDetail. 
         /// <para>
-        /// The event details.
+        /// The external events data details. This will be populated if the <code>trainingDataSource</code>
+        /// for the model version is specified as <code>EXTERNAL_EVENTS</code>.
         /// </para>
         /// </summary>
         public ExternalEventsDetail ExternalEventsDetail
@@ -99,6 +101,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetExternalEventsDetail()
         {
             return this._externalEventsDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestedEventsDetail. 
+        /// <para>
+        /// The ingested events data details. This will be populated if the <code>trainingDataSource</code>
+        /// for the model version is specified as <code>INGESTED_EVENTS</code>.
+        /// </para>
+        /// </summary>
+        public IngestedEventsDetail IngestedEventsDetail
+        {
+            get { return this._ingestedEventsDetail; }
+            set { this._ingestedEventsDetail = value; }
+        }
+
+        // Check to see if IngestedEventsDetail property is set
+        internal bool IsSetIngestedEventsDetail()
+        {
+            return this._ingestedEventsDetail != null;
         }
 
         /// <summary>

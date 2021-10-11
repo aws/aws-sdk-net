@@ -67,6 +67,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeleteAuditHistory())
+                {
+                    context.Writer.WritePropertyName("deleteAuditHistory");
+                    context.Writer.Write(publicRequest.DeleteAuditHistory);
+                }
+
                 if(publicRequest.IsSetEventId())
                 {
                     context.Writer.WritePropertyName("eventId");

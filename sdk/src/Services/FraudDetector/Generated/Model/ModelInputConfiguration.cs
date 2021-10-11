@@ -47,6 +47,7 @@ namespace Amazon.FraudDetector.Model
         /// values before being sent to SageMaker. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string CsvInputTemplate
         {
             get { return this._csvInputTemplate; }
@@ -105,6 +106,7 @@ namespace Amazon.FraudDetector.Model
         /// values before being sent to SageMaker. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
         public string JsonInputTemplate
         {
             get { return this._jsonInputTemplate; }

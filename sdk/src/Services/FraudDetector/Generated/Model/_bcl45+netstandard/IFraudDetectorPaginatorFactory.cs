@@ -31,6 +31,11 @@ namespace Amazon.FraudDetector.Model
         IDescribeModelVersionsPaginator DescribeModelVersions(DescribeModelVersionsRequest request);
 
         /// <summary>
+        /// Paginator for GetBatchImportJobs operation
+        ///</summary>
+        IGetBatchImportJobsPaginator GetBatchImportJobs(GetBatchImportJobsRequest request);
+
+        /// <summary>
         /// Paginator for GetBatchPredictionJobs operation
         ///</summary>
         IGetBatchPredictionJobsPaginator GetBatchPredictionJobs(GetBatchPredictionJobsRequest request);

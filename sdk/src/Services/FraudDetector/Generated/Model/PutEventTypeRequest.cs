@@ -41,6 +41,7 @@ namespace Amazon.FraudDetector.Model
     {
         private string _description;
         private List<string> _entityTypes = new List<string>();
+        private EventIngestion _eventIngestion;
         private List<string> _eventVariables = new List<string>();
         private List<string> _labels = new List<string>();
         private string _name;
@@ -82,6 +83,24 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetEntityTypes()
         {
             return this._entityTypes != null && this._entityTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventIngestion. 
+        /// <para>
+        /// Specifies if ingenstion is enabled or disabled.
+        /// </para>
+        /// </summary>
+        public EventIngestion EventIngestion
+        {
+            get { return this._eventIngestion; }
+            set { this._eventIngestion = value; }
+        }
+
+        // Check to see if EventIngestion property is set
+        internal bool IsSetEventIngestion()
+        {
+            return this._eventIngestion != null;
         }
 
         /// <summary>

@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("FraudDetector")]
+        public void GetBatchImportJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetBatchImportJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetBatchImportJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetBatchImportJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetBatchImportJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetBatchImportJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetBatchImportJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetBatchImportJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetBatchImportJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetBatchImportJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetBatchImportJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FraudDetector")]
         public void GetBatchPredictionJobsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetBatchPredictionJobsRequest>();

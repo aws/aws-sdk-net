@@ -30,8 +30,7 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the PutKMSEncryptionKey operation.
-    /// Specifies the Key Management Service (KMS) customer master key (CMK) to be used to
-    /// encrypt content in Amazon Fraud Detector.
+    /// Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.
     /// </summary>
     public partial class PutKMSEncryptionKeyRequest : AmazonFraudDetectorRequest
     {

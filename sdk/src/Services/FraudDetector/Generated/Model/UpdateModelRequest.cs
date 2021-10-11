@@ -30,7 +30,7 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateModel operation.
-    /// Updates a model. You can update the description attribute using this action.
+    /// Updates model description.
     /// </summary>
     public partial class UpdateModelRequest : AmazonFraudDetectorRequest
     {

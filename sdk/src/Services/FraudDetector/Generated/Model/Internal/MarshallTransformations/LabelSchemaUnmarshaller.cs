@@ -70,6 +70,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.LabelMapper = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("unlabeledEventsTreatment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UnlabeledEventsTreatment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -64,6 +64,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUnlabeledEventsTreatment())
+            {
+                context.Writer.WritePropertyName("unlabeledEventsTreatment");
+                context.Writer.Write(requestObject.UnlabeledEventsTreatment);
+            }
+
         }
 
         /// <summary>

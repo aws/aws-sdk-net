@@ -35,6 +35,7 @@ namespace Amazon.FraudDetector.Model
     public partial class CreateModelVersionRequest : AmazonFraudDetectorRequest
     {
         private ExternalEventsDetail _externalEventsDetail;
+        private IngestedEventsDetail _ingestedEventsDetail;
         private string _modelId;
         private ModelTypeEnum _modelType;
         private List<Tag> _tags = new List<Tag>();
@@ -44,8 +45,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ExternalEventsDetail. 
         /// <para>
-        /// Details for the external events data used for model version training. Required if
-        /// <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.
+        /// Details of the external events data used for model version training. Required if <code>trainingDataSource</code>
+        /// is <code>EXTERNAL_EVENTS</code>.
         /// </para>
         /// </summary>
         public ExternalEventsDetail ExternalEventsDetail
@@ -58,6 +59,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetExternalEventsDetail()
         {
             return this._externalEventsDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestedEventsDetail. 
+        /// <para>
+        /// Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code>
+        /// is <code>INGESTED_EVENTS</code>.
+        /// </para>
+        /// </summary>
+        public IngestedEventsDetail IngestedEventsDetail
+        {
+            get { return this._ingestedEventsDetail; }
+            set { this._ingestedEventsDetail = value; }
+        }
+
+        // Check to see if IngestedEventsDetail property is set
+        internal bool IsSetIngestedEventsDetail()
+        {
+            return this._ingestedEventsDetail != null;
         }
 
         /// <summary>

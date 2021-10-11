@@ -84,6 +84,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEventIngestion())
+                {
+                    context.Writer.WritePropertyName("eventIngestion");
+                    context.Writer.Write(publicRequest.EventIngestion);
+                }
+
                 if(publicRequest.IsSetEventVariables())
                 {
                     context.Writer.WritePropertyName("eventVariables");

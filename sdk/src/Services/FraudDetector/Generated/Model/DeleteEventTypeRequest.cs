@@ -38,7 +38,7 @@ namespace Amazon.FraudDetector.Model
     /// </para>
     ///  
     /// <para>
-    /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
+    /// When you delete an event type, Amazon Fraud Detector permanently deletes that event
     /// type and the data is no longer stored in Amazon Fraud Detector.
     /// </para>
     /// </summary>

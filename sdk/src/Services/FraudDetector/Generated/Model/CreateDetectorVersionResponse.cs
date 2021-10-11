@@ -62,7 +62,7 @@ namespace Amazon.FraudDetector.Model
         /// The ID for the created detector. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=5)]
         public string DetectorVersionId
         {
             get { return this._detectorVersionId; }
