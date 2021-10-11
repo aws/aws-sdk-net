@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.133.0",
+    "ProductVersion" : "3.7.134.0",
     "CoreVersion"    : "3.7.3.19",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.32.0",
+            "Version" : "3.7.32.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.19"
@@ -570,7 +570,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.7.1.7",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.19"
@@ -874,7 +874,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.7.5.35",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.19"
@@ -1690,7 +1690,7 @@
             "InPreview"               : false
         },
         "FraudDetector"                   : {
-            "Version" : "3.7.4.18",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.19"

@@ -1,3 +1,13 @@
+### 3.7.134.0 (2021-10-11 18:13 UTC)
+* EC2 (3.7.32.1)
+	* Documentation update for Amazon EC2.
+* ElasticLoadBalancingV2 (3.7.2.0)
+	* Enable support for ALB IPv6 Target Groups (IP Address Type)
+* FraudDetector (3.7.5.0)
+	* New model type: Transaction Fraud Insights, which is optimized for online transaction fraud. Stored Events, which allows customers to send and store data directly within Amazon Fraud Detector. Batch Import, which allows customers to upload a CSV file of historic event data for processing and storage
+* MediaLive (3.7.6.0)
+	* This release adds support for Transport Stream files as an input type to MediaLive encoders.
+
 ### 3.7.133.0 (2021-10-08 18:28 UTC)
 * EC2 (3.7.32.0)
 	* This release removes a requirement for filters on SearchLocalGatewayRoutes operations.
