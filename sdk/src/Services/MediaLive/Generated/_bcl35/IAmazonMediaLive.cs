@@ -435,6 +435,71 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  ClaimDevice
+
+
+        /// <summary>
+        /// Send a request to claim an AWS Elemental device that you have purchased from a third-party
+        /// vendor. After the request succeeds, you will own the device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClaimDevice service method.</param>
+        /// 
+        /// <returns>The response from the ClaimDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ClaimDevice">REST API Reference for ClaimDevice Operation</seealso>
+        ClaimDeviceResponse ClaimDevice(ClaimDeviceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ClaimDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ClaimDevice operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndClaimDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ClaimDevice">REST API Reference for ClaimDevice Operation</seealso>
+        IAsyncResult BeginClaimDevice(ClaimDeviceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ClaimDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginClaimDevice.</param>
+        /// 
+        /// <returns>Returns a  ClaimDeviceResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ClaimDevice">REST API Reference for ClaimDevice Operation</seealso>
+        ClaimDeviceResponse EndClaimDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateChannel
 
 

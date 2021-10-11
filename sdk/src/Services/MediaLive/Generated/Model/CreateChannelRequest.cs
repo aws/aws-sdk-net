@@ -236,7 +236,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Vpc. Settings for VPC output
+        /// Gets and sets the property Vpc. Settings for the VPC outputs
         /// </summary>
         public VpcOutputSettings Vpc
         {

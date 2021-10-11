@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private string _audioSelectorName;
         private AudioType _audioType;
         private AudioDescriptionAudioTypeControl _audioTypeControl;
+        private AudioWatermarkSettings _audioWatermarkingSettings;
         private AudioCodecSettings _codecSettings;
         private string _languageCode;
         private AudioDescriptionLanguageCodeControl _languageCodeControl;
@@ -111,6 +112,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAudioTypeControl()
         {
             return this._audioTypeControl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioWatermarkingSettings. Settings to configure one or
+        /// more solutions that insert audio watermarks in the audio encode
+        /// </summary>
+        public AudioWatermarkSettings AudioWatermarkingSettings
+        {
+            get { return this._audioWatermarkingSettings; }
+            set { this._audioWatermarkingSettings = value; }
+        }
+
+        // Check to see if AudioWatermarkingSettings property is set
+        internal bool IsSetAudioWatermarkingSettings()
+        {
+            return this._audioWatermarkingSettings != null;
         }
 
         /// <summary>

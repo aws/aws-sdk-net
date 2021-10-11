@@ -74,6 +74,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioTypeControl);
             }
 
+            if(requestObject.IsSetAudioWatermarkingSettings())
+            {
+                context.Writer.WritePropertyName("audioWatermarkingSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AudioWatermarkSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioWatermarkingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");

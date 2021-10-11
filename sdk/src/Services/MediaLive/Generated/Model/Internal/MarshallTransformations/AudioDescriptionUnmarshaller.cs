@@ -88,6 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioTypeControl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioWatermarkingSettings", targetDepth))
+                {
+                    var unmarshaller = AudioWatermarkSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AudioWatermarkingSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codecSettings", targetDepth))
                 {
                     var unmarshaller = AudioCodecSettingsUnmarshaller.Instance;

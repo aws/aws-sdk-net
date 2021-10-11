@@ -802,6 +802,97 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  ClaimDevice
+
+
+        /// <summary>
+        /// Send a request to claim an AWS Elemental device that you have purchased from a third-party
+        /// vendor. After the request succeeds, you will own the device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClaimDevice service method.</param>
+        /// 
+        /// <returns>The response from the ClaimDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ClaimDevice">REST API Reference for ClaimDevice Operation</seealso>
+        public virtual ClaimDeviceResponse ClaimDevice(ClaimDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClaimDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClaimDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<ClaimDeviceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Send a request to claim an AWS Elemental device that you have purchased from a third-party
+        /// vendor. After the request succeeds, you will own the device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ClaimDevice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ClaimDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ClaimDevice">REST API Reference for ClaimDevice Operation</seealso>
+        public virtual Task<ClaimDeviceResponse> ClaimDeviceAsync(ClaimDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ClaimDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ClaimDeviceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ClaimDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateChannel
 
 

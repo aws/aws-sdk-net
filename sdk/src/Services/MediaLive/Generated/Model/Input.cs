@@ -167,7 +167,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property InputSourceType. Certain pull input sources can be dynamic,
         /// meaning that they can have their URL's dynamically changesduring input switch actions.
-        /// Presently, this functionality only works with MP4_FILE inputs.
+        /// Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         /// </summary>
         public InputSourceType InputSourceType
         {

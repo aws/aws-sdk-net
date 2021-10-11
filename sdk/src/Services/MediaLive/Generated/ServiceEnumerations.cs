@@ -8865,6 +8865,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly InputType RTP_PUSH = new InputType("RTP_PUSH");
         /// <summary>
+        /// Constant TS_FILE for InputType
+        /// </summary>
+        public static readonly InputType TS_FILE = new InputType("TS_FILE");
+        /// <summary>
         /// Constant UDP_PUSH for InputType
         /// </summary>
         public static readonly InputType UDP_PUSH = new InputType("UDP_PUSH");
@@ -10920,6 +10924,106 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NielsenPcmToId3TaggingState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NielsenWatermarksCbetStepaside.
+    /// </summary>
+    public class NielsenWatermarksCbetStepaside : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for NielsenWatermarksCbetStepaside
+        /// </summary>
+        public static readonly NielsenWatermarksCbetStepaside DISABLED = new NielsenWatermarksCbetStepaside("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for NielsenWatermarksCbetStepaside
+        /// </summary>
+        public static readonly NielsenWatermarksCbetStepaside ENABLED = new NielsenWatermarksCbetStepaside("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NielsenWatermarksCbetStepaside(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NielsenWatermarksCbetStepaside FindValue(string value)
+        {
+            return FindValue<NielsenWatermarksCbetStepaside>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NielsenWatermarksCbetStepaside(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NielsenWatermarksDistributionTypes.
+    /// </summary>
+    public class NielsenWatermarksDistributionTypes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FINAL_DISTRIBUTOR for NielsenWatermarksDistributionTypes
+        /// </summary>
+        public static readonly NielsenWatermarksDistributionTypes FINAL_DISTRIBUTOR = new NielsenWatermarksDistributionTypes("FINAL_DISTRIBUTOR");
+        /// <summary>
+        /// Constant PROGRAM_CONTENT for NielsenWatermarksDistributionTypes
+        /// </summary>
+        public static readonly NielsenWatermarksDistributionTypes PROGRAM_CONTENT = new NielsenWatermarksDistributionTypes("PROGRAM_CONTENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NielsenWatermarksDistributionTypes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NielsenWatermarksDistributionTypes FindValue(string value)
+        {
+            return FindValue<NielsenWatermarksDistributionTypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NielsenWatermarksDistributionTypes(string value)
         {
             return FindValue(value);
         }
