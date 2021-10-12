@@ -525,6 +525,13 @@ namespace Amazon.ECS.Model
         /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
         /// the latest <code>ACTIVE</code> revision is used.
         /// </para>
+        ///  
+        /// <para>
+        /// The full ARN value must match the value that you specified ias the <code>Resource</code>
+        /// of the IAM principal's permissions policy. For example, if the <code>Resource</code>
+        /// is arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code>
+        /// ARN value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string TaskDefinition
