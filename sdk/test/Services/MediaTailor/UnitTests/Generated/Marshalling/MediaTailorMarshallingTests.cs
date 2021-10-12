@@ -107,6 +107,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaTailor")]
+        public void CreatePrefetchScheduleMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePrefetchSchedule");
+
+            var request = InstantiateClassGenerator.Execute<CreatePrefetchScheduleRequest>();
+            var marshaller = new CreatePrefetchScheduleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreatePrefetchSchedule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreatePrefetchScheduleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreatePrefetchScheduleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
         public void CreateProgramMarshallTest()
         {
             var operation = service_model.FindOperation("CreateProgram");
@@ -286,6 +317,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as DeletePlaybackConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
+        public void DeletePrefetchScheduleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePrefetchSchedule");
+
+            var request = InstantiateClassGenerator.Execute<DeletePrefetchScheduleRequest>();
+            var marshaller = new DeletePrefetchScheduleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeletePrefetchSchedule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeletePrefetchScheduleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeletePrefetchScheduleResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -603,6 +665,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaTailor")]
+        public void GetPrefetchScheduleMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPrefetchSchedule");
+
+            var request = InstantiateClassGenerator.Execute<GetPrefetchScheduleRequest>();
+            var marshaller = new GetPrefetchScheduleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetPrefetchSchedule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPrefetchScheduleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPrefetchScheduleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
         public void ListAlertsMarshallTest()
         {
             var operation = service_model.FindOperation("ListAlerts");
@@ -689,6 +782,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListPlaybackConfigurationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaTailor")]
+        public void ListPrefetchSchedulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPrefetchSchedules");
+
+            var request = InstantiateClassGenerator.Execute<ListPrefetchSchedulesRequest>();
+            var marshaller = new ListPrefetchSchedulesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListPrefetchSchedules", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListPrefetchSchedulesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListPrefetchSchedulesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

@@ -68,6 +68,14 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Paginator for ListPrefetchSchedules operation
+        ///</summary>
+        public IListPrefetchSchedulesPaginator ListPrefetchSchedules(ListPrefetchSchedulesRequest request) 
+        {
+            return new ListPrefetchSchedulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSourceLocations operation
         ///</summary>
         public IListSourceLocationsPaginator ListSourceLocations(ListSourceLocationsRequest request) 

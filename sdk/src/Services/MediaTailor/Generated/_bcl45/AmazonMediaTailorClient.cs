@@ -349,6 +349,47 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  CreatePrefetchSchedule
+
+
+        /// <summary>
+        /// Creates a new prefetch schedule for the specified playback configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrefetchSchedule service method.</param>
+        /// 
+        /// <returns>The response from the CreatePrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">REST API Reference for CreatePrefetchSchedule Operation</seealso>
+        public virtual CreatePrefetchScheduleResponse CreatePrefetchSchedule(CreatePrefetchScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrefetchScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePrefetchScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new prefetch schedule for the specified playback configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrefetchSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">REST API Reference for CreatePrefetchSchedule Operation</seealso>
+        public virtual Task<CreatePrefetchScheduleResponse> CreatePrefetchScheduleAsync(CreatePrefetchScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrefetchScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePrefetchScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateProgram
 
 
@@ -591,6 +632,49 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePlaybackConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePrefetchSchedule
+
+
+        /// <summary>
+        /// Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule
+        /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrefetchSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DeletePrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">REST API Reference for DeletePrefetchSchedule Operation</seealso>
+        public virtual DeletePrefetchScheduleResponse DeletePrefetchSchedule(DeletePrefetchScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePrefetchScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePrefetchScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule
+        /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrefetchSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">REST API Reference for DeletePrefetchSchedule Operation</seealso>
+        public virtual Task<DeletePrefetchScheduleResponse> DeletePrefetchScheduleAsync(DeletePrefetchScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePrefetchScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePrefetchScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1005,6 +1089,51 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  GetPrefetchSchedule
+
+
+        /// <summary>
+        /// Returns information about the prefetch schedule for a specific playback configuration.
+        /// If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns
+        /// an HTTP 404 status code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrefetchSchedule service method.</param>
+        /// 
+        /// <returns>The response from the GetPrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">REST API Reference for GetPrefetchSchedule Operation</seealso>
+        public virtual GetPrefetchScheduleResponse GetPrefetchSchedule(GetPrefetchScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPrefetchScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<GetPrefetchScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the prefetch schedule for a specific playback configuration.
+        /// If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns
+        /// an HTTP 404 status code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrefetchSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">REST API Reference for GetPrefetchSchedule Operation</seealso>
+        public virtual Task<GetPrefetchScheduleResponse> GetPrefetchScheduleAsync(GetPrefetchScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPrefetchScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPrefetchScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAlerts
 
 
@@ -1132,6 +1261,47 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListPlaybackConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPrefetchSchedules
+
+
+        /// <summary>
+        /// Creates a new prefetch schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrefetchSchedules service method.</param>
+        /// 
+        /// <returns>The response from the ListPrefetchSchedules service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">REST API Reference for ListPrefetchSchedules Operation</seealso>
+        public virtual ListPrefetchSchedulesResponse ListPrefetchSchedules(ListPrefetchSchedulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrefetchSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrefetchSchedulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPrefetchSchedulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new prefetch schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrefetchSchedules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPrefetchSchedules service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">REST API Reference for ListPrefetchSchedules Operation</seealso>
+        public virtual Task<ListPrefetchSchedulesResponse> ListPrefetchSchedulesAsync(ListPrefetchSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrefetchSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrefetchSchedulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPrefetchSchedulesResponse>(request, options, cancellationToken);
         }
 
         #endregion

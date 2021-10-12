@@ -25,6 +25,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaTailor.Model.ListPrefetchSchedulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaTailor.Model.ListSourceLocationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>

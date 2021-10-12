@@ -358,6 +358,60 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  CreatePrefetchSchedule
+
+        /// <summary>
+        /// Creates a new prefetch schedule for the specified playback configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrefetchSchedule service method.</param>
+        /// 
+        /// <returns>The response from the CreatePrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">REST API Reference for CreatePrefetchSchedule Operation</seealso>
+        public virtual CreatePrefetchScheduleResponse CreatePrefetchSchedule(CreatePrefetchScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrefetchScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePrefetchScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePrefetchSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrefetchSchedule operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePrefetchSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">REST API Reference for CreatePrefetchSchedule Operation</seealso>
+        public virtual IAsyncResult BeginCreatePrefetchSchedule(CreatePrefetchScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrefetchScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePrefetchSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePrefetchSchedule.</param>
+        /// 
+        /// <returns>Returns a  CreatePrefetchScheduleResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">REST API Reference for CreatePrefetchSchedule Operation</seealso>
+        public virtual CreatePrefetchScheduleResponse EndCreatePrefetchSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePrefetchScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateProgram
 
         /// <summary>
@@ -678,6 +732,61 @@ namespace Amazon.MediaTailor
         public virtual DeletePlaybackConfigurationResponse EndDeletePlaybackConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePlaybackConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePrefetchSchedule
+
+        /// <summary>
+        /// Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule
+        /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrefetchSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DeletePrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">REST API Reference for DeletePrefetchSchedule Operation</seealso>
+        public virtual DeletePrefetchScheduleResponse DeletePrefetchSchedule(DeletePrefetchScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePrefetchScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePrefetchScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePrefetchSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrefetchSchedule operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePrefetchSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">REST API Reference for DeletePrefetchSchedule Operation</seealso>
+        public virtual IAsyncResult BeginDeletePrefetchSchedule(DeletePrefetchScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePrefetchScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePrefetchSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePrefetchSchedule.</param>
+        /// 
+        /// <returns>Returns a  DeletePrefetchScheduleResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">REST API Reference for DeletePrefetchSchedule Operation</seealso>
+        public virtual DeletePrefetchScheduleResponse EndDeletePrefetchSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePrefetchScheduleResponse>(asyncResult);
         }
 
         #endregion
@@ -1222,6 +1331,62 @@ namespace Amazon.MediaTailor
 
         #endregion
         
+        #region  GetPrefetchSchedule
+
+        /// <summary>
+        /// Returns information about the prefetch schedule for a specific playback configuration.
+        /// If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns
+        /// an HTTP 404 status code.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrefetchSchedule service method.</param>
+        /// 
+        /// <returns>The response from the GetPrefetchSchedule service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">REST API Reference for GetPrefetchSchedule Operation</seealso>
+        public virtual GetPrefetchScheduleResponse GetPrefetchSchedule(GetPrefetchScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPrefetchScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<GetPrefetchScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPrefetchSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPrefetchSchedule operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPrefetchSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">REST API Reference for GetPrefetchSchedule Operation</seealso>
+        public virtual IAsyncResult BeginGetPrefetchSchedule(GetPrefetchScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPrefetchScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPrefetchScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPrefetchSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPrefetchSchedule.</param>
+        /// 
+        /// <returns>Returns a  GetPrefetchScheduleResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">REST API Reference for GetPrefetchSchedule Operation</seealso>
+        public virtual GetPrefetchScheduleResponse EndGetPrefetchSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPrefetchScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAlerts
 
         /// <summary>
@@ -1384,6 +1549,60 @@ namespace Amazon.MediaTailor
         public virtual ListPlaybackConfigurationsResponse EndListPlaybackConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPlaybackConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPrefetchSchedules
+
+        /// <summary>
+        /// Creates a new prefetch schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrefetchSchedules service method.</param>
+        /// 
+        /// <returns>The response from the ListPrefetchSchedules service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">REST API Reference for ListPrefetchSchedules Operation</seealso>
+        public virtual ListPrefetchSchedulesResponse ListPrefetchSchedules(ListPrefetchSchedulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrefetchSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrefetchSchedulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPrefetchSchedulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPrefetchSchedules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPrefetchSchedules operation on AmazonMediaTailorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPrefetchSchedules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">REST API Reference for ListPrefetchSchedules Operation</seealso>
+        public virtual IAsyncResult BeginListPrefetchSchedules(ListPrefetchSchedulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPrefetchSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrefetchSchedulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPrefetchSchedules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPrefetchSchedules.</param>
+        /// 
+        /// <returns>Returns a  ListPrefetchSchedulesResult from MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">REST API Reference for ListPrefetchSchedules Operation</seealso>
+        public virtual ListPrefetchSchedulesResponse EndListPrefetchSchedules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPrefetchSchedulesResponse>(asyncResult);
         }
 
         #endregion

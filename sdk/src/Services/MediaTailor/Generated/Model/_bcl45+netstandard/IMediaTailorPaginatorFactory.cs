@@ -46,6 +46,11 @@ namespace Amazon.MediaTailor.Model
         IListPlaybackConfigurationsPaginator ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request);
 
         /// <summary>
+        /// Paginator for ListPrefetchSchedules operation
+        ///</summary>
+        IListPrefetchSchedulesPaginator ListPrefetchSchedules(ListPrefetchSchedulesRequest request);
+
+        /// <summary>
         /// Paginator for ListSourceLocations operation
         ///</summary>
         IListSourceLocationsPaginator ListSourceLocations(ListSourceLocationsRequest request);
