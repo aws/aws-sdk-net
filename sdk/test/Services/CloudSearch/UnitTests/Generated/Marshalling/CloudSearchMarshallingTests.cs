@@ -135,6 +135,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void BuildSuggesters_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BuildSuggesters");
+
+            var request = InstantiateClassGenerator.Execute<BuildSuggestersRequest>();
+            var marshaller = new BuildSuggestersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = BuildSuggestersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void CreateDomainMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDomain");
@@ -409,6 +432,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void DefineAnalysisScheme_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DefineAnalysisScheme");
+
+            var request = InstantiateClassGenerator.Execute<DefineAnalysisSchemeRequest>();
+            var marshaller = new DefineAnalysisSchemeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DefineAnalysisSchemeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void DefineExpressionMarshallTest()
         {
             var operation = service_model.FindOperation("DefineExpression");
@@ -535,6 +581,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DefineExpressionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
+        public void DefineExpression_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DefineExpression");
+
+            var request = InstantiateClassGenerator.Execute<DefineExpressionRequest>();
+            var marshaller = new DefineExpressionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DefineExpressionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -683,6 +752,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void DefineIndexField_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DefineIndexField");
+
+            var request = InstantiateClassGenerator.Execute<DefineIndexFieldRequest>();
+            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DefineIndexFieldResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void DefineSuggesterMarshallTest()
         {
             var operation = service_model.FindOperation("DefineSuggester");
@@ -820,6 +912,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void DefineSuggester_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DefineSuggester");
+
+            var request = InstantiateClassGenerator.Execute<DefineSuggesterRequest>();
+            var marshaller = new DefineSuggesterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DefineSuggesterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void DeleteAnalysisSchemeMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAnalysisScheme");
@@ -923,6 +1038,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteAnalysisSchemeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
+        public void DeleteAnalysisScheme_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAnalysisScheme");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAnalysisSchemeRequest>();
+            var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DeleteAnalysisSchemeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -1116,6 +1254,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void DeleteExpression_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteExpression");
+
+            var request = InstantiateClassGenerator.Execute<DeleteExpressionRequest>();
+            var marshaller = new DeleteExpressionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteExpressionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void DeleteIndexFieldMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteIndexField");
@@ -1230,6 +1391,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void DeleteIndexField_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIndexField");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIndexFieldRequest>();
+            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteIndexFieldResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void DeleteSuggesterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSuggester");
@@ -1333,6 +1517,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteSuggesterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
+        public void DeleteSuggester_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSuggester");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSuggesterRequest>();
+            var marshaller = new DeleteSuggesterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DeleteSuggesterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -2346,6 +2553,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void IndexDocuments_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("IndexDocuments");
+
+            var request = InstantiateClassGenerator.Execute<IndexDocumentsRequest>();
+            var marshaller = new IndexDocumentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = IndexDocumentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void ListDomainNamesMarshallTest()
         {
             var operation = service_model.FindOperation("ListDomainNames");
@@ -2894,6 +3124,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudSearch")]
+        public void UpdateScalingParameters_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateScalingParameters");
+
+            var request = InstantiateClassGenerator.Execute<UpdateScalingParametersRequest>();
+            var marshaller = new UpdateScalingParametersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateScalingParametersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
         public void UpdateServiceAccessPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateServiceAccessPolicies");
@@ -3020,6 +3273,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudSearch")]
+        public void UpdateServiceAccessPolicies_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateServiceAccessPolicies");
+
+            var request = InstantiateClassGenerator.Execute<UpdateServiceAccessPoliciesRequest>();
+            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);

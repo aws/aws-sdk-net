@@ -288,6 +288,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">REST API Reference for BuildSuggesters Operation</seealso>
         public virtual Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -397,6 +400,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">REST API Reference for DefineAnalysisScheme Operation</seealso>
         public virtual Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -452,6 +458,9 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">REST API Reference for DefineExpression Operation</seealso>
         public virtual Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -513,6 +522,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">REST API Reference for DefineIndexField Operation</seealso>
         public virtual Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -570,6 +582,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">REST API Reference for DefineSuggester Operation</seealso>
         public virtual Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -620,6 +635,9 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">REST API Reference for DeleteAnalysisScheme Operation</seealso>
         public virtual Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -718,6 +736,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">REST API Reference for DeleteExpression Operation</seealso>
         public virtual Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -770,6 +791,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">REST API Reference for DeleteIndexField Operation</seealso>
         public virtual Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -820,6 +844,9 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">REST API Reference for DeleteSuggester Operation</seealso>
         public virtual Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1375,6 +1402,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">REST API Reference for IndexDocuments Operation</seealso>
         public virtual Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1618,6 +1648,9 @@ namespace Amazon.CloudSearch
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">REST API Reference for UpdateScalingParameters Operation</seealso>
         public virtual Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1671,6 +1704,9 @@ namespace Amazon.CloudSearch
         /// <exception cref="Amazon.CloudSearch.Model.ResourceNotFoundException">
         /// The request was rejected because it attempted to reference a resource that does not
         /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudSearch.Model.ValidationException">
+        /// The request was rejected because it has invalid parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">REST API Reference for UpdateServiceAccessPolicies Operation</seealso>
         public virtual Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
