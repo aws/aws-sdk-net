@@ -1,3 +1,18 @@
+### 3.7.135.0 (2021-10-12 18:13 UTC)
+* CloudSearch (3.7.2.0)
+	* Adds an additional validation exception for Amazon CloudSearch configuration APIs for better error handling.
+* EC2 (3.7.33.0)
+	* EncryptionSupport for InstanceStorageInfo added to DescribeInstanceTypes API
+* ECS (3.7.2.56)
+	* Documentation only update to address tickets.
+* MediaTailor (3.7.6.0)
+	* MediaTailor now supports ad prefetching.
+* Core 3.7.3.20
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.134.0 (2021-10-11 18:13 UTC)
 * EC2 (3.7.32.1)
 	* Documentation update for Amazon EC2.

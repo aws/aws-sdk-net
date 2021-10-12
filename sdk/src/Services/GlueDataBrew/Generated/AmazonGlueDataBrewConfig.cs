@@ -32,7 +32,7 @@ namespace Amazon.GlueDataBrew
     public partial class AmazonGlueDataBrewConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.28");
+            InternalSDKUtils.BuildUserAgentString("3.7.4.29");
 
         private string _userAgent = UserAgentString;
 

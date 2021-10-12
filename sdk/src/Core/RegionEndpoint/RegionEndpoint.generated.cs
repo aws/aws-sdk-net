@@ -163,6 +163,11 @@ namespace Amazon
         public static readonly RegionEndpoint USIsoEast1 = GetEndpoint("us-iso-east-1", "US ISO East");
 
         /// <summary>
+        /// The US ISO WEST endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsoWest1 = GetEndpoint("us-iso-west-1", "US ISO WEST");
+
+        /// <summary>
         /// The US ISOB East (Ohio) endpoint.
         /// </summary>
         public static readonly RegionEndpoint USIsobEast1 = GetEndpoint("us-isob-east-1", "US ISOB East (Ohio)");
