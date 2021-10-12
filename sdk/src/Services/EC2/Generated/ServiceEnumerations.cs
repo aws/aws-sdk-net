@@ -524,6 +524,10 @@ namespace Amazon.EC2
         /// Constant X86_64 for ArchitectureType
         /// </summary>
         public static readonly ArchitectureType X86_64 = new ArchitectureType("x86_64");
+        /// <summary>
+        /// Constant X86_64_mac for ArchitectureType
+        /// </summary>
+        public static readonly ArchitectureType X86_64_mac = new ArchitectureType("x86_64_mac");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5884,6 +5888,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceStateName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceStorageEncryptionSupport.
+    /// </summary>
+    public class InstanceStorageEncryptionSupport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Required for InstanceStorageEncryptionSupport
+        /// </summary>
+        public static readonly InstanceStorageEncryptionSupport Required = new InstanceStorageEncryptionSupport("required");
+        /// <summary>
+        /// Constant Unsupported for InstanceStorageEncryptionSupport
+        /// </summary>
+        public static readonly InstanceStorageEncryptionSupport Unsupported = new InstanceStorageEncryptionSupport("unsupported");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceStorageEncryptionSupport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceStorageEncryptionSupport FindValue(string value)
+        {
+            return FindValue<InstanceStorageEncryptionSupport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceStorageEncryptionSupport(string value)
         {
             return FindValue(value);
         }

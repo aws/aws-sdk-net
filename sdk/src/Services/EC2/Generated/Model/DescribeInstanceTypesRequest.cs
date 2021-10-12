@@ -141,8 +141,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>instance-storage-info.encryption-supported</code> - Indicates whether data
+        /// is encrypted at rest (<code>required</code> | <code>unsupported</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
-        /// memory express (NVMe) is supported for instance store (<code>required</code> | <code>supported</code>)
+        /// memory express (NVMe) is supported for instance store (<code>required</code> | <code>supported</code>
         /// | <code>unsupported</code>).
         /// </para>
         ///  </li> <li> 

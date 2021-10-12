@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Disks.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("encryptionSupport", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EncryptionSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("nvmeSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

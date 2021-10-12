@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the disks that are available for the instance type.
+    /// Describes the instance store features that are supported by the instance type.
     /// </summary>
     public partial class InstanceStorageInfo
     {
         private List<DiskInfo> _disks = new List<DiskInfo>();
+        private InstanceStorageEncryptionSupport _encryptionSupport;
         private EphemeralNvmeSupport _nvmeSupport;
         private long? _totalSizeInGB;
 
@@ -56,9 +57,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionSupport. 
+        /// <para>
+        /// Indicates whether data is encrypted at rest.
+        /// </para>
+        /// </summary>
+        public InstanceStorageEncryptionSupport EncryptionSupport
+        {
+            get { return this._encryptionSupport; }
+            set { this._encryptionSupport = value; }
+        }
+
+        // Check to see if EncryptionSupport property is set
+        internal bool IsSetEncryptionSupport()
+        {
+            return this._encryptionSupport != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NvmeSupport. 
         /// <para>
-        /// Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+        /// Indicates whether non-volatile memory express (NVMe) is supported.
         /// </para>
         /// </summary>
         public EphemeralNvmeSupport NvmeSupport

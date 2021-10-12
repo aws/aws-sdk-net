@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the disk.
+    /// Describes a disk.
     /// </summary>
     public partial class DiskInfo
     {
