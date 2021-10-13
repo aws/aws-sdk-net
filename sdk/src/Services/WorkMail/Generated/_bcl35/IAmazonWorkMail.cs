@@ -294,8 +294,7 @@ namespace Amazon.WorkMail
         /// The request exceeds the limit of the resource.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain
@@ -678,6 +677,13 @@ namespace Amazon.WorkMail
 
         /// <summary>
         /// Deletes an access control rule for the specified WorkMail organization.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting already deleted and non-existing rules does not produce an error. In those
+        /// cases, the service sends back an HTTP 200 response with an empty HTTP body.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlRule service method.</param>
         /// 
@@ -907,6 +913,13 @@ namespace Amazon.WorkMail
         /// <summary>
         /// Deletes the mobile device access override for the given WorkMail organization, user,
         /// and device.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting already deleted and non-existing overrides does not produce an error. In
+        /// those cases, the service sends back an HTTP 200 response with an empty HTTP body.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessOverride service method.</param>
         /// 
@@ -961,6 +974,13 @@ namespace Amazon.WorkMail
 
         /// <summary>
         /// Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting already deleted and non-existing rules does not produce an error. In those
+        /// cases, the service sends back an HTTP 200 response with an empty HTTP body.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessRule service method.</param>
         /// 
@@ -1297,6 +1317,68 @@ namespace Amazon.WorkMail
         /// <returns>Returns a  DeregisterFromWorkMailResult from WorkMail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         DeregisterFromWorkMailResponse EndDeregisterFromWorkMail(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeregisterMailDomain
+
+
+        /// <summary>
+        /// Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes
+        /// the authorization allowing WorkMail use. SES keeps the domain because other applications
+        /// may use it. You must first remove any email address used by WorkMail entities before
+        /// you remove the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMailDomain service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidCustomSesConfigurationException">
+        /// You SES configuration has customizations that Amazon WorkMail cannot save. The error
+        /// message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainInUseException">
+        /// The domain you're trying to change is in use by another user or organization in your
+        /// account. See the error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">REST API Reference for DeregisterMailDomain Operation</seealso>
+        DeregisterMailDomainResponse DeregisterMailDomain(DeregisterMailDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMailDomain operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterMailDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">REST API Reference for DeregisterMailDomain Operation</seealso>
+        IAsyncResult BeginDeregisterMailDomain(DeregisterMailDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterMailDomain.</param>
+        /// 
+        /// <returns>Returns a  DeregisterMailDomainResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">REST API Reference for DeregisterMailDomain Operation</seealso>
+        DeregisterMailDomainResponse EndDeregisterMailDomain(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1896,6 +1978,61 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  GetMailDomain
+
+
+        /// <summary>
+        /// Gets details for a mail domain, including domain records required to configure your
+        /// domain with recommended security.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMailDomain service method.</param>
+        /// 
+        /// <returns>The response from the GetMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
+        /// The domain specified is not found in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailDomain">REST API Reference for GetMailDomain Operation</seealso>
+        GetMailDomainResponse GetMailDomain(GetMailDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMailDomain operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMailDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailDomain">REST API Reference for GetMailDomain Operation</seealso>
+        IAsyncResult BeginGetMailDomain(GetMailDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMailDomain.</param>
+        /// 
+        /// <returns>Returns a  GetMailDomainResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailDomain">REST API Reference for GetMailDomain Operation</seealso>
+        GetMailDomainResponse EndGetMailDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetMobileDeviceAccessEffect
 
 
@@ -2329,6 +2466,57 @@ namespace Amazon.WorkMail
         /// <returns>Returns a  ListMailboxPermissionsResult from WorkMail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
         ListMailboxPermissionsResponse EndListMailboxPermissions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListMailDomains
+
+
+        /// <summary>
+        /// Lists the mail domains in a given Amazon WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMailDomains service method.</param>
+        /// 
+        /// <returns>The response from the ListMailDomains service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailDomains">REST API Reference for ListMailDomains Operation</seealso>
+        ListMailDomainsResponse ListMailDomains(ListMailDomainsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMailDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMailDomains operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMailDomains
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailDomains">REST API Reference for ListMailDomains Operation</seealso>
+        IAsyncResult BeginListMailDomains(ListMailDomainsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMailDomains operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMailDomains.</param>
+        /// 
+        /// <returns>Returns a  ListMailDomainsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailDomains">REST API Reference for ListMailDomains Operation</seealso>
+        ListMailDomainsResponse EndListMailDomains(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2964,6 +3152,67 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  RegisterMailDomain
+
+
+        /// <summary>
+        /// Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail.
+        /// Emails received by SES for this domain are routed to the specified WorkMail organization,
+        /// and WorkMail has permanent permission to use the specified domain for sending your
+        /// users' emails.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMailDomain service method.</param>
+        /// 
+        /// <returns>The response from the RegisterMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainInUseException">
+        /// The domain you're trying to change is in use by another user or organization in your
+        /// account. See the error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterMailDomain">REST API Reference for RegisterMailDomain Operation</seealso>
+        RegisterMailDomainResponse RegisterMailDomain(RegisterMailDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMailDomain operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterMailDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterMailDomain">REST API Reference for RegisterMailDomain Operation</seealso>
+        IAsyncResult BeginRegisterMailDomain(RegisterMailDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterMailDomain.</param>
+        /// 
+        /// <returns>Returns a  RegisterMailDomainResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterMailDomain">REST API Reference for RegisterMailDomain Operation</seealso>
+        RegisterMailDomainResponse EndRegisterMailDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RegisterToWorkMail
 
 
@@ -3008,8 +3257,7 @@ namespace Amazon.WorkMail
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain
@@ -3278,6 +3526,66 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  UpdateDefaultMailDomain
+
+
+        /// <summary>
+        /// Updates the default mail domain for an organization. The default mail domain is used
+        /// by the WorkMail AWS Console to suggest an email address when enabling a mail user.
+        /// You can only have one default domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultMailDomain service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDefaultMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
+        /// The domain specified is not found in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
+        /// After a domain has been added to the organization, it must be verified. The domain
+        /// is not yet verified.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateDefaultMailDomain">REST API Reference for UpdateDefaultMailDomain Operation</seealso>
+        UpdateDefaultMailDomainResponse UpdateDefaultMailDomain(UpdateDefaultMailDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDefaultMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultMailDomain operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDefaultMailDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateDefaultMailDomain">REST API Reference for UpdateDefaultMailDomain Operation</seealso>
+        IAsyncResult BeginUpdateDefaultMailDomain(UpdateDefaultMailDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDefaultMailDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDefaultMailDomain.</param>
+        /// 
+        /// <returns>Returns a  UpdateDefaultMailDomainResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateDefaultMailDomain">REST API Reference for UpdateDefaultMailDomain Operation</seealso>
+        UpdateDefaultMailDomainResponse EndUpdateDefaultMailDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateMailboxQuota
 
 
@@ -3422,8 +3730,7 @@ namespace Amazon.WorkMail
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain
@@ -3501,8 +3808,7 @@ namespace Amazon.WorkMail
         /// to requests or have at least one delegate associated that can do so on its behalf.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain

@@ -230,8 +230,7 @@ namespace Amazon.WorkMail
         /// The request exceeds the limit of the resource.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain
@@ -479,6 +478,13 @@ namespace Amazon.WorkMail
 
         /// <summary>
         /// Deletes an access control rule for the specified WorkMail organization.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting already deleted and non-existing rules does not produce an error. In those
+        /// cases, the service sends back an HTTP 200 response with an empty HTTP body.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlRule service method.</param>
         /// <param name="cancellationToken">
@@ -620,6 +626,13 @@ namespace Amazon.WorkMail
         /// <summary>
         /// Deletes the mobile device access override for the given WorkMail organization, user,
         /// and device.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting already deleted and non-existing overrides does not produce an error. In
+        /// those cases, the service sends back an HTTP 200 response with an empty HTTP body.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessOverride service method.</param>
         /// <param name="cancellationToken">
@@ -652,6 +665,13 @@ namespace Amazon.WorkMail
 
         /// <summary>
         /// Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Deleting already deleted and non-existing rules does not produce an error. In those
+        /// cases, the service sends back an HTTP 200 response with an empty HTTP body.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMobileDeviceAccessRule service method.</param>
         /// <param name="cancellationToken">
@@ -855,6 +875,46 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         Task<DeregisterFromWorkMailResponse> DeregisterFromWorkMailAsync(DeregisterFromWorkMailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeregisterMailDomain
+
+
+
+        /// <summary>
+        /// Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes
+        /// the authorization allowing WorkMail use. SES keeps the domain because other applications
+        /// may use it. You must first remove any email address used by WorkMail entities before
+        /// you remove the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterMailDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidCustomSesConfigurationException">
+        /// You SES configuration has customizations that Amazon WorkMail cannot save. The error
+        /// message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainInUseException">
+        /// The domain you're trying to change is in use by another user or organization in your
+        /// account. See the error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">REST API Reference for DeregisterMailDomain Operation</seealso>
+        Task<DeregisterMailDomainResponse> DeregisterMailDomainAsync(DeregisterMailDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1212,6 +1272,39 @@ namespace Amazon.WorkMail
 
         #endregion
                 
+        #region  GetMailDomain
+
+
+
+        /// <summary>
+        /// Gets details for a mail domain, including domain records required to configure your
+        /// domain with recommended security.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMailDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
+        /// The domain specified is not found in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailDomain">REST API Reference for GetMailDomain Operation</seealso>
+        Task<GetMailDomainResponse> GetMailDomainAsync(GetMailDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetMobileDeviceAccessEffect
 
 
@@ -1469,6 +1562,35 @@ namespace Amazon.WorkMail
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
         Task<ListMailboxPermissionsResponse> ListMailboxPermissionsAsync(ListMailboxPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListMailDomains
+
+
+
+        /// <summary>
+        /// Lists the mail domains in a given Amazon WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMailDomains service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMailDomains service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailDomains">REST API Reference for ListMailDomains Operation</seealso>
+        Task<ListMailDomainsResponse> ListMailDomainsAsync(ListMailDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1840,6 +1962,45 @@ namespace Amazon.WorkMail
 
         #endregion
                 
+        #region  RegisterMailDomain
+
+
+
+        /// <summary>
+        /// Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail.
+        /// Emails received by SES for this domain are routed to the specified WorkMail organization,
+        /// and WorkMail has permanent permission to use the specified domain for sending your
+        /// users' emails.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterMailDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainInUseException">
+        /// The domain you're trying to change is in use by another user or organization in your
+        /// account. See the error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterMailDomain">REST API Reference for RegisterMailDomain Operation</seealso>
+        Task<RegisterMailDomainResponse> RegisterMailDomainAsync(RegisterMailDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RegisterToWorkMail
 
 
@@ -1888,8 +2049,7 @@ namespace Amazon.WorkMail
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain
@@ -2044,6 +2204,44 @@ namespace Amazon.WorkMail
 
         #endregion
                 
+        #region  UpdateDefaultMailDomain
+
+
+
+        /// <summary>
+        /// Updates the default mail domain for an organization. The default mail domain is used
+        /// by the WorkMail AWS Console to suggest an email address when enabling a mail user.
+        /// You can only have one default domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultMailDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDefaultMailDomain service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
+        /// The domain specified is not found in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
+        /// After a domain has been added to the organization, it must be verified. The domain
+        /// is not yet verified.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateDefaultMailDomain">REST API Reference for UpdateDefaultMailDomain Operation</seealso>
+        Task<UpdateDefaultMailDomainResponse> UpdateDefaultMailDomainAsync(UpdateDefaultMailDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateMailboxQuota
 
 
@@ -2148,8 +2346,7 @@ namespace Amazon.WorkMail
         /// One or more of the input parameters don't match the service's restrictions.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain
@@ -2205,8 +2402,7 @@ namespace Amazon.WorkMail
         /// to requests or have at least one delegate associated that can do so on its behalf.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainNotFoundException">
-        /// For an email or alias to be created in Amazon WorkMail, the included domain must be
-        /// defined in the organization.
+        /// The domain specified is not found in your organization.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.MailDomainStateException">
         /// After a domain has been added to the organization, it must be verified. The domain

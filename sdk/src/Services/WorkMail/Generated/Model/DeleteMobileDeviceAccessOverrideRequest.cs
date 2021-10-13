@@ -32,6 +32,13 @@ namespace Amazon.WorkMail.Model
     /// Container for the parameters to the DeleteMobileDeviceAccessOverride operation.
     /// Deletes the mobile device access override for the given WorkMail organization, user,
     /// and device.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Deleting already deleted and non-existing overrides does not produce an error. In
+    /// those cases, the service sends back an HTTP 200 response with an empty HTTP body.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteMobileDeviceAccessOverrideRequest : AmazonWorkMailRequest
     {

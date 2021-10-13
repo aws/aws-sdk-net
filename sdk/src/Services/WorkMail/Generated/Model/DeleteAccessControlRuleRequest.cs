@@ -31,6 +31,13 @@ namespace Amazon.WorkMail.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccessControlRule operation.
     /// Deletes an access control rule for the specified WorkMail organization.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Deleting already deleted and non-existing rules does not produce an error. In those
+    /// cases, the service sends back an HTTP 200 response with an empty HTTP body.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteAccessControlRuleRequest : AmazonWorkMailRequest
     {

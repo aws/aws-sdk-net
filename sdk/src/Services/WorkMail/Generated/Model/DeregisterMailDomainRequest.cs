@@ -29,44 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteMobileDeviceAccessRule operation.
-    /// Deletes a mobile device access rule for the specified Amazon WorkMail organization.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Deleting already deleted and non-existing rules does not produce an error. In those
-    /// cases, the service sends back an HTTP 200 response with an empty HTTP body.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the DeregisterMailDomain operation.
+    /// Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes
+    /// the authorization allowing WorkMail use. SES keeps the domain because other applications
+    /// may use it. You must first remove any email address used by WorkMail entities before
+    /// you remove the domain.
     /// </summary>
-    public partial class DeleteMobileDeviceAccessRuleRequest : AmazonWorkMailRequest
+    public partial class DeregisterMailDomainRequest : AmazonWorkMailRequest
     {
-        private string _mobileDeviceAccessRuleId;
+        private string _domainName;
         private string _organizationId;
 
         /// <summary>
-        /// Gets and sets the property MobileDeviceAccessRuleId. 
+        /// Gets and sets the property DomainName. 
         /// <para>
-        /// The identifier of the rule to be deleted.
+        /// The domain to deregister in WorkMail and SES. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string MobileDeviceAccessRuleId
+        [AWSProperty(Required=true, Min=3, Max=209)]
+        public string DomainName
         {
-            get { return this._mobileDeviceAccessRuleId; }
-            set { this._mobileDeviceAccessRuleId = value; }
+            get { return this._domainName; }
+            set { this._domainName = value; }
         }
 
-        // Check to see if MobileDeviceAccessRuleId property is set
-        internal bool IsSetMobileDeviceAccessRuleId()
+        // Check to see if DomainName property is set
+        internal bool IsSetDomainName()
         {
-            return this._mobileDeviceAccessRuleId != null;
+            return this._domainName != null;
         }
 
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization under which the rule will be deleted.
+        /// The Amazon WorkMail organization for which the domain will be deregistered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

@@ -237,6 +237,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("WorkMail")]
+        public void ListMailDomainsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMailDomainsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListMailDomainsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListMailDomainsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListMailDomains(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListMailDomains(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WorkMail")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListMailDomainsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMailDomainsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListMailDomainsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListMailDomains(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListMailDomains(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WorkMail")]
         public void ListMobileDeviceAccessOverridesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListMobileDeviceAccessOverridesRequest>();

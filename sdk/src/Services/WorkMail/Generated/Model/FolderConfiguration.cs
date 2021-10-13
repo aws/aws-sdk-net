@@ -78,7 +78,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The period of time at which the folder configuration action is applied.
+        /// The number of days for which the folder-configuration action applies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=730)]

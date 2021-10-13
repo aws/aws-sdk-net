@@ -76,6 +76,14 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Paginator for ListMailDomains operation
+        ///</summary>
+        public IListMailDomainsPaginator ListMailDomains(ListMailDomainsRequest request) 
+        {
+            return new ListMailDomainsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMobileDeviceAccessOverrides operation
         ///</summary>
         public IListMobileDeviceAccessOverridesPaginator ListMobileDeviceAccessOverrides(ListMobileDeviceAccessOverridesRequest request) 

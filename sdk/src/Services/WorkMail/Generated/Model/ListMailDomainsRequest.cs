@@ -29,44 +29,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteMobileDeviceAccessRule operation.
-    /// Deletes a mobile device access rule for the specified Amazon WorkMail organization.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Deleting already deleted and non-existing rules does not produce an error. In those
-    /// cases, the service sends back an HTTP 200 response with an empty HTTP body.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the ListMailDomains operation.
+    /// Lists the mail domains in a given Amazon WorkMail organization.
     /// </summary>
-    public partial class DeleteMobileDeviceAccessRuleRequest : AmazonWorkMailRequest
+    public partial class ListMailDomainsRequest : AmazonWorkMailRequest
     {
-        private string _mobileDeviceAccessRuleId;
+        private int? _maxResults;
+        private string _nextToken;
         private string _organizationId;
 
         /// <summary>
-        /// Gets and sets the property MobileDeviceAccessRuleId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The identifier of the rule to be deleted.
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string MobileDeviceAccessRuleId
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._mobileDeviceAccessRuleId; }
-            set { this._mobileDeviceAccessRuleId = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if MobileDeviceAccessRuleId property is set
-        internal bool IsSetMobileDeviceAccessRuleId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._mobileDeviceAccessRuleId != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to use to retrieve the next page of results. The first call does not require
+        /// a token.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization under which the rule will be deleted.
+        /// The Amazon WorkMail organization for which to list domains.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]
