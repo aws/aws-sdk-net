@@ -66,6 +66,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeliverLogsPermissionArn", StringUtils.FromString(publicRequest.DeliverLogsPermissionArn));
                 }
+                if(publicRequest.IsSetDestinationOptions())
+                {
+                    if(publicRequest.DestinationOptions.IsSetFileFormat())
+                    {
+                        request.Parameters.Add("DestinationOptions" + "." + "FileFormat", StringUtils.FromString(publicRequest.DestinationOptions.FileFormat));
+                    }
+                    if(publicRequest.DestinationOptions.IsSetHiveCompatiblePartitions())
+                    {
+                        request.Parameters.Add("DestinationOptions" + "." + "HiveCompatiblePartitions", StringUtils.FromBool(publicRequest.DestinationOptions.HiveCompatiblePartitions));
+                    }
+                    if(publicRequest.DestinationOptions.IsSetPerHourPartition())
+                    {
+                        request.Parameters.Add("DestinationOptions" + "." + "PerHourPartition", StringUtils.FromBool(publicRequest.DestinationOptions.PerHourPartition));
+                    }
+                }
                 if(publicRequest.IsSetLogDestination())
                 {
                     request.Parameters.Add("LogDestination", StringUtils.FromString(publicRequest.LogDestination));

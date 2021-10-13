@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeliverLogsStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("destinationOptions", targetDepth))
+                    {
+                        var unmarshaller = DestinationOptionsResponseUnmarshaller.Instance;
+                        unmarshalledObject.DestinationOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("flowLogId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

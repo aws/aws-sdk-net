@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _deliverLogsErrorMessage;
         private string _deliverLogsPermissionArn;
         private string _deliverLogsStatus;
+        private DestinationOptionsResponse _destinationOptions;
         private string _flowLogId;
         private string _flowLogStatus;
         private string _logDestination;
@@ -126,6 +127,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationOptions. 
+        /// <para>
+        /// The destination options.
+        /// </para>
+        /// </summary>
+        public DestinationOptionsResponse DestinationOptions
+        {
+            get { return this._destinationOptions; }
+            set { this._destinationOptions = value; }
+        }
+
+        // Check to see if DestinationOptions property is set
+        internal bool IsSetDestinationOptions()
+        {
+            return this._destinationOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FlowLogId. 
         /// <para>
         /// The flow log ID.
@@ -164,12 +183,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogDestination. 
         /// <para>
-        /// Specifies the destination to which the flow log data is published. Flow log data can
-        /// be published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log
-        /// publishes to CloudWatch Logs, this element indicates the Amazon Resource Name (ARN)
-        /// of the CloudWatch Logs log group to which the data is published. If the flow log publishes
-        /// to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the
-        /// data is published.
+        /// The destination to which the flow log data is published. Flow log data can be published
+        /// to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes
+        /// to CloudWatch Logs, this element indicates the Amazon Resource Name (ARN) of the CloudWatch
+        /// Logs log group to which the data is published. If the flow log publishes to Amazon
+        /// S3, this element indicates the ARN of the Amazon S3 bucket to which the data is published.
         /// </para>
         /// </summary>
         public string LogDestination
@@ -187,8 +205,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogDestinationType. 
         /// <para>
-        /// Specifies the type of destination to which the flow log data is published. Flow log
-        /// data can be published to CloudWatch Logs or Amazon S3.
+        /// The type of destination to which the flow log data is published. Flow log data can
+        /// be published to CloudWatch Logs or Amazon S3.
         /// </para>
         /// </summary>
         public LogDestinationType LogDestinationType

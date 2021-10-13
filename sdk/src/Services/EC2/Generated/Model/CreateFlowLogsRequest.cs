@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private string _deliverLogsPermissionArn;
+        private DestinationOptionsRequest _destinationOptions;
         private string _logDestination;
         private LogDestinationType _logDestinationType;
         private string _logFormat;
@@ -112,11 +113,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DestinationOptions. 
+        /// <para>
+        /// The destination options.
+        /// </para>
+        /// </summary>
+        public DestinationOptionsRequest DestinationOptions
+        {
+            get { return this._destinationOptions; }
+            set { this._destinationOptions = value; }
+        }
+
+        // Check to see if DestinationOptions property is set
+        internal bool IsSetDestinationOptions()
+        {
+            return this._destinationOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDestination. 
         /// <para>
-        /// Specifies the destination to which the flow log data is to be published. Flow log
-        /// data can be published to a CloudWatch Logs log group or an Amazon S3 bucket. The value
-        /// specified for this parameter depends on the value specified for <code>LogDestinationType</code>.
+        /// The destination to which the flow log data is to be published. Flow log data can be
+        /// published to a CloudWatch Logs log group or an Amazon S3 bucket. The value specified
+        /// for this parameter depends on the value specified for <code>LogDestinationType</code>.
         /// </para>
         ///  
         /// <para>
@@ -150,10 +169,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogDestinationType. 
         /// <para>
-        /// Specifies the type of destination to which the flow log data is to be published. Flow
-        /// log data can be published to CloudWatch Logs or Amazon S3. To publish flow log data
-        /// to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To publish flow log data
-        /// to Amazon S3, specify <code>s3</code>.
+        /// The type of destination to which the flow log data is to be published. Flow log data
+        /// can be published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch
+        /// Logs, specify <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3,
+        /// specify <code>s3</code>.
         /// </para>
         ///  
         /// <para>
