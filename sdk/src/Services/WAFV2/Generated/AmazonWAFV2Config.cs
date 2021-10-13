@@ -32,7 +32,7 @@ namespace Amazon.WAFV2
     public partial class AmazonWAFV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.6.12");
 
         private string _userAgent = UserAgentString;
 

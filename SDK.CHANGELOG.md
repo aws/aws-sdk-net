@@ -1,3 +1,20 @@
+### 3.7.136.0 (2021-10-13 18:16 UTC)
+* ConfigService (3.7.5.0)
+	* Adding Config support for AWS::OpenSearch::Domain
+* EC2 (3.7.34.0)
+	* This release adds support for additional VPC Flow Logs delivery options to S3, such as Apache Parquet formatted files, Hourly partitions and Hive-compatible S3 prefixes
+* KinesisAnalyticsV2 (3.7.5.0)
+	* Support for Apache Flink 1.13 in Kinesis Data Analytics. Changed the required status of some Update properties to better fit the corresponding Create properties.
+* StorageGateway (3.7.3.0)
+	* Adding support for Audit Logs on NFS shares and Force Closing Files on SMB shares.
+* WorkMail (3.7.4.0)
+	* This release adds APIs for adding, removing and retrieving details of mail domains
+* Core 3.7.3.21
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.135.0 (2021-10-12 18:13 UTC)
 * CloudSearch (3.7.2.0)
 	* Adds an additional validation exception for Amazon CloudSearch configuration APIs for better error handling.
