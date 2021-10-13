@@ -95,7 +95,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// If a previous invocation of this operation returned a pagination token, pass it into
         /// this value to retrieve the next set of results. For more information about pagination,
         /// see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-        /// the AWS Command Line Interface's Pagination Options</a>.
+        /// the Amazon Command Line Interface's Pagination Options</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

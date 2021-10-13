@@ -41,7 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CatalogConfiguration. 
         /// <para>
-        /// The AWS Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio
+        /// The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio
         /// notebook.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property DeployAsApplicationConfiguration. 
         /// <para>
         /// The information required to deploy a Kinesis Data Analytics Studio notebook as an
-        /// application with durable state..
+        /// application with durable state.
         /// </para>
         /// </summary>
         public DeployAsApplicationConfiguration DeployAsApplicationConfiguration

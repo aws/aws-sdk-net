@@ -98,7 +98,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property LambdaOutputUpdate. 
         /// <para>
-        /// Describes an AWS Lambda function as the destination for the output.
+        /// Describes an Amazon Lambda function as the destination for the output.
         /// </para>
         /// </summary>
         public LambdaOutputUpdate LambdaOutputUpdate

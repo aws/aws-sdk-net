@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Updates to the configuration information required to deploy an Amazon Data Analytics
-    /// Studio notebook as an application with durable state..
+    /// Studio notebook as an application with durable state.
     /// </summary>
     public partial class DeployAsApplicationConfigurationUpdate
     {
@@ -43,7 +43,6 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public S3ContentBaseLocationUpdate S3ContentLocationUpdate
         {
             get { return this._s3ContentLocationUpdate; }

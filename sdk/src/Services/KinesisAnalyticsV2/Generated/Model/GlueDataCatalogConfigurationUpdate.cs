@@ -42,7 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The updated Amazon Resource Name (ARN) of the database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string DatabaseARNUpdate
         {
             get { return this._databaseARNUpdate; }

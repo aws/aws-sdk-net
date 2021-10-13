@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// For a SQL-based Kinesis Data Analytics application, provides the configuration information
-    /// about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS
+    /// about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon
     /// Lambda</a>.
     /// </summary>
     public partial class InputProcessingConfigurationDescription

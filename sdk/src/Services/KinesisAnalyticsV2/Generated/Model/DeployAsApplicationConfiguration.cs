@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// The information required to deploy a Kinesis Data Analytics Studio notebook as an
-    /// application with durable state..
+    /// application with durable state.
     /// </summary>
     public partial class DeployAsApplicationConfiguration
     {

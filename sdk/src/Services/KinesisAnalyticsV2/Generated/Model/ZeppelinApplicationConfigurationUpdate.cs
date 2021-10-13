@@ -41,7 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CatalogConfigurationUpdate. 
         /// <para>
-        /// Updates to the configuration of the AWS Glue Data Catalog that is associated with
+        /// Updates to the configuration of the Amazon Glue Data Catalog that is associated with
         /// the Kinesis Data Analytics Studio notebook.
         /// </para>
         /// </summary>

@@ -61,7 +61,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The updated Amazon Resource Name (ARN) of the S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=2048)]
         public string BucketARNUpdate
         {
             get { return this._bucketARNUpdate; }

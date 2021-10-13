@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Updates to
+    /// Updates to the configuration parameters for the default Amazon Glue database. You
+    /// use this database for SQL queries that you write in a Kinesis Data Analytics Studio
+    /// notebook.
     /// </summary>
     public partial class CatalogConfigurationUpdate
     {
@@ -38,8 +40,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property GlueDataCatalogConfigurationUpdate. 
         /// <para>
-        /// Updates to the configuration parameters for the default AWS Glue database. You use
-        /// this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+        /// Updates to the configuration parameters for the default Amazon Glue database. You
+        /// use this database for SQL queries that you write in a Kinesis Data Analytics Studio
+        /// notebook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

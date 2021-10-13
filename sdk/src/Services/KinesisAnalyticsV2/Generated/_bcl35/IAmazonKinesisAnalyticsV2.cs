@@ -182,7 +182,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data Analytics
         /// application. An input processor pre-processes records on the input stream before the
         /// application's SQL code executes. Currently, the only input processor available is
-        /// <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
+        /// <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddApplicationInputProcessingConfiguration service method.</param>
         /// 
@@ -245,10 +245,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// <para>
         /// If you want Kinesis Data Analytics to deliver data from an in-application stream within
         /// your application to an external destination (such as an Kinesis data stream, a Kinesis
-        /// Data Firehose delivery stream, or an AWS Lambda function), you add the relevant configuration
-        /// to your application using this operation. You can configure one or more outputs for
-        /// your application. Each output configuration maps an in-application stream and an external
-        /// destination.
+        /// Data Firehose delivery stream, or an Amazon Lambda function), you add the relevant
+        /// configuration to your application using this operation. You can configure one or more
+        /// outputs for your application. Each output configuration maps an in-application stream
+        /// and an external destination.
         /// </para>
         ///  
         /// <para>
@@ -489,6 +489,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// Application created with too many tags, or too many tags added to an application.
         /// Note that the maximum number of application tags includes system tags. The maximum
         /// number of user-defined application tags is 50.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
@@ -1269,6 +1273,10 @@ namespace Amazon.KinesisAnalyticsV2
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnableToDetectSchemaException">
         /// The data format is not valid. Kinesis Data Analytics cannot detect the schema for
         /// the given streaming source.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalyticsV2.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
         DiscoverInputSchemaResponse DiscoverInputSchema(DiscoverInputSchemaRequest request);
