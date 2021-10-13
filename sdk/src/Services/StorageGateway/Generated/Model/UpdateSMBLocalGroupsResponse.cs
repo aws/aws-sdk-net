@@ -29,31 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the CreateTapePool operation.
+    /// This is the response object from the UpdateSMBLocalGroups operation.
     /// </summary>
-    public partial class CreateTapePoolResponse : AmazonWebServiceResponse
+    public partial class UpdateSMBLocalGroupsResponse : AmazonWebServiceResponse
     {
-        private string _poolARN;
+        private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property PoolARN. 
-        /// <para>
-        /// The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the
-        /// <a>ListTapePools</a> operation to return a list of tape pools for your account and
-        /// Amazon Web Services Region.
-        /// </para>
+        /// Gets and sets the property GatewayARN.
         /// </summary>
         [AWSProperty(Min=50, Max=500)]
-        public string PoolARN
+        public string GatewayARN
         {
-            get { return this._poolARN; }
-            set { this._poolARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
-        // Check to see if PoolARN property is set
-        internal bool IsSetPoolARN()
+        // Check to see if GatewayARN property is set
+        internal bool IsSetGatewayARN()
         {
-            return this._poolARN != null;
+            return this._gatewayARN != null;
         }
 
     }

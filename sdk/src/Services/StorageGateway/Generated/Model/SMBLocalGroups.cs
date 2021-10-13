@@ -29,31 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the CreateTapePool operation.
+    /// A list of Active Directory users and groups that have special permissions for SMB
+    /// file shares on the gateway.
     /// </summary>
-    public partial class CreateTapePoolResponse : AmazonWebServiceResponse
+    public partial class SMBLocalGroups
     {
-        private string _poolARN;
+        private List<string> _gatewayAdmins = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property PoolARN. 
+        /// Gets and sets the property GatewayAdmins. 
         /// <para>
-        /// The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the
-        /// <a>ListTapePools</a> operation to return a list of tape pools for your account and
-        /// Amazon Web Services Region.
+        /// A list of Active Directory users and groups that have local Gateway Admin permissions.
+        /// Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>,
+        /// and <code>group1</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to
+        /// force-close files that are open and locked.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
-        public string PoolARN
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> GatewayAdmins
         {
-            get { return this._poolARN; }
-            set { this._poolARN = value; }
+            get { return this._gatewayAdmins; }
+            set { this._gatewayAdmins = value; }
         }
 
-        // Check to see if PoolARN property is set
-        internal bool IsSetPoolARN()
+        // Check to see if GatewayAdmins property is set
+        internal bool IsSetGatewayAdmins()
         {
-            return this._poolARN != null;
+            return this._gatewayAdmins != null && this._gatewayAdmins.Count > 0; 
         }
 
     }

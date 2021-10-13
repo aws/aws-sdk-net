@@ -44,7 +44,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property PoolARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a>
-        /// operation to return a list of custom tape pools for your account and Region.
+        /// operation to return a list of custom tape pools for your account and Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=500)]
@@ -122,9 +123,10 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property RetentionLockType. 
         /// <para>
         /// Tape retention lock type, which can be configured in two modes. When configured in
-        /// governance mode, accounts with specific IAM permissions are authorized to remove the
-        /// tape retention lock from archived virtual tapes. When configured in compliance mode,
-        /// the tape retention lock cannot be removed by any user, including the root account.
+        /// governance mode, Amazon Web Services accounts with specific IAM permissions are authorized
+        /// to remove the tape retention lock from archived virtual tapes. When configured in
+        /// compliance mode, the tape retention lock cannot be removed by any user, including
+        /// the root Amazon Web Services account.
         /// </para>
         /// </summary>
         public RetentionLockType RetentionLockType

@@ -39,6 +39,7 @@ namespace Amazon.StorageGateway.Model
         private EndpointNetworkConfiguration _endpointNetworkConfiguration;
         private string _fileSystemAssociationARN;
         private string _fileSystemAssociationStatus;
+        private List<FileSystemAssociationStatusDetail> _fileSystemAssociationStatusDetails = new List<FileSystemAssociationStatusDetail>();
         private string _gatewayARN;
         private string _locationARN;
         private List<Tag> _tags = new List<Tag>();
@@ -140,6 +141,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileSystemAssociationStatus()
         {
             return this._fileSystemAssociationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemAssociationStatusDetails. 
+        /// <para>
+        /// An array containing the FileSystemAssociationStatusDetail data type, which provides
+        /// detailed information on file system association status.
+        /// </para>
+        /// </summary>
+        public List<FileSystemAssociationStatusDetail> FileSystemAssociationStatusDetails
+        {
+            get { return this._fileSystemAssociationStatusDetails; }
+            set { this._fileSystemAssociationStatusDetails = value; }
+        }
+
+        // Check to see if FileSystemAssociationStatusDetails property is set
+        internal bool IsSetFileSystemAssociationStatusDetails()
+        {
+            return this._fileSystemAssociationStatusDetails != null && this._fileSystemAssociationStatusDetails.Count > 0; 
         }
 
         /// <summary>

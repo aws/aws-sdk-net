@@ -29,27 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It
-    /// is a string made of information such as your account, gateway name, and Amazon Web
-    /// Services Region. This ARN is used to reference the gateway in other API operations
-    /// as well as resource-based authorization.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway
-    /// name rather than the gateway ID. Changing the name of the gateway has no effect on
-    /// the gateway ARN.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the UpdateSMBLocalGroups operation.
+    /// Updates the list of Active Directory users and groups that have special permissions
+    /// for SMB file shares on the gateway.
     /// </summary>
-    public partial class ActivateGatewayResponse : AmazonWebServiceResponse
+    public partial class UpdateSMBLocalGroupsRequest : AmazonStorageGatewayRequest
     {
         private string _gatewayARN;
+        private SMBLocalGroups _smbLocalGroups;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
+        [AWSProperty(Required=true, Min=50, Max=500)]
         public string GatewayARN
         {
             get { return this._gatewayARN; }
@@ -60,6 +52,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SMBLocalGroups. 
+        /// <para>
+        /// A list of Active Directory users and groups that you want to grant special permissions
+        /// for SMB file shares on the gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SMBLocalGroups SMBLocalGroups
+        {
+            get { return this._smbLocalGroups; }
+            set { this._smbLocalGroups = value; }
+        }
+
+        // Check to see if SMBLocalGroups property is set
+        internal bool IsSetSMBLocalGroups()
+        {
+            return this._smbLocalGroups != null;
         }
 
     }

@@ -268,7 +268,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>,
+        /// or if an access point or access point alias is used.
         /// </para>
         ///  </note>
         /// </summary>

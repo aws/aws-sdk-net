@@ -29,31 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the CreateTapePool operation.
+    /// Detailed information on file system association status.
     /// </summary>
-    public partial class CreateTapePoolResponse : AmazonWebServiceResponse
+    public partial class FileSystemAssociationStatusDetail
     {
-        private string _poolARN;
+        private string _errorCode;
 
         /// <summary>
-        /// Gets and sets the property PoolARN. 
+        /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the
-        /// <a>ListTapePools</a> operation to return a list of tape pools for your account and
-        /// Amazon Web Services Region.
+        /// The error code for a given file system association status.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
-        public string PoolARN
+        public string ErrorCode
         {
-            get { return this._poolARN; }
-            set { this._poolARN = value; }
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
         }
 
-        // Check to see if PoolARN property is set
-        internal bool IsSetPoolARN()
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
         {
-            return this._poolARN != null;
+            return this._errorCode != null;
         }
 
     }

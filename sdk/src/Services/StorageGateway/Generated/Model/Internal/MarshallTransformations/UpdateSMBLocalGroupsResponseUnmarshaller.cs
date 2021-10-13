@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeSMBSettings operation
+    /// Response Unmarshaller for UpdateSMBLocalGroups operation
     /// </summary>  
-    public class DescribeSMBSettingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateSMBLocalGroupsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,52 +45,16 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeSMBSettingsResponse response = new DescribeSMBSettingsResponse();
+            UpdateSMBLocalGroupsResponse response = new UpdateSMBLocalGroupsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ActiveDirectoryStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ActiveDirectoryStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DomainName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FileSharesVisible", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.FileSharesVisible = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SMBGuestPasswordSet", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.SMBGuestPasswordSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SMBLocalGroups", targetDepth))
-                {
-                    var unmarshaller = SMBLocalGroupsUnmarshaller.Instance;
-                    response.SMBLocalGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SMBSecurityStrategy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SMBSecurityStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -128,9 +92,9 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             return new AmazonStorageGatewayException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeSMBSettingsResponseUnmarshaller _instance = new DescribeSMBSettingsResponseUnmarshaller();        
+        private static UpdateSMBLocalGroupsResponseUnmarshaller _instance = new UpdateSMBLocalGroupsResponseUnmarshaller();        
 
-        internal static DescribeSMBSettingsResponseUnmarshaller GetInstance()
+        internal static UpdateSMBLocalGroupsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +102,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeSMBSettingsResponseUnmarshaller Instance
+        public static UpdateSMBLocalGroupsResponseUnmarshaller Instance
         {
             get
             {

@@ -64,6 +64,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AuditDestinationARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuditDestinationARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BucketRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

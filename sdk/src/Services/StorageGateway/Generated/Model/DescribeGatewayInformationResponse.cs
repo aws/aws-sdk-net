@@ -115,7 +115,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceRegion. 
         /// <para>
-        /// The Region where the Amazon EC2 instance is located.
+        /// The Amazon Web Services Region where the Amazon EC2 instance is located.
         /// </para>
         /// </summary>
         public string Ec2InstanceRegion

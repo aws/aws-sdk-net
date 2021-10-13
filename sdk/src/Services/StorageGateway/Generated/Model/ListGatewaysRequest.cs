@@ -30,8 +30,9 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGateways operation.
-    /// Lists gateways owned by an account in an Region specified in the request. The returned
-    /// list is ordered by gateway Amazon Resource Name (ARN).
+    /// Lists gateways owned by an Amazon Web Services account in an Amazon Web Services Region
+    /// specified in the request. The returned list is ordered by gateway Amazon Resource
+    /// Name (ARN).
     /// 
     ///  
     /// <para>

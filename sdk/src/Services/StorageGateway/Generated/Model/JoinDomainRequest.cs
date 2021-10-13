@@ -85,7 +85,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GatewayARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and Region.
+        /// to return a list of gateways for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=50, Max=500)]

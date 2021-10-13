@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class NFSFileShareInfo
     {
+        private string _auditDestinationARN;
         private string _bucketRegion;
         private CacheAttributes _cacheAttributes;
         private List<string> _clientList = new List<string>();
@@ -58,6 +59,25 @@ namespace Amazon.StorageGateway.Model
         private string _squash;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpointDNSName;
+
+        /// <summary>
+        /// Gets and sets the property AuditDestinationARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the storage used for audit logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string AuditDestinationARN
+        {
+            get { return this._auditDestinationARN; }
+            set { this._auditDestinationARN = value; }
+        }
+
+        // Check to see if AuditDestinationARN property is set
+        internal bool IsSetAuditDestinationARN()
+        {
+            return this._auditDestinationARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BucketRegion. 
@@ -183,7 +203,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>,
+        /// or if an access point or access point alias is used.
         /// </para>
         ///  </note>
         /// </summary>

@@ -67,6 +67,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuditDestinationARN())
+                {
+                    context.Writer.WritePropertyName("AuditDestinationARN");
+                    context.Writer.Write(publicRequest.AuditDestinationARN);
+                }
+
                 if(publicRequest.IsSetCacheAttributes())
                 {
                     context.Writer.WritePropertyName("CacheAttributes");

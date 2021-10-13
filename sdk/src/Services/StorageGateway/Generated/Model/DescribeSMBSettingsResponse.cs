@@ -38,6 +38,7 @@ namespace Amazon.StorageGateway.Model
         private bool? _fileSharesVisible;
         private string _gatewayARN;
         private bool? _smbGuestPasswordSet;
+        private SMBLocalGroups _smbLocalGroups;
         private SMBSecurityStrategy _smbSecurityStrategy;
 
         /// <summary>
@@ -166,6 +167,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetSMBGuestPasswordSet()
         {
             return this._smbGuestPasswordSet.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SMBLocalGroups. 
+        /// <para>
+        /// A list of Active Directory users and groups that have special permissions for SMB
+        /// file shares on the gateway.
+        /// </para>
+        /// </summary>
+        public SMBLocalGroups SMBLocalGroups
+        {
+            get { return this._smbLocalGroups; }
+            set { this._smbLocalGroups = value; }
+        }
+
+        // Check to see if SMBLocalGroups property is set
+        internal bool IsSetSMBLocalGroups()
+        {
+            return this._smbLocalGroups != null;
         }
 
         /// <summary>

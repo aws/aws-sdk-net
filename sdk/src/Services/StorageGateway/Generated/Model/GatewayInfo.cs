@@ -62,7 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceRegion. 
         /// <para>
-        /// The Region where the Amazon EC2 instance is located.
+        /// The Amazon Web Services Region where the Amazon EC2 instance is located.
         /// </para>
         /// </summary>
         public string Ec2InstanceRegion
@@ -81,7 +81,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GatewayARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation
-        /// to return a list of gateways for your account and Region.
+        /// to return a list of gateways for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=500)]

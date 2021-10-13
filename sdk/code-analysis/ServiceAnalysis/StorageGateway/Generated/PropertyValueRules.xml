@@ -249,6 +249,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.AuditDestinationARN</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.BucketRegion</property>
     <min>1</min>
     <max>25</max>
@@ -816,7 +820,7 @@
     <property>Amazon.StorageGateway.Model.DescribeSMBSettingsResponse.DomainName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$</pattern>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeSMBSettingsResponse.GatewayARN</property>
@@ -988,7 +992,7 @@
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.DomainName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$</pattern>
+    <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.JoinDomainRequest.GatewayARN</property>
@@ -1498,6 +1502,10 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.AuditDestinationARN</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.DefaultStorageClass</property>
     <min>5</min>
     <max>50</max>
@@ -1577,6 +1585,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareVisibilityResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBLocalGroupsRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBLocalGroupsResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
@@ -1865,6 +1883,10 @@
     <property>Amazon.StorageGateway.Model.NFSFileShareDefaults.OwnerId</property>
     <min>0</min>
     <max>4294967294</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.AuditDestinationARN</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.BucketRegion</property>

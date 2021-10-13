@@ -94,6 +94,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.FileSystemAssociationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FileSystemAssociationStatusDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FileSystemAssociationStatusDetail, FileSystemAssociationStatusDetailUnmarshaller>(FileSystemAssociationStatusDetailUnmarshaller.Instance);
+                    unmarshalledObject.FileSystemAssociationStatusDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

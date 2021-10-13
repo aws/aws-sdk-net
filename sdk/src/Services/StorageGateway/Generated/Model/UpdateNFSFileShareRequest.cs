@@ -65,6 +65,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class UpdateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
+        private string _auditDestinationARN;
         private CacheAttributes _cacheAttributes;
         private List<string> _clientList = new List<string>();
         private string _defaultStorageClass;
@@ -81,9 +82,28 @@ namespace Amazon.StorageGateway.Model
         private string _squash;
 
         /// <summary>
+        /// Gets and sets the property AuditDestinationARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the storage used for audit logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string AuditDestinationARN
+        {
+            get { return this._auditDestinationARN; }
+            set { this._auditDestinationARN = value; }
+        }
+
+        // Check to see if AuditDestinationARN property is set
+        internal bool IsSetAuditDestinationARN()
+        {
+            return this._auditDestinationARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheAttributes. 
         /// <para>
-        /// specifies refresh cache information for the file share.
+        /// Specifies refresh cache information for the file share.
         /// </para>
         /// </summary>
         public CacheAttributes CacheAttributes
@@ -169,7 +189,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>,
+        /// or if an access point or access point alias is used.
         /// </para>
         ///  </note>
         /// </summary>

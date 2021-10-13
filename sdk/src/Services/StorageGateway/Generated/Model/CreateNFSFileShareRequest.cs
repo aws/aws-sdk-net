@@ -37,12 +37,13 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  <important> 
     /// <para>
-    /// S3 File gateway requires Security Token Service (STS) to be activated to enable you
-    /// to create a file share. Make sure STS is activated in the Region you are creating
-    /// your S3 File Gateway in. If STS is not activated in the Region, activate it. For information
-    /// about how to activate STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-    /// and deactivating STS in an Region</a> in the <i>Identity and Access Management User
-    /// Guide</i>.
+    /// S3 File gateway requires Security Token Service (Amazon Web Services STS) to be activated
+    /// to enable you to create a file share. Make sure Amazon Web Services STS is activated
+    /// in the Amazon Web Services Region you are creating your S3 File Gateway in. If Amazon
+    /// Web Services STS is not activated in the Amazon Web Services Region, activate it.
+    /// For information about how to activate Amazon Web Services STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
+    /// <i>Identity and Access Management User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -52,6 +53,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class CreateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
+        private string _auditDestinationARN;
         private string _bucketRegion;
         private CacheAttributes _cacheAttributes;
         private List<string> _clientList = new List<string>();
@@ -72,6 +74,25 @@ namespace Amazon.StorageGateway.Model
         private string _squash;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcEndpointDNSName;
+
+        /// <summary>
+        /// Gets and sets the property AuditDestinationARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the storage used for audit logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string AuditDestinationARN
+        {
+            get { return this._auditDestinationARN; }
+            set { this._auditDestinationARN = value; }
+        }
+
+        // Check to see if AuditDestinationARN property is set
+        internal bool IsSetAuditDestinationARN()
+        {
+            return this._auditDestinationARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BucketRegion. 
@@ -189,7 +210,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>,
+        /// or if an access point or access point alias is used.
         /// </para>
         ///  </note>
         /// </summary>
@@ -297,24 +319,44 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property LocationARN. 
         /// <para>
-        /// The ARN of the backend storage used for storing file data. A prefix name can be added
-        /// to the S3 bucket name. It must end with a "/".
+        /// A custom ARN for the backend storage used for storing data for file shares. It includes
+        /// a resource ARN with an optional prefix concatenation. The prefix must end with a forward
+        /// slash (/).
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can specify a bucket attached to an access point using a complete ARN that includes
-        /// the bucket region as shown:
+        /// You can specify LocationARN as a bucket ARN, access point ARN or access point alias,
+        /// as shown in the following examples.
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:s3:<i>region</i>:<i>account-id</i>:accesspoint/<i>access-point-name</i>
-        /// </code> 
+        /// Bucket ARN:
         /// </para>
         ///  
         /// <para>
-        /// If you specify a bucket attached to an access point, the bucket policy must be configured
-        /// to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
+        ///  <code>arn:aws:s3:::my-bucket/prefix/</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Access point ARN:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an access point, the bucket policy must be configured to delegate access
+        /// control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating
         /// access control to access points</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Access point alias:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> 
         /// </para>
         ///  </note>
         /// </summary>
