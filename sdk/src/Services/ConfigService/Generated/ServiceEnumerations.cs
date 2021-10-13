@@ -1745,6 +1745,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSNetworkFirewallRuleGroup = new ResourceType("AWS::NetworkFirewall::RuleGroup");
         /// <summary>
+        /// Constant AWSOpenSearchDomain for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSOpenSearchDomain = new ResourceType("AWS::OpenSearch::Domain");
+        /// <summary>
         /// Constant AWSQLDBLedger for ResourceType
         /// </summary>
         public static readonly ResourceType AWSQLDBLedger = new ResourceType("AWS::QLDB::Ledger");
