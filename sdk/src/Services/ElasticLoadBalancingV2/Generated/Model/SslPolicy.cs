@@ -36,6 +36,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private List<Cipher> _ciphers = new List<Cipher>();
         private string _name;
         private List<string> _sslProtocols = new List<string>();
+        private List<string> _supportedLoadBalancerTypes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Ciphers. 
@@ -89,6 +90,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetSslProtocols()
         {
             return this._sslProtocols != null && this._sslProtocols.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedLoadBalancerTypes. 
+        /// <para>
+        ///  The supported load balancers. 
+        /// </para>
+        /// </summary>
+        public List<string> SupportedLoadBalancerTypes
+        {
+            get { return this._supportedLoadBalancerTypes; }
+            set { this._supportedLoadBalancerTypes = value; }
+        }
+
+        // Check to see if SupportedLoadBalancerTypes property is set
+        internal bool IsSetSupportedLoadBalancerTypes()
+        {
+            return this._supportedLoadBalancerTypes != null && this._supportedLoadBalancerTypes.Count > 0; 
         }
 
     }

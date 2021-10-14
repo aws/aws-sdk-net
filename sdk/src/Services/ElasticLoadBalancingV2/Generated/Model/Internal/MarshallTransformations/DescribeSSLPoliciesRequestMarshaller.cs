@@ -58,6 +58,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetLoadBalancerType())
+                {
+                    request.Parameters.Add("LoadBalancerType", StringUtils.FromString(publicRequest.LoadBalancerType));
+                }
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));

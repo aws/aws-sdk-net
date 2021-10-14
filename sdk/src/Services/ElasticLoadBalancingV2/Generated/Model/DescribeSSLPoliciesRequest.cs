@@ -41,9 +41,28 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeSSLPoliciesRequest : AmazonElasticLoadBalancingV2Request
     {
+        private LoadBalancerTypeEnum _loadBalancerType;
         private string _marker;
         private List<string> _names = new List<string>();
         private int? _pageSize;
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerType. 
+        /// <para>
+        ///  The type of load balancer. The default lists the SSL policies for all load balancers.
+        /// </para>
+        /// </summary>
+        public LoadBalancerTypeEnum LoadBalancerType
+        {
+            get { return this._loadBalancerType; }
+            set { this._loadBalancerType = value; }
+        }
+
+        // Check to see if LoadBalancerType property is set
+        internal bool IsSetLoadBalancerType()
+        {
+            return this._loadBalancerType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Marker. 
