@@ -10425,6 +10425,11 @@
             "us-gov-west-1": {}
           }
         },
+        "kendra": {
+          "endpoints": {
+            "us-gov-west-1": {}
+          }
+        },
         "kinesis": {
           "endpoints": {
             "us-gov-east-1": {
