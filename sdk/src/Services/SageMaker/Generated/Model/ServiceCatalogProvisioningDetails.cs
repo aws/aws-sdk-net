@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// The ID of the provisioning artifact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string ProvisioningArtifactId
         {
             get { return this._provisioningArtifactId; }

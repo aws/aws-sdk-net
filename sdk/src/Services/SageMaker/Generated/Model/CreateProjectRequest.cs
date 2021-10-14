@@ -81,8 +81,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ServiceCatalogProvisioningDetails. 
         /// <para>
-        /// The product ID and provisioning artifact ID to provision a service catalog. For information,
-        /// see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
+        /// The product ID and provisioning artifact ID to provision a service catalog. The provisioning
+        /// artifact ID will default to the latest provisioning artifact ID of the product, if
+        /// you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
         /// is Amazon Web Services Service Catalog</a>.
         /// </para>
         /// </summary>
