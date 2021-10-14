@@ -64,6 +64,18 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("computeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("gpuUnitLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.GpuUnitLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("simulationUnitLimit", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

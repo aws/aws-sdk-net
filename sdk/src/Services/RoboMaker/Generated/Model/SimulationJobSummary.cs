@@ -34,6 +34,7 @@ namespace Amazon.RoboMaker.Model
     public partial class SimulationJobSummary
     {
         private string _arn;
+        private ComputeType _computeType;
         private List<string> _dataSourceNames = new List<string>();
         private DateTime? _lastUpdatedAt;
         private string _name;
@@ -58,6 +59,24 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeType. 
+        /// <para>
+        /// The compute type for the simulation job summary.
+        /// </para>
+        /// </summary>
+        public ComputeType ComputeType
+        {
+            get { return this._computeType; }
+            set { this._computeType = value; }
+        }
+
+        // Check to see if ComputeType property is set
+        internal bool IsSetComputeType()
+        {
+            return this._computeType != null;
         }
 
         /// <summary>

@@ -1159,14 +1159,30 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.Compute.GpuUnitLimit</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.Compute.SimulationUnitLimit</property>
     <min>1</min>
     <max>15</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RoboMaker.Model.ComputeResponse.GpuUnitLimit</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RoboMaker.Model.ComputeResponse.SimulationUnitLimit</property>
     <min>1</min>
     <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DataSource.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DataSource.Name</property>
@@ -1179,6 +1195,12 @@
     <min>3</min>
     <max>63</max>
     <pattern>[a-z0-9][a-z0-9.\-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RoboMaker.Model.DataSourceConfig.Destination</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.DataSourceConfig.Name</property>
@@ -1435,7 +1457,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RoboMaker.Model.S3KeyOutput.S3Key</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>

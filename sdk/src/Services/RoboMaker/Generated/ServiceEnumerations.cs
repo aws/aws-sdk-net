@@ -79,6 +79,110 @@ namespace Amazon.RoboMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeType.
+    /// </summary>
+    public class ComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPU for ComputeType
+        /// </summary>
+        public static readonly ComputeType CPU = new ComputeType("CPU");
+        /// <summary>
+        /// Constant GPU_AND_CPU for ComputeType
+        /// </summary>
+        public static readonly ComputeType GPU_AND_CPU = new ComputeType("GPU_AND_CPU");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeType FindValue(string value)
+        {
+            return FindValue<ComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSourceType.
+    /// </summary>
+    public class DataSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Archive for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType Archive = new DataSourceType("Archive");
+        /// <summary>
+        /// Constant File for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType File = new DataSourceType("File");
+        /// <summary>
+        /// Constant Prefix for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType Prefix = new DataSourceType("Prefix");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceType FindValue(string value)
+        {
+            return FindValue<DataSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentJobErrorCode.
     /// </summary>
     public class DeploymentJobErrorCode : ConstantClass
@@ -504,6 +608,10 @@ namespace Amazon.RoboMaker
     public class RobotSoftwareSuiteType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant General for RobotSoftwareSuiteType
+        /// </summary>
+        public static readonly RobotSoftwareSuiteType General = new RobotSoftwareSuiteType("General");
         /// <summary>
         /// Constant ROS for RobotSoftwareSuiteType
         /// </summary>
@@ -1062,6 +1170,10 @@ namespace Amazon.RoboMaker
         /// Constant RosbagPlay for SimulationSoftwareSuiteType
         /// </summary>
         public static readonly SimulationSoftwareSuiteType RosbagPlay = new SimulationSoftwareSuiteType("RosbagPlay");
+        /// <summary>
+        /// Constant SimulationRuntime for SimulationSoftwareSuiteType
+        /// </summary>
+        public static readonly SimulationSoftwareSuiteType SimulationRuntime = new SimulationSoftwareSuiteType("SimulationRuntime");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

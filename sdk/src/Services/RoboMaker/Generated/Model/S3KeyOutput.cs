@@ -60,7 +60,7 @@ namespace Amazon.RoboMaker.Model
         /// The S3 key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string S3Key
         {
             get { return this._s3Key; }

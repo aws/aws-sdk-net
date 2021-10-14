@@ -33,9 +33,47 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class DataSource
     {
+        private string _destination;
         private string _name;
         private string _s3Bucket;
         private List<S3KeyOutput> _s3Keys = new List<S3KeyOutput>();
+        private DataSourceType _type;
+
+        /// <summary>
+        /// Gets and sets the property Destination. 
+        /// <para>
+        /// The location where your files are mounted in the container image.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
+        /// you must provide an Amazon S3 object key to your archive. The object key must point
+        /// to either a <code>.zip</code> or <code>.tar.gz</code> file.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
+        /// you provide the Amazon S3 prefix that points to the files that you are using for your
+        /// data source.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you've specified the <code>type</code> of the data source as a <code>File</code>,
+        /// you provide the Amazon S3 path to the file that you're using as your data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Destination
+        {
+            get { return this._destination; }
+            set { this._destination = value; }
+        }
+
+        // Check to see if Destination property is set
+        internal bool IsSetDestination()
+        {
+            return this._destination != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -91,6 +129,30 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetS3Keys()
         {
             return this._s3Keys != null && this._s3Keys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The data type for the data source that you're using for your container image or simulation
+        /// job. You can use this field to specify whether your data source is an Archive, an
+        /// Amazon S3 prefix, or a file.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a field, the default value is <code>File</code>.
+        /// </para>
+        /// </summary>
+        public DataSourceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

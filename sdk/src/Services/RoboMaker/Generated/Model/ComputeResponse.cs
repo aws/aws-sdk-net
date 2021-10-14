@@ -33,14 +33,54 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class ComputeResponse
     {
+        private ComputeType _computeType;
+        private int? _gpuUnitLimit;
         private int? _simulationUnitLimit;
+
+        /// <summary>
+        /// Gets and sets the property ComputeType. 
+        /// <para>
+        /// Compute type response information for the simulation job.
+        /// </para>
+        /// </summary>
+        public ComputeType ComputeType
+        {
+            get { return this._computeType; }
+            set { this._computeType = value; }
+        }
+
+        // Check to see if ComputeType property is set
+        internal bool IsSetComputeType()
+        {
+            return this._computeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GpuUnitLimit. 
+        /// <para>
+        /// Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+        /// allocated to the SimulationJob.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public int GpuUnitLimit
+        {
+            get { return this._gpuUnitLimit.GetValueOrDefault(); }
+            set { this._gpuUnitLimit = value; }
+        }
+
+        // Check to see if GpuUnitLimit property is set
+        internal bool IsSetGpuUnitLimit()
+        {
+            return this._gpuUnitLimit.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SimulationUnitLimit. 
         /// <para>
         /// The simulation unit limit. Your simulation is allocated CPU and memory proportional
         /// to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory.
-        /// You are only billed for the SU utilization you consume up to the maximim value provided.
+        /// You are only billed for the SU utilization you consume up to the maximum value provided.
         /// The default is 15. 
         /// </para>
         /// </summary>

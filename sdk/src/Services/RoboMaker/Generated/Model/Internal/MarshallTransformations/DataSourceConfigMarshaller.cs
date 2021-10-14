@@ -45,6 +45,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDestination())
+            {
+                context.Writer.WritePropertyName("destination");
+                context.Writer.Write(requestObject.Destination);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -66,6 +72,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectS3KeysListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }

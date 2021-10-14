@@ -33,11 +33,36 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class LaunchConfig
     {
+        private List<string> _command = new List<string>();
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _launchFile;
         private string _packageName;
         private PortForwardingConfig _portForwardingConfig;
         private bool? _streamui;
+
+        /// <summary>
+        /// Gets and sets the property Command. 
+        /// <para>
+        /// If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>,
+        /// you can use this field to specify a list of commands for your container image.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>,
+        /// you can use this field to specify a list of commands for your container image.
+        /// </para>
+        /// </summary>
+        public List<string> Command
+        {
+            get { return this._command; }
+            set { this._command = value; }
+        }
+
+        // Check to see if Command property is set
+        internal bool IsSetCommand()
+        {
+            return this._command != null && this._command.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
@@ -64,7 +89,7 @@ namespace Amazon.RoboMaker.Model
         /// The launch file name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string LaunchFile
         {
             get { return this._launchFile; }
@@ -83,7 +108,7 @@ namespace Amazon.RoboMaker.Model
         /// The package name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string PackageName
         {
             get { return this._packageName; }

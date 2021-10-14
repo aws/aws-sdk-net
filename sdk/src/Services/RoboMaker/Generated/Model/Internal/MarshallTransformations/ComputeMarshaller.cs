@@ -45,6 +45,18 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Compute requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetComputeType())
+            {
+                context.Writer.WritePropertyName("computeType");
+                context.Writer.Write(requestObject.ComputeType);
+            }
+
+            if(requestObject.IsSetGpuUnitLimit())
+            {
+                context.Writer.WritePropertyName("gpuUnitLimit");
+                context.Writer.Write(requestObject.GpuUnitLimit);
+            }
+
             if(requestObject.IsSetSimulationUnitLimit())
             {
                 context.Writer.WritePropertyName("simulationUnitLimit");
