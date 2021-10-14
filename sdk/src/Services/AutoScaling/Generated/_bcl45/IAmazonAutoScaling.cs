@@ -1334,9 +1334,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you establish an account, the account has initial quotas on the maximum number
-        /// of Auto Scaling groups and launch configurations that you can create in a given Region.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// When you establish an Amazon Web Services account, the account has initial quotas
+        /// on the maximum number of Auto Scaling groups and launch configurations that you can
+        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -1355,9 +1355,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you establish an account, the account has initial quotas on the maximum number
-        /// of Auto Scaling groups and launch configurations that you can create in a given Region.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// When you establish an Amazon Web Services account, the account has initial quotas
+        /// on the maximum number of Auto Scaling groups and launch configurations that you can
+        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -1377,9 +1377,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you establish an account, the account has initial quotas on the maximum number
-        /// of Auto Scaling groups and launch configurations that you can create in a given Region.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// When you establish an Amazon Web Services account, the account has initial quotas
+        /// on the maximum number of Auto Scaling groups and launch configurations that you can
+        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -1402,9 +1402,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you establish an account, the account has initial quotas on the maximum number
-        /// of Auto Scaling groups and launch configurations that you can create in a given Region.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+        /// When you establish an Amazon Web Services account, the account has initial quotas
+        /// on the maximum number of Auto Scaling groups and launch configurations that you can
+        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
         /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -1568,8 +1568,16 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// This operation returns information about instances in Auto Scaling groups. To retrieve
-        /// information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+        /// If you specify Auto Scaling group names, the output includes information for only
+        /// the specified Auto Scaling groups. If you specify filters, the output includes information
+        /// for only those Auto Scaling groups that meet the filter criteria. If you do not specify
+        /// group names or filters, the output includes information for all Auto Scaling groups.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation also returns information about instances in Auto Scaling groups. To
+        /// retrieve information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
         /// API. 
         /// </para>
         /// </summary>
@@ -1591,8 +1599,16 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// This operation returns information about instances in Auto Scaling groups. To retrieve
-        /// information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+        /// If you specify Auto Scaling group names, the output includes information for only
+        /// the specified Auto Scaling groups. If you specify filters, the output includes information
+        /// for only those Auto Scaling groups that meet the filter criteria. If you do not specify
+        /// group names or filters, the output includes information for all Auto Scaling groups.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation also returns information about instances in Auto Scaling groups. To
+        /// retrieve information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
         /// API. 
         /// </para>
         /// </summary>
@@ -1615,8 +1631,16 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// This operation returns information about instances in Auto Scaling groups. To retrieve
-        /// information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+        /// If you specify Auto Scaling group names, the output includes information for only
+        /// the specified Auto Scaling groups. If you specify filters, the output includes information
+        /// for only those Auto Scaling groups that meet the filter criteria. If you do not specify
+        /// group names or filters, the output includes information for all Auto Scaling groups.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation also returns information about instances in Auto Scaling groups. To
+        /// retrieve information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
         /// API. 
         /// </para>
         /// </summary>
@@ -1642,8 +1666,16 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// This operation returns information about instances in Auto Scaling groups. To retrieve
-        /// information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+        /// If you specify Auto Scaling group names, the output includes information for only
+        /// the specified Auto Scaling groups. If you specify filters, the output includes information
+        /// for only those Auto Scaling groups that meet the filter criteria. If you do not specify
+        /// group names or filters, the output includes information for all Auto Scaling groups.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation also returns information about instances in Auto Scaling groups. To
+        /// retrieve information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
         /// API. 
         /// </para>
         /// </summary>
@@ -2162,6 +2194,9 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
         /// an Auto Scaling group, instance, or load balancer).
@@ -2215,6 +2250,9 @@ namespace Amazon.AutoScaling
         /// </param>
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
         /// an Auto Scaling group, instance, or load balancer).
@@ -2263,6 +2301,9 @@ namespace Amazon.AutoScaling
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerTargetGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerTargetGroups service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
         /// an Auto Scaling group, instance, or load balancer).
@@ -2311,6 +2352,9 @@ namespace Amazon.AutoScaling
         /// </param>
         /// 
         /// <returns>The response from the DescribeLoadBalancerTargetGroups service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
         /// an Auto Scaling group, instance, or load balancer).

@@ -34,14 +34,23 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// This operation returns information about instances in Auto Scaling groups. To retrieve
-    /// information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+    /// If you specify Auto Scaling group names, the output includes information for only
+    /// the specified Auto Scaling groups. If you specify filters, the output includes information
+    /// for only those Auto Scaling groups that meet the filter criteria. If you do not specify
+    /// group names or filters, the output includes information for all Auto Scaling groups.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation also returns information about instances in Auto Scaling groups. To
+    /// retrieve information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
     /// API. 
     /// </para>
     /// </summary>
     public partial class DescribeAutoScalingGroupsRequest : AmazonAutoScalingRequest
     {
         private List<string> _autoScalingGroupNames = new List<string>();
+        private List<Filter> _filters = new List<Filter>();
         private int? _maxRecords;
         private string _nextToken;
 
@@ -66,6 +75,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupNames()
         {
             return this._autoScalingGroupNames != null && this._autoScalingGroupNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters to limit the results based on specific tags. 
+        /// </para>
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
         }
 
         /// <summary>

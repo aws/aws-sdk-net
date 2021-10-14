@@ -1852,6 +1852,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void DescribeLoadBalancers_InvalidNextTokenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeLoadBalancers");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLoadBalancersRequest>();
+            var marshaller = new DescribeLoadBalancersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidNextTokenException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeLoadBalancersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void DescribeLoadBalancers_ResourceContentionExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeLoadBalancers");
@@ -1891,6 +1914,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeLoadBalancerTargetGroupsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void DescribeLoadBalancerTargetGroups_InvalidNextTokenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeLoadBalancerTargetGroups");
+
+            var request = InstantiateClassGenerator.Execute<DescribeLoadBalancerTargetGroupsRequest>();
+            var marshaller = new DescribeLoadBalancerTargetGroupsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidNextTokenException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]

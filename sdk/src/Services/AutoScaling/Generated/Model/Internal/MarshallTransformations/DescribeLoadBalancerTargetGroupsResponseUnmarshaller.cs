@@ -119,6 +119,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextToken"))
+                {
+                    return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceContention"))
                 {
                     return ResourceContentionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

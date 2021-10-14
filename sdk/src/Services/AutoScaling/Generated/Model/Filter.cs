@@ -29,9 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a filter that is used to return a more specific list of results when describing
-    /// tags.
+    /// Describes a filter that is used to return a more specific list of results from a describe
+    /// operation.
     /// 
+    ///  
+    /// <para>
+    /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
+    /// and the request returns only results that match all of the specified filters. 
+    /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
@@ -46,9 +51,69 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
-        /// <code>value</code>, and <code>propagate-at-launch</code>.
+        /// The name of the filter.
         /// </para>
+        ///  
+        /// <para>
+        /// The valid values for <code>Name</code> depend on the API operation that you are including
+        /// the filter in, <a>DescribeAutoScalingGroups</a> or <a>DescribeTags</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>DescribeAutoScalingGroups</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>Name</code> include the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>tag-key</code> - Accepts tag keys. The results will only include information
+        /// about the Auto Scaling groups associated with these tag keys. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag-value</code> - Accepts tag values. The results will only include information
+        /// about the Auto Scaling groups associated with these tag values. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:&lt;key&gt;</code> - Accepts the key/value combination of the tag. Use
+        /// the tag key in the filter name and the tag value as the filter value. The results
+        /// will only include information about the Auto Scaling groups associated with the specified
+        /// key/value combination. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>DescribeTags</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>Name</code> include the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results
+        /// will only include information about the tags associated with these Auto Scaling groups.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>key</code> - Accepts tag keys. The results will only include information about
+        /// the tags associated with these tag keys. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>value</code> - Accepts tag values. The results will only include information
+        /// about the tags associated with these tag values. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>propagate-at-launch</code> - Accepts a boolean value, which specifies whether
+        /// tags propagate to instances at launch. The results will only include information about
+        /// the tags associated with the specified boolean value. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {
@@ -65,7 +130,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more filter values. Filter values are case-sensitive.
+        /// One or more filter values. Filter values are case-sensitive. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple values for a filter, the values are joined with an <code>OR</code>,
+        /// and the request returns all results that match any of the specified values. For example,
+        /// specify "tag:environment" for the filter name and "production,development" for the
+        /// filter values to find Auto Scaling groups with the tag "environment=production" or
+        /// "environment=development".
         /// </para>
         /// </summary>
         public List<string> Values
