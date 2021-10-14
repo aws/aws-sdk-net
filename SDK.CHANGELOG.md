@@ -1,3 +1,18 @@
+### 3.7.137.0 (2021-10-14 20:23 UTC)
+* AutoScaling (3.7.6.0)
+	* Amazon EC2 Auto Scaling now supports filtering describe Auto Scaling groups API using tags
+* ElasticLoadBalancingV2 (3.7.3.0)
+	* Adds new option to filter by availability on each type of load balancer when describing ssl policies.
+* RoboMaker (3.7.5.0)
+	* Adding support to GPU simulation jobs as well as non-ROS simulation jobs.
+* SageMaker (3.7.17.0)
+	* This release updates the provisioning artifact ID to an optional parameter in CreateProject API. The provisioning artifact ID defaults to the latest provisioning artifact ID of the product if you don't provide one.
+* Core 3.7.3.22
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.136.0 (2021-10-13 18:16 UTC)
 * ConfigService (3.7.5.0)
 	* Adding Config support for AWS::OpenSearch::Domain
