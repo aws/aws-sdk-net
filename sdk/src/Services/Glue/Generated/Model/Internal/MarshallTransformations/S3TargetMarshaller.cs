@@ -51,6 +51,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConnectionName);
             }
 
+            if(requestObject.IsSetDlqEventQueueArn())
+            {
+                context.Writer.WritePropertyName("DlqEventQueueArn");
+                context.Writer.Write(requestObject.DlqEventQueueArn);
+            }
+
+            if(requestObject.IsSetEventQueueArn())
+            {
+                context.Writer.WritePropertyName("EventQueueArn");
+                context.Writer.Write(requestObject.EventQueueArn);
+            }
+
             if(requestObject.IsSetExclusions())
             {
                 context.Writer.WritePropertyName("Exclusions");

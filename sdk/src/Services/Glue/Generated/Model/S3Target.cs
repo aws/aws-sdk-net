@@ -34,6 +34,8 @@ namespace Amazon.Glue.Model
     public partial class S3Target
     {
         private string _connectionName;
+        private string _dlqEventQueueArn;
+        private string _eventQueueArn;
         private List<string> _exclusions = new List<string>();
         private string _path;
         private int? _sampleSize;
@@ -55,6 +57,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetConnectionName()
         {
             return this._connectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DlqEventQueueArn. 
+        /// <para>
+        /// A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+        /// </para>
+        /// </summary>
+        public string DlqEventQueueArn
+        {
+            get { return this._dlqEventQueueArn; }
+            set { this._dlqEventQueueArn = value; }
+        }
+
+        // Check to see if DlqEventQueueArn property is set
+        internal bool IsSetDlqEventQueueArn()
+        {
+            return this._dlqEventQueueArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventQueueArn. 
+        /// <para>
+        /// A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+        /// </para>
+        /// </summary>
+        public string EventQueueArn
+        {
+            get { return this._eventQueueArn; }
+            set { this._eventQueueArn = value; }
+        }
+
+        // Check to see if EventQueueArn property is set
+        internal bool IsSetEventQueueArn()
+        {
+            return this._eventQueueArn != null;
         }
 
         /// <summary>

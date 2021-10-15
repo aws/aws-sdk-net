@@ -1789,6 +1789,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant CRAWL_EVENT_MODE for RecrawlBehavior
+        /// </summary>
+        public static readonly RecrawlBehavior CRAWL_EVENT_MODE = new RecrawlBehavior("CRAWL_EVENT_MODE");
+        /// <summary>
         /// Constant CRAWL_EVERYTHING for RecrawlBehavior
         /// </summary>
         public static readonly RecrawlBehavior CRAWL_EVERYTHING = new RecrawlBehavior("CRAWL_EVERYTHING");

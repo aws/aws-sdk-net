@@ -53,6 +53,11 @@ namespace Amazon.Glue.Model
         /// A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that
         /// were added since the last crawler run.
         /// </para>
+        ///  
+        /// <para>
+        /// A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified
+        /// by Amazon S3 events.
+        /// </para>
         /// </summary>
         public RecrawlBehavior RecrawlBehavior
         {
