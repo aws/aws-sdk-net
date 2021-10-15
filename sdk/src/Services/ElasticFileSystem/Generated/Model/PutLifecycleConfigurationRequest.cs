@@ -39,16 +39,13 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// A <code>LifecycleConfiguration</code> applies to all files in a file system.
-    /// </para>
-    ///  
-    /// <para>
     /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
     /// all files in the file system. If a <code>LifecycleConfiguration</code> object already
     /// exists for the specified file system, a <code>PutLifecycleConfiguration</code> call
     /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
     /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
-    /// existing <code>LifecycleConfiguration</code> and disables lifecycle management.
+    /// existing <code>LifecycleConfiguration</code> and turns off lifecycle management for
+    /// the file system.
     /// </para>
     ///  
     /// <para>
@@ -62,8 +59,10 @@ namespace Amazon.ElasticFileSystem.Model
     ///  </li> <li> 
     /// <para>
     /// A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that
-    /// define when files are moved to the IA storage class. The array can contain only one
-    /// <code>LifecyclePolicy</code> item.
+    /// define when files are moved to the IA storage class. Amazon EFS requires that each
+    /// <code>LifecyclePolicy</code> object have only have a single transition, so the <code>LifecyclePolicies</code>
+    /// array needs to be structured with separate <code>LifecyclePolicy</code> objects. See
+    /// the example requests in the following section for more information.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -106,10 +105,27 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property LifecyclePolicies. 
         /// <para>
         /// An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code>
-        /// object. A <code>LifecycleConfiguration</code> object tells lifecycle management when
-        /// to transition files from the Standard storage class to the Infrequent Access storage
-        /// class.
+        /// object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management
+        /// and intelligent tiering of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When to move files in the file system from primary storage to the IA storage class.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When to move files that are in IA storage to primary storage.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code>
+        /// API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have
+        /// only a single transition. This means that in a request body, <code>LifecyclePolicies</code>
+        /// needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object
+        /// for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>.
+        /// See the example requests in the following section for more information.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Max=2)]
         public List<LifecyclePolicy> LifecyclePolicies
