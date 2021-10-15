@@ -1,3 +1,9 @@
+### 3.7.138.0 (2021-10-15 20:21 UTC)
+* ElasticFileSystem (3.7.3.8)
+	* EFS adds documentation for a new exception for short identifiers to be thrown after its migration to long resource identifiers.
+* Glue (3.7.9.0)
+	* Enable S3 event base crawler API.
+
 ### 3.7.137.0 (2021-10-14 20:23 UTC)
 * AutoScaling (3.7.6.0)
 	* Amazon EC2 Auto Scaling now supports filtering describe Auto Scaling groups API using tags

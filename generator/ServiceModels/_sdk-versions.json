@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.137.0",
+    "ProductVersion" : "3.7.138.0",
     "CoreVersion"    : "3.7.3.22",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -402,7 +402,7 @@
             "InPreview"               : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.7.3.7",
+            "Version" : "3.7.3.8",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -826,7 +826,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.7.8.7",
+            "Version" : "3.7.9.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
