@@ -34,11 +34,11 @@ namespace Amazon.IVS.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Known issue:</b> In the us-east-1 region, if you use the AWS CLI to create a recording
-    /// configuration, it returns success even if the S3 bucket is in a different region.
-    /// In this case, the <code>state</code> of the recording configuration is <code>CREATE_FAILED</code>
-    /// (instead of <code>ACTIVE</code>). (In other regions, the CLI correctly returns failure
-    /// if the bucket is in a different region.)
+    ///  <b>Known issue:</b> In the us-east-1 region, if you use the Amazon Web Services CLI
+    /// to create a recording configuration, it returns success even if the S3 bucket is in
+    /// a different region. In this case, the <code>state</code> of the recording configuration
+    /// is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other regions,
+    /// the CLI correctly returns failure if the bucket is in a different region.)
     /// </para>
     ///  
     /// <para>
@@ -77,8 +77,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An arbitrary string (a nickname) that helps the customer identify that resource. The
-        /// value does not need to be unique.
+        /// Recording-configuration name. The value does not need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

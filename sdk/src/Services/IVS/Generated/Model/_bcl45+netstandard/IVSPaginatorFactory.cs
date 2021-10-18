@@ -74,13 +74,5 @@ namespace Amazon.IVS.Model
         {
             return new ListStreamsPaginator(this.client, request);
         }
-
-        /// <summary>
-        /// Paginator for ListTagsForResource operation
-        ///</summary>
-        public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
-        {
-            return new ListTagsForResourcePaginator(this.client, request);
-        }
     }
 }

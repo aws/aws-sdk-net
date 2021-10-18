@@ -36,7 +36,7 @@ namespace Amazon.IVS.Model
         private RecordingConfiguration _recordingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property RecordingConfiguration.
+        /// Gets and sets the property RecordingConfiguration. <zonbook></zonbook><xhtml></xhtml>
         /// </summary>
         public RecordingConfiguration RecordingConfiguration
         {

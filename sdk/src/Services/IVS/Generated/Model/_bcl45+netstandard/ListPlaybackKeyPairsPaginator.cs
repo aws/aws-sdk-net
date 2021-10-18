@@ -41,12 +41,6 @@ namespace Amazon.IVS.Model
         /// </summary>
         public IPaginatedEnumerable<ListPlaybackKeyPairsResponse> Responses => new PaginatedResponse<ListPlaybackKeyPairsResponse>(this);
 
-        /// <summary>
-        /// Enumerable containing all of the KeyPairs
-        /// </summary>
-        public IPaginatedEnumerable<PlaybackKeyPairSummary> KeyPairs => 
-            new PaginatedResultKeyResponse<ListPlaybackKeyPairsResponse, PlaybackKeyPairSummary>(this, (i) => i.KeyPairs);
-
         internal ListPlaybackKeyPairsPaginator(IAmazonIVS client, ListPlaybackKeyPairsRequest request)
         {
             this._client = client;

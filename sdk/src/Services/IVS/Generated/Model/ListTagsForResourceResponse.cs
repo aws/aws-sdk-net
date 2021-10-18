@@ -33,27 +33,7 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _nextToken;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// If there are more tags than <code>maxResults</code>, use <code>nextToken</code> in
-        /// the request to get the next set.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Tags.

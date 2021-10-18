@@ -41,12 +41,6 @@ namespace Amazon.IVS.Model
         /// </summary>
         public IPaginatedEnumerable<ListStreamsResponse> Responses => new PaginatedResponse<ListStreamsResponse>(this);
 
-        /// <summary>
-        /// Enumerable containing all of the Streams
-        /// </summary>
-        public IPaginatedEnumerable<StreamSummary> Streams => 
-            new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.Streams);
-
         internal ListStreamsPaginator(IAmazonIVS client, ListStreamsRequest request)
         {
             this._client = client;

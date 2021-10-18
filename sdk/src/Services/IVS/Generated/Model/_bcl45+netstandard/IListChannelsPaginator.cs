@@ -29,10 +29,5 @@ namespace Amazon.IVS.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListChannelsResponse> Responses { get; }
-
-        /// <summary>
-        /// Enumerable containing all of the Channels
-        /// </summary>
-        IPaginatedEnumerable<ChannelSummary> Channels { get; }
     }
 }

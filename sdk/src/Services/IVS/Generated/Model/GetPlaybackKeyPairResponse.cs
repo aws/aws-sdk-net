@@ -36,7 +36,7 @@ namespace Amazon.IVS.Model
         private PlaybackKeyPair _keyPair;
 
         /// <summary>
-        /// Gets and sets the property KeyPair.
+        /// Gets and sets the property KeyPair. <zonbook></zonbook><xhtml></xhtml>
         /// </summary>
         public PlaybackKeyPair KeyPair
         {

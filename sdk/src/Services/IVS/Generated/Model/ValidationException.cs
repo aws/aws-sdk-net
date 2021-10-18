@@ -126,7 +126,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ExceptionMessage. 
         /// <para>
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </para>
         /// </summary>
         public string ExceptionMessage

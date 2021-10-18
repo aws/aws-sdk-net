@@ -98,7 +98,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// ISO-8601 formatted timestamp of the stream’s start.
+        /// Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -134,7 +134,9 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ViewerCount. 
         /// <para>
-        /// Number of current viewers of the stream. A value of -1 indicates that the request
+        /// A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code>
+        /// within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code>
+        /// within 1 minute of when video playback ends. A value of -1 indicates that the request
         /// timed out; in this case, retry.
         /// </para>
         /// </summary>

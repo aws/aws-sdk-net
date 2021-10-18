@@ -31,7 +31,7 @@ namespace Amazon.IVS.Model
     /// <summary>
     /// Container for the parameters to the ListRecordingConfigurations operation.
     /// Gets summary information about all recording configurations in your account, in the
-    /// AWS region where the API request is processed.
+    /// Amazon Web Services region where the API request is processed.
     /// </summary>
     public partial class ListRecordingConfigurationsRequest : AmazonIVSRequest
     {
@@ -64,7 +64,7 @@ namespace Amazon.IVS.Model
         /// <code>nextToken</code> response field.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

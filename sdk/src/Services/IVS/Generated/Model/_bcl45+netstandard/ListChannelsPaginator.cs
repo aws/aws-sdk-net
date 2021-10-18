@@ -41,12 +41,6 @@ namespace Amazon.IVS.Model
         /// </summary>
         public IPaginatedEnumerable<ListChannelsResponse> Responses => new PaginatedResponse<ListChannelsResponse>(this);
 
-        /// <summary>
-        /// Enumerable containing all of the Channels
-        /// </summary>
-        public IPaginatedEnumerable<ChannelSummary> Channels => 
-            new PaginatedResultKeyResponse<ListChannelsResponse, ChannelSummary>(this, (i) => i.Channels);
-
         internal ListChannelsPaginator(IAmazonIVS client, ListChannelsRequest request)
         {
             this._client = client;

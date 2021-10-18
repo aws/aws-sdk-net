@@ -41,12 +41,6 @@ namespace Amazon.IVS.Model
         /// </summary>
         public IPaginatedEnumerable<ListRecordingConfigurationsResponse> Responses => new PaginatedResponse<ListRecordingConfigurationsResponse>(this);
 
-        /// <summary>
-        /// Enumerable containing all of the RecordingConfigurations
-        /// </summary>
-        public IPaginatedEnumerable<RecordingConfigurationSummary> RecordingConfigurations => 
-            new PaginatedResultKeyResponse<ListRecordingConfigurationsResponse, RecordingConfigurationSummary>(this, (i) => i.RecordingConfigurations);
-
         internal ListRecordingConfigurationsPaginator(IAmazonIVS client, ListRecordingConfigurationsRequest request)
         {
             this._client = client;

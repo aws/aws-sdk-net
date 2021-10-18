@@ -36,7 +36,7 @@ namespace Amazon.IVS.Model
         private StreamKey _streamKey;
 
         /// <summary>
-        /// Gets and sets the property StreamKey.
+        /// Gets and sets the property StreamKey. <zonbook></zonbook><xhtml></xhtml>
         /// </summary>
         public StreamKey StreamKey
         {

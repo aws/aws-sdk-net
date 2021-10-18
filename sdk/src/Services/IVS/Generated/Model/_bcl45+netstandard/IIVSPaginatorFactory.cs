@@ -49,10 +49,5 @@ namespace Amazon.IVS.Model
         /// Paginator for ListStreams operation
         ///</summary>
         IListStreamsPaginator ListStreams(ListStreamsRequest request);
-
-        /// <summary>
-        /// Paginator for ListTagsForResource operation
-        ///</summary>
-        IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }

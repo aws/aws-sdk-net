@@ -30,7 +30,7 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds or updates tags for the AWS resource with the specified ARN.
+    /// Adds or updates tags for the Amazon Web Services resource with the specified ARN.
     /// </summary>
     public partial class TagResourceRequest : AmazonIVSRequest
     {

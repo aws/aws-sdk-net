@@ -62,7 +62,7 @@ namespace Amazon.IVS.Model
         /// in the request to get the next set.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

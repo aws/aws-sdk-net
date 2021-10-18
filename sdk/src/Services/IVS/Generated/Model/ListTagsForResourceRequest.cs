@@ -30,51 +30,11 @@ namespace Amazon.IVS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Gets information about AWS tags for the specified ARN.
+    /// Gets information about Amazon Web Services tags for the specified ARN.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIVSRequest
     {
-        private int? _maxResults;
-        private string _nextToken;
         private string _resourceArn;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// Maximum number of tags to return. Default: 50.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The first tag to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 

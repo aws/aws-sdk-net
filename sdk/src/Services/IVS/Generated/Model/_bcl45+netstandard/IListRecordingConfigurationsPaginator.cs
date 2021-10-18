@@ -29,10 +29,5 @@ namespace Amazon.IVS.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListRecordingConfigurationsResponse> Responses { get; }
-
-        /// <summary>
-        /// Enumerable containing all of the RecordingConfigurations
-        /// </summary>
-        IPaginatedEnumerable<RecordingConfigurationSummary> RecordingConfigurations { get; }
     }
 }

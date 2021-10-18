@@ -148,13 +148,14 @@ namespace Amazon.IVS.Model
         /// <para>
         ///  <code>STANDARD</code>: Multiple qualities are generated from the original input,
         /// to automatically give viewers the best experience for their devices and network conditions.
-        /// Vertical resolution can be up to 1080 and bitrate can be up to 8.5 Mbps.
+        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded
+        /// only for renditions 360p and below; above that, audio is passed through.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Vertical resolution can be
-        /// up to 480 and bitrate can be up to 1.5 Mbps.
+        /// video-quality choice is limited to the original input. Resolution can be up to 480p
+        /// and bitrate can be up to 1.5 Mbps.
         /// </para>
         ///  </li> </ul>
         /// </summary>
