@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSources operation.
-    /// Lists data sources in current Amazon Web Services Region; that belong to this Amazon
+    /// Lists data sources in current Amazon Web Services Region that belong to this Amazon
     /// Web Services account.
     /// </summary>
     public partial class ListDataSourcesRequest : AmazonQuickSightRequest

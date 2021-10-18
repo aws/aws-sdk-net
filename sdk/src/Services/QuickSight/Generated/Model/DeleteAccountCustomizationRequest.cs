@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountCustomization operation.
-    /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region; for
+    /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for
     /// the specified Amazon Web Services account and Amazon QuickSight namespace.
     /// </summary>
     public partial class DeleteAccountCustomizationRequest : AmazonQuickSightRequest
@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// The ID for the Amazon Web Services account that you want to delete Amazon QuickSight
-        /// customizations from in this Amazon Web Services Region;.
+        /// customizations from in this Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateIngestion Request Marshaller
+    /// UpdateIpRestriction Request Marshaller
     /// </summary>       
-    public class CreateIngestionRequestMarshaller : IMarshaller<IRequest, CreateIngestionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateIpRestrictionRequestMarshaller : IMarshaller<IRequest, UpdateIpRestrictionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateIngestionRequest)input);
+            return this.Marshall((UpdateIpRestrictionRequest)input);
         }
 
         /// <summary>
@@ -52,32 +52,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateIngestionRequest publicRequest)
+        public IRequest Marshall(UpdateIpRestrictionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";            
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
-            if (!publicRequest.IsSetDataSetId())
-                throw new AmazonQuickSightException("Request object does not have required field DataSetId set");
-            request.AddPathResource("{DataSetId}", StringUtils.FromString(publicRequest.DataSetId));
-            if (!publicRequest.IsSetIngestionId())
-                throw new AmazonQuickSightException("Request object does not have required field IngestionId set");
-            request.AddPathResource("{IngestionId}", StringUtils.FromString(publicRequest.IngestionId));
-            request.ResourcePath = "/accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}";
+            request.ResourcePath = "/accounts/{AwsAccountId}/ip-restriction";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIngestionType())
+                if(publicRequest.IsSetEnabled())
                 {
-                    context.Writer.WritePropertyName("IngestionType");
-                    context.Writer.Write(publicRequest.IngestionType);
+                    context.Writer.WritePropertyName("Enabled");
+                    context.Writer.Write(publicRequest.Enabled);
+                }
+
+                if(publicRequest.IsSetIpRestrictionRuleMap())
+                {
+                    context.Writer.WritePropertyName("IpRestrictionRuleMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestIpRestrictionRuleMapKvp in publicRequest.IpRestrictionRuleMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestIpRestrictionRuleMapKvp.Key);
+                        var publicRequestIpRestrictionRuleMapValue = publicRequestIpRestrictionRuleMapKvp.Value;
+
+                            context.Writer.Write(publicRequestIpRestrictionRuleMapValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
         
@@ -89,9 +97,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateIngestionRequestMarshaller _instance = new CreateIngestionRequestMarshaller();        
+        private static UpdateIpRestrictionRequestMarshaller _instance = new UpdateIpRestrictionRequestMarshaller();        
 
-        internal static CreateIngestionRequestMarshaller GetInstance()
+        internal static UpdateIpRestrictionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +107,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateIngestionRequestMarshaller Instance
+        public static UpdateIpRestrictionRequestMarshaller Instance
         {
             get
             {

@@ -179,7 +179,7 @@ namespace Amazon.QuickSight.Model
         /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
         /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>
         /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported
-        /// Amazon Web Services Region;. 
+        /// Amazon Web Services Region. 
         /// </para>
         ///  
         /// <para>

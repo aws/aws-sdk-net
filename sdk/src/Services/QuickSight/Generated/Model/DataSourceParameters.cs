@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AmazonElasticsearchParameters. 
         /// <para>
-        /// The parameters for Elasticsearch.
+        /// The parameters for OpenSearch.
         /// </para>
         /// </summary>
         public AmazonElasticsearchParameters AmazonElasticsearchParameters

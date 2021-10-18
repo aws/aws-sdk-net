@@ -46,6 +46,7 @@ namespace Amazon.QuickSight.Model
         private string _awsAccountId;
         private string _dataSetId;
         private string _ingestionId;
+        private IngestionType _ingestionType;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -102,6 +103,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIngestionId()
         {
             return this._ingestionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestionType. 
+        /// <para>
+        /// The type of ingestion that you want to create.
+        /// </para>
+        /// </summary>
+        public IngestionType IngestionType
+        {
+            get { return this._ingestionType; }
+            set { this._ingestionType = value; }
+        }
+
+        // Check to see if IngestionType property is set
+        internal bool IsSetIngestionType()
+        {
+            return this._ingestionType != null;
         }
 
     }

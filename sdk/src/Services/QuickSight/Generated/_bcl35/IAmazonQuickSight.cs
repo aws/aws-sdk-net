@@ -115,8 +115,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates Amazon QuickSight customizations the current Amazon Web Services Region;.
-        /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
+        /// Creates Amazon QuickSight customizations the current Amazon Web Services Region. Currently,
+        /// you can add a custom default theme by using the <code>CreateAccountCustomization</code>
         /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
         /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
         /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
@@ -1286,7 +1286,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region; for
+        /// Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for
         /// the specified Amazon Web Services account and Amazon QuickSight namespace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountCustomization service method.</param>
@@ -2383,7 +2383,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Describes the customizations associated with the provided Amazon Web Services account
-        /// and Amazon Amazon QuickSight namespace in an Amazon Web Services Region;. The Amazon
+        /// and Amazon Amazon QuickSight namespace in an Amazon Web Services Region. The Amazon
         /// QuickSight console evaluates which customizations to apply by running this API operation
         /// with the <code>Resolved</code> flag included. 
         /// 
@@ -2396,23 +2396,23 @@ namespace Amazon.QuickSight
         /// <para>
         ///  <code>Amazon Web Services account</code> - The Amazon Web Services account exists
         /// at the top of the hierarchy. It has the potential to use all of the Amazon Web Services
-        /// Regions; and AWS Services. When you subscribe to Amazon QuickSight, you choose one
-        /// Amazon Web Services Region; to use as your home Region. That's where your free SPICE
+        /// Regions and AWS Services. When you subscribe to Amazon QuickSight, you choose one
+        /// Amazon Web Services Region to use as your home Region. That's where your free SPICE
         /// capacity is located. You can use Amazon QuickSight in any supported Amazon Web Services
-        /// Region;. 
+        /// Region. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Amazon Web Services Region;</code> - In each Amazon Web Services Region; where
+        ///  <code>Amazon Web Services Region</code> - In each Amazon Web Services Region where
         /// you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate
         /// instance of the same service. If you have a user directory, it resides in us-east-1,
         /// which is the US East (N. Virginia). Generally speaking, these users have access to
-        /// Amazon QuickSight in any Amazon Web Services Region;, unless they are constrained
-        /// to a namespace. 
+        /// Amazon QuickSight in any Amazon Web Services Region, unless they are constrained to
+        /// a namespace. 
         /// </para>
         ///  
         /// <para>
-        /// To run the command in a different Amazon Web Services Region;, you change your Region
+        /// To run the command in a different Amazon Web Services Region, you change your Region
         /// settings. If you're using the AWS CLI, you can use one of the following options:
         /// </para>
         ///  <ul> <li> 
@@ -2427,7 +2427,7 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Run <code>aws configure</code> to change your default Amazon Web Services Region;.
+        /// Run <code>aws configure</code> to change your default Amazon Web Services Region.
         /// Use Enter to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
         /// the AWS CLI</a>.
         /// </para>
@@ -2438,17 +2438,17 @@ namespace Amazon.QuickSight
         /// that are in a specific namespace, users and groups must also be part of the same namespace.
         /// People who share a namespace are completely isolated from users and assets in other
         /// namespaces, even if they are in the same Amazon Web Services account and Amazon Web
-        /// Services Region;.
+        /// Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Applied customizations</code> - Within an Amazon Web Services Region;, a set
+        ///  <code>Applied customizations</code> - Within an Amazon Web Services Region, a set
         /// of Amazon QuickSight customizations can apply to an Amazon Web Services account or
         /// to a namespace. Settings that you apply to a namespace override settings that you
         /// apply to an Amazon Web Services account. All settings are isolated to a single Amazon
-        /// Web Services Region;. To apply them in other Amazon Web Services Regions;, run the
-        /// <code>CreateAccountCustomization</code> command in each Amazon Web Services Region;
-        /// where you want to apply the same customizations. 
+        /// Web Services Region. To apply them in other Amazon Web Services Regions, run the <code>CreateAccountCustomization</code>
+        /// command in each Amazon Web Services Region where you want to apply the same customizations.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3426,6 +3426,64 @@ namespace Amazon.QuickSight
         /// <returns>Returns a  DescribeIngestionResult from QuickSight.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIngestion">REST API Reference for DescribeIngestion Operation</seealso>
         DescribeIngestionResponse EndDescribeIngestion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIpRestriction
+
+
+        /// <summary>
+        /// Provides a summary and status of IP Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpRestriction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpRestriction service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIpRestriction">REST API Reference for DescribeIpRestriction Operation</seealso>
+        DescribeIpRestrictionResponse DescribeIpRestriction(DescribeIpRestrictionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpRestriction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpRestriction operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpRestriction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIpRestriction">REST API Reference for DescribeIpRestriction Operation</seealso>
+        IAsyncResult BeginDescribeIpRestriction(DescribeIpRestrictionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpRestriction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpRestriction.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpRestrictionResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIpRestriction">REST API Reference for DescribeIpRestriction Operation</seealso>
+        DescribeIpRestrictionResponse EndDescribeIpRestriction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4580,7 +4638,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Lists all of the datasets belonging to the current Amazon Web Services account in
-        /// an Amazon Web Services Region;.
+        /// an Amazon Web Services Region.
         /// 
         ///  
         /// <para>
@@ -4643,7 +4701,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists data sources in current Amazon Web Services Region; that belong to this Amazon
+        /// Lists data sources in current Amazon Web Services Region that belong to this Amazon
         /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
@@ -6284,8 +6342,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates Amazon QuickSight customizations the current Amazon Web Services Region;.
-        /// Currently, the only customization you can use is a theme.
+        /// Updates Amazon QuickSight customizations the current Amazon Web Services Region. Currently,
+        /// the only customization you can use is a theme.
         /// 
         ///  
         /// <para>
@@ -7254,6 +7312,67 @@ namespace Amazon.QuickSight
         /// <returns>Returns a  UpdateIAMPolicyAssignmentResult from QuickSight.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">REST API Reference for UpdateIAMPolicyAssignment Operation</seealso>
         UpdateIAMPolicyAssignmentResponse EndUpdateIAMPolicyAssignment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateIpRestriction
+
+
+        /// <summary>
+        /// Updates content and status of IP Rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIpRestriction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIpRestriction service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">REST API Reference for UpdateIpRestriction Operation</seealso>
+        UpdateIpRestrictionResponse UpdateIpRestriction(UpdateIpRestrictionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIpRestriction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIpRestriction operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIpRestriction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">REST API Reference for UpdateIpRestriction Operation</seealso>
+        IAsyncResult BeginUpdateIpRestriction(UpdateIpRestrictionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIpRestriction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIpRestriction.</param>
+        /// 
+        /// <returns>Returns a  UpdateIpRestrictionResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">REST API Reference for UpdateIpRestriction Operation</seealso>
+        UpdateIpRestrictionResponse EndUpdateIpRestriction(IAsyncResult asyncResult);
 
         #endregion
         

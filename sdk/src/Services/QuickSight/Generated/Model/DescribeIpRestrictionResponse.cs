@@ -29,40 +29,75 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeNamespace operation.
+    /// This is the response object from the DescribeIpRestriction operation.
     /// </summary>
-    public partial class DescribeNamespaceResponse : AmazonWebServiceResponse
+    public partial class DescribeIpRestrictionResponse : AmazonWebServiceResponse
     {
-        private NamespaceInfoV2 _awsNamespace;
+        private string _awsAccountId;
+        private bool? _enabled;
+        private Dictionary<string, string> _ipRestrictionRuleMap = new Dictionary<string, string>();
         private string _requestId;
         private int? _status;
 
         /// <summary>
-        /// Gets and sets the property Namespace. 
+        /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The information about the namespace that you're describing. The response includes
-        /// the namespace ARN, name, Amazon Web Services Region, creation status, and identity
-        /// store. <code>DescribeNamespace</code> also works for namespaces that are in the process
-        /// of being created. For incomplete namespaces, this API operation lists the namespace
-        /// error types and messages associated with the creation process.
+        /// Your AWS account ID.
         /// </para>
         /// </summary>
-        public NamespaceInfoV2 Namespace
+        [AWSProperty(Min=12, Max=12)]
+        public string AwsAccountId
         {
-            get { return this._awsNamespace; }
-            set { this._awsNamespace = value; }
+            get { return this._awsAccountId; }
+            set { this._awsAccountId = value; }
         }
 
-        // Check to see if Namespace property is set
-        internal bool IsSetNamespace()
+        // Check to see if AwsAccountId property is set
+        internal bool IsSetAwsAccountId()
         {
-            return this._awsNamespace != null;
+            return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Whether or not IP rules are enabled.
+        /// </para>
+        /// </summary>
+        public bool Enabled
+        {
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpRestrictionRuleMap. 
+        /// <para>
+        /// Describes the IP rules with CIDR range and description.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> IpRestrictionRuleMap
+        {
+            get { return this._ipRestrictionRuleMap; }
+            set { this._ipRestrictionRuleMap = value; }
+        }
+
+        // Check to see if IpRestrictionRuleMap property is set
+        internal bool IsSetIpRestrictionRuleMap()
+        {
+            return this._ipRestrictionRuleMap != null && this._ipRestrictionRuleMap.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The Amazon Web Services request ID for this operation.
+        /// The ID of the describe request.
         /// </para>
         /// </summary>
         public string RequestId
@@ -80,7 +115,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The HTTP status of the request.
+        /// The status of a set of IP restrictions. A successful request returns a 200 status
+        /// code.
         /// </para>
         /// </summary>
         public int Status

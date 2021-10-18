@@ -86,7 +86,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// An ID for the data source. This ID is unique per Amazon Web Services Region; for each
+        /// An ID for the data source. This ID is unique per Amazon Web Services Region for each
         /// Amazon Web Services account. 
         /// </para>
         /// </summary>
@@ -205,7 +205,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Use <code>AMAZON_ELASTICSEARCH</code> for Amazon Elasticsearch Service.
+        /// Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataSet operation.
-    /// Deletes a dataset.
+    /// Container for the parameters to the UpdateIpRestriction operation.
+    /// Updates content and status of IP Rules.
     /// </summary>
-    public partial class DeleteDataSetRequest : AmazonQuickSightRequest
+    public partial class UpdateIpRestrictionRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private string _dataSetId;
+        private bool? _enabled;
+        private Dictionary<string, string> _ipRestrictionRuleMap = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID.
+        /// Your AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -57,23 +58,39 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSetId. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// The ID for the dataset that you want to create. This ID is unique per Amazon Web Services
-        /// Region for each Amazon Web Services account.
+        /// Whether or not IP rules are enabled.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DataSetId
+        public bool Enabled
         {
-            get { return this._dataSetId; }
-            set { this._dataSetId = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if DataSetId property is set
-        internal bool IsSetDataSetId()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._dataSetId != null;
+            return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpRestrictionRuleMap. 
+        /// <para>
+        /// Describes updated IP rules.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> IpRestrictionRuleMap
+        {
+            get { return this._ipRestrictionRuleMap; }
+            set { this._ipRestrictionRuleMap = value; }
+        }
+
+        // Check to see if IpRestrictionRuleMap property is set
+        internal bool IsSetIpRestrictionRuleMap()
+        {
+            return this._ipRestrictionRuleMap != null && this._ipRestrictionRuleMap.Count > 0; 
         }
 
     }

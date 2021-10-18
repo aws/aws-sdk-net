@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private long? _rowsDropped;
         private long? _rowsIngested;
+        private long? _totalRowsInDataset;
 
         /// <summary>
         /// Gets and sets the property RowsDropped. 
@@ -70,6 +71,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowsIngested()
         {
             return this._rowsIngested.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalRowsInDataset. 
+        /// <para>
+        /// The total number of rows in the dataset.
+        /// </para>
+        /// </summary>
+        public long TotalRowsInDataset
+        {
+            get { return this._totalRowsInDataset.GetValueOrDefault(); }
+            set { this._totalRowsInDataset = value; }
+        }
+
+        // Check to see if TotalRowsInDataset property is set
+        internal bool IsSetTotalRowsInDataset()
+        {
+            return this._totalRowsInDataset.HasValue; 
         }
 
     }

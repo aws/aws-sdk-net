@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the ListDataSets operation.
     /// Lists all of the datasets belonging to the current Amazon Web Services account in
-    /// an Amazon Web Services Region;.
+    /// an Amazon Web Services Region.
     /// 
     ///  
     /// <para>

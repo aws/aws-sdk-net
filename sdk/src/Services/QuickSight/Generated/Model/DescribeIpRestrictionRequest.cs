@@ -29,18 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataSet operation.
-    /// Deletes a dataset.
+    /// Container for the parameters to the DescribeIpRestriction operation.
+    /// Provides a summary and status of IP Rules.
     /// </summary>
-    public partial class DeleteDataSetRequest : AmazonQuickSightRequest
+    public partial class DescribeIpRestrictionRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private string _dataSetId;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID.
+        /// Your AWS account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -54,26 +53,6 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataSetId. 
-        /// <para>
-        /// The ID for the dataset that you want to create. This ID is unique per Amazon Web Services
-        /// Region for each Amazon Web Services account.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string DataSetId
-        {
-            get { return this._dataSetId; }
-            set { this._dataSetId = value; }
-        }
-
-        // Check to see if DataSetId property is set
-        internal bool IsSetDataSetId()
-        {
-            return this._dataSetId != null;
         }
 
     }

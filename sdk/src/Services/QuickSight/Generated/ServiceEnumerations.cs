@@ -1417,6 +1417,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly IngestionErrorType CONNECTION_FAILURE = new IngestionErrorType("CONNECTION_FAILURE");
         /// <summary>
+        /// Constant CURSOR_NOT_ENABLED for IngestionErrorType
+        /// </summary>
+        public static readonly IngestionErrorType CURSOR_NOT_ENABLED = new IngestionErrorType("CURSOR_NOT_ENABLED");
+        /// <summary>
         /// Constant CUSTOMER_ERROR for IngestionErrorType
         /// </summary>
         public static readonly IngestionErrorType CUSTOMER_ERROR = new IngestionErrorType("CUSTOMER_ERROR");
@@ -1448,6 +1452,10 @@ namespace Amazon.QuickSight
         /// Constant DATA_TOLERANCE_EXCEPTION for IngestionErrorType
         /// </summary>
         public static readonly IngestionErrorType DATA_TOLERANCE_EXCEPTION = new IngestionErrorType("DATA_TOLERANCE_EXCEPTION");
+        /// <summary>
+        /// Constant ELASTICSEARCH_CURSOR_NOT_ENABLED for IngestionErrorType
+        /// </summary>
+        public static readonly IngestionErrorType ELASTICSEARCH_CURSOR_NOT_ENABLED = new IngestionErrorType("ELASTICSEARCH_CURSOR_NOT_ENABLED");
         /// <summary>
         /// Constant FAILURE_TO_ASSUME_ROLE for IngestionErrorType
         /// </summary>
@@ -1505,9 +1513,17 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly IngestionErrorType PERMISSION_DENIED = new IngestionErrorType("PERMISSION_DENIED");
         /// <summary>
+        /// Constant PERMISSION_NOT_FOUND for IngestionErrorType
+        /// </summary>
+        public static readonly IngestionErrorType PERMISSION_NOT_FOUND = new IngestionErrorType("PERMISSION_NOT_FOUND");
+        /// <summary>
         /// Constant QUERY_TIMEOUT for IngestionErrorType
         /// </summary>
         public static readonly IngestionErrorType QUERY_TIMEOUT = new IngestionErrorType("QUERY_TIMEOUT");
+        /// <summary>
+        /// Constant REFRESH_SUPPRESSED_BY_EDIT for IngestionErrorType
+        /// </summary>
+        public static readonly IngestionErrorType REFRESH_SUPPRESSED_BY_EDIT = new IngestionErrorType("REFRESH_SUPPRESSED_BY_EDIT");
         /// <summary>
         /// Constant ROW_SIZE_LIMIT_EXCEEDED for IngestionErrorType
         /// </summary>
@@ -1772,6 +1788,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IngestionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IngestionType.
+    /// </summary>
+    public class IngestionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_REFRESH for IngestionType
+        /// </summary>
+        public static readonly IngestionType FULL_REFRESH = new IngestionType("FULL_REFRESH");
+        /// <summary>
+        /// Constant INCREMENTAL_REFRESH for IngestionType
+        /// </summary>
+        public static readonly IngestionType INCREMENTAL_REFRESH = new IngestionType("INCREMENTAL_REFRESH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IngestionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestionType FindValue(string value)
+        {
+            return FindValue<IngestionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestionType(string value)
         {
             return FindValue(value);
         }

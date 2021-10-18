@@ -47,7 +47,7 @@ namespace Amazon.QuickSight.Model
         /// referred to as a Amazon QuickSight "account" even though it's technically not an account
         /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your
         /// Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight
-        /// in every Amazon Web Services Region; where you use it.
+        /// in every Amazon Web Services Region where you use it.
         /// </para>
         /// </summary>
         public AccountSettings AccountSettings
