@@ -1,3 +1,9 @@
+### 3.7.139.0 (2021-10-18 18:13 UTC)
+* IVS (3.7.2.0)
+	* Bug fix: remove unsupported maxResults and nextToken pagination parameters from ListTagsForResource
+* QuickSight (3.7.7.0)
+	* AWS QuickSight Service  Features    - Add IP Restriction UI and public APIs support.
+
 ### 3.7.138.0 (2021-10-15 20:21 UTC)
 * ElasticFileSystem (3.7.3.8)
 	* EFS adds documentation for a new exception for short identifiers to be thrown after its migration to long resource identifiers.
