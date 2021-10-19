@@ -310,6 +310,17 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Returns true if there is already a non-expired cached login access token in the token cache.
+        /// </summary>
+        /// <param name="startUrl"></param>
+        /// <returns></returns>
+        public static bool HasCachedAccessTokenAvailable(string startUrl)
+        {
+            var tokenCache = new SsoTokenCache(startUrl);
+            return !string.IsNullOrEmpty(tokenCache.GetAccessToken());
+        }
+
+        /// <summary>
         /// Produces a client name watermarked with a timestamp for use in this provider's SSO Flow.
         /// </summary>
         /// <example>

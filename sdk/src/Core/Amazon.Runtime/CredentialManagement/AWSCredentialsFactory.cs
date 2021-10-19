@@ -155,8 +155,8 @@ namespace Amazon.Runtime.CredentialManagement
                     throw new InvalidOperationException(mfaMessage);
                 }
 #if !BCL35
-                else if (profileType == CredentialProfileType.SSO)
-                {
+                else if (profileType == CredentialProfileType.SSO && !SSOAWSCredentials.HasCachedAccessTokenAvailable(options.SsoStartUrl))
+                {                    
                     var ssoMessage = profileName == null
                         ? $"The credential options represent {nameof(SSOAWSCredentials)}.  This is not allowed here.  " +
                           "Please use a different type of credentials."
