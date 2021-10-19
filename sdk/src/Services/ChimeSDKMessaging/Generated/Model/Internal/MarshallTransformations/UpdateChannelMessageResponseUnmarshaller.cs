@@ -63,6 +63,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     response.MessageId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = ChannelMessageStatusStructureUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

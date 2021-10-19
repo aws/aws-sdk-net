@@ -34,6 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class Channel
     {
         private string _channelArn;
+        private string _channelFlowArn;
         private Identity _createdBy;
         private DateTime? _createdTimestamp;
         private DateTime? _lastMessageTimestamp;
@@ -60,6 +61,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelFlowArn. 
+        /// <para>
+        /// The ARN of the channel flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChannelFlowArn
+        {
+            get { return this._channelFlowArn; }
+            set { this._channelFlowArn = value; }
+        }
+
+        // Check to see if ChannelFlowArn property is set
+        internal bool IsSetChannelFlowArn()
+        {
+            return this._channelFlowArn != null;
         }
 
         /// <summary>

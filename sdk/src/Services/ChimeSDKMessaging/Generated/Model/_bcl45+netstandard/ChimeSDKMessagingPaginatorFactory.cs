@@ -44,6 +44,14 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Paginator for ListChannelFlows operation
+        ///</summary>
+        public IListChannelFlowsPaginator ListChannelFlows(ListChannelFlowsRequest request) 
+        {
+            return new ListChannelFlowsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListChannelMemberships operation
         ///</summary>
         public IListChannelMembershipsPaginator ListChannelMemberships(ListChannelMembershipsRequest request) 
@@ -81,6 +89,14 @@ namespace Amazon.ChimeSDKMessaging.Model
         public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
         {
             return new ListChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelsAssociatedWithChannelFlow operation
+        ///</summary>
+        public IListChannelsAssociatedWithChannelFlowPaginator ListChannelsAssociatedWithChannelFlow(ListChannelsAssociatedWithChannelFlowRequest request) 
+        {
+            return new ListChannelsAssociatedWithChannelFlowPaginator(this.client, request);
         }
 
         /// <summary>

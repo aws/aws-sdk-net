@@ -35,6 +35,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     {
         private string _channelArn;
         private string _messageId;
+        private ChannelMessageStatusStructure _status;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -72,6 +73,24 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMessageId()
         {
             return this._messageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the channel message.
+        /// </para>
+        /// </summary>
+        public ChannelMessageStatusStructure Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -41,6 +41,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _metadata;
         private bool? _redacted;
         private Identity _sender;
+        private ChannelMessageStatusStructure _status;
         private ChannelMessageType _type;
 
         /// <summary>
@@ -188,6 +189,26 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetSender()
         {
             return this._sender != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The message status. The status value is <code>SENT</code> for messages sent to a channel
+        /// without a channel flow. For channels associated with channel flow, the value determines
+        /// the processing stage.
+        /// </para>
+        /// </summary>
+        public ChannelMessageStatusStructure Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

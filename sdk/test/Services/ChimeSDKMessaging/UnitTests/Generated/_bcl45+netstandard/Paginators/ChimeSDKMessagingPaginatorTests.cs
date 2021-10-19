@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("ChimeSDKMessaging")]
+        public void ListChannelFlowsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListChannelFlowsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListChannelFlowsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListChannelFlowsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListChannelFlows(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListChannelFlows(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ChimeSDKMessaging")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListChannelFlowsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListChannelFlowsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListChannelFlowsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListChannelFlows(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListChannelFlows(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ChimeSDKMessaging")]
         public void ListChannelMembershipsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListChannelMembershipsRequest>();
@@ -264,6 +303,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListChannels(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListChannels(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void ListChannelsAssociatedWithChannelFlowTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListChannelsAssociatedWithChannelFlowRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListChannelsAssociatedWithChannelFlowResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListChannelsAssociatedWithChannelFlowResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListChannelsAssociatedWithChannelFlow(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListChannelsAssociatedWithChannelFlow(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ChimeSDKMessaging")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListChannelsAssociatedWithChannelFlowTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListChannelsAssociatedWithChannelFlowRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListChannelsAssociatedWithChannelFlowResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListChannelsAssociatedWithChannelFlow(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListChannelsAssociatedWithChannelFlow(request);
 
             // Should work the first time
             paginator.Responses.ToList();

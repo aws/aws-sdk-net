@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Describes a tag applied to a resource.
+    /// A tag object containing a key-value pair.
     /// </summary>
     public partial class Tag
     {
@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the tag.
+        /// The key in a tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -58,7 +58,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the tag.
+        /// The value in a tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

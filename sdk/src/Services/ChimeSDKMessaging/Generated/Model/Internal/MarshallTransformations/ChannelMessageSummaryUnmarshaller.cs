@@ -112,6 +112,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.Sender = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = ChannelMessageStatusStructureUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

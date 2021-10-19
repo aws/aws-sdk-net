@@ -70,6 +70,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChannelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChannelFlowArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChannelFlowArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedBy", targetDepth))
                 {
                     var unmarshaller = IdentityUnmarshaller.Instance;
