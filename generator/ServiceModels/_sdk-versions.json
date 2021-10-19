@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.139.0",
+    "ProductVersion" : "3.7.140.0",
     "CoreVersion"    : "3.7.3.22",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1586,7 +1586,7 @@
             "InPreview"               : false
         },
         "DataExchange"                    : {
-            "Version" : "3.7.1.8",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -2194,7 +2194,7 @@
             "InPreview"               : false
         },
         "ChimeSDKMessaging"               : {
-            "Version" : "3.7.0.33",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"

@@ -1,3 +1,9 @@
+### 3.7.140.0 (2021-10-19 18:13 UTC)
+* ChimeSDKMessaging (3.7.1.0)
+	* The Amazon Chime SDK now allows developers to execute business logic on in-flight messages before they are delivered to members of a messaging channel with channel flows.
+* DataExchange (3.7.2.0)
+	* This release adds support for our public preview of AWS Data Exchange for Amazon Redshift. This enables data providers to list products including AWS Data Exchange datashares for Amazon Redshift, giving subscribers read-only access to provider data in Amazon Redshift.
+
 ### 3.7.139.0 (2021-10-18 18:13 UTC)
 * IVS (3.7.2.0)
 	* Bug fix: remove unsupported maxResults and nextToken pagination parameters from ListTagsForResource
