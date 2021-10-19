@@ -65,7 +65,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetDetails. 
         /// <para>
-        /// Information about the asset, including its size.
+        /// Information about the asset.
         /// </para>
         /// </summary>
         public AssetDetails AssetDetails
@@ -83,7 +83,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetType. 
         /// <para>
-        /// The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+        /// The type of asset that is added to a data set.
         /// </para>
         /// </summary>
         public AssetType AssetType
@@ -155,7 +155,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the asset When importing from Amazon S3, the S3 object key is used as
+        /// The name of the asset. When importing from Amazon S3, the S3 object key is used as
         /// the asset name. When exporting to Amazon S3, the asset name is used as default target
         /// S3 object key.
         /// </para>

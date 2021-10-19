@@ -88,6 +88,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImportAssetFromSignedUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImportAssetsFromRedshiftDataShares", targetDepth))
+                {
+                    var unmarshaller = ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ImportAssetsFromRedshiftDataShares = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImportAssetsFromS3", targetDepth))
                 {
                     var unmarshaller = ImportAssetsFromS3ResponseDetailsUnmarshaller.Instance;

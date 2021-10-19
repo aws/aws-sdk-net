@@ -58,7 +58,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Details.
+        /// Gets and sets the property Details. 
+        /// <para>
+        /// The details about the job error.
+        /// </para>
         /// </summary>
         public Details Details
         {

@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// 
+    /// Information about the job error.
     /// </summary>
     public partial class ImportAssetFromSignedUrlJobErrorDetails
     {
         private string _assetName;
 
         /// <summary>
-        /// Gets and sets the property AssetName.
+        /// Gets and sets the property AssetName. 
+        /// <para>
+        /// Information about the job error.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AssetName

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// 
+    /// Information about the job error.
     /// </summary>
     public partial class Details
     {
@@ -37,7 +37,10 @@ namespace Amazon.DataExchange.Model
         private List<AssetSourceEntry> _importAssetsFromS3JobErrorDetails = new List<AssetSourceEntry>();
 
         /// <summary>
-        /// Gets and sets the property ImportAssetFromSignedUrlJobErrorDetails.
+        /// Gets and sets the property ImportAssetFromSignedUrlJobErrorDetails. 
+        /// <para>
+        /// Information about the job error.
+        /// </para>
         /// </summary>
         public ImportAssetFromSignedUrlJobErrorDetails ImportAssetFromSignedUrlJobErrorDetails
         {
@@ -52,7 +55,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImportAssetsFromS3JobErrorDetails.
+        /// Gets and sets the property ImportAssetsFromS3JobErrorDetails. 
+        /// <para>
+        /// Information about the job error.
+        /// </para>
         /// </summary>
         public List<AssetSourceEntry> ImportAssetsFromS3JobErrorDetails
         {

@@ -44,7 +44,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetName. 
         /// <para>
-        /// The name for the asset associated with this import response.
+        /// The name for the asset associated with this import job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

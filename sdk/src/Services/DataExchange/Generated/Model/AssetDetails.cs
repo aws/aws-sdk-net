@@ -29,14 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// 
+    /// Information about the asset.
     /// </summary>
     public partial class AssetDetails
     {
+        private RedshiftDataShareAsset _redshiftDataShareAsset;
         private S3SnapshotAsset _s3SnapshotAsset;
 
         /// <summary>
-        /// Gets and sets the property S3SnapshotAsset.
+        /// Gets and sets the property RedshiftDataShareAsset. 
+        /// <para>
+        /// The Amazon Redshift datashare that is the asset.
+        /// </para>
+        /// </summary>
+        public RedshiftDataShareAsset RedshiftDataShareAsset
+        {
+            get { return this._redshiftDataShareAsset; }
+            set { this._redshiftDataShareAsset = value; }
+        }
+
+        // Check to see if RedshiftDataShareAsset property is set
+        internal bool IsSetRedshiftDataShareAsset()
+        {
+            return this._redshiftDataShareAsset != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3SnapshotAsset. 
+        /// <para>
+        /// The S3 object that is the asset.
+        /// </para>
         /// </summary>
         public S3SnapshotAsset S3SnapshotAsset
         {

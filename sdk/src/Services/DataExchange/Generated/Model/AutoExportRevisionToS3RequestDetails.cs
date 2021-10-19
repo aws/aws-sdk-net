@@ -37,7 +37,10 @@ namespace Amazon.DataExchange.Model
         private AutoExportRevisionDestinationEntry _revisionDestination;
 
         /// <summary>
-        /// Gets and sets the property Encryption.
+        /// Gets and sets the property Encryption. 
+        /// <para>
+        /// Encryption configuration for the auto export job.
+        /// </para>
         /// </summary>
         public ExportServerSideEncryption Encryption
         {
@@ -52,7 +55,11 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RevisionDestination.
+        /// Gets and sets the property RevisionDestination. 
+        /// <para>
+        /// A revision destination is the Amazon S3 bucket folder destination to where the export
+        /// will be sent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutoExportRevisionDestinationEntry RevisionDestination

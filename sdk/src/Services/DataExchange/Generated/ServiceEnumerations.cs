@@ -31,6 +31,10 @@ namespace Amazon.DataExchange
     {
 
         /// <summary>
+        /// Constant REDSHIFT_DATA_SHARE for AssetType
+        /// </summary>
+        public static readonly AssetType REDSHIFT_DATA_SHARE = new AssetType("REDSHIFT_DATA_SHARE");
+        /// <summary>
         /// Constant S3_SNAPSHOT for AssetType
         /// </summary>
         public static readonly AssetType S3_SNAPSHOT = new AssetType("S3_SNAPSHOT");
@@ -197,6 +201,10 @@ namespace Amazon.DataExchange
     {
 
         /// <summary>
+        /// Constant AmazonRedshiftDatashareAssetsPerRevision for JobErrorLimitName
+        /// </summary>
+        public static readonly JobErrorLimitName AmazonRedshiftDatashareAssetsPerRevision = new JobErrorLimitName("Amazon Redshift datashare assets per revision");
+        /// <summary>
         /// Constant AssetSizeInGB for JobErrorLimitName
         /// </summary>
         public static readonly JobErrorLimitName AssetSizeInGB = new JobErrorLimitName("Asset size in GB");
@@ -301,6 +309,14 @@ namespace Amazon.DataExchange
     {
 
         /// <summary>
+        /// Constant AmazonRedshiftDatashareAssetsPerImportJobFromRedshift for LimitName
+        /// </summary>
+        public static readonly LimitName AmazonRedshiftDatashareAssetsPerImportJobFromRedshift = new LimitName("Amazon Redshift datashare assets per import job from Redshift");
+        /// <summary>
+        /// Constant AmazonRedshiftDatashareAssetsPerRevision for LimitName
+        /// </summary>
+        public static readonly LimitName AmazonRedshiftDatashareAssetsPerRevision = new LimitName("Amazon Redshift datashare assets per revision");
+        /// <summary>
         /// Constant AssetPerExportJobFromAmazonS3 for LimitName
         /// </summary>
         public static readonly LimitName AssetPerExportJobFromAmazonS3 = new LimitName("Asset per export job from Amazon S3");
@@ -333,6 +349,10 @@ namespace Amazon.DataExchange
         /// </summary>
         public static readonly LimitName ConcurrentInProgressJobsToExportRevisionsToAmazonS3 = new LimitName("Concurrent in progress jobs to export revisions to Amazon S3");
         /// <summary>
+        /// Constant ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares for LimitName
+        /// </summary>
+        public static readonly LimitName ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares = new LimitName("Concurrent in progress jobs to import assets from Amazon Redshift datashares");
+        /// <summary>
         /// Constant ConcurrentInProgressJobsToImportAssetsFromAmazonS3 for LimitName
         /// </summary>
         public static readonly LimitName ConcurrentInProgressJobsToImportAssetsFromAmazonS3 = new LimitName("Concurrent in progress jobs to import assets from Amazon S3");
@@ -356,6 +376,10 @@ namespace Amazon.DataExchange
         /// Constant ProductsPerAccount for LimitName
         /// </summary>
         public static readonly LimitName ProductsPerAccount = new LimitName("Products per account");
+        /// <summary>
+        /// Constant RevisionsPerAmazonRedshiftDatashareDataSet for LimitName
+        /// </summary>
+        public static readonly LimitName RevisionsPerAmazonRedshiftDatashareDataSet = new LimitName("Revisions per Amazon Redshift datashare data set");
         /// <summary>
         /// Constant RevisionsPerDataSet for LimitName
         /// </summary>
@@ -646,6 +670,10 @@ namespace Amazon.DataExchange
         /// Constant IMPORT_ASSET_FROM_SIGNED_URL for Type
         /// </summary>
         public static readonly Type IMPORT_ASSET_FROM_SIGNED_URL = new Type("IMPORT_ASSET_FROM_SIGNED_URL");
+        /// <summary>
+        /// Constant IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES for Type
+        /// </summary>
+        public static readonly Type IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES = new Type("IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES");
         /// <summary>
         /// Constant IMPORT_ASSETS_FROM_S3 for Type
         /// </summary>

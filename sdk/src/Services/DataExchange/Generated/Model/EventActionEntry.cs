@@ -63,7 +63,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the event action.
+        /// The Amazon Resource Name (ARN) for the event action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

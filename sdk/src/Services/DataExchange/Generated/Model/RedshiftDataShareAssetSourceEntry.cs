@@ -29,29 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Information about the published revision.
+    /// The source of the Amazon Redshift datashare asset.
     /// </summary>
-    public partial class RevisionPublished
+    public partial class RedshiftDataShareAssetSourceEntry
     {
-        private string _dataSetId;
+        private string _dataShareArn;
 
         /// <summary>
-        /// Gets and sets the property DataSetId. 
-        /// <para>
-        /// The data set ID of the published revision.
-        /// </para>
+        /// Gets and sets the property DataShareArn. The Amazon Resource Name (ARN) of the datashare
+        /// asset.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string DataSetId
+        public string DataShareArn
         {
-            get { return this._dataSetId; }
-            set { this._dataSetId = value; }
+            get { return this._dataShareArn; }
+            set { this._dataShareArn = value; }
         }
 
-        // Check to see if DataSetId property is set
-        internal bool IsSetDataSetId()
+        // Check to see if DataShareArn property is set
+        internal bool IsSetDataShareArn()
         {
-            return this._dataSetId != null;
+            return this._dataShareArn != null;
         }
 
     }

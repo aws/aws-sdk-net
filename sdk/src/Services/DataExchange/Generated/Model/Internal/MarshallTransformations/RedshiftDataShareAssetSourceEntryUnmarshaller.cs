@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExportRevisionsToS3ResponseDetails Object
+    /// Response Unmarshaller for RedshiftDataShareAssetSourceEntry Object
     /// </summary>  
-    public class ExportRevisionsToS3ResponseDetailsUnmarshaller : IUnmarshaller<ExportRevisionsToS3ResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ExportRevisionsToS3ResponseDetails, JsonUnmarshallerContext>
+    public class RedshiftDataShareAssetSourceEntryUnmarshaller : IUnmarshaller<RedshiftDataShareAssetSourceEntry, XmlUnmarshallerContext>, IUnmarshaller<RedshiftDataShareAssetSourceEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExportRevisionsToS3ResponseDetails IUnmarshaller<ExportRevisionsToS3ResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RedshiftDataShareAssetSourceEntry IUnmarshaller<RedshiftDataShareAssetSourceEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExportRevisionsToS3ResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public RedshiftDataShareAssetSourceEntry Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExportRevisionsToS3ResponseDetails unmarshalledObject = new ExportRevisionsToS3ResponseDetails();
+            RedshiftDataShareAssetSourceEntry unmarshalledObject = new RedshiftDataShareAssetSourceEntry();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DataSetId", targetDepth))
+                if (context.TestExpression("DataShareArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Encryption", targetDepth))
-                {
-                    var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventActionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventActionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RevisionDestinations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RevisionDestinationEntry, RevisionDestinationEntryUnmarshaller>(RevisionDestinationEntryUnmarshaller.Instance);
-                    unmarshalledObject.RevisionDestinations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataShareArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExportRevisionsToS3ResponseDetailsUnmarshaller _instance = new ExportRevisionsToS3ResponseDetailsUnmarshaller();        
+        private static RedshiftDataShareAssetSourceEntryUnmarshaller _instance = new RedshiftDataShareAssetSourceEntryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExportRevisionsToS3ResponseDetailsUnmarshaller Instance
+        public static RedshiftDataShareAssetSourceEntryUnmarshaller Instance
         {
             get
             {

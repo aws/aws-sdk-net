@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// 
+    /// What occurs after a certain event.
     /// </summary>
     public partial class Action
     {
         private AutoExportRevisionToS3RequestDetails _exportRevisionToS3;
 
         /// <summary>
-        /// Gets and sets the property ExportRevisionToS3.
+        /// Gets and sets the property ExportRevisionToS3. 
+        /// <para>
+        /// Details for the export revision to Amazon S3 action.
+        /// </para>
         /// </summary>
         public AutoExportRevisionToS3RequestDetails ExportRevisionToS3
         {

@@ -66,7 +66,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetType. 
         /// <para>
-        /// The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+        /// The type of asset that is added to a data set.
         /// </para>
         /// </summary>
         public AssetType AssetType

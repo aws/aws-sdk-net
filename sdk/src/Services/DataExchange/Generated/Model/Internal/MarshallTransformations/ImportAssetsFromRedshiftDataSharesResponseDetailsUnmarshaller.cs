@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExportRevisionsToS3ResponseDetails Object
+    /// Response Unmarshaller for ImportAssetsFromRedshiftDataSharesResponseDetails Object
     /// </summary>  
-    public class ExportRevisionsToS3ResponseDetailsUnmarshaller : IUnmarshaller<ExportRevisionsToS3ResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ExportRevisionsToS3ResponseDetails, JsonUnmarshallerContext>
+    public class ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller : IUnmarshaller<ImportAssetsFromRedshiftDataSharesResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ImportAssetsFromRedshiftDataSharesResponseDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExportRevisionsToS3ResponseDetails IUnmarshaller<ExportRevisionsToS3ResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImportAssetsFromRedshiftDataSharesResponseDetails IUnmarshaller<ImportAssetsFromRedshiftDataSharesResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExportRevisionsToS3ResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public ImportAssetsFromRedshiftDataSharesResponseDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExportRevisionsToS3ResponseDetails unmarshalledObject = new ExportRevisionsToS3ResponseDetails();
+            ImportAssetsFromRedshiftDataSharesResponseDetails unmarshalledObject = new ImportAssetsFromRedshiftDataSharesResponseDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AssetSources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RedshiftDataShareAssetSourceEntry, RedshiftDataShareAssetSourceEntryUnmarshaller>(RedshiftDataShareAssetSourceEntryUnmarshaller.Instance);
+                    unmarshalledObject.AssetSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Encryption", targetDepth))
-                {
-                    var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventActionArn", targetDepth))
+                if (context.TestExpression("RevisionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventActionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RevisionDestinations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RevisionDestinationEntry, RevisionDestinationEntryUnmarshaller>(RevisionDestinationEntryUnmarshaller.Instance);
-                    unmarshalledObject.RevisionDestinations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExportRevisionsToS3ResponseDetailsUnmarshaller _instance = new ExportRevisionsToS3ResponseDetailsUnmarshaller();        
+        private static ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller _instance = new ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExportRevisionsToS3ResponseDetailsUnmarshaller Instance
+        public static ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller Instance
         {
             get
             {

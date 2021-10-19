@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// An asset in AWS Data Exchange is a piece of data that can be stored as an S3 object.
-    /// The asset can be a structured data file, an image file, or some other data file. When
-    /// you create an import job for your files, you create an asset in AWS Data Exchange
-    /// for each of those files.
+    /// An asset in AWS Data Exchange is a piece of data. The asset can be a structured data
+    /// file, an image file, or some other data file that can be stored as an S3 object, or
+    /// an Amazon Redshift datashare (Preview). When you create an import job for your files,
+    /// you create an asset in AWS Data Exchange for each of those files.
     /// </summary>
     public partial class AssetEntry
     {
@@ -69,7 +69,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetDetails. 
         /// <para>
-        /// Information about the asset, including its size.
+        /// Information about the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +88,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property AssetType. 
         /// <para>
-        /// The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+        /// The type of asset that is added to a data set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

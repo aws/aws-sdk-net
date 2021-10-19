@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// 
+    /// Information about the origin of the data set.
     /// </summary>
     public partial class OriginDetails
     {
         private string _productId;
 
         /// <summary>
-        /// Gets and sets the property ProductId.
+        /// Gets and sets the property ProductId. 
+        /// <para>
+        /// The product ID of the origin of the data set.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ProductId

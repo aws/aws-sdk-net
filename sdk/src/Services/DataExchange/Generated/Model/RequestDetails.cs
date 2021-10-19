@@ -37,6 +37,7 @@ namespace Amazon.DataExchange.Model
         private ExportAssetToSignedUrlRequestDetails _exportAssetToSignedUrl;
         private ExportRevisionsToS3RequestDetails _exportRevisionsToS3;
         private ImportAssetFromSignedUrlRequestDetails _importAssetFromSignedUrl;
+        private ImportAssetsFromRedshiftDataSharesRequestDetails _importAssetsFromRedshiftDataShares;
         private ImportAssetsFromS3RequestDetails _importAssetsFromS3;
 
         /// <summary>
@@ -109,6 +110,24 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetImportAssetFromSignedUrl()
         {
             return this._importAssetFromSignedUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportAssetsFromRedshiftDataShares. 
+        /// <para>
+        /// Details from an import from Amazon Redshift datashare request.
+        /// </para>
+        /// </summary>
+        public ImportAssetsFromRedshiftDataSharesRequestDetails ImportAssetsFromRedshiftDataShares
+        {
+            get { return this._importAssetsFromRedshiftDataShares; }
+            set { this._importAssetsFromRedshiftDataShares = value; }
+        }
+
+        // Check to see if ImportAssetsFromRedshiftDataShares property is set
+        internal bool IsSetImportAssetsFromRedshiftDataShares()
+        {
+            return this._importAssetsFromRedshiftDataShares != null;
         }
 
         /// <summary>

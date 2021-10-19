@@ -46,7 +46,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN for the revision
+        /// The ARN for the revision.
         /// </para>
         /// </summary>
         public string Arn

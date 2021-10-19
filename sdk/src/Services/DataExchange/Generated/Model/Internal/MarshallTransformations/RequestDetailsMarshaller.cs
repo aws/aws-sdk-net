@@ -89,6 +89,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetImportAssetsFromRedshiftDataShares())
+            {
+                context.Writer.WritePropertyName("ImportAssetsFromRedshiftDataShares");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImportAssetsFromRedshiftDataSharesRequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImportAssetsFromRedshiftDataShares, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImportAssetsFromS3())
             {
                 context.Writer.WritePropertyName("ImportAssetsFromS3");

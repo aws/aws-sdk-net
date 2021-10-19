@@ -35,6 +35,7 @@ namespace Amazon.DataExchange.Model
     {
         private string _dataSetId;
         private ExportServerSideEncryption _encryption;
+        private string _eventActionArn;
         private List<RevisionDestinationEntry> _revisionDestinations = new List<RevisionDestinationEntry>();
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventActionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the event action.
+        /// </para>
+        /// </summary>
+        public string EventActionArn
+        {
+            get { return this._eventActionArn; }
+            set { this._eventActionArn = value; }
+        }
+
+        // Check to see if EventActionArn property is set
+        internal bool IsSetEventActionArn()
+        {
+            return this._eventActionArn != null;
         }
 
         /// <summary>

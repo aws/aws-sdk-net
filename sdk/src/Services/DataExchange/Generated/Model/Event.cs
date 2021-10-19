@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// 
+    /// What occurs to start an action.
     /// </summary>
     public partial class Event
     {
         private RevisionPublished _revisionPublished;
 
         /// <summary>
-        /// Gets and sets the property RevisionPublished.
+        /// Gets and sets the property RevisionPublished. 
+        /// <para>
+        /// What occurs to start the revision publish action.
+        /// </para>
         /// </summary>
         public RevisionPublished RevisionPublished
         {
