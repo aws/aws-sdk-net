@@ -30,7 +30,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInterconnects operation.
-    /// Lists the interconnects owned by the account or only the specified interconnect.
+    /// Lists the interconnects owned by the Amazon Web Services account or only the specified
+    /// interconnect.
     /// </summary>
     public partial class DescribeInterconnectsRequest : AmazonDirectConnectRequest
     {

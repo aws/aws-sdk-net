@@ -58,9 +58,9 @@ namespace Amazon.DirectConnect.Model
     /// </para>
     ///  
     /// <para>
-    /// If the account used to create a LAG is a registered Direct Connect Partner, the LAG
-    /// is automatically enabled to host sub-connections. For a LAG owned by a partner, any
-    /// associated virtual interfaces cannot be directly configured.
+    /// If the Amazon Web Services account used to create a LAG is a registered Direct Connect
+    /// Partner, the LAG is automatically enabled to host sub-connections. For a LAG owned
+    /// by a partner, any associated virtual interfaces cannot be directly configured.
     /// </para>
     /// </summary>
     public partial class CreateLagRequest : AmazonDirectConnectRequest

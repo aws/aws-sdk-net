@@ -118,7 +118,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the account ID of the customer for the connection.
+        /// The ID of the Amazon Web Services account ID of the customer for the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -377,7 +377,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the account that owns the connection.
+        /// The ID of the Amazon Web Services account that owns the connection.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -454,7 +454,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Region where the connection is located.
+        /// The Amazon Web Services Region where the connection is located.
         /// </para>
         /// </summary>
         public string Region

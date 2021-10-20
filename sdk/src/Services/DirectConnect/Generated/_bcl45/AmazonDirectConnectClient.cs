@@ -41,11 +41,11 @@ namespace Amazon.DirectConnect
     /// Direct Connect links your internal network to an Direct Connect location over a standard
     /// Ethernet fiber-optic cable. One end of the cable is connected to your router, the
     /// other to an Direct Connect router. With this connection in place, you can create virtual
-    /// interfaces directly to the Cloud (for example, to Amazon EC2 and Amazon S3) and to
-    /// Amazon VPC, bypassing Internet service providers in your network path. A connection
-    /// provides access to all Regions except the China (Beijing) and (China) Ningxia Regions.
-    /// Amazon Web Services resources in the China Regions can only be accessed through locations
-    /// associated with those Regions.
+    /// interfaces directly to the Amazon Web Services Cloud (for example, to Amazon EC2 and
+    /// Amazon S3) and to Amazon VPC, bypassing Internet service providers in your network
+    /// path. A connection provides access to all Amazon Web Services Regions except the China
+    /// (Beijing) and (China) Ningxia Regions. Amazon Web Services resources in the China
+    /// Regions can only be accessed through locations associated with those Regions.
     /// </summary>
     public partial class AmazonDirectConnectClient : AmazonServiceClient, IAmazonDirectConnect
     {
@@ -482,7 +482,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Provisions a private virtual interface to be owned by the specified account.
+        /// Provisions a private virtual interface to be owned by the specified Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -518,7 +519,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Provisions a private virtual interface to be owned by the specified account.
+        /// Provisions a private virtual interface to be owned by the specified Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -561,12 +563,13 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Provisions a public virtual interface to be owned by the specified account.
+        /// Provisions a public virtual interface to be owned by the specified Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
         /// The owner of a connection calls this function to provision a public virtual interface
-        /// to be owned by the specified account.
+        /// to be owned by the specified Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -608,12 +611,13 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Provisions a public virtual interface to be owned by the specified account.
+        /// Provisions a public virtual interface to be owned by the specified Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
         /// The owner of a connection calls this function to provision a public virtual interface
-        /// to be owned by the specified account.
+        /// to be owned by the specified Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -662,13 +666,14 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Provisions a transit virtual interface to be owned by the specified account. Use this
-        /// type of interface to connect a transit gateway to your Direct Connect gateway.
+        /// Provisions a transit virtual interface to be owned by the specified Amazon Web Services
+        /// account. Use this type of interface to connect a transit gateway to your Direct Connect
+        /// gateway.
         /// 
         ///  
         /// <para>
         /// The owner of a connection provisions a transit virtual interface to be owned by the
-        /// specified account.
+        /// specified Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -705,13 +710,14 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Provisions a transit virtual interface to be owned by the specified account. Use this
-        /// type of interface to connect a transit gateway to your Direct Connect gateway.
+        /// Provisions a transit virtual interface to be owned by the specified Amazon Web Services
+        /// account. Use this type of interface to connect a transit gateway to your Direct Connect
+        /// gateway.
         /// 
         ///  
         /// <para>
         /// The owner of a connection provisions a transit virtual interface to be owned by the
-        /// specified account.
+        /// specified Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -1144,11 +1150,67 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  ConfirmCustomerAgreement
+
+
+        /// <summary>
+        /// The confirmation of the terms of agreement when creating the connection/link aggregation
+        /// group (LAG).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmCustomerAgreement service method.</param>
+        /// 
+        /// <returns>The response from the ConfirmCustomerAgreement service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">REST API Reference for ConfirmCustomerAgreement Operation</seealso>
+        public virtual ConfirmCustomerAgreementResponse ConfirmCustomerAgreement(ConfirmCustomerAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmCustomerAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmCustomerAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<ConfirmCustomerAgreementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The confirmation of the terms of agreement when creating the connection/link aggregation
+        /// group (LAG).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmCustomerAgreement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConfirmCustomerAgreement service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">REST API Reference for ConfirmCustomerAgreement Operation</seealso>
+        public virtual Task<ConfirmCustomerAgreementResponse> ConfirmCustomerAgreementAsync(ConfirmCustomerAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfirmCustomerAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfirmCustomerAgreementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ConfirmCustomerAgreementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ConfirmPrivateVirtualInterface
 
 
         /// <summary>
-        /// Accepts ownership of a private virtual interface created by another account.
+        /// Accepts ownership of a private virtual interface created by another Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -1178,7 +1240,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Accepts ownership of a private virtual interface created by another account.
+        /// Accepts ownership of a private virtual interface created by another Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -1215,7 +1278,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Accepts ownership of a public virtual interface created by another account.
+        /// Accepts ownership of a public virtual interface created by another Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -1244,7 +1308,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Accepts ownership of a public virtual interface created by another account.
+        /// Accepts ownership of a public virtual interface created by another Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -1280,7 +1345,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Accepts ownership of a transit virtual interface created by another account.
+        /// Accepts ownership of a transit virtual interface created by another Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -1309,7 +1375,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Accepts ownership of a transit virtual interface created by another account.
+        /// Accepts ownership of a transit virtual interface created by another Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -1547,11 +1614,11 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// Creates a Direct Connect gateway, which is an intermediate object that enables you
         /// to connect a set of virtual interfaces and virtual private gateways. A Direct Connect
-        /// gateway is global and visible in any Region after it is created. The virtual interfaces
-        /// and virtual private gateways that are connected through a Direct Connect gateway can
-        /// be in different Regions. This enables you to connect to a VPC in any Region, regardless
-        /// of the Region in which the virtual interfaces are located, and pass traffic between
-        /// them.
+        /// gateway is global and visible in any Amazon Web Services Region after it is created.
+        /// The virtual interfaces and virtual private gateways that are connected through a Direct
+        /// Connect gateway can be in different Amazon Web Services Regions. This enables you
+        /// to connect to a VPC in any Region, regardless of the Region in which the virtual interfaces
+        /// are located, and pass traffic between them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGateway service method.</param>
         /// 
@@ -1576,11 +1643,11 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// Creates a Direct Connect gateway, which is an intermediate object that enables you
         /// to connect a set of virtual interfaces and virtual private gateways. A Direct Connect
-        /// gateway is global and visible in any Region after it is created. The virtual interfaces
-        /// and virtual private gateways that are connected through a Direct Connect gateway can
-        /// be in different Regions. This enables you to connect to a VPC in any Region, regardless
-        /// of the Region in which the virtual interfaces are located, and pass traffic between
-        /// them.
+        /// gateway is global and visible in any Amazon Web Services Region after it is created.
+        /// The virtual interfaces and virtual private gateways that are connected through a Direct
+        /// Connect gateway can be in different Amazon Web Services Regions. This enables you
+        /// to connect to a VPC in any Region, regardless of the Region in which the virtual interfaces
+        /// are located, and pass traffic between them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1673,7 +1740,7 @@ namespace Amazon.DirectConnect
         ///  
         /// <para>
         /// You can associate a Direct Connect gateway and virtual private gateway or transit
-        /// gateway that is owned by any account. 
+        /// gateway that is owned by any Amazon Web Services account. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociationProposal service method.</param>
@@ -1703,7 +1770,7 @@ namespace Amazon.DirectConnect
         ///  
         /// <para>
         /// You can associate a Direct Connect gateway and virtual private gateway or transit
-        /// gateway that is owned by any account. 
+        /// gateway that is owned by any Amazon Web Services account. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAssociationProposal service method.</param>
@@ -1887,9 +1954,9 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  
         /// <para>
-        /// If the account used to create a LAG is a registered Direct Connect Partner, the LAG
-        /// is automatically enabled to host sub-connections. For a LAG owned by a partner, any
-        /// associated virtual interfaces cannot be directly configured.
+        /// If the Amazon Web Services account used to create a LAG is a registered Direct Connect
+        /// Partner, the LAG is automatically enabled to host sub-connections. For a LAG owned
+        /// by a partner, any associated virtual interfaces cannot be directly configured.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLag service method.</param>
@@ -1947,9 +2014,9 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  
         /// <para>
-        /// If the account used to create a LAG is a registered Direct Connect Partner, the LAG
-        /// is automatically enabled to host sub-connections. For a LAG owned by a partner, any
-        /// associated virtual interfaces cannot be directly configured.
+        /// If the Amazon Web Services account used to create a LAG is a registered Direct Connect
+        /// Partner, the LAG is automatically enabled to host sub-connections. For a LAG owned
+        /// by a partner, any associated virtual interfaces cannot be directly configured.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLag service method.</param>
@@ -1990,8 +2057,8 @@ namespace Amazon.DirectConnect
         /// Direct Connect traffic. A private virtual interface can be connected to either a Direct
         /// Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual
         /// interface to a Direct Connect gateway enables the possibility for connecting to multiple
-        /// VPCs, including VPCs in different Regions. Connecting the private virtual interface
-        /// to a VGW only provides access to a single VPC within the same Region.
+        /// VPCs, including VPCs in different Amazon Web Services Regions. Connecting the private
+        /// virtual interface to a VGW only provides access to a single VPC within the same Region.
         /// 
         ///  
         /// <para>
@@ -2034,8 +2101,8 @@ namespace Amazon.DirectConnect
         /// Direct Connect traffic. A private virtual interface can be connected to either a Direct
         /// Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual
         /// interface to a Direct Connect gateway enables the possibility for connecting to multiple
-        /// VPCs, including VPCs in different Regions. Connecting the private virtual interface
-        /// to a VGW only provides access to a single VPC within the same Region.
+        /// VPCs, including VPCs in different Amazon Web Services Regions. Connecting the private
+        /// virtual interface to a VGW only provides access to a single VPC within the same Region.
         /// 
         ///  
         /// <para>
@@ -2998,6 +3065,61 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeCustomerMetadata
+
+
+        /// <summary>
+        /// Get and view a list of customer agreements, along with their signed status and whether
+        /// the customer is an NNIPartner, NNIPartnerV2, or a nonPartner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCustomerMetadata service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">REST API Reference for DescribeCustomerMetadata Operation</seealso>
+        public virtual DescribeCustomerMetadataResponse DescribeCustomerMetadata(DescribeCustomerMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomerMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomerMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomerMetadataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get and view a list of customer agreements, along with their signed status and whether
+        /// the customer is an NNIPartner, NNIPartnerV2, or a nonPartner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomerMetadata service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">REST API Reference for DescribeCustomerMetadata Operation</seealso>
+        public virtual Task<DescribeCustomerMetadataResponse> DescribeCustomerMetadataAsync(DescribeCustomerMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomerMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomerMetadataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeCustomerMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDirectConnectGatewayAssociationProposals
 
 
@@ -3468,7 +3590,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the interconnects owned by the account or only the specified interconnect.
+        /// Lists the interconnects owned by the Amazon Web Services account or only the specified
+        /// interconnect.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInterconnects service method, as returned by DirectConnect.</returns>
@@ -3486,7 +3609,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the interconnects owned by the account or only the specified interconnect.
+        /// Lists the interconnects owned by the Amazon Web Services account or only the specified
+        /// interconnect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnects service method.</param>
         /// 
@@ -3509,7 +3633,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the interconnects owned by the account or only the specified interconnect.
+        /// Lists the interconnects owned by the Amazon Web Services account or only the specified
+        /// interconnect.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3529,7 +3654,8 @@ namespace Amazon.DirectConnect
         }
 
         /// <summary>
-        /// Lists the interconnects owned by the account or only the specified interconnect.
+        /// Lists the interconnects owned by the Amazon Web Services account or only the specified
+        /// interconnect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInterconnects service method.</param>
         /// <param name="cancellationToken">
@@ -3681,8 +3807,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the Direct Connect locations in the current Region. These are the locations
-        /// that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+        /// Lists the Direct Connect locations in the current Amazon Web Services Region. These
+        /// are the locations that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLocations service method, as returned by DirectConnect.</returns>
@@ -3700,8 +3826,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the Direct Connect locations in the current Region. These are the locations
-        /// that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+        /// Lists the Direct Connect locations in the current Amazon Web Services Region. These
+        /// are the locations that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocations service method.</param>
         /// 
@@ -3724,8 +3850,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the Direct Connect locations in the current Region. These are the locations
-        /// that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+        /// Lists the Direct Connect locations in the current Amazon Web Services Region. These
+        /// are the locations that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3745,8 +3871,8 @@ namespace Amazon.DirectConnect
         }
 
         /// <summary>
-        /// Lists the Direct Connect locations in the current Region. These are the locations
-        /// that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+        /// Lists the Direct Connect locations in the current Amazon Web Services Region. These
+        /// are the locations that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocations service method.</param>
         /// <param name="cancellationToken">
@@ -3768,6 +3894,59 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeLocationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRouterConfiguration
+
+
+        /// <summary>
+        /// Details about the router.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouterConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRouterConfiguration service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">REST API Reference for DescribeRouterConfiguration Operation</seealso>
+        public virtual DescribeRouterConfigurationResponse DescribeRouterConfiguration(DescribeRouterConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRouterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRouterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRouterConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Details about the router.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRouterConfiguration service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">REST API Reference for DescribeRouterConfiguration Operation</seealso>
+        public virtual Task<DescribeRouterConfigurationResponse> DescribeRouterConfigurationAsync(DescribeRouterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRouterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRouterConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRouterConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3829,7 +4008,7 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the virtual private gateways owned by the account.
+        /// Lists the virtual private gateways owned by the Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -3853,7 +4032,7 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the virtual private gateways owned by the account.
+        /// Lists the virtual private gateways owned by the Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -3882,7 +4061,7 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Lists the virtual private gateways owned by the account.
+        /// Lists the virtual private gateways owned by the Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -3908,7 +4087,7 @@ namespace Amazon.DirectConnect
         }
 
         /// <summary>
-        /// Lists the virtual private gateways owned by the account.
+        /// Lists the virtual private gateways owned by the Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -3944,10 +4123,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Displays all virtual interfaces for an account. Virtual interfaces deleted fewer than
-        /// 15 minutes before you make the request are also returned. If you specify a connection
-        /// ID, only the virtual interfaces associated with the connection are returned. If you
-        /// specify a virtual interface ID, then only a single virtual interface is returned.
+        /// Displays all virtual interfaces for an Amazon Web Services account. Virtual interfaces
+        /// deleted fewer than 15 minutes before you make the request are also returned. If you
+        /// specify a connection ID, only the virtual interfaces associated with the connection
+        /// are returned. If you specify a virtual interface ID, then only a single virtual interface
+        /// is returned.
         /// 
         ///  
         /// <para>
@@ -3971,10 +4151,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Displays all virtual interfaces for an account. Virtual interfaces deleted fewer than
-        /// 15 minutes before you make the request are also returned. If you specify a connection
-        /// ID, only the virtual interfaces associated with the connection are returned. If you
-        /// specify a virtual interface ID, then only a single virtual interface is returned.
+        /// Displays all virtual interfaces for an Amazon Web Services account. Virtual interfaces
+        /// deleted fewer than 15 minutes before you make the request are also returned. If you
+        /// specify a connection ID, only the virtual interfaces associated with the connection
+        /// are returned. If you specify a virtual interface ID, then only a single virtual interface
+        /// is returned.
         /// 
         ///  
         /// <para>
@@ -4003,10 +4184,11 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Displays all virtual interfaces for an account. Virtual interfaces deleted fewer than
-        /// 15 minutes before you make the request are also returned. If you specify a connection
-        /// ID, only the virtual interfaces associated with the connection are returned. If you
-        /// specify a virtual interface ID, then only a single virtual interface is returned.
+        /// Displays all virtual interfaces for an Amazon Web Services account. Virtual interfaces
+        /// deleted fewer than 15 minutes before you make the request are also returned. If you
+        /// specify a connection ID, only the virtual interfaces associated with the connection
+        /// are returned. If you specify a virtual interface ID, then only a single virtual interface
+        /// is returned.
         /// 
         ///  
         /// <para>
@@ -4032,10 +4214,11 @@ namespace Amazon.DirectConnect
         }
 
         /// <summary>
-        /// Displays all virtual interfaces for an account. Virtual interfaces deleted fewer than
-        /// 15 minutes before you make the request are also returned. If you specify a connection
-        /// ID, only the virtual interfaces associated with the connection are returned. If you
-        /// specify a virtual interface ID, then only a single virtual interface is returned.
+        /// Displays all virtual interfaces for an Amazon Web Services account. Virtual interfaces
+        /// deleted fewer than 15 minutes before you make the request are also returned. If you
+        /// specify a connection ID, only the virtual interfaces associated with the connection
+        /// are returned. If you specify a virtual interface ID, then only a single virtual interface
+        /// is returned.
         /// 
         ///  
         /// <para>
@@ -4601,6 +4784,59 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDirectConnectGateway
+
+
+        /// <summary>
+        /// Updates the name of a current Direct Connect gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectConnectGateway service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDirectConnectGateway service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">REST API Reference for UpdateDirectConnectGateway Operation</seealso>
+        public virtual UpdateDirectConnectGatewayResponse UpdateDirectConnectGateway(UpdateDirectConnectGatewayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectConnectGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectConnectGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDirectConnectGatewayResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the name of a current Direct Connect gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectConnectGateway service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDirectConnectGateway service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">REST API Reference for UpdateDirectConnectGateway Operation</seealso>
+        public virtual Task<UpdateDirectConnectGatewayResponse> UpdateDirectConnectGatewayAsync(UpdateDirectConnectGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectConnectGatewayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectConnectGatewayResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDirectConnectGatewayResponse>(request, options, cancellationToken);
         }
 
         #endregion

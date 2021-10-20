@@ -134,7 +134,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The Region for the location.
+        /// The Amazon Web Services Region for the location.
         /// </para>
         /// </summary>
         public string Region

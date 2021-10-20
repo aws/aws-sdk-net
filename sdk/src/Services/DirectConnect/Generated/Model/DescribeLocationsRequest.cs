@@ -30,8 +30,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocations operation.
-    /// Lists the Direct Connect locations in the current Region. These are the locations
-    /// that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+    /// Lists the Direct Connect locations in the current Amazon Web Services Region. These
+    /// are the locations that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
     /// </summary>
     public partial class DescribeLocationsRequest : AmazonDirectConnectRequest
     {

@@ -30,7 +30,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmPrivateVirtualInterface operation.
-    /// Accepts ownership of a private virtual interface created by another account.
+    /// Accepts ownership of a private virtual interface created by another Amazon Web Services
+    /// account.
     /// 
     ///  
     /// <para>

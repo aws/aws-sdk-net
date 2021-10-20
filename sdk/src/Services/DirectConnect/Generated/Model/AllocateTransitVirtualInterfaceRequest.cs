@@ -30,13 +30,14 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateTransitVirtualInterface operation.
-    /// Provisions a transit virtual interface to be owned by the specified account. Use this
-    /// type of interface to connect a transit gateway to your Direct Connect gateway.
+    /// Provisions a transit virtual interface to be owned by the specified Amazon Web Services
+    /// account. Use this type of interface to connect a transit gateway to your Direct Connect
+    /// gateway.
     /// 
     ///  
     /// <para>
     /// The owner of a connection provisions a transit virtual interface to be owned by the
-    /// specified account.
+    /// specified Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -93,7 +94,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The ID of the account that owns the transit virtual interface.
+        /// The ID of the Amazon Web Services account that owns the transit virtual interface.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVirtualGateways operation.
-    /// Lists the virtual private gateways owned by the account.
+    /// Lists the virtual private gateways owned by the Amazon Web Services account.
     /// 
     ///  
     /// <para>

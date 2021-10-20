@@ -36,7 +36,7 @@ namespace Amazon.DirectConnect.Model
     ///  
     /// <para>
     /// You can associate a Direct Connect gateway and virtual private gateway or transit
-    /// gateway that is owned by any account. 
+    /// gateway that is owned by any Amazon Web Services account. 
     /// </para>
     /// </summary>
     public partial class CreateDirectConnectGatewayAssociationProposalRequest : AmazonDirectConnectRequest
@@ -87,7 +87,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayOwnerAccount. 
         /// <para>
-        /// The ID of the account that owns the Direct Connect gateway.
+        /// The ID of the Amazon Web Services account that owns the Direct Connect gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

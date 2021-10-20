@@ -155,7 +155,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaceOwnerAccount. 
         /// <para>
-        /// The ID of the account that owns the virtual interface.
+        /// The ID of the Amazon Web Services account that owns the virtual interface.
         /// </para>
         /// </summary>
         public string VirtualInterfaceOwnerAccount
@@ -173,7 +173,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaceRegion. 
         /// <para>
-        /// The Region where the virtual interface is located.
+        /// The Amazon Web Services Region where the virtual interface is located.
         /// </para>
         /// </summary>
         public string VirtualInterfaceRegion
