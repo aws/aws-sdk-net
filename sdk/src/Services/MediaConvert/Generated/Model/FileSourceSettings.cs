@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private CaptionSourceFramerate _framerate;
         private string _sourceFile;
         private int? _timeDelta;
+        private FileSourceTimeDeltaUnits _timeDeltaUnits;
 
         /// <summary>
         /// Gets and sets the property Convert608To708. Specify whether this set of input captions
@@ -63,10 +64,10 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Framerate. Ignore this setting unless your input captions
         /// format is SCC. To have the service compensate for differing frame rates between your
         /// input captions and input video, specify the frame rate of the captions file. Specify
-        /// this value as a fraction, using the settings Framerate numerator (framerateNumerator)
-        /// and Framerate denominator (framerateDenominator). For example, you might specify 24
-        /// / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for
-        /// 29.97 fps.
+        /// this value as a fraction. When you work directly in your JSON job specification, use
+        /// the settings framerateNumerator and framerateDenominator. For example, you might specify
+        /// 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001
+        /// for 29.97 fps.
         /// </summary>
         public CaptionSourceFramerate Framerate
         {
@@ -99,8 +100,19 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeDelta. Specifies a time delta in seconds to offset
-        /// the captions from the source file.
+        /// Gets and sets the property TimeDelta. Optional. Use this setting when you need to
+        /// adjust the sync between your sidecar captions and your video. For more information,
+        /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html.
+        /// Enter a positive or negative number to modify the times in the captions file. For
+        /// example, type 15 to add 15 seconds to all the times in the captions file. Type -5
+        /// to subtract 5 seconds from the times in the captions file. You can optionally specify
+        /// your time delta in milliseconds instead of seconds. When you do so, set the related
+        /// setting, Time delta units (TimeDeltaUnits) to Milliseconds (MILLISECONDS). Note that,
+        /// when you specify a time delta for timecode-based caption sources, such as SCC and
+        /// STL, and your time delta isn't a multiple of the input frame rate, MediaConvert snaps
+        /// the captions to the nearest frame. For example, when your input video frame rate is
+        /// 25 fps and you specify 1010ms for time delta, MediaConvert delays your captions by
+        /// 1000 ms.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
         public int TimeDelta
@@ -113,6 +125,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetTimeDelta()
         {
             return this._timeDelta.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeDeltaUnits. When you use the setting Time delta (TimeDelta)
+        /// to adjust the sync between your sidecar captions and your video, use this setting
+        /// to specify the units for the delta that you specify. When you don't specify a value
+        /// for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
+        /// </summary>
+        public FileSourceTimeDeltaUnits TimeDeltaUnits
+        {
+            get { return this._timeDeltaUnits; }
+            set { this._timeDeltaUnits = value; }
+        }
+
+        // Check to see if TimeDeltaUnits property is set
+        internal bool IsSetTimeDeltaUnits()
+        {
+            return this._timeDeltaUnits != null;
         }
 
     }

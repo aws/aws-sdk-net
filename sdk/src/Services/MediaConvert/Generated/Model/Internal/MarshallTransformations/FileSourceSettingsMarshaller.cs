@@ -74,6 +74,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimeDelta);
             }
 
+            if(requestObject.IsSetTimeDeltaUnits())
+            {
+                context.Writer.WritePropertyName("timeDeltaUnits");
+                context.Writer.Write(requestObject.TimeDeltaUnits);
+            }
+
         }
 
         /// <summary>

@@ -49,9 +49,10 @@ namespace Amazon.MediaConvert.Model
         private WebvttDestinationSettings _webvttDestinationSettings;
 
         /// <summary>
-        /// Gets and sets the property BurninDestinationSettings. Settings related to burn-in
-        /// captions. Set up burn-in captions in the same output as your video. For more information,
-        /// see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
+        /// Gets and sets the property BurninDestinationSettings. Burn-in is a captions delivery
+        /// method, rather than a captions format. Burn-in writes the captions directly on your
+        /// video frames, replacing pixels of video content with the captions. Set up burn-in
+        /// captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
         /// When you work directly in your JSON job specification, include this object and any
         /// required children when you set destinationType to BURN_IN.
         /// </summary>
@@ -168,7 +169,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SrtDestinationSettings. SRT Destination Settings
+        /// Gets and sets the property SrtDestinationSettings. Settings related to SRT captions.
+        /// SRT is a sidecar format that holds captions in a file that is separate from the video
+        /// container. Set up sidecar captions in the same output group, but different output
+        /// from your video. When you work directly in your JSON job specification, include this
+        /// object and any required children when you set destinationType to SRT.
         /// </summary>
         public SrtDestinationSettings SrtDestinationSettings
         {
@@ -222,7 +227,12 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebvttDestinationSettings. WEBVTT Destination Settings
+        /// Gets and sets the property WebvttDestinationSettings. Settings related to WebVTT captions.
+        /// WebVTT is a sidecar format that holds captions in a file that is separate from the
+        /// video container. Set up sidecar captions in the same output group, but different output
+        /// from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+        /// When you work directly in your JSON job specification, include this object and any
+        /// required children when you set destinationType to WebVTT.
         /// </summary>
         public WebvttDestinationSettings WebvttDestinationSettings
         {

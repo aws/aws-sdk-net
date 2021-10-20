@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimeDelta = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeDeltaUnits", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimeDeltaUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
