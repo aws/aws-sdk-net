@@ -493,6 +493,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
 * [AWSSDK.Outposts](https://www.nuget.org/packages/AWSSDK.Outposts/)
 	* This is the initial release for AWS Outposts, a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer sites. AWS Outposts enables you to launch and run EC2 instances and EBS volumes locally at your on-premises location. This release introduces new APIs for creating and viewing Outposts. 
+* [AWSSDK.Panorama](https://www.nuget.org/packages/AWSSDK.Panorama/)
+	* General availability for AWS Panorama. AWS SDK for Panorama includes APIs to manage your devices and nodes, and deploy computer vision applications to the edge. For more information, see the AWS Panorama documentation at http://docs.aws.amazon.com/panorama
 * [AWSSDK.Personalize](https://www.nuget.org/packages/AWSSDK.Personalize/)
 	* Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
 * [AWSSDK.PersonalizeEvents](https://www.nuget.org/packages/AWSSDK.PersonalizeEvents/)

@@ -860,6 +860,10 @@
       <Project>{1F501A21-5AB1-453C-BC7D-67B56F5EB3F1}</Project>
       <Name>AWSSDK.Outposts.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Panorama/AWSSDK.Panorama.CodeAnalysis.csproj">
+      <Project>{0D5E637F-5FB5-45BC-B838-1AC29CC66C60}</Project>
+      <Name>AWSSDK.Panorama.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Personalize/AWSSDK.Personalize.CodeAnalysis.csproj">
       <Project>{01150DA6-D796-44CC-BB2B-35CC888338B8}</Project>
       <Name>AWSSDK.Personalize.CodeAnalysis</Name>
