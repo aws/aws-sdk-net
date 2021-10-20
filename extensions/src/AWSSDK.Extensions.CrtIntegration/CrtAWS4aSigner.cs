@@ -100,11 +100,11 @@ namespace Amazon.Extensions.CrtIntegration
                                               ImmutableCredentials credentials)
         {
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
-            var service = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : AWS4Signer.DetermineService(clientConfig);
-            var regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
+            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : AWS4Signer.DetermineService(clientConfig);
+            var regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
             request.DeterminedSigningRegion = regionSet;
 
-            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_VIA_HEADERS, regionSet, service, signedAt, credentials);
+            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_VIA_HEADERS, regionSet, serviceSigningName, signedAt, credentials);
 
             // Compute here rather than CRT to support the fixed value for header of a chunked request
             signingConfig.SignedBodyValue = AWS4Signer.SetRequestBodyHash(request, SignPayload, AWS4Signer.V4aStreamingBodySha256, ChunkedUploadWrapperStream.V4A_SIGNATURE_LENGTH);
@@ -118,7 +118,7 @@ namespace Amazon.Extensions.CrtIntegration
             CrtHttpRequestConverter.CopyHeadersFromCrtRequest(request, signedCrtRequest);
 
             var dateStamp = AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
-            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", dateStamp, service, AWS4Signer.Terminator);
+            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", dateStamp, serviceSigningName, AWS4Signer.Terminator);
 
             AWS4aSigningResult result = new AWS4aSigningResult(
                 credentials.AccessKey,
@@ -127,7 +127,7 @@ namespace Amazon.Extensions.CrtIntegration
                 scope,
                 regionSet,
                 authorizationValue,
-                service,
+                serviceSigningName,
                 "",
                 credentials);
 
@@ -148,21 +148,21 @@ namespace Amazon.Extensions.CrtIntegration
         /// </param>
         /// <param name="metrics">Metrics for the request</param>
         /// <param name="credentials">The AWS credentials for the account making the service call</param>
-        /// <param name="service">Service to sign the request for</param>
+        /// <param name="serviceSigningName">Service to sign the request for</param>
         /// <param name="overrideSigningRegion">Region to sign the request for</param>
         /// <returns>AWS4aSigningResult for the given request</returns>
         public AWS4aSigningResult Presign4a(IRequest request,
                                             IClientConfig clientConfig,
                                             RequestMetrics metrics,
                                             ImmutableCredentials credentials,
-                                            string service,
+                                            string serviceSigningName,
                                             string overrideSigningRegion)
         {
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
-            var regionSet = overrideSigningRegion ?? AWS4Signer.DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
+            var regionSet = overrideSigningRegion ?? AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
-            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_VIA_QUERY_PARAMS, regionSet, service, signedAt, credentials);
-            if (AWS4PreSignedUrlSigner.ServicesUsingUnsignedPayload.Contains(service))
+            var signingConfig = PrepareCRTSigningConfig(AwsSignatureType.HTTP_REQUEST_VIA_QUERY_PARAMS, regionSet, serviceSigningName, signedAt, credentials);
+            if (AWS4PreSignedUrlSigner.ServicesUsingUnsignedPayload.Contains(serviceSigningName))
             {
                 signingConfig.SignedBodyValue = AWS4Signer.UnsignedPayload;
             }
@@ -182,7 +182,7 @@ namespace Amazon.Extensions.CrtIntegration
 
             string authorizationValue = Encoding.Default.GetString(signingResult.Get().Signature);
             var dateStamp = AWS4Signer.FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
-            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", dateStamp, service, AWS4Signer.Terminator);
+            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", dateStamp, serviceSigningName, AWS4Signer.Terminator);
 
             AWS4aSigningResult result = new AWS4aSigningResult(
                 credentials.AccessKey,
@@ -191,7 +191,7 @@ namespace Amazon.Extensions.CrtIntegration
                 scope,
                 regionSet,
                 authorizationValue,
-                service,
+                serviceSigningName,
                 signingResult.Get().SignedRequest.Uri,
                 credentials);
 

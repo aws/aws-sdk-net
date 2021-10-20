@@ -1,21 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Amazon;
+using Amazon.ECR;
+using Amazon.IotData;
+using Amazon.MTurk;
+using Amazon.QuickSight;
 using Amazon.Runtime;
-using System.IO;
-using AWSSDK_DotNet35.UnitTests;
-using Amazon.S3.Model;
-using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.Runtime.Internal.Util;
-using System.Threading;
-using System.Net;
-using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
 {
@@ -74,6 +70,58 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(t.Contains(HeaderKeys.XAmznTraceIdHeader));
 
             Assert.IsTrue(context.RequestContext.Request.Headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader));
+        }
+
+        private static IEnumerable<object[]> TestSignerScopeCases =>
+            new List<object[]> 
+            {
+                // Real region, partition defaults
+                new object[]{new AmazonIotDataConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
+                    "us-east-1", "iotdata", "data.iot.us-east-1.amazonaws.com" },
+                // Real region with credentialScope.region
+                new object[]{new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
+                    "us-east-1", "ecr", "api.ecr.us-east-1.amazonaws.com" },
+                // Pseudoregion with credentialScope.region
+                new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-dkr-us-east-1") },
+                    "us-east-1", "ecr", "ecr-fips.us-east-1.amazonaws.com"},
+                 // Pseudoregion with credentialScope.region, different partition
+                new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1") },
+                    "us-gov-east-1", "ecr", "ecr-fips.us-gov-east-1.amazonaws.com" },
+                // Pseudoregion, no credentialScope.region
+                new object[]{new AmazonIotDataConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-east-1") },
+                    "fips-us-east-1", "iotdata", "data.iot-fips.us-east-1.amazonaws.com" },
+                // Non-FIPS pseudoregion, no credentialScope
+                new object[]{new AmazonMTurkConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("sandbox") },
+                    "sandbox", "mturk-requester", "mturk-requester-sandbox.us-east-1.amazonaws.com" },
+                // Non-FIPS pseudoregion, no credentialScope or hostname
+                new object[]{new AmazonQuickSightConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("api") },
+                    "api", "quicksight", "quicksight.api.amazonaws.com" },
+            };
+
+        /// <summary>
+        /// Tests that the signer selects the correct signing region and service
+        /// </summary>
+        /// <param name="config">Service client config with intended request region</param>
+        /// <param name="expectedAuthRegion">Expected region name to be used for signing</param>
+        /// <param name="expectedAuthService">Exected service name to be used for signing</param>
+        /// <param name="expectedEndpoint">Expected hostname for the request</param>
+        [DataTestMethod]
+        [DynamicData(nameof(TestSignerScopeCases))]
+        public void TestSignerScope(IClientConfig config, string expectedAuthRegion, string expectedAuthService, string expectedEndpoint)
+        {
+            var signer = new AWS4Signer();
+            var mock = new Moq.Mock<IRequest>().SetupAllProperties();
+            var request = mock.Object;
+
+            mock.SetupGet(x => x.Headers).Returns(new Dictionary<string, string>());
+            request.Endpoint = EndpointResolver.DetermineEndpoint(config, request);
+
+            var result = signer.SignRequest(request, config, null, "accessKey", "secretKey");
+
+            var scopePieces = result.Scope.Split('/'); // expected to be date/region/service/aws4_request
+            Assert.AreEqual(expectedAuthRegion, scopePieces[1]);
+            Assert.AreEqual(expectedAuthService, scopePieces[2]);
+            Assert.AreEqual(expectedEndpoint, request.Endpoint.Host);
         }
 
         [TestMethod]

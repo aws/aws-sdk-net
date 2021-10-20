@@ -187,8 +187,8 @@ namespace Amazon.Runtime.Internal.Auth
         {
             ValidateRequest(request);
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
-            var service = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : DetermineService(clientConfig);
-            request.DeterminedSigningRegion = DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
+            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : DetermineService(clientConfig);
+            request.DeterminedSigningRegion = DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
@@ -203,7 +203,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                        bodyHash,
                                                        request.PathResources,
                                                        request.MarshallerVersion,
-                                                       service);
+                                                       serviceSigningName);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 
@@ -211,7 +211,7 @@ namespace Amazon.Runtime.Internal.Auth
                                     awsSecretAccessKey,
                                     request.DeterminedSigningRegion,
                                     signedAt,
-                                    service,
+                                    serviceSigningName,
                                     CanonicalizeHeaderNames(sortedHeaders),
                                     canonicalRequest,
                                     metrics);
@@ -1169,7 +1169,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var signedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
-            var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
+            var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
             // AWS4 presigned urls got S3 are expected to contain a 'UNSIGNED-PAYLOAD' magic string
             // during signing (other services use the empty-body sha)
