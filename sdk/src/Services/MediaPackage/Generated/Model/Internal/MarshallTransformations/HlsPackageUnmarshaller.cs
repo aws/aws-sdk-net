@@ -88,6 +88,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("includeDvbSubtitles", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeDvbSubtitles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("includeIframeOnlyStream", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

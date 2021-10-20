@@ -37,6 +37,7 @@ namespace Amazon.MediaPackage.Model
         private AdsOnDeliveryRestrictions _adsOnDeliveryRestrictions;
         private List<string> _adTriggers = new List<string>();
         private HlsEncryption _encryption;
+        private bool? _includeDvbSubtitles;
         private bool? _includeIframeOnlyStream;
         private PlaylistType _playlistType;
         private int? _playlistWindowSeconds;
@@ -110,6 +111,22 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetEncryption()
         {
             return this._encryption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeDvbSubtitles. When enabled, MediaPackage passes
+        /// through digital video broadcasting (DVB) subtitles into the output.
+        /// </summary>
+        public bool IncludeDvbSubtitles
+        {
+            get { return this._includeDvbSubtitles.GetValueOrDefault(); }
+            set { this._includeDvbSubtitles = value; }
+        }
+
+        // Check to see if IncludeDvbSubtitles property is set
+        internal bool IsSetIncludeDvbSubtitles()
+        {
+            return this._includeDvbSubtitles.HasValue; 
         }
 
         /// <summary>

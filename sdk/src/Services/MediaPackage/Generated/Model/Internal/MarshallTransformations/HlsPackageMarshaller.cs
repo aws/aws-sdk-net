@@ -79,6 +79,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIncludeDvbSubtitles())
+            {
+                context.Writer.WritePropertyName("includeDvbSubtitles");
+                context.Writer.Write(requestObject.IncludeDvbSubtitles);
+            }
+
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
