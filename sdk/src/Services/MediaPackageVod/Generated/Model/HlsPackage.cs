@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageVod.Model
     {
         private HlsEncryption _encryption;
         private List<HlsManifest> _hlsManifests = new List<HlsManifest>();
+        private bool? _includeDvbSubtitles;
         private int? _segmentDurationSeconds;
         private bool? _useAudioRenditionGroup;
 
@@ -67,6 +68,22 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetHlsManifests()
         {
             return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeDvbSubtitles. When enabled, MediaPackage passes
+        /// through digital video broadcasting (DVB) subtitles into the output.
+        /// </summary>
+        public bool IncludeDvbSubtitles
+        {
+            get { return this._includeDvbSubtitles.GetValueOrDefault(); }
+            set { this._includeDvbSubtitles = value; }
+        }
+
+        // Check to see if IncludeDvbSubtitles property is set
+        internal bool IsSetIncludeDvbSubtitles()
+        {
+            return this._includeDvbSubtitles.HasValue; 
         }
 
         /// <summary>

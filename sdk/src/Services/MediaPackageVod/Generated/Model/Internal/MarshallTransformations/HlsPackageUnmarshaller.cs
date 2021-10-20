@@ -76,6 +76,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("includeDvbSubtitles", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeDvbSubtitles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

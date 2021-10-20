@@ -72,6 +72,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetIncludeDvbSubtitles())
+            {
+                context.Writer.WritePropertyName("includeDvbSubtitles");
+                context.Writer.Write(requestObject.IncludeDvbSubtitles);
+            }
+
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
