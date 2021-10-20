@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.140.0",
+    "ProductVersion" : "3.7.141.0",
     "CoreVersion"    : "3.7.3.22",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -136,7 +136,7 @@
             "InPreview"               : false
         },
         "DirectConnect"     : {
-            "Version" : "3.7.2.41",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -866,7 +866,7 @@
             "InPreview"               : false
         },
         "MediaPackage"                    : {
-            "Version" : "3.7.3.20",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -898,7 +898,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.7.8.3",
+            "Version" : "3.7.9.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -1306,7 +1306,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.7.6.3",
+            "Version" : "3.7.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -1394,7 +1394,7 @@
             "InPreview"               : false
         },
         "MediaPackageVod"                 : {
-            "Version" : "3.7.3.13",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -1826,7 +1826,7 @@
             "InPreview"               : false
         },
         "Appflow"                         : {
-            "Version" : "3.7.3.29",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
@@ -2275,6 +2275,14 @@
         },
         "ManagedGrafana"                  : {
             "Version" : "3.7.0.4",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.3.22"
+            },
+            "InPreview"               : false
+        },
+        "Panorama"                        : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.22"
