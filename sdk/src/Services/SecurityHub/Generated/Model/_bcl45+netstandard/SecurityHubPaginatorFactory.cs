@@ -100,6 +100,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListFindingAggregators operation
+        ///</summary>
+        public IListFindingAggregatorsPaginator ListFindingAggregators(ListFindingAggregatorsRequest request) 
+        {
+            return new ListFindingAggregatorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
         public IListInvitationsPaginator ListInvitations(ListInvitationsRequest request) 

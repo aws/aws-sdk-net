@@ -66,6 +66,11 @@ namespace Amazon.SecurityHub.Model
         IListEnabledProductsForImportPaginator ListEnabledProductsForImport(ListEnabledProductsForImportRequest request);
 
         /// <summary>
+        /// Paginator for ListFindingAggregators operation
+        ///</summary>
+        IListFindingAggregatorsPaginator ListFindingAggregators(ListFindingAggregatorsRequest request);
+
+        /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
         IListInvitationsPaginator ListInvitations(ListInvitationsRequest request);

@@ -31,6 +31,13 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the GetFindings operation.
     /// Returns a list of findings that match the specified criteria.
+    /// 
+    ///  
+    /// <para>
+    /// If finding aggregation is enabled, then when you call <code>GetFindings</code> from
+    /// the aggregation Region, the results include all of the matching findings from both
+    /// the aggregation Region and the linked Regions.
+    /// </para>
     /// </summary>
     public partial class GetFindingsRequest : AmazonSecurityHubRequest
     {

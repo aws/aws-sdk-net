@@ -851,6 +851,66 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  CreateFindingAggregator
+
+        internal virtual CreateFindingAggregatorResponse CreateFindingAggregator(CreateFindingAggregatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFindingAggregatorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFindingAggregatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Used to enable finding aggregation. Must be called from the aggregation Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more details about cross-Region replication, see <a href="securityhub/latest/userguide/finding-aggregation.html">Configuring
+        /// finding aggregation</a> in the <i>Security Hub User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFindingAggregator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFindingAggregator service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">REST API Reference for CreateFindingAggregator Operation</seealso>
+        public virtual Task<CreateFindingAggregatorResponse> CreateFindingAggregatorAsync(CreateFindingAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFindingAggregatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFindingAggregatorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInsight
 
         internal virtual CreateInsightResponse CreateInsight(CreateInsightRequest request)
@@ -1134,6 +1194,71 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = DeleteActionTargetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteActionTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFindingAggregator
+
+        internal virtual DeleteFindingAggregatorResponse DeleteFindingAggregator(DeleteFindingAggregatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFindingAggregatorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFindingAggregatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a finding aggregator. When you delete the finding aggregator, you stop finding
+        /// aggregation.
+        /// 
+        ///  
+        /// <para>
+        /// When you stop finding aggregation, findings that were already aggregated to the aggregation
+        /// Region are still visible from the aggregation Region. New findings and finding updates
+        /// are not aggregated. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFindingAggregator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFindingAggregator service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteFindingAggregator">REST API Reference for DeleteFindingAggregator Operation</seealso>
+        public virtual Task<DeleteFindingAggregatorResponse> DeleteFindingAggregatorAsync(DeleteFindingAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFindingAggregatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFindingAggregatorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2330,6 +2455,63 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  GetFindingAggregator
+
+        internal virtual GetFindingAggregatorResponse GetFindingAggregator(GetFindingAggregatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingAggregatorResponseUnmarshaller.Instance;
+
+            return Invoke<GetFindingAggregatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the current finding aggregation configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingAggregator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingAggregator service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingAggregator">REST API Reference for GetFindingAggregator Operation</seealso>
+        public virtual Task<GetFindingAggregatorResponse> GetFindingAggregatorAsync(GetFindingAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFindingAggregatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFindingAggregatorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFindings
 
         internal virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
@@ -2345,6 +2527,13 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Returns a list of findings that match the specified criteria.
+        /// 
+        ///  
+        /// <para>
+        /// If finding aggregation is enabled, then when you call <code>GetFindings</code> from
+        /// the aggregation Region, the results include all of the matching findings from both
+        /// the aggregation Region and the linked Regions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
         /// <param name="cancellationToken">
@@ -2802,6 +2991,61 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  ListFindingAggregators
+
+        internal virtual ListFindingAggregatorsResponse ListFindingAggregators(ListFindingAggregatorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFindingAggregatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFindingAggregatorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFindingAggregatorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns
+        /// the ARN of the finding aggregator. You can run this operation from any Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFindingAggregators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFindingAggregators service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFindingAggregators">REST API Reference for ListFindingAggregators Operation</seealso>
+        public virtual Task<ListFindingAggregatorsResponse> ListFindingAggregatorsAsync(ListFindingAggregatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFindingAggregatorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFindingAggregatorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFindingAggregatorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListInvitations
 
         internal virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
@@ -3147,6 +3391,71 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = UpdateActionTargetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateActionTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFindingAggregator
+
+        internal virtual UpdateFindingAggregatorResponse UpdateFindingAggregator(UpdateFindingAggregatorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFindingAggregatorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFindingAggregatorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the finding aggregation configuration. Used to update the Region linking mode
+        /// and the list of included or excluded Regions. You cannot use <code>UpdateFindingAggregator</code>
+        /// to change the aggregation Region.
+        /// 
+        ///  
+        /// <para>
+        /// You must run <code>UpdateFindingAggregator</code> from the current aggregation Region.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFindingAggregator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFindingAggregator service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindingAggregator">REST API Reference for UpdateFindingAggregator Operation</seealso>
+        public virtual Task<UpdateFindingAggregatorResponse> UpdateFindingAggregatorAsync(UpdateFindingAggregatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFindingAggregatorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFindingAggregatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFindingAggregatorResponse>(request, options, cancellationToken);
         }
 
         #endregion
