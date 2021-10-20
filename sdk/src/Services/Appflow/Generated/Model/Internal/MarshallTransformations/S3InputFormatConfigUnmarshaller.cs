@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3SourceProperties Object
+    /// Response Unmarshaller for S3InputFormatConfig Object
     /// </summary>  
-    public class S3SourcePropertiesUnmarshaller : IUnmarshaller<S3SourceProperties, XmlUnmarshallerContext>, IUnmarshaller<S3SourceProperties, JsonUnmarshallerContext>
+    public class S3InputFormatConfigUnmarshaller : IUnmarshaller<S3InputFormatConfig, XmlUnmarshallerContext>, IUnmarshaller<S3InputFormatConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3SourceProperties IUnmarshaller<S3SourceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3InputFormatConfig IUnmarshaller<S3InputFormatConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3SourceProperties Unmarshall(JsonUnmarshallerContext context)
+        public S3InputFormatConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            S3SourceProperties unmarshalledObject = new S3SourceProperties();
+            S3InputFormatConfig unmarshalledObject = new S3InputFormatConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bucketName", targetDepth))
+                if (context.TestExpression("s3InputFileType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bucketPrefix", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketPrefix = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3InputFormatConfig", targetDepth))
-                {
-                    var unmarshaller = S3InputFormatConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3InputFormatConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3InputFileType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3SourcePropertiesUnmarshaller _instance = new S3SourcePropertiesUnmarshaller();        
+        private static S3InputFormatConfigUnmarshaller _instance = new S3InputFormatConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3SourcePropertiesUnmarshaller Instance
+        public static S3InputFormatConfigUnmarshaller Instance
         {
             get
             {

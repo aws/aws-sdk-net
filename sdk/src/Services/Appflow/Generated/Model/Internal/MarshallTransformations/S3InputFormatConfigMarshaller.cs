@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3SourceProperties Marshaller
+    /// S3InputFormatConfig Marshaller
     /// </summary>       
-    public class S3SourcePropertiesMarshaller : IRequestMarshaller<S3SourceProperties, JsonMarshallerContext> 
+    public class S3InputFormatConfigMarshaller : IRequestMarshaller<S3InputFormatConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3SourceProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(S3InputFormatConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBucketName())
+            if(requestObject.IsSetS3InputFileType())
             {
-                context.Writer.WritePropertyName("bucketName");
-                context.Writer.Write(requestObject.BucketName);
-            }
-
-            if(requestObject.IsSetBucketPrefix())
-            {
-                context.Writer.WritePropertyName("bucketPrefix");
-                context.Writer.Write(requestObject.BucketPrefix);
-            }
-
-            if(requestObject.IsSetS3InputFormatConfig())
-            {
-                context.Writer.WritePropertyName("s3InputFormatConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3InputFormatConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3InputFormatConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("s3InputFileType");
+                context.Writer.Write(requestObject.S3InputFileType);
             }
 
         }
@@ -73,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static S3SourcePropertiesMarshaller Instance = new S3SourcePropertiesMarshaller();
+        public readonly static S3InputFormatConfigMarshaller Instance = new S3InputFormatConfigMarshaller();
 
     }
 }

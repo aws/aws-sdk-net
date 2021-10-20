@@ -1569,6 +1569,56 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type S3InputFileType.
+    /// </summary>
+    public class S3InputFileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for S3InputFileType
+        /// </summary>
+        public static readonly S3InputFileType CSV = new S3InputFileType("CSV");
+        /// <summary>
+        /// Constant JSON for S3InputFileType
+        /// </summary>
+        public static readonly S3InputFileType JSON = new S3InputFileType("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3InputFileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3InputFileType FindValue(string value)
+        {
+            return FindValue<S3InputFileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3InputFileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SalesforceConnectorOperator.
     /// </summary>
     public class SalesforceConnectorOperator : ConstantClass

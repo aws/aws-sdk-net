@@ -35,6 +35,7 @@ namespace Amazon.Appflow.Model
     {
         private string _bucketName;
         private string _bucketPrefix;
+        private S3InputFormatConfig _s3InputFormatConfig;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -72,6 +73,21 @@ namespace Amazon.Appflow.Model
         internal bool IsSetBucketPrefix()
         {
             return this._bucketPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3InputFormatConfig.
+        /// </summary>
+        public S3InputFormatConfig S3InputFormatConfig
+        {
+            get { return this._s3InputFormatConfig; }
+            set { this._s3InputFormatConfig = value; }
+        }
+
+        // Check to see if S3InputFormatConfig property is set
+        internal bool IsSetS3InputFormatConfig()
+        {
+            return this._s3InputFormatConfig != null;
         }
 
     }
