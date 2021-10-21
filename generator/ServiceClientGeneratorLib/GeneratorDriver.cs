@@ -138,6 +138,8 @@ namespace ServiceClientGenerator
                 return;
             }
 
+            ValidateServiceModel();
+
             this.FilesWrittenToGeneratorFolder.Clear();
             if (Options.Clean && !Configuration.IsChildConfig)
             {
@@ -289,6 +291,30 @@ namespace ServiceClientGenerator
 
             if (operation.RequestStructure != null)
                 this.DetermineStructuresToProcess(operation.RequestStructure, false);
+        }
+
+        private void ValidateServiceModel()
+        {
+            // Check to see if any of the GET operations have invalid request body members.
+            foreach (var operation in Configuration.ServiceModel.Operations)
+            {
+                // These methods have already been released. The are broken and we need to work with the service teams to get them fixed.
+                if (string.Equals(operation.HttpMethod, "GET", StringComparison.InvariantCultureIgnoreCase) && operation.RequestHasBodyMembers)
+                {
+                    if ((string.Equals("QuickSight", Configuration.ServiceModel.ServiceId) && string.Equals("ListIAMPolicyAssignments", operation.Name)) ||
+                       (string.Equals("OpenSearch", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name)) ||
+                       (string.Equals("ivs", Configuration.ServiceModel.ServiceId) && string.Equals("ListTagsForResource", operation.Name)) ||
+                       (string.Equals("EFS", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeAccountPreferences", operation.Name)) ||
+                       (string.Equals("SESv2", Configuration.ServiceModel.ServiceId) && string.Equals("ListContacts", operation.Name)) ||
+                       (string.Equals("SESv2", Configuration.ServiceModel.ServiceId) && string.Equals("ListImportJobs", operation.Name)) ||
+                       (string.Equals("Elasticsearch Service", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name))
+                        )
+                    {
+                        continue;
+                    }
+                    throw new InvalidOperationException($"Failed to generate for service {Configuration.ServiceModel.ServiceFullName} because it contains a GET operation ({operation.Name}) with request body members.");
+                }
+            }
         }
 
         private void DetermineStructuresToProcess(Shape containingShape, bool includeContainingShape)
