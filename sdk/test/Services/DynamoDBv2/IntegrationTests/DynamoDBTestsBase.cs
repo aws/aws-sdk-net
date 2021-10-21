@@ -115,8 +115,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// delete the tables after the test has finished.
         /// </summary>
         public const bool ReuseTables = true;
-        public const int DefaultReadCapacity = 50;
-        public const int DefaultWriteCapacity = 50;
         public const string DefaultTTLAttribute = "TTL";
 
         public const int ScanLimit = 1;
@@ -205,7 +203,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             Projection = new Projection { ProjectionType = ProjectionType.ALL }
                         }
                     },
-                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                    BillingMode = BillingMode.PAY_PER_REQUEST
                 });
                 CreatedTables.Add(hashTableName);
 
@@ -263,7 +261,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             }
                         }
                     },
-                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                    BillingMode = BillingMode.PAY_PER_REQUEST
                 });
                 CreatedTables.Add(hashRangeTableName);
 
@@ -287,7 +285,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         new KeySchemaElement { AttributeName = "CreationTime", KeyType = KeyType.HASH },
                         new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.RANGE }
                     },
-                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                    BillingMode = BillingMode.PAY_PER_REQUEST
                 });
                 CreatedTables.Add(numericHashRangeTableName);
 

@@ -27,33 +27,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Create hash-key table
             var table1Name = TableNamePrefix + "Table1";
             Client.CreateTable(
-                table1Name,
-                new List<KeySchemaElement>
+                new CreateTableRequest
                 {
-                    new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
-                },
-                new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
-                },
-                new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity });
+                    TableName = table1Name,
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
+                    },
+                    AttributeDefinitions = new List<AttributeDefinition>
+                    {
+                        new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
+                    },
+                    BillingMode = BillingMode.PAY_PER_REQUEST
+                });
             CreatedTables.Add(table1Name);
 
             // Create hash-and-range-key table
             var table2Name = TableNamePrefix + "Table2";
-            Client.CreateTable(
-                table2Name,
-                new List<KeySchemaElement>
+            Client.CreateTable(new CreateTableRequest
                 {
-                    new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH },
-                    new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.RANGE }
-                },
-                new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S }
-                },
-                new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity });
+                    TableName = table2Name,
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH },
+                        new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.RANGE }
+                    },
+                    AttributeDefinitions = new List<AttributeDefinition>
+                    {
+                        new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S }
+                    },
+                    BillingMode = BillingMode.PAY_PER_REQUEST
+                });
             CreatedTables.Add(table2Name);
 
             // Create hash-key table with global index
@@ -85,7 +90,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         Projection = new Projection { ProjectionType = ProjectionType.ALL }
                     }
                 },
-                ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                BillingMode = BillingMode.PAY_PER_REQUEST
             });
             CreatedTables.Add(table3Name);
 
@@ -141,24 +146,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         }
                     }
                 },
-                ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                BillingMode = BillingMode.PAY_PER_REQUEST
             });
             CreatedTables.Add(table4Name);
 
             tables = GetTableNames();
             Assert.AreEqual(tableCount + 4, tables.Count);
-
-            // Wait for tables to be ready
-            WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
-
-            // Update throughput for a table
-            Client.UpdateTable(
-                table2Name,
-                new ProvisionedThroughput
-                {
-                    ReadCapacityUnits = DefaultReadCapacity * 2,
-                    WriteCapacityUnits = DefaultWriteCapacity * 2
-                });
 
             // Wait for tables to be ready
             WaitForTableStatus(CreatedTables, TableStatus.ACTIVE);
