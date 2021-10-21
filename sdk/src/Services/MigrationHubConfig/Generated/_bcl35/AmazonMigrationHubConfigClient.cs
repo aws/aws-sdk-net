@@ -70,6 +70,24 @@ namespace Amazon.MigrationHubConfig
     {
         private static IServiceMetadata serviceMetadata = new AmazonMigrationHubConfigMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMigrationHubConfigPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMigrationHubConfigPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MigrationHubConfigPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

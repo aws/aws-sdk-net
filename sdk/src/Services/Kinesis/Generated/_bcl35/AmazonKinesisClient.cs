@@ -45,6 +45,24 @@ namespace Amazon.Kinesis
     {
         private static IServiceMetadata serviceMetadata = new AmazonKinesisMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IKinesisPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKinesisPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KinesisPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

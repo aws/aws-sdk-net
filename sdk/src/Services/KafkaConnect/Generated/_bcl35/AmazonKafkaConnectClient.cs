@@ -41,6 +41,24 @@ namespace Amazon.KafkaConnect
     {
         private static IServiceMetadata serviceMetadata = new AmazonKafkaConnectMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IKafkaConnectPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKafkaConnectPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KafkaConnectPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

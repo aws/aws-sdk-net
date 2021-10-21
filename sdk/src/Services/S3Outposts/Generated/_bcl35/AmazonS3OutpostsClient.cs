@@ -41,6 +41,24 @@ namespace Amazon.S3Outposts
     {
         private static IServiceMetadata serviceMetadata = new AmazonS3OutpostsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IS3OutpostsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IS3OutpostsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new S3OutpostsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

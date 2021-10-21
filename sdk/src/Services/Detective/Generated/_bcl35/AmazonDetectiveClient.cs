@@ -109,6 +109,24 @@ namespace Amazon.Detective
     {
         private static IServiceMetadata serviceMetadata = new AmazonDetectiveMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IDetectivePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDetectivePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DetectivePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

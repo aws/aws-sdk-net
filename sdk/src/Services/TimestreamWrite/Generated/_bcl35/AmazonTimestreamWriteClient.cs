@@ -52,6 +52,24 @@ namespace Amazon.TimestreamWrite
     {
         private static IServiceMetadata serviceMetadata = new AmazonTimestreamWriteMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ITimestreamWritePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ITimestreamWritePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new TimestreamWritePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

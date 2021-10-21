@@ -71,6 +71,24 @@ namespace Amazon.CodeGuruProfiler
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeGuruProfilerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICodeGuruProfilerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeGuruProfilerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeGuruProfilerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

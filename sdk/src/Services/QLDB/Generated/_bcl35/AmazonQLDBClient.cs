@@ -41,6 +41,24 @@ namespace Amazon.QLDB
     {
         private static IServiceMetadata serviceMetadata = new AmazonQLDBMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IQLDBPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IQLDBPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new QLDBPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

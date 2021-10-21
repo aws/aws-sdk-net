@@ -142,6 +142,24 @@ namespace Amazon.Organizations
     {
         private static IServiceMetadata serviceMetadata = new AmazonOrganizationsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IOrganizationsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOrganizationsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OrganizationsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

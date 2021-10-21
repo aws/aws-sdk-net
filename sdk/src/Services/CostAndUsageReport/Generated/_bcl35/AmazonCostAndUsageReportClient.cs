@@ -64,6 +64,24 @@ namespace Amazon.CostAndUsageReport
     {
         private static IServiceMetadata serviceMetadata = new AmazonCostAndUsageReportMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICostAndUsageReportPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICostAndUsageReportPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CostAndUsageReportPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

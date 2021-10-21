@@ -59,6 +59,24 @@ namespace Amazon.GreengrassV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonGreengrassV2Metadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IGreengrassV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IGreengrassV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new GreengrassV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

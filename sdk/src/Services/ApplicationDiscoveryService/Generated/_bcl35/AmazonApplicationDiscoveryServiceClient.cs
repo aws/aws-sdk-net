@@ -160,6 +160,24 @@ namespace Amazon.ApplicationDiscoveryService
     {
         private static IServiceMetadata serviceMetadata = new AmazonApplicationDiscoveryServiceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IApplicationDiscoveryServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IApplicationDiscoveryServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ApplicationDiscoveryServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

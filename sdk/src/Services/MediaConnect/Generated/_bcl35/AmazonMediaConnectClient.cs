@@ -41,6 +41,24 @@ namespace Amazon.MediaConnect
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaConnectMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMediaConnectPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaConnectPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaConnectPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

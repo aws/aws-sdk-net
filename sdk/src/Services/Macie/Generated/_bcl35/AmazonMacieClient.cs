@@ -49,6 +49,24 @@ namespace Amazon.Macie
     {
         private static IServiceMetadata serviceMetadata = new AmazonMacieMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMaciePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMaciePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MaciePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

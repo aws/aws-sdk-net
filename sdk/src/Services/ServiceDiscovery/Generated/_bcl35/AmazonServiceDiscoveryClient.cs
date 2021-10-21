@@ -49,6 +49,24 @@ namespace Amazon.ServiceDiscovery
     {
         private static IServiceMetadata serviceMetadata = new AmazonServiceDiscoveryMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IServiceDiscoveryPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IServiceDiscoveryPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ServiceDiscoveryPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

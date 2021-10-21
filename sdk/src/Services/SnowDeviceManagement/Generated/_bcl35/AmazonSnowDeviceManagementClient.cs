@@ -41,6 +41,24 @@ namespace Amazon.SnowDeviceManagement
     {
         private static IServiceMetadata serviceMetadata = new AmazonSnowDeviceManagementMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISnowDeviceManagementPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISnowDeviceManagementPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SnowDeviceManagementPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -51,6 +51,24 @@ namespace Amazon.FMS
     {
         private static IServiceMetadata serviceMetadata = new AmazonFMSMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IFMSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFMSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FMSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

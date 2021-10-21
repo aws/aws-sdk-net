@@ -127,6 +127,24 @@ namespace Amazon.CodeStarNotifications
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeStarNotificationsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICodeStarNotificationsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeStarNotificationsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeStarNotificationsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

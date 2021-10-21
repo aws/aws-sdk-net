@@ -61,6 +61,24 @@ namespace Amazon.CodeGuruReviewer
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeGuruReviewerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICodeGuruReviewerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeGuruReviewerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeGuruReviewerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

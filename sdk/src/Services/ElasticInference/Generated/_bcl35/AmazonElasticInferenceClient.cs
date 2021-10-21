@@ -41,6 +41,24 @@ namespace Amazon.ElasticInference
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticInferenceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IElasticInferencePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticInferencePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticInferencePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

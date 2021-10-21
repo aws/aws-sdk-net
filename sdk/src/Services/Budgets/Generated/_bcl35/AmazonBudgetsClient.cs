@@ -107,6 +107,24 @@ namespace Amazon.Budgets
     {
         private static IServiceMetadata serviceMetadata = new AmazonBudgetsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IBudgetsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBudgetsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BudgetsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

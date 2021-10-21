@@ -41,6 +41,24 @@ namespace Amazon.IoTWireless
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTWirelessMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIoTWirelessPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTWirelessPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTWirelessPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

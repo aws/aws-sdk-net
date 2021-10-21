@@ -43,6 +43,24 @@ namespace Amazon.MediaStoreData
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaStoreDataMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMediaStoreDataPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaStoreDataPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaStoreDataPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

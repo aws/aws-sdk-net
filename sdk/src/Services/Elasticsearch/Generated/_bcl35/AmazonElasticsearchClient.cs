@@ -58,6 +58,24 @@ namespace Amazon.Elasticsearch
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticsearchMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IElasticsearchPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticsearchPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticsearchPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

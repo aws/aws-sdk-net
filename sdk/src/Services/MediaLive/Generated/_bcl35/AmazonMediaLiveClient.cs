@@ -41,6 +41,24 @@ namespace Amazon.MediaLive
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaLiveMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMediaLivePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaLivePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaLivePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -62,6 +62,24 @@ namespace Amazon.RAM
     {
         private static IServiceMetadata serviceMetadata = new AmazonRAMMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IRAMPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRAMPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RAMPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

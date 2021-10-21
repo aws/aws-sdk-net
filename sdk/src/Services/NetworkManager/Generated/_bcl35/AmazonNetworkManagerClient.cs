@@ -49,6 +49,24 @@ namespace Amazon.NetworkManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonNetworkManagerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private INetworkManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public INetworkManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new NetworkManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

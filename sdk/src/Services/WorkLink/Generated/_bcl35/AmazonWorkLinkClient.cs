@@ -47,6 +47,24 @@ namespace Amazon.WorkLink
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkLinkMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IWorkLinkPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkLinkPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkLinkPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

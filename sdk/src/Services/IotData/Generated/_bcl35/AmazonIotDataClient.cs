@@ -62,6 +62,24 @@ namespace Amazon.IotData
     {
         private static IServiceMetadata serviceMetadata = new AmazonIotDataMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIotDataPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIotDataPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IotDataPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 

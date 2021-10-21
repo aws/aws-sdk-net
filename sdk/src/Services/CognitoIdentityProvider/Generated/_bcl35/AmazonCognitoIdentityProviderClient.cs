@@ -53,6 +53,24 @@ namespace Amazon.CognitoIdentityProvider
     {
         private static IServiceMetadata serviceMetadata = new AmazonCognitoIdentityProviderMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICognitoIdentityProviderPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICognitoIdentityProviderPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CognitoIdentityProviderPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

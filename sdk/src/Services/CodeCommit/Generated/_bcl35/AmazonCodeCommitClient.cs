@@ -469,6 +469,24 @@ namespace Amazon.CodeCommit
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeCommitMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICodeCommitPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeCommitPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeCommitPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

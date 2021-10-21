@@ -42,6 +42,24 @@ namespace Amazon.VoiceID
     {
         private static IServiceMetadata serviceMetadata = new AmazonVoiceIDMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IVoiceIDPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IVoiceIDPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new VoiceIDPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

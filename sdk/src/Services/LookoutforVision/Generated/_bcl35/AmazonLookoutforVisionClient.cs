@@ -51,6 +51,24 @@ namespace Amazon.LookoutforVision
     {
         private static IServiceMetadata serviceMetadata = new AmazonLookoutforVisionMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ILookoutforVisionPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ILookoutforVisionPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new LookoutforVisionPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

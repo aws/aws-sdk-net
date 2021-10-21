@@ -64,6 +64,24 @@ namespace Amazon.ElasticBeanstalk
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticBeanstalkMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IElasticBeanstalkPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticBeanstalkPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticBeanstalkPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

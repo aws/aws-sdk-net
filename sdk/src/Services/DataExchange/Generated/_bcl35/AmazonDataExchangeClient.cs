@@ -67,6 +67,24 @@ namespace Amazon.DataExchange
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataExchangeMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IDataExchangePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDataExchangePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DataExchangePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

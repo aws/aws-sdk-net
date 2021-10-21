@@ -41,6 +41,24 @@ namespace Amazon.S3Control
     {
         private static IServiceMetadata serviceMetadata = new AmazonS3ControlMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IS3ControlPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IS3ControlPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new S3ControlPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

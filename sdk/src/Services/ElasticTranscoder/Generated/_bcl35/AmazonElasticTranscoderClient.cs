@@ -44,6 +44,24 @@ namespace Amazon.ElasticTranscoder
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticTranscoderMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IElasticTranscoderPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticTranscoderPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticTranscoderPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

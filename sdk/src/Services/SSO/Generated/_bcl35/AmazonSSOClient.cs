@@ -63,6 +63,24 @@ namespace Amazon.SSO
     {
         private static IServiceMetadata serviceMetadata = new AmazonSSOMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISSOPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISSOPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SSOPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

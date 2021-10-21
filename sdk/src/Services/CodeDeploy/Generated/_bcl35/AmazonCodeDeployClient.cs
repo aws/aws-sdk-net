@@ -144,6 +144,24 @@ namespace Amazon.CodeDeploy
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeDeployMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICodeDeployPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICodeDeployPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CodeDeployPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

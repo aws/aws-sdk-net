@@ -54,6 +54,24 @@ namespace Amazon.SSOAdmin
     {
         private static IServiceMetadata serviceMetadata = new AmazonSSOAdminMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISSOAdminPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISSOAdminPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SSOAdminPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

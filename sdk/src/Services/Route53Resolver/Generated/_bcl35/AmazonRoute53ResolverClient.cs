@@ -87,6 +87,24 @@ namespace Amazon.Route53Resolver
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53ResolverMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IRoute53ResolverPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoute53ResolverPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Route53ResolverPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -41,6 +41,24 @@ namespace Amazon.Kendra
     {
         private static IServiceMetadata serviceMetadata = new AmazonKendraMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IKendraPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IKendraPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new KendraPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

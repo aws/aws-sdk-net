@@ -42,6 +42,24 @@ namespace Amazon.MediaStore
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaStoreMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMediaStorePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaStorePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaStorePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -41,6 +41,24 @@ namespace Amazon.Rekognition
     {
         private static IServiceMetadata serviceMetadata = new AmazonRekognitionMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IRekognitionPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRekognitionPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RekognitionPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -54,6 +54,24 @@ namespace Amazon.MediaTailor
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaTailorMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMediaTailorPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMediaTailorPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MediaTailorPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

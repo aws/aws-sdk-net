@@ -41,6 +41,24 @@ namespace Amazon.Route53Domains
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53DomainsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IRoute53DomainsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoute53DomainsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Route53DomainsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

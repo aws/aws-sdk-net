@@ -42,6 +42,24 @@ namespace Amazon.HealthLake
     {
         private static IServiceMetadata serviceMetadata = new AmazonHealthLakeMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IHealthLakePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IHealthLakePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new HealthLakePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

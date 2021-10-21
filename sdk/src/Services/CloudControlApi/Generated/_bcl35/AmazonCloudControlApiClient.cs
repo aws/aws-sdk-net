@@ -53,6 +53,24 @@ namespace Amazon.CloudControlApi
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudControlApiMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICloudControlApiPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudControlApiPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudControlApiPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

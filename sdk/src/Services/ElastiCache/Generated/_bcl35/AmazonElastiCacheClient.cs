@@ -58,6 +58,24 @@ namespace Amazon.ElastiCache
     {
         private static IServiceMetadata serviceMetadata = new AmazonElastiCacheMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IElastiCachePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElastiCachePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElastiCachePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

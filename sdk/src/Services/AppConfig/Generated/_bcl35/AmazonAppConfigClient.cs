@@ -96,6 +96,24 @@ namespace Amazon.AppConfig
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppConfigMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IAppConfigPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAppConfigPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AppConfigPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

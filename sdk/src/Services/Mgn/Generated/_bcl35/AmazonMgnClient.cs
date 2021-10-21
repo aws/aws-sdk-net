@@ -41,6 +41,24 @@ namespace Amazon.Mgn
     {
         private static IServiceMetadata serviceMetadata = new AmazonMgnMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMgnPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMgnPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MgnPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

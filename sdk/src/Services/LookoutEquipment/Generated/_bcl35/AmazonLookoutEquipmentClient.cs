@@ -42,6 +42,24 @@ namespace Amazon.LookoutEquipment
     {
         private static IServiceMetadata serviceMetadata = new AmazonLookoutEquipmentMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ILookoutEquipmentPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ILookoutEquipmentPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new LookoutEquipmentPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

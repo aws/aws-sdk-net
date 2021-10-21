@@ -188,6 +188,24 @@ namespace Amazon.IVS
     {
         private static IServiceMetadata serviceMetadata = new AmazonIVSMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIVSPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIVSPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IVSPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

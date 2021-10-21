@@ -42,6 +42,24 @@ namespace Amazon.Braket
     {
         private static IServiceMetadata serviceMetadata = new AmazonBraketMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IBraketPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IBraketPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new BraketPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

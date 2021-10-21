@@ -44,6 +44,24 @@ namespace Amazon.FraudDetector
     {
         private static IServiceMetadata serviceMetadata = new AmazonFraudDetectorMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IFraudDetectorPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFraudDetectorPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FraudDetectorPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

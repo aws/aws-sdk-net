@@ -41,6 +41,24 @@ namespace Amazon.LocationService
     {
         private static IServiceMetadata serviceMetadata = new AmazonLocationServiceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ILocationServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ILocationServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new LocationServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

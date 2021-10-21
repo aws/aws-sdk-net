@@ -67,6 +67,24 @@ namespace Amazon.ACMPCA
     {
         private static IServiceMetadata serviceMetadata = new AmazonACMPCAMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IACMPCAPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IACMPCAPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ACMPCAPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -50,6 +50,24 @@ namespace Amazon.IoTSecureTunneling
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTSecureTunnelingMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIoTSecureTunnelingPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTSecureTunnelingPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTSecureTunnelingPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

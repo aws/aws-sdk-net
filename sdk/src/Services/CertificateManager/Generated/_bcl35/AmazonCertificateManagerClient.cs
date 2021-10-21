@@ -47,6 +47,24 @@ namespace Amazon.CertificateManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonCertificateManagerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICertificateManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICertificateManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CertificateManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

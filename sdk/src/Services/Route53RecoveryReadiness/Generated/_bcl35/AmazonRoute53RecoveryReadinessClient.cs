@@ -41,6 +41,24 @@ namespace Amazon.Route53RecoveryReadiness
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoute53RecoveryReadinessMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IRoute53RecoveryReadinessPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoute53RecoveryReadinessPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new Route53RecoveryReadinessPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

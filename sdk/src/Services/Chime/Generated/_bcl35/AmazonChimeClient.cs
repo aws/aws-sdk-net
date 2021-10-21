@@ -88,6 +88,24 @@ namespace Amazon.Chime
     {
         private static IServiceMetadata serviceMetadata = new AmazonChimeMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IChimePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IChimePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ChimePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

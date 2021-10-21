@@ -62,6 +62,24 @@ namespace Amazon.Neptune
     {
         private static IServiceMetadata serviceMetadata = new AmazonNeptuneMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private INeptunePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public INeptunePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new NeptunePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

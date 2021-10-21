@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time that your contact center is closes.
+        /// The end time that your contact center closes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time that your contact center is open.
+        /// The start time that your contact center opens.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

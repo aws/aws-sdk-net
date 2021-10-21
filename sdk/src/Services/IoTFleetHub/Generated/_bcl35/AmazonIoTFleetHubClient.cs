@@ -48,6 +48,24 @@ namespace Amazon.IoTFleetHub
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTFleetHubMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIoTFleetHubPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTFleetHubPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTFleetHubPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

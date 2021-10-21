@@ -87,6 +87,24 @@ namespace Amazon.SimpleSystemsManagement
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleSystemsManagementMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISimpleSystemsManagementPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISimpleSystemsManagementPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SimpleSystemsManagementPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

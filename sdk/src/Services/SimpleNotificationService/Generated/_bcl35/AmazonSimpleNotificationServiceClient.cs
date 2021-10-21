@@ -64,6 +64,24 @@ namespace Amazon.SimpleNotificationService
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleNotificationServiceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISimpleNotificationServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISimpleNotificationServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SimpleNotificationServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

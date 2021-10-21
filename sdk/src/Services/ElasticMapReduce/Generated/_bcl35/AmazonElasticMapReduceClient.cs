@@ -44,6 +44,24 @@ namespace Amazon.ElasticMapReduce
     {
         private static IServiceMetadata serviceMetadata = new AmazonElasticMapReduceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IElasticMapReducePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IElasticMapReducePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ElasticMapReducePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

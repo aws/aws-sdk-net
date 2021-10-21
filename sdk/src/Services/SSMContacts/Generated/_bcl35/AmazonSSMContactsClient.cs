@@ -53,6 +53,24 @@ namespace Amazon.SSMContacts
     {
         private static IServiceMetadata serviceMetadata = new AmazonSSMContactsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISSMContactsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISSMContactsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SSMContactsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

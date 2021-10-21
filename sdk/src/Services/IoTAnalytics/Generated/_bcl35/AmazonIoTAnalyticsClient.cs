@@ -66,6 +66,24 @@ namespace Amazon.IoTAnalytics
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTAnalyticsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIoTAnalyticsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTAnalyticsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTAnalyticsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

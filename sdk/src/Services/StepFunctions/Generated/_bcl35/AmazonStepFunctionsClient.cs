@@ -64,6 +64,24 @@ namespace Amazon.StepFunctions
     {
         private static IServiceMetadata serviceMetadata = new AmazonStepFunctionsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IStepFunctionsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IStepFunctionsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new StepFunctionsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

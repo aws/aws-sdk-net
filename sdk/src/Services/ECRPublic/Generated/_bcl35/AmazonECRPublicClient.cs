@@ -51,6 +51,24 @@ namespace Amazon.ECRPublic
     {
         private static IServiceMetadata serviceMetadata = new AmazonECRPublicMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IECRPublicPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IECRPublicPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ECRPublicPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

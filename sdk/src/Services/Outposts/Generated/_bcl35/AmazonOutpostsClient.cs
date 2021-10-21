@@ -45,6 +45,24 @@ namespace Amazon.Outposts
     {
         private static IServiceMetadata serviceMetadata = new AmazonOutpostsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IOutpostsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOutpostsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OutpostsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

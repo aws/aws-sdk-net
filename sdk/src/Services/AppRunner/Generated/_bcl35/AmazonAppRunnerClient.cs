@@ -75,6 +75,24 @@ namespace Amazon.AppRunner
     {
         private static IServiceMetadata serviceMetadata = new AmazonAppRunnerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IAppRunnerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAppRunnerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AppRunnerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

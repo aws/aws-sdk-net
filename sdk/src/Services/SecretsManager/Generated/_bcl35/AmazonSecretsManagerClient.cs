@@ -130,6 +130,24 @@ namespace Amazon.SecretsManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonSecretsManagerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISecretsManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISecretsManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SecretsManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

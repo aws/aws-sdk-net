@@ -64,6 +64,24 @@ namespace Amazon.DataPipeline
     {
         private static IServiceMetadata serviceMetadata = new AmazonDataPipelineMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IDataPipelinePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDataPipelinePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DataPipelinePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

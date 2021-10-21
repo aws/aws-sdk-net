@@ -48,6 +48,24 @@ namespace Amazon.MWAA
     {
         private static IServiceMetadata serviceMetadata = new AmazonMWAAMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMWAAPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMWAAPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MWAAPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

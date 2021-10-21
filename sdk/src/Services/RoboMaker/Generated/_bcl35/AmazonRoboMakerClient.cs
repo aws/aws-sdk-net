@@ -41,6 +41,24 @@ namespace Amazon.RoboMaker
     {
         private static IServiceMetadata serviceMetadata = new AmazonRoboMakerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IRoboMakerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRoboMakerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RoboMakerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

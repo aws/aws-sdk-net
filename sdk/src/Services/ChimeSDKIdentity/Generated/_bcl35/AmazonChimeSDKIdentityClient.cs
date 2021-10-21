@@ -45,6 +45,24 @@ namespace Amazon.ChimeSDKIdentity
     {
         private static IServiceMetadata serviceMetadata = new AmazonChimeSDKIdentityMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IChimeSDKIdentityPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IChimeSDKIdentityPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ChimeSDKIdentityPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

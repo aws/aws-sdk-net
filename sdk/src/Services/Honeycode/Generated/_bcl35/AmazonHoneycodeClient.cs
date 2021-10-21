@@ -44,6 +44,24 @@ namespace Amazon.Honeycode
     {
         private static IServiceMetadata serviceMetadata = new AmazonHoneycodeMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IHoneycodePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IHoneycodePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new HoneycodePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

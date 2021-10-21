@@ -52,6 +52,24 @@ namespace Amazon.SimpleEmailV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonSimpleEmailServiceV2Metadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISimpleEmailV2PaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISimpleEmailV2PaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SimpleEmailV2PaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

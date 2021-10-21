@@ -49,6 +49,24 @@ namespace Amazon.Snowball
     {
         private static IServiceMetadata serviceMetadata = new AmazonSnowballMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISnowballPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISnowballPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SnowballPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

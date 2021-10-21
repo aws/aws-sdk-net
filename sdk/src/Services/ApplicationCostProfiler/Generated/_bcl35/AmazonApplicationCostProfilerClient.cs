@@ -53,6 +53,24 @@ namespace Amazon.ApplicationCostProfiler
     {
         private static IServiceMetadata serviceMetadata = new AmazonApplicationCostProfilerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IApplicationCostProfilerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IApplicationCostProfilerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ApplicationCostProfilerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

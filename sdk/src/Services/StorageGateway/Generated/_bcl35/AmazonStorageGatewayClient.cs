@@ -119,6 +119,24 @@ namespace Amazon.StorageGateway
     {
         private static IServiceMetadata serviceMetadata = new AmazonStorageGatewayMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IStorageGatewayPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IStorageGatewayPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new StorageGatewayPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

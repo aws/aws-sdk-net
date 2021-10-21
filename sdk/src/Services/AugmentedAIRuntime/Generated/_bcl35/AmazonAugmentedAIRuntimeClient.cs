@@ -78,6 +78,24 @@ namespace Amazon.AugmentedAIRuntime
     {
         private static IServiceMetadata serviceMetadata = new AmazonAugmentedAIRuntimeMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IAugmentedAIRuntimePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAugmentedAIRuntimePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AugmentedAIRuntimePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -58,6 +58,24 @@ namespace Amazon.OpenSearchService
     {
         private static IServiceMetadata serviceMetadata = new AmazonOpenSearchServiceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IOpenSearchServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOpenSearchServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OpenSearchServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

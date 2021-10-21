@@ -49,6 +49,24 @@ namespace Amazon.IoTDeviceAdvisor
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTDeviceAdvisorMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIoTDeviceAdvisorPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIoTDeviceAdvisorPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IoTDeviceAdvisorPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

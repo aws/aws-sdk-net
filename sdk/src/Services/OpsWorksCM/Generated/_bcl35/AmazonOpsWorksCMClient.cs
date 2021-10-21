@@ -145,6 +145,24 @@ namespace Amazon.OpsWorksCM
     {
         private static IServiceMetadata serviceMetadata = new AmazonOpsWorksCMMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IOpsWorksCMPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IOpsWorksCMPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new OpsWorksCMPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

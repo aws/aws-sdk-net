@@ -41,6 +41,24 @@ namespace Amazon.MTurk
     {
         private static IServiceMetadata serviceMetadata = new AmazonMTurkMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMTurkPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMTurkPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MTurkPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

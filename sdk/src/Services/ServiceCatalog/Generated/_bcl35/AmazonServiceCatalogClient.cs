@@ -48,6 +48,24 @@ namespace Amazon.ServiceCatalog
     {
         private static IServiceMetadata serviceMetadata = new AmazonServiceCatalogMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IServiceCatalogPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IServiceCatalogPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ServiceCatalogPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

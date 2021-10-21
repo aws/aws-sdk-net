@@ -45,6 +45,24 @@ namespace Amazon.WorkSpaces
     {
         private static IServiceMetadata serviceMetadata = new AmazonWorkSpacesMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IWorkSpacesPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkSpacesPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkSpacesPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -50,6 +50,24 @@ namespace Amazon.IdentityManagement
     {
         private static IServiceMetadata serviceMetadata = new AmazonIdentityManagementServiceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IIdentityManagementPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IIdentityManagementPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new IdentityManagementPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

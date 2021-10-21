@@ -41,6 +41,24 @@ namespace Amazon.Schemas
     {
         private static IServiceMetadata serviceMetadata = new AmazonSchemasMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISchemasPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISchemasPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SchemasPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

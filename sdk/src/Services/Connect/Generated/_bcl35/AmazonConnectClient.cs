@@ -68,6 +68,24 @@ namespace Amazon.Connect
     {
         private static IServiceMetadata serviceMetadata = new AmazonConnectMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IConnectPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IConnectPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ConnectPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
@@ -1063,12 +1081,7 @@ namespace Amazon.Connect
         #region  CreateHoursOfOperation
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
-        /// Creates hours of operation. 
-        /// </para>
+        /// Creates hours of operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperation service method.</param>
         /// 
@@ -1753,12 +1766,7 @@ namespace Amazon.Connect
         #region  DeleteHoursOfOperation
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes an hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperation service method.</param>
         /// 
@@ -2407,12 +2415,7 @@ namespace Amazon.Connect
         #region  DescribeHoursOfOperation
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperation service method.</param>
         /// 
@@ -6892,12 +6895,7 @@ namespace Amazon.Connect
         #region  UpdateHoursOfOperation
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperation service method.</param>
         /// 

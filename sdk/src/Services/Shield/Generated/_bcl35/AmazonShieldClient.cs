@@ -48,6 +48,24 @@ namespace Amazon.Shield
     {
         private static IServiceMetadata serviceMetadata = new AmazonShieldMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IShieldPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IShieldPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ShieldPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

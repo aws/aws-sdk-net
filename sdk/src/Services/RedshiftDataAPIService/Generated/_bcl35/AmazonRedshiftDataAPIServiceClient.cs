@@ -49,6 +49,24 @@ namespace Amazon.RedshiftDataAPIService
     {
         private static IServiceMetadata serviceMetadata = new AmazonRedshiftDataAPIServiceMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IRedshiftDataAPIServicePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IRedshiftDataAPIServicePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new RedshiftDataAPIServicePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -77,6 +77,24 @@ namespace Amazon.Pricing
     {
         private static IServiceMetadata serviceMetadata = new AmazonPricingMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IPricingPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IPricingPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new PricingPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

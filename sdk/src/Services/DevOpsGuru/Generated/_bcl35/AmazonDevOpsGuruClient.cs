@@ -62,6 +62,24 @@ namespace Amazon.DevOpsGuru
     {
         private static IServiceMetadata serviceMetadata = new AmazonDevOpsGuruMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IDevOpsGuruPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IDevOpsGuruPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new DevOpsGuruPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

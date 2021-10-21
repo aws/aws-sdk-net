@@ -50,6 +50,24 @@ namespace Amazon.Panorama
     {
         private static IServiceMetadata serviceMetadata = new AmazonPanoramaMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IPanoramaPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IPanoramaPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new PanoramaPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -41,6 +41,24 @@ namespace Amazon.MachineLearning
     {
         private static IServiceMetadata serviceMetadata = new AmazonMachineLearningMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IMachineLearningPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IMachineLearningPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new MachineLearningPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

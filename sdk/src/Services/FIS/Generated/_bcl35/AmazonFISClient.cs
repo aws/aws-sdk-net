@@ -43,6 +43,24 @@ namespace Amazon.FIS
     {
         private static IServiceMetadata serviceMetadata = new AmazonFISMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IFISPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFISPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FISPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

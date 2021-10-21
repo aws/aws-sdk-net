@@ -87,6 +87,24 @@ namespace Amazon.AuditManager
     {
         private static IServiceMetadata serviceMetadata = new AmazonAuditManagerMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IAuditManagerPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAuditManagerPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AuditManagerPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

@@ -41,6 +41,24 @@ namespace Amazon.Translate
     {
         private static IServiceMetadata serviceMetadata = new AmazonTranslateMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ITranslatePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ITranslatePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new TranslatePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

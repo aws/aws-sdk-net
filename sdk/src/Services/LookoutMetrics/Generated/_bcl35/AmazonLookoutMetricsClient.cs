@@ -43,6 +43,24 @@ namespace Amazon.LookoutMetrics
     {
         private static IServiceMetadata serviceMetadata = new AmazonLookoutMetricsMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ILookoutMetricsPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ILookoutMetricsPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new LookoutMetricsPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>

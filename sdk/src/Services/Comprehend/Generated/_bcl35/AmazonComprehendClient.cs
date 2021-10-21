@@ -44,6 +44,24 @@ namespace Amazon.Comprehend
     {
         private static IServiceMetadata serviceMetadata = new AmazonComprehendMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IComprehendPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IComprehendPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new ComprehendPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
