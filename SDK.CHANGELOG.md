@@ -1,3 +1,12 @@
+### 3.7.141.1 (2021-10-21 18:31 UTC)
+* Connect (3.7.5.11)
+	* Released Amazon Connect hours of operation API for general availability (GA). This API also supports AWS CloudFormation. For more information, see Amazon Connect Resource Type Reference in the AWS CloudFormation User Guide.
+* Core 3.7.3.23
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.141.0 (2021-10-20 18:16 UTC)
 * Appflow (3.7.4.0)
 	* Feature to add support for  JSON-L format for S3 as a source.
