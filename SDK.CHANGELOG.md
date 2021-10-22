@@ -1,3 +1,8 @@
+### 3.7.141.2 (2021-10-22 06:42 UTC)
+* Core 3.7.3.24
+	* Allow using SSO credentials in default chain if a cached access token exists. Fix issue with using assume role and SSO credentials profile.
+	* All services packages updated to require new Core
+
 ### 3.7.141.1 (2021-10-21 18:31 UTC)
 * Connect (3.7.5.11)
 	* Released Amazon Connect hours of operation API for general availability (GA). This API also supports AWS CloudFormation. For more information, see Amazon Connect Resource Type Reference in the AWS CloudFormation User Guide.
