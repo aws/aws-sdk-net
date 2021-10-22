@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccount. 
         /// <para>
-        ///  The account associated with the assessment. 
+        ///  The Amazon Web Services account associated with the assessment. 
         /// </para>
         /// </summary>
         public AWSAccount AwsAccount

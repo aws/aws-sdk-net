@@ -93,7 +93,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        ///  The identifier for the specified account. 
+        ///  The identifier for the specified Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -112,7 +112,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsOrganization. 
         /// <para>
-        ///  The account from which the evidence is collected, and its organization path. 
+        ///  The Amazon Web Services account from which the evidence is collected, and its organization
+        /// path. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -210,7 +211,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceAwsAccountId. 
         /// <para>
-        ///  The identifier for the specified account. 
+        ///  The identifier for the specified Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

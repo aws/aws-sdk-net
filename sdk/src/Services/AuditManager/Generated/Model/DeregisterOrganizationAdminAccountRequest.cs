@@ -30,8 +30,8 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterOrganizationAdminAccount operation.
-    /// Removes the specified member account as a delegated administrator for Audit Manager.
-    /// 
+    /// Removes the specified member Amazon Web Services account as a delegated administrator
+    /// for Audit Manager. 
     /// 
     ///  <important> 
     /// <para>

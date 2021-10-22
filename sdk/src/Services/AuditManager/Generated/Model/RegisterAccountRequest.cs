@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterAccount operation.
-    /// Enables Audit Manager for the specified account.
+    /// Enables Audit Manager for the specified Amazon Web Services account.
     /// </summary>
     public partial class RegisterAccountRequest : AmazonAuditManagerRequest
     {

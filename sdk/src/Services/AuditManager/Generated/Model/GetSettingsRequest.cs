@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSettings operation.
-    /// Returns the settings for the specified account.
+    /// Returns the settings for the specified Amazon Web Services account.
     /// </summary>
     public partial class GetSettingsRequest : AmazonAuditManagerRequest
     {

@@ -934,8 +934,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Removes the specified member account as a delegated administrator for Audit Manager.
-        /// 
+        /// Removes the specified member Amazon Web Services account as a delegated administrator
+        /// for Audit Manager. 
         /// 
         ///  <important> 
         /// <para>
@@ -970,8 +970,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Removes the specified member account as a delegated administrator for Audit Manager.
-        /// 
+        /// Removes the specified member Amazon Web Services account as a delegated administrator
+        /// for Audit Manager. 
         /// 
         ///  <important> 
         /// <para>
@@ -1824,7 +1824,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the settings for the specified account.
+        /// Returns the settings for the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSettings service method.</param>
         /// 
@@ -1843,7 +1843,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the settings for the specified account.
+        /// Returns the settings for the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2216,7 +2216,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables Audit Manager for the specified account.
+        /// Enables Audit Manager for the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAccount service method.</param>
         /// 
@@ -2241,7 +2241,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables Audit Manager for the specified account.
+        /// Enables Audit Manager for the specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2272,8 +2272,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables an account within the organization as the delegated administrator for Audit
-        /// Manager.
+        /// Enables an Amazon Web Services account within the organization as the delegated administrator
+        /// for Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterOrganizationAdminAccount service method.</param>
         /// 
@@ -2298,8 +2298,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Enables an account within the organization as the delegated administrator for Audit
-        /// Manager.
+        /// Enables an Amazon Web Services account within the organization as the delegated administrator
+        /// for Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">

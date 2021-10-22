@@ -215,7 +215,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        ///  The wrapper of accounts and services in scope for the assessment. 
+        ///  The wrapper of Amazon Web Services accounts and services in scope for the assessment.
+        /// 
         /// </para>
         /// </summary>
         public Scope Scope

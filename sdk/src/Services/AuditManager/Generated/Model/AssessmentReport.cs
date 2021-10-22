@@ -106,7 +106,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        ///  The identifier for the specified account. 
+        ///  The identifier for the specified Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
