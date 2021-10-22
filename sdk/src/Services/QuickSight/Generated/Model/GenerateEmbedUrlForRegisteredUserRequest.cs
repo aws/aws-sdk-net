@@ -101,7 +101,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ExperienceConfiguration. 
         /// <para>
         /// The experience you are embedding. For registered users, you can embed Amazon QuickSight
-        /// dashboards or the entire Amazon QuickSight console.
+        /// dashboards, the entire Amazon QuickSight console, or the Amazon QuickSight Q search
+        /// bar.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

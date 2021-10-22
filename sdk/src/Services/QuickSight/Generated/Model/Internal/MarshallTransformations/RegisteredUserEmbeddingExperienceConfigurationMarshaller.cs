@@ -56,6 +56,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetQSearchBar())
+            {
+                context.Writer.WritePropertyName("QSearchBar");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RegisteredUserQSearchBarEmbeddingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.QSearchBar, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQuickSightConsole())
             {
                 context.Writer.WritePropertyName("QuickSightConsole");
