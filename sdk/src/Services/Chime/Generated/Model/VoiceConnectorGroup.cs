@@ -39,6 +39,7 @@ namespace Amazon.Chime.Model
         private DateTime? _createdTimestamp;
         private string _name;
         private DateTime? _updatedTimestamp;
+        private string _voiceConnectorGroupArn;
         private string _voiceConnectorGroupId;
         private List<VoiceConnectorItem> _voiceConnectorItems = new List<VoiceConnectorItem>();
 
@@ -95,6 +96,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetUpdatedTimestamp()
         {
             return this._updatedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceConnectorGroupArn. 
+        /// <para>
+        /// The ARN of the specified Amazon Chime Voice Connector group.
+        /// </para>
+        /// </summary>
+        public string VoiceConnectorGroupArn
+        {
+            get { return this._voiceConnectorGroupArn; }
+            set { this._voiceConnectorGroupArn = value; }
+        }
+
+        // Check to see if VoiceConnectorGroupArn property is set
+        internal bool IsSetVoiceConnectorGroupArn()
+        {
+            return this._voiceConnectorGroupArn != null;
         }
 
         /// <summary>

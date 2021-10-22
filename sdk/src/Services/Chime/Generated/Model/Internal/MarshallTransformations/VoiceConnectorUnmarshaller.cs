@@ -100,6 +100,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VoiceConnectorArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VoiceConnectorArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VoiceConnectorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

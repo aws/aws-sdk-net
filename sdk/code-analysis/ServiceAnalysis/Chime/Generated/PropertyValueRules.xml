@@ -2434,6 +2434,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.VoiceConnector.VoiceConnectorArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.VoiceConnector.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -2441,6 +2445,10 @@
     <property>Amazon.Chime.Model.VoiceConnectorGroup.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.VoiceConnectorGroup.VoiceConnectorGroupArn</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.VoiceConnectorGroup.VoiceConnectorGroupId</property>

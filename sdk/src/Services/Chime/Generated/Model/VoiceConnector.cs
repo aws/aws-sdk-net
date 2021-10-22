@@ -40,6 +40,7 @@ namespace Amazon.Chime.Model
         private string _outboundHostName;
         private bool? _requireEncryption;
         private DateTime? _updatedTimestamp;
+        private string _voiceConnectorArn;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -150,6 +151,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetUpdatedTimestamp()
         {
             return this._updatedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceConnectorArn. 
+        /// <para>
+        /// The ARN of the specified Amazon Chime Voice Connector.
+        /// </para>
+        /// </summary>
+        public string VoiceConnectorArn
+        {
+            get { return this._voiceConnectorArn; }
+            set { this._voiceConnectorArn = value; }
+        }
+
+        // Check to see if VoiceConnectorArn property is set
+        internal bool IsSetVoiceConnectorArn()
+        {
+            return this._voiceConnectorArn != null;
         }
 
         /// <summary>
