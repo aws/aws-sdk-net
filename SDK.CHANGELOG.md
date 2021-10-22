@@ -1,3 +1,11 @@
+### 3.7.142.0 (2021-10-22 18:12 UTC)
+* AuditManager (3.7.5.0)
+	* This release introduces character restrictions for ControlSet names. We updated regex patterns for the following attributes: ControlSet, CreateAssessmentFrameworkControlSet, and UpdateAssessmentFrameworkControlSet.
+* Chime (3.7.13.0)
+	* Chime VoiceConnector and VoiceConnectorGroup APIs will now return an ARN.
+* QuickSight (3.7.8.0)
+	* Added QSearchBar option for GenerateEmbedUrlForRegisteredUser ExperienceConfiguration to support Q search bar embedding
+
 ### 3.7.141.2 (2021-10-22 06:42 UTC)
 * Core 3.7.3.24
 	* Allow using SSO credentials in default chain if a cached access token exists. Fix issue with using assume role and SSO credentials profile.
