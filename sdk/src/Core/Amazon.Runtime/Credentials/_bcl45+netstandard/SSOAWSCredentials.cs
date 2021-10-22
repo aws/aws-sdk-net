@@ -126,6 +126,11 @@ namespace Amazon.Runtime
             _logger.InfoFormat("New SSO credentials created that expire at {0}", credentials.Expiration.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
             return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
+#else
+        protected override CredentialsRefreshState GenerateNewCredentials()
+        {
+            return GenerateNewCredentialsAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+        }
 #endif
 
         protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
