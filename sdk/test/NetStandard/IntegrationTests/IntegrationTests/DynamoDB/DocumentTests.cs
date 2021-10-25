@@ -822,7 +822,6 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Assert.Equal(SharedTestFixture.hashTableName, hashTable.TableName);
                 Assert.Equal(3, hashTable.Attributes.Count);
                 Assert.Equal(1, hashTable.GlobalSecondaryIndexes.Count);
-                Assert.Equal(1, hashTable.GlobalSecondaryIndexes["GlobalIndex"].ProvisionedThroughput.ReadCapacityUnits);
                 Assert.Equal(1, hashTable.GlobalSecondaryIndexNames.Count);
                 Assert.Equal(1, hashTable.HashKeys.Count);
                 Assert.Equal(0, hashTable.RangeKeys.Count);
@@ -839,7 +838,6 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Assert.Equal(SharedTestFixture.hashRangeTableName, hashRangeTable.TableName);
                 Assert.Equal(5, hashRangeTable.Attributes.Count);
                 Assert.Equal(1, hashRangeTable.GlobalSecondaryIndexes.Count);
-                Assert.Equal(1, hashRangeTable.GlobalSecondaryIndexes["GlobalIndex"].ProvisionedThroughput.ReadCapacityUnits);
                 Assert.Equal(1, hashRangeTable.GlobalSecondaryIndexNames.Count);
                 Assert.Equal(1, hashRangeTable.HashKeys.Count);
                 Assert.Equal(1, hashRangeTable.RangeKeys.Count);
