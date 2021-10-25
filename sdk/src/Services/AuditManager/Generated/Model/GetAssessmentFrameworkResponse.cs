@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Framework. 
         /// <para>
-        ///  The framework returned by the <code>GetAssessmentFramework</code> API. 
+        ///  The framework that the <code>GetAssessmentFramework</code> API returned. 
         /// </para>
         /// </summary>
         public Framework Framework

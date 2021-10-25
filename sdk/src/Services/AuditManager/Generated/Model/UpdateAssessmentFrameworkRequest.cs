@@ -63,7 +63,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSets. 
         /// <para>
-        ///  The control sets associated with the framework. 
+        ///  The control sets that are associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the framework that is to be updated. 
+        ///  The description of the updated framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -101,7 +101,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property FrameworkId. 
         /// <para>
-        ///  The identifier for the specified framework. 
+        ///  The identifier for the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

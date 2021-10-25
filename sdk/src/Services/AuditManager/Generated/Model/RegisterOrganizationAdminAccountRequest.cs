@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        ///  The identifier for the specified delegated administrator account. 
+        ///  The identifier for the delegated administrator account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

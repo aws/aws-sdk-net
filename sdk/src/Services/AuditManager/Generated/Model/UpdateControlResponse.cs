@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  The name of the updated control set returned by the <code>UpdateControl</code> API.
+        ///  The name of the updated control set that the <code>UpdateControl</code> API returned.
         /// 
         /// </para>
         /// </summary>

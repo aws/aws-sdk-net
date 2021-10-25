@@ -41,7 +41,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DelegationId. 
         /// <para>
-        ///  The identifier for the specified delegation. 
+        ///  The identifier for the delegation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -60,7 +60,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  The error code returned by the <code>BatchDeleteDelegationByAssessment</code> API.
+        ///  The error code that the <code>BatchDeleteDelegationByAssessment</code> API returned.
         /// 
         /// </para>
         /// </summary>
@@ -80,8 +80,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message returned by the <code>BatchDeleteDelegationByAssessment</code>
-        /// API. 
+        ///  The error message that the <code>BatchDeleteDelegationByAssessment</code> API returned.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=300)]

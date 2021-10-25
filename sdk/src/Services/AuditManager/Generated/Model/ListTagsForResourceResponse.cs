@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The list of tags returned by the <code>ListTagsForResource</code> API. 
+        ///  The list of tags that the <code>ListTagsForResource</code> API returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

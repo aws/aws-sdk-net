@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Evidence. 
         /// <para>
-        ///  The list of evidence returned by the <code>GetEvidenceByEvidenceFolder</code> API.
+        ///  The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned.
         /// 
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token used to fetch the next set of results. 
+        ///  The pagination token that's used to fetch the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

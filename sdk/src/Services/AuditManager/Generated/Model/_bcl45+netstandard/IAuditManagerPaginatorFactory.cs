@@ -56,6 +56,11 @@ namespace Amazon.AuditManager.Model
         IListAssessmentFrameworksPaginator ListAssessmentFrameworks(ListAssessmentFrameworksRequest request);
 
         /// <summary>
+        /// Paginator for ListAssessmentFrameworkShareRequests operation
+        ///</summary>
+        IListAssessmentFrameworkShareRequestsPaginator ListAssessmentFrameworkShareRequests(ListAssessmentFrameworkShareRequestsRequest request);
+
+        /// <summary>
         /// Paginator for ListAssessmentReports operation
         ///</summary>
         IListAssessmentReportsPaginator ListAssessmentReports(ListAssessmentReportsRequest request);

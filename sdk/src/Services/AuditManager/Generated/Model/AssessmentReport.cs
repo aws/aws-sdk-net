@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A finalized document generated from an Audit Manager assessment. These reports summarize
-    /// the relevant evidence collected for your audit, and link to the relevant evidence
-    /// folders which are named and organized according to the controls specified in your
-    /// assessment.
+    /// A finalized document that's generated from an Audit Manager assessment. These reports
+    /// summarize the relevant evidence that was collected for your audit, and link to the
+    /// relevant evidence folders. These evidence folders are named and organized according
+    /// to the controls that are specified in your assessment.
     /// </summary>
     public partial class AssessmentReport
     {
@@ -162,7 +162,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique identifier for the specified assessment report. 
+        ///  The unique identifier for the assessment report. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -181,7 +181,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name given to the assessment report. 
+        ///  The name that's given to the assessment report. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        ///  The identifier for the specified delegated administrator account. 
+        ///  The identifier for the delegated administrator account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -58,7 +58,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        ///  The identifier for the specified organization. 
+        ///  The identifier for the organization. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=34)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Your account is not registered with Audit Manager. Check the delegated administrator
+    /// Your account isn't registered with Audit Manager. Check the delegated administrator
     /// setup on the Audit Manager settings page, and try again.
     /// </summary>
     #if !NETSTANDARD

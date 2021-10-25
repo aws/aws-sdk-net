@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Control mapping fields that represent the source for evidence collection, along with
-    /// related parameters and metadata. This does not contain <code>mappingID</code>.
+    /// The control mapping fields that represent the source for evidence collection, along
+    /// with related parameters and metadata. This doesn't contain <code>mappingID</code>.
     /// </summary>
     public partial class CreateControlMappingSource
     {
@@ -45,8 +45,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceDescription. 
         /// <para>
-        ///  The description of the data source that determines from where Audit Manager collects
-        /// evidence for the control. 
+        ///  The description of the data source that determines where Audit Manager collects evidence
+        /// from for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -65,7 +65,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceFrequency. 
         /// <para>
-        ///  The frequency of evidence collection for the specified control mapping source. 
+        ///  The frequency of evidence collection for the control mapping source. 
         /// </para>
         /// </summary>
         public SourceFrequency SourceFrequency
@@ -154,7 +154,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property TroubleshootingText. 
         /// <para>
-        ///  The instructions for troubleshooting the specified control. 
+        ///  The instructions for troubleshooting the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

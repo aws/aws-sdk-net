@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The metadata associated with the specified delegation.
+    /// The metadata that's associated with the delegation.
     /// </summary>
     public partial class DelegationMetadata
     {
@@ -44,7 +44,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The unique identifier for the specified assessment. 
+        ///  The unique identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -82,7 +82,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSetName. 
         /// <para>
-        ///  Specifies the name of the control set delegated for review. 
+        ///  Specifies the name of the control set that was delegated for review. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -157,7 +157,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current status of the delgation. 
+        ///  The current status of the delegation. 
         /// </para>
         /// </summary>
         public DelegationStatus Status

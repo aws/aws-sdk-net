@@ -30,8 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchImportEvidenceToAssessmentControl operation.
-    /// Uploads one or more pieces of evidence to the specified control in the assessment
-    /// in Audit Manager.
+    /// Uploads one or more pieces of evidence to a control in an Audit Manager assessment.
     /// </summary>
     public partial class BatchImportEvidenceToAssessmentControlRequest : AmazonAuditManagerRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -62,7 +61,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlId. 
         /// <para>
-        ///  The identifier for the specified control. 
+        ///  The identifier for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -81,7 +80,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSetId. 
         /// <para>
-        ///  The identifier for the specified control set. 
+        ///  The identifier for the control set. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

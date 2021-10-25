@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// A <code>controlSet</code> entity that represents a collection of controls in Audit
-    /// Manager. This does not contain the control set ID.
+    /// Manager. This doesn't contain the control set ID.
     /// </summary>
     public partial class CreateAssessmentFrameworkControlSet
     {
@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Controls. 
         /// <para>
-        ///  The list of controls within the control set. This does not contain the control set
+        ///  The list of controls within the control set. This doesn't contain the control set
         /// ID. 
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified control set. 
+        ///  The name of the control set. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

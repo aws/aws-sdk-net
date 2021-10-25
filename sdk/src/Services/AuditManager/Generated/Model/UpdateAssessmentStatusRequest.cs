@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -59,7 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current status of the specified assessment. 
+        ///  The current status of the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

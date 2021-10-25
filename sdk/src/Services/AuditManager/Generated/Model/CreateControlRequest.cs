@@ -45,7 +45,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ActionPlanInstructions. 
         /// <para>
-        ///  The recommended actions to carry out if the control is not fulfilled. 
+        ///  The recommended actions to carry out if the control isn't fulfilled. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -83,7 +83,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlMappingSources. 
         /// <para>
-        ///  The data mapping sources for the specified control. 
+        ///  The data mapping sources for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -140,7 +140,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags associated with the control. 
+        ///  The tags that are associated with the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -159,7 +159,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property TestingInformation. 
         /// <para>
-        ///  The steps to follow to determine if the control has been satisfied. 
+        ///  The steps to follow to determine if the control is satisfied. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

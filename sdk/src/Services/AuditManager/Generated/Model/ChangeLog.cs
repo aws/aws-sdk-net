@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The record of a change within Audit Manager, such as a modified assessment, a delegated
-    /// control set, and so on.
+    /// The record of a change within Audit Manager. For example, this could be the status
+    /// change of an assessment or the delegation of a control set.
     /// </summary>
     public partial class ChangeLog
     {
@@ -43,7 +43,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        ///  The action performed. 
+        ///  The action that was performed. 
         /// </para>
         /// </summary>
         public ActionEnum Action
@@ -61,7 +61,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  The time of creation for the changelog object. 
+        ///  The time when the action was performed and the changelog record was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -98,7 +98,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ObjectName. 
         /// <para>
-        ///  The name of the changelog object. 
+        ///  The name of the object that changed. This could be the name of an assessment, control,
+        /// or control set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -117,7 +118,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ObjectType. 
         /// <para>
-        ///  The changelog object type, such as an assessment, control, or control set. 
+        ///  The object that was changed, such as an assessment, control, or control set. 
         /// </para>
         /// </summary>
         public ObjectTypeEnum ObjectType

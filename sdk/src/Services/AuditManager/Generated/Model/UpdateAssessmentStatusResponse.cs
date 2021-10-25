@@ -38,8 +38,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Assessment. 
         /// <para>
-        ///  The name of the updated assessment returned by the <code>UpdateAssessmentStatus</code>
-        /// API. 
+        ///  The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API
+        /// returned. 
         /// </para>
         /// </summary>
         public Assessment Assessment

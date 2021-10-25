@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The control entity that represents a standard or custom control used in an Audit
+    /// The control entity that represents a standard control or a custom control in an Audit
     /// Manager assessment.
     /// </summary>
     public partial class AssessmentControl
@@ -65,7 +65,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Comments. 
         /// <para>
-        ///  The list of comments attached to the specified control. 
+        ///  The list of comments that's attached to the control. 
         /// </para>
         /// </summary>
         public List<ControlComment> Comments
@@ -83,7 +83,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the specified control. 
+        ///  The description of the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -102,7 +102,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceCount. 
         /// <para>
-        ///  The amount of evidence generated for the control. 
+        ///  The amount of evidence that's generated for the control. 
         /// </para>
         /// </summary>
         public int EvidenceCount
@@ -120,7 +120,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceSources. 
         /// <para>
-        ///  The list of data sources for the specified evidence. 
+        ///  The list of data sources for the evidence. 
         /// </para>
         /// </summary>
         public List<string> EvidenceSources
@@ -138,7 +138,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The identifier for the specified control. 
+        ///  The identifier for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -157,7 +157,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified control. 
+        ///  The name of the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -176,7 +176,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Response. 
         /// <para>
-        ///  The response of the specified control. 
+        ///  The response of the control. 
         /// </para>
         /// </summary>
         public ControlResponse Response
@@ -194,7 +194,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the specified control. 
+        ///  The status of the control. 
         /// </para>
         /// </summary>
         public ControlStatus Status

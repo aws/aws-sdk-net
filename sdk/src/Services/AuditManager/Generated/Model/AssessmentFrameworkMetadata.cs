@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The metadata associated with a standard or custom framework.
+    /// The metadata that's associated with a standard framework or a custom framework.
     /// </summary>
     public partial class AssessmentFrameworkMetadata
     {
@@ -87,7 +87,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlsCount. 
         /// <para>
-        ///  The number of controls associated with the specified framework. 
+        ///  The number of controls that are associated with the framework. 
         /// </para>
         /// </summary>
         public int ControlsCount
@@ -105,7 +105,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSetsCount. 
         /// <para>
-        ///  The number of control sets associated with the specified framework. 
+        ///  The number of control sets that are associated with the framework. 
         /// </para>
         /// </summary>
         public int ControlSetsCount
@@ -141,7 +141,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the specified framework. 
+        ///  The description of the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -160,7 +160,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique identified for the specified framework. 
+        ///  The unique identifier for the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -197,7 +197,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Logo. 
         /// <para>
-        ///  The logo associated with the framework. 
+        ///  The logo that's associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -216,7 +216,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified framework. 
+        ///  The name of the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -235,7 +235,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The framework type, such as standard or custom. 
+        ///  The framework type, such as a standard framework or a custom framework. 
         /// </para>
         /// </summary>
         public FrameworkType Type

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The folder in which Audit Manager stores evidence for an assessment.
+    /// The folder where Audit Manager stores evidence for an assessment.
     /// </summary>
     public partial class AssessmentEvidenceFolder
     {
@@ -55,7 +55,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -74,7 +74,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentReportSelectionCount. 
         /// <para>
-        ///  The total count of evidence included in the assessment report. 
+        ///  The total count of evidence that's included in the assessment report. 
         /// </para>
         /// </summary>
         public int AssessmentReportSelectionCount
@@ -111,7 +111,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlId. 
         /// <para>
-        ///  The unique identifier for the specified control. 
+        ///  The unique identifier for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -168,7 +168,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        ///  The Amazon Web Service from which the evidence was collected. 
+        ///  The Amazon Web Service that the evidence was collected from. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -205,8 +205,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceAwsServiceSourceCount. 
         /// <para>
-        ///  The total number of Amazon Web Services resources assessed to generate the evidence.
-        /// 
+        ///  The total number of Amazon Web Services resources that were assessed to generate
+        /// the evidence. 
         /// </para>
         /// </summary>
         public int EvidenceAwsServiceSourceCount
@@ -320,7 +320,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceResourcesIncludedCount. 
         /// <para>
-        ///  The amount of evidence included in the evidence folder. 
+        ///  The amount of evidence that's included in the evidence folder. 
         /// </para>
         /// </summary>
         public int EvidenceResourcesIncludedCount
@@ -338,7 +338,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The identifier for the folder in which evidence is stored. 
+        ///  The identifier for the folder that the evidence is stored in. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -357,7 +357,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified evidence folder. 
+        ///  The name of the evidence folder. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

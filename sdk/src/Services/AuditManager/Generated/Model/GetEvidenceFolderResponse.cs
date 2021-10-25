@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceFolder. 
         /// <para>
-        ///  The folder in which evidence is stored. 
+        ///  The folder that the evidence is stored in. 
         /// </para>
         /// </summary>
         public AssessmentEvidenceFolder EvidenceFolder

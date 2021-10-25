@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The file used to structure and automate Audit Manager assessments for a given compliance
-    /// standard.
+    /// The file that's used to structure and automate Audit Manager assessments for a given
+    /// compliance standard.
     /// </summary>
     public partial class Framework
     {
@@ -52,7 +52,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the specified framework. 
+        ///  The Amazon Resource Name (ARN) of the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -91,7 +91,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSets. 
         /// <para>
-        ///  The control sets associated with the framework. 
+        ///  The control sets that are associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -110,7 +110,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSources. 
         /// <para>
-        ///  The sources from which Audit Manager collects evidence for the control. 
+        ///  The sources that Audit Manager collects evidence from for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -166,7 +166,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the specified framework. 
+        ///  The description of the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -185,7 +185,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique identifier for the specified framework. 
+        ///  The unique identifier for the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -241,7 +241,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Logo. 
         /// <para>
-        ///  The logo associated with the framework. 
+        ///  The logo that's associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -260,7 +260,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified framework. 
+        ///  The name of the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -279,7 +279,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags associated with the framework. 
+        ///  The tags that are associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -298,7 +298,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The framework type, such as custom or standard. 
+        ///  The framework type, such as a custom framework or a standard framework. 
         /// </para>
         /// </summary>
         public FrameworkType Type

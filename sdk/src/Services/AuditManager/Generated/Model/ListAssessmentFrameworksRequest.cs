@@ -30,7 +30,8 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssessmentFrameworks operation.
-    /// Returns a list of the frameworks available in the Audit Manager framework library.
+    /// Returns a list of the frameworks that are available in the Audit Manager framework
+    /// library.
     /// </summary>
     public partial class ListAssessmentFrameworksRequest : AmazonAuditManagerRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property FrameworkType. 
         /// <para>
-        ///  The type of framework, such as standard or custom. 
+        ///  The type of framework, such as a standard framework or a custom framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Represents the maximum number of results per page, or per API request call. 
+        ///  Represents the maximum number of results on a page or for an API request call. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -79,7 +80,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token used to fetch the next set of results. 
+        ///  The pagination token that's used to fetch the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

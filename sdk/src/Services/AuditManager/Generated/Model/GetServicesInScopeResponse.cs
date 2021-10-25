@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ServiceMetadata. 
         /// <para>
-        ///  The metadata associated with the Amazon Web Service. 
+        ///  The metadata that's associated with the Amazon Web Service. 
         /// </para>
         /// </summary>
         public List<ServiceMetadata> ServiceMetadata

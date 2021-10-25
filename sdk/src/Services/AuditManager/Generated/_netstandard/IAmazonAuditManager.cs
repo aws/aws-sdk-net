@@ -38,16 +38,17 @@ namespace Amazon.AuditManager
     ///  
     /// <para>
     /// Audit Manager is a service that provides automated evidence collection so that you
-    /// can continuously audit your Amazon Web Services usage, and assess the effectiveness
-    /// of your controls to better manage risk and simplify compliance.
+    /// can continually audit your Amazon Web Services usage. You can use it to assess the
+    /// effectiveness of your controls, manage risk, and simplify compliance.
     /// </para>
     ///  
     /// <para>
-    /// Audit Manager provides pre-built frameworks that structure and automate assessments
-    /// for a given compliance standard. Frameworks include a pre-built collection of controls
-    /// with descriptions and testing procedures, which are grouped according to the requirements
-    /// of the specified compliance standard or regulation. You can also customize frameworks
-    /// and controls to support internal audits with unique requirements. 
+    /// Audit Manager provides prebuilt frameworks that structure and automate assessments
+    /// for a given compliance standard. Frameworks include a prebuilt collection of controls
+    /// with descriptions and testing procedures. These controls are grouped according to
+    /// the requirements of the specified compliance standard or regulation. You can also
+    /// customize frameworks and controls to support internal audits with specific requirements.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -93,7 +94,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Associates an evidence folder to the specified assessment report in Audit Manager.
+        /// Associates an evidence folder to an assessment report in a Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAssessmentReportEvidenceFolder service method.</param>
         /// <param name="cancellationToken">
@@ -102,7 +103,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the AssociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -110,7 +111,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -134,7 +135,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchAssociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -142,7 +143,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -157,7 +158,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Create a batch of delegations for a specified assessment in Audit Manager.
+        /// Creates a batch of delegations for an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateDelegationByAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -166,7 +167,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchCreateDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -174,7 +175,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -189,7 +190,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Deletes the delegations in the specified Audit Manager assessment.
+        /// Deletes a batch of delegations for an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDelegationByAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -198,7 +199,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchDeleteDelegationByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -206,7 +207,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -221,7 +222,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Disassociates a list of evidence from the specified assessment report in Audit Manager.
+        /// Disassociates a list of evidence from an assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAssessmentReportEvidence service method.</param>
         /// <param name="cancellationToken">
@@ -230,7 +231,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchDisassociateAssessmentReportEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -238,7 +239,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -253,8 +254,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Uploads one or more pieces of evidence to the specified control in the assessment
-        /// in Audit Manager.
+        /// Uploads one or more pieces of evidence to a control in an Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportEvidenceToAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -263,7 +263,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the BatchImportEvidenceToAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -271,7 +271,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -295,7 +295,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -303,7 +303,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -327,7 +327,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -335,7 +335,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -359,7 +359,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -367,7 +367,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -391,7 +391,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the CreateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -399,7 +399,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -423,7 +423,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -431,7 +431,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -455,7 +455,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -463,13 +463,45 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFramework">REST API Reference for DeleteAssessmentFramework Operation</seealso>
         Task<DeleteAssessmentFrameworkResponse> DeleteAssessmentFrameworkAsync(DeleteAssessmentFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAssessmentFrameworkShare
+
+
+
+        /// <summary>
+        /// Deletes a share request for a custom framework in Audit Manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssessmentFrameworkShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssessmentFrameworkShare service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFrameworkShare">REST API Reference for DeleteAssessmentFrameworkShare Operation</seealso>
+        Task<DeleteAssessmentFrameworkShareResponse> DeleteAssessmentFrameworkShareAsync(DeleteAssessmentFrameworkShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -487,7 +519,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteAssessmentReport service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -495,7 +527,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -519,7 +551,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeleteControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -527,7 +559,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -551,7 +583,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeregisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -559,7 +591,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -579,11 +611,11 @@ namespace Amazon.AuditManager
         /// 
         ///  <important> 
         /// <para>
-        /// When you remove a delegated administrator from your Audit Manager settings, or when
-        /// you deregister a delegated administrator from Organizations, you continue to have
-        /// access to the evidence that you previously collected under that account. However,
-        /// Audit Manager will stop collecting and attaching evidence to that delegated administrator
-        /// account moving forward.
+        /// When you remove a delegated administrator from your Audit Manager settings, you continue
+        /// to have access to the evidence that you previously collected under that account. This
+        /// is also the case when you deregister a delegated administrator from Audit Manager.
+        /// However, Audit Manager will stop collecting and attaching evidence to that delegated
+        /// administrator account moving forward.
         /// </para>
         ///  </important>
         /// </summary>
@@ -594,7 +626,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DeregisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -602,7 +634,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -626,7 +658,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the DisassociateAssessmentReportEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -634,7 +666,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -680,7 +712,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -688,7 +720,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -712,7 +744,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -720,7 +752,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -735,7 +767,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns the URL of a specified assessment report in Audit Manager.
+        /// Returns the URL of an assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReportUrl service method.</param>
         /// <param name="cancellationToken">
@@ -744,7 +776,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetAssessmentReportUrl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -752,7 +784,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -776,7 +808,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetChangeLogs service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -784,7 +816,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -808,7 +840,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -816,7 +848,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -840,7 +872,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetDelegations service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -869,7 +901,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidence service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -877,7 +909,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -901,7 +933,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceByEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -909,7 +941,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -933,7 +965,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFolder service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -941,7 +973,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -965,7 +997,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -973,7 +1005,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -988,8 +1020,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of evidence folders associated with a specified control of an assessment
-        /// in Audit Manager.
+        /// Returns a list of evidence folders that are associated with a specified control of
+        /// an assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -998,7 +1030,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetEvidenceFoldersByAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1006,7 +1038,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1031,7 +1063,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1039,7 +1071,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1063,7 +1095,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetServicesInScope service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1092,7 +1124,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the GetSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1109,7 +1141,8 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of the frameworks available in the Audit Manager framework library.
+        /// Returns a list of the frameworks that are available in the Audit Manager framework
+        /// library.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssessmentFrameworks service method.</param>
         /// <param name="cancellationToken">
@@ -1118,7 +1151,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessmentFrameworks service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1130,6 +1163,36 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworks">REST API Reference for ListAssessmentFrameworks Operation</seealso>
         Task<ListAssessmentFrameworksResponse> ListAssessmentFrameworksAsync(ListAssessmentFrameworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssessmentFrameworkShareRequests
+
+
+
+        /// <summary>
+        /// Returns a list of sent or received share requests for custom frameworks in Audit
+        /// Manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentFrameworkShareRequests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssessmentFrameworkShareRequests service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworkShareRequests">REST API Reference for ListAssessmentFrameworkShareRequests Operation</seealso>
+        Task<ListAssessmentFrameworkShareRequestsResponse> ListAssessmentFrameworkShareRequestsAsync(ListAssessmentFrameworkShareRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1147,7 +1210,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessmentReports service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1176,7 +1239,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListAssessments service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1205,7 +1268,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListControls service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1225,7 +1288,7 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of keywords that pre-mapped to the specified control data source.
+        /// Returns a list of keywords that are pre-mapped to the specified control data source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeywordsForDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -1234,7 +1297,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListKeywordsForDataSource service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1263,7 +1326,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ListNotifications service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1296,7 +1359,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1320,7 +1383,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the RegisterAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1328,7 +1391,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1353,7 +1416,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the RegisterOrganizationAdminAccount service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1361,13 +1424,63 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">REST API Reference for RegisterOrganizationAdminAccount Operation</seealso>
         Task<RegisterOrganizationAdminAccountResponse> RegisterOrganizationAdminAccountAsync(RegisterOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartAssessmentFrameworkShare
+
+
+
+        /// <summary>
+        /// Creates a share request for a custom framework in Audit Manager. 
+        /// 
+        ///  
+        /// <para>
+        /// The share request specifies a recipient and notifies them that a custom framework
+        /// is available. Recipients have 120 days to accept or decline the request. If no action
+        /// is taken, the share request expires.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about
+        /// to share a custom framework with another Amazon Web Services account. You may not
+        /// share a custom framework that is derived from a standard framework if the standard
+        /// framework is designated as not eligible for sharing by Amazon Web Services, unless
+        /// you have obtained permission to do so from the owner of the standard framework. To
+        /// learn more about which standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework
+        /// sharing eligibility</a> in the <i>Audit Manager User Guide</i>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssessmentFrameworkShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAssessmentFrameworkShare service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/StartAssessmentFrameworkShare">REST API Reference for StartAssessmentFrameworkShare Operation</seealso>
+        Task<StartAssessmentFrameworkShareResponse> StartAssessmentFrameworkShareAsync(StartAssessmentFrameworkShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1389,7 +1502,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1417,7 +1530,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1441,7 +1554,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessment service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1449,7 +1562,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1473,7 +1586,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1481,7 +1594,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1505,7 +1618,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentControlSetStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1513,7 +1626,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1537,7 +1650,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentFramework service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1545,13 +1658,45 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFramework">REST API Reference for UpdateAssessmentFramework Operation</seealso>
         Task<UpdateAssessmentFrameworkResponse> UpdateAssessmentFrameworkAsync(UpdateAssessmentFrameworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAssessmentFrameworkShare
+
+
+
+        /// <summary>
+        /// Updates a share request for a custom framework in Audit Manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentFrameworkShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAssessmentFrameworkShare service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkShare">REST API Reference for UpdateAssessmentFrameworkShare Operation</seealso>
+        Task<UpdateAssessmentFrameworkShareResponse> UpdateAssessmentFrameworkShareAsync(UpdateAssessmentFrameworkShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1569,7 +1714,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateAssessmentStatus service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1577,7 +1722,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1601,7 +1746,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateControl service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1609,7 +1754,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1633,7 +1778,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the UpdateSettings service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1662,7 +1807,7 @@ namespace Amazon.AuditManager
         /// 
         /// <returns>The response from the ValidateAssessmentReportIntegrity service method, as returned by AuditManager.</returns>
         /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
-        /// Your account is not registered with Audit Manager. Check the delegated administrator
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
         /// setup on the Audit Manager settings page, and try again.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
@@ -1670,7 +1815,7 @@ namespace Amazon.AuditManager
         /// later.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
-        /// The resource specified in the request cannot be found.
+        /// The resource that's specified in the request can't be found.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.

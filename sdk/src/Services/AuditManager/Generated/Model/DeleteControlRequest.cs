@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlId. 
         /// <para>
-        ///  The identifier for the specified control. 
+        ///  The identifier for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

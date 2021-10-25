@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property KeywordInputType. 
         /// <para>
-        ///  The method of input for the specified keyword. 
+        ///  The method of input for the keyword. 
         /// </para>
         /// </summary>
         public KeywordInputType KeywordInputType
@@ -58,8 +58,9 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property KeywordValue. 
         /// <para>
-        ///  The value of the keyword used to search CloudTrail logs, Config rules, Security Hub
-        /// checks, and Amazon Web Services API names when mapping a control data source. 
+        ///  The value of the keyword that's used to search CloudTrail logs, Config rules, Security
+        /// Hub checks, and Amazon Web Services API names when mapping a control data source.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

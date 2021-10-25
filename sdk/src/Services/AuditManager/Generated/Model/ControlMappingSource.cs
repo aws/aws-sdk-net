@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The data source that determines from where Audit Manager collects evidence for the
+    /// The data source that determines where Audit Manager collects evidence from for the
     /// control.
     /// </summary>
     public partial class ControlMappingSource
@@ -46,7 +46,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceDescription. 
         /// <para>
-        ///  The description of the specified source. 
+        ///  The description of the source. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -65,7 +65,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceFrequency. 
         /// <para>
-        ///  The frequency of evidence collection for the specified control mapping source. 
+        ///  The frequency of evidence collection for the control mapping source. 
         /// </para>
         /// </summary>
         public SourceFrequency SourceFrequency
@@ -83,7 +83,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceId. 
         /// <para>
-        ///  The unique identifier for the specified source. 
+        ///  The unique identifier for the source. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -117,7 +117,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceName. 
         /// <para>
-        ///  The name of the specified source. 
+        ///  The name of the source. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -136,8 +136,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SourceSetUpOption. 
         /// <para>
-        ///  The setup option for the data source, which reflects if the evidence collection is
-        /// automated or manual. 
+        ///  The setup option for the data source. This option reflects if the evidence collection
+        /// is automated or manual. 
         /// </para>
         /// </summary>
         public SourceSetUpOption SourceSetUpOption
@@ -173,7 +173,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property TroubleshootingText. 
         /// <para>
-        ///  The instructions for troubleshooting the specified control. 
+        ///  The instructions for troubleshooting the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

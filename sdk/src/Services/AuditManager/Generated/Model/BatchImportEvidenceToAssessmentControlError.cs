@@ -41,8 +41,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  The error code returned by the <code>BatchImportEvidenceToAssessmentControl</code>
-        /// API. 
+        ///  The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=3)]
@@ -61,8 +61,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code>
-        /// API. 
+        ///  The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API
+        /// returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=300)]
@@ -81,7 +81,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ManualEvidence. 
         /// <para>
-        ///  Manual evidence that cannot be collected automatically by Audit Manager. 
+        ///  Manual evidence that can't be collected automatically by Audit Manager. 
         /// </para>
         /// </summary>
         public ManualEvidence ManualEvidence

@@ -843,6 +843,184 @@ namespace Amazon.AuditManager
 
 
     /// <summary>
+    /// Constants used for properties of type ShareRequestAction.
+    /// </summary>
+    public class ShareRequestAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPT for ShareRequestAction
+        /// </summary>
+        public static readonly ShareRequestAction ACCEPT = new ShareRequestAction("ACCEPT");
+        /// <summary>
+        /// Constant DECLINE for ShareRequestAction
+        /// </summary>
+        public static readonly ShareRequestAction DECLINE = new ShareRequestAction("DECLINE");
+        /// <summary>
+        /// Constant REVOKE for ShareRequestAction
+        /// </summary>
+        public static readonly ShareRequestAction REVOKE = new ShareRequestAction("REVOKE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareRequestAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareRequestAction FindValue(string value)
+        {
+            return FindValue<ShareRequestAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareRequestAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShareRequestStatus.
+    /// </summary>
+    public class ShareRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus ACTIVE = new ShareRequestStatus("ACTIVE");
+        /// <summary>
+        /// Constant DECLINED for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus DECLINED = new ShareRequestStatus("DECLINED");
+        /// <summary>
+        /// Constant EXPIRED for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus EXPIRED = new ShareRequestStatus("EXPIRED");
+        /// <summary>
+        /// Constant EXPIRING for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus EXPIRING = new ShareRequestStatus("EXPIRING");
+        /// <summary>
+        /// Constant FAILED for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus FAILED = new ShareRequestStatus("FAILED");
+        /// <summary>
+        /// Constant REPLICATING for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus REPLICATING = new ShareRequestStatus("REPLICATING");
+        /// <summary>
+        /// Constant REVOKED for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus REVOKED = new ShareRequestStatus("REVOKED");
+        /// <summary>
+        /// Constant SHARED for ShareRequestStatus
+        /// </summary>
+        public static readonly ShareRequestStatus SHARED = new ShareRequestStatus("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareRequestStatus FindValue(string value)
+        {
+            return FindValue<ShareRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShareRequestType.
+    /// </summary>
+    public class ShareRequestType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RECEIVED for ShareRequestType
+        /// </summary>
+        public static readonly ShareRequestType RECEIVED = new ShareRequestType("RECEIVED");
+        /// <summary>
+        /// Constant SENT for ShareRequestType
+        /// </summary>
+        public static readonly ShareRequestType SENT = new ShareRequestType("SENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareRequestType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareRequestType FindValue(string value)
+        {
+            return FindValue<ShareRequestType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareRequestType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceFrequency.
     /// </summary>
     public class SourceFrequency : ConstantClass

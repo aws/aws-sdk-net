@@ -38,8 +38,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  A list of errors returned by the <code>BatchImportEvidenceToAssessmentControl</code>
-        /// API. 
+        ///  A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API
+        /// returned. 
         /// </para>
         /// </summary>
         public List<BatchImportEvidenceToAssessmentControlError> Errors

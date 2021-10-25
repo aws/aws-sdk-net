@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The metadata of a framework, such as the name, ID, description, and so on.
+    /// The metadata of a framework, such as the name, ID, or description.
     /// </summary>
     public partial class FrameworkMetadata
     {
@@ -41,8 +41,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        ///  The compliance standard associated with the framework, such as PCI-DSS or HIPAA.
-        /// 
+        ///  The compliance standard that's associated with the framework. For example, this could
+        /// be PCI DSS or HIPAA. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -80,7 +80,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Logo. 
         /// <para>
-        ///  The logo associated with the framework. 
+        ///  The logo that's associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

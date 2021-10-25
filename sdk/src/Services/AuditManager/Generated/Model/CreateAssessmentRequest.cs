@@ -45,8 +45,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentReportsDestination. 
         /// <para>
-        ///  The assessment report storage destination for the specified assessment that is being
-        /// created. 
+        ///  The assessment report storage destination for the assessment that's being created.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property FrameworkId. 
         /// <para>
-        ///  The identifier for the specified framework. 
+        ///  The identifier for the framework that the assessment will be created from. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -122,7 +122,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
-        ///  The list of roles for the specified assessment. 
+        ///  The list of roles for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +157,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags associated with the assessment. 
+        ///  The tags that are associated with the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

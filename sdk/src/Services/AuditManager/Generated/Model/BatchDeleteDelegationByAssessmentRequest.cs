@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDeleteDelegationByAssessment operation.
-    /// Deletes the delegations in the specified Audit Manager assessment.
+    /// Deletes a batch of delegations for an assessment in Audit Manager.
     /// </summary>
     public partial class BatchDeleteDelegationByAssessmentRequest : AmazonAuditManagerRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -59,7 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DelegationIds. 
         /// <para>
-        ///  The identifiers for the specified delegations. 
+        ///  The identifiers for the delegations. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

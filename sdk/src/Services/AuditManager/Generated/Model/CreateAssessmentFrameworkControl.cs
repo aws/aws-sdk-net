@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Control entity attributes that uniquely identify an existing control to be added
+    /// The control entity attributes that uniquely identify an existing control to be added
     /// to a framework in Audit Manager.
     /// </summary>
     public partial class CreateAssessmentFrameworkControl

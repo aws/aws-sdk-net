@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The metadata associated with the specified standard or custom control.
+    /// The metadata that's associated with the standard control or custom control.
     /// </summary>
     public partial class ControlMetadata
     {
@@ -43,7 +43,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the specified control. 
+        ///  The Amazon Resource Name (ARN) of the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSources. 
         /// <para>
-        ///  The data source that determines from where Audit Manager collects evidence for the
+        ///  The data source that determines where Audit Manager collects evidence from for the
         /// control. 
         /// </para>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The unique identifier for the specified control. 
+        ///  The unique identifier for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -137,7 +137,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified control. 
+        ///  The name of the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

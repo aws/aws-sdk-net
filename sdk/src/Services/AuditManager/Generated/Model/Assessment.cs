@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccount. 
         /// <para>
-        ///  The Amazon Web Services account associated with the assessment. 
+        ///  The Amazon Web Services account that's associated with the assessment. 
         /// </para>
         /// </summary>
         public AWSAccount AwsAccount
@@ -80,7 +80,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Framework. 
         /// <para>
-        ///  The framework from which the assessment was created. 
+        ///  The framework that the assessment was created from. 
         /// </para>
         /// </summary>
         public AssessmentFramework Framework
@@ -98,7 +98,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        ///  The metadata for the specified assessment. 
+        ///  The metadata for the assessment. 
         /// </para>
         /// </summary>
         public AssessmentMetadata Metadata
@@ -116,7 +116,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags associated with the assessment. 
+        ///  The tags that are associated with the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

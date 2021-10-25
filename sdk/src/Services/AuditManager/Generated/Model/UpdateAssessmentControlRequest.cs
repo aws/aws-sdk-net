@@ -43,7 +43,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CommentBody. 
         /// <para>
-        ///  The comment body text for the specified control. 
+        ///  The comment body text for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -81,7 +81,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlId. 
         /// <para>
-        ///  The identifier for the specified control. 
+        ///  The identifier for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -100,7 +100,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSetId. 
         /// <para>
-        ///  The identifier for the specified control set. 
+        ///  The identifier for the control set. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -119,7 +119,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlStatus. 
         /// <para>
-        ///  The status of the specified control. 
+        ///  The status of the control. 
         /// </para>
         /// </summary>
         public ControlStatus ControlStatus

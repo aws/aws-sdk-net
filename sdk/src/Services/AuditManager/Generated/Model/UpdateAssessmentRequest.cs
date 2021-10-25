@@ -44,7 +44,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentDescription. 
         /// <para>
-        ///  The description of the specified assessment. 
+        ///  The description of the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -63,7 +63,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -82,7 +82,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentName. 
         /// <para>
-        ///  The name of the specified assessment to be updated. 
+        ///  The name of the assessment to be updated. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -101,8 +101,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentReportsDestination. 
         /// <para>
-        ///  The assessment report storage destination for the specified assessment that is being
-        /// updated. 
+        ///  The assessment report storage destination for the assessment that's being updated.
+        /// 
         /// </para>
         /// </summary>
         public AssessmentReportsDestination AssessmentReportsDestination
@@ -120,7 +120,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
-        ///  The list of roles for the specified assessment. 
+        ///  The list of roles for the assessment. 
         /// </para>
         /// </summary>
         public List<Role> Roles
@@ -138,7 +138,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        ///  The scope of the specified assessment. 
+        ///  The scope of the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

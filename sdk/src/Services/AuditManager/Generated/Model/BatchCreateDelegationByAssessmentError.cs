@@ -59,7 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  The error code returned by the <code>BatchCreateDelegationByAssessment</code> API.
+        ///  The error code that the <code>BatchCreateDelegationByAssessment</code> API returned.
         /// 
         /// </para>
         /// </summary>
@@ -79,8 +79,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message returned by the <code>BatchCreateDelegationByAssessment</code>
-        /// API. 
+        ///  The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=300)]

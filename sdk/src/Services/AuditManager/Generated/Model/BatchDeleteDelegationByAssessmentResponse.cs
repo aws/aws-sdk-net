@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  A list of errors returned by the <code>BatchDeleteDelegationByAssessment</code> API.
+        ///  A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned.
         /// 
         /// </para>
         /// </summary>

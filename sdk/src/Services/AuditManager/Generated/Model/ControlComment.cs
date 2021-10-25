@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A comment posted by a user on a control. This includes the author's name, the comment
-    /// text, and a timestamp.
+    /// A comment that's posted by a user on a control. This includes the author's name,
+    /// the comment text, and a timestamp.
     /// </summary>
     public partial class ControlComment
     {

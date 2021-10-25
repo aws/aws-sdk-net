@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// An Amazon Web Service such as Amazon S3, CloudTrail, and so on.
+    /// An Amazon Web Service such as Amazon S3 or CloudTrail.
     /// </summary>
     public partial class AWSService
     {

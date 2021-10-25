@@ -43,7 +43,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -81,7 +81,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceFolderId. 
         /// <para>
-        ///  The unique identifier for the folder in which the evidence is stored. 
+        ///  The unique identifier for the folder that the evidence is stored in. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -100,7 +100,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Represents the maximum number of results per page, or per API request call. 
+        ///  Represents the maximum number of results on a page or for an API request call. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -119,7 +119,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token used to fetch the next set of results. 
+        ///  The pagination token that's used to fetch the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

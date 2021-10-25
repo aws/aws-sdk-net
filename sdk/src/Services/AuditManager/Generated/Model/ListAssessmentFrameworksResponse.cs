@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property FrameworkMetadataList. 
         /// <para>
-        ///  The list of metadata objects for the specified framework. 
+        ///  The list of metadata objects for the framework. 
         /// </para>
         /// </summary>
         public List<AssessmentFrameworkMetadata> FrameworkMetadataList
@@ -57,7 +57,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token used to fetch the next set of results. 
+        ///  The pagination token that's used to fetch the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

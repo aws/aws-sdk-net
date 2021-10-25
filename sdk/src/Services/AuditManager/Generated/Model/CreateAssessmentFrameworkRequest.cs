@@ -63,7 +63,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSets. 
         /// <para>
-        ///  The control sets to be associated with the framework. 
+        ///  The control sets that are associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -120,7 +120,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags associated with the framework. 
+        ///  The tags that are associated with the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

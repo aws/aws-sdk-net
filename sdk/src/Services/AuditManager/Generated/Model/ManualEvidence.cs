@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Evidence that is uploaded to Audit Manager manually.
+    /// Evidence that's uploaded to Audit Manager manually.
     /// </summary>
     public partial class ManualEvidence
     {

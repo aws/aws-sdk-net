@@ -48,7 +48,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the associated assessment. 
+        ///  The identifier for the assessment that's associated with the delegation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -67,7 +67,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentName. 
         /// <para>
-        ///  The name of the associated assessment. 
+        ///  The name of the assessment that's associated with the delegation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -86,7 +86,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        ///  The comment related to the delegation. 
+        ///  The comment that's related to the delegation. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=350)]
@@ -105,7 +105,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSetId. 
         /// <para>
-        ///  The identifier for the associated control set. 
+        ///  The identifier for the control set that's associated with the delegation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

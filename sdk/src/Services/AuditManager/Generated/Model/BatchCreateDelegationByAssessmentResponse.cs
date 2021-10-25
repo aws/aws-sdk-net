@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Delegations. 
         /// <para>
-        ///  The delegations associated with the assessment. 
+        ///  The delegations that are associated with the assessment. 
         /// </para>
         /// </summary>
         public List<Delegation> Delegations
@@ -57,7 +57,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  A list of errors returned by the <code>BatchCreateDelegationByAssessment</code> API.
+        ///  A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.
         /// 
         /// </para>
         /// </summary>

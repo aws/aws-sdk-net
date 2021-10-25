@@ -45,7 +45,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Controls. 
         /// <para>
-        ///  The list of controls contained with the control set. 
+        ///  The list of controls that's contained with the control set. 
         /// </para>
         /// </summary>
         public List<AssessmentControl> Controls
@@ -63,7 +63,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Delegations. 
         /// <para>
-        ///  The delegations associated with the control set. 
+        ///  The delegations that are associated with the control set. 
         /// </para>
         /// </summary>
         public List<Delegation> Delegations
@@ -120,7 +120,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ManualEvidenceCount. 
         /// <para>
-        ///  The total number of evidence objects uploaded manually to the control set. 
+        ///  The total number of evidence objects that are uploaded manually to the control set.
+        /// 
         /// </para>
         /// </summary>
         public int ManualEvidenceCount
@@ -138,7 +139,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
-        ///  The roles associated with the control set. 
+        ///  The roles that are associated with the control set. 
         /// </para>
         /// </summary>
         public List<Role> Roles
@@ -174,8 +175,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SystemEvidenceCount. 
         /// <para>
-        ///  The total number of evidence objects retrieved automatically for the control set.
-        /// 
+        ///  The total number of evidence objects that are retrieved automatically for the control
+        /// set. 
         /// </para>
         /// </summary>
         public int SystemEvidenceCount

@@ -41,7 +41,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The unique identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -60,7 +60,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceFolderId. 
         /// <para>
-        ///  The identifier for the folder in which the evidence is stored. 
+        ///  The identifier for the folder that the evidence is stored in. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

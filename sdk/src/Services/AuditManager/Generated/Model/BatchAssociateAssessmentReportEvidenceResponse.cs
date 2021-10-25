@@ -39,8 +39,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  A list of errors returned by the <code>BatchAssociateAssessmentReportEvidence</code>
-        /// API. 
+        ///  A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API
+        /// returned. 
         /// </para>
         /// </summary>
         public List<AssessmentReportEvidenceError> Errors
@@ -58,7 +58,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceIds. 
         /// <para>
-        ///  The identifier for the evidence. 
+        ///  The list of evidence identifiers. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

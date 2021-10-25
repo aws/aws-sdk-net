@@ -39,8 +39,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property S3RelativePath. 
         /// <para>
-        ///  The relative path of the specified Amazon S3 bucket in which the assessment report
-        /// is stored. 
+        ///  The relative path of the Amazon S3 bucket that the assessment report is stored in.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The metadata objects associated with the specified assessment report.
+    /// The metadata objects that are associated with the specified assessment report.
     /// </summary>
     public partial class AssessmentReportMetadata
     {
@@ -120,7 +120,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the specified assessment report. 
+        ///  The description of the assessment report. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

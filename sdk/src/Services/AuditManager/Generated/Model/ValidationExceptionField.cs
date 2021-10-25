@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Indicates that the request has invalid or missing parameters for the specified field.
+    /// Indicates that the request has invalid or missing parameters for the field.
     /// </summary>
     public partial class ValidationExceptionField
     {

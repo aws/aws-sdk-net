@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAssessmentReportUrl operation.
-    /// Returns the URL of a specified assessment report in Audit Manager.
+    /// Returns the URL of an assessment report in Audit Manager.
     /// </summary>
     public partial class GetAssessmentReportUrlRequest : AmazonAuditManagerRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

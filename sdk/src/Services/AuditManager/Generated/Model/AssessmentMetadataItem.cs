@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A metadata object associated with an assessment in Audit Manager.
+    /// A metadata object that's associated with an assessment in Audit Manager.
     /// </summary>
     public partial class AssessmentMetadataItem
     {
@@ -45,7 +45,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        ///  The name of the compliance standard related to the assessment, such as PCI-DSS. 
+        ///  The name of the compliance standard that's related to the assessment, such as PCI-DSS.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -82,7 +83,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Delegations. 
         /// <para>
-        ///  The delegations associated with the assessment. 
+        ///  The delegations that are associated with the assessment. 
         /// </para>
         /// </summary>
         public List<Delegation> Delegations
@@ -156,7 +157,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
-        ///  The roles associated with the assessment. 
+        ///  The roles that are associated with the assessment. 
         /// </para>
         /// </summary>
         public List<Role> Roles

@@ -38,8 +38,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSet. 
         /// <para>
-        ///  The name of the updated control set returned by the <code>UpdateAssessmentControlSetStatus</code>
-        /// API. 
+        ///  The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code>
+        /// API returned. 
         /// </para>
         /// </summary>
         public AssessmentControlSet ControlSet

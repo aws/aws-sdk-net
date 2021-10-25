@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Evidence. 
         /// <para>
-        ///  The evidence returned by the <code>GetEvidenceResponse</code> API. 
+        ///  The evidence that the <code>GetEvidenceResponse</code> API returned. 
         /// </para>
         /// </summary>
         public Evidence Evidence

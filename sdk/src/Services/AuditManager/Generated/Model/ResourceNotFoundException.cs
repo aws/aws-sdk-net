@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The resource specified in the request cannot be found.
+    /// The resource that's specified in the request can't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -129,7 +129,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The unique identifier for the specified resource. 
+        ///  The unique identifier for the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
@@ -148,7 +148,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of resource affected by the error. 
+        ///  The type of resource that's affected by the error. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

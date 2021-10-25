@@ -97,8 +97,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SnsTopic. 
         /// <para>
-        ///  The Amazon Simple Notification Service (Amazon SNS) topic to which Audit Manager
-        /// sends notifications. 
+        ///  The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
+        /// notifications to. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

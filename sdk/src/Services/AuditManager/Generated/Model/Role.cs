@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The wrapper that contains the Audit Manager role information of the current user,
-    /// such as the role type and IAM Amazon Resource Name (ARN).
+    /// The wrapper that contains the Audit Manager role information of the current user.
+    /// This includes the role type and IAM Amazon Resource Name (ARN).
     /// </summary>
     public partial class Role
     {

@@ -39,8 +39,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentReports. 
         /// <para>
-        ///  The list of assessment reports returned by the <code>ListAssessmentReports</code>
-        /// API. 
+        ///  The list of assessment reports that the <code>ListAssessmentReports</code> API returned.
+        /// 
         /// </para>
         /// </summary>
         public List<AssessmentReportMetadata> AssessmentReports
@@ -58,7 +58,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token used to fetch the next set of results. 
+        ///  The pagination token that's used to fetch the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

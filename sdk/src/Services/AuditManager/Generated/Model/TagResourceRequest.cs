@@ -40,7 +40,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the specified resource. 
+        ///  The Amazon Resource Name (ARN) of the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -59,7 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags to be associated with the resource. 
+        ///  The tags that are associated with the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

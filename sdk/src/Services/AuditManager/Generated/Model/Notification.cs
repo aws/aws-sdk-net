@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The notification used to inform a user of an update in Audit Manager. For example,
-    /// this includes the notification that is sent when a control set is delegated for review.
+    /// The notification that informs a user of an update in Audit Manager. For example,
+    /// this includes the notification that's sent when a control set is delegated for review.
     /// </summary>
     public partial class Notification
     {
@@ -46,7 +46,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the specified assessment. 
+        ///  The identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -84,7 +84,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSetId. 
         /// <para>
-        ///  The identifier for the specified control set. 
+        ///  The identifier for the control set. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

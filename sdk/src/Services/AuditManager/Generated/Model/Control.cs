@@ -52,7 +52,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ActionPlanInstructions. 
         /// <para>
-        ///  The recommended actions to carry out if the control is not fulfilled. 
+        ///  The recommended actions to carry out if the control isn't fulfilled. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -90,7 +90,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the specified control. 
+        ///  The Amazon Resource Name (ARN) of the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -109,7 +109,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlMappingSources. 
         /// <para>
-        ///  The data mapping sources for the specified control. 
+        ///  The data mapping sources for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -128,7 +128,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSources. 
         /// <para>
-        ///  The data source that determines from where Audit Manager collects evidence for the
+        ///  The data source that determines where Audit Manager collects evidence from for the
         /// control. 
         /// </para>
         /// </summary>
@@ -185,7 +185,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the specified control. 
+        ///  The description of the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -260,7 +260,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the specified control. 
+        ///  The name of the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -298,7 +298,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property TestingInformation. 
         /// <para>
-        ///  The steps to follow to determine if the control has been satisfied. 
+        ///  The steps that you should follow to determine if the control has been satisfied.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -317,7 +318,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of control, such as custom or standard. 
+        ///  The type of control, such as a custom control or a standard control. 
         /// </para>
         /// </summary>
         public ControlType Type

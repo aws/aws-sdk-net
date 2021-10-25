@@ -42,7 +42,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the specified framework. 
+        ///  The Amazon Resource Name (ARN) of the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -61,7 +61,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSets. 
         /// <para>
-        ///  The control sets associated with the framework. 
+        ///  The control sets that are associated with the framework. 
         /// </para>
         /// </summary>
         public List<AssessmentControlSet> ControlSets

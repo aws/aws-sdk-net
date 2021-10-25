@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Framework. 
         /// <para>
-        ///  The name of the specified framework. 
+        ///  The name of the framework. 
         /// </para>
         /// </summary>
         public Framework Framework

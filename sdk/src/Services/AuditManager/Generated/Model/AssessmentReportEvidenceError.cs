@@ -41,7 +41,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  The error code returned by the <code>AssessmentReportEvidence</code> API. 
+        ///  The error code that the <code>AssessmentReportEvidence</code> API returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=3)]
@@ -60,7 +60,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message returned by the <code>AssessmentReportEvidence</code> API. 
+        ///  The error message that the <code>AssessmentReportEvidence</code> API returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=300)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A system asset that is evaluated in an Audit Manager assessment.
+    /// A system asset that's evaluated in an Audit Manager assessment.
     /// </summary>
     public partial class Resource
     {
@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for the specified resource. 
+        ///  The Amazon Resource Name (ARN) for the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -58,7 +58,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value of the specified resource. 
+        ///  The value of the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

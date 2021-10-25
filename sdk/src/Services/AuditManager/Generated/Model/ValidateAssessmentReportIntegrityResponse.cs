@@ -42,7 +42,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property SignatureAlgorithm. 
         /// <para>
-        ///  The signature algorithm used to code sign the assessment report file. 
+        ///  The signature algorithm that's used to code sign the assessment report file. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

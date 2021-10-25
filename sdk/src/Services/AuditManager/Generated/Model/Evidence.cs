@@ -73,9 +73,9 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        ///  The names and values used by the evidence event, including an attribute name (such
-        /// as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code> or
-        /// <code>false</code>). 
+        ///  The names and values that are used by the evidence event. This includes an attribute
+        /// name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code>
+        /// or <code>false</code>). 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -93,7 +93,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        ///  The identifier for the specified Amazon Web Services account. 
+        ///  The identifier for the Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -112,7 +112,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AwsOrganization. 
         /// <para>
-        ///  The Amazon Web Services account from which the evidence is collected, and its organization
+        ///  The Amazon Web Services account that the evidence is collected from, and its organization
         /// path. 
         /// </para>
         /// </summary>
@@ -154,7 +154,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        ///  The data source from which the specified evidence was collected. 
+        ///  The data source where the evidence was collected from. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -173,7 +173,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EventName. 
         /// <para>
-        ///  The name of the specified evidence event. 
+        ///  The name of the evidence event. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -192,7 +192,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        ///  The Amazon Web Service from which the evidence is collected. 
+        ///  The Amazon Web Service that the evidence is collected from. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
@@ -211,7 +211,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceAwsAccountId. 
         /// <para>
-        ///  The identifier for the specified Amazon Web Services account. 
+        ///  The identifier for the Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -249,7 +249,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceFolderId. 
         /// <para>
-        ///  The identifier for the folder in which the evidence is stored. 
+        ///  The identifier for the folder that the evidence is stored in. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -268,7 +268,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property IamId. 
         /// <para>
-        ///  The unique identifier for the IAM user or role associated with the evidence. 
+        ///  The unique identifier for the IAM user or role that's associated with the evidence.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -306,7 +307,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ResourcesIncluded. 
         /// <para>
-        ///  The list of resources assessed to generate the evidence. 
+        ///  The list of resources that are assessed to generate the evidence. 
         /// </para>
         /// </summary>
         public List<Resource> ResourcesIncluded

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The location in which Audit Manager saves assessment reports for the given assessment.
+    /// The location where Audit Manager saves assessment reports for the given assessment.
     /// </summary>
     public partial class AssessmentReportsDestination
     {

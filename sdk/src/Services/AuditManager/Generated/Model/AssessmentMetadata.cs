@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The metadata associated with the specified assessment.
+    /// The metadata that's associated with the specified assessment.
     /// </summary>
     public partial class AssessmentMetadata
     {
@@ -48,8 +48,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentReportsDestination. 
         /// <para>
-        ///  The destination in which evidence reports are stored for the specified assessment.
-        /// 
+        ///  The destination that evidence reports are stored in for the assessment. 
         /// </para>
         /// </summary>
         public AssessmentReportsDestination AssessmentReportsDestination
@@ -67,7 +66,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        ///  The name of a compliance standard related to the assessment, such as PCI-DSS. 
+        ///  The name of the compliance standard that's related to the assessment, such as PCI-DSS.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -104,7 +104,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Delegations. 
         /// <para>
-        ///  The delegations associated with the assessment. 
+        ///  The delegations that are associated with the assessment. 
         /// </para>
         /// </summary>
         public List<Delegation> Delegations
@@ -197,7 +197,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
-        ///  The roles associated with the assessment. 
+        ///  The roles that are associated with the assessment. 
         /// </para>
         /// </summary>
         public List<Role> Roles
@@ -215,8 +215,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        ///  The wrapper of Amazon Web Services accounts and services in scope for the assessment.
-        /// 
+        ///  The wrapper of Amazon Web Services accounts and services that are in scope for the
+        /// assessment. 
         /// </para>
         /// </summary>
         public Scope Scope

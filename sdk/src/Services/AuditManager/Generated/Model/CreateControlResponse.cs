@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Control. 
         /// <para>
-        ///  The new control returned by the <code>CreateControl</code> API. 
+        ///  The new control that the <code>CreateControl</code> API returned. 
         /// </para>
         /// </summary>
         public Control Control
