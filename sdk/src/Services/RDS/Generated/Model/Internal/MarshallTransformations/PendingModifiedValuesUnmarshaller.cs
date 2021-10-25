@@ -60,6 +60,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutomationMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutomationMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BackupRetentionPeriod", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -143,6 +149,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = ProcessorFeatureUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ProcessorFeatures.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ResumeFullAutomationModeTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ResumeFullAutomationModeTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StorageType", targetDepth))

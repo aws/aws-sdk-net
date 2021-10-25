@@ -103,6 +103,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticRestartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutomationMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutomationMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -149,6 +155,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.CustomerOwnedIpEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomIamInstanceProfile", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CustomIamInstanceProfile = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBClusterIdentifier", targetDepth))
@@ -434,6 +446,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ReplicaMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResumeFullAutomationModeTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ResumeFullAutomationModeTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SecondaryAvailabilityZone", targetDepth))

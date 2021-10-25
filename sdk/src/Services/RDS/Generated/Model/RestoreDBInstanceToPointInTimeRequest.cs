@@ -55,6 +55,7 @@ namespace Amazon.RDS.Model
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private bool? _copyTagsToSnapshot;
+        private string _customIamInstanceProfile;
         private string _dbInstanceClass;
         private string _dbName;
         private string _dbParameterGroupName;
@@ -108,6 +109,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether minor version upgrades are applied automatically to
         /// the DB instance during the maintenance window.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -173,6 +178,47 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomIamInstanceProfile. 
+        /// <para>
+        /// The instance profile associated with the underlying Amazon EC2 instance of an RDS
+        /// Custom DB instance. The instance profile must meet the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The profile must exist in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The profile must have an IAM role that Amazon EC2 has permissions to assume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance profile name and the associated IAM role name must start with the prefix
+        /// <code>AWSRDSCustom</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is required for RDS Custom.
+        /// </para>
+        /// </summary>
+        public string CustomIamInstanceProfile
+        {
+            get { return this._customIamInstanceProfile; }
+            set { this._customIamInstanceProfile = value; }
+        }
+
+        // Check to see if CustomIamInstanceProfile property is set
+        internal bool IsSetCustomIamInstanceProfile()
+        {
+            return this._customIamInstanceProfile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
@@ -205,7 +251,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't used for the MySQL or MariaDB engines.
+        /// This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply
+        /// to RDS Custom.
         /// </para>
         ///  </note>
         /// </summary>
@@ -230,6 +277,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If you do not specify a value for <code>DBParameterGroupName</code>, then the default
         /// <code>DBParameterGroup</code> for the specified DB engine is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -315,9 +366,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specify the Active Directory directory ID to restore the DB instance in. The domain
-        /// must be created prior to this operation. Currently, only MySQL, Microsoft SQL Server,
-        /// Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
+        /// Specify the Active Directory directory ID to restore the DB instance in. Create the
+        /// domain before running this command. Currently, you can create only the MySQL, Microsoft
+        /// SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -343,6 +398,10 @@ namespace Amazon.RDS.Model
         /// Specify the name of the IAM role to be used when making API calls to the Directory
         /// Service.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string DomainIAMRoleName
         {
@@ -363,6 +422,10 @@ namespace Amazon.RDS.Model
         /// values in the list depend on the DB engine being used. For more information, see <a
         /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -389,6 +452,10 @@ namespace Amazon.RDS.Model
         /// subnets through your on-premises network. For some use cases, a CoIP can provide lower
         /// latency for connections to the DB instance from outside of its virtual private cloud
         /// (VPC) on your local network.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -421,6 +488,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
         /// Guide.</i> 
@@ -442,6 +513,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// The database engine to use for the new instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -551,6 +626,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: Same as source.
         /// </para>
         ///  
@@ -584,6 +663,10 @@ namespace Amazon.RDS.Model
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon
         /// RDS User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public int MaxAllocatedStorage
         {
@@ -601,6 +684,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MultiAZ. 
         /// <para>
         /// A value that indicates whether the DB instance is a Multi-AZ deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -629,7 +716,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't
         /// be removed from an option group, and that option group can't be removed from a DB
-        /// instance once it is associated with a DB instance
+        /// instance after it is associated with a DB instance
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -675,6 +766,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The number of CPU cores and the number of threads per core for the DB instance class
         /// of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public List<ProcessorFeature> ProcessorFeatures
@@ -767,6 +862,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the replicated automated backups from which to restore,
         /// for example, <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string SourceDBInstanceAutomatedBackupsArn
@@ -914,6 +1013,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The ARN from the key store with which to associate the instance for TDE encryption.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string TdeCredentialArn
         {
@@ -931,6 +1034,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TdeCredentialPassword. 
         /// <para>
         /// The password for the given ARN from the key store in order to access the device.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string TdeCredentialPassword
@@ -950,6 +1057,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public bool UseDefaultProcessorFeatures

@@ -31,6 +31,11 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DownloadDBLogFilePortion operation.
     /// Downloads all or a portion of the specified log file, up to 1 MB in size.
+    /// 
+    ///  
+    /// <para>
+    /// This command doesn't apply to RDS Custom.
+    /// </para>
     /// </summary>
     public partial class DownloadDBLogFilePortionRequest : AmazonRDSRequest
     {

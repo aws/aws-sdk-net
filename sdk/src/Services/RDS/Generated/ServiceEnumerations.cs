@@ -229,6 +229,110 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type AutomationMode.
+    /// </summary>
+    public class AutomationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllPaused for AutomationMode
+        /// </summary>
+        public static readonly AutomationMode AllPaused = new AutomationMode("all-paused");
+        /// <summary>
+        /// Constant Full for AutomationMode
+        /// </summary>
+        public static readonly AutomationMode Full = new AutomationMode("full");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationMode FindValue(string value)
+        {
+            return FindValue<AutomationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomEngineVersionStatus.
+    /// </summary>
+    public class CustomEngineVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for CustomEngineVersionStatus
+        /// </summary>
+        public static readonly CustomEngineVersionStatus Available = new CustomEngineVersionStatus("available");
+        /// <summary>
+        /// Constant Inactive for CustomEngineVersionStatus
+        /// </summary>
+        public static readonly CustomEngineVersionStatus Inactive = new CustomEngineVersionStatus("inactive");
+        /// <summary>
+        /// Constant InactiveExceptRestore for CustomEngineVersionStatus
+        /// </summary>
+        public static readonly CustomEngineVersionStatus InactiveExceptRestore = new CustomEngineVersionStatus("inactive-except-restore");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomEngineVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomEngineVersionStatus FindValue(string value)
+        {
+            return FindValue<CustomEngineVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomEngineVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DBProxyEndpointStatus.
     /// </summary>
     public class DBProxyEndpointStatus : ConstantClass
@@ -632,6 +736,10 @@ namespace Amazon.RDS
     public class SourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CustomEngineVersion for SourceType
+        /// </summary>
+        public static readonly SourceType CustomEngineVersion = new SourceType("custom-engine-version");
         /// <summary>
         /// Constant DbCluster for SourceType
         /// </summary>

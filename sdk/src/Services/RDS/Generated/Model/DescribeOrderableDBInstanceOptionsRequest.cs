@@ -55,6 +55,10 @@ namespace Amazon.RDS.Model
         /// Omit this parameter to show the available offerings in the specified Amazon Web Services
         /// Region.
         /// </para>
+        ///  
+        /// <para>
+        ///  This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string AvailabilityZoneGroup
         {
@@ -210,6 +214,10 @@ namespace Amazon.RDS.Model
         /// The license model filter value. Specify this parameter to show only the available
         /// offerings matching the specified license model.
         /// </para>
+        ///  
+        /// <para>
+        /// RDS Custom supports only the BYOL licensing model.
+        /// </para>
         /// </summary>
         public string LicenseModel
         {
@@ -274,7 +282,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Vpc. 
         /// <para>
-        /// A value that indicates whether to show only VPC or non-VPC offerings.
+        /// A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports
+        /// only VPC offerings.
+        /// </para>
+        ///  
+        /// <para>
+        /// RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS
+        /// Custom, the output shows VPC offerings.
         /// </para>
         /// </summary>
         public bool Vpc

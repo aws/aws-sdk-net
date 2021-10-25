@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FeatureName. 
         /// <para>
         /// The name of the feature for the DB cluster that the IAM role is to be associated with.
-        /// For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// For information about supported feature names, see <a>DBEngineVersion</a>.
         /// </para>
         /// </summary>
         public string FeatureName

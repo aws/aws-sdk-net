@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
+        private string _customIamInstanceProfile;
         private string _dbClusterIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
@@ -92,9 +93,9 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
-        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
+        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>Amazon RDS Custom</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 40 to 65536. </li> </ul>  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </param>
-        /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every Amazon Web Services Region.  Valid Values:  <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-ee-cdb</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se2-cdb</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
+        /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every Amazon Web Services Region.  Valid Values:  <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>custom-oracle-ee (for RDS Custom instances)</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-ee-cdb</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se2-cdb</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster.   <b>MariaDB</b>  Constraints: <ul> <li> Required for MariaDB. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Microsoft SQL Server</b>  Constraints: <ul> <li> Required for SQL Server. </li> <li> Must be 1 to 128 letters or numbers. </li> <li> The first character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>MySQL</b>  Constraints: <ul> <li> Required for MySQL. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>Oracle</b>  Constraints: <ul> <li> Required for Oracle. </li> <li> Must be 1 to 30 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li> Required for PostgreSQL. </li> <li> Must be 1 to 63 letters or numbers. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master user. The password can include any printable ASCII character except "/", """, or "@".  <b>Amazon Aurora</b>  Not applicable. The password for the master user is managed by the DB cluster.  <b>MariaDB</b>  Constraints: Must contain from 8 to 41 characters.  <b>Microsoft SQL Server</b>  Constraints: Must contain from 8 to 128 characters.  <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>PostgreSQL</b>  Constraints: Must contain from 8 to 128 characters.</param>
         public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
@@ -127,6 +128,22 @@ namespace Amazon.RDS.Model
         /// an Aurora cluster volume.
         /// </para>
         ///  
+        /// <para>
+        ///  <b>Amazon RDS Custom</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints to the amount of storage for each storage type are the following: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS storage (io1): Must be an integer from 40 to 65536.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  <b>MySQL</b> 
         /// </para>
@@ -271,6 +288,11 @@ namespace Amazon.RDS.Model
         /// the DB instance during the maintenance window. By default, minor engine upgrades are
         /// applied automatically.
         /// </para>
+        ///  
+        /// <para>
+        /// If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code>
+        /// to <code>false</code>.
+        /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
         {
@@ -361,6 +383,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Can't be set to 0 if the DB instance is a source to read replicas
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be set to 0 or 35 for an RDS Custom DB instance
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public int BackupRetentionPeriod
@@ -378,8 +404,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        /// For supported engines, indicates that the DB instance should be associated with the
-        /// specified CharacterSet.
+        /// For supported engines, this value indicates that the DB instance should be associated
+        /// with the specified <code>CharacterSet</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom. However, if you need to change the character
+        /// set, you can change it on the database itself.
         /// </para>
         ///  
         /// <para>
@@ -432,9 +463,54 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomIamInstanceProfile. 
+        /// <para>
+        /// The instance profile associated with the underlying Amazon EC2 instance of an RDS
+        /// Custom DB instance. The instance profile must meet the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The profile must exist in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The profile must have an IAM role that Amazon EC2 has permissions to assume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance profile name and the associated IAM role name must start with the prefix
+        /// <code>AWSRDSCustom</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is required for RDS Custom.
+        /// </para>
+        /// </summary>
+        public string CustomIamInstanceProfile
+        {
+            get { return this._customIamInstanceProfile; }
+            set { this._customIamInstanceProfile = value; }
+        }
+
+        // Check to see if CustomIamInstanceProfile property is set
+        internal bool IsSetCustomIamInstanceProfile()
+        {
+            return this._customIamInstanceProfile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The identifier of the DB cluster that the instance will belong to.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier
@@ -618,6 +694,35 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Amazon RDS Custom</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify
+        /// a value, the default value is <code>ORCL</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ORCL</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It must contain 1 to 8 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must contain a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>SQL Server</b> 
         /// </para>
         ///  
@@ -693,6 +798,10 @@ namespace Amazon.RDS.Model
         /// The name of the DB parameter group to associate with this DB instance. If you do not
         /// specify a value, then the default DB parameter group for the specified DB engine and
         /// version is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -811,6 +920,10 @@ namespace Amazon.RDS.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string Domain
         {
@@ -830,6 +943,10 @@ namespace Amazon.RDS.Model
         /// Specify the name of the IAM role to be used when making API calls to the Directory
         /// Service.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string DomainIAMRoleName
         {
@@ -847,10 +964,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
         /// The list of log types that need to be enabled for exporting to CloudWatch Logs. The
-        /// values in the list depend on the DB engine being used. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
-        /// Service User Guide</i>.
+        /// values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Relational Database Service
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -859,6 +975,14 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Not applicable. CloudWatch Logs exports are managed by the DB cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>RDS Custom</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. 
         /// </para>
         ///  
         /// <para>
@@ -960,8 +1084,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts
-        /// to database accounts is managed by the DB cluster.
+        /// This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon
+        /// Web Services IAM accounts to database accounts is managed by the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -986,13 +1110,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
         /// A value that indicates whether to enable Performance Insights for the DB instance.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
         /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
         /// Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -1031,6 +1155,10 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>aurora-postgresql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>custom-oracle-ee (for RDS Custom instances)</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1115,6 +1243,18 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Not applicable. The version number of the database engine to be used by the DB instance
         /// is managed by the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon RDS Custom</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A custom engine version (CEV) that you have previously created. This setting is required
+        /// for RDS Custom. The CEV name has the following format: <code>19.<i>customized_string</i>
+        /// </code>. An example identifier is <code>19.my_cev1</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+        /// Creating an RDS Custom DB instance</a> in the <i>Amazon RDS User Guide.</i>.
         /// </para>
         ///  
         /// <para>
@@ -1210,8 +1350,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK). To use a CMK in a
-        /// different Amazon Web Services account, specify the key ARN or alias ARN.
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -1225,9 +1365,20 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-        /// <code>KmsKeyId</code> parameter, then Amazon RDS uses your default CMK. There is a
-        /// default CMK for your Amazon Web Services account. Your Amazon Web Services account
-        /// has a different default CMK for each Amazon Web Services Region.
+        /// <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS key. There
+        /// is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon RDS Custom</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A KMS key is required for RDS Custom Oracle instances. For most RDS engines, if you
+        /// leave this parameter empty while enabling <code>StorageEncrypted</code>, the engine
+        /// uses the default KMS key. However, RDS Custom for Oracle doesn't use the default key
+        /// when this parameter is empty. You must explicitly specify a key.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -1251,6 +1402,10 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
         /// | <code>general-public-license</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -1488,6 +1643,10 @@ namespace Amazon.RDS.Model
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon
         /// RDS User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public int MaxAllocatedStorage
         {
@@ -1505,13 +1664,17 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MonitoringInterval. 
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
-        /// for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.
-        /// The default is 0.
+        /// for the DB instance. To disable collection of Enhanced Monitoring metrics, specify
+        /// 0. The default is 0.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code>
+        /// If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code>
         /// to a value other than 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -1535,13 +1698,17 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
         /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
-        /// For information on creating a monitoring role, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+        /// For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
         /// Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply
         /// a <code>MonitoringRoleArn</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -1562,6 +1729,10 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance is a Multi-AZ deployment. You can't
         /// set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public bool MultiAZ
         {
@@ -1579,6 +1750,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property NcharCharacterSetName. 
         /// <para>
         /// The name of the NCHAR character set for the Oracle DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string NcharCharacterSetName
@@ -1603,7 +1778,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't
         /// be removed from an option group. Also, that option group can't be removed from a DB
-        /// instance once it is associated with a DB instance
+        /// instance after it is associated with a DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -1627,14 +1806,18 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK).
+        /// name for the KMS key.
         /// </para>
         ///  
         /// <para>
         /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services
-        /// Region.
+        /// RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// account. Your Amazon Web Services account has a different default KMS key for each
+        /// Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1653,7 +1836,11 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
         /// <para>
         /// The amount of time, in days, to retain Performance Insights data. Valid values are
-        /// 7 or 731 (2 years). 
+        /// 7 or 731 (2 years).
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -1870,6 +2057,10 @@ namespace Amazon.RDS.Model
         /// The number of CPU cores and the number of threads per core for the DB instance class
         /// of the DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public List<ProcessorFeature> ProcessorFeatures
         {
@@ -1891,6 +2082,10 @@ namespace Amazon.RDS.Model
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -1988,6 +2183,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// For RDS Custom Oracle instances, either set this parameter to <code>true</code> or
+        /// leave it unset. If you set this parameter to <code>false</code>, RDS reports an error.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Amazon Aurora</b> 
         /// </para>
         ///  
@@ -2062,6 +2262,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The ARN from the key store with which to associate the instance for TDE encryption.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string TdeCredentialArn
         {
@@ -2079,6 +2283,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TdeCredentialPassword. 
         /// <para>
         /// The password for the given ARN from the key store in order to access the device.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string TdeCredentialPassword

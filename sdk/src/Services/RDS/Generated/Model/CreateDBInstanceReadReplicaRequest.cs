@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private bool? _copyTagsToSnapshot;
+        private string _customIamInstanceProfile;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
@@ -96,7 +97,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceReadReplicaRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</param>
-        /// <param name="sourceDBInstanceIdentifier">The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas. Constraints: <ul> <li> Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance. </li> <li> Can specify a DB instance that is a MySQL read replica only if the source is running MySQL 5.6 or later. </li> <li> For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>. </li> <li> For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>. </li> <li> Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region replication). </li> <li> The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0. </li> <li> If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier. </li> <li> If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server, which doesn't support cross-region replicas. </li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier">The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas. Constraints: <ul> <li> Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance. </li> <li> Can specify a DB instance that is a MySQL read replica only if the source is running MySQL 5.6 or later. </li> <li> For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>. </li> <li> For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>. </li> <li> Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region replication). </li> <li> The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0. </li> <li> If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier. </li> <li> If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas. </li> </ul></param>
         public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -108,6 +109,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether minor engine upgrades are applied automatically to
         /// the read replica during the maintenance window.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>
@@ -173,6 +178,47 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomIamInstanceProfile. 
+        /// <para>
+        /// The instance profile associated with the underlying Amazon EC2 instance of an RDS
+        /// Custom DB instance. The instance profile must meet the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The profile must exist in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The profile must have an IAM role that Amazon EC2 has permissions to assume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance profile name and the associated IAM role name must start with the prefix
+        /// <code>AWSRDSCustom</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is required for RDS Custom.
+        /// </para>
+        /// </summary>
+        public string CustomIamInstanceProfile
+        {
+            get { return this._customIamInstanceProfile; }
+            set { this._customIamInstanceProfile = value; }
+        }
+
+        // Check to see if CustomIamInstanceProfile property is set
+        internal bool IsSetCustomIamInstanceProfile()
+        {
+            return this._customIamInstanceProfile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>.
@@ -230,12 +276,12 @@ namespace Amazon.RDS.Model
         /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine
         /// for a cross region read replica.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// Currently, specifying a parameter group for this operation is only supported for Oracle
-        /// DB instances.
+        /// Specifying a parameter group for this operation is only supported for Oracle DB instances.
+        /// It isn't supported for RDS Custom.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
@@ -355,6 +401,10 @@ namespace Amazon.RDS.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string Domain
         {
@@ -373,6 +423,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specify the name of the IAM role to be used when making API calls to the Directory
         /// Service.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string DomainIAMRoleName
@@ -393,6 +447,10 @@ namespace Amazon.RDS.Model
         /// The list of logs that the new DB instance is to export to CloudWatch Logs. The values
         /// in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -419,6 +477,10 @@ namespace Amazon.RDS.Model
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
         /// Guide.</i> 
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
         {
@@ -436,12 +498,15 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
         /// A value that indicates whether to enable Performance Insights for the read replica.
-        /// 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
         /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
@@ -483,26 +548,31 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS CMK.
+        /// name for the KMS key.
         /// </para>
         ///  
         /// <para>
         /// If you create an encrypted read replica in the same Amazon Web Services Region as
         /// the source DB instance, then do not specify a value for this parameter. A read replica
-        /// in the same Region is always encrypted with the same Amazon Web Services KMS CMK as
+        /// in the same Amazon Web Services Region is always encrypted with the same KMS key as
         /// the source DB instance.
         /// </para>
         ///  
         /// <para>
         /// If you create an encrypted read replica in a different Amazon Web Services Region,
-        /// then you must specify a Amazon Web Services KMS key identifier for the destination
-        /// Amazon Web Services Region. Amazon Web Services KMS CMKs are specific to the Amazon
-        /// Web Services Region that they are created in, and you can't use CMKs from one Amazon
-        /// Web Services Region in another Amazon Web Services Region.
+        /// then you must specify a KMS key identifier for the destination Amazon Web Services
+        /// Region. KMS keys are specific to the Amazon Web Services Region that they are created
+        /// in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon
+        /// Web Services Region.
         /// </para>
         ///  
         /// <para>
         /// You can't create an encrypted read replica from an unencrypted DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary
+        /// replica.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -557,6 +627,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> 
         /// </para>
         /// </summary>
@@ -586,6 +660,10 @@ namespace Amazon.RDS.Model
         /// If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply
         /// a <code>MonitoringRoleArn</code> value.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string MonitoringRoleArn
         {
@@ -609,7 +687,11 @@ namespace Amazon.RDS.Model
         /// You can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
         /// your replica in another Availability Zone for failover support for the replica. Creating
         /// your read replica as a Multi-AZ DB instance is independent of whether the source database
-        /// is a Multi-AZ DB instance. 
+        /// is a Multi-AZ DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -634,7 +716,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For SQL Server, you must use the option group associated with the source instance.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string OptionGroupName
         {
@@ -657,14 +742,18 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK).
+        /// name for the KMS key.
         /// </para>
         ///  
         /// <para>
         /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
-        /// Your Amazon Web Services account has a different default CMK for each Amazon Web Services
-        /// Region.
+        /// RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// account. Your Amazon Web Services account has a different default KMS key for each
+        /// Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -684,6 +773,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The amount of time, in days, to retain Performance Insights data. Valid values are
         /// 7 or 731 (2 years). 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -798,7 +891,10 @@ namespace Amazon.RDS.Model
         ///  <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon
         /// RDS doesn't support cross-region read replicas.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public string PreSignedUrl
         {
@@ -817,6 +913,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The number of CPU cores and the number of threads per core for the DB instance class
         /// of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public List<ProcessorFeature> ProcessorFeatures
@@ -877,16 +977,22 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for
-        /// mounted replicas is cross-Region disaster recovery. The primary database doesn't use
-        /// Active Data Guard to transmit information to the mounted replica. Because it doesn't
-        /// accept user connections, a mounted replica can't serve a read-only workload.
+        /// Mounted DB replicas are included in Oracle Database Enterprise Edition. The main use
+        /// case for mounted replicas is cross-Region disaster recovery. The primary database
+        /// doesn't use Active Data Guard to transmit information to the mounted replica. Because
+        /// it doesn't accept user connections, a mounted replica can't serve a read-only workload.
         /// </para>
         ///  
         /// <para>
         /// You can create a combination of mounted and read-only DB replicas for the same primary
         /// DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
         /// with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For RDS Custom, you must specify this parameter and set it to <code>mounted</code>.
+        /// The value won't be set by default. After replica creation, you can manage the open
+        /// mode manually.
         /// </para>
         /// </summary>
         public ReplicaMode ReplicaMode
@@ -951,7 +1057,7 @@ namespace Amazon.RDS.Model
         /// If the source DB instance is in a different Amazon Web Services Region from the read
         /// replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing
         /// an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply
-        /// to SQL Server, which doesn't support cross-region replicas.
+        /// to SQL Server or RDS Custom, which don't support cross-Region replicas.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1021,6 +1127,10 @@ namespace Amazon.RDS.Model
         /// A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public bool UseDefaultProcessorFeatures
         {
@@ -1037,7 +1147,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A list of EC2 VPC security groups to associate with the read replica. 
+        ///  A list of Amazon EC2 VPC security groups to associate with the read replica. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         ///  
         /// <para>

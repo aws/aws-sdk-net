@@ -31,6 +31,11 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the CreateOptionGroup operation.
     /// Creates a new option group. You can create up to 20 option groups.
+    /// 
+    ///  
+    /// <para>
+    /// This command doesn't apply to RDS Custom.
+    /// </para>
     /// </summary>
     public partial class CreateOptionGroupRequest : AmazonRDSRequest
     {

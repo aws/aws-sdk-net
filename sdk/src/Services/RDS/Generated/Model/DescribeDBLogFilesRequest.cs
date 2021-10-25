@@ -31,6 +31,11 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeDBLogFiles operation.
     /// Returns a list of DB log files for the DB instance.
+    /// 
+    ///  
+    /// <para>
+    /// This command doesn't apply to RDS Custom.
+    /// </para>
     /// </summary>
     public partial class DescribeDBLogFilesRequest : AmazonRDSRequest
     {

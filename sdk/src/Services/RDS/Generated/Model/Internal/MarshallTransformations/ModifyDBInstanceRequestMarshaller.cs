@@ -70,6 +70,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
+                if(publicRequest.IsSetAutomationMode())
+                {
+                    request.Parameters.Add("AutomationMode", StringUtils.FromString(publicRequest.AutomationMode));
+                }
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     request.Parameters.Add("AutoMinorVersionUpgrade", StringUtils.FromBool(publicRequest.AutoMinorVersionUpgrade));
@@ -251,6 +255,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplicaMode())
                 {
                     request.Parameters.Add("ReplicaMode", StringUtils.FromString(publicRequest.ReplicaMode));
+                }
+                if(publicRequest.IsSetResumeFullAutomationModeMinutes())
+                {
+                    request.Parameters.Add("ResumeFullAutomationModeMinutes", StringUtils.FromInt(publicRequest.ResumeFullAutomationModeMinutes));
                 }
                 if(publicRequest.IsSetStorageType())
                 {

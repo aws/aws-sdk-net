@@ -54,10 +54,34 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DatabaseInstallationFilesS3BucketName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DatabaseInstallationFilesS3BucketName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DatabaseInstallationFilesS3Prefix", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DatabaseInstallationFilesS3Prefix = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBEngineDescription", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DBEngineDescription = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBEngineVersionArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBEngineVersionArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBEngineVersionDescription", targetDepth))
@@ -95,6 +119,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExportableLogTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("KMSKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KMSKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MajorEngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MajorEngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
@@ -160,6 +196,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsReadReplica = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TagList/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TagList.Add(item);
                         continue;
                     }
                     if (context.TestExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth))

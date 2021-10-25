@@ -46,6 +46,10 @@ namespace Amazon.RDS.Model
     /// For more information about rebooting, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
     /// a DB Instance</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
+    ///  
+    /// <para>
+    /// This command doesn't apply to RDS Custom.
+    /// </para>
     /// </summary>
     public partial class RebootDBInstanceRequest : AmazonRDSRequest
     {

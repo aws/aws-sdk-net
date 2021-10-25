@@ -148,10 +148,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Specifying this parameter and also specifying to skip final DB snapshot creation in
-        /// SkipFinalShapshot results in an error.
+        /// If you enable this parameter and also enable SkipFinalShapshot, the command results
+        /// in an error.
         /// </para>
         ///  </note> 
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
+        ///  
         /// <para>
         /// Constraints:
         /// </para>
@@ -189,24 +193,29 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
         /// A value that indicates whether to skip the creation of a final DB snapshot before
-        /// the DB instance is deleted. If skip is specified, no DB snapshot is created. If skip
-        /// isn't specified, a DB snapshot is created before the DB instance is deleted. By default,
-        /// skip isn't specified, and the DB snapshot is created.
-        /// </para>
-        ///  
-        /// <para>
-        /// When a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
-        /// or 'incompatible-network', it can only be deleted when skip is specified.
-        /// </para>
-        ///  
-        /// <para>
-        /// Specify skip when deleting a read replica.
+        /// deleting the instance. If you enable this parameter, RDS doesn't create a DB snapshot.
+        /// If you don't enable this parameter, RDS creates a DB snapshot before the DB instance
+        /// is deleted. By default, skip isn't enabled, and the DB snapshot is created.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The FinalDBSnapshotIdentifier parameter must be specified if skip isn't specified.
+        /// If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code>
+        /// parameter.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// When a DB instance is in a failure state and has a status of <code>failed</code>,
+        /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can delete
+        /// the instance only if you enable this parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you delete a read replica or an RDS Custom instance, you must enable this setting.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is required for RDS Custom.
+        /// </para>
         /// </summary>
         public bool SkipFinalSnapshot
         {

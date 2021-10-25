@@ -124,7 +124,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK).
+        /// name for the KMS key.
         /// </para>
         /// </summary>
         public string ActivityStreamKmsKeyId
@@ -560,8 +560,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
         /// The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This
-        /// identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon
-        /// Web Services KMS CMK for the DB cluster is accessed.
+        /// identifier is found in Amazon Web Services CloudTrail log entries whenever the KMS
+        /// key for the DB cluster is accessed.
         /// </para>
         /// </summary>
         public string DbClusterResourceId
@@ -886,7 +886,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK).
+        /// name for the KMS key.
         /// </para>
         /// </summary>
         public string KmsKeyId

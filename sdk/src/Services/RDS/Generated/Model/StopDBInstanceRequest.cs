@@ -43,8 +43,8 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters,
-    /// use <code>StopDBCluster</code> instead. 
+    ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+    /// Aurora clusters, use <code>StopDBCluster</code> instead. 
     /// </para>
     ///  </note>
     /// </summary>

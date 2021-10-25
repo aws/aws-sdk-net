@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
     public partial class PendingModifiedValues
     {
         private int? _allocatedStorage;
+        private AutomationMode _automationMode;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
         private string _dbInstanceClass;
@@ -49,6 +50,7 @@ namespace Amazon.RDS.Model
         private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
+        private DateTime? _resumeFullAutomationModeTime;
         private string _storageType;
 
         /// <summary>
@@ -72,6 +74,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetAllocatedStorage()
         {
             return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomationMode. 
+        /// <para>
+        /// The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>.
+        /// If <code>full</code>, the DB instance automates monitoring and instance recovery.
+        /// If <code>all-paused</code>, the instance pauses automation for the duration set by
+        /// <code>--resume-full-automation-mode-minutes</code>.
+        /// </para>
+        /// </summary>
+        public AutomationMode AutomationMode
+        {
+            get { return this._automationMode; }
+            set { this._automationMode = value; }
+        }
+
+        // Check to see if AutomationMode property is set
+        internal bool IsSetAutomationMode()
+        {
+            return this._automationMode != null;
         }
 
         /// <summary>
@@ -328,6 +351,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetProcessorFeatures()
         {
             return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResumeFullAutomationModeTime. 
+        /// <para>
+        /// The number of minutes to pause the automation. When the time period ends, RDS Custom
+        /// resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime ResumeFullAutomationModeTime
+        {
+            get { return this._resumeFullAutomationModeTime.GetValueOrDefault(); }
+            set { this._resumeFullAutomationModeTime = value; }
+        }
+
+        // Check to see if ResumeFullAutomationModeTime property is set
+        internal bool IsSetResumeFullAutomationModeTime()
+        {
+            return this._resumeFullAutomationModeTime.HasValue; 
         }
 
         /// <summary>

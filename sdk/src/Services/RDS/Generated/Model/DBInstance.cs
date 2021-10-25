@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private int? _allocatedStorage;
         private List<DBInstanceRole> _associatedRoles = new List<DBInstanceRole>();
         private DateTime? _automaticRestartTime;
+        private AutomationMode _automationMode;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private string _awsBackupRecoveryPointArn;
@@ -55,6 +56,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private bool? _customerOwnedIpEnabled;
+        private string _customIamInstanceProfile;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
@@ -101,6 +103,7 @@ namespace Amazon.RDS.Model
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
         private string _readReplicaSourceDBInstanceIdentifier;
         private ReplicaMode _replicaMode;
+        private DateTime? _resumeFullAutomationModeTime;
         private string _secondaryAvailabilityZone;
         private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
         private bool? _storageEncrypted;
@@ -152,7 +155,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Amazon Web Services KMS key identifier used for encrypting messages in the database
         /// activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID,
-        /// alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+        /// alias ARN, or alias name for the KMS key.
         /// </para>
         /// </summary>
         public string ActivityStreamKmsKeyId
@@ -257,6 +260,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutomaticRestartTime()
         {
             return this._automaticRestartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomationMode. 
+        /// <para>
+        /// The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all
+        /// paused</code>. If <code>full</code>, the DB instance automates monitoring and instance
+        /// recovery. If <code>all paused</code>, the instance pauses automation for the duration
+        /// set by <code>--resume-full-automation-mode-minutes</code>.
+        /// </para>
+        /// </summary>
+        public AutomationMode AutomationMode
+        {
+            get { return this._automationMode; }
+            set { this._automationMode = value; }
+        }
+
+        // Check to see if AutomationMode property is set
+        internal bool IsSetAutomationMode()
+        {
+            return this._automationMode != null;
         }
 
         /// <summary>
@@ -433,6 +457,43 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomIamInstanceProfile. 
+        /// <para>
+        /// The instance profile associated with the underlying Amazon EC2 instance of an RDS
+        /// Custom DB instance. The instance profile must meet the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The profile must exist in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The profile must have an IAM role that Amazon EC2 has permissions to assume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The instance profile name and the associated IAM role name must start with the prefix
+        /// <code>AWSRDSCustom</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
+        /// Configure IAM and your VPC</a> in the <i>Amazon Relational Database Service User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string CustomIamInstanceProfile
+        {
+            get { return this._customIamInstanceProfile; }
+            set { this._customIamInstanceProfile = value; }
+        }
+
+        // Check to see if CustomIamInstanceProfile property is set
+        internal bool IsSetCustomIamInstanceProfile()
+        {
+            return this._customIamInstanceProfile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// If the DB instance is a member of a DB cluster, contains the name of the DB cluster
@@ -571,7 +632,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Amazon Web Services Region-unique, immutable identifier for the DB instance. This
         /// identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon
-        /// Web Services KMS customer master key (CMK) for the DB instance is accessed.
+        /// Web Services KMS key for the DB instance is accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -905,7 +966,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK).
+        /// name for the KMS key.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -941,7 +1002,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// License model information for this DB instance.
+        /// License model information for this DB instance. This setting doesn't apply to RDS
+        /// Custom.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -1052,7 +1114,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Specifies if the DB instance is a Multi-AZ deployment.
+        /// Specifies if the DB instance is a Multi-AZ deployment. This setting doesn't apply
+        /// to RDS Custom.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -1151,7 +1214,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK).
+        /// name for the KMS key.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1385,6 +1448,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetReplicaMode()
         {
             return this._replicaMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResumeFullAutomationModeTime. 
+        /// <para>
+        /// The number of minutes to pause the automation. When the time period ends, RDS Custom
+        /// resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime ResumeFullAutomationModeTime
+        {
+            get { return this._resumeFullAutomationModeTime.GetValueOrDefault(); }
+            set { this._resumeFullAutomationModeTime = value; }
+        }
+
+        // Check to see if ResumeFullAutomationModeTime property is set
+        internal bool IsSetResumeFullAutomationModeTime()
+        {
+            return this._resumeFullAutomationModeTime.HasValue; 
         }
 
         /// <summary>

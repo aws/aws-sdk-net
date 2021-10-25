@@ -186,6 +186,10 @@ namespace Amazon.RDS.Model
         /// You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a>
         /// API.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         public bool IncludePublic
         {
@@ -211,6 +215,10 @@ namespace Amazon.RDS.Model
         /// You can give an Amazon Web Services account permission to restore a manual DB snapshot
         /// from another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code>
         /// API action.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         public bool IncludeShared

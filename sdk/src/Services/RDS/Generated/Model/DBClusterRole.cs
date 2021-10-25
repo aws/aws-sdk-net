@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FeatureName. 
         /// <para>
         /// The name of the feature associated with the Amazon Web Services Identity and Access
-        /// Management (IAM) role. For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// Management (IAM) role. For information about supported feature names, see <a>DBEngineVersion</a>.
         /// 
         /// </para>
         /// </summary>

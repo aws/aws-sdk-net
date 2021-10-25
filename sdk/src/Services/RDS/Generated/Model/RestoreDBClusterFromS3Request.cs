@@ -532,15 +532,15 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK). To use a CMK in a
-        /// different Amazon Web Services account, specify the key ARN or alias ARN.
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
         /// If the StorageEncrypted parameter is enabled, and you do not specify a value for the
-        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There
-        /// is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
-        /// has a different default CMK for each Amazon Web Services Region.
+        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key. There
+        /// is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
+        /// account has a different default KMS key for each Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string KmsKeyId

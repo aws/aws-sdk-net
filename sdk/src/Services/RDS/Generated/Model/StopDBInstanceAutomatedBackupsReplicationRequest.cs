@@ -34,6 +34,10 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
+    /// This command doesn't apply to RDS Custom.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
     /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon
     /// RDS User Guide.</i> 

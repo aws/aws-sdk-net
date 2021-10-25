@@ -33,13 +33,19 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBEngineVersion
     {
+        private DateTime? _createTime;
+        private string _databaseInstallationFilesS3BucketName;
+        private string _databaseInstallationFilesS3Prefix;
         private string _dbEngineDescription;
+        private string _dbEngineVersionArn;
         private string _dbEngineVersionDescription;
         private string _dbParameterGroupFamily;
         private CharacterSet _defaultCharacterSet;
         private string _engine;
         private string _engineVersion;
         private List<string> _exportableLogTypes = new List<string>();
+        private string _kmsKeyId;
+        private string _majorEngineVersion;
         private string _status;
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<string> _supportedEngineModes = new List<string>();
@@ -50,12 +56,68 @@ namespace Amazon.RDS.Model
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsParallelQuery;
         private bool? _supportsReadReplica;
+        private List<Tag> _tagList = new List<Tag>();
         private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
         public DBEngineVersion() { }
+
+        /// <summary>
+        /// Gets and sets the property CreateTime. 
+        /// <para>
+        /// The creation time of the DB engine version.
+        /// </para>
+        /// </summary>
+        public DateTime CreateTime
+        {
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
+        }
+
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
+        {
+            return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInstallationFilesS3BucketName. 
+        /// <para>
+        /// The name of the Amazon S3 bucket that contains your database installation files.
+        /// </para>
+        /// </summary>
+        public string DatabaseInstallationFilesS3BucketName
+        {
+            get { return this._databaseInstallationFilesS3BucketName; }
+            set { this._databaseInstallationFilesS3BucketName = value; }
+        }
+
+        // Check to see if DatabaseInstallationFilesS3BucketName property is set
+        internal bool IsSetDatabaseInstallationFilesS3BucketName()
+        {
+            return this._databaseInstallationFilesS3BucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInstallationFilesS3Prefix. 
+        /// <para>
+        /// The Amazon S3 directory that contains the database installation files. If not specified,
+        /// then no prefix is assumed.
+        /// </para>
+        /// </summary>
+        public string DatabaseInstallationFilesS3Prefix
+        {
+            get { return this._databaseInstallationFilesS3Prefix; }
+            set { this._databaseInstallationFilesS3Prefix = value; }
+        }
+
+        // Check to see if DatabaseInstallationFilesS3Prefix property is set
+        internal bool IsSetDatabaseInstallationFilesS3Prefix()
+        {
+            return this._databaseInstallationFilesS3Prefix != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBEngineDescription. 
@@ -73,6 +135,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBEngineDescription()
         {
             return this._dbEngineDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBEngineVersionArn. 
+        /// <para>
+        /// The ARN of the custom engine version.
+        /// </para>
+        /// </summary>
+        public string DBEngineVersionArn
+        {
+            get { return this._dbEngineVersionArn; }
+            set { this._dbEngineVersionArn = value; }
+        }
+
+        // Check to see if DBEngineVersionArn property is set
+        internal bool IsSetDBEngineVersionArn()
+        {
+            return this._dbEngineVersionArn != null;
         }
 
         /// <summary>
@@ -186,6 +266,43 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KMSKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is
+        /// required for RDS Custom, but optional for Amazon RDS.
+        /// </para>
+        /// </summary>
+        public string KMSKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KMSKeyId property is set
+        internal bool IsSetKMSKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MajorEngineVersion. 
+        /// <para>
+        /// The major engine version of the CEV.
+        /// </para>
+        /// </summary>
+        public string MajorEngineVersion
+        {
+            get { return this._majorEngineVersion; }
+            set { this._majorEngineVersion = value; }
+        }
+
+        // Check to see if MajorEngineVersion property is set
+        internal bool IsSetMajorEngineVersion()
+        {
+            return this._majorEngineVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
@@ -243,14 +360,37 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportedFeatureNames. 
         /// <para>
-        ///  A list of features supported by the DB engine. Supported feature names include the
-        /// following. 
+        ///  A list of features supported by the DB engine. 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// s3Import
+        /// The supported features vary by DB engine and DB engine version.
         /// </para>
-        ///  </li> </ul>
+        ///  
+        /// <para>
+        /// To determine the supported features for a specific DB engine and DB engine version
+        /// using the CLI, use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version
+        /// &lt;engine_version&gt;</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, to determine the supported features for RDS for PostgreSQL version 13.3
+        /// using the CLI, use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The supported features are listed under <code>SupportedFeatureNames</code> in the
+        /// output.
+        /// </para>
         /// </summary>
         public List<string> SupportedFeatureNames
         {
@@ -375,6 +515,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsReadReplica()
         {
             return this._supportsReadReplica.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
         /// <summary>

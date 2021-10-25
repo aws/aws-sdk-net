@@ -421,7 +421,10 @@ namespace Amazon.RDS
         /// <para>
         /// To add a role to a DB instance, the status of the DB instance must be <code>available</code>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBInstance service method.</param>
         /// 
@@ -1013,9 +1016,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer
-        /// master key (CMK) to use to encrypt the copy of the DB cluster snapshot in the destination
-        /// Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
+        ///  <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key
+        /// to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web
+        /// Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
         /// action that is called in the destination Amazon Web Services Region, and the action
         /// contained in the pre-signed URL.
         /// </para>
@@ -1229,6 +1232,10 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about copying snapshots, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
         /// a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
@@ -1434,6 +1441,115 @@ namespace Amazon.RDS
         public virtual CreateCustomAvailabilityZoneResponse EndCreateCustomAvailabilityZone(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCustomAvailabilityZoneResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateCustomDBEngineVersion
+
+        /// <summary>
+        /// Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database
+        /// engine and specific AMI. The only supported engine is Oracle Database 19c Enterprise
+        /// Edition with the January 2021 or later RU/RUR. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
+        /// Amazon RDS Custom requirements and limitations</a> in the <i>Amazon RDS User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI)
+        /// and database software. The Amazon RDS database software is preinstalled, so you need
+        /// only select a DB engine and version, and create your database. With Amazon RDS Custom,
+        /// you upload your database installation files in Amazon S3. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.html#custom-cev.preparing">
+        /// Preparing to create a CEV</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a custom engine version, you specify the files in a JSON document
+        /// called a CEV manifest. This document describes installation .zip files stored in Amazon
+        /// S3. RDS Custom creates your CEV from the installation files that you provided. This
+        /// service model is called Bring Your Own Media (BYOM).
+        /// </para>
+        ///  
+        /// <para>
+        /// Creation takes approximately two hours. If creation fails, RDS Custom issues <code>RDS-EVENT-0196</code>
+        /// with the message <code>Creation failed for custom engine version</code>, and includes
+        /// details about the failure. For example, the event prints missing files. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create the CEV, it is available for use. You can create multiple CEVs, and
+        /// create multiple RDS Custom instances from any CEV. You can also change the status
+        /// of a CEV to make it available or inactive.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated
+        /// with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in
+        /// CloudTrail, calls to the <code>CreateCustomDbEngineVersion</code> event aren't logged.
+        /// However, you might see calls from the API gateway that accesses your Amazon S3 bucket.
+        /// These calls originate from the MediaImport service for the <code>CreateCustomDbEngineVersion</code>
+        /// event.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create">
+        /// Creating a CEV</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDBEngineVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomDBEngineVersion service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionAlreadyExistsException">
+        /// A CEV with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionQuotaExceededException">
+        /// You have exceeded your CEV quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomDBEngineVersion">REST API Reference for CreateCustomDBEngineVersion Operation</seealso>
+        public virtual CreateCustomDBEngineVersionResponse CreateCustomDBEngineVersion(CreateCustomDBEngineVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDBEngineVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDBEngineVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomDBEngineVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomDBEngineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDBEngineVersion operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomDBEngineVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomDBEngineVersion">REST API Reference for CreateCustomDBEngineVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateCustomDBEngineVersion(CreateCustomDBEngineVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDBEngineVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDBEngineVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCustomDBEngineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomDBEngineVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateCustomDBEngineVersionResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomDBEngineVersion">REST API Reference for CreateCustomDBEngineVersion Operation</seealso>
+        public virtual CreateCustomDBEngineVersionResponse EndCreateCustomDBEngineVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCustomDBEngineVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -2097,11 +2213,15 @@ namespace Amazon.RDS
         /// <para>
         ///  A DB parameter group is initially created with the default parameters for the database
         /// engine used by the DB instance. To provide custom values for any of the parameters,
-        /// you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once
-        /// you've created a DB parameter group, you need to associate it with your DB instance
-        /// using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a
-        /// running DB instance, you need to reboot the DB instance without failover for the new
-        /// DB parameter group and associated settings to take effect. 
+        /// you must modify the group after creating it using <code>ModifyDBParameterGroup</code>.
+        /// Once you've created a DB parameter group, you need to associate it with your DB instance
+        /// using <code>ModifyDBInstance</code>. When you associate a new DB parameter group with
+        /// a running DB instance, you need to reboot the DB instance without failover for the
+        /// new DB parameter group and associated settings to take effect. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2718,6 +2838,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new option group. You can create up to 20 option groups.
+        /// 
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOptionGroup service method.</param>
         /// 
@@ -2841,6 +2966,96 @@ namespace Amazon.RDS
         public virtual DeleteCustomAvailabilityZoneResponse EndDeleteCustomAvailabilityZone(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCustomAvailabilityZoneResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomDBEngineVersion
+
+        /// <summary>
+        /// Deletes a custom engine version. To run this command, make sure you meet the following
+        /// prerequisites:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The CEV must not be the default for RDS Custom. If it is, change the default before
+        /// running this command.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The CEV must not be associated with an RDS Custom DB instance, RDS Custom instance
+        /// snapshot, or automated backup of your RDS Custom instance.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Typically, deletion takes a few minutes.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated
+        /// with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in
+        /// CloudTrail, calls to the <code>DeleteCustomDbEngineVersion</code> event aren't logged.
+        /// However, you might see calls from the API gateway that accesses your Amazon S3 bucket.
+        /// These calls originate from the MediaImport service for the <code>DeleteCustomDbEngineVersion</code>
+        /// event.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">
+        /// Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDBEngineVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomDBEngineVersion service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionNotFoundException">
+        /// The specified CEV was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidCustomDBEngineVersionStateException">
+        /// You can't delete the CEV.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">REST API Reference for DeleteCustomDBEngineVersion Operation</seealso>
+        public virtual DeleteCustomDBEngineVersionResponse DeleteCustomDBEngineVersion(DeleteCustomDBEngineVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDBEngineVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDBEngineVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomDBEngineVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomDBEngineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDBEngineVersion operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomDBEngineVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">REST API Reference for DeleteCustomDBEngineVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCustomDBEngineVersion(DeleteCustomDBEngineVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDBEngineVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDBEngineVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCustomDBEngineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomDBEngineVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteCustomDBEngineVersionResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">REST API Reference for DeleteCustomDBEngineVersion Operation</seealso>
+        public virtual DeleteCustomDBEngineVersionResponse EndDeleteCustomDBEngineVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCustomDBEngineVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -4943,6 +5158,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns a list of DB log files for the DB instance.
+        /// 
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBLogFiles service method.</param>
         /// 
@@ -6671,6 +6891,12 @@ namespace Amazon.RDS
         /// <summary>
         /// You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications
         /// you can make to your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeValidDBInstanceModifications service method.</param>
         /// 
@@ -6731,6 +6957,11 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Downloads all or a portion of the specified log file, up to 1 MB in size.
+        /// 
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DownloadDBLogFilePortion service method.</param>
         /// 
@@ -7289,6 +7520,82 @@ namespace Amazon.RDS
         public virtual ModifyCurrentDBClusterCapacityResponse EndModifyCurrentDBClusterCapacity(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyCurrentDBClusterCapacityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyCustomDBEngineVersion
+
+        /// <summary>
+        /// Modifies the status of a custom engine version (CEV). You can find CEVs to modify
+        /// by calling <code>DescribeDBEngineVersions</code>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated
+        /// with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in
+        /// CloudTrail, calls to the <code>ModifyCustomDbEngineVersion</code> event aren't logged.
+        /// However, you might see calls from the API gateway that accesses your Amazon S3 bucket.
+        /// These calls originate from the MediaImport service for the <code>ModifyCustomDbEngineVersion</code>
+        /// event.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">Modifying
+        /// CEV status</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCustomDBEngineVersion service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCustomDBEngineVersion service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionNotFoundException">
+        /// The specified CEV was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidCustomDBEngineVersionStateException">
+        /// You can't delete the CEV.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">REST API Reference for ModifyCustomDBEngineVersion Operation</seealso>
+        public virtual ModifyCustomDBEngineVersionResponse ModifyCustomDBEngineVersion(ModifyCustomDBEngineVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCustomDBEngineVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCustomDBEngineVersionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCustomDBEngineVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCustomDBEngineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCustomDBEngineVersion operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCustomDBEngineVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">REST API Reference for ModifyCustomDBEngineVersion Operation</seealso>
+        public virtual IAsyncResult BeginModifyCustomDBEngineVersion(ModifyCustomDBEngineVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCustomDBEngineVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCustomDBEngineVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyCustomDBEngineVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCustomDBEngineVersion.</param>
+        /// 
+        /// <returns>Returns a  ModifyCustomDBEngineVersionResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">REST API Reference for ModifyCustomDBEngineVersion Operation</seealso>
+        public virtual ModifyCustomDBEngineVersionResponse EndModifyCustomDBEngineVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyCustomDBEngineVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -8073,7 +8380,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. 
+        /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
+        /// command doesn't apply to RDS Custom. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -8527,7 +8835,7 @@ namespace Amazon.RDS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+        /// This command doesn't apply to Aurora MySQL, Aurora PostgreSQL, or RDS Custom.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -8733,6 +9041,10 @@ namespace Amazon.RDS
         /// <para>
         /// For more information about rebooting, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
         /// a DB Instance</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
@@ -9941,6 +10253,12 @@ namespace Amazon.RDS
         /// it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file
         /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
         /// Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i>
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromS3 service method.</param>
         /// 
@@ -10440,8 +10758,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters,
-        /// use <code>StartDBCluster</code> instead. 
+        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora DB clusters, use <code>StartDBCluster</code> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -10543,6 +10861,10 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">
         /// Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon
         /// RDS User Guide.</i> 
@@ -10619,7 +10941,12 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Starts an export of a snapshot to Amazon S3. The provided IAM role must have access
-        /// to the S3 bucket.
+        /// to the S3 bucket. 
+        /// 
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
         /// 
@@ -10870,8 +11197,8 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters,
-        /// use <code>StopDBCluster</code> instead. 
+        ///  This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL. For
+        /// Aurora clusters, use <code>StopDBCluster</code> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -10944,6 +11271,10 @@ namespace Amazon.RDS
         /// <summary>
         /// Stops automated backup replication for a DB instance.
         /// 
+        ///  
+        /// <para>
+        /// This command doesn't apply to RDS Custom.
+        /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html">

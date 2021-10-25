@@ -32,6 +32,12 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeValidDBInstanceModifications operation.
     /// You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications
     /// you can make to your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// This command doesn't apply to RDS Custom.
+    /// </para>
     /// </summary>
     public partial class DescribeValidDBInstanceModificationsRequest : AmazonRDSRequest
     {

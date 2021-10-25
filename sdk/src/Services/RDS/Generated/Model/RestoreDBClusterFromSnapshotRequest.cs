@@ -520,8 +520,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
-        /// name for the Amazon Web Services KMS customer master key (CMK). To use a CMK in a
-        /// different Amazon Web Services account, specify the key ARN or alias ARN.
+        /// name for the KMS key. To use a KMS key in a different Amazon Web Services account,
+        /// specify the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -531,8 +531,8 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
-        /// then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK that
-        /// was used to encrypt the DB snapshot or DB cluster snapshot.
+        /// then the restored DB cluster is encrypted using the KMS key that was used to encrypt
+        /// the DB snapshot or DB cluster snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>

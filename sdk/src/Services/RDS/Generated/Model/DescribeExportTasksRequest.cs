@@ -85,10 +85,30 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> - The status of the export task. Must be lowercase, for example,
-        /// <code>complete</code>.
+        ///  <code>status</code> - The status of the export task. Must be lowercase. Valid statuses
+        /// are the following:
         /// </para>
-        ///  </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>canceled</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>canceling</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>complete</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>failed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>starting</code> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
