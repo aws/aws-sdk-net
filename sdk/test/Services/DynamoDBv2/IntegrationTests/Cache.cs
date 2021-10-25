@@ -200,11 +200,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 TableName = name,
                 KeySchema = keySchema,
                 AttributeDefinitions = attributes,
-                ProvisionedThroughput = new ProvisionedThroughput
-                {
-                    ReadCapacityUnits = 5,
-                    WriteCapacityUnits = 5
-                }
+                BillingMode = BillingMode.PAY_PER_REQUEST
             });
 
             AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DynamoDBTests.WaitForTableStatus(name, TableStatus.ACTIVE);

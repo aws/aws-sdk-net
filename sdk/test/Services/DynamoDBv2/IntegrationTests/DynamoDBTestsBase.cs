@@ -199,7 +199,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                                 new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
                                 new KeySchemaElement { AttributeName = "Price", KeyType = KeyType.RANGE }
                             },
-                            ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
                             Projection = new Projection { ProjectionType = ProjectionType.ALL }
                         }
                     },
@@ -240,7 +239,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                                 new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
                                 new KeySchemaElement { AttributeName = "Score", KeyType = KeyType.RANGE }
                             },
-                            ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
                             Projection = new Projection { ProjectionType = ProjectionType.ALL }
                         }
                     },

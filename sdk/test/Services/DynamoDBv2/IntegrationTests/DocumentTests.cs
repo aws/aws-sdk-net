@@ -943,7 +943,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(hashTableName, hashTable.TableName);
                 Assert.AreEqual(3, hashTable.Attributes.Count);
                 Assert.AreEqual(1, hashTable.GlobalSecondaryIndexes.Count);
-                Assert.AreEqual(1, hashTable.GlobalSecondaryIndexes["GlobalIndex"].ProvisionedThroughput.ReadCapacityUnits);
                 Assert.AreEqual(1, hashTable.GlobalSecondaryIndexNames.Count);
                 Assert.AreEqual(1, hashTable.HashKeys.Count);
                 Assert.AreEqual(0, hashTable.RangeKeys.Count);
@@ -960,7 +959,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(hashRangeTableName, hashRangeTable.TableName);
                 Assert.AreEqual(5, hashRangeTable.Attributes.Count);
                 Assert.AreEqual(1, hashRangeTable.GlobalSecondaryIndexes.Count);
-                Assert.AreEqual(1, hashRangeTable.GlobalSecondaryIndexes["GlobalIndex"].ProvisionedThroughput.ReadCapacityUnits);
                 Assert.AreEqual(1, hashRangeTable.GlobalSecondaryIndexNames.Count);
                 Assert.AreEqual(1, hashRangeTable.HashKeys.Count);
                 Assert.AreEqual(1, hashRangeTable.RangeKeys.Count);
