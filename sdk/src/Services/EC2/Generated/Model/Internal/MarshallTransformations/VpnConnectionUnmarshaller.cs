@@ -60,6 +60,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Category = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("coreNetworkArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CoreNetworkArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("coreNetworkAttachmentArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CoreNetworkAttachmentArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("customerGatewayConfiguration", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -70,6 +82,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CustomerGatewayId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("gatewayAssociationState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.GatewayAssociationState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("options", targetDepth))

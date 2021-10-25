@@ -34,8 +34,11 @@ namespace Amazon.EC2.Model
     public partial class VpnConnection
     {
         private string _category;
+        private string _coreNetworkArn;
+        private string _coreNetworkAttachmentArn;
         private string _customerGatewayConfiguration;
         private string _customerGatewayId;
+        private string _gatewayAssociationState;
         private VpnConnectionOptions _options;
         private List<VpnStaticRoute> _routes = new List<VpnStaticRoute>();
         private VpnState _state;
@@ -64,6 +67,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetCategory()
         {
             return this._category != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkArn. 
+        /// <para>
+        /// The ARN of the core network.
+        /// </para>
+        /// </summary>
+        public string CoreNetworkArn
+        {
+            get { return this._coreNetworkArn; }
+            set { this._coreNetworkArn = value; }
+        }
+
+        // Check to see if CoreNetworkArn property is set
+        internal bool IsSetCoreNetworkArn()
+        {
+            return this._coreNetworkArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkAttachmentArn. 
+        /// <para>
+        /// The ARN of the core network attachment.
+        /// </para>
+        /// </summary>
+        public string CoreNetworkAttachmentArn
+        {
+            get { return this._coreNetworkAttachmentArn; }
+            set { this._coreNetworkAttachmentArn = value; }
+        }
+
+        // Check to see if CoreNetworkAttachmentArn property is set
+        internal bool IsSetCoreNetworkAttachmentArn()
+        {
+            return this._coreNetworkAttachmentArn != null;
         }
 
         /// <summary>
@@ -103,6 +142,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCustomerGatewayId()
         {
             return this._customerGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayAssociationState. 
+        /// <para>
+        /// The current state of the gateway association.
+        /// </para>
+        /// </summary>
+        public string GatewayAssociationState
+        {
+            get { return this._gatewayAssociationState; }
+            set { this._gatewayAssociationState = value; }
+        }
+
+        // Check to see if GatewayAssociationState property is set
+        internal bool IsSetGatewayAssociationState()
+        {
+            return this._gatewayAssociationState != null;
         }
 
         /// <summary>
