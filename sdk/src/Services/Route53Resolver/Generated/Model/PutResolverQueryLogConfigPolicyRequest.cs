@@ -89,7 +89,7 @@ namespace Amazon.Route53Resolver.Model
         /// in <code>Arn</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5000)]
+        [AWSProperty(Required=true, Max=30000)]
         public string ResolverQueryLogConfigPolicy
         {
             get { return this._resolverQueryLogConfigPolicy; }

@@ -65,7 +65,7 @@ namespace Amazon.Route53Resolver.Model
         /// rule group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=5000)]
+        [AWSProperty(Required=true, Max=30000)]
         public string FirewallRuleGroupPolicy
         {
             get { return this._firewallRuleGroupPolicy; }

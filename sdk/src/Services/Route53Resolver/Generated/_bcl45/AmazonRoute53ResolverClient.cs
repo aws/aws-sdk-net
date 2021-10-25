@@ -2485,6 +2485,81 @@ namespace Amazon.Route53Resolver
 
         #endregion
         
+        #region  GetResolverConfig
+
+
+        /// <summary>
+        /// Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC
+        /// from Amazon Virtual Private Cloud.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResolverConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetResolverConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">REST API Reference for GetResolverConfig Operation</seealso>
+        public virtual GetResolverConfigResponse GetResolverConfig(GetResolverConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetResolverConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC
+        /// from Amazon Virtual Private Cloud.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResolverConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResolverConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">REST API Reference for GetResolverConfig Operation</seealso>
+        public virtual Task<GetResolverConfigResponse> GetResolverConfigAsync(GetResolverConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResolverConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetResolverDnssecConfig
 
 
@@ -3700,6 +3775,89 @@ namespace Amazon.Route53Resolver
             options.ResponseUnmarshaller = ListFirewallRulesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListFirewallRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResolverConfigs
+
+
+        /// <summary>
+        /// Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses
+        /// the configurations to manage DNS resolution behavior for your VPCs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolverConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListResolverConfigs service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidNextTokenException">
+        /// The value that you specified for <code>NextToken</code> in a <code>List</code> request
+        /// isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">REST API Reference for ListResolverConfigs Operation</seealso>
+        public virtual ListResolverConfigsResponse ListResolverConfigs(ListResolverConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResolverConfigsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses
+        /// the configurations to manage DNS resolution behavior for your VPCs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolverConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResolverConfigs service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidNextTokenException">
+        /// The value that you specified for <code>NextToken</code> in a <code>List</code> request
+        /// isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">REST API Reference for ListResolverConfigs Operation</seealso>
+        public virtual Task<ListResolverConfigsResponse> ListResolverConfigsAsync(ListResolverConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverConfigsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResolverConfigsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5025,6 +5183,99 @@ namespace Amazon.Route53Resolver
             options.ResponseUnmarshaller = UpdateFirewallRuleGroupAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateFirewallRuleGroupAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResolverConfig
+
+
+        /// <summary>
+        /// Updates the behavior configuration of Route 53 Resolver behavior for a single VPC
+        /// from Amazon Virtual Private Cloud.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolverConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResolverConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceUnavailableException">
+        /// The specified resource isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">REST API Reference for UpdateResolverConfig Operation</seealso>
+        public virtual UpdateResolverConfigResponse UpdateResolverConfig(UpdateResolverConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResolverConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the behavior configuration of Route 53 Resolver behavior for a single VPC
+        /// from Amazon Virtual Private Cloud.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolverConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResolverConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceUnavailableException">
+        /// The specified resource isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">REST API Reference for UpdateResolverConfig Operation</seealso>
+        public virtual Task<UpdateResolverConfigResponse> UpdateResolverConfigAsync(UpdateResolverConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateResolverConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion

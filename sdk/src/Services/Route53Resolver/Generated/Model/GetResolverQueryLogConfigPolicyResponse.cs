@@ -42,7 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5000)]
+        [AWSProperty(Max=30000)]
         public string ResolverQueryLogConfigPolicy
         {
             get { return this._resolverQueryLogConfigPolicy; }

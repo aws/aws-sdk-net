@@ -1670,6 +1670,63 @@ namespace Amazon.Route53Resolver
 
         #endregion
         
+        #region  GetResolverConfig
+
+
+        /// <summary>
+        /// Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC
+        /// from Amazon Virtual Private Cloud.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResolverConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetResolverConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">REST API Reference for GetResolverConfig Operation</seealso>
+        GetResolverConfigResponse GetResolverConfig(GetResolverConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResolverConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResolverConfig operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResolverConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">REST API Reference for GetResolverConfig Operation</seealso>
+        IAsyncResult BeginGetResolverConfig(GetResolverConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResolverConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResolverConfig.</param>
+        /// 
+        /// <returns>Returns a  GetResolverConfigResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig">REST API Reference for GetResolverConfig Operation</seealso>
+        GetResolverConfigResponse EndGetResolverConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetResolverDnssecConfig
 
 
@@ -2569,6 +2626,67 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  ListFirewallRulesResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
         ListFirewallRulesResponse EndListFirewallRules(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListResolverConfigs
+
+
+        /// <summary>
+        /// Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses
+        /// the configurations to manage DNS resolution behavior for your VPCs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolverConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListResolverConfigs service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidNextTokenException">
+        /// The value that you specified for <code>NextToken</code> in a <code>List</code> request
+        /// isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">REST API Reference for ListResolverConfigs Operation</seealso>
+        ListResolverConfigsResponse ListResolverConfigs(ListResolverConfigsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResolverConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResolverConfigs operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResolverConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">REST API Reference for ListResolverConfigs Operation</seealso>
+        IAsyncResult BeginListResolverConfigs(ListResolverConfigsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResolverConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResolverConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListResolverConfigsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs">REST API Reference for ListResolverConfigs Operation</seealso>
+        ListResolverConfigsResponse EndListResolverConfigs(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3563,6 +3681,72 @@ namespace Amazon.Route53Resolver
         /// <returns>Returns a  UpdateFirewallRuleGroupAssociationResult from Route53Resolver.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation">REST API Reference for UpdateFirewallRuleGroupAssociation Operation</seealso>
         UpdateFirewallRuleGroupAssociationResponse EndUpdateFirewallRuleGroupAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateResolverConfig
+
+
+        /// <summary>
+        /// Updates the behavior configuration of Route 53 Resolver behavior for a single VPC
+        /// from Amazon Virtual Private Cloud.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolverConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResolverConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceUnavailableException">
+        /// The specified resource isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">REST API Reference for UpdateResolverConfig Operation</seealso>
+        UpdateResolverConfigResponse UpdateResolverConfig(UpdateResolverConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResolverConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolverConfig operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResolverConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">REST API Reference for UpdateResolverConfig Operation</seealso>
+        IAsyncResult BeginUpdateResolverConfig(UpdateResolverConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResolverConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResolverConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateResolverConfigResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig">REST API Reference for UpdateResolverConfig Operation</seealso>
+        UpdateResolverConfigResponse EndUpdateResolverConfig(IAsyncResult asyncResult);
 
         #endregion
         

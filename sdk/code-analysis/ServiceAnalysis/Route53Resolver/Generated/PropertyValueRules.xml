@@ -238,7 +238,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetFirewallRuleGroupPolicyResponse.FirewallRuleGroupPolicy</property>
-    <max>5000</max>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.GetResolverConfigRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverDnssecConfigRequest.ResourceId</property>
@@ -267,7 +272,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverQueryLogConfigPolicyResponse.ResolverQueryLogConfigPolicy</property>
-    <max>5000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverRuleRequest.ResolverRuleId</property>
@@ -363,6 +368,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListResolverConfigsRequest.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ListResolverDnssecConfigsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -449,7 +459,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutFirewallRuleGroupPolicyRequest.FirewallRuleGroupPolicy</property>
-    <max>5000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutResolverQueryLogConfigPolicyRequest.Arn</property>
@@ -458,7 +468,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutResolverQueryLogConfigPolicyRequest.ResolverQueryLogConfigPolicy</property>
-    <max>5000</max>
+    <max>30000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.PutResolverRulePolicyRequest.Arn</property>
@@ -537,6 +547,11 @@
     <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleGroupAssociationRequest.Name</property>
     <max>64</max>
     <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.UpdateResolverConfigRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateResolverDnssecConfigRequest.ResourceId</property>
@@ -843,6 +858,21 @@
     <property>Amazon.Route53Resolver.Model.IpAddressUpdate.SubnetId</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverConfig.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverConfig.OwnerId</property>
+    <min>12</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverConfig.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverDnssecConfig.Id</property>

@@ -29,31 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// This is the response object from the GetFirewallRuleGroupPolicy operation.
+    /// Container for the parameters to the GetResolverConfig operation.
+    /// Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC
+    /// from Amazon Virtual Private Cloud.
     /// </summary>
-    public partial class GetFirewallRuleGroupPolicyResponse : AmazonWebServiceResponse
+    public partial class GetResolverConfigRequest : AmazonRoute53ResolverRequest
     {
-        private string _firewallRuleGroupPolicy;
+        private string _resourceId;
 
         /// <summary>
-        /// Gets and sets the property FirewallRuleGroupPolicy. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The Identity and Access Management (Amazon Web Services IAM) policy for sharing the
-        /// specified rule group. You can use the policy to share the rule group using Resource
-        /// Access Manager (RAM). 
+        /// Resource ID of the Amazon VPC that you want to get information about.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30000)]
-        public string FirewallRuleGroupPolicy
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string ResourceId
         {
-            get { return this._firewallRuleGroupPolicy; }
-            set { this._firewallRuleGroupPolicy = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
-        // Check to see if FirewallRuleGroupPolicy property is set
-        internal bool IsSetFirewallRuleGroupPolicy()
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
         {
-            return this._firewallRuleGroupPolicy != null;
+            return this._resourceId != null;
         }
 
     }

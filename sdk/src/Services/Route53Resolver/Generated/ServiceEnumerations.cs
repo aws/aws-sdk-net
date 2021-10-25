@@ -79,6 +79,56 @@ namespace Amazon.Route53Resolver
 
 
     /// <summary>
+    /// Constants used for properties of type AutodefinedReverseFlag.
+    /// </summary>
+    public class AutodefinedReverseFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE for AutodefinedReverseFlag
+        /// </summary>
+        public static readonly AutodefinedReverseFlag DISABLE = new AutodefinedReverseFlag("DISABLE");
+        /// <summary>
+        /// Constant ENABLE for AutodefinedReverseFlag
+        /// </summary>
+        public static readonly AutodefinedReverseFlag ENABLE = new AutodefinedReverseFlag("ENABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutodefinedReverseFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutodefinedReverseFlag FindValue(string value)
+        {
+            return FindValue<AutodefinedReverseFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutodefinedReverseFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BlockOverrideDnsType.
     /// </summary>
     public class BlockOverrideDnsType : ConstantClass
@@ -624,6 +674,64 @@ namespace Amazon.Route53Resolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MutationProtectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolverAutodefinedReverseStatus.
+    /// </summary>
+    public class ResolverAutodefinedReverseStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ResolverAutodefinedReverseStatus
+        /// </summary>
+        public static readonly ResolverAutodefinedReverseStatus DISABLED = new ResolverAutodefinedReverseStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for ResolverAutodefinedReverseStatus
+        /// </summary>
+        public static readonly ResolverAutodefinedReverseStatus DISABLING = new ResolverAutodefinedReverseStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for ResolverAutodefinedReverseStatus
+        /// </summary>
+        public static readonly ResolverAutodefinedReverseStatus ENABLED = new ResolverAutodefinedReverseStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for ResolverAutodefinedReverseStatus
+        /// </summary>
+        public static readonly ResolverAutodefinedReverseStatus ENABLING = new ResolverAutodefinedReverseStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverAutodefinedReverseStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverAutodefinedReverseStatus FindValue(string value)
+        {
+            return FindValue<ResolverAutodefinedReverseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverAutodefinedReverseStatus(string value)
         {
             return FindValue(value);
         }

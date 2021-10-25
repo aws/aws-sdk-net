@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// This is the response object from the GetFirewallRuleGroupPolicy operation.
+    /// This is the response object from the GetResolverConfig operation.
     /// </summary>
-    public partial class GetFirewallRuleGroupPolicyResponse : AmazonWebServiceResponse
+    public partial class GetResolverConfigResponse : AmazonWebServiceResponse
     {
-        private string _firewallRuleGroupPolicy;
+        private ResolverConfig _resolverConfig;
 
         /// <summary>
-        /// Gets and sets the property FirewallRuleGroupPolicy. 
+        /// Gets and sets the property ResolverConfig. 
         /// <para>
-        /// The Identity and Access Management (Amazon Web Services IAM) policy for sharing the
-        /// specified rule group. You can use the policy to share the rule group using Resource
-        /// Access Manager (RAM). 
+        /// Information about the behavior configuration of Route 53 Resolver behavior for the
+        /// VPC you specified in the <code>GetResolverConfig</code> request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30000)]
-        public string FirewallRuleGroupPolicy
+        public ResolverConfig ResolverConfig
         {
-            get { return this._firewallRuleGroupPolicy; }
-            set { this._firewallRuleGroupPolicy = value; }
+            get { return this._resolverConfig; }
+            set { this._resolverConfig = value; }
         }
 
-        // Check to see if FirewallRuleGroupPolicy property is set
-        internal bool IsSetFirewallRuleGroupPolicy()
+        // Check to see if ResolverConfig property is set
+        internal bool IsSetResolverConfig()
         {
-            return this._firewallRuleGroupPolicy != null;
+            return this._resolverConfig != null;
         }
 
     }
