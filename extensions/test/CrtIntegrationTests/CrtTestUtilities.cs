@@ -12,6 +12,6 @@ namespace CrtIntegrationTests
 
         public override string UserAgent => throw new NotImplementedException();
 
-        public override string RegionEndpointServiceName => throw new NotImplementedException();
+        public override string RegionEndpointServiceName => "";
     }
 }
