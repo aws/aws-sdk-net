@@ -1,3 +1,18 @@
+### 3.7.143.0 (2021-10-25 23:03 UTC)
+* AuditManager (3.7.6.0)
+	* This release introduces a new feature for Audit Manager: Custom framework sharing. You can now share your custom frameworks with another AWS account, or replicate them into another AWS Region under your own account.
+* EC2 (3.7.35.0)
+	* This release adds support to create a VPN Connection that is not attached to a Gateway at the time of creation. Use this to create VPNs associated with Core Networks, or modify your VPN and attach a gateway using the modify API after creation.
+* RDS (3.7.6.0)
+	* This release adds support for Amazon RDS Custom, which is a new RDS management type that gives you full access to your database and operating system. For more information, see https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-custom.html
+* Route53Resolver (3.7.2.0)
+	* New API for ResolverConfig, which allows autodefined rules for reverse DNS resolution to be disabled for a VPC
+* Core 3.7.3.25
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.142.0 (2021-10-22 18:12 UTC)
 * AuditManager (3.7.5.0)
 	* This release introduces character restrictions for ControlSet names. We updated regex patterns for the following attributes: ControlSet, CreateAssessmentFrameworkControlSet, and UpdateAssessmentFrameworkControlSet.
