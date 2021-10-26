@@ -1,3 +1,11 @@
+### 3.7.144.0 (2021-10-26 18:11 UTC)
+* ChimeSDKIdentity (3.7.1.0)
+	* The Amazon Chime SDK now supports push notifications through Amazon Pinpoint
+* ChimeSDKMessaging (3.7.2.0)
+	* The Amazon Chime SDK now supports push notifications through Amazon Pinpoint
+* EMRContainers (3.7.2.0)
+	* This feature enables auto-generation of certificate  to secure the managed-endpoint and removes the need for customer provided certificate-arn during managed-endpoint setup.
+
 ### 3.7.143.1 (2021-10-26 02:47 UTC)
 * Core 3.7.3.26
 	* Use correct region name for request signing for pseudoregions

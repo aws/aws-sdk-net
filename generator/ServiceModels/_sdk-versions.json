@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.143.1",
+    "ProductVersion" : "3.7.144.0",
     "CoreVersion"    : "3.7.3.26",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1970,7 +1970,7 @@
             "InPreview"               : false
         },
         "EMRContainers"                   : {
-            "Version" : "3.7.1.43",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.26"
@@ -2194,7 +2194,7 @@
             "InPreview"               : false
         },
         "ChimeSDKMessaging"               : {
-            "Version" : "3.7.1.4",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.26"
@@ -2202,7 +2202,7 @@
             "InPreview"               : false
         },
         "ChimeSDKIdentity"                : {
-            "Version" : "3.7.0.37",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.26"
