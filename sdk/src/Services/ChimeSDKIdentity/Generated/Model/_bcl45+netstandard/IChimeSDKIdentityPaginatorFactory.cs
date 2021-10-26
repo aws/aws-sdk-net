@@ -36,6 +36,11 @@ namespace Amazon.ChimeSDKIdentity.Model
         IListAppInstancesPaginator ListAppInstances(ListAppInstancesRequest request);
 
         /// <summary>
+        /// Paginator for ListAppInstanceUserEndpoints operation
+        ///</summary>
+        IListAppInstanceUserEndpointsPaginator ListAppInstanceUserEndpoints(ListAppInstanceUserEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListAppInstanceUsers operation
         ///</summary>
         IListAppInstanceUsersPaginator ListAppInstanceUsers(ListAppInstanceUsersRequest request);

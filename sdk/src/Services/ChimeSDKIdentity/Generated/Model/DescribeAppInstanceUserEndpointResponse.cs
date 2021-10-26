@@ -29,49 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// A tag object containing a key-value pair.
+    /// This is the response object from the DescribeAppInstanceUserEndpoint operation.
     /// </summary>
-    public partial class Tag
+    public partial class DescribeAppInstanceUserEndpointResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private string _value;
+        private AppInstanceUserEndpoint _appInstanceUserEndpoint;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property AppInstanceUserEndpoint. 
         /// <para>
-        /// The key in a tag.
+        /// The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>,
+        /// ID, name, type, resource ARN, attributes, allow messages, state, and created and last
+        /// updated timestamps. All timestamps use epoch milliseconds.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        public AppInstanceUserEndpoint AppInstanceUserEndpoint
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._appInstanceUserEndpoint; }
+            set { this._appInstanceUserEndpoint = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if AppInstanceUserEndpoint property is set
+        internal bool IsSetAppInstanceUserEndpoint()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The value in a tag.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._appInstanceUserEndpoint != null;
         }
 
     }

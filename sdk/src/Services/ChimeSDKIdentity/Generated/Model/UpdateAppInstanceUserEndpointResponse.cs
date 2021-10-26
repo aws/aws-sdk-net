@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// A tag object containing a key-value pair.
+    /// This is the response object from the UpdateAppInstanceUserEndpoint operation.
     /// </summary>
-    public partial class Tag
+    public partial class UpdateAppInstanceUserEndpointResponse : AmazonWebServiceResponse
     {
-        private string _key;
-        private string _value;
+        private string _appInstanceUserArn;
+        private string _endpointId;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The key in a tag.
+        /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        [AWSProperty(Min=5, Max=1600)]
+        public string AppInstanceUserArn
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._appInstanceUserArn; }
+            set { this._appInstanceUserArn = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if AppInstanceUserArn property is set
+        internal bool IsSetAppInstanceUserArn()
         {
-            return this._key != null;
+            return this._appInstanceUserArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The value in a tag.
+        /// The unique identifier of the <code>AppInstanceUserEndpoint</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Value
+        [AWSProperty(Min=0, Max=64)]
+        public string EndpointId
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._endpointId; }
+            set { this._endpointId = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if EndpointId property is set
+        internal bool IsSetEndpointId()
         {
-            return this._value != null;
+            return this._endpointId != null;
         }
 
     }

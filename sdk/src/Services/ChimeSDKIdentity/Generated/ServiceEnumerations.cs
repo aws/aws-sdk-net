@@ -25,6 +25,210 @@ namespace Amazon.ChimeSDKIdentity
 {
 
     /// <summary>
+    /// Constants used for properties of type AllowMessages.
+    /// </summary>
+    public class AllowMessages : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for AllowMessages
+        /// </summary>
+        public static readonly AllowMessages ALL = new AllowMessages("ALL");
+        /// <summary>
+        /// Constant NONE for AllowMessages
+        /// </summary>
+        public static readonly AllowMessages NONE = new AllowMessages("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllowMessages(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowMessages FindValue(string value)
+        {
+            return FindValue<AllowMessages>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowMessages(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AppInstanceUserEndpointType.
+    /// </summary>
+    public class AppInstanceUserEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APNS for AppInstanceUserEndpointType
+        /// </summary>
+        public static readonly AppInstanceUserEndpointType APNS = new AppInstanceUserEndpointType("APNS");
+        /// <summary>
+        /// Constant APNS_SANDBOX for AppInstanceUserEndpointType
+        /// </summary>
+        public static readonly AppInstanceUserEndpointType APNS_SANDBOX = new AppInstanceUserEndpointType("APNS_SANDBOX");
+        /// <summary>
+        /// Constant GCM for AppInstanceUserEndpointType
+        /// </summary>
+        public static readonly AppInstanceUserEndpointType GCM = new AppInstanceUserEndpointType("GCM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppInstanceUserEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppInstanceUserEndpointType FindValue(string value)
+        {
+            return FindValue<AppInstanceUserEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppInstanceUserEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndpointStatus.
+    /// </summary>
+    public class EndpointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus ACTIVE = new EndpointStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus INACTIVE = new EndpointStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointStatus FindValue(string value)
+        {
+            return FindValue<EndpointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndpointStatusReason.
+    /// </summary>
+    public class EndpointStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID_DEVICE_TOKEN for EndpointStatusReason
+        /// </summary>
+        public static readonly EndpointStatusReason INVALID_DEVICE_TOKEN = new EndpointStatusReason("INVALID_DEVICE_TOKEN");
+        /// <summary>
+        /// Constant INVALID_PINPOINT_ARN for EndpointStatusReason
+        /// </summary>
+        public static readonly EndpointStatusReason INVALID_PINPOINT_ARN = new EndpointStatusReason("INVALID_PINPOINT_ARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointStatusReason FindValue(string value)
+        {
+            return FindValue<EndpointStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointStatusReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCode.
     /// </summary>
     public class ErrorCode : ConstantClass

@@ -29,49 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// A tag object containing a key-value pair.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes the specified tags from the specified Amazon Chime SDK identity resource.
     /// </summary>
-    public partial class Tag
+    public partial class UntagResourceRequest : AmazonChimeSDKIdentityRequest
     {
-        private string _key;
-        private string _value;
+        private string _resourceARN;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The key in a tag.
+        /// The resource ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        [AWSProperty(Required=true, Min=5, Max=1600)]
+        public string ResourceARN
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._resourceARN; }
+            set { this._resourceARN = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ResourceARN property is set
+        internal bool IsSetResourceARN()
         {
-            return this._key != null;
+            return this._resourceARN != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The value in a tag.
+        /// The tag keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Value
+        [AWSProperty(Required=true, Min=1, Max=50)]
+        public List<string> TagKeys
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._value != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// A tag object containing a key-value pair.
+    /// The attributes of an <code>Endpoint</code>.
     /// </summary>
-    public partial class Tag
+    public partial class EndpointAttributes
     {
-        private string _key;
-        private string _value;
+        private string _deviceToken;
+        private string _voipDeviceToken;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property DeviceToken. 
         /// <para>
-        /// The key in a tag.
+        /// The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        [AWSProperty(Required=true, Min=1, Max=1600)]
+        public string DeviceToken
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._deviceToken; }
+            set { this._deviceToken = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if DeviceToken property is set
+        internal bool IsSetDeviceToken()
         {
-            return this._key != null;
+            return this._deviceToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property VoipDeviceToken. 
         /// <para>
-        /// The value in a tag.
+        /// The VOIP device token for the APNS and APNS_SANDBOX endpoint types.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Value
+        [AWSProperty(Min=1, Max=1600)]
+        public string VoipDeviceToken
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._voipDeviceToken; }
+            set { this._voipDeviceToken = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if VoipDeviceToken property is set
+        internal bool IsSetVoipDeviceToken()
         {
-            return this._value != null;
+            return this._voipDeviceToken != null;
         }
 
     }

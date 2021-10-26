@@ -102,6 +102,18 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.DeregisterAppInstanceUserEndpointRequest.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.DeregisterAppInstanceUserEndpointRequest.EndpointId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKIdentity.Model.DescribeAppInstanceRequest.AppInstanceArn</property>
     <min>5</min>
     <max>1600</max>
@@ -124,6 +136,18 @@
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.DescribeAppInstanceUserEndpointRequest.AppInstanceUserArn</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.DescribeAppInstanceUserEndpointRequest.EndpointId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKIdentity.Model.GetAppInstanceRetentionSettingsRequest.AppInstanceArn</property>
@@ -178,6 +202,29 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.ListAppInstanceUserEndpointsRequest.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.ListAppInstanceUserEndpointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.ListAppInstanceUserEndpointsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.ListAppInstanceUserEndpointsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKIdentity.Model.ListAppInstanceUsersRequest.AppInstanceArn</property>
     <min>5</min>
     <max>1600</max>
@@ -207,7 +254,61 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKIdentity.Model.PutAppInstanceRetentionSettingsRequest.AppInstanceArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.RegisterAppInstanceUserEndpointRequest.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.RegisterAppInstanceUserEndpointRequest.ClientRequestToken</property>
+    <min>2</min>
+    <max>64</max>
+    <pattern>[-_a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.RegisterAppInstanceUserEndpointRequest.Name</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.RegisterAppInstanceUserEndpointRequest.ResourceArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.RegisterAppInstanceUserEndpointResponse.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.RegisterAppInstanceUserEndpointResponse.EndpointId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.TagResourceRequest.ResourceARN</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.UntagResourceRequest.ResourceARN</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -259,6 +360,36 @@
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.UpdateAppInstanceUserEndpointRequest.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.UpdateAppInstanceUserEndpointRequest.EndpointId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.UpdateAppInstanceUserEndpointRequest.Name</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.UpdateAppInstanceUserEndpointResponse.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.UpdateAppInstanceUserEndpointResponse.EndpointId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKIdentity.Model.AppInstance.AppInstanceArn</property>
@@ -321,6 +452,48 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserEndpoint.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserEndpoint.EndpointId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserEndpoint.Name</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserEndpoint.ResourceArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserEndpointSummary.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserEndpointSummary.EndpointId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserEndpointSummary.Name</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKIdentity.Model.AppInstanceUserSummary.AppInstanceUserArn</property>
     <min>5</min>
     <max>1600</max>
@@ -342,6 +515,18 @@
     <property>Amazon.ChimeSDKIdentity.Model.ChannelRetentionSettings.RetentionDays</property>
     <min>1</min>
     <max>5475</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.EndpointAttributes.DeviceToken</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKIdentity.Model.EndpointAttributes.VoipDeviceToken</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKIdentity.Model.Identity.Arn</property>

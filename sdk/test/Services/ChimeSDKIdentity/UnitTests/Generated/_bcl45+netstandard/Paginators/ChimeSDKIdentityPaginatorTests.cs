@@ -120,6 +120,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("ChimeSDKIdentity")]
+        public void ListAppInstanceUserEndpointsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAppInstanceUserEndpointsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAppInstanceUserEndpointsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAppInstanceUserEndpointsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAppInstanceUserEndpoints(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAppInstanceUserEndpoints(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ChimeSDKIdentity")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAppInstanceUserEndpointsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAppInstanceUserEndpointsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAppInstanceUserEndpointsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAppInstanceUserEndpoints(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAppInstanceUserEndpoints(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ChimeSDKIdentity")]
         public void ListAppInstanceUsersTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListAppInstanceUsersRequest>();

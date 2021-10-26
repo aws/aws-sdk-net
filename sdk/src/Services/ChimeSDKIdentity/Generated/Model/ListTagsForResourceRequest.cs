@@ -29,49 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// A tag object containing a key-value pair.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags applied to an Amazon Chime SDK identity resource.
     /// </summary>
-    public partial class Tag
+    public partial class ListTagsForResourceRequest : AmazonChimeSDKIdentityRequest
     {
-        private string _key;
-        private string _value;
+        private string _resourceARN;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The key in a tag.
+        /// The ARN of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Key
+        [AWSProperty(Required=true, Min=5, Max=1600)]
+        public string ResourceARN
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._resourceARN; }
+            set { this._resourceARN = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if ResourceARN property is set
+        internal bool IsSetResourceARN()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The value in a tag.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._resourceARN != null;
         }
 
     }
