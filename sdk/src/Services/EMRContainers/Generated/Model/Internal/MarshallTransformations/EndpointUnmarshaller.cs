@@ -76,6 +76,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("certificateAuthority", targetDepth))
+                {
+                    var unmarshaller = CertificateUnmarshaller.Instance;
+                    unmarshalledObject.CertificateAuthority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("configurationOverrides", targetDepth))
                 {
                     var unmarshaller = ConfigurationOverridesUnmarshaller.Instance;

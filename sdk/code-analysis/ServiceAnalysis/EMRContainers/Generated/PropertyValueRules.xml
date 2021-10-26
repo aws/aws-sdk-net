@@ -319,6 +319,17 @@
     <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-containers:.+:(\d{12}):/virtualclusters/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.Certificate.CertificateArn</property>
+    <min>44</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):acm:.+:(\d{12}):certificate/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.Certificate.CertificateData</property>
+    <max>5000</max>
+    <pattern>^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.CloudWatchMonitoringConfiguration.LogGroupName</property>
     <min>1</min>
     <max>512</max>

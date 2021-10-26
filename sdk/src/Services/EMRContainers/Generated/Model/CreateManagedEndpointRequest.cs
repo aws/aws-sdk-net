@@ -48,10 +48,12 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The certificate ARN of the managed endpoint.
+        /// The certificate ARN provided by users for the managed endpoint. This fiedd is under
+        /// deprecation and will be removed in future releases.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=44, Max=2048)]
+        [Obsolete("Customer provided certificate-arn is deprecated and would be removed in future.")]
+        [AWSProperty(Min=44, Max=2048)]
         public string CertificateArn
         {
             get { return this._certificateArn; }
