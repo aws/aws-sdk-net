@@ -37,6 +37,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private DateTime? _createdTimestamp;
         private DateTime? _lastEditedTimestamp;
         private DateTime? _lastUpdatedTimestamp;
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
         private string _messageId;
         private string _metadata;
         private bool? _redacted;
@@ -115,6 +116,24 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetLastUpdatedTimestamp()
         {
             return this._lastUpdatedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageAttributes. 
+        /// <para>
+        /// The message attribues listed in a the summary of a channel message.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, MessageAttributeValue> MessageAttributes
+        {
+            get { return this._messageAttributes; }
+            set { this._messageAttributes = value; }
+        }
+
+        // Check to see if MessageAttributes property is set
+        internal bool IsSetMessageAttributes()
+        {
+            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
         }
 
         /// <summary>

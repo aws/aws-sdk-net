@@ -87,7 +87,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChannelModeratorArn. 
         /// <para>
-        /// The ARN of the moderator.
+        /// The <code>AppInstanceUserArn</code> of the moderator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

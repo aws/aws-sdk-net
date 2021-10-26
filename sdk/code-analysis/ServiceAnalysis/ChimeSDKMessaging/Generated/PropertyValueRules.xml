@@ -401,6 +401,30 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.GetChannelMembershipPreferencesRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.GetChannelMembershipPreferencesRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.GetChannelMembershipPreferencesRequest.MemberArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.GetChannelMembershipPreferencesResponse.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.GetChannelMessageRequest.ChannelArn</property>
     <min>5</min>
     <max>1600</max>
@@ -711,6 +735,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PutChannelMembershipPreferencesRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PutChannelMembershipPreferencesRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PutChannelMembershipPreferencesRequest.MemberArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PutChannelMembershipPreferencesResponse.ChannelArn</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -1117,6 +1165,23 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PushNotificationConfiguration.Body</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PushNotificationConfiguration.Title</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKMessaging.Model.PushNotificationPreferences.FilterRule</property>
+    <min>1</min>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMessaging.Model.Tag.Key</property>

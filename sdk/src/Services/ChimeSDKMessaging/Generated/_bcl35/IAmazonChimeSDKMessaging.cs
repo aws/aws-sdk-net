@@ -514,8 +514,8 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Adds a user to a channel. The <code>InvitedBy</code> response field is derived from
-        /// the request header. A channel member can:
+        /// Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
+        /// is derived from the request header. A channel member can:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1642,6 +1642,69 @@ namespace Amazon.ChimeSDKMessaging
 
         #endregion
         
+        #region  GetChannelMembershipPreferences
+
+
+        /// <summary>
+        /// Gets the membership preferences of an <code>AppInstanceUser</code> for the specified
+        /// channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the
+        /// <code>AppInstanceUser</code> who owns the membership can retrieve preferences. Users
+        /// in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences
+        /// for other users. Banned users can't retrieve membership preferences for the channel
+        /// from which they are banned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelMembershipPreferences service method.</param>
+        /// 
+        /// <returns>The response from the GetChannelMembershipPreferences service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">REST API Reference for GetChannelMembershipPreferences Operation</seealso>
+        GetChannelMembershipPreferencesResponse GetChannelMembershipPreferences(GetChannelMembershipPreferencesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannelMembershipPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannelMembershipPreferences operation on AmazonChimeSDKMessagingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannelMembershipPreferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">REST API Reference for GetChannelMembershipPreferences Operation</seealso>
+        IAsyncResult BeginGetChannelMembershipPreferences(GetChannelMembershipPreferencesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChannelMembershipPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannelMembershipPreferences.</param>
+        /// 
+        /// <returns>Returns a  GetChannelMembershipPreferencesResult from ChimeSDKMessaging.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">REST API Reference for GetChannelMembershipPreferences Operation</seealso>
+        GetChannelMembershipPreferencesResponse EndGetChannelMembershipPreferences(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetChannelMessage
 
 
@@ -1997,7 +2060,12 @@ namespace Amazon.ChimeSDKMessaging
         /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
         /// of the user that makes the API call as the value in the header.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// If you want to list the channels to which a specific app instance user belongs, see
+        /// the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
+        /// API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannelMemberships service method.</param>
         /// 
@@ -2512,6 +2580,73 @@ namespace Amazon.ChimeSDKMessaging
         /// <returns>Returns a  ListTagsForResourceResult from ChimeSDKMessaging.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutChannelMembershipPreferences
+
+
+        /// <summary>
+        /// Sets the membership preferences of an <code>AppInstanceUser</code> for the specified
+        /// channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the
+        /// <code>AppInstanceUser</code> who owns the membership can set preferences. Users in
+        /// the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences
+        /// for other users. Banned users can't set membership preferences for the channel from
+        /// which they are banned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelMembershipPreferences service method.</param>
+        /// 
+        /// <returns>The response from the PutChannelMembershipPreferences service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">REST API Reference for PutChannelMembershipPreferences Operation</seealso>
+        PutChannelMembershipPreferencesResponse PutChannelMembershipPreferences(PutChannelMembershipPreferencesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutChannelMembershipPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutChannelMembershipPreferences operation on AmazonChimeSDKMessagingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutChannelMembershipPreferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">REST API Reference for PutChannelMembershipPreferences Operation</seealso>
+        IAsyncResult BeginPutChannelMembershipPreferences(PutChannelMembershipPreferencesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutChannelMembershipPreferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutChannelMembershipPreferences.</param>
+        /// 
+        /// <returns>Returns a  PutChannelMembershipPreferencesResult from ChimeSDKMessaging.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">REST API Reference for PutChannelMembershipPreferences Operation</seealso>
+        PutChannelMembershipPreferencesResponse EndPutChannelMembershipPreferences(IAsyncResult asyncResult);
 
         #endregion
         

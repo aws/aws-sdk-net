@@ -94,6 +94,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MessageAttributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, MessageAttributeValue, StringUnmarshaller, MessageAttributeValueUnmarshaller>(StringUnmarshaller.Instance, MessageAttributeValueUnmarshaller.Instance);
+                    unmarshalledObject.MessageAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MessageId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

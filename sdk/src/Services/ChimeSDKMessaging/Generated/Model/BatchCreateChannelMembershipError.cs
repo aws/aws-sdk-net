@@ -76,7 +76,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArn. 
         /// <para>
-        /// The ARN of the member that the service couldn't add.
+        /// The <code>AppInstanceUserArn</code> of the member that the service couldn't add.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

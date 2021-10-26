@@ -94,7 +94,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArn. 
         /// <para>
-        /// The ARN of the member being banned.
+        /// The <code>AppInstanceUserArn</code> of the member being banned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

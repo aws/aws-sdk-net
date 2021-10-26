@@ -25,6 +25,60 @@ namespace Amazon.ChimeSDKMessaging
 {
 
     /// <summary>
+    /// Constants used for properties of type AllowNotifications.
+    /// </summary>
+    public class AllowNotifications : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for AllowNotifications
+        /// </summary>
+        public static readonly AllowNotifications ALL = new AllowNotifications("ALL");
+        /// <summary>
+        /// Constant FILTERED for AllowNotifications
+        /// </summary>
+        public static readonly AllowNotifications FILTERED = new AllowNotifications("FILTERED");
+        /// <summary>
+        /// Constant NONE for AllowNotifications
+        /// </summary>
+        public static readonly AllowNotifications NONE = new AllowNotifications("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllowNotifications(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowNotifications FindValue(string value)
+        {
+            return FindValue<AllowNotifications>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowNotifications(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChannelMembershipType.
     /// </summary>
     public class ChannelMembershipType : ConstantClass
@@ -524,6 +578,56 @@ namespace Amazon.ChimeSDKMessaging
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PushNotificationType.
+    /// </summary>
+    public class PushNotificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for PushNotificationType
+        /// </summary>
+        public static readonly PushNotificationType DEFAULT = new PushNotificationType("DEFAULT");
+        /// <summary>
+        /// Constant VOIP for PushNotificationType
+        /// </summary>
+        public static readonly PushNotificationType VOIP = new PushNotificationType("VOIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PushNotificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PushNotificationType FindValue(string value)
+        {
+            return FindValue<PushNotificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PushNotificationType(string value)
         {
             return FindValue(value);
         }

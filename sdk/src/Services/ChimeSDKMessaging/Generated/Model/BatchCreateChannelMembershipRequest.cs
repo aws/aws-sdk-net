@@ -80,7 +80,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArns. 
         /// <para>
-        /// The ARNs of the members you want to add to the channel.
+        /// The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -29,29 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeChannelBan operation.
-    /// Returns the full details of a channel ban.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
-    /// </para>
-    ///  </note>
+    /// This is the response object from the PutChannelMembershipPreferences operation.
     /// </summary>
-    public partial class DescribeChannelBanRequest : AmazonChimeSDKMessagingRequest
+    public partial class PutChannelMembershipPreferencesResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private string _chimeBearer;
-        private string _memberArn;
+        private Identity _member;
+        private ChannelMembershipPreferences _preferences;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel from which the user is banned.
+        /// The ARN of the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
+        [AWSProperty(Min=5, Max=1600)]
         public string ChannelArn
         {
             get { return this._channelArn; }
@@ -65,41 +57,36 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChimeBearer. 
-        /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
-        /// </para>
+        /// Gets and sets the property Member.
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
-        public string ChimeBearer
+        public Identity Member
         {
-            get { return this._chimeBearer; }
-            set { this._chimeBearer = value; }
+            get { return this._member; }
+            set { this._member = value; }
         }
 
-        // Check to see if ChimeBearer property is set
-        internal bool IsSetChimeBearer()
+        // Check to see if Member property is set
+        internal bool IsSetMember()
         {
-            return this._chimeBearer != null;
+            return this._member != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MemberArn. 
+        /// Gets and sets the property Preferences. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the member being banned.
+        /// The ARN and metadata of the member being added.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
-        public string MemberArn
+        public ChannelMembershipPreferences Preferences
         {
-            get { return this._memberArn; }
-            set { this._memberArn = value; }
+            get { return this._preferences; }
+            set { this._preferences = value; }
         }
 
-        // Check to see if MemberArn property is set
-        internal bool IsSetMemberArn()
+        // Check to see if Preferences property is set
+        internal bool IsSetPreferences()
         {
-            return this._memberArn != null;
+            return this._preferences != null;
         }
 
     }

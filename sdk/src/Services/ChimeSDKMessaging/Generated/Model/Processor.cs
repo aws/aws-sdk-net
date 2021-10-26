@@ -81,10 +81,13 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property FallbackAction. 
         /// <para>
-        /// Determines whether to continue or stop processing if communication with processor
-        /// fails. If the last processor in a channel flow sequence has a fallback action of CONTINUE,
-        /// and communication with the processor fails, the message is considered processed and
-        /// sent to the recipients in the channel.
+        /// Determines whether to continue with message processing or stop it in cases where communication
+        /// with a processor fails. If a processor has a fallback action of <code>ABORT</code>
+        /// and communication with it fails, the processor sets the message status to <code>FAILED</code>
+        /// and does not send the message to any recipients. Note that if the last processor in
+        /// the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication
+        /// with the processor fails, then the message is considered processed and sent to recipients
+        /// of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,61 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateChannelMembership operation.
-    /// Adds a user to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
-    /// is derived from the request header. A channel member can:
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    /// List messages
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Send messages
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Receive messages
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Edit their own messages
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Leave the channel
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Privacy settings impact this action as follows:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Public Channels: You do not need to be a member to list messages, but you must be
-    /// a member to send messages.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Private Channels: You must be a member to list or send messages.
-    /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the PutChannelMembershipPreferences operation.
+    /// Sets the membership preferences of an <code>AppInstanceUser</code> for the specified
+    /// channel. The <code>AppInstanceUser</code> must be a member of the channel. Only the
+    /// <code>AppInstanceUser</code> who owns the membership can set preferences. Users in
+    /// the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences
+    /// for other users. Banned users can't set membership preferences for the channel from
+    /// which they are banned.
     /// </summary>
-    public partial class CreateChannelMembershipRequest : AmazonChimeSDKMessagingRequest
+    public partial class PutChannelMembershipPreferencesRequest : AmazonChimeSDKMessagingRequest
     {
         private string _channelArn;
         private string _chimeBearer;
         private string _memberArn;
-        private ChannelMembershipType _type;
+        private ChannelMembershipPreferences _preferences;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel to which you're adding users.
+        /// The ARN of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -102,7 +66,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The <code>AppInstanceUserARN</code> of the user making the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -121,7 +85,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArn. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the member you want to add to the channel.
+        /// The <code>AppInstanceUserArn</code> of the member setting the preferences.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -138,26 +102,22 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property Preferences. 
         /// <para>
-        /// The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden
-        /// members are only returned if the type filter in <code>ListChannelMemberships</code>
-        /// equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only
-        /// supported by moderators.
+        /// The channel membership preferences of an <code>AppInstanceUser</code> .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ChannelMembershipType Type
+        public ChannelMembershipPreferences Preferences
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._preferences; }
+            set { this._preferences = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if Preferences property is set
+        internal bool IsSetPreferences()
         {
-            return this._type != null;
+            return this._preferences != null;
         }
 
     }
