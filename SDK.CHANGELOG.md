@@ -1,3 +1,8 @@
+### 3.7.143.1 (2021-10-26 02:47 UTC)
+* Core 3.7.3.26
+	* Use correct region name for request signing for pseudoregions
+	* All services packages updated to require new Core
+
 ### 3.7.143.0 (2021-10-25 23:03 UTC)
 * AuditManager (3.7.6.0)
 	* This release introduces a new feature for Audit Manager: Custom framework sharing. You can now share your custom frameworks with another AWS account, or replicate them into another AWS Region under your own account.
