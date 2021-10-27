@@ -280,8 +280,8 @@ namespace Amazon.Textract.Model
         /// <para>
         /// The page on which a block was detected. <code>Page</code> is returned by asynchronous
         /// operations. Page values greater than 1 are only returned for multipage documents that
-        /// are in PDF format. A scanned image (JPEG/PNG), even if it contains multiple document
-        /// pages, is considered to be a single-page document. The value of <code>Page</code>
+        /// are in PDF or TIFF format. A scanned image (JPEG/PNG), even if it contains multiple
+        /// document pages, is considered to be a single-page document. The value of <code>Page</code>
         /// is always 1. Synchronous operations don't return <code>Page</code> because every input
         /// document is considered to be a single-page document.
         /// </para>

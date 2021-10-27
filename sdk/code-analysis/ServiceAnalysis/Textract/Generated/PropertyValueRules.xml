@@ -45,6 +45,28 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.GetExpenseAnalysisRequest.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetExpenseAnalysisRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetExpenseAnalysisRequest.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.GetExpenseAnalysisResponse.NextToken</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.StartDocumentAnalysisRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -88,6 +110,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.StartDocumentTextDetectionResponse.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartExpenseAnalysisRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartExpenseAnalysisRequest.JobTag</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartExpenseAnalysisRequest.KMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartExpenseAnalysisResponse.JobId</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9-_]+$</pattern>

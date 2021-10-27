@@ -29,37 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartDocumentAnalysis operation.
-    /// Starts the asynchronous analysis of an input document for relationships between detected
-    /// items such as key-value pairs, tables, and selection elements.
+    /// Container for the parameters to the StartExpenseAnalysis operation.
+    /// Starts the asynchronous analysis of invoices or receipts for data like contact information,
+    /// items purchased, and vendor names.
     /// 
     ///  
     /// <para>
-    ///  <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPEG,
-    /// PNG, TIFF, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
-    /// to specify the bucket name and file name of the document. 
+    ///  <code>StartExpenseAnalysis</code> can analyze text in documents that are in JPEG,
+    /// PNG, and PDF format. The documents must be stored in an Amazon S3 bucket. Use the
+    /// <a>DocumentLocation</a> parameter to specify the name of your S3 bucket and the name
+    /// of the document in that bucket. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>StartDocumentAnalysis</code> returns a job identifier (<code>JobId</code>)
-    /// that you use to get the results of the operation. When text analysis is finished,
-    /// Amazon Textract publishes a completion status to the Amazon Simple Notification Service
-    /// (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the
-    /// results of the text analysis operation, first check that the status value published
-    /// to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentAnalysis</a>,
-    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+    ///  <code>StartExpenseAnalysis</code> returns a job identifier (<code>JobId</code>) that
+    /// you will provide to <code>GetExpenseAnalysis</code> to retrieve the results of the
+    /// operation. When the analysis of the input invoices/receipts is finished, Amazon Textract
+    /// publishes a completion status to the Amazon Simple Notification Service (Amazon SNS)
+    /// topic that you provide to the <code>NotificationChannel</code>. To obtain the results
+    /// of the invoice and receipt analysis operation, ensure that the status value published
+    /// to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetExpenseAnalysis</a>,
+    /// and pass the job identifier (<code>JobId</code>) that was returned by your call to
+    /// <code>StartExpenseAnalysis</code>.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
-    /// Text Analysis</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/invoice-receipts.html">Analyzing
+    /// Invoices and Receipts</a>.
     /// </para>
     /// </summary>
-    public partial class StartDocumentAnalysisRequest : AmazonTextractRequest
+    public partial class StartExpenseAnalysisRequest : AmazonTextractRequest
     {
         private string _clientRequestToken;
         private DocumentLocation _documentLocation;
-        private List<string> _featureTypes = new List<string>();
         private string _jobTag;
         private string _kmsKeyId;
         private NotificationChannel _notificationChannel;
@@ -68,11 +70,11 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The idempotent token that you use to identify the start request. If you use the same
-        /// token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code>
+        /// The idempotent token that's used to identify the start request. If you use the same
+        /// token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code>
         /// is returned. Use <code>ClientRequestToken</code> to prevent the same job from being
         /// accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
-        /// Amazon Textract Asynchronous Operations</a>.
+        /// Amazon Textract Asynchronous Operations</a> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -108,32 +110,9 @@ namespace Amazon.Textract.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FeatureTypes. 
-        /// <para>
-        /// A list of the types of analysis to perform. Add TABLES to the list to return information
-        /// about the tables that are detected in the input document. Add FORMS to return detected
-        /// form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
-        /// All lines and words detected in the document are included in the response (including
-        /// text that isn't related to the value of <code>FeatureTypes</code>). 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> FeatureTypes
-        {
-            get { return this._featureTypes; }
-            set { this._featureTypes = value; }
-        }
-
-        // Check to see if FeatureTypes property is set
-        internal bool IsSetFeatureTypes()
-        {
-            return this._featureTypes != null && this._featureTypes.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property JobTag. 
         /// <para>
-        /// An identifier that you specify that's included in the completion notification published
+        /// An identifier you specify that's included in the completion notification published
         /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify
         /// the type of document that the completion notification corresponds to (such as a tax
         /// form or a receipt).
@@ -197,7 +176,8 @@ namespace Amazon.Textract.Model
         /// Gets and sets the property OutputConfig. 
         /// <para>
         /// Sets if the output will go to a customer defined bucket. By default, Amazon Textract
-        /// will save the results internally to be accessed by the GetDocumentAnalysis operation.
+        /// will save the results internally to be accessed by the <code>GetExpenseAnalysis</code>
+        /// operation.
         /// </para>
         /// </summary>
         public OutputConfig OutputConfig
