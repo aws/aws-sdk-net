@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private bool? _certifyForMarketplace;
         private UserContext _createdBy;
         private DateTime? _creationTime;
+        private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
         private InferenceSpecification _inferenceSpecification;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
@@ -122,6 +123,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerMetadataProperties. 
+        /// <para>
+        /// The metadata properties associated with the model package versions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> CustomerMetadataProperties
+        {
+            get { return this._customerMetadataProperties; }
+            set { this._customerMetadataProperties = value; }
+        }
+
+        // Check to see if CustomerMetadataProperties property is set
+        internal bool IsSetCustomerMetadataProperties()
+        {
+            return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
         }
 
         /// <summary>
@@ -381,8 +401,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationSpecification. 
         /// <para>
-        /// Configurations for one or more transform jobs that Amazon SageMaker runs to test the
-        /// model package.
+        /// Configurations for one or more transform jobs that SageMaker runs to test the model
+        /// package.
         /// </para>
         /// </summary>
         public ModelPackageValidationSpecification ValidationSpecification

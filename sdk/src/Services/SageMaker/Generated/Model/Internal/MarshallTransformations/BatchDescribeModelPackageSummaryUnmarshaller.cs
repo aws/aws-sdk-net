@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Project Object
+    /// Response Unmarshaller for BatchDescribeModelPackageSummary Object
     /// </summary>  
-    public class ProjectUnmarshaller : IUnmarshaller<Project, XmlUnmarshallerContext>, IUnmarshaller<Project, JsonUnmarshallerContext>
+    public class BatchDescribeModelPackageSummaryUnmarshaller : IUnmarshaller<BatchDescribeModelPackageSummary, XmlUnmarshallerContext>, IUnmarshaller<BatchDescribeModelPackageSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Project IUnmarshaller<Project, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BatchDescribeModelPackageSummary IUnmarshaller<BatchDescribeModelPackageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,87 +53,63 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Project Unmarshall(JsonUnmarshallerContext context)
+        public BatchDescribeModelPackageSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Project unmarshalledObject = new Project();
+            BatchDescribeModelPackageSummary unmarshalledObject = new BatchDescribeModelPackageSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedBy", targetDepth))
-                {
-                    var unmarshaller = UserContextUnmarshaller.Instance;
-                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedBy", targetDepth))
+                if (context.TestExpression("InferenceSpecification", targetDepth))
                 {
-                    var unmarshaller = UserContextUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedBy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InferenceSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.InferenceSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProjectArn", targetDepth))
+                if (context.TestExpression("ModelApprovalStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelApprovalStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProjectDescription", targetDepth))
+                if (context.TestExpression("ModelPackageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProjectId", targetDepth))
+                if (context.TestExpression("ModelPackageDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProjectName", targetDepth))
+                if (context.TestExpression("ModelPackageGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProjectStatus", targetDepth))
+                if (context.TestExpression("ModelPackageStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ServiceCatalogProvisionedProductDetails", targetDepth))
+                if (context.TestExpression("ModelPackageVersion", targetDepth))
                 {
-                    var unmarshaller = ServiceCatalogProvisionedProductDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceCatalogProvisionedProductDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServiceCatalogProvisioningDetails", targetDepth))
-                {
-                    var unmarshaller = ServiceCatalogProvisioningDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceCatalogProvisioningDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ModelPackageVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -142,12 +118,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProjectUnmarshaller _instance = new ProjectUnmarshaller();        
+        private static BatchDescribeModelPackageSummaryUnmarshaller _instance = new BatchDescribeModelPackageSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProjectUnmarshaller Instance
+        public static BatchDescribeModelPackageSummaryUnmarshaller Instance
         {
             get
             {

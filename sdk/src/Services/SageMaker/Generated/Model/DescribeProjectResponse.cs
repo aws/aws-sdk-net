@@ -35,6 +35,8 @@ namespace Amazon.SageMaker.Model
     {
         private UserContext _createdBy;
         private DateTime? _creationTime;
+        private UserContext _lastModifiedBy;
+        private DateTime? _lastModifiedTime;
         private string _projectArn;
         private string _projectDescription;
         private string _projectId;
@@ -75,6 +77,39 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedBy.
+        /// </summary>
+        public UserContext LastModifiedBy
+        {
+            get { return this._lastModifiedBy; }
+            set { this._lastModifiedBy = value; }
+        }
+
+        // Check to see if LastModifiedBy property is set
+        internal bool IsSetLastModifiedBy()
+        {
+            return this._lastModifiedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The timestamp when project was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>

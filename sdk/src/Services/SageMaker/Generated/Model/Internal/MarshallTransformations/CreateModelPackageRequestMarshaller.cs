@@ -84,6 +84,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetCustomerMetadataProperties())
+                {
+                    context.Writer.WritePropertyName("CustomerMetadataProperties");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCustomerMetadataPropertiesKvp in publicRequest.CustomerMetadataProperties)
+                    {
+                        context.Writer.WritePropertyName(publicRequestCustomerMetadataPropertiesKvp.Key);
+                        var publicRequestCustomerMetadataPropertiesValue = publicRequestCustomerMetadataPropertiesKvp.Value;
+
+                            context.Writer.Write(publicRequestCustomerMetadataPropertiesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInferenceSpecification())
                 {
                     context.Writer.WritePropertyName("InferenceSpecification");

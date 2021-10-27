@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomerMetadataProperties", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.CustomerMetadataProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InferenceSpecification", targetDepth))
                 {
                     var unmarshaller = InferenceSpecificationUnmarshaller.Instance;

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateModelPackage Request Marshaller
+    /// BatchDescribeModelPackage Request Marshaller
     /// </summary>       
-    public class UpdateModelPackageRequestMarshaller : IMarshaller<IRequest, UpdateModelPackageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchDescribeModelPackageRequestMarshaller : IMarshaller<IRequest, BatchDescribeModelPackageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateModelPackageRequest)input);
+            return this.Marshall((BatchDescribeModelPackageRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateModelPackageRequest publicRequest)
+        public IRequest Marshall(BatchDescribeModelPackageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.UpdateModelPackage";
+            string target = "SageMaker.BatchDescribeModelPackage";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";            
@@ -67,47 +67,15 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApprovalDescription())
+                if(publicRequest.IsSetModelPackageArnList())
                 {
-                    context.Writer.WritePropertyName("ApprovalDescription");
-                    context.Writer.Write(publicRequest.ApprovalDescription);
-                }
-
-                if(publicRequest.IsSetCustomerMetadataProperties())
-                {
-                    context.Writer.WritePropertyName("CustomerMetadataProperties");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestCustomerMetadataPropertiesKvp in publicRequest.CustomerMetadataProperties)
-                    {
-                        context.Writer.WritePropertyName(publicRequestCustomerMetadataPropertiesKvp.Key);
-                        var publicRequestCustomerMetadataPropertiesValue = publicRequestCustomerMetadataPropertiesKvp.Value;
-
-                            context.Writer.Write(publicRequestCustomerMetadataPropertiesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCustomerMetadataPropertiesToRemove())
-                {
-                    context.Writer.WritePropertyName("CustomerMetadataPropertiesToRemove");
+                    context.Writer.WritePropertyName("ModelPackageArnList");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCustomerMetadataPropertiesToRemoveListValue in publicRequest.CustomerMetadataPropertiesToRemove)
+                    foreach(var publicRequestModelPackageArnListListValue in publicRequest.ModelPackageArnList)
                     {
-                            context.Writer.Write(publicRequestCustomerMetadataPropertiesToRemoveListValue);
+                            context.Writer.Write(publicRequestModelPackageArnListListValue);
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetModelApprovalStatus())
-                {
-                    context.Writer.WritePropertyName("ModelApprovalStatus");
-                    context.Writer.Write(publicRequest.ModelApprovalStatus);
-                }
-
-                if(publicRequest.IsSetModelPackageArn())
-                {
-                    context.Writer.WritePropertyName("ModelPackageArn");
-                    context.Writer.Write(publicRequest.ModelPackageArn);
                 }
 
         
@@ -119,9 +87,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateModelPackageRequestMarshaller _instance = new UpdateModelPackageRequestMarshaller();        
+        private static BatchDescribeModelPackageRequestMarshaller _instance = new BatchDescribeModelPackageRequestMarshaller();        
 
-        internal static UpdateModelPackageRequestMarshaller GetInstance()
+        internal static BatchDescribeModelPackageRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -129,7 +97,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateModelPackageRequestMarshaller Instance
+        public static BatchDescribeModelPackageRequestMarshaller Instance
         {
             get
             {

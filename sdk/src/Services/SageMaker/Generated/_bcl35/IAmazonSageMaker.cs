@@ -230,6 +230,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  BatchDescribeModelPackage
+
+
+        /// <summary>
+        /// This action batch describes a list of versioned model packages
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeModelPackage service method.</param>
+        /// 
+        /// <returns>The response from the BatchDescribeModelPackage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">REST API Reference for BatchDescribeModelPackage Operation</seealso>
+        BatchDescribeModelPackageResponse BatchDescribeModelPackage(BatchDescribeModelPackageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDescribeModelPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeModelPackage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDescribeModelPackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">REST API Reference for BatchDescribeModelPackage Operation</seealso>
+        IAsyncResult BeginBatchDescribeModelPackage(BatchDescribeModelPackageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDescribeModelPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDescribeModelPackage.</param>
+        /// 
+        /// <returns>Returns a  BatchDescribeModelPackageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">REST API Reference for BatchDescribeModelPackage Operation</seealso>
+        BatchDescribeModelPackageResponse EndBatchDescribeModelPackage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAction
 
 
@@ -6020,13 +6060,13 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns a description of the specified model package, which is used to create Amazon
-        /// SageMaker models or list them on Amazon Web Services Marketplace.
+        /// Returns a description of the specified model package, which is used to create SageMaker
+        /// models or list them on Amazon Web Services Marketplace.
         /// 
         ///  
         /// <para>
-        /// To create models in Amazon SageMaker, buyers can subscribe to model packages listed
-        /// on Amazon Web Services Marketplace.
+        /// To create models in SageMaker, buyers can subscribe to model packages listed on Amazon
+        /// Web Services Marketplace.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackage service method.</param>
@@ -11317,6 +11357,55 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  UpdatePipelineExecutionResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution">REST API Reference for UpdatePipelineExecution Operation</seealso>
         UpdatePipelineExecutionResponse EndUpdatePipelineExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProject
+
+
+        /// <summary>
+        /// Updates a machine learning (ML) project that is created from a template that sets
+        /// up an ML pipeline from training to deploying an approved model.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must not update a project that is in use. If you update the <code>ServiceCatalogProvisioningUpdateDetails</code>
+        /// of a project that is active or being created, or updated, you may lose resources already
+        /// created by the project.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        UpdateProjectResponse UpdateProject(UpdateProjectRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProject operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProject.</param>
+        /// 
+        /// <returns>Returns a  UpdateProjectResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult);
 
         #endregion
         

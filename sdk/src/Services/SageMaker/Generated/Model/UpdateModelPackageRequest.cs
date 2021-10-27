@@ -35,6 +35,8 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateModelPackageRequest : AmazonSageMakerRequest
     {
         private string _approvalDescription;
+        private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
+        private List<string> _customerMetadataPropertiesToRemove = new List<string>();
         private ModelApprovalStatus _modelApprovalStatus;
         private string _modelPackageArn;
 
@@ -58,12 +60,48 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerMetadataProperties. 
+        /// <para>
+        /// The metadata properties associated with the model package versions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> CustomerMetadataProperties
+        {
+            get { return this._customerMetadataProperties; }
+            set { this._customerMetadataProperties = value; }
+        }
+
+        // Check to see if CustomerMetadataProperties property is set
+        internal bool IsSetCustomerMetadataProperties()
+        {
+            return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerMetadataPropertiesToRemove. 
+        /// <para>
+        /// The metadata properties associated with the model package versions to remove.
+        /// </para>
+        /// </summary>
+        public List<string> CustomerMetadataPropertiesToRemove
+        {
+            get { return this._customerMetadataPropertiesToRemove; }
+            set { this._customerMetadataPropertiesToRemove = value; }
+        }
+
+        // Check to see if CustomerMetadataPropertiesToRemove property is set
+        internal bool IsSetCustomerMetadataPropertiesToRemove()
+        {
+            return this._customerMetadataPropertiesToRemove != null && this._customerMetadataPropertiesToRemove.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelApprovalStatus. 
         /// <para>
         /// The approval status of the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ModelApprovalStatus ModelApprovalStatus
         {
             get { return this._modelApprovalStatus; }
@@ -79,7 +117,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model.
+        /// The Amazon Resource Name (ARN) of the model package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

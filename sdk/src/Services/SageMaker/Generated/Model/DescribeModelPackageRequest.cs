@@ -30,13 +30,13 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeModelPackage operation.
-    /// Returns a description of the specified model package, which is used to create Amazon
-    /// SageMaker models or list them on Amazon Web Services Marketplace.
+    /// Returns a description of the specified model package, which is used to create SageMaker
+    /// models or list them on Amazon Web Services Marketplace.
     /// 
     ///  
     /// <para>
-    /// To create models in Amazon SageMaker, buyers can subscribe to model packages listed
-    /// on Amazon Web Services Marketplace.
+    /// To create models in SageMaker, buyers can subscribe to model packages listed on Amazon
+    /// Web Services Marketplace.
     /// </para>
     /// </summary>
     public partial class DescribeModelPackageRequest : AmazonSageMakerRequest

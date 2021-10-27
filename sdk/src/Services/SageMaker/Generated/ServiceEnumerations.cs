@@ -7696,6 +7696,18 @@ namespace Amazon.SageMaker
         /// Constant Pending for ProjectStatus
         /// </summary>
         public static readonly ProjectStatus Pending = new ProjectStatus("Pending");
+        /// <summary>
+        /// Constant UpdateCompleted for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus UpdateCompleted = new ProjectStatus("UpdateCompleted");
+        /// <summary>
+        /// Constant UpdateFailed for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus UpdateFailed = new ProjectStatus("UpdateFailed");
+        /// <summary>
+        /// Constant UpdateInProgress for ProjectStatus
+        /// </summary>
+        public static readonly ProjectStatus UpdateInProgress = new ProjectStatus("UpdateInProgress");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

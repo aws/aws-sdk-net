@@ -493,6 +493,47 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  BatchDescribeModelPackage
+
+
+        /// <summary>
+        /// This action batch describes a list of versioned model packages
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeModelPackage service method.</param>
+        /// 
+        /// <returns>The response from the BatchDescribeModelPackage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">REST API Reference for BatchDescribeModelPackage Operation</seealso>
+        public virtual BatchDescribeModelPackageResponse BatchDescribeModelPackage(BatchDescribeModelPackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeModelPackageResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeModelPackageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This action batch describes a list of versioned model packages
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeModelPackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDescribeModelPackage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">REST API Reference for BatchDescribeModelPackage Operation</seealso>
+        public virtual Task<BatchDescribeModelPackageResponse> BatchDescribeModelPackageAsync(BatchDescribeModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDescribeModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeModelPackageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDescribeModelPackageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAction
 
 
@@ -7740,13 +7781,13 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns a description of the specified model package, which is used to create Amazon
-        /// SageMaker models or list them on Amazon Web Services Marketplace.
+        /// Returns a description of the specified model package, which is used to create SageMaker
+        /// models or list them on Amazon Web Services Marketplace.
         /// 
         ///  
         /// <para>
-        /// To create models in Amazon SageMaker, buyers can subscribe to model packages listed
-        /// on Amazon Web Services Marketplace.
+        /// To create models in SageMaker, buyers can subscribe to model packages listed on Amazon
+        /// Web Services Marketplace.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackage service method.</param>
@@ -7764,13 +7805,13 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns a description of the specified model package, which is used to create Amazon
-        /// SageMaker models or list them on Amazon Web Services Marketplace.
+        /// Returns a description of the specified model package, which is used to create SageMaker
+        /// models or list them on Amazon Web Services Marketplace.
         /// 
         ///  
         /// <para>
-        /// To create models in Amazon SageMaker, buyers can subscribe to model packages listed
-        /// on Amazon Web Services Marketplace.
+        /// To create models in SageMaker, buyers can subscribe to model packages listed on Amazon
+        /// Web Services Marketplace.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackage service method.</param>
@@ -13660,6 +13701,65 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdatePipelineExecutionResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePipelineExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProject
+
+
+        /// <summary>
+        /// Updates a machine learning (ML) project that is created from a template that sets
+        /// up an ML pipeline from training to deploying an approved model.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must not update a project that is in use. If you update the <code>ServiceCatalogProvisioningUpdateDetails</code>
+        /// of a project that is active or being created, or updated, you may lose resources already
+        /// created by the project.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a machine learning (ML) project that is created from a template that sets
+        /// up an ML pipeline from training to deploying an approved model.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must not update a project that is in use. If you update the <code>ServiceCatalogProvisioningUpdateDetails</code>
+        /// of a project that is active or being created, or updated, you may lose resources already
+        /// created by the project.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion

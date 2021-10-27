@@ -60,6 +60,7 @@ namespace Amazon.SageMaker.Model
     {
         private bool? _certifyForMarketplace;
         private string _clientToken;
+        private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
         private InferenceSpecification _inferenceSpecification;
         private MetadataProperties _metadataProperties;
         private ModelApprovalStatus _modelApprovalStatus;
@@ -111,6 +112,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerMetadataProperties. 
+        /// <para>
+        /// The metadata properties associated with the model package versions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> CustomerMetadataProperties
+        {
+            get { return this._customerMetadataProperties; }
+            set { this._customerMetadataProperties = value; }
+        }
+
+        // Check to see if CustomerMetadataProperties property is set
+        internal bool IsSetCustomerMetadataProperties()
+        {
+            return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
         }
 
         /// <summary>
@@ -229,7 +249,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageGroupName. 
         /// <para>
-        /// The name of the model group that this model version belongs to.
+        /// The name or Amazon Resource Name (ARN) of the model package group that this model
+        /// version belongs to.
         /// </para>
         ///  
         /// <para>
@@ -237,7 +258,7 @@ namespace Amazon.SageMaker.Model
         /// models.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=63)]
+        [AWSProperty(Min=1, Max=170)]
         public string ModelPackageGroupName
         {
             get { return this._modelPackageGroupName; }
