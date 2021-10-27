@@ -1,3 +1,20 @@
+### 3.7.145.0 (2021-10-27 18:17 UTC)
+* AutoScaling (3.7.7.0)
+	* This release adds support for attribute-based instance type selection, a new EC2 Auto Scaling feature that lets customers express their instance requirements as a set of attributes, such as vCPU, memory, and storage.
+* EC2 (3.7.36.0)
+	* This release adds: attribute-based instance type selection for EC2 Fleet, Spot Fleet, a feature that lets customers express instance requirements as attributes like vCPU, memory, and storage; and Spot placement score, a feature that helps customers identify an optimal location to run Spot workloads.
+* EKS (3.7.9.0)
+	* EKS managed node groups now support BOTTLEROCKET_x86_64 and BOTTLEROCKET_ARM_64 AMI types.
+* SageMaker (3.7.18.0)
+	* This release allows customers to describe one or more versioned model packages through BatchDescribeModelPackage, update project via UpdateProject, modify and read customer metadata properties using Create, Update and Describe ModelPackage and enables cross account registration of model packages.
+* Textract (3.7.2.0)
+	* This release adds support for asynchronously analyzing invoice and receipt documents through two new APIs: StartExpenseAnalysis and GetExpenseAnalysis
+* Core 3.7.3.27
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.144.0 (2021-10-26 18:11 UTC)
 * ChimeSDKIdentity (3.7.1.0)
 	* The Amazon Chime SDK now supports push notifications through Amazon Pinpoint
