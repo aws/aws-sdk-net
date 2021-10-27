@@ -187,6 +187,14 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes AL2_x86_64_GPU = new AMITypes("AL2_x86_64_GPU");
         /// <summary>
+        /// Constant BOTTLEROCKET_ARM_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_ARM_64 = new AMITypes("BOTTLEROCKET_ARM_64");
+        /// <summary>
+        /// Constant BOTTLEROCKET_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes BOTTLEROCKET_x86_64 = new AMITypes("BOTTLEROCKET_x86_64");
+        /// <summary>
         /// Constant CUSTOM for AMITypes
         /// </summary>
         public static readonly AMITypes CUSTOM = new AMITypes("CUSTOM");
