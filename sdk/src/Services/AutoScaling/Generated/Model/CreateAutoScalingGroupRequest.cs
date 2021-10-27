@@ -69,6 +69,7 @@ namespace Amazon.AutoScaling.Model
         private string _context;
         private int? _defaultCooldown;
         private int? _desiredCapacity;
+        private string _desiredCapacityType;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
         private string _instanceId;
@@ -215,6 +216,38 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDesiredCapacity()
         {
             return this._desiredCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredCapacityType. 
+        /// <para>
+        /// The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto
+        /// Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type
+        /// selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+        /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates
+        /// into number of instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DesiredCapacityType
+        {
+            get { return this._desiredCapacityType; }
+            set { this._desiredCapacityType = value; }
+        }
+
+        // Check to see if DesiredCapacityType property is set
+        internal bool IsSetDesiredCapacityType()
+        {
+            return this._desiredCapacityType != null;
         }
 
         /// <summary>
@@ -459,19 +492,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MixedInstancesPolicy. 
         /// <para>
-        /// An embedded object that specifies a mixed instances policy. The required properties
-        /// must be specified. If optional properties are unspecified, their default values are
-        /// used.
+        /// An embedded object that specifies a mixed instances policy.
         /// </para>
         ///  
         /// <para>
-        /// The policy includes properties that not only define the distribution of On-Demand
-        /// Instances and Spot Instances, the maximum price to pay for Spot Instances, and how
-        /// the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacities,
-        /// but also the properties that specify the instance configuration information—the launch
-        /// template and instance types. The policy can also include a weight for each instance
-        /// type and different launch templates for individual instance types. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
         /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>

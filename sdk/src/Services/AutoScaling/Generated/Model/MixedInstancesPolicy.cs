@@ -30,8 +30,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Describes a mixed instances policy. A mixed instances policy contains the instance
-    /// types Amazon EC2 Auto Scaling can launch, and other information Amazon EC2 Auto Scaling
-    /// can use to launch instances to help you optimize your costs. For more information,
+    /// types that Amazon EC2 Auto Scaling can launch and other information that Amazon EC2
+    /// Auto Scaling can use to launch instances and help optimize your costs. For more information,
     /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
     /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
@@ -44,8 +44,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstancesDistribution. 
         /// <para>
-        /// Specifies the instances distribution. If not provided, the value for each property
-        /// in <code>InstancesDistribution</code> uses a default value.
+        /// Specifies the instances distribution.
         /// </para>
         /// </summary>
         public InstancesDistribution InstancesDistribution
@@ -64,8 +63,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
         /// Specifies the launch template to use and the instance types (overrides) that are used
-        /// to provision EC2 instances to fulfill On-Demand and Spot capacities. Required when
-        /// creating a mixed instances policy.
+        /// to launch EC2 instances to fulfill On-Demand and Spot capacities. Required when creating
+        /// a mixed instances policy.
         /// </para>
         /// </summary>
         public LaunchTemplate LaunchTemplate

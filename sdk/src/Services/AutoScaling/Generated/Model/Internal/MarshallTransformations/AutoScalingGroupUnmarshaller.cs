@@ -103,6 +103,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DesiredCapacityType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DesiredCapacityType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EnabledMetrics/member", targetDepth))
                     {
                         var unmarshaller = EnabledMetricUnmarshaller.Instance;

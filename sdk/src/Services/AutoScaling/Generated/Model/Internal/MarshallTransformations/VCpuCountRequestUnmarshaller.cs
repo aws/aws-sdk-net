@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchTemplateOverrides Object
+    /// Response Unmarshaller for VCpuCountRequest Object
     /// </summary>  
-    public class LaunchTemplateOverridesUnmarshaller : IUnmarshaller<LaunchTemplateOverrides, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateOverrides, JsonUnmarshallerContext>
+    public class VCpuCountRequestUnmarshaller : IUnmarshaller<VCpuCountRequest, XmlUnmarshallerContext>, IUnmarshaller<VCpuCountRequest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplateOverrides Unmarshall(XmlUnmarshallerContext context)
+        public VCpuCountRequest Unmarshall(XmlUnmarshallerContext context)
         {
-            LaunchTemplateOverrides unmarshalledObject = new LaunchTemplateOverrides();
+            VCpuCountRequest unmarshalledObject = new VCpuCountRequest();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("InstanceRequirements", targetDepth))
+                    if (context.TestExpression("Max", targetDepth))
                     {
-                        var unmarshaller = InstanceRequirementsUnmarshaller.Instance;
-                        unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Max = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("InstanceType", targetDepth))
+                    if (context.TestExpression("Min", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LaunchTemplateSpecification", targetDepth))
-                    {
-                        var unmarshaller = LaunchTemplateSpecificationUnmarshaller.Instance;
-                        unmarshalledObject.LaunchTemplateSpecification = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("WeightedCapacity", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Min = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +81,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplateOverrides Unmarshall(JsonUnmarshallerContext context)
+        public VCpuCountRequest Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static LaunchTemplateOverridesUnmarshaller _instance = new LaunchTemplateOverridesUnmarshaller();        
+        private static VCpuCountRequestUnmarshaller _instance = new VCpuCountRequestUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchTemplateOverridesUnmarshaller Instance
+        public static VCpuCountRequestUnmarshaller Instance
         {
             get
             {

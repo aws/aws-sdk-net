@@ -62,6 +62,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.DesiredCapacityType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.HealthCheckType</property>
     <min>1</min>
     <max>32</max>
@@ -549,6 +554,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.DesiredCapacityType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.HealthCheckType</property>
     <min>1</min>
     <max>32</max>
@@ -572,6 +582,22 @@
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.VPCZoneIdentifier</property>
     <min>1</min>
     <max>2047</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AcceleratorCountRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AcceleratorCountRequest.Min</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AcceleratorTotalMemoryMiBRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AcceleratorTotalMemoryMiBRequest.Min</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.Activity.ActivityId</property>
@@ -629,6 +655,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingGroup.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AutoScalingGroup.DesiredCapacityType</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -701,6 +732,14 @@
     <property>Amazon.AutoScaling.Model.AutoScalingInstanceDetails.WeightedCapacity</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.BaselineEbsBandwidthMbpsRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.BaselineEbsBandwidthMbpsRequest.Min</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.BlockDeviceMapping.DeviceName</property>
@@ -839,6 +878,14 @@
     <property>Amazon.AutoScaling.Model.InstanceRefreshWarmPoolProgress.PercentageComplete</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstanceRequirements.SpotMaxPricePercentageOverLowestPrice</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.InstancesDistribution.OnDemandAllocationStrategy</property>
@@ -1004,6 +1051,22 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.MemoryGiBPerVCpuRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.MemoryGiBPerVCpuRequest.Min</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.MemoryMiBRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.MemoryMiBRequest.Min</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.MetricCollectionType.Metric</property>
     <min>1</min>
     <max>255</max>
@@ -1012,6 +1075,14 @@
     <property>Amazon.AutoScaling.Model.MetricGranularityType.Granularity</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.NetworkInterfaceCountRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.NetworkInterfaceCountRequest.Min</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.NotificationConfiguration.AutoScalingGroupName</property>
@@ -1187,6 +1258,22 @@
     <property>Amazon.AutoScaling.Model.TagDescription.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.TotalLocalStorageGBRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.TotalLocalStorageGBRequest.Min</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.VCpuCountRequest.Max</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.VCpuCountRequest.Min</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.WarmPoolConfiguration.MaxGroupPreparedCapacity</property>

@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         private DateTime? _createdTime;
         private int? _defaultCooldown;
         private int? _desiredCapacity;
+        private string _desiredCapacityType;
         private List<EnabledMetric> _enabledMetrics = new List<EnabledMetric>();
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
@@ -213,6 +214,38 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetDesiredCapacity()
         {
             return this._desiredCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredCapacityType. 
+        /// <para>
+        /// The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto
+        /// Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type
+        /// selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+        /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates
+        /// into number of instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DesiredCapacityType
+        {
+            get { return this._desiredCapacityType; }
+            set { this._desiredCapacityType = value; }
+        }
+
+        // Check to see if DesiredCapacityType property is set
+        internal bool IsSetDesiredCapacityType()
+        {
+            return this._desiredCapacityType != null;
         }
 
         /// <summary>

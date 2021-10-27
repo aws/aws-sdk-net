@@ -34,8 +34,9 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-    /// and the request returns only results that match all of the specified filters. 
+    /// If you specify multiple filters, the filters are automatically logically joined with
+    /// an <code>AND</code>, and the request returns only the results that match all of the
+    /// specified filters. 
     /// </para>
     ///  
     /// <para>
@@ -55,8 +56,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values for <code>Name</code> depend on the API operation that you are including
-        /// the filter in, <a>DescribeAutoScalingGroups</a> or <a>DescribeTags</a>.
+        /// The valid values for <code>Name</code> depend on which API operation you're using
+        /// with the filter (<a>DescribeAutoScalingGroups</a> or <a>DescribeTags</a>).
         /// </para>
         ///  
         /// <para>
@@ -68,19 +69,19 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tag-key</code> - Accepts tag keys. The results will only include information
-        /// about the Auto Scaling groups associated with these tag keys. 
+        ///  <code>tag-key</code> - Accepts tag keys. The results only include information about
+        /// the Auto Scaling groups associated with these tag keys. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag-value</code> - Accepts tag values. The results will only include information
+        ///  <code>tag-value</code> - Accepts tag values. The results only include information
         /// about the Auto Scaling groups associated with these tag values. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>tag:&lt;key&gt;</code> - Accepts the key/value combination of the tag. Use
         /// the tag key in the filter name and the tag value as the filter value. The results
-        /// will only include information about the Auto Scaling groups associated with the specified
+        /// only include information about the Auto Scaling groups associated with the specified
         /// key/value combination. 
         /// </para>
         ///  </li> </ul> 
@@ -94,24 +95,24 @@ namespace Amazon.AutoScaling.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The results
-        /// will only include information about the tags associated with these Auto Scaling groups.
+        /// only include information about the tags associated with these Auto Scaling groups.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>key</code> - Accepts tag keys. The results will only include information about
-        /// the tags associated with these tag keys. 
+        ///  <code>key</code> - Accepts tag keys. The results only include information about the
+        /// tags associated with these tag keys. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>value</code> - Accepts tag values. The results will only include information
-        /// about the tags associated with these tag values. 
+        ///  <code>value</code> - Accepts tag values. The results only include information about
+        /// the tags associated with these tag values. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>propagate-at-launch</code> - Accepts a boolean value, which specifies whether
-        /// tags propagate to instances at launch. The results will only include information about
-        /// the tags associated with the specified boolean value. 
+        ///  <code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether
+        /// tags propagate to instances at launch. The results only include information about
+        /// the tags associated with the specified Boolean value. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -134,11 +135,11 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify multiple values for a filter, the values are joined with an <code>OR</code>,
-        /// and the request returns all results that match any of the specified values. For example,
-        /// specify "tag:environment" for the filter name and "production,development" for the
-        /// filter values to find Auto Scaling groups with the tag "environment=production" or
-        /// "environment=development".
+        /// If you specify multiple values for a filter, the values are automatically logically
+        /// joined with an <code>OR</code>, and the request returns all results that match any
+        /// of the specified values. For example, specify "tag:environment" for the filter name
+        /// and "production,development" for the filter values to find Auto Scaling groups with
+        /// the tag "environment=production" or "environment=development".
         /// </para>
         /// </summary>
         public List<string> Values

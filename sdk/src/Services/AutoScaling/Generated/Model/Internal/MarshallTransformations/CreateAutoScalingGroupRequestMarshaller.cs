@@ -87,6 +87,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
                 }
+                if(publicRequest.IsSetDesiredCapacityType())
+                {
+                    request.Parameters.Add("DesiredCapacityType", StringUtils.FromString(publicRequest.DesiredCapacityType));
+                }
                 if(publicRequest.IsSetHealthCheckGracePeriod())
                 {
                     request.Parameters.Add("HealthCheckGracePeriod", StringUtils.FromInt(publicRequest.HealthCheckGracePeriod));
@@ -226,6 +230,184 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             int publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex = 1;
                             foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValue in publicRequest.MixedInstancesPolicy.LaunchTemplate.Overrides)
                             {
+                                if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetInstanceRequirements())
+                                {
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorCount())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorCount.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorCount.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorCount.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorCount.Min));
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorManufacturers())
+                                    {
+                                        int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
+                                        foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorManufacturers)
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorManufacturers" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue));
+                                            publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorNames())
+                                    {
+                                        int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
+                                        foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorNames)
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorNames" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue));
+                                            publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Min));
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorTypes())
+                                    {
+                                        int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
+                                        foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.AcceleratorTypes)
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTypes" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue));
+                                            publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBareMetal())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BareMetal));
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBaselineEbsBandwidthMbps())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetBurstablePerformance())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.BurstablePerformance));
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetCpuManufacturers())
+                                    {
+                                        int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
+                                        foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.CpuManufacturers)
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "CpuManufacturers" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue));
+                                            publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetExcludedInstanceTypes())
+                                    {
+                                        int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
+                                        foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.ExcludedInstanceTypes)
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "ExcludedInstanceTypes" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue));
+                                            publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetInstanceGenerations())
+                                    {
+                                        int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
+                                        foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.InstanceGenerations)
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "InstanceGenerations" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue));
+                                            publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetLocalStorage())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorage", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.LocalStorage));
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetLocalStorageTypes())
+                                    {
+                                        int publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex = 1;
+                                        foreach(var publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue in publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.LocalStorageTypes)
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorageTypes" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValue));
+                                            publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetMemoryGiBPerVCpu())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Max", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Min", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.Min));
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetMemoryMiB())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryMiB.Min));
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetNetworkInterfaceCount())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.NetworkInterfaceCount.Min));
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetOnDemandMaxPricePercentageOverLowestPrice())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetRequireHibernateSupport())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.RequireHibernateSupport));
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetSpotMaxPricePercentageOverLowestPrice())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "SpotMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.SpotMaxPricePercentageOverLowestPrice));
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetTotalLocalStorageGB())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Max", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Min", StringUtils.FromDouble(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.TotalLocalStorageGB.Min));
+                                        }
+                                    }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetVCpuCount())
+                                    {
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.IsSetMax())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Max", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.Max));
+                                        }
+                                        if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.IsSetMin())
+                                        {
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Min", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.VCpuCount.Min));
+                                        }
+                                    }
+                                }
                                 if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.IsSetInstanceType())
                                 {
                                     request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceType));
