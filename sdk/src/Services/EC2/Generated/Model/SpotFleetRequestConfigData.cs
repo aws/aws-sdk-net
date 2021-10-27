@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         private string _spotPrice;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private int? _targetCapacity;
+        private TargetCapacityUnitType _targetCapacityUnitType;
         private bool? _terminateInstancesWithExpiration;
         private FleetType _type;
         private DateTime? _validFromUtc;
@@ -532,6 +533,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetTargetCapacity()
         {
             return this._targetCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetCapacityUnitType. 
+        /// <para>
+        /// The unit for the target capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>units</code> (translates to number of instances)
+        /// </para>
+        /// </summary>
+        public TargetCapacityUnitType TargetCapacityUnitType
+        {
+            get { return this._targetCapacityUnitType; }
+            set { this._targetCapacityUnitType = value; }
+        }
+
+        // Check to see if TargetCapacityUnitType property is set
+        internal bool IsSetTargetCapacityUnitType()
+        {
+            return this._targetCapacityUnitType != null;
         }
 
         /// <summary>

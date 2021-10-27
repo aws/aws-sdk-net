@@ -179,6 +179,184 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "ImageId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.ImageId));
                             }
+                            if(publicRequestSpotFleetRequestConfiglistValue.IsSetInstanceRequirements())
+                            {
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetAcceleratorCount())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorCount.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorCount.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorCount.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorCount.Min));
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetAcceleratorManufacturers())
+                                {
+                                    int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex = 1;
+                                    foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorManufacturers)
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorManufacturerSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue));
+                                        publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetAcceleratorNames())
+                                {
+                                    int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex = 1;
+                                    foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorNames)
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorNameSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue));
+                                        publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Min));
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetAcceleratorTypes())
+                                {
+                                    int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex = 1;
+                                    foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.AcceleratorTypes)
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTypeSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue));
+                                        publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetBareMetal())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BareMetal));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetBaselineEbsBandwidthMbps())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetBurstablePerformance())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BurstablePerformance));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetCpuManufacturers())
+                                {
+                                    int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex = 1;
+                                    foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.CpuManufacturers)
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "CpuManufacturerSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue));
+                                        publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetExcludedInstanceTypes())
+                                {
+                                    int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex = 1;
+                                    foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.ExcludedInstanceTypes)
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "ExcludedInstanceTypeSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue));
+                                        publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetInstanceGenerations())
+                                {
+                                    int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex = 1;
+                                    foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.InstanceGenerations)
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "InstanceGenerationSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue));
+                                        publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetLocalStorage())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorage", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.LocalStorage));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetLocalStorageTypes())
+                                {
+                                    int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex = 1;
+                                    foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.LocalStorageTypes)
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorageTypeSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValue));
+                                        publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetMemoryGiBPerVCpu())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Max", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryGiBPerVCpu.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Min", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryGiBPerVCpu.Min));
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetMemoryMiB())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryMiB.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryMiB.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryMiB.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryMiB.Min));
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetNetworkInterfaceCount())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.NetworkInterfaceCount.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.NetworkInterfaceCount.Min));
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetOnDemandMaxPricePercentageOverLowestPrice())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetRequireHibernateSupport())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.RequireHibernateSupport));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetSpotMaxPricePercentageOverLowestPrice())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "SpotMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.SpotMaxPricePercentageOverLowestPrice));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetTotalLocalStorageGB())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Max", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.TotalLocalStorageGB.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Min", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.TotalLocalStorageGB.Min));
+                                    }
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetVCpuCount())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.VCpuCount.IsSetMax())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.VCpuCount.Max));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.VCpuCount.IsSetMin())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.VCpuCount.Min));
+                                    }
+                                }
+                            }
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetInstanceType())
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.InstanceType));
@@ -434,6 +612,184 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.AvailabilityZone));
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetInstanceRequirements())
+                                    {
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetAcceleratorCount())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorCount.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorCount.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorCount.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorCount" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorCount.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetAcceleratorManufacturers())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorManufacturers)
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorManufacturerSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
+                                                publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetAcceleratorNames())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorNames)
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorNameSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
+                                                publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTotalMemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorTotalMemoryMiB.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetAcceleratorTypes())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.AcceleratorTypes)
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "AcceleratorTypeSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
+                                                publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetBareMetal())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BareMetal));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetBaselineEbsBandwidthMbps())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetBurstablePerformance())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BurstablePerformance));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetCpuManufacturers())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.CpuManufacturers)
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "CpuManufacturerSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
+                                                publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetExcludedInstanceTypes())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.ExcludedInstanceTypes)
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "ExcludedInstanceTypeSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
+                                                publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetInstanceGenerations())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.InstanceGenerations)
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "InstanceGenerationSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
+                                                publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetLocalStorage())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorage", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.LocalStorage));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetLocalStorageTypes())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.LocalStorageTypes)
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorageTypeSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
+                                                publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetMemoryGiBPerVCpu())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Max", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryGiBPerVCpu.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryGiBPerVCpu" + "." + "Min", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryGiBPerVCpu.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetMemoryMiB())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryMiB.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryMiB.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryMiB.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MemoryMiB.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetNetworkInterfaceCount())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.NetworkInterfaceCount.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.NetworkInterfaceCount.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "NetworkInterfaceCount" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.NetworkInterfaceCount.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetOnDemandMaxPricePercentageOverLowestPrice())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetRequireHibernateSupport())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.RequireHibernateSupport));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetSpotMaxPricePercentageOverLowestPrice())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "SpotMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.SpotMaxPricePercentageOverLowestPrice));
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetTotalLocalStorageGB())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Max", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.TotalLocalStorageGB.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.TotalLocalStorageGB.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "TotalLocalStorageGB" + "." + "Min", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.TotalLocalStorageGB.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetVCpuCount())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.VCpuCount.IsSetMax())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Max", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.VCpuCount.Max));
+                                            }
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.VCpuCount.IsSetMin())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "VCpuCount" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.VCpuCount.Min));
+                                            }
+                                        }
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetInstanceType())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceType));
@@ -562,6 +918,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotFleetRequestConfig.IsSetTargetCapacity())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "TargetCapacity", StringUtils.FromInt(publicRequest.SpotFleetRequestConfig.TargetCapacity));
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetTargetCapacityUnitType())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "TargetCapacityUnitType", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.TargetCapacityUnitType));
                     }
                     if(publicRequest.SpotFleetRequestConfig.IsSetTerminateInstancesWithExpiration())
                     {

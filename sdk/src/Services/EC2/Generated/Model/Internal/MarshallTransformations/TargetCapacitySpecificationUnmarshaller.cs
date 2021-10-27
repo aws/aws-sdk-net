@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SpotTargetCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("targetCapacityUnitType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetCapacityUnitType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("totalTargetCapacity", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

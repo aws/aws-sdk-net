@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyCapacityReservationRequest : AmazonEC2Request
     {
         private bool? _accept;
+        private string _additionalInfo;
         private string _capacityReservationId;
         private DateTime? _endDate;
         private EndDateType _endDateType;
@@ -60,6 +61,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAccept()
         {
             return this._accept.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public string AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null;
         }
 
         /// <summary>

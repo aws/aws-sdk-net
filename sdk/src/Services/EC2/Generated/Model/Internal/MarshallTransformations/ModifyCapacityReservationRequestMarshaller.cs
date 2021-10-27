@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Accept", StringUtils.FromBool(publicRequest.Accept));
                 }
+                if(publicRequest.IsSetAdditionalInfo())
+                {
+                    request.Parameters.Add("AdditionalInfo", StringUtils.FromString(publicRequest.AdditionalInfo));
+                }
                 if(publicRequest.IsSetCapacityReservationId())
                 {
                     request.Parameters.Add("CapacityReservationId", StringUtils.FromString(publicRequest.CapacityReservationId));

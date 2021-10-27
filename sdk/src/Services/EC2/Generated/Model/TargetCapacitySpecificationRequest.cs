@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         private DefaultTargetCapacityType _defaultTargetCapacityType;
         private int? _onDemandTargetCapacity;
         private int? _spotTargetCapacity;
+        private TargetCapacityUnitType _targetCapacityUnitType;
         private int? _totalTargetCapacity;
 
         /// <summary>
@@ -108,6 +109,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetSpotTargetCapacity()
         {
             return this._spotTargetCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetCapacityUnitType. 
+        /// <para>
+        /// The unit for the target capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>units</code> (translates to number of instances)
+        /// </para>
+        /// </summary>
+        public TargetCapacityUnitType TargetCapacityUnitType
+        {
+            get { return this._targetCapacityUnitType; }
+            set { this._targetCapacityUnitType = value; }
+        }
+
+        // Check to see if TargetCapacityUnitType property is set
+        internal bool IsSetTargetCapacityUnitType()
+        {
+            return this._targetCapacityUnitType != null;
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class FleetLaunchTemplateOverrides
     {
         private string _availabilityZone;
+        private InstanceRequirements _instanceRequirements;
         private InstanceType _instanceType;
         private string _maxPrice;
         private PlacementResponse _placement;
@@ -60,10 +61,39 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceRequirements. 
+        /// <para>
+        /// The attributes for the instance types. When you specify instance attributes, Amazon
+        /// EC2 will identify instance types with those attributes.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public InstanceRequirements InstanceRequirements
+        {
+            get { return this._instanceRequirements; }
+            set { this._instanceRequirements = value; }
+        }
+
+        // Check to see if InstanceRequirements property is set
+        internal bool IsSetInstanceRequirements()
+        {
+            return this._instanceRequirements != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public InstanceType InstanceType
         {

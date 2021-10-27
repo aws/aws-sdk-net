@@ -8193,6 +8193,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void GetInstanceTypesFromInstanceRequirementsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetInstanceTypesFromInstanceRequirements");
+
+            var request = InstantiateClassGenerator.Execute<GetInstanceTypesFromInstanceRequirementsRequest>();
+            var marshaller = new GetInstanceTypesFromInstanceRequirementsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetInstanceTypesFromInstanceRequirementsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetInstanceTypesFromInstanceRequirementsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void GetLaunchTemplateDataMarshallTest()
         {
             var operation = service_model.FindOperation("GetLaunchTemplateData");
@@ -8328,6 +8352,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetSerialConsoleAccessStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetSpotPlacementScoresMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpotPlacementScores");
+
+            var request = InstantiateClassGenerator.Execute<GetSpotPlacementScoresRequest>();
+            var marshaller = new GetSpotPlacementScoresRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetSpotPlacementScoresResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetSpotPlacementScoresResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

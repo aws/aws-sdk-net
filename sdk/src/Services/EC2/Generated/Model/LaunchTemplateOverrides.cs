@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class LaunchTemplateOverrides
     {
         private string _availabilityZone;
+        private InstanceRequirements _instanceRequirements;
         private InstanceType _instanceType;
         private double? _priority;
         private string _spotPrice;
@@ -56,6 +57,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceRequirements. 
+        /// <para>
+        /// The instance requirements. When you specify instance requirements, Amazon EC2 will
+        /// identify instance types with the provided requirements, and then use your On-Demand
+        /// and Spot allocation strategies to launch instances from these instance types, in the
+        /// same way as when you specify a list of instance types.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public InstanceRequirements InstanceRequirements
+        {
+            get { return this._instanceRequirements; }
+            set { this._instanceRequirements = value; }
+        }
+
+        // Check to see if InstanceRequirements property is set
+        internal bool IsSetInstanceRequirements()
+        {
+            return this._instanceRequirements != null;
         }
 
         /// <summary>

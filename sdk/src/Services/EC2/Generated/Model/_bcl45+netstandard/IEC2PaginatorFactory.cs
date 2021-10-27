@@ -491,6 +491,11 @@ namespace Amazon.EC2.Model
         IGetGroupsForCapacityReservationPaginator GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request);
 
         /// <summary>
+        /// Paginator for GetInstanceTypesFromInstanceRequirements operation
+        ///</summary>
+        IGetInstanceTypesFromInstanceRequirementsPaginator GetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request);
+
+        /// <summary>
         /// Paginator for GetManagedPrefixListAssociations operation
         ///</summary>
         IGetManagedPrefixListAssociationsPaginator GetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request);
@@ -499,6 +504,11 @@ namespace Amazon.EC2.Model
         /// Paginator for GetManagedPrefixListEntries operation
         ///</summary>
         IGetManagedPrefixListEntriesPaginator GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request);
+
+        /// <summary>
+        /// Paginator for GetSpotPlacementScores operation
+        ///</summary>
+        IGetSpotPlacementScoresPaginator GetSpotPlacementScores(GetSpotPlacementScoresRequest request);
 
         /// <summary>
         /// Paginator for GetTransitGatewayAttachmentPropagations operation

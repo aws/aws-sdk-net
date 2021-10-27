@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private bool? _ebsOptimized;
         private IamInstanceProfileSpecification _iamInstanceProfile;
         private string _imageId;
+        private InstanceRequirements _instanceRequirements;
         private InstanceType _instanceType;
         private string _kernelId;
         private string _keyName;
@@ -152,6 +153,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetImageId()
         {
             return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceRequirements. 
+        /// <para>
+        /// The attributes for the instance types. When you specify instance attributes, Amazon
+        /// EC2 will identify instance types with those attributes.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public InstanceRequirements InstanceRequirements
+        {
+            get { return this._instanceRequirements; }
+            set { this._instanceRequirements = value; }
+        }
+
+        // Check to see if InstanceRequirements property is set
+        internal bool IsSetInstanceRequirements()
+        {
+            return this._instanceRequirements != null;
         }
 
         /// <summary>

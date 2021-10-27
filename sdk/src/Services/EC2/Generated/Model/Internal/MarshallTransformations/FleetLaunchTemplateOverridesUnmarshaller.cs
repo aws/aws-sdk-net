@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instanceRequirements", targetDepth))
+                    {
+                        var unmarshaller = InstanceRequirementsUnmarshaller.Instance;
+                        unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

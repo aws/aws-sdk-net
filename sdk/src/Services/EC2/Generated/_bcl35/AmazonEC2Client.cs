@@ -22790,6 +22790,79 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetInstanceTypesFromInstanceRequirements
+
+        /// <summary>
+        /// Returns a list of instance types with the specified instance attributes. You can use
+        /// the response to preview the instance types without launching instances. Note that
+        /// the response does not consider capacity.
+        /// 
+        ///  
+        /// <para>
+        /// When you specify multiple parameters, you get instance types that satisfy all of the
+        /// specified parameters. If you specify multiple values for a parameter, you get instance
+        /// types that satisfy any of the specified values.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#spotfleet-get-instance-types-from-instance-requirements">Preview
+        /// instance types with specified attributes</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+        /// instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+        /// instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+        /// placement score</a> in the <i>Amazon EC2 User Guide</i>, and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+        /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceTypesFromInstanceRequirements service method.</param>
+        /// 
+        /// <returns>The response from the GetInstanceTypesFromInstanceRequirements service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTypesFromInstanceRequirements">REST API Reference for GetInstanceTypesFromInstanceRequirements Operation</seealso>
+        public virtual GetInstanceTypesFromInstanceRequirementsResponse GetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceTypesFromInstanceRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceTypesFromInstanceRequirementsResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceTypesFromInstanceRequirementsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInstanceTypesFromInstanceRequirements operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceTypesFromInstanceRequirements operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceTypesFromInstanceRequirements
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTypesFromInstanceRequirements">REST API Reference for GetInstanceTypesFromInstanceRequirements Operation</seealso>
+        public virtual IAsyncResult BeginGetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceTypesFromInstanceRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceTypesFromInstanceRequirementsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInstanceTypesFromInstanceRequirements operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceTypesFromInstanceRequirements.</param>
+        /// 
+        /// <returns>Returns a  GetInstanceTypesFromInstanceRequirementsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTypesFromInstanceRequirements">REST API Reference for GetInstanceTypesFromInstanceRequirements Operation</seealso>
+        public virtual GetInstanceTypesFromInstanceRequirementsResponse EndGetInstanceTypesFromInstanceRequirements(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInstanceTypesFromInstanceRequirementsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetLaunchTemplateData
 
         /// <summary>
@@ -23153,6 +23226,73 @@ namespace Amazon.EC2
         public virtual GetSerialConsoleAccessStatusResponse EndGetSerialConsoleAccessStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSerialConsoleAccessStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSpotPlacementScores
+
+        /// <summary>
+        /// Calculates the Spot placement score for a Region or Availability Zone based on the
+        /// specified target capacity and compute requirements.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify your compute requirements either by using <code>InstanceRequirementsWithMetadata</code>
+        /// and letting Amazon EC2 choose the optimal instance types to fulfill your Spot request,
+        /// or you can specify the instance types by using <code>InstanceTypes</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+        /// placement score</a> in the Amazon EC2 User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpotPlacementScores service method.</param>
+        /// 
+        /// <returns>The response from the GetSpotPlacementScores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSpotPlacementScores">REST API Reference for GetSpotPlacementScores Operation</seealso>
+        public virtual GetSpotPlacementScoresResponse GetSpotPlacementScores(GetSpotPlacementScoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpotPlacementScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpotPlacementScoresResponseUnmarshaller.Instance;
+
+            return Invoke<GetSpotPlacementScoresResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSpotPlacementScores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSpotPlacementScores operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSpotPlacementScores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSpotPlacementScores">REST API Reference for GetSpotPlacementScores Operation</seealso>
+        public virtual IAsyncResult BeginGetSpotPlacementScores(GetSpotPlacementScoresRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSpotPlacementScoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSpotPlacementScoresResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSpotPlacementScores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSpotPlacementScores.</param>
+        /// 
+        /// <returns>Returns a  GetSpotPlacementScoresResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSpotPlacementScores">REST API Reference for GetSpotPlacementScores Operation</seealso>
+        public virtual GetSpotPlacementScoresResponse EndGetSpotPlacementScores(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSpotPlacementScoresResponse>(asyncResult);
         }
 
         #endregion

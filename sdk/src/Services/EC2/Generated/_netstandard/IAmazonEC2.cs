@@ -10101,6 +10101,43 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetInstanceTypesFromInstanceRequirements
+
+
+
+        /// <summary>
+        /// Returns a list of instance types with the specified instance attributes. You can use
+        /// the response to preview the instance types without launching instances. Note that
+        /// the response does not consider capacity.
+        /// 
+        ///  
+        /// <para>
+        /// When you specify multiple parameters, you get instance types that satisfy all of the
+        /// specified parameters. If you specify multiple values for a parameter, you get instance
+        /// types that satisfy any of the specified values.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#spotfleet-get-instance-types-from-instance-requirements">Preview
+        /// instance types with specified attributes</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+        /// instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+        /// instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+        /// placement score</a> in the <i>Amazon EC2 User Guide</i>, and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+        /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
+        /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceTypesFromInstanceRequirements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstanceTypesFromInstanceRequirements service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTypesFromInstanceRequirements">REST API Reference for GetInstanceTypesFromInstanceRequirements Operation</seealso>
+        Task<GetInstanceTypesFromInstanceRequirementsResponse> GetInstanceTypesFromInstanceRequirementsAsync(GetInstanceTypesFromInstanceRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetLaunchTemplateData
 
 
@@ -10249,6 +10286,37 @@ namespace Amazon.EC2
         /// <returns>The response from the GetSerialConsoleAccessStatus service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
         Task<GetSerialConsoleAccessStatusResponse> GetSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSpotPlacementScores
+
+
+
+        /// <summary>
+        /// Calculates the Spot placement score for a Region or Availability Zone based on the
+        /// specified target capacity and compute requirements.
+        /// 
+        ///  
+        /// <para>
+        /// You can specify your compute requirements either by using <code>InstanceRequirementsWithMetadata</code>
+        /// and letting Amazon EC2 choose the optimal instance types to fulfill your Spot request,
+        /// or you can specify the instance types by using <code>InstanceTypes</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+        /// placement score</a> in the Amazon EC2 User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpotPlacementScores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSpotPlacementScores service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSpotPlacementScores">REST API Reference for GetSpotPlacementScores Operation</seealso>
+        Task<GetSpotPlacementScoresResponse> GetSpotPlacementScoresAsync(GetSpotPlacementScoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
