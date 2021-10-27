@@ -5316,6 +5316,15 @@
             "us-west-2": {}
           }
         },
+        "nimble": {
+          "endpoints": {
+            "ap-southeast-2": {},
+            "ca-central-1": {},
+            "eu-west-2": {},
+            "us-east-1": {},
+            "us-west-2": {}
+          }
+        },
         "oidc": {
           "endpoints": {
             "ap-northeast-1": {
