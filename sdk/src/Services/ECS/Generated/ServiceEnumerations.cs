@@ -681,6 +681,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type CPUArchitecture.
+    /// </summary>
+    public class CPUArchitecture : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARM64 for CPUArchitecture
+        /// </summary>
+        public static readonly CPUArchitecture ARM64 = new CPUArchitecture("ARM64");
+        /// <summary>
+        /// Constant X86_64 for CPUArchitecture
+        /// </summary>
+        public static readonly CPUArchitecture X86_64 = new CPUArchitecture("X86_64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CPUArchitecture(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CPUArchitecture FindValue(string value)
+        {
+            return FindValue<CPUArchitecture>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CPUArchitecture(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentControllerType.
     /// </summary>
     public class DeploymentControllerType : ConstantClass
@@ -1580,6 +1630,80 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OSFamily.
+    /// </summary>
+    public class OSFamily : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINUX for OSFamily
+        /// </summary>
+        public static readonly OSFamily LINUX = new OSFamily("LINUX");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2004_CORE for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2004_CORE = new OSFamily("WINDOWS_SERVER_2004_CORE");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2016_FULL for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2016_FULL = new OSFamily("WINDOWS_SERVER_2016_FULL");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2019_CORE for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2019_CORE = new OSFamily("WINDOWS_SERVER_2019_CORE");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2019_FULL for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2019_FULL = new OSFamily("WINDOWS_SERVER_2019_FULL");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2022_CORE for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2022_CORE = new OSFamily("WINDOWS_SERVER_2022_CORE");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2022_FULL for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_2022_FULL = new OSFamily("WINDOWS_SERVER_2022_FULL");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_20H2_CORE for OSFamily
+        /// </summary>
+        public static readonly OSFamily WINDOWS_SERVER_20H2_CORE = new OSFamily("WINDOWS_SERVER_20H2_CORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OSFamily(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OSFamily FindValue(string value)
+        {
+            return FindValue<OSFamily>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OSFamily(string value)
         {
             return FindValue(value);
         }

@@ -190,6 +190,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetRuntimePlatform())
+                {
+                    context.Writer.WritePropertyName("runtimePlatform");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RuntimePlatformMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RuntimePlatform, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

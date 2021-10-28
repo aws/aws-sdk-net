@@ -172,6 +172,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PlacementStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("platformFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("platformVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

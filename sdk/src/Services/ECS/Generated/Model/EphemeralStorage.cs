@@ -36,10 +36,18 @@ namespace Amazon.ECS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This parameter is only supported for tasks hosted on Fargate using platform version
-    /// <code>1.4.0</code> or later.
+    /// This parameter is only supported for tasks hosted on Fargate using the following platform
+    /// versions:
     /// </para>
-    ///  </note>
+    ///  <ul> <li> 
+    /// <para>
+    /// Linux platform version <code>1.4.0</code> or later.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Windows platform version <code>1.0.0</code> or later.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class EphemeralStorage
     {

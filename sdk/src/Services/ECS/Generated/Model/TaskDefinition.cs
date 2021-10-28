@@ -55,6 +55,7 @@ namespace Amazon.ECS.Model
         private List<Attribute> _requiresAttributes = new List<Attribute>();
         private List<string> _requiresCompatibilities = new List<string>();
         private int? _revision;
+        private RuntimePlatform _runtimePlatform;
         private TaskDefinitionStatus _status;
         private string _taskDefinitionArn;
         private string _taskRoleArn;
@@ -616,6 +617,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetRevision()
         {
             return this._revision.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimePlatform. 
+        /// <para>
+        /// The operating system that your task definitions are running on. A platform family
+        /// is specified only for tasks using the Fargate launch type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify a task in a service, this value must match the <code>runtimePlatform</code>
+        /// value of the service.
+        /// </para>
+        /// </summary>
+        public RuntimePlatform RuntimePlatform
+        {
+            get { return this._runtimePlatform; }
+            set { this._runtimePlatform = value; }
+        }
+
+        // Check to see if RuntimePlatform property is set
+        internal bool IsSetRuntimePlatform()
+        {
+            return this._runtimePlatform != null;
         }
 
         /// <summary>

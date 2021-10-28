@@ -47,9 +47,18 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// This field is only valid for containers in Fargate tasks that use platform version
-    /// <code>1.4.0</code> or later.
+    /// This parameter is only supported for tasks hosted on Fargate using the following platform
+    /// versions:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Linux platform version <code>1.4.0</code> or later.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Windows platform version <code>1.0.0</code> or later.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class EnvironmentFile
     {

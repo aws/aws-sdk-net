@@ -49,10 +49,18 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// For tasks using the Fargate launch type, this parameter requires that the task or
-    /// service uses platform version 1.3.0 or later.
+    /// For tasks using the Fargate launch type, the task or service requires the followiwng
+    /// platforms:
     /// </para>
-    ///  </note>
+    ///  <ul> <li> 
+    /// <para>
+    /// Linux platform version <code>1.3.0</code> or later.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Windows platform version <code>1.0.0</code> or later.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class ContainerDependency
     {

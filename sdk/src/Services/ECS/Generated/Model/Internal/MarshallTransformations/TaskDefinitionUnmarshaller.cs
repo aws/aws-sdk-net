@@ -178,6 +178,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runtimePlatform", targetDepth))
+                {
+                    var unmarshaller = RuntimePlatformUnmarshaller.Instance;
+                    unmarshalledObject.RuntimePlatform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

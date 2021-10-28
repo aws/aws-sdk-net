@@ -55,6 +55,7 @@ namespace Amazon.ECS.Model
         private LaunchType _launchType;
         private string _memory;
         private TaskOverride _overrides;
+        private string _platformFamily;
         private string _platformVersion;
         private DateTime? _pullStartedAt;
         private DateTime? _pullStoppedAt;
@@ -564,6 +565,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetOverrides()
         {
             return this._overrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformFamily. 
+        /// <para>
+        /// The operating system that your tasks are running on. A platform family is specified
+        /// only for tasks using the Fargate launch type. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  All tasks that run as part of this service must use the same <code>platformFamily</code>
+        /// value as the service, for example, <code>LINUX.</code>.
+        /// </para>
+        /// </summary>
+        public string PlatformFamily
+        {
+            get { return this._platformFamily; }
+            set { this._platformFamily = value; }
+        }
+
+        // Check to see if PlatformFamily property is set
+        internal bool IsSetPlatformFamily()
+        {
+            return this._platformFamily != null;
         }
 
         /// <summary>

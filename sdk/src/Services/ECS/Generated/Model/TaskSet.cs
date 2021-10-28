@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
+        private string _platformFamily;
         private string _platformVersion;
         private int? _runningCount;
         private Scale _scale;
@@ -257,6 +258,29 @@ namespace Amazon.ECS.Model
         internal bool IsSetPendingCount()
         {
             return this._pendingCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformFamily. 
+        /// <para>
+        /// The operating system that your tasks in the set are running on. A platform family
+        /// is specified only for tasks using the Fargate launch type. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  All tasks in the set must have the same value.
+        /// </para>
+        /// </summary>
+        public string PlatformFamily
+        {
+            get { return this._platformFamily; }
+            set { this._platformFamily = value; }
+        }
+
+        // Check to see if PlatformFamily property is set
+        internal bool IsSetPlatformFamily()
+        {
+            return this._platformFamily != null;
         }
 
         /// <summary>

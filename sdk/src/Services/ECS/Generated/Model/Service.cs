@@ -51,6 +51,7 @@ namespace Amazon.ECS.Model
         private int? _pendingCount;
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
+        private string _platformFamily;
         private string _platformVersion;
         private PropagateTags _propagateTags;
         private string _roleArn;
@@ -402,6 +403,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetPlacementStrategy()
         {
             return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformFamily. 
+        /// <para>
+        /// The operating system that your tasks in the service are running on. A platform family
+        /// is specified only for tasks using the Fargate launch type. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  All tasks that run as part of this service must use the same <code>platformFamily</code>
+        /// value as the service, for example, <code>LINUX</code>.
+        /// </para>
+        /// </summary>
+        public string PlatformFamily
+        {
+            get { return this._platformFamily; }
+            set { this._platformFamily = value; }
+        }
+
+        // Check to see if PlatformFamily property is set
+        internal bool IsSetPlatformFamily()
+        {
+            return this._platformFamily != null;
         }
 
         /// <summary>

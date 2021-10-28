@@ -42,6 +42,7 @@ namespace Amazon.ECS.Model
         private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
+        private string _platformFamily;
         private string _platformVersion;
         private DeploymentRolloutState _rolloutState;
         private string _rolloutStateReason;
@@ -204,6 +205,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetPendingCount()
         {
             return this._pendingCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformFamily. 
+        /// <para>
+        /// The operating system that your tasks in the service, or tasks are running on. A platform
+        /// family is specified only for tasks using the Fargate launch type. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  All tasks that run as part of this service must use the same <code>platformFamily</code>
+        /// value as the service, for example, <code> LINUX.</code>.
+        /// </para>
+        /// </summary>
+        public string PlatformFamily
+        {
+            get { return this._platformFamily; }
+            set { this._platformFamily = value; }
+        }
+
+        // Check to see if PlatformFamily property is set
+        internal bool IsSetPlatformFamily()
+        {
+            return this._platformFamily != null;
         }
 
         /// <summary>

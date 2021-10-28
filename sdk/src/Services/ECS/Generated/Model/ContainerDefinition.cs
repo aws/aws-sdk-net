@@ -195,9 +195,18 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the task or service requires platform version
-        /// <code>1.3.0</code> or later.
+        /// For tasks using the Fargate launch type, the task or service requires the followiwng
+        /// platforms:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Linux platform version <code>1.3.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows platform version <code>1.0.0</code> or later.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<ContainerDependency> DependsOn
         {
@@ -1135,10 +1144,18 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For tasks using the Fargate launch type, this parameter requires that the task or
-        /// service uses platform version 1.3.0 or later.
+        /// For tasks using the Fargate launch type, the task or service requires the followiwng
+        /// platforms:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// Linux platform version <code>1.3.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows platform version <code>1.0.0</code> or later.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For tasks using the EC2 launch type, your container instances require at least version
         /// <code>1.26.0</code> of the container agent to enable a container start timeout value.
@@ -1173,9 +1190,21 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the task or service requires platform version
-        /// 1.3.0 or later. The max stop timeout value is 120 seconds and if the parameter is
-        /// not specified, the default value of 30 seconds is used.
+        /// For tasks using the Fargate launch type, the task or service requires the followiwng
+        /// platforms:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Linux platform version <code>1.3.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows platform version <code>1.0.0</code> or later.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The max stop timeout value is 120 seconds and if the parameter is not specified, the
+        /// default value of 30 seconds is used.
         /// </para>
         ///  
         /// <para>

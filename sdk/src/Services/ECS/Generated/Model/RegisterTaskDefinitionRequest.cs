@@ -72,6 +72,7 @@ namespace Amazon.ECS.Model
         private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
         private ProxyConfiguration _proxyConfiguration;
         private List<string> _requiresCompatibilities = new List<string>();
+        private RuntimePlatform _runtimePlatform;
         private List<Tag> _tags = new List<Tag>();
         private string _taskRoleArn;
         private List<Volume> _volumes = new List<Volume>();
@@ -170,10 +171,18 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported for tasks hosted on Fargate using platform version
-        /// <code>1.4.0</code> or later.
+        /// This parameter is only supported for tasks hosted on Fargate using the following platform
+        /// versions:
         /// </para>
-        ///  </note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Linux platform version <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows platform version <code>1.0.0</code> or later.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public EphemeralStorage EphemeralStorage
         {
@@ -533,6 +542,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetRequiresCompatibilities()
         {
             return this._requiresCompatibilities != null && this._requiresCompatibilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimePlatform. 
+        /// <para>
+        /// The operating system that your tasks definitions run on. A platform family is specified
+        /// only for tasks using the Fargate launch type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify a task definition in a service, this value must match the <code>runtimePlatform</code>
+        /// value of the service.
+        /// </para>
+        /// </summary>
+        public RuntimePlatform RuntimePlatform
+        {
+            get { return this._runtimePlatform; }
+            set { this._runtimePlatform = value; }
+        }
+
+        // Check to see if RuntimePlatform property is set
+        internal bool IsSetRuntimePlatform()
+        {
+            return this._runtimePlatform != null;
         }
 
         /// <summary>
