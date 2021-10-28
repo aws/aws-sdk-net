@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// The set of Regions that your Incident Manager data will be replicated to and the KMS
-    /// key used to encrypt the data.
+    /// The set of Amazon Web Services Region that your Incident Manager data will be replicated
+    /// to and the KMS key used to encrypt the data.
     /// </summary>
     public partial class ReplicationSet
     {
@@ -104,7 +104,8 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property DeletionProtected. 
         /// <para>
         /// Determines if the replication set deletion protection is enabled or not. If deletion
-        /// protection is enabled, you can't delete the last Region in the replication set. 
+        /// protection is enabled, you can't delete the last Amazon Web Services Region in the
+        /// replication set. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,8 +162,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RegionMap. 
         /// <para>
-        /// The map between each Region in your replication set and the KMS key that is used to
-        /// encrypt the data in that Region.
+        /// The map between each Amazon Web Services Region in your replication set and the KMS
+        /// key that's used to encrypt the data in that Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

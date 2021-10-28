@@ -30,9 +30,9 @@ namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIncidentRecord operation.
-    /// Update the details of an incident record. You can use this action to update an incident
-    /// record from the defined chat channel. For more information about using actions in
-    /// chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
+    /// Update the details of an incident record. You can use this operation to update an
+    /// incident record from the defined chat channel. For more information about using actions
+    /// in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
     /// through chat</a>.
     /// </summary>
     public partial class UpdateIncidentRecordRequest : AmazonSSMIncidentsRequest
@@ -68,7 +68,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ChatChannel. 
         /// <para>
-        /// The AWS Chatbot chat channel for responders to collaborate in.
+        /// The Chatbot chat channel where responders can collaborate.
         /// </para>
         /// </summary>
         public ChatChannel ChatChannel
@@ -86,7 +86,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the action is called only once with the specified details.
+        /// A token that ensures that the operation is called only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -105,15 +105,15 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Impact. 
         /// <para>
-        /// Defines the impact to customers and applications. Providing an impact overwrites the
-        /// impact provided by the response plan.
+        /// Defines the impact of the incident to customers and applications. Providing an impact
+        /// overwrites the impact provided by the response plan.
         /// </para>
         ///  <p class="title"> <b>Possible impacts:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>1</code> - Critical impact, this typically relates to full application failure
-        /// that impacts many to all customers. 
+        ///  <code>1</code> - Critical impact, full application failure that impacts many to all
+        /// customers. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -125,7 +125,7 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+        ///  <code>4</code> - Low impact, customer aren't impacted by the problem yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -150,11 +150,11 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property NotificationTargets. 
         /// <para>
-        /// The SNS targets that are notified when updates are made to an incident.
+        /// The Amazon SNS targets that are notified when updates are made to an incident.
         /// </para>
         ///  
         /// <para>
-        /// Using multiple SNS topics creates redundancy in the case that a Region is down during
+        /// Using multiple SNS topics creates redundancy in the event that a Region is down during
         /// the incident.
         /// </para>
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// The summary describes what has happened during the incident.
+        /// A longer description of what occurred during the incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]
@@ -211,7 +211,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of the incident is a brief and easily recognizable.
+        /// A brief description of the incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

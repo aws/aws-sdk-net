@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Defines the information about the Region you're deleting from your replication set.
+    /// Defines the information about the Amazon Web Services Region you're deleting from
+    /// your replication set.
     /// </summary>
     public partial class DeleteRegionAction
     {
@@ -38,7 +39,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the Region you're deleting from the replication set.
+        /// The name of the Amazon Web Services Region you're deleting from the replication set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]

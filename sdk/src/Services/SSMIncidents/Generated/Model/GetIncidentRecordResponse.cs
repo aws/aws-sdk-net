@@ -38,7 +38,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecord. 
         /// <para>
-        /// Details structure of the incident record.
+        /// Details the structure of the incident record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

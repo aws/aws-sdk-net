@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// The AWS Chatbot chat channel used for collaboration during an incident.
+    /// The Chatbot chat channel used for collaboration during an incident.
     /// </summary>
     public partial class ChatChannel
     {
@@ -39,9 +39,9 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ChatbotSns. 
         /// <para>
-        /// The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an
-        /// incident. You can also make updates to the incident through the chat channel by using
-        /// the SNS topics. 
+        /// The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to
+        /// an incident. You can also make updates to the incident through the chat channel by
+        /// using the Amazon SNS topics. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

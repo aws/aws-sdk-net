@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// You don't have sufficient access to perform this action.
+    /// You don't have sufficient access to perform this operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

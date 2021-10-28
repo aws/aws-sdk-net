@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Request references a resource which does not exist.
+    /// Request references a resource which doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

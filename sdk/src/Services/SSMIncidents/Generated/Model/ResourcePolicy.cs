@@ -79,7 +79,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RamResourceShareRegion. 
         /// <para>
-        /// The Region that policy allows resources to be used in.
+        /// The Amazon Web Services Region that policy allows resources to be used in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

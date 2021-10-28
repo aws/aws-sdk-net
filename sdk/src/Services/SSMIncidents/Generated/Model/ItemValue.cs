@@ -60,7 +60,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property MetricDefinition. 
         /// <para>
-        /// The metric definition, if the related item is a metric in CloudWatch.
+        /// The metric definition, if the related item is a metric in Amazon CloudWatch.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]
@@ -79,7 +79,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL, if the related item is a non-AWS resource.
+        /// The URL, if the related item is a non-Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

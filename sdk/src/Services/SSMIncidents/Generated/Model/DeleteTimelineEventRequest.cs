@@ -59,7 +59,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the incident that the event is part of.
+        /// The Amazon Resource Name (ARN) of the incident that includes the timeline event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

@@ -41,8 +41,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RawData. 
         /// <para>
-        /// Raw data passed from either EventBridge, CloudWatch, or Incident Manager when an incident
-        /// is created.
+        /// Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager
+        /// when an incident is created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]
@@ -61,10 +61,10 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Identifies the service that sourced the event. All events sourced from within AWS
-        /// begin with "aws." Customer-generated events can have any value here, as long as it
-        /// doesn't begin with "aws." We recommend the use of Java package-name style reverse
-        /// domain-name strings. 
+        /// Identifies the service that sourced the event. All events sourced from within Amazon
+        /// Web Services begin with "<code>aws.</code>" Customer-generated events can have any
+        /// value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the
+        /// use of Java package-name style reverse domain-name strings. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -102,7 +102,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property TriggerArn. 
         /// <para>
-        /// The ARN of the source that detected the incident.
+        /// The Amazon Resource Name (ARN) of the source that detected the incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

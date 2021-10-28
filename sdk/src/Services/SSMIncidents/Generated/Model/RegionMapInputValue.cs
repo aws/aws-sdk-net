@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// The mapping between a Region and the key that's used to encrypt the data.
+    /// The mapping between a Amazon Web Services Region and the key that's used to encrypt
+    /// the data.
     /// </summary>
     public partial class RegionMapInputValue
     {

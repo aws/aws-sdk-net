@@ -44,7 +44,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the action is called only once with the specified details.
+        /// A token ensuring that the operation is called only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -109,7 +109,7 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property RelatedItems. 
         /// <para>
         /// Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an S3 bucket. 
+        /// resources, external links, or files uploaded to an Amazon S3 bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -129,7 +129,7 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property ResponsePlanArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, SNS topics, runbooks, title, and impact of the incident. 
+        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

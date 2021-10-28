@@ -40,7 +40,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The ID of the event. You can get an event's ID when you create it or by using <code>ListTimelineEvents</code>.
+        /// The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -59,7 +59,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the incident that the timeline event is part of.
+        /// The Amazon Resource Name (ARN) of the incident that includes the timeline event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

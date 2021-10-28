@@ -30,7 +30,7 @@ namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourcePolicy operation.
-    /// Deletes the resource policy that AWS Resource Access Manager uses to share your Incident
+    /// Deletes the resource policy that Resource Access Manager uses to share your Incident
     /// Manager resource.
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonSSMIncidentsRequest

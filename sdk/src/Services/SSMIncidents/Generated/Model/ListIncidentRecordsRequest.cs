@@ -42,8 +42,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filter the list of incident records you are searching through. You can filter on the
-        /// following keys:
+        /// Filters the list of incident records through which you are searching. You can filter
+        /// on the following keys:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -60,6 +60,24 @@ namespace Amazon.SSMIncidents.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>createdBy</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note the following when deciding how to use Filters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you don't specify a Filter, the response includes all incident records.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify more than one filter in a single request, the response returns incident
+        /// records that match all filters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify a filter with more than one value, the response returns incident records
+        /// that match any of the values provided.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -101,7 +119,7 @@ namespace Amazon.SSMIncidents.Model
         /// The pagination token to continue to the next page of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

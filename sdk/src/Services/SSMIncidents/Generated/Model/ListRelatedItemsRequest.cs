@@ -41,8 +41,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the incident record that you are listing related
-        /// items for.
+        /// The Amazon Resource Name (ARN) of the incident record containing the listed related
+        /// items.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
@@ -83,7 +83,7 @@ namespace Amazon.SSMIncidents.Model
         /// The pagination token to continue to the next page of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

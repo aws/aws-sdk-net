@@ -39,7 +39,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property AddRegionAction. 
         /// <para>
-        /// Details about the Region that you're adding to the replication set.
+        /// Details about the Amazon Web Services Region that you're adding to the replication
+        /// set.
         /// </para>
         /// </summary>
         public AddRegionAction AddRegionAction
@@ -57,7 +58,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property DeleteRegionAction. 
         /// <para>
-        /// Details about the Region that you're deleting to the replication set.
+        /// Details about the Amazon Web Services Region that you're deleting to the replication
+        /// set.
         /// </para>
         /// </summary>
         public DeleteRegionAction DeleteRegionAction

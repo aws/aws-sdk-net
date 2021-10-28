@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Information about a Region in your replication set.
+    /// Information about a Amazon Web Services Region in your replication set.
     /// </summary>
     public partial class RegionInfo
     {
@@ -41,7 +41,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property SseKmsKeyId. 
         /// <para>
-        /// The ID of the KMS key used to encrypt the data in this Region.
+        /// The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -60,7 +60,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Region in the replication set.
+        /// The status of the Amazon Web Services Region in the replication set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// Information displayed about the status of the Region.
+        /// Information displayed about the status of the Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -97,7 +97,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property StatusUpdateDateTime. 
         /// <para>
-        /// The most recent date and time that the Region's status was updated.
+        /// The most recent date and time that Incident Manager updated the Amazon Web Services
+        /// Region's status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

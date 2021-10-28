@@ -30,7 +30,7 @@ namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTimelineEvents operation.
-    /// Lists timeline events of the specified incident record.
+    /// Lists timeline events for the specified incident record.
     /// </summary>
     public partial class ListTimelineEventsRequest : AmazonSSMIncidentsRequest
     {
@@ -55,6 +55,24 @@ namespace Amazon.SSMIncidents.Model
         /// <para>
         ///  <code>eventType</code> 
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note the following when deciding how to use Filters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you don't specify a Filter, the response includes all timeline events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify more than one filter in a single request, the response returns timeline
+        /// events that match all filters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify a filter with more than one value, the response returns timeline events
+        /// that match any of the values provided.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -73,7 +91,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the incident that the event is part of.
+        /// The Amazon Resource Name (ARN) of the incident that includes the timeline event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
@@ -114,7 +132,7 @@ namespace Amazon.SSMIncidents.Model
         /// The pagination token to continue to the next page of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

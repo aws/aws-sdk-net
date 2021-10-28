@@ -30,7 +30,7 @@ namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIncidentRecord operation.
-    /// Returns the details of the specified incident record.
+    /// Returns the details for the specified incident record.
     /// </summary>
     public partial class GetIncidentRecordRequest : AmazonSSMIncidentsRequest
     {

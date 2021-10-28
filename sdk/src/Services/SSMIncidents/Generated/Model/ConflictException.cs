@@ -38,6 +38,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _resourceIdentifier;
         private ResourceType _resourceType;
+        private DateTime? _retryAfter;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -101,6 +102,7 @@ namespace Amazon.SSMIncidents.Model
         {
             this.ResourceIdentifier = (string)info.GetValue("ResourceIdentifier", typeof(string));
             this.ResourceType = (ResourceType)info.GetValue("ResourceType", typeof(ResourceType));
+            this.RetryAfter = (DateTime)info.GetValue("RetryAfter", typeof(DateTime));
         }
 
         /// <summary>
@@ -123,6 +125,7 @@ namespace Amazon.SSMIncidents.Model
             base.GetObjectData(info, context);
             info.AddValue("ResourceIdentifier", this.ResourceIdentifier);
             info.AddValue("ResourceType", this.ResourceType);
+            info.AddValue("RetryAfter", this.RetryAfter);
         }
 #endif
 
@@ -160,6 +163,24 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryAfter. 
+        /// <para>
+        /// If present in the output, the operation can be retried after this time
+        /// </para>
+        /// </summary>
+        public DateTime RetryAfter
+        {
+            get { return this._retryAfter.GetValueOrDefault(); }
+            set { this._retryAfter = value; }
+        }
+
+        // Check to see if RetryAfter property is set
+        internal bool IsSetRetryAfter()
+        {
+            return this._retryAfter.HasValue; 
         }
 
     }

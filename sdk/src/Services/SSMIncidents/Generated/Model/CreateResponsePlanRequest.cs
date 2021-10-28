@@ -67,7 +67,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ChatChannel. 
         /// <para>
-        /// The AWS Chatbot chat channel used for collaboration during an incident.
+        /// The Chatbot chat channel used for collaboration during an incident.
         /// </para>
         /// </summary>
         public ChatChannel ChatChannel
@@ -85,7 +85,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the action is called only once with the specified details.
+        /// A token ensuring that the operation is called only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

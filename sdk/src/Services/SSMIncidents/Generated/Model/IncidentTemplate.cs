@@ -82,7 +82,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property NotificationTargets. 
         /// <para>
-        /// The SNS targets that are notified when updates are made to an incident.
+        /// The Amazon SNS targets that are notified when updates are made to an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

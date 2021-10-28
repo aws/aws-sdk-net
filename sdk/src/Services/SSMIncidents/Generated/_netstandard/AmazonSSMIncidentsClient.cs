@@ -38,9 +38,10 @@ namespace Amazon.SSMIncidents
     /// <summary>
     /// Implementation for accessing SSMIncidents
     ///
-    /// AWS Systems Manager Incident Manager is an incident management console designed to
-    /// help users mitigate and recover from incidents affecting their AWS-hosted applications.
-    /// An incident is any unplanned interruption or reduction in quality of services. 
+    /// Systems Manager Incident Manager is an incident management console designed to help
+    /// users mitigate and recover from incidents affecting their Amazon Web Services-hosted
+    /// applications. An incident is any unplanned interruption or reduction in quality of
+    /// services. 
     /// 
     ///  
     /// <para>
@@ -293,7 +294,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the CreateReplicationSet service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -308,7 +309,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateReplicationSet">REST API Reference for CreateReplicationSet Operation</seealso>
         public virtual Task<CreateReplicationSetResponse> CreateReplicationSetAsync(CreateReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -347,7 +348,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the CreateResponsePlan service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -356,13 +357,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateResponsePlan">REST API Reference for CreateResponsePlan Operation</seealso>
         public virtual Task<CreateResponsePlanResponse> CreateResponsePlanAsync(CreateResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -402,7 +403,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the CreateTimelineEvent service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -411,13 +412,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateTimelineEvent">REST API Reference for CreateTimelineEvent Operation</seealso>
         public virtual Task<CreateTimelineEventResponse> CreateTimelineEventAsync(CreateTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -454,7 +455,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the DeleteIncidentRecord service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -463,7 +464,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteIncidentRecord">REST API Reference for DeleteIncidentRecord Operation</seealso>
         public virtual Task<DeleteIncidentRecordResponse> DeleteIncidentRecordAsync(DeleteIncidentRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -501,19 +502,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the DeleteReplicationSet service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteReplicationSet">REST API Reference for DeleteReplicationSet Operation</seealso>
         public virtual Task<DeleteReplicationSetResponse> DeleteReplicationSetAsync(DeleteReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -541,7 +542,7 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Deletes the resource policy that AWS Resource Access Manager uses to share your Incident
+        /// Deletes the resource policy that Resource Access Manager uses to share your Incident
         /// Manager resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
@@ -551,19 +552,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the DeleteResourcePolicy service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -601,7 +602,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the DeleteResponsePlan service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -610,7 +611,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResponsePlan">REST API Reference for DeleteResponsePlan Operation</seealso>
         public virtual Task<DeleteResponsePlanResponse> DeleteResponsePlanAsync(DeleteResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -647,7 +648,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the DeleteTimelineEvent service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -656,7 +657,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteTimelineEvent">REST API Reference for DeleteTimelineEvent Operation</seealso>
         public virtual Task<DeleteTimelineEventResponse> DeleteTimelineEventAsync(DeleteTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -684,7 +685,7 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Returns the details of the specified incident record.
+        /// Returns the details for the specified incident record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIncidentRecord service method.</param>
         /// <param name="cancellationToken">
@@ -693,19 +694,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the GetIncidentRecord service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetIncidentRecord">REST API Reference for GetIncidentRecord Operation</seealso>
         public virtual Task<GetIncidentRecordResponse> GetIncidentRecordAsync(GetIncidentRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -742,19 +743,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the GetReplicationSet service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetReplicationSet">REST API Reference for GetReplicationSet Operation</seealso>
         public virtual Task<GetReplicationSetResponse> GetReplicationSetAsync(GetReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -791,19 +792,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the GetResourcePolicies service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
         public virtual Task<GetResourcePoliciesResponse> GetResourcePoliciesAsync(GetResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -840,19 +841,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the GetResponsePlan service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetResponsePlan">REST API Reference for GetResponsePlan Operation</seealso>
         public virtual Task<GetResponsePlanResponse> GetResponsePlanAsync(GetResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -889,19 +890,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the GetTimelineEvent service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetTimelineEvent">REST API Reference for GetTimelineEvent Operation</seealso>
         public virtual Task<GetTimelineEventResponse> GetTimelineEventAsync(GetTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -939,7 +940,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the ListIncidentRecords service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -948,7 +949,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentRecords">REST API Reference for ListIncidentRecords Operation</seealso>
         public virtual Task<ListIncidentRecordsResponse> ListIncidentRecordsAsync(ListIncidentRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -985,7 +986,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the ListRelatedItems service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -994,7 +995,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListRelatedItems">REST API Reference for ListRelatedItems Operation</seealso>
         public virtual Task<ListRelatedItemsResponse> ListRelatedItemsAsync(ListRelatedItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1031,7 +1032,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the ListReplicationSets service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1040,7 +1041,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListReplicationSets">REST API Reference for ListReplicationSets Operation</seealso>
         public virtual Task<ListReplicationSetsResponse> ListReplicationSetsAsync(ListReplicationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1077,7 +1078,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the ListResponsePlans service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1086,7 +1087,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListResponsePlans">REST API Reference for ListResponsePlans Operation</seealso>
         public virtual Task<ListResponsePlansResponse> ListResponsePlansAsync(ListResponsePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1123,19 +1124,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1163,7 +1164,7 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Lists timeline events of the specified incident record.
+        /// Lists timeline events for the specified incident record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTimelineEvents service method.</param>
         /// <param name="cancellationToken">
@@ -1172,7 +1173,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the ListTimelineEvents service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1181,7 +1182,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTimelineEvents">REST API Reference for ListTimelineEvents Operation</seealso>
         public virtual Task<ListTimelineEventsResponse> ListTimelineEventsAsync(ListTimelineEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1218,19 +1219,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the PutResourcePolicy service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1267,7 +1268,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the StartIncident service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1276,13 +1277,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/StartIncident">REST API Reference for StartIncident Operation</seealso>
         public virtual Task<StartIncidentResponse> StartIncidentAsync(StartIncidentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1319,7 +1320,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the TagResource service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1328,7 +1329,7 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ServiceQuotaExceededException">
         /// Request would cause a service quota to be exceeded.
@@ -1337,7 +1338,7 @@ namespace Amazon.SSMIncidents
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1374,7 +1375,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the UntagResource service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1383,13 +1384,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1427,19 +1428,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the UpdateDeletionProtection service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateDeletionProtection">REST API Reference for UpdateDeletionProtection Operation</seealso>
         public virtual Task<UpdateDeletionProtectionResponse> UpdateDeletionProtectionAsync(UpdateDeletionProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1467,9 +1468,9 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Update the details of an incident record. You can use this action to update an incident
-        /// record from the defined chat channel. For more information about using actions in
-        /// chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
+        /// Update the details of an incident record. You can use this operation to update an
+        /// incident record from the defined chat channel. For more information about using actions
+        /// in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
         /// through chat</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIncidentRecord service method.</param>
@@ -1479,7 +1480,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the UpdateIncidentRecord service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1488,13 +1489,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateIncidentRecord">REST API Reference for UpdateIncidentRecord Operation</seealso>
         public virtual Task<UpdateIncidentRecordResponse> UpdateIncidentRecordAsync(UpdateIncidentRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1531,7 +1532,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the UpdateRelatedItems service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1540,13 +1541,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateRelatedItems">REST API Reference for UpdateRelatedItems Operation</seealso>
         public virtual Task<UpdateRelatedItemsResponse> UpdateRelatedItemsAsync(UpdateRelatedItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1583,19 +1584,19 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the UpdateReplicationSet service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateReplicationSet">REST API Reference for UpdateReplicationSet Operation</seealso>
         public virtual Task<UpdateReplicationSetResponse> UpdateReplicationSetAsync(UpdateReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1632,7 +1633,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the UpdateResponsePlan service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1641,13 +1642,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateResponsePlan">REST API Reference for UpdateResponsePlan Operation</seealso>
         public virtual Task<UpdateResponsePlanResponse> UpdateResponsePlanAsync(UpdateResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1684,7 +1685,7 @@ namespace Amazon.SSMIncidents
         /// 
         /// <returns>The response from the UpdateTimelineEvent service method, as returned by SSMIncidents.</returns>
         /// <exception cref="Amazon.SSMIncidents.Model.AccessDeniedException">
-        /// You don't have sufficient access to perform this action.
+        /// You don't have sufficient access to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ConflictException">
         /// Updating or deleting a resource causes an inconsistent state.
@@ -1693,13 +1694,13 @@ namespace Amazon.SSMIncidents
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ResourceNotFoundException">
-        /// Request references a resource which does not exist.
+        /// Request references a resource which doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SSMIncidents.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateTimelineEvent">REST API Reference for UpdateTimelineEvent Operation</seealso>
         public virtual Task<UpdateTimelineEventResponse> UpdateTimelineEventAsync(UpdateTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

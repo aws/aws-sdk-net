@@ -127,7 +127,7 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property DedupeString. 
         /// <para>
         /// The string Incident Manager uses to prevent duplicate incidents from being created
-        /// by the same incident.
+        /// by the same incident in the same account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
@@ -222,7 +222,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property NotificationTargets. 
         /// <para>
-        /// The SNS targets that are notified when updates are made to an incident.
+        /// The Amazon SNS targets that are notified when updates are made to an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -278,8 +278,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// The summary of the incident. The summary is a brief synopsis of what occurred, what
-        /// is currently happening, and context.
+        /// The summary of the incident. The summary is a brief synopsis of what occurred, what's
+        /// currently happening, and context of the incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]

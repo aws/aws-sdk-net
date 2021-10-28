@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Defines the Region and KMS key to add to the replication set.
+    /// Defines the Amazon Web Services Region and KMS key to add to the replication set.
     /// </summary>
     public partial class AddRegionAction
     {
@@ -39,7 +39,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The Region name to add to the replication set.
+        /// The Amazon Web Services Region name to add to the replication set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]

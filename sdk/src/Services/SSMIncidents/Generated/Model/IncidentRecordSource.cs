@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// Details about how the incident record was created and when.
+    /// Details about what created the incident record and when it was created.
     /// </summary>
     public partial class IncidentRecordSource
     {
@@ -99,7 +99,7 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// The service that started the incident. This can be manually created from Incident
-        /// Manager, automatically created using an AWS CloudWatch alarm, or Amazon EventBridge
+        /// Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge
         /// event.
         /// </para>
         /// </summary>

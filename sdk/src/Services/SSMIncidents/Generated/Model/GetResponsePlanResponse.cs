@@ -82,7 +82,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ChatChannel. 
         /// <para>
-        /// The AWS Chatbot chat channel used for collaboration during an incident.
+        /// The Chatbot chat channel used for collaboration during an incident.
         /// </para>
         /// </summary>
         public ChatChannel ChatChannel
@@ -157,7 +157,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The short format name of the response plan. Can't contain spaces.
+        /// The short format name of the response plan. The name can't contain spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -61,7 +61,7 @@ namespace Amazon.SSMIncidents.Model
         /// The pagination token to continue to the next page of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=2000)]
         public string NextToken
         {
             get { return this._nextToken; }

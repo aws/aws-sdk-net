@@ -65,8 +65,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventData. 
         /// <para>
-        /// A valid JSON string. There is no other schema imposed. A short description of the
-        /// event.
+        /// A short description of the event as a valid JSON string. There is no other schema
+        /// imposed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=6000)]
@@ -123,7 +123,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the incident record you are adding the event to.
+        /// The Amazon Resource Name (ARN) of the incident record to which the event will be added.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

@@ -125,7 +125,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.GetResourcePoliciesRequest.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.GetResourcePoliciesRequest.ResourceArn</property>
@@ -136,7 +136,7 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.GetResourcePoliciesResponse.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.GetResponsePlanRequest.Arn</property>
@@ -180,12 +180,12 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListIncidentRecordsRequest.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListIncidentRecordsResponse.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListRelatedItemsRequest.IncidentRecordArn</property>
@@ -201,12 +201,12 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListRelatedItemsRequest.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListRelatedItemsResponse.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListReplicationSetsRequest.MaxResults</property>
@@ -216,12 +216,12 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListReplicationSetsRequest.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListReplicationSetsResponse.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListResponsePlansRequest.MaxResults</property>
@@ -231,12 +231,12 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListResponsePlansRequest.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListResponsePlansResponse.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListTimelineEventsRequest.IncidentRecordArn</property>
@@ -252,12 +252,12 @@
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListTimelineEventsRequest.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.ListTimelineEventsResponse.NextToken</property>
     <min>0</min>
-    <max>1000</max>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMIncidents.Model.PutResourcePolicyRequest.Policy</property>

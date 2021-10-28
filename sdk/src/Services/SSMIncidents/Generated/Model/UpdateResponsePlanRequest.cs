@@ -87,7 +87,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ChatChannel. 
         /// <para>
-        /// The AWS Chatbot chat channel used for collaboration during an incident.
+        /// The Chatbot chat channel used for collaboration during an incident.
         /// </para>
         ///  
         /// <para>
@@ -109,7 +109,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the action is called only once with the specified details.
+        /// A token ensuring that the operation is called only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -128,7 +128,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The long format name of the response plan. Can't contain spaces.
+        /// The long format name of the response plan. The display name can't contain spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -167,7 +167,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTemplateDedupeString. 
         /// <para>
-        /// Used to create only one incident record for an incident.
+        /// The string Incident Manager uses to prevent duplicate incidents from being created
+        /// by the same incident in the same account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -229,7 +230,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTemplateNotificationTargets. 
         /// <para>
-        /// The SNS targets that are notified when updates are made to an incident.
+        /// The Amazon SNS targets that are notified when updates are made to an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -268,7 +269,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTemplateTitle. 
         /// <para>
-        /// The short format name of the incident. Can't contain spaces.
+        /// The short format name of the incident. The title can't contain spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
