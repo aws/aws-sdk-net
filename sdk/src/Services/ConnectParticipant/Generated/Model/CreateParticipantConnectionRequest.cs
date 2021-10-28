@@ -58,6 +58,20 @@ namespace Amazon.ConnectParticipant.Model
     /// clients need to call this API again to obtain a new websocket URL and perform the
     /// same steps as before.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Message streaming support</b>: This API can also be used together with the <a
+    /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
+    /// API to create a participant connection for chat contacts that are not using a websocket.
+    /// For more information about message streaming, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
+    /// real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Feature specifications</b>: For information about feature specifications, such
+    /// as the allowed number of open websocket connections per participant, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+    /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
+    /// </para>
     ///  <note> 
     /// <para>
     /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
@@ -67,8 +81,28 @@ namespace Amazon.ConnectParticipant.Model
     /// </summary>
     public partial class CreateParticipantConnectionRequest : AmazonConnectParticipantRequest
     {
+        private bool? _connectParticipant;
         private string _participantToken;
         private List<string> _type = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ConnectParticipant. 
+        /// <para>
+        /// Amazon Connect Participant is used to mark the participant as connected for message
+        /// streaming.
+        /// </para>
+        /// </summary>
+        public bool ConnectParticipant
+        {
+            get { return this._connectParticipant.GetValueOrDefault(); }
+            set { this._connectParticipant = value; }
+        }
+
+        // Check to see if ConnectParticipant property is set
+        internal bool IsSetConnectParticipant()
+        {
+            return this._connectParticipant.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ParticipantToken. 
@@ -77,7 +111,7 @@ namespace Amazon.ConnectParticipant.Model
         /// </para>
         ///  
         /// <para>
-        /// The Participant Token as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+        /// The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
         /// API response.
         /// </para>
         /// </summary>

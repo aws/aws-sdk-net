@@ -39,8 +39,8 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The pre-signed URL using which file would be downloaded from Amazon S3 by the API
-        /// caller.
+        /// This is the pre-signed URL that can be used for uploading the file to Amazon S3 when
+        /// used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

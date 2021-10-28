@@ -32,6 +32,12 @@ namespace Amazon.ConnectParticipant.Model
     /// Container for the parameters to the GetAttachment operation.
     /// Provides a pre-signed URL for download of a completed attachment. This is an asynchronous
     /// API for use with active contacts.
+    /// 
+    ///  
+    /// <para>
+    /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 authentication</a>.
+    /// </para>
     /// </summary>
     public partial class GetAttachmentRequest : AmazonConnectParticipantRequest
     {

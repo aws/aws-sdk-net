@@ -105,6 +105,22 @@ namespace Amazon.ConnectParticipant
         /// </summary>
         public static readonly ChatItemType MESSAGE = new ChatItemType("MESSAGE");
         /// <summary>
+        /// Constant PARTICIPANT_ACTIVE for ChatItemType
+        /// </summary>
+        public static readonly ChatItemType PARTICIPANT_ACTIVE = new ChatItemType("PARTICIPANT_ACTIVE");
+        /// <summary>
+        /// Constant PARTICIPANT_DISENGAGED for ChatItemType
+        /// </summary>
+        public static readonly ChatItemType PARTICIPANT_DISENGAGED = new ChatItemType("PARTICIPANT_DISENGAGED");
+        /// <summary>
+        /// Constant PARTICIPANT_ENGAGED for ChatItemType
+        /// </summary>
+        public static readonly ChatItemType PARTICIPANT_ENGAGED = new ChatItemType("PARTICIPANT_ENGAGED");
+        /// <summary>
+        /// Constant PARTICIPANT_INACTIVE for ChatItemType
+        /// </summary>
+        public static readonly ChatItemType PARTICIPANT_INACTIVE = new ChatItemType("PARTICIPANT_INACTIVE");
+        /// <summary>
         /// Constant PARTICIPANT_JOINED for ChatItemType
         /// </summary>
         public static readonly ChatItemType PARTICIPANT_JOINED = new ChatItemType("PARTICIPANT_JOINED");

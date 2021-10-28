@@ -65,6 +65,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectParticipant())
+                {
+                    context.Writer.WritePropertyName("ConnectParticipant");
+                    context.Writer.Write(publicRequest.ConnectParticipant);
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("Type");
