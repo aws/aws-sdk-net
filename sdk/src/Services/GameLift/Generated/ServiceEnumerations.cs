@@ -1345,6 +1345,38 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly GameServerGroupInstanceType C5Xlarge = new GameServerGroupInstanceType("c5.xlarge");
         /// <summary>
+        /// Constant C6g12xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6g12xlarge = new GameServerGroupInstanceType("c6g.12xlarge");
+        /// <summary>
+        /// Constant C6g16xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6g16xlarge = new GameServerGroupInstanceType("c6g.16xlarge");
+        /// <summary>
+        /// Constant C6g2xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6g2xlarge = new GameServerGroupInstanceType("c6g.2xlarge");
+        /// <summary>
+        /// Constant C6g4xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6g4xlarge = new GameServerGroupInstanceType("c6g.4xlarge");
+        /// <summary>
+        /// Constant C6g8xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6g8xlarge = new GameServerGroupInstanceType("c6g.8xlarge");
+        /// <summary>
+        /// Constant C6gLarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6gLarge = new GameServerGroupInstanceType("c6g.large");
+        /// <summary>
+        /// Constant C6gMedium for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6gMedium = new GameServerGroupInstanceType("c6g.medium");
+        /// <summary>
+        /// Constant C6gXlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType C6gXlarge = new GameServerGroupInstanceType("c6g.xlarge");
+        /// <summary>
         /// Constant M410xlarge for GameServerGroupInstanceType
         /// </summary>
         public static readonly GameServerGroupInstanceType M410xlarge = new GameServerGroupInstanceType("m4.10xlarge");
@@ -1428,6 +1460,38 @@ namespace Amazon.GameLift
         /// Constant M5Xlarge for GameServerGroupInstanceType
         /// </summary>
         public static readonly GameServerGroupInstanceType M5Xlarge = new GameServerGroupInstanceType("m5.xlarge");
+        /// <summary>
+        /// Constant M6g12xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6g12xlarge = new GameServerGroupInstanceType("m6g.12xlarge");
+        /// <summary>
+        /// Constant M6g16xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6g16xlarge = new GameServerGroupInstanceType("m6g.16xlarge");
+        /// <summary>
+        /// Constant M6g2xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6g2xlarge = new GameServerGroupInstanceType("m6g.2xlarge");
+        /// <summary>
+        /// Constant M6g4xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6g4xlarge = new GameServerGroupInstanceType("m6g.4xlarge");
+        /// <summary>
+        /// Constant M6g8xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6g8xlarge = new GameServerGroupInstanceType("m6g.8xlarge");
+        /// <summary>
+        /// Constant M6gLarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6gLarge = new GameServerGroupInstanceType("m6g.large");
+        /// <summary>
+        /// Constant M6gMedium for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6gMedium = new GameServerGroupInstanceType("m6g.medium");
+        /// <summary>
+        /// Constant M6gXlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType M6gXlarge = new GameServerGroupInstanceType("m6g.xlarge");
         /// <summary>
         /// Constant R416xlarge for GameServerGroupInstanceType
         /// </summary>
@@ -1516,6 +1580,38 @@ namespace Amazon.GameLift
         /// Constant R5Xlarge for GameServerGroupInstanceType
         /// </summary>
         public static readonly GameServerGroupInstanceType R5Xlarge = new GameServerGroupInstanceType("r5.xlarge");
+        /// <summary>
+        /// Constant R6g12xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6g12xlarge = new GameServerGroupInstanceType("r6g.12xlarge");
+        /// <summary>
+        /// Constant R6g16xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6g16xlarge = new GameServerGroupInstanceType("r6g.16xlarge");
+        /// <summary>
+        /// Constant R6g2xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6g2xlarge = new GameServerGroupInstanceType("r6g.2xlarge");
+        /// <summary>
+        /// Constant R6g4xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6g4xlarge = new GameServerGroupInstanceType("r6g.4xlarge");
+        /// <summary>
+        /// Constant R6g8xlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6g8xlarge = new GameServerGroupInstanceType("r6g.8xlarge");
+        /// <summary>
+        /// Constant R6gLarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6gLarge = new GameServerGroupInstanceType("r6g.large");
+        /// <summary>
+        /// Constant R6gMedium for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6gMedium = new GameServerGroupInstanceType("r6g.medium");
+        /// <summary>
+        /// Constant R6gXlarge for GameServerGroupInstanceType
+        /// </summary>
+        public static readonly GameServerGroupInstanceType R6gXlarge = new GameServerGroupInstanceType("r6g.xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

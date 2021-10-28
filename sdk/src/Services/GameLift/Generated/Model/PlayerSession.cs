@@ -179,6 +179,7 @@ namespace Amazon.GameLift.Model
         /// both the IP address and port number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IpAddress
         {
             get { return this._ipAddress; }

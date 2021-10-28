@@ -100,6 +100,7 @@ namespace Amazon.GameLift.Model
         /// IP address that is assigned to the instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string IpAddress
         {
             get { return this._ipAddress; }
