@@ -6807,6 +6807,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType D3Xlarge = new InstanceType("d3.xlarge");
         /// <summary>
+        /// Constant Dl124xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Dl124xlarge = new InstanceType("dl1.24xlarge");
+        /// <summary>
         /// Constant F116xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType F116xlarge = new InstanceType("f1.16xlarge");

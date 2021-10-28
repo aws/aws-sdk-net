@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("denyAllIgwTraffic", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.DenyAllIgwTraffic = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

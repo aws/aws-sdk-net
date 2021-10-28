@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private NetworkInterfaceAssociation _association;
         private NetworkInterfaceAttachment _attachment;
         private string _availabilityZone;
+        private bool? _denyAllIgwTraffic;
         private string _description;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private NetworkInterfaceType _interfaceType;
@@ -110,6 +111,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DenyAllIgwTraffic. 
+        /// <para>
+        /// Indicates whether a network interface with an IPv6 address is unreachable from the
+        /// public internet. If the value is <code>true</code>, inbound traffic from the internet
+        /// is dropped and you cannot assign an elastic IP address to the network interface. The
+        /// network interface is reachable from peered VPCs and resources connected through a
+        /// transit gateway, including on-premises networks.
+        /// </para>
+        /// </summary>
+        public bool DenyAllIgwTraffic
+        {
+            get { return this._denyAllIgwTraffic.GetValueOrDefault(); }
+            set { this._denyAllIgwTraffic = value; }
+        }
+
+        // Check to see if DenyAllIgwTraffic property is set
+        internal bool IsSetDenyAllIgwTraffic()
+        {
+            return this._denyAllIgwTraffic.HasValue; 
         }
 
         /// <summary>
