@@ -1,0 +1,87 @@
+﻿<!--
+This is a convenience .csproj file.  It is meant to be used in conjunction with AWSSDK.CoreAndCustomUnitTests.Net45.sln to 
+facilitate developing changes to AWSSDK.Core and AWSSDK.UnitTests.Custom without needing to load all Services projects.
+
+This project file should not be used as part of a release pipeline.
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net45</TargetFramework>
+        <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG</DefineConstants>
+        <DebugType>portable</DebugType>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <AssemblyName>AWSSDK.UnitTests.Net45</AssemblyName>
+        <PackageId>AWSSDK.UnitTests.Net45</PackageId>
+
+        <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+        <NoWarn>CS1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Intentionally exclude these tests as they require a large number of unique Service dependencies -->
+        <Compile Remove="Custom\Runtime\SignerTests.cs" />
+        <Compile Remove="Custom\Runtime\UnparseableResponsesTests.cs" />
+        <Compile Remove="Custom\TestTools\CustomizationsTests.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj" />
+        <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
+        <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
+        <ProjectReference Include="..\..\src\Services\AutoScaling\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\CloudFront\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\DynamoDBv2\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\EC2\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\ElasticMapReduce\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\ElasticTranscoder\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\Redshift\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\S3\*.Net45.csproj" />
+        <ProjectReference Include="..\..\src\Services\SecurityToken\*.Net45.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Moq" Version="4.8.3" />
+        <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+        <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+        <PackageReference Include="AutoFixture" Version="3.51.0" />
+        <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="System.Configuration" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Custom\Runtime\TestResponses\*.txt" />
+        <EmbeddedResource Include="Custom\Runtime\EventStreams\test_vectors\*" />
+        <EmbeddedResource Include="Custom\TestTools\ComparerTest.json" />
+        <EmbeddedResource Include="..\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="bin\**" />
+        <None Remove="bin\**" />
+        <EmbeddedResource Remove="bin\**" />
+
+        <Compile Remove="Custom\bin\**" />
+        <None Remove="Custom\bin\**" />
+        <EmbeddedResource Remove="Custom\bin\**" />
+
+        <Compile Remove="obj\**" />
+        <None Remove="obj\**" />
+
+        <EmbeddedResource Remove="Custom\obj\**" />
+        <None Remove="Custom\obj\**" />
+        <Compile Remove="Custom\obj\**" />
+    </ItemGroup>
+</Project>

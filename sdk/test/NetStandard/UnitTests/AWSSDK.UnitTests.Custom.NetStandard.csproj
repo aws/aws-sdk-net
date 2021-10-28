@@ -1,0 +1,55 @@
+﻿<!--
+This is a convenience .csproj file.  It is meant to be used in conjunction with AWSSDK.CoreAndCustomUnitTests.Net45.sln to 
+facilitate developing changes to AWSSDK.Core and AWSSDK.UnitTests.Custom without needing to load all Services projects.
+
+This project file should not be used as part of a release pipeline.
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+        <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
+        <DebugType>portable</DebugType>
+        <PackageId>UnitTests</PackageId>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants)</DefineConstants>
+        <!--Namespace must match UnitTests.NetStandard.csproj to remain interoperable with embedded resources -->
+        <RootNamespace>UnitTests.NetStandard</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+        <LangVersion>8.0</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="sample.rsa.private.key.txt" />
+        <EmbeddedResource Include="endpoint.customization.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+        <ProjectReference Include="..\..\..\src\Services\CloudFront\AWSSDK.CloudFront.NetStandard.csproj" />
+        <ProjectReference Include="..\..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.NetStandard.csproj" />
+        <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.NetStandard.csproj" />
+        <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+        <PackageReference Include="xunit" Version="2.2.0" />
+        <PackageReference Include="Moq" Version="4.8.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="bin\**" />
+        <None Remove="bin\**" />
+        <EmbeddedResource Remove="bin\**" />
+
+        <Compile Remove="obj\**" />
+        <None Remove="obj\**" />
+    </ItemGroup>
+
+</Project>
