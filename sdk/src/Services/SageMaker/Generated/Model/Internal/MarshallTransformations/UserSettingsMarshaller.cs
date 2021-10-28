@@ -73,6 +73,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRSessionAppSettings())
+            {
+                context.Writer.WritePropertyName("RSessionAppSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RSessionAppSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RSessionAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRStudioServerProAppSettings())
+            {
+                context.Writer.WritePropertyName("RStudioServerProAppSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RStudioServerProAppSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RStudioServerProAppSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("SecurityGroups");

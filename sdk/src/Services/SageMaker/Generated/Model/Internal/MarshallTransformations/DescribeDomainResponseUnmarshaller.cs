@@ -57,6 +57,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.AppNetworkAccessType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AppSecurityGroupManagement", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AppSecurityGroupManagement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AuthMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -93,6 +99,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DomainSettings", targetDepth))
+                {
+                    var unmarshaller = DomainSettingsUnmarshaller.Instance;
+                    response.DomainSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -121,6 +133,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecurityGroupIdForDomainBoundary", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SecurityGroupIdForDomainBoundary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SingleSignOnManagedApplicationInstanceId", targetDepth))

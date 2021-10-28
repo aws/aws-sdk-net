@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model
         private string _executionRole;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
+        private RSessionAppSettings _rSessionAppSettings;
+        private RStudioServerProAppSettings _rStudioServerProAppSettings;
         private List<string> _securityGroups = new List<string>();
         private SharingSettings _sharingSettings;
         private TensorBoardAppSettings _tensorBoardAppSettings;
@@ -102,6 +104,43 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKernelGatewayAppSettings()
         {
             return this._kernelGatewayAppSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RSessionAppSettings. 
+        /// <para>
+        /// A collection of settings that configure the <code>RSessionGateway</code> app.
+        /// </para>
+        /// </summary>
+        public RSessionAppSettings RSessionAppSettings
+        {
+            get { return this._rSessionAppSettings; }
+            set { this._rSessionAppSettings = value; }
+        }
+
+        // Check to see if RSessionAppSettings property is set
+        internal bool IsSetRSessionAppSettings()
+        {
+            return this._rSessionAppSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RStudioServerProAppSettings. 
+        /// <para>
+        /// A collection of settings that configure user interaction with the <code>RStudioServerPro</code>
+        /// app.
+        /// </para>
+        /// </summary>
+        public RStudioServerProAppSettings RStudioServerProAppSettings
+        {
+            get { return this._rStudioServerProAppSettings; }
+            set { this._rStudioServerProAppSettings = value; }
+        }
+
+        // Check to see if RStudioServerProAppSettings property is set
+        internal bool IsSetRStudioServerProAppSettings()
+        {
+            return this._rStudioServerProAppSettings != null;
         }
 
         /// <summary>

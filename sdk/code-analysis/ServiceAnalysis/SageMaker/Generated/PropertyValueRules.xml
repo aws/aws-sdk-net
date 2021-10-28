@@ -1605,6 +1605,11 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeDomainResponse.SecurityGroupIdForDomainBoundary</property>
+    <max>32</max>
+    <pattern>[-0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDomainResponse.SingleSignOnManagedApplicationInstanceId</property>
     <max>256</max>
   </property-value-rule>
@@ -7204,6 +7209,18 @@
     <property>Amazon.SageMaker.Model.RetryStrategy.MaximumRetryAttempts</property>
     <min>1</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RStudioServerProDomainSettings.DomainExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.RStudioServerProDomainSettingsForUpdate.DomainExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.S3DataSource.S3Uri</property>

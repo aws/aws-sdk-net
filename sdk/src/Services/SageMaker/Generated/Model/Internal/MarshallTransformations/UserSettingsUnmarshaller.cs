@@ -82,6 +82,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RSessionAppSettings", targetDepth))
+                {
+                    var unmarshaller = RSessionAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RSessionAppSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RStudioServerProAppSettings", targetDepth))
+                {
+                    var unmarshaller = RStudioServerProAppSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RStudioServerProAppSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityGroups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

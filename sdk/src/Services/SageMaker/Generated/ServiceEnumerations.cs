@@ -545,6 +545,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AppSecurityGroupManagement.
+    /// </summary>
+    public class AppSecurityGroupManagement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Customer for AppSecurityGroupManagement
+        /// </summary>
+        public static readonly AppSecurityGroupManagement Customer = new AppSecurityGroupManagement("Customer");
+        /// <summary>
+        /// Constant Service for AppSecurityGroupManagement
+        /// </summary>
+        public static readonly AppSecurityGroupManagement Service = new AppSecurityGroupManagement("Service");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppSecurityGroupManagement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppSecurityGroupManagement FindValue(string value)
+        {
+            return FindValue<AppSecurityGroupManagement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppSecurityGroupManagement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AppSortKey.
     /// </summary>
     public class AppSortKey : ConstantClass
@@ -666,6 +716,14 @@ namespace Amazon.SageMaker
         /// Constant KernelGateway for AppType
         /// </summary>
         public static readonly AppType KernelGateway = new AppType("KernelGateway");
+        /// <summary>
+        /// Constant RSessionGateway for AppType
+        /// </summary>
+        public static readonly AppType RSessionGateway = new AppType("RSessionGateway");
+        /// <summary>
+        /// Constant RStudioServerPro for AppType
+        /// </summary>
+        public static readonly AppType RStudioServerPro = new AppType("RStudioServerPro");
         /// <summary>
         /// Constant TensorBoard for AppType
         /// </summary>
@@ -8136,6 +8194,106 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RootAccess(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RStudioServerProAccessStatus.
+    /// </summary>
+    public class RStudioServerProAccessStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RStudioServerProAccessStatus
+        /// </summary>
+        public static readonly RStudioServerProAccessStatus DISABLED = new RStudioServerProAccessStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RStudioServerProAccessStatus
+        /// </summary>
+        public static readonly RStudioServerProAccessStatus ENABLED = new RStudioServerProAccessStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RStudioServerProAccessStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RStudioServerProAccessStatus FindValue(string value)
+        {
+            return FindValue<RStudioServerProAccessStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RStudioServerProAccessStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RStudioServerProUserGroup.
+    /// </summary>
+    public class RStudioServerProUserGroup : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant R_STUDIO_ADMIN for RStudioServerProUserGroup
+        /// </summary>
+        public static readonly RStudioServerProUserGroup R_STUDIO_ADMIN = new RStudioServerProUserGroup("R_STUDIO_ADMIN");
+        /// <summary>
+        /// Constant R_STUDIO_USER for RStudioServerProUserGroup
+        /// </summary>
+        public static readonly RStudioServerProUserGroup R_STUDIO_USER = new RStudioServerProUserGroup("R_STUDIO_USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RStudioServerProUserGroup(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RStudioServerProUserGroup FindValue(string value)
+        {
+            return FindValue<RStudioServerProUserGroup>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RStudioServerProUserGroup(string value)
         {
             return FindValue(value);
         }

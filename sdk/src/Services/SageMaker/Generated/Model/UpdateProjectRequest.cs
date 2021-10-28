@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// The product ID and provisioning artifact ID to provision a service catalog. The provisioning
         /// artifact ID will default to the latest provisioning artifact ID of the product, if
         /// you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-        /// is AWS Service Catalog</a>. 
+        /// is Amazon Web Services Service Catalog</a>. 
         /// </para>
         /// </summary>
         public ServiceCatalogProvisioningUpdateDetails ServiceCatalogProvisioningUpdateDetails
@@ -110,10 +110,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a>.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

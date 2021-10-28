@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private UserSettings _defaultUserSettings;
         private string _domainId;
+        private DomainSettingsForUpdate _domainSettingsForUpdate;
 
         /// <summary>
         /// Gets and sets the property DefaultUserSettings. 
@@ -72,6 +73,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainSettingsForUpdate. 
+        /// <para>
+        /// A collection of <code>DomainSettings</code> configuration values to update.
+        /// </para>
+        /// </summary>
+        public DomainSettingsForUpdate DomainSettingsForUpdate
+        {
+            get { return this._domainSettingsForUpdate; }
+            set { this._domainSettingsForUpdate = value; }
+        }
+
+        // Check to see if DomainSettingsForUpdate property is set
+        internal bool IsSetDomainSettingsForUpdate()
+        {
+            return this._domainSettingsForUpdate != null;
         }
 
     }

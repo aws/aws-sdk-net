@@ -84,6 +84,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DomainId);
                 }
 
+                if(publicRequest.IsSetDomainSettingsForUpdate())
+                {
+                    context.Writer.WritePropertyName("DomainSettingsForUpdate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DomainSettingsForUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DomainSettingsForUpdate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

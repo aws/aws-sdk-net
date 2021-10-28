@@ -73,6 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppNetworkAccessType);
                 }
 
+                if(publicRequest.IsSetAppSecurityGroupManagement())
+                {
+                    context.Writer.WritePropertyName("AppSecurityGroupManagement");
+                    context.Writer.Write(publicRequest.AppSecurityGroupManagement);
+                }
+
                 if(publicRequest.IsSetAuthMode())
                 {
                     context.Writer.WritePropertyName("AuthMode");
@@ -94,6 +100,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("DomainName");
                     context.Writer.Write(publicRequest.DomainName);
+                }
+
+                if(publicRequest.IsSetDomainSettings())
+                {
+                    context.Writer.WritePropertyName("DomainSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DomainSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DomainSettings, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetHomeEfsFileSystemKmsKeyId())

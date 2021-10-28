@@ -34,17 +34,20 @@ namespace Amazon.SageMaker.Model
     public partial class DescribeDomainResponse : AmazonWebServiceResponse
     {
         private AppNetworkAccessType _appNetworkAccessType;
+        private AppSecurityGroupManagement _appSecurityGroupManagement;
         private AuthMode _authMode;
         private DateTime? _creationTime;
         private UserSettings _defaultUserSettings;
         private string _domainArn;
         private string _domainId;
         private string _domainName;
+        private DomainSettings _domainSettings;
         private string _failureReason;
         private string _homeEfsFileSystemId;
         private string _homeEfsFileSystemKmsKeyId;
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
+        private string _securityGroupIdForDomainBoundary;
         private string _singleSignOnManagedApplicationInstanceId;
         private DomainStatus _status;
         private List<string> _subnetIds = new List<string>();
@@ -77,6 +80,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppNetworkAccessType()
         {
             return this._appNetworkAccessType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppSecurityGroupManagement. 
+        /// <para>
+        /// The entity that creates and manages the required security groups for inter-app communication
+        /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
+        /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// is provided.
+        /// </para>
+        /// </summary>
+        public AppSecurityGroupManagement AppSecurityGroupManagement
+        {
+            get { return this._appSecurityGroupManagement; }
+            set { this._appSecurityGroupManagement = value; }
+        }
+
+        // Check to see if AppSecurityGroupManagement property is set
+        internal bool IsSetAppSecurityGroupManagement()
+        {
+            return this._appSecurityGroupManagement != null;
         }
 
         /// <summary>
@@ -192,6 +216,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainSettings. 
+        /// <para>
+        /// A collection of <code>Domain</code> settings.
+        /// </para>
+        /// </summary>
+        public DomainSettings DomainSettings
+        {
+            get { return this._domainSettings; }
+            set { this._domainSettings = value; }
+        }
+
+        // Check to see if DomainSettings property is set
+        internal bool IsSetDomainSettings()
+        {
+            return this._domainSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// The failure reason.
@@ -285,6 +327,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIdForDomainBoundary. 
+        /// <para>
+        /// The ID of the security group that authorizes traffic between the <code>RSessionGateway</code>
+        /// apps and the <code>RStudioServerPro</code> app.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32)]
+        public string SecurityGroupIdForDomainBoundary
+        {
+            get { return this._securityGroupIdForDomainBoundary; }
+            set { this._securityGroupIdForDomainBoundary = value; }
+        }
+
+        // Check to see if SecurityGroupIdForDomainBoundary property is set
+        internal bool IsSetSecurityGroupIdForDomainBoundary()
+        {
+            return this._securityGroupIdForDomainBoundary != null;
         }
 
         /// <summary>

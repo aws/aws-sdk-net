@@ -96,9 +96,11 @@ namespace Amazon.SageMaker.Model
     public partial class CreateDomainRequest : AmazonSageMakerRequest
     {
         private AppNetworkAccessType _appNetworkAccessType;
+        private AppSecurityGroupManagement _appSecurityGroupManagement;
         private AuthMode _authMode;
         private UserSettings _defaultUserSettings;
         private string _domainName;
+        private DomainSettings _domainSettings;
         private string _homeEfsFileSystemKmsKeyId;
         private string _kmsKeyId;
         private List<string> _subnetIds = new List<string>();
@@ -131,6 +133,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppNetworkAccessType()
         {
             return this._appNetworkAccessType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppSecurityGroupManagement. 
+        /// <para>
+        /// The entity that creates and manages the required security groups for inter-app communication
+        /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
+        /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// is provided.
+        /// </para>
+        /// </summary>
+        public AppSecurityGroupManagement AppSecurityGroupManagement
+        {
+            get { return this._appSecurityGroupManagement; }
+            set { this._appSecurityGroupManagement = value; }
+        }
+
+        // Check to see if AppSecurityGroupManagement property is set
+        internal bool IsSetAppSecurityGroupManagement()
+        {
+            return this._appSecurityGroupManagement != null;
         }
 
         /// <summary>
@@ -195,6 +218,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainSettings. 
+        /// <para>
+        /// A collection of <code>Domain</code> settings.
+        /// </para>
+        /// </summary>
+        public DomainSettings DomainSettings
+        {
+            get { return this._domainSettings; }
+            set { this._domainSettings = value; }
+        }
+
+        // Check to see if DomainSettings property is set
+        internal bool IsSetDomainSettings()
+        {
+            return this._domainSettings != null;
         }
 
         /// <summary>
