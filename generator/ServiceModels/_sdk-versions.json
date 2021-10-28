@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.145.0",
+    "ProductVersion" : "3.7.146.0",
     "CoreVersion"    : "3.7.3.27",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.36.0",
+            "Version" : "3.7.37.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.27"
@@ -160,7 +160,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.7.2.63",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.27"
@@ -514,7 +514,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.7.0.87",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.27"
@@ -946,7 +946,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.7.18.0",
+            "Version" : "3.7.19.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.27"
@@ -1602,7 +1602,7 @@
             "InPreview"               : false
         },
         "ConnectParticipant"              : {
-            "Version" : "3.7.0.87",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.27"
@@ -2130,7 +2130,7 @@
             "InPreview"               : false
         },
         "SSMIncidents"                    : {
-            "Version" : "3.7.1.39",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.27"

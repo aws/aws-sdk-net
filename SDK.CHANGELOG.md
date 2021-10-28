@@ -1,3 +1,17 @@
+### 3.7.146.0 (2021-10-28 18:20 UTC)
+* ConnectParticipant (3.7.1.0)
+	* This release adds a new boolean attribute - Connect Participant - to the CreateParticipantConnection API, which can be used to mark the participant as connected.
+* EC2 (3.7.37.0)
+	* Added new read-only DenyAllIGWTraffic network interface attribute. Added support for DL1 24xlarge instances powered by Habana Gaudi Accelerators for deep learning model training workloads
+* ECS (3.7.3.0)
+	* Amazon ECS now supports running Fargate tasks on Windows Operating Systems Families which includes Windows Server 2019 Core and Windows Server 2019 Full.
+* GameLift (3.7.1.0)
+	* Added support for Arm-based AWS Graviton2 instances, such as M6g, C6g, and R6g.
+* SageMaker (3.7.19.0)
+	* This release adds support for RStudio on SageMaker.
+* SSMIncidents (3.7.2.0)
+	* Updating documentation, adding new field to ConflictException to indicate earliest retry timestamp for some operations, increase maximum length of nextToken fields
+
 ### 3.7.145.0 (2021-10-27 18:17 UTC)
 * AutoScaling (3.7.7.0)
 	* This release adds support for attribute-based instance type selection, a new EC2 Auto Scaling feature that lets customers express their instance requirements as a set of attributes, such as vCPU, memory, and storage.
