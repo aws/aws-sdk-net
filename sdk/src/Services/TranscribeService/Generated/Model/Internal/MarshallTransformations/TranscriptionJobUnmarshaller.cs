@@ -112,6 +112,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LanguageIdSettings", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, LanguageIdSettings, StringUnmarshaller, LanguageIdSettingsUnmarshaller>(StringUnmarshaller.Instance, LanguageIdSettingsUnmarshaller.Instance);
+                    unmarshalledObject.LanguageIdSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LanguageOptions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CallAnalyticsJobSettings Object
+    /// Response Unmarshaller for LanguageIdSettings Object
     /// </summary>  
-    public class CallAnalyticsJobSettingsUnmarshaller : IUnmarshaller<CallAnalyticsJobSettings, XmlUnmarshallerContext>, IUnmarshaller<CallAnalyticsJobSettings, JsonUnmarshallerContext>
+    public class LanguageIdSettingsUnmarshaller : IUnmarshaller<LanguageIdSettings, XmlUnmarshallerContext>, IUnmarshaller<LanguageIdSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CallAnalyticsJobSettings IUnmarshaller<CallAnalyticsJobSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LanguageIdSettings IUnmarshaller<LanguageIdSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CallAnalyticsJobSettings Unmarshall(JsonUnmarshallerContext context)
+        public LanguageIdSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CallAnalyticsJobSettings unmarshalledObject = new CallAnalyticsJobSettings();
+            LanguageIdSettings unmarshalledObject = new LanguageIdSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ContentRedaction", targetDepth))
-                {
-                    var unmarshaller = ContentRedactionUnmarshaller.Instance;
-                    unmarshalledObject.ContentRedaction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LanguageIdSettings", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, LanguageIdSettings, StringUnmarshaller, LanguageIdSettingsUnmarshaller>(StringUnmarshaller.Instance, LanguageIdSettingsUnmarshaller.Instance);
-                    unmarshalledObject.LanguageIdSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("LanguageModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageModelName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LanguageOptions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LanguageOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VocabularyFilterMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VocabularyFilterName", targetDepth))
@@ -112,12 +88,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         }
 
 
-        private static CallAnalyticsJobSettingsUnmarshaller _instance = new CallAnalyticsJobSettingsUnmarshaller();        
+        private static LanguageIdSettingsUnmarshaller _instance = new LanguageIdSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CallAnalyticsJobSettingsUnmarshaller Instance
+        public static LanguageIdSettingsUnmarshaller Instance
         {
             get
             {

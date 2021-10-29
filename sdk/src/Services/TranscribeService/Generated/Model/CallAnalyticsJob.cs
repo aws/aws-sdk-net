@@ -146,7 +146,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) that you use to get access to the analytics job.
+        /// The Amazon Resource Number (ARN) that you use to access the analytics job. ARNs have
+        /// the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

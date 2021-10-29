@@ -42,6 +42,7 @@ namespace Amazon.TranscribeService.Model
         private bool? _identifyLanguage;
         private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
+        private Dictionary<string, LanguageIdSettings> _languageIdSettings = new Dictionary<string, LanguageIdSettings>();
         private List<string> _languageOptions = new List<string>();
         private Media _media;
         private MediaFormat _mediaFormat;
@@ -245,6 +246,27 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageIdSettings. 
+        /// <para>
+        /// Language-specific settings that can be specified when language identification is enabled
+        /// for your transcription job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>,
+        /// and <code>LanguageModelName</code>LanguageModelName.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public Dictionary<string, LanguageIdSettings> LanguageIdSettings
+        {
+            get { return this._languageIdSettings; }
+            set { this._languageIdSettings = value; }
+        }
+
+        // Check to see if LanguageIdSettings property is set
+        internal bool IsSetLanguageIdSettings()
+        {
+            return this._languageIdSettings != null && this._languageIdSettings.Count > 0; 
         }
 
         /// <summary>

@@ -2572,7 +2572,7 @@ namespace Amazon.TranscribeService
         #region  TagResource
 
         /// <summary>
-        /// Tags a Amazon Transcribe resource with the given list of tags.
+        /// Tags an Amazon Transcribe resource with the given list of tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 

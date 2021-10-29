@@ -34,6 +34,7 @@ namespace Amazon.TranscribeService.Model
     public partial class CallAnalyticsJobSettings
     {
         private ContentRedaction _contentRedaction;
+        private Dictionary<string, LanguageIdSettings> _languageIdSettings = new Dictionary<string, LanguageIdSettings>();
         private string _languageModelName;
         private List<string> _languageOptions = new List<string>();
         private VocabularyFilterMethod _vocabularyFilterMethod;
@@ -53,6 +54,27 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetContentRedaction()
         {
             return this._contentRedaction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageIdSettings. 
+        /// <para>
+        /// The language identification settings associated with your call analytics job. These
+        /// settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+        /// <code>LanguageModelName</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public Dictionary<string, LanguageIdSettings> LanguageIdSettings
+        {
+            get { return this._languageIdSettings; }
+            set { this._languageIdSettings = value; }
+        }
+
+        // Check to see if LanguageIdSettings property is set
+        internal bool IsSetLanguageIdSettings()
+        {
+            return this._languageIdSettings != null && this._languageIdSettings.Count > 0; 
         }
 
         /// <summary>

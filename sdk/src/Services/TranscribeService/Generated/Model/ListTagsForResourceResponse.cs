@@ -39,7 +39,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Lists all tags associated with the given Amazon Resource Name (ARN).
+        /// Lists all tags associated with the given Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]

@@ -70,10 +70,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains
-        /// the input files. Amazon Transcribe assumes this role to read queued media files. If
-        /// you have specified an output S3 bucket for the transcription results, this role should
-        /// have access to the output bucket as well.
+        /// The Amazon Resource Name (ARN), in the form <code>arn:partition:service:region:account-id:resource-type/resource-id</code>,
+        /// of a role that has access to the S3 bucket that contains the input files. Amazon Transcribe
+        /// assumes this role to read queued media files. If you have specified an output S3 bucket
+        /// for the transcription results, this role should have access to the output bucket as
+        /// well.
         /// </para>
         ///  
         /// <para>

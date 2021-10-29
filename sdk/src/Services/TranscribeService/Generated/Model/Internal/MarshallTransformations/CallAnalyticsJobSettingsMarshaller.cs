@@ -56,6 +56,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLanguageIdSettings())
+            {
+                context.Writer.WritePropertyName("LanguageIdSettings");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectLanguageIdSettingsKvp in requestObject.LanguageIdSettings)
+                {
+                    context.Writer.WritePropertyName(requestObjectLanguageIdSettingsKvp.Key);
+                    var requestObjectLanguageIdSettingsValue = requestObjectLanguageIdSettingsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LanguageIdSettingsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLanguageIdSettingsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLanguageModelName())
             {
                 context.Writer.WritePropertyName("LanguageModelName");
