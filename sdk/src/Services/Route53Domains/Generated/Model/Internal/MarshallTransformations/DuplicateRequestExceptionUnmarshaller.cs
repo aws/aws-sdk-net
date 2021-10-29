@@ -45,7 +45,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public DuplicateRequestException Unmarshall(JsonUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public DuplicateRequestException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public DuplicateRequestException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
 

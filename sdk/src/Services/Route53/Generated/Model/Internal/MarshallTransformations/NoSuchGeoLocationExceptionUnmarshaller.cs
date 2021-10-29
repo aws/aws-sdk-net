@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public NoSuchGeoLocationException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public NoSuchGeoLocationException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             NoSuchGeoLocationException response = new NoSuchGeoLocationException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

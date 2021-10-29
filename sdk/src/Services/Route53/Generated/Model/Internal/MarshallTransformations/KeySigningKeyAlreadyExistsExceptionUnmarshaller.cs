@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public KeySigningKeyAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public KeySigningKeyAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             KeySigningKeyAlreadyExistsException response = new KeySigningKeyAlreadyExistsException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

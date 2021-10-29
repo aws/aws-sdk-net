@@ -45,7 +45,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public MarketplaceCommerceAnalyticsException Unmarshall(JsonUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public MarketplaceCommerceAnalyticsException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public MarketplaceCommerceAnalyticsException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
 

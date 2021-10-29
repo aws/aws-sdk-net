@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidTTLOrderException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public InvalidTTLOrderException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             InvalidTTLOrderException response = new InvalidTTLOrderException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

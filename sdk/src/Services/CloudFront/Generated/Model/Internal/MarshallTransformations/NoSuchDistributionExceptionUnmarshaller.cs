@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public NoSuchDistributionException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public NoSuchDistributionException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             NoSuchDistributionException response = new NoSuchDistributionException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

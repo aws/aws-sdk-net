@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public InvalidS3BucketException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidS3BucketException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public InvalidS3BucketException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             InvalidS3BucketException response = new InvalidS3BucketException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

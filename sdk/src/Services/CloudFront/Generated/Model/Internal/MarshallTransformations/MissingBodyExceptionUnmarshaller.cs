@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public MissingBodyException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public MissingBodyException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             MissingBodyException response = new MissingBodyException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

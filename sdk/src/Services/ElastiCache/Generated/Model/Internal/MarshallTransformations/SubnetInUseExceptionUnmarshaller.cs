@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public SubnetInUseException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public SubnetInUseException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public SubnetInUseException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             SubnetInUseException response = new SubnetInUseException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

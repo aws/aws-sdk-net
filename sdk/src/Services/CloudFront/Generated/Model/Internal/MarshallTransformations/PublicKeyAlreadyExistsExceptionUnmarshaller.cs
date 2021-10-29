@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public PublicKeyAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public PublicKeyAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             PublicKeyAlreadyExistsException response = new PublicKeyAlreadyExistsException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

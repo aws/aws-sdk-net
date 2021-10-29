@@ -43,7 +43,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public FilterPolicyLimitExceededException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public FilterPolicyLimitExceededException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public FilterPolicyLimitExceededException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             FilterPolicyLimitExceededException response = new FilterPolicyLimitExceededException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

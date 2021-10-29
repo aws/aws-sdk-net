@@ -43,7 +43,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public PackedPolicyTooLargeException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public PackedPolicyTooLargeException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public PackedPolicyTooLargeException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             PackedPolicyTooLargeException response = new PackedPolicyTooLargeException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

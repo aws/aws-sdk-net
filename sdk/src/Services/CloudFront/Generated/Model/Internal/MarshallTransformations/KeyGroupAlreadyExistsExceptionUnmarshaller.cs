@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public KeyGroupAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public KeyGroupAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             KeyGroupAlreadyExistsException response = new KeyGroupAlreadyExistsException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

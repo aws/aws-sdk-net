@@ -53,7 +53,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public NoSuchPublicAccessBlockConfigurationException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public NoSuchPublicAccessBlockConfigurationException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             NoSuchPublicAccessBlockConfigurationException response = new NoSuchPublicAccessBlockConfigurationException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

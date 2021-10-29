@@ -53,7 +53,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InternalServiceException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public InternalServiceException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             InternalServiceException response = new InternalServiceException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

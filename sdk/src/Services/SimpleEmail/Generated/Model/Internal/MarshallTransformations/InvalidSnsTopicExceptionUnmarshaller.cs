@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public InvalidSnsTopicException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidSnsTopicException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public InvalidSnsTopicException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             InvalidSnsTopicException response = new InvalidSnsTopicException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

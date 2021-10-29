@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public TooManyTrafficPolicyInstancesException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public TooManyTrafficPolicyInstancesException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             TooManyTrafficPolicyInstancesException response = new TooManyTrafficPolicyInstancesException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

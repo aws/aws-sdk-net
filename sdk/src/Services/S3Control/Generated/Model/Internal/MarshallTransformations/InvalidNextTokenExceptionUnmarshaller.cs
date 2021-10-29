@@ -53,7 +53,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidNextTokenException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public InvalidNextTokenException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             InvalidNextTokenException response = new InvalidNextTokenException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public InvalidTrackingOptionsException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidTrackingOptionsException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public InvalidTrackingOptionsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             InvalidTrackingOptionsException response = new InvalidTrackingOptionsException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

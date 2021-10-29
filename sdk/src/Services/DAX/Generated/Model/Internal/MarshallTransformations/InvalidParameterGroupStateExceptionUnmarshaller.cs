@@ -45,7 +45,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public InvalidParameterGroupStateException Unmarshall(JsonUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidParameterGroupStateException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public InvalidParameterGroupStateException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
 

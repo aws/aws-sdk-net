@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public DelegationSetAlreadyCreatedException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public DelegationSetAlreadyCreatedException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             DelegationSetAlreadyCreatedException response = new DelegationSetAlreadyCreatedException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

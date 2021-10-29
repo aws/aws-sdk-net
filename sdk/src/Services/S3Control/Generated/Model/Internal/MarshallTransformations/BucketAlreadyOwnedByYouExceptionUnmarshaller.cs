@@ -53,7 +53,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public BucketAlreadyOwnedByYouException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public BucketAlreadyOwnedByYouException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             BucketAlreadyOwnedByYouException response = new BucketAlreadyOwnedByYouException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

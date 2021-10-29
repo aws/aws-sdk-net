@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public FieldLevelEncryptionProfileSizeExceededException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public FieldLevelEncryptionProfileSizeExceededException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             FieldLevelEncryptionProfileSizeExceededException response = new FieldLevelEncryptionProfileSizeExceededException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

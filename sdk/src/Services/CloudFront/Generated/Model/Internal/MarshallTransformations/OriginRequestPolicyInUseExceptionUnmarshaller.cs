@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public OriginRequestPolicyInUseException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public OriginRequestPolicyInUseException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             OriginRequestPolicyInUseException response = new OriginRequestPolicyInUseException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public FieldLevelEncryptionProfileAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public FieldLevelEncryptionProfileAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             FieldLevelEncryptionProfileAlreadyExistsException response = new FieldLevelEncryptionProfileAlreadyExistsException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

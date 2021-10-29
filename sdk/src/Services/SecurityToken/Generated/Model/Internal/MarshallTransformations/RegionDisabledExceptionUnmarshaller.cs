@@ -43,7 +43,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public RegionDisabledException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public RegionDisabledException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public RegionDisabledException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             RegionDisabledException response = new RegionDisabledException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public TooManyCookieNamesInWhiteListException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public TooManyCookieNamesInWhiteListException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             TooManyCookieNamesInWhiteListException response = new TooManyCookieNamesInWhiteListException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public TooManyStreamingDistributionCNAMEsException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public TooManyStreamingDistributionCNAMEsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             TooManyStreamingDistributionCNAMEsException response = new TooManyStreamingDistributionCNAMEsException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

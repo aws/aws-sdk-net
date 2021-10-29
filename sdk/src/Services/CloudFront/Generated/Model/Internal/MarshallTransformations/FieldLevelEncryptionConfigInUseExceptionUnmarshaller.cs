@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public FieldLevelEncryptionConfigInUseException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public FieldLevelEncryptionConfigInUseException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             FieldLevelEncryptionConfigInUseException response = new FieldLevelEncryptionConfigInUseException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

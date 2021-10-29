@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public TooManyCookiesInOriginRequestPolicyException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public TooManyCookiesInOriginRequestPolicyException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             TooManyCookiesInOriginRequestPolicyException response = new TooManyCookiesInOriginRequestPolicyException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public TooManyCloudFrontOriginAccessIdentitiesException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public TooManyCloudFrontOriginAccessIdentitiesException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             TooManyCloudFrontOriginAccessIdentitiesException response = new TooManyCloudFrontOriginAccessIdentitiesException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

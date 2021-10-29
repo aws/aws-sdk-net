@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public NoSuchCloudWatchLogsLogGroupException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public NoSuchCloudWatchLogsLogGroupException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             NoSuchCloudWatchLogsLogGroupException response = new NoSuchCloudWatchLogsLogGroupException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

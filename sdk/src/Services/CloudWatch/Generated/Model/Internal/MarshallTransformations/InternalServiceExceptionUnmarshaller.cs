@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public InternalServiceException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InternalServiceException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public InternalServiceException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             InternalServiceException response = new InternalServiceException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

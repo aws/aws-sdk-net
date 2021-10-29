@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public KeySigningKeyWithActiveStatusNotFoundException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public KeySigningKeyWithActiveStatusNotFoundException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             KeySigningKeyWithActiveStatusNotFoundException response = new KeySigningKeyWithActiveStatusNotFoundException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

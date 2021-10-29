@@ -45,7 +45,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public CommitDoesNotExistException Unmarshall(JsonUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public CommitDoesNotExistException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public CommitDoesNotExistException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
 

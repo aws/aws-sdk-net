@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public HostedZonePartiallyDelegatedException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public HostedZonePartiallyDelegatedException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             HostedZonePartiallyDelegatedException response = new HostedZonePartiallyDelegatedException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public LoadBalancerAttributeNotFoundException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public LoadBalancerAttributeNotFoundException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public LoadBalancerAttributeNotFoundException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             LoadBalancerAttributeNotFoundException response = new LoadBalancerAttributeNotFoundException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

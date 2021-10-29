@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public DuplicateTargetGroupNameException Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public DuplicateTargetGroupNameException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public DuplicateTargetGroupNameException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             DuplicateTargetGroupNameException response = new DuplicateTargetGroupNameException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

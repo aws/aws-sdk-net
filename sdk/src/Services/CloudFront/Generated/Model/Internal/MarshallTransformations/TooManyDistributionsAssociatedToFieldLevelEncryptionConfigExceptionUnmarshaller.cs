@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException response = new TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

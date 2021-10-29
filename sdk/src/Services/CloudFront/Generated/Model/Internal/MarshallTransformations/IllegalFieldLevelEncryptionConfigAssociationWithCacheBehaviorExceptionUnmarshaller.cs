@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException response = new IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

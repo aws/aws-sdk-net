@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public NoSuchFieldLevelEncryptionProfileException Unmarshall(XmlUnmarshallerContext context, ErrorResponse errorResponse)
+        public NoSuchFieldLevelEncryptionProfileException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             NoSuchFieldLevelEncryptionProfileException response = new NoSuchFieldLevelEncryptionProfileException(errorResponse.Message, errorResponse.InnerException, 
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
