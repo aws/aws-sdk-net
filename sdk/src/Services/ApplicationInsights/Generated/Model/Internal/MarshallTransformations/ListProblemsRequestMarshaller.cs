@@ -67,6 +67,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetComponentName())
+                {
+                    context.Writer.WritePropertyName("ComponentName");
+                    context.Writer.Write(publicRequest.ComponentName);
+                }
+
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");

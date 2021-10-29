@@ -36,11 +36,27 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class UpdateComponentConfigurationRequest : AmazonApplicationInsightsRequest
     {
+        private bool? _autoConfigEnabled;
         private string _componentConfiguration;
         private string _componentName;
         private bool? _monitor;
         private string _resourceGroupName;
         private Tier _tier;
+
+        /// <summary>
+        /// Gets and sets the property AutoConfigEnabled.
+        /// </summary>
+        public bool AutoConfigEnabled
+        {
+            get { return this._autoConfigEnabled.GetValueOrDefault(); }
+            set { this._autoConfigEnabled = value; }
+        }
+
+        // Check to see if AutoConfigEnabled property is set
+        internal bool IsSetAutoConfigEnabled()
+        {
+            return this._autoConfigEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ComponentConfiguration. 

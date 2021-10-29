@@ -94,6 +94,18 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.Insights = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastRecurrenceTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastRecurrenceTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RecurringCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RecurringCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

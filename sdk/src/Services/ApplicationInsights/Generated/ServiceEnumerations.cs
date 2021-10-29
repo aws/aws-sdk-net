@@ -195,6 +195,56 @@ namespace Amazon.ApplicationInsights
 
 
     /// <summary>
+    /// Constants used for properties of type DiscoveryType.
+    /// </summary>
+    public class DiscoveryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_BASED for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType ACCOUNT_BASED = new DiscoveryType("ACCOUNT_BASED");
+        /// <summary>
+        /// Constant RESOURCE_GROUP_BASED for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType RESOURCE_GROUP_BASED = new DiscoveryType("RESOURCE_GROUP_BASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DiscoveryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoveryType FindValue(string value)
+        {
+            return FindValue<DiscoveryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoveryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FeedbackKey.
     /// </summary>
     public class FeedbackKey : ConstantClass
@@ -467,6 +517,10 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         public static readonly Status PENDING = new Status("PENDING");
         /// <summary>
+        /// Constant RECURRING for Status
+        /// </summary>
+        public static readonly Status RECURRING = new Status("RECURRING");
+        /// <summary>
         /// Constant RESOLVED for Status
         /// </summary>
         public static readonly Status RESOLVED = new Status("RESOLVED");
@@ -553,6 +607,22 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         public static readonly Tier POSTGRESQL = new Tier("POSTGRESQL");
         /// <summary>
+        /// Constant SAP_HANA for Tier
+        /// </summary>
+        public static readonly Tier SAP_HANA = new Tier("SAP_HANA");
+        /// <summary>
+        /// Constant SAP_HANA_HIGH_AVAILABILITY for Tier
+        /// </summary>
+        public static readonly Tier SAP_HANA_HIGH_AVAILABILITY = new Tier("SAP_HANA_HIGH_AVAILABILITY");
+        /// <summary>
+        /// Constant SAP_HANA_MULTI_NODE for Tier
+        /// </summary>
+        public static readonly Tier SAP_HANA_MULTI_NODE = new Tier("SAP_HANA_MULTI_NODE");
+        /// <summary>
+        /// Constant SAP_HANA_SINGLE_NODE for Tier
+        /// </summary>
+        public static readonly Tier SAP_HANA_SINGLE_NODE = new Tier("SAP_HANA_SINGLE_NODE");
+        /// <summary>
         /// Constant SQL_SERVER for Tier
         /// </summary>
         public static readonly Tier SQL_SERVER = new Tier("SQL_SERVER");
@@ -560,6 +630,10 @@ namespace Amazon.ApplicationInsights
         /// Constant SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP for Tier
         /// </summary>
         public static readonly Tier SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP = new Tier("SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP");
+        /// <summary>
+        /// Constant SQL_SERVER_FAILOVER_CLUSTER_INSTANCE for Tier
+        /// </summary>
+        public static readonly Tier SQL_SERVER_FAILOVER_CLUSTER_INSTANCE = new Tier("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

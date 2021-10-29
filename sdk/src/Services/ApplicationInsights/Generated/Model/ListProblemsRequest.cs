@@ -34,11 +34,28 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ListProblemsRequest : AmazonApplicationInsightsRequest
     {
+        private string _componentName;
         private DateTime? _endTime;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceGroupName;
         private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property ComponentName.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string ComponentName
+        {
+            get { return this._componentName; }
+            set { this._componentName = value; }
+        }
+
+        // Check to see if ComponentName property is set
+        internal bool IsSetComponentName()
+        {
+            return this._componentName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 

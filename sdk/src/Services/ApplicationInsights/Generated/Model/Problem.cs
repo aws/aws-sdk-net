@@ -38,6 +38,8 @@ namespace Amazon.ApplicationInsights.Model
         private Dictionary<string, string> _feedback = new Dictionary<string, string>();
         private string _id;
         private string _insights;
+        private DateTime? _lastRecurrenceTime;
+        private long? _recurringCount;
         private string _resourceGroupName;
         private SeverityLevel _severityLevel;
         private DateTime? _startTime;
@@ -134,6 +136,36 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetInsights()
         {
             return this._insights != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastRecurrenceTime.
+        /// </summary>
+        public DateTime LastRecurrenceTime
+        {
+            get { return this._lastRecurrenceTime.GetValueOrDefault(); }
+            set { this._lastRecurrenceTime = value; }
+        }
+
+        // Check to see if LastRecurrenceTime property is set
+        internal bool IsSetLastRecurrenceTime()
+        {
+            return this._lastRecurrenceTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecurringCount.
+        /// </summary>
+        public long RecurringCount
+        {
+            get { return this._recurringCount.GetValueOrDefault(); }
+            set { this._recurringCount = value; }
+        }
+
+        // Check to see if RecurringCount property is set
+        internal bool IsSetRecurringCount()
+        {
+            return this._recurringCount.HasValue; 
         }
 
         /// <summary>

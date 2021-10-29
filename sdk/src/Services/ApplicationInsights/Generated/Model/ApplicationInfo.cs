@@ -33,12 +33,29 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ApplicationInfo
     {
+        private bool? _autoConfigEnabled;
         private bool? _cweMonitorEnabled;
+        private DiscoveryType _discoveryType;
         private string _lifeCycle;
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
         private string _remarks;
         private string _resourceGroupName;
+
+        /// <summary>
+        /// Gets and sets the property AutoConfigEnabled.
+        /// </summary>
+        public bool AutoConfigEnabled
+        {
+            get { return this._autoConfigEnabled.GetValueOrDefault(); }
+            set { this._autoConfigEnabled = value; }
+        }
+
+        // Check to see if AutoConfigEnabled property is set
+        internal bool IsSetAutoConfigEnabled()
+        {
+            return this._autoConfigEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CWEMonitorEnabled. 
@@ -58,6 +75,21 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetCWEMonitorEnabled()
         {
             return this._cweMonitorEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryType.
+        /// </summary>
+        public DiscoveryType DiscoveryType
+        {
+            get { return this._discoveryType; }
+            set { this._discoveryType = value; }
+        }
+
+        // Check to see if DiscoveryType property is set
+        internal bool IsSetDiscoveryType()
+        {
+            return this._discoveryType != null;
         }
 
         /// <summary>

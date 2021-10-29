@@ -63,6 +63,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     response.ProblemList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

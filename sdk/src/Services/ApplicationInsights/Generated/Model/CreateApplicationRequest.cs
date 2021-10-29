@@ -34,11 +34,43 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class CreateApplicationRequest : AmazonApplicationInsightsRequest
     {
+        private bool? _autoConfigEnabled;
+        private bool? _autoCreate;
         private bool? _cweMonitorEnabled;
         private bool? _opsCenterEnabled;
         private string _opsItemSNSTopicArn;
         private string _resourceGroupName;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AutoConfigEnabled.
+        /// </summary>
+        public bool AutoConfigEnabled
+        {
+            get { return this._autoConfigEnabled.GetValueOrDefault(); }
+            set { this._autoConfigEnabled = value; }
+        }
+
+        // Check to see if AutoConfigEnabled property is set
+        internal bool IsSetAutoConfigEnabled()
+        {
+            return this._autoConfigEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoCreate.
+        /// </summary>
+        public bool AutoCreate
+        {
+            get { return this._autoCreate.GetValueOrDefault(); }
+            set { this._autoCreate = value; }
+        }
+
+        // Check to see if AutoCreate property is set
+        internal bool IsSetAutoCreate()
+        {
+            return this._autoCreate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CWEMonitorEnabled. 
@@ -105,7 +137,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the resource group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string ResourceGroupName
         {
             get { return this._resourceGroupName; }

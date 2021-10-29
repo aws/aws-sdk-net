@@ -35,6 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     {
         private string _nextToken;
         private List<Problem> _problemList = new List<Problem>();
+        private string _resourceGroupName;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,6 +73,22 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetProblemList()
         {
             return this._problemList != null && this._problemList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceGroupName.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ResourceGroupName
+        {
+            get { return this._resourceGroupName; }
+            set { this._resourceGroupName = value; }
+        }
+
+        // Check to see if ResourceGroupName property is set
+        internal bool IsSetResourceGroupName()
+        {
+            return this._resourceGroupName != null;
         }
 
     }

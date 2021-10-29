@@ -324,6 +324,12 @@
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.ComponentName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>(?:^[\d\w\-_\.+]*$)|(?:^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListProblemsRequest.MaxResults</property>
     <min>1</min>
     <max>40</max>
@@ -345,6 +351,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ListProblemsResponse.ResourceGroupName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ListTagsForResourceRequest.ResourceARN</property>
