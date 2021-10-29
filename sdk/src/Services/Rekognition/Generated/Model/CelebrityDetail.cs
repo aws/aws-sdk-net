@@ -37,6 +37,7 @@ namespace Amazon.Rekognition.Model
         private float? _confidence;
         private FaceDetail _face;
         private string _id;
+        private KnownGender _knownGender;
         private string _name;
         private List<string> _urls = new List<string>();
 
@@ -112,6 +113,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KnownGender. 
+        /// <para>
+        /// Retrieves the known gender for the celebrity.
+        /// </para>
+        /// </summary>
+        public KnownGender KnownGender
+        {
+            get { return this._knownGender; }
+            set { this._knownGender = value; }
+        }
+
+        // Check to see if KnownGender property is set
+        internal bool IsSetKnownGender()
+        {
+            return this._knownGender != null;
         }
 
         /// <summary>
