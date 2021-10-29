@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// The content of the chat message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Content
         {
             get { return this._content; }
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         /// The type of the content. Supported types are text and plain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string ContentType
         {
             get { return this._contentType; }

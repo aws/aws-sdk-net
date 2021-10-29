@@ -70,10 +70,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceReference", targetDepth))
+                {
+                    var unmarshaller = InstanceReferenceUnmarshaller.Instance;
+                    unmarshalledObject.InstanceReference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Queue", targetDepth))
                 {
                     var unmarshaller = QueueReferenceUnmarshaller.Instance;
                     unmarshalledObject.Queue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoutingProfile", targetDepth))
+                {
+                    var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;
+                    unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

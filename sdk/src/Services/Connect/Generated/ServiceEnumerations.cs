@@ -511,9 +511,17 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly Grouping CHANNEL = new Grouping("CHANNEL");
         /// <summary>
+        /// Constant INSTANCE for Grouping
+        /// </summary>
+        public static readonly Grouping INSTANCE = new Grouping("INSTANCE");
+        /// <summary>
         /// Constant QUEUE for Grouping
         /// </summary>
         public static readonly Grouping QUEUE = new Grouping("QUEUE");
+        /// <summary>
+        /// Constant ROUTING_PROFILE for Grouping
+        /// </summary>
+        public static readonly Grouping ROUTING_PROFILE = new Grouping("ROUTING_PROFILE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -613,6 +621,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_IN = new HistoricalMetricName("CONTACTS_TRANSFERRED_IN");
         /// <summary>
+        /// Constant CONTACTS_TRANSFERRED_IN_BY_AGENT for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_IN_BY_AGENT = new HistoricalMetricName("CONTACTS_TRANSFERRED_IN_BY_AGENT");
+        /// <summary>
         /// Constant CONTACTS_TRANSFERRED_IN_FROM_QUEUE for HistoricalMetricName
         /// </summary>
         public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_IN_FROM_QUEUE = new HistoricalMetricName("CONTACTS_TRANSFERRED_IN_FROM_QUEUE");
@@ -620,6 +632,10 @@ namespace Amazon.Connect
         /// Constant CONTACTS_TRANSFERRED_OUT for HistoricalMetricName
         /// </summary>
         public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_OUT = new HistoricalMetricName("CONTACTS_TRANSFERRED_OUT");
+        /// <summary>
+        /// Constant CONTACTS_TRANSFERRED_OUT_BY_AGENT for HistoricalMetricName
+        /// </summary>
+        public static readonly HistoricalMetricName CONTACTS_TRANSFERRED_OUT_BY_AGENT = new HistoricalMetricName("CONTACTS_TRANSFERRED_OUT_BY_AGENT");
         /// <summary>
         /// Constant CONTACTS_TRANSFERRED_OUT_FROM_QUEUE for HistoricalMetricName
         /// </summary>
@@ -2315,6 +2331,26 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant ATTACHMENT for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType ATTACHMENT = new ReferenceType("ATTACHMENT");
+        /// <summary>
+        /// Constant DATE for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType DATE = new ReferenceType("DATE");
+        /// <summary>
+        /// Constant EMAIL for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL = new ReferenceType("EMAIL");
+        /// <summary>
+        /// Constant NUMBER for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType NUMBER = new ReferenceType("NUMBER");
+        /// <summary>
+        /// Constant STRING for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType STRING = new ReferenceType("STRING");
+        /// <summary>
         /// Constant URL for ReferenceType
         /// </summary>
         public static readonly ReferenceType URL = new ReferenceType("URL");
@@ -2646,6 +2682,10 @@ namespace Amazon.Connect
         /// Constant COUNT for Unit
         /// </summary>
         public static readonly Unit COUNT = new Unit("COUNT");
+        /// <summary>
+        /// Constant MILLISECONDS for Unit
+        /// </summary>
+        public static readonly Unit MILLISECONDS = new Unit("MILLISECONDS");
         /// <summary>
         /// Constant PERCENT for Unit
         /// </summary>

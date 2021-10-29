@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.Origin</property>
@@ -12,12 +12,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateBotRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigResponse.AssociationId</property>
@@ -32,27 +32,27 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateLambdaFunctionRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateLexBotRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateQueueQuickConnectsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateRoutingProfileQueuesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateSecurityKeyRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateSecurityKeyRequest.Key</property>
@@ -77,7 +77,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateAgentStatusRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateAgentStatusRequest.Name</property>
@@ -87,7 +87,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowRequest.Name</property>
@@ -105,7 +105,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.Name</property>
@@ -131,12 +131,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateInstanceResponse.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateIntegrationAssociationRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateIntegrationAssociationRequest.SourceApplicationName</property>
@@ -162,7 +162,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateQueueRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateQueueRequest.MaxContacts</property>
@@ -181,7 +181,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateQuickConnectRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateQuickConnectRequest.Name</property>
@@ -196,7 +196,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateRoutingProfileRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateRoutingProfileRequest.Name</property>
@@ -206,7 +206,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUseCaseRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUseCaseRequest.IntegrationAssociationId</property>
@@ -221,7 +221,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUserRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUserRequest.Password</property>
@@ -235,22 +235,22 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateUserHierarchyGroupRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteInstanceRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteIntegrationAssociationRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteIntegrationAssociationRequest.IntegrationAssociationId</property>
@@ -260,12 +260,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteQuickConnectRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUseCaseRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUseCaseRequest.IntegrationAssociationId</property>
@@ -280,17 +280,17 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUserRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUserHierarchyGroupRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeAgentStatusRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeContactFlowRequest.ContactFlowId</property>
@@ -299,22 +299,22 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeContactFlowRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeInstanceRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeInstanceAttributeRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeInstanceStorageConfigRequest.AssociationId</property>
@@ -324,42 +324,42 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeQueueRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeQuickConnectRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeRoutingProfileRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeUserRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeUserHierarchyGroupRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeUserHierarchyStructureRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.Origin</property>
@@ -368,7 +368,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateBotRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateInstanceStorageConfigRequest.AssociationId</property>
@@ -378,7 +378,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLambdaFunctionRequest.FunctionArn</property>
@@ -388,7 +388,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLambdaFunctionRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.BotName</property>
@@ -397,7 +397,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.LexRegion</property>
@@ -406,12 +406,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateQueueQuickConnectsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateRoutingProfileQueuesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateSecurityKeyRequest.AssociationId</property>
@@ -421,7 +421,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateSecurityKeyRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetContactAttributesRequest.InitialContactId</property>
@@ -431,12 +431,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.GetContactAttributesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetCurrentMetricDataRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetCurrentMetricDataRequest.MaxResults</property>
@@ -446,12 +446,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.GetFederationTokenRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetMetricDataRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetMetricDataRequest.MaxResults</property>
@@ -461,7 +461,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListAgentStatusesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListAgentStatusesRequest.MaxResults</property>
@@ -471,7 +471,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListApprovedOriginsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListApprovedOriginsRequest.MaxResults</property>
@@ -481,7 +481,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListBotsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListBotsRequest.MaxResults</property>
@@ -491,7 +491,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListContactFlowsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListContactFlowsRequest.MaxResults</property>
@@ -501,7 +501,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListHoursOfOperationsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListHoursOfOperationsRequest.MaxResults</property>
@@ -511,7 +511,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListInstanceAttributesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListInstanceAttributesRequest.MaxResults</property>
@@ -526,7 +526,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListInstanceStorageConfigsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListInstanceStorageConfigsRequest.MaxResults</property>
@@ -536,7 +536,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListIntegrationAssociationsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListIntegrationAssociationsRequest.MaxResults</property>
@@ -546,7 +546,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListLambdaFunctionsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListLambdaFunctionsRequest.MaxResults</property>
@@ -556,7 +556,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListLexBotsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListLexBotsRequest.MaxResults</property>
@@ -566,7 +566,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPhoneNumbersRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPhoneNumbersRequest.MaxResults</property>
@@ -576,7 +576,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPromptsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListPromptsRequest.MaxResults</property>
@@ -586,7 +586,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueueQuickConnectsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueueQuickConnectsRequest.MaxResults</property>
@@ -596,7 +596,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueuesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueuesRequest.MaxResults</property>
@@ -606,7 +606,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQuickConnectsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQuickConnectsRequest.MaxResults</property>
@@ -616,7 +616,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileQueuesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileQueuesRequest.MaxResults</property>
@@ -626,7 +626,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfilesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfilesRequest.MaxResults</property>
@@ -636,7 +636,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityKeysRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityKeysRequest.MaxResults</property>
@@ -646,7 +646,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfilesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListSecurityProfilesRequest.MaxResults</property>
@@ -656,7 +656,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUseCasesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUseCasesRequest.IntegrationAssociationId</property>
@@ -671,7 +671,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUserHierarchyGroupsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUserHierarchyGroupsRequest.MaxResults</property>
@@ -681,7 +681,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUsersRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListUsersRequest.MaxResults</property>
@@ -701,7 +701,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ResumeContactRecordingRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.ClientToken</property>
@@ -714,7 +714,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactResponse.ContactId</property>
@@ -744,6 +744,25 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactRecordingRequest.InstanceId</property>
     <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartContactStreamingRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartContactStreamingRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartContactStreamingRequest.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartContactStreamingResponse.StreamingId</property>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -762,7 +781,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactResponse.ContactId</property>
@@ -785,7 +804,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTaskContactRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartTaskContactRequest.Name</property>
@@ -810,7 +829,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.StopContactRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StopContactRecordingRequest.ContactId</property>
@@ -824,6 +843,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StopContactRecordingRequest.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StopContactStreamingRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StopContactStreamingRequest.InstanceId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StopContactStreamingRequest.StreamingId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -840,7 +874,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.SuspendContactRecordingRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateAgentStatusRequest.Description</property>
@@ -855,7 +889,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateAgentStatusRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateAgentStatusRequest.Name</property>
@@ -870,7 +904,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactAttributesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowContentRequest.ContactFlowId</property>
@@ -879,7 +913,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowContentRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.ContactFlowId</property>
@@ -888,7 +922,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.Name</property>
@@ -902,7 +936,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateHoursOfOperationRequest.Name</property>
@@ -912,7 +946,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceAttributeRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceAttributeRequest.Value</property>
@@ -927,17 +961,17 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueMaxContactsRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueMaxContactsRequest.MaxContacts</property>
@@ -951,7 +985,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueNameRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueNameRequest.Name</property>
@@ -961,17 +995,17 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueOutboundCallerConfigRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueStatusRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQuickConnectConfigRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQuickConnectNameRequest.Description</property>
@@ -981,7 +1015,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQuickConnectNameRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQuickConnectNameRequest.Name</property>
@@ -991,12 +1025,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRoutingProfileConcurrencyRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRoutingProfileDefaultOutboundQueueRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRoutingProfileNameRequest.Description</property>
@@ -1006,7 +1040,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRoutingProfileNameRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRoutingProfileNameRequest.Name</property>
@@ -1016,42 +1050,42 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRoutingProfileQueuesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserHierarchyRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserHierarchyGroupNameRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserHierarchyStructureRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserIdentityInfoRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserPhoneConfigRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserRoutingProfileRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserSecurityProfilesRequest.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AgentStatus.Description</property>
@@ -1087,6 +1121,11 @@
     <property>Amazon.Connect.Model.ChatMessage.ContentType</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ChatStreamingConfiguration.StreamingEndpointArn</property>
+    <min>1</min>
+    <max>350</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Id</property>
@@ -1132,13 +1171,18 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.Instance.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Instance.InstanceAlias</property>
     <min>1</min>
     <max>62</max>
     <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.InstanceReference.Id</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.InstanceStorageConfig.AssociationId</property>
@@ -1148,7 +1192,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.InstanceSummary.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.InstanceSummary.InstanceAlias</property>
@@ -1159,7 +1203,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.IntegrationAssociationSummary.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.IntegrationAssociationSummary.IntegrationAssociationId</property>
@@ -1285,7 +1329,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfile.InstanceId</property>
     <min>1</min>
-    <max>100</max>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfile.Name</property>

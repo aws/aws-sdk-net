@@ -6021,6 +6021,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartContactStreaming
+
+        /// <summary>
+        /// Initiates real-time message streaming for a new chat contact.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about message streaming, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-message-streaming.html">Enable
+        /// real-time chat message streaming</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactStreaming service method.</param>
+        /// 
+        /// <returns>The response from the StartContactStreaming service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">REST API Reference for StartContactStreaming Operation</seealso>
+        public virtual StartContactStreamingResponse StartContactStreaming(StartContactStreamingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartContactStreamingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactStreamingResponseUnmarshaller.Instance;
+
+            return Invoke<StartContactStreamingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContactStreaming operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContactStreaming operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartContactStreaming
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">REST API Reference for StartContactStreaming Operation</seealso>
+        public virtual IAsyncResult BeginStartContactStreaming(StartContactStreamingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartContactStreamingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactStreamingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartContactStreaming operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartContactStreaming.</param>
+        /// 
+        /// <returns>Returns a  StartContactStreamingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactStreaming">REST API Reference for StartContactStreaming Operation</seealso>
+        public virtual StartContactStreamingResponse EndStartContactStreaming(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartContactStreamingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartOutboundVoiceContact
 
         /// <summary>
@@ -6334,6 +6409,74 @@ namespace Amazon.Connect
         public virtual StopContactRecordingResponse EndStopContactRecording(IAsyncResult asyncResult)
         {
             return EndInvoke<StopContactRecordingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopContactStreaming
+
+        /// <summary>
+        /// Ends message streaming on a specified contact. To restart message streaming on that
+        /// contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactStreaming service method.</param>
+        /// 
+        /// <returns>The response from the StopContactStreaming service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">REST API Reference for StopContactStreaming Operation</seealso>
+        public virtual StopContactStreamingResponse StopContactStreaming(StopContactStreamingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContactStreamingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactStreamingResponseUnmarshaller.Instance;
+
+            return Invoke<StopContactStreamingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopContactStreaming operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopContactStreaming operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopContactStreaming
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">REST API Reference for StopContactStreaming Operation</seealso>
+        public virtual IAsyncResult BeginStopContactStreaming(StopContactStreamingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopContactStreamingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactStreamingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopContactStreaming operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopContactStreaming.</param>
+        /// 
+        /// <returns>Returns a  StopContactStreamingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">REST API Reference for StopContactStreaming Operation</seealso>
+        public virtual StopContactStreamingResponse EndStopContactStreaming(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopContactStreamingResponse>(asyncResult);
         }
 
         #endregion

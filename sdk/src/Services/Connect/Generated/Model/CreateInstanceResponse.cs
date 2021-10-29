@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// The identifier for the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
