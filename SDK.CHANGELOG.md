@@ -1,3 +1,20 @@
+### 3.7.147.0 (2021-10-29 18:26 UTC)
+* ApplicationInsights (3.7.1.0)
+	* Added Monitoring support for SQL Server Failover Cluster Instance. Additionally, added a new API to allow one-click monitoring of containers resources.
+* Connect (3.7.6.0)
+	* Amazon Connect Chat now supports real-time message streaming.
+* EC2 (3.7.38.0)
+	* Support added for AMI sharing with organizations and organizational units in ModifyImageAttribute API
+* Rekognition (3.7.4.0)
+	* This release added new attributes to Rekognition Video GetCelebrityRecognition API operations.
+* TranscribeService (3.7.9.0)
+	* Transcribe and Transcribe Call Analytics now support automatic language identification along with custom vocabulary, vocabulary filter, custom language model and PII redaction.
+* Core 3.7.3.28
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.146.0 (2021-10-28 18:20 UTC)
 * ConnectParticipant (3.7.1.0)
 	* This release adds a new boolean attribute - Connect Participant - to the CreateParticipantConnection API, which can be used to mark the participant as connected.
