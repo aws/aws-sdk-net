@@ -60,6 +60,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Group = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("organizationalUnitArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OrganizationalUnitArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("organizationArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OrganizationArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("userId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

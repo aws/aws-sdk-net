@@ -62,6 +62,23 @@ namespace Amazon.EC2.Model
         /// Services account ID, <code>self</code> (the sender of the request), or <code>all</code>
         /// (public AMIs).
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you specify an Amazon Web Services account ID that is not your own, only AMIs shared
+        /// with that specific Amazon Web Services account ID are returned. However, AMIs that
+        /// are shared with the account’s organization or organizational unit (OU) are not returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>self</code> or your own Amazon Web Services account ID, AMIs
+        /// shared with your account are returned. In addition, AMIs that are shared with the
+        /// organization or OU of which you are member are also returned. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you specify <code>all</code>, all public AMIs are returned.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> ExecutableUsers
         {

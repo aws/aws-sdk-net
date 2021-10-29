@@ -34,6 +34,8 @@ namespace Amazon.EC2.Model
     public partial class LaunchPermission
     {
         private PermissionGroup _group;
+        private string _organizationalUnitArn;
+        private string _organizationArn;
         private string _userId;
 
         /// <summary>
@@ -52,6 +54,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an organizational unit (OU).
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnitArn
+        {
+            get { return this._organizationalUnitArn; }
+            set { this._organizationalUnitArn = value; }
+        }
+
+        // Check to see if OrganizationalUnitArn property is set
+        internal bool IsSetOrganizationalUnitArn()
+        {
+            return this._organizationalUnitArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an organization.
+        /// </para>
+        /// </summary>
+        public string OrganizationArn
+        {
+            get { return this._organizationArn; }
+            set { this._organizationArn = value; }
+        }
+
+        // Check to see if OrganizationArn property is set
+        internal bool IsSetOrganizationArn()
+        {
+            return this._organizationArn != null;
         }
 
         /// <summary>

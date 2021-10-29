@@ -390,10 +390,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>c5*.*</code>, Amazon EC2 will exclude the entire
-        /// C5 instance family (all C5a and C5n instance types). If you specify <code>c5a.*</code>,
-        /// Amazon EC2 excludes all the C5a instance types, but does not exclude the C5n instance
-        /// types.
+        /// For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5
+        /// instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
+        /// Amazon EC2 will exclude all the M5a instance types, but not the M5n instance types.
         /// </para>
         ///  
         /// <para>

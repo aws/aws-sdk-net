@@ -81,6 +81,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLaunchPermissionlistValue.Group));
                             }
+                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationalUnitArn())
+                            {
+                                request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationalUnitArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationalUnitArn));
+                            }
+                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationArn())
+                            {
+                                request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationArn));
+                            }
                             if(publicRequestLaunchPermissionlistValue.IsSetUserId())
                             {
                                 request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLaunchPermissionlistValue.UserId));
@@ -97,6 +105,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLaunchPermissionlistValue.Group));
                             }
+                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationalUnitArn())
+                            {
+                                request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationalUnitArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationalUnitArn));
+                            }
+                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationArn())
+                            {
+                                request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationArn));
+                            }
                             if(publicRequestLaunchPermissionlistValue.IsSetUserId())
                             {
                                 request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLaunchPermissionlistValue.UserId));
@@ -108,6 +124,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOperationType())
                 {
                     request.Parameters.Add("OperationType", StringUtils.FromString(publicRequest.OperationType));
+                }
+                if(publicRequest.IsSetOrganizationalUnitArns())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OrganizationalUnitArns)
+                    {
+                        request.Parameters.Add("OrganizationalUnitArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetOrganizationArns())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OrganizationArns)
+                    {
+                        request.Parameters.Add("OrganizationArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
                 if(publicRequest.IsSetProductCodes())
                 {

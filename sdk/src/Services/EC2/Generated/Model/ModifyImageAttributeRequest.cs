@@ -51,6 +51,8 @@ namespace Amazon.EC2.Model
         private string _imageId;
         private LaunchPermissionModifications _launchPermission;
         private OperationType _operationType;
+        private List<string> _organizationalUnitArns = new List<string>();
+        private List<string> _organizationArns = new List<string>();
         private List<string> _productCodes = new List<string>();
         private List<string> _userGroups = new List<string>();
         private List<string> _userIds = new List<string>();
@@ -65,7 +67,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyImageAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
-        /// <param name="attribute">The name of the attribute to modify. The valid values are <code>description</code> and <code>launchPermission</code>.</param>
+        /// <param name="attribute">The name of the attribute to modify. Valid values: <code>description</code> | <code>launchPermission</code> </param>
         public ModifyImageAttributeRequest(string imageId, string attribute)
         {
             _imageId = imageId;
@@ -75,8 +77,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The name of the attribute to modify. The valid values are <code>description</code>
-        /// and <code>launchPermission</code>.
+        /// The name of the attribute to modify.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>description</code> | <code>launchPermission</code> 
         /// </para>
         /// </summary>
         public string Attribute
@@ -163,6 +168,44 @@ namespace Amazon.EC2.Model
         internal bool IsSetOperationType()
         {
             return this._operationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitArns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an organizational unit (OU). This parameter can
+        /// be used only when the <code>Attribute</code> parameter is <code>launchPermission</code>.
+        /// </para>
+        /// </summary>
+        public List<string> OrganizationalUnitArns
+        {
+            get { return this._organizationalUnitArns; }
+            set { this._organizationalUnitArns = value; }
+        }
+
+        // Check to see if OrganizationalUnitArns property is set
+        internal bool IsSetOrganizationalUnitArns()
+        {
+            return this._organizationalUnitArns != null && this._organizationalUnitArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationArns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an organization. This parameter can be used only
+        /// when the <code>Attribute</code> parameter is <code>launchPermission</code>.
+        /// </para>
+        /// </summary>
+        public List<string> OrganizationArns
+        {
+            get { return this._organizationArns; }
+            set { this._organizationArns = value; }
+        }
+
+        // Check to see if OrganizationArns property is set
+        internal bool IsSetOrganizationArns()
+        {
+            return this._organizationArns != null && this._organizationArns.Count > 0; 
         }
 
         /// <summary>
