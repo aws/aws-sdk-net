@@ -51,7 +51,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property AWSLocation. 
         /// <para>
-        /// The AWS location of the device.
+        /// The Amazon Web Services location of the device.
         /// </para>
         /// </summary>
         public AWSLocation AWSLocation

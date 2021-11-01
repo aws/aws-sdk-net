@@ -36,6 +36,7 @@ namespace Amazon.NetworkManager.Model
     #endif
     public partial class ResourceNotFoundException : AmazonNetworkManagerException
     {
+        private Dictionary<string, string> _context = new Dictionary<string, string>();
         private string _resourceId;
         private string _resourceType;
 
@@ -99,6 +100,7 @@ namespace Amazon.NetworkManager.Model
         protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Context = (Dictionary<string, string>)info.GetValue("Context", typeof(Dictionary<string, string>));
             this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
             this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
@@ -121,10 +123,26 @@ namespace Amazon.NetworkManager.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Context", this.Context);
             info.AddValue("ResourceId", this.ResourceId);
             info.AddValue("ResourceType", this.ResourceType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Context.
+        /// </summary>
+        public Dictionary<string, string> Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null && this._context.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 

@@ -84,6 +84,38 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for GetNetworkResourceCounts operation
+        ///</summary>
+        public IGetNetworkResourceCountsPaginator GetNetworkResourceCounts(GetNetworkResourceCountsRequest request) 
+        {
+            return new GetNetworkResourceCountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetNetworkResourceRelationships operation
+        ///</summary>
+        public IGetNetworkResourceRelationshipsPaginator GetNetworkResourceRelationships(GetNetworkResourceRelationshipsRequest request) 
+        {
+            return new GetNetworkResourceRelationshipsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetNetworkResources operation
+        ///</summary>
+        public IGetNetworkResourcesPaginator GetNetworkResources(GetNetworkResourcesRequest request) 
+        {
+            return new GetNetworkResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetNetworkTelemetry operation
+        ///</summary>
+        public IGetNetworkTelemetryPaginator GetNetworkTelemetry(GetNetworkTelemetryRequest request) 
+        {
+            return new GetNetworkTelemetryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSites operation
         ///</summary>
         public IGetSitesPaginator GetSites(GetSitesRequest request) 

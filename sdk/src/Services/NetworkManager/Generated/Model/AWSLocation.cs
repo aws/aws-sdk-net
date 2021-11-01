@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// Specifies a location in AWS.
+    /// Specifies a location in Amazon Web Services.
     /// </summary>
     public partial class AWSLocation
     {
@@ -39,7 +39,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property SubnetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the subnet the device is located in.
+        /// The Amazon Resource Name (ARN) of the subnet that the device is located in.
         /// </para>
         /// </summary>
         public string SubnetArn
@@ -57,7 +57,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Zone. 
         /// <para>
-        /// The Zone the device is located in. This can be the ID of an Availability Zone, Local
+        /// The Zone that the device is located in. Specify the ID of an Availability Zone, Local
         /// Zone, Wavelength Zone, or an Outpost.
         /// </para>
         /// </summary>

@@ -43,9 +43,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property CustomerGatewayArns. 
         /// <para>
-        /// One or more customer gateway Amazon Resource Names (ARNs). For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-        /// Defined by Amazon EC2</a>. The maximum is 10.
+        /// One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.
         /// </para>
         /// </summary>
         public List<string> CustomerGatewayArns

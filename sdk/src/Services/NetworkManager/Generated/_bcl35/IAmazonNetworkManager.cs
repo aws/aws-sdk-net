@@ -30,14 +30,8 @@ namespace Amazon.NetworkManager
     /// Interface for accessing NetworkManager
     ///
     /// Transit Gateway Network Manager (Network Manager) enables you to create a global network,
-    /// in which you can monitor your AWS and on-premises networks that are built around transit
-    /// gateways.
-    /// 
-    ///  
-    /// <para>
-    /// The Network Manager APIs are supported in the US West (Oregon) Region only. You must
-    /// specify the <code>us-west-2</code> Region in all requests made to Network Manager.
-    /// </para>
+    /// in which you can monitor your Amazon Web Services and on-premises networks that are
+    /// built around transit gateways.
     /// </summary>
     public partial interface IAmazonNetworkManager : IAmazonService, IDisposable
     {
@@ -1455,6 +1449,339 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetNetworkResourceCounts
+
+
+        /// <summary>
+        /// Gets the count of network resources, by resource type, for the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResourceCounts service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkResourceCounts service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">REST API Reference for GetNetworkResourceCounts Operation</seealso>
+        GetNetworkResourceCountsResponse GetNetworkResourceCounts(GetNetworkResourceCountsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkResourceCounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResourceCounts operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkResourceCounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">REST API Reference for GetNetworkResourceCounts Operation</seealso>
+        IAsyncResult BeginGetNetworkResourceCounts(GetNetworkResourceCountsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkResourceCounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkResourceCounts.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkResourceCountsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">REST API Reference for GetNetworkResourceCounts Operation</seealso>
+        GetNetworkResourceCountsResponse EndGetNetworkResourceCounts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetNetworkResourceRelationships
+
+
+        /// <summary>
+        /// Gets the network resource relationships for the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResourceRelationships service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkResourceRelationships service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">REST API Reference for GetNetworkResourceRelationships Operation</seealso>
+        GetNetworkResourceRelationshipsResponse GetNetworkResourceRelationships(GetNetworkResourceRelationshipsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkResourceRelationships operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResourceRelationships operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkResourceRelationships
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">REST API Reference for GetNetworkResourceRelationships Operation</seealso>
+        IAsyncResult BeginGetNetworkResourceRelationships(GetNetworkResourceRelationshipsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkResourceRelationships operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkResourceRelationships.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkResourceRelationshipsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">REST API Reference for GetNetworkResourceRelationships Operation</seealso>
+        GetNetworkResourceRelationshipsResponse EndGetNetworkResourceRelationships(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetNetworkResources
+
+
+        /// <summary>
+        /// Describes the network resources for the specified global network.
+        /// 
+        ///  
+        /// <para>
+        /// The results include information from the corresponding Describe call for the resource,
+        /// minus any sensitive information such as pre-shared keys.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResources service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkResources service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">REST API Reference for GetNetworkResources Operation</seealso>
+        GetNetworkResourcesResponse GetNetworkResources(GetNetworkResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResources operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">REST API Reference for GetNetworkResources Operation</seealso>
+        IAsyncResult BeginGetNetworkResources(GetNetworkResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkResources.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkResourcesResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">REST API Reference for GetNetworkResources Operation</seealso>
+        GetNetworkResourcesResponse EndGetNetworkResources(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetNetworkRoutes
+
+
+        /// <summary>
+        /// Gets the network routes of the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkRoutes service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkRoutes service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">REST API Reference for GetNetworkRoutes Operation</seealso>
+        GetNetworkRoutesResponse GetNetworkRoutes(GetNetworkRoutesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkRoutes operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">REST API Reference for GetNetworkRoutes Operation</seealso>
+        IAsyncResult BeginGetNetworkRoutes(GetNetworkRoutesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkRoutes.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkRoutesResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">REST API Reference for GetNetworkRoutes Operation</seealso>
+        GetNetworkRoutesResponse EndGetNetworkRoutes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetNetworkTelemetry
+
+
+        /// <summary>
+        /// Gets the network telemetry of the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkTelemetry service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkTelemetry service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">REST API Reference for GetNetworkTelemetry Operation</seealso>
+        GetNetworkTelemetryResponse GetNetworkTelemetry(GetNetworkTelemetryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkTelemetry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkTelemetry operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkTelemetry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">REST API Reference for GetNetworkTelemetry Operation</seealso>
+        IAsyncResult BeginGetNetworkTelemetry(GetNetworkTelemetryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkTelemetry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkTelemetry.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkTelemetryResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">REST API Reference for GetNetworkTelemetry Operation</seealso>
+        GetNetworkTelemetryResponse EndGetNetworkTelemetry(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRouteAnalysis
+
+
+        /// <summary>
+        /// Gets information about the specified route analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the GetRouteAnalysis service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">REST API Reference for GetRouteAnalysis Operation</seealso>
+        GetRouteAnalysisResponse GetRouteAnalysis(GetRouteAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRouteAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteAnalysis operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRouteAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">REST API Reference for GetRouteAnalysis Operation</seealso>
+        IAsyncResult BeginGetRouteAnalysis(GetRouteAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRouteAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRouteAnalysis.</param>
+        /// 
+        /// <returns>Returns a  GetRouteAnalysisResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">REST API Reference for GetRouteAnalysis Operation</seealso>
+        GetRouteAnalysisResponse EndGetRouteAnalysis(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSites
 
 
@@ -1685,8 +2012,9 @@ namespace Amazon.NetworkManager
 
         /// <summary>
         /// Registers a transit gateway in your global network. The transit gateway can be in
-        /// any AWS Region, but it must be owned by the same AWS account that owns the global
-        /// network. You cannot register a transit gateway in more than one global network.
+        /// any Amazon Web Services Region, but it must be owned by the same Amazon Web Services
+        /// account that owns the global network. You cannot register a transit gateway in more
+        /// than one global network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGateway service method.</param>
         /// 
@@ -1738,6 +2066,67 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  RegisterTransitGatewayResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">REST API Reference for RegisterTransitGateway Operation</seealso>
         RegisterTransitGatewayResponse EndRegisterTransitGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartRouteAnalysis
+
+
+        /// <summary>
+        /// Starts analyzing the routing path between the specified source and destination. For
+        /// more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route
+        /// Analyzer</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouteAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartRouteAnalysis service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">REST API Reference for StartRouteAnalysis Operation</seealso>
+        StartRouteAnalysisResponse StartRouteAnalysis(StartRouteAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartRouteAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartRouteAnalysis operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartRouteAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">REST API Reference for StartRouteAnalysis Operation</seealso>
+        IAsyncResult BeginStartRouteAnalysis(StartRouteAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartRouteAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartRouteAnalysis.</param>
+        /// 
+        /// <returns>Returns a  StartRouteAnalysisResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">REST API Reference for StartRouteAnalysis Operation</seealso>
+        StartRouteAnalysisResponse EndStartRouteAnalysis(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2102,6 +2491,65 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  UpdateLinkResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateLink">REST API Reference for UpdateLink Operation</seealso>
         UpdateLinkResponse EndUpdateLink(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateNetworkResourceMetadata
+
+
+        /// <summary>
+        /// Updates the resource metadata for the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkResourceMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNetworkResourceMetadata service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">REST API Reference for UpdateNetworkResourceMetadata Operation</seealso>
+        UpdateNetworkResourceMetadataResponse UpdateNetworkResourceMetadata(UpdateNetworkResourceMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNetworkResourceMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkResourceMetadata operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNetworkResourceMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">REST API Reference for UpdateNetworkResourceMetadata Operation</seealso>
+        IAsyncResult BeginUpdateNetworkResourceMetadata(UpdateNetworkResourceMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNetworkResourceMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNetworkResourceMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateNetworkResourceMetadataResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">REST API Reference for UpdateNetworkResourceMetadata Operation</seealso>
+        UpdateNetworkResourceMetadataResponse EndUpdateNetworkResourceMetadata(IAsyncResult asyncResult);
 
         #endregion
         

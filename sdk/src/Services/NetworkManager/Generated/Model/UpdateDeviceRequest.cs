@@ -49,7 +49,8 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property AWSLocation. 
         /// <para>
-        /// The AWS location of the device.
+        /// The Amazon Web Services location of the device, if applicable. For an on-premises
+        /// device, you can omit this parameter.
         /// </para>
         /// </summary>
         public AWSLocation AWSLocation
@@ -71,7 +72,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Length Constraints: Maximum length of 256 characters.
+        /// Constraints: Maximum length of 256 characters.
         /// </para>
         /// </summary>
         public string Description
@@ -146,7 +147,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Length Constraints: Maximum length of 128 characters.
+        /// Constraints: Maximum length of 128 characters.
         /// </para>
         /// </summary>
         public string Model
@@ -168,7 +169,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Length Constraints: Maximum length of 128 characters.
+        /// Constraints: Maximum length of 128 characters.
         /// </para>
         /// </summary>
         public string SerialNumber
@@ -226,7 +227,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Length Constraints: Maximum length of 128 characters.
+        /// Constraints: Maximum length of 128 characters.
         /// </para>
         /// </summary>
         public string Vendor

@@ -83,6 +83,106 @@ namespace Amazon.NetworkManager
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionStatus.
+    /// </summary>
+    public class ConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOWN for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus DOWN = new ConnectionStatus("DOWN");
+        /// <summary>
+        /// Constant UP for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus UP = new ConnectionStatus("UP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStatus FindValue(string value)
+        {
+            return FindValue<ConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionType.
+    /// </summary>
+    public class ConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BGP for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType BGP = new ConnectionType("BGP");
+        /// <summary>
+        /// Constant IPSEC for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType IPSEC = new ConnectionType("IPSEC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionType FindValue(string value)
+        {
+            return FindValue<ConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CustomerGatewayAssociationState.
     /// </summary>
     public class CustomerGatewayAssociationState : ConstantClass
@@ -366,6 +466,342 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LinkState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteAnalysisCompletionReasonCode.
+    /// </summary>
+    public class RouteAnalysisCompletionReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND = new RouteAnalysisCompletionReasonCode("BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND");
+        /// <summary>
+        /// Constant CYCLIC_PATH_DETECTED for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode CYCLIC_PATH_DETECTED = new RouteAnalysisCompletionReasonCode("CYCLIC_PATH_DETECTED");
+        /// <summary>
+        /// Constant INACTIVE_ROUTE_FOR_DESTINATION_FOUND for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode INACTIVE_ROUTE_FOR_DESTINATION_FOUND = new RouteAnalysisCompletionReasonCode("INACTIVE_ROUTE_FOR_DESTINATION_FOUND");
+        /// <summary>
+        /// Constant MAX_HOPS_EXCEEDED for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode MAX_HOPS_EXCEEDED = new RouteAnalysisCompletionReasonCode("MAX_HOPS_EXCEEDED");
+        /// <summary>
+        /// Constant NO_DESTINATION_ARN_PROVIDED for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode NO_DESTINATION_ARN_PROVIDED = new RouteAnalysisCompletionReasonCode("NO_DESTINATION_ARN_PROVIDED");
+        /// <summary>
+        /// Constant POSSIBLE_MIDDLEBOX for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode POSSIBLE_MIDDLEBOX = new RouteAnalysisCompletionReasonCode("POSSIBLE_MIDDLEBOX");
+        /// <summary>
+        /// Constant ROUTE_NOT_FOUND for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode ROUTE_NOT_FOUND = new RouteAnalysisCompletionReasonCode("ROUTE_NOT_FOUND");
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH = new RouteAnalysisCompletionReasonCode("TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH");
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND = new RouteAnalysisCompletionReasonCode("TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND");
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY = new RouteAnalysisCompletionReasonCode("TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY");
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND for RouteAnalysisCompletionReasonCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionReasonCode TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND = new RouteAnalysisCompletionReasonCode("TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteAnalysisCompletionReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteAnalysisCompletionReasonCode FindValue(string value)
+        {
+            return FindValue<RouteAnalysisCompletionReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteAnalysisCompletionReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteAnalysisCompletionResultCode.
+    /// </summary>
+    public class RouteAnalysisCompletionResultCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for RouteAnalysisCompletionResultCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionResultCode CONNECTED = new RouteAnalysisCompletionResultCode("CONNECTED");
+        /// <summary>
+        /// Constant NOT_CONNECTED for RouteAnalysisCompletionResultCode
+        /// </summary>
+        public static readonly RouteAnalysisCompletionResultCode NOT_CONNECTED = new RouteAnalysisCompletionResultCode("NOT_CONNECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteAnalysisCompletionResultCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteAnalysisCompletionResultCode FindValue(string value)
+        {
+            return FindValue<RouteAnalysisCompletionResultCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteAnalysisCompletionResultCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteAnalysisStatus.
+    /// </summary>
+    public class RouteAnalysisStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for RouteAnalysisStatus
+        /// </summary>
+        public static readonly RouteAnalysisStatus COMPLETED = new RouteAnalysisStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for RouteAnalysisStatus
+        /// </summary>
+        public static readonly RouteAnalysisStatus FAILED = new RouteAnalysisStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for RouteAnalysisStatus
+        /// </summary>
+        public static readonly RouteAnalysisStatus RUNNING = new RouteAnalysisStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteAnalysisStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteAnalysisStatus FindValue(string value)
+        {
+            return FindValue<RouteAnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteAnalysisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteState.
+    /// </summary>
+    public class RouteState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RouteState
+        /// </summary>
+        public static readonly RouteState ACTIVE = new RouteState("ACTIVE");
+        /// <summary>
+        /// Constant BLACKHOLE for RouteState
+        /// </summary>
+        public static readonly RouteState BLACKHOLE = new RouteState("BLACKHOLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteState FindValue(string value)
+        {
+            return FindValue<RouteState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTableType.
+    /// </summary>
+    public class RouteTableType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY_ROUTE_TABLE for RouteTableType
+        /// </summary>
+        public static readonly RouteTableType TRANSIT_GATEWAY_ROUTE_TABLE = new RouteTableType("TRANSIT_GATEWAY_ROUTE_TABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTableType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTableType FindValue(string value)
+        {
+            return FindValue<RouteTableType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTableType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteType.
+    /// </summary>
+    public class RouteType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROPAGATED for RouteType
+        /// </summary>
+        public static readonly RouteType PROPAGATED = new RouteType("PROPAGATED");
+        /// <summary>
+        /// Constant STATIC for RouteType
+        /// </summary>
+        public static readonly RouteType STATIC = new RouteType("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteType FindValue(string value)
+        {
+            return FindValue<RouteType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteType(string value)
         {
             return FindValue(value);
         }

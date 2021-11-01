@@ -40,9 +40,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property CustomerGatewayArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the customer gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-        /// Defined by Amazon EC2</a>.
+        /// The Amazon Resource Name (ARN) of the customer gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -276,6 +276,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("NetworkManager")]
+        public void GetNetworkResourceCountsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkResourceCountsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetNetworkResourceCountsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetNetworkResourceCountsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetNetworkResourceCounts(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetNetworkResourceCounts(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetNetworkResourceCountsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkResourceCountsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetNetworkResourceCountsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetNetworkResourceCounts(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetNetworkResourceCounts(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        public void GetNetworkResourceRelationshipsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkResourceRelationshipsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetNetworkResourceRelationshipsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetNetworkResourceRelationshipsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetNetworkResourceRelationships(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetNetworkResourceRelationships(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetNetworkResourceRelationshipsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkResourceRelationshipsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetNetworkResourceRelationshipsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetNetworkResourceRelationships(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetNetworkResourceRelationships(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        public void GetNetworkResourcesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkResourcesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetNetworkResourcesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetNetworkResourcesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetNetworkResources(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetNetworkResources(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetNetworkResourcesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkResourcesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetNetworkResourcesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetNetworkResources(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetNetworkResources(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        public void GetNetworkTelemetryTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkTelemetryRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetNetworkTelemetryResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetNetworkTelemetryResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetNetworkTelemetry(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetNetworkTelemetry(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetNetworkTelemetryTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetNetworkTelemetryRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetNetworkTelemetryResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetNetworkTelemetry(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetNetworkTelemetry(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
         public void GetSitesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetSitesRequest>();

@@ -39,14 +39,8 @@ namespace Amazon.NetworkManager
     /// Implementation for accessing NetworkManager
     ///
     /// Transit Gateway Network Manager (Network Manager) enables you to create a global network,
-    /// in which you can monitor your AWS and on-premises networks that are built around transit
-    /// gateways.
-    /// 
-    ///  
-    /// <para>
-    /// The Network Manager APIs are supported in the US West (Oregon) Region only. You must
-    /// specify the <code>us-west-2</code> Region in all requests made to Network Manager.
-    /// </para>
+    /// in which you can monitor your Amazon Web Services and on-premises networks that are
+    /// built around transit gateways.
     /// </summary>
     public partial class AmazonNetworkManagerClient : AmazonServiceClient, IAmazonNetworkManager
     {
@@ -1531,6 +1525,303 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetNetworkResourceCounts
+
+        internal virtual GetNetworkResourceCountsResponse GetNetworkResourceCounts(GetNetworkResourceCountsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkResourceCountsResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkResourceCountsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the count of network resources, by resource type, for the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResourceCounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkResourceCounts service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceCounts">REST API Reference for GetNetworkResourceCounts Operation</seealso>
+        public virtual Task<GetNetworkResourceCountsResponse> GetNetworkResourceCountsAsync(GetNetworkResourceCountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkResourceCountsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkResourceCountsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkResourceCountsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkResourceRelationships
+
+        internal virtual GetNetworkResourceRelationshipsResponse GetNetworkResourceRelationships(GetNetworkResourceRelationshipsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkResourceRelationshipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkResourceRelationshipsResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkResourceRelationshipsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the network resource relationships for the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResourceRelationships service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkResourceRelationships service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResourceRelationships">REST API Reference for GetNetworkResourceRelationships Operation</seealso>
+        public virtual Task<GetNetworkResourceRelationshipsResponse> GetNetworkResourceRelationshipsAsync(GetNetworkResourceRelationshipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkResourceRelationshipsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkResourceRelationshipsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkResourceRelationshipsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkResources
+
+        internal virtual GetNetworkResourcesResponse GetNetworkResources(GetNetworkResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the network resources for the specified global network.
+        /// 
+        ///  
+        /// <para>
+        /// The results include information from the corresponding Describe call for the resource,
+        /// minus any sensitive information such as pre-shared keys.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkResources service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkResources">REST API Reference for GetNetworkResources Operation</seealso>
+        public virtual Task<GetNetworkResourcesResponse> GetNetworkResourcesAsync(GetNetworkResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkRoutes
+
+        internal virtual GetNetworkRoutesResponse GetNetworkRoutes(GetNetworkRoutesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkRoutesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the network routes of the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkRoutes service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkRoutes">REST API Reference for GetNetworkRoutes Operation</seealso>
+        public virtual Task<GetNetworkRoutesResponse> GetNetworkRoutesAsync(GetNetworkRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkRoutesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkRoutesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkTelemetry
+
+        internal virtual GetNetworkTelemetryResponse GetNetworkTelemetry(GetNetworkTelemetryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkTelemetryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkTelemetryResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkTelemetryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the network telemetry of the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkTelemetry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkTelemetry service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetNetworkTelemetry">REST API Reference for GetNetworkTelemetry Operation</seealso>
+        public virtual Task<GetNetworkTelemetryResponse> GetNetworkTelemetryAsync(GetNetworkTelemetryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkTelemetryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkTelemetryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkTelemetryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRouteAnalysis
+
+        internal virtual GetRouteAnalysisResponse GetRouteAnalysis(GetRouteAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<GetRouteAnalysisResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the specified route analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouteAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouteAnalysis service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetRouteAnalysis">REST API Reference for GetRouteAnalysis Operation</seealso>
+        public virtual Task<GetRouteAnalysisResponse> GetRouteAnalysisAsync(GetRouteAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRouteAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouteAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRouteAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSites
 
         internal virtual GetSitesResponse GetSites(GetSitesRequest request)
@@ -1747,8 +2038,9 @@ namespace Amazon.NetworkManager
 
         /// <summary>
         /// Registers a transit gateway in your global network. The transit gateway can be in
-        /// any AWS Region, but it must be owned by the same AWS account that owns the global
-        /// network. You cannot register a transit gateway in more than one global network.
+        /// any Amazon Web Services Region, but it must be owned by the same Amazon Web Services
+        /// account that owns the global network. You cannot register a transit gateway in more
+        /// than one global network.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterTransitGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1783,6 +2075,61 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = RegisterTransitGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterTransitGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartRouteAnalysis
+
+        internal virtual StartRouteAnalysisResponse StartRouteAnalysis(StartRouteAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRouteAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRouteAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartRouteAnalysisResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts analyzing the routing path between the specified source and destination. For
+        /// more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route
+        /// Analyzer</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouteAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRouteAnalysis service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartRouteAnalysis">REST API Reference for StartRouteAnalysis Operation</seealso>
+        public virtual Task<StartRouteAnalysisResponse> StartRouteAnalysisAsync(StartRouteAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartRouteAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRouteAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRouteAnalysisResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2111,6 +2458,59 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = UpdateLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLinkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkResourceMetadata
+
+        internal virtual UpdateNetworkResourceMetadataResponse UpdateNetworkResourceMetadata(UpdateNetworkResourceMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkResourceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkResourceMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkResourceMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the resource metadata for the specified global network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkResourceMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNetworkResourceMetadata service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateNetworkResourceMetadata">REST API Reference for UpdateNetworkResourceMetadata Operation</seealso>
+        public virtual Task<UpdateNetworkResourceMetadataResponse> UpdateNetworkResourceMetadataAsync(UpdateNetworkResourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkResourceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkResourceMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNetworkResourceMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion

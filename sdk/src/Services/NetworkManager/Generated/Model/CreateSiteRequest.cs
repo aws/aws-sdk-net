@@ -46,7 +46,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Length Constraints: Maximum length of 256 characters.
+        /// Constraints: Maximum length of 256 characters.
         /// </para>
         /// </summary>
         public string Description

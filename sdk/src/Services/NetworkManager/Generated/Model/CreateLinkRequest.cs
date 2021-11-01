@@ -68,7 +68,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Length Constraints: Maximum length of 256 characters.
+        /// Constraints: Maximum length of 256 characters.
         /// </para>
         /// </summary>
         public string Description
@@ -109,11 +109,8 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Cannot include the following characters: | \ ^
-        /// </para>
-        ///  
-        /// <para>
-        /// Length Constraints: Maximum length of 128 characters.
+        /// Constraints: Maximum length of 128 characters. Cannot include the following characters:
+        /// | \ ^
         /// </para>
         /// </summary>
         public string Provider
@@ -172,11 +169,8 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Cannot include the following characters: | \ ^
-        /// </para>
-        ///  
-        /// <para>
-        /// Length Constraints: Maximum length of 128 characters.
+        /// Constraints: Maximum length of 128 characters. Cannot include the following characters:
+        /// | \ ^
         /// </para>
         /// </summary>
         public string Type

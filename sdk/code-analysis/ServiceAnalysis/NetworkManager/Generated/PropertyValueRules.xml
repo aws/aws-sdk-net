@@ -31,6 +31,26 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetNetworkResourceCountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetNetworkResourceRelationshipsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetNetworkResourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetNetworkTelemetryRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetSitesRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
