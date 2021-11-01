@@ -40,10 +40,29 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class UpdateBucketRequest : AmazonLightsailRequest
     {
+        private BucketAccessLogConfig _accessLogConfig;
         private AccessRules _accessRules;
         private string _bucketName;
         private List<string> _readonlyAccessAccounts = new List<string>();
         private string _versioning;
+
+        /// <summary>
+        /// Gets and sets the property AccessLogConfig. 
+        /// <para>
+        /// An object that describes the access log configuration for the bucket.
+        /// </para>
+        /// </summary>
+        public BucketAccessLogConfig AccessLogConfig
+        {
+            get { return this._accessLogConfig; }
+            set { this._accessLogConfig = value; }
+        }
+
+        // Check to see if AccessLogConfig property is set
+        internal bool IsSetAccessLogConfig()
+        {
+            return this._accessLogConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AccessRules. 

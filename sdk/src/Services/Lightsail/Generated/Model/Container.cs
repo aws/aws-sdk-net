@@ -83,7 +83,17 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// Container images sourced from your Lightsail container service, that are registered
-        /// and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>.
+        /// and stored on your service, start with a colon (<code>:</code>). For example, if your
+        /// container service name is <code>container-service-1</code>, the container image label
+        /// is <code>mystaticsite</code>, and you want to use the third (<code>3</code>) version
+        /// of the registered container image, then you should specify <code>:container-service-1.mystaticsite.3</code>.
+        /// To use the latest version of a container image, specify <code>latest</code> instead
+        /// of a version number (for example, <code>:container-service-1.mystaticsite.latest</code>).
+        /// Lightsail will automatically use the highest numbered version of the registered container
+        /// image.
+        /// </para>
+        ///  
+        /// <para>
         /// Container images sourced from a public registry like Docker Hub don't start with a
         /// colon. For example, <code>nginx:latest</code> or <code>nginx</code>.
         /// </para>

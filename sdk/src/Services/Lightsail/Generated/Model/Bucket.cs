@@ -34,6 +34,7 @@ namespace Amazon.Lightsail.Model
     public partial class Bucket
     {
         private bool? _ableToUpdateBundle;
+        private BucketAccessLogConfig _accessLogConfig;
         private AccessRules _accessRules;
         private string _arn;
         private string _bundleId;
@@ -74,6 +75,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetAbleToUpdateBundle()
         {
             return this._ableToUpdateBundle.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccessLogConfig. 
+        /// <para>
+        /// An object that describes the access log configuration for the bucket.
+        /// </para>
+        /// </summary>
+        public BucketAccessLogConfig AccessLogConfig
+        {
+            get { return this._accessLogConfig; }
+            set { this._accessLogConfig = value; }
+        }
+
+        // Check to see if AccessLogConfig property is set
+        internal bool IsSetAccessLogConfig()
+        {
+            return this._accessLogConfig != null;
         }
 
         /// <summary>

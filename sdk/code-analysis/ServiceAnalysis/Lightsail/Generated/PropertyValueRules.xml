@@ -777,6 +777,18 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.BucketAccessLogConfig.Destination</property>
+    <min>3</min>
+    <max>54</max>
+    <pattern>^[a-z0-9][a-z0-9-]{1,52}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.BucketAccessLogConfig.Prefix</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w/!.*')(-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.BucketBundle.BundleId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>

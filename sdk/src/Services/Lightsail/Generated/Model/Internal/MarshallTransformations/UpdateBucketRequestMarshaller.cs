@@ -67,6 +67,17 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessLogConfig())
+                {
+                    context.Writer.WritePropertyName("accessLogConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BucketAccessLogConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AccessLogConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAccessRules())
                 {
                     context.Writer.WritePropertyName("accessRules");

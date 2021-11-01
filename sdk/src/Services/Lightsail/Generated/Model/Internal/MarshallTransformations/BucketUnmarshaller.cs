@@ -70,6 +70,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.AbleToUpdateBundle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("accessLogConfig", targetDepth))
+                {
+                    var unmarshaller = BucketAccessLogConfigUnmarshaller.Instance;
+                    unmarshalledObject.AccessLogConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("accessRules", targetDepth))
                 {
                     var unmarshaller = AccessRulesUnmarshaller.Instance;

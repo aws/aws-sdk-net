@@ -226,7 +226,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag keys and optional values to add to the certificate during create.
+        /// The tag keys and optional values to add to the container service during create.
         /// </para>
         ///  
         /// <para>
