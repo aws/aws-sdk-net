@@ -1,3 +1,18 @@
+### 3.7.148.0 (2021-11-01 18:16 UTC)
+* Lightsail (3.7.4.0)
+	* This release adds support to enable access logging for buckets in the Lightsail object storage service.
+* Neptune (3.7.2.0)
+	* Adds support for major version upgrades to ModifyDbCluster API
+* NetworkManager (3.7.1.0)
+	* This release adds API support to aggregate resources, routes, and telemetry data across a Global Network.
+* Rekognition (3.7.5.0)
+	* This Amazon Rekognition Custom Labels release introduces the management of datasets with  projects
+* Core 3.7.3.29
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.147.0 (2021-10-29 18:26 UTC)
 * ApplicationInsights (3.7.1.0)
 	* Added Monitoring support for SQL Server Failover Cluster Instance. Additionally, added a new API to allow one-click monitoring of containers resources.
