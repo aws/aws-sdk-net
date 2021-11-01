@@ -30,7 +30,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProjects operation.
-    /// Lists and gets information about your Amazon Rekognition Custom Labels projects.
+    /// Gets information about your Amazon Rekognition Custom Labels projects. 
     /// 
     ///  
     /// <para>
@@ -42,6 +42,7 @@ namespace Amazon.Rekognition.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _projectNames = new List<string>();
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -83,6 +84,27 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectNames. 
+        /// <para>
+        /// A list of the projects that you want Amazon Rekognition Custom Labels to describe.
+        /// If you don't specify a value, the response includes descriptions for all the projects
+        /// in your AWS account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> ProjectNames
+        {
+            get { return this._projectNames; }
+            set { this._projectNames = value; }
+        }
+
+        // Check to see if ProjectNames property is set
+        internal bool IsSetProjectNames()
+        {
+            return this._projectNames != null && this._projectNames.Count > 0; 
         }
 
     }

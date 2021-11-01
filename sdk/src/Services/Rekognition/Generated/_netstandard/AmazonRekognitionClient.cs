@@ -482,6 +482,110 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  CreateDataset
+
+        internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Amazon Rekognition Custom Labels dataset. You can create a dataset by
+        /// using an Amazon Sagemaker format manifest file or by copying an existing Amazon Rekognition
+        /// Custom Labels dataset.
+        /// 
+        ///  
+        /// <para>
+        /// To create a training dataset for a project, specify <code>train</code> for the value
+        /// of <code>DatasetType</code>. To create the test dataset for a project, specify <code>test</code>
+        /// for the value of <code>DatasetType</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for
+        /// the dataset. Creating a dataset takes a while to complete. Use <a>DescribeDataset</a>
+        /// to check the current status. The dataset created successfully if the value of <code>Status</code>
+        /// is <code>CREATE_COMPLETE</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To check if any non-terminal errors occurred, call <a>ListDatasetEntries</a> and check
+        /// for the presence of <code>errors</code> lists in the JSON Lines.
+        /// </para>
+        ///  
+        /// <para>
+        /// Dataset creation fails if a terminal error occurs (<code>Status</code> = <code>CREATE_FAILED</code>).
+        /// Currently, you can't access the terminal error information. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Creating dataset in the <i>Amazon Rekognition Custom Labels
+        /// Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CreateDataset</code>
+        /// action. If you want to copy an existing dataset, you also require permission to perform
+        /// the <code>rekognition:ListDatasetEntries</code> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataset service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceAlreadyExistsException">
+        /// A resource with the specified ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateProject
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
@@ -496,9 +600,9 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Creates a new Amazon Rekognition Custom Labels project. A project is a logical grouping
-        /// of resources (images, Labels, models) and operations (training, evaluation and detection).
-        /// 
+        /// Creates a new Amazon Rekognition Custom Labels project. A project is a group of resources
+        /// (datasets, model versions) that you use to create and manage Amazon Rekognition Custom
+        /// Labels models. 
         /// 
         ///  
         /// <para>
@@ -566,18 +670,49 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Creates a new version of a model and begins training. Models are managed as part of
-        /// an Amazon Rekognition Custom Labels project. You can specify one training dataset
-        /// and one testing dataset. The response from <code>CreateProjectVersion</code> is an
-        /// Amazon Resource Name (ARN) for the version of the model. 
+        /// an Amazon Rekognition Custom Labels project. The response from <code>CreateProjectVersion</code>
+        /// is an Amazon Resource Name (ARN) for the version of the model. 
         /// 
         ///  
         /// <para>
+        /// Training uses the training and test datasets associated with the project. For more
+        /// information, see Creating training and test dataset in the <i>Amazon Rekognition Custom
+        /// Labels Developer Guide</i>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can train a modelin a project that doesn't have associated datasets by specifying
+        /// manifest files in the <code>TrainingData</code> and <code>TestingData</code> fields.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you open the console after training a model with manifest files, Amazon Rekognition
+        /// Custom Labels creates the datasets for you using the most recent manifest files. You
+        /// can no longer train a model version for the project by specifying manifest files.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Instead of training with a project without associated datasets, we recommend that
+        /// you use the manifest files to create training and test datasets for the project.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
+        /// Training completed successfully if the value of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If training fails, see Debugging a failed model training in the <i>Amazon Rekognition
+        /// Custom Labels</i> developer guide. 
         /// </para>
         ///  
         /// <para>
         /// Once training has successfully completed, call <a>DescribeProjectVersions</a> to get
-        /// the training results and evaluate the model. 
+        /// the training results and evaluate the model. For more information, see Improving a
+        /// trained Amazon Rekognition Custom Labels model in the <i>Amazon Rekognition Custom
+        /// Labels</i> developers guide. 
         /// </para>
         ///  
         /// <para>
@@ -795,6 +930,85 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DeleteDataset
+
+        internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing Amazon Rekognition Custom Labels dataset. Deleting a dataset might
+        /// take while. Use <a>DescribeDataset</a> to check the current status. The dataset is
+        /// still deleting if the value of <code>Status</code> is <code>DELETE_IN_PROGRESS</code>.
+        /// If you try to access the dataset after it is deleted, you get a <code>ResourceNotFoundException</code>
+        /// exception. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a dataset while it is creating (<code>Status</code> = <code>CREATE_IN_PROGRESS</code>)
+        /// or if the dataset is updating (<code>Status</code> = <code>UPDATE_IN_PROGRESS</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DeleteDataset</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataset service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// The specified resource is already being used.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteFaces
 
         internal virtual DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
@@ -873,6 +1087,12 @@ namespace Amazon.Rekognition
         /// Deletes an Amazon Rekognition Custom Labels project. To delete a project you must
         /// first delete all models associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <code>DeleteProject</code> is an asynchronous operation. To check if the project
+        /// is deleted, call <a>DescribeProjects</a>. The project is deleted when the project
+        /// no longer appears in the response.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:DeleteProject</code>
@@ -1112,6 +1332,68 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DescribeDataset
+
+        internal virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an Amazon Rekognition Custom Labels dataset. You can get information such
+        /// as the current status of a dataset and statistics about the images and labels in a
+        /// dataset. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DescribeDataset</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataset service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
+        public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeProjects
 
         internal virtual DescribeProjectsResponse DescribeProjects(DescribeProjectsRequest request)
@@ -1126,7 +1408,7 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Lists and gets information about your Amazon Rekognition Custom Labels projects.
+        /// Gets information about your Amazon Rekognition Custom Labels projects. 
         /// 
         ///  
         /// <para>
@@ -1186,9 +1468,10 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Lists and describes the models in an Amazon Rekognition Custom Labels project. You
-        /// can specify up to 10 model versions in <code>ProjectVersionArns</code>. If you don't
-        /// specify a value, descriptions for all models are returned.
+        /// Lists and describes the versions of a model in an Amazon Rekognition Custom Labels
+        /// project. You can specify up to 10 model versions in <code>ProjectVersionArns</code>.
+        /// If you don't specify a value, descriptions for all model versions in the project are
+        /// returned.
         /// 
         ///  
         /// <para>
@@ -1988,6 +2271,87 @@ namespace Amazon.Rekognition
             options.ResponseUnmarshaller = DetectTextResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectTextResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DistributeDatasetEntries
+
+        internal virtual DistributeDatasetEntriesResponse DistributeDatasetEntries(DistributeDatasetEntriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DistributeDatasetEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DistributeDatasetEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<DistributeDatasetEntriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Distributes the entries (images) in a training dataset across the training dataset
+        /// and the test dataset for a project. <code>DistributeDatasetEntries</code> moves 20%
+        /// of the training dataset images to the test dataset. An entry is a JSON Line that describes
+        /// an image. 
+        /// 
+        ///  
+        /// <para>
+        /// You supply the Amazon Resource Names (ARN) of a project's training dataset and test
+        /// dataset. The training dataset must contain the images that you want to split. The
+        /// test dataset must be empty. The datasets must belong to the same project. To create
+        /// training and test datasets for a project, call <a>CreateDataset</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Distributing a dataset takes a while to complete. To check the status call <code>DescribeDataset</code>.
+        /// The operation is complete when the <code>Status</code> field for the training dataset
+        /// and the test dataset is <code>UPDATE_COMPLETE</code>. If the dataset split fails,
+        /// the value of <code>Status</code> is <code>UPDATE_FAILED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DistributeDatasetEntries</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DistributeDatasetEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DistributeDatasetEntries service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDatasetEntries">REST API Reference for DistributeDatasetEntries Operation</seealso>
+        public virtual Task<DistributeDatasetEntriesResponse> DistributeDatasetEntriesAsync(DistributeDatasetEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DistributeDatasetEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DistributeDatasetEntriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DistributeDatasetEntriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3133,6 +3497,165 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  ListDatasetEntries
+
+        internal virtual ListDatasetEntriesResponse ListDatasetEntries(ListDatasetEntriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetEntriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the entries (images) within a dataset. An entry is a JSON Line that contains
+        /// the information for a single image, including the image location, assigned labels,
+        /// and object location bounding boxes. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-manifest-files.html">Creating
+        /// a manifest file</a>.
+        /// 
+        ///  
+        /// <para>
+        /// JSON Lines in the response include information about non-terminal errors found in
+        /// the dataset. Non terminal errors are reported in <code>errors</code> lists within
+        /// each JSON Line. The same information is reported in the training and testing validation
+        /// result manifests that Amazon Rekognition Custom Labels creates during model training.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can filter the response in variety of ways, such as choosing which labels to return
+        /// and returning JSON Lines created after a specific date. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:ListDatasetEntries</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasetEntries service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// The specified resource is already being used.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetEntries">REST API Reference for ListDatasetEntries Operation</seealso>
+        public virtual Task<ListDatasetEntriesResponse> ListDatasetEntriesAsync(ListDatasetEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetEntriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetEntriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDatasetLabels
+
+        internal virtual ListDatasetLabelsResponse ListDatasetLabels(ListDatasetLabelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetLabelsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe
+        /// images. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling
+        /// images</a>. 
+        /// 
+        ///  
+        /// <para>
+        ///  Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe
+        /// images. For more information, see Labeling images in the <i>Amazon Rekognition Custom
+        /// Labels Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetLabels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasetLabels service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// The specified resource is already being used.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotReadyException">
+        /// The requested resource isn't ready. For example, this exception occurs when you call
+        /// <code>DetectCustomLabels</code> with a model version that isn't deployed.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetLabels">REST API Reference for ListDatasetLabels Operation</seealso>
+        public virtual Task<ListDatasetLabelsResponse> ListDatasetLabelsAsync(ListDatasetLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetLabelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetLabelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListFaces
 
         internal virtual ListFacesResponse ListFaces(ListFacesRequest request)
@@ -3334,9 +3857,9 @@ namespace Amazon.Rekognition
         ///  
         /// <para>
         ///  <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists
-        /// recognized celebrities in the <code>CelebrityFaces</code> array and unrecognized faces
-        /// in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't
-        /// return celebrities whose faces aren't among the largest 64 faces in the image.
+        /// the recognized celebrities in the <code>CelebrityFaces</code> array and any unrecognized
+        /// faces in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code>
+        /// doesn't return celebrities whose faces aren't among the largest 64 faces in the image.
         /// </para>
         ///  
         /// <para>
@@ -4723,6 +5246,110 @@ namespace Amazon.Rekognition
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDatasetEntries
+
+        internal virtual UpdateDatasetEntriesResponse UpdateDatasetEntries(UpdateDatasetEntriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetEntriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line
+        /// which contains the information for a single image, including the image location, assigned
+        /// labels, and object location bounding boxes. For more information, see Image-Level
+        /// labels in manifest files and Object localization in manifest files in the <i>Amazon
+        /// Rekognition Custom Labels Developer Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// If the <code>source-ref</code> field in the JSON line references an existing image,
+        /// the existing image in the dataset is updated. If <code>source-ref</code> field doesn't
+        /// reference an existing image, the image is added as a new image to the dataset. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You specify the changes that you want to make in the <code>Changes</code> input parameter.
+        /// There isn't a limit to the number JSON Lines that you can change, but the size of
+        /// <code>Changes</code> must be less than 5MB.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>UpdateDatasetEntries</code> returns immediatly, but the dataset update might
+        /// take a while to complete. Use <a>DescribeDataset</a> to check the current status.
+        /// The dataset updated successfully if the value of <code>Status</code> is <code>UPDATE_COMPLETE</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To check if any non-terminal errors occured, call <a>ListDatasetEntries</a> and check
+        /// for the presence of <code>errors</code> lists in the JSON Lines.
+        /// </para>
+        ///  
+        /// <para>
+        /// Dataset update fails if a terminal error occurs (<code>Status</code> = <code>UPDATE_FAILED</code>).
+        /// Currently, you can't access the terminal error information from the Amazon Rekognition
+        /// Custom Labels SDK. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:UpdateDatasetEntries</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasetEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDatasetEntries service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// The specified resource is already being used.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateDatasetEntries">REST API Reference for UpdateDatasetEntries Operation</seealso>
+        public virtual Task<UpdateDatasetEntriesResponse> UpdateDatasetEntriesAsync(UpdateDatasetEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetEntriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDatasetEntriesResponse>(request, options, cancellationToken);
         }
 
         #endregion

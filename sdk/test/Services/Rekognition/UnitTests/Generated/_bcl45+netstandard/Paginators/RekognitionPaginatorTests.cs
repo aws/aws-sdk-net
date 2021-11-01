@@ -471,6 +471,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Rekognition")]
+        public void ListDatasetEntriesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDatasetEntriesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDatasetEntriesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDatasetEntriesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDatasetEntries(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDatasetEntries(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rekognition")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDatasetEntriesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDatasetEntriesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDatasetEntriesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDatasetEntries(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDatasetEntries(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rekognition")]
+        public void ListDatasetLabelsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDatasetLabelsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDatasetLabelsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDatasetLabelsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDatasetLabels(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDatasetLabels(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rekognition")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDatasetLabelsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDatasetLabelsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDatasetLabelsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDatasetLabels(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDatasetLabels(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rekognition")]
         public void ListFacesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListFacesRequest>();

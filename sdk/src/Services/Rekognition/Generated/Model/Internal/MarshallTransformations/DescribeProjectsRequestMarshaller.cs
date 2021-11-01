@@ -79,6 +79,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetProjectNames())
+                {
+                    context.Writer.WritePropertyName("ProjectNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProjectNamesListValue in publicRequest.ProjectNames)
+                    {
+                            context.Writer.Write(publicRequestProjectNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

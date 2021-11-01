@@ -29,11 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// A description of a Amazon Rekognition Custom Labels project.
+    /// A description of an Amazon Rekognition Custom Labels project. For more information,
+    /// see <a>DescribeProjects</a>.
     /// </summary>
     public partial class ProjectDescription
     {
         private DateTime? _creationTimestamp;
+        private List<DatasetMetadata> _datasets = new List<DatasetMetadata>();
         private string _projectArn;
         private ProjectStatus _status;
 
@@ -53,6 +55,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetCreationTimestamp()
         {
             return this._creationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Datasets. 
+        /// <para>
+        ///  Information about the training and test datasets in the project. 
+        /// </para>
+        /// </summary>
+        public List<DatasetMetadata> Datasets
+        {
+            get { return this._datasets; }
+            set { this._datasets = value; }
+        }
+
+        // Check to see if Datasets property is set
+        internal bool IsSetDatasets()
+        {
+            return this._datasets != null && this._datasets.Count > 0; 
         }
 
         /// <summary>

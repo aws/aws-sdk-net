@@ -35,6 +35,12 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
+    ///  <code>DeleteProject</code> is an asynchronous operation. To check if the project
+    /// is deleted, call <a>DescribeProjects</a>. The project is deleted when the project
+    /// no longer appears in the response.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permissions to perform the <code>rekognition:DeleteProject</code>
     /// action. 
     /// </para>

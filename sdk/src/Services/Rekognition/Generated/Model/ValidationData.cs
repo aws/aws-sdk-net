@@ -34,8 +34,8 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// The validation data includes error information for individual JSON lines in the dataset.
-    /// For more information, see Debugging a Failed Model Training in the Amazon Rekognition
+    /// The validation data includes error information for individual JSON Lines in the dataset.
+    /// For more information, see <i>Debugging a Failed Model Training</i> in the Amazon Rekognition
     /// Custom Labels Developer Guide. 
     /// </para>
     ///  

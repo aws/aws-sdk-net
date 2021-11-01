@@ -30,9 +30,10 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProjectVersions operation.
-    /// Lists and describes the models in an Amazon Rekognition Custom Labels project. You
-    /// can specify up to 10 model versions in <code>ProjectVersionArns</code>. If you don't
-    /// specify a value, descriptions for all models are returned.
+    /// Lists and describes the versions of a model in an Amazon Rekognition Custom Labels
+    /// project. You can specify up to 10 model versions in <code>ProjectVersionArns</code>.
+    /// If you don't specify a value, descriptions for all model versions in the project are
+    /// returned.
     /// 
     ///  
     /// <para>

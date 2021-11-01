@@ -70,6 +70,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Datasets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DatasetMetadata, DatasetMetadataUnmarshaller>(DatasetMetadataUnmarshaller.Instance);
+                    unmarshalledObject.Datasets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProjectArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -124,6 +124,22 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasetEntries operation
+        ///</summary>
+        public IListDatasetEntriesPaginator ListDatasetEntries(ListDatasetEntriesRequest request) 
+        {
+            return new ListDatasetEntriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetLabels operation
+        ///</summary>
+        public IListDatasetLabelsPaginator ListDatasetLabels(ListDatasetLabelsRequest request) 
+        {
+            return new ListDatasetLabelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFaces operation
         ///</summary>
         public IListFacesPaginator ListFaces(ListFacesRequest request) 

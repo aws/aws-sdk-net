@@ -283,6 +283,180 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type DatasetStatus.
+    /// </summary>
+    public class DatasetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_COMPLETE for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATE_COMPLETE = new DatasetStatus("CREATE_COMPLETE");
+        /// <summary>
+        /// Constant CREATE_FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATE_FAILED = new DatasetStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATE_IN_PROGRESS = new DatasetStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus DELETE_IN_PROGRESS = new DatasetStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_COMPLETE for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus UPDATE_COMPLETE = new DatasetStatus("UPDATE_COMPLETE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus UPDATE_FAILED = new DatasetStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus UPDATE_IN_PROGRESS = new DatasetStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetStatus FindValue(string value)
+        {
+            return FindValue<DatasetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetStatusMessageCode.
+    /// </summary>
+    public class DatasetStatusMessageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLIENT_ERROR for DatasetStatusMessageCode
+        /// </summary>
+        public static readonly DatasetStatusMessageCode CLIENT_ERROR = new DatasetStatusMessageCode("CLIENT_ERROR");
+        /// <summary>
+        /// Constant SERVICE_ERROR for DatasetStatusMessageCode
+        /// </summary>
+        public static readonly DatasetStatusMessageCode SERVICE_ERROR = new DatasetStatusMessageCode("SERVICE_ERROR");
+        /// <summary>
+        /// Constant SUCCESS for DatasetStatusMessageCode
+        /// </summary>
+        public static readonly DatasetStatusMessageCode SUCCESS = new DatasetStatusMessageCode("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetStatusMessageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetStatusMessageCode FindValue(string value)
+        {
+            return FindValue<DatasetStatusMessageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetStatusMessageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetType.
+    /// </summary>
+    public class DatasetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEST for DatasetType
+        /// </summary>
+        public static readonly DatasetType TEST = new DatasetType("TEST");
+        /// <summary>
+        /// Constant TRAIN for DatasetType
+        /// </summary>
+        public static readonly DatasetType TRAIN = new DatasetType("TRAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetType FindValue(string value)
+        {
+            return FindValue<DatasetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmotionName.
     /// </summary>
     public class EmotionName : ConstantClass

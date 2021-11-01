@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The description of a version of a model.
+    /// A description of a version of an Amazon Rekognition Custom Labels model.
     /// </summary>
     public partial class ProjectVersionDescription
     {
@@ -50,8 +50,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property BillableTrainingTimeInSeconds. 
         /// <para>
-        /// The duration, in seconds, that the model version has been billed for training. This
-        /// value is only returned if the model version has been successfully trained.
+        /// The duration, in seconds, that you were billed for a successful training of the model
+        /// version. This value is only returned if the model version has been successfully trained.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -107,8 +107,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifer for the AWS Key Management Service (AWS KMS) customer master key that
-        /// was used to encrypt the model during training. 
+        /// The identifer for the AWS Key Management Service key (AWS KMS key) that was used to
+        /// encrypt the model during training. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -81,6 +81,16 @@ namespace Amazon.Rekognition.Model
         IListCollectionsPaginator ListCollections(ListCollectionsRequest request);
 
         /// <summary>
+        /// Paginator for ListDatasetEntries operation
+        ///</summary>
+        IListDatasetEntriesPaginator ListDatasetEntries(ListDatasetEntriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasetLabels operation
+        ///</summary>
+        IListDatasetLabelsPaginator ListDatasetLabels(ListDatasetLabelsRequest request);
+
+        /// <summary>
         /// Paginator for ListFaces operation
         ///</summary>
         IListFacesPaginator ListFaces(ListFacesRequest request);
