@@ -69,7 +69,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Associates an Identity and Access Management (IAM) role from an Neptune DB cluster.
+        /// Associates an Identity and Access Management (IAM) role with an Neptune DB cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster service method.</param>
         /// 
@@ -3604,8 +3604,8 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the Amazon
-        /// CLI stop-db-cluster command, or the StopDBCluster API.
+        /// Starts an Amazon Neptune DB cluster that was stopped using the Amazon console, the
+        /// Amazon CLI stop-db-cluster command, or the StopDBCluster API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDBCluster service method.</param>
         /// 

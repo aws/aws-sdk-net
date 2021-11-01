@@ -61,7 +61,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property FeatureName. 
         /// <para>
         /// The name of the feature for the DB cluster that the IAM role is to be disassociated
-        /// from. For the list of supported feature names, see <a>DBEngineVersion</a>.
+        /// from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
         /// </para>
         /// </summary>
         public string FeatureName

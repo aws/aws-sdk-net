@@ -42,7 +42,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property FeatureName. 
         /// <para>
         /// The name of the feature associated with the Amazon Identity and Access Management
-        /// (IAM) role. For the list of supported feature names, see <a>DBEngineVersion</a>. 
+        /// (IAM) role. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
+        /// 
         /// </para>
         /// </summary>
         public string FeatureName

@@ -30,8 +30,8 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDBCluster operation.
-    /// Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the Amazon
-    /// CLI stop-db-cluster command, or the StopDBCluster API.
+    /// Starts an Amazon Neptune DB cluster that was stopped using the Amazon console, the
+    /// Amazon CLI stop-db-cluster command, or the StopDBCluster API.
     /// </summary>
     public partial class StartDBClusterRequest : AmazonNeptuneRequest
     {

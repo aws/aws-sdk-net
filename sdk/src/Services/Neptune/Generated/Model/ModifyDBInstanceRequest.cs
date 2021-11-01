@@ -248,7 +248,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions.
+        /// Not all DB instance classes are available in all Amazon Regions.
         /// </para>
         ///  
         /// <para>

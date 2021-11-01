@@ -153,7 +153,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property IncludeShared. 
         /// <para>
         /// True to include shared manual DB cluster snapshots from other Amazon accounts that
-        /// this AWS account has been given permission to copy or restore, and otherwise false.
+        /// this Amazon account has been given permission to copy or restore, and otherwise false.
         /// The default is <code>false</code>.
         /// </para>
         ///  
@@ -236,7 +236,7 @@ namespace Amazon.Neptune.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>manual</code> - Return all DB cluster snapshots that have been taken by my
-        /// AWS account.
+        /// Amazon account.
         /// </para>
         ///  </li> <li> 
         /// <para>
