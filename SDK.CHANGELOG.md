@@ -1,3 +1,16 @@
+### 3.7.149.0 (2021-11-02 18:29 UTC)
+* CloudFront (3.7.4.0)
+	* CloudFront now supports response headers policies to add HTTP headers to the responses that CloudFront sends to viewers. You can use these policies to add CORS headers, control browser caching, and more, without modifying your origin or writing any code.
+* Connect (3.7.7.0)
+	* Amazon Connect Chat now supports real-time message streaming.
+* NimbleStudio (3.7.2.0)
+	* Amazon Nimble Studio adds support for users to stop and start streaming sessions.
+* Core 3.7.3.30
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.148.0 (2021-11-01 18:16 UTC)
 * Lightsail (3.7.4.0)
 	* This release adds support to enable access logging for buckets in the Lightsail object storage service.
