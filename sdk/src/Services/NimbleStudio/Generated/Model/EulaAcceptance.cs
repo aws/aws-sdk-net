@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// The acceptance of a EULA, required to use Amazon-provided streaming images.
     /// </summary>
     public partial class EulaAcceptance
     {
@@ -99,7 +99,7 @@ namespace Amazon.NimbleStudio.Model
         /// The EULA acceptance ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string EulaAcceptanceId
         {
             get { return this._eulaAcceptanceId; }
@@ -118,7 +118,7 @@ namespace Amazon.NimbleStudio.Model
         /// The EULA ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string EulaId
         {
             get { return this._eulaId; }

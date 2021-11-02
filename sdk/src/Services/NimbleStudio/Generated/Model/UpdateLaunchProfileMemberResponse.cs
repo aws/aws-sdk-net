@@ -38,7 +38,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Member. 
         /// <para>
-        /// The member.
+        /// The updated member. 
         /// </para>
         /// </summary>
         public LaunchProfileMembership Member

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// The specified resource could not be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

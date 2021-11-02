@@ -36,6 +36,7 @@ namespace Amazon.NimbleStudio.Model
         private StreamingClipboardMode _clipboardMode;
         private List<string> _ec2InstanceTypes = new List<string>();
         private int? _maxSessionLengthInMinutes;
+        private int? _maxStoppedSessionLengthInMinutes;
         private List<string> _streamingImageIds = new List<string>();
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace Amazon.NimbleStudio.Model
         /// session and streaming client.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public StreamingClipboardMode ClipboardMode
         {
             get { return this._clipboardMode; }
@@ -64,7 +66,7 @@ namespace Amazon.NimbleStudio.Model
         /// with this launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Required=true, Min=1, Max=30)]
         public List<string> Ec2InstanceTypes
         {
             get { return this._ec2InstanceTypes; }
@@ -80,11 +82,13 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property MaxSessionLengthInMinutes. 
         /// <para>
-        /// The length of time, in minutes, that a streaming session can run. After this point,
-        /// Nimble Studio automatically terminates the session.
+        /// The length of time, in minutes, that a streaming session can be active before it is
+        /// stopped or terminated. After this point, Nimble Studio automatically terminates or
+        /// stops the session. The default length of time is 690 minutes, and the maximum length
+        /// of time is 30 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=690)]
+        [AWSProperty(Min=1, Max=43200)]
         public int MaxSessionLengthInMinutes
         {
             get { return this._maxSessionLengthInMinutes.GetValueOrDefault(); }
@@ -98,13 +102,47 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxStoppedSessionLengthInMinutes. 
+        /// <para>
+        /// Integer that determines if you can start and stop your sessions and how long a session
+        /// can stay in the STOPPED state. The default value is 0. The maximum value is 5760.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is missing or set to 0, your sessions can’t be stopped. If you then call
+        /// StopStreamingSession, the session fails. If the time that a session stays in the READY
+        /// state exceeds the maxSessionLengthInMinutes value, the session will automatically
+        /// be terminated by AWS (instead of stopped).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is set to a positive number, the session can be stopped. You can call
+        /// StopStreamingSession to stop sessions in the READY state. If the time that a session
+        /// stays in the READY state exceeds the maxSessionLengthInMinutes value, the session
+        /// will automatically be stopped by AWS (instead of terminated).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5760)]
+        public int MaxStoppedSessionLengthInMinutes
+        {
+            get { return this._maxStoppedSessionLengthInMinutes.GetValueOrDefault(); }
+            set { this._maxStoppedSessionLengthInMinutes = value; }
+        }
+
+        // Check to see if MaxStoppedSessionLengthInMinutes property is set
+        internal bool IsSetMaxStoppedSessionLengthInMinutes()
+        {
+            return this._maxStoppedSessionLengthInMinutes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamingImageIds. 
         /// <para>
         /// The streaming images that users can select from when launching a streaming session
         /// with this launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> StreamingImageIds
         {
             get { return this._streamingImageIds; }

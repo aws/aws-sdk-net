@@ -620,6 +620,26 @@ namespace Amazon.NimbleStudio
         /// Constant READY for StreamingSessionState
         /// </summary>
         public static readonly StreamingSessionState READY = new StreamingSessionState("READY");
+        /// <summary>
+        /// Constant START_FAILED for StreamingSessionState
+        /// </summary>
+        public static readonly StreamingSessionState START_FAILED = new StreamingSessionState("START_FAILED");
+        /// <summary>
+        /// Constant START_IN_PROGRESS for StreamingSessionState
+        /// </summary>
+        public static readonly StreamingSessionState START_IN_PROGRESS = new StreamingSessionState("START_IN_PROGRESS");
+        /// <summary>
+        /// Constant STOP_FAILED for StreamingSessionState
+        /// </summary>
+        public static readonly StreamingSessionState STOP_FAILED = new StreamingSessionState("STOP_FAILED");
+        /// <summary>
+        /// Constant STOP_IN_PROGRESS for StreamingSessionState
+        /// </summary>
+        public static readonly StreamingSessionState STOP_IN_PROGRESS = new StreamingSessionState("STOP_IN_PROGRESS");
+        /// <summary>
+        /// Constant STOPPED for StreamingSessionState
+        /// </summary>
+        public static readonly StreamingSessionState STOPPED = new StreamingSessionState("STOPPED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -706,6 +726,22 @@ namespace Amazon.NimbleStudio
         /// Constant STREAMING_SESSION_READY for StreamingSessionStatusCode
         /// </summary>
         public static readonly StreamingSessionStatusCode STREAMING_SESSION_READY = new StreamingSessionStatusCode("STREAMING_SESSION_READY");
+        /// <summary>
+        /// Constant STREAMING_SESSION_START_IN_PROGRESS for StreamingSessionStatusCode
+        /// </summary>
+        public static readonly StreamingSessionStatusCode STREAMING_SESSION_START_IN_PROGRESS = new StreamingSessionStatusCode("STREAMING_SESSION_START_IN_PROGRESS");
+        /// <summary>
+        /// Constant STREAMING_SESSION_STARTED for StreamingSessionStatusCode
+        /// </summary>
+        public static readonly StreamingSessionStatusCode STREAMING_SESSION_STARTED = new StreamingSessionStatusCode("STREAMING_SESSION_STARTED");
+        /// <summary>
+        /// Constant STREAMING_SESSION_STOP_IN_PROGRESS for StreamingSessionStatusCode
+        /// </summary>
+        public static readonly StreamingSessionStatusCode STREAMING_SESSION_STOP_IN_PROGRESS = new StreamingSessionStatusCode("STREAMING_SESSION_STOP_IN_PROGRESS");
+        /// <summary>
+        /// Constant STREAMING_SESSION_STOPPED for StreamingSessionStatusCode
+        /// </summary>
+        public static readonly StreamingSessionStatusCode STREAMING_SESSION_STOPPED = new StreamingSessionStatusCode("STREAMING_SESSION_STOPPED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

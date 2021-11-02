@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateStudio operation.
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     public partial class UpdateStudioResponse : AmazonWebServiceResponse
     {
@@ -41,6 +41,7 @@ namespace Amazon.NimbleStudio.Model
         /// Information about a studio.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Studio Studio
         {
             get { return this._studio; }

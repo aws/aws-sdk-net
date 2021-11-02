@@ -41,7 +41,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property EulaIds. 
         /// <para>
-        /// A collection of EULA IDs.
+        /// The list of EULA IDs that have been previously accepted.
         /// </para>
         /// </summary>
         public List<string> EulaIds
@@ -59,7 +59,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// The token to request the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -77,7 +77,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -59,7 +59,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

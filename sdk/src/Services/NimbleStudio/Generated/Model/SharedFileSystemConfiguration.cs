@@ -82,7 +82,7 @@ namespace Amazon.NimbleStudio.Model
         /// The mount location for a shared file system on a Linux virtual workstation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string LinuxMountPoint
         {
             get { return this._linuxMountPoint; }

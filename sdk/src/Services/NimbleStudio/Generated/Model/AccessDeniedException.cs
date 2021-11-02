@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+    /// that you are using the correct access keys.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

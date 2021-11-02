@@ -40,7 +40,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the target resource for tagging operations.
+        /// Identifies the Amazon Resource Name(ARN) key from which you are removing tags. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// An array of tag keys to delete.
+        /// One or more tag keys. Specify only the tag keys, not the tag values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

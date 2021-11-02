@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// One of the parameters in the request is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

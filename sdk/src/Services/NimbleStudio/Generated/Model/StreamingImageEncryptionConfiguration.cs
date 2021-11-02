@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// Specifies how a streaming image is encrypted.
     /// </summary>
     public partial class StreamingImageEncryptionConfiguration
     {

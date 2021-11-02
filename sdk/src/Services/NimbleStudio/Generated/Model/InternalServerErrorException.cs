@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// An internal error has occurred. Please retry your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -38,6 +38,8 @@ namespace Amazon.NimbleStudio.Model
     {
         private string _code;
         private Dictionary<string, string> _context = new Dictionary<string, string>();
+
+        private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
         /// Constructs a new InternalServerErrorException with the specified error
@@ -162,5 +164,16 @@ namespace Amazon.NimbleStudio.Model
             return this._context != null && this._context.Count > 0; 
         }
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }

@@ -36,6 +36,7 @@ namespace Amazon.NimbleStudio.Model
         private string _identityStoreId;
         private LaunchProfilePersona _persona;
         private string _principalId;
+        private string _sid;
 
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 
@@ -89,6 +90,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetPrincipalId()
         {
             return this._principalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sid. 
+        /// <para>
+        /// The Active Directory Security Identifier for this user, if available.
+        /// </para>
+        /// </summary>
+        public string Sid
+        {
+            get { return this._sid; }
+            set { this._sid = value; }
+        }
+
+        // Check to see if Sid property is set
+        internal bool IsSetSid()
+        {
+            return this._sid != null;
         }
 
     }

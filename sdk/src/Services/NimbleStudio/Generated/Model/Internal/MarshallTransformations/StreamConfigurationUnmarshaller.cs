@@ -82,6 +82,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxSessionLengthInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxStoppedSessionLengthInMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxStoppedSessionLengthInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("streamingImageIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

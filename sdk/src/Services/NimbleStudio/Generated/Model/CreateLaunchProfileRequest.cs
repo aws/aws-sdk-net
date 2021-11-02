@@ -47,12 +47,9 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// To make an idempotent API request using one of these actions, specify a client token
-        /// in the request. You should not reuse the same client token for other API requests.
-        /// If you retry a request that completed successfully using the same client token and
-        /// the same parameters, the retry succeeds without performing any further actions. If
-        /// you retry a successful request using the same client token, but one or more of the
-        /// parameters are different, the retry fails with a ValidationException error.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates
+        /// a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -74,7 +71,7 @@ namespace Amazon.NimbleStudio.Model
         /// The description.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -88,9 +85,13 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ec2SubnetIds.
+        /// Gets and sets the property Ec2SubnetIds. 
+        /// <para>
+        /// Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
+        /// These subnets must support the specified instance types. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=6)]
+        [AWSProperty(Required=true, Min=0, Max=6)]
         public List<string> Ec2SubnetIds
         {
             get { return this._ec2SubnetIds; }
@@ -129,7 +130,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -184,7 +185,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

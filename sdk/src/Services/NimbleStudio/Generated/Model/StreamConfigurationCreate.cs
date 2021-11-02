@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// Configuration for streaming workstations created using this launch profile.
     /// </summary>
     public partial class StreamConfigurationCreate
     {
         private StreamingClipboardMode _clipboardMode;
         private List<string> _ec2InstanceTypes = new List<string>();
         private int? _maxSessionLengthInMinutes;
+        private int? _maxStoppedSessionLengthInMinutes;
         private List<string> _streamingImageIds = new List<string>();
 
         /// <summary>
@@ -81,11 +82,13 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property MaxSessionLengthInMinutes. 
         /// <para>
-        /// The length of time, in minutes, that a streaming session can run. After this point,
-        /// Nimble Studio automatically terminates the session.
+        /// The length of time, in minutes, that a streaming session can be active before it is
+        /// stopped or terminated. After this point, Nimble Studio automatically terminates or
+        /// stops the session. The default length of time is 690 minutes, and the maximum length
+        /// of time is 30 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=690)]
+        [AWSProperty(Min=1, Max=43200)]
         public int MaxSessionLengthInMinutes
         {
             get { return this._maxSessionLengthInMinutes.GetValueOrDefault(); }
@@ -99,13 +102,35 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxStoppedSessionLengthInMinutes. 
+        /// <para>
+        /// The length of time, in minutes, that a streaming session can be active before it is
+        /// stopped or terminated. After this point, Nimble Studio automatically terminates or
+        /// stops the session. The default length of time is 690 minutes, and the maximum length
+        /// of time is 30 days.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5760)]
+        public int MaxStoppedSessionLengthInMinutes
+        {
+            get { return this._maxStoppedSessionLengthInMinutes.GetValueOrDefault(); }
+            set { this._maxStoppedSessionLengthInMinutes = value; }
+        }
+
+        // Check to see if MaxStoppedSessionLengthInMinutes property is set
+        internal bool IsSetMaxStoppedSessionLengthInMinutes()
+        {
+            return this._maxStoppedSessionLengthInMinutes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamingImageIds. 
         /// <para>
         /// The streaming images that users can select from when launching a streaming session
         /// with this launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<string> StreamingImageIds
         {
             get { return this._streamingImageIds; }

@@ -41,7 +41,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned per request.
+        /// The max number of results to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// The token to request the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -78,7 +78,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

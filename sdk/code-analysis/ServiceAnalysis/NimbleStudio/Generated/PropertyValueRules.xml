@@ -12,10 +12,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateLaunchProfileRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateLaunchProfileRequest.Name</property>
+    <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -25,6 +27,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStreamingImageRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -33,6 +36,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStreamingImageRequest.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -42,6 +46,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStreamingSessionRequest.StreamingImageId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
@@ -62,6 +67,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStudioRequest.DisplayName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -77,10 +83,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStudioComponentRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.CreateStudioComponentRequest.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -149,7 +157,17 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StartStreamingSessionRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StartStudioSSOConfigurationRepairRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StopStreamingSessionRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -160,10 +178,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateLaunchProfileRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateLaunchProfileRequest.Name</property>
+    <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -178,10 +198,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateStreamingImageRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateStreamingImageRequest.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -191,6 +213,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateStudioRequest.DisplayName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -200,10 +223,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateStudioComponentRequest.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.UpdateStudioComponentRequest.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -222,102 +247,65 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateLaunchProfileInput.Description</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateLaunchProfileInput.Name</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStreamingImageInput.Description</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStreamingImageInput.Ec2ImageId</property>
-    <pattern>^ami-[0-9A-z]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStreamingImageInput.Name</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStreamingSessionInput.StreamingImageId</property>
-    <max>22</max>
-    <pattern>^[a-zA-Z0-9-_]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStreamingSessionStreamInput.ExpirationInSeconds</property>
-    <min>60</min>
-    <max>3600</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStudioComponentInput.Description</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStudioComponentInput.Name</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStudioInput.DisplayName</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.CreateStudioInput.StudioName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>^[a-z0-9]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.NimbleStudio.Model.Eula.EulaId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.Eula.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.EulaAcceptance.EulaAcceptanceId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.EulaAcceptance.EulaId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfile.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfile.LaunchProfileId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfile.Name</property>
+    <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitialization.LaunchProfileId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitialization.LaunchProfileProtocolVersion</property>
+    <min>0</min>
     <max>10</max>
     <pattern>^2021\-03\-31$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitialization.LaunchPurpose</property>
+    <min>0</min>
     <max>64</max>
     <pattern>^[A-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitialization.Name</property>
+    <min>1</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -327,11 +315,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationActiveDirectory.StudioComponentId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationActiveDirectory.StudioComponentName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -341,11 +331,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationScript.StudioComponentId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.LaunchProfileInitializationScript.StudioComponentName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -361,6 +353,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.SharedFileSystemConfiguration.LinuxMountPoint</property>
+    <min>0</min>
     <max>128</max>
     <pattern>^(/?|(\$HOME)?(/[^/\n\s\\]+)*)$</pattern>
   </property-value-rule>
@@ -371,15 +364,26 @@
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamConfiguration.MaxSessionLengthInMinutes</property>
     <min>1</min>
-    <max>690</max>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamConfiguration.MaxStoppedSessionLengthInMinutes</property>
+    <min>0</min>
+    <max>5760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamConfigurationCreate.MaxSessionLengthInMinutes</property>
     <min>1</min>
-    <max>690</max>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NimbleStudio.Model.StreamConfigurationCreate.MaxStoppedSessionLengthInMinutes</property>
+    <min>0</min>
+    <max>5760</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingImage.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -388,6 +392,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingImage.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -396,6 +401,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingImage.StreamingImageId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
@@ -406,15 +412,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StreamingSession.StreamingImageId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.Studio.DisplayName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.Studio.HomeRegion</property>
+    <min>0</min>
     <max>50</max>
     <pattern>[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]</pattern>
   </property-value-rule>
@@ -426,19 +435,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponent.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponent.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponent.StudioComponentId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponentInitializationScript.LaunchProfileProtocolVersion</property>
+    <min>0</min>
     <max>10</max>
     <pattern>^2021\-03\-31$</pattern>
   </property-value-rule>
@@ -449,14 +462,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponentSummary.Description</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponentSummary.Name</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NimbleStudio.Model.StudioComponentSummary.StudioComponentId</property>
+    <min>0</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
@@ -464,33 +480,5 @@
     <property>Amazon.NimbleStudio.Model.StudioEncryptionConfiguration.KeyArn</property>
     <min>4</min>
     <pattern>^arn:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.UpdateLaunchProfileInput.Description</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.UpdateLaunchProfileInput.Name</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.UpdateStreamingImageInput.Description</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.UpdateStreamingImageInput.Name</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.UpdateStudioComponentInput.Description</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.UpdateStudioComponentInput.Name</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.NimbleStudio.Model.UpdateStudioInput.DisplayName</property>
-    <max>64</max>
   </property-value-rule>
 </property-value-rules>

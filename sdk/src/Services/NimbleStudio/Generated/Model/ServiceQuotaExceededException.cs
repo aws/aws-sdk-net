@@ -29,7 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
+    /// Your current quota does not allow you to perform the request action. You can request
+    /// increases for some quotas, and other quotas cannot be increased.
     /// 
+    ///  
+    /// <para>
+    /// Please use AWS Service Quotas to request an increase. 
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

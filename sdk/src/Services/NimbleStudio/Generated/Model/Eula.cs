@@ -81,7 +81,7 @@ namespace Amazon.NimbleStudio.Model
         /// The EULA ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string EulaId
         {
             get { return this._eulaId; }
@@ -100,7 +100,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the EULA.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }

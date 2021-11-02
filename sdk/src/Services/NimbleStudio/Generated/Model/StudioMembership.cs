@@ -29,13 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
+    /// A studio member is an association of a user from your studio identity source to elevated
+    /// permissions that they are granted in the studio.
     /// 
+    ///  
+    /// <para>
+    /// When you add a user to your studio using the Nimble Studio console, they are given
+    /// access to the studio's AWS SSO application and are given access to log in to the Nimble
+    /// Studio portal. These users have the permissions provided by the studio's user IAM
+    /// role and do not appear in the studio membership collection. Only studio admins appear
+    /// in studio membership.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you add a user to studio membership with the persona ADMIN, upon logging in to
+    /// the Nimble Studio portal, they are granted permissions specified by the Studio's Admin
+    /// IAM role.
+    /// </para>
     /// </summary>
     public partial class StudioMembership
     {
         private string _identityStoreId;
         private StudioPersona _persona;
         private string _principalId;
+        private string _sid;
 
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 
@@ -89,6 +106,24 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetPrincipalId()
         {
             return this._principalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sid. 
+        /// <para>
+        /// The Active Directory Security Identifier for this user, if available.
+        /// </para>
+        /// </summary>
+        public string Sid
+        {
+            get { return this._sid; }
+            set { this._sid = value; }
+        }
+
+        // Check to see if Sid property is set
+        internal bool IsSetSid()
+        {
+            return this._sid != null;
         }
 
     }

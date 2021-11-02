@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// Another operation is in progress.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

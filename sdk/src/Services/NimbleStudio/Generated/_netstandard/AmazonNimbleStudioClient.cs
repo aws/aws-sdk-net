@@ -38,7 +38,14 @@ namespace Amazon.NimbleStudio
     /// <summary>
     /// Implementation for accessing NimbleStudio
     ///
+    /// Welcome to the Amazon Nimble Studio API reference. This API reference provides methods,
+    /// schema, resources, parameters, and more to help you get the most out of Nimble Studio.
     /// 
+    ///  
+    /// <para>
+    /// Nimble Studio is a virtual studio that empowers visual effects, animation, and interactive
+    /// content teams to create content securely within a scalable, private cloud service.
+    /// </para>
     /// </summary>
     public partial class AmazonNimbleStudioClient : AmazonServiceClient, IAmazonNimbleStudio
     {
@@ -281,25 +288,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the AcceptEulas service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/AcceptEulas">REST API Reference for AcceptEulas Operation</seealso>
         public virtual Task<AcceptEulasResponse> AcceptEulasAsync(AcceptEulasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -336,25 +350,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the CreateLaunchProfile service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateLaunchProfile">REST API Reference for CreateLaunchProfile Operation</seealso>
         public virtual Task<CreateLaunchProfileResponse> CreateLaunchProfileAsync(CreateLaunchProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -391,25 +412,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the CreateStreamingImage service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingImage">REST API Reference for CreateStreamingImage Operation</seealso>
         public virtual Task<CreateStreamingImageResponse> CreateStreamingImageAsync(CreateStreamingImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -452,25 +480,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the CreateStreamingSession service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSession">REST API Reference for CreateStreamingSession Operation</seealso>
         public virtual Task<CreateStreamingSessionResponse> CreateStreamingSessionAsync(CreateStreamingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -513,25 +548,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the CreateStreamingSessionStream service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSessionStream">REST API Reference for CreateStreamingSessionStream Operation</seealso>
         public virtual Task<CreateStreamingSessionStreamResponse> CreateStreamingSessionStreamAsync(CreateStreamingSessionStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -609,25 +651,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the CreateStudio service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudio">REST API Reference for CreateStudio Operation</seealso>
         public virtual Task<CreateStudioResponse> CreateStudioAsync(CreateStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -664,25 +713,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the CreateStudioComponent service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudioComponent">REST API Reference for CreateStudioComponent Operation</seealso>
         public virtual Task<CreateStudioComponentResponse> CreateStudioComponentAsync(CreateStudioComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -719,25 +775,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the DeleteLaunchProfile service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteLaunchProfile">REST API Reference for DeleteLaunchProfile Operation</seealso>
         public virtual Task<DeleteLaunchProfileResponse> DeleteLaunchProfileAsync(DeleteLaunchProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -774,25 +837,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the DeleteLaunchProfileMember service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteLaunchProfileMember">REST API Reference for DeleteLaunchProfileMember Operation</seealso>
         public virtual Task<DeleteLaunchProfileMemberResponse> DeleteLaunchProfileMemberAsync(DeleteLaunchProfileMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -829,25 +899,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the DeleteStreamingImage service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingImage">REST API Reference for DeleteStreamingImage Operation</seealso>
         public virtual Task<DeleteStreamingImageResponse> DeleteStreamingImageAsync(DeleteStreamingImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -895,25 +972,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the DeleteStreamingSession service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingSession">REST API Reference for DeleteStreamingSession Operation</seealso>
         public virtual Task<DeleteStreamingSessionResponse> DeleteStreamingSessionAsync(DeleteStreamingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -950,25 +1034,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the DeleteStudio service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudio">REST API Reference for DeleteStudio Operation</seealso>
         public virtual Task<DeleteStudioResponse> DeleteStudioAsync(DeleteStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1005,25 +1096,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the DeleteStudioComponent service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudioComponent">REST API Reference for DeleteStudioComponent Operation</seealso>
         public virtual Task<DeleteStudioComponentResponse> DeleteStudioComponentAsync(DeleteStudioComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1060,25 +1158,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the DeleteStudioMember service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudioMember">REST API Reference for DeleteStudioMember Operation</seealso>
         public virtual Task<DeleteStudioMemberResponse> DeleteStudioMemberAsync(DeleteStudioMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1115,25 +1220,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetEula service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetEula">REST API Reference for GetEula Operation</seealso>
         public virtual Task<GetEulaResponse> GetEulaAsync(GetEulaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1170,25 +1282,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetLaunchProfile service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfile">REST API Reference for GetLaunchProfile Operation</seealso>
         public virtual Task<GetLaunchProfileResponse> GetLaunchProfileAsync(GetLaunchProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1228,25 +1347,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetLaunchProfileDetails service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileDetails">REST API Reference for GetLaunchProfileDetails Operation</seealso>
         public virtual Task<GetLaunchProfileDetailsResponse> GetLaunchProfileDetailsAsync(GetLaunchProfileDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1283,25 +1409,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetLaunchProfileInitialization service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileInitialization">REST API Reference for GetLaunchProfileInitialization Operation</seealso>
         public virtual Task<GetLaunchProfileInitializationResponse> GetLaunchProfileInitializationAsync(GetLaunchProfileInitializationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1338,25 +1471,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetLaunchProfileMember service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileMember">REST API Reference for GetLaunchProfileMember Operation</seealso>
         public virtual Task<GetLaunchProfileMemberResponse> GetLaunchProfileMemberAsync(GetLaunchProfileMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1393,25 +1533,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetStreamingImage service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingImage">REST API Reference for GetStreamingImage Operation</seealso>
         public virtual Task<GetStreamingImageResponse> GetStreamingImageAsync(GetStreamingImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1443,7 +1590,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Invoke this operation to poll for a streaming session state while creating or deleting
+        /// anvoke this operation to poll for a streaming session state while creating or deleting
         /// a session.
         /// </para>
         /// </summary>
@@ -1454,25 +1601,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetStreamingSession service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession">REST API Reference for GetStreamingSession Operation</seealso>
         public virtual Task<GetStreamingSessionResponse> GetStreamingSessionAsync(GetStreamingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1519,25 +1673,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetStreamingSessionStream service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionStream">REST API Reference for GetStreamingSessionStream Operation</seealso>
         public virtual Task<GetStreamingSessionStreamResponse> GetStreamingSessionStreamAsync(GetStreamingSessionStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1574,25 +1735,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetStudio service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudio">REST API Reference for GetStudio Operation</seealso>
         public virtual Task<GetStudioResponse> GetStudioAsync(GetStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1629,25 +1797,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetStudioComponent service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudioComponent">REST API Reference for GetStudioComponent Operation</seealso>
         public virtual Task<GetStudioComponentResponse> GetStudioComponentAsync(GetStudioComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1684,25 +1859,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the GetStudioMember service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudioMember">REST API Reference for GetStudioMember Operation</seealso>
         public virtual Task<GetStudioMemberResponse> GetStudioMemberAsync(GetStudioMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1739,25 +1921,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListEulaAcceptances service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulaAcceptances">REST API Reference for ListEulaAcceptances Operation</seealso>
         public virtual Task<ListEulaAcceptancesResponse> ListEulaAcceptancesAsync(ListEulaAcceptancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1794,25 +1983,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListEulas service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulas">REST API Reference for ListEulas Operation</seealso>
         public virtual Task<ListEulasResponse> ListEulasAsync(ListEulasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1849,25 +2045,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListLaunchProfileMembers service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListLaunchProfileMembers">REST API Reference for ListLaunchProfileMembers Operation</seealso>
         public virtual Task<ListLaunchProfileMembersResponse> ListLaunchProfileMembersAsync(ListLaunchProfileMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1904,25 +2107,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListLaunchProfiles service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListLaunchProfiles">REST API Reference for ListLaunchProfiles Operation</seealso>
         public virtual Task<ListLaunchProfilesResponse> ListLaunchProfilesAsync(ListLaunchProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1965,25 +2175,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListStreamingImages service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingImages">REST API Reference for ListStreamingImages Operation</seealso>
         public virtual Task<ListStreamingImagesResponse> ListStreamingImagesAsync(ListStreamingImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2020,25 +2237,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListStreamingSessions service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessions">REST API Reference for ListStreamingSessions Operation</seealso>
         public virtual Task<ListStreamingSessionsResponse> ListStreamingSessionsAsync(ListStreamingSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2075,25 +2299,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListStudioComponents service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioComponents">REST API Reference for ListStudioComponents Operation</seealso>
         public virtual Task<ListStudioComponentsResponse> ListStudioComponentsAsync(ListStudioComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2130,25 +2361,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListStudioMembers service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioMembers">REST API Reference for ListStudioMembers Operation</seealso>
         public virtual Task<ListStudioMembersResponse> ListStudioMembersAsync(ListStudioMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2186,25 +2424,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListStudios service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudios">REST API Reference for ListStudios Operation</seealso>
         public virtual Task<ListStudiosResponse> ListStudiosAsync(ListStudiosRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2249,25 +2494,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2304,25 +2556,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the PutLaunchProfileMembers service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutLaunchProfileMembers">REST API Reference for PutLaunchProfileMembers Operation</seealso>
         public virtual Task<PutLaunchProfileMembersResponse> PutLaunchProfileMembersAsync(PutLaunchProfileMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2359,25 +2618,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the PutStudioMembers service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutStudioMembers">REST API Reference for PutStudioMembers Operation</seealso>
         public virtual Task<PutStudioMembersResponse> PutStudioMembersAsync(PutStudioMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2387,6 +2653,69 @@ namespace Amazon.NimbleStudio
             options.ResponseUnmarshaller = PutStudioMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutStudioMembersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartStreamingSession
+
+        internal virtual StartStreamingSessionResponse StartStreamingSession(StartStreamingSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartStreamingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartStreamingSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartStreamingSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS
+        /// state is the intermediate state between the STOPPED and READY states.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartStreamingSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartStreamingSession service method, as returned by NimbleStudio.</returns>
+        /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
+        /// Another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
+        /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession">REST API Reference for StartStreamingSession Operation</seealso>
+        public virtual Task<StartStreamingSessionResponse> StartStreamingSessionAsync(StartStreamingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartStreamingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartStreamingSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartStreamingSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2405,7 +2734,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Repairs the SSO configuration for a given studio.
+        /// Repairs the Amazon Web Services SSO configuration for a given studio.
         /// 
         ///  
         /// <para>
@@ -2431,25 +2760,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the StartStudioSSOConfigurationRepair service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair">REST API Reference for StartStudioSSOConfigurationRepair Operation</seealso>
         public virtual Task<StartStudioSSOConfigurationRepairResponse> StartStudioSSOConfigurationRepairAsync(StartStudioSSOConfigurationRepairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2459,6 +2795,69 @@ namespace Amazon.NimbleStudio
             options.ResponseUnmarshaller = StartStudioSSOConfigurationRepairResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartStudioSSOConfigurationRepairResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopStreamingSession
+
+        internal virtual StopStreamingSessionResponse StopStreamingSession(StopStreamingSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopStreamingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopStreamingSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopStreamingSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS
+        /// state is the intermediate state between the READY and STOPPED states.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopStreamingSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopStreamingSession service method, as returned by NimbleStudio.</returns>
+        /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
+        /// Another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
+        /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession">REST API Reference for StopStreamingSession Operation</seealso>
+        public virtual Task<StopStreamingSessionResponse> StopStreamingSessionAsync(StopStreamingSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopStreamingSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopStreamingSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopStreamingSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2486,25 +2885,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the TagResource service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2541,25 +2947,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the UntagResource service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2596,25 +3009,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the UpdateLaunchProfile service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfile">REST API Reference for UpdateLaunchProfile Operation</seealso>
         public virtual Task<UpdateLaunchProfileResponse> UpdateLaunchProfileAsync(UpdateLaunchProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2651,25 +3071,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the UpdateLaunchProfileMember service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfileMember">REST API Reference for UpdateLaunchProfileMember Operation</seealso>
         public virtual Task<UpdateLaunchProfileMemberResponse> UpdateLaunchProfileMemberAsync(UpdateLaunchProfileMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2706,25 +3133,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the UpdateStreamingImage service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStreamingImage">REST API Reference for UpdateStreamingImage Operation</seealso>
         public virtual Task<UpdateStreamingImageResponse> UpdateStreamingImageAsync(UpdateStreamingImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2766,25 +3200,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the UpdateStudio service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudio">REST API Reference for UpdateStudio Operation</seealso>
         public virtual Task<UpdateStudioResponse> UpdateStudioAsync(UpdateStudioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2821,25 +3262,32 @@ namespace Amazon.NimbleStudio
         /// 
         /// <returns>The response from the UpdateStudioComponent service method, as returned by NimbleStudio.</returns>
         /// <exception cref="Amazon.NimbleStudio.Model.AccessDeniedException">
-        /// 
+        /// You are not authorized to perform this operation. Check your IAM policies, and ensure
+        /// that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ConflictException">
-        /// 
+        /// Another operation is in progress.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.InternalServerErrorException">
-        /// 
+        /// An internal error has occurred. Please retry your request.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ResourceNotFoundException">
-        /// 
+        /// The specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ServiceQuotaExceededException">
+        /// Your current quota does not allow you to perform the request action. You can request
+        /// increases for some quotas, and other quotas cannot be increased.
         /// 
+        ///  
+        /// <para>
+        /// Please use AWS Service Quotas to request an increase. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ThrottlingException">
-        /// 
+        /// The request throughput limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.NimbleStudio.Model.ValidationException">
-        /// 
+        /// One of the parameters in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudioComponent">REST API Reference for UpdateStudioComponent Operation</seealso>
         public virtual Task<UpdateStudioComponentResponse> UpdateStudioComponentAsync(UpdateStudioComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

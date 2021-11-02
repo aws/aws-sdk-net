@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// This is the response object from the CreateStreamingImage operation.
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     public partial class CreateStreamingImageResponse : AmazonWebServiceResponse
     {
         private StreamingImage _streamingImage;
 
         /// <summary>
-        /// Gets and sets the property StreamingImage.
+        /// Gets and sets the property StreamingImage. 
+        /// <para>
+        /// The streaming image.
+        /// </para>
         /// </summary>
         public StreamingImage StreamingImage
         {

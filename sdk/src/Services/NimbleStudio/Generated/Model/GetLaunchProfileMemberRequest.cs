@@ -41,7 +41,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The launch profile ID.
+        /// The Launch Profile ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The principal ID.
+        /// The principal ID. This currently supports a Amazon Web Services SSO UserId. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
+    /// Represents a streaming image resource.
     /// 
+    ///  
+    /// <para>
+    /// Streaming images are used by studio users to select which operating system and software
+    /// they want to use in a Nimble Studio streaming session.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon provides a number of streaming images that include popular 3rd-party software.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon
+    /// EC2) machine image that you create for this purpose. You can also include software
+    /// that your users require.
+    /// </para>
     /// </summary>
     public partial class StreamingImage
     {
@@ -71,7 +87,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description of the streaming image.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -145,7 +161,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for a streaming image resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -255,7 +271,7 @@ namespace Amazon.NimbleStudio.Model
         /// The ID of the streaming image.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string StreamingImageId
         {
             get { return this._streamingImageId; }

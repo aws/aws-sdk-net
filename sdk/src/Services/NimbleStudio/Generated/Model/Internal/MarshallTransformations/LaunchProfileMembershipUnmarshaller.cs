@@ -82,6 +82,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sid", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Sid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

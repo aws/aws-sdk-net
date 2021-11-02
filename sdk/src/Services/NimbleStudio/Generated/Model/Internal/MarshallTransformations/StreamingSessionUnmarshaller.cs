@@ -106,6 +106,18 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.SessionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("startedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +134,24 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stopAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StopAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stoppedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stoppedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StoppedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("streamingImageId", targetDepth))

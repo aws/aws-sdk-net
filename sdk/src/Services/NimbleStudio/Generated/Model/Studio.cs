@@ -29,7 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
+    /// Represents a studio resource.
     /// 
+    ///  
+    /// <para>
+    /// A studio is the core resource used with Nimble Studio. You must create a studio first,
+    /// before any other resource type can be created. All other resources you create and
+    /// manage in Nimble Studio are contained within a studio.
+    /// </para>
+    ///  
+    /// <para>
+    /// When creating a studio, you must provides two IAM roles for use with the Nimble Studio
+    /// portal. These roles are assumed by your users when they log in to the Nimble Studio
+    /// portal via Amazon Web Services SSO and your identity source.
+    /// </para>
+    ///  
+    /// <para>
+    /// The user role must have the AmazonNimbleStudio-StudioUser managed policy attached
+    /// for the portal to function properly.
+    /// </para>
+    ///  
+    /// <para>
+    /// The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached
+    /// for the portal to function properly.
+    /// </para>
+    ///  
+    /// <para>
+    /// Your studio roles must trust the identity.nimble.amazonaws.com service principal to
+    /// function properly.
+    /// </para>
     /// </summary>
     public partial class Studio
     {
@@ -111,7 +139,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -130,7 +158,7 @@ namespace Amazon.NimbleStudio.Model
         /// The Amazon Web Services Region where the studio resource is located.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public string HomeRegion
         {
             get { return this._homeRegion; }
@@ -147,7 +175,7 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property SsoClientId. 
         /// <para>
         /// The Amazon Web Services SSO application client ID used to integrate with Amazon Web
-        /// Services SSO to enable Amazon Web Services SSO users to log in to Nimble portal.
+        /// Services SSO to enable Amazon Web Services SSO users to log in to Nimble Studio portal.
         /// </para>
         /// </summary>
         public string SsoClientId

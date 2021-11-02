@@ -40,7 +40,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property EulaIds. 
         /// <para>
-        /// A collection of EULA IDs.
+        /// The list of EULA IDs that should be returned
         /// </para>
         /// </summary>
         public List<string> EulaIds
@@ -58,7 +58,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// The token to request the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken

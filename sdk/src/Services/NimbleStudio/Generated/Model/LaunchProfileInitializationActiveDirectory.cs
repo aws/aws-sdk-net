@@ -47,7 +47,7 @@ namespace Amazon.NimbleStudio.Model
         /// A collection of custom attributes for an Active Directory computer.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<ActiveDirectoryComputerAttribute> ComputerAttributes
         {
             get { return this._computerAttributes; }
@@ -103,7 +103,7 @@ namespace Amazon.NimbleStudio.Model
         /// The DNS IP address.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<string> DnsIpAddresses
         {
             get { return this._dnsIpAddresses; }
@@ -141,7 +141,7 @@ namespace Amazon.NimbleStudio.Model
         /// The unique identifier for a studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string StudioComponentId
         {
             get { return this._studioComponentId; }
@@ -160,7 +160,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the studio component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string StudioComponentName
         {
             get { return this._studioComponentName; }

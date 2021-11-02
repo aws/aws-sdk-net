@@ -51,7 +51,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The session ID.
+        /// The streaming session ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,7 +70,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StreamId. 
         /// <para>
-        /// The stream ID.
+        /// The streaming session stream ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +89,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

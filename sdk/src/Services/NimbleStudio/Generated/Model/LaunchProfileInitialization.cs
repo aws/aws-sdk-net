@@ -29,7 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
+    /// A Launch Profile Initialization contains information required for a workstation or
+    /// server to connect to a launch profile
     /// 
+    ///  
+    /// <para>
+    /// This includes scripts, endpoints, security groups, subnets, and other configuration.
+    /// </para>
     /// </summary>
     public partial class LaunchProfileInitialization
     {
@@ -86,7 +92,7 @@ namespace Amazon.NimbleStudio.Model
         /// The launch profile ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string LaunchProfileId
         {
             get { return this._launchProfileId; }
@@ -106,7 +112,7 @@ namespace Amazon.NimbleStudio.Model
         /// version is "2021-03-31".
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public string LaunchProfileProtocolVersion
         {
             get { return this._launchProfileProtocolVersion; }
@@ -125,7 +131,7 @@ namespace Amazon.NimbleStudio.Model
         /// The launch purpose.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string LaunchPurpose
         {
             get { return this._launchPurpose; }
@@ -144,7 +150,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

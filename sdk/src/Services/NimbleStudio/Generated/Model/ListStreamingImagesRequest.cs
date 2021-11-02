@@ -47,7 +47,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// The token to request the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -65,7 +65,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner.
+        /// Filter this request to streaming images with the given owner
         /// </para>
         /// </summary>
         public string Owner
@@ -83,7 +83,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

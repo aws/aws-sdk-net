@@ -68,6 +68,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxSessionLengthInMinutes);
             }
 
+            if(requestObject.IsSetMaxStoppedSessionLengthInMinutes())
+            {
+                context.Writer.WritePropertyName("maxStoppedSessionLengthInMinutes");
+                context.Writer.Write(requestObject.MaxStoppedSessionLengthInMinutes);
+            }
+
             if(requestObject.IsSetStreamingImageIds())
             {
                 context.Writer.WritePropertyName("streamingImageIds");

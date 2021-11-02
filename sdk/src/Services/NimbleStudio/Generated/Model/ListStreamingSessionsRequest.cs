@@ -43,7 +43,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The user ID of the user that created the streaming session.
+        /// Filters the request to streaming sessions created by the given user.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -61,7 +61,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// The token to request the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,7 +79,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property OwnedBy. 
         /// <para>
-        /// The user ID of the user that owns the streaming session.
+        /// Filters the request to streaming session owned by the given user
         /// </para>
         /// </summary>
         public string OwnedBy
@@ -97,7 +97,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionIds. 
         /// <para>
-        /// A collection of session IDs.
+        /// Filters the request to only the provided session IDs.
         /// </para>
         /// </summary>
         public string SessionIds
@@ -115,7 +115,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

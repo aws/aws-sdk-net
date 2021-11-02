@@ -45,7 +45,7 @@ namespace Amazon.NimbleStudio.Model
         /// version is "2021-03-31".
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public string LaunchProfileProtocolVersion
         {
             get { return this._launchProfileProtocolVersion; }

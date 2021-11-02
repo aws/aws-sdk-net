@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// This is the response object from the ListLaunchProfileMembers operation.
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     public partial class ListLaunchProfileMembersResponse : AmazonWebServiceResponse
     {
@@ -42,7 +42,7 @@ namespace Amazon.NimbleStudio.Model
         /// A list of members.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Min=0, Max=20)]
         public List<LaunchProfileMembership> Members
         {
             get { return this._members; }

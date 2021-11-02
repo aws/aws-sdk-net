@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
+    /// A launch profile controls your artist workforce’s access to studio components, like
+    /// compute farms, shared file systems, managed file systems, and license server configurations,
+    /// as well as instance types and Amazon Machine Images (AMIs). 
     /// 
+    ///  <pre><code> &lt;p&gt;Studio administrators create launch profiles in the Nimble Studio
+    /// console. Artists can use their launch profiles to launch an instance from the Nimble
+    /// Studio portal. Each user’s launch profile defines how they can launch a streaming
+    /// session. By default, studio admins can use all launch profiles.&lt;/p&gt; </code></pre>
     /// </summary>
     public partial class LaunchProfile
     {
@@ -110,7 +117,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description of the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -129,7 +136,7 @@ namespace Amazon.NimbleStudio.Model
         /// Unique identifiers for a collection of EC2 subnets.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=6)]
+        [AWSProperty(Min=0, Max=6)]
         public List<string> Ec2SubnetIds
         {
             get { return this._ec2SubnetIds; }
@@ -148,7 +155,7 @@ namespace Amazon.NimbleStudio.Model
         /// The launch profile ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string LaunchProfileId
         {
             get { return this._launchProfileId; }
@@ -186,7 +193,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the launch profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

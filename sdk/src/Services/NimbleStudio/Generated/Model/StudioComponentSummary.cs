@@ -85,7 +85,7 @@ namespace Amazon.NimbleStudio.Model
         /// The description.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -104,7 +104,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name for the studio component.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -123,7 +123,7 @@ namespace Amazon.NimbleStudio.Model
         /// The unique identifier for a studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string StudioComponentId
         {
             get { return this._studioComponentId; }

@@ -41,12 +41,9 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// To make an idempotent API request using one of these actions, specify a client token
-        /// in the request. You should not reuse the same client token for other API requests.
-        /// If you retry a request that completed successfully using the same client token and
-        /// the same parameters, the retry succeeds without performing any further actions. If
-        /// you retry a successful request using the same client token, but one or more of the
-        /// parameters are different, the retry fails with a ValidationException error.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. If you don’t specify a client token, the AWS SDK automatically generates
+        /// a client token and uses it for the request to ensure idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -65,7 +62,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property LaunchProfileId. 
         /// <para>
-        /// The launch profile ID.
+        /// The Launch Profile ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +81,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -43,7 +43,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to be returned per request.
+        /// The max number of results to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -62,7 +62,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or null if there are no more results.
+        /// The token to request the next page of results. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -80,7 +80,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// The principal ID.
+        /// The principal ID. This currently supports a Amazon Web Services SSO UserId. 
         /// </para>
         /// </summary>
         public string PrincipalId
@@ -98,7 +98,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property States. 
         /// <para>
-        /// A list of states.
+        /// Filter this request to launch profiles in any of the given states.
         /// </para>
         /// </summary>
         public List<string> States
@@ -116,7 +116,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

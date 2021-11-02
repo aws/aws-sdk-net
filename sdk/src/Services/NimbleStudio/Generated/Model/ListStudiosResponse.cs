@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// This is the response object from the ListStudios operation.
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     public partial class ListStudiosResponse : AmazonWebServiceResponse
     {
@@ -60,6 +60,7 @@ namespace Amazon.NimbleStudio.Model
         /// A collection of studios.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<Studio> Studios
         {
             get { return this._studios; }

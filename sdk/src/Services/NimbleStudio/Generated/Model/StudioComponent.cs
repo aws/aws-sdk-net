@@ -29,8 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// A network that is used by a studio’s users and workflows, including render farm, Active
-    /// Directory, licensing, and file system.
+    /// A studio component represents a network resource to be used by a studio's users and
+    /// workflows. A typical studio contains studio components for each of the following:
+    /// render farm, Active Directory, licensing, and file system.
+    /// 
+    ///  
+    /// <para>
+    /// Access to a studio component is managed by specifying security groups for the resource,
+    /// as well as its endpoint.
+    /// </para>
+    ///  
+    /// <para>
+    /// A studio component also has a set of initialization scripts that are returned by <code>GetLaunchProfileInitialization</code>.
+    /// These initialization scripts run on streaming sessions when they start. They provide
+    /// users with flexibility in controlling how the studio resources are configured on a
+    /// streaming session.
+    /// </para>
     /// </summary>
     public partial class StudioComponent
     {
@@ -131,7 +145,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description for the studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -187,7 +201,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
+        [AWSProperty(Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -206,7 +220,7 @@ namespace Amazon.NimbleStudio.Model
         /// Parameters for the studio component scripts.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public List<ScriptParameterKeyValue> ScriptParameters
         {
             get { return this._scriptParameters; }
@@ -279,7 +293,7 @@ namespace Amazon.NimbleStudio.Model
         /// The unique identifier for a studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string StudioComponentId
         {
             get { return this._studioComponentId; }

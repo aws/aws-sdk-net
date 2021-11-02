@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// This is the response object from the GetEula operation.
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     public partial class GetEulaResponse : AmazonWebServiceResponse
     {

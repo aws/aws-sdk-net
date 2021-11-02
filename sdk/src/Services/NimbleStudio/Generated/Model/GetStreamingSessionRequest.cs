@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model
     /// 
     ///  
     /// <para>
-    /// Invoke this operation to poll for a streaming session state while creating or deleting
+    /// anvoke this operation to poll for a streaming session state while creating or deleting
     /// a session.
     /// </para>
     /// </summary>
@@ -46,7 +46,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The session ID.
+        /// The streaming session ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// The studio ID.
+        /// The studio ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

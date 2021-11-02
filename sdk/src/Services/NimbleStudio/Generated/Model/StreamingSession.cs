@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
-    /// 
+    /// A streaming session is a virtual workstation created using a particular launch profile.
     /// </summary>
     public partial class StreamingSession
     {
@@ -40,9 +40,14 @@ namespace Amazon.NimbleStudio.Model
         private string _launchProfileId;
         private string _ownedBy;
         private string _sessionId;
+        private DateTime? _startedAt;
+        private string _startedBy;
         private StreamingSessionState _state;
         private StreamingSessionStatusCode _statusCode;
         private string _statusMessage;
+        private DateTime? _stopAt;
+        private DateTime? _stoppedAt;
+        private string _stoppedBy;
         private string _streamingImageId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private DateTime? _terminateAt;
@@ -176,6 +181,42 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The time the session entered START_IN_PROGRESS state.
+        /// </para>
+        /// </summary>
+        public DateTime StartedAt
+        {
+            get { return this._startedAt.GetValueOrDefault(); }
+            set { this._startedAt = value; }
+        }
+
+        // Check to see if StartedAt property is set
+        internal bool IsSetStartedAt()
+        {
+            return this._startedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedBy. 
+        /// <para>
+        /// The user ID of the user that started the streaming session.
+        /// </para>
+        /// </summary>
+        public string StartedBy
+        {
+            get { return this._startedBy; }
+            set { this._startedBy = value; }
+        }
+
+        // Check to see if StartedBy property is set
+        internal bool IsSetStartedBy()
+        {
+            return this._startedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The current state.
@@ -230,12 +271,67 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StopAt. 
+        /// <para>
+        /// The time the streaming session will automatically be stopped if the user doesn’t stop
+        /// the session themselves. 
+        /// </para>
+        /// </summary>
+        public DateTime StopAt
+        {
+            get { return this._stopAt.GetValueOrDefault(); }
+            set { this._stopAt = value; }
+        }
+
+        // Check to see if StopAt property is set
+        internal bool IsSetStopAt()
+        {
+            return this._stopAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StoppedAt. 
+        /// <para>
+        /// The time the session entered STOP_IN_PROGRESS state.
+        /// </para>
+        /// </summary>
+        public DateTime StoppedAt
+        {
+            get { return this._stoppedAt.GetValueOrDefault(); }
+            set { this._stoppedAt = value; }
+        }
+
+        // Check to see if StoppedAt property is set
+        internal bool IsSetStoppedAt()
+        {
+            return this._stoppedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StoppedBy. 
+        /// <para>
+        /// The user ID of the user that stopped the streaming session.
+        /// </para>
+        /// </summary>
+        public string StoppedBy
+        {
+            get { return this._stoppedBy; }
+            set { this._stoppedBy = value; }
+        }
+
+        // Check to see if StoppedBy property is set
+        internal bool IsSetStoppedBy()
+        {
+            return this._stoppedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamingImageId. 
         /// <para>
         /// The ID of the streaming image.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public string StreamingImageId
         {
             get { return this._streamingImageId; }
