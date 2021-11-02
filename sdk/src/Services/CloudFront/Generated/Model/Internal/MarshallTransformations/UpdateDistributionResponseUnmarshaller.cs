@@ -228,6 +228,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return NoSuchRealtimeLogConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchResponseHeadersPolicy"))
+                {
+                    return NoSuchResponseHeadersPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailed"))
                 {
                     return PreconditionFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -267,6 +271,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginRequestPolicy"))
                 {
                     return TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToResponseHeadersPolicy"))
+                {
+                    return TooManyDistributionsAssociatedToResponseHeadersPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsWithFunctionAssociations"))
                 {

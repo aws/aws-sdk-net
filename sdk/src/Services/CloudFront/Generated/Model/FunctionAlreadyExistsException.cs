@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A function with the same name already exists in this account. To create a function,
-    /// you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.
+    /// A function with the same name already exists in this Amazon Web Services account.
+    /// To create a function, you must provide a unique name. To update an existing function,
+    /// use <code>UpdateFunction</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

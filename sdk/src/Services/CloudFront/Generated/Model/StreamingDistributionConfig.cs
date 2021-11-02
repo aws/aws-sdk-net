@@ -191,10 +191,10 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property TrustedSigners. 
         /// <para>
-        /// A complex type that specifies any accounts that you want to permit to create signed
-        /// URLs for private content. If you want the distribution to use signed URLs, include
-        /// this element; if you want the distribution to use public URLs, remove this element.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// A complex type that specifies any Amazon Web Services accounts that you want to permit
+        /// to create signed URLs for private content. If you want the distribution to use signed
+        /// URLs, include this element; if you want the distribution to use public URLs, remove
+        /// this element. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
         /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// 
         /// </para>

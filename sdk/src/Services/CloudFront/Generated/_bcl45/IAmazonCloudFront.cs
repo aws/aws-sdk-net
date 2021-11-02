@@ -195,8 +195,8 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCachePoliciesException">
-        /// You have reached the maximum number of cache policies for this account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of cache policies for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
@@ -272,8 +272,8 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCachePoliciesException">
-        /// You have reached the maximum number of cache policies for this account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of cache policies for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
@@ -505,8 +505,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -539,6 +543,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -734,8 +748,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -768,6 +786,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -951,8 +979,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -985,6 +1017,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -1168,8 +1210,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -1202,6 +1248,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -1445,8 +1501,9 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
-        /// A function with the same name already exists in this account. To create a function,
-        /// you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.
+        /// A function with the same name already exists in this Amazon Web Services account.
+        /// To create a function, you must provide a unique name. To update an existing function,
+        /// use <code>UpdateFunction</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
         /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -1456,8 +1513,8 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionsException">
-        /// You have reached the maximum number of CloudFront functions for this account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of CloudFront functions for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
@@ -1497,8 +1554,9 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
-        /// A function with the same name already exists in this account. To create a function,
-        /// you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.
+        /// A function with the same name already exists in this Amazon Web Services account.
+        /// To create a function, you must provide a unique name. To update an existing function,
+        /// use <code>UpdateFunction</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
         /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -1508,8 +1566,8 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionsException">
-        /// You have reached the maximum number of CloudFront functions for this account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of CloudFront functions for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
@@ -1624,8 +1682,8 @@ namespace Amazon.CloudFront
         /// an existing key group, use <code>UpdateKeyGroup</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
-        /// You have reached the maximum number of key groups for this account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of key groups for this Amazon Web Services account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
@@ -1668,8 +1726,8 @@ namespace Amazon.CloudFront
         /// an existing key group, use <code>UpdateKeyGroup</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
-        /// You have reached the maximum number of key groups for this account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of key groups for this Amazon Web Services account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
@@ -1811,8 +1869,8 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginRequestPoliciesException">
-        /// You have reached the maximum number of origin request policies for this account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of origin request policies for this Amazon Web
+        /// Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
@@ -1892,8 +1950,8 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginRequestPoliciesException">
-        /// You have reached the maximum number of origin request policies for this account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of origin request policies for this Amazon Web
+        /// Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
@@ -1989,8 +2047,8 @@ namespace Amazon.CloudFront
         /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
-        /// You have reached the maximum number of real-time log configurations for this account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of real-time log configurations for this Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
@@ -2029,12 +2087,132 @@ namespace Amazon.CloudFront
         /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
-        /// You have reached the maximum number of real-time log configurations for this account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of real-time log configurations for this Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
         Task<CreateRealtimeLogConfigResponse> CreateRealtimeLogConfigAsync(CreateRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateResponseHeadersPolicy
+
+
+        /// <summary>
+        /// Creates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// A response headers policy contains information about a set of HTTP response headers
+        /// and their values. To create a response headers policy, you provide some metadata about
+        /// the policy, and a set of configurations that specify the response headers.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a response headers policy, you can use its ID to attach it to one
+        /// or more cache behaviors in a CloudFront distribution. When it’s attached to a cache
+        /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
+        /// for requests that match the cache behavior.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyResponseHeadersPoliciesException">
+        /// You have reached the maximum number of response headers policies for this Amazon Web
+        /// Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
+        CreateResponseHeadersPolicyResponse CreateResponseHeadersPolicy(CreateResponseHeadersPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// A response headers policy contains information about a set of HTTP response headers
+        /// and their values. To create a response headers policy, you provide some metadata about
+        /// the policy, and a set of configurations that specify the response headers.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a response headers policy, you can use its ID to attach it to one
+        /// or more cache behaviors in a CloudFront distribution. When it’s attached to a cache
+        /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
+        /// for requests that match the cache behavior.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyResponseHeadersPoliciesException">
+        /// You have reached the maximum number of response headers policies for this Amazon Web
+        /// Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
+        Task<CreateResponseHeadersPolicyResponse> CreateResponseHeadersPolicyAsync(CreateResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3121,6 +3299,98 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig">REST API Reference for DeleteRealtimeLogConfig Operation</seealso>
         Task<DeleteRealtimeLogConfigResponse> DeleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteResponseHeadersPolicy
+
+
+        /// <summary>
+        /// Deletes a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a response headers policy if it’s attached to a cache behavior.
+        /// First update your distributions to remove the response headers policy from all cache
+        /// behaviors, then delete the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a response headers policy, you must provide the policy’s identifier and
+        /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
+        /// or <code>GetResponseHeadersPolicy</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// You cannot delete a managed policy.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyInUseException">
+        /// Cannot delete the response headers policy because it is attached to one or more cache
+        /// behaviors in a CloudFront distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
+        DeleteResponseHeadersPolicyResponse DeleteResponseHeadersPolicy(DeleteResponseHeadersPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a response headers policy if it’s attached to a cache behavior.
+        /// First update your distributions to remove the response headers policy from all cache
+        /// behaviors, then delete the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a response headers policy, you must provide the policy’s identifier and
+        /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
+        /// or <code>GetResponseHeadersPolicy</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// You cannot delete a managed policy.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyInUseException">
+        /// Cannot delete the response headers policy because it is attached to one or more cache
+        /// behaviors in a CloudFront distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
+        Task<DeleteResponseHeadersPolicyResponse> DeleteResponseHeadersPolicyAsync(DeleteResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4627,6 +4897,124 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetResponseHeadersPolicy
+
+
+        /// <summary>
+        /// Gets a response headers policy, including metadata (the policy’s identifier and the
+        /// date and time when the policy was last modified).
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy, you must provide the policy’s identifier. If the
+        /// response headers policy is attached to a distribution’s cache behavior, you can get
+        /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
+        GetResponseHeadersPolicyResponse GetResponseHeadersPolicy(GetResponseHeadersPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Gets a response headers policy, including metadata (the policy’s identifier and the
+        /// date and time when the policy was last modified).
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy, you must provide the policy’s identifier. If the
+        /// response headers policy is attached to a distribution’s cache behavior, you can get
+        /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
+        Task<GetResponseHeadersPolicyResponse> GetResponseHeadersPolicyAsync(GetResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetResponseHeadersPolicyConfig
+
+
+        /// <summary>
+        /// Gets a response headers policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy configuration, you must provide the policy’s identifier.
+        /// If the response headers policy is attached to a distribution’s cache behavior, you
+        /// can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetResponseHeadersPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
+        GetResponseHeadersPolicyConfigResponse GetResponseHeadersPolicyConfig(GetResponseHeadersPolicyConfigRequest request);
+
+
+
+        /// <summary>
+        /// Gets a response headers policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy configuration, you must provide the policy’s identifier.
+        /// If the response headers policy is attached to a distribution’s cache behavior, you
+        /// can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResponseHeadersPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
+        Task<GetResponseHeadersPolicyConfigResponse> GetResponseHeadersPolicyConfigAsync(GetResponseHeadersPolicyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetStreamingDistribution
 
 
@@ -4782,7 +5170,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the managed policies created by Amazon
-        /// Web Services, or only the custom policies created in your account.
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -4816,7 +5204,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the managed policies created by Amazon
-        /// Web Services, or only the custom policies created in your account.
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -5333,6 +5721,72 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByResponseHeadersPolicyId
+
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// associated with the specified response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByResponseHeadersPolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
+        ListDistributionsByResponseHeadersPolicyIdResponse ListDistributionsByResponseHeadersPolicyId(ListDistributionsByResponseHeadersPolicyIdRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// associated with the specified response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionsByResponseHeadersPolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
+        Task<ListDistributionsByResponseHeadersPolicyIdResponse> ListDistributionsByResponseHeadersPolicyIdAsync(ListDistributionsByResponseHeadersPolicyIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListDistributionsByWebACLId
 
 
@@ -5453,7 +5907,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of all CloudFront functions in your account.
+        /// Gets a list of all CloudFront functions in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5484,7 +5938,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a list of all CloudFront functions in your account.
+        /// Gets a list of all CloudFront functions in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5624,7 +6078,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the managed policies created by Amazon
-        /// Web Services, or only the custom policies created in your account.
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -5658,7 +6112,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the managed policies created by Amazon
-        /// Web Services, or only the custom policies created in your account.
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -5784,6 +6238,80 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs">REST API Reference for ListRealtimeLogConfigs Operation</seealso>
         Task<ListRealtimeLogConfigsResponse> ListRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListResponseHeadersPolicies
+
+
+        /// <summary>
+        /// Gets a list of response headers policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to get only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListResponseHeadersPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
+        ListResponseHeadersPoliciesResponse ListResponseHeadersPolicies(ListResponseHeadersPoliciesRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of response headers policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to get only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResponseHeadersPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
+        Task<ListResponseHeadersPoliciesResponse> ListResponseHeadersPoliciesAsync(ListResponseHeadersPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6620,11 +7148,15 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -6657,6 +7189,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
         /// You have reached the maximum number of distributions that are associated with a CloudFront
@@ -6927,11 +7469,15 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -6964,6 +7510,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
         /// You have reached the maximum number of distributions that are associated with a CloudFront
@@ -7735,6 +8291,144 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig">REST API Reference for UpdateRealtimeLogConfig Operation</seealso>
         Task<UpdateRealtimeLogConfigResponse> UpdateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateResponseHeadersPolicy
+
+
+        /// <summary>
+        /// Updates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a response headers policy, the entire policy is replaced. You cannot
+        /// update some policy fields independent of others. To update a response headers policy
+        /// configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modify the fields in the response headers policy configuration that you want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
+        /// policy configuration, including the fields that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
+        UpdateResponseHeadersPolicyResponse UpdateResponseHeadersPolicy(UpdateResponseHeadersPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Updates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a response headers policy, the entire policy is replaced. You cannot
+        /// update some policy fields independent of others. To update a response headers policy
+        /// configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modify the fields in the response headers policy configuration that you want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
+        /// policy configuration, including the fields that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResponseHeadersPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
+        Task<UpdateResponseHeadersPolicyResponse> UpdateResponseHeadersPolicyAsync(UpdateResponseHeadersPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model
         private long? _minTTL;
         private string _originRequestPolicyId;
         private string _realtimeLogConfigArn;
+        private string _responseHeadersPolicyId;
         private bool? _smoothStreaming;
         private string _targetOriginId;
         private TrustedKeyGroups _trustedKeyGroups;
@@ -362,6 +363,24 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResponseHeadersPolicyId. 
+        /// <para>
+        /// The identifier for a response headers policy.
+        /// </para>
+        /// </summary>
+        public string ResponseHeadersPolicyId
+        {
+            get { return this._responseHeadersPolicyId; }
+            set { this._responseHeadersPolicyId = value; }
+        }
+
+        // Check to see if ResponseHeadersPolicyId property is set
+        internal bool IsSetResponseHeadersPolicyId()
+        {
+            return this._responseHeadersPolicyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SmoothStreaming. 
         /// <para>
         /// Indicates whether you want to distribute media files in the Microsoft Smooth Streaming
@@ -437,16 +456,17 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// A list of account IDs whose public keys CloudFront can use to validate signed URLs
-        /// or signed cookies.
+        /// A list of Amazon Web Services account IDs whose public keys CloudFront can use to
+        /// validate signed URLs or signed cookies.
         /// </para>
         ///  
         /// <para>
         /// When a cache behavior contains trusted signers, CloudFront requires signed URLs or
         /// signed cookies for all requests that match the cache behavior. The URLs or cookies
         /// must be signed with the private key of a CloudFront key pair in a trusted signer’s
-        /// account. The signed URL or cookie contains information about which public key CloudFront
-        /// should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Amazon Web Services account. The signed URL or cookie contains information about which
+        /// public key CloudFront should use to verify the signature. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
         /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>

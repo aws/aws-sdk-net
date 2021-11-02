@@ -399,6 +399,56 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type FrameOptionsList.
+    /// </summary>
+    public class FrameOptionsList : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENY for FrameOptionsList
+        /// </summary>
+        public static readonly FrameOptionsList DENY = new FrameOptionsList("DENY");
+        /// <summary>
+        /// Constant SAMEORIGIN for FrameOptionsList
+        /// </summary>
+        public static readonly FrameOptionsList SAMEORIGIN = new FrameOptionsList("SAMEORIGIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FrameOptionsList(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FrameOptionsList FindValue(string value)
+        {
+            return FindValue<FrameOptionsList>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FrameOptionsList(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FunctionRuntime.
     /// </summary>
     public class FunctionRuntime : ConstantClass
@@ -1214,6 +1264,204 @@ namespace Amazon.CloudFront
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RealtimeMetricsSubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReferrerPolicyList.
+    /// </summary>
+    public class ReferrerPolicyList : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoReferrer for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList NoReferrer = new ReferrerPolicyList("no-referrer");
+        /// <summary>
+        /// Constant NoReferrerWhenDowngrade for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList NoReferrerWhenDowngrade = new ReferrerPolicyList("no-referrer-when-downgrade");
+        /// <summary>
+        /// Constant Origin for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList Origin = new ReferrerPolicyList("origin");
+        /// <summary>
+        /// Constant OriginWhenCrossOrigin for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList OriginWhenCrossOrigin = new ReferrerPolicyList("origin-when-cross-origin");
+        /// <summary>
+        /// Constant SameOrigin for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList SameOrigin = new ReferrerPolicyList("same-origin");
+        /// <summary>
+        /// Constant StrictOrigin for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList StrictOrigin = new ReferrerPolicyList("strict-origin");
+        /// <summary>
+        /// Constant StrictOriginWhenCrossOrigin for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList StrictOriginWhenCrossOrigin = new ReferrerPolicyList("strict-origin-when-cross-origin");
+        /// <summary>
+        /// Constant UnsafeUrl for ReferrerPolicyList
+        /// </summary>
+        public static readonly ReferrerPolicyList UnsafeUrl = new ReferrerPolicyList("unsafe-url");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReferrerPolicyList(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReferrerPolicyList FindValue(string value)
+        {
+            return FindValue<ReferrerPolicyList>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReferrerPolicyList(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResponseHeadersPolicyAccessControlAllowMethodsValues.
+    /// </summary>
+    public class ResponseHeadersPolicyAccessControlAllowMethodsValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues ALL = new ResponseHeadersPolicyAccessControlAllowMethodsValues("ALL");
+        /// <summary>
+        /// Constant DELETE for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues DELETE = new ResponseHeadersPolicyAccessControlAllowMethodsValues("DELETE");
+        /// <summary>
+        /// Constant GET for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues GET = new ResponseHeadersPolicyAccessControlAllowMethodsValues("GET");
+        /// <summary>
+        /// Constant HEAD for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues HEAD = new ResponseHeadersPolicyAccessControlAllowMethodsValues("HEAD");
+        /// <summary>
+        /// Constant OPTIONS for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues OPTIONS = new ResponseHeadersPolicyAccessControlAllowMethodsValues("OPTIONS");
+        /// <summary>
+        /// Constant PATCH for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues PATCH = new ResponseHeadersPolicyAccessControlAllowMethodsValues("PATCH");
+        /// <summary>
+        /// Constant POST for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues POST = new ResponseHeadersPolicyAccessControlAllowMethodsValues("POST");
+        /// <summary>
+        /// Constant PUT for ResponseHeadersPolicyAccessControlAllowMethodsValues
+        /// </summary>
+        public static readonly ResponseHeadersPolicyAccessControlAllowMethodsValues PUT = new ResponseHeadersPolicyAccessControlAllowMethodsValues("PUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseHeadersPolicyAccessControlAllowMethodsValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseHeadersPolicyAccessControlAllowMethodsValues FindValue(string value)
+        {
+            return FindValue<ResponseHeadersPolicyAccessControlAllowMethodsValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseHeadersPolicyAccessControlAllowMethodsValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResponseHeadersPolicyType.
+    /// </summary>
+    public class ResponseHeadersPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Custom for ResponseHeadersPolicyType
+        /// </summary>
+        public static readonly ResponseHeadersPolicyType Custom = new ResponseHeadersPolicyType("custom");
+        /// <summary>
+        /// Constant Managed for ResponseHeadersPolicyType
+        /// </summary>
+        public static readonly ResponseHeadersPolicyType Managed = new ResponseHeadersPolicyType("managed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseHeadersPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseHeadersPolicyType FindValue(string value)
+        {
+            return FindValue<ResponseHeadersPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseHeadersPolicyType(string value)
         {
             return FindValue(value);
         }

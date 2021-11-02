@@ -93,8 +93,9 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// CloudFront automatically adds this field to the response if you’ve configured a cache
         /// behavior in this distribution to serve private content using trusted signers. This
-        /// field contains a list of account IDs and the active CloudFront key pairs in each account
-        /// that CloudFront can use to verify the signatures of signed URLs or signed cookies.
+        /// field contains a list of Amazon Web Services account IDs and the active CloudFront
+        /// key pairs in each account that CloudFront can use to verify the signatures of signed
+        /// URLs or signed cookies.
         /// </para>
         /// </summary>
         public ActiveTrustedSigners ActiveTrustedSigners
@@ -140,7 +141,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ARN. 
         /// <para>
         /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-        /// where <code>123456789012</code> is your account ID.
+        /// where <code>123456789012</code> is your Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

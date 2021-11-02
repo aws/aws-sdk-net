@@ -400,8 +400,8 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCachePoliciesException">
-        /// You have reached the maximum number of cache policies for this account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of cache policies for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
@@ -675,8 +675,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -709,6 +713,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -932,8 +946,12 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -966,6 +984,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -1253,8 +1281,9 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
-        /// A function with the same name already exists in this account. To create a function,
-        /// you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.
+        /// A function with the same name already exists in this Amazon Web Services account.
+        /// To create a function, you must provide a unique name. To update an existing function,
+        /// use <code>UpdateFunction</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
         /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -1264,8 +1293,8 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFunctionsException">
-        /// You have reached the maximum number of CloudFront functions for this account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of CloudFront functions for this Amazon Web Services
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
@@ -1423,8 +1452,8 @@ namespace Amazon.CloudFront
         /// an existing key group, use <code>UpdateKeyGroup</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
-        /// You have reached the maximum number of key groups for this account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of key groups for this Amazon Web Services account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
@@ -1615,8 +1644,8 @@ namespace Amazon.CloudFront
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginRequestPoliciesException">
-        /// You have reached the maximum number of origin request policies for this account. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of origin request policies for this Amazon Web
+        /// Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringsInOriginRequestPolicyException">
@@ -1766,8 +1795,8 @@ namespace Amazon.CloudFront
         /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
-        /// You have reached the maximum number of real-time log configurations for this account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// You have reached the maximum number of real-time log configurations for this Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig">REST API Reference for CreateRealtimeLogConfig Operation</seealso>
@@ -1812,6 +1841,106 @@ namespace Amazon.CloudFront
         public virtual CreateRealtimeLogConfigResponse EndCreateRealtimeLogConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRealtimeLogConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateResponseHeadersPolicy
+
+        /// <summary>
+        /// Creates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// A response headers policy contains information about a set of HTTP response headers
+        /// and their values. To create a response headers policy, you provide some metadata about
+        /// the policy, and a set of configurations that specify the response headers.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a response headers policy, you can use its ID to attach it to one
+        /// or more cache behaviors in a CloudFront distribution. When it’s attached to a cache
+        /// behavior, CloudFront adds the headers in the policy to HTTP responses that it sends
+        /// for requests that match the cache behavior.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyResponseHeadersPoliciesException">
+        /// You have reached the maximum number of response headers policies for this Amazon Web
+        /// Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
+        public virtual CreateResponseHeadersPolicyResponse CreateResponseHeadersPolicy(CreateResponseHeadersPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResponseHeadersPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateResponseHeadersPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResponseHeadersPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
+        public virtual IAsyncResult BeginCreateResponseHeadersPolicy(CreateResponseHeadersPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResponseHeadersPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateResponseHeadersPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateResponseHeadersPolicy">REST API Reference for CreateResponseHeadersPolicy Operation</seealso>
+        public virtual CreateResponseHeadersPolicyResponse EndCreateResponseHeadersPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateResponseHeadersPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -2876,6 +3005,92 @@ namespace Amazon.CloudFront
         public virtual DeleteRealtimeLogConfigResponse EndDeleteRealtimeLogConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRealtimeLogConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResponseHeadersPolicy
+
+        /// <summary>
+        /// Deletes a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a response headers policy if it’s attached to a cache behavior.
+        /// First update your distributions to remove the response headers policy from all cache
+        /// behaviors, then delete the response headers policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a response headers policy, you must provide the policy’s identifier and
+        /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
+        /// or <code>GetResponseHeadersPolicy</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// You cannot delete a managed policy.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyInUseException">
+        /// Cannot delete the response headers policy because it is attached to one or more cache
+        /// behaviors in a CloudFront distribution.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
+        public virtual DeleteResponseHeadersPolicyResponse DeleteResponseHeadersPolicy(DeleteResponseHeadersPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResponseHeadersPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResponseHeadersPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResponseHeadersPolicy(DeleteResponseHeadersPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResponseHeadersPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResponseHeadersPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteResponseHeadersPolicy">REST API Reference for DeleteResponseHeadersPolicy Operation</seealso>
+        public virtual DeleteResponseHeadersPolicyResponse EndDeleteResponseHeadersPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResponseHeadersPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -4514,6 +4729,145 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetResponseHeadersPolicy
+
+        /// <summary>
+        /// Gets a response headers policy, including metadata (the policy’s identifier and the
+        /// date and time when the policy was last modified).
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy, you must provide the policy’s identifier. If the
+        /// response headers policy is attached to a distribution’s cache behavior, you can get
+        /// the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
+        public virtual GetResponseHeadersPolicyResponse GetResponseHeadersPolicy(GetResponseHeadersPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResponseHeadersPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResponseHeadersPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetResponseHeadersPolicy(GetResponseHeadersPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResponseHeadersPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResponseHeadersPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicy">REST API Reference for GetResponseHeadersPolicy Operation</seealso>
+        public virtual GetResponseHeadersPolicyResponse EndGetResponseHeadersPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResponseHeadersPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResponseHeadersPolicyConfig
+
+        /// <summary>
+        /// Gets a response headers policy configuration.
+        /// 
+        ///  
+        /// <para>
+        /// To get a response headers policy configuration, you must provide the policy’s identifier.
+        /// If the response headers policy is attached to a distribution’s cache behavior, you
+        /// can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// If the response headers policy is not attached to a cache behavior, you can get the
+        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetResponseHeadersPolicyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
+        public virtual GetResponseHeadersPolicyConfigResponse GetResponseHeadersPolicyConfig(GetResponseHeadersPolicyConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResponseHeadersPolicyConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResponseHeadersPolicyConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetResponseHeadersPolicyConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResponseHeadersPolicyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResponseHeadersPolicyConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetResponseHeadersPolicyConfig(GetResponseHeadersPolicyConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResponseHeadersPolicyConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResponseHeadersPolicyConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResponseHeadersPolicyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResponseHeadersPolicyConfig.</param>
+        /// 
+        /// <returns>Returns a  GetResponseHeadersPolicyConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetResponseHeadersPolicyConfig">REST API Reference for GetResponseHeadersPolicyConfig Operation</seealso>
+        public virtual GetResponseHeadersPolicyConfigResponse EndGetResponseHeadersPolicyConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResponseHeadersPolicyConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetStreamingDistribution
 
         /// <summary>
@@ -4676,7 +5030,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the managed policies created by Amazon
-        /// Web Services, or only the custom policies created in your account.
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -5269,6 +5623,79 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByResponseHeadersPolicyId
+
+        /// <summary>
+        /// Gets a list of distribution IDs for distributions that have a cache behavior that’s
+        /// associated with the specified response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByResponseHeadersPolicyId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
+        public virtual ListDistributionsByResponseHeadersPolicyIdResponse ListDistributionsByResponseHeadersPolicyId(ListDistributionsByResponseHeadersPolicyIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByResponseHeadersPolicyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByResponseHeadersPolicyIdResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByResponseHeadersPolicyIdResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByResponseHeadersPolicyId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByResponseHeadersPolicyId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
+        public virtual IAsyncResult BeginListDistributionsByResponseHeadersPolicyId(ListDistributionsByResponseHeadersPolicyIdRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByResponseHeadersPolicyIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByResponseHeadersPolicyIdResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByResponseHeadersPolicyId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByResponseHeadersPolicyId.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByResponseHeadersPolicyIdResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
+        public virtual ListDistributionsByResponseHeadersPolicyIdResponse EndListDistributionsByResponseHeadersPolicyId(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionsByResponseHeadersPolicyIdResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDistributionsByWebACLId
 
         /// <summary>
@@ -5450,7 +5877,7 @@ namespace Amazon.CloudFront
         #region  ListFunctions
 
         /// <summary>
-        /// Gets a list of all CloudFront functions in your account.
+        /// Gets a list of all CloudFront functions in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5658,7 +6085,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the managed policies created by Amazon
-        /// Web Services, or only the custom policies created in your account.
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -5852,6 +6279,83 @@ namespace Amazon.CloudFront
         public virtual ListRealtimeLogConfigsResponse EndListRealtimeLogConfigs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRealtimeLogConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResponseHeadersPolicies
+
+        /// <summary>
+        /// Gets a list of response headers policies.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally apply a filter to get only the managed policies created by Amazon
+        /// Web Services, or only the custom policies created in your Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the subsequent request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListResponseHeadersPolicies service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
+        public virtual ListResponseHeadersPoliciesResponse ListResponseHeadersPolicies(ListResponseHeadersPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResponseHeadersPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResponseHeadersPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResponseHeadersPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResponseHeadersPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResponseHeadersPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
+        public virtual IAsyncResult BeginListResponseHeadersPolicies(ListResponseHeadersPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResponseHeadersPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResponseHeadersPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResponseHeadersPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResponseHeadersPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListResponseHeadersPoliciesResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListResponseHeadersPolicies">REST API Reference for ListResponseHeadersPolicies Operation</seealso>
+        public virtual ListResponseHeadersPoliciesResponse EndListResponseHeadersPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResponseHeadersPoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -6698,11 +7202,15 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchRealtimeLogConfigException">
         /// The real-time log configuration does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
-        /// The specified real-time log configuration belongs to a different account.
+        /// The specified real-time log configuration belongs to a different Amazon Web Services
+        /// account.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
         /// You cannot create more cache behaviors for the distribution.
@@ -6735,6 +7243,16 @@ namespace Amazon.CloudFront
         /// The maximum number of distributions have been associated with the specified origin
         /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToResponseHeadersPolicyException">
+        /// The maximum number of distributions have been associated with the specified response
+        /// headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithFunctionAssociationsException">
         /// You have reached the maximum number of distributions that are associated with a CloudFront
@@ -7468,6 +7986,115 @@ namespace Amazon.CloudFront
         public virtual UpdateRealtimeLogConfigResponse EndUpdateRealtimeLogConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRealtimeLogConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateResponseHeadersPolicy
+
+        /// <summary>
+        /// Updates a response headers policy.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a response headers policy, the entire policy is replaced. You cannot
+        /// update some policy fields independent of others. To update a response headers policy
+        /// configuration:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modify the fields in the response headers policy configuration that you want to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
+        /// policy configuration, including the fields that you modified and those that you didn’t.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResponseHeadersPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResponseHeadersPolicy service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
+        /// The response headers policy does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
+        /// A response headers policy with this name already exists. You must provide a unique
+        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCustomHeadersInResponseHeadersPolicyException">
+        /// The number of custom headers in the response headers policy exceeds the maximum.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
+        public virtual UpdateResponseHeadersPolicyResponse UpdateResponseHeadersPolicy(UpdateResponseHeadersPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResponseHeadersPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResponseHeadersPolicy operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResponseHeadersPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResponseHeadersPolicy(UpdateResponseHeadersPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResponseHeadersPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResponseHeadersPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResponseHeadersPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResponseHeadersPolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdateResponseHeadersPolicyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateResponseHeadersPolicy">REST API Reference for UpdateResponseHeadersPolicy Operation</seealso>
+        public virtual UpdateResponseHeadersPolicyResponse EndUpdateResponseHeadersPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResponseHeadersPolicyResponse>(asyncResult);
         }
 
         #endregion

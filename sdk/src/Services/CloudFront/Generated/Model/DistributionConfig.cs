@@ -326,7 +326,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you're using an Route 53 Amazon Web Services Integration alias resource record
+        /// If you're using an Route 53 Amazon Web Services Integration alias resource record
         /// set to route traffic to your CloudFront distribution, you need to create a second
         /// alias resource record set when both of the following are true:
         /// </para>
@@ -342,11 +342,11 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
         /// Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in
-        /// the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.
+        /// the <i>Route 53 Amazon Web Services Integration Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you created a CNAME resource record set, either with Route 53 Amazon Web Services
+        /// If you created a CNAME resource record set, either with Route 53 Amazon Web Services
         /// Integration or with another DNS service, you don't need to make any changes. A CNAME
         /// record will route traffic to your distribution regardless of the IP address format
         /// of the viewer request.

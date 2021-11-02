@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A list of accounts whose public keys CloudFront can use to verify the signatures of
-    /// signed URLs and signed cookies.
+    /// A list of Amazon Web Services accounts whose public keys CloudFront can use to verify
+    /// the signatures of signed URLs and signed cookies.
     /// </summary>
     public partial class TrustedSigners
     {
@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates TrustedSigners with the parameterized properties
         /// </summary>
-        /// <param name="items">A list of account identifiers.</param>
+        /// <param name="items">A list of Amazon Web Services account identifiers.</param>
         public TrustedSigners(List<string> items)
         {
             _items = items;
@@ -55,9 +55,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// This field is <code>true</code> if any of the accounts have public keys that CloudFront
-        /// can use to verify the signatures of signed URLs and signed cookies. If not, this field
-        /// is <code>false</code>.
+        /// This field is <code>true</code> if any of the Amazon Web Services accounts have public
+        /// keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+        /// If not, this field is <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,7 +76,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A list of account identifiers.
+        /// A list of Amazon Web Services account identifiers.
         /// </para>
         /// </summary>
         public List<string> Items
@@ -94,7 +94,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of accounts in the list.
+        /// The number of Amazon Web Services accounts in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

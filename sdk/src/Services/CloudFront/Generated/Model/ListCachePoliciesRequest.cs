@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// You can optionally apply a filter to return only the managed policies created by Amazon
-    /// Web Services, or only the custom policies created in your account.
+    /// Web Services, or only the custom policies created in your Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
@@ -102,7 +102,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom</code> – Returns only the custom policies created in your account.
+        ///  <code>custom</code> – Returns only the custom policies created in your Amazon Web
+        /// Services account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

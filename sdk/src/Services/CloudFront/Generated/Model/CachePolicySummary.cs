@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of cache policy, either <code>managed</code> (created by Amazon Web Services)
-        /// or <code>custom</code> (created in this account).
+        /// or <code>custom</code> (created in this Amazon Web Services account).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

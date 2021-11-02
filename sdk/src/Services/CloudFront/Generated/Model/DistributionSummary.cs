@@ -110,7 +110,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ARN. 
         /// <para>
         /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-        /// where <code>123456789012</code> is your account ID.
+        /// where <code>123456789012</code> is your Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A list of accounts and the active CloudFront key pairs in each account that CloudFront
-    /// can use to verify the signatures of signed URLs and signed cookies.
+    /// A list of Amazon Web Services accounts and the active CloudFront key pairs in each
+    /// account that CloudFront can use to verify the signatures of signed URLs and signed
+    /// cookies.
     /// </summary>
     public partial class ActiveTrustedSigners
     {
@@ -46,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates ActiveTrustedSigners with the parameterized properties
         /// </summary>
-        /// <param name="items">A list of accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</param>
+        /// <param name="items">A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</param>
         public ActiveTrustedSigners(List<Signer> items)
         {
             _items = items;
@@ -55,9 +56,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// This field is <code>true</code> if any of the accounts in the list have active CloudFront
-        /// key pairs that CloudFront can use to verify the signatures of signed URLs and signed
-        /// cookies. If not, this field is <code>false</code>.
+        /// This field is <code>true</code> if any of the Amazon Web Services accounts in the
+        /// list have active CloudFront key pairs that CloudFront can use to verify the signatures
+        /// of signed URLs and signed cookies. If not, this field is <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,8 +77,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A list of accounts and the identifiers of active CloudFront key pairs in each account
-        /// that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+        /// A list of Amazon Web Services accounts and the identifiers of active CloudFront key
+        /// pairs in each account that CloudFront can use to verify the signatures of signed URLs
+        /// and signed cookies.
         /// </para>
         /// </summary>
         public List<Signer> Items
@@ -95,7 +97,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of accounts in the list.
+        /// The number of Amazon Web Services accounts in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
