@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model
         /// ARN of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }

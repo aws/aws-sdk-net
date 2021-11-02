@@ -34,9 +34,7 @@ namespace Amazon.Connect.Model
     public partial class Dimensions
     {
         private Channel _channel;
-        private InstanceReference _instanceReference;
         private QueueReference _queue;
-        private RoutingProfileReference _routingProfile;
 
         /// <summary>
         /// Gets and sets the property Channel. 
@@ -57,24 +55,6 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceReference. 
-        /// <para>
-        /// The instance reference.
-        /// </para>
-        /// </summary>
-        public InstanceReference InstanceReference
-        {
-            get { return this._instanceReference; }
-            set { this._instanceReference = value; }
-        }
-
-        // Check to see if InstanceReference property is set
-        internal bool IsSetInstanceReference()
-        {
-            return this._instanceReference != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Queue. 
         /// <para>
         /// Information about the queue for which metrics are returned.
@@ -90,24 +70,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetQueue()
         {
             return this._queue != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RoutingProfile. 
-        /// <para>
-        /// The routing profile.
-        /// </para>
-        /// </summary>
-        public RoutingProfileReference RoutingProfile
-        {
-            get { return this._routingProfile; }
-            set { this._routingProfile = value; }
-        }
-
-        // Check to see if RoutingProfile property is set
-        internal bool IsSetRoutingProfile()
-        {
-            return this._routingProfile != null;
         }
 
     }

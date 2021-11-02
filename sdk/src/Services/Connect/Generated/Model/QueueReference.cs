@@ -35,7 +35,6 @@ namespace Amazon.Connect.Model
     {
         private string _arn;
         private string _id;
-        private QueueType _queueType;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -71,24 +70,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetId()
         {
             return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property QueueType. 
-        /// <para>
-        /// The type of queue.
-        /// </para>
-        /// </summary>
-        public QueueType QueueType
-        {
-            get { return this._queueType; }
-            set { this._queueType = value; }
-        }
-
-        // Check to see if QueueType property is set
-        internal bool IsSetQueueType()
-        {
-            return this._queueType != null;
         }
 
     }

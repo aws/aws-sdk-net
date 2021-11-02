@@ -68,7 +68,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the Amazon Connect instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
         {
             get { return this._instanceId; }
