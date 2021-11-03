@@ -544,6 +544,59 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationHdfs
+
+
+        /// <summary>
+        /// Creates an endpoint for a Hadoop Distributed File System (HDFS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationHdfs service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">REST API Reference for CreateLocationHdfs Operation</seealso>
+        public virtual CreateLocationHdfsResponse CreateLocationHdfs(CreateLocationHdfsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationHdfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationHdfsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationHdfsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an endpoint for a Hadoop Distributed File System (HDFS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationHdfs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">REST API Reference for CreateLocationHdfs Operation</seealso>
+        public virtual Task<CreateLocationHdfsResponse> CreateLocationHdfsAsync(CreateLocationHdfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationHdfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationHdfsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLocationHdfsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLocationNfs
 
 
@@ -1213,6 +1266,61 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = DescribeLocationFsxWindowsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeLocationFsxWindowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLocationHdfs
+
+
+        /// <summary>
+        /// Returns metadata, such as the authentication information about the Hadoop Distributed
+        /// File System (HDFS) location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationHdfs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">REST API Reference for DescribeLocationHdfs Operation</seealso>
+        public virtual DescribeLocationHdfsResponse DescribeLocationHdfs(DescribeLocationHdfsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationHdfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationHdfsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationHdfsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns metadata, such as the authentication information about the Hadoop Distributed
+        /// File System (HDFS) location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationHdfs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">REST API Reference for DescribeLocationHdfs Operation</seealso>
+        public virtual Task<DescribeLocationHdfsResponse> DescribeLocationHdfsAsync(DescribeLocationHdfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationHdfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationHdfsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLocationHdfsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2082,6 +2190,61 @@ namespace Amazon.DataSync
             options.ResponseUnmarshaller = UpdateAgentResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLocationHdfs
+
+
+        /// <summary>
+        /// Updates some parameters of a previously created location for a Hadoop Distributed
+        /// File System cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationHdfs service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationHdfs">REST API Reference for UpdateLocationHdfs Operation</seealso>
+        public virtual UpdateLocationHdfsResponse UpdateLocationHdfs(UpdateLocationHdfsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationHdfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationHdfsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLocationHdfsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates some parameters of a previously created location for a Hadoop Distributed
+        /// File System cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationHdfs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationHdfs">REST API Reference for UpdateLocationHdfs Operation</seealso>
+        public virtual Task<UpdateLocationHdfsResponse> UpdateLocationHdfsAsync(UpdateLocationHdfsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLocationHdfsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLocationHdfsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLocationHdfsResponse>(request, options, cancellationToken);
         }
 
         #endregion

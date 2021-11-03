@@ -283,6 +283,172 @@ namespace Amazon.DataSync
 
 
     /// <summary>
+    /// Constants used for properties of type HdfsAuthenticationType.
+    /// </summary>
+    public class HdfsAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KERBEROS for HdfsAuthenticationType
+        /// </summary>
+        public static readonly HdfsAuthenticationType KERBEROS = new HdfsAuthenticationType("KERBEROS");
+        /// <summary>
+        /// Constant SIMPLE for HdfsAuthenticationType
+        /// </summary>
+        public static readonly HdfsAuthenticationType SIMPLE = new HdfsAuthenticationType("SIMPLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HdfsAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HdfsAuthenticationType FindValue(string value)
+        {
+            return FindValue<HdfsAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HdfsAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HdfsDataTransferProtection.
+    /// </summary>
+    public class HdfsDataTransferProtection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHENTICATION for HdfsDataTransferProtection
+        /// </summary>
+        public static readonly HdfsDataTransferProtection AUTHENTICATION = new HdfsDataTransferProtection("AUTHENTICATION");
+        /// <summary>
+        /// Constant DISABLED for HdfsDataTransferProtection
+        /// </summary>
+        public static readonly HdfsDataTransferProtection DISABLED = new HdfsDataTransferProtection("DISABLED");
+        /// <summary>
+        /// Constant INTEGRITY for HdfsDataTransferProtection
+        /// </summary>
+        public static readonly HdfsDataTransferProtection INTEGRITY = new HdfsDataTransferProtection("INTEGRITY");
+        /// <summary>
+        /// Constant PRIVACY for HdfsDataTransferProtection
+        /// </summary>
+        public static readonly HdfsDataTransferProtection PRIVACY = new HdfsDataTransferProtection("PRIVACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HdfsDataTransferProtection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HdfsDataTransferProtection FindValue(string value)
+        {
+            return FindValue<HdfsDataTransferProtection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HdfsDataTransferProtection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HdfsRpcProtection.
+    /// </summary>
+    public class HdfsRpcProtection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHENTICATION for HdfsRpcProtection
+        /// </summary>
+        public static readonly HdfsRpcProtection AUTHENTICATION = new HdfsRpcProtection("AUTHENTICATION");
+        /// <summary>
+        /// Constant DISABLED for HdfsRpcProtection
+        /// </summary>
+        public static readonly HdfsRpcProtection DISABLED = new HdfsRpcProtection("DISABLED");
+        /// <summary>
+        /// Constant INTEGRITY for HdfsRpcProtection
+        /// </summary>
+        public static readonly HdfsRpcProtection INTEGRITY = new HdfsRpcProtection("INTEGRITY");
+        /// <summary>
+        /// Constant PRIVACY for HdfsRpcProtection
+        /// </summary>
+        public static readonly HdfsRpcProtection PRIVACY = new HdfsRpcProtection("PRIVACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HdfsRpcProtection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HdfsRpcProtection FindValue(string value)
+        {
+            return FindValue<HdfsRpcProtection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HdfsRpcProtection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocationFilterName.
     /// </summary>
     public class LocationFilterName : ConstantClass

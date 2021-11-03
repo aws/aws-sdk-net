@@ -55,7 +55,7 @@ namespace Amazon.DataSync.Model
         ///  </li> <li> 
         /// <para>
         ///  <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly
-        /// protocol version that supports delegations and pseudo filesystems.
+        /// protocol version that supports delegations and pseudo file systems.
         /// </para>
         ///  </li> <li> 
         /// <para>

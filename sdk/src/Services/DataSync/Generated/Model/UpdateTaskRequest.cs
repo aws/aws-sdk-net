@@ -45,7 +45,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+        /// The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -66,8 +66,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// A list of filter rules that determines which files to exclude from a task. The list
         /// should contain a single filter string that consists of the patterns to exclude. The
-        /// patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
-        /// 
+        /// patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
         /// </para>
         ///  
         /// <para>
@@ -91,8 +90,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Includes. 
         /// <para>
         /// A list of filter rules that determines which files to include when running a task.
-        /// The pattern should contain a single filter string that consists of the patterns to
-        /// include. The patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2</code>"
+        /// The pattern contains a single filter string that consists of the patterns to include.
+        /// The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

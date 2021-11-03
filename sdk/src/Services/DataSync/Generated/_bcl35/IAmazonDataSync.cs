@@ -272,6 +272,52 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationHdfs
+
+
+        /// <summary>
+        /// Creates an endpoint for a Hadoop Distributed File System (HDFS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationHdfs service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">REST API Reference for CreateLocationHdfs Operation</seealso>
+        CreateLocationHdfsResponse CreateLocationHdfs(CreateLocationHdfsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocationHdfs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationHdfs operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocationHdfs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">REST API Reference for CreateLocationHdfs Operation</seealso>
+        IAsyncResult BeginCreateLocationHdfs(CreateLocationHdfsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocationHdfs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocationHdfs.</param>
+        /// 
+        /// <returns>Returns a  CreateLocationHdfsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationHdfs">REST API Reference for CreateLocationHdfs Operation</seealso>
+        CreateLocationHdfsResponse EndCreateLocationHdfs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateLocationNfs
 
 
@@ -820,6 +866,53 @@ namespace Amazon.DataSync
         /// <returns>Returns a  DescribeLocationFsxWindowsResult from DataSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows">REST API Reference for DescribeLocationFsxWindows Operation</seealso>
         DescribeLocationFsxWindowsResponse EndDescribeLocationFsxWindows(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLocationHdfs
+
+
+        /// <summary>
+        /// Returns metadata, such as the authentication information about the Hadoop Distributed
+        /// File System (HDFS) location.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationHdfs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">REST API Reference for DescribeLocationHdfs Operation</seealso>
+        DescribeLocationHdfsResponse DescribeLocationHdfs(DescribeLocationHdfsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocationHdfs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationHdfs operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocationHdfs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">REST API Reference for DescribeLocationHdfs Operation</seealso>
+        IAsyncResult BeginDescribeLocationHdfs(DescribeLocationHdfsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocationHdfs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocationHdfs.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocationHdfsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationHdfs">REST API Reference for DescribeLocationHdfs Operation</seealso>
+        DescribeLocationHdfsResponse EndDescribeLocationHdfs(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1547,6 +1640,53 @@ namespace Amazon.DataSync
         /// <returns>Returns a  UpdateAgentResult from DataSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateAgent">REST API Reference for UpdateAgent Operation</seealso>
         UpdateAgentResponse EndUpdateAgent(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLocationHdfs
+
+
+        /// <summary>
+        /// Updates some parameters of a previously created location for a Hadoop Distributed
+        /// File System cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationHdfs service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLocationHdfs service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationHdfs">REST API Reference for UpdateLocationHdfs Operation</seealso>
+        UpdateLocationHdfsResponse UpdateLocationHdfs(UpdateLocationHdfsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLocationHdfs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLocationHdfs operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLocationHdfs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationHdfs">REST API Reference for UpdateLocationHdfs Operation</seealso>
+        IAsyncResult BeginUpdateLocationHdfs(UpdateLocationHdfsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLocationHdfs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLocationHdfs.</param>
+        /// 
+        /// <returns>Returns a  UpdateLocationHdfsResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationHdfs">REST API Reference for UpdateLocationHdfs Operation</seealso>
+        UpdateLocationHdfsResponse EndUpdateLocationHdfs(IAsyncResult asyncResult);
 
         #endregion
         

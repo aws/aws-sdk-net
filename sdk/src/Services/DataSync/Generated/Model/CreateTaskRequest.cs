@@ -143,8 +143,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Includes. 
         /// <para>
         /// A list of filter rules that determines which files to include when running a task.
-        /// The pattern should contain a single filter string that consists of the patterns to
-        /// include. The patterns are delimited by "|" (that is, a pipe). For example: <code>"/folder1|/folder2</code>"
+        /// The pattern contains a single filter string that consists of the patterns to include.
+        /// The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
