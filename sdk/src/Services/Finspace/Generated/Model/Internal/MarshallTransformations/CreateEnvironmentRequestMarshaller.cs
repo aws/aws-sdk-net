@@ -65,6 +65,17 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataBundles())
+                {
+                    context.Writer.WritePropertyName("dataBundles");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDataBundlesListValue in publicRequest.DataBundles)
+                    {
+                            context.Writer.Write(publicRequestDataBundlesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -98,6 +109,17 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetSuperuserParameters())
+                {
+                    context.Writer.WritePropertyName("superuserParameters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SuperuserParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SuperuserParameters, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTags())

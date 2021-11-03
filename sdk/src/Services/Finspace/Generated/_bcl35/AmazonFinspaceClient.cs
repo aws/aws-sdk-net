@@ -35,7 +35,7 @@ namespace Amazon.Finspace
     /// <summary>
     /// Implementation for accessing Finspace
     ///
-    /// The FinSpace management service provides the APIs for managing the FinSpace environments.
+    /// The FinSpace management service provides the APIs for managing FinSpace environments.
     /// </summary>
     public partial class AmazonFinspaceClient : AmazonServiceClient, IAmazonFinspace
     {

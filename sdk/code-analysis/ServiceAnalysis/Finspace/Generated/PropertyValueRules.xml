@@ -185,4 +185,22 @@
     <max>1000</max>
     <pattern>^https?://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.SuperuserParameters.EmailAddress</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+[.]+[A-Za-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.SuperuserParameters.FirstName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9]{1,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Finspace.Model.SuperuserParameters.LastName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9]{1,50}$</pattern>
+  </property-value-rule>
 </property-value-rules>

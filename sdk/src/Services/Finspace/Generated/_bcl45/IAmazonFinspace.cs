@@ -31,7 +31,7 @@ namespace Amazon.Finspace
     /// <summary>
     /// Interface for accessing Finspace
     ///
-    /// The FinSpace management service provides the APIs for managing the FinSpace environments.
+    /// The FinSpace management service provides the APIs for managing FinSpace environments.
     /// </summary>
     public partial interface IAmazonFinspace : IAmazonService, IDisposable
     {

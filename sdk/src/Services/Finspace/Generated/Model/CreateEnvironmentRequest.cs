@@ -34,12 +34,44 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonFinspaceRequest
     {
+        private List<string> _dataBundles = new List<string>();
         private string _description;
         private FederationMode _federationMode;
         private FederationParameters _federationParameters;
         private string _kmsKeyId;
         private string _name;
+        private SuperuserParameters _superuserParameters;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property DataBundles. 
+        /// <para>
+        /// The list of Amazon Resource Names (ARN) of the data bundles to install. Currently
+        /// supported data bundle ARNs:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains
+        /// sample Capital Markets datasets, categories and controlled vocabularies.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades
+        /// and quotes data in addition to sample Capital Markets data.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> DataBundles
+        {
+            get { return this._dataBundles; }
+            set { this._dataBundles = value; }
+        }
+
+        // Check to see if DataBundles property is set
+        internal bool IsSetDataBundles()
+        {
+            return this._dataBundles != null && this._dataBundles.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -143,6 +175,24 @@ namespace Amazon.Finspace.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuperuserParameters. 
+        /// <para>
+        /// Configuration information for the superuser.
+        /// </para>
+        /// </summary>
+        public SuperuserParameters SuperuserParameters
+        {
+            get { return this._superuserParameters; }
+            set { this._superuserParameters = value; }
+        }
+
+        // Check to see if SuperuserParameters property is set
+        internal bool IsSetSuperuserParameters()
+        {
+            return this._superuserParameters != null;
         }
 
         /// <summary>
