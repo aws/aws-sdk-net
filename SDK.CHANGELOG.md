@@ -1,3 +1,18 @@
+### 3.7.150.0 (2021-11-03 18:15 UTC)
+* ConnectParticipant (3.7.2.0)
+	* This release adds a new boolean attribute - Connect Participant - to the CreateParticipantConnection API, which can be used to mark the participant as connected.
+* DataSync (3.7.3.0)
+	* AWS DataSync now supports Hadoop Distributed File System (HDFS) Locations
+* Finspace (3.7.1.0)
+	* Adds superuser and data-bundle parameters to CreateEnvironment API
+* Macie2 (3.7.6.0)
+	* This release adds support for specifying the severity of findings that a custom data identifier produces, based on the number of occurrences of text that matches the detection criteria.
+* Core 3.7.3.31
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.149.0 (2021-11-02 18:29 UTC)
 * CloudFront (3.7.4.0)
 	* CloudFront now supports response headers policies to add HTTP headers to the responses that CloudFront sends to viewers. You can use these policies to add CORS headers, control browser caching, and more, without modifying your origin or writing any code.
