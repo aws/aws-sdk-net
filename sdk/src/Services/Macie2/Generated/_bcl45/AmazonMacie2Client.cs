@@ -5311,7 +5311,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Enables an Amazon Macie administrator to suspend or re-enable a member account.
+        /// Enables an Amazon Macie administrator to suspend or re-enable Macie for a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMemberSession service method.</param>
         /// 
@@ -5355,7 +5355,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Enables an Amazon Macie administrator to suspend or re-enable a member account.
+        /// Enables an Amazon Macie administrator to suspend or re-enable Macie for a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMemberSession service method.</param>
         /// <param name="cancellationToken">

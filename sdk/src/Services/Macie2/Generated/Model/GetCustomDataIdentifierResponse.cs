@@ -43,6 +43,7 @@ namespace Amazon.Macie2.Model
         private int? _maximumMatchDistance;
         private string _name;
         private string _regex;
+        private List<SeverityLevel> _severityLevels = new List<SeverityLevel>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -141,9 +142,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property IgnoreWords. 
         /// <para>
-        /// An array that lists specific character sequences (ignore words) to exclude from the
-        /// results. If the text matched by the regular expression is the same as any string in
-        /// this array, Amazon Macie ignores it. Ignore words are case sensitive.
+        /// An array that lists specific character sequences (<i>ignore words</i>) to exclude
+        /// from the results. If the text matched by the regular expression contains any string
+        /// in this array, Amazon Macie ignores it. Ignore words are case sensitive.
         /// </para>
         /// </summary>
         public List<string> IgnoreWords
@@ -161,8 +162,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Keywords. 
         /// <para>
-        /// An array that lists specific character sequences (keywords), one of which must be
-        /// within proximity (maximumMatchDistance) of the regular expression to match. Keywords
+        /// An array that lists specific character sequences (<i>keywords</i>), one of which must
+        /// be within proximity (maximumMatchDistance) of the regular expression to match. Keywords
         /// aren't case sensitive.
         /// </para>
         /// </summary>
@@ -181,10 +182,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MaximumMatchDistance. 
         /// <para>
-        /// The maximum number of characters that can exist between text that matches the regex
-        /// pattern and the character sequences specified by the keywords array. Amazon Macie
+        /// The maximum number of characters that can exist between text that matches the regular
+        /// expression and the character sequences specified by the keywords array. Amazon Macie
         /// includes or excludes a result based on the proximity of a keyword to text that matches
-        /// the regex pattern.
+        /// the regular expression.
         /// </para>
         /// </summary>
         public int MaximumMatchDistance
@@ -233,6 +234,28 @@ namespace Amazon.Macie2.Model
         internal bool IsSetRegex()
         {
             return this._regex != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SeverityLevels. 
+        /// <para>
+        /// Specifies the severity that's assigned to findings that the custom data identifier
+        /// produces, based on the number of occurrences of text that matches the custom data
+        /// identifier's detection criteria. By default, Amazon Macie creates findings for S3
+        /// objects that contain at least one occurrence of text that matches the detection criteria,
+        /// and Macie assigns the MEDIUM severity to those findings.
+        /// </para>
+        /// </summary>
+        public List<SeverityLevel> SeverityLevels
+        {
+            get { return this._severityLevels; }
+            set { this._severityLevels = value; }
+        }
+
+        // Check to see if SeverityLevels property is set
+        internal bool IsSetSeverityLevels()
+        {
+            return this._severityLevels != null && this._severityLevels.Count > 0; 
         }
 
         /// <summary>

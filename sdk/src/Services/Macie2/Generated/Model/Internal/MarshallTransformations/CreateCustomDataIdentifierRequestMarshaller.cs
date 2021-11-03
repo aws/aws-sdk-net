@@ -122,6 +122,22 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Regex);
                 }
 
+                if(publicRequest.IsSetSeverityLevels())
+                {
+                    context.Writer.WritePropertyName("severityLevels");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSeverityLevelsListValue in publicRequest.SeverityLevels)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SeverityLevelMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSeverityLevelsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

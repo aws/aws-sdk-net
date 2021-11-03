@@ -39,8 +39,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property FindingTypes. 
         /// <para>
-        /// An array that lists one or more types of findings to include in the set of sample
-        /// findings. Currently, the only supported value is Policy:IAMUser/S3BucketEncryptionDisabled.
+        /// An array of finding types, one for each type of sample finding to create. To create
+        /// a sample of every type of finding that Amazon Macie supports, don't include this array
+        /// in your request.
         /// </para>
         /// </summary>
         public List<string> FindingTypes

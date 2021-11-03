@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMemberSession operation.
-    /// Enables an Amazon Macie administrator to suspend or re-enable a member account.
+    /// Enables an Amazon Macie administrator to suspend or re-enable Macie for a member account.
     /// </summary>
     public partial class UpdateMemberSessionRequest : AmazonMacie2Request
     {

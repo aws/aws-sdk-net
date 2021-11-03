@@ -111,6 +111,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.Regex = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("severityLevels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SeverityLevel, SeverityLevelUnmarshaller>(SeverityLevelUnmarshaller.Instance);
+                    response.SeverityLevels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

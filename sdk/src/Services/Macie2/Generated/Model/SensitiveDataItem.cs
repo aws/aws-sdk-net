@@ -42,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Category. 
         /// <para>
         /// The category of sensitive data that was detected. For example: CREDENTIALS, for credentials
-        /// data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION,
+        /// data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION,
         /// for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal
         /// health information, such as health insurance identification numbers, or personally
         /// identifiable information, such as passport numbers.
