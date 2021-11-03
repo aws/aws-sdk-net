@@ -19926,6 +19926,15 @@
         ],
         "signatureVersions": [
           "v4"
+        ],
+        "variants": [
+          {
+            "dnsSuffix": "c2s.ic.gov",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [
+              "fips"
+            ]
+          }
         ]
       },
       "dnsSuffix": "c2s.ic.gov",
@@ -20484,6 +20493,15 @@
         ],
         "signatureVersions": [
           "v4"
+        ],
+        "variants": [
+          {
+            "dnsSuffix": "sc2s.sgov.gov",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [
+              "fips"
+            ]
+          }
         ]
       },
       "dnsSuffix": "sc2s.sgov.gov",
