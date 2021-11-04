@@ -1,3 +1,10 @@
+### 3.7.152.0 (2021-11-04 22:13 UTC)
+* S3 (3.7.4.0)
+	* Added ability to clear user defined metadata from S3 MetadataCollection. Added overloaded AmazonS3Uri constructor and TryParseAmazonS3Uri method with a flag to control URI string preprocessing to decode certain characters.
+* Core 3.7.3.33
+	* fix: conflict between ErrorResponse internal type and service type
+	* All services packages updated to require new Core
+
 ### 3.7.151.0 (2021-11-04 18:38 UTC)
 * ChimeSDKMeetings (3.7.0.0)
 	* The Amazon Chime SDK Meetings APIs allow software developers to create meetings and attendees for interactive audio, video, screen and content sharing in custom meeting applications which use the Amazon Chime SDK.
