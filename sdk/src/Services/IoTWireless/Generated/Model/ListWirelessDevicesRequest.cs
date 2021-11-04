@@ -36,7 +36,9 @@ namespace Amazon.IoTWireless.Model
     {
         private string _destinationName;
         private string _deviceProfileId;
+        private string _fuotaTaskId;
         private int? _maxResults;
+        private string _multicastGroupId;
         private string _nextToken;
         private string _serviceProfileId;
         private WirelessDeviceType _wirelessDeviceType;
@@ -80,6 +82,22 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FuotaTaskId.
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FuotaTaskId
+        {
+            get { return this._fuotaTaskId; }
+            set { this._fuotaTaskId = value; }
+        }
+
+        // Check to see if FuotaTaskId property is set
+        internal bool IsSetFuotaTaskId()
+        {
+            return this._fuotaTaskId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in this operation.
@@ -96,6 +114,22 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastGroupId.
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string MulticastGroupId
+        {
+            get { return this._multicastGroupId; }
+            set { this._multicastGroupId = value; }
+        }
+
+        // Check to see if MulticastGroupId property is set
+        internal bool IsSetMulticastGroupId()
+        {
+            return this._multicastGroupId != null;
         }
 
         /// <summary>

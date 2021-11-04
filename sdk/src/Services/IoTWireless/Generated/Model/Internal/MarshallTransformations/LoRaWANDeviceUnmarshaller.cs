@@ -88,6 +88,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FPorts", targetDepth))
+                {
+                    var unmarshaller = FPortsUnmarshaller.Instance;
+                    unmarshalledObject.FPorts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OtaaV1_0_x", targetDepth))
                 {
                     var unmarshaller = OtaaV1_0_xUnmarshaller.Instance;

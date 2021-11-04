@@ -331,6 +331,237 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  AssociateMulticastGroupWithFuotaTask
+
+
+        /// <summary>
+        /// Associate a multicast group with a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMulticastGroupWithFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the AssociateMulticastGroupWithFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask">REST API Reference for AssociateMulticastGroupWithFuotaTask Operation</seealso>
+        public virtual AssociateMulticastGroupWithFuotaTaskResponse AssociateMulticastGroupWithFuotaTask(AssociateMulticastGroupWithFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMulticastGroupWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMulticastGroupWithFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateMulticastGroupWithFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associate a multicast group with a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMulticastGroupWithFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateMulticastGroupWithFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask">REST API Reference for AssociateMulticastGroupWithFuotaTask Operation</seealso>
+        public virtual Task<AssociateMulticastGroupWithFuotaTaskResponse> AssociateMulticastGroupWithFuotaTaskAsync(AssociateMulticastGroupWithFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMulticastGroupWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMulticastGroupWithFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateMulticastGroupWithFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateWirelessDeviceWithFuotaTask
+
+
+        /// <summary>
+        /// Associate a wireless device with a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWirelessDeviceWithFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask">REST API Reference for AssociateWirelessDeviceWithFuotaTask Operation</seealso>
+        public virtual AssociateWirelessDeviceWithFuotaTaskResponse AssociateWirelessDeviceWithFuotaTask(AssociateWirelessDeviceWithFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWirelessDeviceWithFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associate a wireless device with a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateWirelessDeviceWithFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask">REST API Reference for AssociateWirelessDeviceWithFuotaTask Operation</seealso>
+        public virtual Task<AssociateWirelessDeviceWithFuotaTaskResponse> AssociateWirelessDeviceWithFuotaTaskAsync(AssociateWirelessDeviceWithFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateWirelessDeviceWithFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateWirelessDeviceWithMulticastGroup
+
+
+        /// <summary>
+        /// Associates a wireless device with a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWirelessDeviceWithMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup">REST API Reference for AssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual AssociateWirelessDeviceWithMulticastGroupResponse AssociateWirelessDeviceWithMulticastGroup(AssociateWirelessDeviceWithMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWirelessDeviceWithMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a wireless device with a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateWirelessDeviceWithMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup">REST API Reference for AssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual Task<AssociateWirelessDeviceWithMulticastGroupResponse> AssociateWirelessDeviceWithMulticastGroupAsync(AssociateWirelessDeviceWithMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateWirelessDeviceWithMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateWirelessDeviceWithThing
 
 
@@ -562,6 +793,83 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  CancelMulticastGroupSession
+
+
+        /// <summary>
+        /// Cancels an existing multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMulticastGroupSession service method.</param>
+        /// 
+        /// <returns>The response from the CancelMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession">REST API Reference for CancelMulticastGroupSession Operation</seealso>
+        public virtual CancelMulticastGroupSessionResponse CancelMulticastGroupSession(CancelMulticastGroupSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMulticastGroupSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels an existing multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMulticastGroupSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession">REST API Reference for CancelMulticastGroupSession Operation</seealso>
+        public virtual Task<CancelMulticastGroupSessionResponse> CancelMulticastGroupSessionAsync(CancelMulticastGroupSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMulticastGroupSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelMulticastGroupSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDestination
 
 
@@ -706,6 +1014,160 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = CreateDeviceProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateDeviceProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFuotaTask
+
+
+        /// <summary>
+        /// Creates a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask">REST API Reference for CreateFuotaTask Operation</seealso>
+        public virtual CreateFuotaTaskResponse CreateFuotaTask(CreateFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask">REST API Reference for CreateFuotaTask Operation</seealso>
+        public virtual Task<CreateFuotaTaskResponse> CreateFuotaTaskAsync(CreateFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMulticastGroup
+
+
+        /// <summary>
+        /// Creates a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup">REST API Reference for CreateMulticastGroup Operation</seealso>
+        public virtual CreateMulticastGroupResponse CreateMulticastGroup(CreateMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup">REST API Reference for CreateMulticastGroup Operation</seealso>
+        public virtual Task<CreateMulticastGroupResponse> CreateMulticastGroupAsync(CreateMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateMulticastGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1237,6 +1699,154 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  DeleteFuotaTask
+
+
+        /// <summary>
+        /// Deletes a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask">REST API Reference for DeleteFuotaTask Operation</seealso>
+        public virtual DeleteFuotaTaskResponse DeleteFuotaTask(DeleteFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask">REST API Reference for DeleteFuotaTask Operation</seealso>
+        public virtual Task<DeleteFuotaTaskResponse> DeleteFuotaTaskAsync(DeleteFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteMulticastGroup
+
+
+        /// <summary>
+        /// Deletes a multicast group if it is not in use by a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">REST API Reference for DeleteMulticastGroup Operation</seealso>
+        public virtual DeleteMulticastGroupResponse DeleteMulticastGroup(DeleteMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a multicast group if it is not in use by a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">REST API Reference for DeleteMulticastGroup Operation</seealso>
+        public virtual Task<DeleteMulticastGroupResponse> DeleteMulticastGroupAsync(DeleteMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteServiceProfile
 
 
@@ -1669,6 +2279,225 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  DisassociateMulticastGroupFromFuotaTask
+
+
+        /// <summary>
+        /// Disassociates a multicast group from a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMulticastGroupFromFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateMulticastGroupFromFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">REST API Reference for DisassociateMulticastGroupFromFuotaTask Operation</seealso>
+        public virtual DisassociateMulticastGroupFromFuotaTaskResponse DisassociateMulticastGroupFromFuotaTask(DisassociateMulticastGroupFromFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMulticastGroupFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMulticastGroupFromFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateMulticastGroupFromFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a multicast group from a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMulticastGroupFromFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateMulticastGroupFromFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">REST API Reference for DisassociateMulticastGroupFromFuotaTask Operation</seealso>
+        public virtual Task<DisassociateMulticastGroupFromFuotaTaskResponse> DisassociateMulticastGroupFromFuotaTaskAsync(DisassociateMulticastGroupFromFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMulticastGroupFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMulticastGroupFromFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateMulticastGroupFromFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateWirelessDeviceFromFuotaTask
+
+
+        /// <summary>
+        /// Disassociates a wireless device from a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWirelessDeviceFromFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask">REST API Reference for DisassociateWirelessDeviceFromFuotaTask Operation</seealso>
+        public virtual DisassociateWirelessDeviceFromFuotaTaskResponse DisassociateWirelessDeviceFromFuotaTask(DisassociateWirelessDeviceFromFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWirelessDeviceFromFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a wireless device from a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateWirelessDeviceFromFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask">REST API Reference for DisassociateWirelessDeviceFromFuotaTask Operation</seealso>
+        public virtual Task<DisassociateWirelessDeviceFromFuotaTaskResponse> DisassociateWirelessDeviceFromFuotaTaskAsync(DisassociateWirelessDeviceFromFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateWirelessDeviceFromFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateWirelessDeviceFromMulticastGroup
+
+
+        /// <summary>
+        /// Disassociates a wireless device from a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWirelessDeviceFromMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup">REST API Reference for DisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual DisassociateWirelessDeviceFromMulticastGroupResponse DisassociateWirelessDeviceFromMulticastGroup(DisassociateWirelessDeviceFromMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWirelessDeviceFromMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a wireless device from a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateWirelessDeviceFromMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup">REST API Reference for DisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual Task<DisassociateWirelessDeviceFromMulticastGroupResponse> DisassociateWirelessDeviceFromMulticastGroupAsync(DisassociateWirelessDeviceFromMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateWirelessDeviceFromMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateWirelessDeviceFromThing
 
 
@@ -2036,6 +2865,77 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetFuotaTask
+
+
+        /// <summary>
+        /// Gets information about a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the GetFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask">REST API Reference for GetFuotaTask Operation</seealso>
+        public virtual GetFuotaTaskResponse GetFuotaTask(GetFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask">REST API Reference for GetFuotaTask Operation</seealso>
+        public virtual Task<GetFuotaTaskResponse> GetFuotaTaskAsync(GetFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLogLevelsByResourceTypes
 
 
@@ -2109,6 +3009,148 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetMulticastGroup
+
+
+        /// <summary>
+        /// Gets information about a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup">REST API Reference for GetMulticastGroup Operation</seealso>
+        public virtual GetMulticastGroupResponse GetMulticastGroup(GetMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup">REST API Reference for GetMulticastGroup Operation</seealso>
+        public virtual Task<GetMulticastGroupResponse> GetMulticastGroupAsync(GetMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMulticastGroupSession
+
+
+        /// <summary>
+        /// Gets information about a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroupSession service method.</param>
+        /// 
+        /// <returns>The response from the GetMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession">REST API Reference for GetMulticastGroupSession Operation</seealso>
+        public virtual GetMulticastGroupSessionResponse GetMulticastGroupSession(GetMulticastGroupSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetMulticastGroupSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroupSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession">REST API Reference for GetMulticastGroupSession Operation</seealso>
+        public virtual Task<GetMulticastGroupSessionResponse> GetMulticastGroupSessionAsync(GetMulticastGroupSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMulticastGroupSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPartnerAccount
 
 
@@ -2172,6 +3214,77 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = GetPartnerAccountResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetPartnerAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourceEventConfiguration
+
+
+        /// <summary>
+        /// Get the event configuration for a particular resource identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEventConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceEventConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration">REST API Reference for GetResourceEventConfiguration Operation</seealso>
+        public virtual GetResourceEventConfigurationResponse GetResourceEventConfiguration(GetResourceEventConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEventConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceEventConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get the event configuration for a particular resource identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEventConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceEventConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration">REST API Reference for GetResourceEventConfiguration Operation</seealso>
+        public virtual Task<GetResourceEventConfigurationResponse> GetResourceEventConfigurationAsync(GetResourceEventConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEventConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourceEventConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3085,6 +4198,207 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  ListFuotaTasks
+
+
+        /// <summary>
+        /// Lists the FUOTA tasks registered to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFuotaTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListFuotaTasks service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks">REST API Reference for ListFuotaTasks Operation</seealso>
+        public virtual ListFuotaTasksResponse ListFuotaTasks(ListFuotaTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFuotaTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFuotaTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListFuotaTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the FUOTA tasks registered to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFuotaTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFuotaTasks service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks">REST API Reference for ListFuotaTasks Operation</seealso>
+        public virtual Task<ListFuotaTasksResponse> ListFuotaTasksAsync(ListFuotaTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFuotaTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFuotaTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFuotaTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMulticastGroups
+
+
+        /// <summary>
+        /// Lists the multicast groups registered to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListMulticastGroups service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups">REST API Reference for ListMulticastGroups Operation</seealso>
+        public virtual ListMulticastGroupsResponse ListMulticastGroups(ListMulticastGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMulticastGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the multicast groups registered to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMulticastGroups service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups">REST API Reference for ListMulticastGroups Operation</seealso>
+        public virtual Task<ListMulticastGroupsResponse> ListMulticastGroupsAsync(ListMulticastGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMulticastGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMulticastGroupsByFuotaTask
+
+
+        /// <summary>
+        /// List all multicast groups associated with a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroupsByFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the ListMulticastGroupsByFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">REST API Reference for ListMulticastGroupsByFuotaTask Operation</seealso>
+        public virtual ListMulticastGroupsByFuotaTaskResponse ListMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsByFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsByFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<ListMulticastGroupsByFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all multicast groups associated with a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroupsByFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMulticastGroupsByFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">REST API Reference for ListMulticastGroupsByFuotaTask Operation</seealso>
+        public virtual Task<ListMulticastGroupsByFuotaTaskResponse> ListMulticastGroupsByFuotaTaskAsync(ListMulticastGroupsByFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsByFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsByFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMulticastGroupsByFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPartnerAccounts
 
 
@@ -3702,6 +5016,83 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  SendDataToMulticastGroup
+
+
+        /// <summary>
+        /// Sends the specified data to a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDataToMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the SendDataToMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup">REST API Reference for SendDataToMulticastGroup Operation</seealso>
+        public virtual SendDataToMulticastGroupResponse SendDataToMulticastGroup(SendDataToMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataToMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataToMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<SendDataToMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sends the specified data to a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDataToMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDataToMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup">REST API Reference for SendDataToMulticastGroup Operation</seealso>
+        public virtual Task<SendDataToMulticastGroupResponse> SendDataToMulticastGroupAsync(SendDataToMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataToMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataToMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendDataToMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendDataToWirelessDevice
 
 
@@ -3763,6 +5154,302 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = SendDataToWirelessDeviceResponseUnmarshaller.Instance;
             
             return InvokeAsync<SendDataToWirelessDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartBulkAssociateWirelessDeviceWithMulticastGroup
+
+
+        /// <summary>
+        /// Starts a bulk association of all qualifying wireless devices with a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkAssociateWirelessDeviceWithMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the StartBulkAssociateWirelessDeviceWithMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup">REST API Reference for StartBulkAssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual StartBulkAssociateWirelessDeviceWithMulticastGroupResponse StartBulkAssociateWirelessDeviceWithMulticastGroup(StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<StartBulkAssociateWirelessDeviceWithMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a bulk association of all qualifying wireless devices with a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkAssociateWirelessDeviceWithMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartBulkAssociateWirelessDeviceWithMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup">REST API Reference for StartBulkAssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual Task<StartBulkAssociateWirelessDeviceWithMulticastGroupResponse> StartBulkAssociateWirelessDeviceWithMulticastGroupAsync(StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartBulkAssociateWirelessDeviceWithMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartBulkDisassociateWirelessDeviceFromMulticastGroup
+
+
+        /// <summary>
+        /// Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDisassociateWirelessDeviceFromMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the StartBulkDisassociateWirelessDeviceFromMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup">REST API Reference for StartBulkDisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse StartBulkDisassociateWirelessDeviceFromMulticastGroup(StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDisassociateWirelessDeviceFromMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartBulkDisassociateWirelessDeviceFromMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup">REST API Reference for StartBulkDisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual Task<StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse> StartBulkDisassociateWirelessDeviceFromMulticastGroupAsync(StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartFuotaTask
+
+
+        /// <summary>
+        /// Starts a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the StartFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask">REST API Reference for StartFuotaTask Operation</seealso>
+        public virtual StartFuotaTaskResponse StartFuotaTask(StartFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask">REST API Reference for StartFuotaTask Operation</seealso>
+        public virtual Task<StartFuotaTaskResponse> StartFuotaTaskAsync(StartFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMulticastGroupSession
+
+
+        /// <summary>
+        /// Starts a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMulticastGroupSession service method.</param>
+        /// 
+        /// <returns>The response from the StartMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
+        public virtual StartMulticastGroupSessionResponse StartMulticastGroupSession(StartMulticastGroupSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartMulticastGroupSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMulticastGroupSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
+        public virtual Task<StartMulticastGroupSessionResponse> StartMulticastGroupSessionAsync(StartMulticastGroupSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMulticastGroupSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMulticastGroupSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4051,6 +5738,83 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  UpdateFuotaTask
+
+
+        /// <summary>
+        /// Updates properties of a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask">REST API Reference for UpdateFuotaTask Operation</seealso>
+        public virtual UpdateFuotaTaskResponse UpdateFuotaTask(UpdateFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFuotaTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates properties of a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFuotaTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask">REST API Reference for UpdateFuotaTask Operation</seealso>
+        public virtual Task<UpdateFuotaTaskResponse> UpdateFuotaTaskAsync(UpdateFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFuotaTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateFuotaTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateLogLevelsByResourceTypes
 
 
@@ -4132,6 +5896,83 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  UpdateMulticastGroup
+
+
+        /// <summary>
+        /// Updates properties of a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup">REST API Reference for UpdateMulticastGroup Operation</seealso>
+        public virtual UpdateMulticastGroupResponse UpdateMulticastGroup(UpdateMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMulticastGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates properties of a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMulticastGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup">REST API Reference for UpdateMulticastGroup Operation</seealso>
+        public virtual Task<UpdateMulticastGroupResponse> UpdateMulticastGroupAsync(UpdateMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMulticastGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMulticastGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdatePartnerAccount
 
 
@@ -4193,6 +6034,83 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = UpdatePartnerAccountResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePartnerAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceEventConfiguration
+
+
+        /// <summary>
+        /// Update the event configuration for a particular resource identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceEventConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceEventConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
+        public virtual UpdateResourceEventConfigurationResponse UpdateResourceEventConfiguration(UpdateResourceEventConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceEventConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceEventConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update the event configuration for a particular resource identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceEventConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceEventConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
+        public virtual Task<UpdateResourceEventConfigurationResponse> UpdateResourceEventConfigurationAsync(UpdateResourceEventConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceEventConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateResourceEventConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

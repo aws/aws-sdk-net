@@ -57,6 +57,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AppKey);
             }
 
+            if(requestObject.IsSetGenAppKey())
+            {
+                context.Writer.WritePropertyName("GenAppKey");
+                context.Writer.Write(requestObject.GenAppKey);
+            }
+
         }
 
         /// <summary>

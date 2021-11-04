@@ -52,6 +52,30 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Paginator for ListFuotaTasks operation
+        ///</summary>
+        public IListFuotaTasksPaginator ListFuotaTasks(ListFuotaTasksRequest request) 
+        {
+            return new ListFuotaTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMulticastGroups operation
+        ///</summary>
+        public IListMulticastGroupsPaginator ListMulticastGroups(ListMulticastGroupsRequest request) 
+        {
+            return new ListMulticastGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMulticastGroupsByFuotaTask operation
+        ///</summary>
+        public IListMulticastGroupsByFuotaTaskPaginator ListMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request) 
+        {
+            return new ListMulticastGroupsByFuotaTaskPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServiceProfiles operation
         ///</summary>
         public IListServiceProfilesPaginator ListServiceProfiles(ListServiceProfilesRequest request) 

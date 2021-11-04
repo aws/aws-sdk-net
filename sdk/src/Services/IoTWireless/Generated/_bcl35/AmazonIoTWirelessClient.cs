@@ -327,6 +327,222 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  AssociateMulticastGroupWithFuotaTask
+
+        /// <summary>
+        /// Associate a multicast group with a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMulticastGroupWithFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the AssociateMulticastGroupWithFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask">REST API Reference for AssociateMulticastGroupWithFuotaTask Operation</seealso>
+        public virtual AssociateMulticastGroupWithFuotaTaskResponse AssociateMulticastGroupWithFuotaTask(AssociateMulticastGroupWithFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMulticastGroupWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMulticastGroupWithFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateMulticastGroupWithFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateMulticastGroupWithFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMulticastGroupWithFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateMulticastGroupWithFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask">REST API Reference for AssociateMulticastGroupWithFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginAssociateMulticastGroupWithFuotaTask(AssociateMulticastGroupWithFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMulticastGroupWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMulticastGroupWithFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateMulticastGroupWithFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateMulticastGroupWithFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  AssociateMulticastGroupWithFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask">REST API Reference for AssociateMulticastGroupWithFuotaTask Operation</seealso>
+        public virtual AssociateMulticastGroupWithFuotaTaskResponse EndAssociateMulticastGroupWithFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateMulticastGroupWithFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateWirelessDeviceWithFuotaTask
+
+        /// <summary>
+        /// Associate a wireless device with a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWirelessDeviceWithFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask">REST API Reference for AssociateWirelessDeviceWithFuotaTask Operation</seealso>
+        public virtual AssociateWirelessDeviceWithFuotaTaskResponse AssociateWirelessDeviceWithFuotaTask(AssociateWirelessDeviceWithFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWirelessDeviceWithFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWirelessDeviceWithFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateWirelessDeviceWithFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask">REST API Reference for AssociateWirelessDeviceWithFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginAssociateWirelessDeviceWithFuotaTask(AssociateWirelessDeviceWithFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateWirelessDeviceWithFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateWirelessDeviceWithFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  AssociateWirelessDeviceWithFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask">REST API Reference for AssociateWirelessDeviceWithFuotaTask Operation</seealso>
+        public virtual AssociateWirelessDeviceWithFuotaTaskResponse EndAssociateWirelessDeviceWithFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateWirelessDeviceWithFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateWirelessDeviceWithMulticastGroup
+
+        /// <summary>
+        /// Associates a wireless device with a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWirelessDeviceWithMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup">REST API Reference for AssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual AssociateWirelessDeviceWithMulticastGroupResponse AssociateWirelessDeviceWithMulticastGroup(AssociateWirelessDeviceWithMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWirelessDeviceWithMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWirelessDeviceWithMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWirelessDeviceWithMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateWirelessDeviceWithMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup">REST API Reference for AssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginAssociateWirelessDeviceWithMulticastGroup(AssociateWirelessDeviceWithMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateWirelessDeviceWithMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateWirelessDeviceWithMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  AssociateWirelessDeviceWithMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup">REST API Reference for AssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual AssociateWirelessDeviceWithMulticastGroupResponse EndAssociateWirelessDeviceWithMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateWirelessDeviceWithMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateWirelessDeviceWithThing
 
         /// <summary>
@@ -543,6 +759,78 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  CancelMulticastGroupSession
+
+        /// <summary>
+        /// Cancels an existing multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMulticastGroupSession service method.</param>
+        /// 
+        /// <returns>The response from the CancelMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession">REST API Reference for CancelMulticastGroupSession Operation</seealso>
+        public virtual CancelMulticastGroupSessionResponse CancelMulticastGroupSession(CancelMulticastGroupSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMulticastGroupSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelMulticastGroupSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelMulticastGroupSession operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelMulticastGroupSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession">REST API Reference for CancelMulticastGroupSession Operation</seealso>
+        public virtual IAsyncResult BeginCancelMulticastGroupSession(CancelMulticastGroupSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelMulticastGroupSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelMulticastGroupSession.</param>
+        /// 
+        /// <returns>Returns a  CancelMulticastGroupSessionResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession">REST API Reference for CancelMulticastGroupSession Operation</seealso>
+        public virtual CancelMulticastGroupSessionResponse EndCancelMulticastGroupSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelMulticastGroupSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDestination
 
         /// <summary>
@@ -680,6 +968,150 @@ namespace Amazon.IoTWireless
         public virtual CreateDeviceProfileResponse EndCreateDeviceProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeviceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFuotaTask
+
+        /// <summary>
+        /// Creates a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the CreateFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask">REST API Reference for CreateFuotaTask Operation</seealso>
+        public virtual CreateFuotaTaskResponse CreateFuotaTask(CreateFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask">REST API Reference for CreateFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginCreateFuotaTask(CreateFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  CreateFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask">REST API Reference for CreateFuotaTask Operation</seealso>
+        public virtual CreateFuotaTaskResponse EndCreateFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMulticastGroup
+
+        /// <summary>
+        /// Creates a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup">REST API Reference for CreateMulticastGroup Operation</seealso>
+        public virtual CreateMulticastGroupResponse CreateMulticastGroup(CreateMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup">REST API Reference for CreateMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateMulticastGroup(CreateMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup">REST API Reference for CreateMulticastGroup Operation</seealso>
+        public virtual CreateMulticastGroupResponse EndCreateMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMulticastGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -1182,6 +1614,147 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  DeleteFuotaTask
+
+        /// <summary>
+        /// Deletes a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask">REST API Reference for DeleteFuotaTask Operation</seealso>
+        public virtual DeleteFuotaTaskResponse DeleteFuotaTask(DeleteFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask">REST API Reference for DeleteFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFuotaTask(DeleteFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  DeleteFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask">REST API Reference for DeleteFuotaTask Operation</seealso>
+        public virtual DeleteFuotaTaskResponse EndDeleteFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMulticastGroup
+
+        /// <summary>
+        /// Deletes a multicast group if it is not in use by a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">REST API Reference for DeleteMulticastGroup Operation</seealso>
+        public virtual DeleteMulticastGroupResponse DeleteMulticastGroup(DeleteMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">REST API Reference for DeleteMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMulticastGroup(DeleteMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">REST API Reference for DeleteMulticastGroup Operation</seealso>
+        public virtual DeleteMulticastGroupResponse EndDeleteMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteServiceProfile
 
         /// <summary>
@@ -1599,6 +2172,216 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  DisassociateMulticastGroupFromFuotaTask
+
+        /// <summary>
+        /// Disassociates a multicast group from a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMulticastGroupFromFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateMulticastGroupFromFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">REST API Reference for DisassociateMulticastGroupFromFuotaTask Operation</seealso>
+        public virtual DisassociateMulticastGroupFromFuotaTaskResponse DisassociateMulticastGroupFromFuotaTask(DisassociateMulticastGroupFromFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMulticastGroupFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMulticastGroupFromFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateMulticastGroupFromFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateMulticastGroupFromFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMulticastGroupFromFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateMulticastGroupFromFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">REST API Reference for DisassociateMulticastGroupFromFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateMulticastGroupFromFuotaTask(DisassociateMulticastGroupFromFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMulticastGroupFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMulticastGroupFromFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateMulticastGroupFromFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateMulticastGroupFromFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  DisassociateMulticastGroupFromFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">REST API Reference for DisassociateMulticastGroupFromFuotaTask Operation</seealso>
+        public virtual DisassociateMulticastGroupFromFuotaTaskResponse EndDisassociateMulticastGroupFromFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateMulticastGroupFromFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateWirelessDeviceFromFuotaTask
+
+        /// <summary>
+        /// Disassociates a wireless device from a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWirelessDeviceFromFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask">REST API Reference for DisassociateWirelessDeviceFromFuotaTask Operation</seealso>
+        public virtual DisassociateWirelessDeviceFromFuotaTaskResponse DisassociateWirelessDeviceFromFuotaTask(DisassociateWirelessDeviceFromFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWirelessDeviceFromFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWirelessDeviceFromFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateWirelessDeviceFromFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask">REST API Reference for DisassociateWirelessDeviceFromFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateWirelessDeviceFromFuotaTask(DisassociateWirelessDeviceFromFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateWirelessDeviceFromFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateWirelessDeviceFromFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  DisassociateWirelessDeviceFromFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask">REST API Reference for DisassociateWirelessDeviceFromFuotaTask Operation</seealso>
+        public virtual DisassociateWirelessDeviceFromFuotaTaskResponse EndDisassociateWirelessDeviceFromFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateWirelessDeviceFromFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateWirelessDeviceFromMulticastGroup
+
+        /// <summary>
+        /// Disassociates a wireless device from a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWirelessDeviceFromMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup">REST API Reference for DisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual DisassociateWirelessDeviceFromMulticastGroupResponse DisassociateWirelessDeviceFromMulticastGroup(DisassociateWirelessDeviceFromMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWirelessDeviceFromMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWirelessDeviceFromMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWirelessDeviceFromMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateWirelessDeviceFromMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup">REST API Reference for DisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateWirelessDeviceFromMulticastGroup(DisassociateWirelessDeviceFromMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateWirelessDeviceFromMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateWirelessDeviceFromMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  DisassociateWirelessDeviceFromMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup">REST API Reference for DisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual DisassociateWirelessDeviceFromMulticastGroupResponse EndDisassociateWirelessDeviceFromMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateWirelessDeviceFromMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateWirelessDeviceFromThing
 
         /// <summary>
@@ -1950,6 +2733,75 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetFuotaTask
+
+        /// <summary>
+        /// Gets information about a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the GetFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask">REST API Reference for GetFuotaTask Operation</seealso>
+        public virtual GetFuotaTaskResponse GetFuotaTask(GetFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask">REST API Reference for GetFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginGetFuotaTask(GetFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  GetFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask">REST API Reference for GetFuotaTask Operation</seealso>
+        public virtual GetFuotaTaskResponse EndGetFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetLogLevelsByResourceTypes
 
         /// <summary>
@@ -2020,6 +2872,144 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetMulticastGroup
+
+        /// <summary>
+        /// Gets information about a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup">REST API Reference for GetMulticastGroup Operation</seealso>
+        public virtual GetMulticastGroupResponse GetMulticastGroup(GetMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup">REST API Reference for GetMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginGetMulticastGroup(GetMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  GetMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup">REST API Reference for GetMulticastGroup Operation</seealso>
+        public virtual GetMulticastGroupResponse EndGetMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMulticastGroupSession
+
+        /// <summary>
+        /// Gets information about a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroupSession service method.</param>
+        /// 
+        /// <returns>The response from the GetMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession">REST API Reference for GetMulticastGroupSession Operation</seealso>
+        public virtual GetMulticastGroupSessionResponse GetMulticastGroupSession(GetMulticastGroupSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetMulticastGroupSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMulticastGroupSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMulticastGroupSession operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMulticastGroupSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession">REST API Reference for GetMulticastGroupSession Operation</seealso>
+        public virtual IAsyncResult BeginGetMulticastGroupSession(GetMulticastGroupSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMulticastGroupSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMulticastGroupSession.</param>
+        /// 
+        /// <returns>Returns a  GetMulticastGroupSessionResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession">REST API Reference for GetMulticastGroupSession Operation</seealso>
+        public virtual GetMulticastGroupSessionResponse EndGetMulticastGroupSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMulticastGroupSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPartnerAccount
 
         /// <summary>
@@ -2083,6 +3073,75 @@ namespace Amazon.IoTWireless
         public virtual GetPartnerAccountResponse EndGetPartnerAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPartnerAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourceEventConfiguration
+
+        /// <summary>
+        /// Get the event configuration for a particular resource identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEventConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceEventConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration">REST API Reference for GetResourceEventConfiguration Operation</seealso>
+        public virtual GetResourceEventConfigurationResponse GetResourceEventConfiguration(GetResourceEventConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEventConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceEventConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceEventConfiguration operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceEventConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration">REST API Reference for GetResourceEventConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetResourceEventConfiguration(GetResourceEventConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceEventConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceEventConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetResourceEventConfigurationResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration">REST API Reference for GetResourceEventConfiguration Operation</seealso>
+        public virtual GetResourceEventConfigurationResponse EndGetResourceEventConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourceEventConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -2977,6 +4036,207 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  ListFuotaTasks
+
+        /// <summary>
+        /// Lists the FUOTA tasks registered to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFuotaTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListFuotaTasks service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks">REST API Reference for ListFuotaTasks Operation</seealso>
+        public virtual ListFuotaTasksResponse ListFuotaTasks(ListFuotaTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFuotaTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFuotaTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListFuotaTasksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFuotaTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFuotaTasks operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFuotaTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks">REST API Reference for ListFuotaTasks Operation</seealso>
+        public virtual IAsyncResult BeginListFuotaTasks(ListFuotaTasksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFuotaTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFuotaTasksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFuotaTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFuotaTasks.</param>
+        /// 
+        /// <returns>Returns a  ListFuotaTasksResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks">REST API Reference for ListFuotaTasks Operation</seealso>
+        public virtual ListFuotaTasksResponse EndListFuotaTasks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFuotaTasksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMulticastGroups
+
+        /// <summary>
+        /// Lists the multicast groups registered to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListMulticastGroups service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups">REST API Reference for ListMulticastGroups Operation</seealso>
+        public virtual ListMulticastGroupsResponse ListMulticastGroups(ListMulticastGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMulticastGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMulticastGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroups operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMulticastGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups">REST API Reference for ListMulticastGroups Operation</seealso>
+        public virtual IAsyncResult BeginListMulticastGroups(ListMulticastGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMulticastGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMulticastGroups.</param>
+        /// 
+        /// <returns>Returns a  ListMulticastGroupsResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups">REST API Reference for ListMulticastGroups Operation</seealso>
+        public virtual ListMulticastGroupsResponse EndListMulticastGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMulticastGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMulticastGroupsByFuotaTask
+
+        /// <summary>
+        /// List all multicast groups associated with a fuota task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroupsByFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the ListMulticastGroupsByFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">REST API Reference for ListMulticastGroupsByFuotaTask Operation</seealso>
+        public virtual ListMulticastGroupsByFuotaTaskResponse ListMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsByFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsByFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<ListMulticastGroupsByFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMulticastGroupsByFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMulticastGroupsByFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMulticastGroupsByFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">REST API Reference for ListMulticastGroupsByFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginListMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMulticastGroupsByFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMulticastGroupsByFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMulticastGroupsByFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMulticastGroupsByFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  ListMulticastGroupsByFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">REST API Reference for ListMulticastGroupsByFuotaTask Operation</seealso>
+        public virtual ListMulticastGroupsByFuotaTaskResponse EndListMulticastGroupsByFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMulticastGroupsByFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPartnerAccounts
 
         /// <summary>
@@ -3587,6 +4847,78 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  SendDataToMulticastGroup
+
+        /// <summary>
+        /// Sends the specified data to a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDataToMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the SendDataToMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup">REST API Reference for SendDataToMulticastGroup Operation</seealso>
+        public virtual SendDataToMulticastGroupResponse SendDataToMulticastGroup(SendDataToMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataToMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataToMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<SendDataToMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendDataToMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendDataToMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendDataToMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup">REST API Reference for SendDataToMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginSendDataToMulticastGroup(SendDataToMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendDataToMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDataToMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendDataToMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendDataToMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  SendDataToMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup">REST API Reference for SendDataToMulticastGroup Operation</seealso>
+        public virtual SendDataToMulticastGroupResponse EndSendDataToMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendDataToMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SendDataToWirelessDevice
 
         /// <summary>
@@ -3649,6 +4981,288 @@ namespace Amazon.IoTWireless
         public virtual SendDataToWirelessDeviceResponse EndSendDataToWirelessDevice(IAsyncResult asyncResult)
         {
             return EndInvoke<SendDataToWirelessDeviceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartBulkAssociateWirelessDeviceWithMulticastGroup
+
+        /// <summary>
+        /// Starts a bulk association of all qualifying wireless devices with a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkAssociateWirelessDeviceWithMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the StartBulkAssociateWirelessDeviceWithMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup">REST API Reference for StartBulkAssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual StartBulkAssociateWirelessDeviceWithMulticastGroupResponse StartBulkAssociateWirelessDeviceWithMulticastGroup(StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<StartBulkAssociateWirelessDeviceWithMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBulkAssociateWirelessDeviceWithMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkAssociateWirelessDeviceWithMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBulkAssociateWirelessDeviceWithMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup">REST API Reference for StartBulkAssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginStartBulkAssociateWirelessDeviceWithMulticastGroup(StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBulkAssociateWirelessDeviceWithMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBulkAssociateWirelessDeviceWithMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  StartBulkAssociateWirelessDeviceWithMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup">REST API Reference for StartBulkAssociateWirelessDeviceWithMulticastGroup Operation</seealso>
+        public virtual StartBulkAssociateWirelessDeviceWithMulticastGroupResponse EndStartBulkAssociateWirelessDeviceWithMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartBulkAssociateWirelessDeviceWithMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartBulkDisassociateWirelessDeviceFromMulticastGroup
+
+        /// <summary>
+        /// Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDisassociateWirelessDeviceFromMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the StartBulkDisassociateWirelessDeviceFromMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup">REST API Reference for StartBulkDisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse StartBulkDisassociateWirelessDeviceFromMulticastGroup(StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBulkDisassociateWirelessDeviceFromMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDisassociateWirelessDeviceFromMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBulkDisassociateWirelessDeviceFromMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup">REST API Reference for StartBulkDisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginStartBulkDisassociateWirelessDeviceFromMulticastGroup(StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBulkDisassociateWirelessDeviceFromMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBulkDisassociateWirelessDeviceFromMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  StartBulkDisassociateWirelessDeviceFromMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup">REST API Reference for StartBulkDisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
+        public virtual StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse EndStartBulkDisassociateWirelessDeviceFromMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartFuotaTask
+
+        /// <summary>
+        /// Starts a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the StartFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask">REST API Reference for StartFuotaTask Operation</seealso>
+        public virtual StartFuotaTaskResponse StartFuotaTask(StartFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask">REST API Reference for StartFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginStartFuotaTask(StartFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  StartFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask">REST API Reference for StartFuotaTask Operation</seealso>
+        public virtual StartFuotaTaskResponse EndStartFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMulticastGroupSession
+
+        /// <summary>
+        /// Starts a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMulticastGroupSession service method.</param>
+        /// 
+        /// <returns>The response from the StartMulticastGroupSession service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
+        public virtual StartMulticastGroupSessionResponse StartMulticastGroupSession(StartMulticastGroupSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartMulticastGroupSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMulticastGroupSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMulticastGroupSession operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMulticastGroupSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
+        public virtual IAsyncResult BeginStartMulticastGroupSession(StartMulticastGroupSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMulticastGroupSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMulticastGroupSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMulticastGroupSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMulticastGroupSession.</param>
+        /// 
+        /// <returns>Returns a  StartMulticastGroupSessionResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
+        public virtual StartMulticastGroupSessionResponse EndStartMulticastGroupSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMulticastGroupSessionResponse>(asyncResult);
         }
 
         #endregion
@@ -3929,6 +5543,78 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  UpdateFuotaTask
+
+        /// <summary>
+        /// Updates properties of a FUOTA task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFuotaTask service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFuotaTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask">REST API Reference for UpdateFuotaTask Operation</seealso>
+        public virtual UpdateFuotaTaskResponse UpdateFuotaTask(UpdateFuotaTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFuotaTaskResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFuotaTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFuotaTask operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFuotaTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask">REST API Reference for UpdateFuotaTask Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFuotaTask(UpdateFuotaTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFuotaTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFuotaTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFuotaTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFuotaTask.</param>
+        /// 
+        /// <returns>Returns a  UpdateFuotaTaskResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask">REST API Reference for UpdateFuotaTask Operation</seealso>
+        public virtual UpdateFuotaTaskResponse EndUpdateFuotaTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFuotaTaskResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateLogLevelsByResourceTypes
 
         /// <summary>
@@ -4003,6 +5689,78 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  UpdateMulticastGroup
+
+        /// <summary>
+        /// Updates properties of a multicast group session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMulticastGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMulticastGroup service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup">REST API Reference for UpdateMulticastGroup Operation</seealso>
+        public virtual UpdateMulticastGroupResponse UpdateMulticastGroup(UpdateMulticastGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMulticastGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMulticastGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMulticastGroup operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMulticastGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup">REST API Reference for UpdateMulticastGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMulticastGroup(UpdateMulticastGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMulticastGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMulticastGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMulticastGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMulticastGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateMulticastGroupResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup">REST API Reference for UpdateMulticastGroup Operation</seealso>
+        public virtual UpdateMulticastGroupResponse EndUpdateMulticastGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMulticastGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdatePartnerAccount
 
         /// <summary>
@@ -4065,6 +5823,78 @@ namespace Amazon.IoTWireless
         public virtual UpdatePartnerAccountResponse EndUpdatePartnerAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePartnerAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceEventConfiguration
+
+        /// <summary>
+        /// Update the event configuration for a particular resource identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceEventConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceEventConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
+        public virtual UpdateResourceEventConfigurationResponse UpdateResourceEventConfiguration(UpdateResourceEventConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceEventConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceEventConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResourceEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceEventConfiguration operation on AmazonIoTWirelessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResourceEventConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResourceEventConfiguration(UpdateResourceEventConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResourceEventConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceEventConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResourceEventConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResourceEventConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateResourceEventConfigurationResult from IoTWireless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
+        public virtual UpdateResourceEventConfigurationResponse EndUpdateResourceEventConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResourceEventConfigurationResponse>(asyncResult);
         }
 
         #endregion

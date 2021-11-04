@@ -59,10 +59,7 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PayloadData. 
-        /// <para>
-        /// The binary to be sent to the end device, encoded in base64.
-        /// </para>
+        /// Gets and sets the property PayloadData.
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]
         public string PayloadData

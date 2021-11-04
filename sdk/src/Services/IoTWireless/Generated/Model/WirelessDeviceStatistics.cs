@@ -35,9 +35,12 @@ namespace Amazon.IoTWireless.Model
     {
         private string _arn;
         private string _destinationName;
+        private FuotaDeviceStatus _fuotaDeviceStatus;
         private string _id;
         private string _lastUplinkReceivedAt;
         private LoRaWANListDevice _loRaWAN;
+        private int? _mcGroupId;
+        private string _multicastDeviceStatus;
         private string _name;
         private SidewalkListDevice _sidewalk;
         private WirelessDeviceType _type;
@@ -77,6 +80,21 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDestinationName()
         {
             return this._destinationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FuotaDeviceStatus.
+        /// </summary>
+        public FuotaDeviceStatus FuotaDeviceStatus
+        {
+            get { return this._fuotaDeviceStatus; }
+            set { this._fuotaDeviceStatus = value; }
+        }
+
+        // Check to see if FuotaDeviceStatus property is set
+        internal bool IsSetFuotaDeviceStatus()
+        {
+            return this._fuotaDeviceStatus != null;
         }
 
         /// <summary>
@@ -132,6 +150,41 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetLoRaWAN()
         {
             return this._loRaWAN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property McGroupId.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public int McGroupId
+        {
+            get { return this._mcGroupId.GetValueOrDefault(); }
+            set { this._mcGroupId = value; }
+        }
+
+        // Check to see if McGroupId property is set
+        internal bool IsSetMcGroupId()
+        {
+            return this._mcGroupId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastDeviceStatus. 
+        /// <para>
+        /// The status of the wireless device in the multicast group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string MulticastDeviceStatus
+        {
+            get { return this._multicastDeviceStatus; }
+            set { this._multicastDeviceStatus = value; }
+        }
+
+        // Check to see if MulticastDeviceStatus property is set
+        internal bool IsSetMulticastDeviceStatus()
+        {
+            return this._multicastDeviceStatus != null;
         }
 
         /// <summary>

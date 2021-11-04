@@ -65,8 +65,14 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDeviceProfileId())
                 request.Parameters.Add("deviceProfileId", StringUtils.FromString(publicRequest.DeviceProfileId));
             
+            if (publicRequest.IsSetFuotaTaskId())
+                request.Parameters.Add("fuotaTaskId", StringUtils.FromString(publicRequest.FuotaTaskId));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetMulticastGroupId())
+                request.Parameters.Add("multicastGroupId", StringUtils.FromString(publicRequest.MulticastGroupId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));

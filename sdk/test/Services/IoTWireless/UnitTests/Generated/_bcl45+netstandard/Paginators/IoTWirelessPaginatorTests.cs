@@ -120,6 +120,123 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("IoTWireless")]
+        public void ListFuotaTasksTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFuotaTasksResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFuotaTasksResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFuotaTasks(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFuotaTasks(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTWireless")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFuotaTasksTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFuotaTasksRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFuotaTasksResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFuotaTasks(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFuotaTasks(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTWireless")]
+        public void ListMulticastGroupsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListMulticastGroupsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListMulticastGroupsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListMulticastGroups(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListMulticastGroups(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTWireless")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListMulticastGroupsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListMulticastGroupsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListMulticastGroups(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListMulticastGroups(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTWireless")]
+        public void ListMulticastGroupsByFuotaTaskTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListMulticastGroupsByFuotaTask(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListMulticastGroupsByFuotaTask(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTWireless")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListMulticastGroupsByFuotaTaskTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListMulticastGroupsByFuotaTaskResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListMulticastGroupsByFuotaTask(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListMulticastGroupsByFuotaTask(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("IoTWireless")]
         public void ListServiceProfilesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListServiceProfilesRequest>();

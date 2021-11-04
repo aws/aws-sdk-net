@@ -37,6 +37,7 @@ namespace Amazon.IoTWireless.Model
         private AbpV1_1 _abpV1_1;
         private string _devEui;
         private string _deviceProfileId;
+        private FPorts _fPorts;
         private OtaaV1_0_x _otaaV1_0_x;
         private OtaaV1_1 _otaaV1_1;
         private string _serviceProfileId;
@@ -112,6 +113,21 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceProfileId()
         {
             return this._deviceProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FPorts.
+        /// </summary>
+        public FPorts FPorts
+        {
+            get { return this._fPorts; }
+            set { this._fPorts = value; }
+        }
+
+        // Check to see if FPorts property is set
+        internal bool IsSetFPorts()
+        {
+            return this._fPorts != null;
         }
 
         /// <summary>

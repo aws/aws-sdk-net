@@ -35,6 +35,7 @@ namespace Amazon.IoTWireless.Model
     {
         private string _appEui;
         private string _appKey;
+        private string _genAppKey;
 
         /// <summary>
         /// Gets and sets the property AppEui. 
@@ -70,6 +71,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetAppKey()
         {
             return this._appKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenAppKey. 
+        /// <para>
+        /// The GenAppKey value.
+        /// </para>
+        /// </summary>
+        public string GenAppKey
+        {
+            get { return this._genAppKey; }
+            set { this._genAppKey = value; }
+        }
+
+        // Check to see if GenAppKey property is set
+        internal bool IsSetGenAppKey()
+        {
+            return this._genAppKey != null;
         }
 
     }
