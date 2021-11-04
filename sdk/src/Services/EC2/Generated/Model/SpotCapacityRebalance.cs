@@ -37,25 +37,28 @@ namespace Amazon.EC2.Model
     public partial class SpotCapacityRebalance
     {
         private ReplacementStrategy _replacementStrategy;
+        private int? _terminationDelay;
 
         /// <summary>
         /// Gets and sets the property ReplacementStrategy. 
         /// <para>
         /// The replacement strategy to use. Only available for fleets of type <code>maintain</code>.
-        /// You must specify a value, otherwise you get an error.
         /// </para>
         ///  
         /// <para>
-        /// To allow Spot Fleet to launch a replacement Spot Instance when an instance rebalance
-        /// notification is emitted for a Spot Instance in the fleet, specify <code>launch</code>.
+        ///  <code>launch</code> - Spot Fleet launches a new replacement Spot Instance when a
+        /// rebalance notification is emitted for an existing Spot Instance in the fleet. Spot
+        /// Fleet does not terminate the instances that receive a rebalance notification. You
+        /// can terminate the old instances, or you can leave them running. You are charged for
+        /// all instances while they are running. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// When a replacement instance is launched, the instance marked for rebalance is not
-        /// automatically terminated. You can terminate it, or you can leave it running. You are
-        /// charged for all instances while they are running.
+        ///  <code>launch-before-terminate</code> - Spot Fleet launches a new replacement Spot
+        /// Instance when a rebalance notification is emitted for an existing Spot Instance in
+        /// the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>),
+        /// terminates the instances that received a rebalance notification.
         /// </para>
-        ///  </note>
         /// </summary>
         public ReplacementStrategy ReplacementStrategy
         {
@@ -67,6 +70,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetReplacementStrategy()
         {
             return this._replacementStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminationDelay. 
+        /// <para>
+        /// The amount of time (in seconds) that Amazon EC2 waits before terminating the old Spot
+        /// Instance after launching a new replacement Spot Instance.
+        /// </para>
+        /// </summary>
+        public int TerminationDelay
+        {
+            get { return this._terminationDelay.GetValueOrDefault(); }
+            set { this._terminationDelay = value; }
+        }
+
+        // Check to see if TerminationDelay property is set
+        internal bool IsSetTerminationDelay()
+        {
+            return this._terminationDelay.HasValue; 
         }
 
     }

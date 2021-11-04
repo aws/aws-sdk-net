@@ -4776,6 +4776,10 @@ namespace Amazon.EC2
         /// Constant Launch for FleetReplacementStrategy
         /// </summary>
         public static readonly FleetReplacementStrategy Launch = new FleetReplacementStrategy("launch");
+        /// <summary>
+        /// Constant LaunchBeforeTerminate for FleetReplacementStrategy
+        /// </summary>
+        public static readonly FleetReplacementStrategy LaunchBeforeTerminate = new FleetReplacementStrategy("launch-before-terminate");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -10666,6 +10670,10 @@ namespace Amazon.EC2
         /// Constant Launch for ReplacementStrategy
         /// </summary>
         public static readonly ReplacementStrategy Launch = new ReplacementStrategy("launch");
+        /// <summary>
+        /// Constant LaunchBeforeTerminate for ReplacementStrategy
+        /// </summary>
+        public static readonly ReplacementStrategy LaunchBeforeTerminate = new ReplacementStrategy("launch-before-terminate");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

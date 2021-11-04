@@ -877,6 +877,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotMaintenanceStrategies" + "." + "CapacityRebalance" + "." + "ReplacementStrategy", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.ReplacementStrategy));
                             }
+                            if(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.IsSetTerminationDelay())
+                            {
+                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotMaintenanceStrategies" + "." + "CapacityRebalance" + "." + "TerminationDelay", StringUtils.FromInt(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.TerminationDelay));
+                            }
                         }
                     }
                     if(publicRequest.SpotFleetRequestConfig.IsSetSpotMaxTotalPrice())
