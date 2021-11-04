@@ -89,6 +89,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Chime.CodeAnalysis" Path="|AWSSDK.Chime.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKIdentity.CodeAnalysis" Path="|AWSSDK.ChimeSDKIdentity.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKIdentity.CodeAnalysis" Path="|AWSSDK.ChimeSDKIdentity.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKMeetings.CodeAnalysis" Path="|AWSSDK.ChimeSDKMeetings.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKMeetings.CodeAnalysis" Path="|AWSSDK.ChimeSDKMeetings.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKMessaging.CodeAnalysis" Path="|AWSSDK.ChimeSDKMessaging.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ChimeSDKMessaging.CodeAnalysis" Path="|AWSSDK.ChimeSDKMessaging.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Cloud9.CodeAnalysis" Path="|AWSSDK.Cloud9.CodeAnalysis|"/>
