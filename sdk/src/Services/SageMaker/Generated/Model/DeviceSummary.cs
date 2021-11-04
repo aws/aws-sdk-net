@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DeviceSummary
     {
+        private string _agentVersion;
         private string _description;
         private string _deviceArn;
         private string _deviceFleetName;
@@ -41,6 +42,25 @@ namespace Amazon.SageMaker.Model
         private DateTime? _latestHeartbeat;
         private List<EdgeModelSummary> _models = new List<EdgeModelSummary>();
         private DateTime? _registrationTime;
+
+        /// <summary>
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// Edge Manager agent version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+
+        // Check to see if AgentVersion property is set
+        internal bool IsSetAgentVersion()
+        {
+            return this._agentVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
