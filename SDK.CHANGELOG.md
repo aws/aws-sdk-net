@@ -1,3 +1,20 @@
+### 3.7.151.0 (2021-11-04 18:38 UTC)
+* ChimeSDKMeetings (3.7.0.0)
+	* The Amazon Chime SDK Meetings APIs allow software developers to create meetings and attendees for interactive audio, video, screen and content sharing in custom meeting applications which use the Amazon Chime SDK.
+* Connect (3.7.8.0)
+	* This release adds CRUD operation support for Security profile resource in Amazon Connect
+* EC2 (3.7.39.0)
+	* This release adds a new instance replacement strategy for EC2 Fleet, Spot Fleet. Now you can select an action to perform when your instance gets a rebalance notification. EC2 Fleet, Spot Fleet can launch a replacement then terminate the instance that received notification after a termination delay
+* IoTWireless (3.7.7.0)
+	* Adding APIs for the FUOTA (firmware update over the air) and multicast for LoRaWAN devices and APIs to support event notification opt-in feature for Sidewalk related events. A few existing APIs need to be modified for this new feature.
+* SageMaker (3.7.20.0)
+	* ListDevices and DescribeDevice now show Edge Manager agent version.
+* Core 3.7.3.32
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.150.0 (2021-11-03 18:15 UTC)
 * ConnectParticipant (3.7.2.0)
 	* This release adds a new boolean attribute - Connect Participant - to the CreateParticipantConnection API, which can be used to mark the participant as connected.
