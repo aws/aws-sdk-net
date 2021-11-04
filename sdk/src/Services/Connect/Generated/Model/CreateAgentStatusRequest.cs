@@ -145,7 +145,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// The tags used to organize, track, or control access for this resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

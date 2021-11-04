@@ -29,44 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateInstanceAttribute operation.
+    /// Container for the parameters to the DeleteSecurityProfile operation.
     /// This API is in preview release for Amazon Connect and is subject to change.
     /// 
     ///  
     /// <para>
-    /// Updates the value for the specified attribute type.
+    /// Deletes a security profile.
     /// </para>
     /// </summary>
-    public partial class UpdateInstanceAttributeRequest : AmazonConnectRequest
+    public partial class DeleteSecurityProfileRequest : AmazonConnectRequest
     {
-        private InstanceAttributeType _attributeType;
         private string _instanceId;
-        private string _value;
-
-        /// <summary>
-        /// Gets and sets the property AttributeType. 
-        /// <para>
-        /// The type of attribute.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature,
-        /// contact Amazon Web Services Support for allowlisting.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public InstanceAttributeType AttributeType
-        {
-            get { return this._attributeType; }
-            set { this._attributeType = value; }
-        }
-
-        // Check to see if AttributeType property is set
-        internal bool IsSetAttributeType()
-        {
-            return this._attributeType != null;
-        }
+        private string _securityProfileId;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -89,22 +63,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property SecurityProfileId. 
         /// <para>
-        /// The value for the attribute. Maximum character limit is 100. 
+        /// The identifier for the security profle.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string Value
+        [AWSProperty(Required=true)]
+        public string SecurityProfileId
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._securityProfileId; }
+            set { this._securityProfileId = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if SecurityProfileId property is set
+        internal bool IsSetSecurityProfileId()
         {
-            return this._value != null;
+            return this._securityProfileId != null;
         }
 
     }

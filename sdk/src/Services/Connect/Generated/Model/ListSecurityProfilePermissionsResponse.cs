@@ -29,30 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the ListLambdaFunctions operation.
+    /// This is the response object from the ListSecurityProfilePermissions operation.
     /// </summary>
-    public partial class ListLambdaFunctionsResponse : AmazonWebServiceResponse
+    public partial class ListSecurityProfilePermissionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _lambdaFunctions = new List<string>();
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property LambdaFunctions. 
-        /// <para>
-        /// The Lambda function ARNs associated with the specified instance.
-        /// </para>
-        /// </summary>
-        public List<string> LambdaFunctions
-        {
-            get { return this._lambdaFunctions; }
-            set { this._lambdaFunctions = value; }
-        }
-
-        // Check to see if LambdaFunctions property is set
-        internal bool IsSetLambdaFunctions()
-        {
-            return this._lambdaFunctions != null && this._lambdaFunctions.Count > 0; 
-        }
+        private List<string> _permissions = new List<string>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,6 +52,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// The permissions granted to the security profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=500)]
+        public List<string> Permissions
+        {
+            get { return this._permissions; }
+            set { this._permissions = value; }
+        }
+
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
+        {
+            return this._permissions != null && this._permissions.Count > 0; 
         }
 
     }

@@ -204,6 +204,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListSecurityProfilePermissions operation
+        ///</summary>
+        public IListSecurityProfilePermissionsPaginator ListSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request) 
+        {
+            return new ListSecurityProfilePermissionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityProfiles operation
         ///</summary>
         public IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request) 

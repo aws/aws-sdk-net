@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the ListLambdaFunctions operation.
+    /// This is the response object from the CreateSecurityProfile operation.
     /// </summary>
-    public partial class ListLambdaFunctionsResponse : AmazonWebServiceResponse
+    public partial class CreateSecurityProfileResponse : AmazonWebServiceResponse
     {
-        private List<string> _lambdaFunctions = new List<string>();
-        private string _nextToken;
+        private string _securityProfileArn;
+        private string _securityProfileId;
 
         /// <summary>
-        /// Gets and sets the property LambdaFunctions. 
+        /// Gets and sets the property SecurityProfileArn. 
         /// <para>
-        /// The Lambda function ARNs associated with the specified instance.
+        /// The Amazon Resource Name (ARN) for the security profile.
         /// </para>
         /// </summary>
-        public List<string> LambdaFunctions
+        public string SecurityProfileArn
         {
-            get { return this._lambdaFunctions; }
-            set { this._lambdaFunctions = value; }
+            get { return this._securityProfileArn; }
+            set { this._securityProfileArn = value; }
         }
 
-        // Check to see if LambdaFunctions property is set
-        internal bool IsSetLambdaFunctions()
+        // Check to see if SecurityProfileArn property is set
+        internal bool IsSetSecurityProfileArn()
         {
-            return this._lambdaFunctions != null && this._lambdaFunctions.Count > 0; 
+            return this._securityProfileArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property SecurityProfileId. 
         /// <para>
-        /// If there are additional results, this is the token for the next set of results.
+        /// The identifier for the security profle.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string SecurityProfileId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._securityProfileId; }
+            set { this._securityProfileId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if SecurityProfileId property is set
+        internal bool IsSetSecurityProfileId()
         {
-            return this._nextToken != null;
+            return this._securityProfileId != null;
         }
 
     }

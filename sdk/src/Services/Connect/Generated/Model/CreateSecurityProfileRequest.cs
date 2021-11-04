@@ -29,24 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains information about a quick connect.
+    /// Container for the parameters to the CreateSecurityProfile operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
+    /// Creates a security profile.
+    /// </para>
     /// </summary>
-    public partial class QuickConnect
+    public partial class CreateSecurityProfileRequest : AmazonConnectRequest
     {
         private string _description;
-        private string _name;
-        private string _quickConnectARN;
-        private QuickConnectConfig _quickConnectConfig;
-        private string _quickConnectId;
+        private string _instanceId;
+        private List<string> _permissions = new List<string>();
+        private string _securityProfileName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description.
+        /// The description of the security profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=250)]
+        [AWSProperty(Max=250)]
         public string Description
         {
             get { return this._description; }
@@ -60,76 +65,61 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The name of the quick connect.
+        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// ARN of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=127)]
-        public string Name
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string InstanceId
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
         {
-            return this._name != null;
+            return this._instanceId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property QuickConnectARN. 
+        /// Gets and sets the property Permissions. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the quick connect.
+        /// Permissions assigned to the security profile.
         /// </para>
         /// </summary>
-        public string QuickConnectARN
+        [AWSProperty(Max=500)]
+        public List<string> Permissions
         {
-            get { return this._quickConnectARN; }
-            set { this._quickConnectARN = value; }
+            get { return this._permissions; }
+            set { this._permissions = value; }
         }
 
-        // Check to see if QuickConnectARN property is set
-        internal bool IsSetQuickConnectARN()
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
         {
-            return this._quickConnectARN != null;
+            return this._permissions != null && this._permissions.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property QuickConnectConfig. 
+        /// Gets and sets the property SecurityProfileName. 
         /// <para>
-        /// Contains information about the quick connect.
+        /// The name of the security profile.
         /// </para>
         /// </summary>
-        public QuickConnectConfig QuickConnectConfig
+        [AWSProperty(Required=true)]
+        public string SecurityProfileName
         {
-            get { return this._quickConnectConfig; }
-            set { this._quickConnectConfig = value; }
+            get { return this._securityProfileName; }
+            set { this._securityProfileName = value; }
         }
 
-        // Check to see if QuickConnectConfig property is set
-        internal bool IsSetQuickConnectConfig()
+        // Check to see if SecurityProfileName property is set
+        internal bool IsSetSecurityProfileName()
         {
-            return this._quickConnectConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property QuickConnectId. 
-        /// <para>
-        /// The identifier for the quick connect.
-        /// </para>
-        /// </summary>
-        public string QuickConnectId
-        {
-            get { return this._quickConnectId; }
-            set { this._quickConnectId = value; }
-        }
-
-        // Check to see if QuickConnectId property is set
-        internal bool IsSetQuickConnectId()
-        {
-            return this._quickConnectId != null;
+            return this._securityProfileName != null;
         }
 
         /// <summary>

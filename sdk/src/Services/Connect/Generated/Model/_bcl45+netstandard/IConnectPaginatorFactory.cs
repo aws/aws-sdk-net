@@ -131,6 +131,11 @@ namespace Amazon.Connect.Model
         IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
 
         /// <summary>
+        /// Paginator for ListSecurityProfilePermissions operation
+        ///</summary>
+        IListSecurityProfilePermissionsPaginator ListSecurityProfilePermissions(ListSecurityProfilePermissionsRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityProfiles operation
         ///</summary>
         IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request);

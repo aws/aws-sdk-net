@@ -29,15 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateUseCase operation.
-    /// Creates a use case for an integration association.
+    /// Container for the parameters to the ListSecurityProfilePermissions operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
+    /// Lists the permissions granted to a security profile.
+    /// </para>
     /// </summary>
-    public partial class CreateUseCaseRequest : AmazonConnectRequest
+    public partial class ListSecurityProfilePermissionsRequest : AmazonConnectRequest
     {
         private string _instanceId;
-        private string _integrationAssociationId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private UseCaseType _useCaseType;
+        private int? _maxResults;
+        private string _nextToken;
+        private string _securityProfileId;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -60,61 +65,60 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntegrationAssociationId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The identifier for the integration association.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
-        public string IntegrationAssociationId
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
         {
-            get { return this._integrationAssociationId; }
-            set { this._integrationAssociationId = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if IntegrationAssociationId property is set
-        internal bool IsSetIntegrationAssociationId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._integrationAssociationId != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource.
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
+        public string NextToken
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property UseCaseType. 
+        /// Gets and sets the property SecurityProfileId. 
         /// <para>
-        /// The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.
+        /// The identifier for the security profle.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public UseCaseType UseCaseType
+        public string SecurityProfileId
         {
-            get { return this._useCaseType; }
-            set { this._useCaseType = value; }
+            get { return this._securityProfileId; }
+            set { this._securityProfileId = value; }
         }
 
-        // Check to see if UseCaseType property is set
-        internal bool IsSetUseCaseType()
+        // Check to see if SecurityProfileId property is set
+        internal bool IsSetSecurityProfileId()
         {
-            return this._useCaseType != null;
+            return this._securityProfileId != null;
         }
 
     }
