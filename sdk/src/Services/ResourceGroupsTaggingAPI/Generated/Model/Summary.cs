@@ -79,7 +79,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region that the summary applies to.
+        /// The Amazon Web Services Region that the summary applies to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -98,7 +98,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The AWS resource type.
+        /// The Amazon Web Services resource type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -118,7 +118,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property TargetId. 
         /// <para>
         /// The account identifier or the root identifier of the organization. If you don't know
-        /// the root ID, you can call the AWS Organizations <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
+        /// the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
         /// API.
         /// </para>
         /// </summary>

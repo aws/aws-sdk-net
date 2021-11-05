@@ -78,7 +78,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags that have been applied to one or more AWS resources.
+        /// The tags that have been applied to one or more Amazon Web Services resources.
         /// </para>
         /// </summary>
         public List<Tag> Tags

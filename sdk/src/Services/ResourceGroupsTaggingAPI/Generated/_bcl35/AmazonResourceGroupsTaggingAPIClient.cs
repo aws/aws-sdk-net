@@ -278,14 +278,14 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
-        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// to integrate with Organizations For information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -319,8 +319,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -383,7 +383,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  
         /// <para>
         /// For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-        /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+        /// Policies</a> in the <i>Organizations User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -412,14 +412,14 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
-        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// to integrate with Organizations For information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -453,8 +453,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -512,7 +512,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 
         /// <summary>
         /// Returns all the tagged or previously tagged resources that are located in the specified
-        /// Region for the AWS account.
+        /// Amazon Web Services Region for the account.
         /// 
         ///  
         /// <para>
@@ -527,7 +527,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <para>
         /// Information about compliance with the account's effective tag policy. For more information
         /// on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-        /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+        /// Policies</a> in the <i>Organizations User Guide.</i> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -568,8 +568,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -630,8 +630,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         #region  GetTagKeys
 
         /// <summary>
-        /// Returns all tag keys currently in use in the specified Region for the calling AWS
-        /// account.
+        /// Returns all tag keys currently in use in the specified Amazon Web Services Region
+        /// for the calling account.
         /// 
         ///  
         /// <para>
@@ -672,8 +672,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -734,8 +734,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         #region  GetTagValues
 
         /// <summary>
-        /// Returns all tag values for the specified key that are used in the specified AWS Region
-        /// for the calling AWS account.
+        /// Returns all tag values for the specified key that are used in the specified Amazon
+        /// Web Services Region for the calling account.
         /// 
         ///  
         /// <para>
@@ -776,8 +776,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -873,14 +873,14 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-        /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+        /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+        /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
-        /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+        /// to integrate with Organizations For information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -914,8 +914,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -978,17 +978,20 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <para>
         /// Not all resources can have tags. For a list of services with resources that support
         /// tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
-        /// that support the Resource Groups Tagging API</a>.
+        /// that support the Resource Groups Tagging API</a>. If the resource doesn't yet support
+        /// this operation, the resource's service might support tagging using its own API operations.
+        /// For more information, refer to the documentation for that service.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
-        /// Naming and Usage Conventions</a> in the <i>AWS General Reference.</i> 
+        /// Naming and Usage Conventions</a> in the <i>Amazon Web Services General Reference.</i>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified AWS Region for the AWS
-        /// account.
+        /// You can only tag resources that are located in the specified Amazon Web Services Region
+        /// for the Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1002,7 +1005,26 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// information in tags. We use tags to provide you with billing and administration services.
         /// Tags are not intended to be used for private or sensitive data.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition to the <code>tag:TagResources</code> permission required by this operation,
+        /// you must also have the tagging permission defined by the service that created the
+        /// resource. For example, to tag an Amazon EC2 instance using the <code>TagResources</code>
+        /// operation, you must have both of the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>tag:TagResource</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:CreateTags</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResources service method.</param>
         /// 
@@ -1033,8 +1055,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>
@@ -1104,8 +1126,27 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can only tag resources that are located in the specified AWS Region for the calling
-        /// AWS account.
+        /// You can only tag resources that are located in the specified Amazon Web Services Region
+        /// for the calling Amazon Web Services account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition to the <code>tag:UntagResources</code> permission required by this operation,
+        /// you must also have the remove tags permission defined by the service that created
+        /// the resource. For example, to remove the tags from an Amazon EC2 instance using the
+        /// <code>UntagResources</code> operation, you must have both of the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>tag:UntagResource</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DeleteTags</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1138,8 +1179,8 @@ namespace Amazon.ResourceGroupsTaggingAPI
         ///  </li> <li> 
         /// <para>
         /// You can't access the Amazon S3 bucket for report storage. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
-        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>AWS Organizations
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html#bucket-policies-org-report">Additional
+        /// Requirements for Organization-wide Tag Compliance Reports</a> in the <i>Organizations
         /// User Guide.</i> 
         /// </para>
         ///  </li> </ul>

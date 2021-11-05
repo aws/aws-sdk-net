@@ -36,7 +36,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     ///  
     /// <para>
     /// For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-    /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+    /// Policies</a> in the <i>Organizations User Guide.</i> 
     /// </para>
     ///  
     /// <para>
@@ -128,9 +128,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property RegionFilters. 
         /// <para>
-        /// Specifies a list of AWS Regions to limit the output by. If you use this parameter,
-        /// the count of returned noncompliant resources includes only resources in the specified
-        /// Regions.
+        /// Specifies a list of Amazon Web Services Regions to limit the output to. If you use
+        /// this parameter, the count of returned noncompliant resources includes only resources
+        /// in the specified Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -153,18 +153,18 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// the specified types. The format of each resource type is <code>service[:resourceType]</code>.
         /// For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2
         /// resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
-        /// returns only EC2 instances. 
+        /// returns only EC2 instances.
         /// </para>
         ///  
         /// <para>
         /// The string for each service name and resource type is the same as that embedded in
-        /// a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i>
-        /// for the following:
+        /// a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon
+        /// Web Services General Reference</a> </i> for the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a>.
+        /// For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+        /// Web Services Service Namespaces</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -174,7 +174,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         ///  </li> <li> 
         /// <para>
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -31,7 +31,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <summary>
     /// Container for the parameters to the GetResources operation.
     /// Returns all the tagged or previously tagged resources that are located in the specified
-    /// Region for the AWS account.
+    /// Amazon Web Services Region for the account.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <para>
     /// Information about compliance with the account's effective tag policy. For more information
     /// on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-    /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
+    /// Policies</a> in the <i>Organizations User Guide.</i> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -151,8 +151,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         ///  
         /// <para>
         /// An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -201,19 +202,20 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         ///  
         /// <para>
         /// The string for each service name and resource type is the same as that embedded in
-        /// a resource's Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i>
-        /// for the following:
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// a resource's Amazon Resource Name (ARN). For the list of services whose resources
+        /// you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+        /// that support the Resource Groups Tagging API</a>.
         /// </para>
         ///  
         /// <para>
         /// You can specify multiple resource types by using an array. The array can include up
         /// to 100 items. Note that the length constraint requirement applies to each resource
-        /// type filter. 
+        /// type filter. For example, the following string would limit the response to only Amazon
+        /// EC2 instances, Amazon S3 buckets, or any Audit Manager resource:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ec2:instance,s3:bucket,auditmanager</code> 
         /// </para>
         /// </summary>
         public List<string> ResourceTypeFilters
@@ -232,9 +234,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property TagFilters. 
         /// <para>
         /// Specifies a list of TagFilters (keys and values) to restrict the output to only those
-        /// resources that have the specified tag and, if included, the specified value. Each
-        /// <code>TagFilter</code> must contain a key with values optional. A request can include
-        /// up to 50 keys, and each key can include up to 20 values. 
+        /// resources that have tags with the specified keys and, if included, the specified values.
+        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
+        /// include up to 50 keys, and each key can include up to 20 values. 
         /// </para>
         ///  
         /// <para>
@@ -254,12 +256,12 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         ///  </li> <li> 
         /// <para>
         /// If you specify a filter that contains more than one value for a key, the response
-        /// returns resources that match any of the specified values for that key.
+        /// returns resources that match <i>any</i> of the specified values for that key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify any values for a key, the response returns resources that are
-        /// tagged with that key and any or no value.
+        /// If you don't specify a value for a key, the response returns all resources that are
+        /// tagged with that key, with any or no value.
         /// </para>
         ///  
         /// <para>
@@ -305,7 +307,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TagsPerPage. 
         /// <para>
-        /// AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.
+        /// Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this
+        /// parameter.
         /// </para>
         ///  
         /// <para>

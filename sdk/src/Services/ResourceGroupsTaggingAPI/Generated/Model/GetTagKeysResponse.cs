@@ -60,7 +60,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of all tag keys in the AWS account.
+        /// A list of all tag keys in the Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<string> TagKeys

@@ -37,14 +37,14 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You must meet the prerequisites for using tag policies. For information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
-    /// and Permissions for Using Tag Policies</a> in the <i>AWS Organizations User Guide.</i>
+    /// You must meet the prerequisites for using tag policies. For information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies-prereqs.html">Prerequisites
+    /// and Permissions for Using Tag Policies</a> in the <i>Organizations User Guide.</i>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You must enable the tag policies service principal (<code>tagpolicies.tag.amazonaws.com</code>)
-    /// to integrate with AWS Organizations For information, see <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
+    /// to integrate with Organizations For information, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html">EnableAWSServiceAccess</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>

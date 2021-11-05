@@ -30,8 +30,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTagKeys operation.
-    /// Returns all tag keys currently in use in the specified Region for the calling AWS
-    /// account.
+    /// Returns all tag keys currently in use in the specified Amazon Web Services Region
+    /// for the calling account.
     /// 
     ///  
     /// <para>

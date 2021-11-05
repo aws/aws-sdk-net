@@ -60,7 +60,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property ResourceTagMappingList. 
         /// <para>
-        /// A list of resource ARNs and the tags (keys and values) associated with those ARNs.
+        /// A list of resource ARNs and the tags (keys and values) associated with each.
         /// </para>
         /// </summary>
         public List<ResourceTagMapping> ResourceTagMappingList

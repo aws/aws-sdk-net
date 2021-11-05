@@ -43,8 +43,27 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can only tag resources that are located in the specified AWS Region for the calling
-    /// AWS account.
+    /// You can only tag resources that are located in the specified Amazon Web Services Region
+    /// for the calling Amazon Web Services account.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// In addition to the <code>tag:UntagResources</code> permission required by this operation,
+    /// you must also have the remove tags permission defined by the service that created
+    /// the resource. For example, to remove the tags from an Amazon EC2 instance using the
+    /// <code>UntagResources</code> operation, you must have both of the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>tag:UntagResource</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ec2:DeleteTags</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -61,8 +80,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         ///  
         /// <para>
         /// An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

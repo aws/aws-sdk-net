@@ -60,8 +60,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TagValues. 
         /// <para>
-        /// A list of all tag values for the specified key currently used in the specified AWS
-        /// Region for the calling AWS account.
+        /// A list of all tag values for the specified key currently used in the specified Amazon
+        /// Web Services Region for the calling account.
         /// </para>
         /// </summary>
         public List<string> TagValues
