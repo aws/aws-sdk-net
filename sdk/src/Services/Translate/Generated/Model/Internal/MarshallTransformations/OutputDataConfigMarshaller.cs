@@ -45,6 +45,17 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEncryptionKey())
+            {
+                context.Writer.WritePropertyName("EncryptionKey");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EncryptionKeyMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionKey, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");

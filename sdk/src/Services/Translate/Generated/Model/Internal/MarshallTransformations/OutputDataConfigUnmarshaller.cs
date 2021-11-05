@@ -64,6 +64,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EncryptionKey", targetDepth))
+                {
+                    var unmarshaller = EncryptionKeyUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

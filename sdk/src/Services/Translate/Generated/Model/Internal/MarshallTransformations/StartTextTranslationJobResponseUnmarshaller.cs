@@ -90,6 +90,10 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
+                {
+                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

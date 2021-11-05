@@ -68,6 +68,12 @@ namespace Amazon.Translate.Model
         ///  <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
         /// input data consists of one or more Excel Workbook files (.xlsx).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>application/x-xliff+xml</code>: The input data consists of one or more XML
+        /// Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports
+        /// only XLIFF version 1.2.
+        /// </para>
         ///  </li> </ul> <important> 
         /// <para>
         /// If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>.

@@ -62,10 +62,28 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property DataLocation. 
         /// <para>
-        /// The location of the most recent parallel data input file that was successfully imported
-        /// into Amazon Translate. The location is returned as a presigned URL that has a 30 minute
-        /// expiration.
+        /// The Amazon S3 location of the most recent parallel data input file that was successfully
+        /// imported into Amazon Translate. The location is returned as a presigned URL that has
+        /// a 30 minute expiration.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
+        /// attacks. 
+        /// </para>
+        ///  
+        /// <para>
+        /// CSV injection occurs when a .csv or .tsv file is altered so that a record contains
+        /// malicious code. The record begins with a special character, such as =, +, -, or @.
+        /// When the file is opened in a spreadsheet program, the program might interpret the
+        /// record as a formula and run the code within it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you download a parallel data input file from Amazon S3, ensure that you recognize
+        /// the file and trust its creator.
+        /// </para>
+        ///  </important>
         /// </summary>
         public ParallelDataDataLocation DataLocation
         {

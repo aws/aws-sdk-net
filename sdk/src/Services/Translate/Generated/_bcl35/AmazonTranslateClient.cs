@@ -259,9 +259,9 @@ namespace Amazon.Translate
 
         /// <summary>
         /// Creates a parallel data resource in Amazon Translate by importing an input file from
-        /// Amazon S3. Parallel data files contain examples of source phrases and their translations
-        /// from your translation memory. By adding parallel data, you can influence the style,
-        /// tone, and word choice in your translation output.
+        /// Amazon S3. Parallel data files contain examples that show how you want segments of
+        /// text to be translated. By adding parallel data, you can influence the style, tone,
+        /// and word choice in your translation output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParallelData service method.</param>
         /// 
@@ -477,7 +477,7 @@ namespace Amazon.Translate
         #region  DescribeTextTranslationJob
 
         /// <summary>
-        /// Gets the properties associated with an asycnhronous batch translation job including
+        /// Gets the properties associated with an asynchronous batch translation job including
         /// name, ID, status, source and target languages, input/output S3 buckets, and so on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTextTranslationJob service method.</param>
@@ -984,6 +984,10 @@ namespace Amazon.Translate
         /// <returns>The response from the StartTextTranslationJob service method, as returned by Translate.</returns>
         /// <exception cref="Amazon.Translate.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is invalid. Review the value of the parameter you are using
+        /// to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
         /// The request that you made is invalid. Check your request to determine why it's invalid

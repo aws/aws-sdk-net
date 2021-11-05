@@ -83,7 +83,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that grants Amazon Translate read access to your input data. For more nformation,
+        /// that grants Amazon Translate read access to your input data. For more information,
         /// see <a>identity-and-access-management</a>.
         /// </para>
         /// </summary>
@@ -160,8 +160,28 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property ParallelDataNames. 
         /// <para>
-        /// The names of the parallel data resources to use in the batch translation job. For
-        /// a list of available parallel data resources, use the <a>ListParallelData</a> operation.
+        /// The name of a parallel data resource to add to the translation job. This resource
+        /// consists of examples that show how you want segments of text to be translated. When
+        /// you add parallel data to a translation job, you create an <i>Active Custom Translation</i>
+        /// job. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter accepts only one parallel data resource.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Active Custom Translation jobs are priced at a higher rate than other jobs that don't
+        /// use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon
+        /// Translate pricing</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>customizing-translations-parallel-data</a>.
         /// </para>
         /// </summary>
         public List<string> ParallelDataNames
@@ -222,8 +242,21 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TerminologyNames. 
         /// <para>
-        /// The name of the terminology to use in the batch translation job. For a list of available
-        /// terminologies, use the <a>ListTerminologies</a> operation.
+        /// The name of a custom terminology resource to add to the translation job. This resource
+        /// lists examples source terms and the desired translation for each term.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter accepts only one custom terminology resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of available custom terminology resources, use the <a>ListTerminologies</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>how-custom-terminology</a>.
         /// </para>
         /// </summary>
         public List<string> TerminologyNames

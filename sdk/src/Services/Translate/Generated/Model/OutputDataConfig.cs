@@ -33,7 +33,23 @@ namespace Amazon.Translate.Model
     /// </summary>
     public partial class OutputDataConfig
     {
+        private EncryptionKey _encryptionKey;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKey.
+        /// </summary>
+        public EncryptionKey EncryptionKey
+        {
+            get { return this._encryptionKey; }
+            set { this._encryptionKey = value; }
+        }
+
+        // Check to see if EncryptionKey property is set
+        internal bool IsSetEncryptionKey()
+        {
+            return this._encryptionKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Uri. 

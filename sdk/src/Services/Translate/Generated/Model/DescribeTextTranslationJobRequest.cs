@@ -30,7 +30,7 @@ namespace Amazon.Translate.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTextTranslationJob operation.
-    /// Gets the properties associated with an asycnhronous batch translation job including
+    /// Gets the properties associated with an asynchronous batch translation job including
     /// name, ID, status, source and target languages, input/output S3 buckets, and so on.
     /// </summary>
     public partial class DescribeTextTranslationJobRequest : AmazonTranslateRequest

@@ -182,7 +182,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// An explanation of any errors that may have occured during the translation job.
+        /// An explanation of any errors that may have occurred during the translation job.
         /// </para>
         /// </summary>
         public string Message
