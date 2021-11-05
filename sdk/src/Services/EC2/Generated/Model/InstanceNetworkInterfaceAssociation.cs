@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class InstanceNetworkInterfaceAssociation
     {
         private string _carrierIp;
+        private string _customerOwnedIp;
         private string _ipOwnerId;
         private string _publicDnsName;
         private string _publicIp;
@@ -54,6 +55,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCarrierIp()
         {
             return this._carrierIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOwnedIp. 
+        /// <para>
+        /// The customer-owned IP address associated with the network interface.
+        /// </para>
+        /// </summary>
+        public string CustomerOwnedIp
+        {
+            get { return this._customerOwnedIp; }
+            set { this._customerOwnedIp = value; }
+        }
+
+        // Check to see if CustomerOwnedIp property is set
+        internal bool IsSetCustomerOwnedIp()
+        {
+            return this._customerOwnedIp != null;
         }
 
         /// <summary>
