@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.152.0",
+    "ProductVersion" : "3.7.153.0",
     "CoreVersion"    : "3.7.3.33",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.39.1",
+            "Version" : "3.7.40.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.33"
@@ -762,7 +762,7 @@
             "InPreview"               : false
         },
         "ResourceGroupsTaggingAPI"        : {
-            "Version" : "3.7.0.93",
+            "Version" : "3.7.0.94",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.33"
@@ -954,7 +954,7 @@
             "InPreview"               : false
         },
         "Translate"                       : {
-            "Version" : "3.7.0.93",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.33"

@@ -1,3 +1,11 @@
+### 3.7.153.0 (2021-11-05 18:16 UTC)
+* EC2 (3.7.40.0)
+	* DescribeInstances now returns customer-owned IP addresses for instances running on an AWS Outpost.
+* ResourceGroupsTaggingAPI (3.7.0.94)
+	* Documentation updates and improvements.
+* Translate (3.7.1.0)
+	* This release enable customers to use their own KMS keys to encrypt output files when they submit a batch transform job.
+
 ### 3.7.152.0 (2021-11-04 22:13 UTC)
 * S3 (3.7.4.0)
 	* Added ability to clear user defined metadata from S3 MetadataCollection. Added overloaded AmazonS3Uri constructor and TryParseAmazonS3Uri method with a flag to control URI string preprocessing to decode certain characters.
