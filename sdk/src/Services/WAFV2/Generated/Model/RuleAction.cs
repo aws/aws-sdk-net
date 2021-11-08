@@ -36,6 +36,7 @@ namespace Amazon.WAFV2.Model
     {
         private AllowAction _allow;
         private BlockAction _block;
+        private CaptchaAction _captcha;
         private CountAction _count;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetBlock()
         {
             return this._block != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Captcha. 
+        /// <para>
+        /// Instructs WAF to run a <code>CAPTCHA</code> check against the web request.
+        /// </para>
+        /// </summary>
+        public CaptchaAction Captcha
+        {
+            get { return this._captcha; }
+            set { this._captcha = value; }
+        }
+
+        // Check to see if Captcha property is set
+        internal bool IsSetCaptcha()
+        {
+            return this._captcha != null;
         }
 
         /// <summary>

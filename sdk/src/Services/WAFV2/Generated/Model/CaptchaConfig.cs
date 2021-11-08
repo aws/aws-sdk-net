@@ -29,32 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies a single rule in a rule group whose action you want to override to <code>Count</code>.
-    /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting
-    /// were <code>Count</code>. This is a useful option for testing the rules in a rule group
-    /// without modifying how they handle your web traffic.
+    /// Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available
+    /// at the web ACL level and in each rule.
     /// </summary>
-    public partial class ExcludedRule
+    public partial class CaptchaConfig
     {
-        private string _name;
+        private ImmunityTimeProperty _immunityTimeProperty;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ImmunityTimeProperty. 
         /// <para>
-        /// The name of the rule whose action you want to override to <code>Count</code>.
+        /// Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully
+        /// solves a <code>CAPTCHA</code> puzzle. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string Name
+        public ImmunityTimeProperty ImmunityTimeProperty
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._immunityTimeProperty; }
+            set { this._immunityTimeProperty = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ImmunityTimeProperty property is set
+        internal bool IsSetImmunityTimeProperty()
         {
-            return this._name != null;
+            return this._immunityTimeProperty != null;
         }
 
     }

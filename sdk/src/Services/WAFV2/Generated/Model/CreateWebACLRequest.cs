@@ -46,6 +46,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class CreateWebACLRequest : AmazonWAFV2Request
     {
+        private CaptchaConfig _captchaConfig;
         private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
         private DefaultAction _defaultAction;
         private string _description;
@@ -54,6 +55,26 @@ namespace Amazon.WAFV2.Model
         private Scope _scope;
         private List<Tag> _tags = new List<Tag>();
         private VisibilityConfig _visibilityConfig;
+
+        /// <summary>
+        /// Gets and sets the property CaptchaConfig. 
+        /// <para>
+        /// Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't
+        /// have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF
+        /// uses its default settings for <code>CaptchaConfig</code>. 
+        /// </para>
+        /// </summary>
+        public CaptchaConfig CaptchaConfig
+        {
+            get { return this._captchaConfig; }
+            set { this._captchaConfig = value; }
+        }
+
+        // Check to see if CaptchaConfig property is set
+        internal bool IsSetCaptchaConfig()
+        {
+            return this._captchaConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomResponseBodies. 

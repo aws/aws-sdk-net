@@ -67,6 +67,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCaptcha())
+            {
+                context.Writer.WritePropertyName("Captcha");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CaptchaActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Captcha, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");

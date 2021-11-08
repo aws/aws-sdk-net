@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleAction Object
+    /// Response Unmarshaller for CaptchaResponse Object
     /// </summary>  
-    public class RuleActionUnmarshaller : IUnmarshaller<RuleAction, XmlUnmarshallerContext>, IUnmarshaller<RuleAction, JsonUnmarshallerContext>
+    public class CaptchaResponseUnmarshaller : IUnmarshaller<CaptchaResponse, XmlUnmarshallerContext>, IUnmarshaller<CaptchaResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RuleAction IUnmarshaller<RuleAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CaptchaResponse IUnmarshaller<CaptchaResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RuleAction Unmarshall(JsonUnmarshallerContext context)
+        public CaptchaResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RuleAction unmarshalledObject = new RuleAction();
+            CaptchaResponse unmarshalledObject = new CaptchaResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Allow", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth))
                 {
-                    var unmarshaller = AllowActionUnmarshaller.Instance;
-                    unmarshalledObject.Allow = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Block", targetDepth))
+                if (context.TestExpression("ResponseCode", targetDepth))
                 {
-                    var unmarshaller = BlockActionUnmarshaller.Instance;
-                    unmarshalledObject.Block = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Captcha", targetDepth))
+                if (context.TestExpression("SolveTimestamp", targetDepth))
                 {
-                    var unmarshaller = CaptchaActionUnmarshaller.Instance;
-                    unmarshalledObject.Captcha = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Count", targetDepth))
-                {
-                    var unmarshaller = CountActionUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.SolveTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleActionUnmarshaller _instance = new RuleActionUnmarshaller();        
+        private static CaptchaResponseUnmarshaller _instance = new CaptchaResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleActionUnmarshaller Instance
+        public static CaptchaResponseUnmarshaller Instance
         {
             get
             {

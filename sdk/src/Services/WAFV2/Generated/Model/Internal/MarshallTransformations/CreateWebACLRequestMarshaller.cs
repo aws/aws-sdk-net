@@ -67,6 +67,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCaptchaConfig())
+                {
+                    context.Writer.WritePropertyName("CaptchaConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CaptchaConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CaptchaConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCustomResponseBodies())
                 {
                     context.Writer.WritePropertyName("CustomResponseBodies");

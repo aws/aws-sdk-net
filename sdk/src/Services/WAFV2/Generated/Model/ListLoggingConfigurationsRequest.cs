@@ -104,6 +104,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Scope Scope
         {
             get { return this._scope; }

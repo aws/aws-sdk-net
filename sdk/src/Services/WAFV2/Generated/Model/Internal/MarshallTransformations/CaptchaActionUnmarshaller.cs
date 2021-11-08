@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleAction Object
+    /// Response Unmarshaller for CaptchaAction Object
     /// </summary>  
-    public class RuleActionUnmarshaller : IUnmarshaller<RuleAction, XmlUnmarshallerContext>, IUnmarshaller<RuleAction, JsonUnmarshallerContext>
+    public class CaptchaActionUnmarshaller : IUnmarshaller<CaptchaAction, XmlUnmarshallerContext>, IUnmarshaller<CaptchaAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RuleAction IUnmarshaller<RuleAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CaptchaAction IUnmarshaller<CaptchaAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RuleAction Unmarshall(JsonUnmarshallerContext context)
+        public CaptchaAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RuleAction unmarshalledObject = new RuleAction();
+            CaptchaAction unmarshalledObject = new CaptchaAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Allow", targetDepth))
+                if (context.TestExpression("CustomRequestHandling", targetDepth))
                 {
-                    var unmarshaller = AllowActionUnmarshaller.Instance;
-                    unmarshalledObject.Allow = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Block", targetDepth))
-                {
-                    var unmarshaller = BlockActionUnmarshaller.Instance;
-                    unmarshalledObject.Block = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Captcha", targetDepth))
-                {
-                    var unmarshaller = CaptchaActionUnmarshaller.Instance;
-                    unmarshalledObject.Captcha = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Count", targetDepth))
-                {
-                    var unmarshaller = CountActionUnmarshaller.Instance;
-                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CustomRequestHandlingUnmarshaller.Instance;
+                    unmarshalledObject.CustomRequestHandling = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleActionUnmarshaller _instance = new RuleActionUnmarshaller();        
+        private static CaptchaActionUnmarshaller _instance = new CaptchaActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleActionUnmarshaller Instance
+        public static CaptchaActionUnmarshaller Instance
         {
             get
             {

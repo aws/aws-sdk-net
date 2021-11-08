@@ -29,31 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The override action to apply to the rules in a rule group. Used only for rule statements
-    /// that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
-    /// 
+    /// The action to use in the place of the action that results from the rule group evaluation.
+    /// Set the override action to none to leave the result of the rule group alone. Set it
+    /// to count to override the result to count only. 
     /// 
     ///  
     /// <para>
-    /// Set the override action to none to leave the rule actions in effect. Set it to count
-    /// to only count matches, regardless of the rule action settings. 
+    /// You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code>
+    /// and <code>ManagedRuleGroupStatement</code>. 
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    /// In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting
-    /// or the rule <code>Action</code> setting, but not both:
+    /// This option is usually set to none. It does not affect how the rules in the rule group
+    /// are evaluated. If you want the rules in the rule group to only count matches, do not
+    /// use this and instead exclude those rules in your rule group reference statement settings.
+    /// 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// If the rule statement references a rule group, use this override action setting and
-    /// not the action setting. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If the rule statement does not reference a rule group, use the rule action setting
-    /// and not this rule override action setting. 
-    /// </para>
-    ///  </li> </ul>
+    ///  </note>
     /// </summary>
     public partial class OverrideAction
     {
@@ -63,8 +55,16 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// Override the rule action setting to count.
+        /// Override the rule group evaluation result to count only. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This option is usually set to none. It does not affect how the rules in the rule group
+        /// are evaluated. If you want the rules in the rule group to only count matches, do not
+        /// use this and instead exclude those rules in your rule group reference statement settings.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public CountAction Count
         {
@@ -81,7 +81,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property None. 
         /// <para>
-        /// Don't override the rule action setting.
+        /// Don't override the rule group evaluation result. This is the most common setting.
         /// </para>
         /// </summary>
         public NoneAction None

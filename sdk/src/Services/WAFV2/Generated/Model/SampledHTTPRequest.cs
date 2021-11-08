@@ -37,6 +37,7 @@ namespace Amazon.WAFV2.Model
     public partial class SampledHTTPRequest
     {
         private string _action;
+        private CaptchaResponse _captchaResponse;
         private List<Label> _labels = new List<Label>();
         private HTTPRequest _request;
         private List<HTTPHeader> _requestHeadersInserted = new List<HTTPHeader>();
@@ -48,8 +49,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>,
-        /// <code>BLOCK</code>, or <code>COUNT</code>.
+        /// The action for the <code>Rule</code> that the request matched: <code>Allow</code>,
+        /// <code>Block</code>, or <code>Count</code>.
         /// </para>
         /// </summary>
         public string Action
@@ -62,6 +63,24 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaptchaResponse. 
+        /// <para>
+        /// The <code>CAPTCHA</code> response for the request.
+        /// </para>
+        /// </summary>
+        public CaptchaResponse CaptchaResponse
+        {
+            get { return this._captchaResponse; }
+            set { this._captchaResponse = value; }
+        }
+
+        // Check to see if CaptchaResponse property is set
+        internal bool IsSetCaptchaResponse()
+        {
+            return this._captchaResponse != null;
         }
 
         /// <summary>
@@ -134,7 +153,7 @@ namespace Amazon.WAFV2.Model
         /// The response code that was sent for the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=200, Max=600)]
+        [AWSProperty(Min=200, Max=599)]
         public int ResponseCodeSent
         {
             get { return this._responseCodeSent.GetValueOrDefault(); }

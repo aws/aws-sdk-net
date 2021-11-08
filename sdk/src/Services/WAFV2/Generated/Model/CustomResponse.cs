@@ -81,7 +81,7 @@ namespace Amazon.WAFV2.Model
         /// Developer Guide</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=200, Max=600)]
+        [AWSProperty(Required=true, Min=200, Max=599)]
         public int ResponseCode
         {
             get { return this._responseCode.GetValueOrDefault(); }
