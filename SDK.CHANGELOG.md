@@ -1,3 +1,13 @@
+### 3.7.154.0 (2021-11-08 19:14 UTC)
+* ChimeSDKMeetings (3.7.1.0)
+	* Updated format validation for ids and regions.
+* EC2 (3.7.41.0)
+	* This release adds internal validation on the GatewayAssociationState field
+* SageMaker (3.7.21.0)
+	* SageMaker CreateEndpoint and UpdateEndpoint APIs now support additional deployment configuration to manage traffic shifting options and automatic rollback monitoring. DescribeEndpoint now shows new in-progress deployment details with stage status.
+* WAFV2 (3.7.7.0)
+	* You can now configure rules to run a CAPTCHA check against web requests and, as needed, send a CAPTCHA challenge to the client.
+
 ### 3.7.153.0 (2021-11-05 18:16 UTC)
 * EC2 (3.7.40.0)
 	* DescribeInstances now returns customer-owned IP addresses for instances running on an AWS Outpost.
