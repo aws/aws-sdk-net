@@ -106,10 +106,10 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property MediaRegion. 
         /// <para>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
+        /// The Region in which to create the meeting.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Required=true, Min=2, Max=64)]
         public string MediaRegion
         {
             get { return this._mediaRegion; }

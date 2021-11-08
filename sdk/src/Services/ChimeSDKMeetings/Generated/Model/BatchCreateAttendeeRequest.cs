@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The Amazon Chime SDK ID of the meeting to which you're adding attendees.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Required=true)]
         public string MeetingId
         {
             get { return this._meetingId; }

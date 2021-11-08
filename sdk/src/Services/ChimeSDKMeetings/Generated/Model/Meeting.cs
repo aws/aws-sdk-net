@@ -87,7 +87,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Min=2, Max=64)]
         public string MediaRegion
         {
             get { return this._mediaRegion; }

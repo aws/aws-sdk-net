@@ -54,7 +54,6 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The Amazon Chime SDK attendee ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
         public string AttendeeId
         {
             get { return this._attendeeId; }
@@ -93,7 +92,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The join token used by the Amazon Chime SDK attendee.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=4096)]
+        [AWSProperty(Min=2, Max=2048)]
         public string JoinToken
         {
             get { return this._joinToken; }

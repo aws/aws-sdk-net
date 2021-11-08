@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The Amazon Chime SDK meeting ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Required=true)]
         public string MeetingId
         {
             get { return this._meetingId; }

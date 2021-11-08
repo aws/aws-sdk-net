@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The unique ID of the meeting being transcribed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Required=true)]
         public string MeetingId
         {
             get { return this._meetingId; }

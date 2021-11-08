@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.BatchCreateAttendeeRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateAttendeeRequest.ExternalUserId</property>
@@ -11,7 +11,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateAttendeeRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingRequest.ClientRequestToken</property>
@@ -26,7 +26,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingRequest.MediaRegion</property>
-    <max>4096</max>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingRequest.MeetingHostId</property>
@@ -46,7 +47,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.MediaRegion</property>
-    <max>4096</max>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.CreateMeetingWithAttendeesRequest.MeetingHostId</property>
@@ -55,27 +57,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.DeleteAttendeeRequest.AttendeeId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.DeleteAttendeeRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.DeleteMeetingRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.GetAttendeeRequest.AttendeeId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.GetAttendeeRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.GetMeetingRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ListAttendeesRequest.MaxResults</property>
@@ -84,7 +86,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ListAttendeesRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.ListAttendeesRequest.NextToken</property>
@@ -96,15 +98,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.StartMeetingTranscriptionRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.StopMeetingTranscriptionRequest.MeetingId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Attendee.AttendeeId</property>
-    <max>4096</max>
+    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Attendee.ExternalUserId</property>
@@ -114,7 +116,7 @@
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Attendee.JoinToken</property>
     <min>2</min>
-    <max>4096</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.BadRequestException.Code</property>
@@ -209,7 +211,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Meeting.MediaRegion</property>
-    <max>4096</max>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKMeetings.Model.Meeting.MeetingHostId</property>
