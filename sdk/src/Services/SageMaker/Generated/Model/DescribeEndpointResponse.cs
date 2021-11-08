@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private DeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
+        private PendingDeploymentSummary _pendingDeploymentSummary;
         private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
 
         /// <summary>
@@ -272,6 +273,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingDeploymentSummary. 
+        /// <para>
+        /// Returns the summary of an in-progress deployment. This field is only returned when
+        /// the endpoint is creating or updating with a new endpoint configuration.
+        /// </para>
+        /// </summary>
+        public PendingDeploymentSummary PendingDeploymentSummary
+        {
+            get { return this._pendingDeploymentSummary; }
+            set { this._pendingDeploymentSummary = value; }
+        }
+
+        // Check to see if PendingDeploymentSummary property is set
+        internal bool IsSetPendingDeploymentSummary()
+        {
+            return this._pendingDeploymentSummary != null;
         }
 
         /// <summary>

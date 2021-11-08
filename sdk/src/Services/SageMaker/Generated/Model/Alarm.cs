@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This API is not supported.
+    /// An Amazon CloudWatch alarm configured to monitor metrics on an endpoint.
     /// </summary>
     public partial class Alarm
     {
         private string _alarmName;
 
         /// <summary>
-        /// Gets and sets the property AlarmName.
+        /// Gets and sets the property AlarmName. 
+        /// <para>
+        /// The name of a CloudWatch alarm in your account.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string AlarmName

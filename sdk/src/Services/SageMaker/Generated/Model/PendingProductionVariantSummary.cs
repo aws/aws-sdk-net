@@ -29,20 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Describes weight and capacities for a production variant associated with an endpoint.
-    /// If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and
-    /// the endpoint status is <code>Updating</code>, you get different desired and current
-    /// values.
+    /// The production variant summary for a deployment when an endpoint is creating or updating
+    /// with the <code> <a>CreateEndpoint</a> </code> or <code> <a>UpdateEndpoint</a> </code>
+    /// operations. Describes the <code>VariantStatus </code>, weight and capacity for a production
+    /// variant associated with an endpoint.
     /// </summary>
-    public partial class ProductionVariantSummary
+    public partial class PendingProductionVariantSummary
     {
+        private ProductionVariantAcceleratorType _acceleratorType;
         private int? _currentInstanceCount;
         private float? _currentWeight;
         private List<DeployedImage> _deployedImages = new List<DeployedImage>();
         private int? _desiredInstanceCount;
         private float? _desiredWeight;
+        private ProductionVariantInstanceType _instanceType;
         private string _variantName;
         private List<ProductionVariantStatus> _variantStatus = new List<ProductionVariantStatus>();
+
+        /// <summary>
+        /// Gets and sets the property AcceleratorType. 
+        /// <para>
+        /// The size of the Elastic Inference (EI) instance to use for the production variant.
+        /// EI instances provide on-demand GPU computing for inference. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+        /// Inference in Amazon SageMaker</a>.
+        /// </para>
+        /// </summary>
+        public ProductionVariantAcceleratorType AcceleratorType
+        {
+            get { return this._acceleratorType; }
+            set { this._acceleratorType = value; }
+        }
+
+        // Check to see if AcceleratorType property is set
+        internal bool IsSetAcceleratorType()
+        {
+            return this._acceleratorType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentInstanceCount. 
@@ -104,8 +127,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredInstanceCount. 
         /// <para>
-        /// The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code>
-        /// request. 
+        /// The number of instances requested in this deployment, as specified in the endpoint
+        /// configuration for the endpoint. The value is taken from the request to the <code>
+        /// <a>CreateEndpointConfig</a> </code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -124,8 +148,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredWeight. 
         /// <para>
-        /// The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code>
-        /// request. 
+        /// The requested weight for the variant in this deployment, as specified in the endpoint
+        /// configuration for the endpoint. The value is taken from the request to the <code>
+        /// <a>CreateEndpointConfig</a> </code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -139,6 +164,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDesiredWeight()
         {
             return this._desiredWeight.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The type of instances associated with the variant.
+        /// </para>
+        /// </summary>
+        public ProductionVariantInstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

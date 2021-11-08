@@ -62,11 +62,13 @@ namespace Amazon.SageMaker.Model
         private string _endpointName;
         private List<VariantProperty> _excludeRetainedVariantProperties = new List<VariantProperty>();
         private bool? _retainAllVariantProperties;
+        private bool? _retainDeploymentConfig;
 
         /// <summary>
         /// Gets and sets the property DeploymentConfig. 
         /// <para>
-        /// The deployment configuration for the endpoint to be updated.
+        /// The deployment configuration for an endpoint, which contains the desired deployment
+        /// strategy and rollback configurations.
         /// </para>
         /// </summary>
         public DeploymentConfig DeploymentConfig
@@ -163,6 +165,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRetainAllVariantProperties()
         {
             return this._retainAllVariantProperties.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainDeploymentConfig. 
+        /// <para>
+        /// Specifies whether to reuse the last deployment configuration. The default value is
+        /// false (the configuration is not reused).
+        /// </para>
+        /// </summary>
+        public bool RetainDeploymentConfig
+        {
+            get { return this._retainDeploymentConfig.GetValueOrDefault(); }
+            set { this._retainDeploymentConfig = value; }
+        }
+
+        // Check to see if RetainDeploymentConfig property is set
+        internal bool IsSetRetainDeploymentConfig()
+        {
+            return this._retainDeploymentConfig.HasValue; 
         }
 
     }

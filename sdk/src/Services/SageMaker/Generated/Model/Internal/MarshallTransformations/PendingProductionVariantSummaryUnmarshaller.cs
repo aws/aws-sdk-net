@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProductionVariantSummary Object
+    /// Response Unmarshaller for PendingProductionVariantSummary Object
     /// </summary>  
-    public class ProductionVariantSummaryUnmarshaller : IUnmarshaller<ProductionVariantSummary, XmlUnmarshallerContext>, IUnmarshaller<ProductionVariantSummary, JsonUnmarshallerContext>
+    public class PendingProductionVariantSummaryUnmarshaller : IUnmarshaller<PendingProductionVariantSummary, XmlUnmarshallerContext>, IUnmarshaller<PendingProductionVariantSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProductionVariantSummary IUnmarshaller<ProductionVariantSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PendingProductionVariantSummary IUnmarshaller<PendingProductionVariantSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,17 +53,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProductionVariantSummary Unmarshall(JsonUnmarshallerContext context)
+        public PendingProductionVariantSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProductionVariantSummary unmarshalledObject = new ProductionVariantSummary();
+            PendingProductionVariantSummary unmarshalledObject = new PendingProductionVariantSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AcceleratorType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CurrentInstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VariantName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,12 +124,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProductionVariantSummaryUnmarshaller _instance = new ProductionVariantSummaryUnmarshaller();        
+        private static PendingProductionVariantSummaryUnmarshaller _instance = new PendingProductionVariantSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProductionVariantSummaryUnmarshaller Instance
+        public static PendingProductionVariantSummaryUnmarshaller Instance
         {
             get
             {

@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Currently, the <code>AutoRollbackConfig</code> API is not supported.
+    /// Automatic rollback configuration for handling endpoint deployment failures and recovery.
     /// </summary>
     public partial class AutoRollbackConfig
     {
         private List<Alarm> _alarms = new List<Alarm>();
 
         /// <summary>
-        /// Gets and sets the property Alarms.
+        /// Gets and sets the property Alarms. 
+        /// <para>
+        /// List of CloudWatch alarms in your account that are configured to monitor metrics on
+        /// an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the
+        /// deployment.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<Alarm> Alarms

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Currently, the <code>CapacitySize</code> API is not supported.
+    /// Specifies the endpoint capacity to activate for production.
     /// </summary>
     public partial class CapacitySize
     {
@@ -39,8 +39,18 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// This API is not supported.
+        /// Specifies the endpoint capacity type.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage
+        /// of capacity.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public CapacitySizeType Type
@@ -56,7 +66,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// Defines the capacity size, either as a number of instances or a capacity percentage.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public int Value

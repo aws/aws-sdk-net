@@ -140,9 +140,25 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateEndpointRequest : AmazonSageMakerRequest
     {
+        private DeploymentConfig _deploymentConfig;
         private string _endpointConfigName;
         private string _endpointName;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig.
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 

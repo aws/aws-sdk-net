@@ -111,6 +111,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PendingDeploymentSummary", targetDepth))
+                {
+                    var unmarshaller = PendingDeploymentSummaryUnmarshaller.Instance;
+                    response.PendingDeploymentSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProductionVariants", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ProductionVariantSummary, ProductionVariantSummaryUnmarshaller>(ProductionVariantSummaryUnmarshaller.Instance);

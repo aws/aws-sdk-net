@@ -29,7 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Currently, the <code>BlueGreenUpdatePolicy</code> API is not supported.
+    /// Update policy for a blue/green deployment. If this update policy is specified, SageMaker
+    /// creates a new fleet during the deployment while maintaining the old fleet. SageMaker
+    /// flips traffic to the new fleet according to the specified traffic routing configuration.
+    /// Only one update policy should be used in the deployment configuration. If no update
+    /// policy is specified, SageMaker uses a blue/green deployment strategy with all at once
+    /// traffic shifting by default.
     /// </summary>
     public partial class BlueGreenUpdatePolicy
     {
@@ -38,7 +43,12 @@ namespace Amazon.SageMaker.Model
         private TrafficRoutingConfig _trafficRoutingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property MaximumExecutionTimeoutInSeconds.
+        /// Gets and sets the property MaximumExecutionTimeoutInSeconds. 
+        /// <para>
+        /// Maximum execution timeout for the deployment. Note that the timeout value should be
+        /// larger than the total waiting time specified in <code>TerminationWaitInSeconds</code>
+        /// and <code>WaitIntervalInSeconds</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=600, Max=14400)]
         public int MaximumExecutionTimeoutInSeconds
@@ -54,7 +64,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TerminationWaitInSeconds.
+        /// Gets and sets the property TerminationWaitInSeconds. 
+        /// <para>
+        /// Additional waiting time in seconds after the completion of an endpoint deployment
+        /// before terminating the old endpoint fleet. Default is 0.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
         public int TerminationWaitInSeconds
@@ -70,7 +84,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrafficRoutingConfiguration.
+        /// Gets and sets the property TrafficRoutingConfiguration. 
+        /// <para>
+        /// Defines the traffic routing strategy to shift traffic from the old fleet to the new
+        /// fleet during an endpoint deployment.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TrafficRoutingConfig TrafficRoutingConfiguration

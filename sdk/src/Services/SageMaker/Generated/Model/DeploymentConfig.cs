@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Currently, the <code>DeploymentConfig</code> API is not supported.
+    /// The deployment configuration for an endpoint, which contains the desired deployment
+    /// strategy and rollback configurations.
     /// </summary>
     public partial class DeploymentConfig
     {
@@ -37,7 +38,10 @@ namespace Amazon.SageMaker.Model
         private BlueGreenUpdatePolicy _blueGreenUpdatePolicy;
 
         /// <summary>
-        /// Gets and sets the property AutoRollbackConfiguration.
+        /// Gets and sets the property AutoRollbackConfiguration. 
+        /// <para>
+        /// Automatic rollback configuration for handling endpoint deployment failures and recovery.
+        /// </para>
         /// </summary>
         public AutoRollbackConfig AutoRollbackConfiguration
         {
@@ -52,7 +56,15 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BlueGreenUpdatePolicy.
+        /// Gets and sets the property BlueGreenUpdatePolicy. 
+        /// <para>
+        /// Update policy for a blue/green deployment. If this update policy is specified, SageMaker
+        /// creates a new fleet during the deployment while maintaining the old fleet. SageMaker
+        /// flips traffic to the new fleet according to the specified traffic routing configuration.
+        /// Only one update policy should be used in the deployment configuration. If no update
+        /// policy is specified, SageMaker uses a blue/green deployment strategy with all at once
+        /// traffic shifting by default.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public BlueGreenUpdatePolicy BlueGreenUpdatePolicy

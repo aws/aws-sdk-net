@@ -29,16 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Currently, the <code>TrafficRoutingConfig</code> API is not supported.
+    /// Defines the traffic routing strategy during an endpoint deployment to shift traffic
+    /// from the old fleet to the new fleet.
     /// </summary>
     public partial class TrafficRoutingConfig
     {
         private CapacitySize _canarySize;
+        private CapacitySize _linearStepSize;
         private TrafficRoutingConfigType _type;
         private int? _waitIntervalInSeconds;
 
         /// <summary>
-        /// Gets and sets the property CanarySize.
+        /// Gets and sets the property CanarySize. 
+        /// <para>
+        /// Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code>
+        /// must be less than or equal to 50% of the variant's total instance count.
+        /// </para>
         /// </summary>
         public CapacitySize CanarySize
         {
@@ -53,7 +59,46 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property LinearStepSize. 
+        /// <para>
+        /// Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code>
+        /// must be 10-50% of the variant's total instance count.
+        /// </para>
+        /// </summary>
+        public CapacitySize LinearStepSize
+        {
+            get { return this._linearStepSize; }
+            set { this._linearStepSize = value; }
+        }
+
+        // Check to see if LinearStepSize property is set
+        internal bool IsSetLinearStepSize()
+        {
+            return this._linearStepSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Traffic routing strategy type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first
+        /// step is the canary, which is a small portion of the traffic. The second step is the
+        /// remainder of the traffic. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable
+        /// size. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public TrafficRoutingConfigType Type
@@ -69,7 +114,11 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WaitIntervalInSeconds.
+        /// Gets and sets the property WaitIntervalInSeconds. 
+        /// <para>
+        /// The waiting time (in seconds) between incremental steps to turn on traffic on the
+        /// new endpoint fleet.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=3600)]
         public int WaitIntervalInSeconds

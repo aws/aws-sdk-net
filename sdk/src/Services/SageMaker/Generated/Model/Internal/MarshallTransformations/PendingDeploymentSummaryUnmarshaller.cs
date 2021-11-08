@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TrafficRoutingConfig Object
+    /// Response Unmarshaller for PendingDeploymentSummary Object
     /// </summary>  
-    public class TrafficRoutingConfigUnmarshaller : IUnmarshaller<TrafficRoutingConfig, XmlUnmarshallerContext>, IUnmarshaller<TrafficRoutingConfig, JsonUnmarshallerContext>
+    public class PendingDeploymentSummaryUnmarshaller : IUnmarshaller<PendingDeploymentSummary, XmlUnmarshallerContext>, IUnmarshaller<PendingDeploymentSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TrafficRoutingConfig IUnmarshaller<TrafficRoutingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PendingDeploymentSummary IUnmarshaller<PendingDeploymentSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TrafficRoutingConfig Unmarshall(JsonUnmarshallerContext context)
+        public PendingDeploymentSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TrafficRoutingConfig unmarshalledObject = new TrafficRoutingConfig();
+            PendingDeploymentSummary unmarshalledObject = new PendingDeploymentSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CanarySize", targetDepth))
-                {
-                    var unmarshaller = CapacitySizeUnmarshaller.Instance;
-                    unmarshalledObject.CanarySize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LinearStepSize", targetDepth))
-                {
-                    var unmarshaller = CapacitySizeUnmarshaller.Instance;
-                    unmarshalledObject.LinearStepSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("EndpointConfigName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointConfigName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("WaitIntervalInSeconds", targetDepth))
+                if (context.TestExpression("ProductionVariants", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.WaitIntervalInSeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<PendingProductionVariantSummary, PendingProductionVariantSummaryUnmarshaller>(PendingProductionVariantSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ProductionVariants = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static TrafficRoutingConfigUnmarshaller _instance = new TrafficRoutingConfigUnmarshaller();        
+        private static PendingDeploymentSummaryUnmarshaller _instance = new PendingDeploymentSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TrafficRoutingConfigUnmarshaller Instance
+        public static PendingDeploymentSummaryUnmarshaller Instance
         {
             get
             {

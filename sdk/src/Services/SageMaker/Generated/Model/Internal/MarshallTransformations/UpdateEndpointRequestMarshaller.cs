@@ -112,6 +112,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RetainAllVariantProperties);
                 }
 
+                if(publicRequest.IsSetRetainDeploymentConfig())
+                {
+                    context.Writer.WritePropertyName("RetainDeploymentConfig");
+                    context.Writer.Write(publicRequest.RetainDeploymentConfig);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
