@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         private string _coreNetworkAttachmentArn;
         private string _customerGatewayConfiguration;
         private string _customerGatewayId;
-        private string _gatewayAssociationState;
+        private GatewayAssociationState _gatewayAssociationState;
         private VpnConnectionOptions _options;
         private List<VpnStaticRoute> _routes = new List<VpnStaticRoute>();
         private VpnState _state;
@@ -150,7 +150,7 @@ namespace Amazon.EC2.Model
         /// The current state of the gateway association.
         /// </para>
         /// </summary>
-        public string GatewayAssociationState
+        public GatewayAssociationState GatewayAssociationState
         {
             get { return this._gatewayAssociationState; }
             set { this._gatewayAssociationState = value; }
