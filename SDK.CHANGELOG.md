@@ -1,3 +1,16 @@
+### 3.7.155.0 (2021-11-09 19:26 UTC)
+* AWSHealth (3.7.1.51)
+	* Documentation updates for AWS Health.
+* Batch (3.7.3.0)
+	* Adds support for scheduling policy APIs.
+* GreengrassV2 (3.7.3.0)
+	* This release adds support for Greengrass core devices running Windows. You can now specify name of a Windows user to run a component.
+* Core 3.7.3.34
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.154.0 (2021-11-08 19:14 UTC)
 * ChimeSDKMeetings (3.7.1.0)
 	* Updated format validation for ids and regions.
