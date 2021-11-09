@@ -135,6 +135,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSchedulingPriority())
+                {
+                    context.Writer.WritePropertyName("schedulingPriority");
+                    context.Writer.Write(publicRequest.SchedulingPriority);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

@@ -118,6 +118,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("schedulingPriority", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SchedulingPriority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

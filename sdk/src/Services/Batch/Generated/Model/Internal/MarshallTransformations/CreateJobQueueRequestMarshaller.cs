@@ -93,6 +93,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Priority);
                 }
 
+                if(publicRequest.IsSetSchedulingPolicyArn())
+                {
+                    context.Writer.WritePropertyName("schedulingPolicyArn");
+                    context.Writer.Write(publicRequest.SchedulingPolicyArn);
+                }
+
                 if(publicRequest.IsSetState())
                 {
                     context.Writer.WritePropertyName("state");

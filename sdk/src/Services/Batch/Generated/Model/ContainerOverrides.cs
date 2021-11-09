@@ -112,19 +112,16 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// This parameter indicates the amount of memory (in MiB) that's reserved for the job.
-        /// It overrides the <code>memory</code> parameter set in the job definition, but doesn't
-        /// override any memory requirement specified in the <code>ResourceRequirement</code>
-        /// structure in the job definition. To override memory requirements that are specified
-        /// in the <code>ResourceRequirement</code> structure in the job definition, <code>ResourceRequirement</code>
-        /// must be specified in the <code>SubmitJob</code> request, with <code>type</code> set
-        /// to <code>MEMORY</code> and <code>value</code> set to the new value.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is supported for jobs that run on EC2 resources, but isn't supported
-        /// for jobs that run on Fargate resources. For these resources, use <code>resourceRequirement</code>
-        /// instead.
+        /// This parameter is deprecated, use <code>resourceRequirements</code> to override the
+        /// memory requirements specified in the job definition. It's not supported for jobs that
+        /// run on Fargate resources. For jobs run on EC2 resources, it overrides the <code>memory</code>
+        /// parameter set in the job definition, but doesn't override any memory requirement specified
+        /// in the <code>resourceRequirements</code> structure in the job definition. To override
+        /// memory requirements that are specified in the <code>resourceRequirements</code> structure
+        /// in the job definition, <code>resourceRequirements</code> must be specified in the
+        /// <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code>
+        /// and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't
+        /// override job definition resource requirements</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
@@ -163,30 +160,17 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// This parameter indicates the number of vCPUs reserved for the container.It overrides
-        /// the <code>vcpus</code> parameter that's set in the job definition, but doesn't override
-        /// any vCPU requirement specified in the <code>resourceRequirement</code> structure in
-        /// the job definition. To override vCPU requirements that are specified in the <code>ResourceRequirement</code>
-        /// structure in the job definition, <code>ResourceRequirement</code> must be specified
+        /// This parameter is deprecated, use <code>resourceRequirements</code> to override the
+        /// <code>vcpus</code> parameter that's set in the job definition. It's not supported
+        /// for jobs that run on Fargate resources. For jobs run on EC2 resources, it overrides
+        /// the <code>vcpus</code> parameter set in the job definition, but doesn't override any
+        /// vCPU requirement specified in the <code>resourceRequirements</code> structure in the
+        /// job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code>
+        /// structure in the job definition, <code>resourceRequirements</code> must be specified
         /// in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code>
-        /// and <code>value</code> set to the new value.
+        /// and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't
+        /// override job definition resource requirements</a> in the <i>Batch User Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
-        /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
-        /// vCPU.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter is supported for jobs that run on EC2 resources, but isn't supported
-        /// for jobs that run on Fargate resources. For Fargate resources, you can only use <code>resourceRequirement</code>.
-        /// For EC2 resources, you can use either this parameter or <code>resourceRequirement</code>
-        /// but not both.
-        /// </para>
-        ///  </note>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
         public int Vcpus

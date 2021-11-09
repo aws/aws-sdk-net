@@ -33,14 +33,14 @@ namespace Amazon.Batch
     ///
     /// Batch 
     /// <para>
-    /// Using Batch, you can run batch computing workloads on the Cloud. Batch computing is
-    /// a common means for developers, scientists, and engineers to access large amounts of
-    /// compute resources. Batch uses the advantages of this computing workload to remove
-    /// the undifferentiated heavy lifting of configuring and managing required infrastructure.
-    /// At the same time, it also adopts a familiar batch computing software approach. Given
-    /// these advantages, Batch can help you to efficiently provision resources in response
-    /// to jobs submitted, thus effectively helping you to eliminate capacity constraints,
-    /// reduce compute costs, and deliver your results more quickly.
+    /// Using Batch, you can run batch computing workloads on the Amazon Web Services Cloud.
+    /// Batch computing is a common means for developers, scientists, and engineers to access
+    /// large amounts of compute resources. Batch uses the advantages of this computing workload
+    /// to remove the undifferentiated heavy lifting of configuring and managing required
+    /// infrastructure. At the same time, it also adopts a familiar batch computing software
+    /// approach. Given these advantages, Batch can help you to efficiently provision resources
+    /// in response to jobs submitted, thus effectively helping you to eliminate capacity
+    /// constraints, reduce compute costs, and deliver your results more quickly.
     /// </para>
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.Batch
     /// Batch automatically provisions compute resources and optimizes workload distribution
     /// based on the quantity and scale of your specific workloads. With Batch, there's no
     /// need to install or manage batch computing software. This means that you can focus
-    /// your time and energy on analyzing results and solving your specific problems. 
+    /// your time and energy on analyzing results and solving your specific problems.
     /// </para>
     /// </summary>
     public partial interface IAmazonBatch : IAmazonService, IDisposable
@@ -336,6 +336,50 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  CreateSchedulingPolicy
+
+
+        /// <summary>
+        /// Creates an Batch scheduling policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchedulingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">REST API Reference for CreateSchedulingPolicy Operation</seealso>
+        CreateSchedulingPolicyResponse CreateSchedulingPolicy(CreateSchedulingPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Batch scheduling policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchedulingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">REST API Reference for CreateSchedulingPolicy Operation</seealso>
+        Task<CreateSchedulingPolicyResponse> CreateSchedulingPolicyAsync(CreateSchedulingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteComputeEnvironment
 
 
@@ -459,6 +503,60 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         Task<DeleteJobQueueResponse> DeleteJobQueueAsync(DeleteJobQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSchedulingPolicy
+
+
+        /// <summary>
+        /// Deletes the specified scheduling policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a scheduling policy that is used in any job queues.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchedulingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">REST API Reference for DeleteSchedulingPolicy Operation</seealso>
+        DeleteSchedulingPolicyResponse DeleteSchedulingPolicy(DeleteSchedulingPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified scheduling policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a scheduling policy that is used in any job queues.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchedulingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">REST API Reference for DeleteSchedulingPolicy Operation</seealso>
+        Task<DeleteSchedulingPolicyResponse> DeleteSchedulingPolicyAsync(DeleteSchedulingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -700,6 +798,50 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  DescribeSchedulingPolicies
+
+
+        /// <summary>
+        /// Describes one or more of your scheduling policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSchedulingPolicies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSchedulingPolicies service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">REST API Reference for DescribeSchedulingPolicies Operation</seealso>
+        DescribeSchedulingPoliciesResponse DescribeSchedulingPolicies(DescribeSchedulingPoliciesRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more of your scheduling policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSchedulingPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSchedulingPolicies service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">REST API Reference for DescribeSchedulingPolicies Operation</seealso>
+        Task<DescribeSchedulingPoliciesResponse> DescribeSchedulingPoliciesAsync(DescribeSchedulingPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListJobs
 
 
@@ -788,13 +930,57 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  ListSchedulingPolicies
+
+
+        /// <summary>
+        /// Returns a list of Batch scheduling policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchedulingPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListSchedulingPolicies service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">REST API Reference for ListSchedulingPolicies Operation</seealso>
+        ListSchedulingPoliciesResponse ListSchedulingPolicies(ListSchedulingPoliciesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of Batch scheduling policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchedulingPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSchedulingPolicies service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">REST API Reference for ListSchedulingPolicies Operation</seealso>
+        Task<ListSchedulingPoliciesResponse> ListSchedulingPoliciesAsync(ListSchedulingPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
         /// <summary>
         /// Lists the tags for an Batch resource. Batch resources that support tags are compute
-        /// environments, jobs, job definitions, and job queues. ARNs for child jobs of array
-        /// and multi-node parallel (MNP) jobs are not supported.
+        /// environments, jobs, job definitions, job queues, and scheduling policies. ARNs for
+        /// child jobs of array and multi-node parallel (MNP) jobs are not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -814,8 +1000,8 @@ namespace Amazon.Batch
 
         /// <summary>
         /// Lists the tags for an Batch resource. Batch resources that support tags are compute
-        /// environments, jobs, job definitions, and job queues. ARNs for child jobs of array
-        /// and multi-node parallel (MNP) jobs are not supported.
+        /// environments, jobs, job definitions, job queues, and scheduling policies. ARNs for
+        /// child jobs of array and multi-node parallel (MNP) jobs are not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -886,13 +1072,18 @@ namespace Amazon.Batch
         /// <summary>
         /// Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
         /// override parameters defined in the job definition. vCPU and memory requirements that
-        /// are specified in the <code>ResourceRequirements</code> objects in the job definition
+        /// are specified in the <code>resourceRequirements</code> objects in the job definition
         /// are the exception. They can't be overridden this way using the <code>memory</code>
         /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
         /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
         /// parameter.
         /// 
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// Job queues with a scheduling policy are limited to 500 active fair share identifiers
+        /// at a time. 
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days.
         /// This is because, after 14 days, Fargate resources might become unavailable and job
@@ -919,13 +1110,18 @@ namespace Amazon.Batch
         /// <summary>
         /// Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
         /// override parameters defined in the job definition. vCPU and memory requirements that
-        /// are specified in the <code>ResourceRequirements</code> objects in the job definition
+        /// are specified in the <code>resourceRequirements</code> objects in the job definition
         /// are the exception. They can't be overridden this way using the <code>memory</code>
         /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
         /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
         /// parameter.
         /// 
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// Job queues with a scheduling policy are limited to 500 active fair share identifiers
+        /// at a time. 
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days.
         /// This is because, after 14 days, Fargate resources might become unavailable and job
@@ -960,8 +1156,8 @@ namespace Amazon.Batch
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags that are associated with that resource
         /// are deleted as well. Batch resources that support tags are compute environments, jobs,
-        /// job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
-        /// (MNP) jobs are not supported.
+        /// job definitions, job queues, and scheduling policies. ARNs for child jobs of array
+        /// and multi-node parallel (MNP) jobs are not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -984,8 +1180,8 @@ namespace Amazon.Batch
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags that are associated with that resource
         /// are deleted as well. Batch resources that support tags are compute environments, jobs,
-        /// job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
-        /// (MNP) jobs are not supported.
+        /// job definitions, job queues, and scheduling policies. ARNs for child jobs of array
+        /// and multi-node parallel (MNP) jobs are not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1183,6 +1379,50 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         Task<UpdateJobQueueResponse> UpdateJobQueueAsync(UpdateJobQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSchedulingPolicy
+
+
+        /// <summary>
+        /// Updates a scheduling policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchedulingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">REST API Reference for UpdateSchedulingPolicy Operation</seealso>
+        UpdateSchedulingPolicyResponse UpdateSchedulingPolicy(UpdateSchedulingPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Updates a scheduling policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchedulingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">REST API Reference for UpdateSchedulingPolicy Operation</seealso>
+        Task<UpdateSchedulingPolicyResponse> UpdateSchedulingPolicyAsync(UpdateSchedulingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

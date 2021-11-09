@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private string _jobQueueArn;
         private string _jobQueueName;
         private int? _priority;
+        private string _schedulingPolicyArn;
         private JQState _state;
         private JQStatus _status;
         private string _statusReason;
@@ -125,6 +126,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetPriority()
         {
             return this._priority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingPolicyArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+        /// </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.
+        /// </para>
+        /// </summary>
+        public string SchedulingPolicyArn
+        {
+            get { return this._schedulingPolicyArn; }
+            set { this._schedulingPolicyArn = value; }
+        }
+
+        // Check to see if SchedulingPolicyArn property is set
+        internal bool IsSetSchedulingPolicyArn()
+        {
+            return this._schedulingPolicyArn != null;
         }
 
         /// <summary>

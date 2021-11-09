@@ -34,8 +34,8 @@ namespace Amazon.Batch.Model
     /// If existing tags on a resource aren't specified in the request parameters, they aren't
     /// changed. When a resource is deleted, the tags that are associated with that resource
     /// are deleted as well. Batch resources that support tags are compute environments, jobs,
-    /// job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
-    /// (MNP) jobs are not supported.
+    /// job definitions, job queues, and scheduling policies. ARNs for child jobs of array
+    /// and multi-node parallel (MNP) jobs are not supported.
     /// </summary>
     public partial class TagResourceRequest : AmazonBatchRequest
     {
@@ -46,8 +46,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources
-        /// that support tags are compute environments, jobs, job definitions, and job queues.
-        /// ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.
+        /// that support tags are compute environments, jobs, job definitions, job queues, and
+        /// scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs
+        /// are not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

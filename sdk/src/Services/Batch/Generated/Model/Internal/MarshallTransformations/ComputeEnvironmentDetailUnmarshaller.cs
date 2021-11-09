@@ -124,6 +124,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("unmanagedvCpus", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.UnmanagedvCpus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

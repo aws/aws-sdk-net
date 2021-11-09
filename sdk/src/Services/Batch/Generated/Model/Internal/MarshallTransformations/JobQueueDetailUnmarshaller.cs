@@ -88,6 +88,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("schedulingPolicyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SchedulingPolicyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("state", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

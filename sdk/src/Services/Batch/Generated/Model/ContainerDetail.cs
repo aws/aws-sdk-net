@@ -334,7 +334,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>,
+        /// For jobs run on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>,
         /// the number of MiB of memory reserved for the job. For other jobs, including all run
         /// on Fargate resources, see <code>resourceRequirements</code>.
         /// </para>
@@ -584,7 +584,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The number of vCPUs reserved for the container. For jobs that run on EC2 resources,
         /// you can specify the vCPU requirement for the job using <code>resourceRequirements</code>,
-        /// but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirement</code>
+        /// but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code>
         /// object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker

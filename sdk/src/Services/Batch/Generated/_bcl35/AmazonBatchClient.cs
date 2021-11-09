@@ -37,14 +37,14 @@ namespace Amazon.Batch
     ///
     /// Batch 
     /// <para>
-    /// Using Batch, you can run batch computing workloads on the Cloud. Batch computing is
-    /// a common means for developers, scientists, and engineers to access large amounts of
-    /// compute resources. Batch uses the advantages of this computing workload to remove
-    /// the undifferentiated heavy lifting of configuring and managing required infrastructure.
-    /// At the same time, it also adopts a familiar batch computing software approach. Given
-    /// these advantages, Batch can help you to efficiently provision resources in response
-    /// to jobs submitted, thus effectively helping you to eliminate capacity constraints,
-    /// reduce compute costs, and deliver your results more quickly.
+    /// Using Batch, you can run batch computing workloads on the Amazon Web Services Cloud.
+    /// Batch computing is a common means for developers, scientists, and engineers to access
+    /// large amounts of compute resources. Batch uses the advantages of this computing workload
+    /// to remove the undifferentiated heavy lifting of configuring and managing required
+    /// infrastructure. At the same time, it also adopts a familiar batch computing software
+    /// approach. Given these advantages, Batch can help you to efficiently provision resources
+    /// in response to jobs submitted, thus effectively helping you to eliminate capacity
+    /// constraints, reduce compute costs, and deliver your results more quickly.
     /// </para>
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.Batch
     /// Batch automatically provisions compute resources and optimizes workload distribution
     /// based on the quantity and scale of your specific workloads. With Batch, there's no
     /// need to install or manage batch computing software. This means that you can focus
-    /// your time and energy on analyzing results and solving your specific problems. 
+    /// your time and energy on analyzing results and solving your specific problems.
     /// </para>
     /// </summary>
     public partial class AmazonBatchClient : AmazonServiceClient, IAmazonBatch
@@ -531,6 +531,68 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  CreateSchedulingPolicy
+
+        /// <summary>
+        /// Creates an Batch scheduling policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchedulingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">REST API Reference for CreateSchedulingPolicy Operation</seealso>
+        public virtual CreateSchedulingPolicyResponse CreateSchedulingPolicy(CreateSchedulingPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSchedulingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSchedulingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSchedulingPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSchedulingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchedulingPolicy operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSchedulingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">REST API Reference for CreateSchedulingPolicy Operation</seealso>
+        public virtual IAsyncResult BeginCreateSchedulingPolicy(CreateSchedulingPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSchedulingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSchedulingPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSchedulingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSchedulingPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreateSchedulingPolicyResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">REST API Reference for CreateSchedulingPolicy Operation</seealso>
+        public virtual CreateSchedulingPolicyResponse EndCreateSchedulingPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSchedulingPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteComputeEnvironment
 
         /// <summary>
@@ -670,6 +732,73 @@ namespace Amazon.Batch
         public virtual DeleteJobQueueResponse EndDeleteJobQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteJobQueueResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSchedulingPolicy
+
+        /// <summary>
+        /// Deletes the specified scheduling policy.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete a scheduling policy that is used in any job queues.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchedulingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">REST API Reference for DeleteSchedulingPolicy Operation</seealso>
+        public virtual DeleteSchedulingPolicyResponse DeleteSchedulingPolicy(DeleteSchedulingPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSchedulingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSchedulingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSchedulingPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSchedulingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchedulingPolicy operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSchedulingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">REST API Reference for DeleteSchedulingPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSchedulingPolicy(DeleteSchedulingPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSchedulingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSchedulingPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSchedulingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSchedulingPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteSchedulingPolicyResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteSchedulingPolicy">REST API Reference for DeleteSchedulingPolicy Operation</seealso>
+        public virtual DeleteSchedulingPolicyResponse EndDeleteSchedulingPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSchedulingPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -993,6 +1122,68 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  DescribeSchedulingPolicies
+
+        /// <summary>
+        /// Describes one or more of your scheduling policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSchedulingPolicies service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSchedulingPolicies service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">REST API Reference for DescribeSchedulingPolicies Operation</seealso>
+        public virtual DescribeSchedulingPoliciesResponse DescribeSchedulingPolicies(DescribeSchedulingPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSchedulingPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSchedulingPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSchedulingPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSchedulingPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSchedulingPolicies operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSchedulingPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">REST API Reference for DescribeSchedulingPolicies Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSchedulingPolicies(DescribeSchedulingPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSchedulingPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSchedulingPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSchedulingPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSchedulingPolicies.</param>
+        /// 
+        /// <returns>Returns a  DescribeSchedulingPoliciesResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">REST API Reference for DescribeSchedulingPolicies Operation</seealso>
+        public virtual DescribeSchedulingPoliciesResponse EndDescribeSchedulingPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSchedulingPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListJobs
 
         /// <summary>
@@ -1077,12 +1268,74 @@ namespace Amazon.Batch
 
         #endregion
         
+        #region  ListSchedulingPolicies
+
+        /// <summary>
+        /// Returns a list of Batch scheduling policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchedulingPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListSchedulingPolicies service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">REST API Reference for ListSchedulingPolicies Operation</seealso>
+        public virtual ListSchedulingPoliciesResponse ListSchedulingPolicies(ListSchedulingPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchedulingPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchedulingPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSchedulingPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSchedulingPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSchedulingPolicies operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSchedulingPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">REST API Reference for ListSchedulingPolicies Operation</seealso>
+        public virtual IAsyncResult BeginListSchedulingPolicies(ListSchedulingPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchedulingPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchedulingPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSchedulingPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSchedulingPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListSchedulingPoliciesResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListSchedulingPolicies">REST API Reference for ListSchedulingPolicies Operation</seealso>
+        public virtual ListSchedulingPoliciesResponse EndListSchedulingPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSchedulingPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         /// <summary>
         /// Lists the tags for an Batch resource. Batch resources that support tags are compute
-        /// environments, jobs, job definitions, and job queues. ARNs for child jobs of array
-        /// and multi-node parallel (MNP) jobs are not supported.
+        /// environments, jobs, job definitions, job queues, and scheduling policies. ARNs for
+        /// child jobs of array and multi-node parallel (MNP) jobs are not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1208,13 +1461,18 @@ namespace Amazon.Batch
         /// <summary>
         /// Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
         /// override parameters defined in the job definition. vCPU and memory requirements that
-        /// are specified in the <code>ResourceRequirements</code> objects in the job definition
+        /// are specified in the <code>resourceRequirements</code> objects in the job definition
         /// are the exception. They can't be overridden this way using the <code>memory</code>
         /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
         /// parameters in a <code>ResourceRequirements</code> object that's included in the <code>containerOverrides</code>
         /// parameter.
         /// 
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// Job queues with a scheduling policy are limited to 500 active fair share identifiers
+        /// at a time. 
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days.
         /// This is because, after 14 days, Fargate resources might become unavailable and job
@@ -1286,8 +1544,8 @@ namespace Amazon.Batch
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags that are associated with that resource
         /// are deleted as well. Batch resources that support tags are compute environments, jobs,
-        /// job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
-        /// (MNP) jobs are not supported.
+        /// job definitions, job queues, and scheduling policies. ARNs for child jobs of array
+        /// and multi-node parallel (MNP) jobs are not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1592,6 +1850,68 @@ namespace Amazon.Batch
         public virtual UpdateJobQueueResponse EndUpdateJobQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateJobQueueResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSchedulingPolicy
+
+        /// <summary>
+        /// Updates a scheduling policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchedulingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSchedulingPolicy service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">REST API Reference for UpdateSchedulingPolicy Operation</seealso>
+        public virtual UpdateSchedulingPolicyResponse UpdateSchedulingPolicy(UpdateSchedulingPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSchedulingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSchedulingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSchedulingPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSchedulingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchedulingPolicy operation on AmazonBatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSchedulingPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">REST API Reference for UpdateSchedulingPolicy Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSchedulingPolicy(UpdateSchedulingPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSchedulingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSchedulingPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSchedulingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSchedulingPolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdateSchedulingPolicyResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">REST API Reference for UpdateSchedulingPolicy Operation</seealso>
+        public virtual UpdateSchedulingPolicyResponse EndUpdateSchedulingPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSchedulingPolicyResponse>(asyncResult);
         }
 
         #endregion

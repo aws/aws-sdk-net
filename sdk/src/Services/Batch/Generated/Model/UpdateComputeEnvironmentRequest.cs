@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private ComputeResourceUpdate _computeResources;
         private string _serviceRole;
         private CEState _state;
+        private int? _unmanagedvCpus;
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironment. 
@@ -152,6 +153,28 @@ namespace Amazon.Batch.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnmanagedvCpus. 
+        /// <para>
+        /// The maximum number of vCPUs expected to be used for an unmanaged compute environment.
+        /// This parameter should not be specified for a managed compute environment. This parameter
+        /// is only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
+        /// If this parameter is not provided for a fair share job queue, no vCPU capacity will
+        /// be reserved.
+        /// </para>
+        /// </summary>
+        public int UnmanagedvCpus
+        {
+            get { return this._unmanagedvCpus.GetValueOrDefault(); }
+            set { this._unmanagedvCpus = value; }
+        }
+
+        // Check to see if UnmanagedvCpus property is set
+        internal bool IsSetUnmanagedvCpus()
+        {
+            return this._unmanagedvCpus.HasValue; 
         }
 
     }

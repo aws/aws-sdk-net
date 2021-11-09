@@ -49,6 +49,8 @@ namespace Amazon.Batch.Model
         private List<string> _platformCapabilities = new List<string>();
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
+        private int? _schedulingPriority;
+        private string _shareIdentifier;
         private long? _startedAt;
         private JobStatus _status;
         private string _statusReason;
@@ -362,6 +364,44 @@ namespace Amazon.Batch.Model
         internal bool IsSetRetryStrategy()
         {
             return this._retryStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingPriority. 
+        /// <para>
+        /// The scheduling policy of the job definition. This will only affect jobs in job queues
+        /// with a fair share policy. Jobs with a higher scheduling priority will be scheduled
+        /// before jobs with a lower scheduling priority.
+        /// </para>
+        /// </summary>
+        public int SchedulingPriority
+        {
+            get { return this._schedulingPriority.GetValueOrDefault(); }
+            set { this._schedulingPriority = value; }
+        }
+
+        // Check to see if SchedulingPriority property is set
+        internal bool IsSetSchedulingPriority()
+        {
+            return this._schedulingPriority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareIdentifier. 
+        /// <para>
+        /// The share identifier for the job.
+        /// </para>
+        /// </summary>
+        public string ShareIdentifier
+        {
+            get { return this._shareIdentifier; }
+            set { this._shareIdentifier = value; }
+        }
+
+        // Check to see if ShareIdentifier property is set
+        internal bool IsSetShareIdentifier()
+        {
+            return this._shareIdentifier != null;
         }
 
         /// <summary>

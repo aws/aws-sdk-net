@@ -66,5 +66,13 @@ namespace Amazon.Batch.Model
         {
             return new ListJobsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSchedulingPolicies operation
+        ///</summary>
+        public IListSchedulingPoliciesPaginator ListSchedulingPolicies(ListSchedulingPoliciesRequest request) 
+        {
+            return new ListSchedulingPoliciesPaginator(this.client, request);
+        }
     }
 }

@@ -163,6 +163,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSchedulingPriorityOverride())
+                {
+                    context.Writer.WritePropertyName("schedulingPriorityOverride");
+                    context.Writer.Write(publicRequest.SchedulingPriorityOverride);
+                }
+
+                if(publicRequest.IsSetShareIdentifier())
+                {
+                    context.Writer.WritePropertyName("shareIdentifier");
+                    context.Writer.Write(publicRequest.ShareIdentifier);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

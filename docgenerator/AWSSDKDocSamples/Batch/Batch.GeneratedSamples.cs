@@ -334,8 +334,16 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                         "10"
                     },
                     Image = "busybox",
-                    Memory = 128,
-                    Vcpus = 1
+                    ResourceRequirements = new List<ResourceRequirement> {
+                        new ResourceRequirement {
+                            Type = "MEMORY",
+                            Value = "128"
+                        },
+                        new ResourceRequirement {
+                            Type = "VCPU",
+                            Value = "1"
+                        }
+                    }
                 },
                 JobDefinitionName = "sleep10"
             });
@@ -361,8 +369,16 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                         "30"
                     },
                     Image = "busybox",
-                    Memory = 128,
-                    Vcpus = 1
+                    ResourceRequirements = new List<ResourceRequirement> {
+                        new ResourceRequirement {
+                            Type = "MEMORY",
+                            Value = "128"
+                        },
+                        new ResourceRequirement {
+                            Type = "VCPU",
+                            Value = "1"
+                        }
+                    }
                 },
                 JobDefinitionName = "sleep30",
                 Tags = new Dictionary<string, string> {

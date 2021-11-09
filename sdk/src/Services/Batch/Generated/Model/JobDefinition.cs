@@ -42,6 +42,7 @@ namespace Amazon.Batch.Model
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _revision;
+        private int? _schedulingPriority;
         private string _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private JobTimeout _timeout;
@@ -229,6 +230,26 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SchedulingPriority. 
+        /// <para>
+        /// The scheduling priority of the job definition. This will only affect jobs in job queues
+        /// with a fair share policy. Jobs with a higher scheduling priority will be scheduled
+        /// before jobs with a lower scheduling priority.
+        /// </para>
+        /// </summary>
+        public int SchedulingPriority
+        {
+            get { return this._schedulingPriority.GetValueOrDefault(); }
+            set { this._schedulingPriority = value; }
+        }
+
+        // Check to see if SchedulingPriority property is set
+        internal bool IsSetSchedulingPriority()
+        {
+            return this._schedulingPriority.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the job definition.
@@ -288,8 +309,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of job definition. If the job is run on Fargate resources, then <code>multinode</code>
-        /// isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+        /// The type of job definition, either <code>container</code> or <code>multinode</code>.
+        /// If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
+        /// For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
         /// a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>

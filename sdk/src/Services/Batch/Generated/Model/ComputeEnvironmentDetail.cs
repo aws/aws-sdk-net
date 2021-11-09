@@ -43,6 +43,7 @@ namespace Amazon.Batch.Model
         private string _statusReason;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private CEType _type;
+        private int? _unmanagedvCpus;
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentArn. 
@@ -253,6 +254,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnmanagedvCpus. 
+        /// <para>
+        /// The maximum number of VCPUs expected to be used for an unmanaged compute environment.
+        /// </para>
+        /// </summary>
+        public int UnmanagedvCpus
+        {
+            get { return this._unmanagedvCpus.GetValueOrDefault(); }
+            set { this._unmanagedvCpus = value; }
+        }
+
+        // Check to see if UnmanagedvCpus property is set
+        internal bool IsSetUnmanagedvCpus()
+        {
+            return this._unmanagedvCpus.HasValue; 
         }
 
     }

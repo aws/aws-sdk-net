@@ -160,6 +160,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.RetryStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("schedulingPriority", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SchedulingPriority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("shareIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

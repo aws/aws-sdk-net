@@ -41,6 +41,7 @@ namespace Amazon.Batch.Model
         private List<string> _platformCapabilities = new List<string>();
         private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
+        private int? _schedulingPriority;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private JobTimeout _timeout;
         private JobDefinitionType _type;
@@ -201,6 +202,30 @@ namespace Amazon.Batch.Model
         internal bool IsSetRetryStrategy()
         {
             return this._retryStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingPriority. 
+        /// <para>
+        /// The scheduling priority for jobs that are submitted with this job definition. This
+        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling
+        /// priority will be scheduled before jobs with a lower scheduling priority.
+        /// </para>
+        ///  
+        /// <para>
+        /// The minimum supported value is 0 and the maximum supported value is 9999.
+        /// </para>
+        /// </summary>
+        public int SchedulingPriority
+        {
+            get { return this._schedulingPriority.GetValueOrDefault(); }
+            set { this._schedulingPriority = value; }
+        }
+
+        // Check to see if SchedulingPriority property is set
+        internal bool IsSetSchedulingPriority()
+        {
+            return this._schedulingPriority.HasValue; 
         }
 
         /// <summary>

@@ -170,7 +170,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Provides information used to select Amazon Machine Images (AMIs) for EC2 instances
         /// in the compute environment. If <code>Ec2Configuration</code> isn't specified, the
-        /// default is <code>ECS_AL1</code>.
+        /// default is <code>ECS_AL2</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// One or two values can be provided.
         /// </para>
         ///  <note> 
         /// <para>
@@ -522,7 +526,7 @@ namespace Amazon.Batch.Model
         /// is the tag key and String2 is the tag value−for example, <code>{ "Name": "Batch Instance
         /// - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the
         /// Amazon EC2 console. These tags can't be updated or removed after the compute environment
-        /// is created.Aany changes to these tags require that you create a new compute environment
+        /// is created. Any changes to these tags require that you create a new compute environment
         /// and remove the old compute environment. These tags aren't seen when using the Batch
         /// <code>ListTagsForResource</code> API operation.
         /// </para>

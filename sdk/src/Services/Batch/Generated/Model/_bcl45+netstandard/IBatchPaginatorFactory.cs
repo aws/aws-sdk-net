@@ -44,5 +44,10 @@ namespace Amazon.Batch.Model
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSchedulingPolicies operation
+        ///</summary>
+        IListSchedulingPoliciesPaginator ListSchedulingPolicies(ListSchedulingPoliciesRequest request);
     }
 }

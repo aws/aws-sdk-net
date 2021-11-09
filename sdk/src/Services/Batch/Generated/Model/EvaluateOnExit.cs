@@ -68,6 +68,10 @@ namespace Amazon.Batch.Model
         /// only numbers, and can optionally end with an asterisk (*) so that only the start of
         /// the string needs to be an exact match.
         /// </para>
+        ///  
+        /// <para>
+        /// The string can be between 1 and 512 characters in length.
+        /// </para>
         /// </summary>
         public string OnExitCode
         {
@@ -90,6 +94,10 @@ namespace Amazon.Batch.Model
         /// end with an asterisk (*) so that only the start of the string needs to be an exact
         /// match.
         /// </para>
+        ///  
+        /// <para>
+        /// The string can be between 1 and 512 characters in length.
+        /// </para>
         /// </summary>
         public string OnReason
         {
@@ -111,6 +119,10 @@ namespace Amazon.Batch.Model
         /// numbers, periods (.), colons (:), and white space (including spaces or tabs). It can
         /// optionally end with an asterisk (*) so that only the start of the string needs to
         /// be an exact match.
+        /// </para>
+        ///  
+        /// <para>
+        /// The string can be between 1 and 512 characters in length.
         /// </para>
         /// </summary>
         public string OnStatusReason
