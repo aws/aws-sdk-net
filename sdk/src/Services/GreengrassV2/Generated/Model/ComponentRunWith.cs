@@ -37,14 +37,16 @@ namespace Amazon.GreengrassV2.Model
     {
         private string _posixUser;
         private SystemResourceLimits _systemResourceLimits;
+        private string _windowsUser;
 
         /// <summary>
         /// Gets and sets the property PosixUser. 
         /// <para>
-        /// The POSIX system user and (optional) group to use to run this component. Specify the
-        /// user and group separated by a colon (<code>:</code>) in the following format: <code>user:group</code>.
-        /// The group is optional. If you don't specify a group, the IoT Greengrass Core software
-        /// uses the primary user for the group.
+        /// The POSIX system user and, optionally, group to use to run this component on Linux
+        /// core devices. The user, and group if specified, must exist on each Linux core device.
+        /// Specify the user and group separated by a colon (<code>:</code>) in the following
+        /// format: <code>user:group</code>. The group is optional. If you don't specify a group,
+        /// the IoT Greengrass Core software uses the primary user for the group.
         /// </para>
         ///  
         /// <para>
@@ -71,6 +73,7 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property SystemResourceLimits. 
         /// <para>
         /// The system resource limits to apply to this component's process on the core device.
+        /// IoT Greengrass currently supports this feature on only Linux core devices.
         /// </para>
         ///  
         /// <para>
@@ -90,6 +93,34 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetSystemResourceLimits()
         {
             return this._systemResourceLimits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WindowsUser. 
+        /// <para>
+        /// The Windows user to use to run this component on Windows core devices. The user must
+        /// exist on each Windows core device, and its name and password must be in the LocalSystem
+        /// account's Credentials Manager instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the IoT Greengrass Core software uses the default Windows
+        /// user that you configure on the Greengrass nucleus component. For more information,
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure
+        /// the user and group that run components</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string WindowsUser
+        {
+            get { return this._windowsUser; }
+            set { this._windowsUser = value; }
+        }
+
+        // Check to see if WindowsUser property is set
+        internal bool IsSetWindowsUser()
+        {
+            return this._windowsUser != null;
         }
 
     }

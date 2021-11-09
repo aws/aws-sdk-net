@@ -62,6 +62,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWindowsUser())
+            {
+                context.Writer.WritePropertyName("windowsUser");
+                context.Writer.Write(requestObject.WindowsUser);
+            }
+
         }
 
         /// <summary>

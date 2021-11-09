@@ -363,7 +363,11 @@ namespace Amazon.GreengrassV2
         /// To create a component from a Lambda function, specify <code>lambdaFunction</code>
         /// when you call this operation.
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass currently supports Lambda functions on only Linux core devices.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponentVersion service method.</param>
         /// 
@@ -470,7 +474,11 @@ namespace Amazon.GreengrassV2
         /// To create a component from a Lambda function, specify <code>lambdaFunction</code>
         /// when you call this operation.
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// IoT Greengrass currently supports Lambda functions on only Linux core devices.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponentVersion service method.</param>
         /// <param name="cancellationToken">

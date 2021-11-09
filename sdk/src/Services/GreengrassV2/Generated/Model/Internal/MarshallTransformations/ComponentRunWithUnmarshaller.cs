@@ -76,6 +76,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SystemResourceLimits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("windowsUser", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WindowsUser = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

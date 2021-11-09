@@ -321,6 +321,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.ComponentRunWith.WindowsUser</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ComponentVersionListItem.Arn</property>
     <min>1</min>
   </property-value-rule>
