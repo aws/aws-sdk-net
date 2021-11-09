@@ -38,8 +38,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property HealthServiceAccessStatusForOrganization. 
         /// <para>
-        /// Information about the status of enabling or disabling AWS Health Organizational View
-        /// in your organization.
+        /// Information about the status of enabling or disabling the Health organizational view
+        /// feature in your organization.
         /// </para>
         ///  
         /// <para>

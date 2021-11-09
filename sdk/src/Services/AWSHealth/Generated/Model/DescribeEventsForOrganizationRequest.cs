@@ -30,8 +30,8 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEventsForOrganization operation.
-    /// Returns information about events across your organization in AWS Organizations. You
-    /// can use the<code>filters</code> parameter to specify the events that you want to return.
+    /// Returns information about events across your organization in Organizations. You can
+    /// use the<code>filters</code> parameter to specify the events that you want to return.
     /// Events are returned in a summary form and don't include the affected accounts, detailed
     /// description, any additional metadata that depends on the event type, or any affected
     /// resources. To retrieve that information, use the following operations:
@@ -59,12 +59,12 @@ namespace Amazon.AWSHealth.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about the different types of AWS Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
+    /// For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
     /// </para>
     ///  
     /// <para>
-    /// Before you can call this operation, you must first enable AWS Health to work with
-    /// AWS Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+    /// Before you can call this operation, you must first enable Health to work with Organizations.
+    /// To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
     /// operation from your organization's management account.
     /// </para>
     ///  <note> 

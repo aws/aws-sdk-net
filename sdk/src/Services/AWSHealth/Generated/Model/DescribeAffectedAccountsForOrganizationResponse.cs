@@ -58,8 +58,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventScopeCode. 
         /// <para>
-        /// This parameter specifies if the AWS Health event is a public AWS service event or
-        /// an account-specific event.
+        /// This parameter specifies if the Health event is a public Amazon Web Services service
+        /// event or an account-specific event.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -69,9 +69,10 @@ namespace Amazon.AWSHealth.Model
         ///  </li> <li> 
         /// <para>
         /// If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
-        /// <code>affectedAccounts</code> value lists the affected AWS accounts in your organization.
-        /// For example, if an event affects a service such as Amazon Elastic Compute Cloud and
-        /// you have AWS accounts that use that service, those account IDs appear in the response.
+        /// <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts
+        /// in your organization. For example, if an event affects a service such as Amazon Elastic
+        /// Compute Cloud and you have Amazon Web Services accounts that use that service, those
+        /// account IDs appear in the response.
         /// </para>
         ///  </li> <li> 
         /// <para>

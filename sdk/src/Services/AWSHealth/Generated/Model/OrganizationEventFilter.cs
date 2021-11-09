@@ -49,7 +49,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AwsAccountIds. 
         /// <para>
-        /// A list of 12-digit AWS account numbers that contains the affected entities.
+        /// A list of 12-digit Amazon Web Services account numbers that contains the affected
+        /// entities.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -141,7 +142,9 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
         /// <para>
-        /// A list of event type category codes (issue, scheduledChange, or accountNotification).
+        /// A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+        /// or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+        /// supported at this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -195,7 +198,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A list of AWS Regions.
+        /// A list of Amazon Web Services Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -214,7 +217,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
+        /// The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
+        /// <code>RDS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

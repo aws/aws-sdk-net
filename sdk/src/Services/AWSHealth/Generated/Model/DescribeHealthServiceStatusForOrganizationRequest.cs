@@ -30,10 +30,10 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHealthServiceStatusForOrganization operation.
-    /// This operation provides status information on enabling or disabling AWS Health to
-    /// work with your organization. To call this operation, you must sign in as an IAM user,
-    /// assume an IAM role, or sign in as the root user (not recommended) in the organization's
-    /// management account.
+    /// This operation provides status information on enabling or disabling Health to work
+    /// with your organization. To call this operation, you must sign in as an IAM user, assume
+    /// an IAM role, or sign in as the root user (not recommended) in the organization's management
+    /// account.
     /// </summary>
     public partial class DescribeHealthServiceStatusForOrganizationRequest : AmazonAWSHealthRequest
     {

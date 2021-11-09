@@ -72,18 +72,19 @@ namespace Amazon.AWSHealth.Model
         ///  <ul> <li> 
         /// <para>
         /// We couldn't find a public event that matches your request. To find an event that is
-        /// account specific, you must enter an AWS account ID in the request.
+        /// account specific, you must enter an Amazon Web Services account ID in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// We couldn't find an account specific event for the specified AWS account. To find
-        /// an event that is public, you must enter a null value for the AWS account ID in the
-        /// request.
+        /// We couldn't find an account specific event for the specified Amazon Web Services account.
+        /// To find an event that is public, you must enter a null value for the Amazon Web Services
+        /// account ID in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Your AWS account doesn't include the AWS Support plan required to use the AWS Health
-        /// API. You must have either a Business or Enterprise Support plan.
+        /// Your Amazon Web Services account doesn't include the Amazon Web Services Support plan
+        /// required to use the Health API. You must have either a Business or Enterprise Support
+        /// plan.
         /// </para>
         ///  </li> </ul>
         /// </summary>

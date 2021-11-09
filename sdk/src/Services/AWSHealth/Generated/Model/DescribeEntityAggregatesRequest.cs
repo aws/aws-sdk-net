@@ -31,7 +31,6 @@ namespace Amazon.AWSHealth.Model
     /// <summary>
     /// Container for the parameters to the DescribeEntityAggregates operation.
     /// Returns the number of entities that are affected by each of the specified events.
-    /// If no events are specified, the counts of all affected entities are returned.
     /// </summary>
     public partial class DescribeEntityAggregatesRequest : AmazonAWSHealthRequest
     {

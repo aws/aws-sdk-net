@@ -52,7 +52,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// A list of AWS Availability Zones.
+        /// A list of Amazon Web Services Availability Zones.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -168,8 +168,9 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
         /// <para>
-        /// A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
-        /// or <code>accountNotification</code>).
+        /// A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+        /// or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+        /// supported at this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -227,7 +228,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A list of AWS Regions.
+        /// A list of Amazon Web Services Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -246,7 +247,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
+        /// The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
+        /// <code>RDS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

@@ -95,8 +95,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventScopeCode. 
         /// <para>
-        /// This parameter specifies if the AWS Health event is a public AWS service event or
-        /// an account-specific event.
+        /// This parameter specifies if the Health event is a public Amazon Web Services service
+        /// event or an account-specific event.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -106,9 +106,10 @@ namespace Amazon.AWSHealth.Model
         ///  </li> <li> 
         /// <para>
         /// If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
-        /// <code>affectedAccounts</code> value lists the affected AWS accounts in your organization.
-        /// For example, if an event affects a service such as Amazon Elastic Compute Cloud and
-        /// you have AWS accounts that use that service, those account IDs appear in the response.
+        /// <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts
+        /// in your organization. For example, if an event affects a service such as Amazon Elastic
+        /// Compute Cloud and you have Amazon Web Services accounts that use that service, those
+        /// account IDs appear in the response.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -132,7 +133,9 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategory. 
         /// <para>
-        /// The category of the event type.
+        /// A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+        /// or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+        /// supported at this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -189,7 +192,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region name of the event.
+        /// The Amazon Web Services Region name of the event.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=25)]
@@ -208,7 +211,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The AWS service that is affected by the event, such as EC2 and RDS.
+        /// The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=30)]

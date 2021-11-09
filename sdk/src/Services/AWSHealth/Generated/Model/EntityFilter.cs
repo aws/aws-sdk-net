@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a>
+    /// The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
     /// operation.
     /// </summary>
     public partial class EntityFilter

@@ -45,7 +45,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The 12-digit AWS account number that contains the affected entity.
+        /// The 12-digit Amazon Web Services account number that contains the affected entity.
         /// </para>
         /// </summary>
         [AWSProperty(Max=12)]

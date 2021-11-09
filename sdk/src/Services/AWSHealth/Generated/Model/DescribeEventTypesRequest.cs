@@ -31,8 +31,9 @@ namespace Amazon.AWSHealth.Model
     /// <summary>
     /// Container for the parameters to the DescribeEventTypes operation.
     /// Returns the event types that meet the specified filter criteria. You can use this
-    /// API operation to find information about the AWS Health event, such as the category,
-    /// AWS service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
+    /// API operation to find information about the Health event, such as the category, Amazon
+    /// Web Services service, and event code. The metadata for each event appears in the <a
+    /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
     /// object. 
     /// 
     ///  

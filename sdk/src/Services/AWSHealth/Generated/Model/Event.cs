@@ -29,24 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Summary information about an AWS Health event.
+    /// Summary information about an Health event.
     /// 
     ///  
     /// <para>
-    /// AWS Health events can be public or account-specific:
+    /// Health events can be public or account-specific:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <i>Public events</i> might be service events that are not specific to an AWS account.
-    /// For example, if there is an issue with an AWS Region, AWS Health provides information
-    /// about the event, even if you don't use services or resources in that Region.
+    ///  <i>Public events</i> might be service events that are not specific to an Amazon Web
+    /// Services account. For example, if there is an issue with an Amazon Web Services Region,
+    /// Health provides information about the event, even if you don't use services or resources
+    /// in that Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>Account-specific</i> events are specific to either your AWS account or an account
-    /// in your organization. For example, if there's an issue with Amazon Elastic Compute
-    /// Cloud in a Region that you use, AWS Health provides information about the event and
-    /// the affected resources in the account.
+    ///  <i>Account-specific</i> events are specific to either your Amazon Web Services account
+    /// or an account in your organization. For example, if there's an issue with Amazon Elastic
+    /// Compute Cloud in a Region that you use, Health provides information about the event
+    /// and the affected resources in the account.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -100,7 +101,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The AWS Availability Zone of the event. For example, us-east-1a.
+        /// The Amazon Web Services Availability Zone of the event. For example, us-east-1a.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=18)]
@@ -137,8 +138,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventScopeCode. 
         /// <para>
-        /// This parameter specifies if the AWS Health event is a public AWS service event or
-        /// an account-specific event.
+        /// This parameter specifies if the Health event is a public Amazon Web Services service
+        /// event or an account-specific event.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -148,9 +149,10 @@ namespace Amazon.AWSHealth.Model
         ///  </li> <li> 
         /// <para>
         /// If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
-        /// <code>affectedAccounts</code> value lists the affected AWS accounts in your organization.
-        /// For example, if an event affects a service such as Amazon Elastic Compute Cloud and
-        /// you have AWS accounts that use that service, those account IDs appear in the response.
+        /// <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts
+        /// in your organization. For example, if an event affects a service such as Amazon Elastic
+        /// Compute Cloud and you have Amazon Web Services accounts that use that service, those
+        /// account IDs appear in the response.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -174,8 +176,9 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategory. 
         /// <para>
-        /// The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>,
-        /// and <code>accountNotification</code>.
+        /// A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+        /// or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+        /// supported at this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -232,7 +235,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region name of the event.
+        /// The Amazon Web Services Region name of the event.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=25)]
@@ -251,7 +254,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
+        /// The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>,
+        /// <code>RDS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=30)]
