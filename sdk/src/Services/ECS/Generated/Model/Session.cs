@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The details of the execute command session.
+    /// The details for the execute command session.
     /// </summary>
     public partial class Session
     {
@@ -77,7 +77,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TokenValue. 
         /// <para>
-        /// An encrypted token value containing session and caller information. Used to authenticate
+        /// An encrypted token value containing session and caller information. It's used to authenticate
         /// the connection to the container.
         /// </para>
         /// </summary>

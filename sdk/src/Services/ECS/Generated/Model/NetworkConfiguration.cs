@@ -38,7 +38,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property AwsvpcConfiguration. 
         /// <para>
-        /// The VPC subnets and security groups associated with a task.
+        /// The VPC subnets and security groups that are associated with a task.
         /// </para>
         ///  <note> 
         /// <para>

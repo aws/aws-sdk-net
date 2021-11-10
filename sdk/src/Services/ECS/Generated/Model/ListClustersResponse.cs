@@ -39,8 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterArns. 
         /// <para>
-        /// The list of full Amazon Resource Name (ARN) entries for each cluster associated with
-        /// your account.
+        /// The list of full Amazon Resource Name (ARN) entries for each cluster that's associated
+        /// with your account.
         /// </para>
         /// </summary>
         public List<string> ClusterArns

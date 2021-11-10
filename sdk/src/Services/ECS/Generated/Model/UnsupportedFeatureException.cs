@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified task is not supported in this Region.
+    /// The specified task isn't supported in this Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

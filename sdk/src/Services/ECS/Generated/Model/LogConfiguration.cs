@@ -37,15 +37,15 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// By default, containers use the same logging driver that the Docker daemon uses; however
-    /// the container may use a different logging driver than the Docker daemon by specifying
-    /// a log driver configuration in the container definition. For more information on the
-    /// options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+    /// By default, containers use the same logging driver that the Docker daemon uses. However,
+    /// the container might use a different logging driver than the Docker daemon by specifying
+    /// a log driver configuration in the container definition. For more information about
+    /// the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
     /// logging drivers</a> in the Docker documentation.
     /// </para>
     ///  
     /// <para>
-    /// The following should be noted when specifying a log configuration for your containers:
+    /// Understand the following when specifying a log configuration for your containers.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -60,8 +60,8 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For tasks hosted on Amazon EC2 instances, the Amazon ECS container agent must register
-    /// the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
+    /// For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent
+    /// must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
     /// environment variable before containers placed on that instance can use these log configuration
     /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
     /// ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer
@@ -69,10 +69,10 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For tasks on Fargate, because you do not have access to the underlying infrastructure
-    /// your tasks are hosted on, any additional software needed will have to be installed
-    /// outside of the task. For example, the Fluentd output aggregators or a remote host
-    /// running Logstash to send Gelf logs to.
+    /// For tasks that are on Fargate, because you don't have access to the underlying infrastructure
+    /// your tasks are hosted on, any additional software needed must be installed outside
+    /// of the task. For example, the Fluentd output aggregators or a remote host running
+    /// Logstash to send Gelf logs to.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -110,11 +110,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you have a custom driver that is not listed, you can fork the Amazon ECS container
-        /// agent project that is <a href="https://github.com/aws/amazon-ecs-agent">available
-        /// on GitHub</a> and customize it to work with that driver. We encourage you to submit
-        /// pull requests for changes that you would like to have included. However, we do not
-        /// currently provide support for running modified copies of this software.
+        /// If you have a custom driver that isn't listed, you can fork the Amazon ECS container
+        /// agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on
+        /// GitHub</a> and customize it to work with that driver. We encourage you to submit pull
+        /// requests for changes that you would like to have included. However, we don't currently
+        /// provide support for running modified copies of this software.
         /// </para>
         ///  </note>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified target could not be found. You can view your available container instances
+    /// The specified target wasn't found. You can view your available container instances
     /// with <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific
     /// and Region-specific.
     /// </summary>

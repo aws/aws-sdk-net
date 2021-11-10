@@ -46,11 +46,11 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// The Amazon ECS API follows an eventual consistency model, due to the distributed nature
-    /// of the system supporting the API. This means that the result of an API command you
-    /// run that affects your Amazon ECS resources might not be immediately visible to all
-    /// subsequent commands you run. Keep this in mind when you carry out an API command that
-    /// immediately follows a previous API command.
+    /// The Amazon ECS API follows an eventual consistency model. This is because the distributed
+    /// nature of the system supporting the API. This means that the result of an API command
+    /// you run that affects your Amazon ECS resources might not be immediately visible to
+    /// all subsequent commands you run. Keep this in mind when you carry out an API command
+    /// that immediately follows a previous API command.
     /// </para>
     ///  
     /// <para>
@@ -129,8 +129,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster on which to run your
-        /// task. If you do not specify a cluster, the default cluster is assumed.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster to run your task
+        /// on. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -149,7 +149,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Count. 
         /// <para>
         /// The number of instantiations of the specified task to place on your cluster. You can
-        /// specify up to 10 tasks per call.
+        /// specify up to 10 tasks for each call.
         /// </para>
         /// </summary>
         public int Count
@@ -188,9 +188,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Whether or not to enable the execute command functionality for the containers in this
-        /// task. If <code>true</code>, this enables execute command functionality on all containers
-        /// in the task.
+        /// Determines whether to enable the execute command functionality for the containers
+        /// in this task. If <code>true</code>, this enables execute command functionality on
+        /// all containers in the task.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -227,8 +227,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The infrastructure on which to run your standalone task. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// The infrastructure to run your standalone task on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -248,7 +247,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+        /// The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
         /// virtual machine (VM) capacity registered to your cluster.
         /// </para>
         ///  
@@ -279,8 +278,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The network configuration for the task. This parameter is required for task definitions
         /// that use the <code>awsvpc</code> network mode to receive their own elastic network
-        /// interface, and it is not supported for other network modes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// interface, and it isn't supported for other network modes. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -301,7 +300,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A list of container overrides in JSON format that specify the name of a container
         /// in the specified task definition and the overrides it should receive. You can override
-        /// the default command for a container (that is specified in the task definition or Docker
+        /// the default command for a container (that's specified in the task definition or Docker
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container
         /// or add new environment variables to it with an <code>environment</code> override.
@@ -328,8 +327,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlacementConstraints. 
         /// <para>
         /// An array of placement constraint objects to use for the task. You can specify up to
-        /// 10 constraints per task (including constraints in the task definition and those specified
-        /// at runtime).
+        /// 10 constraints for each task (including constraints in the task definition and those
+        /// specified at runtime).
         /// </para>
         /// </summary>
         public List<PlacementConstraint> PlacementConstraints
@@ -348,7 +347,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlacementStrategy. 
         /// <para>
         /// The placement strategy objects to use for the task. You can specify a maximum of 5
-        /// strategy rules per task.
+        /// strategy rules for each task.
         /// </para>
         /// </summary>
         public List<PlacementStrategy> PlacementStrategy
@@ -366,9 +365,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version the task should use. A platform version is only specified for
-        /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code> platform
-        /// version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// The platform version the task uses. A platform version is only specified for tasks
+        /// hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version
+        /// is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -388,7 +387,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PropagateTags. 
         /// <para>
         /// Specifies whether to propagate the tags from the task definition to the task. If no
-        /// value is specified, the tags are not propagated. Tags can only be propagated to the
+        /// value is specified, the tags aren't propagated. Tags can only be propagated to the
         /// task during task creation. To add tags to a task after task creation, use the <a>TagResource</a>
         /// API action.
         /// </para>
@@ -438,7 +437,7 @@ namespace Amazon.ECS.Model
         /// that job to your task with the <code>startedBy</code> parameter. You can then identify
         /// which tasks belong to that job by filtering the results of a <a>ListTasks</a> call
         /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.
+        /// numbers, hyphens (-), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>
@@ -522,12 +521,12 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
+        /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
         /// the latest <code>ACTIVE</code> revision is used.
         /// </para>
         ///  
         /// <para>
-        /// The full ARN value must match the value that you specified ias the <code>Resource</code>
+        /// The full ARN value must match the value that you specified as the <code>Resource</code>
         /// of the IAM principal's permissions policy. For example, if the <code>Resource</code>
         /// is arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the <code>taskDefinition</code>
         /// ARN value must be <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.

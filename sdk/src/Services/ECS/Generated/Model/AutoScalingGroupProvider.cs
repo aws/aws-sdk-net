@@ -83,7 +83,7 @@ namespace Amazon.ECS.Model
         ///  <important> 
         /// <para>
         /// When using managed termination protection, managed scaling must also be used otherwise
-        /// managed termination protection will not work.
+        /// managed termination protection doesn't work.
         /// </para>
         ///  </important> 
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// When managed termination protection is disabled, your Amazon EC2 instances are not
+        /// When managed termination protection is disabled, your Amazon EC2 instances aren't
         /// protected from termination when the Auto Scaling group scales in.
         /// </para>
         /// </summary>

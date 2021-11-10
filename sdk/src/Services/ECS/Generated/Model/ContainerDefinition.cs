@@ -77,13 +77,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command that is passed to the container. This parameter maps to <code>Cmd</code>
+        /// The command that's passed to the container. This parameter maps to <code>Cmd</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
-        /// If there are multiple arguments, each argument should be a separated string in the
-        /// array.
+        /// If there are multiple arguments, each argument is a separated string in the array.
         /// </para>
         /// </summary>
         public List<string> Command
@@ -124,12 +123,12 @@ namespace Amazon.ECS.Model
         /// Linux containers share unallocated CPU units with other containers on the container
         /// instance with the same ratio as their allocated amount. For example, if you run a
         /// single-container task on a single-core instance type with 512 CPU units specified
-        /// for that container, and that is the only task running on the container instance, that
+        /// for that container, and that's the only task running on the container instance, that
         /// container could use the full 1,024 CPU unit share at any given time. However, if you
-        /// launched another copy of the same task on that container instance, each task would
-        /// be guaranteed a minimum of 512 CPU units when needed, and each container could float
-        /// to higher CPU usage if the other container was not using it, but if both tasks were
-        /// 100% active all of the time, they would be limited to 512 CPU units.
+        /// launched another copy of the same task on that container instance, each task is guaranteed
+        /// a minimum of 512 CPU units when needed. Moreover, each container could float to higher
+        /// CPU usage if the other container was not using it. If both tasks were 100% active
+        /// all of the time, they would be limited to 512 CPU units.
         /// </para>
         ///  
         /// <para>
@@ -137,7 +136,7 @@ namespace Amazon.ECS.Model
         /// CPU value to calculate the relative CPU share ratios for running containers. For more
         /// information, see <a href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
         /// share constraint</a> in the Docker documentation. The minimum valid CPU share value
-        /// that the Linux kernel allows is 2. However, the CPU parameter is not required, and
+        /// that the Linux kernel allows is 2. However, the CPU parameter isn't required, and
         /// you can use CPU values below 2 in your container definitions. For CPU values below
         /// 2 (including null), the behavior varies based on your Amazon ECS container agent version:
         /// </para>
@@ -155,7 +154,7 @@ namespace Amazon.ECS.Model
         ///  </li> </ul> 
         /// <para>
         /// On Windows container instances, the CPU limit is enforced as an absolute limit, or
-        /// a quota. Windows containers only have access to the specified amount of CPU that is
+        /// a quota. Windows containers only have access to the specified amount of CPU that's
         /// described in the task definition. A null or zero CPU value is passed to Docker as
         /// <code>0</code>, which Windows interprets as 1% of one CPU.
         /// </para>
@@ -186,7 +185,7 @@ namespace Amazon.ECS.Model
         /// using the latest container agent version. For information about checking your agent
         /// version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
+        /// Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
         /// instances are launched from version <code>20190301</code> or later, then they contain
         /// the required versions of the container agent and <code>ecs-init</code>. For more information,
@@ -195,7 +194,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the task or service requires the followiwng
+        /// For tasks using the Fargate launch type, the task or service requires the following
         /// platforms:
         /// </para>
         ///  <ul> <li> 
@@ -329,8 +328,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DockerSecurityOptions. 
         /// <para>
         /// A list of strings to provide custom labels for SELinux and AppArmor multi-level security
-        /// systems. This field is not valid for containers in tasks using the Fargate launch
-        /// type.
+        /// systems. This field isn't valid for containers in tasks using the Fargate launch type.
         /// </para>
         ///  
         /// <para>
@@ -381,13 +379,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EntryPoint. <important> 
         /// <para>
-        /// Early versions of the Amazon ECS container agent do not properly handle <code>entryPoint</code>
+        /// Early versions of the Amazon ECS container agent don't properly handle <code>entryPoint</code>
         /// parameters. If you have problems using <code>entryPoint</code>, update your container
         /// agent or enter your commands and arguments as <code>command</code> array items instead.
         /// </para>
         ///  </important> 
         /// <para>
-        /// The entry point that is passed to the container. This parameter maps to <code>Entrypoint</code>
+        /// The entry point that's passed to the container. This parameter maps to <code>Entrypoint</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
@@ -417,7 +415,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// We do not recommend using plaintext environment variables for sensitive information,
+        /// We don't recommend that you use plaintext environment variables for sensitive information,
         /// such as credential data.
         /// </para>
         ///  </important>
@@ -444,9 +442,9 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// You can specify up to ten environment files. The file must have a <code>.env</code>
-        /// file extension. Each line in an environment file should contain an environment variable
+        /// file extension. Each line in an environment file contains an environment variable
         /// in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated
-        /// as comments and are ignored. For more information on the environment variable file
+        /// as comments and are ignored. For more information about the environment variable file
         /// syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment
         /// variables in file</a>.
         /// </para>
@@ -455,7 +453,7 @@ namespace Amazon.ECS.Model
         /// If there are environment variables specified using the <code>environment</code> parameter
         /// in a container definition, they take precedence over the variables contained within
         /// an environment file. If multiple environment files are specified that contain the
-        /// same variable, they are processed from the top down. It is recommended to use unique
+        /// same variable, they're processed from the top down. We recommend that you use unique
         /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
         /// Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -478,15 +476,15 @@ namespace Amazon.ECS.Model
         /// If the <code>essential</code> parameter of a container is marked as <code>true</code>,
         /// and that container fails or stops for any reason, all other containers that are part
         /// of the task are stopped. If the <code>essential</code> parameter of a container is
-        /// marked as <code>false</code>, then its failure does not affect the rest of the containers
+        /// marked as <code>false</code>, its failure doesn't affect the rest of the containers
         /// in a task. If this parameter is omitted, a container is assumed to be essential.
         /// </para>
         ///  
         /// <para>
-        /// All tasks must have at least one essential container. If you have an application that
-        /// is composed of multiple containers, you should group containers that are used for
-        /// a common purpose into components, and separate the different components into multiple
-        /// task definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+        /// All tasks must have at least one essential container. If you have an application that's
+        /// composed of multiple containers, group containers that are used for a common purpose
+        /// into components, and separate the different components into multiple task definitions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
         /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -513,7 +511,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code>
+        /// This parameter isn't supported for Windows containers or tasks that use the <code>awsvpc</code>
         /// network mode.
         /// </para>
         ///  </note>
@@ -583,7 +581,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code>
+        /// The <code>hostname</code> parameter is not supported if you're using the <code>awsvpc</code>
         /// network mode.
         /// </para>
         ///  </note>
@@ -604,7 +602,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Image. 
         /// <para>
         /// The image used to start a container. This string is passed directly to the Docker
-        /// daemon. Images in the Docker Hub registry are available by default. Other repositories
+        /// daemon. By default, images in the Docker Hub registry are available. Other repositories
         /// are specified with either <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>
         /// or <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters
         /// (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward
@@ -618,7 +616,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// When a new task starts, the Amazon ECS container agent pulls the latest version of
         /// the specified image and tag for the container to use. However, subsequent updates
-        /// to a repository image are not propagated to already running tasks.
+        /// to a repository image aren't propagated to already running tasks.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -659,9 +657,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Interactive. 
         /// <para>
-        /// When this parameter is <code>true</code>, this allows you to deploy containerized
-        /// applications that require <code>stdin</code> or a <code>tty</code> to be allocated.
-        /// This parameter maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// When this parameter is <code>true</code>, you can deploy containerized applications
+        /// that require <code>stdin</code> or a <code>tty</code> to be allocated. This parameter
+        /// maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--interactive</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
@@ -753,12 +751,13 @@ namespace Amazon.ECS.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>. By default, containers use the same logging driver that the Docker daemon
-        /// uses. However the container may use a different logging driver than the Docker daemon
+        /// uses. However the container can use a different logging driver than the Docker daemon
         /// by specifying a log driver with this parameter in the container definition. To use
         /// a different logging driver for a container, the log system must be configured properly
         /// on the container instance (or on a different log server for remote logging options).
-        /// For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
-        /// logging drivers</a> in the Docker documentation.
+        /// For more information about the options for different supported log drivers, see <a
+        /// href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a>
+        /// in the Docker documentation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -818,12 +817,12 @@ namespace Amazon.ECS.Model
         /// and <code>memoryReservation</code> value, <code>memory</code> must be greater than
         /// <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then
         /// that value is subtracted from the available memory resources for the container instance
-        /// on which the container is placed. Otherwise, the value of <code>memory</code> is used.
+        /// where the container is placed. Otherwise, the value of <code>memory</code> is used.
         /// </para>
         ///  
         /// <para>
-        /// The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
-        /// not specify fewer than 4 MiB of memory for your containers.
+        /// The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore,
+        /// we recommend that you specify fewer than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
         public int Memory
@@ -857,8 +856,8 @@ namespace Amazon.ECS.Model
         /// for one or both of <code>memory</code> or <code>memoryReservation</code> in a container
         /// definition. If you specify both, <code>memory</code> must be greater than <code>memoryReservation</code>.
         /// If you specify <code>memoryReservation</code>, then that value is subtracted from
-        /// the available memory resources for the container instance on which the container is
-        /// placed. Otherwise, the value of <code>memory</code> is used.
+        /// the available memory resources for the container instance where the container is placed.
+        /// Otherwise, the value of <code>memory</code> is used.
         /// </para>
         ///  
         /// <para>
@@ -871,8 +870,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
-        /// not specify fewer than 4 MiB of memory for your containers. 
+        /// The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore,
+        /// we recommend that you specify fewer than 4 MiB of memory for your containers. 
         /// </para>
         /// </summary>
         public int MemoryReservation
@@ -902,8 +901,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
-        /// Windows containers cannot mount directories on a different drive, and mount point
-        /// cannot be across drives.
+        /// Windows containers can't mount directories on a different drive, and mount point can't
+        /// be across drives.
         /// </para>
         /// </summary>
         public List<MountPoint> MountPoints
@@ -921,7 +920,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a container. If you are linking multiple containers together in a task
+        /// The name of a container. If you're linking multiple containers together in a task
         /// definition, the <code>name</code> of one container can be entered in the <code>links</code>
         /// of another container to connect the containers. Up to 255 letters (uppercase and lowercase),
         /// numbers, underscores, and hyphens are allowed. This parameter maps to <code>name</code>
@@ -951,14 +950,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For task definitions that use the <code>awsvpc</code> network mode, you should only
-        /// specify the <code>containerPort</code>. The <code>hostPort</code> can be left blank
-        /// or it must be the same value as the <code>containerPort</code>.
+        /// For task definitions that use the <code>awsvpc</code> network mode, only specify the
+        /// <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must
+        /// be the same value as the <code>containerPort</code>.
         /// </para>
         ///  
         /// <para>
         /// Port mappings on Windows use the <code>NetNAT</code> gateway address rather than <code>localhost</code>.
-        /// There is no loopback for port mappings on Windows, so you cannot access a container's
+        /// There's no loopback for port mappings on Windows, so you can't access a container's
         /// mapped port from the host itself. 
         /// </para>
         ///  
@@ -1133,18 +1132,18 @@ namespace Amazon.ECS.Model
         /// a container. For example, you specify two containers in a task definition with containerA
         /// having a dependency on containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>,
         /// or <code>HEALTHY</code> status. If a <code>startTimeout</code> value is specified
-        /// for containerB and it does not reach the desired status within that time then containerA
-        /// will give up and not start. This results in the task transitioning to a <code>STOPPED</code>
+        /// for containerB and it doesn't reach the desired status within that time then containerA
+        /// gives up and not start. This results in the task transitioning to a <code>STOPPED</code>
         /// state.
         /// </para>
         ///  <note> 
         /// <para>
         /// When the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration variable
-        /// is used, it is enforced indendently from this start timeout value.
+        /// is used, it's enforced independently from this start timeout value.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For tasks using the Fargate launch type, the task or service requires the followiwng
+        /// For tasks using the Fargate launch type, the task or service requires the following
         /// platforms:
         /// </para>
         ///  <ul> <li> 
@@ -1162,7 +1161,7 @@ namespace Amazon.ECS.Model
         /// However, we recommend using the latest container agent version. For information about
         /// checking your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
+        /// Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package. If your
         /// container instances are launched from version <code>20190301</code> or later, then
         /// they contain the required versions of the container agent and <code>ecs-init</code>.
@@ -1190,7 +1189,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the Fargate launch type, the task or service requires the followiwng
+        /// For tasks using the Fargate launch type, the task or service requires the following
         /// platforms:
         /// </para>
         ///  <ul> <li> 
@@ -1208,9 +1207,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is
-        /// not specified, the value set for the Amazon ECS container agent configuration variable
-        /// <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the <code>stopTimeout</code>
+        /// For tasks that use the EC2 launch type, if the <code>stopTimeout</code> parameter
+        /// isn't specified, the value set for the Amazon ECS container agent configuration variable
+        /// <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the <code>stopTimeout</code>
         /// parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable
         /// are set, then the default values of 30 seconds for Linux containers and 30 seconds
         /// on Windows containers are used. Your container instances require at least version
@@ -1218,7 +1217,7 @@ namespace Amazon.ECS.Model
         /// recommend using the latest container agent version. For information about checking
         /// your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
         /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
+        /// Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs
         /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
         /// instances are launched from version <code>20190301</code> or later, then they contain
         /// the required versions of the container agent and <code>ecs-init</code>. For more information,
@@ -1249,10 +1248,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// It is not recommended that you specify network-related <code>systemControls</code>
+        /// We don't recommended that you specify network-related <code>systemControls</code>
         /// parameters for multiple containers in a single task that also uses either the <code>awsvpc</code>
         /// or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network
-        /// mode, the container that is started last determines which <code>systemControls</code>
+        /// mode, the container that's started last determines which <code>systemControls</code>
         /// parameters take effect. For tasks that use the <code>host</code> network mode, it
         /// changes the container instance's namespaced kernel parameters as well as the containers.
         /// </para>
@@ -1274,7 +1273,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Ulimits. 
         /// <para>
         /// A list of <code>ulimits</code> to set in the container. If a ulimit value is specified
-        /// in a task definition, it will override the default values set by Docker. This parameter
+        /// in a task definition, it overrides the default values set by Docker. This parameter
         /// maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
@@ -1324,8 +1323,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// When running tasks using the <code>host</code> network mode, you should not run containers
-        /// using the root user (UID 0). It is considered best practice to use a non-root user.
+        /// When running tasks using the <code>host</code> network mode, don't run containers
+        /// using the root user (UID 0). We recommend using a non-root user for better security.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1399,8 +1398,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property WorkingDirectory. 
         /// <para>
-        /// The working directory in which to run commands inside the container. This parameter
-        /// maps to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// The working directory to run commands inside the container in. This parameter maps
+        /// to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--workdir</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.

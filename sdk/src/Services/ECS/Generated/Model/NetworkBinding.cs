@@ -62,7 +62,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerPort. 
         /// <para>
-        /// The port number on the container that is used with the network binding.
+        /// The port number on the container that's used with the network binding.
         /// </para>
         /// </summary>
         public int ContainerPort
@@ -80,7 +80,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HostPort. 
         /// <para>
-        /// The port number on the host that is used with the network binding.
+        /// The port number on the host that's used with the network binding.
         /// </para>
         /// </summary>
         public int HostPort

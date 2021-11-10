@@ -59,8 +59,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Include. 
         /// <para>
-        /// Whether to include additional information about the clusters in the response. If this
-        /// field is omitted, this information isn't included.
+        /// Determines whether to include additional information about the clusters in the response.
+        /// If this field is omitted, this information isn't included.
         /// </para>
         ///  
         /// <para>

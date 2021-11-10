@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A regional grouping of one or more container instances on which you can run task requests.
+    /// A regional grouping of one or more container instances where you can run task requests.
     /// Each account receives a default cluster the first time you use the Amazon ECS service,
     /// but you may also create other clusters. Clusters may contain more than one instance
     /// type simultaneously.
@@ -75,7 +75,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Attachments. 
         /// <para>
         /// The resources attached to a cluster. When using a capacity provider with a cluster,
-        /// the Auto Scaling plan that is created will be returned as a cluster attachment.
+        /// the Auto Scaling plan that's created is returned as a cluster attachment.
         /// </para>
         /// </summary>
         public List<Attachment> Attachments
@@ -94,7 +94,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property AttachmentsStatus. 
         /// <para>
         /// The status of the capacity providers associated with the cluster. The following are
-        /// the states that will be returned:
+        /// the states that are returned.
         /// </para>
         ///  <dl> <dt>UPDATE_IN_PROGRESS</dt> <dd> 
         /// <para>
@@ -295,7 +295,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// Additional information about your clusters that are separated by launch type, including:
+        /// Additional information about your clusters that are separated by launch type. They
+        /// include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -346,7 +347,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the cluster. The following are the possible states that will be returned.
+        /// The status of the cluster. The following are the possible states that are returned.
         /// </para>
         ///  <dl> <dt>ACTIVE</dt> <dd> 
         /// <para>
@@ -355,25 +356,25 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </dd> <dt>PROVISIONING</dt> <dd> 
         /// <para>
-        /// The cluster has capacity providers associated with it and the resources needed for
-        /// the capacity provider are being created.
+        /// The cluster has capacity providers that are associated with it and the resources needed
+        /// for the capacity provider are being created.
         /// </para>
         ///  </dd> <dt>DEPROVISIONING</dt> <dd> 
         /// <para>
-        /// The cluster has capacity providers associated with it and the resources needed for
-        /// the capacity provider are being deleted.
+        /// The cluster has capacity providers that are associated with it and the resources needed
+        /// for the capacity provider are being deleted.
         /// </para>
         ///  </dd> <dt>FAILED</dt> <dd> 
         /// <para>
-        /// The cluster has capacity providers associated with it and the resources needed for
-        /// the capacity provider have failed to create.
+        /// The cluster has capacity providers that are associated with it and the resources needed
+        /// for the capacity provider have failed to create.
         /// </para>
         ///  </dd> <dt>INACTIVE</dt> <dd> 
         /// <para>
         /// The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain
         /// discoverable in your account for a period of time. However, this behavior is subject
-        /// to change in the future, so you should not rely on <code>INACTIVE</code> clusters
-        /// persisting.
+        /// to change in the future. We don't recommend that you rely on <code>INACTIVE</code>
+        /// clusters persisting.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -393,7 +394,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the cluster to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// Each tag consists of a key and an optional value. You define both.
         /// </para>
         ///  
         /// <para>

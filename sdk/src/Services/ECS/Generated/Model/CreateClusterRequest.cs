@@ -37,10 +37,10 @@ namespace Amazon.ECS.Model
     ///  <note> 
     /// <para>
     /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
-    /// the Amazon ECS service-linked role for your account so that required resources in
-    /// other Amazon Web Services services can be managed on your behalf. However, if the
-    /// IAM user that makes the call does not have permissions to create the service-linked
-    /// role, it is not created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+    /// the Amazon ECS service-linked role for your account. This is so that it can manage
+    /// required resources in other Amazon Web Services services on your behalf. However,
+    /// if the IAM user that makes the call doesn't have permissions to create the service-linked
+    /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
     /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
     /// Developer Guide</i>.
     /// </para>
@@ -66,9 +66,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If specifying a capacity provider that uses an Auto Scaling group, the capacity provider
-        /// must already be created and not already associated with another cluster. New Auto
-        /// Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a>
-        /// API operation.
+        /// must be created but not associated with another cluster. New Auto Scaling group capacity
+        /// providers can be created with the <a>CreateCapacityProvider</a> API operation.
         /// </para>
         ///  
         /// <para>
@@ -97,8 +96,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of your cluster. If you do not specify a name for your cluster, you create
-        /// a cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase),
+        /// The name of your cluster. If you don't specify a name for your cluster, you create
+        /// a cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase),
         /// numbers, underscores, and hyphens are allowed. 
         /// </para>
         /// </summary>
@@ -135,14 +134,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DefaultCapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy to set as the default for the cluster. When a default
-        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or
-        /// <a>CreateService</a> APIs with no capacity provider strategy or launch type specified,
+        /// The capacity provider strategy to set as the default for the cluster. After a default
+        /// capacity provider strategy is set for a cluster, when you call the <a>RunTask</a>
+        /// or <a>CreateService</a> APIs with no capacity provider strategy or launch type specified,
         /// the default capacity provider strategy for the cluster is used.
         /// </para>
         ///  
         /// <para>
-        /// If a default capacity provider strategy is not defined for a cluster during creation,
+        /// If a default capacity provider strategy isn't defined for a cluster when it was created,
         /// it can be defined later with the <a>PutClusterCapacityProviders</a> API operation.
         /// </para>
         /// </summary>
@@ -162,8 +161,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Settings. 
         /// <para>
         /// The setting to use when creating a cluster. This parameter is used to enable CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it will override the
-        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+        /// Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code>
+        /// value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
         /// </para>
         /// </summary>
         public List<ClusterSetting> Settings
@@ -182,7 +181,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the cluster to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// Each tag consists of a key and an optional value. You define both.
         /// </para>
         ///  
         /// <para>

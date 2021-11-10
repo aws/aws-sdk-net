@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified service is not active. You can't update a service that is inactive.
-    /// If you have previously deleted a service, you can re-create it with <a>CreateService</a>.
+    /// The specified service isn't active. You can't update a service that's inactive. If
+    /// you have previously deleted a service, you can re-create it with <a>CreateService</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

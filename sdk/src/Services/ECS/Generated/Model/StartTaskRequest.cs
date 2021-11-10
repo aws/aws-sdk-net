@@ -58,8 +58,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The short name or full Amazon Resource Name (ARN) of the cluster on which to start
-        /// your task. If you do not specify a cluster, the default cluster is assumed.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster where to start your
+        /// task. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -77,8 +77,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
         /// <para>
-        /// The container instance IDs or full ARN entries for the container instances on which
-        /// you would like to place your task. You can specify up to 10 container instances.
+        /// The container instance IDs or full ARN entries for the container instances where you
+        /// would like to place your task. You can specify up to 10 container instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -176,8 +176,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Overrides. 
         /// <para>
         /// A list of container overrides in JSON format that specify the name of a container
-        /// in the specified task definition and the overrides it should receive. You can override
-        /// the default command for a container (that is specified in the task definition or Docker
+        /// in the specified task definition and the overrides it receives. You can override the
+        /// default command for a container (that's specified in the task definition or Docker
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container
         /// or add new environment variables to it with an <code>environment</code> override.
@@ -205,7 +205,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PropagateTags. 
         /// <para>
         /// Specifies whether to propagate the tags from the task definition or the service to
-        /// the task. If no value is specified, the tags are not propagated.
+        /// the task. If no value is specified, the tags aren't propagated.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags
@@ -246,11 +246,11 @@ namespace Amazon.ECS.Model
         /// that job to your task with the <code>startedBy</code> parameter. You can then identify
         /// which tasks belong to that job by filtering the results of a <a>ListTasks</a> call
         /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.
+        /// numbers, hyphens (-), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>
-        /// If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+        /// If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
         /// contains the deployment ID of the service that starts it.
         /// </para>
         /// </summary>
@@ -330,7 +330,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to start. If a <code>revision</code> is not specified,
+        /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
         /// the latest <code>ACTIVE</code> revision is used.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified parameter is invalid. Review the available parameters for the API request.
+    /// The specified parameter isn't valid. Review the available parameters for the API request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

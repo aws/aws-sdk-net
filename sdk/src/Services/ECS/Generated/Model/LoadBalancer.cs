@@ -68,7 +68,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The port on the container to associate with the load balancer. This port must correspond
         /// to a <code>containerPort</code> in the task definition the tasks in the service are
-        /// using. For tasks that use the EC2 launch type, the container instance they are launched
+        /// using. For tasks that use the EC2 launch type, the container instance they're launched
         /// on must allow ingress traffic on the <code>hostPort</code> of the port mapping.
         /// </para>
         /// </summary>
@@ -117,8 +117,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// A target group ARN is only specified when using an Application Load Balancer or Network
-        /// Load Balancer. If you are using a Classic Load Balancer the target group ARN should
-        /// be omitted.
+        /// Load Balancer. If you're using a Classic Load Balancer, omit the target group ARN.
         /// </para>
         ///  
         /// <para>
@@ -129,18 +128,18 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For services using the <code>CODE_DEPLOY</code> deployment controller, you are required
+        /// For services using the <code>CODE_DEPLOY</code> deployment controller, you're required
         /// to define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
         /// Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your service's task definition uses the <code>awsvpc</code> network mode (which
-        /// is required for the Fargate launch type), you must choose <code>ip</code> as the target
-        /// type, not <code>instance</code>, when creating your target groups because tasks that
-        /// use the <code>awsvpc</code> network mode are associated with an elastic network interface,
-        /// not an Amazon EC2 instance.
+        /// If your service's task definition uses the <code>awsvpc</code> network mode, you must
+        /// choose <code>ip</code> as the target type, not <code>instance</code>. Do this when
+        /// creating your target groups because tasks that use the <code>awsvpc</code> network
+        /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
+        /// This network mode is required for the Fargate launch type.
         /// </para>
         ///  </important>
         /// </summary>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// There is no update available for this Amazon ECS container agent. This could be because
-    /// the agent is already running the latest version, or it is so old that there is no
-    /// update path to the current version.
+    /// There's no update available for this Amazon ECS container agent. This might be because
+    /// the agent is already running the latest version or because it's so old that there's
+    /// no update path to the current version.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

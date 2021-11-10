@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An attribute is a name-value pair associated with an Amazon ECS object. Attributes
+    /// An attribute is a name-value pair that's associated with an Amazon ECS object. Attributes
     /// enable you to extend the Amazon ECS data model by adding custom metadata to your resources.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the attribute. The <code>name</code> must contain between 1 and 128 characters
-        /// and name may contain letters (uppercase and lowercase), numbers, hyphens, underscores,
-        /// forward slashes, back slashes, or periods.
+        /// The name of the attribute. The <code>name</code> must contain between 1 and 128 characters.
+        /// The name may contain letters (uppercase and lowercase), numbers, hyphens (-), underscores
+        /// (_), forward slashes (/), back slashes (\), or periods (.).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,8 +84,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The type of the target with which to attach the attribute. This parameter is required
-        /// if you use the short form ID for a resource instead of the full ARN.
+        /// The type of the target to attach the attribute with. This parameter is required if
+        /// you use the short form ID for a resource instead of the full ARN.
         /// </para>
         /// </summary>
         public TargetType TargetType
@@ -104,9 +104,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the attribute. The <code>value</code> must contain between 1 and 128
-        /// characters and may contain letters (uppercase and lowercase), numbers, hyphens, underscores,
-        /// periods, at signs (@), forward slashes, back slashes, colons, or spaces. The value
-        /// cannot contain any leading or trailing whitespace.
+        /// characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-),
+        /// underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\),
+        /// colons (:), or spaces. The value can't can't start or end with a space.
         /// </para>
         /// </summary>
         public string Value

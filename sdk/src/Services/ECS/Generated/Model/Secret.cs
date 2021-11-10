@@ -81,7 +81,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the SSM Parameter Store parameter exists in the same Region as the task you are
+        /// If the SSM Parameter Store parameter exists in the same Region as the task you're
         /// launching, then you can use either the full ARN or name of the parameter. If the parameter
         /// exists in a different Region, then the full ARN must be specified.
         /// </para>

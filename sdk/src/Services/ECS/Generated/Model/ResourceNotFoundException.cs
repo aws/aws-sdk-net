@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified resource could not be found.
+    /// The specified resource wasn't found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

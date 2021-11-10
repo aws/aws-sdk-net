@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// This parameter is specified when you are using an Amazon Elastic File System file
-    /// system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon
+    /// This parameter is specified when you're using an Amazon Elastic File System file system
+    /// for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon
     /// EFS Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class EFSVolumeConfiguration
@@ -108,10 +108,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TransitEncryption. 
         /// <para>
-        /// Whether or not to enable encryption for Amazon EFS data in transit between the Amazon
-        /// ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS
-        /// IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code>
-        /// is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
+        /// Determines whether to enable encryption for Amazon EFS data in transit between the
+        /// Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon
+        /// EFS IAM authorization is used. If this parameter is omitted, the default value of
+        /// <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
         /// Data in Transit</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>

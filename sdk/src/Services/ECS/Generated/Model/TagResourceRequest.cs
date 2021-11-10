@@ -31,9 +31,9 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-    /// If existing tags on a resource are not specified in the request parameters, they are
-    /// not changed. When a resource is deleted, the tags associated with that resource are
-    /// deleted as well.
+    /// If existing tags on a resource aren't specified in the request parameters, they aren't
+    /// changed. When a resource is deleted, the tags that are associated with that resource
+    /// are deleted as well.
     /// </summary>
     public partial class TagResourceRequest : AmazonECSRequest
     {
@@ -43,9 +43,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
-        /// supported resources are Amazon ECS capacity providers, tasks, services, task definitions,
-        /// clusters, and container instances.
+        /// The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported
+        /// resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters,
+        /// and container instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

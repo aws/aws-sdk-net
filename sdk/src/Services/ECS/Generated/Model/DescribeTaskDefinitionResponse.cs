@@ -39,8 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that is applied to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
+        /// The metadata that's applied to the task definition to help you categorize and organize
+        /// them. Each tag consists of a key and an optional value. You define both.
         /// </para>
         ///  
         /// <para>

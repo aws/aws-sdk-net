@@ -36,9 +36,10 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks
-    /// on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers
-    /// which are already created and available to all accounts in Regions supported by Fargate.
+    /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
+    /// tasks on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity
+    /// providers. These providers are available to all accounts in the Amazon Web Services
+    /// Regions that Fargate supports.
     /// </para>
     /// </summary>
     public partial class CreateCapacityProviderRequest : AmazonECSRequest
@@ -69,9 +70,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the capacity provider. Up to 255 characters are allowed, including letters
-        /// (upper and lowercase), numbers, underscores, and hyphens. The name cannot be prefixed
-        /// with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".
+        /// The name of the capacity provider. Up to 255 characters are allowed. They include
+        /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens
+        /// (-). The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,8 +91,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that you apply to the capacity provider to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
+        /// The metadata that you apply to the capacity provider to categorize and organize them
+        /// more conveniently. Each tag consists of a key and an optional value. You define both
+        /// of them.
         /// </para>
         ///  
         /// <para>

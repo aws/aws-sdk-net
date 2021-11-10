@@ -39,8 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the supported resources are Amazon ECS tasks, services, task definitions,
+        /// The Amazon Resource Name (ARN) that identifies the resource to list the tags for.
+        /// Currently, the supported resources are Amazon ECS tasks, services, task definitions,
         /// clusters, and container instances.
         /// </para>
         /// </summary>

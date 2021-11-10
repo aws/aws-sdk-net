@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified service could not be found. You can view your available services with
-    /// <a>ListServices</a>. Amazon ECS services are cluster-specific and Region-specific.
+    /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
+    /// Amazon ECS services are cluster specific and Region specific.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

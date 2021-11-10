@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// You cannot delete a cluster that has active tasks.
+    /// You can't delete a cluster that has active tasks.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

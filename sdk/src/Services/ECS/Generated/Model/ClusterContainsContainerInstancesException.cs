@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// You cannot delete a cluster that has registered container instances. First, deregister
+    /// You can't delete a cluster that has registered container instances. First, deregister
     /// the container instances before you can delete the cluster. For more information, see
     /// <a>DeregisterContainerInstance</a>.
     /// </summary>

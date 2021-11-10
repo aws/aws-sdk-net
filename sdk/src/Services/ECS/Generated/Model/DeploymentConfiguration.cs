@@ -114,10 +114,10 @@ namespace Amazon.ECS.Model
         /// additional cluster capacity. For example, if your service has a desired number of
         /// four tasks and a minimum healthy percent of 50%, the scheduler may stop two existing
         /// tasks to free up cluster capacity before starting two new tasks. Tasks for services
-        /// that <i>do not</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code>
+        /// that <i>do not</i> use a load balancer are considered healthy if they're in the <code>RUNNING</code>
         /// state; tasks for services that <i>do</i> use a load balancer are considered healthy
-        /// if they are in the <code>RUNNING</code> state and they are reported as healthy by
-        /// the load balancer. The default value for minimum healthy percent is 100%.
+        /// if they're in the <code>RUNNING</code> state and they're reported as healthy by the
+        /// load balancer. The default value for minimum healthy percent is 100%.
         /// </para>
         ///  
         /// <para>

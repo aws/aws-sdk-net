@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A Docker container that is part of a task.
+    /// A Docker container that's part of a task.
     /// </summary>
     public partial class Container
     {
@@ -72,8 +72,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of CPU units set for the container. The value will be <code>0</code> if
-        /// no value was specified in the container definition when the task definition was registered.
+        /// The number of CPU units set for the container. The value is <code>0</code> if no value
+        /// was specified in the container definition when the task definition was registered.
         /// </para>
         /// </summary>
         public string Cpu
@@ -127,7 +127,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// The health status of the container. If health checks are not configured for this container
+        /// The health status of the container. If health checks aren't configured for this container
         /// in its task definition, then it reports the health status as <code>UNKNOWN</code>.
         /// </para>
         /// </summary>

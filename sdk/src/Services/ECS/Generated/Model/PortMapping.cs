@@ -34,14 +34,14 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// If you are using containers in a task with the <code>awsvpc</code> or <code>host</code>
-    /// network mode, exposed ports should be specified using <code>containerPort</code>.
-    /// The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.
+    /// If you use containers in a task with the <code>awsvpc</code> or <code>host</code>
+    /// network mode, specify the exposed ports using <code>containerPort</code>. The <code>hostPort</code>
+    /// can be left blank or it must be the same value as the <code>containerPort</code>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// You cannot expose the same container port for multiple protocols. An error will be
-    /// returned if this is attempted
+    /// You can't expose the same container port for multiple protocols. If you attempt this,
+    /// an error is returned.
     /// </para>
     ///  </note> 
     /// <para>
@@ -59,18 +59,18 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerPort. 
         /// <para>
-        /// The port number on the container that is bound to the user-specified or automatically
+        /// The port number on the container that's bound to the user-specified or automatically
         /// assigned host port.
         /// </para>
         ///  
         /// <para>
-        /// If you are using containers in a task with the <code>awsvpc</code> or <code>host</code>
-        /// network mode, exposed ports should be specified using <code>containerPort</code>.
+        /// If you use containers in a task with the <code>awsvpc</code> or <code>host</code>
+        /// network mode, specify the exposed ports using <code>containerPort</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you are using containers in a task with the <code>bridge</code> network mode and
-        /// you specify a container port and not a host port, your container automatically receives
+        /// If you use containers in a task with the <code>bridge</code> network mode and you
+        /// specify a container port and not a host port, your container automatically receives
         /// a host port in the ephemeral port range. For more information, see <code>hostPort</code>.
         /// Port mappings that are automatically assigned in this way do not count toward the
         /// 100 reserved ports limit of a container instance.
@@ -95,14 +95,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are using containers in a task with the <code>awsvpc</code> or <code>host</code>
+        /// If you use containers in a task with the <code>awsvpc</code> or <code>host</code>
         /// network mode, the <code>hostPort</code> can either be left blank or set to the same
         /// value as the <code>containerPort</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you are using containers in a task with the <code>bridge</code> network mode, you
-        /// can specify a non-reserved host port for your container port mapping, or you can omit
+        /// If you use containers in a task with the <code>bridge</code> network mode, you can
+        /// specify a non-reserved host port for your container port mapping, or you can omit
         /// the <code>hostPort</code> (or set it to <code>0</code>) while specifying a <code>containerPort</code>
         /// and your container automatically receives a port in the ephemeral port range for your
         /// container instance operating system and Docker version.
@@ -125,11 +125,12 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
         /// Amazon ECS container agent ports 51678-51680. Any host port that was previously specified
-        /// in a running task is also reserved while the task is running (after a task stops,
-        /// the host port is released). The current reserved ports are displayed in the <code>remainingResources</code>
-        /// of <a>DescribeContainerInstances</a> output. A container instance can have up to 100
-        /// reserved ports at a time, including the default reserved ports. Automatically assigned
-        /// ports don't count toward the 100 reserved ports limit.
+        /// in a running task is also reserved while the task is running. That is, after a task
+        /// stops, the host port is released. The current reserved ports are displayed in the
+        /// <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container
+        /// instance can have up to 100 reserved ports at a time. This number includes the default
+        /// reserved ports. Automatically assigned ports aren't included in the 100 reserved ports
+        /// quota.
         /// </para>
         /// </summary>
         public int HostPort

@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the service deployment was created.
+        /// The Unix timestamp for the time when the service deployment was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -234,10 +234,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version on which your tasks in the service are running. A platform version
-        /// is only specified for tasks using the Fargate launch type. If one is not specified,
-        /// the <code>LATEST</code> platform version is used by default. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// The platform version that your tasks in the service run on. A platform version is
+        /// only specified for tasks using the Fargate launch type. If one isn't specified, the
+        /// <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -257,17 +256,17 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RolloutState. <note> 
         /// <para>
         /// The <code>rolloutState</code> of a service is only returned for services that use
-        /// the rolling update (<code>ECS</code>) deployment type that are not behind a Classic
+        /// the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic
         /// Load Balancer.
         /// </para>
         ///  </note> 
         /// <para>
         /// The rollout state of the deployment. When a service deployment is started, it begins
         /// in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-        /// deployment will transition to a <code>COMPLETED</code> state. If the service fails
-        /// to reach a steady state and circuit breaker is enabled, the deployment will transition
-        /// to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
-        /// no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+        /// deployment transitions to a <code>COMPLETED</code> state. If the service fails to
+        /// reach a steady state and circuit breaker is enabled, the deployment transitions to
+        /// a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch
+        /// any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
         /// </para>
         /// </summary>
         public DeploymentRolloutState RolloutState
@@ -321,7 +320,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the deployment. The following describes each state:
+        /// The status of the deployment. The following describes each state.
         /// </para>
         ///  <dl> <dt>PRIMARY</dt> <dd> 
         /// <para>
@@ -372,7 +371,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp for when the service deployment was last updated.
+        /// The Unix timestamp for the time when the service deployment was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

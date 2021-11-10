@@ -53,7 +53,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UNKNOWN</code>-The container health check is being evaluated or there is no
+    ///  <code>UNKNOWN</code>-The container health check is being evaluated or there's no
     /// container health check defined.
     /// </para>
     ///  </li> </ul> 
@@ -96,14 +96,14 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Container health checks are supported for Fargate tasks if you are using platform
-    /// version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+    /// Container health checks are supported for Fargate tasks if you're using platform version
+    /// 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
     /// Platform Versions</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Container health checks are not supported for tasks that are part of a service that
-    /// is configured to use a Classic Load Balancer.
+    /// Container health checks aren't supported for tasks that are part of a service that's
+    /// configured to use a Classic Load Balancer.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -126,8 +126,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         ///  When you use the Amazon Web Services Management Console JSON panel, the Command Line
-        /// Interface, or the APIs, you should enclose the list of commands in brackets, as shown
-        /// below.
+        /// Interface, or the APIs, enclose the list of commands in brackets.
         /// </para>
         ///  
         /// <para>
@@ -135,8 +134,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You do not need to include the brackets when you use the Amazon Web Services Management
-        /// Consoleas shown below.
+        /// You don't need to include the brackets when you use the Amazon Web Services Management
+        /// Console.
         /// </para>
         ///  
         /// <para>
@@ -204,9 +203,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartPeriod. 
         /// <para>
-        /// The optional grace period within which to provide containers time to bootstrap before
-        /// failed health checks count towards the maximum number of retries. You may specify
-        /// between 0 and 300 seconds. The <code>startPeriod</code> is disabled by default.
+        /// The optional grace period to provide containers time to bootstrap before failed health
+        /// checks count towards the maximum number of retries. You can specify between 0 and
+        /// 300 seconds. By default, the <code>startPeriod</code> is disabled.
         /// </para>
         ///  <note> 
         /// <para>

@@ -78,8 +78,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using tasks that use the Fargate launch type, the <code>devices</code>
-        /// parameter is not supported.
+        /// If you're using tasks that use the Fargate launch type, the <code>devices</code> parameter
+        /// isn't supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -136,8 +136,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using tasks that use the Fargate launch type, the <code>maxSwap</code>
-        /// parameter is not supported.
+        /// If you're using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter
+        /// isn't supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -194,8 +194,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using tasks that use the Fargate launch type, the <code>swappiness</code>
-        /// parameter is not supported.
+        /// If you're using tasks that use the Fargate launch type, the <code>swappiness</code>
+        /// parameter isn't supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -220,8 +220,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter
-        /// is not supported.
+        /// If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter
+        /// isn't supported.
         /// </para>
         ///  </note>
         /// </summary>

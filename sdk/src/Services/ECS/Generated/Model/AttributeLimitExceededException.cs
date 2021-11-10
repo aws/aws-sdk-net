@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// You can apply up to 10 custom attributes per resource. You can view the attributes
+    /// You can apply up to 10 custom attributes for each resource. You can view the attributes
     /// of a resource with <a>ListAttributes</a>. You can remove existing attributes on a
     /// resource with <a>DeleteAttributes</a>.
     /// </summary>

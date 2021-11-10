@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service
-        /// that the task set exists in.
+        /// that the task set is found in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Service. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the service that the task set
-        /// exists in.
+        /// is found in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

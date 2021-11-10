@@ -67,7 +67,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Specifies whether to see the resource tags for the task set. If <code>TAGS</code>
         /// is specified, the tags are included in the response. If this field is omitted, tags
-        /// are not included in the response.
+        /// aren't included in the response.
         /// </para>
         /// </summary>
         public List<string> Include

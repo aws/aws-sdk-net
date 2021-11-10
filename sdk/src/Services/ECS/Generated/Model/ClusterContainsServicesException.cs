@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// You cannot delete a cluster that contains services. First, update the service to reduce
-    /// its desired task count to 0 and then delete the service. For more information, see
+    /// You can't delete a cluster that contains services. First, update the service to reduce
+    /// its desired task count to 0, and then delete the service. For more information, see
     /// <a>UpdateService</a> and <a>DeleteService</a>.
     /// </summary>
     #if !NETSTANDARD

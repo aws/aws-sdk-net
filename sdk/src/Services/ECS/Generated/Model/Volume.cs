@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A data volume used in a task definition. For tasks that use the Amazon Elastic File
-    /// System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks
-    /// that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>.
+    /// A data volume that's used in a task definition. For tasks that use the Amazon Elastic
+    /// File System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows
+    /// tasks that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>.
     /// For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>.
     /// For tasks that use a bind mount host volume, specify a <code>host</code> and optional
     /// <code>sourcePath</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerVolumeConfiguration. 
         /// <para>
-        /// This parameter is specified when you are using Docker volumes.
+        /// This parameter is specified when you use Docker volumes.
         /// </para>
         ///  
         /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Docker volumes are not supported by tasks run on Fargate.
+        /// Docker volumes aren't supported by tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -76,8 +76,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EfsVolumeConfiguration. 
         /// <para>
-        /// This parameter is specified when you are using an Amazon Elastic File System file
-        /// system for task storage.
+        /// This parameter is specified when you use an Amazon Elastic File System file system
+        /// for task storage.
         /// </para>
         /// </summary>
         public EFSVolumeConfiguration EfsVolumeConfiguration
@@ -95,8 +95,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property FsxWindowsFileServerVolumeConfiguration. 
         /// <para>
-        /// This parameter is specified when you are using Amazon FSx for Windows File Server
-        /// file system for task storage.
+        /// This parameter is specified when you use Amazon FSx for Windows File Server file system
+        /// for task storage.
         /// </para>
         /// </summary>
         public FSxWindowsFileServerVolumeConfiguration FsxWindowsFileServerVolumeConfiguration
@@ -114,19 +114,19 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// This parameter is specified when you are using bind mount host volumes. The contents
-        /// of the <code>host</code> parameter determine whether your bind mount host volume persists
-        /// on the host container instance and where it is stored. If the <code>host</code> parameter
+        /// This parameter is specified when you use bind mount host volumes. The contents of
+        /// the <code>host</code> parameter determine whether your bind mount host volume persists
+        /// on the host container instance and where it's stored. If the <code>host</code> parameter
         /// is empty, then the Docker daemon assigns a host path for your data volume. However,
-        /// the data is not guaranteed to persist after the containers associated with it stop
-        /// running.
+        /// the data isn't guaranteed to persist after the containers that are associated with
+        /// it stop running.
         /// </para>
         ///  
         /// <para>
         /// Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
-        /// Windows containers cannot mount directories on a different drive, and mount point
-        /// cannot be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
-        /// and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+        /// Windows containers can't mount directories on a different drive, and mount point can't
+        /// be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and
+        /// <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
         /// </para>
         /// </summary>
         public HostVolumeProperties Host

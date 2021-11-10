@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// You do not have authorization to perform the requested action.
+    /// You don't have authorization to perform the requested action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -106,6 +106,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("healthStatus", targetDepth))
+                {
+                    var unmarshaller = ContainerInstanceHealthStatusUnmarshaller.Instance;
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pendingTasksCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

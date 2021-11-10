@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
     /// agent version. For information about checking your agent version and updating to the
     /// latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
     /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
-    /// Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs
+    /// Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs
     /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
     /// instances are launched from version <code>20190301</code> or later, then they contain
     /// the required versions of the container agent and <code>ecs-init</code>. For more information,
@@ -49,7 +49,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// For tasks using the Fargate launch type, the task or service requires the followiwng
+    /// For tasks that use the Fargate launch type, the task or service requires the following
     /// platforms:
     /// </para>
     ///  <ul> <li> 
@@ -83,14 +83,14 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  <code>COMPLETE</code> - This condition validates that a dependent container runs
         /// to completion (exits) before permitting other containers to start. This can be useful
-        /// for nonessential containers that run a script and then exit. This condition cannot
+        /// for nonessential containers that run a script and then exit. This condition can't
         /// be set on an essential container.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it
         /// also requires that the container exits with a <code>zero</code> status. This condition
-        /// cannot be set on an essential container.
+        /// can't be set on an essential container.
         /// </para>
         ///  </li> <li> 
         /// <para>

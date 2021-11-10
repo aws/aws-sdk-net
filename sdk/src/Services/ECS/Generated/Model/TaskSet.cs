@@ -63,7 +63,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy associated with the task set.
+        /// The capacity provider strategy that are associated with the task set.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -121,7 +121,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the task set was created.
+        /// The Unix timestamp for the time when the task set was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -143,8 +143,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If a task set is created by an CodeDeploy deployment, the <code>externalId</code>
-        /// parameter contains the CodeDeploy deployment ID.
+        /// If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter
+        /// contains the CodeDeploy deployment ID.
         /// </para>
         ///  
         /// <para>
@@ -206,7 +206,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// Details on a load balancer that is used with a task set.
+        /// Details on a load balancer that are used with a task set.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -245,7 +245,7 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the task set that are in the <code>PENDING</code> status during
         /// a deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code>
         /// state. A task set enters the <code>PENDING</code> status when it launches for the
-        /// first time or when it is restarted after being in the <code>STOPPED</code> state.
+        /// first time or when it's restarted after being in the <code>STOPPED</code> state.
         /// </para>
         /// </summary>
         public int PendingCount
@@ -264,7 +264,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlatformFamily. 
         /// <para>
         /// The operating system that your tasks in the set are running on. A platform family
-        /// is specified only for tasks using the Fargate launch type. 
+        /// is specified only for tasks that use the Fargate launch type. 
         /// </para>
         ///  
         /// <para>
@@ -286,7 +286,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The Fargate platform version on which the tasks in the task set are running. A platform
+        /// The Fargate platform version where the tasks in the task set are running. A platform
         /// version is only specified for tasks run on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -325,7 +325,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Scale. 
         /// <para>
-        /// A floating-point percentage of the desired number of tasks to place and keep running
+        /// A floating-point percentage of your desired number of tasks to place and keep running
         /// in the task set.
         /// </para>
         /// </summary>
@@ -362,7 +362,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
-        /// The details of the service discovery registries to assign to this task set. For more
+        /// The details for the service discovery registries to assign to this task set. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// discovery</a>.
         /// </para>
@@ -382,8 +382,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StabilityStatus. 
         /// <para>
-        /// The stability status, which indicates whether the task set has reached a steady state.
-        /// If the following conditions are met, the task set will be in <code>STEADY_STATE</code>:
+        /// The stability status. This indicates whether the task set has reached a steady state.
+        /// If the following conditions are met, the task set sre in <code>STEADY_STATE</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -395,7 +395,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There are no tasks running on container instances in the <code>DRAINING</code> status.
+        /// There are no tasks that are running on container instances in the <code>DRAINING</code>
+        /// status.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -404,7 +405,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
+        /// If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
         /// </para>
         /// </summary>
         public StabilityStatus StabilityStatus
@@ -422,7 +423,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StabilityStatusAt. 
         /// <para>
-        /// The Unix timestamp for when the task set stability status was retrieved.
+        /// The Unix timestamp for the time when the task set stability status was retrieved.
         /// </para>
         /// </summary>
         public DateTime StabilityStatusAt
@@ -440,9 +441,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// The tag specified when a task set is started. If the task set is created by an CodeDeploy
-        /// deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For
-        /// a task set created for an external deployment, the startedBy field isn't used.
+        /// The tag specified when a task set is started. If an CodeDeploy deployment created
+        /// the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If
+        /// an external deployment created the task set, the startedBy field isn't used.
         /// </para>
         /// </summary>
         public string StartedBy
@@ -460,7 +461,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the task set. The following describes each state:
+        /// The status of the task set. The following describes each state.
         /// </para>
         ///  <dl> <dt>PRIMARY</dt> <dd> 
         /// <para>
@@ -468,11 +469,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </dd> <dt>ACTIVE</dt> <dd> 
         /// <para>
-        /// The task set is not serving production traffic.
+        /// The task set isn't serving production traffic.
         /// </para>
         ///  </dd> <dt>DRAINING</dt> <dd> 
         /// <para>
-        /// The tasks in the task set are being stopped and their corresponding targets are being
+        /// The tasks in the task set are being stopped, and their corresponding targets are being
         /// deregistered from their target group.
         /// </para>
         ///  </dd> </dl>
@@ -493,7 +494,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the task set to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// Each tag consists of a key and an optional value. You define both.
         /// </para>
         ///  
         /// <para>
@@ -552,7 +553,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinition. 
         /// <para>
-        /// The task definition the task set is using.
+        /// The task definition that the task set is using.
         /// </para>
         /// </summary>
         public string TaskDefinition
@@ -588,7 +589,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp for when the task set was last updated.
+        /// The Unix timestamp for the time when the task set was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

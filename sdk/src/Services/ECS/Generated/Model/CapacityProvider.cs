@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The details of a capacity provider.
+    /// The details for a capacity provider.
     /// </summary>
     public partial class CapacityProvider
     {
@@ -100,7 +100,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code>
         /// state can be used in a cluster. When a capacity provider is successfully deleted,
-        /// it will have an <code>INACTIVE</code> status.
+        /// it has an <code>INACTIVE</code> status.
         /// </para>
         /// </summary>
         public CapacityProviderStatus Status
@@ -119,7 +119,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the capacity provider to help you categorize and organize
-        /// it. Each tag consists of a key and an optional value, both of which you define.
+        /// it. Each tag consists of a key and an optional value. You define both.
         /// </para>
         ///  
         /// <para>
@@ -179,7 +179,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         /// The update status of the capacity provider. The following are the possible states
-        /// that will be returned.
+        /// that is returned.
         /// </para>
         ///  <dl> <dt>DELETE_IN_PROGRESS</dt> <dd> 
         /// <para>
@@ -187,13 +187,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </dd> <dt>DELETE_COMPLETE</dt> <dd> 
         /// <para>
-        /// The capacity provider has been successfully deleted and will have an <code>INACTIVE</code>
-        /// status.
+        /// The capacity provider was successfully deleted and has an <code>INACTIVE</code> status.
         /// </para>
         ///  </dd> <dt>DELETE_FAILED</dt> <dd> 
         /// <para>
-        /// The capacity provider was unable to be deleted. The update status reason will provide
-        /// further details about why the delete failed.
+        /// The capacity provider can't be deleted. The update status reason provides further
+        /// details about why the delete failed.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

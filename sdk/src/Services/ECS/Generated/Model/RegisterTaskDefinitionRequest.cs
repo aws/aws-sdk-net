@@ -41,8 +41,8 @@ namespace Amazon.ECS.Model
     /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
     /// When you specify an IAM role for a task, its containers can then use the latest versions
     /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
-    /// specified in the IAM policy associated with the role. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+    /// specified in the IAM policy that's associated with the role. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
     /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -101,8 +101,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cpu. 
         /// <para>
         /// The number of CPU units used by the task. It can be expressed as an integer using
-        /// CPU units, for example <code>1024</code>, or as a string using vCPUs, for example
-        /// <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+        /// CPU units (for example, <code>1024</code>) or as a string using vCPUs (for example,
+        /// <code>1 vCPU</code> or <code>1 vcpu</code>) in a task definition. String values are
         /// converted to an integer indicating the CPU units when the task definition is registered.
         /// </para>
         ///  <note> 
@@ -112,15 +112,19 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// If you are using the EC2 launch type, this field is optional. Supported values are
+        /// If you're using the EC2 launch type, this field is optional. Supported values are
         /// between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code>
         /// CPU units (<code>10</code> vCPUs).
         /// </para>
         ///  
         /// <para>
-        /// If you are using the Fargate launch type, this field is required and you must use
-        /// one of the following values, which determines your range of supported values for the
-        /// <code>memory</code> parameter:
+        /// If you're using the Fargate launch type, this field is required and you must use one
+        /// of the following values, which determines your range of supported values for the <code>memory</code>
+        /// parameter:
+        /// </para>
+        ///  
+        /// <para>
+        /// The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -222,9 +226,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Family. 
         /// <para>
-        /// You must specify a <code>family</code> for a task definition, which allows you to
-        /// track multiple versions of the same task definition. The <code>family</code> is used
-        /// as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers,
+        /// You must specify a <code>family</code> for a task definition. You can use it track
+        /// multiple versions of the same task definition. The <code>family</code> is used as
+        /// a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers,
         /// underscores, and hyphens are allowed.
         /// </para>
         /// </summary>
@@ -319,8 +323,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Memory. 
         /// <para>
         /// The amount of memory (in MiB) used by the task. It can be expressed as an integer
-        /// using MiB, for example <code>1024</code>, or as a string using GB, for example <code>1GB</code>
-        /// or <code>1 GB</code>, in a task definition. String values are converted to an integer
+        /// using MiB (for example ,<code>1024</code>) or as a string using GB (for example, <code>1GB</code>
+        /// or <code>1 GB</code>) in a task definition. String values are converted to an integer
         /// indicating the MiB when the task definition is registered.
         /// </para>
         ///  <note> 
@@ -335,8 +339,12 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If using the Fargate launch type, this field is required and you must use one of the
-        /// following values, which determines your range of supported values for the <code>cpu</code>
-        /// parameter:
+        /// following values. This determines your range of supported values for the <code>cpu</code>
+        /// parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -478,8 +486,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlacementConstraints. 
         /// <para>
         /// An array of placement constraint objects to use for the task. You can specify a maximum
-        /// of 10 constraints per task (this limit includes constraints in the task definition
-        /// and those specified at runtime).
+        /// of 10 constraints for each task. This limit includes constraints in the task definition
+        /// and those specified at runtime.
         /// </para>
         /// </summary>
         public List<TaskDefinitionPlacementConstraint> PlacementConstraints
@@ -526,10 +534,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The task launch type that Amazon ECS should validate the task definition against.
-        /// A client exception is returned if the task definition doesn't validate against the
-        /// compatibilities specified. If no value is specified, the parameter is omitted from
-        /// the response.
+        /// The task launch type that Amazon ECS validates the task definition against. A client
+        /// exception is returned if the task definition doesn't validate against the compatibilities
+        /// specified. If no value is specified, the parameter is omitted from the response.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities
@@ -572,7 +579,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
+        /// them. Each tag consists of a key and an optional value. You define both of them.
         /// </para>
         ///  
         /// <para>
@@ -652,7 +659,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
-        /// A list of volume definitions in JSON format that containers in your task may use.
+        /// A list of volume definitions in JSON format that containers in your task might use.
         /// </para>
         /// </summary>
         public List<Volume> Volumes

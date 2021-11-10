@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified task set could not be found. You can view your available task sets with
-    /// <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
+    /// The specified task set wasn't found. You can view your available task sets with <a>DescribeTaskSets</a>.
+    /// Task sets are specific to each cluster, service and Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

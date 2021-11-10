@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// This parameter is specified when you are using Docker volumes. Docker volumes are
-    /// only supported when you are using the EC2 launch type. Windows containers only support
-    /// the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code>
+    /// This parameter is specified when you're using Docker volumes. Docker volumes are only
+    /// supported when you're using the EC2 launch type. Windows containers only support the
+    /// use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code>
     /// instead.
     /// </summary>
     public partial class DockerVolumeConfiguration
@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Autoprovision. 
         /// <para>
-        /// If this value is <code>true</code>, the Docker volume is created if it does not already
+        /// If this value is <code>true</code>, the Docker volume is created if it doesn't already
         /// exist.
         /// </para>
         ///  <note> 

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on an event associated with a service.
+    /// The details for an event that's associated with a service.
     /// </summary>
     public partial class ServiceEvent
     {
@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the event was triggered.
+        /// The Unix timestamp for the time when the event was triggered.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID string of the event.
+        /// The ID string for the event.
         /// </para>
         /// </summary>
         public string Id

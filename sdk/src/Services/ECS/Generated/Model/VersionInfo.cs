@@ -77,7 +77,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerVersion. 
         /// <para>
-        /// The Docker version running on the container instance.
+        /// The Docker version that's running on the container instance.
         /// </para>
         /// </summary>
         public string DockerVersion

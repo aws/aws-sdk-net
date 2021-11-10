@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An EC2 instance that is running the Amazon ECS agent and has been registered with
-    /// a cluster.
+    /// An EC2 instance that's running the Amazon ECS agent and has been registered with a
+    /// cluster.
     /// </summary>
     public partial class ContainerInstance
     {
@@ -41,6 +41,7 @@ namespace Amazon.ECS.Model
         private string _capacityProviderName;
         private string _containerInstanceArn;
         private string _ec2InstanceId;
+        private ContainerInstanceHealthStatus _healthStatus;
         private int? _pendingTasksCount;
         private DateTime? _registeredAt;
         private List<Resource> _registeredResources = new List<Resource>();
@@ -75,8 +76,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property AgentUpdateStatus. 
         /// <para>
-        /// The status of the most recent agent update. If an update has never been requested,
-        /// this value is <code>NULL</code>.
+        /// The status of the most recent agent update. If an update wasn't ever requested, this
+        /// value is <code>NULL</code>.
         /// </para>
         /// </summary>
         public AgentUpdateStatus AgentUpdateStatus
@@ -131,7 +132,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviderName. 
         /// <para>
-        /// The capacity provider associated with the container instance.
+        /// The capacity provider that's associated with the container instance.
         /// </para>
         /// </summary>
         public string CapacityProviderName
@@ -188,6 +189,24 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        /// An object representing the health status of the container instance.
+        /// </para>
+        /// </summary>
+        public ContainerInstanceHealthStatus HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PendingTasksCount. 
         /// <para>
         /// The number of tasks on the container instance that are in the <code>PENDING</code>
@@ -209,7 +228,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RegisteredAt. 
         /// <para>
-        /// The Unix timestamp for when the container instance was registered.
+        /// The Unix timestamp for the time when the container instance was registered.
         /// </para>
         /// </summary>
         public DateTime RegisteredAt
@@ -251,11 +270,11 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RemainingResources. 
         /// <para>
         /// For CPU and memory resource types, this parameter describes the remaining CPU and
-        /// memory that has not already been allocated to tasks and is therefore available for
-        /// new tasks. For port resource types, this parameter describes the ports that were reserved
-        /// by the Amazon ECS container agent (at instance registration time) and any task containers
+        /// memory that wasn't already allocated to tasks and is therefore available for new tasks.
+        /// For port resource types, this parameter describes the ports that were reserved by
+        /// the Amazon ECS container agent (at instance registration time) and any task containers
         /// that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
-        /// network mode). Any port that is not specified here is available for new tasks.
+        /// network mode). Any port that's not specified here is available for new tasks.
         /// </para>
         /// </summary>
         public List<Resource> RemainingResources
@@ -311,7 +330,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// The <code>ACTIVE</code> status indicates that the container instance can accept tasks.
-        /// The <code>DRAINING</code> indicates that new tasks are not placed on the container
+        /// The <code>DRAINING</code> indicates that new tasks aren't placed on the container
         /// instance and any service tasks running on the container instance are removed if possible.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
         /// Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -351,7 +370,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the container instance to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
+        /// them. Each tag consists of a key and an optional value. You define both.
         /// </para>
         ///  
         /// <para>
@@ -412,7 +431,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The version counter for the container instance. Every time a container instance experiences
         /// a change that triggers a CloudWatch event, the version counter is incremented. If
-        /// you are replicating your Amazon ECS container instance state with CloudWatch Events,
+        /// you're replicating your Amazon ECS container instance state with CloudWatch Events,
         /// you can compare the version of a container instance reported by the Amazon ECS APIs
         /// with the version reported in CloudWatch Events for the container instance (inside
         /// the <code>detail</code> object) to verify that the version in your event stream is

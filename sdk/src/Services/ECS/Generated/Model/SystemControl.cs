@@ -37,22 +37,22 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// It is not recommended that you specify network-related <code>systemControls</code>
-    /// parameters for multiple containers in a single task that also uses either the <code>awsvpc</code>
-    /// or <code>host</code> network mode for the following reasons:
+    /// We don't recommend that you specify network-related <code>systemControls</code> parameters
+    /// for multiple containers in a single task. This task also uses either the <code>awsvpc</code>
+    /// or <code>host</code> network mode. It does it for the following reasons.
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code>
     /// for any container, it applies to all containers in the task. If you set different
     /// <code>systemControls</code> for multiple containers in a single task, the container
-    /// that is started last determines which <code>systemControls</code> take effect.
+    /// that's started last determines which <code>systemControls</code> take effect.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For tasks that use the <code>host</code> network mode, the <code>systemControls</code>
-    /// parameter applies to the container instance's kernel parameter as well as that of
-    /// all containers of any tasks running on that container instance.
+    /// parameter applies to the container instance's kernel parameter and that of all containers
+    /// of any tasks running on that container instance.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespaced kernel parameter for which to set a <code>value</code>.
+        /// The namespaced kernel parameter to set a <code>value</code> for.
         /// </para>
         /// </summary>
         public string Namespace
@@ -82,7 +82,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for the namespaced kernel parameter specified in <code>namespace</code>.
+        /// The value for the namespaced kernel parameter that's specified in <code>namespace</code>.
         /// </para>
         /// </summary>
         public string Value

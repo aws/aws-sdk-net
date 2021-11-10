@@ -138,8 +138,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>,
-        /// or <code>STRINGSET</code>.
+        /// The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>,
+        /// <code>LONG</code>, or <code>STRINGSET</code>.
         /// </para>
         /// </summary>
         public string Type

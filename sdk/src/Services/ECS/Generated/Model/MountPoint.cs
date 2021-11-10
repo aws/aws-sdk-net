@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on a volume mount point that is used in a container definition.
+    /// Details for a volume mount point that's used in a container definition.
     /// </summary>
     public partial class MountPoint
     {

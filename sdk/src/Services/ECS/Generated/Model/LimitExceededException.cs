@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The limit for the resource has been exceeded.
+    /// The limit for the resource was exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

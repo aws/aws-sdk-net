@@ -105,10 +105,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of <code>cpu</code> units used by the task. If you are using the EC2 launch
-        /// type, this field is optional and any value can be used. If you are using the Fargate
-        /// launch type, this field is required and you must use one of the following values,
-        /// which determines your range of valid values for the <code>memory</code> parameter:
+        /// The number of <code>cpu</code> units used by the task. If you use the EC2 launch type,
+        /// this field is optional. Any value can be used. If you use the Fargate launch type,
+        /// this field is required. You must use one of the following values. The value that you
+        /// choose determines your range of valid values for the <code>memory</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -152,7 +156,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DeregisteredAt. 
         /// <para>
-        /// The Unix timestamp for when the task definition was deregistered.
+        /// The Unix timestamp for the time when the task definition was deregistered.
         /// </para>
         /// </summary>
         public DateTime DeregisteredAt
@@ -211,8 +215,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Family. 
         /// <para>
-        /// The name of a family that this task definition is registered to. Up to 255 letters
-        /// (uppercase and lowercase), numbers, hyphens, and underscores are allowed.
+        /// The name of a family that this task definition is registered to. Up to 255 characters
+        /// are allowed. Letters (both uppercase and lowercase letters), numbers, hyphens (-),
+        /// and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>
@@ -236,7 +241,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property InferenceAccelerators. 
         /// <para>
-        /// The Elastic Inference accelerator associated with the task.
+        /// The Elastic Inference accelerator that's associated with the task.
         /// </para>
         /// </summary>
         public List<InferenceAccelerator> InferenceAccelerators
@@ -314,17 +319,17 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If your tasks will be run on Amazon EC2 instances, you must specify either a task-level
-        /// memory value or a container-level memory value. This field is optional and any value
-        /// can be used. If a task-level memory value is specified then the container-level memory
-        /// value is optional. For more information regarding container-level memory and memory
-        /// reservation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
+        /// If your tasks runs on Amazon EC2 instances, you must specify either a task-level memory
+        /// value or a container-level memory value. This field is optional and any value can
+        /// be used. If a task-level memory value is specified, the container-level memory value
+        /// is optional. For more information regarding container-level memory and memory reservation,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.
         /// </para>
         ///  
         /// <para>
-        /// If your tasks will be run on Fargate, this field is required and you must use one
-        /// of the following values, which determines your range of valid values for the <code>cpu</code>
-        /// parameter:
+        /// If your tasks runs on Fargate, this field is required. You must use one of the following
+        /// values. The value you choose determines your range of valid values for the <code>cpu</code>
+        /// parameter.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -469,7 +474,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for tasks run on Fargate.
+        /// This parameter isn't supported for tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -494,8 +499,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Your Amazon ECS container instances require at least version 1.26.0 of the container
         /// agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable
-        /// a proxy configuration. If your container instances are launched from the Amazon ECS-optimized
-        /// AMI version <code>20190301</code> or later, then they contain the required versions
+        /// a proxy configuration. If your container instances are launched from the Amazon ECS
+        /// optimized AMI version <code>20190301</code> or later, they contain the required versions
         /// of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
         /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -515,7 +520,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RegisteredAt. 
         /// <para>
-        /// The Unix timestamp for when the task definition was registered.
+        /// The Unix timestamp for the time when the task definition was registered.
         /// </para>
         /// </summary>
         public DateTime RegisteredAt
@@ -553,15 +558,15 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The container instance attributes required by your task. When an Amazon EC2 instance
         /// is registered to your cluster, the Amazon ECS container agent assigns some standard
-        /// attributes to the instance. You can apply custom attributes, specified as key-value
-        /// pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These attributes
-        /// are used when considering task placement for tasks hosted on Amazon EC2 instances.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+        /// attributes to the instance. You can apply custom attributes. These are specified as
+        /// key-value pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These
+        /// attributes are used when determining task placement for tasks hosted on Amazon EC2
+        /// instances. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for tasks run on Fargate.
+        /// This parameter isn't supported for tasks run on Fargate.
         /// </para>
         ///  </note>
         /// </summary>
@@ -603,8 +608,8 @@ namespace Amazon.ECS.Model
         /// The revision of the task in a particular family. The revision is a version number
         /// of a task definition in a family. When you register a task definition for the first
         /// time, the revision is <code>1</code>. Each time that you register a new revision of
-        /// a task definition in the same family, the revision value always increases by one,
-        /// even if you have deregistered previous revisions in this family.
+        /// a task definition in the same family, the revision value always increases by one.
+        /// This is even if you deregistered previous revisions in this family.
         /// </para>
         /// </summary>
         public int Revision
@@ -691,8 +696,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option
         /// is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must
-        /// also run some configuration code in order to take advantage of the feature. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+        /// also run some configuration code to use the feature. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
         /// IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -716,7 +721,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>host</code> and <code>sourcePath</code> parameters are not supported for
+        /// The <code>host</code> and <code>sourcePath</code> parameters aren't supported for
         /// tasks run on Fargate.
         /// </para>
         ///  </note>

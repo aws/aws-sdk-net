@@ -105,8 +105,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 32 ASCII characters are allowed.
+        /// The identifier that you provide to ensure the idempotency of the request. It's case
+        /// sensitive and must be unique. It can be up to 32 ASCII characters are allowed.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -165,8 +165,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type that new tasks in the task set will use. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// The launch type that new tasks in the task set uses. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -228,9 +228,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version that the tasks in the task set should use. A platform version
-        /// is specified only for tasks using the Fargate launch type. If one isn't specified,
-        /// the <code>LATEST</code> platform version is used by default.
+        /// The platform version that the tasks in the task set uses. A platform version is specified
+        /// only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code>
+        /// platform version is used.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -308,8 +308,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the task set to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define. When a
-        /// service is deleted, the tags are deleted as well.
+        /// Each tag consists of a key and an optional value. You define both. When a service
+        /// is deleted, the tags are deleted.
         /// </para>
         ///  
         /// <para>

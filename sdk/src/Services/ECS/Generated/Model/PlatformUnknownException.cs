@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified platform version does not exist.
+    /// The specified platform version doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

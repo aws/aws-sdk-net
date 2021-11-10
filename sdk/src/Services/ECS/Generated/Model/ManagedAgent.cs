@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LastStartedAt. 
         /// <para>
-        /// The Unix timestamp for when the managed agent was last started.
+        /// The Unix timestamp for the time when the managed agent was last started.
         /// </para>
         /// </summary>
         public DateTime LastStartedAt

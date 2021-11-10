@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified resource is in-use and cannot be removed.
+    /// The specified resource is in-use and can't be removed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

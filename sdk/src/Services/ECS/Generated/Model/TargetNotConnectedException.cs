@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The target container is not properly configured with the execute command agent or
-    /// the container is no longer active or running.
+    /// The target container isn't properly configured with the execute command agent or the
+    /// container is no longer active or running.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

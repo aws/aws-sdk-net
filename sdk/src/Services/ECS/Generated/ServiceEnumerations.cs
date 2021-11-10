@@ -579,6 +579,10 @@ namespace Amazon.ECS
     {
 
         /// <summary>
+        /// Constant CONTAINER_INSTANCE_HEALTH for ContainerInstanceField
+        /// </summary>
+        public static readonly ContainerInstanceField CONTAINER_INSTANCE_HEALTH = new ContainerInstanceField("CONTAINER_INSTANCE_HEALTH");
+        /// <summary>
         /// Constant TAGS for ContainerInstanceField
         /// </summary>
         public static readonly ContainerInstanceField TAGS = new ContainerInstanceField("TAGS");
@@ -1244,6 +1248,110 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HealthStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceHealthCheckState.
+    /// </summary>
+    public class InstanceHealthCheckState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPAIRED for InstanceHealthCheckState
+        /// </summary>
+        public static readonly InstanceHealthCheckState IMPAIRED = new InstanceHealthCheckState("IMPAIRED");
+        /// <summary>
+        /// Constant INITIALIZING for InstanceHealthCheckState
+        /// </summary>
+        public static readonly InstanceHealthCheckState INITIALIZING = new InstanceHealthCheckState("INITIALIZING");
+        /// <summary>
+        /// Constant INSUFFICIENT_DATA for InstanceHealthCheckState
+        /// </summary>
+        public static readonly InstanceHealthCheckState INSUFFICIENT_DATA = new InstanceHealthCheckState("INSUFFICIENT_DATA");
+        /// <summary>
+        /// Constant OK for InstanceHealthCheckState
+        /// </summary>
+        public static readonly InstanceHealthCheckState OK = new InstanceHealthCheckState("OK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceHealthCheckState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceHealthCheckState FindValue(string value)
+        {
+            return FindValue<InstanceHealthCheckState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceHealthCheckState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceHealthCheckType.
+    /// </summary>
+    public class InstanceHealthCheckType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINER_RUNTIME for InstanceHealthCheckType
+        /// </summary>
+        public static readonly InstanceHealthCheckType CONTAINER_RUNTIME = new InstanceHealthCheckType("CONTAINER_RUNTIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceHealthCheckType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceHealthCheckType FindValue(string value)
+        {
+            return FindValue<InstanceHealthCheckType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceHealthCheckType(string value)
         {
             return FindValue(value);
         }

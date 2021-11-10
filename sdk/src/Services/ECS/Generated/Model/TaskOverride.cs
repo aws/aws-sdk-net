@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The overrides associated with a task.
+    /// The overrides that are associated with a task.
     /// </summary>
     public partial class TaskOverride
     {
@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
-        /// One or more container overrides sent to a task.
+        /// One or more container overrides that are sent to a task.
         /// </para>
         /// </summary>
         public List<ContainerOverride> ContainerOverrides
@@ -84,8 +84,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported for tasks hosted on Fargate using the following platform
-        /// versions:
+        /// This parameter is only supported for tasks hosted on Fargate that use the following
+        /// platform versions:
         /// </para>
         ///  <ul> <li> 
         /// <para>

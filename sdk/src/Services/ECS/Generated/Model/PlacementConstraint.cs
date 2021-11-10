@@ -35,7 +35,7 @@ namespace Amazon.ECS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If you are using the Fargate launch type, task placement constraints are not supported.
+    /// If you're using the Fargate launch type, task placement constraints aren't supported.
     /// </para>
     ///  </note>
     /// </summary>

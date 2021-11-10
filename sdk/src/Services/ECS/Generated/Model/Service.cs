@@ -68,8 +68,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy the service is using. When using the DescribeServices
-        /// API, this field is omitted if the service was created using a launch type.
+        /// The capacity provider strategy the service uses. When using the DescribeServices API,
+        /// this field is omitted if the service was created using a launch type.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -105,7 +105,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the service was created.
+        /// The Unix timestamp for the time when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -161,8 +161,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeploymentController. 
         /// <para>
         /// The deployment controller type the service is using. When using the DescribeServices
-        /// API, this field is omitted if the service is using the <code>ECS</code> deployment
-        /// controller type.
+        /// API, this field is omitted if the service uses the <code>ECS</code> deployment controller
+        /// type.
         /// </para>
         /// </summary>
         public DeploymentController DeploymentController
@@ -218,7 +218,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableECSManagedTags. 
         /// <para>
-        /// Specifies whether to enable Amazon ECS managed tags for the tasks in the service.
+        /// Determines whether to enable Amazon ECS managed tags for the tasks in the service.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
         /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -239,9 +239,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Whether or not the execute command functionality is enabled for the service. If <code>true</code>,
-        /// the execute command functionality is enabled for all containers in tasks as part of
-        /// the service.
+        /// Determines whether the execute command functionality is enabled for the service. If
+        /// <code>true</code>, the execute command functionality is enabled for all containers
+        /// in tasks as part of the service.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -315,9 +315,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A list of Elastic Load Balancing load balancer objects, containing the load balancer
-        /// name, the container name (as it appears in a container definition), and the container
-        /// port to access from the load balancer.
+        /// A list of Elastic Load Balancing load balancer objects. It contains the load balancer
+        /// name, the container name, and the container port to access from the load balancer.
+        /// The container name is as it appears in a container definition.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -408,13 +408,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformFamily. 
         /// <para>
-        /// The operating system that your tasks in the service are running on. A platform family
-        /// is specified only for tasks using the Fargate launch type. 
+        /// The operating system that your tasks in the service run on. A platform family is specified
+        /// only for tasks using the Fargate launch type. 
         /// </para>
         ///  
         /// <para>
         ///  All tasks that run as part of this service must use the same <code>platformFamily</code>
-        /// value as the service, for example, <code>LINUX</code>.
+        /// value as the service (for example, <code>LINUX</code>).
         /// </para>
         /// </summary>
         public string PlatformFamily
@@ -432,9 +432,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version on which to run your service. A platform version is only specified
-        /// for tasks hosted on Fargate. If one is not specified, the <code>LATEST</code> platform
-        /// version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// The platform version to run your service on. A platform version is only specified
+        /// for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code>
+        /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -453,8 +453,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PropagateTags. 
         /// <para>
-        /// Specifies whether to propagate the tags from the task definition or the service to
-        /// the task. If no value is specified, the tags are not propagated.
+        /// Determines whether to propagate the tags from the task definition or the service to
+        /// the task. If no value is specified, the tags aren't propagated.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags
@@ -472,8 +472,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role associated with the service that allows the Amazon ECS container
-        /// agent to register container instances with an Elastic Load Balancing load balancer.
+        /// The ARN of the IAM role that's associated with the service. It allows the Amazon ECS
+        /// container agent to register container instances with an Elastic Load Balancing load
+        /// balancer.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -513,7 +514,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// There are two service scheduler strategies available:
+        /// There are two service scheduler strategies available.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -525,13 +526,13 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
-        /// active container instance that meets all of the task placement constraints that you
-        /// specify in your cluster. The service scheduler also evaluates the task placement constraints
-        /// for running tasks and will stop tasks that do not meet the placement constraints.
+        /// active container instance. This taskmeets all of the task placement constraints that
+        /// you specify in your cluster. The service scheduler also evaluates the task placement
+        /// constraints for running tasks. It stop tasks that don't meet the placement constraints.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+        /// Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
@@ -572,8 +573,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores,
-        /// and hyphens are allowed. Service names must be unique within a cluster, but you can
-        /// have similarly named services in multiple clusters within a Region or across multiple
+        /// and hyphens are allowed. Service names must be unique within a cluster. However, you
+        /// can have similarly named services in multiple clusters within a Region or across multiple
         /// Regions.
         /// </para>
         /// </summary>
@@ -592,7 +593,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
-        /// The details of the service discovery registries to assign to this service. For more
+        /// The details for the service discovery registries to assign to this service. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.
         /// </para>
@@ -632,7 +633,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the service to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// Each tag consists of a key and an optional value. You define bot the key and value.
         /// </para>
         ///  
         /// <para>

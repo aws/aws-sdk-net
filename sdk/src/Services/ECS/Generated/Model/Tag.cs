@@ -30,7 +30,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The metadata that you apply to a resource to help you categorize and organize them.
-    /// Each tag consists of a key and an optional value, both of which you define.
+    /// Each tag consists of a key and an optional value. You define them.
     /// 
     ///  
     /// <para>

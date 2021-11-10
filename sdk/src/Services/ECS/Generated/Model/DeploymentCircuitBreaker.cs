@@ -32,7 +32,7 @@ namespace Amazon.ECS.Model
     /// <note> 
     /// <para>
     /// The deployment circuit breaker can only be used for services using the rolling update
-    /// (<code>ECS</code>) deployment type that are not behind a Classic Load Balancer.
+    /// (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.
     /// </para>
     ///  </note> 
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Enable. 
         /// <para>
-        /// Whether to enable the deployment circuit breaker logic for the service.
+        /// Determines whether to enable the deployment circuit breaker logic for the service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,9 +71,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Rollback. 
         /// <para>
-        /// Whether to enable Amazon ECS to roll back the service if a service deployment fails.
-        /// If rollback is enabled, when a service deployment fails, the service is rolled back
-        /// to the last deployment that completed successfully.
+        /// Determines whether to enable Amazon ECS to roll back the service if a service deployment
+        /// fails. If rollback is enabled, when a service deployment fails, the service is rolled
+        /// back to the last deployment that completed successfully.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

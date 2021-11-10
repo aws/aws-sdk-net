@@ -73,7 +73,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code>
+        /// The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code>
         /// network mode.
         /// </para>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The availability zone of the task.
+        /// The Availability Zone for the task.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -128,7 +128,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviderName. 
         /// <para>
-        /// The capacity provider associated with the task.
+        /// The capacity provider that's associated with the task.
         /// </para>
         /// </summary>
         public string CapacityProviderName
@@ -182,7 +182,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ConnectivityAt. 
         /// <para>
-        /// The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
+        /// The Unix timestamp for the time when the task last went into <code>CONNECTED</code>
+        /// status.
         /// </para>
         /// </summary>
         public DateTime ConnectivityAt
@@ -218,7 +219,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Containers. 
         /// <para>
-        /// The containers associated with the task.
+        /// The containers that's associated with the task.
         /// </para>
         /// </summary>
         public List<Container> Containers
@@ -237,22 +238,26 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cpu. 
         /// <para>
         /// The number of CPU units used by the task as expressed in a task definition. It can
-        /// be expressed as an integer using CPU units, for example <code>1024</code>. It can
-        /// also be expressed as a string using vCPUs, for example <code>1 vCPU</code> or <code>1
-        /// vcpu</code>. String values are converted to an integer indicating the CPU units when
-        /// the task definition is registered.
+        /// be expressed as an integer using CPU units (for example, <code>1024</code>). It can
+        /// also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1
+        /// vcpu</code>). String values are converted to an integer that indicates the CPU units
+        /// when the task definition is registered.
         /// </para>
         ///  
         /// <para>
-        /// If you are using the EC2 launch type, this field is optional. Supported values are
-        /// between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code>
-        /// CPU units (<code>10</code> vCPUs).
+        /// If you use the EC2 launch type, this field is optional. Supported values are between
+        /// <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+        /// (<code>10</code> vCPUs).
         /// </para>
         ///  
         /// <para>
-        /// If you are using the Fargate launch type, this field is required and you must use
-        /// one of the following values, which determines your range of supported values for the
-        /// <code>memory</code> parameter:
+        /// If you use the Fargate launch type, this field is required. You must use one of the
+        /// following values. These values determine the range of supported values for the <code>memory</code>
+        /// parameter:
+        /// </para>
+        ///  
+        /// <para>
+        /// The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -296,8 +301,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp for when the task was created (the task entered the <code>PENDING</code>
-        /// state).
+        /// The Unix timestamp for the time when the task was created. More specifically, it's
+        /// for the time when the task entered the <code>PENDING</code> state.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -334,8 +339,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Whether or not execute command functionality is enabled for this task. If <code>true</code>,
-        /// this enables execute command functionality on all containers in the task.
+        /// Determines whether execute command functionality is enabled for this task. If <code>true</code>,
+        /// execute command functionality is enabled on all the containers in the task.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -371,7 +376,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ExecutionStoppedAt. 
         /// <para>
-        /// The Unix timestamp for when the task execution stopped.
+        /// The Unix timestamp for the time when the task execution stopped.
         /// </para>
         /// </summary>
         public DateTime ExecutionStoppedAt
@@ -389,7 +394,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name of the task group associated with the task.
+        /// The name of the task group that's associated with the task.
         /// </para>
         /// </summary>
         public string Group
@@ -407,19 +412,19 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// The health status for the task, which is determined by the health of the essential
-        /// containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>,
-        /// then the task status also reports as <code>HEALTHY</code>. If any essential containers
-        /// in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then
-        /// the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.
+        /// The health status for the task. It's determined by the health of the essential containers
+        /// in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>,
+        /// the task status also reports as <code>HEALTHY</code>. If any essential containers
+        /// in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task
+        /// status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The Amazon ECS container agent does not monitor or report on Docker health checks
-        /// that are embedded in a container image (such as those specified in a parent image
-        /// or from the image's Dockerfile) and not specified in the container definition. Health
-        /// check parameters that are specified in a container definition override any Docker
-        /// health checks that exist in the container image.
+        /// The Amazon ECS container agent doesn't monitor or report on Docker health checks that
+        /// are embedded in a container image and not specified in the container definition. For
+        /// example, this includes those specified in a parent image or from the image's Dockerfile.
+        /// Health check parameters that are specified in a container definition override any
+        /// Docker health checks that are found in the container image.
         /// </para>
         ///  </note>
         /// </summary>
@@ -438,7 +443,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property InferenceAccelerators. 
         /// <para>
-        /// The Elastic Inference accelerator associated with the task.
+        /// The Elastic Inference accelerator that's associated with the task.
         /// </para>
         /// </summary>
         public List<InferenceAccelerator> InferenceAccelerators
@@ -456,7 +461,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LastStatus. 
         /// <para>
-        /// The last known status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
+        /// The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
         /// Lifecycle</a>.
         /// </para>
         /// </summary>
@@ -475,7 +480,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The infrastructure on which your task is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// The infrastructure where your task runs on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -494,21 +499,20 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The amount of memory (in MiB) used by the task as expressed in a task definition.
-        /// It can be expressed as an integer using MiB, for example <code>1024</code>. It can
-        /// also be expressed as a string using GB, for example <code>1GB</code> or <code>1 GB</code>.
-        /// String values are converted to an integer indicating the MiB when the task definition
-        /// is registered.
+        /// The amount of memory (in MiB) that the task uses as expressed in a task definition.
+        /// It can be expressed as an integer using MiB (for example, <code>1024</code>). If it's
+        /// expressed as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>),
+        /// it's converted to an integer indicating the MiB when the task definition is registered.
         /// </para>
         ///  
         /// <para>
-        /// If you are using the EC2 launch type, this field is optional.
+        /// If you use the EC2 launch type, this field is optional.
         /// </para>
         ///  
         /// <para>
-        /// If you are using the Fargate launch type, this field is required and you must use
-        /// one of the following values, which determines your range of supported values for the
-        /// <code>cpu</code> parameter:
+        /// If you use the Fargate launch type, this field is required. You must use one of the
+        /// following values. The value that you choose determines the range of supported values
+        /// for the <code>cpu</code> parameter.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -571,12 +575,12 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlatformFamily. 
         /// <para>
         /// The operating system that your tasks are running on. A platform family is specified
-        /// only for tasks using the Fargate launch type. 
+        /// only for tasks that use the Fargate launch type. 
         /// </para>
         ///  
         /// <para>
         ///  All tasks that run as part of this service must use the same <code>platformFamily</code>
-        /// value as the service, for example, <code>LINUX.</code>.
+        /// value as the service (for example, <code>LINUX.</code>).
         /// </para>
         /// </summary>
         public string PlatformFamily
@@ -594,9 +598,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version on which your task is running. A platform version is only specified
-        /// for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code>
-        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// The platform version where your task runs on. A platform version is only specified
+        /// for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code>
+        /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -615,7 +619,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PullStartedAt. 
         /// <para>
-        /// The Unix timestamp for when the container image pull began.
+        /// The Unix timestamp for the time when the container image pull began.
         /// </para>
         /// </summary>
         public DateTime PullStartedAt
@@ -633,7 +637,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PullStoppedAt. 
         /// <para>
-        /// The Unix timestamp for when the container image pull completed.
+        /// The Unix timestamp for the time when the container image pull completed.
         /// </para>
         /// </summary>
         public DateTime PullStoppedAt
@@ -651,8 +655,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code>
-        /// state to the <code>RUNNING</code> state).
+        /// The Unix timestamp for the time when the task started. More specifically, it's for
+        /// the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+        /// state.
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -670,9 +675,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// The tag specified when a task is started. If the task is started by an Amazon ECS
-        /// service, then the <code>startedBy</code> parameter contains the deployment ID of the
-        /// service that starts it.
+        /// The tag specified when a task is started. If an Amazon ECS service started the task,
+        /// the <code>startedBy</code> parameter contains the deployment ID of that service.
         /// </para>
         /// </summary>
         public string StartedBy
@@ -690,7 +694,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StopCode. 
         /// <para>
-        /// The stop code indicating why a task was stopped. The <code>stoppedReason</code> may
+        /// The stop code indicating why a task was stopped. The <code>stoppedReason</code> might
         /// contain additional details.
         /// </para>
         /// </summary>
@@ -709,8 +713,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
-        /// state to the <code>STOPPED</code> state).
+        /// The Unix timestamp for the time when the task was stopped. More specifically, it's
+        /// for the time when the task transitioned from the <code>RUNNING</code> state to the
+        /// <code>STOPPED</code> state.
         /// </para>
         /// </summary>
         public DateTime StoppedAt
@@ -746,8 +751,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StoppingAt. 
         /// <para>
-        /// The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
-        /// state to <code>STOPPED</code>).
+        /// The Unix timestamp for the time when the task stops. More specifically, it's for the
+        /// time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.
         /// </para>
         /// </summary>
         public DateTime StoppingAt
@@ -765,8 +770,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The metadata that you apply to the task to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// The metadata that you apply to the task to help you categorize and organize the task.
+        /// Each tag consists of a key and an optional value. You define both the key and value.
         /// </para>
         ///  
         /// <para>
@@ -861,12 +866,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version counter for the task. Every time a task experiences a change that triggers
-        /// a CloudWatch event, the version counter is incremented. If you are replicating your
-        /// Amazon ECS task state with CloudWatch Events, you can compare the version of a task
-        /// reported by the Amazon ECS API actions with the version reported in CloudWatch Events
-        /// for the task (inside the <code>detail</code> object) to verify that the version in
-        /// your event stream is current.
+        /// The version counter for the task. Every time a task experiences a change that starts
+        /// a CloudWatch event, the version counter is incremented. If you replicate your Amazon
+        /// ECS task state with CloudWatch Events, you can compare the version of a task reported
+        /// by the Amazon ECS API actions with the version reported in CloudWatch Events for the
+        /// task (inside the <code>detail</code> object) to verify that the version in your event
+        /// stream is current.
         /// </para>
         /// </summary>
         public long Version

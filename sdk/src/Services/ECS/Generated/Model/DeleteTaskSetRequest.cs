@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service
-        /// that the task set exists in to delete.
+        /// that the task set found in to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,8 +64,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// If <code>true</code>, this allows you to delete a task set even if it hasn't been
-        /// scaled down to zero.
+        /// If <code>true</code>, you can delete a task set even if it hasn't been scaled down
+        /// to zero.
         /// </para>
         /// </summary>
         public bool Force

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified cluster could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. Amazon ECS clusters are Region-specific.
+    /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+    /// Amazon ECS clusters are Region specific.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

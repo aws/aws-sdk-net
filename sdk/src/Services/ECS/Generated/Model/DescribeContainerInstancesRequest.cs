@@ -83,8 +83,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Include. 
         /// <para>
         /// Specifies whether you want to see the resource tags for the container instance. If
-        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
-        /// is omitted, tags are not included in the response.
+        /// <code>TAGS</code> is specified, the tags are included in the response. If <code>CONTAINER_INSTANCE_HEALTH</code>
+        /// is specified, the container instance health is included in the response. If this field
+        /// is omitted, tags and container instance health status aren't included in the response.
         /// </para>
         /// </summary>
         public List<string> Include

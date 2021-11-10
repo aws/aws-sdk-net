@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details of the service registry.
+    /// The details for the service registry.
     /// </summary>
     public partial class ServiceRegistry
     {
@@ -41,13 +41,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerName. 
         /// <para>
-        /// The container name value, already specified in the task definition, to be used for
-        /// your service discovery service. If the task definition that your service task specifies
+        /// The container name value to be used for your service discovery service. It's already
+        /// specified in the task definition. If the task definition that your service task specifies
         /// uses the <code>bridge</code> or <code>host</code> network mode, you must specify a
         /// <code>containerName</code> and <code>containerPort</code> combination from the task
         /// definition. If the task definition that your service task specifies uses the <code>awsvpc</code>
         /// network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code>
-        /// and <code>containerPort</code> combination or a <code>port</code> value, but not both.
+        /// and <code>containerPort</code> combination or a <code>port</code> value. However,
+        /// you can't specify both.
         /// </para>
         /// </summary>
         public string ContainerName
@@ -65,13 +66,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerPort. 
         /// <para>
-        /// The port value, already specified in the task definition, to be used for your service
-        /// discovery service. If the task definition your service task specifies uses the <code>bridge</code>
-        /// or <code>host</code> network mode, you must specify a <code>containerName</code> and
-        /// <code>containerPort</code> combination from the task definition. If the task definition
+        /// The port value to be used for your service discovery service. It's already specified
+        /// in the task definition. If the task definition your service task specifies uses the
+        /// <code>bridge</code> or <code>host</code> network mode, you must specify a <code>containerName</code>
+        /// and <code>containerPort</code> combination from the task definition. If the task definition
         /// your service task specifies uses the <code>awsvpc</code> network mode and a type SRV
         /// DNS record is used, you must specify either a <code>containerName</code> and <code>containerPort</code>
-        /// combination or a <code>port</code> value, but not both.
+        /// combination or a <code>port</code> value. However, you can't specify both.
         /// </para>
         /// </summary>
         public int ContainerPort
@@ -90,7 +91,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The port value used if your service discovery service specified an SRV record. This
-        /// field may be used if both the <code>awsvpc</code> network mode and SRV records are
+        /// field might be used if both the <code>awsvpc</code> network mode and SRV records are
         /// used.
         /// </para>
         /// </summary>

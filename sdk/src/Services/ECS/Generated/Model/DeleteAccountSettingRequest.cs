@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code>
+        /// The resource name to disable the account setting for. If <code>serviceLongArnFormat</code>
         /// is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code>
         /// is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code>
         /// is specified, the ARN and resource ID for your Amazon ECS container instances is affected.
@@ -65,11 +65,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
-        /// you specify the root user, it disables the account setting for all IAM users, IAM
-        /// roles, and the root user of the account unless an IAM user or role explicitly overrides
-        /// these settings. If this field is omitted, the setting is changed only for the authenticated
-        /// user.
+        /// The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role,
+        /// or the root user. If you specify the root user, it disables the account setting for
+        /// all IAM users, IAM roles, and the root user of the account unless an IAM user or role
+        /// explicitly overrides these settings. If this field is omitted, the setting is changed
+        /// only for the authenticated user.
         /// </para>
         /// </summary>
         public string PrincipalArn

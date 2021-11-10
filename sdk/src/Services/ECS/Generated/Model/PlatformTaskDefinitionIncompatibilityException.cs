@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The specified platform version does not satisfy the task definition's required capabilities.
+    /// The specified platform version doesn't satisfy the required capabilities of the task
+    /// definition.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
