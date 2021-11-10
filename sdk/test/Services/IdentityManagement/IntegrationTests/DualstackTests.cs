@@ -153,17 +153,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.IsFalse(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
             }
         }
-
-        [TestMethod]
-        [TestCategory("SecurityToken")]
-        [TestCategory("IdentityManagement")]
-        public void TestExplicitlyDefinedEndpoint()
-        {
-            string hostname = RegionEndpoint.APNortheast2.GetEndpointForService("sts", true).Hostname;
-            Assert.AreEqual<string>("sts.dualstack.ap-northeast-2.amazonaws.com", hostname);
-
-            hostname = RegionEndpoint.CNNorth1.GetEndpointForService("iam", true).Hostname;
-            Assert.AreEqual<string>("iam.dualstack.cn-north-1.amazonaws.com.cn", hostname);
-        }
     }
 }

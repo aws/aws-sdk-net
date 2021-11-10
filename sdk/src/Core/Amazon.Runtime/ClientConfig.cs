@@ -62,7 +62,7 @@ namespace Amazon.Runtime
         private bool disableLogging = false;
         private TimeSpan? timeout = null;
         private bool allowAutoRedirect = true;
-        private bool useDualstackEndpoint = false;
+        private bool? useDualstackEndpoint;
         private TimeSpan? readWriteTimeout = null;
         private bool disableHostPrefixInjection = false;
         private bool? endpointDiscoveryEnabled = null;
@@ -494,7 +494,15 @@ namespace Amazon.Runtime
         /// </remarks>
         public bool UseDualstackEndpoint
         {
-            get { return useDualstackEndpoint; }
+            get 
+            {
+                if (!this.useDualstackEndpoint.HasValue)
+                {
+                    return FallbackInternalConfigurationFactory.UseDualStackEndpoint ?? false;
+                }
+
+                return this.useDualstackEndpoint.Value;
+            }
             set { useDualstackEndpoint = value; }
         }
 

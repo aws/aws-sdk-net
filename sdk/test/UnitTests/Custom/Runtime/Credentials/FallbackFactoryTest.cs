@@ -39,6 +39,7 @@ namespace AWSSDK.UnitTests
         private const string AWS_ENABLE_ENDPOINT_DISCOVERY_ENVIRONMENT_VARIABLE = "AWS_ENABLE_ENDPOINT_DISCOVERY";
         private const string AWS_RETRY_MODE_ENVIRONMENT_VARIABLE = "AWS_RETRY_MODE";
         private const string AWS_MAX_ATTEMPTS_ENVIRONMENT_VARIABLE = "AWS_MAX_ATTEMPTS";
+        private const string AWS_USE_DUALSTACK_ENDPOINT_ENVIRONMENT_VARIABLE = "AWS_USE_DUALSTACK_ENDPOINT";
 
         private static readonly string ProfileText = new StringBuilder()
             .AppendLine("[default]")
@@ -64,7 +65,11 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_secret_access_key=awsprofilename_aws_secret_access_key")
             .AppendLine("[retries]")
             .AppendLine("max_attempts=100")
-            .AppendLine("retry_mode=standard")            
+            .AppendLine("retry_mode=standard")
+            .AppendLine("[dualstack-enabled]")
+            .AppendLine("use_dualstack_endpoint=true")
+            .AppendLine("[dualstack-disabled]")
+            .AppendLine("use_dualstack_endpoint=false")
             .ToString();
 
         [TestMethod]
@@ -209,6 +214,34 @@ namespace AWSSDK.UnitTests
                 var maxAttempts = FallbackInternalConfigurationFactory.MaxAttempts;
                 Assert.IsTrue(maxAttempts.HasValue);
                 Assert.AreEqual(6, maxAttempts.Value);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(true, false, "dualstack-disabled", true)]  // service client should supersede conflicting env var and profile values
+        [DataRow(false, true, "dualstack-enabled", false)]
+        [DataRow(null, true, "dualstack-disabled", true)]   // env var should supersede conflicting profile value
+        [DataRow(null, false, "dualstack-enabled", false)]
+        [DataRow(null, null, "dualstack-enabled", true)]    // profile should drive value
+        [DataRow(null, null, "dualstack-disabled", false)]
+        [DataRow(null, null, "default", false)]             // should default to false when no config values specified
+        public void TestDualstackConfigurationHierarchy(bool? clientConfigValue, bool? envVarValue, string profileName, bool expectedUseDualstackEndpointValue)
+        {
+            var config = new AmazonSecurityTokenServiceConfig();
+            if (clientConfigValue.HasValue)
+            {
+                config.UseDualstackEndpoint = clientConfigValue.Value;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue.HasValue)
+            {
+                envVariables.Add(AWS_USE_DUALSTACK_ENDPOINT_ENVIRONMENT_VARIABLE, envVarValue.Value.ToString());
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedUseDualstackEndpointValue, config.UseDualstackEndpoint);
             }
         }
 

@@ -57,6 +57,12 @@ namespace Amazon.Runtime.Internal
         /// Internet protocol version to be used for communicating with the EC2 Instance Metadata Service
         /// </summary>
         public EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode { get; set; }
+
+        /// <summary>
+        /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
+        /// for the configured region.
+        /// </summary>
+        public bool? UseDualstackEndpoint { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -74,6 +80,7 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_RETRY_MODE = "AWS_RETRY_MODE";
         public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
+        public const string ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT = "AWS_USE_DUALSTACK_ENDPOINT";
 
         /// <summary>
         /// Attempts to construct a configuration instance of configuration environment 
@@ -89,6 +96,7 @@ namespace Amazon.Runtime.Internal
             RetryMode = GetEnvironmentVariable<RequestRetryMode>(ENVIRONMENT_VARIABLE_AWS_RETRY_MODE);
             EC2MetadataServiceEndpoint = GetEC2MetadataEndpointEnvironmentVariable();
             EC2MetadataServiceEndpointMode = GetEnvironmentVariable<EC2MetadataServiceEndpointMode>(ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE);
+            UseDualstackEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT);
         }
 
         private bool TryGetEnvironmentVariable(string environmentVariableName, out string value)
@@ -196,6 +204,7 @@ namespace Amazon.Runtime.Internal
                 MaxAttempts = profile.MaxAttempts;
                 EC2MetadataServiceEndpoint = profile.EC2MetadataServiceEndpoint;
                 EC2MetadataServiceEndpointMode = profile.EC2MetadataServiceEndpointMode;
+                UseDualstackEndpoint = profile.UseDualstackEndpoint;
             }
             else
             {
@@ -209,7 +218,8 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("retry_mode", profile.RetryMode),
                 new KeyValuePair<string, object>("max_attempts", profile.MaxAttempts),
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint", profile.EC2MetadataServiceEndpoint),
-                new KeyValuePair<string, object>("ec2_metadata_service_endpoint_mode", profile.EC2MetadataServiceEndpointMode)
+                new KeyValuePair<string, object>("ec2_metadata_service_endpoint_mode", profile.EC2MetadataServiceEndpointMode),
+                new KeyValuePair<string, object>("use_dualstack_endpoint", profile.UseDualstackEndpoint)
             };
 
             foreach(var item in items)
@@ -270,6 +280,7 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.MaxAttempts = SeekValue(standardGenerators, (c) => c.MaxAttempts);
             _cachedConfiguration.EC2MetadataServiceEndpoint = SeekString(standardGenerators, (c) => c.EC2MetadataServiceEndpoint);
             _cachedConfiguration.EC2MetadataServiceEndpointMode = SeekValue(standardGenerators, (c) => c.EC2MetadataServiceEndpointMode);
+            _cachedConfiguration.UseDualstackEndpoint = SeekValue(standardGenerators, (c) => c.UseDualstackEndpoint);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -359,6 +370,18 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.EC2MetadataServiceEndpointMode;
+            }
+        }
+
+        /// <summary>
+        /// Configures the endpoint calculation to go to a dual stack (ipv6 enabled) endpoint
+        /// for the configured region.
+        /// </summary>
+        public static bool? UseDualStackEndpoint
+        {
+            get
+            {
+                return _cachedConfiguration.UseDualstackEndpoint;
             }
         }
     }

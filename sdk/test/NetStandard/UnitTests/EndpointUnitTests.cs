@@ -15,21 +15,6 @@ namespace AWSSDK_NetStandard.UnitTests
     {
         [Fact]
         [Trait("Category", "Core")]
-        public void CustomServicesTest()
-        {
-            RegionEndpoint.EUCentral1.GetEndpointForService("data.iot");
-
-            string t = RegionEndpoint.EUCentral1.GetEndpointForService("iotdata").Hostname;
-            Assert.Equal("data.iot.eu-central-1.amazonaws.com", t);
-            Assert.Equal("iot.ap-southeast-2.amazonaws.com", RegionEndpoint.APSoutheast2.GetEndpointForService("execute-api").Hostname);
-
-            RegionEndpoint.USEast1.GetEndpointForService("importexport");
-
-            Assert.Equal("importexport.amazonaws.com", RegionEndpoint.APSoutheast2.GetEndpointForService("IngestionService").Hostname);
-        }
-
-        [Fact]
-        [Trait("Category", "Core")]
         public void V2RegressionTest()
         {
             Assert.Equal("application-autoscaling.us-east-1.amazonaws.com", RegionEndpoint.USEast1.GetEndpointForService("application-autoscaling").Hostname);

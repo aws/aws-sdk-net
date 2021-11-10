@@ -152,6 +152,9 @@ namespace Amazon
             lock (_hashBySystemName)
             {
                 _hashBySystemName.Clear();
+
+                // Add the .NET/S3-specific legacy region back to the lookup map
+                GetEndpoint("us-east-1-regional", "US East (Virginia) regional");
             }
 
             ResetRegionEndpointOverride();
@@ -343,7 +346,6 @@ namespace Amazon
         {
             return InternedRegionEndpoint.GetEndpointForService(serviceName, dualStack);
         }
-
         public override string ToString()
         {
             return string.Format(CultureInfo.InvariantCulture, "{0} ({1})", this.DisplayName, this.SystemName);

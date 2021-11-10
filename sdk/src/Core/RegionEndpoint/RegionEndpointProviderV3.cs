@@ -1,29 +1,23 @@
-﻿/*******************************************************************************
- *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+﻿/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
+
 using Amazon.Runtime;
-using System.Globalization;
-using Amazon.Runtime.Internal.Auth;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using ThirdParty.Json.LitJson;
@@ -64,7 +58,25 @@ namespace Amazon.Internal
             _servicesJsonData = services;
         }
 
+        /// <summary>
+        /// Retrieves the endpoint for the given service in the current region
+        /// </summary>
+        /// <param name="serviceName">Name of the service in endpoints.json</param>
+        /// <param name="dualStack">Whether to retrieve the dual-stack variant</param>
+        /// <returns>Matching endpoint from endpoints.json, or a computed endpoint if possible</returns>
         public RegionEndpoint.Endpoint GetEndpointForService(string serviceName, bool dualStack)
+        {
+            var variants = BuildVariantHashSet(dualStack, false);
+            return GetEndpointForService(serviceName, variants);
+        }
+
+        /// <summary>
+        /// Retrieves the endpoint for the given service in the current region
+        /// </summary>
+        /// <param name="serviceName">Name of the service in endpoints.json</param>
+        /// <param name="variants">Set of tags describing an endpoint variant</param>
+        /// <returns><returns>Matching endpoint from endpoints.json, or a computed endpoint if possible</returns>
+        public RegionEndpoint.Endpoint GetEndpointForService(string serviceName, HashSet<string> variants)
         {
             RegionEndpoint.Endpoint endpointObject = null;
 
@@ -76,24 +88,25 @@ namespace Amazon.Internal
                     _servicesLoaded = true;
                 }
 
-                if (!_serviceMap.TryGetEndpoint(serviceName, dualStack, out endpointObject))
+                if (!_serviceMap.TryGetEndpoint(serviceName, variants, out endpointObject))
                 {
+                    // For all current variants (dual-stack and FIPS) SDKs cannot
+                    // fall back to normal endpoints and must raise an error.
+                    if (variants?.Count > 0)
+                    {
+                        throw new AmazonClientException($"Requested endpoint for {serviceName} with variants [{string.Join(", ", variants.ToArray())}] could not be found.");
+                    }
                     // Do a fallback of creating an unknown endpoint based on the
                     // current region's hostname template.
-                    endpointObject = CreateUnknownEndpoint(serviceName, dualStack);
+                    endpointObject = CreateUnknownEndpoint(serviceName);
                 }
             }
             return endpointObject;
         }
 
-        private RegionEndpoint.Endpoint CreateUnknownEndpoint(string serviceName, bool dualStack)
+        private RegionEndpoint.Endpoint CreateUnknownEndpoint(string serviceName)
         {
             string template = (string)_partitionJsonData["defaults"]["hostname"];
-
-            if (dualStack)
-            {
-                template = template.Replace("{region}", "dualstack.{region}");
-            }
 
             string hostname = template.Replace("{service}", serviceName)
                                  .Replace("{region}", RegionName)
@@ -106,142 +119,148 @@ namespace Amazon.Internal
         {
             foreach (string serviceName in _servicesJsonData.PropertyNames)
             {
-                if(_servicesJsonData[serviceName]!=null&&_servicesJsonData[serviceName].Count>0)
+                if (_servicesJsonData[serviceName] != null && _servicesJsonData[serviceName].Count > 0)
+                {
                     AddServiceToMap(_servicesJsonData[serviceName], serviceName);
+                }
             }
         }
 
         private void AddServiceToMap(JsonData service, string serviceName)
         {
-            string partitionEndpoint = service["partitionEndpoint"] != null ? (string)service["partitionEndpoint"] : "";
-            bool isRegionalized = service["isRegionalized"] != null ? (bool)service["isRegionalized"] : true;
-
-            string serviceEndpoint = RegionName;
+            var partitionEndpoint = service["partitionEndpoint"] != null ? (string)service["partitionEndpoint"] : "";
+            var isRegionalized = service["isRegionalized"] != null ? (bool)service["isRegionalized"] : true;
+            var regionKey = RegionName;
 
             // Use the partition's default endpoint if the service is not regionalized, like Route53, and there is no
             // endpoint defined for the this service name.
-            if (!isRegionalized && service["endpoints"][serviceEndpoint] == null &&!string.IsNullOrEmpty(partitionEndpoint))
+            if (!isRegionalized && service["endpoints"][regionKey] == null && !string.IsNullOrEmpty(partitionEndpoint))
             {
-                serviceEndpoint = partitionEndpoint;
+                regionKey = partitionEndpoint;
             }
 
-            JsonData regionEndpoint = service["endpoints"][serviceEndpoint];
-            if (regionEndpoint == null)
+            var regionEndpoint = service["endpoints"][regionKey];
+            var mergedEndpoint = new JsonData();
+            var variantJsonData = new Dictionary<HashSet<string>, JsonData>(HashSet<string>.CreateSetComparer());
+
+            // Create the merged endpoint definitions for both the normal endpoint and variants
+            MergeJsonData(mergedEndpoint, regionEndpoint, variantJsonData); // first prioritizing the service+region object
+            MergeJsonData(mergedEndpoint, service["defaults"], variantJsonData); // then service-level defaults
+            MergeJsonData(mergedEndpoint, _partitionJsonData["defaults"], variantJsonData); // then partition-level defaults
+
+            // Preserve existing behavior of short circuiting the normal endpoint if there isn't a region-specific entry
+            if (regionEndpoint != null)
             {
-                return;
+                AddNormalEndpointToServiceMap(mergedEndpoint, RegionName, serviceName);
             }
 
-            JsonData result = new JsonData();
-            MergeJsonData(result, regionEndpoint);
-            MergeJsonData(result, service["defaults"]);
-            MergeJsonData(result, _partitionJsonData["defaults"]);
-
-            CreateEndpointAndAddToServiceMap(result, RegionName, serviceName);
+            AddVariantEndpointsToServiceMap(mergedEndpoint, RegionName, serviceName, variantJsonData);
         }
 
-        private static void MergeJsonData(JsonData target, JsonData source)
+        private static void MergeJsonData(JsonData target, JsonData source, Dictionary<HashSet<string>, JsonData> variants)
         {
             if (source == null || target == null)
             {
                 return;
             }
+
             foreach (var propertyName in source.PropertyNames)
             {
-                if (target[propertyName] == null)
+                if (propertyName != "variants")
                 {
-                    target[propertyName] = source[propertyName];
+                    if (target[propertyName] == null)
+                    {
+                        target[propertyName] = source[propertyName];
+                    }
+                }
+                else // Variants need special handling because they are identified by the "tags" within the
+                {    // variant object. First build the key, and then merge the rest of the json properties for a given variant.
+                    foreach (JsonData variant in source["variants"])
+                    {
+                        var tagsKey = new HashSet<string>();
+                        foreach (JsonData label in variant["tags"])
+                        {
+                            tagsKey.Add((string)label);
+                        }
+
+                        if (variants.ContainsKey(tagsKey))
+                        {
+                            // We've encountered this variant at a lower level in the hierarchy
+                            // so only merge properties which are still null
+                            foreach (var variantProperty in variant.PropertyNames)
+                            {
+                                if (variants[tagsKey][variantProperty] == null)
+                                {
+                                    variants[tagsKey][variantProperty] = variant[variantProperty];
+                                }
+                            }
+                        }
+                        else // First time encountering this variant, so merge the entire object
+                        {
+                            variants[tagsKey] = variant;
+                        }
+                    }
                 }
             }
         }
 
-        private void CreateEndpointAndAddToServiceMap(JsonData result, string regionName, string serviceName)
+        private void AddNormalEndpointToServiceMap(JsonData mergedEndpoint, string regionName, string serviceName)
         {
-            CreateEndpointAndAddToServiceMap(result, regionName, serviceName, false);
-            CreateEndpointAndAddToServiceMap(result, regionName, serviceName, true);
-        }
-
-        private void CreateEndpointAndAddToServiceMap(JsonData result, string regionName, string serviceName, bool dualStack)
-        {
-            string template = (string)result["hostname"];
+            string template = (string)mergedEndpoint["hostname"];
             string hostname = template.Replace("{service}", serviceName)
                                  .Replace("{region}", regionName)
                                  .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
 
-            if (dualStack)
-            {
-                // We need special handling for S3's s3.amazonaws.com endpoint, which doesn't
-                // support dualstack (need to transform to s3.dualstack.us-east-1.amazonaws.com).
-                // Other endpoints that begin s3-* need to transform to s3.* for dualstack support.
-                // S3's 'external' endpoints do not support dualstack and should not be transformed.
-                if (serviceName.Equals("s3", StringComparison.OrdinalIgnoreCase))
-                {
-                    if (hostname.Equals("s3.amazonaws.com", StringComparison.OrdinalIgnoreCase))
-                    {
-                        hostname = "s3.dualstack.us-east-1.amazonaws.com";
-                    }
-                    else
-                    {
-                        var isExternalEndpoint = hostname.StartsWith("s3-external-", StringComparison.OrdinalIgnoreCase);
-                        if (!isExternalEndpoint)
-                        {
-                            // transform fixed s3-<region> to s3.<region> and then onto s3.dualstack.<region>,
-                            // bypassing endpoints that do not start with the expected tags.
-                            if (hostname.StartsWith("s3-", StringComparison.OrdinalIgnoreCase))
-                                hostname = "s3." + hostname.Substring(3);
-
-                            if (hostname.StartsWith("s3.", StringComparison.OrdinalIgnoreCase))
-                                hostname = hostname.Replace("s3.", "s3.dualstack.");
-                        }
-                    }
-                }
-                else if (serviceName.Equals("s3-control", StringComparison.OrdinalIgnoreCase))
-                {
-                    // transform s3-control.<region>.amazonaws.com or s3-control-fips.<region>.amazonaws.com into
-                    // s3-control.dualstack.<region>.amazonaws.com and s3-control-fips.dualstack.<region>.amazonaws.com
-                    if (hostname.StartsWith("s3-control", StringComparison.OrdinalIgnoreCase))
-                    {
-                        int firstDot = hostname.IndexOf('.');
-                        if (firstDot >= 0)
-                        {
-                            hostname = hostname.Substring(0, firstDot) + ".dualstack." + hostname.Substring(firstDot + 1);
-                        }
-                    }
-                }
-                else
-                {
-                    // For certain region and endpoint combination, we actually get an explicit endpoint as "hostname" property
-                    // (e.g. sts.ap-northeast-2.amazon.com). We can't assume that the template variable will be {service}.{region}.{dnsSuffix},
-                    // so just construct a brand new endpoint.
-                    hostname = string.Format(CultureInfo.InvariantCulture, "{0}.{1}.{2}", serviceName,
-                                                            "dualstack." + regionName,
-                                                            (string)_partitionJsonData["dnsSuffix"]);
-                }
-            }
 
             string authRegion = null;
-            string customService = null;
-            JsonData credentialScope = result["credentialScope"];
+            JsonData credentialScope = mergedEndpoint["credentialScope"];
             if (credentialScope != null)
             {
                 authRegion = DetermineAuthRegion(credentialScope);
-                // This is a workaround until we overhaul how the SDK consumes the v3 endpoint structure
-                // and customize the signing based on the metadata in the endpoint structure.
-                // There are points in SDK where we retrieve endpoints via service name such as "execute-api".
-                // Since we are building a cache, just add the custom service entry.
-                if (credentialScope["service"] != null && string.Compare((string)credentialScope["service"], serviceName, StringComparison.OrdinalIgnoreCase) != 0)
-                {
-                    customService = (string)credentialScope["service"];
-                }
             }
 
-            string signatureOverride = DetermineSignatureOverride(result, serviceName);
+            string signatureOverride = DetermineSignatureOverride(mergedEndpoint, serviceName);
 
             RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, signatureOverride);
 
-            _serviceMap.Add(serviceName, dualStack, endpoint);
-            if (!string.IsNullOrEmpty(customService) && !_serviceMap.ContainsKey(customService))
+            _serviceMap.Add(serviceName, endpoint);
+
+        }
+
+        private void AddVariantEndpointsToServiceMap(JsonData mergedEndpoint, string regionName, string serviceName, Dictionary<HashSet<string>, JsonData> mergedVariants)
+        {
+            string authRegion = null;
+            JsonData credentialScope = mergedEndpoint["credentialScope"];
+            if (credentialScope != null)
             {
-                _serviceMap.Add(customService, dualStack, endpoint);
+                authRegion = DetermineAuthRegion(credentialScope);
+            }
+            string signatureOverride = DetermineSignatureOverride(mergedEndpoint, serviceName);
+
+            foreach (var tagsKey in mergedVariants.Keys)
+            {
+                var variantHostnameTemplate = (string)mergedVariants[tagsKey]["hostname"];
+                if (string.IsNullOrEmpty(variantHostnameTemplate))
+                {
+                    throw new AmazonClientException($"Unable to determine the hostname for {serviceName} with variants [{string.Join(", ", tagsKey.ToArray())}].");
+                }
+
+                if (variantHostnameTemplate.Contains("{region}") && string.IsNullOrEmpty(regionName))
+                {
+                    throw new AmazonClientException($"Unable to determine the region for {serviceName} with variants [{string.Join(", ", tagsKey.ToArray())}].");
+                }
+
+                var variantDnsSuffix = mergedVariants[tagsKey]["dnsSuffix"] != null ? (string)mergedVariants[tagsKey]["dnsSuffix"] : (string)_partitionJsonData["dnsSuffix"];
+                if (variantHostnameTemplate.Contains("{dnsSuffix}") && string.IsNullOrEmpty(variantDnsSuffix))
+                {
+                    throw new AmazonClientException($"Unable to determine the dnsSuffix for {serviceName} with variants [{string.Join(", ", tagsKey.ToArray())}].");
+                }
+
+                var variantHostname = variantHostnameTemplate.Replace("{service}", serviceName)
+                                     .Replace("{region}", regionName)
+                                     .Replace("{dnsSuffix}", variantDnsSuffix);
+
+                _serviceMap.Add(serviceName, new RegionEndpoint.Endpoint(variantHostname, authRegion, signatureOverride), tagsKey);
             }
         }
 
@@ -270,35 +289,89 @@ namespace Amazon.Internal
             string authRegion = null;
             if (credentialScope["region"] != null)
             {
-                authRegion = (string) credentialScope["region"];
+                authRegion = (string)credentialScope["region"];
             }
             return authRegion;
         }
 
+        /// <summary>
+        /// Builds the set used to identify a specific endpoint variant
+        /// </summary>
+        /// <param name="dualStack">Whether to use a dualstack (IPv6 enabled) endpoint</param>
+        /// <param name="fips">Whether to use a FIPS-compliant endpoint</param>
+        /// <returns>Set used to identify the combined variant in endpoints.json</returns>
+        private static HashSet<string> BuildVariantHashSet(bool dualStack, bool fips)
+        {
+            if (!dualStack && !fips)
+            {
+                return null;
+            }
+
+            var variants = new HashSet<string>();
+
+            if (dualStack)
+            {
+                variants.Add("dualstack");
+            }
+            if (fips)
+            {
+                variants.Add("fips");
+            }
+
+            return variants;
+        }
+
         class ServiceMap
         {
-            private Dictionary<string, Amazon.RegionEndpoint.Endpoint> _serviceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
-            private Dictionary<string, Amazon.RegionEndpoint.Endpoint> _dualServiceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
+            /// <summary>
+            /// Stores the plain endpoints for each service in the current region
+            /// </summary>
+            private Dictionary<string, RegionEndpoint.Endpoint> _serviceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
 
-            private Dictionary<string, Amazon.RegionEndpoint.Endpoint> GetMap(bool dualStack)
+            /// <summary>
+            /// Stores the variants for each service in the current region, identified by the set of variant tags.
+            /// </summary>
+            private Dictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>> _variantMap = new Dictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>>();
+
+            public bool ContainsKey(string serviceName)
             {
-                return dualStack ? _dualServiceMap : _serviceMap;
+                return _serviceMap.ContainsKey(serviceName);
             }
 
-            public bool ContainsKey(string servicName)
+            public void Add(string serviceName, RegionEndpoint.Endpoint endpoint, HashSet<string> variants = null)
             {
-                return _serviceMap.ContainsKey(servicName);
+                if (variants == null || variants.Count == 0)
+                {
+                    _serviceMap.Add(serviceName, endpoint);
+                }
+                else
+                {
+                    if (!_variantMap.ContainsKey(serviceName) || _variantMap[serviceName] == null)
+                    {
+                        _variantMap.Add(serviceName, new Dictionary<HashSet<string>, RegionEndpoint.Endpoint>(HashSet<string>.CreateSetComparer()));
+                    }
+                    _variantMap[serviceName].Add(variants, endpoint);
+                }
             }
 
-            public void Add(string serviceName, bool dualStack, RegionEndpoint.Endpoint endpoint)
+            public bool TryGetEndpoint(string serviceName, HashSet<string> variants, out RegionEndpoint.Endpoint endpoint)
             {
-                var map = dualStack ? _dualServiceMap : _serviceMap;
-                GetMap(dualStack).Add(serviceName, endpoint);
-            }
-
-            public bool TryGetEndpoint(string serviceName, bool dualStack, out RegionEndpoint.Endpoint endpoint)
-            {
-                return this.GetMap(dualStack).TryGetValue(serviceName, out endpoint);
+                if (variants == null || variants.Count == 0)
+                {
+                    return _serviceMap.TryGetValue(serviceName, out endpoint);
+                }
+                else
+                {
+                    if (!_variantMap.ContainsKey(serviceName))
+                    {
+                        endpoint = default(RegionEndpoint.Endpoint);
+                        return false;
+                    }
+                    else
+                    {
+                        return _variantMap[serviceName].TryGetValue(variants, out endpoint);
+                    }
+                }
             }
         }
     }
@@ -389,7 +462,7 @@ namespace Amazon.Internal
                     }
                     finally
                     {
-                        if(_readerWriterLock.IsWriteLockHeld)
+                        if (_readerWriterLock.IsWriteLockHeld)
                         {
                             _readerWriterLock.ExitWriteLock();
                         }
@@ -459,10 +532,10 @@ namespace Amazon.Internal
             // see if the region name is a real region 
             if (regionsData[regionName] != null)
             {
-                description = (string) regionsData[regionName]["description"];
+                description = (string)regionsData[regionName]["description"];
                 return true;
             }
-            
+
             // see if the region is global region by concatenating the partition and "-global" to construct the global name 
             // for the partition
             else if (regionName.Equals(string.Concat((string)partition["partition"], "-global"), StringComparison.OrdinalIgnoreCase))
@@ -493,7 +566,7 @@ namespace Amazon.Internal
                 try
                 {
                     _readerWriterLock.EnterReadLock();
-                    
+
                     IRegionEndpoint endpoint;
                     if (_regionEndpointMap.TryGetValue(regionName, out endpoint))
                     {
@@ -556,7 +629,7 @@ namespace Amazon.Internal
             try
             {
                 _readerWriterLock.EnterReadLock();
-                
+
                 IRegionEndpoint regionEndpoint;
                 if (_nonStandardRegionNameToObjectMap.TryGetValue(regionName, out regionEndpoint))
                 {
@@ -574,7 +647,7 @@ namespace Amazon.Internal
             try
             {
                 _readerWriterLock.EnterWriteLock();
-                
+
                 IRegionEndpoint regionEndpoint;
                 // Check again to see if region is in cache in case another thread got the write lock before and filled the cache.
                 if (_nonStandardRegionNameToObjectMap.TryGetValue(regionName, out regionEndpoint))
@@ -585,7 +658,7 @@ namespace Amazon.Internal
                 // default to "aws" partition
                 JsonData partitionData = _root["partitions"][0];
                 string regionDescription = GetUnknownRegionDescription(regionName);
-                JsonData servicesData = _emptyDictionaryJsonData;
+                JsonData servicesData = partitionData["services"];
                 bool foundContainingPartition = false;
 
                 const string validRegionRegexStr = @"^[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?$";

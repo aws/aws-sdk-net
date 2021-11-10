@@ -98,6 +98,12 @@ namespace Amazon.Runtime.CredentialManagement
         public EC2MetadataServiceEndpointMode? EC2MetadataServiceEndpointMode { get; set; }
 
         /// <summary>
+        /// Configures the endpoint calculation to go to a dual stack (ipv6 enabled) endpoint
+        /// for the configured region.
+        /// </summary>
+        public bool? UseDualstackEndpoint { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

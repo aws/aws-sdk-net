@@ -86,6 +86,7 @@
             "embeddedResources" : [
                 "Custom\\Runtime\\TestResponses\\*.txt",
                 "Custom\\Runtime\\EventStreams\\test_vectors\\*",
+                "Custom\\Runtime\\TestEndpoints\\*.json",
                 "Custom\\TestTools\\ComparerTest.json",
                 "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"
             ],
@@ -127,11 +128,12 @@
             "name": "Net45",
             "targetFrameworks": [ "net45" ],
             "defineConstants": [ "TRACE", "BCL", "BCL45", "ASYNC_AWAIT" ],
-			"excludeFolders": ["obj"],
+            "excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
             "embeddedResources" : [
                 "Custom\\Runtime\\TestResponses\\*.txt",
                 "Custom\\Runtime\\EventStreams\\test_vectors\\*",
+                "Custom\\Runtime\\TestEndpoints\\*.json",
                 "Custom\\TestTools\\ComparerTest.json",
                 "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"
             ],

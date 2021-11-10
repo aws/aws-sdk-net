@@ -17,6 +17,20 @@
         "signatureVersions": [
           "s3",
           "s3v4"
+        ],
+        "variants" : [ 
+          {
+            "hostname" : "s3-fips.dualstack.us-east-1.amazonaws.com",
+            "tags" : [ "dualstack", "fips" ]
+          },
+          {
+            "hostname" : "s3-fips.us-east-1.amazonaws.com",
+            "tags" : [ "fips" ]
+          },
+          {
+            "hostname" : "s3.dualstack.us-east-1.amazonaws.com",
+            "tags" : [ "dualstack" ]
+          }
         ]
       }
     }

@@ -55,6 +55,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoStartUrl = "sso_start_url";
         private const string EC2MetadataServiceEndpointField = "ec2_metadata_service_endpoint";
         private const string EC2MetadataServiceEndpointModeField = "ec2_metadata_service_endpoint_mode";
+        private const string UseDualstackEndpointField = "use_dualstack_endpoint";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -74,7 +75,8 @@ namespace Amazon.Runtime.CredentialManagement
             SsoRoleName,
             SsoStartUrl,
             EC2MetadataServiceEndpointField,
-            EC2MetadataServiceEndpointModeField
+            EC2MetadataServiceEndpointModeField,
+            UseDualstackEndpointField
         };
 
         /// <summary>
@@ -282,6 +284,9 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.EC2MetadataServiceEndpointMode != null)
                 reservedProperties[EC2MetadataServiceEndpointModeField] = profile.EC2MetadataServiceEndpointMode.ToString().ToLowerInvariant();
+
+            if (profile.UseDualstackEndpoint != null)
+                reservedProperties[UseDualstackEndpointField] = profile.UseDualstackEndpoint.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -574,6 +579,19 @@ namespace Amazon.Runtime.CredentialManagement
 #endif
                 }
 
+                string useDualstackEndpointString;
+                bool? useDualstackEndpoint = null;
+                if (reservedProperties.TryGetValue(UseDualstackEndpointField, out useDualstackEndpointString))
+                {
+                    bool useDualstackEndpointOut;
+                    if (!bool.TryParse(useDualstackEndpointString, out useDualstackEndpointOut))
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected.", useDualstackEndpointString, UseDualstackEndpointField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    useDualstackEndpoint = useDualstackEndpointOut;
+                }
 
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
@@ -589,7 +607,8 @@ namespace Amazon.Runtime.CredentialManagement
                     RetryMode = requestRetryMode,
                     MaxAttempts = maxAttempts,
                     EC2MetadataServiceEndpoint = ec2MetadataServiceEndpoint,
-                    EC2MetadataServiceEndpointMode = ec2MetadataServiceEndpointMode
+                    EC2MetadataServiceEndpointMode = ec2MetadataServiceEndpointMode,
+                    UseDualstackEndpoint = useDualstackEndpoint
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

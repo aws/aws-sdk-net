@@ -12,199 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Internal;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ThirdParty.Json.LitJson;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using Amazon;
+using Amazon.Runtime;
+using AWSSDK_DotNet35.UnitTests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK.UnitTests
 {
     [TestClass]
     public class RegionEndpointProviderV3Test
     {
-        private const string partitionJson = @"{
-            ""defaults"": {
-                ""hostname"": ""{service}.{region}.{dnsSuffix}"",
-                ""protocols"": [
-                    ""https""
-                ],
-                ""signatureVersions"": [
-                    ""v4""
-                ]
-            },
-            ""dnsSuffix"": ""amazonaws.com"",
-            ""partition"": ""aws"",
-            ""partitionName"": ""AWS Standard"",
-            ""regionRegex"": ""^(us|eu|ap|sa|ca)\\-\\w+\\-\\d+$""
-        }";
-
-        private const string servicesJson = @"{
-            ""svc"": {
-                ""endpoints"": {
-                    ""xx-northeast-1"": {},
-                    ""xx-east-1-fips"": {
-                        ""credentialScope"": {
-                            ""region"": ""xx-east-1""
-                        },
-                        ""hostname"": ""svc-fips.xx-east-1.amazonaws.com""
-                    }
-                }
-            },
-            ""s3"": {
-                ""endpoints"": {
-                    ""xx-northeast-1"": {},
-                    ""xx-east-1"": {
-                        ""hostname"": ""s3.xx-east-1.amazonaws.com""
-                    },
-                    ""xx-west-1"": {
-                        ""hostname"": ""s3-xx-west-1.amazonaws.com""
-                    },
-                    ""us-east-1"": {
-                        ""hostname"": ""s3.amazonaws.com""
-                    },
-                    ""xx-east-1-fips"": {
-                        ""credentialScope"": {
-                            ""region"": ""xx-east-1""
-                        },
-                        ""hostname"": ""s3-fips.xx-east-1.amazonaws.com""
-                    }
-                },
-                ""isRegionalized"": true,
-                ""partitionEndpoint"": ""us-east-1""
-            },
-            ""s3-control"": {
-                ""endpoints"": {
-                    ""xx-northeast-1"": {},
-                    ""xx-east-1-fips"": {
-                        ""credentialScope"": {
-                            ""region"": ""xx-east-1""
-                        },
-                        ""hostname"": ""s3-control-fips.xx-east-1.amazonaws.com""
-                    }
-                },
-                ""isRegionalized"": true
-            }
-        }";
-
-        [TestMethod]
-        public void GetEndpointForService()
+        /// These test cases pre-dated variants being added to endpoints.json
+        /// The test data was updated to use variants because hardcoded dual-stack 
+        /// support was remove, but the test cases were left the same.
+        [DataTestMethod]
+        [DataRow("xx-northeast-1", "svc", false, "svc.xx-northeast-1.amazonaws.com")]
+        [DataRow("xx-northeast-1", "svc", true, "svc.xx-northeast-1.api.aws")]
+        [DataRow("xx-east-1-fips", "svc", false, "svc-fips.xx-east-1.amazonaws.com")]
+        [DataRow("xx-east-1-fips", "svc", true, "svc.xx-east-1-fips.api.aws")]
+        [DataRow("xx-northeast-1", "s3", false, "s3.xx-northeast-1.amazonaws.com")]
+        [DataRow("xx-northeast-1", "s3", true, "s3.dualstack.xx-northeast-1.amazonaws.com")]
+        [DataRow("xx-west-1", "s3", false, "s3-xx-west-1.amazonaws.com")]
+        [DataRow("xx-west-1", "s3", true, "s3.dualstack.xx-west-1.amazonaws.com")]
+        [DataRow("xx-east-1", "s3", false, "s3.xx-east-1.amazonaws.com")]
+        [DataRow("xx-east-1", "s3", true, "s3.dualstack.xx-east-1.amazonaws.com")]
+        [DataRow("us-east-1", "s3", false, "s3.amazonaws.com")]
+        [DataRow("us-east-1", "s3", true, "s3.dualstack.us-east-1.amazonaws.com")]
+        [DataRow("xx-east-1-fips", "s3", false, "s3-fips.xx-east-1.amazonaws.com")]
+        [DataRow("xx-east-1-fips", "s3", true, "s3.dualstack.xx-east-1-fips.amazonaws.com")]
+        [DataRow("xx-northeast-1", "s3-control", false, "s3-control.xx-northeast-1.amazonaws.com")]
+        [DataRow("xx-northeast-1", "s3-control", true, "s3-control.xx-northeast-1.api.aws")]
+        [DataRow("xx-east-1-fips", "s3-control", false, "s3-control-fips.xx-east-1.amazonaws.com")]
+        [DataRow("xx-east-1-fips", "s3-control", true, "s3-control.xx-east-1-fips.api.aws")]
+        public void GetEndpointForService(string region, string service, bool useDualStack, string expectedHostname)
         {
-            var partition = JsonMapper.ToObject(new StringReader(partitionJson));
-            var services = JsonMapper.ToObject(new StringReader(servicesJson));
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-northeast-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("svc", false);
-                Assert.AreEqual(endpoint.Hostname, "svc.xx-northeast-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-northeast-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("svc", true);
-                Assert.AreEqual(endpoint.Hostname, "svc.dualstack.xx-northeast-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1-fips", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("svc", false);
-                Assert.AreEqual(endpoint.Hostname, "svc-fips.xx-east-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1-fips", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("svc", true);
-                Assert.AreEqual(endpoint.Hostname, "svc.dualstack.xx-east-1-fips.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-northeast-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", false);
-                Assert.AreEqual(endpoint.Hostname, "s3.xx-northeast-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-northeast-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", true);
-                Assert.AreEqual(endpoint.Hostname, "s3.dualstack.xx-northeast-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-west-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", false);
-                Assert.AreEqual(endpoint.Hostname, "s3-xx-west-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-west-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", true);
-                Assert.AreEqual(endpoint.Hostname, "s3.dualstack.xx-west-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", false);
-                Assert.AreEqual(endpoint.Hostname, "s3.xx-east-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", true);
-                Assert.AreEqual(endpoint.Hostname, "s3.dualstack.xx-east-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("us-east-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", false);
-                Assert.AreEqual(endpoint.Hostname, "s3.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("us-east-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", true);
-                Assert.AreEqual(endpoint.Hostname, "s3.dualstack.us-east-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1-fips", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", false);
-                Assert.AreEqual(endpoint.Hostname, "s3-fips.xx-east-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1-fips", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3", true);
-                Assert.AreEqual(endpoint.Hostname, "s3.dualstack.fips.xx-east-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-northeast-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3-control", false);
-                Assert.AreEqual(endpoint.Hostname, "s3-control.xx-northeast-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-northeast-1", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3-control", true);
-                Assert.AreEqual(endpoint.Hostname, "s3-control.dualstack.xx-northeast-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1-fips", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3-control", false);
-                Assert.AreEqual(endpoint.Hostname, "s3-control-fips.xx-east-1.amazonaws.com");
-            }
-
-            {
-                var regionEndpoint = new RegionEndpointV3("xx-east-1-fips", "", partition, services);
-                var endpoint = regionEndpoint.GetEndpointForService("s3-control", true);
-                Assert.AreEqual(endpoint.Hostname, "s3-control-fips.dualstack.xx-east-1.amazonaws.com");
-            }
+            GetEndpointForServiceHelper("testEndpoints.json", service, useDualStack, region, expectedHostname);
         }
 
         [DataTestMethod]
@@ -253,6 +96,76 @@ namespace AWSSDK.UnitTests
             {
                 RegionEndpoint.GetBySystemName(regionName);
             });
+        }
+
+        [TestMethod]
+        [DataRow("default-pattern-service", "us-west-2", false, "default-pattern-service.us-west-2.amazonaws.com")]
+        [DataRow("default-pattern-service", "af-south-1", false, "default-pattern-service.af-south-1.amazonaws.com")]
+        [DataRow("global-service", "aws-global", false, "global-service.amazonaws.com")]
+        [DataRow("global-service", "foo", false, "global-service.amazonaws.com")]
+        [DataRow("override-variant-service", "us-west-2", false, "override-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("override-variant-service", "af-south-1", false, "override-variant-service.af-south-1.amazonaws.com")]
+        [DataRow("override-variant-dns-suffix-service", "us-west-2", false, "override-variant-dns-suffix-service.us-west-2.amazonaws.com")]
+        [DataRow("override-variant-dns-suffix-service", "af-south-1", false, "override-variant-dns-suffix-service.af-south-1.amazonaws.com")]
+        [DataRow("override-variant-hostname-service", "us-west-2", false, "override-variant-hostname-service.us-west-2.amazonaws.com")]
+        [DataRow("override-variant-hostname-service", "af-south-1", false, "override-variant-hostname-service.af-south-1.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "us-west-2", false, "override-endpoint-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "af-south-1", false, "override-endpoint-variant-service.af-south-1.amazonaws.com")]
+        [DataRow("default-pattern-service", "us-west-2", true, "default-pattern-service.us-west-2.api.aws")]
+        [DataRow("default-pattern-service", "af-south-1", true, "default-pattern-service.af-south-1.api.aws")]
+        [DataRow("global-service", "aws-global", true, "global-service.api.aws")]
+        [DataRow("global-service", "foo", true, "global-service.api.aws")]
+        [DataRow("override-variant-service", "us-west-2", true, "override-variant-service.dualstack.us-west-2.new.dns.suffix")]
+        [DataRow("override-variant-service", "af-south-1", true, "override-variant-service.dualstack.af-south-1.new.dns.suffix")]
+        [DataRow("override-variant-dns-suffix-service", "us-west-2", true, "override-variant-dns-suffix-service.us-west-2.new.dns.suffix")]
+        [DataRow("override-variant-dns-suffix-service", "af-south-1", true, "override-variant-dns-suffix-service.af-south-1.new.dns.suffix")]
+        [DataRow("override-variant-hostname-service", "us-west-2", true, "override-variant-hostname-service.dualstack.us-west-2.api.aws")]
+        [DataRow("override-variant-hostname-service", "af-south-1", true, "override-variant-hostname-service.dualstack.af-south-1.api.aws")]
+        [DataRow("override-endpoint-variant-service", "us-west-2", true, "override-endpoint-variant-service.dualstack.us-west-2.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "af-south-1", true, "override-endpoint-variant-service.af-south-1.api.aws")]
+        [DataRow("multi-variant-service", "us-west-2", false, "multi-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("multi-variant-service", "us-west-2", true, "multi-variant-service.dualstack.us-west-2.api.aws")]
+        [DataRow("multi-variant-service", "af-south-1", false, "multi-variant-service.af-south-1.amazonaws.com")]
+        [DataRow("multi-variant-service", "af-south-1", true, "multi-variant-service.dualstack.af-south-1.api.aws")]
+        public void VariantTests(string service, string region, bool useDualstack, string expectedHostname)
+        {
+            GetEndpointForServiceHelper("testEndpointsWithVariants.json", service, useDualstack, region, expectedHostname);
+        }
+
+        [DataTestMethod]
+        [DataRow("some-service", true, "us-iso-east-1", "Requested endpoint for some-service with variants [dualstack] could not be found.")]
+        public void GetEndpointForServiceException(string service, bool useDualStackEndpoint, string region, string expectedExceptionMessage)
+        {
+            Exception exception = null;
+
+            try
+            {
+                GetEndpointForServiceHelper("testEndpointsWithVariants.json", service, useDualStackEndpoint, region, "");
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
+
+            Assert.IsNotNull(exception);
+            Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
+            Assert.AreEqual(expectedExceptionMessage, exception.Message);
+        }
+
+        private void GetEndpointForServiceHelper(string endpointsFile, string service, bool useDualStackEndpoint,string region, string expectedEndpoint)
+        {
+            try
+            {
+                RegionEndpoint.Reload(Utils.GetResourceStream(endpointsFile));
+                var regionEndpoint = RegionEndpoint.GetBySystemName(region);
+
+                Assert.IsNotNull(regionEndpoint);
+                Assert.AreEqual(expectedEndpoint, regionEndpoint.GetEndpointForService(service, useDualStackEndpoint).Hostname);
+            }
+            finally
+            {
+                RegionEndpoint.Reload(null);
+            }
         }
     }
 }

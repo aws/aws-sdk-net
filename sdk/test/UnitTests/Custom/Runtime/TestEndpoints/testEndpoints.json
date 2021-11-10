@@ -1,0 +1,92 @@
+{
+  "partitions": [
+    {
+      "defaults": {
+        "hostname": "{service}.{region}.{dnsSuffix}",
+        "protocols": [ "https" ],
+        "signatureVersions": [ "v4" ],
+        "variants": [
+          {
+            "dnsSuffix": "amazonaws.com",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [ "fips" ]
+          },
+          {
+            "dnsSuffix": "api.aws",
+            "hostname": "{service}.{region}.{dnsSuffix}",
+            "tags": [ "dualstack" ]
+          },
+          {
+            "dnsSuffix": "api.aws",
+            "hostname": "{service}-fips.{region}.{dnsSuffix}",
+            "tags": [ "dualstack", "fips" ]
+          }
+        ]
+      },
+      "dnsSuffix": "amazonaws.com",
+      "partition": "aws",
+      "partitionName": "AWS Standard",
+      "regionRegex": "^(us|eu|ap|sa|ca)\\-\\w+\\-\\d+$",
+      "regions": {},
+      "services": {
+        "svc": {
+          "endpoints": {
+            "xx-northeast-1": {},
+            "xx-east-1-fips": {
+              "credentialScope": {
+                "region": "xx-east-1"
+              },
+              "hostname": "svc-fips.xx-east-1.amazonaws.com"
+            }
+          }
+        },
+        "s3": {
+          "defaults": {
+            "protocols": [ "http", "https" ],
+            "signatureVersions": [ "s3v4" ],
+            "variants": [
+              {
+                "dnsSuffix": "amazonaws.com",
+                "hostname": "s3.dualstack.{region}.{dnsSuffix}",
+                "tags": [ "dualstack" ]
+              }
+            ]
+          },
+          "endpoints": {
+            "xx-northeast-1": {},
+            "xx-east-1": {
+              "hostname": "s3.xx-east-1.amazonaws.com"
+            },
+            "xx-west-1": {
+              "hostname": "s3-xx-west-1.amazonaws.com"
+            },
+            "us-east-1": {
+              "hostname": "s3.amazonaws.com"
+            },
+            "xx-east-1-fips": {
+              "credentialScope": {
+                "region": "xx-east-1"
+              },
+              "hostname": "s3-fips.xx-east-1.amazonaws.com"
+            }
+          },
+          "isRegionalized": true,
+          "partitionEndpoint": "us-east-1"
+        },
+        "s3-control": {
+          "endpoints": {
+            "xx-northeast-1": {},
+            "xx-east-1-fips": {
+              "credentialScope": {
+                "region": "xx-east-1"
+              },
+              "hostname": "s3-control-fips.xx-east-1.amazonaws.com"
+            }
+          },
+          "isRegionalized": true
+        }
+      }
+    }
+  ],
+  "version": 3
+}
