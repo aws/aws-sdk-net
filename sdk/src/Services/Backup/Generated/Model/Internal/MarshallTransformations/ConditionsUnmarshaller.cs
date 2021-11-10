@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BackupSelection Object
+    /// Response Unmarshaller for Conditions Object
     /// </summary>  
-    public class BackupSelectionUnmarshaller : IUnmarshaller<BackupSelection, XmlUnmarshallerContext>, IUnmarshaller<BackupSelection, JsonUnmarshallerContext>
+    public class ConditionsUnmarshaller : IUnmarshaller<Conditions, XmlUnmarshallerContext>, IUnmarshaller<Conditions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BackupSelection IUnmarshaller<BackupSelection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Conditions IUnmarshaller<Conditions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,39 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BackupSelection Unmarshall(JsonUnmarshallerContext context)
+        public Conditions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BackupSelection unmarshalledObject = new BackupSelection();
+            Conditions unmarshalledObject = new Conditions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Conditions", targetDepth))
+                if (context.TestExpression("StringEquals", targetDepth))
                 {
-                    var unmarshaller = ConditionsUnmarshaller.Instance;
-                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
+                    unmarshalledObject.StringEquals = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IamRoleArn", targetDepth))
+                if (context.TestExpression("StringLike", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
+                    unmarshalledObject.StringLike = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ListOfTags", targetDepth))
+                if (context.TestExpression("StringNotEquals", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
-                    unmarshalledObject.ListOfTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
+                    unmarshalledObject.StringNotEquals = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NotResources", targetDepth))
+                if (context.TestExpression("StringNotLike", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NotResources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Resources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SelectionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectionName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
+                    unmarshalledObject.StringNotLike = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +94,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         }
 
 
-        private static BackupSelectionUnmarshaller _instance = new BackupSelectionUnmarshaller();        
+        private static ConditionsUnmarshaller _instance = new ConditionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BackupSelectionUnmarshaller Instance
+        public static ConditionsUnmarshaller Instance
         {
             get
             {

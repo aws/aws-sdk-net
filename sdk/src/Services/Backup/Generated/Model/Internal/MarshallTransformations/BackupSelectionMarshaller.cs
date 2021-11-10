@@ -45,6 +45,17 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackupSelection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConditions())
+            {
+                context.Writer.WritePropertyName("Conditions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Conditions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIamRoleArn())
             {
                 context.Writer.WritePropertyName("IamRoleArn");
@@ -63,6 +74,17 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     marshaller.Marshall(requestObjectListOfTagsListValue, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNotResources())
+            {
+                context.Writer.WritePropertyName("NotResources");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNotResourcesListValue in requestObject.NotResources)
+                {
+                        context.Writer.Write(requestObjectNotResourcesListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

@@ -33,10 +33,27 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class BackupSelection
     {
+        private Conditions _conditions;
         private string _iamRoleArn;
         private List<Condition> _listOfTags = new List<Condition>();
+        private List<string> _notResources = new List<string>();
         private List<string> _resources = new List<string>();
         private string _selectionName;
+
+        /// <summary>
+        /// Gets and sets the property Conditions.
+        /// </summary>
+        public Conditions Conditions
+        {
+            get { return this._conditions; }
+            set { this._conditions = value; }
+        }
+
+        // Check to see if Conditions property is set
+        internal bool IsSetConditions()
+        {
+            return this._conditions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
@@ -76,6 +93,21 @@ namespace Amazon.Backup.Model
         internal bool IsSetListOfTags()
         {
             return this._listOfTags != null && this._listOfTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotResources.
+        /// </summary>
+        public List<string> NotResources
+        {
+            get { return this._notResources; }
+            set { this._notResources = value; }
+        }
+
+        // Check to see if NotResources property is set
+        internal bool IsSetNotResources()
+        {
+            return this._notResources != null && this._notResources.Count > 0; 
         }
 
         /// <summary>

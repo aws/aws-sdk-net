@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BackupSelection Object
+    /// Response Unmarshaller for ConditionParameter Object
     /// </summary>  
-    public class BackupSelectionUnmarshaller : IUnmarshaller<BackupSelection, XmlUnmarshallerContext>, IUnmarshaller<BackupSelection, JsonUnmarshallerContext>
+    public class ConditionParameterUnmarshaller : IUnmarshaller<ConditionParameter, XmlUnmarshallerContext>, IUnmarshaller<ConditionParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BackupSelection IUnmarshaller<BackupSelection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConditionParameter IUnmarshaller<ConditionParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BackupSelection Unmarshall(JsonUnmarshallerContext context)
+        public ConditionParameter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BackupSelection unmarshalledObject = new BackupSelection();
+            ConditionParameter unmarshalledObject = new ConditionParameter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Conditions", targetDepth))
-                {
-                    var unmarshaller = ConditionsUnmarshaller.Instance;
-                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IamRoleArn", targetDepth))
+                if (context.TestExpression("ConditionKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConditionKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ListOfTags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
-                    unmarshalledObject.ListOfTags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NotResources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NotResources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Resources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SelectionName", targetDepth))
+                if (context.TestExpression("ConditionValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConditionValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         }
 
 
-        private static BackupSelectionUnmarshaller _instance = new BackupSelectionUnmarshaller();        
+        private static ConditionParameterUnmarshaller _instance = new ConditionParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BackupSelectionUnmarshaller Instance
+        public static ConditionParameterUnmarshaller Instance
         {
             get
             {
