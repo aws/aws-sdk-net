@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.155.0",
+    "ProductVersion" : "3.7.156.0",
     "CoreVersion"    : "3.7.3.34",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -160,7 +160,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.7.3.7",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.34"
@@ -1362,7 +1362,7 @@
             "InPreview"               : false
         },
         "Backup"                          : {
-            "Version" : "3.7.3.16",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.34"
@@ -2291,6 +2291,14 @@
         },
         "ChimeSDKMeetings"                : {
             "Version" : "3.7.1.1",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.3.34"
+            },
+            "InPreview"               : false
+        },
+        "ResilienceHub"                   : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.3.34"

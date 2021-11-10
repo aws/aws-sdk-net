@@ -1,3 +1,11 @@
+### 3.7.156.0 (2021-11-10 19:12 UTC)
+* Backup (3.7.4.0)
+	* AWS Backup SDK provides new options when scheduling backups: select supported services and resources that are assigned to a particular tag, linked to a combination of tags, or can be identified by a partial tag value, and exclude resources from their assignments.
+* ECS (3.7.4.0)
+	* This release adds support for container instance health.
+* ResilienceHub (3.7.0.0)
+	* Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS
+
 ### 3.7.155.0 (2021-11-09 19:26 UTC)
 * AWSHealth (3.7.1.51)
 	* Documentation updates for AWS Health.
