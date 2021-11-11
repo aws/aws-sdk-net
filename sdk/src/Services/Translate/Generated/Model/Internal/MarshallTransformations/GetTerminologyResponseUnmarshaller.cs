@@ -51,6 +51,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AuxiliaryDataLocation", targetDepth))
+                {
+                    var unmarshaller = TerminologyDataLocationUnmarshaller.Instance;
+                    response.AuxiliaryDataLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TerminologyDataLocation", targetDepth))
                 {
                     var unmarshaller = TerminologyDataLocationUnmarshaller.Instance;

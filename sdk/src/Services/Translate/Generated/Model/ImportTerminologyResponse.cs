@@ -33,7 +33,29 @@ namespace Amazon.Translate.Model
     /// </summary>
     public partial class ImportTerminologyResponse : AmazonWebServiceResponse
     {
+        private TerminologyDataLocation _auxiliaryDataLocation;
         private TerminologyProperties _terminologyProperties;
+
+        /// <summary>
+        /// Gets and sets the property AuxiliaryDataLocation. 
+        /// <para>
+        /// The Amazon S3 location of a file that provides any errors or warnings that were produced
+        /// by your input file. This file was created when Amazon Translate attempted to create
+        /// a terminology resource. The location is returned as a presigned URL to that has a
+        /// 30 minute expiration.
+        /// </para>
+        /// </summary>
+        public TerminologyDataLocation AuxiliaryDataLocation
+        {
+            get { return this._auxiliaryDataLocation; }
+            set { this._auxiliaryDataLocation = value; }
+        }
+
+        // Check to see if AuxiliaryDataLocation property is set
+        internal bool IsSetAuxiliaryDataLocation()
+        {
+            return this._auxiliaryDataLocation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TerminologyProperties. 

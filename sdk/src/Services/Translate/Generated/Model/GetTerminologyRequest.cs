@@ -59,10 +59,20 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TerminologyDataFormat. 
         /// <para>
-        /// The data format of the custom terminology being retrieved, either CSV or TMX.
+        /// The data format of the custom terminology being retrieved.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this parameter, Amazon Translate returns a file that has the
+        /// same format as the file that was imported to create the terminology. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify this parameter when you retrieve a multi-directional terminology resource,
+        /// you must specify the same format as that of the input file that was imported to create
+        /// it. Otherwise, Amazon Translate throws an error.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TerminologyDataFormat TerminologyDataFormat
         {
             get { return this._terminologyDataFormat; }

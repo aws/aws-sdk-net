@@ -33,8 +33,47 @@ namespace Amazon.Translate.Model
     /// </summary>
     public partial class TerminologyData
     {
+        private Directionality _directionality;
         private MemoryStream _file;
         private TerminologyDataFormat _format;
+
+        /// <summary>
+        /// Gets and sets the property Directionality. 
+        /// <para>
+        /// The directionality of your terminology resource indicates whether it has one source
+        /// language (uni-directional) or multiple (multi-directional).
+        /// </para>
+        ///  <dl> <dt>UNI</dt> <dd> 
+        /// <para>
+        /// The terminology resource has one source language (for example, the first column in
+        /// a CSV file), and all of its other languages are target languages. 
+        /// </para>
+        ///  </dd> <dt>MULTI</dt> <dd> 
+        /// <para>
+        /// Any language in the terminology resource can be the source language or a target language.
+        /// A single multi-directional terminology resource can be used for jobs that translate
+        /// different language pairs. For example, if the terminology contains terms in English
+        /// and Spanish, then it can be used for jobs that translate English to Spanish and jobs
+        /// that translate Spanish to English.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// When you create a custom terminology resource without specifying the directionality,
+        /// it behaves as uni-directional terminology, although this parameter will have a null
+        /// value.
+        /// </para>
+        /// </summary>
+        public Directionality Directionality
+        {
+            get { return this._directionality; }
+            set { this._directionality = value; }
+        }
+
+        // Check to see if Directionality property is set
+        internal bool IsSetDirectionality()
+        {
+            return this._directionality != null;
+        }
 
         /// <summary>
         /// Gets and sets the property File. 
@@ -60,7 +99,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The data format of the custom terminology. Either CSV or TMX.
+        /// The data format of the custom terminology.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

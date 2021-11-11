@@ -82,16 +82,34 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Directionality", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Directionality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EncryptionKey", targetDepth))
                 {
                     var unmarshaller = EncryptionKeyUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Format", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -104,6 +122,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SizeBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SkippedTermCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SkippedTermCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceLanguageCode", targetDepth))
