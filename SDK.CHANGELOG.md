@@ -1,3 +1,8 @@
+### 3.7.157.0 (2021-11-10 23:05 UTC)
+* Core 3.7.4.0
+	* Add support for endpoint variants and new configuration options for choosing dualstack endpoints
+	* All services packages updated to require new Core
+
 ### 3.7.156.0 (2021-11-10 19:12 UTC)
 * Backup (3.7.4.0)
 	* AWS Backup SDK provides new options when scheduling backups: select supported services and resources that are assigned to a particular tag, linked to a combination of tags, or can be identified by a partial tag value, and exclude resources from their assignments.
