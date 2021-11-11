@@ -1,3 +1,16 @@
+### 3.7.158.0 (2021-11-11 19:13 UTC)
+* DynamoDBv2 (3.7.0.97)
+	* Updated Help section for "dynamodb update-contributor-insights" API
+* EC2 (3.7.42.0)
+	* This release provides an additional route target for the VPC route table.
+* Translate (3.7.2.0)
+	* This release enables customers to import Multi-Directional Custom Terminology and use Multi-Directional Custom Terminology in both real-time translation and asynchronous batch translation.
+* Core 3.7.4.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.157.0 (2021-11-10 23:05 UTC)
 * Core 3.7.4.0
 	* Add support for endpoint variants and new configuration options for choosing dualstack endpoints
