@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
     public partial class ReplaceRouteRequest : AmazonEC2Request
     {
         private string _carrierGatewayId;
+        private string _coreNetworkArn;
         private string _destinationCidrBlock;
         private string _destinationIpv6CidrBlock;
         private string _destinationPrefixListId;
@@ -75,6 +76,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetCarrierGatewayId()
         {
             return this._carrierGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkArn.
+        /// </summary>
+        public string CoreNetworkArn
+        {
+            get { return this._coreNetworkArn; }
+            set { this._coreNetworkArn = value; }
+        }
+
+        // Check to see if CoreNetworkArn property is set
+        internal bool IsSetCoreNetworkArn()
+        {
+            return this._coreNetworkArn != null;
         }
 
         /// <summary>

@@ -120,7 +120,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MultiRegion. <para>Reserved.</para>
+        /// Gets and sets the property MultiRegion. 
+        /// <para>
+        /// Reserved.
+        /// </para>
         /// </summary>
         public bool MultiRegion
         {
