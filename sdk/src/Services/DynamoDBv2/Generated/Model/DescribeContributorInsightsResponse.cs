@@ -43,7 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ContributorInsightsRuleList. 
         /// <para>
-        /// List of names of the associated Alpine rules.
+        /// List of names of the associated contributor insights rules.
         /// </para>
         /// </summary>
         public List<string> ContributorInsightsRuleList
@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ContributorInsightsStatus. 
         /// <para>
-        /// Current Status contributor insights.
+        /// Current status of contributor insights.
         /// </para>
         /// </summary>
         public ContributorInsightsStatus ContributorInsightsStatus
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property FailureException. 
         /// <para>
-        /// Returns information about the last failure that encountered.
+        /// Returns information about the last failure that was encountered.
         /// </para>
         ///  
         /// <para>

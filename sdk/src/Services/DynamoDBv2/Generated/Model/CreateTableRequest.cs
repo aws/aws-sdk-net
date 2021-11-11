@@ -30,9 +30,9 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTable operation.
-    /// The <code>CreateTable</code> operation adds a new table to your account. In an AWS
-    /// account, table names must be unique within each Region. That is, you can have two
-    /// tables with same name if you create the tables in different Regions.
+    /// The <code>CreateTable</code> operation adds a new table to your account. In an Amazon
+    /// Web Services account, table names must be unique within each Region. That is, you
+    /// can have two tables with same name if you create the tables in different Regions.
     /// 
     ///  
     /// <para>

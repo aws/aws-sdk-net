@@ -30,8 +30,15 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchExecuteStatement operation.
-    /// This operation allows you to perform batch reads and writes on data stored in DynamoDB,
+    /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
     /// using PartiQL.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The entire batch must consist of either read statements or write statements, you cannot
+    /// mix both in one batch.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchExecuteStatementRequest : AmazonDynamoDBRequest
     {
@@ -40,7 +47,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Statements. 
         /// <para>
-        ///  The list of PartiQL statements representing the batch to run. 
+        /// The list of PartiQL statements representing the batch to run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

@@ -278,7 +278,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property S3BucketOwner. 
         /// <para>
-        /// The ID of the AWS account that owns the bucket containing the export.
+        /// The ID of the Amazon Web Services account that owns the bucket containing the export.
         /// </para>
         /// </summary>
         public string S3BucketOwner
@@ -323,7 +323,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KMS</code> - server-side encryption with AWS KMS managed keys
+        ///  <code>KMS</code> - server-side encryption with KMS managed keys
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -342,8 +342,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property S3SseKmsKeyId. 
         /// <para>
-        /// The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data
-        /// is stored (if applicable).
+        /// The ID of the KMS managed key used to encrypt the S3 bucket where export data is stored
+        /// (if applicable).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

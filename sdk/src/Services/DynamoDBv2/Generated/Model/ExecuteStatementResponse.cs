@@ -39,9 +39,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        ///  If a read operation was used, this property will contain the result of the reade
-        /// operation; a map of attribute names and their values. For the write operations this
-        /// value will be empty. 
+        /// If a read operation was used, this property will contain the result of the read operation;
+        /// a map of attribute names and their values. For the write operations this value will
+        /// be empty.
         /// </para>
         /// </summary>
         public List<Dictionary<string, AttributeValue>> Items
@@ -59,9 +59,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If the response of a read request exceeds the response payload limit DynamoDB will
+        /// If the response of a read request exceeds the response payload limit DynamoDB will
         /// set this value in the response. If set, you can use that this value in the subsequent
-        /// request to get the remaining results. 
+        /// request to get the remaining results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32768)]

@@ -156,7 +156,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Messages: 
+    /// Messages:
     /// </para>
     ///  <ul> <li> 
     /// <para>

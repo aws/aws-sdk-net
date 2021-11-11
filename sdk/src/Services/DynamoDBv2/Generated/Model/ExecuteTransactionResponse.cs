@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        ///  The response to a PartiQL transaction. 
+        /// The response to a PartiQL transaction.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

@@ -271,7 +271,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property GlobalTableVersion. 
         /// <para>
         /// Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
-        /// tables</a> in use, if the table is replicated across AWS Regions.
+        /// tables</a> in use, if the table is replicated across Amazon Web Services Regions.
         /// </para>
         /// </summary>
         public string GlobalTableVersion
@@ -391,7 +391,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS customer ID
+        /// Amazon Web Services customer ID
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -683,10 +683,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The AWS KMS key used to encrypt
-        /// the table in inaccessible. Table operations may fail due to failure to use the AWS
-        /// KMS key. DynamoDB will initiate the table archival process when a table's AWS KMS
-        /// key remains inaccessible for more than seven days. 
+        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The KMS key used to encrypt the
+        /// table in inaccessible. Table operations may fail due to failure to use the KMS key.
+        /// DynamoDB will initiate the table archival process when a table's KMS key remains inaccessible
+        /// for more than seven days. 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        ///  The response to each PartiQL statement in the batch. 
+        /// The response to each PartiQL statement in the batch.
         /// </para>
         /// </summary>
         public List<BatchStatementResponse> Responses

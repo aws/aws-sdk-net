@@ -32,9 +32,10 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the TransactWriteItems operation.
     /// <code>TransactWriteItems</code> is a synchronous write operation that groups up to
     /// 25 action requests. These actions can target items in different tables, but not in
-    /// different AWS accounts or Regions, and no two actions can target the same item. For
-    /// example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the same
-    /// item. The aggregate size of the items in the transaction cannot exceed 4 MB.
+    /// different Amazon Web Services accounts or Regions, and no two actions can target the
+    /// same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code>
+    /// the same item. The aggregate size of the items in the transaction cannot exceed 4
+    /// MB.
     /// 
     ///  
     /// <para>
@@ -43,15 +44,15 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Put</code>  &#x97;   Initiates a <code>PutItem</code> operation to write a
-    /// new item. This structure specifies the primary key of the item to be written, the
-    /// name of the table to write it in, an optional condition expression that must be satisfied
-    /// for the write to succeed, a list of the item's attributes, and a field indicating
-    /// whether to retrieve the item's attributes if the condition is not met.
+    ///  <code>Put</code>  —   Initiates a <code>PutItem</code> operation to write a new item.
+    /// This structure specifies the primary key of the item to be written, the name of the
+    /// table to write it in, an optional condition expression that must be satisfied for
+    /// the write to succeed, a list of the item's attributes, and a field indicating whether
+    /// to retrieve the item's attributes if the condition is not met.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to update
+    ///  <code>Update</code>  —   Initiates an <code>UpdateItem</code> operation to update
     /// an existing item. This structure specifies the primary key of the item to be updated,
     /// the name of the table where it resides, an optional condition expression that must
     /// be satisfied for the update to succeed, an expression that defines one or more attributes
@@ -60,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code> operation to delete
+    ///  <code>Delete</code>  —   Initiates a <code>DeleteItem</code> operation to delete
     /// an existing item. This structure specifies the primary key of the item to be deleted,
     /// the name of the table where it resides, an optional condition expression that must
     /// be satisfied for the deletion to succeed, and a field indicating whether to retrieve
@@ -68,11 +69,11 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ConditionCheck</code>  &#x97;   Applies a condition to an item that is not
-    /// being modified by the transaction. This structure specifies the primary key of the
-    /// item to be checked, the name of the table where it resides, a condition expression
-    /// that must be satisfied for the transaction to succeed, and a field indicating whether
-    /// to retrieve the item's attributes if the condition is not met.
+    ///  <code>ConditionCheck</code>  —   Applies a condition to an item that is not being
+    /// modified by the transaction. This structure specifies the primary key of the item
+    /// to be checked, the name of the table where it resides, a condition expression that
+    /// must be satisfied for the transaction to succeed, and a field indicating whether to
+    /// retrieve the item's attributes if the condition is not met.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -200,8 +201,8 @@ namespace Amazon.DynamoDBv2.Model
         /// An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
         /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
         /// <code>Delete</code> object. These can operate on items in different tables, but the
-        /// tables must reside in the same AWS account and Region, and no two of them can operate
-        /// on the same item. 
+        /// tables must reside in the same Amazon Web Services account and Region, and no two
+        /// of them can operate on the same item. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

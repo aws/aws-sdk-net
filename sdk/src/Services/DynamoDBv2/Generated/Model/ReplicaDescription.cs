@@ -63,8 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property KMSMasterKeyId. 
         /// <para>
-        /// The AWS KMS customer master key (CMK) of the replica that will be used for AWS KMS
-        /// encryption.
+        /// The KMS key of the replica that will be used for KMS encryption.
         /// </para>
         /// </summary>
         public string KMSMasterKeyId
@@ -158,24 +157,24 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGION_DISABLED</code> - The replica is inaccessible because the AWS Region
-        /// has been disabled.
+        ///  <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web
+        /// Services Region has been disabled.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the AWS Region remains inaccessible for more than 20 hours, DynamoDB will remove
-        /// this replica from the replication group. The replica will not be deleted and replication
-        /// will stop from and to this region.
+        /// If the Amazon Web Services Region remains inaccessible for more than 20 hours, DynamoDB
+        /// will remove this replica from the replication group. The replica will not be deleted
+        /// and replication will stop from and to this region.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The AWS KMS key used to encrypt
-        /// the table is inaccessible.
+        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the
+        /// table is inaccessible.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the AWS KMS key remains inaccessible for more than 20 hours, DynamoDB will remove
-        /// this replica from the replication group. The replica will not be deleted and replication
+        /// If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this
+        /// replica from the replication group. The replica will not be deleted and replication
         /// will stop from and to this region.
         /// </para>
         ///  </note> </li> </ul>

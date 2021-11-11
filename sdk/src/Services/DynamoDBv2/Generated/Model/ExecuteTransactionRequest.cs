@@ -32,6 +32,16 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the ExecuteTransaction operation.
     /// This operation allows you to perform transactional reads or writes on data stored
     /// in DynamoDB, using PartiQL.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The entire transaction must consist of either read statements or write statements,
+    /// you cannot mix both in one transaction. The EXISTS function is an exception and can
+    /// be used to check the condition of specific attributes of the item in a similar manner
+    /// to <code>ConditionCheck</code> in the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
+    /// API.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ExecuteTransactionRequest : AmazonDynamoDBRequest
     {
@@ -41,8 +51,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        ///  Set this value to get remaining results, if <code>NextToken</code> was returned in
-        /// the statement response. 
+        /// Set this value to get remaining results, if <code>NextToken</code> was returned in
+        /// the statement response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -61,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TransactStatements. 
         /// <para>
-        ///  The list of PartiQL statements representing the transaction to run. 
+        /// The list of PartiQL statements representing the transaction to run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

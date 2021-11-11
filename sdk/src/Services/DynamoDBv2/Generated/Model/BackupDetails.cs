@@ -173,7 +173,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+        ///  <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.
         /// </para>
         ///  </li> </ul>
         /// </summary>

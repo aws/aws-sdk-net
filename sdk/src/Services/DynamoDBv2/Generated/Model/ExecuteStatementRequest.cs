@@ -43,8 +43,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsistentRead. 
         /// <para>
-        ///  The consistency of a read operation. If set to <code>true</code>, then a strongly
-        /// consistent read is used; otherwise, an eventually consistent read is used. 
+        /// The consistency of a read operation. If set to <code>true</code>, then a strongly
+        /// consistent read is used; otherwise, an eventually consistent read is used.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -62,8 +62,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Set this value to get remaining results, if <code>NextToken</code> was returned in
-        /// the statement response. 
+        /// Set this value to get remaining results, if <code>NextToken</code> was returned in
+        /// the statement response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32768)]
@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///  The parameters for the PartiQL statement, if any. 
+        /// The parameters for the PartiQL statement, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -101,7 +101,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Statement. 
         /// <para>
-        ///  The PartiQL statement representing the operation to run. 
+        /// The PartiQL statement representing the operation to run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]

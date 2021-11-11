@@ -34,10 +34,10 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    ///  AWS-assigned tag names and values are automatically assigned the <code>aws:</code>
-    /// prefix, which the user cannot assign. AWS-assigned tag names do not count towards
-    /// the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in
-    /// the Cost Allocation Report. You cannot backdate the application of a tag. 
+    /// Amazon Web Services-assigned tag names and values are automatically assigned the <code>aws:</code>
+    /// prefix, which the user cannot assign. Amazon Web Services-assigned tag names do not
+    /// count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>
+    /// in the Cost Allocation Report. You cannot backdate the application of a tag.
     /// </para>
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have
         /// up to one tag with the same key. If you try to add an existing tag (same key), the
-        /// existing tag value will be updated to the new value. 
+        /// existing tag value will be updated to the new value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

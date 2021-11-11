@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Throughput exceeds the current throughput quota for your account. Please contact AWS
-    /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
-    /// increase.
+    /// Throughput exceeds the current throughput quota for your account. Please contact <a
+    /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
+    /// quota increase.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,9 +30,10 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the Query operation.
-    /// The <code>Query</code> operation finds items based on primary key values. You can
-    /// query any table or secondary index that has a composite primary key (a partition key
-    /// and a sort key). 
+    /// You must provide the name of the partition key attribute and a single value for that
+    /// attribute. <code>Query</code> returns all items with that partition key value. Optionally,
+    /// you can provide a sort key attribute and use a comparison operator to refine the search
+    /// results.
     /// 
     ///  
     /// <para>
