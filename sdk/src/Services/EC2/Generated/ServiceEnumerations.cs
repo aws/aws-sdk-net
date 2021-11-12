@@ -6797,6 +6797,42 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C6gXlarge = new InstanceType("c6g.xlarge");
         /// <summary>
+        /// Constant C6i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6i12xlarge = new InstanceType("c6i.12xlarge");
+        /// <summary>
+        /// Constant C6i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6i16xlarge = new InstanceType("c6i.16xlarge");
+        /// <summary>
+        /// Constant C6i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6i24xlarge = new InstanceType("c6i.24xlarge");
+        /// <summary>
+        /// Constant C6i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6i2xlarge = new InstanceType("c6i.2xlarge");
+        /// <summary>
+        /// Constant C6i32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6i32xlarge = new InstanceType("c6i.32xlarge");
+        /// <summary>
+        /// Constant C6i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6i4xlarge = new InstanceType("c6i.4xlarge");
+        /// <summary>
+        /// Constant C6i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6i8xlarge = new InstanceType("c6i.8xlarge");
+        /// <summary>
+        /// Constant C6iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6iLarge = new InstanceType("c6i.large");
+        /// <summary>
+        /// Constant C6iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6iXlarge = new InstanceType("c6i.xlarge");
+        /// <summary>
         /// Constant Cc14xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Cc14xlarge = new InstanceType("cc1.4xlarge");
@@ -6956,6 +6992,38 @@ namespace Amazon.EC2
         /// Constant G4dnXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G4dnXlarge = new InstanceType("g4dn.xlarge");
+        /// <summary>
+        /// Constant G512xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G512xlarge = new InstanceType("g5.12xlarge");
+        /// <summary>
+        /// Constant G516xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G516xlarge = new InstanceType("g5.16xlarge");
+        /// <summary>
+        /// Constant G524xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G524xlarge = new InstanceType("g5.24xlarge");
+        /// <summary>
+        /// Constant G52xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G52xlarge = new InstanceType("g5.2xlarge");
+        /// <summary>
+        /// Constant G548xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G548xlarge = new InstanceType("g5.48xlarge");
+        /// <summary>
+        /// Constant G54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G54xlarge = new InstanceType("g5.4xlarge");
+        /// <summary>
+        /// Constant G58xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G58xlarge = new InstanceType("g5.8xlarge");
+        /// <summary>
+        /// Constant G5Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G5Xlarge = new InstanceType("g5.xlarge");
         /// <summary>
         /// Constant H116xlarge for InstanceType
         /// </summary>
