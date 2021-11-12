@@ -139,6 +139,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetScheduledTime())
+                {
+                    context.Writer.WritePropertyName("ScheduledTime");
+                    context.Writer.Write(publicRequest.ScheduledTime);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

@@ -307,6 +307,72 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ContactInitiationMethod.
+    /// </summary>
+    public class ContactInitiationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod API = new ContactInitiationMethod("API");
+        /// <summary>
+        /// Constant CALLBACK for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod CALLBACK = new ContactInitiationMethod("CALLBACK");
+        /// <summary>
+        /// Constant INBOUND for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod INBOUND = new ContactInitiationMethod("INBOUND");
+        /// <summary>
+        /// Constant OUTBOUND for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod OUTBOUND = new ContactInitiationMethod("OUTBOUND");
+        /// <summary>
+        /// Constant QUEUE_TRANSFER for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod QUEUE_TRANSFER = new ContactInitiationMethod("QUEUE_TRANSFER");
+        /// <summary>
+        /// Constant TRANSFER for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod TRANSFER = new ContactInitiationMethod("TRANSFER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactInitiationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactInitiationMethod FindValue(string value)
+        {
+            return FindValue<ContactInitiationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactInitiationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CurrentMetricName.
     /// </summary>
     public class CurrentMetricName : ConstantClass
@@ -2309,11 +2375,65 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ReferenceStatus.
+    /// </summary>
+    public class ReferenceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus APPROVED = new ReferenceStatus("APPROVED");
+        /// <summary>
+        /// Constant REJECTED for ReferenceStatus
+        /// </summary>
+        public static readonly ReferenceStatus REJECTED = new ReferenceStatus("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReferenceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReferenceStatus FindValue(string value)
+        {
+            return FindValue<ReferenceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReferenceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReferenceType.
     /// </summary>
     public class ReferenceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ATTACHMENT for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType ATTACHMENT = new ReferenceType("ATTACHMENT");
         /// <summary>
         /// Constant URL for ReferenceType
         /// </summary>

@@ -56,8 +56,8 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
-    /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// You can connect programmatically to an AWS service by using an endpoint. For a list
+    /// of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
     ///  <note> 
@@ -1393,7 +1393,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
+        /// Creates an AWS resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// 
@@ -1425,7 +1425,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
+        /// Creates an AWS resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2223,8 +2223,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
-        /// The association must not have any use cases associated with it.
+        /// Deletes an AWS resource association from an Amazon Connect instance. The association
+        /// must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
         /// 
@@ -2253,8 +2253,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
-        /// The association must not have any use cases associated with it.
+        /// Deletes an AWS resource association from an Amazon Connect instance. The association
+        /// must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2758,6 +2758,97 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeAgentStatusResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeAgentStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeContact
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the specified contact. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
+        public virtual DescribeContactResponse DescribeContact(DescribeContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the specified contact. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
+        public virtual Task<DescribeContactResponse> DescribeContactAsync(DescribeContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeContactResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4988,6 +5079,89 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListContactReferences
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// For the specified <code>referenceTypes</code>, returns a list of references associated
+        /// with the contact. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactReferences service method.</param>
+        /// 
+        /// <returns>The response from the ListContactReferences service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactReferences">REST API Reference for ListContactReferences Operation</seealso>
+        public virtual ListContactReferencesResponse ListContactReferences(ListContactReferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactReferencesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// For the specified <code>referenceTypes</code>, returns a list of references associated
+        /// with the contact. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactReferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactReferences service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactReferences">REST API Reference for ListContactReferences Operation</seealso>
+        public virtual Task<ListContactReferencesResponse> ListContactReferencesAsync(ListContactReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactReferencesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListContactReferencesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListHoursOfOperations
 
 
@@ -5308,8 +5482,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the Amazon Web Services resource associations for
-        /// the specified Amazon Connect instance.
+        /// Provides summary information about the AWS resource associations for the specified
+        /// Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// 
@@ -5338,8 +5512,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Provides summary information about the Amazon Web Services resource associations for
-        /// the specified Amazon Connect instance.
+        /// Provides summary information about the AWS resource associations for the specified
+        /// Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -6266,13 +6440,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Provides summary information about the security profiles for the specified Amazon
         /// Connect instance.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
@@ -6309,13 +6479,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Provides summary information about the security profiles for the specified Amazon
         /// Connect instance.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
@@ -7182,7 +7348,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a contact flow to start a new task.
+        /// Initiates a contact flow to start a new task immediately or at a future date and time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
         /// 
@@ -7217,7 +7383,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Initiates a contact flow to start a new task.
+        /// Initiates a contact flow to start a new task immediately or at a future date and time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
         /// <param name="cancellationToken">
@@ -7816,6 +7982,101 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateContact
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Adds or updates user defined contact information associated with the specified contact.
+        /// At least one field to be updated must be present in the request.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can add or update user-defined contact information for both ongoing and completed
+        /// contacts.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Adds or updates user defined contact information associated with the specified contact.
+        /// At least one field to be updated must be present in the request.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can add or update user-defined contact information for both ongoing and completed
+        /// contacts.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateContactAttributes
 
 
@@ -8109,6 +8370,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateContactFlowNameResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateContactFlowNameResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContactSchedule
+
+
+        /// <summary>
+        /// Updates the scheduled time of a task contact that is already scheduled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactSchedule service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactSchedule">REST API Reference for UpdateContactSchedule Operation</seealso>
+        public virtual UpdateContactScheduleResponse UpdateContactSchedule(UpdateContactScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the scheduled time of a task contact that is already scheduled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactSchedule service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactSchedule">REST API Reference for UpdateContactSchedule Operation</seealso>
+        public virtual Task<UpdateContactScheduleResponse> UpdateContactScheduleAsync(UpdateContactScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateContactScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctions. 
         /// <para>
-        /// The Lambda function ARNs associated with the specified instance.
+        /// The Lambdafunction ARNs associated with the specified instance.
         /// </para>
         /// </summary>
         public List<string> LambdaFunctions

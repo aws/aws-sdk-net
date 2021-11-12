@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTaskContact operation.
-    /// Initiates a contact flow to start a new task.
+    /// Initiates a contact flow to start a new task immediately or at a future date and time.
     /// </summary>
     public partial class StartTaskContactRequest : AmazonConnectRequest
     {
@@ -42,6 +42,7 @@ namespace Amazon.Connect.Model
         private string _name;
         private string _previousContactId;
         private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
+        private DateTime? _scheduledTime;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -209,6 +210,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetReferences()
         {
             return this._references != null && this._references.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledTime. 
+        /// <para>
+        /// The timestamp, in Unix Epoch seconds format, at which to start running the inbound
+        /// contact flow. The scheduled time cannot be in the past. It must be within up to 6
+        /// days in future. 
+        /// </para>
+        /// </summary>
+        public DateTime ScheduledTime
+        {
+            get { return this._scheduledTime.GetValueOrDefault(); }
+            set { this._scheduledTime = value; }
+        }
+
+        // Check to see if ScheduledTime property is set
+        internal bool IsSetScheduledTime()
+        {
+            return this._scheduledTime.HasValue; 
         }
 
     }

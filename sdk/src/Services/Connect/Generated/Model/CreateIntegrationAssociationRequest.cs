@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegrationAssociation operation.
-    /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
+    /// Creates an AWS resource association with an Amazon Connect instance.
     /// </summary>
     public partial class CreateIntegrationAssociationRequest : AmazonConnectRequest
     {
@@ -162,7 +162,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource.
+        /// One or more tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

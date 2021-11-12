@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// The channel to use to filter the metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Max=3)]
         public List<string> Channels
         {
             get { return this._channels; }

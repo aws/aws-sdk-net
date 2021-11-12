@@ -40,7 +40,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A valid URL.
+        /// The type of the reference. Only <code>URL</code> type can be added or updated on a
+        /// contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A formatted URL that displays to an agent in the Contact Control Panel (CCP)
+        /// A valid value for the reference. For example, for a URL reference, a formatted URL
+        /// that is displayed to an agent in the Contact Control Panel (CCP).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4096)]

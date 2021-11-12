@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIntegrationAssociations operation.
-    /// Provides summary information about the Amazon Web Services resource associations for
-    /// the specified Amazon Connect instance.
+    /// Provides summary information about the AWS resource associations for the specified
+    /// Amazon Connect instance.
     /// </summary>
     public partial class ListIntegrationAssociationsRequest : AmazonConnectRequest
     {
@@ -61,10 +61,7 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntegrationType. 
-        /// <para>
-        /// The type of integration.
-        /// </para>
+        /// Gets and sets the property IntegrationType.
         /// </summary>
         public IntegrationType IntegrationType
         {

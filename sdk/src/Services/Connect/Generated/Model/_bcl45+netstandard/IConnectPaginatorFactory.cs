@@ -56,6 +56,11 @@ namespace Amazon.Connect.Model
         IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactReferences operation
+        ///</summary>
+        IListContactReferencesPaginator ListContactReferences(ListContactReferencesRequest request);
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request);

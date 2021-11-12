@@ -53,8 +53,8 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
-    /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// You can connect programmatically to an AWS service by using an endpoint. For a list
+    /// of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
     ///  <note> 
@@ -1241,7 +1241,7 @@ namespace Amazon.Connect
         #region  CreateIntegrationAssociation
 
         /// <summary>
-        /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
+        /// Creates an AWS resource association with an Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
         /// 
@@ -1991,8 +1991,8 @@ namespace Amazon.Connect
         #region  DeleteIntegrationAssociation
 
         /// <summary>
-        /// Deletes an Amazon Web Services resource association from an Amazon Connect instance.
-        /// The association must not have any use cases associated with it.
+        /// Deletes an AWS resource association from an Amazon Connect instance. The association
+        /// must not have any use cases associated with it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
         /// 
@@ -2490,6 +2490,85 @@ namespace Amazon.Connect
         public virtual DescribeAgentStatusResponse EndDescribeAgentStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAgentStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeContact
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the specified contact. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
+        public virtual DescribeContactResponse DescribeContact(DescribeContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
+        public virtual IAsyncResult BeginDescribeContact(DescribeContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContact.</param>
+        /// 
+        /// <returns>Returns a  DescribeContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
+        public virtual DescribeContactResponse EndDescribeContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeContactResponse>(asyncResult);
         }
 
         #endregion
@@ -4545,6 +4624,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListContactReferences
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// For the specified <code>referenceTypes</code>, returns a list of references associated
+        /// with the contact. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactReferences service method.</param>
+        /// 
+        /// <returns>The response from the ListContactReferences service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactReferences">REST API Reference for ListContactReferences Operation</seealso>
+        public virtual ListContactReferencesResponse ListContactReferences(ListContactReferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactReferencesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContactReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContactReferences operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContactReferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactReferences">REST API Reference for ListContactReferences Operation</seealso>
+        public virtual IAsyncResult BeginListContactReferences(ListContactReferencesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContactReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactReferencesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContactReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContactReferences.</param>
+        /// 
+        /// <returns>Returns a  ListContactReferencesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactReferences">REST API Reference for ListContactReferences Operation</seealso>
+        public virtual ListContactReferencesResponse EndListContactReferences(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListContactReferencesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListHoursOfOperations
 
         /// <summary>
@@ -4840,8 +4994,8 @@ namespace Amazon.Connect
         #region  ListIntegrationAssociations
 
         /// <summary>
-        /// Provides summary information about the Amazon Web Services resource associations for
-        /// the specified Amazon Connect instance.
+        /// Provides summary information about the AWS resource associations for the specified
+        /// Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
         /// 
@@ -5721,13 +5875,9 @@ namespace Amazon.Connect
         #region  ListSecurityProfiles
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Provides summary information about the security profiles for the specified Amazon
         /// Connect instance.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
@@ -6514,7 +6664,7 @@ namespace Amazon.Connect
         #region  StartTaskContact
 
         /// <summary>
-        /// Initiates a contact flow to start a new task.
+        /// Initiates a contact flow to start a new task immediately or at a future date and time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
         /// 
@@ -7098,6 +7248,87 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateContact
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Adds or updates user defined contact information associated with the specified contact.
+        /// At least one field to be updated must be present in the request.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can add or update user-defined contact information for both ongoing and completed
+        /// contacts.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual IAsyncResult BeginUpdateContact(UpdateContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContact.</param>
+        /// 
+        /// <returns>Returns a  UpdateContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual UpdateContactResponse EndUpdateContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateContactAttributes
 
         /// <summary>
@@ -7343,6 +7574,78 @@ namespace Amazon.Connect
         public virtual UpdateContactFlowNameResponse EndUpdateContactFlowName(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateContactFlowNameResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateContactSchedule
+
+        /// <summary>
+        /// Updates the scheduled time of a task contact that is already scheduled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactSchedule service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactSchedule">REST API Reference for UpdateContactSchedule Operation</seealso>
+        public virtual UpdateContactScheduleResponse UpdateContactSchedule(UpdateContactScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContactSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactSchedule operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContactSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactSchedule">REST API Reference for UpdateContactSchedule Operation</seealso>
+        public virtual IAsyncResult BeginUpdateContactSchedule(UpdateContactScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContactScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContactSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContactSchedule.</param>
+        /// 
+        /// <returns>Returns a  UpdateContactScheduleResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactSchedule">REST API Reference for UpdateContactSchedule Operation</seealso>
+        public virtual UpdateContactScheduleResponse EndUpdateContactSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateContactScheduleResponse>(asyncResult);
         }
 
         #endregion

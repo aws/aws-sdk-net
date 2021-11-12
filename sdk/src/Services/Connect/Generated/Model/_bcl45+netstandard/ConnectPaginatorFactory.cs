@@ -84,6 +84,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListContactReferences operation
+        ///</summary>
+        public IListContactReferencesPaginator ListContactReferences(ListContactReferencesRequest request) 
+        {
+            return new ListContactReferencesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         public IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request) 

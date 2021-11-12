@@ -307,6 +307,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeContactRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeContactRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DescribeContactFlowRequest.ContactFlowId</property>
     <max>500</max>
   </property-value-rule>
@@ -516,6 +526,16 @@
     <property>Amazon.Connect.Model.ListContactFlowsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactReferencesRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactReferencesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListHoursOfOperationsRequest.InstanceId</property>
@@ -926,6 +946,26 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactRequest.Description</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactRequest.Name</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactAttributesRequest.InitialContactId</property>
     <min>1</min>
     <max>256</max>
@@ -956,6 +996,16 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactScheduleRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactScheduleRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateHoursOfOperationRequest.Description</property>
@@ -1126,6 +1176,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AgentInfo.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AgentStatus.Description</property>
     <min>1</min>
     <max>250</max>
@@ -1146,6 +1201,16 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AttachmentReference.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachmentReference.Value</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.Attribute.Value</property>
     <min>1</min>
     <max>100</max>
@@ -1164,6 +1229,31 @@
     <property>Amazon.Connect.Model.ChatStreamingConfiguration.StreamingEndpointArn</property>
     <min>1</min>
     <max>350</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Contact.Description</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Contact.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Contact.InitialContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Contact.Name</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Contact.PreviousContactId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Id</property>
@@ -1427,6 +1517,16 @@
     <property>Amazon.Connect.Model.SecurityProfile.OrganizationResourceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UrlReference.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UrlReference.Value</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UseCase.UseCaseId</property>
