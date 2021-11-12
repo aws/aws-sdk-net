@@ -209,6 +209,18 @@
               ]
             }
           }
+        },
+        "deprecated-service": {
+          "endpoints": {
+            "us-east-1": {},
+            "fips-us-east-1": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "deprecated": true,
+              "hostname": "deprecated-service-fips.us-east-1.amazonaws.com"
+            }
+          }
         }
       }
     },

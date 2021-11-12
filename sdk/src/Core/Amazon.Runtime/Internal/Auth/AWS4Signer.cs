@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 
@@ -592,11 +593,11 @@ namespace Amazon.Runtime.Internal.Auth
                                                     RegionEndpoint alternateEndpoint,
                                                     IRequest request)
         {
-            // Alternate endpoint (IRequest.AlternateEndopoint) takes precedence over
+            // Alternate endpoint (IRequest.AlternateEndpoint) takes precedence over
             // client config properties.
             if (alternateEndpoint != null)
             {
-                var serviceEndpoint = alternateEndpoint.GetEndpointForService(serviceName, clientConfig.UseDualstackEndpoint);
+                var serviceEndpoint = alternateEndpoint.GetEndpointForService(serviceName, clientConfig.ToGetEndpointForServiceOptions());
                 if (serviceEndpoint.AuthRegion != null)
                     return serviceEndpoint.AuthRegion;
 
@@ -620,7 +621,7 @@ namespace Amazon.Runtime.Internal.Auth
             var endpoint = clientConfig.RegionEndpoint;
             if (endpoint != null)
             {
-                var serviceEndpoint = endpoint.GetEndpointForService(serviceName, clientConfig.UseDualstackEndpoint);
+                var serviceEndpoint = endpoint.GetEndpointForService(serviceName, clientConfig.ToGetEndpointForServiceOptions());
                 if (!string.IsNullOrEmpty(serviceEndpoint.AuthRegion))
                     return serviceEndpoint.AuthRegion;
 

@@ -86,7 +86,7 @@ namespace Amazon.S3Control.Internal
             var config = executionContext.RequestContext.ClientConfig;
 
             //If a ServiceURL is set the config ClientRegion should be null. Under this case
-            //the region needs to be determined from the ServiceURL.          
+            //the region needs to be determined from the ServiceURL.
             RegionEndpoint useRegion = config.RegionEndpoint;
             if (useRegion == null && !string.IsNullOrEmpty(config.ServiceURL))
             {
@@ -109,7 +109,8 @@ namespace Amazon.S3Control.Internal
                     {
                         throw new AmazonClientException($"Invalid ARN: {s3Arn.ToString()}, not S3 Outposts ARN");
                     }
-                    s3Resource = s3Arn.ParseOutpost();
+                    s3Resource = s3Arn.ParseOutpost(config as AmazonS3ControlConfig);
+                    
                     request.Headers[HeaderKeys.XAmzOutpostId] = ((S3OutpostResource) s3Resource).OutpostId;
                 }
                 if (s3Resource != null)

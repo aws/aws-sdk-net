@@ -63,6 +63,12 @@ namespace Amazon.Runtime.Internal
         /// for the configured region.
         /// </summary>
         public bool? UseDualstackEndpoint { get; set; }
+
+        /// <summary>
+        /// Configures the endpoint calculation to go to a FIPS (https://aws.amazon.com/compliance/fips/) endpoint
+        /// for the configured region.
+        /// </summary>
+        public bool? UseFIPSEndpoint { get; set; }
     }
 
 #if BCL || NETSTANDARD
@@ -81,6 +87,7 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT = "AWS_EC2_METADATA_SERVICE_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE = "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE";
         public const string ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT = "AWS_USE_DUALSTACK_ENDPOINT";
+        public const string ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT = "AWS_USE_FIPS_ENDPOINT";
 
         /// <summary>
         /// Attempts to construct a configuration instance of configuration environment 
@@ -97,6 +104,7 @@ namespace Amazon.Runtime.Internal
             EC2MetadataServiceEndpoint = GetEC2MetadataEndpointEnvironmentVariable();
             EC2MetadataServiceEndpointMode = GetEnvironmentVariable<EC2MetadataServiceEndpointMode>(ENVIRONMENT_VARIABLE_AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE);
             UseDualstackEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_DUALSTACK_ENDPOINT);
+            UseFIPSEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT);
         }
 
         private bool TryGetEnvironmentVariable(string environmentVariableName, out string value)
@@ -205,6 +213,7 @@ namespace Amazon.Runtime.Internal
                 EC2MetadataServiceEndpoint = profile.EC2MetadataServiceEndpoint;
                 EC2MetadataServiceEndpointMode = profile.EC2MetadataServiceEndpointMode;
                 UseDualstackEndpoint = profile.UseDualstackEndpoint;
+                UseFIPSEndpoint = profile.UseFIPSEndpoint;
             }
             else
             {
@@ -219,7 +228,8 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("max_attempts", profile.MaxAttempts),
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint", profile.EC2MetadataServiceEndpoint),
                 new KeyValuePair<string, object>("ec2_metadata_service_endpoint_mode", profile.EC2MetadataServiceEndpointMode),
-                new KeyValuePair<string, object>("use_dualstack_endpoint", profile.UseDualstackEndpoint)
+                new KeyValuePair<string, object>("use_dualstack_endpoint", profile.UseDualstackEndpoint),
+                new KeyValuePair<string, object>("use_fips_endpoint", profile.UseFIPSEndpoint)
             };
 
             foreach(var item in items)
@@ -281,6 +291,7 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.EC2MetadataServiceEndpoint = SeekString(standardGenerators, (c) => c.EC2MetadataServiceEndpoint);
             _cachedConfiguration.EC2MetadataServiceEndpointMode = SeekValue(standardGenerators, (c) => c.EC2MetadataServiceEndpointMode);
             _cachedConfiguration.UseDualstackEndpoint = SeekValue(standardGenerators, (c) => c.UseDualstackEndpoint);
+            _cachedConfiguration.UseFIPSEndpoint = SeekValue(standardGenerators, (c) => c.UseFIPSEndpoint);
         }        
                 
         private static T? SeekValue<T>(List<ConfigGenerator> generators, Func<InternalConfiguration, T?> getValue) where T : struct
@@ -382,6 +393,18 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.UseDualstackEndpoint;
+            }
+        }
+
+        /// <summary>
+        /// Configures the endpoint calculation to go to a FIPS (https://aws.amazon.com/compliance/fips/) endpoint
+        /// for the configured region.
+        /// </summary>
+        public static bool? UseFIPSEndpoint
+        {
+            get
+            {
+                return _cachedConfiguration.UseFIPSEndpoint;
             }
         }
     }

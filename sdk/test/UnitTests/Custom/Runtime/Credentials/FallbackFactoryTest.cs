@@ -40,6 +40,7 @@ namespace AWSSDK.UnitTests
         private const string AWS_RETRY_MODE_ENVIRONMENT_VARIABLE = "AWS_RETRY_MODE";
         private const string AWS_MAX_ATTEMPTS_ENVIRONMENT_VARIABLE = "AWS_MAX_ATTEMPTS";
         private const string AWS_USE_DUALSTACK_ENDPOINT_ENVIRONMENT_VARIABLE = "AWS_USE_DUALSTACK_ENDPOINT";
+        private const string AWS_USE_FIPS_ENDPOINT_ENVIRONMENT_VARIABLE = EnvironmentVariableInternalConfiguration.ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT;
 
         private static readonly string ProfileText = new StringBuilder()
             .AppendLine("[default]")
@@ -70,6 +71,10 @@ namespace AWSSDK.UnitTests
             .AppendLine("use_dualstack_endpoint=true")
             .AppendLine("[dualstack-disabled]")
             .AppendLine("use_dualstack_endpoint=false")
+            .AppendLine("[fips-enabled]")
+            .AppendLine("use_fips_endpoint=true")
+            .AppendLine("[fips-disabled]")
+            .AppendLine("use_fips_endpoint=false")
             .ToString();
 
         [TestMethod]
@@ -242,6 +247,34 @@ namespace AWSSDK.UnitTests
             using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
             {
                 Assert.AreEqual(expectedUseDualstackEndpointValue, config.UseDualstackEndpoint);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(true, false, "fips-disabled", true)]  // service client should supersede conflicting env var and profile values
+        [DataRow(false, true, "fips-enabled", false)]
+        [DataRow(null, true, "fips-disabled", true)]   // env var should supersede conflicting profile value
+        [DataRow(null, false, "fips-enabled", false)]
+        [DataRow(null, null, "fips-enabled", true)]    // profile should drive value
+        [DataRow(null, null, "fips-disabled", false)]
+        [DataRow(null, null, "default", false)]             // should default to false when no config values specified
+        public void TestFIPSConfigurationHierarchy(bool? clientConfigValue, bool? envVarValue, string profileName, bool expectedUseFIPSEndpointValue)
+        {
+            var config = new AmazonSecurityTokenServiceConfig();
+            if (clientConfigValue.HasValue)
+            {
+                config.UseFIPSEndpoint = clientConfigValue.Value;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue.HasValue)
+            {
+                envVariables.Add(AWS_USE_FIPS_ENDPOINT_ENVIRONMENT_VARIABLE, envVarValue.Value.ToString());
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedUseFIPSEndpointValue, config.UseFIPSEndpoint);
             }
         }
 

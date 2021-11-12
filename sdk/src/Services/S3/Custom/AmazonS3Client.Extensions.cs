@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading.Tasks;
 #endif
 
+using Amazon.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -107,7 +108,7 @@ namespace Amazon.S3
                     throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
                 RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
-                var s3SignatureVersionOverride = endpoint.GetEndpointForService("s3").SignatureVersionOverride;
+                var s3SignatureVersionOverride = endpoint.GetEndpointForService("s3", Config.ToGetEndpointForServiceOptions()).SignatureVersionOverride;
                 if (s3SignatureVersionOverride == "4" || s3SignatureVersionOverride == null)
                 {
                     signatureVersionToUse = SignatureVersion.SigV4;

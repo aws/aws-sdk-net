@@ -212,6 +212,12 @@ namespace Amazon.Runtime
         bool UseDualstackEndpoint { get; }
 
         /// <summary>
+        /// Configures the endpoint calculation to go to a FIPS (https://aws.amazon.com/compliance/fips/) endpoint
+        /// for the configured region.
+        /// </summary>
+        bool UseFIPSEndpoint { get; }
+
+        /// <summary>
         /// Configures a flag enabling to either opt in or opt out of the retry throttling service.
         /// Note: set value to true to enable retry throttling feature. The Default value for this flag is false.
         /// </summary>

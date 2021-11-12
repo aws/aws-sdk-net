@@ -21,7 +21,9 @@ using System.Text;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;
@@ -63,6 +65,7 @@ namespace Amazon.Runtime
         private TimeSpan? timeout = null;
         private bool allowAutoRedirect = true;
         private bool? useDualstackEndpoint;
+        private bool? useFIPSEndpoint;
         private TimeSpan? readWriteTimeout = null;
         private bool disableHostPrefixInjection = false;
         private bool? endpointDiscoveryEnabled = null;
@@ -154,6 +157,24 @@ namespace Amazon.Runtime
                 this.serviceURL = null;
                 this.regionEndpoint = value;
                 this.probeForRegionEndpoint = this.regionEndpoint == null;
+
+                var defaultEndpoint = regionEndpoint?.GetEndpointForService(RegionEndpointServiceName, new GetEndpointForServiceOptions());
+                if (defaultEndpoint?.Deprecated == true)
+                    Logger.GetLogger(GetType()).InfoFormat($"Endpoint {defaultEndpoint.Hostname} is deprecated.");
+
+                // legacy support for initial pseudo regions - convert to base Region 
+                // and set FIPSEndpoint to true
+                if (!string.IsNullOrEmpty(value?.SystemName) && 
+                    (value.SystemName.Contains("fips-") || value.SystemName.Contains("-fips")))
+                {
+                    Logger.GetLogger(GetType()).InfoFormat($"FIPS Pseudo Region support is deprecated. Will attempt to convert {value.SystemName}.");
+
+                    this.UseFIPSEndpoint = true;
+                    this.regionEndpoint =
+                        RegionEndpoint.GetBySystemName(
+                            value.SystemName.Replace("fips-", "").Replace("-fips", ""));
+                    this.RegionEndpoint.OriginalSystemName = value.SystemName;
+                }
             }
         }
 
@@ -214,16 +235,20 @@ namespace Amazon.Runtime
             }
             else
             {
-                url = GetUrl(this.RegionEndpoint, this.RegionEndpointServiceName, this.UseHttp, this.UseDualstackEndpoint);
+                url = GetUrl(this, RegionEndpoint);
             }
 
             return url;
         }
 
-        internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp, bool useDualStack)
+        internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
-            var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName, useDualStack);
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;         
+            var endpoint = 
+                regionEndpoint.GetEndpointForService(
+                    config.RegionEndpointServiceName, 
+                    config.ToGetEndpointForServiceOptions());
+
+            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
 
@@ -504,6 +529,24 @@ namespace Amazon.Runtime
                 return this.useDualstackEndpoint.Value;
             }
             set { useDualstackEndpoint = value; }
+        }
+
+        /// <summary>
+        /// Configures the endpoint calculation to go to a FIPS (https://aws.amazon.com/compliance/fips/) endpoint
+        /// for the configured region.
+        /// </summary>
+        public bool UseFIPSEndpoint
+        {
+            get
+            {
+                if (!this.useFIPSEndpoint.HasValue)
+                {
+                    return FallbackInternalConfigurationFactory.UseFIPSEndpoint ?? false;
+                }
+
+                return this.useFIPSEndpoint.Value;
+            }
+            set { useFIPSEndpoint = value; }
         }
 
         /// <summary>

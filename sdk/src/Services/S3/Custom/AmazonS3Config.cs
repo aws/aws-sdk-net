@@ -15,6 +15,7 @@
 using Amazon.Runtime;
 using System;
 using System.Globalization;
+using Amazon.Internal;
 using Amazon.Runtime.CredentialManagement;
 
 namespace Amazon.S3
@@ -181,7 +182,7 @@ namespace Amazon.S3
                 actual = RegionEndpoint.GetBySystemName("us-east-1-regional");
             }
 
-            return GetUrl(actual, this.RegionEndpointServiceName, this.UseHttp, this.UseDualstackEndpoint);
+            return GetUrl(this, actual);
         }
 
         /// <summary>
@@ -202,10 +203,11 @@ namespace Amazon.S3
             }
         }
 
-        internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp, bool useDualStack)
+        internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
-            var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName, useDualStack);
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
+            var endpoint = regionEndpoint.GetEndpointForService(config);
+
+            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
         

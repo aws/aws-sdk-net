@@ -36,6 +36,7 @@ namespace UnitTests
             "ProxyCredentials",
             "Timeout",
             "UseDualstackEndpoint",
+            "UseFIPSEndpoint",
             "ProxyHost",
             "ProxyPort",
             "CacheHttpClient",

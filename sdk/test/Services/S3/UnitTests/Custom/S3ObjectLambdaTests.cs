@@ -14,6 +14,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System.IO;
+using System.Linq;
 using Amazon.Runtime.Internal;
 
 namespace AWSSDK.UnitTests
@@ -21,86 +22,142 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class S3ObjectLambdaTests
     {
-        [DataTestMethod]
-        [TestCategory("S3")]
-        [DataRow("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "us-east-1", false, "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "us-west-2", false, "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner", "us-west-2", false, "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com")]
-        [DataRow("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "us-west-2", true, "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com")]
-        [DataRow("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner", "cn-north-1", true, "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn")]
-        [DataRow("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner", "cn-north-1", false, "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn")]
-        [DataRow("arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner", "cn-north-1", true, "mybanner-123456789012.s3-object-lambda.cn-northwest-1.amazonaws.com.cn")]
-        [DataRow("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner", "us-gov-east-1", true, "mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com")]
-        [DataRow("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner", "fips-us-gov-east-1", true, "mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com")]
-        public void ValidConfigurationsTest(string arnString, string clientRegion, bool useArnRegion, string expectedEndpointHost)
+        
+        public static IEnumerable<object[]> S3ObjectLambdaBucketFieldInputTestsData()
         {
+            var testDataFromSpecMarkDown =
+                // |Bucket Field Input  | Client Region | Additional Flags | use arn region | endpoint_url | Expected Endpoint|
+                // |------------------- | ------------- | ---------------- | ---------------|--------------|------------------|
+                @"
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | us-east-1 | none | no  | null | mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner | us-west-2 | none | no  | null | mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner | us-west-2 | none | no  | null | mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | us-west-2 | none | yes | null | mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | s3-external-1 | none | yes | null | mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | s3-external-1 | none | no | null | Invalid configuration, client region is not a regional endpoint|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | aws-global | none | yes | null | mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | aws-global | none | no | null | Invalid configuration, client region is not a regional endpoint|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | us-west-2 | none | no  | null | Invalid configuration, cross region Access Point ARN|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner | us-west-2 | dualstack | yes | null | Invalid configuration Banner Access Points do not support dualstack|
+                |arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner     | us-west-2  | none | yes | null | Invalid configuration, cross partition Access Point ARN|
+                |arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner     | cn-north-1 | none | yes | null | mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn|
+                |arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner     | cn-north-1 | none | no  | null | mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn|
+                |arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner | cn-north-1 | none | yes | null | mybanner-123456789012.s3-object-lambda.cn-northwest-1.amazonaws.com.cn|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | us-gov-east-1  | none      | yes | null | mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | no | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | yes | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | no | null | Invalid configuration, cross region Access Point ARN|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | yes | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-west-1.amazonaws.com |
+                |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | us-gov-east-1 | fips | no | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com |
+                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner | us-gov-east-1 | fips | yes | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-west-1.amazonaws.com |
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner | us-west-2 | accelerate | n/a | null | Invalid configuration Access Points do not support accelerate|
+                |arn:aws:sqs:us-west-2:123456789012:someresource          | us-west-2 | n/a  | n/a | null | Invalid ARN not S3 Access Point ARN|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket | us-west-2 | n/a | n/a | null | Invalid ARN not S3 Access Point ARN|
+                |arn:aws:s3-object-lambda::123456789012:accesspoint/mybanner          | us-west-2 | none | n/a | null | Invalid ARN, missing region|
+                |arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint | n/a | n/a | n/a | null | Invalid ARN, FIPS region not allowed in ARN|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint | n/a | n/a | n/a | null | Invalid ARN, FIPS region not allowed in ARN|
+                |arn:aws:s3-object-lambda:us-west-2::accesspoint/mybanner             | us-west-2 | none | n/a | null | Invalid ARN, missing account-id|
+                |arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket | us-west-2 | n/a  | n/a | null | Invalid ARN, account-id contains invalid character, `.`.|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint            | us-west-2 | n/a  | n/a | null | Invalid ARN, missing Access Point name|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*          | us-west-2 | n/a  | n/a | null | Invalid ARN, Access Point Name contains invalid character, `*`|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.bucket  | us-west-2 | n/a  | n/a | null | Invalid ARN, Access Point Name contains invalid character, `.`|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybucket:object:foo | us-west-2 | n/a | n/a | null | Invalid ARN, Access Point ARN contains sub resources|
+                ";
+
+            // account for known exception message deviations
+            testDataFromSpecMarkDown =
+                testDataFromSpecMarkDown
+                    .Replace("Invalid ARN, Access Point Name contains invalid character, `.`", "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")
+                    .Replace("Invalid ARN, Access Point Name contains invalid character, `.`.", "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")
+                    .Replace("Invalid ARN, Access Point Name contains invalid character, `*`", "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")
+                    .Replace("Invalid ARN, account-id contains invalid character, `.`.", "AccountId is invalid. The AccountId length should be 12 and only contain numeric characters with no spaces or periods.")
+                    .Replace("Invalid ARN, missing Access Point name", "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")
+                    .Replace("Invalid ARN, missing account-id", "Account ID is missing in S3ObjectLambda access point ARN")
+                    .Replace("Invalid ARN, missing region", "AWS region is missing in S3ObjectLambda access point ARN")
+                    .Replace("Invalid ARN not S3 Access Point ARN","Invalid ARN specified for bucket name. Only access point ARNs are allowed for the value of bucket name.")
+                    .Replace("Invalid configuration Banner Access Points do not support dualstack", "Invalid configuration S3ObjectLambda access points do not support dualstack")
+                    .Replace("Invalid configuration, client region is not a regional endpoint", "Invalid configuration, cross region S3ObjectLambda access point ARN")
+                ;
+
+            var data = testDataFromSpecMarkDown
+                .StandardDataClean()
+                .ParseMarkdownTable();
+            
+            return data;
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("UnitTest")]
+        [DynamicData(nameof(S3ObjectLambdaBucketFieldInputTestsData), DynamicDataSourceType.Method)]
+        public void S3ObjectLambdaBucketFieldInputTests(string bucketFieldInput, string clientRegion, string additionalFlags, string useArnRegion, string endpointUrl, string expectedEndpoint)
+        {
+            Console.WriteLine(string.Join(" | ", bucketFieldInput, clientRegion, additionalFlags, useArnRegion, endpointUrl, expectedEndpoint));
+            Console.WriteLine();
+
+            // ARRANGE
+
+            // expectedEndpoint can be overloaded with the expected error message
+            var expectSuccess = expectedEndpoint.Contains("amazonaws.com") || expectedEndpoint.Contains("my-endpoint.com");
+            // outputs to assert against:
+            IRequest s3Request = null;
+            Exception exception = null;
+
             var request = new GetObjectRequest
             {
-                BucketName = arnString,
+                BucketName = bucketFieldInput,
                 Key = "foo.txt"
             };
 
             var config = new AmazonS3Config
             {
-                RegionEndpoint = RegionEndpoint.GetBySystemName(clientRegion),
-                UseArnRegion = useArnRegion
+                UseArnRegion = useArnRegion == "" ? false : bool.Parse(useArnRegion),
+                RegionEndpoint = clientRegion == "" ? null : RegionEndpoint.GetBySystemName(clientRegion)
             };
-            var internalRequest = S3ArnTestUtils.RunMockRequest(request, GetObjectRequestMarshaller.Instance, config);
-            Assert.AreEqual(expectedEndpointHost, internalRequest.Endpoint.Host);
-        }
 
-        [DataTestMethod]
-        [TestCategory("S3")]
-        [DataRow("arn:aws:sqs:us-west-2:123456789012:someresource", "us-west-2", S3ConfigFlags.ArnRegion,"Invalid ARN specified for bucket name. Only access point ARNs are allowed for the value of bucket name.")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket","us-west-2", S3ConfigFlags.ArnRegion, "Invalid ARN specified for bucket name. Only access point ARNs are allowed for the value of bucket name.")]
-        [DataRow("arn:aws:s3-object-lambda::123456789012:accesspoint/mybanner","us-west-2", S3ConfigFlags.ArnRegion, "AWS region is missing in S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2::accesspoint/mybanner","us-west-2", S3ConfigFlags.ArnRegion, "Account ID is missing in S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket", "us-west-2", S3ConfigFlags.ArnRegion, "AccountId is invalid. The AccountId length should be 12 and only contain numeric characters with no spaces or periods.")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*","us-west-2",S3ConfigFlags.ArnRegion, "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.bucket", "us-west-2", S3ConfigFlags.ArnRegion, "Invalid Arn. S3ObjectLambda arns can only contain alphanumeric characters, :, / and -")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybucket:object:foo","us-west-2", S3ConfigFlags.ArnRegion, "Invalid ARN, Access Point ARN contains sub resources")]
-        [DataRow("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",  "s3-external-1", S3ConfigFlags.None, "Invalid configuration, cross region S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",  "aws-global", S3ConfigFlags.None, "Invalid configuration, cross region S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",  "us-west-2", S3ConfigFlags.None, "Invalid configuration, cross region S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner", "us-west-2", S3ConfigFlags.ArnRegion, "Invalid configuration, cross partition S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "us-west-2", S3ConfigFlags.Dualstack, "Invalid configuration S3ObjectLambda access points do not support dualstack")]
-        [DataRow("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "us-west-2", S3ConfigFlags.Accelerate, "Invalid configuration S3ObjectLambda access points do not support accelerate")]
-        [DataRow("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "fips-us-gov-east-1", S3ConfigFlags.None, "Invalid configuration, cross region S3ObjectLambda access point ARN")]
-        [DataRow("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "fips-us-gov-east-1", S3ConfigFlags.ArnRegion, "Invalid configuration, FIPS region does not match ARN region")]
-        [DataRow("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", S3ConfigFlags.None, "Invalid region endpoint provided")]
-        [DataRow("arn:aws-us-gov:s3:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", S3ConfigFlags.None, "Invalid region endpoint provided")]
-        public void InvalidConfigurationTests(string arnString, string region, S3ConfigFlags flags, string expectedErrorMessage)
-        {
-            Exception exception = null;
-            IRequest result = null;
+            if (!string.IsNullOrWhiteSpace(endpointUrl))
+            {
+                if (!endpointUrl.ToLower().StartsWith("https://"))
+                    endpointUrl = $"https://{endpointUrl}";
 
+                config.ServiceURL = endpointUrl;
+            }
+
+            if (additionalFlags.Contains("dualstack"))
+                config.UseDualstackEndpoint = true;
+
+            if (additionalFlags.Contains("fips"))
+                config.UseFIPSEndpoint = true;
+
+            if (additionalFlags.Contains("accelerate"))
+                config.UseAccelerateEndpoint = true;
+
+            // ACT
             try
             {
-                var request = new GetObjectRequest
-                {
-                    BucketName = arnString,
-                    Key = "foo.txt"
-                };
-
-                var config = S3ArnTestUtils.BuildFromRegionSystemName(region, flags);
-
-                result = S3ArnTestUtils.RunMockRequest(request, GetObjectRequestMarshaller.Instance, config);
+                s3Request = S3ArnTestUtils.RunMockRequest(request, GetObjectRequestMarshaller.Instance, config);
+                Console.WriteLine(s3Request.Endpoint.ToString());
+                Console.WriteLine();
             }
             catch (Exception e)
             {
                 exception = e;
             }
 
-            Assert.IsNotNull(exception, "Expected exception, but got result " + result?.Endpoint);
-            if(region == string.Empty)
+            // ASSERT
+            if (expectSuccess)
             {
-                Assert.IsInstanceOfType(exception, typeof(ArgumentException), "ArgumentException expected");
+                Assert.IsNull(exception, exception?.Message);
+                Assert.IsNotNull(s3Request);
+                AssertExtensions.UrlSuffixMatches(expectedEndpoint, s3Request.Endpoint);
             }
             else
             {
-                Assert.IsInstanceOfType(exception, typeof(AmazonClientException), "AmazonClientException expected");
+                Assert.IsNull(s3Request, s3Request?.Endpoint.ToString());
+                Assert.IsNotNull(exception);
+                // reminder, expectedEndpoint also contains expected error message.
+                AssertExtensions.AssertAreSameWithEmbellishments(expectedEndpoint, exception.Message);
             }
-            Assert.AreEqual(expectedErrorMessage, exception.Message);
         }
 
         [TestMethod]

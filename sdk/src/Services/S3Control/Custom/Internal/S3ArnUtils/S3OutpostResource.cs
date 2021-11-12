@@ -123,13 +123,9 @@ namespace Amazon.S3Control.Internal
             {
                 throw new AmazonClientException($"Invalid configuration, cross partition Outpost {capitalizedAccessPointOrBucketString} ARN");
             }
-            if ((s3Config.UseArnRegion && _arn.Region.StartsWith("fips-"))
-                || (!s3Config.UseArnRegion && region.SystemName.StartsWith("fips-")))
-            {
-                throw new AmazonClientException($"Invalid configuration Outpost {capitalizedAccessPointOrBucketString}s do not support Fips- regions");
-            }
             if (!s3Config.UseArnRegion
-                && !string.Equals(_arn.Region, region.SystemName, StringComparison.Ordinal))
+                && !string.Equals(_arn.Region, region.SystemName, StringComparison.Ordinal)
+                && !string.Equals($"{_arn.Region}-fips", region.SystemName, StringComparison.Ordinal))
             {
                 throw new AmazonClientException($"Invalid configuration, cross region Outpost {capitalizedAccessPointOrBucketString} ARN");
             }
@@ -143,9 +139,10 @@ namespace Amazon.S3Control.Internal
         public Uri GetEndpoint(IClientConfig config)
         {
             var s3Config = config as AmazonS3ControlConfig;
-            var region = s3Config.UseArnRegion ? _arn.Region : s3Config.RegionEndpoint.SystemName;
+            var region = s3Config.UseArnRegion ? _arn.Region : config.RegionEndpoint?.SystemName;
             var scheme = config.UseHttp ? "http" : "https";
-            UriBuilder ub = new UriBuilder($"{scheme}://s3-outposts.{region}.{config.RegionEndpoint.PartitionDnsSuffix}");
+            var fips = config.UseFIPSEndpoint ? "-fips" : "";
+            UriBuilder ub = new UriBuilder($"{scheme}://s3-outposts{fips}.{region}.{config.RegionEndpoint?.PartitionDnsSuffix}");
             return ub.Uri;
         }
 

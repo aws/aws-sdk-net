@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Globalization;
+using Amazon.Internal;
 
 namespace Amazon.DocDB.Internal
 {
@@ -113,7 +114,7 @@ namespace Amazon.DocDB.Internal
                 var iRequest = marshaller.Marshall(preSignedUrlRequest as AmazonWebServiceRequest);
                 iRequest.UseQueryString = true;
                 iRequest.HttpMethod = HTTPGet;
-                iRequest.Endpoint = new UriBuilder(UriSchemeHTTPS, endpoint.GetEndpointForService(config.RegionEndpointServiceName).Hostname).Uri;
+                iRequest.Endpoint = new UriBuilder(UriSchemeHTTPS, endpoint.GetEndpointForService(config).Hostname).Uri;
                 iRequest.Parameters[DestinationRegionParameterKey] = executionContext.RequestContext.ClientConfig.RegionEndpoint.SystemName;
                 iRequest.Parameters[XAmzExpires] = ((int)ExpirationTime.TotalSeconds).ToString(CultureInfo.InvariantCulture);
 

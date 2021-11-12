@@ -64,9 +64,21 @@ namespace Amazon.Internal
         /// <param name="serviceName">Name of the service in endpoints.json</param>
         /// <param name="dualStack">Whether to retrieve the dual-stack variant</param>
         /// <returns>Matching endpoint from endpoints.json, or a computed endpoint if possible</returns>
+        [Obsolete("Use GetEndpointForService(string serviceName, GetEndpointForServiceOptions options) instead", error: false)]
         public RegionEndpoint.Endpoint GetEndpointForService(string serviceName, bool dualStack)
         {
-            var variants = BuildVariantHashSet(dualStack, false);
+            return GetEndpointForService(serviceName, new GetEndpointForServiceOptions { DualStack = dualStack });
+        }
+
+        /// <summary>
+        /// Retrieves the endpoint for the given service in the current region
+        /// </summary>
+        /// <param name="serviceName">Name of the service in endpoints.json</param>
+        /// <param name="options"> Specify additional requirements on the <see cref="RegionEndpoint.Endpoint"/> to be returned.</param>
+        /// <returns>Matching endpoint from endpoints.json, or a computed endpoint if possible</returns>
+        public RegionEndpoint.Endpoint GetEndpointForService(string serviceName, GetEndpointForServiceOptions options)
+        {
+            var variants = BuildVariantHashSet(options);
             return GetEndpointForService(serviceName, variants);
         }
 
@@ -75,7 +87,7 @@ namespace Amazon.Internal
         /// </summary>
         /// <param name="serviceName">Name of the service in endpoints.json</param>
         /// <param name="variants">Set of tags describing an endpoint variant</param>
-        /// <returns><returns>Matching endpoint from endpoints.json, or a computed endpoint if possible</returns>
+        /// <returns>Matching endpoint from endpoints.json, or a computed endpoint if possible</returns>
         public RegionEndpoint.Endpoint GetEndpointForService(string serviceName, HashSet<string> variants)
         {
             RegionEndpoint.Endpoint endpointObject = null;
@@ -112,7 +124,7 @@ namespace Amazon.Internal
                                  .Replace("{region}", RegionName)
                                  .Replace("{dnsSuffix}", (string)_partitionJsonData["dnsSuffix"]);
 
-            return new RegionEndpoint.Endpoint(hostname, null, null);
+            return new RegionEndpoint.Endpoint(hostname, null, null, deprecated: false);
         }
 
         private void ParseAllServices()
@@ -219,10 +231,12 @@ namespace Amazon.Internal
                 authRegion = DetermineAuthRegion(credentialScope);
             }
 
-            string signatureOverride = DetermineSignatureOverride(mergedEndpoint, serviceName);
+            JsonData deprecatedJson = mergedEndpoint["deprecated"];
+            var deprecated = deprecatedJson?.IsBoolean == true ? (bool) deprecatedJson : false;
 
-            RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, signatureOverride);
+            var signatureOverride = DetermineSignatureOverride(mergedEndpoint, serviceName);
 
+            RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, signatureOverride, deprecated);
             _serviceMap.Add(serviceName, endpoint);
 
         }
@@ -235,6 +249,10 @@ namespace Amazon.Internal
             {
                 authRegion = DetermineAuthRegion(credentialScope);
             }
+
+            JsonData deprecatedJson = mergedEndpoint["deprecated"];
+            var deprecated = deprecatedJson?.IsBoolean == true ? (bool)deprecatedJson : false;
+
             string signatureOverride = DetermineSignatureOverride(mergedEndpoint, serviceName);
 
             foreach (var tagsKey in mergedVariants.Keys)
@@ -260,7 +278,7 @@ namespace Amazon.Internal
                                      .Replace("{region}", regionName)
                                      .Replace("{dnsSuffix}", variantDnsSuffix);
 
-                _serviceMap.Add(serviceName, new RegionEndpoint.Endpoint(variantHostname, authRegion, signatureOverride), tagsKey);
+                _serviceMap.Add(serviceName, new RegionEndpoint.Endpoint(variantHostname, authRegion, signatureOverride, deprecated), tagsKey);
             }
         }
 
@@ -300,20 +318,22 @@ namespace Amazon.Internal
         /// <param name="dualStack">Whether to use a dualstack (IPv6 enabled) endpoint</param>
         /// <param name="fips">Whether to use a FIPS-compliant endpoint</param>
         /// <returns>Set used to identify the combined variant in endpoints.json</returns>
-        private static HashSet<string> BuildVariantHashSet(bool dualStack, bool fips)
+        private static HashSet<string> BuildVariantHashSet(GetEndpointForServiceOptions options)
         {
-            if (!dualStack && !fips)
+            options = options ?? new GetEndpointForServiceOptions();
+
+            if (!options.DualStack && !options.FIPS)
             {
                 return null;
             }
 
             var variants = new HashSet<string>();
 
-            if (dualStack)
+            if (options.DualStack)
             {
                 variants.Add("dualstack");
             }
-            if (fips)
+            if (options.FIPS)
             {
                 variants.Add("fips");
             }

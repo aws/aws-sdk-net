@@ -17,6 +17,8 @@ using Amazon.Runtime;
 using AWSSDK_DotNet35.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Amazon.Internal;
+using Amazon.S3.Model;
 
 namespace AWSSDK.UnitTests
 {
@@ -47,7 +49,7 @@ namespace AWSSDK.UnitTests
         [DataRow("xx-east-1-fips", "s3-control", true, "s3-control.xx-east-1-fips.api.aws")]
         public void GetEndpointForService(string region, string service, bool useDualStack, string expectedHostname)
         {
-            GetEndpointForServiceHelper("testEndpoints.json", service, useDualStack, region, expectedHostname);
+            GetEndpointForServiceHelper("testEndpoints.json", service, useDualStack, false, region, expectedHostname);
         }
 
         [DataTestMethod]
@@ -99,48 +101,65 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [DataRow("default-pattern-service", "us-west-2", false, "default-pattern-service.us-west-2.amazonaws.com")]
-        [DataRow("default-pattern-service", "af-south-1", false, "default-pattern-service.af-south-1.amazonaws.com")]
-        [DataRow("global-service", "aws-global", false, "global-service.amazonaws.com")]
-        [DataRow("global-service", "foo", false, "global-service.amazonaws.com")]
-        [DataRow("override-variant-service", "us-west-2", false, "override-variant-service.us-west-2.amazonaws.com")]
-        [DataRow("override-variant-service", "af-south-1", false, "override-variant-service.af-south-1.amazonaws.com")]
-        [DataRow("override-variant-dns-suffix-service", "us-west-2", false, "override-variant-dns-suffix-service.us-west-2.amazonaws.com")]
-        [DataRow("override-variant-dns-suffix-service", "af-south-1", false, "override-variant-dns-suffix-service.af-south-1.amazonaws.com")]
-        [DataRow("override-variant-hostname-service", "us-west-2", false, "override-variant-hostname-service.us-west-2.amazonaws.com")]
-        [DataRow("override-variant-hostname-service", "af-south-1", false, "override-variant-hostname-service.af-south-1.amazonaws.com")]
-        [DataRow("override-endpoint-variant-service", "us-west-2", false, "override-endpoint-variant-service.us-west-2.amazonaws.com")]
-        [DataRow("override-endpoint-variant-service", "af-south-1", false, "override-endpoint-variant-service.af-south-1.amazonaws.com")]
-        [DataRow("default-pattern-service", "us-west-2", true, "default-pattern-service.us-west-2.api.aws")]
-        [DataRow("default-pattern-service", "af-south-1", true, "default-pattern-service.af-south-1.api.aws")]
-        [DataRow("global-service", "aws-global", true, "global-service.api.aws")]
-        [DataRow("global-service", "foo", true, "global-service.api.aws")]
-        [DataRow("override-variant-service", "us-west-2", true, "override-variant-service.dualstack.us-west-2.new.dns.suffix")]
-        [DataRow("override-variant-service", "af-south-1", true, "override-variant-service.dualstack.af-south-1.new.dns.suffix")]
-        [DataRow("override-variant-dns-suffix-service", "us-west-2", true, "override-variant-dns-suffix-service.us-west-2.new.dns.suffix")]
-        [DataRow("override-variant-dns-suffix-service", "af-south-1", true, "override-variant-dns-suffix-service.af-south-1.new.dns.suffix")]
-        [DataRow("override-variant-hostname-service", "us-west-2", true, "override-variant-hostname-service.dualstack.us-west-2.api.aws")]
-        [DataRow("override-variant-hostname-service", "af-south-1", true, "override-variant-hostname-service.dualstack.af-south-1.api.aws")]
-        [DataRow("override-endpoint-variant-service", "us-west-2", true, "override-endpoint-variant-service.dualstack.us-west-2.amazonaws.com")]
-        [DataRow("override-endpoint-variant-service", "af-south-1", true, "override-endpoint-variant-service.af-south-1.api.aws")]
-        [DataRow("multi-variant-service", "us-west-2", false, "multi-variant-service.us-west-2.amazonaws.com")]
-        [DataRow("multi-variant-service", "us-west-2", true, "multi-variant-service.dualstack.us-west-2.api.aws")]
-        [DataRow("multi-variant-service", "af-south-1", false, "multi-variant-service.af-south-1.amazonaws.com")]
-        [DataRow("multi-variant-service", "af-south-1", true, "multi-variant-service.dualstack.af-south-1.api.aws")]
-        public void VariantTests(string service, string region, bool useDualstack, string expectedHostname)
+        [DataRow("default-pattern-service", "us-west-2", false, false, "default-pattern-service.us-west-2.amazonaws.com")]
+        [DataRow("default-pattern-service", "us-west-2", false, true, "default-pattern-service-fips.us-west-2.amazonaws.com")]
+        [DataRow("default-pattern-service", "af-south-1", false, false, "default-pattern-service.af-south-1.amazonaws.com")]
+        [DataRow("default-pattern-service", "af-south-1", false, true, "default-pattern-service-fips.af-south-1.amazonaws.com")]
+        [DataRow("global-service", "aws-global", false, false, "global-service.amazonaws.com")]
+        [DataRow("global-service", "aws-global", false, true, "global-service-fips.amazonaws.com")]
+        [DataRow("global-service", "foo", false, false, "global-service.amazonaws.com")]
+        [DataRow("global-service", "foo", false, true, "global-service-fips.amazonaws.com")]
+        [DataRow("override-variant-service", "us-west-2", false, false, "override-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("override-variant-service", "us-west-2", false, true, "fips.override-variant-service.us-west-2.new.dns.suffix")]
+        [DataRow("override-variant-service", "af-south-1", false, false, "override-variant-service.af-south-1.amazonaws.com")]
+        [DataRow("override-variant-service", "af-south-1", false, true, "fips.override-variant-service.af-south-1.new.dns.suffix")]
+        [DataRow("override-variant-dns-suffix-service", "us-west-2", false, false, "override-variant-dns-suffix-service.us-west-2.amazonaws.com")]
+        [DataRow("override-variant-dns-suffix-service", "us-west-2", false, true, "override-variant-dns-suffix-service-fips.us-west-2.new.dns.suffix")]
+        [DataRow("override-variant-dns-suffix-service", "af-south-1", false, false, "override-variant-dns-suffix-service.af-south-1.amazonaws.com")]
+        [DataRow("override-variant-dns-suffix-service", "af-south-1", false, true, "override-variant-dns-suffix-service-fips.af-south-1.new.dns.suffix")]
+        [DataRow("override-variant-hostname-service", "us-west-2", false, false, "override-variant-hostname-service.us-west-2.amazonaws.com")]
+        [DataRow("override-variant-hostname-service", "us-west-2", false, true, "fips.override-variant-hostname-service.us-west-2.amazonaws.com")]
+        [DataRow("override-variant-hostname-service", "af-south-1", false, false, "override-variant-hostname-service.af-south-1.amazonaws.com")]
+        [DataRow("override-variant-hostname-service", "af-south-1", false, true, "fips.override-variant-hostname-service.af-south-1.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "us-west-2", false, false, "override-endpoint-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "us-west-2", false, true, "fips.override-endpoint-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "af-south-1", false, false, "override-endpoint-variant-service.af-south-1.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "af-south-1", false, true, "override-endpoint-variant-service-fips.af-south-1.amazonaws.com")]
+        [DataRow("default-pattern-service", "us-west-2", true, false, "default-pattern-service.us-west-2.api.aws")]
+        [DataRow("default-pattern-service", "af-south-1", true, false, "default-pattern-service.af-south-1.api.aws")]
+        [DataRow("global-service", "aws-global", true, false, "global-service.api.aws")]
+        [DataRow("global-service", "foo", true, false, "global-service.api.aws")]
+        [DataRow("override-variant-service", "us-west-2", true, false, "override-variant-service.dualstack.us-west-2.new.dns.suffix")]
+        [DataRow("override-variant-service", "af-south-1", true, false, "override-variant-service.dualstack.af-south-1.new.dns.suffix")]
+        [DataRow("override-variant-dns-suffix-service", "us-west-2", true, false, "override-variant-dns-suffix-service.us-west-2.new.dns.suffix")]
+        [DataRow("override-variant-dns-suffix-service", "af-south-1", true, false, "override-variant-dns-suffix-service.af-south-1.new.dns.suffix")]
+        [DataRow("override-variant-hostname-service", "us-west-2", true, false, "override-variant-hostname-service.dualstack.us-west-2.api.aws")]
+        [DataRow("override-variant-hostname-service", "af-south-1", true, false, "override-variant-hostname-service.dualstack.af-south-1.api.aws")]
+        [DataRow("override-endpoint-variant-service", "us-west-2", true, false, "override-endpoint-variant-service.dualstack.us-west-2.amazonaws.com")]
+        [DataRow("override-endpoint-variant-service", "af-south-1", true, false, "override-endpoint-variant-service.af-south-1.api.aws")]
+        [DataRow("multi-variant-service", "us-west-2", false, false, "multi-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("multi-variant-service", "us-west-2", true, false, "multi-variant-service.dualstack.us-west-2.api.aws")]
+        [DataRow("multi-variant-service", "us-west-2", false, true, "fips.multi-variant-service.us-west-2.amazonaws.com")]
+        [DataRow("multi-variant-service", "us-west-2", true, true, "fips.multi-variant-service.dualstack.us-west-2.new.dns.suffix")]
+        [DataRow("multi-variant-service", "af-south-1", false, false, "multi-variant-service.af-south-1.amazonaws.com")]
+        [DataRow("multi-variant-service", "af-south-1", true, false, "multi-variant-service.dualstack.af-south-1.api.aws")]
+        [DataRow("multi-variant-service", "af-south-1", false, true, "fips.multi-variant-service.af-south-1.amazonaws.com")]
+        [DataRow("multi-variant-service", "af-south-1", true, true, "fips.multi-variant-service.dualstack.af-south-1.new.dns.suffix")]
+        public void VariantTests(string service, string region, bool useDualstack, bool useFips, string expectedHostname)
         {
-            GetEndpointForServiceHelper("testEndpointsWithVariants.json", service, useDualstack, region, expectedHostname);
+            GetEndpointForServiceHelper("testEndpointsWithVariants.json", service, useDualstack, useFips, region, expectedHostname);
         }
 
         [DataTestMethod]
-        [DataRow("some-service", true, "us-iso-east-1", "Requested endpoint for some-service with variants [dualstack] could not be found.")]
-        public void GetEndpointForServiceException(string service, bool useDualStackEndpoint, string region, string expectedExceptionMessage)
+        [DataRow("some-service", false, true, "us-iso-east-1", "Requested endpoint for some-service with variants [fips] could not be found.")]
+        [DataRow("some-service", true, false, "us-iso-east-1", "Requested endpoint for some-service with variants [dualstack] could not be found.")]
+        public void GetEndpointForServiceException(string service, bool useDualStackEndpoint, bool useFipsEndpoint, string region, string expectedExceptionMessage)
         {
             Exception exception = null;
 
             try
             {
-                GetEndpointForServiceHelper("testEndpointsWithVariants.json", service, useDualStackEndpoint, region, "");
+                GetEndpointForServiceHelper("testEndpointsWithVariants.json", service, useDualStackEndpoint, useFipsEndpoint, region, "");
             }
             catch (Exception e)
             {
@@ -152,15 +171,43 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expectedExceptionMessage, exception.Message);
         }
 
-        private void GetEndpointForServiceHelper(string endpointsFile, string service, bool useDualStackEndpoint,string region, string expectedEndpoint)
+        private void GetEndpointForServiceHelper(string endpointsFile, string service, bool useDualStackEndpoint, bool useFipsEndpoint, string region, string expectedEndpoint)
         {
             try
             {
                 RegionEndpoint.Reload(Utils.GetResourceStream(endpointsFile));
+
                 var regionEndpoint = RegionEndpoint.GetBySystemName(region);
 
+                var getEndpointOptions = new GetEndpointForServiceOptions
+                {
+                    DualStack = useDualStackEndpoint,
+                    FIPS = useFipsEndpoint
+                };
+                var hostname = regionEndpoint?.GetEndpointForService(service, getEndpointOptions).Hostname;
+
                 Assert.IsNotNull(regionEndpoint);
-                Assert.AreEqual(expectedEndpoint, regionEndpoint.GetEndpointForService(service, useDualStackEndpoint).Hostname);
+                Assert.AreEqual(expectedEndpoint, hostname);
+            }
+            finally
+            {
+                RegionEndpoint.Reload(null);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow("us-west-2", "default-pattern-service", false)]
+        [DataRow("fips-us-east-1", "deprecated-service", true)]
+        public void LoadDeprecatedRegionEndpoint(string region, string serviceName, bool expectToBeDeprecated)
+        {
+            try
+            {
+                RegionEndpoint.Reload(Utils.GetResourceStream("testEndpointsWithVariants.json"));
+                 
+                var regionEndpoint = RegionEndpoint.GetBySystemName(region);
+                var isDeprecated = regionEndpoint.GetEndpointForService(serviceName).Deprecated;
+
+                Assert.AreEqual(expectToBeDeprecated, isDeprecated);
             }
             finally
             {

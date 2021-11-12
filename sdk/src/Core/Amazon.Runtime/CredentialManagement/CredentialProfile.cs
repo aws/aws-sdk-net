@@ -104,6 +104,12 @@ namespace Amazon.Runtime.CredentialManagement
         public bool? UseDualstackEndpoint { get; set; }
 
         /// <summary>
+        /// Configures the endpoint calculation to go to a FIPS (https://aws.amazon.com/compliance/fips/) endpoint
+        /// for the configured region.
+        /// </summary>
+        public bool? UseFIPSEndpoint { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

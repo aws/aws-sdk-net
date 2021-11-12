@@ -26,6 +26,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
     public static class AssertExtensions
     {
+        #region ExpectException
         public static T ExpectException<T>(Action action) where T : Exception
         {
             var exceptionType = typeof(T);
@@ -95,6 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
             return exception;
         }
+        #endregion
 
         /// <summary>
         /// Assert that the actual DateTime provided is equal to the expected DateTime provided, down to the second.
@@ -182,6 +184,71 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             messageBuilder.AppendLine("Manual testing required:");
             messageBuilder.AppendLine(message);
             Assert.True(expectedHash == actualHash, messageBuilder.ToString());
+        }
+
+        /// <summary>
+        /// Asserts that <paramref name="actual"/> contains every word from <paramref name="expected"/>
+        /// and in the same order, but allows <paramref name="actual"/> to contain additional words.
+        /// </summary>
+        public static void AssertAreSameWithEmbellishments(string expected, string actual, StringComparison comparison = StringComparison.OrdinalIgnoreCase)
+        {
+            var expectedWords = 
+                expected
+                    .Split(' ')
+                    // remove punctuation
+                    .Select(s => new string(s.ToCharArray().Where(char.IsLetterOrDigit).ToArray()))
+                    // remove empty elements
+                    .Where(s => !string.IsNullOrEmpty(s))
+                    .ToArray();
+
+            var actualSlice = actual;
+            for (var i = 0; i < expectedWords.Length; i++)
+            {
+                var index = actualSlice.IndexOf(expectedWords[i], comparison);
+
+                Assert.False(index < 0, $"Failed to match word {i+1}: {expectedWords[i]}.  Expected:<{expected}>.  Actual:<{actual}>");
+
+                actualSlice = actualSlice.Substring(expectedWords[i].Length + index, actualSlice.Length - index - expectedWords[i].Length);
+            }
+        }
+
+        public static void UrlSuffixMatches(
+            string expectedUrl, 
+            Uri actualUri,
+            StringComparison comparison = StringComparison.OrdinalIgnoreCase)
+        {
+            var actualUrl = actualUri.ToString();
+            expectedUrl = expectedUrl.Trim();
+
+            // cleanup trailing slash
+            if (!expectedUrl.EndsWith("/") && actualUrl.EndsWith("/"))
+                actualUrl = actualUrl.Substring(0, actualUrl.Length - 1);
+
+
+            // expectedUrl could be templated, remove templating
+            // ie {accountId field value}.s3-control.us-west-2.amazonaws.com 
+            expectedUrl = Regex.Replace(expectedUrl, @"\{.*\}", "");
+
+            Assert.True(actualUrl.EndsWith(expectedUrl, comparison), $"Expected <{actualUrl}> to end with <{expectedUrl}>.");
+        }
+
+        public static void ContainsHeaders(
+            IDictionary<string, string> expectedHeaders, 
+            IDictionary<string, string> actualHeaders, 
+            StringComparison comparison = StringComparison.OrdinalIgnoreCase)
+        {
+            foreach (var expected in expectedHeaders)
+            {
+                // ignore templated headers
+                // ie x-amz-account-id: "{accountId field value}"
+                if (expected.Value.StartsWith("{"))
+                    continue;
+
+                var key = expected.Key.Trim();
+                Assert.True(actualHeaders.ContainsKey(key), $"Expected to find Header {key}.  Found {string.Join(", ", actualHeaders.Keys)}");
+
+                Assert.True(string.Equals(expected.Value, actualHeaders[key], comparison), $"Expected <{expected.Value}>. Actual <{actualHeaders[key]}>.");
+            }
         }
     }
 }

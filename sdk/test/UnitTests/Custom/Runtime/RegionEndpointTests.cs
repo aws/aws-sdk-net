@@ -34,7 +34,7 @@ namespace AWSSDK.UnitTests
         public void Reload()
         {
             var initialRegionEndpoint = RegionEndpoint.USWest2;
-            var initialTestServiceEndpoint = initialRegionEndpoint.GetEndpointForService(TestService);
+            var initialTestServiceEndpoint = initialRegionEndpoint.GetEndpointForService(TestService, new GetEndpointForServiceOptions());
 
             // Get and Mutate the manifest
             var rootData = GetEndpointsManifest();
@@ -52,7 +52,7 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(regionEndpoint);
             Assert.AreEqual(SampleValues.SampleRegionDisplayName, regionEndpoint.DisplayName);
             Assert.AreEqual(SampleValues.SampleDnsSuffix, regionEndpoint.PartitionDnsSuffix);
-            var endpoint = regionEndpoint.GetEndpointForService(TestService);
+            var endpoint = regionEndpoint.GetEndpointForService(TestService, new GetEndpointForServiceOptions());
             Assert.IsNotNull(endpoint);
             Assert.AreEqual(SampleValues.SampleAuthRegion, endpoint.AuthRegion);
             Assert.AreEqual(SampleValues.SampleHostName, endpoint.Hostname);

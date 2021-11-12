@@ -20,6 +20,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Globalization;
+using Amazon.Internal;
 
 namespace Amazon.Polly
 {
@@ -53,8 +54,30 @@ namespace Amazon.Polly
         /// <param name="credentials">The credentials to use in the presigned URL.</param>
         /// <param name="region">The region for the URL.</param>
         /// <param name="request">The request to base the presigned URL on.</param>
-        /// <returns></returns>
         public static string GeneratePresignedUrl(AWSCredentials credentials, RegionEndpoint region, SynthesizeSpeechRequest request)
+        {
+            var options = new PreSignerOptions();
+
+            if (region.SystemName.Contains("fips-") || region.SystemName.Contains("-fips") ||
+                region.OriginalSystemName.Contains("fips-") || region.OriginalSystemName.Contains("-fips"))
+            {
+                region = RegionEndpoint.GetBySystemName(region.SystemName.Replace("fips-", "").Replace("-fips", ""));
+                options.FIPS = true;
+            }
+
+            return GeneratePresignedUrl(credentials, region, request, options);
+        }
+
+        /// <summary>
+        /// Generate a presigned URL based on a <see cref="SynthesizeSpeechRequest"/>.
+        /// </summary>
+        /// <param name="credentials">The credentials to use in the presigned URL.</param>
+        /// <param name="region">The region for the URL.</param>
+        /// <param name="request">The request to base the presigned URL on.</param>
+        /// <param name="signerOptions">Options to configure how the presigner will calculate the service url.
+        /// This is the preferred method for generating a presigned url for a FIPS endpoint.
+        /// </param>
+        public static string GeneratePresignedUrl(AWSCredentials credentials, RegionEndpoint region, SynthesizeSpeechRequest request, PreSignerOptions signerOptions)
         {
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
@@ -70,7 +93,7 @@ namespace Amazon.Polly
             var iRequest = marshaller.Marshall(request);
             iRequest.UseQueryString = true;
             iRequest.HttpMethod = HTTPGet;
-            iRequest.Endpoint = new UriBuilder(HTTPS, region.GetEndpointForService(PollyServiceName).Hostname).Uri;
+            iRequest.Endpoint = new UriBuilder(HTTPS, region.GetEndpointForService(PollyServiceName, signerOptions.ToGetEndpointForServiceOptions()).Hostname).Uri;
             iRequest.Parameters[XAmzExpires] = ((int)FifteenMinutes.TotalSeconds).ToString(CultureInfo.InvariantCulture);
 
             if (request.IsSetLexiconNames())
@@ -115,6 +138,32 @@ namespace Amazon.Polly
             var authorization = "&" + signingResult.ForQueryParameters;
 
             return AmazonServiceClient.ComposeUrl(iRequest).AbsoluteUri + authorization;
+        }
+    }
+
+    /// <summary>
+    /// Customizations for <see cref="SynthesizeSpeechUtil.GeneratePresignedUrl(Amazon.RegionEndpoint,Amazon.Polly.Model.SynthesizeSpeechRequest)"/>
+    /// </summary>
+    public class PreSignerOptions
+    {
+        /// <summary>
+        /// If true a dualstack endpoint is returned. It is the user's responsibility to verify that the given service
+        /// supports a dualstack endpoint for the region.
+        /// </summary>
+        public bool DualStack { get; set; }
+        /// <summary>
+        /// If true an endpoint that supports FIPS is returned.  It is the user's responsibility to verify that the given service
+        /// supports a FIPS endpoint for the region.  For background, see https://aws.amazon.com/compliance/fips/
+        /// </summary>
+        public bool FIPS { get; set; }
+
+        internal GetEndpointForServiceOptions ToGetEndpointForServiceOptions()
+        {
+            return new GetEndpointForServiceOptions
+            {
+                DualStack = DualStack,
+                FIPS = FIPS
+            };
         }
     }
 }

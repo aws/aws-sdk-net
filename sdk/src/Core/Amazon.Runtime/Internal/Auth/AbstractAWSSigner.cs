@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Net;
-
+using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 
@@ -139,7 +139,7 @@ namespace Amazon.Runtime.Internal.Auth
 
                 if (r != null)
                 {
-                    var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName, config.UseDualstackEndpoint);
+                    var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName, config.ToGetEndpointForServiceOptions());
                     if (endpoint != null && (endpoint.SignatureVersionOverride == "4" || string.IsNullOrEmpty(endpoint.SignatureVersionOverride)))
                         return true;
                 }

@@ -158,7 +158,7 @@ namespace Amazon.S3.Internal
                         {
                             isHttp = config.UseHttp;
                             var scheme = isHttp ? "http" : "https";
-                            var fipsSuffix = regionEndpoint?.SystemName?.ToLower().Contains("fips") == true ? "-fips" : "";
+                            var fipsSuffix = config.UseFIPSEndpoint ? "-fips" : "";
                             ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.s3-accesspoint{fipsSuffix}{(config.UseDualstackEndpoint ? ".dualstack" : "")}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
                         }
                     }
@@ -179,7 +179,7 @@ namespace Amazon.S3.Internal
                     {
                         isHttp = s3Config.UseHttp;
                         var scheme = isHttp ? "http" : "https";
-                        var fipsSuffix = regionEndpoint?.SystemName?.ToLower().Contains("fips") == true ? "-fips" : "";
+                        var fipsSuffix = s3Config.UseFIPSEndpoint ? "-fips" : "";
                         ub = new UriBuilder($"{scheme}://{accessPoint}-{s3Arn.AccountId}.{s3ObjectLambdaServiceName}{fipsSuffix}.{s3Arn.Region}.{config.RegionEndpoint.PartitionDnsSuffix}");
                     }
 
@@ -425,7 +425,7 @@ namespace Amazon.S3.Internal
             {
                 throw new AmazonClientException("Invalid configuration, multi-region access points do not support dualstack");
             }
-            if (!s3Config.UseArnRegion && s3Config.RegionEndpoint != null && s3Config.RegionEndpoint.SystemName.StartsWith("fips-"))
+            if (!s3Config.UseArnRegion && s3Config.RegionEndpoint != null && s3Config.UseFIPSEndpoint)
             {
                 throw new AmazonClientException("Invalid configuration, multi-region access points do not support Fips- regions");
             }
@@ -472,7 +472,7 @@ namespace Amazon.S3.Internal
             {
                 throw new AmazonClientException("Invalid configuration, cross partition outpost access point ARN");
             }
-            if (region.SystemName?.StartsWith("fips-") == true ||
+            if (s3Config.UseFIPSEndpoint ||
                 s3Config.UseArnRegion && arn.Region.StartsWith("fips-"))
             {
                 throw new AmazonClientException("Invalid configuration outpost access points do not support Fips- regions");
@@ -507,15 +507,11 @@ namespace Amazon.S3.Internal
             {
                 throw new AmazonClientException("Invalid ARN, FIPS region not allowed in ARN");
             }
-            if (region.SystemName.StartsWith("fips-"))
+            if (s3Config.UseFIPSEndpoint)
             { 
                 if (region.SystemName.Contains(arn.Region))
                 {
                     return true;
-                }
-                else if (s3Config.UseArnRegion)
-                {
-                    throw new AmazonClientException("Invalid configuration, FIPS region does not match ARN region");
                 }
             }
 

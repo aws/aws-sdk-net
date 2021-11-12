@@ -409,7 +409,6 @@ namespace AWSSDK.UnitTests
             }
         }
 
-
         [TestMethod]
         [TestCategory("S3")]
         [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "us-west-2", S3ConfigFlags.None, "myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com", "")]
@@ -427,8 +426,10 @@ namespace AWSSDK.UnitTests
         [DataRow("arn:aws:s3:us-west-2:123.45678.9012:accesspoint:mybucket", "us-west-2", S3ConfigFlags.None, "", "AccountId is invalid. The AccountId length should be 12 and only contain numeric characters with no spaces or periods.")]
         [DataRow("arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1", S3ConfigFlags.None, "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", "")]
         [DataRow("arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1", S3ConfigFlags.ArnRegion, "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", "")]
-        [DataRow("arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1", S3ConfigFlags.None, "", "The S3 service client is configured for region fips-us-gov-east-1 but the access point is in us-gov-west-1. By default the SDK doesn't allow cross region calls. If you want to enable cross region calls set the environment AWS_S3_USE_ARN_REGION or the AmazonS3Config.UseArnRegion property to value \"true\".")]
-        [DataRow("arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1", S3ConfigFlags.ArnRegion, "", "Invalid configuration, FIPS region does not match ARN region")]
+        [DataRow("arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1", S3ConfigFlags.None, "", "The S3 service client is configured for region us-gov-east-1 but the access point is in us-gov-west-1. By default the SDK doesn't allow cross region calls. If you want to enable cross region calls set the environment AWS_S3_USE_ARN_REGION or the AmazonS3Config.UseArnRegion property to value \"true\".")]
+        [DataRow("arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1", S3ConfigFlags.ArnRegion, "myendpoint-123456789012.s3-accesspoint-fips.us-gov-west-1.amazonaws.com", "")]
+        [DataRow("arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint", "us-gov-east-1", S3ConfigFlags.Fips, "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", "")]
+        [DataRow("arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "us-gov-east-1", S3ConfigFlags.Fips | S3ConfigFlags.ArnRegion, "myendpoint-123456789012.s3-accesspoint-fips.us-gov-west-1.amazonaws.com", "")]
         [DataRow("arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint","fips-us-gov-east-1",S3ConfigFlags.ArnRegion | S3ConfigFlags.Dualstack, "myendpoint-123456789012.s3-accesspoint-fips.dualstack.us-gov-east-1.amazonaws.com", "")]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint","s3-external-1", S3ConfigFlags.ArnRegion, "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", "")]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint","s3-external-1", S3ConfigFlags.None, "", "The S3 service client is configured for region s3-external-1 but the access point is in us-east-1. By default the SDK doesn't allow cross region calls. If you want to enable cross region calls set the environment AWS_S3_USE_ARN_REGION or the AmazonS3Config.UseArnRegion property to value \"true\".")]

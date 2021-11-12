@@ -19,10 +19,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.S3Control;
 using Amazon.S3Control.Model;
 using Amazon.S3Control.Model.Internal.MarshallTransformations;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests
@@ -30,222 +35,101 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class S3OutpostsAccessPointArnTests
     {
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSWest2UseArnRegionFalse()
+        public static IEnumerable<object[]> S3OutpostsAccessPointARNTestsData()
         {
-            var outpostsAccessPointArn = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
-            {
-                RegionEndpoint = RegionEndpoint.USWest2
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var marshalledRequest = S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance ,s3ControlConfig);
-            Assert.AreEqual(new Uri("https://s3-outposts.us-west-2.amazonaws.com"), marshalledRequest.Endpoint);
-            Assert.AreEqual("op-01234567890123456", marshalledRequest.Headers[HeaderKeys.XAmzOutpostId]);
-            Assert.AreEqual("123456789012", marshalledRequest.Headers[HeaderKeys.XAmzAccountId]);
+            var testDataFromSpecMarkDown =
+                // | AccesspointName Input | Client Region | Additional Flags | Use ARN Region | Expected Endpoint | Expected Headers | Expected Signed By |
+                // | --------------------- | ------------- | ---------------- | -------------- | ----------------- | ---------------- | ------------------ |
+                @"
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | no | s3-outposts.us-west-2.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
+                | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | yes | s3-outposts.us-east-1.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
+                | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | no | Invalid configuration, cross region Outpost Access Point ARN | - | - |
+                | arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | none | yes | Invalid configuration, cross partition Outpost Access Point ARN | - | - |
+                | arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-gov-east-1 | none | yes | s3-outposts.us-gov-east-1.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
+                | arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-gov-west-1 | fips | no | s3-outposts-fips.us-gov-west-1.amazonaws.com |  x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
+                | arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-gov-west-1 | fips | yes | s3-outposts-fips.us-gov-east-1.amazonaws.com |  x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
+                | arn:aws-us-gov:s3-outposts:us-gov-west-1-fips:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | n/a | none | n/a | Invalid ARN, FIPS region not allowed in ARN | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | dualstack | n/a | Invalid configuration Outpost Access Points do not support dualstack | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint | us-west-2 | accelerate | n/a | Invalid configuration Access Points do not support accelerate | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost | us-west-2 | n/a | n/a | Invalid ARN, outpost resource format is incorrect  | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456 | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
+                | myaccesspoint | us-west-2 | none | N/A | {accountId field value}.s3-control.us-west-2.amazonaws.com | x-amz-account-id: ""{accountId field value}"" | s3 |
+                ";
+
+            var data = testDataFromSpecMarkDown
+                .StandardDataClean()
+                .ParseMarkdownTable();
+
+            return data;
         }
 
         [TestMethod]
         [TestCategory("S3Control")]
         [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSEast1UseArnRegionTrue()
+        [DynamicData(nameof(S3OutpostsAccessPointARNTestsData), DynamicDataSourceType.Method)]
+        public void S3OutpostsAccessPointARNTests(string accesspointNameInput, string clientRegion, string additionalFlags, string useArnRegion, string expectedEndpoint, string expectedHeaders, string expectedSignedBy)
         {
-            var outpostsAccessPointArn = "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
-            {
-                RegionEndpoint = RegionEndpoint.USWest2,
-                UseArnRegion = true
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var marshalledRequest = S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            Assert.AreEqual(new Uri("https://s3-outposts.us-east-1.amazonaws.com"), marshalledRequest.Endpoint);
-            Assert.AreEqual("op-01234567890123456", marshalledRequest.Headers[HeaderKeys.XAmzOutpostId]);
-            Assert.AreEqual("123456789012", marshalledRequest.Headers[HeaderKeys.XAmzAccountId]);
-        }
+            Console.WriteLine(string.Join(" | ", accesspointNameInput, clientRegion, additionalFlags, useArnRegion, expectedEndpoint, expectedHeaders, expectedSignedBy));
+            Console.WriteLine();
 
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSEast1UseArnRegionFalseCrossRegionError()
-        {
-            var outpostsAccessPointArn = "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
-            {
-                RegionEndpoint = RegionEndpoint.USWest2,
-                UseArnRegion = false
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
-            {
-                S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            });
-            Assert.AreEqual("Invalid configuration, cross region Outpost Access Point ARN", exception.Message);
-        }
+            // ARRANGE
 
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputCNNorth1UseArnRegionTrueCrossPartitionError()
-        {
-            var outpostsAccessPointArn = "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
-            {
-                RegionEndpoint = RegionEndpoint.USWest2,
-                UseArnRegion = true
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
-            {
-                S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            });
-            Assert.AreEqual("Invalid configuration, cross partition Outpost Access Point ARN", exception.Message);
-        }
+            // expectedEndpoint can be overloaded with the expected error message
+            var expectSuccess = expectedEndpoint.Contains("amazonaws.com");
+            // outputs to assert against:
+            IRequest s3Request = null;
+            Exception exception = null;
 
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSGovEast1UseArnRegionTrue()
-        {
-            var outpostsAccessPointArn = "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
+            var request = new GetAccessPointRequest
             {
-                RegionEndpoint = RegionEndpoint.USGovCloudEast1,
-                UseArnRegion = true
+                Name = accesspointNameInput,
+                AccountId = "123456789012"
             };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var marshalledRequest = S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            Assert.AreEqual(new Uri("https://s3-outposts.us-gov-east-1.amazonaws.com"), marshalledRequest.Endpoint);
-            Assert.AreEqual("op-01234567890123456", marshalledRequest.Headers[HeaderKeys.XAmzOutpostId]);
-            Assert.AreEqual("123456789012", marshalledRequest.Headers[HeaderKeys.XAmzAccountId]);
-        }
 
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSGovEast1UseArnRegionFalseFipsException()
-        {
-            var outpostsAccessPointArn = "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
+            var config = new AmazonS3ControlConfig
             {
-                RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1"),
-                UseArnRegion = false
+                RegionEndpoint = clientRegion == "" ? null : RegionEndpoint.GetBySystemName(clientRegion),
+                UseArnRegion = useArnRegion == "" ? false : bool.Parse(useArnRegion)
             };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
-            {
-                S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            });
-            Assert.AreEqual("Invalid configuration Outpost Access Points do not support Fips- regions", exception.Message);
-        }
 
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSGovEast1UseArnRegionTrueFipsException()
-        {
-            var outpostsAccessPointArn = "arn:aws-us-gov:s3-outposts:fips-us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
-            {
-                RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1"),
-                UseArnRegion = true
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
-            {
-                S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            });
-            Assert.AreEqual("Invalid configuration Outpost Access Points do not support Fips- regions", exception.Message);
-        }
+            if (additionalFlags.Contains("dualstack"))
+                config.UseDualstackEndpoint = true;
 
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSGovEast1UseArnRegionTrueSystemFips()
-        {
-            var outpostsAccessPointArn = "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
-            {
-                RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1"),
-                UseArnRegion = true
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var marshalledRequest = S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            Assert.AreEqual(new Uri("https://s3-outposts.us-gov-east-1.amazonaws.com"), marshalledRequest.Endpoint);
-            Assert.AreEqual("op-01234567890123456", marshalledRequest.Headers[HeaderKeys.XAmzOutpostId]);
-            Assert.AreEqual("123456789012", marshalledRequest.Headers[HeaderKeys.XAmzAccountId]);
-        }
+            if (additionalFlags.Contains("fips"))
+                config.UseFIPSEndpoint = true;
 
-        [TestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        public void OutpostsAccessPointInputUSWest2UseArnRegionTrueDualstackException()
-        {
-            var outpostsAccessPointArn = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            var s3ControlConfig = new AmazonS3ControlConfig
-            {
-                RegionEndpoint = RegionEndpoint.USWest2,
-                UseDualstackEndpoint = true,
-                UseArnRegion = true
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
-            {
-                Name = outpostsAccessPointArn
-            };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
-            {
-                S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            });
-            Assert.AreEqual("Invalid configuration Outpost Access Points do not support dualstack", exception.Message);
-        }
+            if (additionalFlags.Contains("accelerate") && !expectSuccess)
+                // S3 Control Config does not allow setting accelerate, so it will not generate the expected error
+                return;
 
-        [DataTestMethod]
-        [TestCategory("S3Control")]
-        [TestCategory("UnitTest")]
-        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456")]
-        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint")]
-        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint:123")]
-        public void OutpostsAccessPointInputUSWest2UseArnRegionTrueInvalidArnException(string outpostsAccessPointArn)
-        {
-            var s3ControlConfig = new AmazonS3ControlConfig
+            // ACT
+            try
             {
-                RegionEndpoint = RegionEndpoint.USWest2,
-                UseArnRegion = true
-            };
-            var getAccessPointRequest = new GetAccessPointRequest
+                s3Request = S3ControlArnTestUtils.RunMockRequest(request, GetAccessPointRequestMarshaller.Instance, config);
+                Console.WriteLine(s3Request.Endpoint.ToString());
+                Console.WriteLine();
+            }
+            catch (Exception e)
             {
-                Name = outpostsAccessPointArn
-            };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
+                exception = e;
+            }
+
+            // ASSERT
+            if (expectSuccess)
             {
-                S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
-            });
-            Assert.AreEqual("Invalid ARN, outpost resource format is incorrect", exception.Message);
+                Assert.IsNull(exception, exception?.Message);
+                Assert.IsNotNull(s3Request);
+                AssertExtensions.UrlSuffixMatches(expectedEndpoint, s3Request.Endpoint);
+                AssertExtensions.ContainsHeaders(SpecMarkdownTestDataHelper.ParseExpectedHeaders(expectedHeaders), s3Request.Headers);
+            }
+            else
+            {
+                Assert.IsNull(s3Request);
+                Assert.IsNotNull(exception);
+                // reminder, expectedEndpoint also contains expected error message.
+                AssertExtensions.AssertAreSameWithEmbellishments(expectedEndpoint, exception.Message);
+            }
         }
     }
 }

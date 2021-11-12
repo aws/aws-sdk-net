@@ -21,6 +21,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon;
 using System.Globalization;
+using Amazon.Internal;
 
 namespace Amazon.SecurityToken
 {
@@ -131,14 +132,18 @@ namespace Amazon.SecurityToken
             }
             else
             {
-                return GetUrl(this.RegionEndpoint, this.RegionEndpointServiceName, this.UseHttp, this.UseDualstackEndpoint);
+                return GetUrl(this, RegionEndpoint);
             }
         }
 
-        internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp, bool useDualStack)
+        internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
-            var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName, useDualStack);
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
+            var endpoint =
+                regionEndpoint.GetEndpointForService(
+                    config.RegionEndpointServiceName,
+                    config.ToGetEndpointForServiceOptions());
+
+            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
 

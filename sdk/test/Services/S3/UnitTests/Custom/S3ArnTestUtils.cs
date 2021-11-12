@@ -23,11 +23,12 @@ namespace AWSSDK.UnitTests
         {
             return new AmazonS3Config
             {
-                RegionEndpoint = RegionEndpoint.GetBySystemName(region),
                 UseArnRegion = (flags & S3ConfigFlags.ArnRegion) != 0,
-                UseDualstackEndpoint = (flags & S3ConfigFlags.Dualstack) != 0,
                 UseAccelerateEndpoint = (flags & S3ConfigFlags.Accelerate) != 0,
-                DisableMultiregionAccessPoints = (flags & S3ConfigFlags.DisableMRAP) != 0
+                UseDualstackEndpoint = (flags & S3ConfigFlags.Dualstack) != 0,
+                UseFIPSEndpoint = (flags & S3ConfigFlags.Fips) != 0,
+                DisableMultiregionAccessPoints = (flags & S3ConfigFlags.DisableMRAP) != 0,
+                RegionEndpoint = RegionEndpoint.GetBySystemName(region)
             };
         }
 

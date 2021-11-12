@@ -26,7 +26,7 @@ namespace Amazon.S3Control.Internal
     public static class ArnExtensions
     {
         internal const string ResourceTypeAccessPoint = "accesspoint";
-        internal const string ResourceTypeBucketArn = "bucket";
+        internal const string ResourceTypeBucket = "bucket";
         internal const string ResourceTypeOutpost = "outpost";
 
         /// <summary>
@@ -46,8 +46,9 @@ namespace Amazon.S3Control.Internal
         /// and if it is not found or properly formatted, throw an exception
         /// </summary>
         /// <param name="arn">The ARN to be parsed into an S3 Outposts resource</param>
-        /// <returns>An IS3Resource of type S3OutpostResource</returns>
-        public static IS3Resource ParseOutpost(this Arn arn)
+        /// <param name="config">Used to validate <paramref name="arn"/> </param>
+        /// <returns>A <see cref="S3OutpostResource"/></returns>
+        public static IS3Resource ParseOutpost(this Arn arn, AmazonS3ControlConfig config = null)
         {
             if (string.IsNullOrEmpty(arn.Resource))
             {
@@ -58,10 +59,15 @@ namespace Amazon.S3Control.Internal
                 throw new AmazonClientException("ARN resource does not resemble an outpost access point");
             }
             var parts = arn.Resource.Split(S3ArnUtils.ArnSplit, 5);
-            if (parts.Length < 4 || (!string.Equals(parts[2], "accesspoint") && !string.Equals(parts[2], "bucket")))
+            if (parts.Length < 4 || (!string.Equals(parts[2], ResourceTypeAccessPoint) && !string.Equals(parts[2], ResourceTypeBucket)))
             {
-                throw new AmazonClientException($"Invalid ARN, outpost resource format is incorrect");
+                throw new AmazonClientException("Invalid ARN, outpost resource format is incorrect");
             }
+            if (arn.Region.EndsWith("-fips", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new AmazonClientException("Invalid ARN, FIPS region not allowed in ARN");
+            }
+
             return new S3OutpostResource(arn)
             {
                 OutpostId = parts[1],
