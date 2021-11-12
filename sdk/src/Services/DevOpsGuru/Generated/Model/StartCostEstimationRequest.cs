@@ -30,7 +30,8 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCostEstimation operation.
-    /// Starts the creation of an estimate of the monthly cost to analyze your AWS resources.
+    /// Starts the creation of an estimate of the monthly cost to analyze your Amazon Web
+    /// Services resources.
     /// </summary>
     public partial class StartCostEstimationRequest : AmazonDevOpsGuruRequest
     {
@@ -59,7 +60,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceCollection. 
         /// <para>
-        /// The collection of AWS resources used to create a monthly DevOps Guru cost estimate.
+        /// The collection of Amazon Web Services resources used to create a monthly DevOps Guru
+        /// cost estimate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

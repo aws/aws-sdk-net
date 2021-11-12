@@ -57,7 +57,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ServiceCollection. 
         /// <para>
-        /// A collection of the names of AWS services.
+        /// A collection of the names of Amazon Web Services services.
         /// </para>
         /// </summary>
         public ServiceCollection ServiceCollection

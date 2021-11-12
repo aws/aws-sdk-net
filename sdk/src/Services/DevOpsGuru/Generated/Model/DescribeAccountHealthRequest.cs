@@ -31,8 +31,8 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Container for the parameters to the DescribeAccountHealth operation.
     /// Returns the number of open reactive insights, the number of open proactive insights,
-    /// and the number of metrics analyzed in your AWS account. Use these numbers to gauge
-    /// the health of operations in your AWS account.
+    /// and the number of metrics analyzed in your Amazon Web Services account. Use these
+    /// numbers to gauge the health of operations in your Amazon Web Services account.
     /// </summary>
     public partial class DescribeAccountHealthRequest : AmazonDevOpsGuruRequest
     {

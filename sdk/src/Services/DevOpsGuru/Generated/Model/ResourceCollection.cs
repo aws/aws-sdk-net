@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource
-    /// collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
-    /// analyze only the AWS resources that are defined in the stacks. You can specify up
-    /// to 500 AWS CloudFormation stacks.
+    /// A collection of Amazon Web Services resources supported by DevOps Guru. The one type
+    /// of Amazon Web Services resource collection supported is Amazon Web Services CloudFormation
+    /// stacks. DevOps Guru can be configured to analyze only the Amazon Web Services resources
+    /// that are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation
+    /// stacks.
     /// </summary>
     public partial class ResourceCollection
     {
@@ -41,8 +42,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property CloudFormation. 
         /// <para>
-        ///  An array of the names of AWS CloudFormation stacks. The stacks define AWS resources
-        /// that DevOps Guru analyzes. You can specify up to 500 AWS CloudFormation stacks. 
+        ///  An array of the names of Amazon Web Services CloudFormation stacks. The stacks define
+        /// Amazon Web Services resources that DevOps Guru analyzes. You can specify up to 500
+        /// Amazon Web Services CloudFormation stacks. 
         /// </para>
         /// </summary>
         public CloudFormationCollection CloudFormation

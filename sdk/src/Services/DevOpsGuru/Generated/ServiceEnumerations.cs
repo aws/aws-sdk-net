@@ -129,6 +129,60 @@ namespace Amazon.DevOpsGuru
 
 
     /// <summary>
+    /// Constants used for properties of type CloudWatchMetricDataStatusCode.
+    /// </summary>
+    public class CloudWatchMetricDataStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Complete for CloudWatchMetricDataStatusCode
+        /// </summary>
+        public static readonly CloudWatchMetricDataStatusCode Complete = new CloudWatchMetricDataStatusCode("Complete");
+        /// <summary>
+        /// Constant InternalError for CloudWatchMetricDataStatusCode
+        /// </summary>
+        public static readonly CloudWatchMetricDataStatusCode InternalError = new CloudWatchMetricDataStatusCode("InternalError");
+        /// <summary>
+        /// Constant PartialData for CloudWatchMetricDataStatusCode
+        /// </summary>
+        public static readonly CloudWatchMetricDataStatusCode PartialData = new CloudWatchMetricDataStatusCode("PartialData");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudWatchMetricDataStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudWatchMetricDataStatusCode FindValue(string value)
+        {
+            return FindValue<CloudWatchMetricDataStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudWatchMetricDataStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CloudWatchMetricsStat.
     /// </summary>
     public class CloudWatchMetricsStat : ConstantClass
@@ -760,6 +814,60 @@ namespace Amazon.DevOpsGuru
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OptInStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationResourceCollectionType.
+    /// </summary>
+    public class OrganizationResourceCollectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_ACCOUNT for OrganizationResourceCollectionType
+        /// </summary>
+        public static readonly OrganizationResourceCollectionType AWS_ACCOUNT = new OrganizationResourceCollectionType("AWS_ACCOUNT");
+        /// <summary>
+        /// Constant AWS_CLOUD_FORMATION for OrganizationResourceCollectionType
+        /// </summary>
+        public static readonly OrganizationResourceCollectionType AWS_CLOUD_FORMATION = new OrganizationResourceCollectionType("AWS_CLOUD_FORMATION");
+        /// <summary>
+        /// Constant AWS_SERVICE for OrganizationResourceCollectionType
+        /// </summary>
+        public static readonly OrganizationResourceCollectionType AWS_SERVICE = new OrganizationResourceCollectionType("AWS_SERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationResourceCollectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationResourceCollectionType FindValue(string value)
+        {
+            return FindValue<OrganizationResourceCollectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationResourceCollectionType(string value)
         {
             return FindValue(value);
         }

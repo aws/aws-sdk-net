@@ -65,6 +65,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccountId())
+                {
+                    context.Writer.WritePropertyName("AccountId");
+                    context.Writer.Write(publicRequest.AccountId);
+                }
+
                 if(publicRequest.IsSetFilters())
                 {
                     context.Writer.WritePropertyName("Filters");

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// A collection of the names of AWS services.
+    /// A collection of the names of Amazon Web Services services.
     /// </summary>
     public partial class ServiceCollection
     {
@@ -38,7 +38,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ServiceNames. 
         /// <para>
-        /// An array of strings that each specifies the name of an AWS service.
+        /// An array of strings that each specifies the name of an Amazon Web Services service.
         /// </para>
         /// </summary>
         public List<string> ServiceNames

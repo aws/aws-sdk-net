@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Contains information used to update a collection of AWS resources.
+    /// Contains information used to update a collection of Amazon Web Services resources.
     /// </summary>
     public partial class UpdateResourceCollectionFilter
     {
@@ -38,8 +38,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property CloudFormation. 
         /// <para>
-        ///  An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation
-        /// stacks. 
+        ///  An collection of Amazon Web Services CloudFormation stacks. You can specify up to
+        /// 500 Amazon Web Services CloudFormation stacks. 
         /// </para>
         /// </summary>
         public UpdateCloudFormationCollectionFilter CloudFormation

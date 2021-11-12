@@ -129,7 +129,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The ID of the AWS resource that could not be found. 
+        ///  The ID of the Amazon Web Services resource that could not be found. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -148,7 +148,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of the AWS resource that could not be found. 
+        ///  The type of the Amazon Web Services resource that could not be found. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

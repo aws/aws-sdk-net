@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about the health of AWS resources in your account that are specified
-    /// by an AWS CloudFormation stack.
+    /// Information about the health of Amazon Web Services resources in your account that
+    /// are specified by an Amazon Web Services CloudFormation stack.
     /// </summary>
     public partial class CloudFormationHealth
     {
@@ -40,9 +40,10 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Insight. 
         /// <para>
-        ///  Information about the health of the AWS resources in your account that are specified
-        /// by an AWS CloudFormation stack, including the number of open proactive, open reactive
-        /// insights, and the Mean Time to Recover (MTTR) of closed insights. 
+        ///  Information about the health of the Amazon Web Services resources in your account
+        /// that are specified by an Amazon Web Services CloudFormation stack, including the number
+        /// of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of
+        /// closed insights. 
         /// </para>
         /// </summary>
         public InsightHealth Insight

@@ -34,7 +34,27 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class DescribeInsightRequest : AmazonDevOpsGuruRequest
     {
+        private string _accountId;
         private string _id;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The ID of the member account in the organization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

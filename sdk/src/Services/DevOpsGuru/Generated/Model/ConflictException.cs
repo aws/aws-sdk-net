@@ -129,7 +129,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        ///  The ID of the AWS resource in which a conflict occurred. 
+        ///  The ID of the Amazon Web Services resource in which a conflict occurred. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -148,7 +148,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of the AWS resource in which a conflict occurred. 
+        ///  The type of the Amazon Web Services resource in which a conflict occurred. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

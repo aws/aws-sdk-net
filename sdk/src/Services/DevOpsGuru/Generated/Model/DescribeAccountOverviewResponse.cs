@@ -60,8 +60,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ProactiveInsights. 
         /// <para>
-        ///  An integer that specifies the number of open proactive insights in your AWS account
-        /// that were created during the time range passed in. 
+        ///  An integer that specifies the number of open proactive insights in your Amazon Web
+        /// Services account that were created during the time range passed in. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,8 +80,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ReactiveInsights. 
         /// <para>
-        ///  An integer that specifies the number of open reactive insights in your AWS account
-        /// that were created during the time range passed in. 
+        ///  An integer that specifies the number of open reactive insights in your Amazon Web
+        /// Services account that were created during the time range passed in. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

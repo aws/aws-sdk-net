@@ -31,8 +31,8 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Container for the parameters to the DescribeServiceIntegration operation.
     /// Returns the integration status of services that are integrated with DevOps Guru.
-    /// The one service that can be integrated with DevOps Guru is AWS Systems Manager, which
-    /// can be used to create an OpsItem for each generated insight.
+    /// The one service that can be integrated with DevOps Guru is Amazon Web Services Systems
+    /// Manager, which can be used to create an OpsItem for each generated insight.
     /// </summary>
     public partial class DescribeServiceIntegrationRequest : AmazonDevOpsGuruRequest
     {

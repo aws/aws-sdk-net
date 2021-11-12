@@ -80,8 +80,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// An array of <code>ServiceHealth</code> objects that describes the health of the AWS
-        /// services associated with the resources in the collection.
+        /// An array of <code>ServiceHealth</code> objects that describes the health of the Amazon
+        /// Web Services services associated with the resources in the collection.
         /// </para>
         /// </summary>
         public List<ServiceHealth> Service

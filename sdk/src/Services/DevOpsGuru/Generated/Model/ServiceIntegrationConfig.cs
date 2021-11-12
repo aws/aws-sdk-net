@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about the integration of DevOps Guru with another AWS service, such as
-    /// AWS Systems Manager.
+    /// Information about the integration of DevOps Guru with another Amazon Web Services
+    /// service, such as Amazon Web Services Systems Manager.
     /// </summary>
     public partial class ServiceIntegrationConfig
     {
@@ -39,8 +39,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property OpsCenter. 
         /// <para>
-        ///  Information about whether DevOps Guru is configured to create an OpsItem in AWS Systems
-        /// Manager OpsCenter for each created insight. 
+        ///  Information about whether DevOps Guru is configured to create an OpsItem in Amazon
+        /// Web Services Systems Manager OpsCenter for each created insight. 
         /// </para>
         /// </summary>
         public OpsCenterIntegration OpsCenter

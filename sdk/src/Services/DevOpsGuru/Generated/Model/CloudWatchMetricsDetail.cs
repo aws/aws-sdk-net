@@ -34,6 +34,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class CloudWatchMetricsDetail
     {
         private List<CloudWatchMetricsDimension> _dimensions = new List<CloudWatchMetricsDimension>();
+        private CloudWatchMetricsDataSummary _metricDataSummary;
         private string _metricName;
         private string _awsNamespace;
         private int? _period;
@@ -56,6 +57,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricDataSummary. 
+        /// <para>
+        /// This object returns anomaly metric data.
+        /// </para>
+        /// </summary>
+        public CloudWatchMetricsDataSummary MetricDataSummary
+        {
+            get { return this._metricDataSummary; }
+            set { this._metricDataSummary = value; }
+        }
+
+        // Check to see if MetricDataSummary property is set
+        internal bool IsSetMetricDataSummary()
+        {
+            return this._metricDataSummary != null;
         }
 
         /// <summary>

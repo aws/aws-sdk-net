@@ -26,6 +26,11 @@ namespace Amazon.DevOpsGuru.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeOrganizationResourceCollectionHealth operation
+        ///</summary>
+        IDescribeOrganizationResourceCollectionHealthPaginator DescribeOrganizationResourceCollectionHealth(DescribeOrganizationResourceCollectionHealthRequest request);
+
+        /// <summary>
         /// Paginator for DescribeResourceCollectionHealth operation
         ///</summary>
         IDescribeResourceCollectionHealthPaginator DescribeResourceCollectionHealth(DescribeResourceCollectionHealthRequest request);
@@ -61,6 +66,11 @@ namespace Amazon.DevOpsGuru.Model
         IListNotificationChannelsPaginator ListNotificationChannels(ListNotificationChannelsRequest request);
 
         /// <summary>
+        /// Paginator for ListOrganizationInsights operation
+        ///</summary>
+        IListOrganizationInsightsPaginator ListOrganizationInsights(ListOrganizationInsightsRequest request);
+
+        /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
         IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
@@ -69,5 +79,10 @@ namespace Amazon.DevOpsGuru.Model
         /// Paginator for SearchInsights operation
         ///</summary>
         ISearchInsightsPaginator SearchInsights(SearchInsightsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchOrganizationInsights operation
+        ///</summary>
+        ISearchOrganizationInsightsPaginator SearchOrganizationInsights(SearchOrganizationInsightsRequest request);
     }
 }

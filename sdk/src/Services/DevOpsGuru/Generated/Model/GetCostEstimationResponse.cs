@@ -44,7 +44,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Gets and sets the property Costs. 
         /// <para>
         /// An array of <code>ResourceCost</code> objects that each contains details about the
-        /// monthly cost estimate to analyze one of your AWS resources.
+        /// monthly cost estimate to analyze one of your Amazon Web Services resources.
         /// </para>
         /// </summary>
         public List<ServiceResourceCost> Costs
@@ -82,7 +82,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceCollection. 
         /// <para>
-        /// The collection of the AWS resources used to create your monthly DevOps Guru cost estimate.
+        /// The collection of the Amazon Web Services resources used to create your monthly DevOps
+        /// Guru cost estimate.
         /// </para>
         /// </summary>
         public CostEstimationResourceCollectionFilter ResourceCollection
@@ -137,9 +138,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property TotalCost. 
         /// <para>
-        /// The estimated monthly cost to analyze the AWS resources. This value is the sum of
-        /// the estimated costs to analyze each resource in the <code>Costs</code> object in this
-        /// response.
+        /// The estimated monthly cost to analyze the Amazon Web Services resources. This value
+        /// is the sum of the estimated costs to analyze each resource in the <code>Costs</code>
+        /// object in this response.
         /// </para>
         /// </summary>
         public double TotalCost

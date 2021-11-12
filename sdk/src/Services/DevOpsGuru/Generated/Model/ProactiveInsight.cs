@@ -146,8 +146,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property SsmOpsItemId. 
         /// <para>
-        ///  The ID of the AWS System Manager OpsItem created for this insight. You must enable
-        /// the creation of OpstItems insights before they are created for each insight. 
+        ///  The ID of the Amazon Web Services System Manager OpsItem created for this insight.
+        /// You must enable the creation of OpstItems insights before they are created for each
+        /// insight. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

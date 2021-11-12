@@ -82,7 +82,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        ///  The AWS source that emitted the events you want to filter for. 
+        ///  The Amazon Web Services source that emitted the events you want to filter for. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=50)]

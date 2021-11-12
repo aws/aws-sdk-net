@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about a filter used to specify which AWS resources are analyzed to create
-    /// a monthly DevOps Guru cost estimate. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+    /// Information about a filter used to specify which Amazon Web Services resources are
+    /// analyzed to create a monthly DevOps Guru cost estimate. For more information, see
+    /// <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
     /// your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon
     /// DevOps Guru pricing</a>.
     /// </summary>
@@ -41,8 +42,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property CloudFormation. 
         /// <para>
-        /// An object that specifies the CloudFormation stack that defines the AWS resources used
-        /// to create a monthly estimate for DevOps Guru.
+        /// An object that specifies the CloudFormation stack that defines the Amazon Web Services
+        /// resources used to create a monthly estimate for DevOps Guru.
         /// </para>
         /// </summary>
         public CloudFormationCostEstimationResourceCollectionFilter CloudFormation

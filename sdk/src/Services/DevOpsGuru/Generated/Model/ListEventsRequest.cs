@@ -35,9 +35,29 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ListEventsRequest : AmazonDevOpsGuruRequest
     {
+        private string _accountId;
         private ListEventsFilters _filters;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The ID of the Amazon Web Services account. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 

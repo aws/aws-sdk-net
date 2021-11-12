@@ -30,7 +30,7 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// An object that contains information about the estimated monthly cost to analyze an
-    /// AWS resource. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+    /// Amazon Web Services resource. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
     /// your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon
     /// DevOps Guru pricing</a>.
     /// </summary>
@@ -84,8 +84,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <para>
         /// The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics,
         /// events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for
-        /// the number of active AWS resource hours analyzed for each resource. Inactive resources
-        /// are not charged. 
+        /// the number of active Amazon Web Services resource hours analyzed for each resource.
+        /// Inactive resources are not charged. 
         /// </para>
         /// </summary>
         public CostEstimationServiceResourceState State
@@ -103,7 +103,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the AWS resource.
+        /// The type of the Amazon Web Services resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

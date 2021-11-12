@@ -30,8 +30,8 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInsights operation.
-    /// Returns a list of insights in your AWS account. You can specify which insights are
-    /// returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>,
+    /// Returns a list of insights in your Amazon Web Services account. You can specify which
+    /// insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>,
     /// or <code>ANY</code>).
     /// </summary>
     public partial class ListInsightsRequest : AmazonDevOpsGuruRequest

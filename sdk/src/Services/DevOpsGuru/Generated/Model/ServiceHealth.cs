@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Represents the health of an AWS service.
+    /// Represents the health of an Amazon Web Services service.
     /// </summary>
     public partial class ServiceHealth
     {
@@ -39,7 +39,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Insight. 
         /// <para>
-        /// Represents the health of an AWS service. This is a <code>ServiceInsightHealth</code>
+        /// Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code>
         /// that contains the number of open proactive and reactive insights for this service.
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service.
+        /// The name of the Amazon Web Services service.
         /// </para>
         /// </summary>
         public ServiceName ServiceName

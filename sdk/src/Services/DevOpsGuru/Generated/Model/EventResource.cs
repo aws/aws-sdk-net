@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// The AWS resource that emitted an event. AWS resource events and metrics are analyzed
-    /// by DevOps Guru to find anomalous behavior and provide recommendations to improve your
-    /// operational solutions.
+    /// The Amazon Web Services resource that emitted an event. Amazon Web Services resource
+    /// events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide
+    /// recommendations to improve your operational solutions.
     /// </summary>
     public partial class EventResource
     {

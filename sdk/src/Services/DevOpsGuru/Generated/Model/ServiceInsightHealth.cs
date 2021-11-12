@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Contains the number of open proactive and reactive insights in an analyzed AWS service.
+    /// Contains the number of open proactive and reactive insights in an analyzed Amazon
+    /// Web Services service.
     /// </summary>
     public partial class ServiceInsightHealth
     {
@@ -39,7 +40,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property OpenProactiveInsights. 
         /// <para>
-        /// The number of open proactive insights in the AWS service
+        /// The number of open proactive insights in the Amazon Web Services service
         /// </para>
         /// </summary>
         public int OpenProactiveInsights
@@ -57,7 +58,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property OpenReactiveInsights. 
         /// <para>
-        /// The number of open reactive insights in the AWS service
+        /// The number of open reactive insights in the Amazon Web Services service
         /// </para>
         /// </summary>
         public int OpenReactiveInsights

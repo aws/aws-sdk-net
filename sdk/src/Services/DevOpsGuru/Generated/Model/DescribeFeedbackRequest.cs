@@ -30,7 +30,8 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFeedback operation.
-    /// Returns the most recent feedback submitted in the current AWS account and Region.
+    /// Returns the most recent feedback submitted in the current Amazon Web Services account
+    /// and Region.
     /// </summary>
     public partial class DescribeFeedbackRequest : AmazonDevOpsGuruRequest
     {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about an AWS resource that emitted and event that is related to a recommendation
-    /// in an insight.
+    /// Information about an Amazon Web Services resource that emitted and event that is
+    /// related to a recommendation in an insight.
     /// </summary>
     public partial class RecommendationRelatedEventResource
     {

@@ -36,6 +36,14 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeOrganizationResourceCollectionHealth operation
+        ///</summary>
+        public IDescribeOrganizationResourceCollectionHealthPaginator DescribeOrganizationResourceCollectionHealth(DescribeOrganizationResourceCollectionHealthRequest request) 
+        {
+            return new DescribeOrganizationResourceCollectionHealthPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeResourceCollectionHealth operation
         ///</summary>
         public IDescribeResourceCollectionHealthPaginator DescribeResourceCollectionHealth(DescribeResourceCollectionHealthRequest request) 
@@ -92,6 +100,14 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
+        /// Paginator for ListOrganizationInsights operation
+        ///</summary>
+        public IListOrganizationInsightsPaginator ListOrganizationInsights(ListOrganizationInsightsRequest request) 
+        {
+            return new ListOrganizationInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
         public IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request) 
@@ -105,6 +121,14 @@ namespace Amazon.DevOpsGuru.Model
         public ISearchInsightsPaginator SearchInsights(SearchInsightsRequest request) 
         {
             return new SearchInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchOrganizationInsights operation
+        ///</summary>
+        public ISearchOrganizationInsightsPaginator SearchOrganizationInsights(SearchOrganizationInsightsRequest request) 
+        {
+            return new SearchOrganizationInsightsPaginator(this.client, request);
         }
     }
 }

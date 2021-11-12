@@ -58,8 +58,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        ///  A <code>ResourceCollection</code> object that contains arrays of the names of AWS
-        /// CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks. 
+        ///  A <code>ResourceCollection</code> object that contains arrays of the names of Amazon
+        /// Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services
+        /// CloudFormation stacks. 
         /// </para>
         /// </summary>
         public List<RecommendationRelatedEventResource> Resources

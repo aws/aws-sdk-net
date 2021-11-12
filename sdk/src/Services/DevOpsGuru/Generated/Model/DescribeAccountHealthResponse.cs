@@ -41,8 +41,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property MetricsAnalyzed. 
         /// <para>
-        ///  An integer that specifies the number of metrics that have been analyzed in your AWS
-        /// account. 
+        ///  An integer that specifies the number of metrics that have been analyzed in your Amazon
+        /// Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +61,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property OpenProactiveInsights. 
         /// <para>
-        ///  An integer that specifies the number of open proactive insights in your AWS account.
-        /// 
+        ///  An integer that specifies the number of open proactive insights in your Amazon Web
+        /// Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,8 +81,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property OpenReactiveInsights. 
         /// <para>
-        ///  An integer that specifies the number of open reactive insights in your AWS account.
-        /// 
+        ///  An integer that specifies the number of open reactive insights in your Amazon Web
+        /// Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,8 +101,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceHours. 
         /// <para>
-        /// The number of Amazon DevOps Guru resource analysis hours billed to the current AWS
-        /// account in the last hour. 
+        /// The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon
+        /// Web Services account in the last hour. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

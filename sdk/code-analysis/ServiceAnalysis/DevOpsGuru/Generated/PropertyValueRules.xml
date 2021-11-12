@@ -7,6 +7,12 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.DescribeAnomalyRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.DescribeAnomalyRequest.Id</property>
     <min>1</min>
     <max>100</max>
@@ -19,10 +25,33 @@
     <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.DescribeInsightRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.DescribeInsightRequest.Id</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.DescribeOrganizationResourceCollectionHealthRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.DescribeOrganizationResourceCollectionHealthRequest.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.DescribeOrganizationResourceCollectionHealthResponse.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.DescribeResourceCollectionHealthRequest.NextToken</property>
@@ -61,6 +90,12 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListAnomaliesForInsightRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ListAnomaliesForInsightRequest.InsightId</property>
     <min>1</min>
     <max>100</max>
@@ -82,6 +117,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListEventsRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ListEventsRequest.MaxResults</property>
@@ -130,6 +171,29 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListOrganizationInsightsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListOrganizationInsightsRequest.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListOrganizationInsightsResponse.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListRecommendationsRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ListRecommendationsRequest.InsightId</property>
     <min>1</min>
     <max>100</max>
@@ -171,10 +235,33 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.SearchOrganizationInsightsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.SearchOrganizationInsightsRequest.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.SearchOrganizationInsightsResponse.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.StartCostEstimationRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9]+[a-zA-Z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.AccountHealth.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.CloudFormationHealth.StackName</property>
@@ -290,6 +377,29 @@
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ProactiveOrganizationInsightSummary.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ProactiveOrganizationInsightSummary.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ProactiveOrganizationInsightSummary.Name</property>
+    <min>1</min>
+    <max>530</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ProactiveOrganizationInsightSummary.OrganizationalUnitId</property>
+    <max>68</max>
+    <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ReactiveAnomaly.AssociatedInsightId</property>
     <min>1</min>
     <max>100</max>
@@ -342,6 +452,29 @@
     <min>1</min>
     <max>530</max>
     <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ReactiveOrganizationInsightSummary.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ReactiveOrganizationInsightSummary.Id</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ReactiveOrganizationInsightSummary.Name</property>
+    <min>1</min>
+    <max>530</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ReactiveOrganizationInsightSummary.OrganizationalUnitId</property>
+    <max>68</max>
+    <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ServiceResourceCost.Type</property>
