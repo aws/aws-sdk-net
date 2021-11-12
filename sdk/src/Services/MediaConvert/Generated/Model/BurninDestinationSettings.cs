@@ -106,7 +106,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property BackgroundColor. Specify the color of the rectangle behind
         /// the captions. Leave background color (BackgroundColor) blank and set Style passthrough
         /// (StylePassthrough) to enabled to use the background color data from your input captions,
-        /// if present. Within your job settings, all of your DVB-Sub settings must be identical.
+        /// if present.
         /// </summary>
         public BurninSubtitleBackgroundColor BackgroundColor
         {

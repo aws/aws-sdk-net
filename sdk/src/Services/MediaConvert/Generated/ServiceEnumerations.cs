@@ -8663,6 +8663,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant AUTO for H264GopSizeUnits
+        /// </summary>
+        public static readonly H264GopSizeUnits AUTO = new H264GopSizeUnits("AUTO");
+        /// <summary>
         /// Constant FRAMES for H264GopSizeUnits
         /// </summary>
         public static readonly H264GopSizeUnits FRAMES = new H264GopSizeUnits("FRAMES");
@@ -9932,6 +9936,10 @@ namespace Amazon.MediaConvert
     public class H265GopSizeUnits : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTO for H265GopSizeUnits
+        /// </summary>
+        public static readonly H265GopSizeUnits AUTO = new H265GopSizeUnits("AUTO");
         /// <summary>
         /// Constant FRAMES for H265GopSizeUnits
         /// </summary>
