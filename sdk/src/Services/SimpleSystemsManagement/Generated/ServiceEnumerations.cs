@@ -2925,6 +2925,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem ORACLE_LINUX = new OperatingSystem("ORACLE_LINUX");
         /// <summary>
+        /// Constant RASPBIAN for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem RASPBIAN = new OperatingSystem("RASPBIAN");
+        /// <summary>
         /// Constant REDHAT_ENTERPRISE_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem REDHAT_ENTERPRISE_LINUX = new OperatingSystem("REDHAT_ENTERPRISE_LINUX");
