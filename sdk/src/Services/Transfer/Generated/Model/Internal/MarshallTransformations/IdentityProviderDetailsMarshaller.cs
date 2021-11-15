@@ -51,6 +51,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DirectoryId);
             }
 
+            if(requestObject.IsSetFunction())
+            {
+                context.Writer.WritePropertyName("Function");
+                context.Writer.Write(requestObject.Function);
+            }
+
             if(requestObject.IsSetInvocationRole())
             {
                 context.Writer.WritePropertyName("InvocationRole");

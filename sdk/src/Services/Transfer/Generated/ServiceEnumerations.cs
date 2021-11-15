@@ -347,6 +347,10 @@ namespace Amazon.Transfer
         /// </summary>
         public static readonly IdentityProviderType AWS_DIRECTORY_SERVICE = new IdentityProviderType("AWS_DIRECTORY_SERVICE");
         /// <summary>
+        /// Constant AWS_LAMBDA for IdentityProviderType
+        /// </summary>
+        public static readonly IdentityProviderType AWS_LAMBDA = new IdentityProviderType("AWS_LAMBDA");
+        /// <summary>
         /// Constant SERVICE_MANAGED for IdentityProviderType
         /// </summary>
         public static readonly IdentityProviderType SERVICE_MANAGED = new IdentityProviderType("SERVICE_MANAGED");

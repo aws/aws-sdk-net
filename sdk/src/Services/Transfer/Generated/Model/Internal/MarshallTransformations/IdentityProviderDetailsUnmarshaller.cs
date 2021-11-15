@@ -70,6 +70,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Function", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Function = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InvocationRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
