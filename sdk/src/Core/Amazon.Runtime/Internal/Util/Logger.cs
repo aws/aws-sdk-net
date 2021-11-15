@@ -33,6 +33,7 @@ namespace Amazon.Runtime.Internal.Util
         private static IDictionary<Type, Logger> cachedLoggers = new Dictionary<Type, Logger>();
         private List<InternalLogger> loggers;
         private static Logger emptyLogger = new Logger();
+        private readonly Type type;
 
         private Logger()
         {
@@ -41,12 +42,9 @@ namespace Amazon.Runtime.Internal.Util
         private Logger(Type type)
         {
             loggers = new List<InternalLogger>();
+            this.type = type;
 
-            InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
-            loggers.Add(log4netLogger);
-            loggers.Add(new InternalConsoleLogger(type));
-            InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
-            loggers.Add(sdLogger);
+
             ConfigureLoggers();
             AWSConfigs.PropertyChanged += ConfigsChanged;
         }
@@ -60,14 +58,54 @@ namespace Amazon.Runtime.Internal.Util
         private void ConfigureLoggers()
         {
             LoggingOptions logging = AWSConfigs.LoggingConfig.LogTo;
+            bool found = true;
             foreach (InternalLogger il in loggers)
             {
-                if (il is InternalLog4netLogger)
-                    il.IsEnabled = (logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net;
-                if (il is InternalConsoleLogger)
-                    il.IsEnabled = (logging & LoggingOptions.Console) == LoggingOptions.Console;
-                if (il is InternalSystemDiagnosticsLogger)
-                    il.IsEnabled = (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics;
+                if (il is InternalLog4netLogger && (logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net)
+                {
+                    il.IsEnabled = true;
+                    found = true;
+                }
+
+                if (il is InternalConsoleLogger && (logging & LoggingOptions.Console) == LoggingOptions.Console)
+                {
+                    il.IsEnabled = true;
+                    found = true;
+
+                }
+                if (il is InternalSystemDiagnosticsLogger && (logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics)
+                {
+                    il.IsEnabled = true;
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                if ((logging & LoggingOptions.Log4Net) == LoggingOptions.Log4Net)
+                {
+                    InternalLogger internalLogger = new InternalLog4netLogger(this.type)
+                    {
+                        IsEnabled = true
+                    };
+                    loggers.Add(internalLogger);
+                }
+                else if ((logging & LoggingOptions.Console) == LoggingOptions.Console)
+                {
+                    InternalLogger internalLogger = new InternalConsoleLogger(type)
+                    {
+                        IsEnabled = true
+                    };
+                    loggers.Add(internalLogger);
+                }
+                else if ((logging & LoggingOptions.SystemDiagnostics) == LoggingOptions.SystemDiagnostics)
+                {
+                    InternalLogger internalLogger = new InternalSystemDiagnosticsLogger(type)
+                    {
+                        IsEnabled = true
+                    };
+                    loggers.Add(internalLogger);
+                }
             }
         }
 
