@@ -50,7 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>DescribeActions</code>, all of the listed patterns are valid except <code>Label</code>.
+        /// For <code>DescribeParameters</code>, all of the listed patterns are valid except <code>Label</code>.
         /// </para>
         ///  
         /// <para>

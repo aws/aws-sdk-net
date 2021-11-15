@@ -53,6 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _documentName;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private string _reason;
         private string _target;
 
         /// <summary>
@@ -92,6 +93,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for connecting to the instance. This value is included in the details for
+        /// the Amazon CloudWatch Events event created when you start the session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
         /// <summary>

@@ -92,6 +92,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReason())
+                {
+                    context.Writer.WritePropertyName("Reason");
+                    context.Writer.Write(publicRequest.Reason);
+                }
+
                 if(publicRequest.IsSetTarget())
                 {
                     context.Writer.WritePropertyName("Target");

@@ -82,6 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxSessionDuration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxSessionDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputUrl", targetDepth))
                 {
                     var unmarshaller = SessionManagerOutputUrlUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Reason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SessionId", targetDepth))
