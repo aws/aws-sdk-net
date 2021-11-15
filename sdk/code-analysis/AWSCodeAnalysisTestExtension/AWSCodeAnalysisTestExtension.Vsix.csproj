@@ -808,6 +808,10 @@
       <Project>{8BA725F1-2A4A-492A-9803-8E128983ABEF}</Project>
       <Name>AWSSDK.MigrationHubConfig.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MigrationHubStrategyRecommendations/AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis.csproj">
+      <Project>{27A60892-7646-4606-91DC-17E930FB0F13}</Project>
+      <Name>AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Mobile/AWSSDK.Mobile.CodeAnalysis.csproj">
       <Project>{C3190A64-6C58-4A8C-A0D5-49E539A5627C}</Project>
       <Name>AWSSDK.Mobile.CodeAnalysis</Name>
