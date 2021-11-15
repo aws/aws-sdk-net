@@ -889,6 +889,10 @@ namespace Amazon.AppStream
     {
 
         /// <summary>
+        /// Constant AMAZON_LINUX2 for PlatformType
+        /// </summary>
+        public static readonly PlatformType AMAZON_LINUX2 = new PlatformType("AMAZON_LINUX2");
+        /// <summary>
         /// Constant WINDOWS for PlatformType
         /// </summary>
         public static readonly PlatformType WINDOWS = new PlatformType("WINDOWS");
