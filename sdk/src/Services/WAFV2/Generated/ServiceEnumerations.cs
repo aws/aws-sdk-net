@@ -1767,6 +1767,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField LABEL_MATCH_STATEMENT = new ParameterExceptionField("LABEL_MATCH_STATEMENT");
         /// <summary>
+        /// Constant LOG_DESTINATION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField LOG_DESTINATION = new ParameterExceptionField("LOG_DESTINATION");
+        /// <summary>
         /// Constant LOGGING_FILTER for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField LOGGING_FILTER = new ParameterExceptionField("LOGGING_FILTER");

@@ -82,7 +82,7 @@ namespace Amazon.WAFV2.Model
         /// Inter-Domain Routing</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public List<string> Addresses
         {
             get { return this._addresses; }

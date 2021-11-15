@@ -3100,34 +3100,24 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Create an Amazon Kinesis Data Firehose. 
+        /// Create your logging destination. You can use an Amazon CloudWatch Logs log group,
+        /// an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose.
+        /// For information about configuring logging destinations and the permissions that are
+        /// required for each, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// web ACL traffic information</a> in the <i>WAF Developer Guide</i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Create the data firehose with a PUT source and in the Region that you are operating.
-        /// If you are capturing logs for Amazon CloudFront, always create the firehose in US
-        /// East (N. Virginia). 
-        /// </para>
-        ///  
-        /// <para>
-        /// Give the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>.
-        /// For example, <code>aws-waf-logs-us-east-2-analytics</code>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Do not create the data firehose using a <code>Kinesis stream</code> as your source.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        /// Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code>
+        /// Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code>
         /// request.
         /// </para>
         ///  </li> </ol> 
         /// <para>
         /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-        /// request, WAF will create a service linked role with the necessary permissions to write
-        /// logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
-        /// Web ACL Traffic Information</a> in the <i>WAF Developer Guide</i>.
+        /// request, WAF creates an additional role or policy that is required to write logs to
+        /// the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource
+        /// policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For
+        /// an Amazon Kinesis Data Firehose, WAF creates a service-linked role.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3179,6 +3169,11 @@ namespace Amazon.WAFV2
         /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
         /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
         /// quotas</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFLogDestinationPermissionIssueException">
+        /// The operation failed because you don't have the permissions that your logging configuration
+        /// requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// web ACL traffic information</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
         /// WAF couldn’t perform the operation because your resource doesn’t exist.

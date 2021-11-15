@@ -96,6 +96,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     return WAFLimitsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLogDestinationPermissionIssueException"))
+                {
+                    return WAFLogDestinationPermissionIssueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
                 {
                     return WAFNonexistentItemExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -42,7 +42,6 @@ namespace Amazon.WAFV2.Model
         /// The IP addresses that are currently blocked.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public List<string> Addresses
         {
             get { return this._addresses; }
