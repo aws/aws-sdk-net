@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _assignIpv6AddressOnCreation;
         private string _customerOwnedIpv4Pool;
+        private bool? _enableDns64;
         private bool? _mapCustomerOwnedIpOnLaunch;
         private bool? _mapPublicIpOnLaunch;
         private string _subnetId;
@@ -87,6 +88,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetCustomerOwnedIpv4Pool()
         {
             return this._customerOwnedIpv4Pool != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableDns64. 
+        /// <para>
+        /// Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet
+        /// should return synthetic IPv6 addresses for IPv4-only destinations.
+        /// </para>
+        /// </summary>
+        public bool EnableDns64
+        {
+            get { return this._enableDns64.GetValueOrDefault(); }
+            set { this._enableDns64 = value; }
+        }
+
+        // Check to see if EnableDns64 property is set
+        internal bool IsSetEnableDns64()
+        {
+            return this._enableDns64.HasValue; 
         }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _cidrBlock;
         private string _customerOwnedIpv4Pool;
         private bool? _defaultForAz;
+        private bool? _enableDns64;
         private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
         private bool? _mapCustomerOwnedIpOnLaunch;
         private bool? _mapPublicIpOnLaunch;
@@ -177,6 +178,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDefaultForAz()
         {
             return this._defaultForAz.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableDns64. 
+        /// <para>
+        /// Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet
+        /// should return synthetic IPv6 addresses for IPv4-only destinations.
+        /// </para>
+        /// </summary>
+        public bool EnableDns64
+        {
+            get { return this._enableDns64.GetValueOrDefault(); }
+            set { this._enableDns64 = value; }
+        }
+
+        // Check to see if EnableDns64 property is set
+        internal bool IsSetEnableDns64()
+        {
+            return this._enableDns64.HasValue; 
         }
 
         /// <summary>

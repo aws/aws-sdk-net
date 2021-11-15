@@ -96,6 +96,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DefaultForAz = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enableDns64", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnableDns64 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6CidrBlockAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = SubnetIpv6CidrBlockAssociationUnmarshaller.Instance;
