@@ -51,9 +51,8 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// After the Manifest is updated and applied, then the connected cluster is visible to
-    /// the Amazon EKS control plane. If the Manifest is not applied within a set amount of
-    /// time, then the connected cluster will no longer be visible and must be deregistered.
-    /// See <a>DeregisterCluster</a>.
+    /// the Amazon EKS control plane. If the Manifest is not applied within three days, then
+    /// the connected cluster will no longer be visible and must be deregistered. See <a>DeregisterCluster</a>.
     /// </para>
     /// </summary>
     public partial class RegisterClusterRequest : AmazonEKSRequest
@@ -61,6 +60,7 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private ConnectorConfigRequest _connectorConfig;
         private string _name;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -104,7 +104,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Define a unique name for this cluster within your AWS account.
+        /// Define a unique name for this cluster for your Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -118,6 +118,27 @@ namespace Amazon.EKS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the cluster to assist with categorization and organization.
+        /// Each tag consists of a key and an optional value, both of which you define. Cluster
+        /// tags do not propagate to any other resources associated with the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

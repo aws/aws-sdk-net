@@ -46,7 +46,7 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Within one of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0.0/12,
+        /// Within one of the following private IP address blocks: 10.0.0.0/8, 172.16.0.0/12,
         /// or 192.168.0.0/16.
         /// </para>
         ///  </li> <li> 

@@ -115,8 +115,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate
-        /// with AWS services from the connected Kubernetes cluster.
+        /// The Amazon Resource Name (ARN) of the role to communicate with services from the connected
+        /// Kubernetes cluster.
         /// </para>
         /// </summary>
         public string RoleArn

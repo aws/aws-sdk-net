@@ -449,10 +449,11 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// Amazon EKS add-ons help to automate the provisioning and lifecycle management of common
-        /// operational software for Amazon EKS clusters. Amazon EKS add-ons can only be used
-        /// with Amazon EKS clusters running version 1.18 with platform version <code>eks.3</code>
-        /// or later because add-ons rely on the Server-side Apply Kubernetes feature, which is
-        /// only available in Kubernetes 1.18 and later.
+        /// operational software for Amazon EKS clusters. Amazon EKS add-ons require clusters
+        /// running version 1.18 or later because Amazon EKS add-ons rely on the Server-side Apply
+        /// Kubernetes feature, which is only available in Kubernetes 1.18 and later. For more
+        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
+        /// EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAddon service method.</param>
@@ -1182,6 +1183,12 @@ namespace Amazon.EKS
         /// <param name="request">Container for the necessary parameters to execute the DeregisterCluster service method.</param>
         /// 
         /// <returns>The response from the DeregisterCluster service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
         /// or resource on behalf of a user that doesn't have permissions to use the action or
@@ -2363,14 +2370,19 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// After the Manifest is updated and applied, then the connected cluster is visible to
-        /// the Amazon EKS control plane. If the Manifest is not applied within a set amount of
-        /// time, then the connected cluster will no longer be visible and must be deregistered.
-        /// See <a>DeregisterCluster</a>.
+        /// the Amazon EKS control plane. If the Manifest is not applied within three days, then
+        /// the connected cluster will no longer be visible and must be deregistered. See <a>DeregisterCluster</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCluster service method.</param>
         /// 
         /// <returns>The response from the RegisterCluster service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.EKS.Model.ClientException">
         /// These errors are usually caused by a client action. Actions can include using an action
         /// or resource on behalf of a user that doesn't have permissions to use the action or
