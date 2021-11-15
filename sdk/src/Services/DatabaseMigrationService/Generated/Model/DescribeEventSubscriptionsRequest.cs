@@ -53,6 +53,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Filters applied to event subscriptions.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names: event-subscription-arn | event-subscription-id 
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

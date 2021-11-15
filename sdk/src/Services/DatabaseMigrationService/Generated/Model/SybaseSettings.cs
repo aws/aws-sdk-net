@@ -80,7 +80,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Endpoint TCP port.
+        /// Endpoint TCP port. The default is 5000.
         /// </para>
         /// </summary>
         public int Port

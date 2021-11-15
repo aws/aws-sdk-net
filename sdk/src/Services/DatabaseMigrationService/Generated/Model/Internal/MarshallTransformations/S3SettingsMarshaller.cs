@@ -261,6 +261,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.UseCsvNoSupValue);
             }
 
+            if(requestObject.IsSetUseTaskStartTimeForFullLoadTimestamp())
+            {
+                context.Writer.WritePropertyName("UseTaskStartTimeForFullLoadTimestamp");
+                context.Writer.Write(requestObject.UseTaskStartTimeForFullLoadTimestamp);
+            }
+
         }
 
         /// <summary>

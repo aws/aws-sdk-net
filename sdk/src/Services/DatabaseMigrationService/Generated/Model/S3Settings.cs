@@ -69,6 +69,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _serviceAccessRoleArn;
         private string _timestampColumnName;
         private bool? _useCsvNoSupValue;
+        private bool? _useTaskStartTimeForFullLoadTimestamp;
 
         /// <summary>
         /// Gets and sets the property AddColumnName. 
@@ -1121,6 +1122,34 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetUseCsvNoSupValue()
         {
             return this._useCsvNoSupValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseTaskStartTimeForFullLoadTimestamp. 
+        /// <para>
+        /// When set to true, this parameter uses the task start time as the timestamp column
+        /// value instead of the time data is written to target. For full load, when <code>useTaskStartTimeForFullLoadTimestamp</code>
+        /// is set to <code>true</code>, each row of the timestamp column contains the task start
+        /// time. For CDC loads, each row of the timestamp column contains the transaction commit
+        /// time.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>useTaskStartTimeForFullLoadTimestamp</code> is set to <code>false</code>,
+        /// the full load timestamp in the timestamp column increments with the time data arrives
+        /// at the target. 
+        /// </para>
+        /// </summary>
+        public bool UseTaskStartTimeForFullLoadTimestamp
+        {
+            get { return this._useTaskStartTimeForFullLoadTimestamp.GetValueOrDefault(); }
+            set { this._useTaskStartTimeForFullLoadTimestamp = value; }
+        }
+
+        // Check to see if UseTaskStartTimeForFullLoadTimestamp property is set
+        internal bool IsSetUseTaskStartTimeForFullLoadTimestamp()
+        {
+            return this._useTaskStartTimeForFullLoadTimestamp.HasValue; 
         }
 
     }

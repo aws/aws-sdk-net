@@ -41,7 +41,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to the certificates described in the form of key-value pairs.
+        /// Filters applied to the certificates described in the form of key-value pairs. Valid
+        /// values are <code>certificate-arn</code> and <code>certificate-id</code>.
         /// </para>
         /// </summary>
         public List<Filter> Filters

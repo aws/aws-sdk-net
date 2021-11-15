@@ -280,6 +280,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.UseCsvNoSupValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UseTaskStartTimeForFullLoadTimestamp", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseTaskStartTimeForFullLoadTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

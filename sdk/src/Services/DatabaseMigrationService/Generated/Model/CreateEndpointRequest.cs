@@ -55,6 +55,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engineName;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private GcpMySQLSettings _gcpMySQLSettings;
         private IBMDb2Settings _ibmDb2Settings;
         private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
@@ -195,9 +196,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchSettings. 
         /// <para>
-        /// Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
-        /// Connection Attributes When Using Elasticsearch as a Target for DMS</a> in the <i>Database
+        /// Settings in JSON format for the target OpenSearch endpoint. For more information about
+        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+        /// Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database
         /// Migration Service User Guide</i>.
         /// </para>
         /// </summary>
@@ -258,11 +259,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code>
         /// value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>,
-        /// <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
-        /// <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-        /// <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and
-        /// <code>"neptune"</code>.
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
+        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
+        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+        /// <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>,
+        /// and <code>"neptune"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -316,6 +317,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetExtraConnectionAttributes()
         {
             return this._extraConnectionAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GcpMySQLSettings. 
+        /// <para>
+        /// Settings in JSON format for the source GCP MySQL endpoint.
+        /// </para>
+        /// </summary>
+        public GcpMySQLSettings GcpMySQLSettings
+        {
+            get { return this._gcpMySQLSettings; }
+            set { this._gcpMySQLSettings = value; }
+        }
+
+        // Check to see if GcpMySQLSettings property is set
+        internal bool IsSetGcpMySQLSettings()
+        {
+            return this._gcpMySQLSettings != null;
         }
 
         /// <summary>

@@ -36,8 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
     ///  
     /// <para>
     /// For more information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-    /// a task assessment report</a> in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-    /// Database Migration Service User Guide</a>.
+    /// a task assessment report</a> in the <i>Database Migration Service User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeReplicationTaskAssessmentResultsRequest : AmazonDatabaseMigrationServiceRequest

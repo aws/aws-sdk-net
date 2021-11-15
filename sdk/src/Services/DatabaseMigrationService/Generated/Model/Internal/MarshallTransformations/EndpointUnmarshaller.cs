@@ -148,6 +148,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExtraConnectionAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GcpMySQLSettings", targetDepth))
+                {
+                    var unmarshaller = GcpMySQLSettingsUnmarshaller.Instance;
+                    unmarshalledObject.GcpMySQLSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IBMDb2Settings", targetDepth))
                 {
                     var unmarshaller = IBMDb2SettingsUnmarshaller.Instance;

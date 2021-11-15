@@ -165,6 +165,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ExtraConnectionAttributes);
                 }
 
+                if(publicRequest.IsSetGcpMySQLSettings())
+                {
+                    context.Writer.WritePropertyName("GcpMySQLSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GcpMySQLSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GcpMySQLSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIBMDb2Settings())
                 {
                     context.Writer.WritePropertyName("IBMDb2Settings");

@@ -103,7 +103,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to events.
+        /// Filters applied to events. The only valid filter is <code>replication-instance-id</code>.
         /// </para>
         /// </summary>
         public List<Filter> Filters

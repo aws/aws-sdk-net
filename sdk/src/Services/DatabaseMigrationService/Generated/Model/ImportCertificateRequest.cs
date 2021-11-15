@@ -83,7 +83,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The location of an imported Oracle Wallet certificate for use with SSL. Provide the
         /// name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't
-        /// provide the certificate inline. 
+        /// provide the certificate inline.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> 
         /// </para>
         /// </summary>
         public MemoryStream CertificateWallet

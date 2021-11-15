@@ -62,6 +62,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _externalId;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private GcpMySQLSettings _gcpMySQLSettings;
         private IBMDb2Settings _ibmDb2Settings;
         private KafkaSettings _kafkaSettings;
         private KinesisSettings _kinesisSettings;
@@ -122,30 +123,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DmsTransferSettings. 
         /// <para>
-        /// The settings in JSON format for the DMS transfer type of source endpoint. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Possible settings include the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>ServiceAccessRoleArn</code> - - The Amazon Resource Name (ARN) used by the
-        /// service access IAM role. The role must allow the <code>iam:PassRole</code> action.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BucketName</code> - The name of the S3 bucket to use.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string"} </code> 
+        /// The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings
+        /// structure. 
         /// </para>
         /// </summary>
         public DmsTransferSettings DmsTransferSettings
@@ -197,8 +176,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchSettings. 
         /// <para>
-        /// The settings for the Elasticsearch source endpoint. For more information, see the
-        /// <code>ElasticsearchSettings</code> structure.
+        /// The settings for the OpenSearch source endpoint. For more information, see the <code>ElasticsearchSettings</code>
+        /// structure.
         /// </para>
         /// </summary>
         public ElasticsearchSettings ElasticsearchSettings
@@ -293,10 +272,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
         /// <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-        /// <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.
+        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>,
+        /// <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+        /// <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+        /// <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>,
+        /// and <code>"neptune"</code>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -365,6 +345,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetExtraConnectionAttributes()
         {
             return this._extraConnectionAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GcpMySQLSettings. 
+        /// <para>
+        /// Settings in JSON format for the source GCP MySQL endpoint.
+        /// </para>
+        /// </summary>
+        public GcpMySQLSettings GcpMySQLSettings
+        {
+            get { return this._gcpMySQLSettings; }
+            set { this._gcpMySQLSettings = value; }
+        }
+
+        // Check to see if GcpMySQLSettings property is set
+        internal bool IsSetGcpMySQLSettings()
+        {
+            return this._gcpMySQLSettings != null;
         }
 
         /// <summary>

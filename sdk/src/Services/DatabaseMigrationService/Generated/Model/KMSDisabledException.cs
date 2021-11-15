@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The specified master key (CMK) isn't enabled.
+    /// The specified KMS key isn't enabled.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

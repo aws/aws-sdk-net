@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Provides information that defines a MySQL endpoint.
+    /// Settings in JSON format for the source GCP MySQL endpoint.
     /// </summary>
-    public partial class MySQLSettings
+    public partial class GcpMySQLSettings
     {
         private string _afterConnectScript;
         private bool? _cleanSourceMetadataOnMismatch;
@@ -57,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// For this parameter, provide the code of the script itself, not the name of a file
-        /// containing the script.
+        /// containing the script. 
         /// </para>
         /// </summary>
         public string AfterConnectScript
@@ -78,7 +78,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Adjusts the behavior of DMS when migrating from an SQL Server source database that
         /// is hosted as part of an Always On availability group cluster. If you need DMS to poll
         /// all the nodes in the Always On cluster for transaction backups, set this attribute
-        /// to <code>false</code>.
+        /// to <code>false</code>. 
         /// </para>
         /// </summary>
         public bool CleanSourceMetadataOnMismatch
@@ -101,7 +101,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying
         /// <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all
         /// the task tables to this single database. For MySQL endpoints, you specify the database
-        /// only when you specify the schema in the table-mapping rules of the DMS task.
+        /// only when you specify the schema in the table-mapping rules of the DMS task. 
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -128,7 +128,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// In the example, DMS checks for changes in the binary logs every five seconds.
+        /// In the example, DMS checks for changes in the binary logs every five seconds. 
         /// </para>
         /// </summary>
         public int EventsPollInterval
@@ -211,10 +211,7 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port. 
-        /// <para>
-        /// Endpoint TCP port.
-        /// </para>
+        /// Gets and sets the property Port.
         /// </summary>
         public int Port
         {
@@ -232,7 +229,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
-        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret.</code>
         /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
         /// has the value of the Amazon Web Services Secrets Manager secret that allows access
         /// to the MySQL endpoint.
@@ -245,8 +242,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// and <code>Port</code>. You can't specify both. For more information on creating this
         /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
         /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
-        /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
-        /// Service User Guide</i>.
+        /// secrets to access Database Migration Service resources</a> in the Database Migration
+        /// Service User Guide. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -266,7 +263,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerSecretId. 
         /// <para>
         /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
-        /// that contains the MySQL endpoint connection details.
+        /// that contains the MySQL endpoint connection details. 
         /// </para>
         /// </summary>
         public string SecretsManagerSecretId
@@ -284,7 +281,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        /// Fully qualified domain name of the endpoint.
+        /// Endpoint TCP port.
         /// </para>
         /// </summary>
         public string ServerName

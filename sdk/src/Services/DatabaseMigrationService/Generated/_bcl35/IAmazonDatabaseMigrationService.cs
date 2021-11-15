@@ -311,7 +311,7 @@ namespace Amazon.DatabaseMigrationService
         /// have access to.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
-        /// The specified master key (CMK) isn't enabled.
+        /// The specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
         /// The state of the specified KMS resource isn't valid for this request.
@@ -1711,8 +1711,7 @@ namespace Amazon.DatabaseMigrationService
         ///  
         /// <para>
         /// For more information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
-        /// a task assessment report</a> in the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-        /// Database Migration Service User Guide</a>.
+        /// a task assessment report</a> in the <i>Database Migration Service User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTaskAssessmentResults service method.</param>
@@ -2172,7 +2171,7 @@ namespace Amazon.DatabaseMigrationService
         /// have access to.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
-        /// The specified master key (CMK) isn't enabled.
+        /// The specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSInvalidStateException">
         /// The state of the specified KMS resource isn't valid for this request.
@@ -2801,7 +2800,7 @@ namespace Amazon.DatabaseMigrationService
         /// have access to.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSDisabledException">
-        /// The specified master key (CMK) isn't enabled.
+        /// The specified KMS key isn't enabled.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSException">
         /// An Key Management Service (KMS) error is preventing access to KMS.
