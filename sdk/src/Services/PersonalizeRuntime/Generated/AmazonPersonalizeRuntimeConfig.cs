@@ -32,7 +32,7 @@ namespace Amazon.PersonalizeRuntime
     public partial class AmazonPersonalizeRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.97");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.98");
 
         private string _userAgent = UserAgentString;
 

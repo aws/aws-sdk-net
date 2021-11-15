@@ -1,3 +1,26 @@
+### 3.7.160.0 (2021-11-15 20:35 UTC)
+* AppStream (3.7.2.0)
+	* This release includes support for images of AmazonLinux2 platform type.
+* DatabaseMigrationService (3.7.5.0)
+	* Add Settings in JSON format for the source GCP MySQL endpoint
+* EC2 (3.7.44.0)
+	* Adds a new VPC Subnet attribute "EnableDns64." When enabled on IPv6 Subnets, the Amazon-Provided DNS Resolver returns synthetic IPv6 addresses for IPv4-only destinations.
+* EKS (3.7.10.0)
+	* Adding Tags support to Cluster Registrations.
+* MigrationHubStrategyRecommendations (3.7.0.0)
+	* AWS SDK for Migration Hub Strategy Recommendations. It includes APIs to start the portfolio assessment, import portfolio data for assessment, and to retrieve recommendations. For more information, see the AWS Migration Hub documentation at https://docs.aws.amazon.com/migrationhub/index.html
+* SimpleSystemsManagement (3.7.9.0)
+	* Adds support for Session Reason and Max Session Duration for Systems Manager Session Manager.
+* Transfer (3.7.4.0)
+	* AWS Transfer Family now supports integrating a custom identity provider using AWS Lambda
+* WAFV2 (3.7.8.0)
+	* Your options for logging web ACL traffic now include Amazon CloudWatch Logs log groups and Amazon S3 buckets.
+* Core 3.7.4.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.159.0 (2021-11-12 19:16 UTC)
 * Connect (3.7.9.0)
 	* This release adds APIs for creating and managing scheduled tasks. Additionally, adds APIs to describe and update a contact and list associated references.
