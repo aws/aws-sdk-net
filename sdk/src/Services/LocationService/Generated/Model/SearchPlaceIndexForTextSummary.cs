@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A summary of the geocoding request sent using <code>SearchPlaceIndexForText</code>.
+    /// A summary of the request sent by using <code>SearchPlaceIndexForText</code>.
     /// </summary>
     public partial class SearchPlaceIndexForTextSummary
     {
@@ -37,6 +37,7 @@ namespace Amazon.LocationService.Model
         private string _dataSource;
         private List<double> _filterBBox = new List<double>();
         private List<string> _filterCountries = new List<string>();
+        private string _language;
         private int? _maxResults;
         private List<double> _resultBBox = new List<double>();
         private string _text;
@@ -44,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property BiasPosition. 
         /// <para>
-        /// Contains the coordinates for the bias position entered in the geocoding request.
+        /// Contains the coordinates for the optional bias position specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -63,7 +64,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The data provider of geospatial data. Indicates one of the available providers:
+        /// The geospatial data provider attached to the place index resource specified in the
+        /// request. Values can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -71,11 +73,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HERE
+        /// Here
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
         /// Location Service data providers</a>.
         /// </para>
         /// </summary>
@@ -95,8 +97,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property FilterBBox. 
         /// <para>
-        /// Contains the coordinates for the optional bounding box coordinated entered in the
-        /// geocoding request.
+        /// Contains the coordinates for the optional bounding box specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=4)]
@@ -115,7 +116,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property FilterCountries. 
         /// <para>
-        /// Contains the country filter entered in the geocoding request.
+        /// Contains the optional country filter specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -132,9 +133,30 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The preferred language used to return results. Matches the language in the request.
+        /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language
+        /// tag, for example, <code>en</code> for English.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=35)]
+        public string Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Contains the maximum number of results indicated for the request.
+        /// Contains the optional result count limit specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -153,9 +175,14 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property ResultBBox. 
         /// <para>
-        /// A bounding box that contains the search results within the specified area indicated
-        /// by <code>FilterBBox</code>. A subset of bounding box specified using <code>FilterBBox</code>.
+        /// The bounding box that fully contains all search results.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
+        /// is contained within <code>FilterBBox</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=4, Max=4)]
         public List<double> ResultBBox
@@ -173,8 +200,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The address, name, city or region to be used in the geocoding request. In free-form
-        /// text format. For example, <code>Vancouver</code>.
+        /// The search text specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

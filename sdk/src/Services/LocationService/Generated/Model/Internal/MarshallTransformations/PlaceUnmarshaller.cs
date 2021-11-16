@@ -82,6 +82,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Geometry = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Interpolated", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Interpolated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Label", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeZone", targetDepth))
+                {
+                    var unmarshaller = TimeZoneUnmarshaller.Instance;
+                    unmarshalledObject.TimeZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

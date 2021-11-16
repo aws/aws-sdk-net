@@ -100,10 +100,11 @@ namespace Amazon.LocationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location
-        /// updates are ignored. Location updates within this distance are neither evaluated against
+        /// updates are ignored. Location updates within this area are neither evaluated against
         /// linked geofence collections, nor stored. This helps control costs by reducing the
-        /// number of geofence evaluations and device positions to retrieve. Distance-based filtering
-        /// can also reduce the jitter effect when displaying device trajectory on a map. 
+        /// number of geofence evaluations and historical device positions to paginate through.
+        /// Distance-based filtering can also reduce the effects of GPS noise when displaying
+        /// device trajectories on a map. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -219,6 +220,10 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
         /// = . _ : / @. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot use "aws:" as a prefix for a key.
         /// </para>
         ///  </li> </ul>
         /// </summary>

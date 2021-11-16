@@ -36,6 +36,7 @@ namespace Amazon.LocationService.Model
     public partial class SearchPlaceIndexForPositionRequest : AmazonLocationServiceRequest
     {
         private string _indexName;
+        private string _language;
         private int? _maxResults;
         private List<double> _position = new List<double>();
 
@@ -59,9 +60,35 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP
+        /// 47</a> language tag, for example, <code>en</code> for English.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting affects the languages used in the results. It does not change which results
+        /// are returned. If the language is not specified, or not supported for a particular
+        /// result, the partner automatically chooses a language for the result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=35)]
+        public string Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// An optional paramer. The maximum number of results returned per request. 
+        /// An optional parameter. The maximum number of results returned per request.
         /// </para>
         ///  
         /// <para>
@@ -84,19 +111,17 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Specifies a coordinate for the query defined by a longitude, and latitude.
+        /// Specifies the longitude and latitude of the position to query.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// The first position is the X coordinate, or longitude.
+        ///  This parameter must contain a pair of numbers. The first number represents the X
+        /// coordinate, or longitude; the second number represents the Y coordinate, or latitude.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// The second position is the Y coordinate, or latitude. 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, <code>position=xLongitude&amp;position=yLatitude</code> .
+        /// For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude
+        /// <code>-123.1174</code> and latitude <code>49.2847</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=2)]

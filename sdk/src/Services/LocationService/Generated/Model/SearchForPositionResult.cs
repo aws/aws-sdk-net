@@ -29,17 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Specifies a single point of interest, or Place as a result of a search query obtained
-    /// from a dataset configured in the place index resource.
+    /// Contains a search result from a position search query that is run on a place index
+    /// resource.
     /// </summary>
     public partial class SearchForPositionResult
     {
+        private double? _distance;
         private Place _place;
+
+        /// <summary>
+        /// Gets and sets the property Distance. 
+        /// <para>
+        /// The distance in meters of a great-circle arc between the query position and the result.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// A great-circle arc is the shortest path on a sphere, in this case the Earth. This
+        /// returns the shortest distance between two locations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0)]
+        public double Distance
+        {
+            get { return this._distance.GetValueOrDefault(); }
+            set { this._distance = value; }
+        }
+
+        // Check to see if Distance property is set
+        internal bool IsSetDistance()
+        {
+            return this._distance.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Place. 
         /// <para>
-        /// Contains details about the relevant point of interest.
+        /// Details about the search result, such as its address and position.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

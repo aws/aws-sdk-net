@@ -64,6 +64,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Distance", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Distance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Place", targetDepth))
                 {
                     var unmarshaller = PlaceUnmarshaller.Instance;

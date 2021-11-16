@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SearchPlaceIndexForPositionSummary Object
+    /// Response Unmarshaller for TimeZone Object
     /// </summary>  
-    public class SearchPlaceIndexForPositionSummaryUnmarshaller : IUnmarshaller<SearchPlaceIndexForPositionSummary, XmlUnmarshallerContext>, IUnmarshaller<SearchPlaceIndexForPositionSummary, JsonUnmarshallerContext>
+    public class TimeZoneUnmarshaller : IUnmarshaller<TimeZone, XmlUnmarshallerContext>, IUnmarshaller<TimeZone, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SearchPlaceIndexForPositionSummary IUnmarshaller<SearchPlaceIndexForPositionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeZone IUnmarshaller<TimeZone, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SearchPlaceIndexForPositionSummary Unmarshall(JsonUnmarshallerContext context)
+        public TimeZone Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SearchPlaceIndexForPositionSummary unmarshalledObject = new SearchPlaceIndexForPositionSummary();
+            TimeZone unmarshalledObject = new TimeZone();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DataSource", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Language", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Language = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxResults", targetDepth))
+                if (context.TestExpression("Offset", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Position", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Offset = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SearchPlaceIndexForPositionSummaryUnmarshaller _instance = new SearchPlaceIndexForPositionSummaryUnmarshaller();        
+        private static TimeZoneUnmarshaller _instance = new TimeZoneUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchPlaceIndexForPositionSummaryUnmarshaller Instance
+        public static TimeZoneUnmarshaller Instance
         {
             get
             {

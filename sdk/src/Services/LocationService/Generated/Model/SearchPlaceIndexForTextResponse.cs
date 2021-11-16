@@ -39,8 +39,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of Places closest to the specified position. Each result contains additional
-        /// information about the specific point of interest. 
+        /// A list of Places matching the input text. Each result contains additional information
+        /// about the specific point of interest. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,9 +59,11 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// Contains a summary of the request. Contains the <code>BiasPosition</code>, <code>DataSource</code>,
-        /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>MaxResults</code>, <code>ResultBBox</code>,
-        /// and <code>Text</code>.
+        /// Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
+        /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
+        /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index
+        /// and the bounding box, <code>ResultBBox</code>, which surrounds the search results.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

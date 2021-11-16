@@ -101,6 +101,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLanguage())
+                {
+                    context.Writer.WritePropertyName("Language");
+                    context.Writer.Write(publicRequest.Language);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

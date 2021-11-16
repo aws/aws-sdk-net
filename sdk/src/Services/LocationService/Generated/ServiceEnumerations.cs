@@ -247,6 +247,10 @@ namespace Amazon.LocationService
     {
 
         /// <summary>
+        /// Constant AccuracyBased for PositionFiltering
+        /// </summary>
+        public static readonly PositionFiltering AccuracyBased = new PositionFiltering("AccuracyBased");
+        /// <summary>
         /// Constant DistanceBased for PositionFiltering
         /// </summary>
         public static readonly PositionFiltering DistanceBased = new PositionFiltering("DistanceBased");

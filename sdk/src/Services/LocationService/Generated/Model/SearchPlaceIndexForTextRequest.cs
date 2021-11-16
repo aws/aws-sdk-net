@@ -35,7 +35,8 @@ namespace Amazon.LocationService.Model
     /// 
     ///  
     /// <para>
-    /// Includes the option to apply additional parameters to narrow your list of results.
+    /// Optional parameters let you narrow your search results by bounding box or country,
+    /// or bias your search toward a specific position on the globe.
     /// </para>
     ///  <note> 
     /// <para>
@@ -43,7 +44,10 @@ namespace Amazon.LocationService.Model
     /// filter results within a bounding box using <code>FilterBBox</code>. Providing both
     /// parameters simultaneously returns an error.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// Search results are returned in order of highest to lowest relevance.
+    /// </para>
     /// </summary>
     public partial class SearchPlaceIndexForTextRequest : AmazonLocationServiceRequest
     {
@@ -51,27 +55,33 @@ namespace Amazon.LocationService.Model
         private List<double> _filterBBox = new List<double>();
         private List<string> _filterCountries = new List<string>();
         private string _indexName;
+        private string _language;
         private int? _maxResults;
         private string _text;
 
         /// <summary>
         /// Gets and sets the property BiasPosition. 
         /// <para>
-        /// Searches for results closest to the given position. An optional parameter defined
-        /// by longitude, and latitude.
+        /// An optional parameter that indicates a preference for places that are closer to a
+        /// specified position.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// The first <code>bias</code> position is the X coordinate, or longitude.
+        ///  If provided, this parameter must contain a pair of numbers. The first number represents
+        /// the X coordinate, or longitude; the second number represents the Y coordinate, or
+        /// latitude.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// The second <code>bias</code> position is the Y coordinate, or latitude. 
+        /// For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude
+        /// <code>-123.1174</code> and latitude <code>49.2847</code>.
         /// </para>
-        ///  </li> </ul> 
+        ///  <note> 
         /// <para>
-        /// For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.
+        ///  <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying
+        /// both options results in an error. 
         /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
         public List<double> BiasPosition
@@ -89,45 +99,29 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property FilterBBox. 
         /// <para>
-        /// Filters the results by returning only Places within the provided bounding box. An
-        /// optional parameter.
+        /// An optional parameter that limits the search results by returning only places that
+        /// are within the provided bounding box.
         /// </para>
         ///  
         /// <para>
-        /// The first 2 <code>bbox</code> parameters describe the lower southwest corner:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The first <code>bbox</code> position is the X coordinate or longitude of the lower
-        /// southwest corner.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-        /// southwest corner.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.
+        ///  If provided, this parameter must contain a total of four consecutive numbers in two
+        /// pairs. The first pair of numbers represents the X and Y coordinates (longitude and
+        /// latitude, respectively) of the southwest corner of the bounding box; the second pair
+        /// of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the northeast corner of the bounding box.
         /// </para>
         ///  
         /// <para>
-        /// The next <code>bbox</code> parameters describe the upper northeast corner:
+        /// For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding
+        /// box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
+        /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// The third <code>bbox</code> position is the X coordinate, or longitude of the upper
-        /// northeast corner.
+        ///  <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying
+        /// both options results in an error. 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The fourth <code>bbox</code> position is the Y coordinate, or longitude of the upper
-        /// northeast corner.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code> 
-        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=4, Max=4)]
         public List<double> FilterBBox
@@ -145,12 +139,14 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property FilterCountries. 
         /// <para>
-        /// Limits the search to the given a list of countries/regions. An optional parameter.
+        /// An optional parameter that limits the search results by returning only places that
+        /// are in a specified list of countries.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-        /// country code. For example, Australia uses three upper-case characters: <code>AUS</code>.
+        /// Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO
+        /// 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters:
+        /// <code>AUS</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -187,6 +183,32 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP
+        /// 47</a> language tag, for example, <code>en</code> for English.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting affects the languages used in the results. It does not change which results
+        /// are returned. If the language is not specified, or not supported for a particular
+        /// result, the partner automatically chooses a language for the result.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=35)]
+        public string Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter. The maximum number of results returned per request. 
@@ -212,7 +234,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The address, name, city, or region to be used in the search. In free-form text format.
+        /// The address, name, city, or region to be used in the search in free-form text format.
         /// For example, <code>123 Any Street</code>.
         /// </para>
         /// </summary>

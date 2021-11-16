@@ -213,6 +213,10 @@ namespace Amazon.LocationService.Model
         /// Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
         /// = . _ : / @. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot use "aws:" as a prefix for a key.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

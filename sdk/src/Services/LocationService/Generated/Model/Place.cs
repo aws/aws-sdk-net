@@ -36,6 +36,7 @@ namespace Amazon.LocationService.Model
         private string _addressNumber;
         private string _country;
         private PlaceGeometry _geometry;
+        private bool? _interpolated;
         private string _label;
         private string _municipality;
         private string _neighborhood;
@@ -43,6 +44,7 @@ namespace Amazon.LocationService.Model
         private string _region;
         private string _street;
         private string _subRegion;
+        private TimeZone _timeZone;
 
         /// <summary>
         /// Gets and sets the property AddressNumber. 
@@ -95,6 +97,39 @@ namespace Amazon.LocationService.Model
         internal bool IsSetGeometry()
         {
             return this._geometry != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interpolated. 
+        /// <para>
+        ///  <code>True</code> if the result is interpolated from other known places.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>False</code> if the Place is a known place.
+        /// </para>
+        ///  
+        /// <para>
+        /// Not returned when the partner does not provide the information.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, returns <code>False</code> for an address location that is found in the
+        /// partner data, but returns <code>True</code> if an address does not exist in the partner
+        /// data and its location is calculated by interpolating between other known addresses.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool Interpolated
+        {
+            get { return this._interpolated.GetValueOrDefault(); }
+            set { this._interpolated = value; }
+        }
+
+        // Check to see if Interpolated property is set
+        internal bool IsSetInterpolated()
+        {
+            return this._interpolated.HasValue; 
         }
 
         /// <summary>
@@ -211,7 +246,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SubRegion. 
         /// <para>
-        /// A country, or an area that's part of a larger region . For example, <code>Metro Vancouver</code>.
+        /// A country, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
         /// </para>
         /// </summary>
         public string SubRegion
@@ -224,6 +259,25 @@ namespace Amazon.LocationService.Model
         internal bool IsSetSubRegion()
         {
             return this._subRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeZone. 
+        /// <para>
+        /// The time zone in which the <code>Place</code> is located. Returned only when using
+        /// Here as the selected partner.
+        /// </para>
+        /// </summary>
+        public TimeZone TimeZone
+        {
+            get { return this._timeZone; }
+            set { this._timeZone = value; }
+        }
+
+        // Check to see if TimeZone property is set
+        internal bool IsSetTimeZone()
+        {
+            return this._timeZone != null;
         }
 
     }

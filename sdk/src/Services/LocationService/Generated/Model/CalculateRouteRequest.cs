@@ -33,7 +33,7 @@ namespace Amazon.LocationService.Model
     /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
     /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
     /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-    /// a route calculator resource</a> 
+    /// a route calculator resource</a>.
     /// 
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.LocationService.Model
     ///  <note> 
     /// <para>
     /// You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in
-    /// a single request. Specifying both parameters returns an error message.
+    /// a single request. Specifying both parameters returns a validation error.
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
@@ -84,7 +84,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property CalculatorName. 
         /// <para>
-        /// The name of the route calculator resource that you want to use to calculate a route.
+        /// The name of the route calculator resource that you want to use to calculate the route.
         /// 
         /// </para>
         /// </summary>
@@ -190,7 +190,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DepartureTime. 
         /// <para>
-        /// Specifies the desired time of departure. Uses the given time to calculate a route.
+        /// Specifies the desired time of departure. Uses the given time to calculate the route.
         /// Otherwise, the best time of day to travel with the best traffic conditions is used
         /// to calculate the route.
         /// </para>

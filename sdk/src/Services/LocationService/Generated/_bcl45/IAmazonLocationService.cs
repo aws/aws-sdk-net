@@ -615,7 +615,7 @@ namespace Amazon.LocationService
         /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
         /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
         /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-        /// a route calculator resource</a> 
+        /// a route calculator resource</a>.
         /// 
         ///  
         /// <para>
@@ -635,7 +635,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in
-        /// a single request. Specifying both parameters returns an error message.
+        /// a single request. Specifying both parameters returns a validation error.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -678,7 +678,7 @@ namespace Amazon.LocationService
         /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
         /// a route</a> given the following required parameters: <code>DeparturePostiton</code>
         /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
-        /// a route calculator resource</a> 
+        /// a route calculator resource</a>.
         /// 
         ///  
         /// <para>
@@ -698,7 +698,7 @@ namespace Amazon.LocationService
         ///  <note> 
         /// <para>
         /// You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in
-        /// a single request. Specifying both parameters returns an error message.
+        /// a single request. Specifying both parameters returns a validation error.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -870,8 +870,10 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a place index resource in your AWS account, which supports functions with
-        /// geospatial data sourced from your chosen data provider.
+        /// Creates a place index resource in your AWS account. Use a place index resource to
+        /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
+        /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
         /// 
@@ -899,8 +901,10 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a place index resource in your AWS account, which supports functions with
-        /// geospatial data sourced from your chosen data provider.
+        /// Creates a place index resource in your AWS account. Use a place index resource to
+        /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
+        /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -2995,7 +2999,8 @@ namespace Amazon.LocationService
         /// 
         ///  
         /// <para>
-        /// Includes the option to apply additional parameters to narrow your list of results.
+        /// Optional parameters let you narrow your search results by bounding box or country,
+        /// or bias your search toward a specific position on the globe.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3003,7 +3008,10 @@ namespace Amazon.LocationService
         /// filter results within a bounding box using <code>FilterBBox</code>. Providing both
         /// parameters simultaneously returns an error.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Search results are returned in order of highest to lowest relevance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForText service method.</param>
         /// 
@@ -3036,7 +3044,8 @@ namespace Amazon.LocationService
         /// 
         ///  
         /// <para>
-        /// Includes the option to apply additional parameters to narrow your list of results.
+        /// Optional parameters let you narrow your search results by bounding box or country,
+        /// or bias your search toward a specific position on the globe.
         /// </para>
         ///  <note> 
         /// <para>
@@ -3044,7 +3053,10 @@ namespace Amazon.LocationService
         /// filter results within a bounding box using <code>FilterBBox</code>. Providing both
         /// parameters simultaneously returns an error.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Search results are returned in order of highest to lowest relevance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForText service method.</param>
         /// <param name="cancellationToken">

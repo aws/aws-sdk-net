@@ -66,7 +66,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The data provider of geospatial data. Indicates one of the available providers:
+        /// The data provider of geospatial data. Values can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
         /// Location Service data providers</a>.
         /// </para>
         /// </summary>

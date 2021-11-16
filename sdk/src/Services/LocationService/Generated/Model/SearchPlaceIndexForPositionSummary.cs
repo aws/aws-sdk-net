@@ -29,18 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A summary of the reverse geocoding request sent using <code>SearchPlaceIndexForPosition</code>.
+    /// A summary of the request sent by using <code>SearchPlaceIndexForPosition</code>.
     /// </summary>
     public partial class SearchPlaceIndexForPositionSummary
     {
         private string _dataSource;
+        private string _language;
         private int? _maxResults;
         private List<double> _position = new List<double>();
 
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The data provider of geospatial data. Indicates one of the available providers:
+        /// The geospatial data provider attached to the place index resource specified in the
+        /// request. Values can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -48,11 +50,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// HERE
+        /// Here
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+        /// For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
         /// Location Service data providers</a>.
         /// </para>
         /// </summary>
@@ -70,9 +72,30 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The preferred language used to return results. Matches the language in the request.
+        /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language
+        /// tag, for example, <code>en</code> for English.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=35)]
+        public string Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// An optional parameter. The maximum number of results returned per request. 
+        /// Contains the optional result count limit that is specified in the request.
         /// </para>
         ///  
         /// <para>
@@ -95,7 +118,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The position given in the reverse geocoding request.
+        /// The position specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=2)]

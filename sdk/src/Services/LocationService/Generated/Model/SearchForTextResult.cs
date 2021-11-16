@@ -29,16 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Contains relevant Places returned by calling <code>SearchPlaceIndexForText</code>.
+    /// Contains a search result from a text search query that is run on a place index resource.
     /// </summary>
     public partial class SearchForTextResult
     {
+        private double? _distance;
         private Place _place;
+        private double? _relevance;
+
+        /// <summary>
+        /// Gets and sets the property Distance. 
+        /// <para>
+        /// The distance in meters of a great-circle arc between the bias position specified and
+        /// the result. <code>Distance</code> will be returned only if a bias position was specified
+        /// in the query.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// A great-circle arc is the shortest path on a sphere, in this case the Earth. This
+        /// returns the shortest distance between two locations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public double Distance
+        {
+            get { return this._distance.GetValueOrDefault(); }
+            set { this._distance = value; }
+        }
+
+        // Check to see if Distance property is set
+        internal bool IsSetDistance()
+        {
+            return this._distance.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Place. 
         /// <para>
-        /// Contains details about the relevant point of interest.
+        /// Details about the search result, such as its address and position.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -52,6 +81,31 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPlace()
         {
             return this._place != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Relevance. 
+        /// <para>
+        /// The relative confidence in the match for a result among the results returned. For
+        /// example, if more fields for an address match (including house number, street, city,
+        /// country/region, and postal code), the relevance score is closer to 1.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returned only when the partner selected is Esri.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public double Relevance
+        {
+            get { return this._relevance.GetValueOrDefault(); }
+            set { this._relevance = value; }
+        }
+
+        // Check to see if Relevance property is set
+        internal bool IsSetRelevance()
+        {
+            return this._relevance.HasValue; 
         }
 
     }

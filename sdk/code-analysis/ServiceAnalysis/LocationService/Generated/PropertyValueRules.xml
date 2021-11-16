@@ -611,6 +611,11 @@
     <pattern>^[-._\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchPlaceIndexForPositionRequest.Language</property>
+    <min>2</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.SearchPlaceIndexForPositionRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -620,6 +625,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[-._\w]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchPlaceIndexForTextRequest.Language</property>
+    <min>2</min>
+    <max>35</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.SearchPlaceIndexForTextRequest.MaxResults</property>
@@ -908,9 +918,32 @@
     <pattern>^[-._\w]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchForPositionResult.Distance</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchForTextResult.Distance</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchForTextResult.Relevance</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchPlaceIndexForPositionSummary.Language</property>
+    <min>2</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.SearchPlaceIndexForPositionSummary.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.SearchPlaceIndexForTextSummary.Language</property>
+    <min>2</min>
+    <max>35</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.SearchPlaceIndexForTextSummary.MaxResults</property>

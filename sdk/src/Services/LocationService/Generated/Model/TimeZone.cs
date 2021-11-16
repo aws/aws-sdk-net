@@ -29,50 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// This is the response object from the ListPlaceIndexes operation.
+    /// Information about a time zone. Includes the name of the time zone and the offset from
+    /// UTC in seconds.
     /// </summary>
-    public partial class ListPlaceIndexesResponse : AmazonWebServiceResponse
+    public partial class TimeZone
     {
-        private List<ListPlaceIndexesResponseEntry> _entries = new List<ListPlaceIndexesResponseEntry>();
-        private string _nextToken;
+        private string _name;
+        private int? _offset;
 
         /// <summary>
-        /// Gets and sets the property Entries. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Lists the place index resources that exist in your AWS account
+        /// The name of the time zone, following the <a href="https://www.iana.org/time-zones">
+        /// IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<ListPlaceIndexesResponseEntry> Entries
+        public string Name
         {
-            get { return this._entries; }
-            set { this._entries = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Entries property is set
-        internal bool IsSetEntries()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Offset. 
         /// <para>
-        /// A pagination token indicating that there are additional pages available. You can use
-        /// the token in a new request to fetch the next page of results.
+        /// The time zone's offset, in seconds, from UTC.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
-        public string NextToken
+        public int Offset
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._offset.GetValueOrDefault(); }
+            set { this._offset = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Offset property is set
+        internal bool IsSetOffset()
         {
-            return this._nextToken != null;
+            return this._offset.HasValue; 
         }
 
     }

@@ -102,7 +102,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DistanceUnit. 
         /// <para>
-        /// The unit of measurement for the distance.
+        /// The unit of measurement for route distances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
