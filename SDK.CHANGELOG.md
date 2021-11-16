@@ -1,3 +1,14 @@
+### 3.7.161.0 (2021-11-16 19:21 UTC)
+* CloudTrail (3.7.1.0)
+	* CloudTrail Insights now supports ApiErrorRateInsight, which enables customers to identify unusual activity in their AWS account based on API error codes and their rate.
+* LocationService (3.7.5.0)
+	* This release adds the support for Relevance, Distance, Time Zone, Language and Interpolated Address for Geocoding and Reverse Geocoding.
+* Core 3.7.4.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.160.0 (2021-11-15 20:35 UTC)
 * AppStream (3.7.2.0)
 	* This release includes support for images of AmazonLinux2 platform type.
