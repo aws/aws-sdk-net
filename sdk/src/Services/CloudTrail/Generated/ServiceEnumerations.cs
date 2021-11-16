@@ -80,6 +80,10 @@ namespace Amazon.CloudTrail
         /// Constant ApiCallRateInsight for InsightType
         /// </summary>
         public static readonly InsightType ApiCallRateInsight = new InsightType("ApiCallRateInsight");
+        /// <summary>
+        /// Constant ApiErrorRateInsight for InsightType
+        /// </summary>
+        public static readonly InsightType ApiErrorRateInsight = new InsightType("ApiErrorRateInsight");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

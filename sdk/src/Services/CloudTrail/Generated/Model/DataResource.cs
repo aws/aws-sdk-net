@@ -107,16 +107,53 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
-        /// <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.
+        /// The resource type in which you want to log data events. You can specify the following
+        /// <i>basic</i> event selector resource types:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code>
-        /// resource types are not valid in basic event selectors. To log data events on these
-        /// resource types, use advanced event selectors.
+        ///  <code>AWS::S3::Object</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Lambda::Function</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::Table</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following resource types are also availble through <i>advanced</i> event selectors.
+        /// Basic event selector resource types are valid in advanced event selectors, but advanced
+        /// event selector resource types are not valid in basic event selectors. For more information,
+        /// see <a>AdvancedFieldSelector$Field</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::S3Outposts::Object</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ManagedBlockchain::Node</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::Snapshot</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::Stream</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Type
         {

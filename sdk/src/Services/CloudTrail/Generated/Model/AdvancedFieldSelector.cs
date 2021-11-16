@@ -118,15 +118,51 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code>
         /// can only use the <code>Equals</code> operator, and the value can be one of the following:
-        /// <code>AWS::S3::Object</code>, <code>AWS::S3::AccessPoint</code>, <code>AWS::Lambda::Function</code>,
-        /// <code>AWS::DynamoDB::Table</code>, <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
-        /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data events
-        /// on more than one resource type, add another selector.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS::S3::Object</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
+        ///  <code>AWS::Lambda::Function</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::Table</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3Outposts::Object</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ManagedBlockchain::Node</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EC2::Snapshot</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::DynamoDB::Stream</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  You can have only one <code>resources.type</code> ﬁeld per selector. To log data
+        /// events on more than one resource type, add another selector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>,
         /// but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly
         /// match the ARN of a valid resource of the type you've speciﬁed in the template as the
         /// value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>,
@@ -185,7 +221,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table:&lt;table_name&gt;</code>
+        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -230,6 +266,17 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> </li> </ul>
