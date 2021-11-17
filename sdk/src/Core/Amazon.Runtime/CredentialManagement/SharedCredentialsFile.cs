@@ -135,7 +135,7 @@ namespace Amazon.Runtime.CredentialManagement
             );
 
         public static readonly string DefaultDirectory;
-        public static readonly string DefaultFilePath;
+        public static string DefaultFilePath { get; private set; }
 
         static SharedCredentialsFile()
         {
