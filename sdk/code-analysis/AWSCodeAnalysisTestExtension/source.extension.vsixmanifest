@@ -191,6 +191,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DLM.CodeAnalysis" Path="|AWSSDK.DLM.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DocDB.CodeAnalysis" Path="|AWSSDK.DocDB.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DocDB.CodeAnalysis" Path="|AWSSDK.DocDB.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Drs.CodeAnalysis" Path="|AWSSDK.Drs.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Drs.CodeAnalysis" Path="|AWSSDK.Drs.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DynamoDBv2.CodeAnalysis" Path="|AWSSDK.DynamoDBv2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DynamoDBv2.CodeAnalysis" Path="|AWSSDK.DynamoDBv2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EBS.CodeAnalysis" Path="|AWSSDK.EBS.CodeAnalysis|"/>
