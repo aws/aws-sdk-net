@@ -92,6 +92,10 @@
       <Project>{610DFFBF-9C45-4D0F-8A75-8E8BC205288F}</Project>
       <Name>AWSSDK.AppConfig.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppConfigData/AWSSDK.AppConfigData.CodeAnalysis.csproj">
+      <Project>{684FAC4A-AC97-45E3-B30B-FDADCDF2FC2C}</Project>
+      <Name>AWSSDK.AppConfigData.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Appflow/AWSSDK.Appflow.CodeAnalysis.csproj">
       <Project>{46F6224C-A560-4D5C-A932-0D4A587F205F}</Project>
       <Name>AWSSDK.Appflow.CodeAnalysis</Name>

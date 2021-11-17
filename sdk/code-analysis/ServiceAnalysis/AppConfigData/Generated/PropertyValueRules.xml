@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.AppConfigData.Model.GetLatestConfigurationRequest.ConfigurationToken</property>
+    <pattern>\S{1,8192}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfigData.Model.GetLatestConfigurationResponse.NextPollConfigurationToken</property>
+    <pattern>\S{1,8192}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.ConfigurationProfileIdentifier</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.EnvironmentIdentifier</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfigData.Model.StartConfigurationSessionRequest.RequiredMinimumPollIntervalInSeconds</property>
+    <min>15</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfigData.Model.StartConfigurationSessionResponse.InitialConfigurationToken</property>
+    <pattern>\S{1,8192}</pattern>
+  </property-value-rule>
+</property-value-rules>

@@ -109,6 +109,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for the Amazon API Gateway v2 APIs. This SDK will allow you to manage and configure APIs in Amazon API Gateway; this first release provides the capabilities that allow you to programmatically setup and manage WebSocket APIs end to end.
 * [AWSSDK.AppConfig](https://www.nuget.org/packages/AWSSDK.AppConfig/)
 	* Introducing AWS AppConfig, a new service that enables customers to quickly deploy validated configurations to applications of any size in a controlled and monitored fashion.
+* [AWSSDK.AppConfigData](https://www.nuget.org/packages/AWSSDK.AppConfigData/)
+	* AWS AppConfig Data is a new service that allows you to retrieve configuration deployed by AWS AppConfig. See the AppConfig user guide for more details on getting started. https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html
 * [AWSSDK.Appflow](https://www.nuget.org/packages/AWSSDK.Appflow/)
 	* Amazon AppFlow is a fully managed integration service that securely transfers data between AWS services and SaaS applications. This update releases the first version of Amazon AppFlow APIs and SDK.
 * [AWSSDK.AppIntegrationsService](https://www.nuget.org/packages/AWSSDK.AppIntegrationsService/)

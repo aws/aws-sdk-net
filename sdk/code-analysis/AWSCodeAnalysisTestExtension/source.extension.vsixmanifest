@@ -35,6 +35,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApiGatewayV2.CodeAnalysis" Path="|AWSSDK.ApiGatewayV2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AppConfig.CodeAnalysis" Path="|AWSSDK.AppConfig.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AppConfig.CodeAnalysis" Path="|AWSSDK.AppConfig.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AppConfigData.CodeAnalysis" Path="|AWSSDK.AppConfigData.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AppConfigData.CodeAnalysis" Path="|AWSSDK.AppConfigData.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Appflow.CodeAnalysis" Path="|AWSSDK.Appflow.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Appflow.CodeAnalysis" Path="|AWSSDK.Appflow.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AppIntegrationsService.CodeAnalysis" Path="|AWSSDK.AppIntegrationsService.CodeAnalysis|"/>
