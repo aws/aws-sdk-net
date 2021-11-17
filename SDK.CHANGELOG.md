@@ -1,3 +1,24 @@
+### 3.7.162.0 (2021-11-17 19:18 UTC)
+* AmplifyBackend (3.7.4.0)
+	* New APIs to support the Amplify Storage category. Add and manage file storage in your Amplify app backend.
+* APIGateway (3.7.2.46)
+	* Documentation updates for Amazon API Gateway.
+* AppConfigData (3.7.0.0)
+	* AWS AppConfig Data is a new service that allows you to retrieve configuration deployed by AWS AppConfig. See the AppConfig user guide for more details on getting started. https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html
+* DevOpsGuru (3.7.5.0)
+	* Add paginator for DescribeResourceCollectionHealth
+* Drs (3.7.0.0)
+	* Introducing AWS Elastic Disaster Recovery (AWS DRS), a new service that minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications using affordable storage, minimal compute, and point-in-time recovery.
+* RedshiftDataAPIService (3.7.3.0)
+	* Data API now supports serverless requests.
+* SimpleNotificationService (3.7.3.0)
+	* Amazon SNS introduces the PublishBatch API, which enables customers to publish up to 10 messages per API request. The new API is valid for Standard and FIFO topics.
+* Core 3.7.4.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.161.0 (2021-11-16 19:21 UTC)
 * CloudTrail (3.7.1.0)
 	* CloudTrail Insights now supports ApiErrorRateInsight, which enables customers to identify unusual activity in their AWS account based on API error codes and their rate.
