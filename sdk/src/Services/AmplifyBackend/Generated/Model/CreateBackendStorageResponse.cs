@@ -29,17 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateBackend operation.
-    /// This operation creates a backend for an Amplify app. Backends are automatically created
-    /// at the time of app creation.
+    /// This is the response object from the CreateBackendStorage operation.
     /// </summary>
-    public partial class CreateBackendRequest : AmazonAmplifyBackendRequest
+    public partial class CreateBackendStorageResponse : AmazonWebServiceResponse
     {
         private string _appId;
-        private string _appName;
         private string _backendEnvironmentName;
-        private ResourceConfig _resourceConfig;
-        private string _resourceName;
+        private string _jobId;
+        private string _status;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -47,7 +44,6 @@ namespace Amazon.AmplifyBackend.Model
         /// The app ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AppId
         {
             get { return this._appId; }
@@ -61,31 +57,11 @@ namespace Amazon.AmplifyBackend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AppName. 
-        /// <para>
-        /// The name of the app.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string AppName
-        {
-            get { return this._appName; }
-            set { this._appName = value; }
-        }
-
-        // Check to see if AppName property is set
-        internal bool IsSetAppName()
-        {
-            return this._appName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property BackendEnvironmentName. 
         /// <para>
         /// The name of the backend environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string BackendEnvironmentName
         {
             get { return this._backendEnvironmentName; }
@@ -99,39 +75,39 @@ namespace Amazon.AmplifyBackend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceConfig. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// The resource configuration for creating backend storage.
+        /// The ID for the job.
         /// </para>
         /// </summary>
-        public ResourceConfig ResourceConfig
+        public string JobId
         {
-            get { return this._resourceConfig; }
-            set { this._resourceConfig = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if ResourceConfig property is set
-        internal bool IsSetResourceConfig()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return this._resourceConfig != null;
+            return this._jobId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceName. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The name of the resource.
+        /// The current status of the request.
         /// </para>
         /// </summary>
-        public string ResourceName
+        public string Status
         {
-            get { return this._resourceName; }
-            set { this._resourceName = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if ResourceName property is set
-        internal bool IsSetResourceName()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._resourceName != null;
+            return this._status != null;
         }
 
     }

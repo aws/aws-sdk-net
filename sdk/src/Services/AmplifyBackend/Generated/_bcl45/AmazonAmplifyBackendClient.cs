@@ -581,6 +581,71 @@ namespace Amazon.AmplifyBackend
 
         #endregion
         
+        #region  CreateBackendStorage
+
+
+        /// <summary>
+        /// Creates a backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the CreateBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">REST API Reference for CreateBackendStorage Operation</seealso>
+        public virtual CreateBackendStorageResponse CreateBackendStorage(CreateBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBackendStorageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackendStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">REST API Reference for CreateBackendStorage Operation</seealso>
+        public virtual Task<CreateBackendStorageResponse> CreateBackendStorageAsync(CreateBackendStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackendStorageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateBackendStorageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateToken
 
 
@@ -839,6 +904,71 @@ namespace Amazon.AmplifyBackend
             options.ResponseUnmarshaller = DeleteBackendAuthResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteBackendAuthResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBackendStorage
+
+
+        /// <summary>
+        /// Removes the specified backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">REST API Reference for DeleteBackendStorage Operation</seealso>
+        public virtual DeleteBackendStorageResponse DeleteBackendStorage(DeleteBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackendStorageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the specified backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackendStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">REST API Reference for DeleteBackendStorage Operation</seealso>
+        public virtual Task<DeleteBackendStorageResponse> DeleteBackendStorageAsync(DeleteBackendStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackendStorageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteBackendStorageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1298,6 +1428,71 @@ namespace Amazon.AmplifyBackend
 
         #endregion
         
+        #region  GetBackendStorage
+
+
+        /// <summary>
+        /// Gets details for a backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the GetBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">REST API Reference for GetBackendStorage Operation</seealso>
+        public virtual GetBackendStorageResponse GetBackendStorage(GetBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<GetBackendStorageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets details for a backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBackendStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">REST API Reference for GetBackendStorage Operation</seealso>
+        public virtual Task<GetBackendStorageResponse> GetBackendStorageAsync(GetBackendStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBackendStorageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBackendStorageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetToken
 
 
@@ -1428,6 +1623,71 @@ namespace Amazon.AmplifyBackend
 
         #endregion
         
+        #region  ImportBackendStorage
+
+
+        /// <summary>
+        /// Imports an existing backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the ImportBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">REST API Reference for ImportBackendStorage Operation</seealso>
+        public virtual ImportBackendStorageResponse ImportBackendStorage(ImportBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportBackendStorageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports an existing backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">REST API Reference for ImportBackendStorage Operation</seealso>
+        public virtual Task<ImportBackendStorageResponse> ImportBackendStorageAsync(ImportBackendStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportBackendStorageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportBackendStorageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBackendJobs
 
 
@@ -1489,6 +1749,71 @@ namespace Amazon.AmplifyBackend
             options.ResponseUnmarshaller = ListBackendJobsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListBackendJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListS3Buckets
+
+
+        /// <summary>
+        /// The list of S3 buckets in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListS3Buckets service method.</param>
+        /// 
+        /// <returns>The response from the ListS3Buckets service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">REST API Reference for ListS3Buckets Operation</seealso>
+        public virtual ListS3BucketsResponse ListS3Buckets(ListS3BucketsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3BucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3BucketsResponseUnmarshaller.Instance;
+
+            return Invoke<ListS3BucketsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The list of S3 buckets in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListS3Buckets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListS3Buckets service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">REST API Reference for ListS3Buckets Operation</seealso>
+        public virtual Task<ListS3BucketsResponse> ListS3BucketsAsync(ListS3BucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3BucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3BucketsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListS3BucketsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1879,6 +2204,71 @@ namespace Amazon.AmplifyBackend
             options.ResponseUnmarshaller = UpdateBackendJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateBackendJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBackendStorage
+
+
+        /// <summary>
+        /// Updates an existing backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">REST API Reference for UpdateBackendStorage Operation</seealso>
+        public virtual UpdateBackendStorageResponse UpdateBackendStorage(UpdateBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBackendStorageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBackendStorage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">REST API Reference for UpdateBackendStorage Operation</seealso>
+        public virtual Task<UpdateBackendStorageResponse> UpdateBackendStorageAsync(UpdateBackendStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBackendStorageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateBackendStorageResponse>(request, options, cancellationToken);
         }
 
         #endregion

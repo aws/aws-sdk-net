@@ -29,17 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateBackend operation.
-    /// This operation creates a backend for an Amplify app. Backends are automatically created
-    /// at the time of app creation.
+    /// Container for the parameters to the ImportBackendStorage operation.
+    /// Imports an existing backend storage resource.
     /// </summary>
-    public partial class CreateBackendRequest : AmazonAmplifyBackendRequest
+    public partial class ImportBackendStorageRequest : AmazonAmplifyBackendRequest
     {
         private string _appId;
-        private string _appName;
         private string _backendEnvironmentName;
-        private ResourceConfig _resourceConfig;
-        private string _resourceName;
+        private string _bucketName;
+        private ServiceName _serviceName;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -58,25 +56,6 @@ namespace Amazon.AmplifyBackend.Model
         internal bool IsSetAppId()
         {
             return this._appId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AppName. 
-        /// <para>
-        /// The name of the app.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string AppName
-        {
-            get { return this._appName; }
-            set { this._appName = value; }
-        }
-
-        // Check to see if AppName property is set
-        internal bool IsSetAppName()
-        {
-            return this._appName != null;
         }
 
         /// <summary>
@@ -99,39 +78,40 @@ namespace Amazon.AmplifyBackend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceConfig. 
+        /// Gets and sets the property BucketName. 
         /// <para>
-        /// The resource configuration for creating backend storage.
+        /// The name of the S3 bucket.
         /// </para>
         /// </summary>
-        public ResourceConfig ResourceConfig
+        public string BucketName
         {
-            get { return this._resourceConfig; }
-            set { this._resourceConfig = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
-        // Check to see if ResourceConfig property is set
-        internal bool IsSetResourceConfig()
+        // Check to see if BucketName property is set
+        internal bool IsSetBucketName()
         {
-            return this._resourceConfig != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceName. 
+        /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the resource.
+        /// The name of the storage service.
         /// </para>
         /// </summary>
-        public string ResourceName
+        [AWSProperty(Required=true)]
+        public ServiceName ServiceName
         {
-            get { return this._resourceName; }
-            set { this._resourceName = value; }
+            get { return this._serviceName; }
+            set { this._serviceName = value; }
         }
 
-        // Check to see if ResourceName property is set
-        internal bool IsSetResourceName()
+        // Check to see if ServiceName property is set
+        internal bool IsSetServiceName()
         {
-            return this._resourceName != null;
+            return this._serviceName != null;
         }
 
     }

@@ -83,6 +83,60 @@ namespace Amazon.AmplifyBackend
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticatedElement.
+    /// </summary>
+    public class AuthenticatedElement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_AND_UPDATE for AuthenticatedElement
+        /// </summary>
+        public static readonly AuthenticatedElement CREATE_AND_UPDATE = new AuthenticatedElement("CREATE_AND_UPDATE");
+        /// <summary>
+        /// Constant DELETE for AuthenticatedElement
+        /// </summary>
+        public static readonly AuthenticatedElement DELETE = new AuthenticatedElement("DELETE");
+        /// <summary>
+        /// Constant READ for AuthenticatedElement
+        /// </summary>
+        public static readonly AuthenticatedElement READ = new AuthenticatedElement("READ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticatedElement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticatedElement FindValue(string value)
+        {
+            return FindValue<AuthenticatedElement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticatedElement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthResources.
     /// </summary>
     public class AuthResources : ConstantClass
@@ -671,6 +725,52 @@ namespace Amazon.AmplifyBackend
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceName.
+    /// </summary>
+    public class ServiceName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3 for ServiceName
+        /// </summary>
+        public static readonly ServiceName S3 = new ServiceName("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceName FindValue(string value)
+        {
+            return FindValue<ServiceName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SignInMethod.
     /// </summary>
     public class SignInMethod : ConstantClass
@@ -772,6 +872,60 @@ namespace Amazon.AmplifyBackend
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnAuthenticatedElement.
+    /// </summary>
+    public class UnAuthenticatedElement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_AND_UPDATE for UnAuthenticatedElement
+        /// </summary>
+        public static readonly UnAuthenticatedElement CREATE_AND_UPDATE = new UnAuthenticatedElement("CREATE_AND_UPDATE");
+        /// <summary>
+        /// Constant DELETE for UnAuthenticatedElement
+        /// </summary>
+        public static readonly UnAuthenticatedElement DELETE = new UnAuthenticatedElement("DELETE");
+        /// <summary>
+        /// Constant READ for UnAuthenticatedElement
+        /// </summary>
+        public static readonly UnAuthenticatedElement READ = new UnAuthenticatedElement("READ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnAuthenticatedElement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnAuthenticatedElement FindValue(string value)
+        {
+            return FindValue<UnAuthenticatedElement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnAuthenticatedElement(string value)
         {
             return FindValue(value);
         }

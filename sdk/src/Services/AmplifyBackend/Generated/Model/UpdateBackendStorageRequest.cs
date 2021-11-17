@@ -29,16 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateBackend operation.
-    /// This operation creates a backend for an Amplify app. Backends are automatically created
-    /// at the time of app creation.
+    /// Container for the parameters to the UpdateBackendStorage operation.
+    /// Updates an existing backend storage resource.
     /// </summary>
-    public partial class CreateBackendRequest : AmazonAmplifyBackendRequest
+    public partial class UpdateBackendStorageRequest : AmazonAmplifyBackendRequest
     {
         private string _appId;
-        private string _appName;
         private string _backendEnvironmentName;
-        private ResourceConfig _resourceConfig;
+        private UpdateBackendStorageResourceConfig _resourceConfig;
         private string _resourceName;
 
         /// <summary>
@@ -58,25 +56,6 @@ namespace Amazon.AmplifyBackend.Model
         internal bool IsSetAppId()
         {
             return this._appId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AppName. 
-        /// <para>
-        /// The name of the app.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string AppName
-        {
-            get { return this._appName; }
-            set { this._appName = value; }
-        }
-
-        // Check to see if AppName property is set
-        internal bool IsSetAppName()
-        {
-            return this._appName != null;
         }
 
         /// <summary>
@@ -101,10 +80,11 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ResourceConfig. 
         /// <para>
-        /// The resource configuration for creating backend storage.
+        /// The resource configuration for updating backend storage.
         /// </para>
         /// </summary>
-        public ResourceConfig ResourceConfig
+        [AWSProperty(Required=true)]
+        public UpdateBackendStorageResourceConfig ResourceConfig
         {
             get { return this._resourceConfig; }
             set { this._resourceConfig = value; }
@@ -119,9 +99,10 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The name of the resource.
+        /// The name of the storage resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }

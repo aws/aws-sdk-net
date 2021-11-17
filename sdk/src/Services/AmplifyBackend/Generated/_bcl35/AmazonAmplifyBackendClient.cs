@@ -586,6 +586,72 @@ namespace Amazon.AmplifyBackend
 
         #endregion
         
+        #region  CreateBackendStorage
+
+        /// <summary>
+        /// Creates a backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the CreateBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">REST API Reference for CreateBackendStorage Operation</seealso>
+        public virtual CreateBackendStorageResponse CreateBackendStorage(CreateBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBackendStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackendStorage operation on AmazonAmplifyBackendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBackendStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">REST API Reference for CreateBackendStorage Operation</seealso>
+        public virtual IAsyncResult BeginCreateBackendStorage(CreateBackendStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBackendStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBackendStorage.</param>
+        /// 
+        /// <returns>Returns a  CreateBackendStorageResult from AmplifyBackend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">REST API Reference for CreateBackendStorage Operation</seealso>
+        public virtual CreateBackendStorageResponse EndCreateBackendStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBackendStorageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateToken
 
         /// <summary>
@@ -847,6 +913,72 @@ namespace Amazon.AmplifyBackend
         public virtual DeleteBackendAuthResponse EndDeleteBackendAuth(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBackendAuthResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBackendStorage
+
+        /// <summary>
+        /// Removes the specified backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">REST API Reference for DeleteBackendStorage Operation</seealso>
+        public virtual DeleteBackendStorageResponse DeleteBackendStorage(DeleteBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackendStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackendStorage operation on AmazonAmplifyBackendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBackendStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">REST API Reference for DeleteBackendStorage Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBackendStorage(DeleteBackendStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBackendStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBackendStorage.</param>
+        /// 
+        /// <returns>Returns a  DeleteBackendStorageResult from AmplifyBackend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">REST API Reference for DeleteBackendStorage Operation</seealso>
+        public virtual DeleteBackendStorageResponse EndDeleteBackendStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBackendStorageResponse>(asyncResult);
         }
 
         #endregion
@@ -1313,6 +1445,72 @@ namespace Amazon.AmplifyBackend
 
         #endregion
         
+        #region  GetBackendStorage
+
+        /// <summary>
+        /// Gets details for a backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the GetBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">REST API Reference for GetBackendStorage Operation</seealso>
+        public virtual GetBackendStorageResponse GetBackendStorage(GetBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<GetBackendStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBackendStorage operation on AmazonAmplifyBackendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBackendStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">REST API Reference for GetBackendStorage Operation</seealso>
+        public virtual IAsyncResult BeginGetBackendStorage(GetBackendStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBackendStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBackendStorage.</param>
+        /// 
+        /// <returns>Returns a  GetBackendStorageResult from AmplifyBackend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">REST API Reference for GetBackendStorage Operation</seealso>
+        public virtual GetBackendStorageResponse EndGetBackendStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBackendStorageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetToken
 
         /// <summary>
@@ -1445,6 +1643,72 @@ namespace Amazon.AmplifyBackend
 
         #endregion
         
+        #region  ImportBackendStorage
+
+        /// <summary>
+        /// Imports an existing backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the ImportBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">REST API Reference for ImportBackendStorage Operation</seealso>
+        public virtual ImportBackendStorageResponse ImportBackendStorage(ImportBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportBackendStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportBackendStorage operation on AmazonAmplifyBackendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportBackendStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">REST API Reference for ImportBackendStorage Operation</seealso>
+        public virtual IAsyncResult BeginImportBackendStorage(ImportBackendStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportBackendStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportBackendStorage.</param>
+        /// 
+        /// <returns>Returns a  ImportBackendStorageResult from AmplifyBackend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">REST API Reference for ImportBackendStorage Operation</seealso>
+        public virtual ImportBackendStorageResponse EndImportBackendStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportBackendStorageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListBackendJobs
 
         /// <summary>
@@ -1507,6 +1771,72 @@ namespace Amazon.AmplifyBackend
         public virtual ListBackendJobsResponse EndListBackendJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBackendJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListS3Buckets
+
+        /// <summary>
+        /// The list of S3 buckets in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListS3Buckets service method.</param>
+        /// 
+        /// <returns>The response from the ListS3Buckets service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">REST API Reference for ListS3Buckets Operation</seealso>
+        public virtual ListS3BucketsResponse ListS3Buckets(ListS3BucketsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3BucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3BucketsResponseUnmarshaller.Instance;
+
+            return Invoke<ListS3BucketsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListS3Buckets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListS3Buckets operation on AmazonAmplifyBackendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListS3Buckets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">REST API Reference for ListS3Buckets Operation</seealso>
+        public virtual IAsyncResult BeginListS3Buckets(ListS3BucketsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListS3BucketsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListS3BucketsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListS3Buckets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListS3Buckets.</param>
+        /// 
+        /// <returns>Returns a  ListS3BucketsResult from AmplifyBackend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">REST API Reference for ListS3Buckets Operation</seealso>
+        public virtual ListS3BucketsResponse EndListS3Buckets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListS3BucketsResponse>(asyncResult);
         }
 
         #endregion
@@ -1903,6 +2233,72 @@ namespace Amazon.AmplifyBackend
         public virtual UpdateBackendJobResponse EndUpdateBackendJob(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBackendJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateBackendStorage
+
+        /// <summary>
+        /// Updates an existing backend storage resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBackendStorage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBackendStorage service method, as returned by AmplifyBackend.</returns>
+        /// <exception cref="Amazon.AmplifyBackend.Model.BadRequestException">
+        /// An error returned if a request is not formed properly.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.GatewayTimeoutException">
+        /// An error returned if there's a temporary issue with the service.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.NotFoundException">
+        /// An error returned when a specific resource type is not found.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyBackend.Model.TooManyRequestsException">
+        /// An error that is returned when a limit of a specific type has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">REST API Reference for UpdateBackendStorage Operation</seealso>
+        public virtual UpdateBackendStorageResponse UpdateBackendStorage(UpdateBackendStorageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBackendStorageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBackendStorageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBackendStorage operation on AmazonAmplifyBackendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBackendStorage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">REST API Reference for UpdateBackendStorage Operation</seealso>
+        public virtual IAsyncResult BeginUpdateBackendStorage(UpdateBackendStorageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBackendStorageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBackendStorageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBackendStorage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBackendStorage.</param>
+        /// 
+        /// <returns>Returns a  UpdateBackendStorageResult from AmplifyBackend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">REST API Reference for UpdateBackendStorage Operation</seealso>
+        public virtual UpdateBackendStorageResponse EndUpdateBackendStorage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateBackendStorageResponse>(asyncResult);
         }
 
         #endregion
