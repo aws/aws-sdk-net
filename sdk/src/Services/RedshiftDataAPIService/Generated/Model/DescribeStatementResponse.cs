@@ -165,7 +165,8 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Gets and sets the property HasResultSet. 
         /// <para>
         /// A value that indicates whether the statement has a result set. The result set can
-        /// be empty. 
+        /// be empty. The value is true for an empty result set. The value is true if any substatement
+        /// returns a result set.
         /// </para>
         /// </summary>
         public bool HasResultSet
