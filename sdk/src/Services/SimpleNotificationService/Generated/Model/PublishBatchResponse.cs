@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The endpoint for mobile app and device.
+    /// This is the response object from the PublishBatch operation.
     /// </summary>
-    public partial class Endpoint
+    public partial class PublishBatchResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
-        private string _endpointArn;
+        private List<BatchResultErrorEntry> _failed = new List<BatchResultErrorEntry>();
+        private List<PublishBatchResultEntry> _successful = new List<PublishBatchResultEntry>();
 
         /// <summary>
-        /// Gets and sets the property Attributes. 
+        /// Gets and sets the property Failed. 
         /// <para>
-        /// Attributes for endpoint.
+        /// A list of failed <code>PublishBatch</code> responses. 
         /// </para>
         /// </summary>
-        public Dictionary<string, string> Attributes
+        public List<BatchResultErrorEntry> Failed
         {
-            get { return this._attributes; }
-            set { this._attributes = value; }
+            get { return this._failed; }
+            set { this._failed = value; }
         }
 
-        // Check to see if Attributes property is set
-        internal bool IsSetAttributes()
+        // Check to see if Failed property is set
+        internal bool IsSetFailed()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._failed != null && this._failed.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointArn. 
+        /// Gets and sets the property Successful. 
         /// <para>
-        /// The <code>EndpointArn</code> for mobile app and device.
+        /// A list of successful <code>PublishBatch</code> responses.
         /// </para>
         /// </summary>
-        public string EndpointArn
+        public List<PublishBatchResultEntry> Successful
         {
-            get { return this._endpointArn; }
-            set { this._endpointArn = value; }
+            get { return this._successful; }
+            set { this._successful = value; }
         }
 
-        // Check to see if EndpointArn property is set
-        internal bool IsSetEndpointArn()
+        // Check to see if Successful property is set
+        internal bool IsSetSuccessful()
         {
-            return this._endpointArn != null;
+            return this._successful != null && this._successful.Count > 0; 
         }
 
     }

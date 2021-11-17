@@ -52,8 +52,14 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For <code>APNS</code> and <code>APNS_SANDBOX</code>, <code>PlatformPrincipal</code>
-    /// is <code>SSL certificate</code> and <code>PlatformCredential</code> is <code>private
+    /// For <code>APNS</code> and <code>APNS_SANDBOX</code> using certificate credentials,
+    /// <code>PlatformPrincipal</code> is <code>SSL certificate</code> and <code>PlatformCredential</code>
+    /// is <code>private key</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For <code>APNS</code> and <code>APNS_SANDBOX</code> using token credentials, <code>PlatformPrincipal</code>
+    /// is <code>signing key ID</code> and <code>PlatformCredential</code> is <code>signing
     /// key</code>.
     /// </para>
     ///  </li> <li> 

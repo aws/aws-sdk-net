@@ -31,7 +31,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the AddPermission operation.
     /// Adds a statement to a topic's access control policy, granting access for the specified
-    /// accounts to the specified actions.
+    /// Amazon Web Services accounts to the specified actions.
     /// </summary>
     public partial class AddPermissionRequest : AmazonSimpleNotificationServiceRequest
     {
@@ -50,7 +50,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
         /// <param name="label">A unique identifier for the new policy statement.</param>
-        /// <param name="awsAccountId">The account IDs of the users (principals) who will be given access to the specified actions. The users must have account, but do not need to be signed up for this service.</param>
+        /// <param name="awsAccountId">The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</param>
         /// <param name="actionName">The action you want to allow for the specified principal(s). Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</param>
         public AddPermissionRequest(string topicArn, string label, List<string> awsAccountId, List<string> actionName)
         {
@@ -86,8 +86,9 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property AWSAccountId. 
         /// <para>
-        /// The account IDs of the users (principals) who will be given access to the specified
-        /// actions. The users must have account, but do not need to be signed up for this service.
+        /// The Amazon Web Services account IDs of the users (principals) who will be given access
+        /// to the specified actions. The users must have Amazon Web Services account, but do
+        /// not need to be signed up for this service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

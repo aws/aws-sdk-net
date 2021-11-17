@@ -42,6 +42,21 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate
+        /// used to configure certificate-based authentication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure
+        /// token-based authentication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based
+        /// authentication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications
         /// should be sent.
         /// </para>

@@ -54,8 +54,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The default settings for sending SMS messages from your account. You can set values
-        /// for the following attribute names:
+        /// The default settings for sending SMS messages from your Amazon Web Services account.
+        /// You can set values for the following attribute names:
         /// </para>
         ///  
         /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.SimpleNotificationService.Model
         ///  <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily
         /// SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report
         /// as a CSV file to the bucket. The report includes the following information for each
-        /// SMS message that was successfully delivered by your account:
+        /// SMS message that was successfully delivered by your Amazon Web Services account:
         /// </para>
         ///  <ul> <li> 
         /// <para>

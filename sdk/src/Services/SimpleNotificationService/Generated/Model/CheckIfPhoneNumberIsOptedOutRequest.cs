@@ -31,8 +31,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the CheckIfPhoneNumberIsOptedOut operation.
     /// Accepts a phone number and indicates whether the phone holder has opted out of receiving
-    /// SMS messages from your account. You cannot send SMS messages to a number that is opted
-    /// out.
+    /// SMS messages from your Amazon Web Services account. You cannot send SMS messages to
+    /// a number that is opted out.
     /// 
     ///  
     /// <para>

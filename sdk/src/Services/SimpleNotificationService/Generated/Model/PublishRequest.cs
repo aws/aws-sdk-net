@@ -41,12 +41,12 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  
     /// <para>
-    /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
-    /// will attempt to deliver it shortly.
+    /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
+    /// deliverers it to subscribers.
     /// </para>
     ///  
     /// <para>
-    /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
+    /// To use the <code>Publish</code> action for publishing a message to a mobile endpoint,
     /// such as an app on a Kindle device or mobile phone, you must specify the EndpointArn
     /// for the TargetArn parameter. The EndpointArn is returned when making a call with the
     /// <code>CreatePlatformEndpoint</code> action. 
@@ -58,7 +58,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// You can publish messages only to topics and endpoints in the same Region.
+    /// You can publish messages only to topics and endpoints in the same Amazon Web Services
+    /// Region.
     /// </para>
     ///  </important>
     /// </summary>
@@ -222,7 +223,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// Gets and sets the property MessageDeduplicationId. 
         /// <para>
         /// This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageDeduplicationId</code>
-        /// can contain up to 128 alphanumeric characters (a-z, A-Z, 0-9) and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        /// can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation
+        /// <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
         /// </para>
         ///  
         /// <para>
@@ -254,7 +256,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// Gets and sets the property MessageGroupId. 
         /// <para>
         /// This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code>
-        /// can contain up to 128 alphanumeric characters (a-z, A-Z, 0-9) and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        /// can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation
+        /// <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
         /// </para>
         ///  
         /// <para>

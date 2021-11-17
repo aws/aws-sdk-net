@@ -30,7 +30,8 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Indicates that the specified phone number opted out of receiving SMS messages from
-    /// your account. You can't send SMS messages to phone numbers that opt out.
+    /// your Amazon Web Services account. You can't send SMS messages to phone numbers that
+    /// opt out.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

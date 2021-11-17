@@ -29,42 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Indicates that the rate at which requests have been submitted for this action exceeds
-    /// the limit for your Amazon Web Services account.
+    /// Two or more batch entries in the request have the same <code>Id</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ThrottledException : AmazonSimpleNotificationServiceException
+    public partial class BatchEntryIdsNotDistinctException : AmazonSimpleNotificationServiceException
     {
 
         /// <summary>
-        /// Constructs a new ThrottledException with the specified error
+        /// Constructs a new BatchEntryIdsNotDistinctException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ThrottledException(string message) 
+        public BatchEntryIdsNotDistinctException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ThrottledException
+        /// Construct instance of BatchEntryIdsNotDistinctException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ThrottledException(string message, Exception innerException) 
+        public BatchEntryIdsNotDistinctException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ThrottledException
+        /// Construct instance of BatchEntryIdsNotDistinctException
         /// </summary>
         /// <param name="innerException"></param>
-        public ThrottledException(Exception innerException) 
+        public BatchEntryIdsNotDistinctException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ThrottledException
+        /// Construct instance of BatchEntryIdsNotDistinctException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,30 +71,30 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ThrottledException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public BatchEntryIdsNotDistinctException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ThrottledException
+        /// Construct instance of BatchEntryIdsNotDistinctException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ThrottledException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public BatchEntryIdsNotDistinctException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ThrottledException class with serialized data.
+        /// Constructs a new instance of the BatchEntryIdsNotDistinctException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ThrottledException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected BatchEntryIdsNotDistinctException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

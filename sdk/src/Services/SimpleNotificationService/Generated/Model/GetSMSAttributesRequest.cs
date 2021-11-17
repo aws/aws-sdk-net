@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSMSAttributes operation.
-    /// Returns the settings for sending SMS messages from your account.
+    /// Returns the settings for sending SMS messages from your Amazon Web Services account.
     /// 
     ///  
     /// <para>

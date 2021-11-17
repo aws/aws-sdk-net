@@ -63,7 +63,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Owner</code> – The account ID of the subscription's owner.
+        ///  <code>Owner</code> – The Amazon Web Services account ID of the subscription's owner.
         /// </para>
         ///  </li> <li> 
         /// <para>

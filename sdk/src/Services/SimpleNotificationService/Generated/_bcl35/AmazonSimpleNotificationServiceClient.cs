@@ -282,11 +282,11 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
-        /// accounts to the specified actions.
+        /// Amazon Web Services accounts to the specified actions.
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
         /// <param name="label">A unique identifier for the new policy statement.</param>
-        /// <param name="awsAccountId">The account IDs of the users (principals) who will be given access to the specified actions. The users must have account, but do not need to be signed up for this service.</param>
+        /// <param name="awsAccountId">The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</param>
         /// <param name="actionName">The action you want to allow for the specified principal(s). Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SimpleNotificationService.</returns>
@@ -316,7 +316,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Adds a statement to a topic's access control policy, granting access for the specified
-        /// accounts to the specified actions.
+        /// Amazon Web Services accounts to the specified actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
         /// 
@@ -383,8 +383,8 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Accepts a phone number and indicates whether the phone holder has opted out of receiving
-        /// SMS messages from your account. You cannot send SMS messages to a number that is opted
-        /// out.
+        /// SMS messages from your Amazon Web Services account. You cannot send SMS messages to
+        /// a number that is opted out.
         /// 
         ///  
         /// <para>
@@ -406,7 +406,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public virtual CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request)
@@ -472,9 +472,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your account exceeds the limit. To
-        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
-        /// Support Center.
+        /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
+        /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -514,9 +514,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your account exceeds the limit. To
-        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
-        /// Support Center.
+        /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
+        /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -554,9 +554,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your account exceeds the limit. To
-        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
-        /// Support Center.
+        /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
+        /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -641,8 +641,14 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>APNS</code> and <code>APNS_SANDBOX</code>, <code>PlatformPrincipal</code>
-        /// is <code>SSL certificate</code> and <code>PlatformCredential</code> is <code>private
+        /// For <code>APNS</code> and <code>APNS_SANDBOX</code> using certificate credentials,
+        /// <code>PlatformPrincipal</code> is <code>SSL certificate</code> and <code>PlatformCredential</code>
+        /// is <code>private key</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>APNS</code> and <code>APNS_SANDBOX</code> using token credentials, <code>PlatformPrincipal</code>
+        /// is <code>signing key ID</code> and <code>PlatformCredential</code> is <code>signing
         /// key</code>.
         /// </para>
         ///  </li> <li> 
@@ -809,17 +815,18 @@ namespace Amazon.SimpleNotificationService
         #region  CreateSMSSandboxPhoneNumber
 
         /// <summary>
-        /// Adds a destination phone number to an account in the SMS sandbox and sends a one-time
-        /// password (OTP) to that phone number.
+        /// Adds a destination phone number to an Amazon Web Services account in the SMS sandbox
+        /// and sends a one-time password (OTP) to that phone number.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
-        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
-        /// features without risking your reputation as an SMS sender. While your account is in
-        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-        /// SMS messages only to verified destination phone numbers. For more information, including
-        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// When you start using Amazon SNS to send SMS messages, your Amazon Web Services account
+        /// is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you
+        /// to try Amazon SNS features without risking your reputation as an SMS sender. While
+        /// your Amazon Web Services account is in the SMS sandbox, you can use all of the features
+        /// of Amazon SNS. However, you can send SMS messages only to verified destination phone
+        /// numbers. For more information, including how to move out of the sandbox to send messages
+        /// without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
         /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -837,11 +844,12 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.OptedOutException">
         /// Indicates that the specified phone number opted out of receiving SMS messages from
-        /// your account. You can't send SMS messages to phone numbers that opt out.
+        /// your Amazon Web Services account. You can't send SMS messages to phone numbers that
+        /// opt out.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.UserErrorException">
         /// Indicates that a request parameter does not comply with the associated constraints.
@@ -1172,16 +1180,18 @@ namespace Amazon.SimpleNotificationService
         #region  DeleteSMSSandboxPhoneNumber
 
         /// <summary>
-        /// Deletes an account's verified or pending phone number from the SMS sandbox.
+        /// Deletes an Amazon Web Services account's verified or pending phone number from the
+        /// SMS sandbox.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
-        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
-        /// features without risking your reputation as an SMS sender. While your account is in
-        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-        /// SMS messages only to verified destination phone numbers. For more information, including
-        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// When you start using Amazon SNS to send SMS messages, your Amazon Web Services account
+        /// is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you
+        /// to try Amazon SNS features without risking your reputation as an SMS sender. While
+        /// your Amazon Web Services account is in the SMS sandbox, you can use all of the features
+        /// of Amazon SNS. However, you can send SMS messages only to verified destination phone
+        /// numbers. For more information, including how to move out of the sandbox to send messages
+        /// without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
         /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1202,7 +1212,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.UserErrorException">
         /// Indicates that a request parameter does not comply with the associated constraints.
@@ -1515,7 +1525,7 @@ namespace Amazon.SimpleNotificationService
         #region  GetSMSAttributes
 
         /// <summary>
-        /// Returns the settings for sending SMS messages from your account.
+        /// Returns the settings for sending SMS messages from your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -1536,7 +1546,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public virtual GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request)
@@ -1587,16 +1597,18 @@ namespace Amazon.SimpleNotificationService
         #region  GetSMSSandboxAccountStatus
 
         /// <summary>
-        /// Retrieves the SMS sandbox status for the calling account in the target Region.
+        /// Retrieves the SMS sandbox status for the calling Amazon Web Services account in the
+        /// target Amazon Web Services Region.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
-        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
-        /// features without risking your reputation as an SMS sender. While your account is in
-        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-        /// SMS messages only to verified destination phone numbers. For more information, including
-        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// When you start using Amazon SNS to send SMS messages, your Amazon Web Services account
+        /// is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you
+        /// to try Amazon SNS features without risking your reputation as an SMS sender. While
+        /// your Amazon Web Services account is in the SMS sandbox, you can use all of the features
+        /// of Amazon SNS. However, you can send SMS messages only to verified destination phone
+        /// numbers. For more information, including how to move out of the sandbox to send messages
+        /// without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
         /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1611,7 +1623,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus">REST API Reference for GetSMSSandboxAccountStatus Operation</seealso>
         public virtual GetSMSSandboxAccountStatusResponse GetSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request)
@@ -1936,8 +1948,8 @@ namespace Amazon.SimpleNotificationService
         #region  ListOriginationNumbers
 
         /// <summary>
-        /// Lists the calling account's dedicated origination numbers and their metadata. For
-        /// more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination
+        /// Lists the calling Amazon Web Services account's dedicated origination numbers and
+        /// their metadata. For more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination
         /// numbers</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginationNumbers service method.</param>
@@ -1954,7 +1966,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
         /// Indicates that a parameter in the request is invalid.
@@ -2035,7 +2047,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public virtual ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request)
@@ -2195,17 +2207,18 @@ namespace Amazon.SimpleNotificationService
         #region  ListSMSSandboxPhoneNumbers
 
         /// <summary>
-        /// Lists the calling account's current verified and pending destination phone numbers
-        /// in the SMS sandbox.
+        /// Lists the calling Amazon Web Services account's current verified and pending destination
+        /// phone numbers in the SMS sandbox.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
-        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
-        /// features without risking your reputation as an SMS sender. While your account is in
-        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-        /// SMS messages only to verified destination phone numbers. For more information, including
-        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// When you start using Amazon SNS to send SMS messages, your Amazon Web Services account
+        /// is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you
+        /// to try Amazon SNS features without risking your reputation as an SMS sender. While
+        /// your Amazon Web Services account is in the SMS sandbox, you can use all of the features
+        /// of Amazon SNS. However, you can send SMS messages only to verified destination phone
+        /// numbers. For more information, including how to move out of the sandbox to send messages
+        /// without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
         /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2226,7 +2239,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers">REST API Reference for ListSMSSandboxPhoneNumbers Operation</seealso>
         public virtual ListSMSSandboxPhoneNumbersResponse ListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request)
@@ -2779,7 +2792,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public virtual OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request)
@@ -2841,12 +2854,12 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  
         /// <para>
-        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
-        /// will attempt to deliver it shortly.
+        /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
+        /// deliverers it to subscribers.
         /// </para>
         ///  
         /// <para>
-        /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
+        /// To use the <code>Publish</code> action for publishing a message to a mobile endpoint,
         /// such as an app on a Kindle device or mobile phone, you must specify the EndpointArn
         /// for the TargetArn parameter. The EndpointArn is returned when making a call with the
         /// <code>CreatePlatformEndpoint</code> action. 
@@ -2858,7 +2871,8 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same Region.
+        /// You can publish messages only to topics and endpoints in the same Amazon Web Services
+        /// Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2936,12 +2950,12 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  
         /// <para>
-        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
-        /// will attempt to deliver it shortly.
+        /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
+        /// deliverers it to subscribers.
         /// </para>
         ///  
         /// <para>
-        /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
+        /// To use the <code>Publish</code> action for publishing a message to a mobile endpoint,
         /// such as an app on a Kindle device or mobile phone, you must specify the EndpointArn
         /// for the TargetArn parameter. The EndpointArn is returned when making a call with the
         /// <code>CreatePlatformEndpoint</code> action. 
@@ -2953,7 +2967,8 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same Region.
+        /// You can publish messages only to topics and endpoints in the same Amazon Web Services
+        /// Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3033,12 +3048,12 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  
         /// <para>
-        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
-        /// will attempt to deliver it shortly.
+        /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
+        /// deliverers it to subscribers.
         /// </para>
         ///  
         /// <para>
-        /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
+        /// To use the <code>Publish</code> action for publishing a message to a mobile endpoint,
         /// such as an app on a Kindle device or mobile phone, you must specify the EndpointArn
         /// for the TargetArn parameter. The EndpointArn is returned when making a call with the
         /// <code>CreatePlatformEndpoint</code> action. 
@@ -3050,7 +3065,8 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can publish messages only to topics and endpoints in the same Region.
+        /// You can publish messages only to topics and endpoints in the same Amazon Web Services
+        /// Region.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3147,6 +3163,165 @@ namespace Amazon.SimpleNotificationService
         public virtual PublishResponse EndPublish(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PublishBatch
+
+        /// <summary>
+        /// Publishes up to ten messages to the specified topic. This is a batch version of <code>Publish</code>.
+        /// For FIFO topics, multiple messages within a single batch are published in the order
+        /// they are sent, and messages are deduplicated within the batch and across batches for
+        /// 5 minutes.
+        /// 
+        ///  
+        /// <para>
+        /// The result of publishing each message is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// <code>200</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum allowed individual message size and the maximum total payload size (the
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
+        /// bytes). 
+        /// </para>
+        ///  
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this: 
+        /// </para>
+        ///  
+        /// <para>
+        /// &amp;AttributeName.1=first
+        /// </para>
+        ///  
+        /// <para>
+        /// &amp;AttributeName.2=second
+        /// </para>
+        ///  
+        /// <para>
+        /// If you send a batch message to a topic, Amazon SNS publishes the batch message to
+        /// each endpoint that is subscribed to the topic. The format of the batch message depends
+        /// on the notification protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the batch message is saved and Amazon SNS
+        /// immediately delivers the message to subscribers.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishBatch service method.</param>
+        /// 
+        /// <returns>The response from the PublishBatch service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.BatchEntryIdsNotDistinctException">
+        /// Two or more batch entries in the request have the same <code>Id</code>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.BatchRequestTooLongException">
+        /// The length of all the batch messages put together is more than the limit.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.EmptyBatchRequestException">
+        /// The batch request doesn't contain any entries.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.EndpointDisabledException">
+        /// Exception error indicating endpoint disabled.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidBatchEntryIdException">
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterValueException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidSecurityException">
+        /// The credential signature isn't valid. You must use an HTTPS endpoint and sign your
+        /// request using Signature Version 4.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.KMSDisabledException">
+        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service
+        /// Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.KMSOptInRequiredException">
+        /// The Amazon Web Services access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>Key Management Service Developer Guide.</i>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
+        /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
+        /// Exception error indicating platform application disabled.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.TooManyEntriesInBatchRequestException">
+        /// The batch request contains more entries than permissible.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">REST API Reference for PublishBatch Operation</seealso>
+        public virtual PublishBatchResponse PublishBatch(PublishBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishBatchResponseUnmarshaller.Instance;
+
+            return Invoke<PublishBatchResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishBatch operation on AmazonSimpleNotificationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishBatch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">REST API Reference for PublishBatch Operation</seealso>
+        public virtual IAsyncResult BeginPublishBatch(PublishBatchRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PublishBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishBatchResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PublishBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishBatch.</param>
+        /// 
+        /// <returns>Returns a  PublishBatchResult from SimpleNotificationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">REST API Reference for PublishBatch Operation</seealso>
+        public virtual PublishBatchResponse EndPublishBatch(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PublishBatchResponse>(asyncResult);
         }
 
         #endregion
@@ -3420,7 +3595,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public virtual SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request)
@@ -3482,9 +3657,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your account exceeds the limit. To
-        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
-        /// Support Center.
+        /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
+        /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3516,9 +3691,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your account exceeds the limit. To
-        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
-        /// Support Center.
+        /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
+        /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3684,8 +3859,9 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
-        /// or if the endpoint and the topic are not in the same account, the endpoint owner must
-        /// run the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// or if the endpoint and the topic are not in the same Amazon Web Services account,
+        /// the endpoint owner must run the <code>ConfirmSubscription</code> action to confirm
+        /// the subscription.
         /// 
         ///  
         /// <para>
@@ -3706,9 +3882,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your account exceeds the limit. To
-        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
-        /// Support Center.
+        /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
+        /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3739,8 +3915,9 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
-        /// or if the endpoint and the topic are not in the same account, the endpoint owner must
-        /// run the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// or if the endpoint and the topic are not in the same Amazon Web Services account,
+        /// the endpoint owner must run the <code>ConfirmSubscription</code> action to confirm
+        /// the subscription.
         /// 
         ///  
         /// <para>
@@ -3759,9 +3936,9 @@ namespace Amazon.SimpleNotificationService
         /// Indicates that the user has been denied access to the requested resource.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
-        /// Indicates that the number of filter polices in your account exceeds the limit. To
-        /// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services
-        /// Support Center.
+        /// Indicates that the number of filter polices in your Amazon Web Services account exceeds
+        /// the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in
+        /// the Amazon Web Services Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -3854,8 +4031,8 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Tagging actions are limited to 10 TPS per account, per Region. If your application
-        /// requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
+        /// Tagging actions are limited to 10 TPS per Amazon Web Services account, per Amazon
+        /// Web Services Region. If your application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical
         /// support request</a>.
         /// </para>
         ///  </li> </ul>
@@ -4137,16 +4314,17 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Verifies a destination phone number with a one-time password (OTP) for the calling
-        /// account.
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// When you start using Amazon SNS to send SMS messages, your account is in the <i>SMS
-        /// sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS
-        /// features without risking your reputation as an SMS sender. While your account is in
-        /// the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-        /// SMS messages only to verified destination phone numbers. For more information, including
-        /// how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
+        /// When you start using Amazon SNS to send SMS messages, your Amazon Web Services account
+        /// is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you
+        /// to try Amazon SNS features without risking your reputation as an SMS sender. While
+        /// your Amazon Web Services account is in the SMS sandbox, you can use all of the features
+        /// of Amazon SNS. However, you can send SMS messages only to verified destination phone
+        /// numbers. For more information, including how to move out of the sandbox to send messages
+        /// without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS
         /// sandbox</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4167,7 +4345,7 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.ThrottledException">
         /// Indicates that the rate at which requests have been submitted for this action exceeds
-        /// the limit for your account.
+        /// the limit for your Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.VerificationException">
         /// Indicates that the one-time password (OTP) used for verification is invalid.

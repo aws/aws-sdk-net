@@ -38,7 +38,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property IsInSandbox. 
         /// <para>
-        /// Indicates whether the calling account is in the SMS sandbox.
+        /// Indicates whether the calling Amazon Web Services account is in the SMS sandbox.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
