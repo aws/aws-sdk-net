@@ -43,7 +43,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentId. 
         /// <para>
-        ///  The identifier for the assessment. 
+        /// The unique identifier for the assessment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -62,7 +62,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlId. 
         /// <para>
-        ///  The identifier for the control. 
+        ///  The unique identifier for the control. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -81,7 +81,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlSetId. 
         /// <para>
-        ///  The identifier for the control set. 
+        ///  The unique identifier for the control set. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -100,7 +100,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Represents the maximum number of results on a page or for an API request call. 
+        /// Represents the maximum number of results on a page or for an API request call. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

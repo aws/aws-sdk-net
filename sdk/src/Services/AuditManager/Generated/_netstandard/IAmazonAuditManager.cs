@@ -1048,6 +1048,64 @@ namespace Amazon.AuditManager
 
         #endregion
                 
+        #region  GetInsights
+
+
+
+        /// <summary>
+        /// Gets the latest analytics data for all your current active assessments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsights service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">REST API Reference for GetInsights Operation</seealso>
+        Task<GetInsightsResponse> GetInsightsAsync(GetInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetInsightsByAssessment
+
+
+
+        /// <summary>
+        /// Gets the latest analytics data for a specific active assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightsByAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightsByAssessment service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">REST API Reference for GetInsightsByAssessment Operation</seealso>
+        Task<GetInsightsByAssessmentResponse> GetInsightsByAssessmentAsync(GetInsightsByAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetOrganizationAdminAccount
 
 
@@ -1133,6 +1191,48 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">REST API Reference for GetSettings Operation</seealso>
         Task<GetSettingsResponse> GetSettingsAsync(GetSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssessmentControlInsightsByControlDomain
+
+
+
+        /// <summary>
+        /// Lists the latest analytics data for controls within a specific control domain and
+        /// a specific active assessment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Control insights are listed only if the control belongs to the control domain and
+        /// assessment that was specified. Moreover, the control must have collected evidence
+        /// on the <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>.
+        /// If neither of these conditions are met, no data is listed for that control. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentControlInsightsByControlDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssessmentControlInsightsByControlDomain service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">REST API Reference for ListAssessmentControlInsightsByControlDomain Operation</seealso>
+        Task<ListAssessmentControlInsightsByControlDomainResponse> ListAssessmentControlInsightsByControlDomainAsync(ListAssessmentControlInsightsByControlDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1251,6 +1351,129 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessments">REST API Reference for ListAssessments Operation</seealso>
         Task<ListAssessmentsResponse> ListAssessmentsAsync(ListAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListControlDomainInsights
+
+
+
+        /// <summary>
+        /// Lists the latest analytics data for control domains across all of your active assessments.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A control domain is listed only if at least one of the controls within that domain
+        /// collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>.
+        /// If this condition isn’t met, no data is listed for that control domain.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControlDomainInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListControlDomainInsights service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">REST API Reference for ListControlDomainInsights Operation</seealso>
+        Task<ListControlDomainInsightsResponse> ListControlDomainInsightsAsync(ListControlDomainInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListControlDomainInsightsByAssessment
+
+
+
+        /// <summary>
+        /// Lists analytics data for control domains within a specified active assessment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A control domain is listed only if at least one of the controls within that domain
+        /// collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>.
+        /// If this condition isn’t met, no data is listed for that domain.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControlDomainInsightsByAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListControlDomainInsightsByAssessment service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">REST API Reference for ListControlDomainInsightsByAssessment Operation</seealso>
+        Task<ListControlDomainInsightsByAssessmentResponse> ListControlDomainInsightsByAssessmentAsync(ListControlDomainInsightsByAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListControlInsightsByControlDomain
+
+
+
+        /// <summary>
+        /// Lists the latest analytics data for controls within a specific control domain across
+        /// all active assessments.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Control insights are listed only if the control belongs to the control domain that
+        /// was specified and the control collected evidence on the <code>lastUpdated</code> date
+        /// of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no
+        /// data is listed for that control. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControlInsightsByControlDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListControlInsightsByControlDomain service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">REST API Reference for ListControlInsightsByControlDomain Operation</seealso>
+        Task<ListControlInsightsByControlDomainResponse> ListControlInsightsByControlDomainAsync(ListControlInsightsByControlDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

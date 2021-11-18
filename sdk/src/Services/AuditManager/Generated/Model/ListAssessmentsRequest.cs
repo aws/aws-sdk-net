@@ -36,6 +36,7 @@ namespace Amazon.AuditManager.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private AssessmentStatus _status;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -73,6 +74,24 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The current status of the assessment.
+        /// </para>
+        /// </summary>
+        public AssessmentStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

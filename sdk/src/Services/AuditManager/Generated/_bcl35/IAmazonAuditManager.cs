@@ -1710,6 +1710,108 @@ namespace Amazon.AuditManager
 
         #endregion
         
+        #region  GetInsights
+
+
+        /// <summary>
+        /// Gets the latest analytics data for all your current active assessments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsights service method.</param>
+        /// 
+        /// <returns>The response from the GetInsights service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">REST API Reference for GetInsights Operation</seealso>
+        GetInsightsResponse GetInsights(GetInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInsights operation on AmazonAuditManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">REST API Reference for GetInsights Operation</seealso>
+        IAsyncResult BeginGetInsights(GetInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInsights.</param>
+        /// 
+        /// <returns>Returns a  GetInsightsResult from AuditManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">REST API Reference for GetInsights Operation</seealso>
+        GetInsightsResponse EndGetInsights(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetInsightsByAssessment
+
+
+        /// <summary>
+        /// Gets the latest analytics data for a specific active assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightsByAssessment service method.</param>
+        /// 
+        /// <returns>The response from the GetInsightsByAssessment service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">REST API Reference for GetInsightsByAssessment Operation</seealso>
+        GetInsightsByAssessmentResponse GetInsightsByAssessment(GetInsightsByAssessmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInsightsByAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightsByAssessment operation on AmazonAuditManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInsightsByAssessment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">REST API Reference for GetInsightsByAssessment Operation</seealso>
+        IAsyncResult BeginGetInsightsByAssessment(GetInsightsByAssessmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInsightsByAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInsightsByAssessment.</param>
+        /// 
+        /// <returns>Returns a  GetInsightsByAssessmentResult from AuditManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">REST API Reference for GetInsightsByAssessment Operation</seealso>
+        GetInsightsByAssessmentResponse EndGetInsightsByAssessment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetOrganizationAdminAccount
 
 
@@ -1861,6 +1963,70 @@ namespace Amazon.AuditManager
         /// <returns>Returns a  GetSettingsResult from AuditManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">REST API Reference for GetSettings Operation</seealso>
         GetSettingsResponse EndGetSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAssessmentControlInsightsByControlDomain
+
+
+        /// <summary>
+        /// Lists the latest analytics data for controls within a specific control domain and
+        /// a specific active assessment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Control insights are listed only if the control belongs to the control domain and
+        /// assessment that was specified. Moreover, the control must have collected evidence
+        /// on the <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>.
+        /// If neither of these conditions are met, no data is listed for that control. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentControlInsightsByControlDomain service method.</param>
+        /// 
+        /// <returns>The response from the ListAssessmentControlInsightsByControlDomain service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">REST API Reference for ListAssessmentControlInsightsByControlDomain Operation</seealso>
+        ListAssessmentControlInsightsByControlDomainResponse ListAssessmentControlInsightsByControlDomain(ListAssessmentControlInsightsByControlDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssessmentControlInsightsByControlDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessmentControlInsightsByControlDomain operation on AmazonAuditManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssessmentControlInsightsByControlDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">REST API Reference for ListAssessmentControlInsightsByControlDomain Operation</seealso>
+        IAsyncResult BeginListAssessmentControlInsightsByControlDomain(ListAssessmentControlInsightsByControlDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssessmentControlInsightsByControlDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssessmentControlInsightsByControlDomain.</param>
+        /// 
+        /// <returns>Returns a  ListAssessmentControlInsightsByControlDomainResult from AuditManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">REST API Reference for ListAssessmentControlInsightsByControlDomain Operation</seealso>
+        ListAssessmentControlInsightsByControlDomainResponse EndListAssessmentControlInsightsByControlDomain(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2067,6 +2233,195 @@ namespace Amazon.AuditManager
         /// <returns>Returns a  ListAssessmentsResult from AuditManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessments">REST API Reference for ListAssessments Operation</seealso>
         ListAssessmentsResponse EndListAssessments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListControlDomainInsights
+
+
+        /// <summary>
+        /// Lists the latest analytics data for control domains across all of your active assessments.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A control domain is listed only if at least one of the controls within that domain
+        /// collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>.
+        /// If this condition isn’t met, no data is listed for that control domain.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControlDomainInsights service method.</param>
+        /// 
+        /// <returns>The response from the ListControlDomainInsights service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">REST API Reference for ListControlDomainInsights Operation</seealso>
+        ListControlDomainInsightsResponse ListControlDomainInsights(ListControlDomainInsightsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListControlDomainInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListControlDomainInsights operation on AmazonAuditManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListControlDomainInsights
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">REST API Reference for ListControlDomainInsights Operation</seealso>
+        IAsyncResult BeginListControlDomainInsights(ListControlDomainInsightsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListControlDomainInsights operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListControlDomainInsights.</param>
+        /// 
+        /// <returns>Returns a  ListControlDomainInsightsResult from AuditManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">REST API Reference for ListControlDomainInsights Operation</seealso>
+        ListControlDomainInsightsResponse EndListControlDomainInsights(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListControlDomainInsightsByAssessment
+
+
+        /// <summary>
+        /// Lists analytics data for control domains within a specified active assessment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A control domain is listed only if at least one of the controls within that domain
+        /// collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>.
+        /// If this condition isn’t met, no data is listed for that domain.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControlDomainInsightsByAssessment service method.</param>
+        /// 
+        /// <returns>The response from the ListControlDomainInsightsByAssessment service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">REST API Reference for ListControlDomainInsightsByAssessment Operation</seealso>
+        ListControlDomainInsightsByAssessmentResponse ListControlDomainInsightsByAssessment(ListControlDomainInsightsByAssessmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListControlDomainInsightsByAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListControlDomainInsightsByAssessment operation on AmazonAuditManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListControlDomainInsightsByAssessment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">REST API Reference for ListControlDomainInsightsByAssessment Operation</seealso>
+        IAsyncResult BeginListControlDomainInsightsByAssessment(ListControlDomainInsightsByAssessmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListControlDomainInsightsByAssessment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListControlDomainInsightsByAssessment.</param>
+        /// 
+        /// <returns>Returns a  ListControlDomainInsightsByAssessmentResult from AuditManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">REST API Reference for ListControlDomainInsightsByAssessment Operation</seealso>
+        ListControlDomainInsightsByAssessmentResponse EndListControlDomainInsightsByAssessment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListControlInsightsByControlDomain
+
+
+        /// <summary>
+        /// Lists the latest analytics data for controls within a specific control domain across
+        /// all active assessments.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Control insights are listed only if the control belongs to the control domain that
+        /// was specified and the control collected evidence on the <code>lastUpdated</code> date
+        /// of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no
+        /// data is listed for that control. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListControlInsightsByControlDomain service method.</param>
+        /// 
+        /// <returns>The response from the ListControlInsightsByControlDomain service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
+        /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">REST API Reference for ListControlInsightsByControlDomain Operation</seealso>
+        ListControlInsightsByControlDomainResponse ListControlInsightsByControlDomain(ListControlInsightsByControlDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListControlInsightsByControlDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListControlInsightsByControlDomain operation on AmazonAuditManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListControlInsightsByControlDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">REST API Reference for ListControlInsightsByControlDomain Operation</seealso>
+        IAsyncResult BeginListControlInsightsByControlDomain(ListControlInsightsByControlDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListControlInsightsByControlDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListControlInsightsByControlDomain.</param>
+        /// 
+        /// <returns>Returns a  ListControlInsightsByControlDomainResult from AuditManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">REST API Reference for ListControlInsightsByControlDomain Operation</seealso>
+        ListControlInsightsByControlDomainResponse EndListControlInsightsByControlDomain(IAsyncResult asyncResult);
 
         #endregion
         

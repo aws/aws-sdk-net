@@ -101,7 +101,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property FrameworkId. 
         /// <para>
-        ///  The identifier for the framework. 
+        ///  The unique identifier for the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

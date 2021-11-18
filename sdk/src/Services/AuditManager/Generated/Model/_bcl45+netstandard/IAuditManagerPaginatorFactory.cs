@@ -51,6 +51,11 @@ namespace Amazon.AuditManager.Model
         IGetEvidenceFoldersByAssessmentControlPaginator GetEvidenceFoldersByAssessmentControl(GetEvidenceFoldersByAssessmentControlRequest request);
 
         /// <summary>
+        /// Paginator for ListAssessmentControlInsightsByControlDomain operation
+        ///</summary>
+        IListAssessmentControlInsightsByControlDomainPaginator ListAssessmentControlInsightsByControlDomain(ListAssessmentControlInsightsByControlDomainRequest request);
+
+        /// <summary>
         /// Paginator for ListAssessmentFrameworks operation
         ///</summary>
         IListAssessmentFrameworksPaginator ListAssessmentFrameworks(ListAssessmentFrameworksRequest request);
@@ -69,6 +74,21 @@ namespace Amazon.AuditManager.Model
         /// Paginator for ListAssessments operation
         ///</summary>
         IListAssessmentsPaginator ListAssessments(ListAssessmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListControlDomainInsights operation
+        ///</summary>
+        IListControlDomainInsightsPaginator ListControlDomainInsights(ListControlDomainInsightsRequest request);
+
+        /// <summary>
+        /// Paginator for ListControlDomainInsightsByAssessment operation
+        ///</summary>
+        IListControlDomainInsightsByAssessmentPaginator ListControlDomainInsightsByAssessment(ListControlDomainInsightsByAssessmentRequest request);
+
+        /// <summary>
+        /// Paginator for ListControlInsightsByControlDomain operation
+        ///</summary>
+        IListControlInsightsByControlDomainPaginator ListControlInsightsByControlDomain(ListControlInsightsByControlDomainRequest request);
 
         /// <summary>
         /// Paginator for ListControls operation

@@ -76,6 +76,14 @@ namespace Amazon.AuditManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssessmentControlInsightsByControlDomain operation
+        ///</summary>
+        public IListAssessmentControlInsightsByControlDomainPaginator ListAssessmentControlInsightsByControlDomain(ListAssessmentControlInsightsByControlDomainRequest request) 
+        {
+            return new ListAssessmentControlInsightsByControlDomainPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssessmentFrameworks operation
         ///</summary>
         public IListAssessmentFrameworksPaginator ListAssessmentFrameworks(ListAssessmentFrameworksRequest request) 
@@ -105,6 +113,30 @@ namespace Amazon.AuditManager.Model
         public IListAssessmentsPaginator ListAssessments(ListAssessmentsRequest request) 
         {
             return new ListAssessmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListControlDomainInsights operation
+        ///</summary>
+        public IListControlDomainInsightsPaginator ListControlDomainInsights(ListControlDomainInsightsRequest request) 
+        {
+            return new ListControlDomainInsightsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListControlDomainInsightsByAssessment operation
+        ///</summary>
+        public IListControlDomainInsightsByAssessmentPaginator ListControlDomainInsightsByAssessment(ListControlDomainInsightsByAssessmentRequest request) 
+        {
+            return new ListControlDomainInsightsByAssessmentPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListControlInsightsByControlDomain operation
+        ///</summary>
+        public IListControlInsightsByControlDomainPaginator ListControlInsightsByControlDomain(ListControlInsightsByControlDomainRequest request) 
+        {
+            return new ListControlInsightsByControlDomainPaginator(this.client, request);
         }
 
         /// <summary>

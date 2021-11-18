@@ -237,6 +237,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("AuditManager")]
+        public void ListAssessmentControlInsightsByControlDomainTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAssessmentControlInsightsByControlDomainRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAssessmentControlInsightsByControlDomainResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAssessmentControlInsightsByControlDomainResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAssessmentControlInsightsByControlDomain(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAssessmentControlInsightsByControlDomain(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAssessmentControlInsightsByControlDomainTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAssessmentControlInsightsByControlDomainRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAssessmentControlInsightsByControlDomainResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAssessmentControlInsightsByControlDomain(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAssessmentControlInsightsByControlDomain(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
         public void ListAssessmentFrameworksTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListAssessmentFrameworksRequest>();
@@ -381,6 +420,123 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListAssessments(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListAssessments(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
+        public void ListControlDomainInsightsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListControlDomainInsightsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListControlDomainInsightsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListControlDomainInsightsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListControlDomainInsights(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListControlDomainInsights(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListControlDomainInsightsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListControlDomainInsightsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListControlDomainInsightsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListControlDomainInsights(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListControlDomainInsights(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
+        public void ListControlDomainInsightsByAssessmentTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListControlDomainInsightsByAssessmentRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListControlDomainInsightsByAssessmentResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListControlDomainInsightsByAssessmentResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListControlDomainInsightsByAssessment(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListControlDomainInsightsByAssessment(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListControlDomainInsightsByAssessmentTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListControlDomainInsightsByAssessmentRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListControlDomainInsightsByAssessmentResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListControlDomainInsightsByAssessment(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListControlDomainInsightsByAssessment(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
+        public void ListControlInsightsByControlDomainTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListControlInsightsByControlDomainRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListControlInsightsByControlDomainResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListControlInsightsByControlDomainResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListControlInsightsByControlDomain(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListControlInsightsByControlDomain(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("AuditManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListControlInsightsByControlDomainTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListControlInsightsByControlDomainRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListControlInsightsByControlDomainResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListControlInsightsByControlDomain(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListControlInsightsByControlDomain(request);
 
             // Should work the first time
             paginator.Responses.ToList();
