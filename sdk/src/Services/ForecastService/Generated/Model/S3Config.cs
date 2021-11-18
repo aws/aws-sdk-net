@@ -67,7 +67,7 @@ namespace Amazon.ForecastService.Model
         /// S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=7, Max=4096)]
         public string Path
         {
             get { return this._path; }

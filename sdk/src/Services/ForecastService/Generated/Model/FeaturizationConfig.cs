@@ -93,7 +93,7 @@ namespace Amazon.ForecastService.Model
         /// <code>CreatePredictor</code> request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=10)]
         public List<string> ForecastDimensions
         {
             get { return this._forecastDimensions; }
@@ -127,7 +127,7 @@ namespace Amazon.ForecastService.Model
         /// RELATED_TIME_SERIES dataset frequency.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public string ForecastFrequency
         {
             get { return this._forecastFrequency; }

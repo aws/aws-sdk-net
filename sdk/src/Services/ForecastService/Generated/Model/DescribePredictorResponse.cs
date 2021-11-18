@@ -46,6 +46,7 @@ namespace Amazon.ForecastService.Model
         private List<string> _forecastTypes = new List<string>();
         private HyperParameterTuningJobConfig _hpoConfig;
         private InputDataConfig _inputDataConfig;
+        private bool? _isAutoPredictor;
         private DateTime? _lastModificationTime;
         private string _message;
         private OptimizationMetric _optimizationMetric;
@@ -309,6 +310,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetInputDataConfig()
         {
             return this._inputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsAutoPredictor. 
+        /// <para>
+        /// Whether the predictor was created with <a>CreateAutoPredictor</a>.
+        /// </para>
+        /// </summary>
+        public bool IsAutoPredictor
+        {
+            get { return this._isAutoPredictor.GetValueOrDefault(); }
+            set { this._isAutoPredictor = value; }
+        }
+
+        // Check to see if IsAutoPredictor property is set
+        internal bool IsSetIsAutoPredictor()
+        {
+            return this._isAutoPredictor.HasValue; 
         }
 
         /// <summary>

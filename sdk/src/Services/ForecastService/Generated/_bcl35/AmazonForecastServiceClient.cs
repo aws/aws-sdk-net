@@ -255,6 +255,134 @@ namespace Amazon.ForecastService
         #endregion
 
 
+        #region  CreateAutoPredictor
+
+        /// <summary>
+        /// Creates an Amazon Forecast predictor.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Forecast creates predictors with AutoPredictor, which involves applying the
+        /// optimal combination of algorithms to each time series in your datasets. You can use
+        /// CreateAutoPredictor to create new predictors or upgrade/retrain existing predictors.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Creating new predictors</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following parameters are required when creating a new predictor:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PredictorName</code> - A unique name for the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ForecastFrequency</code> - The granularity of your forecasts (hourly, daily,
+        /// weekly, etc).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ForecastHorizon</code> - The number of time steps being forecasted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When creating a new predictor, do not specify a value for <code>ReferencePredictorArn</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Upgrading and retraining predictors</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following parameters are required when retraining or upgrading a predictor:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PredictorName</code> - A unique name for the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReferencePredictorArn</code> - The ARN of the predictor to retrain or upgrade.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code>
+        /// and <code>PredictorName</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoPredictor service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutoPredictor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">REST API Reference for CreateAutoPredictor Operation</seealso>
+        public virtual CreateAutoPredictorResponse CreateAutoPredictor(CreateAutoPredictorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoPredictorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoPredictorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutoPredictorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutoPredictor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoPredictor operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutoPredictor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">REST API Reference for CreateAutoPredictor Operation</seealso>
+        public virtual IAsyncResult BeginCreateAutoPredictor(CreateAutoPredictorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoPredictorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoPredictorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutoPredictor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutoPredictor.</param>
+        /// 
+        /// <returns>Returns a  CreateAutoPredictorResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">REST API Reference for CreateAutoPredictor Operation</seealso>
+        public virtual CreateAutoPredictorResponse EndCreateAutoPredictor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAutoPredictorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDataset
 
         /// <summary>
@@ -554,6 +682,295 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  CreateExplainability
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Explainability is only available for Forecasts and Predictors generated from an AutoPredictor
+        /// (<a>CreateAutoPredictor</a>)
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates an Amazon Forecast Explainability.
+        /// </para>
+        ///  
+        /// <para>
+        /// Explainability helps you better understand how the attributes in your datasets impact
+        /// forecast. Amazon Forecast uses a metric called Impact scores to quantify the relative
+        /// impact of each attribute and determine whether they increase or decrease forecast
+        /// values.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable Forecast Explainability, your predictor must include at least one of the
+        /// following: related time series, item metadata, or additional datasets like Holidays
+        /// and the Weather Index.
+        /// </para>
+        ///  
+        /// <para>
+        /// CreateExplainability accepts either a Predictor ARN or Forecast ARN. To receive aggregated
+        /// Impact scores for all time series and time points in your datasets, provide a Predictor
+        /// ARN. To receive Impact scores for specific time series and time points, provide a
+        /// Forecast ARN.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>CreateExplainability with a Predictor ARN</b> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can only have one Explainability resource per predictor. If you already enabled
+        /// <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>, that predictor already
+        /// has an Explainability resource.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following parameters are required when providing a Predictor ARN:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ExplainabilityName</code> - A unique name for the Explainability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ResourceArn</code> - The Arn of the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimePointGranularity</code> - Must be set to “ALL”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimeSeriesGranularity</code> - Must be set to “ALL”.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Do not specify a value for the following parameters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DataSource</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Schema</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StartDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EndDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>CreateExplainability with a Forecast ARN</b> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify a maximum of 50 time series and 1500 time points.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following parameters are required when providing a Predictor ARN:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ExplainabilityName</code> - A unique name for the Explainability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ResourceArn</code> - The Arn of the forecast.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DataSource</code> - The S3 location of the CSV file specifying your time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Schema</code> - The Schema defines the attributes and attribute types listed
+        /// in the Data Source.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you set TimePointGranularity to “SPECIFIC”, you must also provide the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>StartDateTime</code> - The first timestamp in the range of time points.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EndDateTime</code> - The last timestamp in the range of time points.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExplainability service method.</param>
+        /// 
+        /// <returns>The response from the CreateExplainability service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">REST API Reference for CreateExplainability Operation</seealso>
+        public virtual CreateExplainabilityResponse CreateExplainability(CreateExplainabilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExplainabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExplainabilityResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExplainabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExplainability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExplainability operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExplainability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">REST API Reference for CreateExplainability Operation</seealso>
+        public virtual IAsyncResult BeginCreateExplainability(CreateExplainabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExplainabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExplainabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExplainability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExplainability.</param>
+        /// 
+        /// <returns>Returns a  CreateExplainabilityResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">REST API Reference for CreateExplainability Operation</seealso>
+        public virtual CreateExplainabilityResponse EndCreateExplainability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateExplainabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateExplainabilityExport
+
+        /// <summary>
+        /// Exports an Explainability resource created by the <a>CreateExplainability</a> operation.
+        /// Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
+        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
+        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
+        /// access the export in your Amazon S3 bucket. To get the status, use the <a>DescribeExplainabilityExport</a>
+        /// operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExplainabilityExport service method.</param>
+        /// 
+        /// <returns>The response from the CreateExplainabilityExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">REST API Reference for CreateExplainabilityExport Operation</seealso>
+        public virtual CreateExplainabilityExportResponse CreateExplainabilityExport(CreateExplainabilityExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExplainabilityExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExplainabilityExportResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExplainabilityExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExplainabilityExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExplainabilityExport operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExplainabilityExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">REST API Reference for CreateExplainabilityExport Operation</seealso>
+        public virtual IAsyncResult BeginCreateExplainabilityExport(CreateExplainabilityExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExplainabilityExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExplainabilityExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExplainabilityExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExplainabilityExport.</param>
+        /// 
+        /// <returns>Returns a  CreateExplainabilityExportResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">REST API Reference for CreateExplainabilityExport Operation</seealso>
+        public virtual CreateExplainabilityExportResponse EndCreateExplainabilityExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateExplainabilityExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateForecast
 
         /// <summary>
@@ -763,8 +1180,16 @@ namespace Amazon.ForecastService
         #region  CreatePredictor
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  This operation creates a legacy predictor that does not include all the predictor
+        /// functionalities provided by Amazon Forecast. To create a predictor that is compatible
+        /// with all aspects of Forecast, use CreateAutoPredictor.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates an Amazon Forecast predictor.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// In the request, provide a dataset group and either specify an algorithm or let Amazon
@@ -1225,6 +1650,142 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DeleteExplainability
+
+        /// <summary>
+        /// Deletes an Explainability resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
+        /// To get the status, use the <a>DescribeExplainability</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExplainability service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExplainability service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">REST API Reference for DeleteExplainability Operation</seealso>
+        public virtual DeleteExplainabilityResponse DeleteExplainability(DeleteExplainabilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExplainabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExplainabilityResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExplainabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteExplainability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExplainability operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExplainability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">REST API Reference for DeleteExplainability Operation</seealso>
+        public virtual IAsyncResult BeginDeleteExplainability(DeleteExplainabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExplainabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExplainabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteExplainability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExplainability.</param>
+        /// 
+        /// <returns>Returns a  DeleteExplainabilityResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">REST API Reference for DeleteExplainability Operation</seealso>
+        public virtual DeleteExplainabilityResponse EndDeleteExplainability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteExplainabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteExplainabilityExport
+
+        /// <summary>
+        /// Deletes an Explainability export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExplainabilityExport service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExplainabilityExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">REST API Reference for DeleteExplainabilityExport Operation</seealso>
+        public virtual DeleteExplainabilityExportResponse DeleteExplainabilityExport(DeleteExplainabilityExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExplainabilityExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExplainabilityExportResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExplainabilityExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteExplainabilityExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExplainabilityExport operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExplainabilityExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">REST API Reference for DeleteExplainabilityExport Operation</seealso>
+        public virtual IAsyncResult BeginDeleteExplainabilityExport(DeleteExplainabilityExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExplainabilityExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExplainabilityExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteExplainabilityExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExplainabilityExport.</param>
+        /// 
+        /// <returns>Returns a  DeleteExplainabilityExportResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">REST API Reference for DeleteExplainabilityExport Operation</seealso>
+        public virtual DeleteExplainabilityExportResponse EndDeleteExplainabilityExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteExplainabilityExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteForecast
 
         /// <summary>
@@ -1597,6 +2158,68 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DescribeAutoPredictor
+
+        /// <summary>
+        /// Describes a predictor created using the CreateAutoPredictor operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoPredictor service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAutoPredictor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">REST API Reference for DescribeAutoPredictor Operation</seealso>
+        public virtual DescribeAutoPredictorResponse DescribeAutoPredictor(DescribeAutoPredictorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoPredictorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoPredictorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutoPredictorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAutoPredictor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoPredictor operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutoPredictor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">REST API Reference for DescribeAutoPredictor Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAutoPredictor(DescribeAutoPredictorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoPredictorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoPredictorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAutoPredictor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutoPredictor.</param>
+        /// 
+        /// <returns>Returns a  DescribeAutoPredictorResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">REST API Reference for DescribeAutoPredictor Operation</seealso>
+        public virtual DescribeAutoPredictorResponse EndDescribeAutoPredictor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAutoPredictorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDataset
 
         /// <summary>
@@ -1856,6 +2479,132 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DescribeExplainability
+
+        /// <summary>
+        /// Describes an Explainability resource created using the <a>CreateExplainability</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExplainability service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExplainability service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">REST API Reference for DescribeExplainability Operation</seealso>
+        public virtual DescribeExplainabilityResponse DescribeExplainability(DescribeExplainabilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExplainabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExplainabilityResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExplainabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExplainability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExplainability operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExplainability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">REST API Reference for DescribeExplainability Operation</seealso>
+        public virtual IAsyncResult BeginDescribeExplainability(DescribeExplainabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExplainabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExplainabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExplainability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExplainability.</param>
+        /// 
+        /// <returns>Returns a  DescribeExplainabilityResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">REST API Reference for DescribeExplainability Operation</seealso>
+        public virtual DescribeExplainabilityResponse EndDescribeExplainability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeExplainabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeExplainabilityExport
+
+        /// <summary>
+        /// Describes an Explainability export created using the <a>CreateExplainabilityExport</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExplainabilityExport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExplainabilityExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">REST API Reference for DescribeExplainabilityExport Operation</seealso>
+        public virtual DescribeExplainabilityExportResponse DescribeExplainabilityExport(DescribeExplainabilityExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExplainabilityExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExplainabilityExportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExplainabilityExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExplainabilityExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExplainabilityExport operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExplainabilityExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">REST API Reference for DescribeExplainabilityExport Operation</seealso>
+        public virtual IAsyncResult BeginDescribeExplainabilityExport(DescribeExplainabilityExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExplainabilityExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExplainabilityExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExplainabilityExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExplainabilityExport.</param>
+        /// 
+        /// <returns>Returns a  DescribeExplainabilityExportResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">REST API Reference for DescribeExplainabilityExport Operation</seealso>
+        public virtual DescribeExplainabilityExportResponse EndDescribeExplainabilityExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeExplainabilityExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeForecast
 
         /// <summary>
@@ -2033,8 +2782,19 @@ namespace Amazon.ForecastService
         #region  DescribePredictor
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  This operation is only valid for legacy predictors created with CreatePredictor.
+        /// If you are not using a legacy predictor, use DescribeAutoPredictor.
+        /// </para>
+        ///  
+        /// <para>
+        /// To upgrade a legacy predictor to AutoPredictor, see Upgrading to AutoPredictor.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes a predictor created using the <a>CreatePredictor</a> operation.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// In addition to listing the properties provided in the <code>CreatePredictor</code>
@@ -2483,6 +3243,144 @@ namespace Amazon.ForecastService
         public virtual ListDatasetsResponse EndListDatasets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDatasetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExplainabilities
+
+        /// <summary>
+        /// Returns a list of Explainability resources created using the <a>CreateExplainability</a>
+        /// operation. This operation returns a summary for each Explainability. You can filter
+        /// the list using an array of <a>Filter</a> objects.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve the complete set of properties for a particular Explainability resource,
+        /// use the ARN with the <a>DescribeExplainability</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExplainabilities service method.</param>
+        /// 
+        /// <returns>The response from the ListExplainabilities service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">REST API Reference for ListExplainabilities Operation</seealso>
+        public virtual ListExplainabilitiesResponse ListExplainabilities(ListExplainabilitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExplainabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExplainabilitiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListExplainabilitiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExplainabilities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExplainabilities operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExplainabilities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">REST API Reference for ListExplainabilities Operation</seealso>
+        public virtual IAsyncResult BeginListExplainabilities(ListExplainabilitiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExplainabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExplainabilitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExplainabilities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExplainabilities.</param>
+        /// 
+        /// <returns>Returns a  ListExplainabilitiesResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">REST API Reference for ListExplainabilities Operation</seealso>
+        public virtual ListExplainabilitiesResponse EndListExplainabilities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExplainabilitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExplainabilityExports
+
+        /// <summary>
+        /// Returns a list of Explainability exports created using the <a>CreateExplainabilityExport</a>
+        /// operation. This operation returns a summary for each Explainability export. You can
+        /// filter the list using an array of <a>Filter</a> objects.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve the complete set of properties for a particular Explainability export,
+        /// use the ARN with the <a>DescribeExplainability</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExplainabilityExports service method.</param>
+        /// 
+        /// <returns>The response from the ListExplainabilityExports service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">REST API Reference for ListExplainabilityExports Operation</seealso>
+        public virtual ListExplainabilityExportsResponse ListExplainabilityExports(ListExplainabilityExportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExplainabilityExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExplainabilityExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExplainabilityExportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExplainabilityExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExplainabilityExports operation on AmazonForecastServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExplainabilityExports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">REST API Reference for ListExplainabilityExports Operation</seealso>
+        public virtual IAsyncResult BeginListExplainabilityExports(ListExplainabilityExportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExplainabilityExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExplainabilityExportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExplainabilityExports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExplainabilityExports.</param>
+        /// 
+        /// <returns>Returns a  ListExplainabilityExportsResult from ForecastService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">REST API Reference for ListExplainabilityExports Operation</seealso>
+        public virtual ListExplainabilityExportsResponse EndListExplainabilityExports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExplainabilityExportsResponse>(asyncResult);
         }
 
         #endregion

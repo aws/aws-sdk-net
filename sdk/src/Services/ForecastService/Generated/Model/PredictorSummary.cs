@@ -37,10 +37,12 @@ namespace Amazon.ForecastService.Model
     {
         private DateTime? _creationTime;
         private string _datasetGroupArn;
+        private bool? _isAutoPredictor;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _predictorArn;
         private string _predictorName;
+        private ReferencePredictorSummary _referencePredictorSummary;
         private string _status;
 
         /// <summary>
@@ -79,6 +81,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDatasetGroupArn()
         {
             return this._datasetGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsAutoPredictor. 
+        /// <para>
+        /// Whether AutoPredictor was used to create the predictor.
+        /// </para>
+        /// </summary>
+        public bool IsAutoPredictor
+        {
+            get { return this._isAutoPredictor.GetValueOrDefault(); }
+            set { this._isAutoPredictor = value; }
+        }
+
+        // Check to see if IsAutoPredictor property is set
+        internal bool IsSetIsAutoPredictor()
+        {
+            return this._isAutoPredictor.HasValue; 
         }
 
         /// <summary>
@@ -175,6 +195,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetPredictorName()
         {
             return this._predictorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReferencePredictorSummary. 
+        /// <para>
+        /// A summary of the reference predictor used if the predictor was retrained or upgraded.
+        /// </para>
+        /// </summary>
+        public ReferencePredictorSummary ReferencePredictorSummary
+        {
+            get { return this._referencePredictorSummary; }
+            set { this._referencePredictorSummary = value; }
+        }
+
+        // Check to see if ReferencePredictorSummary property is set
+        internal bool IsSetReferencePredictorSummary()
+        {
+            return this._referencePredictorSummary != null;
         }
 
         /// <summary>

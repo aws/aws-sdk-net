@@ -76,6 +76,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatasetGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsAutoPredictor", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsAutoPredictor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PredictorName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReferencePredictorSummary", targetDepth))
+                {
+                    var unmarshaller = ReferencePredictorSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ReferencePredictorSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

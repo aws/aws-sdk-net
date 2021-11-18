@@ -35,6 +35,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ForecastSummary
     {
+        private bool? _createdUsingAutoPredictor;
         private DateTime? _creationTime;
         private string _datasetGroupArn;
         private string _forecastArn;
@@ -43,6 +44,21 @@ namespace Amazon.ForecastService.Model
         private string _message;
         private string _predictorArn;
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property CreatedUsingAutoPredictor.
+        /// </summary>
+        public bool CreatedUsingAutoPredictor
+        {
+            get { return this._createdUsingAutoPredictor.GetValueOrDefault(); }
+            set { this._createdUsingAutoPredictor = value; }
+        }
+
+        // Check to see if CreatedUsingAutoPredictor property is set
+        internal bool IsSetCreatedUsingAutoPredictor()
+        {
+            return this._createdUsingAutoPredictor.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 

@@ -74,6 +74,7 @@ namespace Amazon.ForecastService.Model
         /// example, "M" indicates every month and "30min" indicates every 30 minutes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public string DataFrequency
         {
             get { return this._dataFrequency; }

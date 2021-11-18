@@ -34,6 +34,7 @@ namespace Amazon.ForecastService.Model
     public partial class GetAccuracyMetricsResponse : AmazonWebServiceResponse
     {
         private AutoMLOverrideStrategy _autoMLOverrideStrategy;
+        private bool? _isAutoPredictor;
         private OptimizationMetric _optimizationMetric;
         private List<EvaluationResult> _predictorEvaluationResults = new List<EvaluationResult>();
 
@@ -64,6 +65,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetAutoMLOverrideStrategy()
         {
             return this._autoMLOverrideStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsAutoPredictor. 
+        /// <para>
+        /// Whether the predictor was created with <a>CreateAutoPredictor</a>.
+        /// </para>
+        /// </summary>
+        public bool IsAutoPredictor
+        {
+            get { return this._isAutoPredictor.GetValueOrDefault(); }
+            set { this._isAutoPredictor = value; }
+        }
+
+        // Check to see if IsAutoPredictor property is set
+        internal bool IsSetIsAutoPredictor()
+        {
+            return this._isAutoPredictor.HasValue; 
         }
 
         /// <summary>

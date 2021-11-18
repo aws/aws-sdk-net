@@ -97,6 +97,7 @@ namespace Amazon.ForecastService.Model
         /// example, "D" indicates every day and "15min" indicates every 15 minutes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=5)]
         public string DataFrequency
         {
             get { return this._dataFrequency; }

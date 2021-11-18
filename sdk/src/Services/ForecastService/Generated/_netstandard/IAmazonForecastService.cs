@@ -42,6 +42,98 @@ namespace Amazon.ForecastService
         IForecastServicePaginatorFactory Paginators { get; }
 #endif
                 
+        #region  CreateAutoPredictor
+
+
+
+        /// <summary>
+        /// Creates an Amazon Forecast predictor.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Forecast creates predictors with AutoPredictor, which involves applying the
+        /// optimal combination of algorithms to each time series in your datasets. You can use
+        /// CreateAutoPredictor to create new predictors or upgrade/retrain existing predictors.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Creating new predictors</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following parameters are required when creating a new predictor:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PredictorName</code> - A unique name for the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ForecastFrequency</code> - The granularity of your forecasts (hourly, daily,
+        /// weekly, etc).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ForecastHorizon</code> - The number of time steps being forecasted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When creating a new predictor, do not specify a value for <code>ReferencePredictorArn</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Upgrading and retraining predictors</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following parameters are required when retraining or upgrading a predictor:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PredictorName</code> - A unique name for the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReferencePredictorArn</code> - The ARN of the predictor to retrain or upgrade.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code>
+        /// and <code>PredictorName</code>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoPredictor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutoPredictor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">REST API Reference for CreateAutoPredictor Operation</seealso>
+        Task<CreateAutoPredictorResponse> CreateAutoPredictorAsync(CreateAutoPredictorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDataset
 
 
@@ -233,6 +325,223 @@ namespace Amazon.ForecastService
 
         #endregion
                 
+        #region  CreateExplainability
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Explainability is only available for Forecasts and Predictors generated from an AutoPredictor
+        /// (<a>CreateAutoPredictor</a>)
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates an Amazon Forecast Explainability.
+        /// </para>
+        ///  
+        /// <para>
+        /// Explainability helps you better understand how the attributes in your datasets impact
+        /// forecast. Amazon Forecast uses a metric called Impact scores to quantify the relative
+        /// impact of each attribute and determine whether they increase or decrease forecast
+        /// values.
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable Forecast Explainability, your predictor must include at least one of the
+        /// following: related time series, item metadata, or additional datasets like Holidays
+        /// and the Weather Index.
+        /// </para>
+        ///  
+        /// <para>
+        /// CreateExplainability accepts either a Predictor ARN or Forecast ARN. To receive aggregated
+        /// Impact scores for all time series and time points in your datasets, provide a Predictor
+        /// ARN. To receive Impact scores for specific time series and time points, provide a
+        /// Forecast ARN.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>CreateExplainability with a Predictor ARN</b> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can only have one Explainability resource per predictor. If you already enabled
+        /// <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>, that predictor already
+        /// has an Explainability resource.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following parameters are required when providing a Predictor ARN:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ExplainabilityName</code> - A unique name for the Explainability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ResourceArn</code> - The Arn of the predictor.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimePointGranularity</code> - Must be set to “ALL”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimeSeriesGranularity</code> - Must be set to “ALL”.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Do not specify a value for the following parameters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DataSource</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Schema</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StartDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EndDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>CreateExplainability with a Forecast ARN</b> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify a maximum of 50 time series and 1500 time points.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The following parameters are required when providing a Predictor ARN:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ExplainabilityName</code> - A unique name for the Explainability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ResourceArn</code> - The Arn of the forecast.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DataSource</code> - The S3 location of the CSV file specifying your time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Schema</code> - The Schema defines the attributes and attribute types listed
+        /// in the Data Source.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you set TimePointGranularity to “SPECIFIC”, you must also provide the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>StartDateTime</code> - The first timestamp in the range of time points.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EndDateTime</code> - The last timestamp in the range of time points.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExplainability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExplainability service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">REST API Reference for CreateExplainability Operation</seealso>
+        Task<CreateExplainabilityResponse> CreateExplainabilityAsync(CreateExplainabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateExplainabilityExport
+
+
+
+        /// <summary>
+        /// Exports an Explainability resource created by the <a>CreateExplainability</a> operation.
+        /// Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
+        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
+        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
+        /// access the export in your Amazon S3 bucket. To get the status, use the <a>DescribeExplainabilityExport</a>
+        /// operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExplainabilityExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExplainabilityExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">REST API Reference for CreateExplainabilityExport Operation</seealso>
+        Task<CreateExplainabilityExportResponse> CreateExplainabilityExportAsync(CreateExplainabilityExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateForecast
 
 
@@ -372,8 +681,16 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  This operation creates a legacy predictor that does not include all the predictor
+        /// functionalities provided by Amazon Forecast. To create a predictor that is compatible
+        /// with all aspects of Forecast, use CreateAutoPredictor.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates an Amazon Forecast predictor.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// In the request, provide a dataset group and either specify an algorithm or let Amazon
@@ -652,6 +969,70 @@ namespace Amazon.ForecastService
 
         #endregion
                 
+        #region  DeleteExplainability
+
+
+
+        /// <summary>
+        /// Deletes an Explainability resource.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>.
+        /// To get the status, use the <a>DescribeExplainability</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExplainability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExplainability service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">REST API Reference for DeleteExplainability Operation</seealso>
+        Task<DeleteExplainabilityResponse> DeleteExplainabilityAsync(DeleteExplainabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteExplainabilityExport
+
+
+
+        /// <summary>
+        /// Deletes an Explainability export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExplainabilityExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExplainabilityExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">REST API Reference for DeleteExplainabilityExport Operation</seealso>
+        Task<DeleteExplainabilityExportResponse> DeleteExplainabilityExportAsync(DeleteExplainabilityExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteForecast
 
 
@@ -844,6 +1225,32 @@ namespace Amazon.ForecastService
 
         #endregion
                 
+        #region  DescribeAutoPredictor
+
+
+
+        /// <summary>
+        /// Describes a predictor created using the CreateAutoPredictor operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoPredictor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAutoPredictor service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">REST API Reference for DescribeAutoPredictor Operation</seealso>
+        Task<DescribeAutoPredictorResponse> DescribeAutoPredictorAsync(DescribeAutoPredictorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeDataset
 
 
@@ -995,6 +1402,60 @@ namespace Amazon.ForecastService
 
         #endregion
                 
+        #region  DescribeExplainability
+
+
+
+        /// <summary>
+        /// Describes an Explainability resource created using the <a>CreateExplainability</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExplainability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExplainability service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">REST API Reference for DescribeExplainability Operation</seealso>
+        Task<DescribeExplainabilityResponse> DescribeExplainabilityAsync(DescribeExplainabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeExplainabilityExport
+
+
+
+        /// <summary>
+        /// Describes an Explainability export created using the <a>CreateExplainabilityExport</a>
+        /// operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExplainabilityExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExplainabilityExport service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">REST API Reference for DescribeExplainabilityExport Operation</seealso>
+        Task<DescribeExplainabilityExportResponse> DescribeExplainabilityExportAsync(DescribeExplainabilityExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeForecast
 
 
@@ -1102,8 +1563,19 @@ namespace Amazon.ForecastService
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        ///  This operation is only valid for legacy predictors created with CreatePredictor.
+        /// If you are not using a legacy predictor, use DescribeAutoPredictor.
+        /// </para>
+        ///  
+        /// <para>
+        /// To upgrade a legacy predictor to AutoPredictor, see Upgrading to AutoPredictor.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes a predictor created using the <a>CreatePredictor</a> operation.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// In addition to listing the properties provided in the <code>CreatePredictor</code>
@@ -1335,6 +1807,72 @@ namespace Amazon.ForecastService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListExplainabilities
+
+
+
+        /// <summary>
+        /// Returns a list of Explainability resources created using the <a>CreateExplainability</a>
+        /// operation. This operation returns a summary for each Explainability. You can filter
+        /// the list using an array of <a>Filter</a> objects.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve the complete set of properties for a particular Explainability resource,
+        /// use the ARN with the <a>DescribeExplainability</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExplainabilities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExplainabilities service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">REST API Reference for ListExplainabilities Operation</seealso>
+        Task<ListExplainabilitiesResponse> ListExplainabilitiesAsync(ListExplainabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListExplainabilityExports
+
+
+
+        /// <summary>
+        /// Returns a list of Explainability exports created using the <a>CreateExplainabilityExport</a>
+        /// operation. This operation returns a summary for each Explainability export. You can
+        /// filter the list using an array of <a>Filter</a> objects.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve the complete set of properties for a particular Explainability export,
+        /// use the ARN with the <a>DescribeExplainability</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExplainabilityExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExplainabilityExports service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">REST API Reference for ListExplainabilityExports Operation</seealso>
+        Task<ListExplainabilityExportsResponse> ListExplainabilityExportsAsync(ListExplainabilityExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

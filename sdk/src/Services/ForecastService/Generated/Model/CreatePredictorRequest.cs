@@ -30,8 +30,16 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePredictor operation.
+    /// <note> 
+    /// <para>
+    ///  This operation creates a legacy predictor that does not include all the predictor
+    /// functionalities provided by Amazon Forecast. To create a predictor that is compatible
+    /// with all aspects of Forecast, use CreateAutoPredictor.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Creates an Amazon Forecast predictor.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// In the request, provide a dataset group and either specify an algorithm or let Amazon

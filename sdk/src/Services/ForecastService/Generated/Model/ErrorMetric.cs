@@ -46,6 +46,7 @@ namespace Amazon.ForecastService.Model
         ///  The Forecast type used to compute WAPE, MAPE, MASE, and RMSE. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=4)]
         public string ForecastType
         {
             get { return this._forecastType; }

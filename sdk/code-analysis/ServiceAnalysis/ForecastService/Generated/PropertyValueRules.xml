@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateAutoPredictorRequest.ForecastFrequency</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^Y|M|W|D|H|30min|15min|10min|5min|1min$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateAutoPredictorRequest.PredictorName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateAutoPredictorRequest.ReferencePredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateAutoPredictorResponse.PredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetRequest.DataFrequency</property>
+    <min>1</min>
+    <max>5</max>
     <pattern>^Y|M|W|D|H|30min|15min|10min|5min|1min$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -50,6 +72,44 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetImportJobResponse.DatasetImportJobArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityRequest.EndDateTime</property>
+    <max>19</max>
+    <pattern>^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityRequest.ExplainabilityName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityRequest.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityRequest.StartDateTime</property>
+    <max>19</max>
+    <pattern>^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityResponse.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityExportRequest.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityExportRequest.ExplainabilityExportName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateExplainabilityExportResponse.ExplainabilityExportArn</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -121,6 +181,14 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.DeleteExplainabilityRequest.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DeleteExplainabilityExportRequest.ExplainabilityExportArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.DeleteForecastRequest.ForecastArn</property>
     <max>256</max>
   </property-value-rule>
@@ -141,11 +209,37 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeAutoPredictorRequest.PredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeAutoPredictorResponse.ForecastFrequency</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^Y|M|W|D|H|30min|15min|10min|5min|1min$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeAutoPredictorResponse.PredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeAutoPredictorResponse.PredictorName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeAutoPredictorResponse.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetRequest.DatasetArn</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetResponse.DataFrequency</property>
+    <min>1</min>
+    <max>5</max>
     <pattern>^Y|M|W|D|H|30min|15min|10min|5min|1min$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -214,6 +308,60 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.TimeZone</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityRequest.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityResponse.EndDateTime</property>
+    <max>19</max>
+    <pattern>^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityResponse.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityResponse.ExplainabilityName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityResponse.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityResponse.StartDateTime</property>
+    <max>19</max>
+    <pattern>^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityResponse.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityExportRequest.ExplainabilityExportArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityExportResponse.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityExportResponse.ExplainabilityExportArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityExportResponse.ExplainabilityExportName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeExplainabilityExportResponse.Status</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -323,11 +471,13 @@
     <property>Amazon.ForecastService.Model.ListDatasetGroupsRequest.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListDatasetGroupsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListDatasetImportJobsRequest.MaxResults</property>
@@ -338,11 +488,13 @@
     <property>Amazon.ForecastService.Model.ListDatasetImportJobsRequest.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListDatasetImportJobsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListDatasetsRequest.MaxResults</property>
@@ -353,11 +505,47 @@
     <property>Amazon.ForecastService.Model.ListDatasetsRequest.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListDatasetsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListExplainabilitiesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListExplainabilitiesRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListExplainabilitiesResponse.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListExplainabilityExportsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListExplainabilityExportsRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListExplainabilityExportsResponse.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListForecastExportJobsRequest.MaxResults</property>
@@ -368,11 +556,13 @@
     <property>Amazon.ForecastService.Model.ListForecastExportJobsRequest.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListForecastExportJobsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListForecastsRequest.MaxResults</property>
@@ -383,11 +573,13 @@
     <property>Amazon.ForecastService.Model.ListForecastsRequest.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListForecastsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListPredictorBacktestExportJobsRequest.MaxResults</property>
@@ -398,11 +590,13 @@
     <property>Amazon.ForecastService.Model.ListPredictorBacktestExportJobsRequest.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListPredictorBacktestExportJobsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListPredictorsRequest.MaxResults</property>
@@ -413,11 +607,13 @@
     <property>Amazon.ForecastService.Model.ListPredictorsRequest.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListPredictorsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
+    <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -440,6 +636,18 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.AdditionalDataset.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.AttributeConfig.AttributeName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.CategoricalParameterRange.Name</property>
     <min>1</min>
     <max>63</max>
@@ -450,6 +658,10 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DataConfig.DatasetGroupArn</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DatasetGroupSummary.DatasetGroupArn</property>
@@ -496,10 +708,52 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ErrorMetric.ForecastType</property>
+    <min>2</min>
+    <max>4</max>
     <pattern>(^0?\.\d\d?$|^mean$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.EvaluationResult.AlgorithmArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilityExportSummary.ExplainabilityExportArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilityExportSummary.ExplainabilityExportName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilityExportSummary.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilityInfo.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilityInfo.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilitySummary.ExplainabilityArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilitySummary.ExplainabilityName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilitySummary.ResourceArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ExplainabilitySummary.Status</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -510,6 +764,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.FeaturizationConfig.ForecastFrequency</property>
+    <min>1</min>
+    <max>5</max>
     <pattern>^Y|M|W|D|H|30min|15min|10min|5min|1min$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -603,12 +859,18 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.ReferencePredictorSummary.Arn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.S3Config.KMSKeyArn</property>
     <max>256</max>
     <pattern>arn:aws:kms:.*:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.S3Config.Path</property>
+    <min>7</min>
+    <max>4096</max>
     <pattern>^s3://[a-z0-9].+$</pattern>
   </property-value-rule>
   <property-value-rule>

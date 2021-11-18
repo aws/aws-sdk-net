@@ -57,6 +57,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.AutoMLOverrideStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsAutoPredictor", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsAutoPredictor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OptimizationMetric", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

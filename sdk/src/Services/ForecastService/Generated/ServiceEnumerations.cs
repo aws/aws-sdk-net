@@ -93,6 +93,10 @@ namespace Amazon.ForecastService
     {
 
         /// <summary>
+        /// Constant AccuracyOptimized for AutoMLOverrideStrategy
+        /// </summary>
+        public static readonly AutoMLOverrideStrategy AccuracyOptimized = new AutoMLOverrideStrategy("AccuracyOptimized");
+        /// <summary>
         /// Constant LatencyOptimized for AutoMLOverrideStrategy
         /// </summary>
         public static readonly AutoMLOverrideStrategy LatencyOptimized = new AutoMLOverrideStrategy("LatencyOptimized");
@@ -516,6 +520,156 @@ namespace Amazon.ForecastService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type State.
+    /// </summary>
+    public class State : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for State
+        /// </summary>
+        public static readonly State Active = new State("Active");
+        /// <summary>
+        /// Constant Deleted for State
+        /// </summary>
+        public static readonly State Deleted = new State("Deleted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public State(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static State FindValue(string value)
+        {
+            return FindValue<State>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator State(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimePointGranularity.
+    /// </summary>
+    public class TimePointGranularity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for TimePointGranularity
+        /// </summary>
+        public static readonly TimePointGranularity ALL = new TimePointGranularity("ALL");
+        /// <summary>
+        /// Constant SPECIFIC for TimePointGranularity
+        /// </summary>
+        public static readonly TimePointGranularity SPECIFIC = new TimePointGranularity("SPECIFIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimePointGranularity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimePointGranularity FindValue(string value)
+        {
+            return FindValue<TimePointGranularity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimePointGranularity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeSeriesGranularity.
+    /// </summary>
+    public class TimeSeriesGranularity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for TimeSeriesGranularity
+        /// </summary>
+        public static readonly TimeSeriesGranularity ALL = new TimeSeriesGranularity("ALL");
+        /// <summary>
+        /// Constant SPECIFIC for TimeSeriesGranularity
+        /// </summary>
+        public static readonly TimeSeriesGranularity SPECIFIC = new TimeSeriesGranularity("SPECIFIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeSeriesGranularity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeSeriesGranularity FindValue(string value)
+        {
+            return FindValue<TimeSeriesGranularity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeSeriesGranularity(string value)
         {
             return FindValue(value);
         }
