@@ -245,7 +245,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_ALL }
             });
 
-            Assert.AreEqual(11, attrResults.Attributes.Count);
+            // if a new attribute has been added, then it's necessary to also update
+            // SQSConstants and the GetQueueAttributesResponse.Extensions
+            Assert.AreEqual(12, attrResults.Attributes.Count);
+
             Assert.AreEqual(int.Parse(defaultTimeout), int.Parse(attrResults.Attributes[SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT]));
             Assert.AreEqual(false, attrResults.FifoQueue);
             Assert.AreEqual(false, attrResults.ContentBasedDeduplication.HasValue);
