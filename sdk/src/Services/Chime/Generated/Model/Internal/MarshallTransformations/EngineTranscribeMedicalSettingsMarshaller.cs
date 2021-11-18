@@ -45,6 +45,12 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EngineTranscribeMedicalSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContentIdentificationType())
+            {
+                context.Writer.WritePropertyName("ContentIdentificationType");
+                context.Writer.Write(requestObject.ContentIdentificationType);
+            }
+
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");

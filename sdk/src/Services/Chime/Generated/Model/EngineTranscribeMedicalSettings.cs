@@ -33,11 +33,31 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class EngineTranscribeMedicalSettings
     {
+        private TranscribeMedicalContentIdentificationType _contentIdentificationType;
         private TranscribeMedicalLanguageCode _languageCode;
         private TranscribeMedicalRegion _region;
         private TranscribeMedicalSpecialty _specialty;
         private TranscribeMedicalType _type;
         private string _vocabularyName;
+
+        /// <summary>
+        /// Gets and sets the property ContentIdentificationType. 
+        /// <para>
+        /// Set this field to <code>PHI</code> to identify personal health information in the
+        /// transcription output.
+        /// </para>
+        /// </summary>
+        public TranscribeMedicalContentIdentificationType ContentIdentificationType
+        {
+            get { return this._contentIdentificationType; }
+            set { this._contentIdentificationType = value; }
+        }
+
+        // Check to see if ContentIdentificationType property is set
+        internal bool IsSetContentIdentificationType()
+        {
+            return this._contentIdentificationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 

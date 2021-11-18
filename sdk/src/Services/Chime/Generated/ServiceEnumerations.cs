@@ -2023,6 +2023,98 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type TranscribeContentIdentificationType.
+    /// </summary>
+    public class TranscribeContentIdentificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PII for TranscribeContentIdentificationType
+        /// </summary>
+        public static readonly TranscribeContentIdentificationType PII = new TranscribeContentIdentificationType("PII");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranscribeContentIdentificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscribeContentIdentificationType FindValue(string value)
+        {
+            return FindValue<TranscribeContentIdentificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscribeContentIdentificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TranscribeContentRedactionType.
+    /// </summary>
+    public class TranscribeContentRedactionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PII for TranscribeContentRedactionType
+        /// </summary>
+        public static readonly TranscribeContentRedactionType PII = new TranscribeContentRedactionType("PII");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranscribeContentRedactionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscribeContentRedactionType FindValue(string value)
+        {
+            return FindValue<TranscribeContentRedactionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscribeContentRedactionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TranscribeLanguageCode.
     /// </summary>
     public class TranscribeLanguageCode : ConstantClass
@@ -2106,6 +2198,52 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TranscribeLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TranscribeMedicalContentIdentificationType.
+    /// </summary>
+    public class TranscribeMedicalContentIdentificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PHI for TranscribeMedicalContentIdentificationType
+        /// </summary>
+        public static readonly TranscribeMedicalContentIdentificationType PHI = new TranscribeMedicalContentIdentificationType("PHI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranscribeMedicalContentIdentificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscribeMedicalContentIdentificationType FindValue(string value)
+        {
+            return FindValue<TranscribeMedicalContentIdentificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscribeMedicalContentIdentificationType(string value)
         {
             return FindValue(value);
         }
@@ -2338,6 +2476,60 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TranscribeMedicalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TranscribePartialResultsStability.
+    /// </summary>
+    public class TranscribePartialResultsStability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for TranscribePartialResultsStability
+        /// </summary>
+        public static readonly TranscribePartialResultsStability High = new TranscribePartialResultsStability("high");
+        /// <summary>
+        /// Constant Low for TranscribePartialResultsStability
+        /// </summary>
+        public static readonly TranscribePartialResultsStability Low = new TranscribePartialResultsStability("low");
+        /// <summary>
+        /// Constant Medium for TranscribePartialResultsStability
+        /// </summary>
+        public static readonly TranscribePartialResultsStability Medium = new TranscribePartialResultsStability("medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranscribePartialResultsStability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscribePartialResultsStability FindValue(string value)
+        {
+            return FindValue<TranscribePartialResultsStability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscribePartialResultsStability(string value)
         {
             return FindValue(value);
         }
