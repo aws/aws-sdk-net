@@ -272,17 +272,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -316,17 +313,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -366,9 +360,6 @@ namespace Amazon.RedshiftDataAPIService
         /// <param name="request">Container for the necessary parameters to execute the CancelStatement service method.</param>
         /// 
         /// <returns>The response from the CancelStatement service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -398,9 +389,6 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the CancelStatement service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -496,26 +484,20 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTable service method.</param>
         /// 
         /// <returns>The response from the DescribeTable service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -541,17 +523,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -561,9 +540,6 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the DescribeTable service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -592,17 +568,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -636,17 +609,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -748,26 +718,20 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatabases service method.</param>
         /// 
         /// <returns>The response from the ListDatabases service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -792,17 +756,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -812,9 +773,6 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the ListDatabases service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -843,26 +801,20 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
         /// 
         /// <returns>The response from the ListSchemas service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -887,17 +839,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -907,9 +856,6 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the ListSchemas service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -994,26 +940,20 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
         /// 
         /// <returns>The response from the ListTables service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -1039,17 +979,14 @@ namespace Amazon.RedshiftDataAPIService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-        /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-        /// Name (ARN) of the secret and the database name. 
+        /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+        /// name, and the cluster identifier that matches the cluster in the secret. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-        /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// Temporary credentials - specify the cluster identifier, the database name, and the
+        /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+        /// operation is required to use this method. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1059,9 +996,6 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the ListTables service method, as returned by RedshiftDataAPIService.</returns>
-        /// <exception cref="Amazon.RedshiftDataAPIService.Model.DatabaseConnectionException">
-        /// Connection to a database failed.
-        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>

@@ -43,8 +43,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The cluster identifier. This parameter is not returned when connecting to a serverless
-        /// endpoint. 
+        /// The cluster identifier. 
         /// </para>
         /// </summary>
         public string ClusterIdentifier

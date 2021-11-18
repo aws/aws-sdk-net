@@ -36,17 +36,14 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
-    /// of the secret, the database name, and the cluster identifier that matches the cluster
-    /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
-    /// Name (ARN) of the secret and the database name. 
+    /// Secrets Manager - specify the Amazon Resource Name (ARN) of the secret, the database
+    /// name, and the cluster identifier that matches the cluster in the secret. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
-    /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required. When connecting to a serverless endpoint, specify the database
-    /// name. 
+    /// Temporary credentials - specify the cluster identifier, the database name, and the
+    /// database user name. Permission to call the <code>redshift:GetClusterCredentials</code>
+    /// operation is required to use this method. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -63,10 +60,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The cluster identifier. This parameter is required when connecting to a cluster and
-        /// authenticating using either Secrets Manager or temporary credentials. 
+        /// The cluster identifier. This parameter is required when authenticating using either
+        /// Secrets Manager or temporary credentials. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -102,8 +100,8 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property DbUser. 
         /// <para>
-        /// The database user name. This parameter is required when connecting to a cluster and
-        /// authenticating using temporary credentials. 
+        /// The database user name. This parameter is required when authenticating using temporary
+        /// credentials. 
         /// </para>
         /// </summary>
         public string DbUser
