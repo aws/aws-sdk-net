@@ -33,9 +33,30 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class ViewFrame
     {
+        private AnalyticsMode _analytics;
         private int? _columnRange;
         private List<string> _hiddenColumns = new List<string>();
+        private int? _rowRange;
         private int? _startColumnIndex;
+        private int? _startRowIndex;
+
+        /// <summary>
+        /// Gets and sets the property Analytics. 
+        /// <para>
+        /// Controls if analytics computation is enabled or disabled. Enabled by default.
+        /// </para>
+        /// </summary>
+        public AnalyticsMode Analytics
+        {
+            get { return this._analytics; }
+            set { this._analytics = value; }
+        }
+
+        // Check to see if Analytics property is set
+        internal bool IsSetAnalytics()
+        {
+            return this._analytics != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ColumnRange. 
@@ -76,6 +97,25 @@ namespace Amazon.GlueDataBrew.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RowRange. 
+        /// <para>
+        /// The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code>
+        /// value.
+        /// </para>
+        /// </summary>
+        public int RowRange
+        {
+            get { return this._rowRange.GetValueOrDefault(); }
+            set { this._rowRange = value; }
+        }
+
+        // Check to see if RowRange property is set
+        internal bool IsSetRowRange()
+        {
+            return this._rowRange.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StartColumnIndex. 
         /// <para>
         /// The starting index for the range of columns to return in the view frame.
@@ -92,6 +132,25 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetStartColumnIndex()
         {
             return this._startColumnIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartRowIndex. 
+        /// <para>
+        /// The starting index for the range of rows to return in the view frame.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int StartRowIndex
+        {
+            get { return this._startRowIndex.GetValueOrDefault(); }
+            set { this._startRowIndex = value; }
+        }
+
+        // Check to see if StartRowIndex property is set
+        internal bool IsSetStartRowIndex()
+        {
+            return this._startRowIndex.HasValue; 
         }
 
     }

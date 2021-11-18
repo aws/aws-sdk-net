@@ -36,6 +36,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private DatabaseInputDefinition _databaseInputDefinition;
         private DataCatalogInputDefinition _dataCatalogInputDefinition;
+        private Metadata _metadata;
         private S3Location _s3InputDefinition;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetDataCatalogInputDefinition()
         {
             return this._dataCatalogInputDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Contains additional resource information needed for specific datasets.
+        /// </para>
+        /// </summary>
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>

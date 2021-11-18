@@ -50,6 +50,7 @@ namespace Amazon.GlueDataBrew.Model
         private string _startedBy;
         private DateTime? _startedOn;
         private JobRunState _state;
+        private List<ValidationConfiguration> _validationConfigurations = new List<ValidationConfiguration>();
 
         /// <summary>
         /// Gets and sets the property Attempt. 
@@ -368,6 +369,25 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationConfigurations. 
+        /// <para>
+        /// List of validation configurations that are applied to the profile job run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ValidationConfiguration> ValidationConfigurations
+        {
+            get { return this._validationConfigurations; }
+            set { this._validationConfigurations = value; }
+        }
+
+        // Check to see if ValidationConfigurations property is set
+        internal bool IsSetValidationConfigurations()
+        {
+            return this._validationConfigurations != null && this._validationConfigurations.Count > 0; 
         }
 
     }

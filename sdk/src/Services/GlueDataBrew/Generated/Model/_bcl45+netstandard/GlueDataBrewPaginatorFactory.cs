@@ -84,6 +84,14 @@ namespace Amazon.GlueDataBrew.Model
         }
 
         /// <summary>
+        /// Paginator for ListRulesets operation
+        ///</summary>
+        public IListRulesetsPaginator ListRulesets(ListRulesetsRequest request) 
+        {
+            return new ListRulesetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSchedules operation
         ///</summary>
         public IListSchedulesPaginator ListSchedules(ListSchedulesRequest request) 

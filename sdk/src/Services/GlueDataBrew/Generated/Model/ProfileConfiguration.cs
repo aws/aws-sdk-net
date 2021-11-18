@@ -37,6 +37,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private List<ColumnStatisticsConfiguration> _columnStatisticsConfigurations = new List<ColumnStatisticsConfiguration>();
         private StatisticsConfiguration _datasetStatisticsConfiguration;
+        private EntityDetectorConfiguration _entityDetectorConfiguration;
         private List<ColumnSelector> _profileColumns = new List<ColumnSelector>();
 
         /// <summary>
@@ -79,6 +80,25 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetDatasetStatisticsConfiguration()
         {
             return this._datasetStatisticsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityDetectorConfiguration. 
+        /// <para>
+        /// Configuration of entity detection for a profile job. When undefined, entity detection
+        /// is disabled.
+        /// </para>
+        /// </summary>
+        public EntityDetectorConfiguration EntityDetectorConfiguration
+        {
+            get { return this._entityDetectorConfiguration; }
+            set { this._entityDetectorConfiguration = value; }
+        }
+
+        // Check to see if EntityDetectorConfiguration property is set
+        internal bool IsSetEntityDetectorConfiguration()
+        {
+            return this._entityDetectorConfiguration != null;
         }
 
         /// <summary>

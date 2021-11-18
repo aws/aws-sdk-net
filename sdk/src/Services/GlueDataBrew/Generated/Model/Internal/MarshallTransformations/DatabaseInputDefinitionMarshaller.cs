@@ -57,6 +57,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GlueConnectionName);
             }
 
+            if(requestObject.IsSetQueryString())
+            {
+                context.Writer.WritePropertyName("QueryString");
+                context.Writer.Write(requestObject.QueryString);
+            }
+
             if(requestObject.IsSetTempDirectory())
             {
                 context.Writer.WritePropertyName("TempDirectory");

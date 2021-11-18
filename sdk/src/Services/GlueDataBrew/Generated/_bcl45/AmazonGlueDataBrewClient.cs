@@ -753,6 +753,67 @@ namespace Amazon.GlueDataBrew
 
         #endregion
         
+        #region  CreateRuleset
+
+
+        /// <summary>
+        /// Creates a new ruleset that can be used in a profile job to validate the data quality
+        /// of a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleset service method.</param>
+        /// 
+        /// <returns>The response from the CreateRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRuleset">REST API Reference for CreateRuleset Operation</seealso>
+        public virtual CreateRulesetResponse CreateRuleset(CreateRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new ruleset that can be used in a profile job to validate the data quality
+        /// of a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRuleset">REST API Reference for CreateRuleset Operation</seealso>
+        public virtual Task<CreateRulesetResponse> CreateRulesetAsync(CreateRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRulesetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSchedule
 
 
@@ -1046,6 +1107,65 @@ namespace Amazon.GlueDataBrew
             options.ResponseUnmarshaller = DeleteRecipeVersionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteRecipeVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRuleset
+
+
+        /// <summary>
+        /// Deletes a ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleset service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRuleset">REST API Reference for DeleteRuleset Operation</seealso>
+        public virtual DeleteRulesetResponse DeleteRuleset(DeleteRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRuleset">REST API Reference for DeleteRuleset Operation</seealso>
+        public virtual Task<DeleteRulesetResponse> DeleteRulesetAsync(DeleteRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRulesetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1366,6 +1486,59 @@ namespace Amazon.GlueDataBrew
             options.ResponseUnmarshaller = DescribeRecipeResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeRecipeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeRuleset
+
+
+        /// <summary>
+        /// Retrieves detailed information about the ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleset service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRuleset">REST API Reference for DescribeRuleset Operation</seealso>
+        public virtual DescribeRulesetResponse DescribeRuleset(DescribeRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about the ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRuleset">REST API Reference for DescribeRuleset Operation</seealso>
+        public virtual Task<DescribeRulesetResponse> DescribeRulesetAsync(DescribeRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRulesetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1707,6 +1880,61 @@ namespace Amazon.GlueDataBrew
             options.ResponseUnmarshaller = ListRecipeVersionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListRecipeVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRulesets
+
+
+        /// <summary>
+        /// List all rulesets available in the current account or rulesets associated with a specific
+        /// resource (dataset).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRulesets service method.</param>
+        /// 
+        /// <returns>The response from the ListRulesets service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRulesets">REST API Reference for ListRulesets Operation</seealso>
+        public virtual ListRulesetsResponse ListRulesets(ListRulesetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRulesetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all rulesets available in the current account or rulesets associated with a specific
+        /// resource (dataset).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRulesets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRulesets service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRulesets">REST API Reference for ListRulesets Operation</seealso>
+        public virtual Task<ListRulesetsResponse> ListRulesetsAsync(ListRulesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRulesetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2517,6 +2745,59 @@ namespace Amazon.GlueDataBrew
             options.ResponseUnmarshaller = UpdateRecipeJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateRecipeJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRuleset
+
+
+        /// <summary>
+        /// Updates specified ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRuleset service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRuleset">REST API Reference for UpdateRuleset Operation</seealso>
+        public virtual UpdateRulesetResponse UpdateRuleset(UpdateRulesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates specified ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRuleset">REST API Reference for UpdateRuleset Operation</seealso>
+        public virtual Task<UpdateRulesetResponse> UpdateRulesetAsync(UpdateRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRulesetResponse>(request, options, cancellationToken);
         }
 
         #endregion

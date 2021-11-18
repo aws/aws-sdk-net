@@ -56,6 +56,7 @@ namespace Amazon.GlueDataBrew.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeout;
         private JobType _type;
+        private List<ValidationConfiguration> _validationConfigurations = new List<ValidationConfiguration>();
 
         /// <summary>
         /// Gets and sets the property CreateDate. 
@@ -505,6 +506,25 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationConfigurations. 
+        /// <para>
+        /// List of validation configurations that are applied to the profile job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ValidationConfiguration> ValidationConfigurations
+        {
+            get { return this._validationConfigurations; }
+            set { this._validationConfigurations = value; }
+        }
+
+        // Check to see if ValidationConfigurations property is set
+        internal bool IsSetValidationConfigurations()
+        {
+            return this._validationConfigurations != null && this._validationConfigurations.Count > 0; 
         }
 
     }

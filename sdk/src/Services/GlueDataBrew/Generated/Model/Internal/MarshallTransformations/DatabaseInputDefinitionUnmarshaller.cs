@@ -76,6 +76,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlueConnectionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryString", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TempDirectory", targetDepth))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;

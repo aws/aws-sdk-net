@@ -25,6 +25,56 @@ namespace Amazon.GlueDataBrew
 {
 
     /// <summary>
+    /// Constants used for properties of type AnalyticsMode.
+    /// </summary>
+    public class AnalyticsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode DISABLE = new AnalyticsMode("DISABLE");
+        /// <summary>
+        /// Constant ENABLE for AnalyticsMode
+        /// </summary>
+        public static readonly AnalyticsMode ENABLE = new AnalyticsMode("ENABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsMode FindValue(string value)
+        {
+            return FindValue<AnalyticsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CompressionFormat.
     /// </summary>
     public class CompressionFormat : ConstantClass
@@ -884,6 +934,160 @@ namespace Amazon.GlueDataBrew
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Source(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThresholdType.
+    /// </summary>
+    public class ThresholdType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GREATER_THAN for ThresholdType
+        /// </summary>
+        public static readonly ThresholdType GREATER_THAN = new ThresholdType("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL for ThresholdType
+        /// </summary>
+        public static readonly ThresholdType GREATER_THAN_OR_EQUAL = new ThresholdType("GREATER_THAN_OR_EQUAL");
+        /// <summary>
+        /// Constant LESS_THAN for ThresholdType
+        /// </summary>
+        public static readonly ThresholdType LESS_THAN = new ThresholdType("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL for ThresholdType
+        /// </summary>
+        public static readonly ThresholdType LESS_THAN_OR_EQUAL = new ThresholdType("LESS_THAN_OR_EQUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThresholdType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThresholdType FindValue(string value)
+        {
+            return FindValue<ThresholdType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThresholdType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThresholdUnit.
+    /// </summary>
+    public class ThresholdUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COUNT for ThresholdUnit
+        /// </summary>
+        public static readonly ThresholdUnit COUNT = new ThresholdUnit("COUNT");
+        /// <summary>
+        /// Constant PERCENTAGE for ThresholdUnit
+        /// </summary>
+        public static readonly ThresholdUnit PERCENTAGE = new ThresholdUnit("PERCENTAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThresholdUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThresholdUnit FindValue(string value)
+        {
+            return FindValue<ThresholdUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThresholdUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationMode.
+    /// </summary>
+    public class ValidationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHECK_ALL for ValidationMode
+        /// </summary>
+        public static readonly ValidationMode CHECK_ALL = new ValidationMode("CHECK_ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationMode FindValue(string value)
+        {
+            return FindValue<ValidationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationMode(string value)
         {
             return FindValue(value);
         }

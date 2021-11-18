@@ -56,6 +56,11 @@ namespace Amazon.GlueDataBrew.Model
         IListRecipeVersionsPaginator ListRecipeVersions(ListRecipeVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListRulesets operation
+        ///</summary>
+        IListRulesetsPaginator ListRulesets(ListRulesetsRequest request);
+
+        /// <summary>
         /// Paginator for ListSchedules operation
         ///</summary>
         IListSchedulesPaginator ListSchedules(ListSchedulesRequest request);

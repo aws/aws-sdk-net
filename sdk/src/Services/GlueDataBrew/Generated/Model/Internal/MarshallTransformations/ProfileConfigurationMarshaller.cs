@@ -72,6 +72,17 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEntityDetectorConfiguration())
+            {
+                context.Writer.WritePropertyName("EntityDetectorConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EntityDetectorConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EntityDetectorConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProfileColumns())
             {
                 context.Writer.WritePropertyName("ProfileColumns");

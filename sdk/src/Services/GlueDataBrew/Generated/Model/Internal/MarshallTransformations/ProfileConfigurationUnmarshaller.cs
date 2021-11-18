@@ -76,6 +76,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatasetStatisticsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EntityDetectorConfiguration", targetDepth))
+                {
+                    var unmarshaller = EntityDetectorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EntityDetectorConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProfileColumns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ColumnSelector, ColumnSelectorUnmarshaller>(ColumnSelectorUnmarshaller.Instance);

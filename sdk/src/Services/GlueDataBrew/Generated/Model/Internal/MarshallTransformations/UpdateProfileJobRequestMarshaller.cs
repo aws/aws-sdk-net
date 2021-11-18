@@ -143,6 +143,22 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Timeout);
                 }
 
+                if(publicRequest.IsSetValidationConfigurations())
+                {
+                    context.Writer.WritePropertyName("ValidationConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestValidationConfigurationsListValue in publicRequest.ValidationConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ValidationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestValidationConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

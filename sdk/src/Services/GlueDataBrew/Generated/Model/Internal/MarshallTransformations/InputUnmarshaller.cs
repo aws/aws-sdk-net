@@ -76,6 +76,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataCatalogInputDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Metadata", targetDepth))
+                {
+                    var unmarshaller = MetadataUnmarshaller.Instance;
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3InputDefinition", targetDepth))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;

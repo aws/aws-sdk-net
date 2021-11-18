@@ -412,6 +412,56 @@ namespace Amazon.GlueDataBrew
 
         #endregion
         
+        #region  CreateRuleset
+
+
+        /// <summary>
+        /// Creates a new ruleset that can be used in a profile job to validate the data quality
+        /// of a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleset service method.</param>
+        /// 
+        /// <returns>The response from the CreateRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRuleset">REST API Reference for CreateRuleset Operation</seealso>
+        CreateRulesetResponse CreateRuleset(CreateRulesetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRuleset operation on AmazonGlueDataBrewClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRuleset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRuleset">REST API Reference for CreateRuleset Operation</seealso>
+        IAsyncResult BeginCreateRuleset(CreateRulesetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRuleset.</param>
+        /// 
+        /// <returns>Returns a  CreateRulesetResult from GlueDataBrew.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRuleset">REST API Reference for CreateRuleset Operation</seealso>
+        CreateRulesetResponse EndCreateRuleset(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateSchedule
 
 
@@ -655,6 +705,55 @@ namespace Amazon.GlueDataBrew
         /// <returns>Returns a  DeleteRecipeVersionResult from GlueDataBrew.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRecipeVersion">REST API Reference for DeleteRecipeVersion Operation</seealso>
         DeleteRecipeVersionResponse EndDeleteRecipeVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRuleset
+
+
+        /// <summary>
+        /// Deletes a ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleset service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRuleset">REST API Reference for DeleteRuleset Operation</seealso>
+        DeleteRulesetResponse DeleteRuleset(DeleteRulesetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRuleset operation on AmazonGlueDataBrewClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRuleset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRuleset">REST API Reference for DeleteRuleset Operation</seealso>
+        IAsyncResult BeginDeleteRuleset(DeleteRulesetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRuleset.</param>
+        /// 
+        /// <returns>Returns a  DeleteRulesetResult from GlueDataBrew.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRuleset">REST API Reference for DeleteRuleset Operation</seealso>
+        DeleteRulesetResponse EndDeleteRuleset(IAsyncResult asyncResult);
 
         #endregion
         
@@ -932,6 +1031,52 @@ namespace Amazon.GlueDataBrew
         /// <returns>Returns a  DescribeRecipeResult from GlueDataBrew.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRecipe">REST API Reference for DescribeRecipe Operation</seealso>
         DescribeRecipeResponse EndDescribeRecipe(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRuleset
+
+
+        /// <summary>
+        /// Retrieves detailed information about the ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleset service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRuleset">REST API Reference for DescribeRuleset Operation</seealso>
+        DescribeRulesetResponse DescribeRuleset(DescribeRulesetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRuleset operation on AmazonGlueDataBrewClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRuleset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRuleset">REST API Reference for DescribeRuleset Operation</seealso>
+        IAsyncResult BeginDescribeRuleset(DescribeRulesetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRuleset.</param>
+        /// 
+        /// <returns>Returns a  DescribeRulesetResult from GlueDataBrew.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRuleset">REST API Reference for DescribeRuleset Operation</seealso>
+        DescribeRulesetResponse EndDescribeRuleset(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1239,6 +1384,53 @@ namespace Amazon.GlueDataBrew
         /// <returns>Returns a  ListRecipeVersionsResult from GlueDataBrew.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipeVersions">REST API Reference for ListRecipeVersions Operation</seealso>
         ListRecipeVersionsResponse EndListRecipeVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListRulesets
+
+
+        /// <summary>
+        /// List all rulesets available in the current account or rulesets associated with a specific
+        /// resource (dataset).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRulesets service method.</param>
+        /// 
+        /// <returns>The response from the ListRulesets service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRulesets">REST API Reference for ListRulesets Operation</seealso>
+        ListRulesetsResponse ListRulesets(ListRulesetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRulesets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRulesets operation on AmazonGlueDataBrewClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRulesets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRulesets">REST API Reference for ListRulesets Operation</seealso>
+        IAsyncResult BeginListRulesets(ListRulesetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRulesets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRulesets.</param>
+        /// 
+        /// <returns>Returns a  ListRulesetsResult from GlueDataBrew.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRulesets">REST API Reference for ListRulesets Operation</seealso>
+        ListRulesetsResponse EndListRulesets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1917,6 +2109,52 @@ namespace Amazon.GlueDataBrew
         /// <returns>Returns a  UpdateRecipeJobResult from GlueDataBrew.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipeJob">REST API Reference for UpdateRecipeJob Operation</seealso>
         UpdateRecipeJobResponse EndUpdateRecipeJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRuleset
+
+
+        /// <summary>
+        /// Updates specified ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRuleset service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRuleset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRuleset">REST API Reference for UpdateRuleset Operation</seealso>
+        UpdateRulesetResponse UpdateRuleset(UpdateRulesetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRuleset operation on AmazonGlueDataBrewClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRuleset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRuleset">REST API Reference for UpdateRuleset Operation</seealso>
+        IAsyncResult BeginUpdateRuleset(UpdateRulesetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRuleset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRuleset.</param>
+        /// 
+        /// <returns>Returns a  UpdateRulesetResult from GlueDataBrew.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRuleset">REST API Reference for UpdateRuleset Operation</seealso>
+        UpdateRulesetResponse EndUpdateRuleset(IAsyncResult asyncResult);
 
         #endregion
         

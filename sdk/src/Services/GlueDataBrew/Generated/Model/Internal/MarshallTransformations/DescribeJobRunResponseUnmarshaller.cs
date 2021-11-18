@@ -159,6 +159,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     response.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ValidationConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ValidationConfiguration, ValidationConfigurationUnmarshaller>(ValidationConfigurationUnmarshaller.Instance);
+                    response.ValidationConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

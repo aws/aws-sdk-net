@@ -35,6 +35,7 @@ namespace Amazon.GlueDataBrew.Model
     {
         private string _databaseTableName;
         private string _glueConnectionName;
+        private string _queryString;
         private S3Location _tempDirectory;
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.GlueDataBrew.Model
         /// The table within the target database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string DatabaseTableName
         {
             get { return this._databaseTableName; }
@@ -73,6 +74,26 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetGlueConnectionName()
         {
             return this._glueConnectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryString. 
+        /// <para>
+        /// Custom SQL to run against the provided Glue connection. This SQL will be used as the
+        /// input for DataBrew projects and jobs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10000)]
+        public string QueryString
+        {
+            get { return this._queryString; }
+            set { this._queryString = value; }
+        }
+
+        // Check to see if QueryString property is set
+        internal bool IsSetQueryString()
+        {
+            return this._queryString != null;
         }
 
         /// <summary>
