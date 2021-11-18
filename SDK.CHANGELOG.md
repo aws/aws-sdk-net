@@ -1,3 +1,34 @@
+### 3.7.163.0 (2021-11-18 21:21 UTC)
+* AppConfig (3.7.1.0)
+	* Add Type to support feature flag configuration profiles
+* AuditManager (3.7.7.0)
+	* This release introduces a new feature for Audit Manager: Dashboard views. You can now view insights data for your active assessments, and quickly identify non-compliant evidence that needs to be remediated.
+* Chime (3.7.14.0)
+	* Adds new Transcribe API parameters to StartMeetingTranscription, including support for content identification and redaction (PII & PHI), partial results stabilization, and custom language models.
+* ChimeSDKMeetings (3.7.2.0)
+	* Adds new Transcribe API parameters to StartMeetingTranscription, including support for content identification and redaction (PII & PHI), partial results stabilization, and custom language models.
+* CloudWatch (3.7.3.0)
+	* CloudWatch Anomaly Detection now supports anomaly detectors that use metric math as input.
+* ForecastService (3.7.6.0)
+	* NEW CreateExplanability API that helps you understand how attributes such as price, promotion, etc. contributes to your forecasted values; NEW CreateAutoPredictor API that trains up to 40% more accurate forecasting model, saves up to 50% of retraining time, and provides model level explainability.
+* GlueDataBrew (3.7.5.0)
+	* This SDK release adds the following new features: 1) PII detection in profile jobs, 2) Data quality rules, enabling validation of data quality in profile jobs, 3) SQL query-based datasets for Amazon Redshift and Snowflake data sources, and 4) Connecting DataBrew datasets with Amazon AppFlow flows.
+* IVS (3.7.3.0)
+	* Add APIs for retrieving stream session information and support for filtering live streams by health.  For more information, see https://docs.aws.amazon.com/ivs/latest/userguide/stream-health.html
+* Kafka (3.7.4.0)
+	* Amazon MSK has added a new API that allows you to update the connectivity settings for an existing cluster to enable public accessibility.
+* Lambda (3.7.5.0)
+	* Added support for CLIENT_CERTIFICATE_TLS_AUTH and SERVER_ROOT_CA_CERTIFICATE as SourceAccessType for MSK and Kafka event source mappings.
+* LexModelsV2 (3.7.8.0)
+	* Added support for Polly Neural TTS (NTTS) voices. Customers can choose between 'standard' and 'neural' for Polly Engine configuration per locale when creating or updating an Amazon Lex bot.
+* RedshiftDataAPIService (3.7.4.0)
+	* Rolling back Data API serverless features until dependencies are live.
+* Core 3.7.4.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.162.0 (2021-11-17 19:18 UTC)
 * AmplifyBackend (3.7.4.0)
 	* New APIs to support the Amplify Storage category. Add and manage file storage in your Amplify app backend.
