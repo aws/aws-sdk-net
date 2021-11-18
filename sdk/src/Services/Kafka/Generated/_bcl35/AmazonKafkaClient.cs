@@ -1391,7 +1391,7 @@ namespace Amazon.Kafka
         #region  ListKafkaVersions
 
         /// <summary>
-        /// Returns a list of Kafka versions.
+        /// Returns a list of Apache Kafka versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKafkaVersions service method.</param>
         /// 
@@ -2287,6 +2287,78 @@ namespace Amazon.Kafka
         public virtual UpdateConfigurationResponse EndUpdateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConnectivity
+
+        /// <summary>
+        /// Updates the cluster's connectivity configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivity service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectivity service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">REST API Reference for UpdateConnectivity Operation</seealso>
+        public virtual UpdateConnectivityResponse UpdateConnectivity(UpdateConnectivityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectivityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectivityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectivityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectivity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivity operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectivity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">REST API Reference for UpdateConnectivity Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnectivity(UpdateConnectivityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectivityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectivityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectivity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectivity.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectivityResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">REST API Reference for UpdateConnectivity Operation</seealso>
+        public virtual UpdateConnectivityResponse EndUpdateConnectivity(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectivityResponse>(asyncResult);
         }
 
         #endregion

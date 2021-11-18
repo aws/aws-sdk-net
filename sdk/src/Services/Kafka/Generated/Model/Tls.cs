@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property Enabled.             
         /// <para>
-        /// Specifies whether you want to enable or disable TLS authentication.
+        /// Specifies whether you want to turn on or turn off TLS authentication.
         /// </para>
         /// </summary>
         public bool Enabled

@@ -30,7 +30,7 @@ namespace Amazon.Kafka.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKafkaVersions operation.
-    /// Returns a list of Kafka versions.
+    /// Returns a list of Apache Kafka versions.
     /// </summary>
     public partial class ListKafkaVersionsRequest : AmazonKafkaRequest
     {

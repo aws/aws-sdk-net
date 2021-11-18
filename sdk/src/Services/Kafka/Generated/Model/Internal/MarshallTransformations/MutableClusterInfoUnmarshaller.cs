@@ -82,6 +82,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConfigurationInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectivityInfo", targetDepth))
+                {
+                    var unmarshaller = ConnectivityInfoUnmarshaller.Instance;
+                    unmarshalledObject.ConnectivityInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("encryptionInfo", targetDepth))
                 {
                     var unmarshaller = EncryptionInfoUnmarshaller.Instance;

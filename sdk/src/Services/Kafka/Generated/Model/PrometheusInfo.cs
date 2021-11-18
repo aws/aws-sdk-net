@@ -39,7 +39,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property JmxExporter.             
         /// <para>
-        /// Indicates whether you want to enable or disable the JMX Exporter.
+        /// Indicates whether you want to turn on or turn off the JMX Exporter.
         /// </para>
         /// </summary>
         public JmxExporterInfo JmxExporter
@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property NodeExporter.             
         /// <para>
-        /// Indicates whether you want to enable or disable the Node Exporter.
+        /// Indicates whether you want to turn on or turn off the Node Exporter.
         /// </para>
         /// </summary>
         public NodeExporterInfo NodeExporter

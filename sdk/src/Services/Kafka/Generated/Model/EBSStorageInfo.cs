@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Contains information about the EBS storage volumes attached to Kafka broker nodes.
+    /// Contains information about the EBS storage volumes attached to Apache Kafka broker
+    /// nodes.
     /// </summary>
     public partial class EBSStorageInfo
     {

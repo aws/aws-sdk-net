@@ -29,47 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Prometheus settings.
+    /// This is the response object from the UpdateConnectivity operation.
     /// </summary>
-    public partial class Prometheus
+    public partial class UpdateConnectivityResponse : AmazonWebServiceResponse
     {
-        private JmxExporter _jmxExporter;
-        private NodeExporter _nodeExporter;
+        private string _clusterArn;
+        private string _clusterOperationArn;
 
         /// <summary>
-        /// Gets and sets the property JmxExporter.             
+        /// Gets and sets the property ClusterArn.             
         /// <para>
-        /// Indicates whether you want to turn on or turn off the JMX Exporter.
+        /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
-        public JmxExporter JmxExporter
+        public string ClusterArn
         {
-            get { return this._jmxExporter; }
-            set { this._jmxExporter = value; }
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
         }
 
-        // Check to see if JmxExporter property is set
-        internal bool IsSetJmxExporter()
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
         {
-            return this._jmxExporter != null;
+            return this._clusterArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NodeExporter.             
+        /// Gets and sets the property ClusterOperationArn.             
         /// <para>
-        /// Indicates whether you want to turn on or turn off the Node Exporter.
+        /// The Amazon Resource Name (ARN) of the cluster operation.
         /// </para>
         /// </summary>
-        public NodeExporter NodeExporter
+        public string ClusterOperationArn
         {
-            get { return this._nodeExporter; }
-            set { this._nodeExporter = value; }
+            get { return this._clusterOperationArn; }
+            set { this._clusterOperationArn = value; }
         }
 
-        // Check to see if NodeExporter property is set
-        internal bool IsSetNodeExporter()
+        // Check to see if ClusterOperationArn property is set
+        internal bool IsSetClusterOperationArn()
         {
-            return this._nodeExporter != null;
+            return this._clusterOperationArn != null;
         }
 
     }

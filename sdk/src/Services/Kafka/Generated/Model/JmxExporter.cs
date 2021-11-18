@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Indicates whether you want to enable or disable the JMX Exporter.
+    /// Indicates whether you want to turn on or turn off the JMX Exporter.
     /// </summary>
     public partial class JmxExporter
     {
@@ -38,7 +38,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property EnabledInBroker.             
         /// <para>
-        /// Indicates whether you want to enable or disable the JMX Exporter.
+        /// Indicates whether you want to turn on or turn off the JMX Exporter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetBootstrapBrokers operation
+    /// Response Unmarshaller for UpdateConnectivity operation
     /// </summary>  
-    public class GetBootstrapBrokersResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateConnectivityResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,52 +45,22 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetBootstrapBrokersResponse response = new GetBootstrapBrokersResponse();
+            UpdateConnectivityResponse response = new UpdateConnectivityResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bootstrapBrokerString", targetDepth))
+                if (context.TestExpression("clusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootstrapBrokerString = unmarshaller.Unmarshall(context);
+                    response.ClusterArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringPublicSaslIam", targetDepth))
+                if (context.TestExpression("clusterOperationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootstrapBrokerStringPublicSaslIam = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bootstrapBrokerStringPublicSaslScram", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootstrapBrokerStringPublicSaslScram = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bootstrapBrokerStringPublicTls", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootstrapBrokerStringPublicTls = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bootstrapBrokerStringSaslIam", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootstrapBrokerStringSaslIam = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bootstrapBrokerStringSaslScram", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootstrapBrokerStringSaslScram = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("bootstrapBrokerStringTls", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootstrapBrokerStringTls = unmarshaller.Unmarshall(context);
+                    response.ClusterOperationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -120,10 +90,6 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -131,6 +97,14 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+                {
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                {
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
                 {
@@ -140,9 +114,9 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             return new AmazonKafkaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetBootstrapBrokersResponseUnmarshaller _instance = new GetBootstrapBrokersResponseUnmarshaller();        
+        private static UpdateConnectivityResponseUnmarshaller _instance = new UpdateConnectivityResponseUnmarshaller();        
 
-        internal static GetBootstrapBrokersResponseUnmarshaller GetInstance()
+        internal static UpdateConnectivityResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -150,7 +124,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBootstrapBrokersResponseUnmarshaller Instance
+        public static UpdateConnectivityResponseUnmarshaller Instance
         {
             get
             {

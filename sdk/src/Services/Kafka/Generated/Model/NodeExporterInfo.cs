@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Indicates whether you want to enable or disable the Node Exporter.
+    /// Indicates whether you want to turn on or turn off the Node Exporter.
     /// </summary>
     public partial class NodeExporterInfo
     {
@@ -38,7 +38,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property EnabledInBroker.             
         /// <para>
-        /// Indicates whether you want to enable or disable the Node Exporter.
+        /// Indicates whether you want to turn on or turn off the Node Exporter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

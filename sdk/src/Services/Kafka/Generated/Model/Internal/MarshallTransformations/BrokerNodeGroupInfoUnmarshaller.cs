@@ -76,6 +76,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientSubnets = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("connectivityInfo", targetDepth))
+                {
+                    var unmarshaller = ConnectivityInfoUnmarshaller.Instance;
+                    unmarshalledObject.ConnectivityInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

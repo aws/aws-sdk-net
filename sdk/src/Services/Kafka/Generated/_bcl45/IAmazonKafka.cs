@@ -1032,7 +1032,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Returns a list of Kafka versions.
+        /// Returns a list of Apache Kafka versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKafkaVersions service method.</param>
         /// 
@@ -1055,7 +1055,7 @@ namespace Amazon.Kafka
 
 
         /// <summary>
-        /// Returns a list of Kafka versions.
+        /// Returns a list of Apache Kafka versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKafkaVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1791,6 +1791,70 @@ namespace Amazon.Kafka
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateConnectivity
+
+
+        /// <summary>
+        /// Updates the cluster's connectivity configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivity service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectivity service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">REST API Reference for UpdateConnectivity Operation</seealso>
+        UpdateConnectivityResponse UpdateConnectivity(UpdateConnectivityRequest request);
+
+
+
+        /// <summary>
+        /// Updates the cluster's connectivity configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectivity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectivity service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">REST API Reference for UpdateConnectivity Operation</seealso>
+        Task<UpdateConnectivityResponse> UpdateConnectivityAsync(UpdateConnectivityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

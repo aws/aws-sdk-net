@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// 
+    /// Public access control for brokers.
     /// </summary>
-    public partial class Unauthenticated
+    public partial class PublicAccess
     {
-        private bool? _enabled;
+        private string _type;
 
         /// <summary>
-        /// Gets and sets the property Enabled.             
+        /// Gets and sets the property Type.             
         /// <para>
-        /// Specifies whether you want to turn on or turn off unauthenticated traffic to your
-        /// cluster.
+        /// The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS
+        /// indicates that public access is turned on.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public string Type
         {
-            get { return this._enabled.GetValueOrDefault(); }
-            set { this._enabled = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._enabled.HasValue; 
+            return this._type != null;
         }
 
     }

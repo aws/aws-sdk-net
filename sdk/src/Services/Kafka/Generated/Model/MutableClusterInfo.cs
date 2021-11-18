@@ -36,6 +36,7 @@ namespace Amazon.Kafka.Model
         private List<BrokerEBSVolumeInfo> _brokerEBSVolumeInfo = new List<BrokerEBSVolumeInfo>();
         private ClientAuthentication _clientAuthentication;
         private ConfigurationInfo _configurationInfo;
+        private ConnectivityInfo _connectivityInfo;
         private EncryptionInfo _encryptionInfo;
         private EnhancedMonitoring _enhancedMonitoring;
         private string _instanceType;
@@ -99,6 +100,24 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectivityInfo.             
+        /// <para>
+        /// Information about the broker access configuration.
+        /// </para>
+        /// </summary>
+        public ConnectivityInfo ConnectivityInfo
+        {
+            get { return this._connectivityInfo; }
+            set { this._connectivityInfo = value; }
+        }
+
+        // Check to see if ConnectivityInfo property is set
+        internal bool IsSetConnectivityInfo()
+        {
+            return this._connectivityInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EncryptionInfo.             
         /// <para>
         /// Includes all encryption-related information.
@@ -157,7 +176,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property KafkaVersion.             
         /// <para>
-        /// The Kafka version.
+        /// The Apache Kafka version.
         /// </para>
         /// </summary>
         public string KafkaVersion

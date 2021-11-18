@@ -115,7 +115,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property CurrentBrokerSoftwareInfo.             
         /// <para>
-        /// Information about the version of software currently deployed on the Kafka brokers
+        /// Information about the version of software currently deployed on the Apache Kafka brokers
         /// in the cluster.
         /// </para>
         /// </summary>

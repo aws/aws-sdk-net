@@ -62,6 +62,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetConnectivityInfo())
+            {
+                context.Writer.WritePropertyName("connectivityInfo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConnectivityInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectivityInfo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("instanceType");

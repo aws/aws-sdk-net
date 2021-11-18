@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Contains source Kafka versions and compatible target Kafka versions.
+    /// Contains source Apache Kafka versions and compatible target Apache Kafka versions.
     /// </summary>
     public partial class CompatibleKafkaVersion
     {
@@ -39,7 +39,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property SourceVersion.             
         /// <para>
-        /// A Kafka version.
+        /// An Apache Kafka version.
         /// </para>
         /// </summary>
         public string SourceVersion
@@ -57,7 +57,7 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property TargetVersions.             
         /// <para>
-        /// A list of Kafka versions.
+        /// A list of Apache Kafka versions.
         /// </para>
         /// </summary>
         public List<string> TargetVersions

@@ -34,6 +34,9 @@ namespace Amazon.Kafka.Model
     public partial class GetBootstrapBrokersResponse : AmazonWebServiceResponse
     {
         private string _bootstrapBrokerString;
+        private string _bootstrapBrokerStringPublicSaslIam;
+        private string _bootstrapBrokerStringPublicSaslScram;
+        private string _bootstrapBrokerStringPublicTls;
         private string _bootstrapBrokerStringSaslIam;
         private string _bootstrapBrokerStringSaslScram;
         private string _bootstrapBrokerStringTls;
@@ -54,6 +57,60 @@ namespace Amazon.Kafka.Model
         internal bool IsSetBootstrapBrokerString()
         {
             return this._bootstrapBrokerString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringPublicSaslIam.             
+        /// <para>
+        /// A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringPublicSaslIam
+        {
+            get { return this._bootstrapBrokerStringPublicSaslIam; }
+            set { this._bootstrapBrokerStringPublicSaslIam = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringPublicSaslIam property is set
+        internal bool IsSetBootstrapBrokerStringPublicSaslIam()
+        {
+            return this._bootstrapBrokerStringPublicSaslIam != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringPublicSaslScram.             
+        /// <para>
+        /// A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringPublicSaslScram
+        {
+            get { return this._bootstrapBrokerStringPublicSaslScram; }
+            set { this._bootstrapBrokerStringPublicSaslScram = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringPublicSaslScram property is set
+        internal bool IsSetBootstrapBrokerStringPublicSaslScram()
+        {
+            return this._bootstrapBrokerStringPublicSaslScram != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringPublicTls.             
+        /// <para>
+        /// A string containing one or more DNS names (or IP) and TLS port pairs.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringPublicTls
+        {
+            get { return this._bootstrapBrokerStringPublicTls; }
+            set { this._bootstrapBrokerStringPublicTls = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringPublicTls property is set
+        internal bool IsSetBootstrapBrokerStringPublicTls()
+        {
+            return this._bootstrapBrokerStringPublicTls != null;
         }
 
         /// <summary>

@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Describes the setup to be used for Kafka broker nodes in the cluster.
+    /// Describes the setup to be used for Apache Kafka broker nodes in the cluster.
     /// </summary>
     public partial class BrokerNodeGroupInfo
     {
         private BrokerAZDistribution _brokerAZDistribution;
         private List<string> _clientSubnets = new List<string>();
+        private ConnectivityInfo _connectivityInfo;
         private string _instanceType;
         private List<string> _securityGroups = new List<string>();
         private StorageInfo _storageInfo;
@@ -87,9 +88,27 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectivityInfo.             
+        /// <para>
+        /// Information about the broker access configuration.
+        /// </para>
+        /// </summary>
+        public ConnectivityInfo ConnectivityInfo
+        {
+            get { return this._connectivityInfo; }
+            set { this._connectivityInfo = value; }
+        }
+
+        // Check to see if ConnectivityInfo property is set
+        internal bool IsSetConnectivityInfo()
+        {
+            return this._connectivityInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType.             
         /// <para>
-        /// The type of Amazon EC2 instances to use for Kafka brokers. The following instance
+        /// The type of Amazon EC2 instances to use for Apache Kafka brokers. The following instance
         /// types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,kafka.m5.4xlarge,
         /// kafka.m5.12xlarge, and kafka.m5.24xlarge.
         /// </para>
