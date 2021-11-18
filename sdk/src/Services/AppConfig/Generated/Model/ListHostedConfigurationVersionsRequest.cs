@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHostedConfigurationVersions operation.
-    /// View a list of configurations stored in the AppConfig configuration store by version.
+    /// Lists configurations stored in the AppConfig hosted configuration store by version.
     /// </summary>
     public partial class ListHostedConfigurationVersionsRequest : AmazonAppConfigRequest
     {

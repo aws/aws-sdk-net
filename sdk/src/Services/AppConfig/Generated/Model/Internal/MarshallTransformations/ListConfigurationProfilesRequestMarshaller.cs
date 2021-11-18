@@ -67,6 +67,9 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next_token", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetType())
+                request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/applications/{ApplicationId}/configurationprofiles";
             request.UseQueryString = true;
 

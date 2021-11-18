@@ -30,10 +30,10 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeploymentStrategy operation.
-    /// A deployment strategy defines important criteria for rolling out your configuration
-    /// to the designated targets. A deployment strategy includes: the overall duration required,
-    /// a percentage of targets to receive the deployment during each interval, an algorithm
-    /// that defines how percentage grows, and bake time.
+    /// Creates a deployment strategy that defines important criteria for rolling out your
+    /// configuration to the designated targets. A deployment strategy includes the overall
+    /// duration required, a percentage of targets to receive the deployment during each interval,
+    /// an algorithm that defines how percentage grows, and bake time.
     /// </summary>
     public partial class CreateDeploymentStrategyRequest : AmazonAppConfigRequest
     {
@@ -126,8 +126,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property GrowthType. 
         /// <para>
-        /// The algorithm used to define how percentage grows over time. AWS AppConfig supports
-        /// the following growth types:
+        /// The algorithm used to define how percentage grows over time. AppConfig supports the
+        /// following growth types:
         /// </para>
         ///  
         /// <para>

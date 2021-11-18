@@ -39,6 +39,7 @@ namespace Amazon.AppConfig.Model
         private string _locationUri;
         private string _name;
         private string _retrievalRoleArn;
+        private string _type;
         private List<Validator> _validators = new List<Validator>();
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property RetrievalRoleArn. 
         /// <para>
         /// The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.
+        /// <code>LocationUri</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -152,6 +153,26 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetRetrievalRoleArn()
         {
             return this._retrievalRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of configurations that the configuration profile contains. A configuration
+        /// can be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used for distributing configurations to your application. 
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

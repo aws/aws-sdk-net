@@ -79,7 +79,7 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

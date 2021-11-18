@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEnvironments operation.
-    /// List the environments for an application.
+    /// Lists the environments for an application.
     /// </summary>
     public partial class ListEnvironmentsRequest : AmazonAppConfigRequest
     {

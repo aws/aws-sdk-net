@@ -31,14 +31,12 @@ namespace Amazon.AppConfig
     /// <summary>
     /// Interface for accessing AppConfig
     ///
-    /// AWS AppConfig 
-    /// <para>
-    /// Use AWS AppConfig, a capability of AWS Systems Manager, to create, manage, and quickly
-    /// deploy application configurations. AppConfig supports controlled deployments to applications
-    /// of any size and includes built-in validation checks and monitoring. You can use AppConfig
-    /// with applications hosted on Amazon EC2 instances, AWS Lambda, containers, mobile applications,
-    /// or IoT devices.
-    /// </para>
+    /// Use AppConfig, a capability of Amazon Web Services Systems Manager, to create, manage,
+    /// and quickly deploy application configurations. AppConfig supports controlled deployments
+    /// to applications of any size and includes built-in validation checks and monitoring.
+    /// You can use AppConfig with applications hosted on Amazon EC2 instances, Lambda, containers,
+    /// mobile applications, or IoT devices.
+    /// 
     ///  
     /// <para>
     /// To prevent errors when deploying application configurations, especially for production
@@ -60,7 +58,7 @@ namespace Amazon.AppConfig
     /// </para>
     ///  
     /// <para>
-    /// AppConfig supports multiple use cases. Here are some examples.
+    /// AppConfig supports multiple use cases. Here are some examples:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -84,8 +82,8 @@ namespace Amazon.AppConfig
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
-    /// AppConfig User Guide</a>.
+    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">AppConfig
+    /// User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonAppConfig : IAmazonService, IDisposable
@@ -102,10 +100,11 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// An application in AppConfig is a logical unit of code that provides capabilities for
-        /// your customers. For example, an application can be a microservice that runs on Amazon
-        /// EC2 instances, a mobile application installed by your users, a serverless application
-        /// using Amazon API Gateway and AWS Lambda, or any system you run on behalf of others.
+        /// Creates an application. An application in AppConfig is a logical unit of code that
+        /// provides capabilities for your customers. For example, an application can be a microservice
+        /// that runs on Amazon EC2 instances, a mobile application installed by your users, a
+        /// serverless application using Amazon API Gateway and Lambda, or any system you run
+        /// on behalf of others.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -114,7 +113,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -129,28 +128,31 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Information that enables AppConfig to access the configuration source. Valid configuration
-        /// sources include Systems Manager (SSM) documents, SSM Parameter Store parameters, and
-        /// Amazon S3 objects. A configuration profile includes the following information.
+        /// Creates a configuration profile, which is information that enables AppConfig to access
+        /// the configuration source. Valid configuration sources include the AppConfig hosted
+        /// configuration store, Amazon Web Services Systems Manager (SSM) documents, SSM Parameter
+        /// Store parameters, Amazon S3 objects, or any <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/integrations-action-type.html#integrations-source">integration
+        /// source action</a> supported by CodePipeline. A configuration profile includes the
+        /// following information:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The Uri location of the configuration data.
+        /// The URI location of the configuration data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The AWS Identity and Access Management (IAM) role that provides access to the configuration
+        /// The Identity and Access Management (IAM) role that provides access to the configuration
         /// data.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// A validator for the configuration data. Available validators include either a JSON
-        /// Schema or an AWS Lambda function.
+        /// Schema or an Lambda function.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
-        /// a Configuration and a Configuration Profile</a> in the <i>AWS AppConfig User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
+        /// a Configuration and a Configuration Profile</a> in the <i>AppConfig User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationProfile service method.</param>
@@ -160,7 +162,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the CreateConfigurationProfile service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -178,10 +180,10 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// A deployment strategy defines important criteria for rolling out your configuration
-        /// to the designated targets. A deployment strategy includes: the overall duration required,
-        /// a percentage of targets to receive the deployment during each interval, an algorithm
-        /// that defines how percentage grows, and bake time.
+        /// Creates a deployment strategy that defines important criteria for rolling out your
+        /// configuration to the designated targets. A deployment strategy includes the overall
+        /// duration required, a percentage of targets to receive the deployment during each interval,
+        /// an algorithm that defines how percentage grows, and bake time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentStrategy service method.</param>
         /// <param name="cancellationToken">
@@ -190,7 +192,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the CreateDeploymentStrategy service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -205,13 +207,13 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// For each application, you define one or more environments. An environment is a logical
-        /// deployment group of AppConfig targets, such as applications in a <code>Beta</code>
-        /// or <code>Production</code> environment. You can also define environments for application
-        /// subcomponents such as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code>
-        /// components for your application. You can configure Amazon CloudWatch alarms for each
-        /// environment. The system monitors alarms during a configuration deployment. If an alarm
-        /// is triggered, the system rolls back the configuration.
+        /// Creates an environment. For each application, you define one or more environments.
+        /// An environment is a logical deployment group of AppConfig targets, such as applications
+        /// in a <code>Beta</code> or <code>Production</code> environment. You can also define
+        /// environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
+        /// and <code>Back-end</code> components for your application. You can configure Amazon
+        /// CloudWatch alarms for each environment. The system monitors alarms during a configuration
+        /// deployment. If an alarm is triggered, the system rolls back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -220,7 +222,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the CreateEnvironment service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -238,7 +240,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Create a new configuration in the AppConfig configuration store.
+        /// Creates a new configuration in the AppConfig hosted configuration store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedConfigurationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -247,7 +249,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the CreateHostedConfigurationVersion service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
@@ -263,8 +265,8 @@ namespace Amazon.AppConfig
         /// The requested resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
-        /// The number of hosted configuration versions exceeds the limit for the AppConfig configuration
-        /// store. Delete one or more versions and try again.
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+        /// configuration store. Delete one or more versions and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
         Task<CreateHostedConfigurationVersionResponse> CreateHostedConfigurationVersionAsync(CreateHostedConfigurationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -276,7 +278,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Delete an application. Deleting an application does not delete a configuration from
+        /// Deletes an application. Deleting an application does not delete a configuration from
         /// a host.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
@@ -286,7 +288,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the DeleteApplication service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -304,8 +306,8 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Delete a configuration profile. Deleting a configuration profile does not delete a
-        /// configuration from a host.
+        /// Deletes a configuration profile. Deleting a configuration profile does not delete
+        /// a configuration from a host.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationProfile service method.</param>
         /// <param name="cancellationToken">
@@ -314,7 +316,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the DeleteConfigurationProfile service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
@@ -336,7 +338,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Delete a deployment strategy. Deleting a deployment strategy does not delete a configuration
+        /// Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration
         /// from a host.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentStrategy service method.</param>
@@ -346,7 +348,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the DeleteDeploymentStrategy service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -364,7 +366,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Delete an environment. Deleting an environment does not delete a configuration from
+        /// Deletes an environment. Deleting an environment does not delete a configuration from
         /// a host.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
@@ -374,7 +376,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the DeleteEnvironment service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
@@ -396,7 +398,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Delete a version of a configuration from the AppConfig configuration store.
+        /// Deletes a version of a configuration from the AppConfig hosted configuration store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostedConfigurationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -405,7 +407,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the DeleteHostedConfigurationVersion service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -423,7 +425,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieve information about an application.
+        /// Retrieves information about an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
         /// <param name="cancellationToken">
@@ -432,7 +434,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the GetApplication service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -450,11 +452,11 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Receive information about a configuration.
+        /// Retrieves information about a configuration.
         /// 
         ///  <important> 
         /// <para>
-        /// AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
+        /// AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
         /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
         /// with each call to <code>GetConfiguration</code>, your clients receive the current
         /// configuration. You are charged each time your clients receive a configuration.
@@ -475,7 +477,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the GetConfiguration service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -493,7 +495,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieve information about a configuration profile.
+        /// Retrieves information about a configuration profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfigurationProfile service method.</param>
         /// <param name="cancellationToken">
@@ -502,7 +504,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the GetConfigurationProfile service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -520,7 +522,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieve information about a configuration deployment.
+        /// Retrieves information about a configuration deployment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -529,7 +531,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the GetDeployment service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -547,9 +549,9 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieve information about a deployment strategy. A deployment strategy defines important
+        /// Retrieves information about a deployment strategy. A deployment strategy defines important
         /// criteria for rolling out your configuration to the designated targets. A deployment
-        /// strategy includes: the overall duration required, a percentage of targets to receive
+        /// strategy includes the overall duration required, a percentage of targets to receive
         /// the deployment during each interval, an algorithm that defines how percentage grows,
         /// and bake time.
         /// </summary>
@@ -560,7 +562,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the GetDeploymentStrategy service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -578,7 +580,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Retrieve information about an environment. An environment is a logical deployment
+        /// Retrieves information about an environment. An environment is a logical deployment
         /// group of AppConfig applications, such as applications in a <code>Production</code>
         /// environment or in an <code>EU_Region</code> environment. Each configuration deployment
         /// targets an environment. You can enable one or more Amazon CloudWatch alarms for an
@@ -592,7 +594,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the GetEnvironment service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -610,7 +612,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Get information about a specific configuration version.
+        /// Retrieves information about a specific configuration version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedConfigurationVersion service method.</param>
         /// <param name="cancellationToken">
@@ -619,7 +621,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the GetHostedConfigurationVersion service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -637,7 +639,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// List all applications in your AWS account.
+        /// Lists all applications in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
@@ -646,7 +648,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ListApplications service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -670,7 +672,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ListConfigurationProfiles service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -697,7 +699,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ListDeployments service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -715,7 +717,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// List deployment strategies.
+        /// Lists deployment strategies.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentStrategies service method.</param>
         /// <param name="cancellationToken">
@@ -724,7 +726,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ListDeploymentStrategies service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -739,7 +741,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// List the environments for an application.
+        /// Lists the environments for an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironments service method.</param>
         /// <param name="cancellationToken">
@@ -748,7 +750,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ListEnvironments service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -766,7 +768,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// View a list of configurations stored in the AppConfig configuration store by version.
+        /// Lists configurations stored in the AppConfig hosted configuration store by version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostedConfigurationVersions service method.</param>
         /// <param name="cancellationToken">
@@ -775,7 +777,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ListHostedConfigurationVersions service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -802,7 +804,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -829,7 +831,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the StartDeployment service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
@@ -861,7 +863,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the StopDeployment service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -879,7 +881,7 @@ namespace Amazon.AppConfig
 
 
         /// <summary>
-        /// Metadata to assign to an AppConfig resource. Tags help organize and categorize your
+        /// Assigns metadata to an AppConfig resource. Tags help organize and categorize your
         /// AppConfig resources. Each tag consists of a key and an optional value, both of which
         /// you define. You can specify a maximum of 50 tags for a resource.
         /// </summary>
@@ -890,7 +892,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the TagResource service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -917,7 +919,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the UntagResource service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -944,7 +946,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -971,7 +973,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the UpdateConfigurationProfile service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -998,7 +1000,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the UpdateDeploymentStrategy service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -1025,7 +1027,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the UpdateEnvironment service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.
@@ -1052,7 +1054,7 @@ namespace Amazon.AppConfig
         /// 
         /// <returns>The response from the ValidateConfiguration service method, as returned by AppConfig.</returns>
         /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
         /// There was an internal failure in the AppConfig service.

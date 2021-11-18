@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeploymentStrategies operation.
-    /// List deployment strategies.
+    /// Lists deployment strategies.
     /// </summary>
     public partial class ListDeploymentStrategiesRequest : AmazonAppConfigRequest
     {

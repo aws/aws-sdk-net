@@ -30,8 +30,8 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConfigurationProfile operation.
-    /// Delete a configuration profile. Deleting a configuration profile does not delete a
-    /// configuration from a host.
+    /// Deletes a configuration profile. Deleting a configuration profile does not delete
+    /// a configuration from a host.
     /// </summary>
     public partial class DeleteConfigurationProfileRequest : AmazonAppConfigRequest
     {

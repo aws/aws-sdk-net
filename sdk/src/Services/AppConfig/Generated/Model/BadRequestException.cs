@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by an AWS service.
+    /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class BadRequestException : AmazonAppConfigException
     {
+        private BadRequestDetails _details;
+        private BadRequestReason _reason;
 
         /// <summary>
         /// Constructs a new BadRequestException with the specified error
@@ -97,6 +99,8 @@ namespace Amazon.AppConfig.Model
         protected BadRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Details = (BadRequestDetails)info.GetValue("Details", typeof(BadRequestDetails));
+            this.Reason = (BadRequestReason)info.GetValue("Reason", typeof(BadRequestReason));
         }
 
         /// <summary>
@@ -117,8 +121,40 @@ namespace Amazon.AppConfig.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Details", this.Details);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Details.
+        /// </summary>
+        public BadRequestDetails Details
+        {
+            get { return this._details; }
+            set { this._details = value; }
+        }
+
+        // Check to see if Details property is set
+        internal bool IsSetDetails()
+        {
+            return this._details != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason.
+        /// </summary>
+        public BadRequestReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

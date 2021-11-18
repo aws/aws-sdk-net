@@ -37,6 +37,7 @@ namespace Amazon.AppConfig.Model
         private string _applicationId;
         private int? _maxResults;
         private string _nextToken;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -94,6 +95,25 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// A filter based on the type of configurations that the configuration profile contains.
+        /// A configuration can be a feature flag or a free-form configuration.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

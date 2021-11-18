@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// A validator provides a syntactic or semantic check to ensure the configuration you
-    /// want to deploy functions as intended. To validate your application configuration data,
-    /// you provide a schema or a Lambda function that runs against the configuration. The
-    /// configuration deployment or update can only proceed when the configuration data is
-    /// valid.
+    /// A validator provides a syntactic or semantic check to ensure the configuration that
+    /// you want to deploy functions as intended. To validate your application configuration
+    /// data, you provide a schema or a Lambda function that runs against the configuration.
+    /// The configuration deployment or update can only proceed when the configuration data
+    /// is valid.
     /// </summary>
     public partial class Validator
     {
@@ -43,8 +43,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda
-        /// function.
+        /// Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=32768)]

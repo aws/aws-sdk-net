@@ -50,6 +50,10 @@
     <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.Type</property>
+    <pattern>^[a-zA-Z\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
@@ -77,6 +81,10 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.Type</property>
+    <pattern>^[a-zA-Z\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
@@ -318,6 +326,10 @@
     <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.Type</property>
+    <pattern>^[a-zA-Z\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentRequest.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
@@ -494,6 +506,10 @@
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListConfigurationProfilesRequest.Type</property>
+    <pattern>^[a-zA-Z\.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesResponse.NextToken</property>
@@ -826,6 +842,10 @@
     <pattern>^((arn):(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):(iam)::\d{12}:role[/].*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.Type</property>
+    <pattern>^[a-zA-Z\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
     <min>0</min>
     <max>1440</max>
@@ -946,6 +966,10 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.Type</property>
+    <pattern>^[a-zA-Z\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.DeploymentEvent.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -1000,9 +1024,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Monitor.AlarmArn</property>
-    <min>20</min>
+    <min>1</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Monitor.AlarmRoleArn</property>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// The number of hosted configuration versions exceeds the limit for the AppConfig configuration
-    /// store. Delete one or more versions and try again.
+    /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+    /// configuration store. Delete one or more versions and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

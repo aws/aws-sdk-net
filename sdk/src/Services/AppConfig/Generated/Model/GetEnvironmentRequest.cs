@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEnvironment operation.
-    /// Retrieve information about an environment. An environment is a logical deployment
+    /// Retrieves information about an environment. An environment is a logical deployment
     /// group of AppConfig applications, such as applications in a <code>Production</code>
     /// environment or in an <code>EU_Region</code> environment. Each configuration deployment
     /// targets an environment. You can enable one or more Amazon CloudWatch alarms for an
@@ -64,7 +64,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// The ID of the environment you wnat to get.
+        /// The ID of the environment that you want to get.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

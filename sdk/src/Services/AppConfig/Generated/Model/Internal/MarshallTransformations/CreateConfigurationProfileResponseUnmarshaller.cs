@@ -87,6 +87,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     response.RetrievalRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Validators", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Validator, ValidatorUnmarshaller>(ValidatorUnmarshaller.Instance);

@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApplication operation.
-    /// Retrieve information about an application.
+    /// Retrieves information about an application.
     /// </summary>
     public partial class GetApplicationRequest : AmazonAppConfigRequest
     {

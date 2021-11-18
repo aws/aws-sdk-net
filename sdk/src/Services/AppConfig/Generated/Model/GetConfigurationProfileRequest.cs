@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConfigurationProfile operation.
-    /// Retrieve information about a configuration profile.
+    /// Retrieves information about a configuration profile.
     /// </summary>
     public partial class GetConfigurationProfileRequest : AmazonAppConfigRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property ConfigurationProfileId. 
         /// <para>
-        /// The ID of the configuration profile you want to get.
+        /// The ID of the configuration profile that you want to get.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

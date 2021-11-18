@@ -121,7 +121,7 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property RetrievalRoleArn. 
         /// <para>
         /// The ARN of an IAM role with permission to access the configuration at the specified
-        /// LocationUri.
+        /// <code>LocationUri</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

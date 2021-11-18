@@ -39,10 +39,10 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property AlarmArn. 
         /// <para>
-        /// ARN of the Amazon CloudWatch alarm.
+        /// Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AlarmArn
         {
             get { return this._alarmArn; }
@@ -58,7 +58,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property AlarmRoleArn. 
         /// <para>
-        /// ARN of an IAM role for AppConfig to monitor <code>AlarmArn</code>.
+        /// ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

@@ -141,8 +141,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property FinalBakeTimeInMinutes. 
         /// <para>
-        /// The amount of time AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic roll back.
+        /// The amount of time that AppConfig monitors for alarms before considering the deployment
+        /// to be complete and no longer eligible for automatic rollback.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1440)]

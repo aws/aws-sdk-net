@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostedConfigurationVersion operation.
-    /// Get information about a specific configuration version.
+    /// Retrieves information about a specific configuration version.
     /// </summary>
     public partial class GetHostedConfigurationVersionRequest : AmazonAppConfigRequest
     {

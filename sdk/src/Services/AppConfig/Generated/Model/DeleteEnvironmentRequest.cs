@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironment operation.
-    /// Delete an environment. Deleting an environment does not delete a configuration from
+    /// Deletes an environment. Deleting an environment does not delete a configuration from
     /// a host.
     /// </summary>
     public partial class DeleteEnvironmentRequest : AmazonAppConfigRequest
@@ -41,7 +41,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The application ID that includes the environment you want to delete.
+        /// The application ID that includes the environment that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// The ID of the environment you want to delete.
+        /// The ID of the environment that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

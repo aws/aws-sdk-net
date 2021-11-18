@@ -106,6 +106,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
                 if(publicRequest.IsSetValidators())
                 {
                     context.Writer.WritePropertyName("Validators");

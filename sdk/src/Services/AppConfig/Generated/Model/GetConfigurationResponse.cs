@@ -61,6 +61,15 @@ namespace Amazon.AppConfig.Model
         /// <para>
         /// The content of the configuration or the configuration data.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Compare the configuration version numbers of the configuration cached locally on your
+        /// machine and the configuration number in the the header. If the configuration numbers
+        /// are the same, the content can be ignored. The <code>Content</code> section only appears
+        /// if the system finds new or updated configuration data. If the system doesn't find
+        /// new or updated configuration data, then the <code>Content</code> section is not returned.
+        /// </para>
+        ///  </important>
         /// </summary>
         public MemoryStream Content
         {

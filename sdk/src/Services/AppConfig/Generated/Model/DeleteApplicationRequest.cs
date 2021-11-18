@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Delete an application. Deleting an application does not delete a configuration from
+    /// Deletes an application. Deleting an application does not delete a configuration from
     /// a host.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonAppConfigRequest

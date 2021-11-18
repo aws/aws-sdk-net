@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDeploymentStrategy operation.
-    /// Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration
-    /// from a host.
+    /// Detailed information about the input that failed to satisfy the constraints specified
+    /// by an AWS service.
     /// </summary>
-    public partial class DeleteDeploymentStrategyRequest : AmazonAppConfigRequest
+    public partial class BadRequestDetails
     {
-        private string _deploymentStrategyId;
+        private List<InvalidConfigurationDetail> _invalidConfiguration = new List<InvalidConfigurationDetail>();
 
         /// <summary>
-        /// Gets and sets the property DeploymentStrategyId. 
+        /// Gets and sets the property InvalidConfiguration. 
         /// <para>
-        /// The ID of the deployment strategy you want to delete.
+        /// Detailed information about the bad request exception error when creating a hosted
+        /// configuration version.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DeploymentStrategyId
+        public List<InvalidConfigurationDetail> InvalidConfiguration
         {
-            get { return this._deploymentStrategyId; }
-            set { this._deploymentStrategyId = value; }
+            get { return this._invalidConfiguration; }
+            set { this._invalidConfiguration = value; }
         }
 
-        // Check to see if DeploymentStrategyId property is set
-        internal bool IsSetDeploymentStrategyId()
+        // Check to see if InvalidConfiguration property is set
+        internal bool IsSetInvalidConfiguration()
         {
-            return this._deploymentStrategyId != null;
+            return this._invalidConfiguration != null && this._invalidConfiguration.Count > 0; 
         }
 
     }

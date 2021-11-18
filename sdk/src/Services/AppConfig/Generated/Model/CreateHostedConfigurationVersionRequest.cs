@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHostedConfigurationVersion operation.
-    /// Create a new configuration in the AppConfig configuration store.
+    /// Creates a new configuration in the AppConfig hosted configuration store.
     /// </summary>
     public partial class CreateHostedConfigurationVersionRequest : AmazonAppConfigRequest
     {
@@ -102,7 +102,7 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.
+        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -142,8 +142,8 @@ namespace Amazon.AppConfig.Model
         /// <para>
         /// An optional locking token used to prevent race conditions from overwriting configuration
         /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version of
-        /// the latest hosted configuration version.
+        /// multiple hosted configuration versions in rapid succession, specify the version number
+        /// of the latest hosted configuration version.
         /// </para>
         /// </summary>
         public int LatestVersionNumber

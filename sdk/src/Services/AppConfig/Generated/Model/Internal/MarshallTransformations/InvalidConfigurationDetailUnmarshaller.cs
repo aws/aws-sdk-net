@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationProfileSummary Object
+    /// Response Unmarshaller for InvalidConfigurationDetail Object
     /// </summary>  
-    public class ConfigurationProfileSummaryUnmarshaller : IUnmarshaller<ConfigurationProfileSummary, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationProfileSummary, JsonUnmarshallerContext>
+    public class InvalidConfigurationDetailUnmarshaller : IUnmarshaller<InvalidConfigurationDetail, XmlUnmarshallerContext>, IUnmarshaller<InvalidConfigurationDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigurationProfileSummary IUnmarshaller<ConfigurationProfileSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InvalidConfigurationDetail IUnmarshaller<InvalidConfigurationDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConfigurationProfileSummary Unmarshall(JsonUnmarshallerContext context)
+        public InvalidConfigurationDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConfigurationProfileSummary unmarshalledObject = new ConfigurationProfileSummary();
+            InvalidConfigurationDetail unmarshalledObject = new InvalidConfigurationDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationId", targetDepth))
+                if (context.TestExpression("Constraint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Constraint = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LocationUri", targetDepth))
+                if (context.TestExpression("Reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationUri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
@@ -94,24 +88,18 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ValidatorTypes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ValidatorTypes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static ConfigurationProfileSummaryUnmarshaller _instance = new ConfigurationProfileSummaryUnmarshaller();        
+        private static InvalidConfigurationDetailUnmarshaller _instance = new InvalidConfigurationDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationProfileSummaryUnmarshaller Instance
+        public static InvalidConfigurationDetailUnmarshaller Instance
         {
             get
             {

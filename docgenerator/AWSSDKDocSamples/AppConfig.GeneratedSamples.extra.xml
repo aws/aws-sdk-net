@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.CreateApplication(Amazon.AppConfig.Model.CreateApplicationRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.CreateApplication(Amazon.AppConfig.Model.CreateApplicationRequest)" />
+            <member name="T:Amazon.AppConfig.Model.CreateApplicationRequest" />
+            <member name="T:Amazon.AppConfig.Model.CreateApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following create-application example creates an application in AWS AppConfig.
+                </para>
+                <code
+                    title="To create an application"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-create-an-application-1632264511615" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.CreateConfigurationProfile(Amazon.AppConfig.Model.CreateConfigurationProfileRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.CreateConfigurationProfile(Amazon.AppConfig.Model.CreateConfigurationProfileRequest)" />
+            <member name="T:Amazon.AppConfig.Model.CreateConfigurationProfileRequest" />
+            <member name="T:Amazon.AppConfig.Model.CreateConfigurationProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following create-configuration-profile example creates a configuration profile using a configuration stored in Parameter Store, a capability of Systems Manager.
+                </para>
+                <code
+                    title="To create a configuration profile"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-create-a-configuration-profile-1632264580336" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.CreateDeploymentStrategy(Amazon.AppConfig.Model.CreateDeploymentStrategyRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.CreateDeploymentStrategy(Amazon.AppConfig.Model.CreateDeploymentStrategyRequest)" />
+            <member name="T:Amazon.AppConfig.Model.CreateDeploymentStrategyRequest" />
+            <member name="T:Amazon.AppConfig.Model.CreateDeploymentStrategyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following create-deployment-strategy example creates a deployment strategy called Example-Deployment that takes 15 minutes and deploys the configuration to 25% of the application at a time. The strategy is also copied to an SSM Document.
+                </para>
+                <code
+                    title="To create a deployment strategy"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-create-a-deployment-strategy-1632264783812" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.CreateEnvironment(Amazon.AppConfig.Model.CreateEnvironmentRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.CreateEnvironment(Amazon.AppConfig.Model.CreateEnvironmentRequest)" />
+            <member name="T:Amazon.AppConfig.Model.CreateEnvironmentRequest" />
+            <member name="T:Amazon.AppConfig.Model.CreateEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following create-environment example creates an AWS AppConfig environment named Example-Environment using the application you created using create-application
+                </para>
+                <code
+                    title="To create an environment"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-create-an-environment-1632265124975" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.CreateHostedConfigurationVersion(Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.CreateHostedConfigurationVersion(Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest)" />
+            <member name="T:Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest" />
+            <member name="T:Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following create-hosted-configuration-version example creates a new configuration in the AWS AppConfig configuration store.
+                </para>
+                <code
+                    title="To create a hosted configuration version"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-create-a-hosted-configuration-version-1632265196980" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.DeleteApplication(Amazon.AppConfig.Model.DeleteApplicationRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.DeleteApplication(Amazon.AppConfig.Model.DeleteApplicationRequest)" />
+            <member name="T:Amazon.AppConfig.Model.DeleteApplicationRequest" />
+            <member name="T:Amazon.AppConfig.Model.DeleteApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following delete-application example deletes the specified application. 
+
+                </para>
+                <code
+                    title="To delete an application"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-delete-an-application-1632265343951" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.DeleteConfigurationProfile(Amazon.AppConfig.Model.DeleteConfigurationProfileRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.DeleteConfigurationProfile(Amazon.AppConfig.Model.DeleteConfigurationProfileRequest)" />
+            <member name="T:Amazon.AppConfig.Model.DeleteConfigurationProfileRequest" />
+            <member name="T:Amazon.AppConfig.Model.DeleteConfigurationProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following delete-configuration-profile example deletes the specified configuration profile.
+                </para>
+                <code
+                    title="To delete a configuration profile"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-delete-a-configuration-profile-1632265401308" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.DeleteDeploymentStrategy(Amazon.AppConfig.Model.DeleteDeploymentStrategyRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.DeleteDeploymentStrategy(Amazon.AppConfig.Model.DeleteDeploymentStrategyRequest)" />
+            <member name="T:Amazon.AppConfig.Model.DeleteDeploymentStrategyRequest" />
+            <member name="T:Amazon.AppConfig.Model.DeleteDeploymentStrategyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following delete-deployment-strategy example deletes the specified deployment strategy.
+                </para>
+                <code
+                    title="To delete a deployment strategy"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-delete-a-deployment-strategy-1632265473708" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.DeleteEnvironment(Amazon.AppConfig.Model.DeleteEnvironmentRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.DeleteEnvironment(Amazon.AppConfig.Model.DeleteEnvironmentRequest)" />
+            <member name="T:Amazon.AppConfig.Model.DeleteEnvironmentRequest" />
+            <member name="T:Amazon.AppConfig.Model.DeleteEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following delete-environment example deletes the specified application environment.
+                </para>
+                <code
+                    title="To delete an environment"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-delete-an-environment-1632265641044" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.DeleteHostedConfigurationVersion(Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.DeleteHostedConfigurationVersion(Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest)" />
+            <member name="T:Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest" />
+            <member name="T:Amazon.AppConfig.Model.DeleteHostedConfigurationVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following delete-hosted-configuration-version example deletes a configuration version hosted in the AWS AppConfig configuration store.
+                </para>
+                <code
+                    title="To delete a hosted configuration version"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-delete-a-hosted-configuration-version-1632265720740" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetApplication(Amazon.AppConfig.Model.GetApplicationRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetApplication(Amazon.AppConfig.Model.GetApplicationRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetApplicationRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following get-application example lists the details of the specified application.
+                </para>
+                <code
+                    title="To list details of an application"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-details-of-an-application-1632265864702" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetConfiguration(Amazon.AppConfig.Model.GetConfigurationRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetConfiguration(Amazon.AppConfig.Model.GetConfigurationRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetConfigurationRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following get-configuration example returns the configuration details of the example application. On subsequent calls to get-configuration, use the client-configuration-version parameter to only update the configuration of your application if the version has changed. Only updating the configuration when the version has changed avoids excess charges incurred by calling get-configuration.
+                </para>
+                <code
+                    title="To retrieve configuration details"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-retrieve-configuration-details-1632265954314" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetConfigurationProfile(Amazon.AppConfig.Model.GetConfigurationProfileRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetConfigurationProfile(Amazon.AppConfig.Model.GetConfigurationProfileRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetConfigurationProfileRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetConfigurationProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following get-configuration-profile example returns the details of the specified configuration profile.
+                </para>
+                <code
+                    title="To retrieve configuration profile details"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-retrieve-configuration-profile-details-1632266081013" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetDeployment(Amazon.AppConfig.Model.GetDeploymentRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetDeployment(Amazon.AppConfig.Model.GetDeploymentRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetDeploymentRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following get-deployment example lists details of the deployment to the application in the specified environment and deployment.
+                </para>
+                <code
+                    title="To retrieve deployment details"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-retrieve-deployment-details-1633976766883" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetDeploymentStrategy(Amazon.AppConfig.Model.GetDeploymentStrategyRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetDeploymentStrategy(Amazon.AppConfig.Model.GetDeploymentStrategyRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetDeploymentStrategyRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetDeploymentStrategyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following get-deployment-strategy example lists the details of the specified deployment strategy.
+                </para>
+                <code
+                    title="To retrieve details of a deployment strategy"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-retrieve-details-of-a-deployment-strategy-1632266385805" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetEnvironment(Amazon.AppConfig.Model.GetEnvironmentRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetEnvironment(Amazon.AppConfig.Model.GetEnvironmentRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetEnvironmentRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following get-environment example returns the details and state of the specified environment.
+                </para>
+                <code
+                    title="To retrieve environment details"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-retrieve-environment-details-1632266924806" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetHostedConfigurationVersion(Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetHostedConfigurationVersion(Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following get-hosted-configuration-version example retrieves the configuration details of the AWS AppConfig hosted configuration.
+                </para>
+                <code
+                    title="To retrieve hosted configuration details"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-retrieve-hosted-configuration-details-1632267003527" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListApplications(Amazon.AppConfig.Model.ListApplicationsRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListApplications(Amazon.AppConfig.Model.ListApplicationsRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListApplicationsRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListApplicationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following list-applications example lists the available applications in your AWS account.
+                </para>
+                <code
+                    title="To list the available applications"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-the-available-applications-1632267111131" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListConfigurationProfiles(Amazon.AppConfig.Model.ListConfigurationProfilesRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListConfigurationProfiles(Amazon.AppConfig.Model.ListConfigurationProfilesRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListConfigurationProfilesRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListConfigurationProfilesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following list-configuration-profiles example lists the available configuration profiles for the specified application.
+                </para>
+                <code
+                    title="To list the available configuration profiles"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-the-available-configuration-profiles-1632267193265" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListDeployments(Amazon.AppConfig.Model.ListDeploymentsRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListDeployments(Amazon.AppConfig.Model.ListDeploymentsRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListDeploymentsRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following list-deployments example lists the available deployments in your AWS account for the specified application and environment.
+                </para>
+                <code
+                    title="To list the available deployments"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-the-available-deployments-1632267282025" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListDeploymentStrategies(Amazon.AppConfig.Model.ListDeploymentStrategiesRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListDeploymentStrategies(Amazon.AppConfig.Model.ListDeploymentStrategiesRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListDeploymentStrategiesRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListDeploymentStrategiesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following list-deployment-strategies example lists the available deployment strategies in your AWS account.
+                </para>
+                <code
+                    title="To list the available deployment strategies"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-the-available-deployment-strategies-1632267364180" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListEnvironments(Amazon.AppConfig.Model.ListEnvironmentsRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListEnvironments(Amazon.AppConfig.Model.ListEnvironmentsRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListEnvironmentsRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListEnvironmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following list-environments example lists the available environments in your AWS account for the specified application.
+                </para>
+                <code
+                    title="To list the available environments"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-the-available-environments-1632267474389" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListHostedConfigurationVersions(Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListHostedConfigurationVersions(Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListHostedConfigurationVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following list-hosted-configuration-versions example lists the configurations versions hosted in the AWS AppConfig hosted configuration store for the specified application and configuration profile.
+                </para>
+                <code
+                    title="To list the available hosted configuration versions"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-the-available-hosted-configuration-versions-1632267647667" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListTagsForResource(Amazon.AppConfig.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListTagsForResource(Amazon.AppConfig.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following list-tags-for-resource example lists the tags of a specified application.
+                </para>
+                <code
+                    title="To list the tags of an application"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-the-tags-of-an-application-1632328796560" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.StartDeployment(Amazon.AppConfig.Model.StartDeploymentRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.StartDeployment(Amazon.AppConfig.Model.StartDeploymentRequest)" />
+            <member name="T:Amazon.AppConfig.Model.StartDeploymentRequest" />
+            <member name="T:Amazon.AppConfig.Model.StartDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following start-deployment example starts a deployment to the application using the specified environment, deployment strategy, and configuration profile.
+                </para>
+                <code
+                    title="To start a configuration deployment"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-start-a-configuration-deployment-1632328956790" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.StopDeployment(Amazon.AppConfig.Model.StopDeploymentRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.StopDeployment(Amazon.AppConfig.Model.StopDeploymentRequest)" />
+            <member name="T:Amazon.AppConfig.Model.StopDeploymentRequest" />
+            <member name="T:Amazon.AppConfig.Model.StopDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following stop-deployment example stops the deployment of an application configuration to the specified environment.
+                </para>
+                <code
+                    title="To stop configuration deployment"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-stop-configuration-deployment-1632329139126" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.TagResource(Amazon.AppConfig.Model.TagResourceRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.TagResource(Amazon.AppConfig.Model.TagResourceRequest)" />
+            <member name="T:Amazon.AppConfig.Model.TagResourceRequest" />
+            <member name="T:Amazon.AppConfig.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following tag-resource example tags an application resource.
+                </para>
+                <code
+                    title="To tag an application"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-tag-an-application-1632330350645" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.UntagResource(Amazon.AppConfig.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.UntagResource(Amazon.AppConfig.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.AppConfig.Model.UntagResourceRequest" />
+            <member name="T:Amazon.AppConfig.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following untag-resource example removes the group1 tag from the specified application.
+                </para>
+                <code
+                    title="To remove a tag from an application"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-remove-a-tag-from-an-application-1632330429881" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.UpdateApplication(Amazon.AppConfig.Model.UpdateApplicationRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.UpdateApplication(Amazon.AppConfig.Model.UpdateApplicationRequest)" />
+            <member name="T:Amazon.AppConfig.Model.UpdateApplicationRequest" />
+            <member name="T:Amazon.AppConfig.Model.UpdateApplicationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following update-application example updates the name of the specified application.
+                </para>
+                <code
+                    title="To update an application"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-update-an-application-1632330585893" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.UpdateConfigurationProfile(Amazon.AppConfig.Model.UpdateConfigurationProfileRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.UpdateConfigurationProfile(Amazon.AppConfig.Model.UpdateConfigurationProfileRequest)" />
+            <member name="T:Amazon.AppConfig.Model.UpdateConfigurationProfileRequest" />
+            <member name="T:Amazon.AppConfig.Model.UpdateConfigurationProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following update-configuration-profile example updates the description of the specified configuration profile.
+                </para>
+                <code
+                    title="To update a configuration profile"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-update-a-configuration-profile-1632330721974" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.UpdateDeploymentStrategy(Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.UpdateDeploymentStrategy(Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest)" />
+            <member name="T:Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest" />
+            <member name="T:Amazon.AppConfig.Model.UpdateDeploymentStrategyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following update-deployment-strategy example updates final bake time to 20 minutes in the specified deployment strategy. ::
+
+                </para>
+                <code
+                    title="To update a deployment strategy"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-update-a-deployment-strategy-1632330896602" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.UpdateEnvironment(Amazon.AppConfig.Model.UpdateEnvironmentRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.UpdateEnvironment(Amazon.AppConfig.Model.UpdateEnvironmentRequest)" />
+            <member name="T:Amazon.AppConfig.Model.UpdateEnvironmentRequest" />
+            <member name="T:Amazon.AppConfig.Model.UpdateEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following update-environment example updates an environment's description.
+                </para>
+                <code
+                    title="To update an environment"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-update-an-environment-1632331382428" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ValidateConfiguration(Amazon.AppConfig.Model.ValidateConfigurationRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ValidateConfiguration(Amazon.AppConfig.Model.ValidateConfigurationRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ValidateConfigurationRequest" />
+            <member name="T:Amazon.AppConfig.Model.ValidateConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following validate-configuration example uses the validators in a configuration profile to validate a configuration.
+                </para>
+                <code
+                    title="To validate a configuration"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-validate-a-configuration-1632331491365" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -37,6 +37,7 @@ namespace Amazon.AppConfig.Model
         private string _id;
         private string _locationUri;
         private string _name;
+        private string _type;
         private List<string> _validatorTypes = new List<string>();
 
         /// <summary>
@@ -111,6 +112,26 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of configurations that the configuration profile contains. A configuration
+        /// can be a feature flag used for enabling or disabling new features or a free-form configuration
+        /// used to introduce changes to your application.
+        /// </para>
+        /// </summary>
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

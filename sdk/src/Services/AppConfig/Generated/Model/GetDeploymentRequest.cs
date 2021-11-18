@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDeployment operation.
-    /// Retrieve information about a configuration deployment.
+    /// Retrieves information about a configuration deployment.
     /// </summary>
     public partial class GetDeploymentRequest : AmazonAppConfigRequest
     {

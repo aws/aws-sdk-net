@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHostedConfigurationVersion operation.
-    /// Delete a version of a configuration from the AppConfig configuration store.
+    /// Deletes a version of a configuration from the AppConfig hosted configuration store.
     /// </summary>
     public partial class DeleteHostedConfigurationVersionRequest : AmazonAppConfigRequest
     {

@@ -34,46 +34,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BadRequestException Object
+    /// Response Unmarshaller for BadRequestDetails Object
     /// </summary>  
-    public class BadRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<BadRequestException, JsonUnmarshallerContext>
+    public class BadRequestDetailsUnmarshaller : IUnmarshaller<BadRequestDetails, XmlUnmarshallerContext>, IUnmarshaller<BadRequestDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BadRequestException Unmarshall(JsonUnmarshallerContext context)
+        BadRequestDetails IUnmarshaller<BadRequestDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public BadRequestException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public BadRequestDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            BadRequestException unmarshalledObject = new BadRequestException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            BadRequestDetails unmarshalledObject = new BadRequestDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Details", targetDepth))
+                if (context.TestExpression("InvalidConfiguration", targetDepth))
                 {
-                    var unmarshaller = BadRequestDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Reason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<InvalidConfigurationDetail, InvalidConfigurationDetailUnmarshaller>(InvalidConfigurationDetailUnmarshaller.Instance);
+                    unmarshalledObject.InvalidConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,12 +75,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static BadRequestExceptionUnmarshaller _instance = new BadRequestExceptionUnmarshaller();        
+
+        private static BadRequestDetailsUnmarshaller _instance = new BadRequestDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BadRequestExceptionUnmarshaller Instance
+        public static BadRequestDetailsUnmarshaller Instance
         {
             get
             {

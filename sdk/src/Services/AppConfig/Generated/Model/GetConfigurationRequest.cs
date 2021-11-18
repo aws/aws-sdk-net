@@ -30,11 +30,11 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConfiguration operation.
-    /// Receive information about a configuration.
+    /// Retrieves information about a configuration.
     /// 
     ///  <important> 
     /// <para>
-    /// AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
+    /// AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
     /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
     /// with each call to <code>GetConfiguration</code>, your clients receive the current
     /// configuration. You are charged each time your clients receive a configuration.
@@ -83,7 +83,7 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// AWS AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
+        /// AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter
         /// to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code>
         /// with each call to <code>GetConfiguration</code>, your clients receive the current
         /// configuration. You are charged each time your clients receive a configuration.
@@ -97,8 +97,8 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about working with configurations, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
-        /// the Configuration</a> in the <i>AWS AppConfig User Guide</i>.
+        /// For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+        /// the Configuration</a> in the <i>AppConfig User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -117,8 +117,9 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// A unique ID to identify the client for the configuration. This ID enables AppConfig
-        /// to deploy the configuration in intervals, as defined in the deployment strategy.
+        /// The clientId parameter in the following command is a unique, user-specified ID to
+        /// identify the client for the configuration. This ID enables AppConfig to deploy the
+        /// configuration in intervals, as defined in the deployment strategy. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
