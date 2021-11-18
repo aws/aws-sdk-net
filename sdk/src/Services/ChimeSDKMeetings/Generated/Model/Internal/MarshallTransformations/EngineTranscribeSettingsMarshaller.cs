@@ -45,10 +45,46 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EngineTranscribeSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContentIdentificationType())
+            {
+                context.Writer.WritePropertyName("ContentIdentificationType");
+                context.Writer.Write(requestObject.ContentIdentificationType);
+            }
+
+            if(requestObject.IsSetContentRedactionType())
+            {
+                context.Writer.WritePropertyName("ContentRedactionType");
+                context.Writer.Write(requestObject.ContentRedactionType);
+            }
+
+            if(requestObject.IsSetEnablePartialResultsStabilization())
+            {
+                context.Writer.WritePropertyName("EnablePartialResultsStabilization");
+                context.Writer.Write(requestObject.EnablePartialResultsStabilization);
+            }
+
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");
                 context.Writer.Write(requestObject.LanguageCode);
+            }
+
+            if(requestObject.IsSetLanguageModelName())
+            {
+                context.Writer.WritePropertyName("LanguageModelName");
+                context.Writer.Write(requestObject.LanguageModelName);
+            }
+
+            if(requestObject.IsSetPartialResultsStability())
+            {
+                context.Writer.WritePropertyName("PartialResultsStability");
+                context.Writer.Write(requestObject.PartialResultsStability);
+            }
+
+            if(requestObject.IsSetPiiEntityTypes())
+            {
+                context.Writer.WritePropertyName("PiiEntityTypes");
+                context.Writer.Write(requestObject.PiiEntityTypes);
             }
 
             if(requestObject.IsSetRegion())
