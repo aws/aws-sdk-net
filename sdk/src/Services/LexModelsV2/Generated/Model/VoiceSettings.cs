@@ -33,7 +33,28 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class VoiceSettings
     {
+        private VoiceEngine _engine;
         private string _voiceId;
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// Indicates the type of Amazon Polly voice that Amazon Lex should use for voice interaction
+        /// with the user. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices
+        /// in Amazon Polly</a>.
+        /// </para>
+        /// </summary>
+        public VoiceEngine Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property VoiceId. 

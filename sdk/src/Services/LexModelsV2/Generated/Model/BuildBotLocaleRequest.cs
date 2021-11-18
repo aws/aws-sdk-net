@@ -44,7 +44,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BotId. 
         /// <para>
         /// The identifier of the bot to build. The identifier is returned in the response from
-        /// the operation.
+        /// the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]

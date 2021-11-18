@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Provides summary information about a built-in intent for the <a>ListBuiltInIntents</a>
-    /// operation.
+    /// Provides summary information about a built-in intent for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInIntents.html">
+    /// ListBuiltInIntents </a> operation.
     /// </summary>
     public partial class BuiltInIntentSummary
     {

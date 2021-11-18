@@ -59,8 +59,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ExportStatus. 
         /// <para>
         /// The current status of the deletion. When the deletion is complete, the export will
-        /// no longer be returned by the operation and calls to the with the export identifier
-        /// will fail.
+        /// no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a>
+        /// operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">
+        /// DescribeExport</a> operation with the export identifier will fail.
         /// </para>
         /// </summary>
         public ExportStatus ExportStatus

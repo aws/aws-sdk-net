@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Summary information about a bot returned by the <a>ListBots</a> operation.
+    /// Summary information about a bot returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html">ListBots</a>
+    /// operation.
     /// </summary>
     public partial class BotSummary
     {
@@ -44,7 +45,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BotId. 
         /// <para>
         /// The unique identifier assigned to the bot. Use this ID to get detailed information
-        /// about the bot with the <a>DescribeBot</a> operation.
+        /// about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=10)]

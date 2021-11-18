@@ -30,7 +30,7 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBotVersion operation.
-    /// Deletes a specific version of a bot. To delete all version of a bot, use the <a>DeleteBot</a>
+    /// Deletes a specific version of a bot. To delete all version of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a>
     /// operation.
     /// </summary>
     public partial class DeleteBotVersionRequest : AmazonLexModelsV2Request

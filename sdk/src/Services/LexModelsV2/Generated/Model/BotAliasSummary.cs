@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Summary information about bot aliases returned from the <a>ListBotAliases</a> operation.
+    /// Summary information about bot aliases returned from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotAliases.html">ListBotAliases</a>
+    /// operation.
     /// </summary>
     public partial class BotAliasSummary
     {
@@ -45,7 +46,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BotAliasId. 
         /// <para>
         /// The unique identifier assigned to the bot alias. You can use this ID to get detailed
-        /// information about the alias using the <a>DescribeBotAlias</a> operation.
+        /// information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=10)]

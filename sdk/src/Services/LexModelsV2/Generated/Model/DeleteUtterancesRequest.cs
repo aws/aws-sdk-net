@@ -35,8 +35,9 @@ namespace Amazon.LexModelsV2.Model
     ///  
     /// <para>
     /// Amazon Lex stores the utterances that users send to your bot. Utterances are stored
-    /// for 15 days for use with the operation, and then stored indefinitely for use in improving
-    /// the ability of your bot to respond to user input..
+    /// for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+    /// operation, and then stored indefinitely for use in improving the ability of your bot
+    /// to respond to user input..
     /// </para>
     ///  
     /// <para>
@@ -96,7 +97,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property SessionId. 
         /// <para>
         /// The unique identifier of the session with the user. The ID is returned in the response
-        /// from the and operations.
+        /// from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeText.html">RecognizeText</a>
+        /// and <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a>
+        /// operations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=100)]

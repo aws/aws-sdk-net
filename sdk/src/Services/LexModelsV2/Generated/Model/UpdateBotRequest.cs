@@ -44,7 +44,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotId. 
         /// <para>
-        /// The unique identifier of the bot to update. This identifier is returned by the <a>CreateBot</a>
+        /// The unique identifier of the bot to update. This identifier is returned by the <a
+        /// href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a>
         /// operation.
         /// </para>
         /// </summary>

@@ -45,6 +45,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VoiceSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEngine())
+            {
+                context.Writer.WritePropertyName("engine");
+                context.Writer.Write(requestObject.Engine);
+            }
+
             if(requestObject.IsSetVoiceId())
             {
                 context.Writer.WritePropertyName("voiceId");
