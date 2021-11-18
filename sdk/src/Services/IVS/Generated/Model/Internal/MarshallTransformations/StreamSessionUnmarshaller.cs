@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Stream Object
+    /// Response Unmarshaller for StreamSession Object
     /// </summary>  
-    public class StreamUnmarshaller : IUnmarshaller<Stream, XmlUnmarshallerContext>, IUnmarshaller<Stream, JsonUnmarshallerContext>
+    public class StreamSessionUnmarshaller : IUnmarshaller<StreamSession, XmlUnmarshallerContext>, IUnmarshaller<StreamSession, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Stream IUnmarshaller<Stream, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StreamSession IUnmarshaller<StreamSession, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Stream Unmarshall(JsonUnmarshallerContext context)
+        public StreamSession Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Stream unmarshalledObject = new Stream();
+            StreamSession unmarshalledObject = new StreamSession();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channelArn", targetDepth))
+                if (context.TestExpression("channel", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ChannelUnmarshaller.Instance;
+                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("health", targetDepth))
+                if (context.TestExpression("endTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Health = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("playbackUrl", targetDepth))
+                if (context.TestExpression("ingestConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IngestConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IngestConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingConfiguration", targetDepth))
+                {
+                    var unmarshaller = RecordingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RecordingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
@@ -88,22 +94,16 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("streamId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("viewerCount", targetDepth))
+                if (context.TestExpression("truncatedEvents", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ViewerCount = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<StreamEvent, StreamEventUnmarshaller>(StreamEventUnmarshaller.Instance);
+                    unmarshalledObject.TruncatedEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +112,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         }
 
 
-        private static StreamUnmarshaller _instance = new StreamUnmarshaller();        
+        private static StreamSessionUnmarshaller _instance = new StreamSessionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StreamUnmarshaller Instance
+        public static StreamSessionUnmarshaller Instance
         {
             get
             {

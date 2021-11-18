@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Stream Object
+    /// Response Unmarshaller for VideoConfiguration Object
     /// </summary>  
-    public class StreamUnmarshaller : IUnmarshaller<Stream, XmlUnmarshallerContext>, IUnmarshaller<Stream, JsonUnmarshallerContext>
+    public class VideoConfigurationUnmarshaller : IUnmarshaller<VideoConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VideoConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Stream IUnmarshaller<Stream, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VideoConfiguration IUnmarshaller<VideoConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,63 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Stream Unmarshall(JsonUnmarshallerContext context)
+        public VideoConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Stream unmarshalledObject = new Stream();
+            VideoConfiguration unmarshalledObject = new VideoConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channelArn", targetDepth))
+                if (context.TestExpression("avcLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvcLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("health", targetDepth))
+                if (context.TestExpression("avcProfile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Health = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvcProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("playbackUrl", targetDepth))
+                if (context.TestExpression("codec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("encoder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encoder = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("streamId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("viewerCount", targetDepth))
+                if (context.TestExpression("targetBitrate", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ViewerCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetBitrate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetFramerate", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TargetFramerate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoHeight", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VideoHeight = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoWidth", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VideoWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +118,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         }
 
 
-        private static StreamUnmarshaller _instance = new StreamUnmarshaller();        
+        private static VideoConfigurationUnmarshaller _instance = new VideoConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StreamUnmarshaller Instance
+        public static VideoConfigurationUnmarshaller Instance
         {
             get
             {

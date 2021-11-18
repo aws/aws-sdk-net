@@ -38,6 +38,7 @@ namespace Amazon.IVS.Model
         private string _playbackUrl;
         private DateTime? _startTime;
         private StreamState _state;
+        private string _streamId;
         private long? _viewerCount;
 
         /// <summary>
@@ -129,6 +130,25 @@ namespace Amazon.IVS.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Unique identifier for a live or previously live stream in the specified channel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=26, Max=26)]
+        public string StreamId
+        {
+            get { return this._streamId; }
+            set { this._streamId = value; }
+        }
+
+        // Check to see if StreamId property is set
+        internal bool IsSetStreamId()
+        {
+            return this._streamId != null;
         }
 
         /// <summary>

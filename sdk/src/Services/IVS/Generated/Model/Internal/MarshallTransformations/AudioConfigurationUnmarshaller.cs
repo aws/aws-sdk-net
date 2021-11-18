@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Stream Object
+    /// Response Unmarshaller for AudioConfiguration Object
     /// </summary>  
-    public class StreamUnmarshaller : IUnmarshaller<Stream, XmlUnmarshallerContext>, IUnmarshaller<Stream, JsonUnmarshallerContext>
+    public class AudioConfigurationUnmarshaller : IUnmarshaller<AudioConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AudioConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Stream IUnmarshaller<Stream, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioConfiguration IUnmarshaller<AudioConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,39 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Stream Unmarshall(JsonUnmarshallerContext context)
+        public AudioConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Stream unmarshalledObject = new Stream();
+            AudioConfiguration unmarshalledObject = new AudioConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channelArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("health", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Health = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("playbackUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("streamId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("viewerCount", targetDepth))
+                if (context.TestExpression("channels", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ViewerCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("codec", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sampleRate", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetBitrate", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.TargetBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +94,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         }
 
 
-        private static StreamUnmarshaller _instance = new StreamUnmarshaller();        
+        private static AudioConfigurationUnmarshaller _instance = new AudioConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StreamUnmarshaller Instance
+        public static AudioConfigurationUnmarshaller Instance
         {
             get
             {

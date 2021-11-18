@@ -29,32 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListStreams operation.
-    /// Gets summary information about live streams in your account, in the Amazon Web Services
-    /// region where the API request is processed.
+    /// Container for the parameters to the ListStreamSessions operation.
+    /// Gets a summary of current and previous streams for a specified channel in your account,
+    /// in the AWS region where the API request is processed.
     /// </summary>
-    public partial class ListStreamsRequest : AmazonIVSRequest
+    public partial class ListStreamSessionsRequest : AmazonIVSRequest
     {
-        private StreamFilters _filterBy;
+        private string _channelArn;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property FilterBy. 
+        /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// Filters the stream list to match the specified criterion.
+        /// Channel ARN used to filter the list.
         /// </para>
         /// </summary>
-        public StreamFilters FilterBy
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string ChannelArn
         {
-            get { return this._filterBy; }
-            set { this._filterBy = value; }
+            get { return this._channelArn; }
+            set { this._channelArn = value; }
         }
 
-        // Check to see if FilterBy property is set
-        internal bool IsSetFilterBy()
+        // Check to see if ChannelArn property is set
+        internal bool IsSetChannelArn()
         {
-            return this._filterBy != null;
+            return this._channelArn != null;
         }
 
         /// <summary>

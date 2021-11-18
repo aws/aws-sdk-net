@@ -49,5 +49,10 @@ namespace Amazon.IVS.Model
         /// Paginator for ListStreams operation
         ///</summary>
         IListStreamsPaginator ListStreams(ListStreamsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStreamSessions operation
+        ///</summary>
+        IListStreamSessionsPaginator ListStreamSessions(ListStreamSessionsRequest request);
     }
 }

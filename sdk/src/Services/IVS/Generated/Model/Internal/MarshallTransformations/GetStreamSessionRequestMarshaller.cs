@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListStreams Request Marshaller
+    /// GetStreamSession Request Marshaller
     /// </summary>       
-    public class ListStreamsRequestMarshaller : IMarshaller<IRequest, ListStreamsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetStreamSessionRequestMarshaller : IMarshaller<IRequest, GetStreamSessionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListStreamsRequest)input);
+            return this.Marshall((GetStreamSessionRequest)input);
         }
 
         /// <summary>
@@ -52,40 +52,29 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListStreamsRequest publicRequest)
+        public IRequest Marshall(GetStreamSessionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/ListStreams";
+            request.ResourcePath = "/GetStreamSession";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterBy())
+                if(publicRequest.IsSetChannelArn())
                 {
-                    context.Writer.WritePropertyName("filterBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StreamFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FilterBy, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("channelArn");
+                    context.Writer.Write(publicRequest.ChannelArn);
                 }
 
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetStreamId())
                 {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("streamId");
+                    context.Writer.Write(publicRequest.StreamId);
                 }
 
         
@@ -97,9 +86,9 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListStreamsRequestMarshaller _instance = new ListStreamsRequestMarshaller();        
+        private static GetStreamSessionRequestMarshaller _instance = new GetStreamSessionRequestMarshaller();        
 
-        internal static ListStreamsRequestMarshaller GetInstance()
+        internal static GetStreamSessionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +96,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListStreamsRequestMarshaller Instance
+        public static GetStreamSessionRequestMarshaller Instance
         {
             get
             {
