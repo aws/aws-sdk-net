@@ -32,6 +32,14 @@ namespace Amazon.CloudWatch.Model
     /// Container for the parameters to the DescribeAlarms operation.
     /// Retrieves the specified alarms. You can filter the results by specifying a prefix
     /// for the alarm name, the alarm state, or a prefix for any action.
+    /// 
+    ///  
+    /// <para>
+    /// To use this operation and return information about composite alarms, you must be signed
+    /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
+    /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+    /// permission has a narrower scope.
+    /// </para>
     /// </summary>
     public partial class DescribeAlarmsRequest : AmazonCloudWatchRequest
     {

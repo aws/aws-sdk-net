@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// This structure contains the definition for a Contributor Insights rule.
+    /// This structure contains the definition for a Contributor Insights rule. For more information
+    /// about this rule, see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">
+    /// Using Constributor Insights to analyze high-cardinality data</a> in the <i>Amazon
+    /// CloudWatch User Guide</i>.
     /// </summary>
     public partial class InsightRule
     {
@@ -83,7 +86,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Schema. 
         /// <para>
         /// For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version":
-        /// 1}</code>. For built-in rules, this is <code>{"Name": "ServiceLogRule", "Version":
+        /// 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version":
         /// 1}</code> 
         /// </para>
         /// </summary>

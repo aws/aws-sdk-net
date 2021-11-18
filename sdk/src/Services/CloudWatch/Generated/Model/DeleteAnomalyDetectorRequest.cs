@@ -35,8 +35,10 @@ namespace Amazon.CloudWatch.Model
     public partial class DeleteAnomalyDetectorRequest : AmazonCloudWatchRequest
     {
         private List<Dimension> _dimensions = new List<Dimension>();
+        private MetricMathAnomalyDetector _metricMathAnomalyDetector;
         private string _metricName;
         private string _awsNamespace;
+        private SingleMetricAnomalyDetector _singleMetricAnomalyDetector;
         private string _stat;
 
         /// <summary>
@@ -45,6 +47,7 @@ namespace Amazon.CloudWatch.Model
         /// The metric dimensions associated with the anomaly detection model to delete.
         /// </para>
         /// </summary>
+        [Obsolete("Use SingleMetricAnomalyDetector.")]
         [AWSProperty(Max=10)]
         public List<Dimension> Dimensions
         {
@@ -59,12 +62,62 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricMathAnomalyDetector. 
+        /// <para>
+        /// The metric math anomaly detector to be deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
+        /// in the same operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Dimensions</code>,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MetricName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Namespace</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stat</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code>
+        /// property.
+        /// </para>
+        /// </summary>
+        public MetricMathAnomalyDetector MetricMathAnomalyDetector
+        {
+            get { return this._metricMathAnomalyDetector; }
+            set { this._metricMathAnomalyDetector = value; }
+        }
+
+        // Check to see if MetricMathAnomalyDetector property is set
+        internal bool IsSetMetricMathAnomalyDetector()
+        {
+            return this._metricMathAnomalyDetector != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
         /// The metric name associated with the anomaly detection model to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [Obsolete("Use SingleMetricAnomalyDetector.")]
+        [AWSProperty(Min=1, Max=255)]
         public string MetricName
         {
             get { return this._metricName; }
@@ -83,7 +136,8 @@ namespace Amazon.CloudWatch.Model
         /// The namespace associated with the anomaly detection model to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [Obsolete("Use SingleMetricAnomalyDetector.")]
+        [AWSProperty(Min=1, Max=255)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -97,12 +151,62 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SingleMetricAnomalyDetector. 
+        /// <para>
+        /// A single metric anomaly detector to be deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following
+        /// parameters in the same operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Dimensions</code>,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MetricName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Namespace</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stat</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code>
+        /// property.
+        /// </para>
+        /// </summary>
+        public SingleMetricAnomalyDetector SingleMetricAnomalyDetector
+        {
+            get { return this._singleMetricAnomalyDetector; }
+            set { this._singleMetricAnomalyDetector = value; }
+        }
+
+        // Check to see if SingleMetricAnomalyDetector property is set
+        internal bool IsSetSingleMetricAnomalyDetector()
+        {
+            return this._singleMetricAnomalyDetector != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Stat. 
         /// <para>
         /// The statistic associated with the anomaly detection model to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("Use SingleMetricAnomalyDetector.")]
+        [AWSProperty(Max=50)]
         public string Stat
         {
             get { return this._stat; }

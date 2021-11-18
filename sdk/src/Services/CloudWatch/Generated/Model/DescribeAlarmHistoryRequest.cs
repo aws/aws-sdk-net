@@ -38,6 +38,13 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// CloudWatch retains the history of an alarm even if you delete the alarm.
     /// </para>
+    ///  
+    /// <para>
+    /// To use this operation and return information about a composite alarm, you must be
+    /// signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is
+    /// scoped to <code>*</code>. You can't return information about composite alarms if your
+    /// <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.
+    /// </para>
     /// </summary>
     public partial class DescribeAlarmHistoryRequest : AmazonCloudWatchRequest
     {

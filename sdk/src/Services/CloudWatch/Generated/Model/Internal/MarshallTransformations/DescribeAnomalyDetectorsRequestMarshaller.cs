@@ -58,6 +58,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAnomalyDetectorTypes())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AnomalyDetectorTypes)
+                    {
+                        request.Parameters.Add("AnomalyDetectorTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetDimensions())
                 {
                     int publicRequestlistValueIndex = 1;

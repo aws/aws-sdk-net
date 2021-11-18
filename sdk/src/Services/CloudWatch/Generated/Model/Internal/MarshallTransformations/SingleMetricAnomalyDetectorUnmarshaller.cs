@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnomalyDetector Object
+    /// Response Unmarshaller for SingleMetricAnomalyDetector Object
     /// </summary>  
-    public class AnomalyDetectorUnmarshaller : IUnmarshaller<AnomalyDetector, XmlUnmarshallerContext>, IUnmarshaller<AnomalyDetector, JsonUnmarshallerContext>
+    public class SingleMetricAnomalyDetectorUnmarshaller : IUnmarshaller<SingleMetricAnomalyDetector, XmlUnmarshallerContext>, IUnmarshaller<SingleMetricAnomalyDetector, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AnomalyDetector Unmarshall(XmlUnmarshallerContext context)
+        public SingleMetricAnomalyDetector Unmarshall(XmlUnmarshallerContext context)
         {
-            AnomalyDetector unmarshalledObject = new AnomalyDetector();
+            SingleMetricAnomalyDetector unmarshalledObject = new SingleMetricAnomalyDetector();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Configuration", targetDepth))
-                    {
-                        var unmarshaller = AnomalyDetectorConfigurationUnmarshaller.Instance;
-                        unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("Dimensions/member", targetDepth))
                     {
                         var unmarshaller = DimensionUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Dimensions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("MetricMathAnomalyDetector", targetDepth))
-                    {
-                        var unmarshaller = MetricMathAnomalyDetectorUnmarshaller.Instance;
-                        unmarshalledObject.MetricMathAnomalyDetector = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MetricName", targetDepth))
@@ -85,22 +73,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SingleMetricAnomalyDetector", targetDepth))
-                    {
-                        var unmarshaller = SingleMetricAnomalyDetectorUnmarshaller.Instance;
-                        unmarshalledObject.SingleMetricAnomalyDetector = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("Stat", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Stat = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StateValue", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StateValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -118,18 +94,18 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AnomalyDetector Unmarshall(JsonUnmarshallerContext context)
+        public SingleMetricAnomalyDetector Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static AnomalyDetectorUnmarshaller _instance = new AnomalyDetectorUnmarshaller();        
+        private static SingleMetricAnomalyDetectorUnmarshaller _instance = new SingleMetricAnomalyDetectorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnomalyDetectorUnmarshaller Instance
+        public static SingleMetricAnomalyDetectorUnmarshaller Instance
         {
             get
             {

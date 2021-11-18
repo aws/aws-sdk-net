@@ -30,17 +30,41 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAnomalyDetectors operation.
-    /// Lists the anomaly detection models that you have created in your account. You can
-    /// list all models in your account or filter the results to only the models that are
-    /// related to a certain namespace, metric name, or metric dimension.
+    /// Lists the anomaly detection models that you have created in your account. For single
+    /// metric anomaly detectors, you can list all of the models in your account or filter
+    /// the results to only the models that are related to a certain namespace, metric name,
+    /// or metric dimension. For metric math anomaly detectors, you can list them by adding
+    /// <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will
+    /// return all metric math anomaly detectors in your account.
     /// </summary>
     public partial class DescribeAnomalyDetectorsRequest : AmazonCloudWatchRequest
     {
+        private List<string> _anomalyDetectorTypes = new List<string>();
         private List<Dimension> _dimensions = new List<Dimension>();
         private int? _maxResults;
         private string _metricName;
         private string _awsNamespace;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AnomalyDetectorTypes. 
+        /// <para>
+        /// The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
+        /// If empty, defaults to <code>SINGLE_METRIC</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<string> AnomalyDetectorTypes
+        {
+            get { return this._anomalyDetectorTypes; }
+            set { this._anomalyDetectorTypes = value; }
+        }
+
+        // Check to see if AnomalyDetectorTypes property is set
+        internal bool IsSetAnomalyDetectorTypes()
+        {
+            return this._anomalyDetectorTypes != null && this._anomalyDetectorTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 

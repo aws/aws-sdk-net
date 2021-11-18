@@ -87,6 +87,12 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
+    /// To use this operation, you must be signed on with the <code>cloudwatch:PutCompositeAlarm</code>
+    /// permission that is scoped to <code>*</code>. You can't create a composite alarms if
+    /// your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.
+    /// </para>
+    ///  
+    /// <para>
     /// If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
     /// create a composite alarm that has Systems Manager OpsItem actions.
     /// </para>

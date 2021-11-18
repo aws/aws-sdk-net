@@ -29,16 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// An anomaly detection model associated with a particular CloudWatch metric and statistic.
-    /// You can use the model to display a band of expected normal values when the metric
-    /// is graphed.
+    /// An anomaly detection model associated with a particular CloudWatch metric, statistic,
+    /// or metric math expression. You can use the model to display a band of expected, normal
+    /// values when the metric is graphed.
     /// </summary>
     public partial class AnomalyDetector
     {
         private AnomalyDetectorConfiguration _configuration;
         private List<Dimension> _dimensions = new List<Dimension>();
+        private MetricMathAnomalyDetector _metricMathAnomalyDetector;
         private string _metricName;
         private string _awsNamespace;
+        private SingleMetricAnomalyDetector _singleMetricAnomalyDetector;
         private string _stat;
         private AnomalyDetectorStateValue _stateValue;
 
@@ -68,6 +70,7 @@ namespace Amazon.CloudWatch.Model
         /// The metric dimensions associated with the anomaly detection model.
         /// </para>
         /// </summary>
+        [Obsolete("Use SingleMetricAnomalyDetector.Dimensions property.")]
         [AWSProperty(Max=10)]
         public List<Dimension> Dimensions
         {
@@ -82,11 +85,30 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricMathAnomalyDetector. 
+        /// <para>
+        /// The CloudWatch metric math expression for this anomaly detector.
+        /// </para>
+        /// </summary>
+        public MetricMathAnomalyDetector MetricMathAnomalyDetector
+        {
+            get { return this._metricMathAnomalyDetector; }
+            set { this._metricMathAnomalyDetector = value; }
+        }
+
+        // Check to see if MetricMathAnomalyDetector property is set
+        internal bool IsSetMetricMathAnomalyDetector()
+        {
+            return this._metricMathAnomalyDetector != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
         /// The name of the metric associated with the anomaly detection model.
         /// </para>
         /// </summary>
+        [Obsolete("Use SingleMetricAnomalyDetector.MetricName property.")]
         [AWSProperty(Min=1, Max=255)]
         public string MetricName
         {
@@ -106,6 +128,7 @@ namespace Amazon.CloudWatch.Model
         /// The namespace of the metric associated with the anomaly detection model.
         /// </para>
         /// </summary>
+        [Obsolete("Use SingleMetricAnomalyDetector.Namespace property.")]
         [AWSProperty(Min=1, Max=255)]
         public string Namespace
         {
@@ -120,11 +143,31 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SingleMetricAnomalyDetector. 
+        /// <para>
+        /// The CloudWatch metric and statistic for this anomaly detector.
+        /// </para>
+        /// </summary>
+        public SingleMetricAnomalyDetector SingleMetricAnomalyDetector
+        {
+            get { return this._singleMetricAnomalyDetector; }
+            set { this._singleMetricAnomalyDetector = value; }
+        }
+
+        // Check to see if SingleMetricAnomalyDetector property is set
+        internal bool IsSetSingleMetricAnomalyDetector()
+        {
+            return this._singleMetricAnomalyDetector != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Stat. 
         /// <para>
         /// The statistic associated with the anomaly detection model.
         /// </para>
         /// </summary>
+        [Obsolete("Use SingleMetricAnomalyDetector.Stat property.")]
+        [AWSProperty(Max=50)]
         public string Stat
         {
             get { return this._stat; }

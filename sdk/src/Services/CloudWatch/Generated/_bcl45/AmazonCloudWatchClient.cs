@@ -389,6 +389,9 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
@@ -420,6 +423,9 @@ namespace Amazon.CloudWatch
         /// <returns>The response from the DeleteAnomalyDetector service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
@@ -639,6 +645,13 @@ namespace Amazon.CloudWatch
         /// <para>
         /// CloudWatch retains the history of an alarm even if you delete the alarm.
         /// </para>
+        ///  
+        /// <para>
+        /// To use this operation and return information about a composite alarm, you must be
+        /// signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is
+        /// scoped to <code>*</code>. You can't return information about composite alarms if your
+        /// <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
@@ -660,6 +673,13 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// CloudWatch retains the history of an alarm even if you delete the alarm.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation and return information about a composite alarm, you must be
+        /// signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is
+        /// scoped to <code>*</code>. You can't return information about composite alarms if your
+        /// <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory service method.</param>
@@ -688,6 +708,13 @@ namespace Amazon.CloudWatch
         /// <para>
         /// CloudWatch retains the history of an alarm even if you delete the alarm.
         /// </para>
+        ///  
+        /// <para>
+        /// To use this operation and return information about a composite alarm, you must be
+        /// signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is
+        /// scoped to <code>*</code>. You can't return information about composite alarms if your
+        /// <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -711,6 +738,13 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// CloudWatch retains the history of an alarm even if you delete the alarm.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation and return information about a composite alarm, you must be
+        /// signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is
+        /// scoped to <code>*</code>. You can't return information about composite alarms if your
+        /// <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory service method.</param>
@@ -740,6 +774,14 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation and return information about composite alarms, you must be signed
+        /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
+        /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+        /// permission has a narrower scope.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
@@ -756,6 +798,14 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation and return information about composite alarms, you must be signed
+        /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
+        /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+        /// permission has a narrower scope.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
         /// 
@@ -777,6 +827,14 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation and return information about composite alarms, you must be signed
+        /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
+        /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+        /// permission has a narrower scope.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -795,6 +853,14 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation and return information about composite alarms, you must be signed
+        /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
+        /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+        /// permission has a narrower scope.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
         /// <param name="cancellationToken">
@@ -878,9 +944,12 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Lists the anomaly detection models that you have created in your account. You can
-        /// list all models in your account or filter the results to only the models that are
-        /// related to a certain namespace, metric name, or metric dimension.
+        /// Lists the anomaly detection models that you have created in your account. For single
+        /// metric anomaly detectors, you can list all of the models in your account or filter
+        /// the results to only the models that are related to a certain namespace, metric name,
+        /// or metric dimension. For metric math anomaly detectors, you can list them by adding
+        /// <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will
+        /// return all metric math anomaly detectors in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetectors service method.</param>
         /// 
@@ -890,6 +959,9 @@ namespace Amazon.CloudWatch
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
@@ -906,9 +978,12 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Lists the anomaly detection models that you have created in your account. You can
-        /// list all models in your account or filter the results to only the models that are
-        /// related to a certain namespace, metric name, or metric dimension.
+        /// Lists the anomaly detection models that you have created in your account. For single
+        /// metric anomaly detectors, you can list all of the models in your account or filter
+        /// the results to only the models that are related to a certain namespace, metric name,
+        /// or metric dimension. For metric math anomaly detectors, you can list them by adding
+        /// <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will
+        /// return all metric math anomaly detectors in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetectors service method.</param>
         /// <param name="cancellationToken">
@@ -921,6 +996,9 @@ namespace Amazon.CloudWatch
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
@@ -2353,6 +2431,9 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
@@ -2391,6 +2472,9 @@ namespace Amazon.CloudWatch
         /// <returns>The response from the PutAnomalyDetector service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
+        /// Parameters were used together that cannot be used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
@@ -2474,6 +2558,12 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
+        /// To use this operation, you must be signed on with the <code>cloudwatch:PutCompositeAlarm</code>
+        /// permission that is scoped to <code>*</code>. You can't create a composite alarms if
+        /// your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.
+        /// </para>
+        ///  
+        /// <para>
         /// If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
         /// create a composite alarm that has Systems Manager OpsItem actions.
         /// </para>
@@ -2550,6 +2640,12 @@ namespace Amazon.CloudWatch
         /// <para>
         /// When you update an existing alarm, its state is left unchanged, but the update completely
         /// overwrites the previous configuration of the alarm.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must be signed on with the <code>cloudwatch:PutCompositeAlarm</code>
+        /// permission that is scoped to <code>*</code>. You can't create a composite alarms if
+        /// your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.
         /// </para>
         ///  
         /// <para>
@@ -2793,9 +2889,9 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The first time you create an alarm in the Management Console, the CLI, or by using
-        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
-        /// The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
+        /// The first time you create an alarm in the Amazon Web Services Management Console,
+        /// the CLI, or by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
+        /// role for you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
         /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
         /// Web Services service-linked role</a>.
@@ -2881,9 +2977,9 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The first time you create an alarm in the Management Console, the CLI, or by using
-        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
-        /// The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
+        /// The first time you create an alarm in the Amazon Web Services Management Console,
+        /// the CLI, or by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
+        /// role for you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
         /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
         /// Web Services service-linked role</a>.
@@ -3144,7 +3240,7 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html">
         /// Using Metric Streams</a>.
         /// </para>
         ///  
@@ -3213,7 +3309,7 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html">
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Streams.html">
         /// Using Metric Streams</a>.
         /// </para>
         ///  
