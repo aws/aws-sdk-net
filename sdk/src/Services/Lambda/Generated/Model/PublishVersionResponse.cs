@@ -276,7 +276,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
         /// The KMS key that's used to encrypt the function's environment variables. This key
-        /// is only returned if you've configured a customer managed CMK.
+        /// is only returned if you've configured a customer managed key.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -387,7 +387,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MasterArn. 
         /// <para>
-        /// For Lambda@Edge functions, the ARN of the master function.
+        /// For Lambda@Edge functions, the ARN of the main function.
         /// </para>
         /// </summary>
         public string MasterArn

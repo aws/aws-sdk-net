@@ -813,6 +813,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly SourceAccessType BASIC_AUTH = new SourceAccessType("BASIC_AUTH");
         /// <summary>
+        /// Constant CLIENT_CERTIFICATE_TLS_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType CLIENT_CERTIFICATE_TLS_AUTH = new SourceAccessType("CLIENT_CERTIFICATE_TLS_AUTH");
+        /// <summary>
         /// Constant SASL_SCRAM_256_AUTH for SourceAccessType
         /// </summary>
         public static readonly SourceAccessType SASL_SCRAM_256_AUTH = new SourceAccessType("SASL_SCRAM_256_AUTH");
@@ -820,6 +824,10 @@ namespace Amazon.Lambda
         /// Constant SASL_SCRAM_512_AUTH for SourceAccessType
         /// </summary>
         public static readonly SourceAccessType SASL_SCRAM_512_AUTH = new SourceAccessType("SASL_SCRAM_512_AUTH");
+        /// <summary>
+        /// Constant SERVER_ROOT_CA_CERTIFICATE for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType SERVER_ROOT_CA_CERTIFICATE = new SourceAccessType("SERVER_ROOT_CA_CERTIFICATE");
         /// <summary>
         /// Constant VIRTUAL_HOST for SourceAccessType
         /// </summary>

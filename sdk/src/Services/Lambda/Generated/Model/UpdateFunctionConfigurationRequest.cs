@@ -372,9 +372,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The amount of time that Lambda allows a function to run before stopping it. The default
-        /// is 3 seconds. The maximum allowed value is 900 seconds. For additional information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
+        /// The amount of time (in seconds) that Lambda allows a function to run before stopping
+        /// it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda
         /// execution environment</a>.
         /// </para>
         /// </summary>

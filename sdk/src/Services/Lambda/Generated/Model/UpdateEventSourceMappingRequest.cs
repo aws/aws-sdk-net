@@ -35,6 +35,41 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
+    /// For details about how to configure different event sources, see the following topics.
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
+    /// Amazon DynamoDB Streams</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
+    /// Amazon Kinesis</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
+    /// Amazon SQS</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
+    /// Amazon MQ and RabbitMQ</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Amazon MSK</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// The following error handling options are only available for stream sources (DynamoDB
     /// and Kinesis):
     /// </para>
@@ -63,6 +98,41 @@ namespace Amazon.Lambda.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about which configuration parameters apply to each event source, see
+    /// the following topics.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
+    /// Amazon DynamoDB Streams</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params">
+    /// Amazon Kinesis</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#services-sqs-params">
+    /// Amazon SQS</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-params">
+    /// Amazon MQ and RabbitMQ</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms">
+    /// Amazon MSK</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
+    /// Apache Kafka</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -110,6 +180,10 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> </ul>
         /// </summary>
