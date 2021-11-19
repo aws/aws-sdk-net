@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.AssociateApplicationFleetRequest.ApplicationArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AssociateApplicationFleetRequest.FleetName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.AssociateFleetRequest.FleetName</property>
     <min>1</min>
   </property-value-rule>
@@ -28,6 +36,46 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.CopyImageResponse.DestinationImageName</property>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateAppBlockRequest.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateAppBlockRequest.DisplayName</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateAppBlockRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateApplicationRequest.AppBlockArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateApplicationRequest.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateApplicationRequest.DisplayName</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateApplicationRequest.LaunchParameters</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateApplicationRequest.LaunchPath</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateApplicationRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateApplicationRequest.WorkingDirectory</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateFleetRequest.Description</property>
@@ -181,6 +229,14 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DeleteAppBlockRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DeleteApplicationRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DeleteFleetRequest.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -209,6 +265,38 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppBlocksRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeAppBlocksResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeApplicationFleetAssociationsRequest.ApplicationArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeApplicationFleetAssociationsRequest.FleetName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeApplicationFleetAssociationsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeApplicationFleetAssociationsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeApplicationsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeApplicationsResponse.NextToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeDirectoryConfigsRequest.NextToken</property>
@@ -343,6 +431,14 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DisassociateApplicationFleetRequest.ApplicationArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DisassociateApplicationFleetRequest.FleetName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DisassociateFleetRequest.FleetName</property>
     <min>1</min>
   </property-value-rule>
@@ -418,6 +514,34 @@
     <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateApplicationRequest.AppBlockArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateApplicationRequest.Description</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateApplicationRequest.DisplayName</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateApplicationRequest.LaunchParameters</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateApplicationRequest.LaunchPath</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateApplicationRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateApplicationRequest.WorkingDirectory</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateFleetRequest.Description</property>
     <max>256</max>
   </property-value-rule>
@@ -478,6 +602,34 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.AppBlock.Arn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AppBlock.Description</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AppBlock.DisplayName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AppBlock.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Application.AppBlockArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Application.Arn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Application.Description</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.Application.DisplayName</property>
     <min>1</min>
   </property-value-rule>
@@ -495,6 +647,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Application.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Application.WorkingDirectory</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationFleetAssociation.ApplicationArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationFleetAssociation.FleetName</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -633,6 +797,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ResourceError.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.S3Location.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[0-9a-z\.\-]*(?&lt;!\.)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.S3Location.S3Key</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ScriptDetails.ExecutableParameters</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ScriptDetails.ExecutablePath</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

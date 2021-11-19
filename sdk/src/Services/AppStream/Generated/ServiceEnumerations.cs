@@ -141,6 +141,56 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type ApplicationAttribute.
+    /// </summary>
+    public class ApplicationAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAUNCH_PARAMETERS for ApplicationAttribute
+        /// </summary>
+        public static readonly ApplicationAttribute LAUNCH_PARAMETERS = new ApplicationAttribute("LAUNCH_PARAMETERS");
+        /// <summary>
+        /// Constant WORKING_DIRECTORY for ApplicationAttribute
+        /// </summary>
+        public static readonly ApplicationAttribute WORKING_DIRECTORY = new ApplicationAttribute("WORKING_DIRECTORY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationAttribute FindValue(string value)
+        {
+            return FindValue<ApplicationAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -208,6 +258,10 @@ namespace Amazon.AppStream
         /// Constant IAM_ROLE_ARN for FleetAttribute
         /// </summary>
         public static readonly FleetAttribute IAM_ROLE_ARN = new FleetAttribute("IAM_ROLE_ARN");
+        /// <summary>
+        /// Constant USB_DEVICE_FILTER_STRINGS for FleetAttribute
+        /// </summary>
+        public static readonly FleetAttribute USB_DEVICE_FILTER_STRINGS = new FleetAttribute("USB_DEVICE_FILTER_STRINGS");
         /// <summary>
         /// Constant VPC_CONFIGURATION for FleetAttribute
         /// </summary>
@@ -482,6 +536,10 @@ namespace Amazon.AppStream
         /// Constant ALWAYS_ON for FleetType
         /// </summary>
         public static readonly FleetType ALWAYS_ON = new FleetType("ALWAYS_ON");
+        /// <summary>
+        /// Constant ELASTIC for FleetType
+        /// </summary>
+        public static readonly FleetType ELASTIC = new FleetType("ELASTIC");
         /// <summary>
         /// Constant ON_DEMAND for FleetType
         /// </summary>

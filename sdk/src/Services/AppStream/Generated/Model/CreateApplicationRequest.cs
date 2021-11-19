@@ -29,32 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes an application in the application catalog.
+    /// Container for the parameters to the CreateApplication operation.
+    /// Creates an application.
+    /// 
+    ///  
+    /// <para>
+    /// Applications are an Amazon AppStream 2.0 resource that stores the details about how
+    /// to launch applications on Elastic fleet streaming instances. An application consists
+    /// of the launch details, icon, and display name. Applications are associated with an
+    /// app block that contains the application binaries and other files. The applications
+    /// assigned to an Elastic fleet are the applications users can launch. 
+    /// </para>
+    ///  
+    /// <para>
+    /// This is only supported for Elastic fleets.
+    /// </para>
     /// </summary>
-    public partial class Application
+    public partial class CreateApplicationRequest : AmazonAppStreamRequest
     {
         private string _appBlockArn;
-        private string _arn;
-        private DateTime? _createdTime;
         private string _description;
         private string _displayName;
-        private bool? _enabled;
         private S3Location _iconS3Location;
-        private string _iconURL;
         private List<string> _instanceFamilies = new List<string>();
         private string _launchParameters;
         private string _launchPath;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
         private string _name;
         private List<string> _platforms = new List<string>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workingDirectory;
 
         /// <summary>
         /// Gets and sets the property AppBlockArn. 
         /// <para>
-        /// The app block ARN of the application.
+        /// The app block ARN to which the application should be associated
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AppBlockArn
         {
             get { return this._appBlockArn; }
@@ -68,48 +79,12 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The ARN of the application.
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CreatedTime. 
-        /// <para>
-        /// The time at which the application was created within the app block.
-        /// </para>
-        /// </summary>
-        public DateTime CreatedTime
-        {
-            get { return this._createdTime.GetValueOrDefault(); }
-            set { this._createdTime = value; }
-        }
-
-        // Check to see if CreatedTime property is set
-        internal bool IsSetCreatedTime()
-        {
-            return this._createdTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -125,10 +100,11 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The application name to display.
+        /// The display name of the application. This name is visible to users in the application
+        /// catalog.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -142,29 +118,12 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. 
-        /// <para>
-        /// If there is a problem, the application can be disabled after image creation.
-        /// </para>
-        /// </summary>
-        public bool Enabled
-        {
-            get { return this._enabled.GetValueOrDefault(); }
-            set { this._enabled = value; }
-        }
-
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
-        {
-            return this._enabled.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property IconS3Location. 
         /// <para>
-        /// The S3 location of the application icon.
+        /// The location in S3 of the application icon.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public S3Location IconS3Location
         {
             get { return this._iconS3Location; }
@@ -178,30 +137,13 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IconURL. 
-        /// <para>
-        /// The URL for the application icon. This URL might be time-limited.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1)]
-        public string IconURL
-        {
-            get { return this._iconURL; }
-            set { this._iconURL = value; }
-        }
-
-        // Check to see if IconURL property is set
-        internal bool IsSetIconURL()
-        {
-            return this._iconURL != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property InstanceFamilies. 
         /// <para>
-        /// The instance families for the application.
+        /// The instance families the application supports. Valid values are GENERAL_PURPOSE and
+        /// GRAPHICS_G4.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> InstanceFamilies
         {
             get { return this._instanceFamilies; }
@@ -217,7 +159,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property LaunchParameters. 
         /// <para>
-        /// The arguments that are passed to the application at launch.
+        /// The launch parameters of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -236,10 +178,10 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property LaunchPath. 
         /// <para>
-        /// The path to the application executable in the instance.
+        /// The launch path of the application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Required=true, Min=1)]
         public string LaunchPath
         {
             get { return this._launchPath; }
@@ -253,30 +195,13 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metadata. 
-        /// <para>
-        /// Additional attributes that describe the application.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> Metadata
-        {
-            get { return this._metadata; }
-            set { this._metadata = value; }
-        }
-
-        // Check to see if Metadata property is set
-        internal bool IsSetMetadata()
-        {
-            return this._metadata != null && this._metadata.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the application.
+        /// The name of the application. This name is visible to users when display name is not
+        /// specified.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -292,10 +217,11 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Platforms. 
         /// <para>
-        /// The platforms on which the application can run.
+        /// The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are
+        /// supported for Elastic fleets.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4)]
+        [AWSProperty(Required=true, Max=4)]
         public List<string> Platforms
         {
             get { return this._platforms; }
@@ -309,9 +235,28 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property WorkingDirectory. 
         /// <para>
-        /// The working directory for the application.
+        /// The working directory of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

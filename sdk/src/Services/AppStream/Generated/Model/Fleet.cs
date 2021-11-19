@@ -48,10 +48,13 @@ namespace Amazon.AppStream.Model
         private string _imageArn;
         private string _imageName;
         private string _instanceType;
+        private int? _maxConcurrentSessions;
         private int? _maxUserDurationInSeconds;
         private string _name;
+        private PlatformType _platform;
         private FleetState _state;
         private StreamView _streamView;
+        private List<string> _usbDeviceFilterStrings = new List<string>();
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -520,6 +523,24 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxConcurrentSessions. 
+        /// <para>
+        /// The maximum number of concurrent sessions for the fleet.
+        /// </para>
+        /// </summary>
+        public int MaxConcurrentSessions
+        {
+            get { return this._maxConcurrentSessions.GetValueOrDefault(); }
+            set { this._maxConcurrentSessions = value; }
+        }
+
+        // Check to see if MaxConcurrentSessions property is set
+        internal bool IsSetMaxConcurrentSessions()
+        {
+            return this._maxConcurrentSessions.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxUserDurationInSeconds. 
         /// <para>
         /// The maximum amount of time that a streaming session can remain active, in seconds.
@@ -565,6 +586,24 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The platform of the fleet.
+        /// </para>
+        /// </summary>
+        public PlatformType Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The current state for the fleet.
@@ -606,6 +645,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetStreamView()
         {
             return this._streamView != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsbDeviceFilterStrings. 
+        /// <para>
+        /// The USB device filter strings associated with the fleet.
+        /// </para>
+        /// </summary>
+        public List<string> UsbDeviceFilterStrings
+        {
+            get { return this._usbDeviceFilterStrings; }
+            set { this._usbDeviceFilterStrings = value; }
+        }
+
+        // Check to see if UsbDeviceFilterStrings property is set
+        internal bool IsSetUsbDeviceFilterStrings()
+        {
+            return this._usbDeviceFilterStrings != null && this._usbDeviceFilterStrings.Count > 0; 
         }
 
         /// <summary>

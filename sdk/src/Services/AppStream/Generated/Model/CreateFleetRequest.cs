@@ -30,7 +30,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet. A fleet consists of streaming instances that run a specified image.
+    /// Creates a fleet. A fleet consists of streaming instances that run a specified image
+    /// when using Always-On or On-Demand.
     /// </summary>
     public partial class CreateFleetRequest : AmazonAppStreamRequest
     {
@@ -46,19 +47,22 @@ namespace Amazon.AppStream.Model
         private string _imageArn;
         private string _imageName;
         private string _instanceType;
+        private int? _maxConcurrentSessions;
         private int? _maxUserDurationInSeconds;
         private string _name;
+        private PlatformType _platform;
         private StreamView _streamView;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _usbDeviceFilterStrings = new List<string>();
         private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property ComputeCapacity. 
         /// <para>
-        /// The desired capacity for the fleet.
+        /// The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic
+        /// fleets, specify MaxConcurrentSessions instead.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ComputeCapacity ComputeCapacity
         {
             get { return this._computeCapacity; }
@@ -138,7 +142,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property DomainJoinInfo. 
         /// <para>
         /// The name of the directory and organizational unit (OU) to use to join the fleet to
-        /// a Microsoft Active Directory domain. 
+        /// a Microsoft Active Directory domain. This is not allowed for Elastic fleets. 
         /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo
@@ -447,6 +451,18 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// stream.graphics-pro.16xlarge
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following instance types are available for Elastic fleets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// stream.standard.small
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.medium
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -460,6 +476,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrentSessions. 
+        /// <para>
+        /// The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
+        /// fleets, and not allowed for other fleet types.
+        /// </para>
+        /// </summary>
+        public int MaxConcurrentSessions
+        {
+            get { return this._maxConcurrentSessions.GetValueOrDefault(); }
+            set { this._maxConcurrentSessions = value; }
+        }
+
+        // Check to see if MaxConcurrentSessions property is set
+        internal bool IsSetMaxConcurrentSessions()
+        {
+            return this._maxConcurrentSessions.HasValue; 
         }
 
         /// <summary>
@@ -504,6 +539,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
+        /// fleets. 
+        /// </para>
+        /// </summary>
+        public PlatformType Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
         }
 
         /// <summary>
@@ -571,9 +625,31 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UsbDeviceFilterStrings. 
+        /// <para>
+        /// The USB device filter strings that specify which USB devices a user can redirect to
+        /// the fleet streaming session, when using the Windows native client. This is allowed
+        /// but not required for Elastic fleets.
+        /// </para>
+        /// </summary>
+        public List<string> UsbDeviceFilterStrings
+        {
+            get { return this._usbDeviceFilterStrings; }
+            set { this._usbDeviceFilterStrings = value; }
+        }
+
+        // Check to see if UsbDeviceFilterStrings property is set
+        internal bool IsSetUsbDeviceFilterStrings()
+        {
+            return this._usbDeviceFilterStrings != null && this._usbDeviceFilterStrings.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// The VPC configuration for the fleet.
+        /// The VPC configuration for the fleet. This is required for Elastic fleets, but not
+        /// required for other fleet types. Elastic fleets require that you specify at least two
+        /// subnets in different availability zones.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

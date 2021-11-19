@@ -74,6 +74,62 @@ namespace Amazon.AppStream
 
 
         
+        #region  AssociateApplicationFleet
+
+
+        /// <summary>
+        /// Associates the specified application with the specified fleet. This is only supported
+        /// for Elastic fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationFleet service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApplicationFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet">REST API Reference for AssociateApplicationFleet Operation</seealso>
+        AssociateApplicationFleetResponse AssociateApplicationFleet(AssociateApplicationFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateApplicationFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationFleet operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateApplicationFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet">REST API Reference for AssociateApplicationFleet Operation</seealso>
+        IAsyncResult BeginAssociateApplicationFleet(AssociateApplicationFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateApplicationFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateApplicationFleet.</param>
+        /// 
+        /// <returns>Returns a  AssociateApplicationFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet">REST API Reference for AssociateApplicationFleet Operation</seealso>
+        AssociateApplicationFleetResponse EndAssociateApplicationFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateFleet
 
 
@@ -286,6 +342,139 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateAppBlock
+
+
+        /// <summary>
+        /// Creates an app block.
+        /// 
+        ///  
+        /// <para>
+        /// App blocks are an Amazon AppStream 2.0 resource that stores the details about the
+        /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
+        /// how to mount the virtual hard disk. The virtual hard disk includes the application
+        /// binaries and other files necessary to launch your applications. Multiple applications
+        /// can be assigned to a single app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is only supported for Elastic fleets.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock">REST API Reference for CreateAppBlock Operation</seealso>
+        CreateAppBlockResponse CreateAppBlock(CreateAppBlockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlock operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppBlock
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock">REST API Reference for CreateAppBlock Operation</seealso>
+        IAsyncResult BeginCreateAppBlock(CreateAppBlockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppBlock.</param>
+        /// 
+        /// <returns>Returns a  CreateAppBlockResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock">REST API Reference for CreateAppBlock Operation</seealso>
+        CreateAppBlockResponse EndCreateAppBlock(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateApplication
+
+
+        /// <summary>
+        /// Creates an application.
+        /// 
+        ///  
+        /// <para>
+        /// Applications are an Amazon AppStream 2.0 resource that stores the details about how
+        /// to launch applications on Elastic fleet streaming instances. An application consists
+        /// of the launch details, icon, and display name. Applications are associated with an
+        /// app block that contains the application binaries and other files. The applications
+        /// assigned to an Elastic fleet are the applications users can launch. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is only supported for Elastic fleets.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplication.</param>
+        /// 
+        /// <returns>Returns a  CreateApplicationResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDirectoryConfig
 
 
@@ -351,7 +540,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a fleet. A fleet consists of streaming instances that run a specified image.
+        /// Creates a fleet. A fleet consists of streaming instances that run a specified image
+        /// when using Always-On or On-Demand.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
@@ -842,6 +1032,107 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteAppBlock
+
+
+        /// <summary>
+        /// Deletes an app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock">REST API Reference for DeleteAppBlock Operation</seealso>
+        DeleteAppBlockResponse DeleteAppBlock(DeleteAppBlockRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlock operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAppBlock
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock">REST API Reference for DeleteAppBlock Operation</seealso>
+        IAsyncResult BeginDeleteAppBlock(DeleteAppBlockRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAppBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAppBlock.</param>
+        /// 
+        /// <returns>Returns a  DeleteAppBlockResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock">REST API Reference for DeleteAppBlock Operation</seealso>
+        DeleteAppBlockResponse EndDeleteAppBlock(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteApplication
+
+
+        /// <summary>
+        /// Deletes an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplication.</param>
+        /// 
+        /// <returns>Returns a  DeleteApplicationResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDirectoryConfig
 
 
@@ -1226,6 +1517,145 @@ namespace Amazon.AppStream
         /// <returns>Returns a  DeleteUserResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAppBlocks
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlocks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppBlocks service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks">REST API Reference for DescribeAppBlocks Operation</seealso>
+        DescribeAppBlocksResponse DescribeAppBlocks(DescribeAppBlocksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAppBlocks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlocks operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAppBlocks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks">REST API Reference for DescribeAppBlocks Operation</seealso>
+        IAsyncResult BeginDescribeAppBlocks(DescribeAppBlocksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAppBlocks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAppBlocks.</param>
+        /// 
+        /// <returns>Returns a  DescribeAppBlocksResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks">REST API Reference for DescribeAppBlocks Operation</seealso>
+        DescribeAppBlocksResponse EndDescribeAppBlocks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeApplicationFleetAssociations
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more application fleet associations. Either
+        /// ApplicationArn or FleetName must be specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationFleetAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationFleetAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations">REST API Reference for DescribeApplicationFleetAssociations Operation</seealso>
+        DescribeApplicationFleetAssociationsResponse DescribeApplicationFleetAssociations(DescribeApplicationFleetAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplicationFleetAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationFleetAssociations operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplicationFleetAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations">REST API Reference for DescribeApplicationFleetAssociations Operation</seealso>
+        IAsyncResult BeginDescribeApplicationFleetAssociations(DescribeApplicationFleetAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplicationFleetAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplicationFleetAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicationFleetAssociationsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations">REST API Reference for DescribeApplicationFleetAssociations Operation</seealso>
+        DescribeApplicationFleetAssociationsResponse EndDescribeApplicationFleetAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeApplications
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplications service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeApplications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        IAsyncResult BeginDescribeApplications(DescribeApplicationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeApplications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeApplications.</param>
+        /// 
+        /// <returns>Returns a  DescribeApplicationsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        DescribeApplicationsResponse EndDescribeApplications(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1746,6 +2176,55 @@ namespace Amazon.AppStream
         /// <returns>Returns a  DisableUserResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
         DisableUserResponse EndDisableUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateApplicationFleet
+
+
+        /// <summary>
+        /// Disassociates the specified application from the fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFleet service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet">REST API Reference for DisassociateApplicationFleet Operation</seealso>
+        DisassociateApplicationFleetResponse DisassociateApplicationFleet(DisassociateApplicationFleetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateApplicationFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFleet operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateApplicationFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet">REST API Reference for DisassociateApplicationFleet Operation</seealso>
+        IAsyncResult BeginDisassociateApplicationFleet(DisassociateApplicationFleetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateApplicationFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateApplicationFleet.</param>
+        /// 
+        /// <returns>Returns a  DisassociateApplicationFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet">REST API Reference for DisassociateApplicationFleet Operation</seealso>
+        DisassociateApplicationFleetResponse EndDisassociateApplicationFleet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2356,6 +2835,55 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  UpdateApplication
+
+
+        /// <summary>
+        /// Updates the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplication.</param>
+        /// 
+        /// <returns>Returns a  UpdateApplicationResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateDirectoryConfig
 
 
@@ -2422,11 +2950,37 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-        /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
-        /// the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+        /// the fleet name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the fleet is in the <code>RUNNING</code> state, you can update the following based
+        /// on the fleet type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Always-On and On-Demand fleet types
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
         /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
-        /// attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code>
-        /// state, you can't update it.
+        /// attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Elastic fleet type
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
+        /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and <code>UsbDeviceFilterStrings</code>
+        /// attributes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't
+        /// update it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>

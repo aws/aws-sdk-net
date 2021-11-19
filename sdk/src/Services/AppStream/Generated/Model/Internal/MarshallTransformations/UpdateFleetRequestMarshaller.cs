@@ -160,6 +160,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InstanceType);
                 }
 
+                if(publicRequest.IsSetMaxConcurrentSessions())
+                {
+                    context.Writer.WritePropertyName("MaxConcurrentSessions");
+                    context.Writer.Write(publicRequest.MaxConcurrentSessions);
+                }
+
                 if(publicRequest.IsSetMaxUserDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("MaxUserDurationInSeconds");
@@ -172,10 +178,27 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPlatform())
+                {
+                    context.Writer.WritePropertyName("Platform");
+                    context.Writer.Write(publicRequest.Platform);
+                }
+
                 if(publicRequest.IsSetStreamView())
                 {
                     context.Writer.WritePropertyName("StreamView");
                     context.Writer.Write(publicRequest.StreamView);
+                }
+
+                if(publicRequest.IsSetUsbDeviceFilterStrings())
+                {
+                    context.Writer.WritePropertyName("UsbDeviceFilterStrings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUsbDeviceFilterStringsListValue in publicRequest.UsbDeviceFilterStrings)
+                    {
+                            context.Writer.Write(publicRequestUsbDeviceFilterStringsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetVpcConfig())

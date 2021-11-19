@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Application Object
+    /// Response Unmarshaller for AppBlock Object
     /// </summary>  
-    public class ApplicationUnmarshaller : IUnmarshaller<Application, XmlUnmarshallerContext>, IUnmarshaller<Application, JsonUnmarshallerContext>
+    public class AppBlockUnmarshaller : IUnmarshaller<AppBlock, XmlUnmarshallerContext>, IUnmarshaller<AppBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Application IUnmarshaller<Application, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AppBlock IUnmarshaller<AppBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,23 +53,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Application Unmarshall(JsonUnmarshallerContext context)
+        public AppBlock Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Application unmarshalledObject = new Application();
+            AppBlock unmarshalledObject = new AppBlock();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AppBlockArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppBlockArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,64 +88,22 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Enabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IconS3Location", targetDepth))
-                {
-                    var unmarshaller = S3LocationUnmarshaller.Instance;
-                    unmarshalledObject.IconS3Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IconURL", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IconURL = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceFamilies", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InstanceFamilies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LaunchParameters", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LaunchPath", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchPath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Metadata", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Platforms", targetDepth))
+                if (context.TestExpression("SetupScriptDetails", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Platforms = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ScriptDetailsUnmarshaller.Instance;
+                    unmarshalledObject.SetupScriptDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("WorkingDirectory", targetDepth))
+                if (context.TestExpression("SourceS3Location", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkingDirectory = unmarshaller.Unmarshall(context);
+                    var unmarshaller = S3LocationUnmarshaller.Instance;
+                    unmarshalledObject.SourceS3Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -160,12 +112,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApplicationUnmarshaller _instance = new ApplicationUnmarshaller();        
+        private static AppBlockUnmarshaller _instance = new AppBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplicationUnmarshaller Instance
+        public static AppBlockUnmarshaller Instance
         {
             get
             {

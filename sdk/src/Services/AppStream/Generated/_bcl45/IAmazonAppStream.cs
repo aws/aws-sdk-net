@@ -72,6 +72,66 @@ namespace Amazon.AppStream
         IAppStreamPaginatorFactory Paginators { get; }
 
         
+        #region  AssociateApplicationFleet
+
+
+        /// <summary>
+        /// Associates the specified application with the specified fleet. This is only supported
+        /// for Elastic fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationFleet service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApplicationFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet">REST API Reference for AssociateApplicationFleet Operation</seealso>
+        AssociateApplicationFleetResponse AssociateApplicationFleet(AssociateApplicationFleetRequest request);
+
+
+
+        /// <summary>
+        /// Associates the specified application with the specified fleet. This is only supported
+        /// for Elastic fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApplicationFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet">REST API Reference for AssociateApplicationFleet Operation</seealso>
+        Task<AssociateApplicationFleetResponse> AssociateApplicationFleetAsync(AssociateApplicationFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateFleet
 
 
@@ -288,6 +348,168 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateAppBlock
+
+
+        /// <summary>
+        /// Creates an app block.
+        /// 
+        ///  
+        /// <para>
+        /// App blocks are an Amazon AppStream 2.0 resource that stores the details about the
+        /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
+        /// how to mount the virtual hard disk. The virtual hard disk includes the application
+        /// binaries and other files necessary to launch your applications. Multiple applications
+        /// can be assigned to a single app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is only supported for Elastic fleets.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock">REST API Reference for CreateAppBlock Operation</seealso>
+        CreateAppBlockResponse CreateAppBlock(CreateAppBlockRequest request);
+
+
+
+        /// <summary>
+        /// Creates an app block.
+        /// 
+        ///  
+        /// <para>
+        /// App blocks are an Amazon AppStream 2.0 resource that stores the details about the
+        /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
+        /// how to mount the virtual hard disk. The virtual hard disk includes the application
+        /// binaries and other files necessary to launch your applications. Multiple applications
+        /// can be assigned to a single app block.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is only supported for Elastic fleets.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppBlock service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlock">REST API Reference for CreateAppBlock Operation</seealso>
+        Task<CreateAppBlockResponse> CreateAppBlockAsync(CreateAppBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateApplication
+
+
+        /// <summary>
+        /// Creates an application.
+        /// 
+        ///  
+        /// <para>
+        /// Applications are an Amazon AppStream 2.0 resource that stores the details about how
+        /// to launch applications on Elastic fleet streaming instances. An application consists
+        /// of the launch details, icon, and display name. Applications are associated with an
+        /// app block that contains the application binaries and other files. The applications
+        /// assigned to an Elastic fleet are the applications users can launch. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is only supported for Elastic fleets.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        CreateApplicationResponse CreateApplication(CreateApplicationRequest request);
+
+
+
+        /// <summary>
+        /// Creates an application.
+        /// 
+        ///  
+        /// <para>
+        /// Applications are an Amazon AppStream 2.0 resource that stores the details about how
+        /// to launch applications on Elastic fleet streaming instances. An application consists
+        /// of the launch details, icon, and display name. Applications are associated with an
+        /// app block that contains the application binaries and other files. The applications
+        /// assigned to an Elastic fleet are the applications users can launch. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is only supported for Elastic fleets.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
+        Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDirectoryConfig
 
 
@@ -362,7 +584,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a fleet. A fleet consists of streaming instances that run a specified image.
+        /// Creates a fleet. A fleet consists of streaming instances that run a specified image
+        /// when using Always-On or On-Demand.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
@@ -408,7 +631,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a fleet. A fleet consists of streaming instances that run a specified image.
+        /// Creates a fleet. A fleet consists of streaming instances that run a specified image
+        /// when using Always-On or On-Demand.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// <param name="cancellationToken">
@@ -932,6 +1156,104 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteAppBlock
+
+
+        /// <summary>
+        /// Deletes an app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlock service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock">REST API Reference for DeleteAppBlock Operation</seealso>
+        DeleteAppBlockResponse DeleteAppBlock(DeleteAppBlockRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an app block.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppBlock service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppBlock service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlock">REST API Reference for DeleteAppBlock Operation</seealso>
+        Task<DeleteAppBlockResponse> DeleteAppBlockAsync(DeleteAppBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteApplication
+
+
+        /// <summary>
+        /// Deletes an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDirectoryConfig
 
 
@@ -1287,6 +1609,128 @@ namespace Amazon.AppStream
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAppBlocks
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlocks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppBlocks service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks">REST API Reference for DescribeAppBlocks Operation</seealso>
+        DescribeAppBlocksResponse DescribeAppBlocks(DescribeAppBlocksRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more app blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppBlocks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppBlocks service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlocks">REST API Reference for DescribeAppBlocks Operation</seealso>
+        Task<DescribeAppBlocksResponse> DescribeAppBlocksAsync(DescribeAppBlocksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeApplicationFleetAssociations
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more application fleet associations. Either
+        /// ApplicationArn or FleetName must be specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationFleetAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationFleetAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations">REST API Reference for DescribeApplicationFleetAssociations Operation</seealso>
+        DescribeApplicationFleetAssociationsResponse DescribeApplicationFleetAssociations(DescribeApplicationFleetAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more application fleet associations. Either
+        /// ApplicationArn or FleetName must be specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationFleetAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationFleetAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplicationFleetAssociations">REST API Reference for DescribeApplicationFleetAssociations Operation</seealso>
+        Task<DescribeApplicationFleetAssociationsResponse> DescribeApplicationFleetAssociationsAsync(DescribeApplicationFleetAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeApplications
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplications service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more applications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplications service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
+        Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1755,6 +2199,52 @@ namespace Amazon.AppStream
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
         Task<DisableUserResponse> DisableUserAsync(DisableUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateApplicationFleet
+
+
+        /// <summary>
+        /// Disassociates the specified application from the fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFleet service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet">REST API Reference for DisassociateApplicationFleet Operation</seealso>
+        DisassociateApplicationFleetResponse DisassociateApplicationFleet(DisassociateApplicationFleetRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates the specified application from the fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet">REST API Reference for DisassociateApplicationFleet Operation</seealso>
+        Task<DisassociateApplicationFleetResponse> DisassociateApplicationFleetAsync(DisassociateApplicationFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2348,6 +2838,52 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  UpdateApplication
+
+
+        /// <summary>
+        /// Updates the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApplication service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
+        Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateDirectoryConfig
 
 
@@ -2419,11 +2955,37 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-        /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
-        /// the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+        /// the fleet name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the fleet is in the <code>RUNNING</code> state, you can update the following based
+        /// on the fleet type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Always-On and On-Demand fleet types
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
         /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
-        /// attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code>
-        /// state, you can't update it.
+        /// attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Elastic fleet type
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
+        /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and <code>UsbDeviceFilterStrings</code>
+        /// attributes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't
+        /// update it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
@@ -2475,11 +3037,37 @@ namespace Amazon.AppStream
         ///  
         /// <para>
         /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-        /// the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update
-        /// the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
+        /// the fleet name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the fleet is in the <code>RUNNING</code> state, you can update the following based
+        /// on the fleet type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Always-On and On-Demand fleet types
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
         /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
-        /// attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code>
-        /// state, you can't update it.
+        /// attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Elastic fleet type
+        /// </para>
+        ///  
+        /// <para>
+        /// You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
+        /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and <code>UsbDeviceFilterStrings</code>
+        /// attributes.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't
+        /// update it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>

@@ -154,6 +154,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxConcurrentSessions", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrentSessions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxUserDurationInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -166,6 +172,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Platform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -176,6 +188,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamView = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UsbDeviceFilterStrings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.UsbDeviceFilterStrings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VpcConfig", targetDepth))
