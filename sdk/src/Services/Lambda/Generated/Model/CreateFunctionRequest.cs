@@ -132,7 +132,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Architectures. 
         /// <para>
         /// The instruction set architecture that the function supports. Enter a string array
-        /// with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.
+        /// with one of the valid values. The default value is <code>x86_64</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

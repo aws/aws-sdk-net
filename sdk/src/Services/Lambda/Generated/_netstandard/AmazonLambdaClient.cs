@@ -66,75 +66,7 @@ namespace Amazon.Lambda
     ///  
     /// <para>
     /// For a list of Region-specific endpoints that Lambda supports, see <a href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html/">Lambda
-    /// endpoints and quotas </a> in the <i>Amazon Web Services General Reference.</i>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// When making the API calls, you will need to authenticate your request by providing
-    /// a signature. Lambda supports signature version 4. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 signing process</a> in the <i>Amazon Web Services General Reference.</i>.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>CA certificates</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// Because Amazon Web Services SDKs use the CA certificates from your computer, changes
-    /// to the certificates on the Amazon Web Services servers can cause connection failures
-    /// when you attempt to use an SDK. You can prevent these failures by keeping your computer's
-    /// CA certificates and operating system up-to-date. If you encounter this issue in a
-    /// corporate environment and do not manage your own computer, you might need to ask an
-    /// administrator to assist with the update process. The following list shows minimum
-    /// operating system and Java versions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Microsoft Windows versions that have updates from January 2005 or later installed
-    /// contain at least one of the required CAs in their trust list. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Mac OS X 10.4 with Java for Mac OS X 10.4 Release 5 (February 2007), Mac OS X 10.5
-    /// (October 2007), and later versions contain at least one of the required CAs in their
-    /// trust list. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Red Hat Enterprise Linux 5 (March 2007), 6, and 7 and CentOS 5, 6, and 7 all contain
-    /// at least one of the required CAs in their default trusted CA list. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Java 1.4.2_12 (May 2006), 5 Update 2 (March 2005), and all later versions, including
-    /// Java 6 (December 2006), 7, and 8, contain at least one of the required CAs in their
-    /// default trusted CA list. 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// When accessing the Lambda management console or Lambda API endpoints, whether through
-    /// browsers or programmatically, you will need to ensure your client machines support
-    /// any of the following CAs: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Amazon Root CA 1
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Starfield Services Root Certificate Authority - G2
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Starfield Class 2 Certification Authority
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Root certificates from the first two authorities are available from <a href="https://www.amazontrust.com/repository/">Amazon
-    /// trust services</a>, but keeping your computer up-to-date is the more straightforward
-    /// solution. To learn more about ACM-provided certificates, see <a href="http://aws.amazon.com/certificate-manager/faqs/#certificates">Amazon
-    /// Web Services Certificate Manager FAQs.</a> 
+    /// endpoints and quotas </a> in the Amazon Web Services General Reference. 
     /// </para>
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
@@ -891,6 +823,55 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  CreateFunctionUrlConfig
+
+        internal virtual CreateFunctionUrlConfigResponse CreateFunctionUrlConfig(CreateFunctionUrlConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFunctionUrlConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
+        public virtual Task<CreateFunctionUrlConfigResponse> CreateFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFunctionUrlConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlias
 
         internal virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
@@ -1292,6 +1273,52 @@ namespace Amazon.Lambda
             options.ResponseUnmarshaller = DeleteFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFunctionEventInvokeConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFunctionUrlConfig
+
+        internal virtual DeleteFunctionUrlConfigResponse DeleteFunctionUrlConfig(DeleteFunctionUrlConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFunctionUrlConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
+        public virtual Task<DeleteFunctionUrlConfigResponse> DeleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFunctionUrlConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1876,6 +1903,52 @@ namespace Amazon.Lambda
             options.ResponseUnmarshaller = GetFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFunctionEventInvokeConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFunctionUrlConfig
+
+        internal virtual GetFunctionUrlConfigResponse GetFunctionUrlConfig(GetFunctionUrlConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetFunctionUrlConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
+        public virtual Task<GetFunctionUrlConfigResponse> GetFunctionUrlConfigAsync(GetFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFunctionUrlConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2678,6 +2751,52 @@ namespace Amazon.Lambda
             options.ResponseUnmarshaller = ListFunctionsByCodeSigningConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFunctionsByCodeSigningConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFunctionUrlConfigs
+
+        internal virtual ListFunctionUrlConfigsResponse ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionUrlConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionUrlConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFunctionUrlConfigsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionUrlConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctionUrlConfigs service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
+        public virtual Task<ListFunctionUrlConfigsResponse> ListFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFunctionUrlConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionUrlConfigsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFunctionUrlConfigsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3971,6 +4090,55 @@ namespace Amazon.Lambda
             options.ResponseUnmarshaller = UpdateFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFunctionEventInvokeConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFunctionUrlConfig
+
+        internal virtual UpdateFunctionUrlConfigResponse UpdateFunctionUrlConfig(UpdateFunctionUrlConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFunctionUrlConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionUrlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFunctionUrlConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
+        public virtual Task<UpdateFunctionUrlConfigResponse> UpdateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFunctionUrlConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFunctionUrlConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFunctionUrlConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -84,6 +84,14 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Paginator for ListFunctionUrlConfigs operation
+        ///</summary>
+        public IListFunctionUrlConfigsPaginator ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request) 
+        {
+            return new ListFunctionUrlConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLayers operation
         ///</summary>
         public IListLayersPaginator ListLayers(ListLayersRequest request) 

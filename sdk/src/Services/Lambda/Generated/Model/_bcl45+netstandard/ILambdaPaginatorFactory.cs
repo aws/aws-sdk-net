@@ -56,6 +56,11 @@ namespace Amazon.Lambda.Model
         IListFunctionsByCodeSigningConfigPaginator ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request);
 
         /// <summary>
+        /// Paginator for ListFunctionUrlConfigs operation
+        ///</summary>
+        IListFunctionUrlConfigsPaginator ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListLayers operation
         ///</summary>
         IListLayersPaginator ListLayers(ListLayersRequest request);

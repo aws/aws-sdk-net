@@ -181,10 +181,6 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
