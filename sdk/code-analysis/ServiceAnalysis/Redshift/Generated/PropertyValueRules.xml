@@ -214,6 +214,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.DefaultIamRoleArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ElasticIp</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1263,6 +1267,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyClusterIamRolesRequest.DefaultIamRoleArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyClusterMaintenanceRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1472,6 +1480,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ClusterSubnetGroupName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.DefaultIamRoleArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1717,6 +1729,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.DBName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.DefaultIamRoleArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

@@ -177,6 +177,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DefaultIamRoleArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultIamRoleArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeferredMaintenanceWindows/DeferredMaintenanceWindow", targetDepth))
                     {
                         var unmarshaller = DeferredMaintenanceWindowUnmarshaller.Instance;

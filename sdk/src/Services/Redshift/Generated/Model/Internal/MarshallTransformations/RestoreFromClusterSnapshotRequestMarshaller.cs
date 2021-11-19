@@ -103,6 +103,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterSubnetGroupName", StringUtils.FromString(publicRequest.ClusterSubnetGroupName));
                 }
+                if(publicRequest.IsSetDefaultIamRoleArn())
+                {
+                    request.Parameters.Add("DefaultIamRoleArn", StringUtils.FromString(publicRequest.DefaultIamRoleArn));
+                }
                 if(publicRequest.IsSetElasticIp())
                 {
                     request.Parameters.Add("ElasticIp", StringUtils.FromString(publicRequest.ElasticIp));

@@ -53,6 +53,7 @@ namespace Amazon.Redshift.Model
         private string _clusterVersion;
         private DataTransferProgress _dataTransferProgress;
         private string _dbName;
+        private string _defaultIamRoleArn;
         private List<DeferredMaintenanceWindow> _deferredMaintenanceWindows = new List<DeferredMaintenanceWindow>();
         private ElasticIpStatus _elasticIpStatus;
         private string _elasticResizeNumberOfNodeOptions;
@@ -568,6 +569,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetDBName()
         {
             return this._dbName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultIamRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM role set as default for the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string DefaultIamRoleArn
+        {
+            get { return this._defaultIamRoleArn; }
+            set { this._defaultIamRoleArn = value; }
+        }
+
+        // Check to see if DefaultIamRoleArn property is set
+        internal bool IsSetDefaultIamRoleArn()
+        {
+            return this._defaultIamRoleArn != null;
         }
 
         /// <summary>

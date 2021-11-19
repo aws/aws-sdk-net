@@ -61,6 +61,7 @@ namespace Amazon.Redshift.Model
         private string _clusterParameterGroupName;
         private List<string> _clusterSecurityGroups = new List<string>();
         private string _clusterSubnetGroupName;
+        private string _defaultIamRoleArn;
         private string _elasticIp;
         private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
@@ -368,6 +369,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterSubnetGroupName()
         {
             return this._clusterSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultIamRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster
+        /// when the cluster was last modified while it was restored from a snapshot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string DefaultIamRoleArn
+        {
+            get { return this._defaultIamRoleArn; }
+            set { this._defaultIamRoleArn = value; }
+        }
+
+        // Check to see if DefaultIamRoleArn property is set
+        internal bool IsSetDefaultIamRoleArn()
+        {
+            return this._defaultIamRoleArn != null;
         }
 
         /// <summary>

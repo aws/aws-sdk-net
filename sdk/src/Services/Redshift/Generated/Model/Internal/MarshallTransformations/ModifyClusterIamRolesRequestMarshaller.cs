@@ -71,6 +71,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+                if(publicRequest.IsSetDefaultIamRoleArn())
+                {
+                    request.Parameters.Add("DefaultIamRoleArn", StringUtils.FromString(publicRequest.DefaultIamRoleArn));
+                }
                 if(publicRequest.IsSetRemoveIamRoles())
                 {
                     int publicRequestlistValueIndex = 1;

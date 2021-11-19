@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ConsumerIdentifier. 
         /// <para>
         /// The identifier of the data consumer that is authorized to access the datashare. This
-        /// identifier is an AWS account ID.
+        /// identifier is an Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]
