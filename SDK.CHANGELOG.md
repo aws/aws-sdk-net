@@ -1,3 +1,8 @@
+### 3.7.164.0 (2021-11-19 01:14 UTC)
+* Core 3.7.5.0
+	* Enable FIPS endpoint variants and enable FIPS support in S3 Control for Outposts
+	* All services packages updated to require new Core
+
 ### 3.7.163.0 (2021-11-18 21:21 UTC)
 * AppConfig (3.7.1.0)
 	* Add Type to support feature flag configuration profiles
