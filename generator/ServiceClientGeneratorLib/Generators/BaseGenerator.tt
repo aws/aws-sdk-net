@@ -341,6 +341,11 @@
         if(documentation.StartsWith("<para>"))
         {
             int closePos= documentation.IndexOf("</para>");
+
+            if (closePos < 0)
+                // note: documentation was transformed a few lines above
+                throw new Exception("Documentation is missing closing tag (ie </p> or </para>): " + documentation);
+
             var firstParaContent= documentation.Substring("<para>".Length, closePos - "<para>".Length);
             documentation = firstParaContent + documentation.Substring(closePos + "</para>".Length);
         }
