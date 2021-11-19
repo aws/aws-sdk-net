@@ -112,6 +112,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetScte35Pid())
+            {
+                context.Writer.WritePropertyName("scte35Pid");
+                context.Writer.Write(requestObject.Scte35Pid);
+            }
+
             if(requestObject.IsSetSmpte2038DataPreference())
             {
                 context.Writer.WritePropertyName("smpte2038DataPreference");

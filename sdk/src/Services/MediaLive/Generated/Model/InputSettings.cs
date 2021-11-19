@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private int? _filterStrength;
         private InputFilter _inputFilter;
         private NetworkInputSettings _networkInputSettings;
+        private int? _scte35Pid;
         private Smpte2038DataPreference _smpte2038DataPreference;
         private InputSourceEndBehavior _sourceEndBehavior;
         private VideoSelector _videoSelector;
@@ -156,6 +157,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetNetworkInputSettings()
         {
             return this._networkInputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35Pid. PID from which to read SCTE-35 messages. If
+        /// left undefined, EML will select the first SCTE-35 PID found in the input.
+        /// </summary>
+        [AWSProperty(Min=32, Max=8191)]
+        public int Scte35Pid
+        {
+            get { return this._scte35Pid.GetValueOrDefault(); }
+            set { this._scte35Pid = value; }
+        }
+
+        // Check to see if Scte35Pid property is set
+        internal bool IsSetScte35Pid()
+        {
+            return this._scte35Pid.HasValue; 
         }
 
         /// <summary>

@@ -567,6 +567,11 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.InputSettings.Scte35Pid</property>
+    <min>32</min>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.M2tsSettings.AudioFramesPerPes</property>
     <min>0</min>
   </property-value-rule>
