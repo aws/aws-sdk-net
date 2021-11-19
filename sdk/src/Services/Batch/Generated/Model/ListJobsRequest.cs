@@ -118,13 +118,13 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The value for the filter is the time that's before the job was created. This corresponds
         /// to the <code>createdAt</code> value. The value is a string representation of the number
-        /// of seconds since 00:00:00 UTC (midnight) on January 1, 1970.
+        /// of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.
         /// </para>
         ///  </dd> <dt>AFTER_CREATED_AT</dt> <dd> 
         /// <para>
         /// The value for the filter is the time that's after the job was created. This corresponds
         /// to the <code>createdAt</code> value. The value is a string representation of the number
-        /// of seconds since 00:00:00 UTC (midnight) on January 1, 1970.
+        /// of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

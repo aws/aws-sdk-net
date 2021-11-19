@@ -81,10 +81,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The time period to use to calculate a fair share percentage for each fair share identifier
         /// in use, in seconds. A value of zero (0) indicates that only current usage should be
-        /// measured; if there are four evenly weighted fair share identifiers then each can only
-        /// use up to 25% of the available CPU resources, even if some of the fair share identifiers
-        /// have no currently running jobs. The decay allows for more recently run jobs to have
-        /// more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).
+        /// measured. The decay allows for more recently run jobs to have more weight than jobs
+        /// that ran earlier. The maximum supported value is 604800 (1 week).
         /// </para>
         /// </summary>
         public int ShareDecaySeconds
@@ -102,9 +100,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareDistribution. 
         /// <para>
-        /// Array of <code>SharedIdentifier</code> objects that contain the weights for the fair
-        /// share identifiers for the fair share policy. Fair share identifiers that are not included
-        /// have a default weight of <code>1.0</code>.
+        /// An array of <code>SharedIdentifier</code> objects that contain the weights for the
+        /// fair share identifiers for the fair share policy. Fair share identifiers that aren't
+        /// included have a default weight of <code>1.0</code>.
         /// </para>
         /// </summary>
         public List<ShareAttributes> ShareDistribution

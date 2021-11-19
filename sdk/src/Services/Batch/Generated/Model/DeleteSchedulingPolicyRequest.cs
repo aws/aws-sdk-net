@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model
     /// 
     ///  
     /// <para>
-    /// You can't delete a scheduling policy that is used in any job queues.
+    /// You can't delete a scheduling policy that's used in any job queues.
     /// </para>
     /// </summary>
     public partial class DeleteSchedulingPolicyRequest : AmazonBatchRequest

@@ -62,8 +62,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobDefinitions. 
         /// <para>
-        /// A list of up to 100 job definitions. Each entry in the list can either be an ARN of
-        /// the form <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+        /// A list of up to 100 job definitions. Each entry in the list can either be an ARN in
+        /// the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
         /// or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
         /// </para>
         /// </summary>

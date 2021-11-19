@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Specifies the weights for the fair share identifiers for the fair share policy. Fair
-    /// share identifiers that are not included have a default weight of <code>1.0</code>.
+    /// share identifiers that aren't included have a default weight of <code>1.0</code>.
     /// </summary>
     public partial class ShareAttributes
     {
@@ -40,10 +40,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareIdentifier. 
         /// <para>
-        /// A fair share identifier or fair share identifier prefix. If the string ends with '*'
-        /// then this entry specifies the weight factor to use for fair share identifiers that
-        /// begin with that prefix. The list of fair share identifiers in a fair share policy
-        /// cannot overlap. For example you cannot have one that specifies a <code>shareIdentifier</code>
+        /// A fair share identifier or fair share identifier prefix. If the string ends with an
+        /// asterisk (*), this entry specifies the weight factor to use for fair share identifiers
+        /// that start with that prefix. The list of fair share identifiers in a fair share policy
+        /// cannot overlap. For example, you can't have one that specifies a <code>shareIdentifier</code>
         /// of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
         /// <code>UserA-1</code>.
         /// </para>
@@ -53,7 +53,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// The string is limited to 255 alphanumeric characters, optionally followed by '*'.
+        /// The string is limited to 255 alphanumeric characters, optionally followed by an asterisk
+        /// (*).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -73,13 +74,13 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property WeightFactor. 
         /// <para>
         /// The weight factor for the fair share identifier. The default value is 1.0. A lower
-        /// value has a higher priority for compute resources. For example, jobs using a share
-        /// identifier with a weight factor of 0.125 (1/8) will get 8 times the compute resources
-        /// of jobs using a share identifier with a weight factor of 1.
+        /// value has a higher priority for compute resources. For example, jobs that use a share
+        /// identifier with a weight factor of 0.125 (1/8) get 8 times the compute resources of
+        /// jobs that use a share identifier with a weight factor of 1.
         /// </para>
         ///  
         /// <para>
-        /// The smallest supported value is 0.0001 and the largest supported value is 999.9999.
+        /// The smallest supported value is 0.0001, and the largest supported value is 999.9999.
         /// </para>
         /// </summary>
         public float WeightFactor

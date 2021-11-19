@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing a scheduling policy.
+    /// An object that represents a scheduling policy.
     /// </summary>
     public partial class SchedulingPolicyDetail
     {
@@ -41,8 +41,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the scheduling policy. An example would be <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-        /// </code> 
+        /// The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
+        /// </code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,9 +98,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags that you apply to the scheduling policy to help you categorize and organize
-        /// your resources. Each tag consists of a key and an optional value. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// The tags that you apply to the scheduling policy to categorize and organize your resources.
+        /// Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>

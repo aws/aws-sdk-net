@@ -103,8 +103,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name for your compute environment. Up to 128 letters (uppercase and lowercase),
-        /// numbers, hyphens, and underscores are allowed.
+        /// The name for your compute environment. It can be up to 128 letters long. It can contain
+        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -275,8 +275,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The maximum number of vCPUs for an unmanaged compute environment. This parameter is
         /// only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
-        /// If this parameter is not provided for a fair share job queue, no vCPU capacity will
-        /// be reserved.
+        /// If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.
         /// </para>
         ///  <note> 
         /// <para>

@@ -59,8 +59,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the scheduling policy. Up to 128 letters (uppercase and lowercase), numbers,
-        /// hyphens, and underscores are allowed.
+        /// The name of the scheduling policy. It can be up to 128 letters long. It can contain
+        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

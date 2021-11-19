@@ -88,9 +88,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
-        /// and underscores are allowed. This name is referenced in the <code>sourceVolume</code>
-        /// parameter of container definition <code>mountPoints</code>.
+        /// The name of the volume. It can be up to 255 letters long. It can contain uppercase
+        /// and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced
+        /// in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
         /// </para>
         /// </summary>
         public string Name
