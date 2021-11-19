@@ -607,10 +607,6 @@ namespace Amazon.ApplicationInsights
         /// </summary>
         public static readonly Tier POSTGRESQL = new Tier("POSTGRESQL");
         /// <summary>
-        /// Constant SAP_HANA for Tier
-        /// </summary>
-        public static readonly Tier SAP_HANA = new Tier("SAP_HANA");
-        /// <summary>
         /// Constant SAP_HANA_HIGH_AVAILABILITY for Tier
         /// </summary>
         public static readonly Tier SAP_HANA_HIGH_AVAILABILITY = new Tier("SAP_HANA_HIGH_AVAILABILITY");
