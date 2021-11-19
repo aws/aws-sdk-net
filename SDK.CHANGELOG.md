@@ -1,3 +1,21 @@
+### 3.7.165.0 (2021-11-19 19:24 UTC)
+* ApplicationInsights (3.7.2.0)
+	* Application Insights now supports monitoring for HANA
+* AppStream (3.7.3.0)
+	* Includes APIs for managing resources for Elastic fleets: applications, app blocks, and application-fleet associations.
+* Batch (3.7.3.9)
+	* Documentation updates for AWS Batch.
+* CloudFormation (3.7.6.0)
+	* The StackSets ManagedExecution feature will allow concurrency for non-conflicting StackSet operations and queuing the StackSet operations that conflict at a given time for later execution.
+* Lambda (3.7.6.0)
+	* Add support for Lambda Function URLs. Customers can use Function URLs to create built-in HTTPS endpoints on their functions.
+* LexRuntimeV2 (3.7.3.0)
+	* Now supports styled slots in Lex V2 runtime. Customers can provide inputs like "a as in apple b for beta" which will be resolved to "ab" as slot value.
+* MediaLive (3.7.7.0)
+	* This release adds support for specifying a SCTE-35 PID on input. MediaLive now supports SCTE-35 PID selection on inputs containing one or more active SCTE-35 PIDs.
+* Redshift (3.7.9.0)
+	* Added support of default IAM role for CreateCluster, RestoreFromClusterSnapshot and ModifyClusterIamRoles APIs
+
 ### 3.7.164.0 (2021-11-19 01:14 UTC)
 * Core 3.7.5.0
 	* Enable FIPS endpoint variants and enable FIPS support in S3 Control for Outposts

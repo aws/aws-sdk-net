@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.164.0",
+    "ProductVersion" : "3.7.165.0",
     "CoreVersion"    : "3.7.5.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -30,7 +30,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.7.5.46",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
@@ -242,7 +242,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.7.5.1",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
@@ -290,7 +290,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.7.8.55",
+            "Version" : "3.7.9.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
@@ -642,7 +642,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.7.2.4",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
@@ -706,7 +706,7 @@
             "InPreview"               : false
         },
         "Batch"                           : {
-            "Version" : "3.7.3.8",
+            "Version" : "3.7.3.9",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
@@ -874,7 +874,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.7.6.23",
+            "Version" : "3.7.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
@@ -1466,7 +1466,7 @@
             "InPreview"               : false
         },
         "ApplicationInsights"             : {
-            "Version" : "3.7.1.14",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
@@ -2058,7 +2058,7 @@
             "InPreview"               : false
         },
         "LexRuntimeV2"                    : {
-            "Version" : "3.7.2.23",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.0"
