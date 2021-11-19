@@ -102,6 +102,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ExecutionRoleName", StringUtils.FromString(publicRequest.ExecutionRoleName));
                 }
+                if(publicRequest.IsSetManagedExecution())
+                {
+                    if(publicRequest.ManagedExecution.IsSetActive())
+                    {
+                        request.Parameters.Add("ManagedExecution" + "." + "Active", StringUtils.FromBool(publicRequest.ManagedExecution.Active));
+                    }
+                }
                 if(publicRequest.IsSetParameters())
                 {
                     int publicRequestlistValueIndex = 1;

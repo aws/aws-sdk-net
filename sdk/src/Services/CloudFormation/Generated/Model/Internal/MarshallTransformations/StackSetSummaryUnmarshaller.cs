@@ -78,6 +78,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.LastDriftCheckTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ManagedExecution", targetDepth))
+                    {
+                        var unmarshaller = ManagedExecutionUnmarshaller.Instance;
+                        unmarshalledObject.ManagedExecution = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PermissionModel", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

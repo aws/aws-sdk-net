@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _capabilities = new List<string>();
         private string _description;
         private string _executionRoleName;
+        private ManagedExecution _managedExecution;
         private List<string> _organizationalUnitIds = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
         private PermissionModels _permissionModel;
@@ -161,6 +162,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetExecutionRoleName()
         {
             return this._executionRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedExecution. 
+        /// <para>
+        /// Describes whether StackSets performs non-conflicting operations concurrently and queues
+        /// conflicting operations.
+        /// </para>
+        /// </summary>
+        public ManagedExecution ManagedExecution
+        {
+            get { return this._managedExecution; }
+            set { this._managedExecution = value; }
+        }
+
+        // Check to see if ManagedExecution property is set
+        internal bool IsSetManagedExecution()
+        {
+            return this._managedExecution != null;
         }
 
         /// <summary>

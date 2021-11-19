@@ -37,6 +37,7 @@ namespace Amazon.CloudFormation.Model
         private string _description;
         private StackDriftStatus _driftStatus;
         private DateTime? _lastDriftCheckTimestamp;
+        private ManagedExecution _managedExecution;
         private PermissionModels _permissionModel;
         private string _stackSetId;
         private string _stackSetName;
@@ -139,6 +140,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLastDriftCheckTimestamp()
         {
             return this._lastDriftCheckTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedExecution. 
+        /// <para>
+        /// Describes whether StackSets performs non-conflicting operations concurrently and queues
+        /// conflicting operations.
+        /// </para>
+        /// </summary>
+        public ManagedExecution ManagedExecution
+        {
+            get { return this._managedExecution; }
+            set { this._managedExecution = value; }
+        }
+
+        // Check to see if ManagedExecution property is set
+        internal bool IsSetManagedExecution()
+        {
+            return this._managedExecution != null;
         }
 
         /// <summary>

@@ -81,8 +81,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
-        /// value when returning the list of types.
+        /// Filters must be compatible with <code>Visibility</code> to return valid results. For
+        /// example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code>
+        /// for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code>
+        /// for <code>Visibility</code> returns the desired list.
         /// </para>
         /// </summary>
         public TypeFilters Filters
