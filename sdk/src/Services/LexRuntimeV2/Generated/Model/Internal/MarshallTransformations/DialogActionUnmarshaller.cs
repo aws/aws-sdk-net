@@ -64,6 +64,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("slotElicitationStyle", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SlotElicitationStyle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("slotToElicit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

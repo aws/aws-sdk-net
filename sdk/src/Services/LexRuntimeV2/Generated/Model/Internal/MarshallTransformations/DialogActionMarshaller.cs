@@ -45,6 +45,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DialogAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetSlotElicitationStyle())
+            {
+                context.Writer.WritePropertyName("slotElicitationStyle");
+                context.Writer.Write(requestObject.SlotElicitationStyle);
+            }
+
             if(requestObject.IsSetSlotToElicit())
             {
                 context.Writer.WritePropertyName("slotToElicit");

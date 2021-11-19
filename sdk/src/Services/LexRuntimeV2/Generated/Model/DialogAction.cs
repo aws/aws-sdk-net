@@ -33,8 +33,41 @@ namespace Amazon.LexRuntimeV2.Model
     /// </summary>
     public partial class DialogAction
     {
+        private StyleType _slotElicitationStyle;
         private string _slotToElicit;
         private DialogActionType _type;
+
+        /// <summary>
+        /// Gets and sets the property SlotElicitationStyle. 
+        /// <para>
+        /// Configures the slot to use spell-by-letter or spell-by-word style. When you use a
+        /// style on a slot, users can spell out their input to make it clear to your bot.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Spell by letter - "b" "o" "b"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spell by word - "b as in boy" "o as in oscar" "b as in boy"
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html">
+        /// Using spelling to enter slot values </a>.
+        /// </para>
+        /// </summary>
+        public StyleType SlotElicitationStyle
+        {
+            get { return this._slotElicitationStyle; }
+            set { this._slotElicitationStyle = value; }
+        }
+
+        // Check to see if SlotElicitationStyle property is set
+        internal bool IsSetSlotElicitationStyle()
+        {
+            return this._slotElicitationStyle != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SlotToElicit. 
