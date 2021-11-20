@@ -1,3 +1,7 @@
+### 3.7.165.1 (2021-11-20 01:30 UTC)
+* Core 3.7.5.1
+	* test!: make DefaultFilePath settable to allow mocking. BREAKING CHANGE: this is binary change and can break customers on drop-in replacing AWSSDK.Core
+
 ### 3.7.165.0 (2021-11-19 19:24 UTC)
 * ApplicationInsights (3.7.2.0)
 	* Application Insights now supports monitoring for HANA
