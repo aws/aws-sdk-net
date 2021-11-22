@@ -54,6 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _expirationDate;
         private string _iamRole;
         private int? _registrationLimit;
+        private List<RegistrationMetadataItem> _registrationMetadata = new List<RegistrationMetadataItem>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -169,6 +170,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRegistrationLimit()
         {
             return this._registrationLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegistrationMetadata. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public List<RegistrationMetadataItem> RegistrationMetadata
+        {
+            get { return this._registrationMetadata; }
+            set { this._registrationMetadata = value; }
+        }
+
+        // Check to see if RegistrationMetadata property is set
+        internal bool IsSetRegistrationMetadata()
+        {
+            return this._registrationMetadata != null && this._registrationMetadata.Count > 0; 
         }
 
         /// <summary>

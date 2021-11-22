@@ -48,6 +48,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The name of the filter.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code>
+        /// operation, only with <code>ListCommands</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public CommandFilterKey Key
@@ -201,7 +207,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ExecutionStage</b>: Specify one of the following values:
+        ///  <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code>
+        /// operations only):
         /// </para>
         ///  <ul> <li> 
         /// <para>

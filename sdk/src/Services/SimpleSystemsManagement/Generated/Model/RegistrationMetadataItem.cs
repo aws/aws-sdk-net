@@ -29,33 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeregisterManagedInstance operation.
-    /// Removes the server or virtual machine from the list of registered servers. You can
-    /// reregister the instance again at any time. If you don't plan to use Run Command on
-    /// the server, we suggest uninstalling SSM Agent first.
+    /// Reserved for internal use.
     /// </summary>
-    public partial class DeregisterManagedInstanceRequest : AmazonSimpleSystemsManagementRequest
+    public partial class RegistrationMetadataItem
     {
-        private string _instanceId;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property InstanceId. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The ID assigned to the managed instance when you registered it using the activation
-        /// process. 
+        /// Reserved for internal use.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=124)]
-        public string InstanceId
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Key
         {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._instanceId != null;
+            return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

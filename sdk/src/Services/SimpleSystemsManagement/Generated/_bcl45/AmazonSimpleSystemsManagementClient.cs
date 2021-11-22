@@ -967,6 +967,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public virtual CreateActivationResponse CreateActivation(CreateActivationRequest request)
         {
@@ -1004,6 +1009,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the CreateActivation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the Amazon Web Services Systems
+        /// Manager document (SSM document). You can only supply values to parameters defined
+        /// in the SSM document.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public virtual Task<CreateActivationResponse> CreateActivationAsync(CreateActivationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

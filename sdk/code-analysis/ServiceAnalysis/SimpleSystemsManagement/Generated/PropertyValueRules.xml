@@ -326,7 +326,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeregisterManagedInstanceRequest.InstanceId</property>
-    <pattern>^mi-[0-9a-f]{17}$</pattern>
+    <min>20</min>
+    <max>124</max>
+    <pattern>(^mi-[0-9a-f]{17}$)|(^eks_c:[0-9A-Za-z][A-Za-z0-9\-_]{0,99}_\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupRequest.BaselineId</property>
@@ -1981,7 +1983,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateManagedInstanceRoleRequest.InstanceId</property>
-    <pattern>^mi-[0-9a-f]{17}$</pattern>
+    <min>20</min>
+    <max>124</max>
+    <pattern>(^mi-[0-9a-f]{17}$)|(^eks_c:[0-9A-Za-z][A-Za-z0-9\-_]{0,99}_\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Category</property>
@@ -3464,6 +3468,18 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PatchSource.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegistrationMetadataItem.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegistrationMetadataItem.Value</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResourceComplianceSummaryItem.ComplianceType</property>

@@ -97,6 +97,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RegistrationLimit);
                 }
 
+                if(publicRequest.IsSetRegistrationMetadata())
+                {
+                    context.Writer.WritePropertyName("RegistrationMetadata");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRegistrationMetadataListValue in publicRequest.RegistrationMetadata)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RegistrationMetadataItemMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRegistrationMetadataListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

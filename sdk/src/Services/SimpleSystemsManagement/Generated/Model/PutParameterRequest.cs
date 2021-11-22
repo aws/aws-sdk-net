@@ -280,13 +280,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events
+        /// ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events
         /// that notifies you about the expiration. By using this policy, you can receive notification
         /// before or after the expiration time is reached, in units of days or hours.
         /// </para>
         ///  
         /// <para>
-        /// NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter
+        /// NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter
         /// hasn't been modified for a specified period of time. This policy type is useful when,
         /// for example, a secret needs to be changed within a period of time, but it hasn't been
         /// changed.

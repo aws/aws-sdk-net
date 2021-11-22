@@ -64,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The ID of the managed instance where you want to update the role.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=20, Max=124)]
         public string InstanceId
         {
             get { return this._instanceId; }
