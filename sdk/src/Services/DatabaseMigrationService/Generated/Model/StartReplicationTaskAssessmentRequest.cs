@@ -31,6 +31,30 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the StartReplicationTaskAssessment operation.
     /// Starts the replication task assessment for unsupported data types in the source database.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// You can only use this operation for a task if the following conditions are true:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The task must be in the <code>stopped</code> state.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The task must have successful connections to the source and target.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If either of these conditions are not met, an <code>InvalidResourceStateFault</code>
+    /// error will result. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating
+    /// a task assessment report</a> in the <i>Database Migration Service User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class StartReplicationTaskAssessmentRequest : AmazonDatabaseMigrationServiceRequest
     {

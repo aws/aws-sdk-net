@@ -159,6 +159,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatePartitionSequence);
             }
 
+            if(requestObject.IsSetDatePartitionTimezone())
+            {
+                context.Writer.WritePropertyName("DatePartitionTimezone");
+                context.Writer.Write(requestObject.DatePartitionTimezone);
+            }
+
             if(requestObject.IsSetDictPageSizeLimit())
             {
                 context.Writer.WritePropertyName("DictPageSizeLimit");

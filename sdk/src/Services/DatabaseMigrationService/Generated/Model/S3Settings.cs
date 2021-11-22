@@ -52,6 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private DatePartitionDelimiterValue _datePartitionDelimiter;
         private bool? _datePartitionEnabled;
         private DatePartitionSequenceValue _datePartitionSequence;
+        private string _datePartitionTimezone;
         private int? _dictPageSizeLimit;
         private bool? _enableStatistics;
         private EncodingTypeValue _encodingType;
@@ -583,6 +584,34 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatePartitionSequence()
         {
             return this._datePartitionSequence != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatePartitionTimezone. 
+        /// <para>
+        /// When creating an S3 target endpoint, set <code>DatePartitionTimezone</code> to convert
+        /// the current UTC time into a specified time zone. The conversion occurs when a date
+        /// partition folder is created and a CDC filename is generated. The time zone format
+        /// is Area/Location. Use this parameter when <code>DatePartitionedEnabled</code> is set
+        /// to <code>true</code>, as shown in the following example.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>s3-settings='{"DatePartitionEnabled": true, "DatePartitionSequence": "YYYYMMDDHH",
+        /// "DatePartitionDelimiter": "SLASH", "DatePartitionTimezone":"<i>Asia/Seoul</i>", "BucketName":
+        /// "dms-nattarat-test"}'</code> 
+        /// </para>
+        /// </summary>
+        public string DatePartitionTimezone
+        {
+            get { return this._datePartitionTimezone; }
+            set { this._datePartitionTimezone = value; }
+        }
+
+        // Check to see if DatePartitionTimezone property is set
+        internal bool IsSetDatePartitionTimezone()
+        {
+            return this._datePartitionTimezone != null;
         }
 
         /// <summary>
