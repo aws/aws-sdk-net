@@ -146,6 +146,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("DataExport", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         
+                        if (publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics != null) 
+                        {
+                            xmlWriter.WriteStartElement("CloudWatchMetrics", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            if(publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics.IsSetIsEnabled())
+                                xmlWriter.WriteElementString("IsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.StorageLensConfiguration.DataExport.CloudWatchMetrics.IsEnabled));                 
+            
+                            xmlWriter.WriteEndElement();
+                        }
+                        
                         if (publicRequest.StorageLensConfiguration.DataExport.S3BucketDestination != null) 
                         {
                             xmlWriter.WriteStartElement("S3BucketDestination", "http://awss3control.amazonaws.com/doc/2018-08-20/");            

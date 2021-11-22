@@ -34,7 +34,26 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class StorageLensDataExport
     {
+        private CloudWatchMetrics _cloudWatchMetrics;
         private S3BucketDestination _s3BucketDestination;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchMetrics. 
+        /// <para>
+        /// A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
+        /// </para>
+        /// </summary>
+        public CloudWatchMetrics CloudWatchMetrics
+        {
+            get { return this._cloudWatchMetrics; }
+            set { this._cloudWatchMetrics = value; }
+        }
+
+        // Check to see if CloudWatchMetrics property is set
+        internal bool IsSetCloudWatchMetrics()
+        {
+            return this._cloudWatchMetrics != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3BucketDestination. 
@@ -48,7 +67,6 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public S3BucketDestination S3BucketDestination
         {
             get { return this._s3BucketDestination; }
