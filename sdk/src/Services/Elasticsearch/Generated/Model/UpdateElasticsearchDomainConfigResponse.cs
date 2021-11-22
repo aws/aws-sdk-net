@@ -35,6 +35,7 @@ namespace Amazon.Elasticsearch.Model
     public partial class UpdateElasticsearchDomainConfigResponse : AmazonWebServiceResponse
     {
         private ElasticsearchDomainConfig _domainConfig;
+        private DryRunResults _dryRunResults;
 
         /// <summary>
         /// Gets and sets the property DomainConfig. 
@@ -53,6 +54,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetDomainConfig()
         {
             return this._domainConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRunResults. 
+        /// <para>
+        /// Contains result of DryRun. 
+        /// </para>
+        /// </summary>
+        public DryRunResults DryRunResults
+        {
+            get { return this._dryRunResults; }
+            set { this._dryRunResults = value; }
+        }
+
+        // Check to see if DryRunResults property is set
+        internal bool IsSetDryRunResults()
+        {
+            return this._dryRunResults != null;
         }
 
     }

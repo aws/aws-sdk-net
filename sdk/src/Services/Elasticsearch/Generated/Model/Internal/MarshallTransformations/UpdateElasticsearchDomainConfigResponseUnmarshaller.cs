@@ -57,6 +57,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     response.DomainConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DryRunResults", targetDepth))
+                {
+                    var unmarshaller = DryRunResultsUnmarshaller.Instance;
+                    response.DryRunResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

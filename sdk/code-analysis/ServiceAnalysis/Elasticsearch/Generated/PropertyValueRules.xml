@@ -289,6 +289,16 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DryRunResults.DeploymentType</property>
+    <min>2</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DryRunResults.Message</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.Duration.Value</property>
     <min>1</min>
     <max>24</max>

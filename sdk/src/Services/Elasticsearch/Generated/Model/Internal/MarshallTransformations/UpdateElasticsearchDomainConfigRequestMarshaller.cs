@@ -132,6 +132,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDryRun())
+                {
+                    context.Writer.WritePropertyName("DryRun");
+                    context.Writer.Write(publicRequest.DryRun);
+                }
+
                 if(publicRequest.IsSetEBSOptions())
                 {
                     context.Writer.WritePropertyName("EBSOptions");
