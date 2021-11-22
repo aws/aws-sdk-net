@@ -42,6 +42,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _clientRequestToken;
         private string _externalMeetingId;
         private string _mediaRegion;
+        private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingHostId;
         private NotificationsConfiguration _notificationsConfiguration;
 
@@ -120,6 +121,24 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetMediaRegion()
         {
             return this._mediaRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeetingFeatures. 
+        /// <para>
+        /// Lists the audio and video features enabled for a meeting, such as echo reduction.
+        /// </para>
+        /// </summary>
+        public MeetingFeaturesConfiguration MeetingFeatures
+        {
+            get { return this._meetingFeatures; }
+            set { this._meetingFeatures = value; }
+        }
+
+        // Check to see if MeetingFeatures property is set
+        internal bool IsSetMeetingFeatures()
+        {
+            return this._meetingFeatures != null;
         }
 
         /// <summary>

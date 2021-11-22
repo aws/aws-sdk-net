@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Meeting Object
+    /// Response Unmarshaller for AudioFeatures Object
     /// </summary>  
-    public class MeetingUnmarshaller : IUnmarshaller<Meeting, XmlUnmarshallerContext>, IUnmarshaller<Meeting, JsonUnmarshallerContext>
+    public class AudioFeaturesUnmarshaller : IUnmarshaller<AudioFeatures, XmlUnmarshallerContext>, IUnmarshaller<AudioFeatures, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Meeting IUnmarshaller<Meeting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioFeatures IUnmarshaller<AudioFeatures, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,21 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Meeting Unmarshall(JsonUnmarshallerContext context)
+        public AudioFeatures Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Meeting unmarshalledObject = new Meeting();
+            AudioFeatures unmarshalledObject = new AudioFeatures();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExternalMeetingId", targetDepth))
+                if (context.TestExpression("EchoReduction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalMeetingId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MediaPlacement", targetDepth))
-                {
-                    var unmarshaller = MediaPlacementUnmarshaller.Instance;
-                    unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MediaRegion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MeetingFeatures", targetDepth))
-                {
-                    var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MeetingFeatures = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MeetingHostId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeetingHostId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MeetingId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EchoReduction = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +76,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         }
 
 
-        private static MeetingUnmarshaller _instance = new MeetingUnmarshaller();        
+        private static AudioFeaturesUnmarshaller _instance = new AudioFeaturesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MeetingUnmarshaller Instance
+        public static AudioFeaturesUnmarshaller Instance
         {
             get
             {

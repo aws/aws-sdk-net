@@ -36,6 +36,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _externalMeetingId;
         private MediaPlacement _mediaPlacement;
         private string _mediaRegion;
+        private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingHostId;
         private string _meetingId;
 
@@ -98,6 +99,24 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetMediaRegion()
         {
             return this._mediaRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeetingFeatures. 
+        /// <para>
+        /// The features available to a meeting, such as Amazon Voice Focus.
+        /// </para>
+        /// </summary>
+        public MeetingFeaturesConfiguration MeetingFeatures
+        {
+            get { return this._meetingFeatures; }
+            set { this._meetingFeatures = value; }
+        }
+
+        // Check to see if MeetingFeatures property is set
+        internal bool IsSetMeetingFeatures()
+        {
+            return this._meetingFeatures != null;
         }
 
         /// <summary>

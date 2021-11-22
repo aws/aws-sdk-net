@@ -105,6 +105,17 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MediaRegion);
                 }
 
+                if(publicRequest.IsSetMeetingFeatures())
+                {
+                    context.Writer.WritePropertyName("MeetingFeatures");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MeetingFeaturesConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MeetingFeatures, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMeetingHostId())
                 {
                     context.Writer.WritePropertyName("MeetingHostId");

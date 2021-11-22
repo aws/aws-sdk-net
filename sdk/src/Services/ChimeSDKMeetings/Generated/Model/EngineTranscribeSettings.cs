@@ -48,8 +48,8 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
         /// <para>
-        /// Set this field to <code>PII</code> to identify personal health information in the
-        /// transcription output.
+        /// Set this field to <code>PII</code> to identify personally identifiable information
+        /// in the transcription output.
         /// </para>
         /// </summary>
         public TranscribeContentIdentificationType ContentIdentificationType
@@ -73,7 +73,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  
         /// <para>
-        /// You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code>
+        /// You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code>
         /// in the same request. If you set both, your request returns a <code>BadRequestException</code>.
         /// </para>
         /// </summary>
@@ -175,7 +175,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>PIIEntityTypes</code> must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
+        /// PIIEntityTypes must be comma-separated. The available values are: <code>BANK_ACCOUNT_NUMBER</code>,
         /// <code>BANK_ROUTING, CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
         /// <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
         /// <code>SSN</code>, and <code>ALL</code>.
