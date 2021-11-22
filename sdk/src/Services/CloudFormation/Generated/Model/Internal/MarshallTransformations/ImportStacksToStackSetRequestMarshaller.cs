@@ -102,6 +102,15 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if(publicRequest.IsSetOrganizationalUnitIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.OrganizationalUnitIds)
+                    {
+                        request.Parameters.Add("OrganizationalUnitIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetStackIds())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -110,6 +119,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         request.Parameters.Add("StackIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetStackIdsUrl())
+                {
+                    request.Parameters.Add("StackIdsUrl", StringUtils.FromString(publicRequest.StackIdsUrl));
                 }
                 if(publicRequest.IsSetStackSetName())
                 {

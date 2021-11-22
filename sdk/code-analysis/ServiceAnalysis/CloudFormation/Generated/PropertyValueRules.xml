@@ -609,6 +609,12 @@
     <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ImportStacksToStackSetRequest.StackIdsUrl</property>
+    <min>1</min>
+    <max>5120</max>
+    <pattern>(s3://|http(s?)://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.ImportStacksToStackSetRequest.StackSetName</property>
     <pattern>[a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})?</pattern>
   </property-value-rule>

@@ -79,9 +79,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResolvedValue. 
         /// <para>
-        /// Read-only. The value that corresponds to a Systems Manager parameter key. This field
+        /// Read-only. Read-only. The value that corresponds to a SSM parameter key. This field
         /// is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-        /// <code>SSM</code> parameter types</a> in the template.
+        /// <code>SSM</code> </a> parameter types in the template.
         /// </para>
         /// </summary>
         public string ResolvedValue

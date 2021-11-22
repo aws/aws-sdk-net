@@ -30,23 +30,21 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportStacksToStackSet operation.
-    /// Import existing stacks into a new stack sets. Use the stack import operation to import
-    /// up to 10 stacks into a new stack set in the same account as the source stack or in
-    /// a different administrator account and Region, by specifying the stack ID of the stack
-    /// you intend to import.
-    /// 
-    ///  <note> 
-    /// <para>
-    ///  <code>ImportStacksToStackSet</code> is only supported by self-managed permissions.
-    /// </para>
-    ///  </note>
+    /// Use the stack import operations for self-managed or service-managed StackSets. For
+    /// self-managed StackSets, the import operation can import stacks in the administrator
+    /// account or in different target accounts and Amazon Web Services Regions. For service-managed
+    /// StackSets, the import operation can import any stack in the same AWS Organizations
+    /// as the management account. The import operation can import up to 10 stacks using inline
+    /// stack IDs or up to 10,000 stacks using an Amazon S3 object.
     /// </summary>
     public partial class ImportStacksToStackSetRequest : AmazonCloudFormationRequest
     {
         private CallAs _callAs;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
+        private List<string> _organizationalUnitIds = new List<string>();
         private List<string> _stackIds = new List<string>();
+        private string _stackIdsUrl;
         private string _stackSetName;
 
         /// <summary>
@@ -112,13 +110,35 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OrganizationalUnitIds. 
+        /// <para>
+        /// The list of OU ID’s to which the stacks being imported has to be mapped as deployment
+        /// target.
+        /// </para>
+        /// </summary>
+        public List<string> OrganizationalUnitIds
+        {
+            get { return this._organizationalUnitIds; }
+            set { this._organizationalUnitIds = value; }
+        }
+
+        // Check to see if OrganizationalUnitIds property is set
+        internal bool IsSetOrganizationalUnitIds()
+        {
+            return this._organizationalUnitIds != null && this._organizationalUnitIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StackIds. 
         /// <para>
         /// The IDs of the stacks you are importing into a stack set. You import up to 10 stacks
         /// per stack set at a time.
         /// </para>
+        ///  
+        /// <para>
+        /// Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> StackIds
         {
             get { return this._stackIds; }
@@ -129,6 +149,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackIds()
         {
             return this._stackIds != null && this._stackIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackIdsUrl. 
+        /// <para>
+        /// The Amazon S3 URL which contains list of stack ids to be inputted.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5120)]
+        public string StackIdsUrl
+        {
+            get { return this._stackIdsUrl; }
+            set { this._stackIdsUrl = value; }
+        }
+
+        // Check to see if StackIdsUrl property is set
+        internal bool IsSetStackIdsUrl()
+        {
+            return this._stackIdsUrl != null;
         }
 
         /// <summary>
