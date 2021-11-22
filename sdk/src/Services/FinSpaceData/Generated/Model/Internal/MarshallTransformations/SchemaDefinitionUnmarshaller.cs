@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ErrorInfo Object
+    /// Response Unmarshaller for SchemaDefinition Object
     /// </summary>  
-    public class ErrorInfoUnmarshaller : IUnmarshaller<ErrorInfo, XmlUnmarshallerContext>, IUnmarshaller<ErrorInfo, JsonUnmarshallerContext>
+    public class SchemaDefinitionUnmarshaller : IUnmarshaller<SchemaDefinition, XmlUnmarshallerContext>, IUnmarshaller<SchemaDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ErrorInfo IUnmarshaller<ErrorInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SchemaDefinition IUnmarshaller<SchemaDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ErrorInfo Unmarshall(JsonUnmarshallerContext context)
+        public SchemaDefinition Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ErrorInfo unmarshalledObject = new ErrorInfo();
+            SchemaDefinition unmarshalledObject = new SchemaDefinition();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("errorCategory", targetDepth))
+                if (context.TestExpression("columns", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCategory = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ColumnDefinition, ColumnDefinitionUnmarshaller>(ColumnDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("errorMessage", targetDepth))
+                if (context.TestExpression("primaryKeyColumns", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PrimaryKeyColumns = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         }
 
 
-        private static ErrorInfoUnmarshaller _instance = new ErrorInfoUnmarshaller();        
+        private static SchemaDefinitionUnmarshaller _instance = new SchemaDefinitionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ErrorInfoUnmarshaller Instance
+        public static SchemaDefinitionUnmarshaller Instance
         {
             get
             {

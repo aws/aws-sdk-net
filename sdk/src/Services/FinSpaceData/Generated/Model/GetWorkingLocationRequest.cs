@@ -30,8 +30,8 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkingLocation operation.
-    /// A temporary Amazon S3 location to copy your files from a source location to stage
-    /// or use as a scratch space in Habanero notebook.
+    /// A temporary Amazon S3 location, where you can copy your files from a source location
+    /// to stage or use as a scratch space in FinSpace notebook.
     /// </summary>
     public partial class GetWorkingLocationRequest : AmazonFinSpaceDataRequest
     {
@@ -50,7 +50,7 @@ namespace Amazon.FinSpaceData.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy
-        /// your data content and then use the location with the changeset creation operation.
+        /// your data content and then use the location with the Changeset creation operation.
         /// </para>
         ///  </li> </ul>
         /// </summary>

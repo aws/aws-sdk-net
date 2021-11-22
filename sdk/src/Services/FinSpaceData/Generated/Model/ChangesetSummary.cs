@@ -29,32 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// A changeset is unit of data in a dataset.
+    /// A Changeset is unit of data in a Dataset.
     /// </summary>
-    public partial class ChangesetInfo
+    public partial class ChangesetSummary
     {
+        private long? _activeUntilTimestamp;
         private string _changesetArn;
-        private Dictionary<string, string> _changesetLabels = new Dictionary<string, string>();
+        private string _changesetId;
         private ChangeType _changeType;
-        private DateTime? _createTimestamp;
+        private long? _createTime;
         private string _datasetId;
-        private ErrorInfo _errorInfo;
+        private ChangesetErrorInfo _errorInfo;
         private Dictionary<string, string> _formatParams = new Dictionary<string, string>();
-        private FormatType _formatType;
-        private string _id;
         private Dictionary<string, string> _sourceParams = new Dictionary<string, string>();
-        private SourceType _sourceType;
-        private ChangesetStatus _status;
+        private IngestionStatus _status;
         private string _updatedByChangesetId;
         private string _updatesChangesetId;
 
         /// <summary>
-        /// Gets and sets the property ChangesetArn. 
+        /// Gets and sets the property ActiveUntilTimestamp. 
         /// <para>
-        /// The ARN identifier of the changeset.
+        /// Time until which the Changeset is active. The value is determined as Epoch time in
+        /// milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC
+        /// is specified as 1635768000000.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        public long ActiveUntilTimestamp
+        {
+            get { return this._activeUntilTimestamp.GetValueOrDefault(); }
+            set { this._activeUntilTimestamp = value; }
+        }
+
+        // Check to see if ActiveUntilTimestamp property is set
+        internal bool IsSetActiveUntilTimestamp()
+        {
+            return this._activeUntilTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangesetArn. 
+        /// <para>
+        /// The ARN identifier of the Changeset.
+        /// </para>
+        /// </summary>
         public string ChangesetArn
         {
             get { return this._changesetArn; }
@@ -68,42 +85,43 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChangesetLabels. 
+        /// Gets and sets the property ChangesetId. 
         /// <para>
-        /// Tags associated with the changeset.
+        /// The unique identifier for a Changeset.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> ChangesetLabels
+        [AWSProperty(Min=1, Max=26)]
+        public string ChangesetId
         {
-            get { return this._changesetLabels; }
-            set { this._changesetLabels = value; }
+            get { return this._changesetId; }
+            set { this._changesetId = value; }
         }
 
-        // Check to see if ChangesetLabels property is set
-        internal bool IsSetChangesetLabels()
+        // Check to see if ChangesetId property is set
+        internal bool IsSetChangesetId()
         {
-            return this._changesetLabels != null && this._changesetLabels.Count > 0; 
+            return this._changesetId != null;
         }
 
         /// <summary>
         /// Gets and sets the property ChangeType. 
         /// <para>
-        /// Change type indicates how a changeset is applied to a dataset.
+        /// Type that indicates how a Changeset is applied to a Dataset.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded
-        /// changesets.
+        /// Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>APPEND</code> - Changeset is considered as an addition to the end of all prior
-        /// loaded changesets.
+        /// loaded Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
-        /// ingested changeset.
+        /// ingested Changeset.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -120,27 +138,29 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateTimestamp. 
+        /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The timestamp at which the changeset was created in FinSpace.
+        /// The timestamp at which the Changeset was created in FinSpace. The value is determined
+        /// as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021
+        /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime CreateTimestamp
+        public long CreateTime
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
-            set { this._createTimestamp = value; }
+            get { return this._createTime.GetValueOrDefault(); }
+            set { this._createTime = value; }
         }
 
-        // Check to see if CreateTimestamp property is set
-        internal bool IsSetCreateTimestamp()
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
         {
-            return this._createTimestamp.HasValue; 
+            return this._createTime.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property DatasetId. 
         /// <para>
-        /// The unique identifier for the FinSpace dataset in which the changeset is created.
+        /// The unique identifier for the FinSpace Dataset in which the Changeset is created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=26)]
@@ -162,7 +182,7 @@ namespace Amazon.FinSpaceData.Model
         /// The structure with error messages.
         /// </para>
         /// </summary>
-        public ErrorInfo ErrorInfo
+        public ChangesetErrorInfo ErrorInfo
         {
             get { return this._errorInfo; }
             set { this._errorInfo = value; }
@@ -177,7 +197,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property FormatParams. 
         /// <para>
-        /// Structure of the source file(s).
+        /// Options that define the structure of the source file(s).
         /// </para>
         /// </summary>
         public Dictionary<string, string> FormatParams
@@ -193,46 +213,9 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FormatType. 
-        /// <para>
-        /// Format type of the input files loaded into the changeset.
-        /// </para>
-        /// </summary>
-        public FormatType FormatType
-        {
-            get { return this._formatType; }
-            set { this._formatType = value; }
-        }
-
-        // Check to see if FormatType property is set
-        internal bool IsSetFormatType()
-        {
-            return this._formatType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// Unique identifier for a changeset.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=26)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property SourceParams. 
         /// <para>
-        /// Source path from which the files to create the changeset are sourced.
+        /// Options that define the location of the data being ingested.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SourceParams
@@ -248,35 +231,33 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceType. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// Type of the data source from which the files to create the changeset are sourced.
+        /// Status of the Changeset ingestion.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>S3</code> - Amazon S3.
+        ///  <code>PENDING</code> - Changeset is pending creation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - Changeset creation has failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SUCCESS</code> - Changeset creation has succeeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RUNNING</code> - Changeset creation is running.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public SourceType SourceType
-        {
-            get { return this._sourceType; }
-            set { this._sourceType = value; }
-        }
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this._sourceType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of changeset creation operation.
-        /// </para>
-        /// </summary>
-        public ChangesetStatus Status
+        public IngestionStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -291,9 +272,10 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property UpdatedByChangesetId. 
         /// <para>
-        /// Unique identifier of the changeset that is updated a changeset.
+        /// The unique identifier of the updated Changeset.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=26)]
         public string UpdatedByChangesetId
         {
             get { return this._updatedByChangesetId; }
@@ -309,9 +291,10 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property UpdatesChangesetId. 
         /// <para>
-        /// Unique identifier of the changeset that is updated.
+        /// The unique identifier of the Changeset that is updated.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=26)]
         public string UpdatesChangesetId
         {
             get { return this._updatesChangesetId; }

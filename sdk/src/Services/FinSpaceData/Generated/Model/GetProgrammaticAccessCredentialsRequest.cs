@@ -30,7 +30,7 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProgrammaticAccessCredentials operation.
-    /// Request programmatic credentials to use with Habanero SDK.
+    /// Request programmatic credentials to use with FinSpace SDK.
     /// </summary>
     public partial class GetProgrammaticAccessCredentialsRequest : AmazonFinSpaceDataRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// The habanero environment identifier.
+        /// The FinSpace environment identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=26)]

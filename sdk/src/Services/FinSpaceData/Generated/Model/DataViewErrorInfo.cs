@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// Error message.
+    /// The structure with error messages.
     /// </summary>
-    public partial class ErrorInfo
+    public partial class DataViewErrorInfo
     {
         private ErrorCategory _errorCategory;
         private string _errorMessage;
@@ -69,7 +69,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELLED</code> - A user recoverable error has occurred.
+        ///  <code>CANCELLED</code> - Cancelled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.
         /// </para>
         ///  </li> </ul>
         /// </summary>

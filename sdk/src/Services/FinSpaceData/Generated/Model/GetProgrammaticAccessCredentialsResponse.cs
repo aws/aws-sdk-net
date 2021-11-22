@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// This is the response object from the GetProgrammaticAccessCredentials operation.
+    /// Response for GetProgrammaticAccessCredentials operation
     /// </summary>
     public partial class GetProgrammaticAccessCredentialsResponse : AmazonWebServiceResponse
     {

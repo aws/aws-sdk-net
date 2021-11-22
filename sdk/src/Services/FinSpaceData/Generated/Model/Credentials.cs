@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// Set short term API credentials.
+    /// Short term API credentials.
     /// </summary>
     public partial class Credentials
     {

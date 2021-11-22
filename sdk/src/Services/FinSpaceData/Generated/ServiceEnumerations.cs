@@ -25,68 +25,6 @@ namespace Amazon.FinSpaceData
 {
 
     /// <summary>
-    /// Constants used for properties of type ChangesetStatus.
-    /// </summary>
-    public class ChangesetStatus : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant FAILED for ChangesetStatus
-        /// </summary>
-        public static readonly ChangesetStatus FAILED = new ChangesetStatus("FAILED");
-        /// <summary>
-        /// Constant PENDING for ChangesetStatus
-        /// </summary>
-        public static readonly ChangesetStatus PENDING = new ChangesetStatus("PENDING");
-        /// <summary>
-        /// Constant RUNNING for ChangesetStatus
-        /// </summary>
-        public static readonly ChangesetStatus RUNNING = new ChangesetStatus("RUNNING");
-        /// <summary>
-        /// Constant STOP_REQUESTED for ChangesetStatus
-        /// </summary>
-        public static readonly ChangesetStatus STOP_REQUESTED = new ChangesetStatus("STOP_REQUESTED");
-        /// <summary>
-        /// Constant SUCCESS for ChangesetStatus
-        /// </summary>
-        public static readonly ChangesetStatus SUCCESS = new ChangesetStatus("SUCCESS");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public ChangesetStatus(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static ChangesetStatus FindValue(string value)
-        {
-            return FindValue<ChangesetStatus>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator ChangesetStatus(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type ChangeType.
     /// </summary>
     public class ChangeType : ConstantClass
@@ -141,43 +79,315 @@ namespace Amazon.FinSpaceData
 
 
     /// <summary>
+    /// Constants used for properties of type ColumnDataType.
+    /// </summary>
+    public class ColumnDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BIGINT for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType BIGINT = new ColumnDataType("BIGINT");
+        /// <summary>
+        /// Constant BINARY for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType BINARY = new ColumnDataType("BINARY");
+        /// <summary>
+        /// Constant BOOLEAN for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType BOOLEAN = new ColumnDataType("BOOLEAN");
+        /// <summary>
+        /// Constant CHAR for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType CHAR = new ColumnDataType("CHAR");
+        /// <summary>
+        /// Constant DATE for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType DATE = new ColumnDataType("DATE");
+        /// <summary>
+        /// Constant DATETIME for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType DATETIME = new ColumnDataType("DATETIME");
+        /// <summary>
+        /// Constant DOUBLE for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType DOUBLE = new ColumnDataType("DOUBLE");
+        /// <summary>
+        /// Constant FLOAT for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType FLOAT = new ColumnDataType("FLOAT");
+        /// <summary>
+        /// Constant INTEGER for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType INTEGER = new ColumnDataType("INTEGER");
+        /// <summary>
+        /// Constant SMALLINT for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType SMALLINT = new ColumnDataType("SMALLINT");
+        /// <summary>
+        /// Constant STRING for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType STRING = new ColumnDataType("STRING");
+        /// <summary>
+        /// Constant TINYINT for ColumnDataType
+        /// </summary>
+        public static readonly ColumnDataType TINYINT = new ColumnDataType("TINYINT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColumnDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColumnDataType FindValue(string value)
+        {
+            return FindValue<ColumnDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColumnDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetKind.
+    /// </summary>
+    public class DatasetKind : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NON_TABULAR for DatasetKind
+        /// </summary>
+        public static readonly DatasetKind NON_TABULAR = new DatasetKind("NON_TABULAR");
+        /// <summary>
+        /// Constant TABULAR for DatasetKind
+        /// </summary>
+        public static readonly DatasetKind TABULAR = new DatasetKind("TABULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetKind(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetKind FindValue(string value)
+        {
+            return FindValue<DatasetKind>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetKind(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetStatus.
+    /// </summary>
+    public class DatasetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus FAILED = new DatasetStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus PENDING = new DatasetStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus RUNNING = new DatasetStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCESS for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus SUCCESS = new DatasetStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetStatus FindValue(string value)
+        {
+            return FindValue<DatasetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataViewStatus.
+    /// </summary>
+    public class DataViewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus CANCELLED = new DataViewStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus FAILED = new DataViewStatus("FAILED");
+        /// <summary>
+        /// Constant FAILED_CLEANUP_FAILED for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus FAILED_CLEANUP_FAILED = new DataViewStatus("FAILED_CLEANUP_FAILED");
+        /// <summary>
+        /// Constant PENDING for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus PENDING = new DataViewStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus RUNNING = new DataViewStatus("RUNNING");
+        /// <summary>
+        /// Constant STARTING for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus STARTING = new DataViewStatus("STARTING");
+        /// <summary>
+        /// Constant SUCCESS for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus SUCCESS = new DataViewStatus("SUCCESS");
+        /// <summary>
+        /// Constant TIMEOUT for DataViewStatus
+        /// </summary>
+        public static readonly DataViewStatus TIMEOUT = new DataViewStatus("TIMEOUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataViewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataViewStatus FindValue(string value)
+        {
+            return FindValue<DataViewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataViewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCategory.
     /// </summary>
     public class ErrorCategory : ConstantClass
     {
 
         /// <summary>
-        /// Constant A_user_recoverable_error_has_occurred for ErrorCategory
+        /// Constant ACCESS_DENIED for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory A_user_recoverable_error_has_occurred = new ErrorCategory("A_user_recoverable_error_has_occurred");
+        public static readonly ErrorCategory ACCESS_DENIED = new ErrorCategory("ACCESS_DENIED");
         /// <summary>
-        /// Constant An_internal_error_has_occurred for ErrorCategory
+        /// Constant CANCELLED for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory An_internal_error_has_occurred = new ErrorCategory("An_internal_error_has_occurred");
+        public static readonly ErrorCategory CANCELLED = new ErrorCategory("CANCELLED");
         /// <summary>
-        /// Constant Cancelled for ErrorCategory
+        /// Constant INTERNAL_SERVICE_EXCEPTION for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory Cancelled = new ErrorCategory("Cancelled");
+        public static readonly ErrorCategory INTERNAL_SERVICE_EXCEPTION = new ErrorCategory("INTERNAL_SERVICE_EXCEPTION");
         /// <summary>
-        /// Constant Missing_required_permission_to_perform_this_request for ErrorCategory
+        /// Constant RESOURCE_NOT_FOUND for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory Missing_required_permission_to_perform_this_request = new ErrorCategory("Missing_required_permission_to_perform_this_request");
+        public static readonly ErrorCategory RESOURCE_NOT_FOUND = new ErrorCategory("RESOURCE_NOT_FOUND");
         /// <summary>
-        /// Constant One_or_more_inputs_to_this_request_were_not_found for ErrorCategory
+        /// Constant SERVICE_QUOTA_EXCEEDED for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory One_or_more_inputs_to_this_request_were_not_found = new ErrorCategory("One_or_more_inputs_to_this_request_were_not_found");
+        public static readonly ErrorCategory SERVICE_QUOTA_EXCEEDED = new ErrorCategory("SERVICE_QUOTA_EXCEEDED");
         /// <summary>
-        /// Constant Service_limits_have_been_exceeded for ErrorCategory
+        /// Constant THROTTLING for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory Service_limits_have_been_exceeded = new ErrorCategory("Service_limits_have_been_exceeded");
+        public static readonly ErrorCategory THROTTLING = new ErrorCategory("THROTTLING");
         /// <summary>
-        /// Constant The_inputs_to_this_request_are_invalid for ErrorCategory
+        /// Constant USER_RECOVERABLE for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory The_inputs_to_this_request_are_invalid = new ErrorCategory("The_inputs_to_this_request_are_invalid");
+        public static readonly ErrorCategory USER_RECOVERABLE = new ErrorCategory("USER_RECOVERABLE");
         /// <summary>
-        /// Constant The_system_temporarily_lacks_sufficient_resources_to_process_the_request for ErrorCategory
+        /// Constant VALIDATION for ErrorCategory
         /// </summary>
-        public static readonly ErrorCategory The_system_temporarily_lacks_sufficient_resources_to_process_the_request = new ErrorCategory("The_system_temporarily_lacks_sufficient_resources_to_process_the_request");
+        public static readonly ErrorCategory VALIDATION = new ErrorCategory("VALIDATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -215,27 +425,31 @@ namespace Amazon.FinSpaceData
 
 
     /// <summary>
-    /// Constants used for properties of type FormatType.
+    /// Constants used for properties of type IngestionStatus.
     /// </summary>
-    public class FormatType : ConstantClass
+    public class IngestionStatus : ConstantClass
     {
 
         /// <summary>
-        /// Constant CSV for FormatType
+        /// Constant FAILED for IngestionStatus
         /// </summary>
-        public static readonly FormatType CSV = new FormatType("CSV");
+        public static readonly IngestionStatus FAILED = new IngestionStatus("FAILED");
         /// <summary>
-        /// Constant JSON for FormatType
+        /// Constant PENDING for IngestionStatus
         /// </summary>
-        public static readonly FormatType JSON = new FormatType("JSON");
+        public static readonly IngestionStatus PENDING = new IngestionStatus("PENDING");
         /// <summary>
-        /// Constant PARQUET for FormatType
+        /// Constant RUNNING for IngestionStatus
         /// </summary>
-        public static readonly FormatType PARQUET = new FormatType("PARQUET");
+        public static readonly IngestionStatus RUNNING = new IngestionStatus("RUNNING");
         /// <summary>
-        /// Constant XML for FormatType
+        /// Constant STOP_REQUESTED for IngestionStatus
         /// </summary>
-        public static readonly FormatType XML = new FormatType("XML");
+        public static readonly IngestionStatus STOP_REQUESTED = new IngestionStatus("STOP_REQUESTED");
+        /// <summary>
+        /// Constant SUCCESS for IngestionStatus
+        /// </summary>
+        public static readonly IngestionStatus SUCCESS = new IngestionStatus("SUCCESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -245,7 +459,7 @@ namespace Amazon.FinSpaceData
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public FormatType(string value)
+        public IngestionStatus(string value)
             : base(value)
         {
         }
@@ -255,9 +469,9 @@ namespace Amazon.FinSpaceData
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static FormatType FindValue(string value)
+        public static IngestionStatus FindValue(string value)
         {
-            return FindValue<FormatType>(value);
+            return FindValue<IngestionStatus>(value);
         }
 
         /// <summary>
@@ -265,7 +479,7 @@ namespace Amazon.FinSpaceData
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator FormatType(string value)
+        public static implicit operator IngestionStatus(string value)
         {
             return FindValue(value);
         }
@@ -316,52 +530,6 @@ namespace Amazon.FinSpaceData
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LocationType(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
-    /// Constants used for properties of type SourceType.
-    /// </summary>
-    public class SourceType : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant S3 for SourceType
-        /// </summary>
-        public static readonly SourceType S3 = new SourceType("S3");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public SourceType(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static SourceType FindValue(string value)
-        {
-            return FindValue<SourceType>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator SourceType(string value)
         {
             return FindValue(value);
         }

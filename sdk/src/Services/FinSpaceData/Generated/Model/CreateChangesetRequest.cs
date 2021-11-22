@@ -30,32 +30,35 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateChangeset operation.
-    /// Creates a new changeset in a FinSpace dataset.
+    /// Creates a new Changeset in a FinSpace Dataset.
     /// </summary>
     public partial class CreateChangesetRequest : AmazonFinSpaceDataRequest
     {
         private ChangeType _changeType;
+        private string _clientToken;
         private string _datasetId;
         private Dictionary<string, string> _formatParams = new Dictionary<string, string>();
-        private FormatType _formatType;
         private Dictionary<string, string> _sourceParams = new Dictionary<string, string>();
-        private SourceType _sourceType;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ChangeType. 
         /// <para>
-        /// Option to indicate how a changeset will be applied to a dataset.
+        /// Option to indicate how a Changeset will be applied to a Dataset.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
-        /// loaded changesets.
+        /// loaded Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>APPEND</code> - Changeset will be considered as an addition to the end of all
-        /// prior loaded changesets.
+        /// prior loaded Changesets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
+        /// ingested Changeset.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -73,9 +76,29 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A token used to ensure idempotency.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DatasetId. 
         /// <para>
-        /// The unique identifier for the FinSpace dataset in which the changeset will be created.
+        /// The unique identifier for the FinSpace Dataset where the Changeset will be created.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=26)]
@@ -94,9 +117,37 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property FormatParams. 
         /// <para>
-        /// Options that define the structure of the source file(s).
+        /// Options that define the structure of the source file(s) including the format type
+        /// (<code>formatType</code>), header row (<code>withHeader</code>), data separation character
+        /// (<code>separator</code>) and the type of compression (<code>compression</code>). 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>formatType</code> is a required attribute and can have the following values:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PARQUET</code> - Parquet source file format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CSV</code> - CSV source file format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JSON</code> - JSON source file format.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>XML</code> - XML source file format.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For example, you could specify the following for <code>formatParams</code>:
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Dictionary<string, string> FormatParams
         {
             get { return this._formatParams; }
@@ -110,27 +161,9 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FormatType. 
-        /// <para>
-        /// Format type of the input files being loaded into the changeset.
-        /// </para>
-        /// </summary>
-        public FormatType FormatType
-        {
-            get { return this._formatType; }
-            set { this._formatType = value; }
-        }
-
-        // Check to see if FormatType property is set
-        internal bool IsSetFormatType()
-        {
-            return this._formatType != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property SourceParams. 
         /// <para>
-        /// Source path from which the files to create the changeset will be sourced.
+        /// Options that define the location of the data being ingested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,48 +177,6 @@ namespace Amazon.FinSpaceData.Model
         internal bool IsSetSourceParams()
         {
             return this._sourceParams != null && this._sourceParams.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceType. 
-        /// <para>
-        /// Type of the data source from which the files to create the changeset will be sourced.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>S3</code> - Amazon S3.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public SourceType SourceType
-        {
-            get { return this._sourceType; }
-            set { this._sourceType = value; }
-        }
-
-        // Check to see if SourceType property is set
-        internal bool IsSetSourceType()
-        {
-            return this._sourceType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Metadata tags to apply to this changeset.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChangesetInfo Object
+    /// Response Unmarshaller for ChangesetSummary Object
     /// </summary>  
-    public class ChangesetInfoUnmarshaller : IUnmarshaller<ChangesetInfo, XmlUnmarshallerContext>, IUnmarshaller<ChangesetInfo, JsonUnmarshallerContext>
+    public class ChangesetSummaryUnmarshaller : IUnmarshaller<ChangesetSummary, XmlUnmarshallerContext>, IUnmarshaller<ChangesetSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChangesetInfo IUnmarshaller<ChangesetInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ChangesetSummary IUnmarshaller<ChangesetSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ChangesetInfo Unmarshall(JsonUnmarshallerContext context)
+        public ChangesetSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ChangesetInfo unmarshalledObject = new ChangesetInfo();
+            ChangesetSummary unmarshalledObject = new ChangesetSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("activeUntilTimestamp", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ActiveUntilTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("changesetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChangesetArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("changesetLabels", targetDepth))
+                if (context.TestExpression("changesetId", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ChangesetLabels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChangesetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("changeType", targetDepth))
@@ -82,10 +88,10 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChangeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createTimestamp", targetDepth))
+                if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTimestamp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("datasetId", targetDepth))
@@ -96,7 +102,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("errorInfo", targetDepth))
                 {
-                    var unmarshaller = ErrorInfoUnmarshaller.Instance;
+                    var unmarshaller = ChangesetErrorInfoUnmarshaller.Instance;
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -106,28 +112,10 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     unmarshalledObject.FormatParams = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("formatType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FormatType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("sourceParams", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.SourceParams = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -154,12 +142,12 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChangesetInfoUnmarshaller _instance = new ChangesetInfoUnmarshaller();        
+        private static ChangesetSummaryUnmarshaller _instance = new ChangesetSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChangesetInfoUnmarshaller Instance
+        public static ChangesetSummaryUnmarshaller Instance
         {
             get
             {

@@ -51,10 +51,16 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("changeset", targetDepth))
+                if (context.TestExpression("changesetId", targetDepth))
                 {
-                    var unmarshaller = ChangesetInfoUnmarshaller.Instance;
-                    response.Changeset = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ChangesetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("datasetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DatasetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -84,9 +90,17 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

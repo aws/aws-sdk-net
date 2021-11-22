@@ -29,28 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// This is the response object from the CreateChangeset operation.
+    /// The response from a CreateChangeset operation.
     /// </summary>
     public partial class CreateChangesetResponse : AmazonWebServiceResponse
     {
-        private ChangesetInfo _changeset;
+        private string _changesetId;
+        private string _datasetId;
 
         /// <summary>
-        /// Gets and sets the property Changeset. 
+        /// Gets and sets the property ChangesetId. 
         /// <para>
-        /// Returns the changeset details.
+        /// The unique identifier of the Changeset that is created.
         /// </para>
         /// </summary>
-        public ChangesetInfo Changeset
+        [AWSProperty(Min=1, Max=26)]
+        public string ChangesetId
         {
-            get { return this._changeset; }
-            set { this._changeset = value; }
+            get { return this._changesetId; }
+            set { this._changesetId = value; }
         }
 
-        // Check to see if Changeset property is set
-        internal bool IsSetChangeset()
+        // Check to see if ChangesetId property is set
+        internal bool IsSetChangesetId()
         {
-            return this._changeset != null;
+            return this._changesetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetId. 
+        /// <para>
+        /// The unique identifier for the FinSpace Dataset where the Changeset is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=26)]
+        public string DatasetId
+        {
+            get { return this._datasetId; }
+            set { this._datasetId = value; }
+        }
+
+        // Check to see if DatasetId property is set
+        internal bool IsSetDatasetId()
+        {
+            return this._datasetId != null;
         }
 
     }

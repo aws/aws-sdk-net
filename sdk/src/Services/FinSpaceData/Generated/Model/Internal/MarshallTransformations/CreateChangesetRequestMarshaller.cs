@@ -62,7 +62,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDatasetId())
                 throw new AmazonFinSpaceDataException("Request object does not have required field DatasetId set");
             request.AddPathResource("{datasetId}", StringUtils.FromString(publicRequest.DatasetId));
-            request.ResourcePath = "/datasets/{datasetId}/changesets";
+            request.ResourcePath = "/datasets/{datasetId}/changesetsv2";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -74,6 +74,17 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ChangeType);
                 }
 
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetFormatParams())
                 {
                     context.Writer.WritePropertyName("formatParams");
@@ -88,12 +99,6 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFormatType())
-                {
-                    context.Writer.WritePropertyName("formatType");
-                    context.Writer.Write(publicRequest.FormatType);
-                }
-
                 if(publicRequest.IsSetSourceParams())
                 {
                     context.Writer.WritePropertyName("sourceParams");
@@ -104,26 +109,6 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                         var publicRequestSourceParamsValue = publicRequestSourceParamsKvp.Value;
 
                             context.Writer.Write(publicRequestSourceParamsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceType())
-                {
-                    context.Writer.WritePropertyName("sourceType");
-                    context.Writer.Write(publicRequest.SourceType);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
                     }
                     context.Writer.WriteObjectEnd();
                 }

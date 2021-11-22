@@ -38,7 +38,7 @@ namespace Amazon.FinSpaceData
     /// <summary>
     /// Implementation for accessing FinSpaceData
     ///
-    /// The FinSpace APIs let you take actions inside the FinSpace environment.
+    /// The FinSpace APIs let you take actions inside the FinSpace.
     /// </summary>
     public partial class AmazonFinSpaceDataClient : AmazonServiceClient, IAmazonFinSpaceData
     {
@@ -203,6 +203,24 @@ namespace Amazon.FinSpaceData
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private IFinSpaceDataPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFinSpaceDataPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FinSpaceDataPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 
@@ -254,7 +272,7 @@ namespace Amazon.FinSpaceData
 
 
         /// <summary>
-        /// Creates a new changeset in a FinSpace dataset.
+        /// Creates a new Changeset in a FinSpace Dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChangeset service method.</param>
         /// <param name="cancellationToken">
@@ -265,8 +283,14 @@ namespace Amazon.FinSpaceData
         /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
         /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
         /// </exception>
         /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -289,6 +313,321 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  CreateDataset
+
+        internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new FinSpace Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDataView
+
+        internal virtual CreateDataViewResponse CreateDataView(CreateDataViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataViewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataViewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a Dataview for a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataView service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">REST API Reference for CreateDataView Operation</seealso>
+        public virtual Task<CreateDataViewResponse> CreateDataViewAsync(CreateDataViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataViewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataViewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDataset
+
+        internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a FinSpace Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetChangeset
+
+        internal virtual GetChangesetResponse GetChangeset(GetChangesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChangesetResponseUnmarshaller.Instance;
+
+            return Invoke<GetChangesetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about a Changeset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChangeset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetChangeset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">REST API Reference for GetChangeset Operation</seealso>
+        public virtual Task<GetChangesetResponse> GetChangesetAsync(GetChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChangesetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetChangesetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataset
+
+        internal virtual GetDatasetResponse GetDataset(GetDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        public virtual Task<GetDatasetResponse> GetDatasetAsync(GetDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDatasetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataView
+
+        internal virtual GetDataViewResponse GetDataView(GetDataViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataViewResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataViewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about a Dataview.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataView service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
+        public virtual Task<GetDataViewResponse> GetDataViewAsync(GetDataViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataViewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataViewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProgrammaticAccessCredentials
 
         internal virtual GetProgrammaticAccessCredentialsResponse GetProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest request)
@@ -303,7 +642,7 @@ namespace Amazon.FinSpaceData
 
 
         /// <summary>
-        /// Request programmatic credentials to use with Habanero SDK.
+        /// Request programmatic credentials to use with FinSpace SDK.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProgrammaticAccessCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -319,6 +658,9 @@ namespace Amazon.FinSpaceData
         /// </exception>
         /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">REST API Reference for GetProgrammaticAccessCredentials Operation</seealso>
         public virtual Task<GetProgrammaticAccessCredentialsResponse> GetProgrammaticAccessCredentialsAsync(GetProgrammaticAccessCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -346,8 +688,8 @@ namespace Amazon.FinSpaceData
 
 
         /// <summary>
-        /// A temporary Amazon S3 location to copy your files from a source location to stage
-        /// or use as a scratch space in Habanero notebook.
+        /// A temporary Amazon S3 location, where you can copy your files from a source location
+        /// to stage or use as a scratch space in FinSpace notebook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkingLocation service method.</param>
         /// <param name="cancellationToken">
@@ -375,6 +717,260 @@ namespace Amazon.FinSpaceData
             options.ResponseUnmarshaller = GetWorkingLocationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetWorkingLocationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChangesets
+
+        internal virtual ListChangesetsResponse ListChangesets(ListChangesetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChangesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChangesetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangesetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the FinSpace Changesets for a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChangesets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChangesets service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">REST API Reference for ListChangesets Operation</seealso>
+        public virtual Task<ListChangesetsResponse> ListChangesetsAsync(ListChangesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChangesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChangesetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListChangesetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDatasets
+
+        internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all of the active Datasets that a user has access to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasets service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataViews
+
+        internal virtual ListDataViewsResponse ListDataViews(ListDataViewsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataViewsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataViewsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all available Dataviews for a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataViews service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">REST API Reference for ListDataViews Operation</seealso>
+        public virtual Task<ListDataViewsResponse> ListDataViewsAsync(ListDataViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataViewsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataViewsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateChangeset
+
+        internal virtual UpdateChangesetResponse UpdateChangeset(UpdateChangesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChangesetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChangesetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a FinSpace Changeset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChangeset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateChangeset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">REST API Reference for UpdateChangeset Operation</seealso>
+        public virtual Task<UpdateChangesetResponse> UpdateChangesetAsync(UpdateChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChangesetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateChangesetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataset
+
+        internal virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a FinSpace Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
         }
 
         #endregion

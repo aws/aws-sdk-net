@@ -35,12 +35,30 @@ namespace Amazon.FinSpaceData
     /// <summary>
     /// Implementation for accessing FinSpaceData
     ///
-    /// The FinSpace APIs let you take actions inside the FinSpace environment.
+    /// The FinSpace APIs let you take actions inside the FinSpace.
     /// </summary>
     public partial class AmazonFinSpaceDataClient : AmazonServiceClient, IAmazonFinSpaceData
     {
         private static IServiceMetadata serviceMetadata = new AmazonFinSpaceDataMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IFinSpaceDataPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IFinSpaceDataPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new FinSpaceDataPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
@@ -240,7 +258,7 @@ namespace Amazon.FinSpaceData
         #region  CreateChangeset
 
         /// <summary>
-        /// Creates a new changeset in a FinSpace dataset.
+        /// Creates a new Changeset in a FinSpace Dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChangeset service method.</param>
         /// 
@@ -248,8 +266,14 @@ namespace Amazon.FinSpaceData
         /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
         /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
         /// </exception>
         /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -306,10 +330,445 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  CreateDataset
+
+        /// <summary>
+        /// Creates a new FinSpace Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataset(CreateDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataset.</param>
+        /// 
+        /// <returns>Returns a  CreateDatasetResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual CreateDatasetResponse EndCreateDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDataView
+
+        /// <summary>
+        /// Creates a Dataview for a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataView service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataView service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">REST API Reference for CreateDataView Operation</seealso>
+        public virtual CreateDataViewResponse CreateDataView(CreateDataViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataViewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataViewResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataView operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataView operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataView
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">REST API Reference for CreateDataView Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataView(CreateDataViewRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataViewResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataView operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataView.</param>
+        /// 
+        /// <returns>Returns a  CreateDataViewResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView">REST API Reference for CreateDataView Operation</seealso>
+        public virtual CreateDataViewResponse EndCreateDataView(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataViewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDataset
+
+        /// <summary>
+        /// Deletes a FinSpace Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.LimitExceededException">
+        /// A limit has exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataset.</param>
+        /// 
+        /// <returns>Returns a  DeleteDatasetResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        public virtual DeleteDatasetResponse EndDeleteDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetChangeset
+
+        /// <summary>
+        /// Get information about a Changeset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChangeset service method.</param>
+        /// 
+        /// <returns>The response from the GetChangeset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">REST API Reference for GetChangeset Operation</seealso>
+        public virtual GetChangesetResponse GetChangeset(GetChangesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChangesetResponseUnmarshaller.Instance;
+
+            return Invoke<GetChangesetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChangeset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChangeset operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChangeset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">REST API Reference for GetChangeset Operation</seealso>
+        public virtual IAsyncResult BeginGetChangeset(GetChangesetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChangesetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChangeset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChangeset.</param>
+        /// 
+        /// <returns>Returns a  GetChangesetResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset">REST API Reference for GetChangeset Operation</seealso>
+        public virtual GetChangesetResponse EndGetChangeset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetChangesetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataset
+
+        /// <summary>
+        /// Returns information about a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
+        /// 
+        /// <returns>The response from the GetDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        public virtual GetDatasetResponse GetDataset(GetDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataset operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        public virtual IAsyncResult BeginGetDataset(GetDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataset.</param>
+        /// 
+        /// <returns>Returns a  GetDatasetResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        public virtual GetDatasetResponse EndGetDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataView
+
+        /// <summary>
+        /// Gets information about a Dataview.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataView service method.</param>
+        /// 
+        /// <returns>The response from the GetDataView service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
+        public virtual GetDataViewResponse GetDataView(GetDataViewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataViewResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataViewResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataView operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataView operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataView
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
+        public virtual IAsyncResult BeginGetDataView(GetDataViewRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataViewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataViewResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataView operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataView.</param>
+        /// 
+        /// <returns>Returns a  GetDataViewResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
+        public virtual GetDataViewResponse EndGetDataView(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataViewResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetProgrammaticAccessCredentials
 
         /// <summary>
-        /// Request programmatic credentials to use with Habanero SDK.
+        /// Request programmatic credentials to use with FinSpace SDK.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProgrammaticAccessCredentials service method.</param>
         /// 
@@ -322,6 +781,9 @@ namespace Amazon.FinSpaceData
         /// </exception>
         /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">REST API Reference for GetProgrammaticAccessCredentials Operation</seealso>
         public virtual GetProgrammaticAccessCredentialsResponse GetProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest request)
@@ -372,8 +834,8 @@ namespace Amazon.FinSpaceData
         #region  GetWorkingLocation
 
         /// <summary>
-        /// A temporary Amazon S3 location to copy your files from a source location to stage
-        /// or use as a scratch space in Habanero notebook.
+        /// A temporary Amazon S3 location, where you can copy your files from a source location
+        /// to stage or use as a scratch space in FinSpace notebook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkingLocation service method.</param>
         /// 
@@ -432,6 +894,360 @@ namespace Amazon.FinSpaceData
         public virtual GetWorkingLocationResponse EndGetWorkingLocation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetWorkingLocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListChangesets
+
+        /// <summary>
+        /// Lists the FinSpace Changesets for a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChangesets service method.</param>
+        /// 
+        /// <returns>The response from the ListChangesets service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">REST API Reference for ListChangesets Operation</seealso>
+        public virtual ListChangesetsResponse ListChangesets(ListChangesetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChangesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChangesetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChangesetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChangesets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChangesets operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChangesets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">REST API Reference for ListChangesets Operation</seealso>
+        public virtual IAsyncResult BeginListChangesets(ListChangesetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChangesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChangesetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChangesets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChangesets.</param>
+        /// 
+        /// <returns>Returns a  ListChangesetsResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets">REST API Reference for ListChangesets Operation</seealso>
+        public virtual ListChangesetsResponse EndListChangesets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListChangesetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDatasets
+
+        /// <summary>
+        /// Lists all of the active Datasets that a user has access to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasets service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDatasets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatasets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDatasets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasets.</param>
+        /// 
+        /// <returns>Returns a  ListDatasetsResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual ListDatasetsResponse EndListDatasets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDatasetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataViews
+
+        /// <summary>
+        /// Lists all available Dataviews for a Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataViews service method.</param>
+        /// 
+        /// <returns>The response from the ListDataViews service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">REST API Reference for ListDataViews Operation</seealso>
+        public virtual ListDataViewsResponse ListDataViews(ListDataViewsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataViewsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataViewsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataViews operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataViews operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataViews
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">REST API Reference for ListDataViews Operation</seealso>
+        public virtual IAsyncResult BeginListDataViews(ListDataViewsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataViewsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataViews operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataViews.</param>
+        /// 
+        /// <returns>Returns a  ListDataViewsResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews">REST API Reference for ListDataViews Operation</seealso>
+        public virtual ListDataViewsResponse EndListDataViews(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataViewsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateChangeset
+
+        /// <summary>
+        /// Updates a FinSpace Changeset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChangeset service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChangeset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">REST API Reference for UpdateChangeset Operation</seealso>
+        public virtual UpdateChangesetResponse UpdateChangeset(UpdateChangesetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChangesetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChangesetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChangeset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChangeset operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChangeset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">REST API Reference for UpdateChangeset Operation</seealso>
+        public virtual IAsyncResult BeginUpdateChangeset(UpdateChangesetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateChangesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateChangesetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateChangeset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChangeset.</param>
+        /// 
+        /// <returns>Returns a  UpdateChangesetResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset">REST API Reference for UpdateChangeset Operation</seealso>
+        public virtual UpdateChangesetResponse EndUpdateChangeset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateChangesetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDataset
+
+        /// <summary>
+        /// Updates a FinSpace Dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataset service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        public virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataset operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataset(UpdateDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataset.</param>
+        /// 
+        /// <returns>Returns a  UpdateDatasetResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        public virtual UpdateDatasetResponse EndUpdateDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDatasetResponse>(asyncResult);
         }
 
         #endregion
