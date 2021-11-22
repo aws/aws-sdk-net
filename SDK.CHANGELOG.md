@@ -1,3 +1,34 @@
+### 3.7.166.0 (2021-11-22 19:25 UTC)
+* Braket (3.7.2.0)
+	* This release adds support for Amazon Braket Hybrid Jobs.
+* ChimeSDKMeetings (3.7.3.0)
+	* Added new APIs for enabling Echo Reduction with Voice Focus.
+* CloudFormation (3.7.7.0)
+	* This release include SDK changes for the feature launch of Stack Import to Service Managed StackSet.
+* Connect (3.7.10.0)
+	* This release adds support for UpdateContactFlowMetadata, DeleteContactFlow and module APIs. For details, see the Release Notes in the Amazon Connect Administrator Guide.
+* DatabaseMigrationService (3.7.6.0)
+	* Added new S3 endpoint settings to allow to convert the current UTC time into a specified time zone when a date partition folder is created. Using with 'DatePartitionedEnabled'.
+* EKS (3.7.11.0)
+	* Adding missing exceptions to RegisterCluster operation
+* Elasticsearch (3.7.3.0)
+	* This release adds an optional parameter dry-run for the UpdateElasticsearchDomainConfig API to perform basic validation checks, and detect the deployment type that will be required for the configuration change, without actually applying the change.
+* FinSpaceData (3.7.1.0)
+	* Add new APIs for managing Datasets, Changesets, and Dataviews.
+* QuickSight (3.7.9.0)
+	* Add support for Exasol data source, 1 click enterprise embedding and email customization.
+* RDS (3.7.7.0)
+	* Adds local backup support to Amazon RDS on AWS Outposts.
+* S3Control (3.7.4.0)
+	* Added Amazon CloudWatch publishing option for S3 Storage Lens metrics.
+* SimpleSystemsManagement (3.7.10.0)
+	* Adds new parameter to CreateActivation API . This parameter is for "internal use only".
+* Core 3.7.5.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.165.1 (2021-11-20 01:30 UTC)
 * Core 3.7.5.1
 	* test!: make DefaultFilePath settable to allow mocking. BREAKING CHANGE: this is binary change and can break customers on drop-in replacing AWSSDK.Core
