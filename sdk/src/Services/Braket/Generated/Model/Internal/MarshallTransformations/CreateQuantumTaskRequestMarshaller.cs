@@ -94,6 +94,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeviceParameters);
                 }
 
+                if(publicRequest.IsSetJobToken())
+                {
+                    context.Writer.WritePropertyName("jobToken");
+                    context.Writer.Write(publicRequest.JobToken);
+                }
+
                 if(publicRequest.IsSetOutputS3Bucket())
                 {
                     context.Writer.WritePropertyName("outputS3Bucket");

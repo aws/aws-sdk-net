@@ -31,6 +31,11 @@ namespace Amazon.Braket.Model
         ISearchDevicesPaginator SearchDevices(SearchDevicesRequest request);
 
         /// <summary>
+        /// Paginator for SearchJobs operation
+        ///</summary>
+        ISearchJobsPaginator SearchJobs(SearchJobsRequest request);
+
+        /// <summary>
         /// Paginator for SearchQuantumTasks operation
         ///</summary>
         ISearchQuantumTasksPaginator SearchQuantumTasks(SearchQuantumTasksRequest request);

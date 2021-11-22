@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Braket")]
+        public void SearchJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<SearchJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<SearchJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.SearchJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.SearchJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Braket")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void SearchJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<SearchJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.SearchJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.SearchJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Braket")]
         public void SearchQuantumTasksTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<SearchQuantumTasksRequest>();

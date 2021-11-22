@@ -38,6 +38,7 @@ namespace Amazon.Braket.Model
         private string _deviceParameters;
         private DateTime? _endedAt;
         private string _failureReason;
+        private string _jobArn;
         private string _outputs3Bucket;
         private string _outputs3Directory;
         private string _quantumTaskArn;
@@ -136,6 +137,24 @@ namespace Amazon.Braket.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobArn. 
+        /// <para>
+        /// The ARN of the Amazon Braket job associated with the quantum task.
+        /// </para>
+        /// </summary>
+        public string JobArn
+        {
+            get { return this._jobArn; }
+            set { this._jobArn = value; }
+        }
+
+        // Check to see if JobArn property is set
+        internal bool IsSetJobArn()
+        {
+            return this._jobArn != null;
         }
 
         /// <summary>

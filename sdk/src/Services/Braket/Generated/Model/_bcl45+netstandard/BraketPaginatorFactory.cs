@@ -44,6 +44,14 @@ namespace Amazon.Braket.Model
         }
 
         /// <summary>
+        /// Paginator for SearchJobs operation
+        ///</summary>
+        public ISearchJobsPaginator SearchJobs(SearchJobsRequest request) 
+        {
+            return new SearchJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchQuantumTasks operation
         ///</summary>
         public ISearchQuantumTasksPaginator SearchQuantumTasks(SearchQuantumTasksRequest request) 

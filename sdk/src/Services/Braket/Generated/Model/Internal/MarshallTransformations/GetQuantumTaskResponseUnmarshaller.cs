@@ -81,6 +81,12 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputS3Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

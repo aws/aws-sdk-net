@@ -43,6 +43,42 @@ namespace Amazon.Braket
         IBraketPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  CancelJob
+
+
+
+        /// <summary>
+        /// Cancels an Amazon Braket job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelJob service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ConflictException">
+        /// An error occurred due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The throttling rate limit is met.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
+        Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CancelQuantumTask
 
 
@@ -79,6 +115,45 @@ namespace Amazon.Braket
 
         #endregion
                 
+        #region  CreateJob
+
+
+
+        /// <summary>
+        /// Creates an Amazon Braket job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ConflictException">
+        /// An error occurred due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.DeviceRetiredException">
+        /// The specified device has been retired.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ServiceQuotaExceededException">
+        /// The request failed because a service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The throttling rate limit is met.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
+        Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateQuantumTask
 
 
@@ -97,6 +172,9 @@ namespace Amazon.Braket
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.DeviceOfflineException">
         /// The specified device is currently offline.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.DeviceRetiredException">
+        /// The specified device has been retired.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
         /// The request processing has failed because of an unknown error, exception, or failure.
@@ -131,12 +209,6 @@ namespace Amazon.Braket
         /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
-        /// <exception cref="Amazon.Braket.Model.DeviceOfflineException">
-        /// The specified device is currently offline.
-        /// </exception>
-        /// <exception cref="Amazon.Braket.Model.DeviceRetiredException">
-        /// The specified device has been retired.
-        /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
@@ -151,6 +223,39 @@ namespace Amazon.Braket
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">REST API Reference for GetDevice Operation</seealso>
         Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetJob
+
+
+
+        /// <summary>
+        /// Retrieves the specified Amazon Braket job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJob service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The throttling rate limit is met.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetJob">REST API Reference for GetJob Operation</seealso>
+        Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -241,6 +346,36 @@ namespace Amazon.Braket
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchDevices">REST API Reference for SearchDevices Operation</seealso>
         Task<SearchDevicesResponse> SearchDevicesAsync(SearchDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SearchJobs
+
+
+
+        /// <summary>
+        /// Searches for Amazon Braket jobs that match the specified filter values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchJobs service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The throttling rate limit is met.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchJobs">REST API Reference for SearchJobs Operation</seealso>
+        Task<SearchJobsResponse> SearchJobsAsync(SearchJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

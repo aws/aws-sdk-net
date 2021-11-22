@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Braket.Model.CancelJobRequest.JobArn</property>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CancelJobResponse.JobArn</property>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.CancelQuantumTaskRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -16,6 +24,25 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.CreateJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateJobRequest.JobName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateJobRequest.RoleArn</property>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateJobResponse.JobArn</property>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.CreateQuantumTaskRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -29,6 +56,11 @@
     <property>Amazon.Braket.Model.CreateQuantumTaskRequest.DeviceParameters</property>
     <min>1</min>
     <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateQuantumTaskRequest.JobToken</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateQuantumTaskRequest.OutputS3Bucket</property>
@@ -60,6 +92,29 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.GetJobRequest.JobArn</property>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.GetJobResponse.FailureReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.GetJobResponse.JobArn</property>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.GetJobResponse.JobName</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.GetJobResponse.RoleArn</property>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.GetQuantumTaskRequest.QuantumTaskArn</property>
     <min>1</min>
     <max>256</max>
@@ -68,6 +123,10 @@
     <property>Amazon.Braket.Model.GetQuantumTaskResponse.DeviceArn</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.GetQuantumTaskResponse.JobArn</property>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetQuantumTaskResponse.QuantumTaskArn</property>
@@ -80,14 +139,86 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.SearchJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.SearchQuantumTasksRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.ContainerImage.Uri</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>\d{10,14}\.dkr\.ecr.[a-z0-9-]+\.amazonaws\.com\/.+(@sha256)?:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.DeviceConfig.Device</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.DeviceSummary.DeviceArn</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.InputFileConfig.ChannelName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9\.\-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.InputFileConfig.ContentType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.InstanceConfig.VolumeSizeInGb</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobCheckpointConfig.LocalPath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobCheckpointConfig.S3Uri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobEventDetails.Message</property>
+    <min>0</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobOutputDataConfig.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobOutputDataConfig.S3Path</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobStoppingCondition.MaxRuntimeInSeconds</property>
+    <min>1</min>
+    <max>432000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobSummary.Device</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.JobSummary.JobArn</property>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.QuantumTaskSummary.DeviceArn</property>
@@ -100,7 +231,24 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.S3DataSource.S3Uri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.ScriptModeConfig.S3Uri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.SearchDevicesFilter.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SearchJobsFilter.Name</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>

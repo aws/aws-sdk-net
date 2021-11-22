@@ -38,6 +38,7 @@ namespace Amazon.Braket.Model
         private string _clientToken;
         private string _deviceArn;
         private string _deviceParameters;
+        private string _jobToken;
         private string _outputs3Bucket;
         private string _outputs3KeyPrefix;
         private long? _shots;
@@ -117,6 +118,25 @@ namespace Amazon.Braket.Model
         internal bool IsSetDeviceParameters()
         {
             return this._deviceParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobToken. 
+        /// <para>
+        /// The token for an Amazon Braket job that associates it with the quantum task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string JobToken
+        {
+            get { return this._jobToken; }
+            set { this._jobToken = value; }
+        }
+
+        // Check to see if JobToken property is set
+        internal bool IsSetJobToken()
+        {
+            return this._jobToken != null;
         }
 
         /// <summary>
