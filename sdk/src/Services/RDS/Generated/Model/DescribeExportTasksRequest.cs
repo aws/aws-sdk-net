@@ -106,6 +106,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>in_progress</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>starting</code> 
         /// </para>
         ///  </li> </ul> </li> </ul>

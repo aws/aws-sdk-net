@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         private string _availabilityZone;
         private string _awsBackupRecoveryPointArn;
         private int? _backupRetentionPeriod;
+        private string _backupTarget;
         private string _caCertificateIdentifier;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
@@ -353,6 +354,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupTarget. 
+        /// <para>
+        /// Specifies where automated backups and manual snapshots are stored: Amazon Web Services
+        /// Outposts or the Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string BackupTarget
+        {
+            get { return this._backupTarget; }
+            set { this._backupTarget = value; }
+        }
+
+        // Check to see if BackupTarget property is set
+        internal bool IsSetBackupTarget()
+        {
+            return this._backupTarget != null;
         }
 
         /// <summary>

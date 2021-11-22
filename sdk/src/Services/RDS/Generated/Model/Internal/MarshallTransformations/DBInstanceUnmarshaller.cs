@@ -133,6 +133,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("BackupTarget", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BackupTarget = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CACertificateIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -44,7 +44,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">Modifying
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.modify">Modifying
     /// CEV status</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
     /// </summary>

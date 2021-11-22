@@ -74,6 +74,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
                 }
+                if(publicRequest.IsSetBackupTarget())
+                {
+                    request.Parameters.Add("BackupTarget", StringUtils.FromString(publicRequest.BackupTarget));
+                }
                 if(publicRequest.IsSetCharacterSetName())
                 {
                     request.Parameters.Add("CharacterSetName", StringUtils.FromString(publicRequest.CharacterSetName));

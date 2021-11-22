@@ -63,6 +63,7 @@ namespace Amazon.RDS.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
+        private string _backupTarget;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
         private string _dbInstanceClass;
@@ -160,6 +161,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupTarget. 
+        /// <para>
+        /// Specifies where automated backups and manual snapshots are stored for the restored
+        /// DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code>
+        /// (Amazon Web Services Region). The default is <code>region</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string BackupTarget
+        {
+            get { return this._backupTarget; }
+            set { this._backupTarget = value; }
+        }
+
+        // Check to see if BackupTarget property is set
+        internal bool IsSetBackupTarget()
+        {
+            return this._backupTarget != null;
         }
 
         /// <summary>
