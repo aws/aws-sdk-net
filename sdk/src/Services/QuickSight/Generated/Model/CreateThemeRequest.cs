@@ -74,8 +74,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the theme that a custom theme will inherit from. All themes inherit from
         /// one of the starting themes defined by Amazon QuickSight. For a list of the starting
-        /// themes, use <code>ListThemes</code> or choose <b>Themes</b> from within a Amazon QuickSight
-        /// analysis. 
+        /// themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

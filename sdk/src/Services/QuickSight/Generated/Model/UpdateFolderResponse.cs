@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the folder.
         /// </para>
         /// </summary>
         public string Arn
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderId. 
         /// <para>
-        /// The folder ID.
+        /// The ID of the folder.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId
@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status. If succeeded, the status is <code>SC_OK</code>.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status

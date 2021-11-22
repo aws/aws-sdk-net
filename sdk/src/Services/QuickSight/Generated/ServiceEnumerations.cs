@@ -701,6 +701,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType AWS_IOT_ANALYTICS = new DataSourceType("AWS_IOT_ANALYTICS");
         /// <summary>
+        /// Constant EXASOL for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType EXASOL = new DataSourceType("EXASOL");
+        /// <summary>
         /// Constant GITHUB for DataSourceType
         /// </summary>
         public static readonly DataSourceType GITHUB = new DataSourceType("GITHUB");

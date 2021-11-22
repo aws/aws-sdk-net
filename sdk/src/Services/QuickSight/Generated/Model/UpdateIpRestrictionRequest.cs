@@ -30,7 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIpRestriction operation.
-    /// Updates content and status of IP Rules.
+    /// Updates the content and status of IP rules. To use this operation, you need to provide
+    /// the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation
+    /// to get the current rule map.
     /// </summary>
     public partial class UpdateIpRestrictionRequest : AmazonQuickSightRequest
     {
@@ -41,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// Your AWS account ID.
+        /// The ID of the Amazon Web Services account that contains the IP rules.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -60,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether or not IP rules are enabled.
+        /// A value that specifies whether IP rules are turned on.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -78,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IpRestrictionRuleMap. 
         /// <para>
-        /// Describes updated IP rules.
+        /// A map that describes the updated IP rules with CIDR ranges and descriptions.
         /// </para>
         /// </summary>
         public Dictionary<string, string> IpRestrictionRuleMap

@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// IAM policy assignment summary.
+    /// The required parameters for connecting to an Exasol data source.
     /// </summary>
-    public partial class IAMPolicyAssignmentSummary
+    public partial class ExasolParameters
     {
-        private string _assignmentName;
-        private AssignmentStatus _assignmentStatus;
+        private string _host;
+        private int? _port;
 
         /// <summary>
-        /// Gets and sets the property AssignmentName. 
+        /// Gets and sets the property Host. 
         /// <para>
-        /// Assignment name.
+        /// The hostname or IP address of the Exasol data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string AssignmentName
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string Host
         {
-            get { return this._assignmentName; }
-            set { this._assignmentName = value; }
+            get { return this._host; }
+            set { this._host = value; }
         }
 
-        // Check to see if AssignmentName property is set
-        internal bool IsSetAssignmentName()
+        // Check to see if Host property is set
+        internal bool IsSetHost()
         {
-            return this._assignmentName != null;
+            return this._host != null;
         }
 
         /// <summary>
-        /// Gets and sets the property AssignmentStatus. 
+        /// Gets and sets the property Port. 
         /// <para>
-        /// Assignment status.
+        /// The port for the Exasol data source.
         /// </para>
         /// </summary>
-        public AssignmentStatus AssignmentStatus
+        [AWSProperty(Required=true, Min=1, Max=65535)]
+        public int Port
         {
-            get { return this._assignmentStatus; }
-            set { this._assignmentStatus = value; }
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
         }
 
-        // Check to see if AssignmentStatus property is set
-        internal bool IsSetAssignmentStatus()
+        // Check to see if Port property is set
+        internal bool IsSetPort()
         {
-            return this._assignmentStatus != null;
+            return this._port.HasValue; 
         }
 
     }

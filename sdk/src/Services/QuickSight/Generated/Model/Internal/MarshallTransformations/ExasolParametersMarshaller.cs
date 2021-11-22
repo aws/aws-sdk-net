@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AccountCustomization Marshaller
+    /// ExasolParameters Marshaller
     /// </summary>       
-    public class AccountCustomizationMarshaller : IRequestMarshaller<AccountCustomization, JsonMarshallerContext> 
+    public class ExasolParametersMarshaller : IRequestMarshaller<ExasolParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccountCustomization requestObject, JsonMarshallerContext context)
+        public void Marshall(ExasolParameters requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDefaultEmailCustomizationTemplate())
+            if(requestObject.IsSetHost())
             {
-                context.Writer.WritePropertyName("DefaultEmailCustomizationTemplate");
-                context.Writer.Write(requestObject.DefaultEmailCustomizationTemplate);
+                context.Writer.WritePropertyName("Host");
+                context.Writer.Write(requestObject.Host);
             }
 
-            if(requestObject.IsSetDefaultTheme())
+            if(requestObject.IsSetPort())
             {
-                context.Writer.WritePropertyName("DefaultTheme");
-                context.Writer.Write(requestObject.DefaultTheme);
+                context.Writer.WritePropertyName("Port");
+                context.Writer.Write(requestObject.Port);
             }
 
         }
@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AccountCustomizationMarshaller Instance = new AccountCustomizationMarshaller();
+        public readonly static ExasolParametersMarshaller Instance = new ExasolParametersMarshaller();
 
     }
 }

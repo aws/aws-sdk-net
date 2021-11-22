@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A tag for a column in a <a>TagColumnOperation</a> structure. This is a variant type
-    /// structure. For this structure to be valid, only one of the attributes can be non-null.
+    /// A tag for a column in a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a>
+    /// </code> structure. This is a variant type structure. For this structure to be valid,
+    /// only one of the attributes can be non-null.
     /// </summary>
     public partial class ColumnTag
     {

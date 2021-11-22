@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIAMPolicyAssignment operation.
-    /// Creates an assignment with one specified IAMpolicy, identified by its Amazon Resource
+    /// Creates an assignment with one specified IAM policy, identified by its Amazon Resource
     /// Name (ARN). This policy assignment is attached to the specified groups or users of
     /// Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To
     /// avoid overwriting rules in other namespaces, use assignment names that are unique.
@@ -101,7 +101,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account where you want to assign an IAMpolicy to
+        /// The ID of the Amazon Web Services account where you want to assign an IAM policy to
         /// Amazon QuickSight users or groups.
         /// </para>
         /// </summary>
@@ -158,7 +158,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified
+        /// The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified
         /// in this assignment.
         /// </para>
         /// </summary>

@@ -111,6 +111,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExasolParameters())
+            {
+                context.Writer.WritePropertyName("ExasolParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExasolParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExasolParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetJiraParameters())
             {
                 context.Writer.WritePropertyName("JiraParameters");

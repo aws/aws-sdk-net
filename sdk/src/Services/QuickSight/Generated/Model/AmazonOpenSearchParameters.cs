@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// 
+    /// The parameters for OpenSearch.
     /// </summary>
     public partial class AmazonOpenSearchParameters
     {
         private string _domain;
 
         /// <summary>
-        /// Gets and sets the property Domain.
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The OpenSearch domain.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string Domain

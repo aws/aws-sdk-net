@@ -30,11 +30,30 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The Amazon QuickSight customizations associated with your Amazon Web Services account
-    /// or a Amazon QuickSight namespace in a specific Amazon Web Services Region.
+    /// or a QuickSight namespace in a specific Amazon Web Services Region.
     /// </summary>
     public partial class AccountCustomization
     {
+        private string _defaultEmailCustomizationTemplate;
         private string _defaultTheme;
+
+        /// <summary>
+        /// Gets and sets the property DefaultEmailCustomizationTemplate. 
+        /// <para>
+        /// The default email customization template.
+        /// </para>
+        /// </summary>
+        public string DefaultEmailCustomizationTemplate
+        {
+            get { return this._defaultEmailCustomizationTemplate; }
+            set { this._defaultEmailCustomizationTemplate = value; }
+        }
+
+        // Check to see if DefaultEmailCustomizationTemplate property is set
+        internal bool IsSetDefaultEmailCustomizationTemplate()
+        {
+            return this._defaultEmailCustomizationTemplate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultTheme. 

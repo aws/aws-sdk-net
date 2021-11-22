@@ -71,6 +71,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGrantLinkPermissions())
+                {
+                    context.Writer.WritePropertyName("GrantLinkPermissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGrantLinkPermissionsListValue in publicRequest.GrantLinkPermissions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourcePermissionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGrantLinkPermissionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetGrantPermissions())
                 {
                     context.Writer.WritePropertyName("GrantPermissions");
@@ -81,6 +97,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                         var marshaller = ResourcePermissionMarshaller.Instance;
                         marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRevokeLinkPermissions())
+                {
+                    context.Writer.WritePropertyName("RevokeLinkPermissions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRevokeLinkPermissionsListValue in publicRequest.RevokeLinkPermissions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourcePermissionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRevokeLinkPermissionsListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }

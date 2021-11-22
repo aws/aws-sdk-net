@@ -114,13 +114,13 @@ namespace Amazon.QuickSight.Model
         /// A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon
         /// QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign
-        /// the named set of permissions to a Amazon QuickSight user. 
+        /// the named set of permissions to a QuickSight user. 
         /// </para>
         ///  
         /// <para>
-        /// Amazon QuickSight custom permissions are applied through IAMpolicies. Therefore, they
-        /// override the permissions typically granted by assigning Amazon QuickSight users to
-        /// one of the default security cohorts in Amazon QuickSight (admin, author, reader).
+        /// Amazon QuickSight custom permissions are applied through IAM policies. Therefore,
+        /// they override the permissions typically granted by assigning Amazon QuickSight users
+        /// to one of the default security cohorts in Amazon QuickSight (admin, author, reader).
         /// </para>
         ///  
         /// <para>
@@ -181,8 +181,8 @@ namespace Amazon.QuickSight.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>NONE</code>: This clears all the previously saved external login information
-        /// for a user. Use <code> <a>DescribeUser</a> </code> API to check the external login
-        /// information.
+        /// for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// </code> API operation to check the external login information.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -63,6 +63,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.DashboardId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LinkSharingConfiguration", targetDepth))
+                {
+                    var unmarshaller = LinkSharingConfigurationUnmarshaller.Instance;
+                    response.LinkSharingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Permissions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourcePermission, ResourcePermissionUnmarshaller>(ResourcePermissionUnmarshaller.Instance);

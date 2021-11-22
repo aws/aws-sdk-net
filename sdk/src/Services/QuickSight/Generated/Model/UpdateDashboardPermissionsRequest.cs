@@ -36,7 +36,9 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private string _dashboardId;
+        private List<ResourcePermission> _grantLinkPermissions = new List<ResourcePermission>();
         private List<ResourcePermission> _grantPermissions = new List<ResourcePermission>();
+        private List<ResourcePermission> _revokeLinkPermissions = new List<ResourcePermission>();
         private List<ResourcePermission> _revokePermissions = new List<ResourcePermission>();
 
         /// <summary>
@@ -79,6 +81,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GrantLinkPermissions. 
+        /// <para>
+        /// Grants link permissions to all users in a defined namespace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<ResourcePermission> GrantLinkPermissions
+        {
+            get { return this._grantLinkPermissions; }
+            set { this._grantLinkPermissions = value; }
+        }
+
+        // Check to see if GrantLinkPermissions property is set
+        internal bool IsSetGrantLinkPermissions()
+        {
+            return this._grantLinkPermissions != null && this._grantLinkPermissions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property GrantPermissions. 
         /// <para>
         /// The permissions that you want to grant on this resource.
@@ -95,6 +116,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetGrantPermissions()
         {
             return this._grantPermissions != null && this._grantPermissions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevokeLinkPermissions. 
+        /// <para>
+        /// Revokes link permissions from all users in a defined namespace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public List<ResourcePermission> RevokeLinkPermissions
+        {
+            get { return this._revokeLinkPermissions; }
+            set { this._revokeLinkPermissions = value; }
+        }
+
+        // Check to see if RevokeLinkPermissions property is set
+        internal bool IsSetRevokeLinkPermissions()
+        {
+            return this._revokeLinkPermissions != null && this._revokeLinkPermissions.Count > 0; 
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _dashboardArn;
         private string _dashboardId;
+        private LinkSharingConfiguration _linkSharingConfiguration;
         private List<ResourcePermission> _permissions = new List<ResourcePermission>();
         private string _requestId;
         private int? _status;
@@ -74,6 +75,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboardId()
         {
             return this._dashboardId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkSharingConfiguration. 
+        /// <para>
+        /// A structure that contains the configuration of a shareable link that grants access
+        /// to the dashboard. Your users can use the link to view and interact with the dashboard,
+        /// if the dashboard has been shared with them. For more information about sharing dashboards,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing
+        /// Dashboards</a>.
+        /// </para>
+        /// </summary>
+        public LinkSharingConfiguration LinkSharingConfiguration
+        {
+            get { return this._linkSharingConfiguration; }
+            set { this._linkSharingConfiguration = value; }
+        }
+
+        // Check to see if LinkSharingConfiguration property is set
+        internal bool IsSetLinkSharingConfiguration()
+        {
+            return this._linkSharingConfiguration != null;
         }
 
         /// <summary>

@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderId. 
         /// <para>
-        /// The folder ID.
+        /// The ID of the folder.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request ID.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId
@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of deleting the folder. If succeeded, the status is <code>SC_OK (200)</code>.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status

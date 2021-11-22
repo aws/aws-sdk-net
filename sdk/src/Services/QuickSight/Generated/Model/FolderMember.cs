@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An asset in a folder, such as a dashboard, analysis, or dataset.
+    /// An asset in a Amazon QuickSight folder, such as a dashboard, analysis, or dataset.
     /// </summary>
     public partial class FolderMember
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MemberId. 
         /// <para>
-        /// The ID of the asset.
+        /// The ID of an asset in the folder.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// The type of the asset.
+        /// The type of asset that it is.
         /// </para>
         /// </summary>
         public MemberType MemberType

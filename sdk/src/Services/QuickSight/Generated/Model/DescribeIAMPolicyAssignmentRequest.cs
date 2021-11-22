@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIAMPolicyAssignment operation.
-    /// Describes an existing IAMpolicy assignment, as specified by the assignment name.
+    /// Describes an existing IAM policy assignment, as specified by the assignment name.
     /// </summary>
     public partial class DescribeIAMPolicyAssignmentRequest : AmazonQuickSightRequest
     {

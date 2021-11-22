@@ -87,7 +87,7 @@ namespace Amazon.QuickSight.Model
         /// A list of one or more dashboard IDs that you want to add to a session that includes
         /// anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code>
         /// for this to work, because other identity types authenticate as Amazon QuickSight or
-        /// IAMusers. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2
+        /// IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2
         /// dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.
         /// 
         /// </para>
@@ -281,12 +281,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IAMusers and IAMrole-based sessions authenticated through Federated Single Sign-On
-        /// using SAML, OpenID Connect, or IAMfederation.
+        /// IAM users and IAM role-based sessions authenticated through Federated Single Sign-On
+        /// using SAML, OpenID Connect, or IAM federation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Omit this parameter for users in the third group – IAMusers and IAM role-based sessions.
+        /// Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
         /// </para>
         /// </summary>
         public string UserArn

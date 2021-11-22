@@ -36,7 +36,8 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// Updating a Dashboard creates a new dashboard version but does not immediately publish
     /// the new version. You can update the published version of a dashboard by using the
-    /// <a>UpdateDashboardPublishedVersion</a> API operation.
+    /// <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
+    /// </code> API operation.
     /// </para>
     ///  </note>
     /// </summary>
@@ -176,10 +177,11 @@ namespace Amazon.QuickSight.Model
         /// you specify the type of object you're using as source. You can only update a dashboard
         /// from a template, so you use a <code>SourceTemplate</code> entity. If you need to update
         /// a dashboard from an analysis, first convert the analysis to a template by using the
-        /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
-        /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported
-        /// Amazon Web Services Region. 
+        /// <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource
+        /// Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain
+        /// any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services
+        /// Region. 
         /// </para>
         ///  
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIpRestriction operation.
-    /// Provides a summary and status of IP Rules.
+    /// Provides a summary and status of IP rules.
     /// </summary>
     public partial class DescribeIpRestrictionRequest : AmazonQuickSightRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// Your AWS account ID.
+        /// The ID of the Amazon Web Services account that contains the IP rules.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

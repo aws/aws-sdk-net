@@ -135,7 +135,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the IAMpolicy.
+        /// The Amazon Resource Name (ARN) for the IAM policy.
         /// </para>
         /// </summary>
         public string PolicyArn

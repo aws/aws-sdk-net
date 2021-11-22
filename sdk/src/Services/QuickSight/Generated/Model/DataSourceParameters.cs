@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private AuroraParameters _auroraParameters;
         private AuroraPostgreSqlParameters _auroraPostgreSqlParameters;
         private AwsIotAnalyticsParameters _awsIotAnalyticsParameters;
+        private ExasolParameters _exasolParameters;
         private JiraParameters _jiraParameters;
         private MariaDbParameters _mariaDbParameters;
         private MySqlParameters _mySqlParameters;
@@ -76,7 +77,10 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AmazonOpenSearchParameters.
+        /// Gets and sets the property AmazonOpenSearchParameters. 
+        /// <para>
+        /// The parameters for OpenSearch.
+        /// </para>
         /// </summary>
         public AmazonOpenSearchParameters AmazonOpenSearchParameters
         {
@@ -160,6 +164,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsIotAnalyticsParameters()
         {
             return this._awsIotAnalyticsParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExasolParameters. 
+        /// <para>
+        /// The parameters for Exasol.
+        /// </para>
+        /// </summary>
+        public ExasolParameters ExasolParameters
+        {
+            get { return this._exasolParameters; }
+            set { this._exasolParameters = value; }
+        }
+
+        // Check to see if ExasolParameters property is set
+        internal bool IsSetExasolParameters()
+        {
+            return this._exasolParameters != null;
         }
 
         /// <summary>

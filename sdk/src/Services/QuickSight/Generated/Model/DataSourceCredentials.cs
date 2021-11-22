@@ -61,7 +61,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CredentialPair. 
         /// <para>
-        /// Credential pair. For more information, see <a>CredentialPair</a>.
+        /// Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a>
+        /// </code>.
         /// </para>
         /// </summary>
         public CredentialPair CredentialPair

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A summary of the folder.
+    /// A summary of information about an existing Amazon QuickSight folder.
     /// </summary>
     public partial class FolderSummary
     {
@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the folder.
         /// </para>
         /// </summary>
         public string Arn
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderId. 
         /// <para>
-        /// The folder ID.
+        /// The ID of the folder.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

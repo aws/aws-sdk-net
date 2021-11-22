@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the newly created folder. If succeeded, the status is <code>SC_OK (200)</code>.
+        /// The HTTP status of the request.
         /// </para>
         /// </summary>
         public int Status

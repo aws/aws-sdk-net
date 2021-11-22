@@ -44,10 +44,10 @@ namespace Amazon.QuickSight.Model
     /// <para>
     ///  <code>Amazon Web Services account</code> - The Amazon Web Services account exists
     /// at the top of the hierarchy. It has the potential to use all of the Amazon Web Services
-    /// Regions and AWS Services. When you subscribe to Amazon QuickSight, you choose one
-    /// Amazon Web Services Region to use as your home Region. That's where your free SPICE
-    /// capacity is located. You can use Amazon QuickSight in any supported Amazon Web Services
-    /// Region. 
+    /// Regions and Amazon Web Services Services. When you subscribe to Amazon QuickSight,
+    /// you choose one Amazon Web Services Region to use as your home Region. That's where
+    /// your free SPICE capacity is located. You can use Amazon QuickSight in any supported
+    /// Amazon Web Services Region. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// To run the command in a different Amazon Web Services Region, you change your Region
-    /// settings. If you're using the AWS CLI, you can use one of the following options:
+    /// settings. If you're using the CLI, you can use one of the following options:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -77,13 +77,13 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// Run <code>aws configure</code> to change your default Amazon Web Services Region.
     /// Use Enter to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
-    /// the AWS CLI</a>.
+    /// the CLI</a>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <code>Namespace</code> - A Amazon QuickSight namespace is a partition that contains
-    /// users and assets (data sources, datasets, dashboards, and so on). To access assets
-    /// that are in a specific namespace, users and groups must also be part of the same namespace.
+    ///  <code>Namespace</code> - A QuickSight namespace is a partition that contains users
+    /// and assets (data sources, datasets, dashboards, and so on). To access assets that
+    /// are in a specific namespace, users and groups must also be part of the same namespace.
     /// People who share a namespace are completely isolated from users and assets in other
     /// namespaces, even if they are in the same Amazon Web Services account and Amazon Web
     /// Services Region.

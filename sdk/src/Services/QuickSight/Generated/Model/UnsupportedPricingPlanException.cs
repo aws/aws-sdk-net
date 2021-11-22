@@ -31,14 +31,14 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// This error indicates that you are calling an embedding operation in Amazon QuickSight
     /// without the required pricing plan on your Amazon Web Services account. Before you
-    /// can use embedding for anonymous users, a Amazon QuickSight administrator needs to
-    /// add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon
-    /// QuickSight</b> page. 
+    /// can use embedding for anonymous users, a QuickSight administrator needs to add capacity
+    /// pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b>
+    /// page. 
     /// 
     ///  
     /// <para>
-    /// After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation
-    /// with the <code>--identity-type ANONYMOUS</code> option.
+    /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+    /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

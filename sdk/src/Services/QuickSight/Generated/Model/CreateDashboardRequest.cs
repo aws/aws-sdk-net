@@ -30,7 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDashboard operation.
-    /// Creates a dashboard from a template. To first create a template, see the <code> <a>CreateTemplate</a>
+    /// Creates a dashboard from a template. To first create a template, see the <code> <a
+    /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
     /// </code> API operation.
     /// 
     ///  
@@ -77,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to the IAMpolicy.
+        /// The ID for the dashboard, also added to the IAM policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -176,7 +177,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Permissions. 
         /// <para>
         /// A structure that contains the permissions of the dashboard. You can use this structure
-        /// for granting permissions by providing a list of IAMaction information for each principal
+        /// for granting permissions by providing a list of IAM action information for each principal
         /// ARN. 
         /// </para>
         ///  
@@ -204,10 +205,11 @@ namespace Amazon.QuickSight.Model
         /// you specify the type of object you're using as source. You can only create a dashboard
         /// from a template, so you use a <code>SourceTemplate</code> entity. If you need to create
         /// a dashboard from an analysis, first convert the analysis to a template by using the
-        /// <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify the
-        /// Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN
-        /// can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon
-        /// Web Services Region. 
+        /// <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource
+        /// Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain
+        /// any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services
+        /// Region. 
         /// </para>
         ///  
         /// <para>

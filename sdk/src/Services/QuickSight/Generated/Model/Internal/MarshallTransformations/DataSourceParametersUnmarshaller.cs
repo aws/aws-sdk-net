@@ -100,6 +100,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsIotAnalyticsParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExasolParameters", targetDepth))
+                {
+                    var unmarshaller = ExasolParametersUnmarshaller.Instance;
+                    unmarshalledObject.ExasolParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JiraParameters", targetDepth))
                 {
                     var unmarshaller = JiraParametersUnmarshaller.Instance;

@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIAMPolicyAssignment operation.
-    /// Updates an existing IAMpolicy assignment. This operation updates only the optional
+    /// Updates an existing IAM policy assignment. This operation updates only the optional
     /// parameter or parameters that are specified in the request. This overwrites all of
     /// the users included in <code>Identities</code>.
     /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that contains the IAMpolicy assignment.
+        /// The ID of the Amazon Web Services account that contains the IAM policy assignment.
         /// 
         /// </para>
         /// </summary>
@@ -156,7 +156,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN for the IAMpolicy to apply to the Amazon QuickSight users and groups specified
+        /// The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified
         /// in this assignment.
         /// </para>
         /// </summary>

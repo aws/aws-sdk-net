@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccountCustomization Object
+    /// Response Unmarshaller for ExasolParameters Object
     /// </summary>  
-    public class AccountCustomizationUnmarshaller : IUnmarshaller<AccountCustomization, XmlUnmarshallerContext>, IUnmarshaller<AccountCustomization, JsonUnmarshallerContext>
+    public class ExasolParametersUnmarshaller : IUnmarshaller<ExasolParameters, XmlUnmarshallerContext>, IUnmarshaller<ExasolParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AccountCustomization IUnmarshaller<AccountCustomization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExasolParameters IUnmarshaller<ExasolParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AccountCustomization Unmarshall(JsonUnmarshallerContext context)
+        public ExasolParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AccountCustomization unmarshalledObject = new AccountCustomization();
+            ExasolParameters unmarshalledObject = new ExasolParameters();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DefaultEmailCustomizationTemplate", targetDepth))
+                if (context.TestExpression("Host", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultEmailCustomizationTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DefaultTheme", targetDepth))
+                if (context.TestExpression("Port", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultTheme = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccountCustomizationUnmarshaller _instance = new AccountCustomizationUnmarshaller();        
+        private static ExasolParametersUnmarshaller _instance = new ExasolParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccountCustomizationUnmarshaller Instance
+        public static ExasolParametersUnmarshaller Instance
         {
             get
             {

@@ -29,48 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An object that consists of a member Amazon Resource Name (ARN) and a member ID.
+    /// A structure that contains the configuration of a shareable link to the dashboard.
     /// </summary>
-    public partial class MemberIdArnPair
+    public partial class LinkSharingConfiguration
     {
-        private string _memberArn;
-        private string _memberId;
+        private List<ResourcePermission> _permissions = new List<ResourcePermission>();
 
         /// <summary>
-        /// Gets and sets the property MemberArn. 
+        /// Gets and sets the property Permissions. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the member.
+        /// A structure that contains the permissions of a shareable link.
         /// </para>
         /// </summary>
-        public string MemberArn
+        [AWSProperty(Min=1, Max=64)]
+        public List<ResourcePermission> Permissions
         {
-            get { return this._memberArn; }
-            set { this._memberArn = value; }
+            get { return this._permissions; }
+            set { this._permissions = value; }
         }
 
-        // Check to see if MemberArn property is set
-        internal bool IsSetMemberArn()
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
         {
-            return this._memberArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MemberId. 
-        /// <para>
-        /// The ID of the member.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
-        public string MemberId
-        {
-            get { return this._memberId; }
-            set { this._memberId = value; }
-        }
-
-        // Check to see if MemberId property is set
-        internal bool IsSetMemberId()
-        {
-            return this._memberId != null;
+            return this._permissions != null && this._permissions.Count > 0; 
         }
 
     }

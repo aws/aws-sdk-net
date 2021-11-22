@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccountCustomization Object
+    /// Response Unmarshaller for LinkSharingConfiguration Object
     /// </summary>  
-    public class AccountCustomizationUnmarshaller : IUnmarshaller<AccountCustomization, XmlUnmarshallerContext>, IUnmarshaller<AccountCustomization, JsonUnmarshallerContext>
+    public class LinkSharingConfigurationUnmarshaller : IUnmarshaller<LinkSharingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LinkSharingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AccountCustomization IUnmarshaller<AccountCustomization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LinkSharingConfiguration IUnmarshaller<LinkSharingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AccountCustomization Unmarshall(JsonUnmarshallerContext context)
+        public LinkSharingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AccountCustomization unmarshalledObject = new AccountCustomization();
+            LinkSharingConfiguration unmarshalledObject = new LinkSharingConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DefaultEmailCustomizationTemplate", targetDepth))
+                if (context.TestExpression("Permissions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultEmailCustomizationTemplate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultTheme", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultTheme = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ResourcePermission, ResourcePermissionUnmarshaller>(ResourcePermissionUnmarshaller.Instance);
+                    unmarshalledObject.Permissions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static AccountCustomizationUnmarshaller _instance = new AccountCustomizationUnmarshaller();        
+        private static LinkSharingConfigurationUnmarshaller _instance = new LinkSharingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccountCustomizationUnmarshaller Instance
+        public static LinkSharingConfigurationUnmarshaller Instance
         {
             get
             {

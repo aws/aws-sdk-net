@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS Account ID.
+        /// The ID for the Amazon Web Services account that contains the folder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderId. 
         /// <para>
-        /// The folder ID.
+        /// The ID of the folder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

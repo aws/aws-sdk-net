@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Searches a folder by a filter.
+    /// A filter to use to search a Amazon QuickSight folder.
     /// </summary>
     public partial class FolderSearchFilter
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the value that you want to use as a filter. For example, <code>"Name":
+        /// The name of a value that you want to use in the filter. For example, <code>"Name":
         /// "PARENT_FOLDER_ARN"</code>.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The comparison operator that you want to use as a filter. For example, <code>"Operator":
+        /// The comparison operator that you want to use in the filter. For example, <code>"Operator":
         /// "StringEquals"</code>.
         /// </para>
         /// </summary>

@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// Your AWS account ID.
+        /// The ID of the Amazon Web Services account that contains the IP rules.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether or not IP rules are enabled.
+        /// A value that specifies whether IP rules are turned on.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IpRestrictionRuleMap. 
         /// <para>
-        /// Describes the IP rules with CIDR range and description.
+        /// A map that describes the IP rules with CIDR range and description.
         /// </para>
         /// </summary>
         public Dictionary<string, string> IpRestrictionRuleMap
@@ -97,7 +97,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The ID of the describe request.
+        /// The Amazon Web Services request ID for this operation.
         /// </para>
         /// </summary>
         public string RequestId
@@ -115,8 +115,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a set of IP restrictions. A successful request returns a 200 status
-        /// code.
+        /// The HTTP status of the request. 
         /// </para>
         /// </summary>
         public int Status
