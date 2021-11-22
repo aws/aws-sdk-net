@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// Information about Url reference if the <code>referenceType</code> is <code>URL</code>.
+        /// Information about the URL reference if the <code>referenceType</code> is <code>URL</code>.
         /// Otherwise, null.
         /// </para>
         /// </summary>

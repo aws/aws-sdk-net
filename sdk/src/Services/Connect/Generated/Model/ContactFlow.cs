@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private string _description;
         private string _id;
         private string _name;
+        private ContactFlowState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ContactFlowType _type;
 
@@ -131,6 +132,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The type of contact flow.
+        /// </para>
+        /// </summary>
+        public ContactFlowState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

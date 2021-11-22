@@ -237,6 +237,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Connect")]
+        public void ListContactFlowModulesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContactFlowModulesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListContactFlowModulesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListContactFlowModulesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListContactFlowModules(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListContactFlowModules(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Connect")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListContactFlowModulesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContactFlowModulesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListContactFlowModulesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListContactFlowModules(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListContactFlowModules(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Connect")]
         public void ListContactFlowsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListContactFlowsRequest>();

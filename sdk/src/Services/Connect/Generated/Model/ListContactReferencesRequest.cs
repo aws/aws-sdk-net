@@ -92,8 +92,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// This is not expected to be set since the value returned in the previous response is
-        /// always null.
+        /// This is not expected to be set, because the value returned in the previous response
+        /// is always null.
         /// </para>
         ///  </important>
         /// </summary>

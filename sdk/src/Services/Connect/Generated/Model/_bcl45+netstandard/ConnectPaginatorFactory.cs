@@ -76,6 +76,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListContactFlowModules operation
+        ///</summary>
+        public IListContactFlowModulesPaginator ListContactFlowModules(ListContactFlowModulesRequest request) 
+        {
+            return new ListContactFlowModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactFlows operation
         ///</summary>
         public IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request) 

@@ -38,7 +38,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Contact information is available in Amazon Connect for 24 months, and then it is deleted.
+    /// Contact information remains available in Amazon Connect for 24 months, and then it
+    /// is deleted.
     /// </para>
     ///  </important>
     /// </summary>
@@ -50,7 +51,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the initial contact.
+        /// The identifier of the contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

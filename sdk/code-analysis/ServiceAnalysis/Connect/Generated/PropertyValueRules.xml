@@ -98,6 +98,37 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowModuleRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowModuleRequest.Content</property>
+    <min>1</min>
+    <max>256000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowModuleRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowModuleRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowModuleRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowModuleResponse.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.Description</property>
     <min>1</min>
     <max>250</max>
@@ -247,6 +278,25 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteContactFlowRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteContactFlowRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteContactFlowModuleRequest.ContactFlowModuleId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteContactFlowModuleRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -322,6 +372,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeContactFlowRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeContactFlowModuleRequest.ContactFlowModuleId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeContactFlowModuleRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -516,6 +576,16 @@
     <property>Amazon.Connect.Model.ListBotsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactFlowModulesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactFlowModulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListContactFlowsRequest.InstanceId</property>
@@ -985,6 +1055,56 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowMetadataRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowMetadataRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowMetadataRequest.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowModuleContentRequest.ContactFlowModuleId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowModuleContentRequest.Content</property>
+    <min>1</min>
+    <max>256000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowModuleContentRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowModuleMetadataRequest.ContactFlowModuleId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowModuleMetadataRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowModuleMetadataRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateContactFlowModuleMetadataRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowNameRequest.ContactFlowId</property>
     <max>500</max>
   </property-value-rule>
@@ -1262,6 +1382,39 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowModule.Content</property>
+    <min>1</min>
+    <max>256000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowModule.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowModule.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowModule.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowModuleSummary.Id</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowModuleSummary.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowSummary.Id</property>

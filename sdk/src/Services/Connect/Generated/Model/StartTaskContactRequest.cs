@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTaskContact operation.
-    /// Initiates a contact flow to start a new task immediately or at a future date and time.
+    /// Initiates a contact flow to start a new task.
     /// </summary>
     public partial class StartTaskContactRequest : AmazonConnectRequest
     {

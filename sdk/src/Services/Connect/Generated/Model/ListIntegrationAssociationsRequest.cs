@@ -61,7 +61,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntegrationType.
+        /// Gets and sets the property IntegrationType. 
+        /// <para>
+        /// The integration type.
+        /// </para>
         /// </summary>
         public IntegrationType IntegrationType
         {

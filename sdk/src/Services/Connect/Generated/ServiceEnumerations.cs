@@ -229,6 +229,156 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ContactFlowModuleState.
+    /// </summary>
+    public class ContactFlowModuleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ContactFlowModuleState
+        /// </summary>
+        public static readonly ContactFlowModuleState ACTIVE = new ContactFlowModuleState("ACTIVE");
+        /// <summary>
+        /// Constant ARCHIVED for ContactFlowModuleState
+        /// </summary>
+        public static readonly ContactFlowModuleState ARCHIVED = new ContactFlowModuleState("ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactFlowModuleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowModuleState FindValue(string value)
+        {
+            return FindValue<ContactFlowModuleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowModuleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowModuleStatus.
+    /// </summary>
+    public class ContactFlowModuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLISHED for ContactFlowModuleStatus
+        /// </summary>
+        public static readonly ContactFlowModuleStatus PUBLISHED = new ContactFlowModuleStatus("PUBLISHED");
+        /// <summary>
+        /// Constant SAVED for ContactFlowModuleStatus
+        /// </summary>
+        public static readonly ContactFlowModuleStatus SAVED = new ContactFlowModuleStatus("SAVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactFlowModuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowModuleStatus FindValue(string value)
+        {
+            return FindValue<ContactFlowModuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowModuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContactFlowState.
+    /// </summary>
+    public class ContactFlowState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ContactFlowState
+        /// </summary>
+        public static readonly ContactFlowState ACTIVE = new ContactFlowState("ACTIVE");
+        /// <summary>
+        /// Constant ARCHIVED for ContactFlowState
+        /// </summary>
+        public static readonly ContactFlowState ARCHIVED = new ContactFlowState("ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactFlowState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactFlowState FindValue(string value)
+        {
+            return FindValue<ContactFlowState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactFlowState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContactFlowType.
     /// </summary>
     public class ContactFlowType : ConstantClass

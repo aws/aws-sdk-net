@@ -51,6 +51,11 @@ namespace Amazon.Connect.Model
         IListBotsPaginator ListBots(ListBotsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactFlowModules operation
+        ///</summary>
+        IListContactFlowModulesPaginator ListContactFlowModules(ListContactFlowModulesRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlows operation
         ///</summary>
         IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request);

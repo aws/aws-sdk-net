@@ -40,6 +40,7 @@ namespace Amazon.Connect.Model
     public partial class ContactFlowSummary
     {
         private string _arn;
+        private ContactFlowState _contactFlowState;
         private ContactFlowType _contactFlowType;
         private string _id;
         private string _name;
@@ -60,6 +61,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactFlowState. 
+        /// <para>
+        /// The type of contact flow.
+        /// </para>
+        /// </summary>
+        public ContactFlowState ContactFlowState
+        {
+            get { return this._contactFlowState; }
+            set { this._contactFlowState = value; }
+        }
+
+        // Check to see if ContactFlowState property is set
+        internal bool IsSetContactFlowState()
+        {
+            return this._contactFlowState != null;
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action.
+    /// You do not have sufficient permissions to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

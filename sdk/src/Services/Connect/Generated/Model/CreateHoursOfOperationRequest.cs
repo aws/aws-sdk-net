@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHoursOfOperation operation.
-    /// Creates hours of operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
+    /// Creates hours of operation. 
+    /// </para>
     /// </summary>
     public partial class CreateHoursOfOperationRequest : AmazonConnectRequest
     {
@@ -121,7 +126,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// The tags used to organize, track, or control access for this resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
