@@ -36,9 +36,9 @@ namespace Amazon.EKS.Model
     /// <para>
     /// The Amazon EKS control plane consists of control plane instances that run the Kubernetes
     /// software, such as <code>etcd</code> and the API server. The control plane runs in
-    /// an account managed by Amazon Web Services, and the Kubernetes API is exposed via the
-    /// Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single-tenant
-    /// and unique and runs on its own set of Amazon EC2 instances.
+    /// an account managed by Amazon Web Services, and the Kubernetes API is exposed by the
+    /// Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single tenant
+    /// and unique. It runs on its own set of Amazon EC2 instances.
     /// </para>
     ///  
     /// <para>
@@ -51,14 +51,14 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// Amazon EKS nodes run in your Amazon Web Services account and connect to your cluster's
-    /// control plane via the Kubernetes API server endpoint and a certificate file that is
-    /// created for your cluster.
+    /// control plane over the Kubernetes API server endpoint and a certificate file that
+    /// is created for your cluster.
     /// </para>
     ///  
     /// <para>
-    /// Cluster creation typically takes several minutes. After you create an Amazon EKS cluster,
-    /// you must configure your Kubernetes tooling to communicate with the API server and
-    /// launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
+    /// In most cases, it takes several minutes to create a cluster. After you create an Amazon
+    /// EKS cluster, you must configure your Kubernetes tooling to communicate with the API
+    /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
     /// Cluster Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
     /// Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
     /// </para>
@@ -181,12 +181,12 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ResourcesVpcConfig. 
         /// <para>
-        /// The VPC configuration used by the cluster control plane. Amazon EKS VPC resources
+        /// The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources
         /// have specific requirements to work properly with Kubernetes. For more information,
         /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
         /// VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
         /// Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify
-        /// at least two subnets. You can specify up to five security groups, but we recommend
+        /// at least two subnets. You can specify up to five security groups. However, we recommend
         /// that you use a dedicated security group for your cluster control plane.
         /// </para>
         /// </summary>
@@ -229,7 +229,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata to apply to the cluster to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// Each tag consists of a key and an optional value. You define both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

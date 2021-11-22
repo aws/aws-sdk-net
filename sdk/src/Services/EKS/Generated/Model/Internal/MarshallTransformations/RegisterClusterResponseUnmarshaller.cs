@@ -92,9 +92,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
+                {
+                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceededException"))
                 {
                     return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourcePropagationDelayException"))
+                {
+                    return ResourcePropagationDelayExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
                 {

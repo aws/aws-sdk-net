@@ -380,9 +380,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata to apply to the node group to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define. Node group
-        /// tags do not propagate to any other resources associated with the node group, such
-        /// as the Amazon EC2 instances or subnets.
+        /// Each tag consists of a key and an optional value. You define both. Node group tags
+        /// do not propagate to any other resources associated with the node group, such as the
+        /// Amazon EC2 instances or subnets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

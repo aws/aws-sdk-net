@@ -111,7 +111,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata to apply to the configuration to assist with categorization and organization.
-        /// Each tag consists of a key and an optional value, both of which you define.
+        /// Each tag consists of a key and an optional value. You define both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

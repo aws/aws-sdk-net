@@ -42,8 +42,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Include. 
         /// <para>
-        /// Indicates whether connected clusters are included in the returned list. Default value
-        /// is 'ALL'.
+        /// Indicates whether external clusters are included in the returned list. Use '<code>all</code>'
+        /// to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>'
+        /// must be in lowercase otherwise an error occurs.
         /// </para>
         /// </summary>
         public List<string> Include
