@@ -65,6 +65,20 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetResourceTypeManagementPreference())
+                {
+                    context.Writer.WritePropertyName("ResourceTypeManagementPreference");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestResourceTypeManagementPreferenceKvp in publicRequest.ResourceTypeManagementPreference)
+                    {
+                        context.Writer.WritePropertyName(publicRequestResourceTypeManagementPreferenceKvp.Key);
+                        var publicRequestResourceTypeManagementPreferenceValue = publicRequestResourceTypeManagementPreferenceKvp.Value;
+
+                            context.Writer.Write(publicRequestResourceTypeManagementPreferenceValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResourceTypeOptInPreference())
                 {
                     context.Writer.WritePropertyName("ResourceTypeOptInPreference");

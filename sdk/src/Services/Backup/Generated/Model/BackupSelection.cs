@@ -41,7 +41,28 @@ namespace Amazon.Backup.Model
         private string _selectionName;
 
         /// <summary>
-        /// Gets and sets the property Conditions.
+        /// Gets and sets the property Conditions. 
+        /// <para>
+        /// A list of conditions that you define to assign resources to your backup plans using
+        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+        /// operators are case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you specify more than one condition, you only assign the resources that match
+        /// ALL conditions (using AND logic).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>,
+        /// <code>StringNotEquals</code>, and <code>StringNotLike</code>. <code>ListOfTags</code>
+        /// only supports <code>StringEquals</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Conditions Conditions
         {
@@ -78,10 +99,26 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ListOfTags. 
         /// <para>
-        /// An array of conditions used to specify a set of resources to assign to a backup plan;
-        /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
-        /// Assigns the backup plan to every resource with at least one matching tag.
+        /// A list of conditions that you define to assign resources to your backup plans using
+        /// tags. For example, <code>"StringEquals": {"Department": "accounting"</code>. Condition
+        /// operators are case sensitive.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you specify more than one condition, you assign all resources that match AT LEAST
+        /// ONE condition (using OR logic).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ListOfTags</code> only supports <code>StringEquals</code>. <code>Conditions</code>
+        /// supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>,
+        /// and <code>StringNotLike</code>. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Condition> ListOfTags
         {
@@ -96,7 +133,17 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotResources.
+        /// Gets and sets the property NotResources. 
+        /// <para>
+        /// A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum
+        /// number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to exclude many resources from a backup plan, consider a different resource
+        /// selection strategy, such as assigning only one or a few resource types or refining
+        /// your resource selection using tags.
+        /// </para>
         /// </summary>
         public List<string> NotResources
         {
@@ -113,8 +160,14 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// An array of strings that contain Amazon Resource Names (ARNs) of resources to assign
-        /// to a backup plan.
+        /// A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number
+        /// of ARNs is 500 without wildcards, or 30 ARNs with wildcards.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to assign many resources to a backup plan, consider a different resource
+        /// selection strategy, such as assigning all resources of a resource type or refining
+        /// your resource selection using tags.
         /// </para>
         /// </summary>
         public List<string> Resources
@@ -132,7 +185,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property SelectionName. 
         /// <para>
-        /// The display name of a resource selection document.
+        /// The display name of a resource selection document. Must contain 1 to 50 alphanumeric
+        /// or '-_.' characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

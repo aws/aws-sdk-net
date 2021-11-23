@@ -30,9 +30,10 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// A framework consists of one or more controls. Each control has its own control scope.
-    /// The control scope defines what the control will evaluate. Three examples of control
-    /// scopes are: a specific backup plan, all backup plans with a specific tag, or all backup
-    /// plans.
+    /// The control scope can include one or more resource types, a combination of a tag key
+    /// and value, or a combination of one resource type and one resource ID. If no scope
+    /// is specified, evaluations for the rule are triggered when any resource in your recording
+    /// group changes in configuration.
     /// 
     ///  <note> 
     /// <para>
@@ -89,8 +90,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Describes whether the control scope includes resources with one or more tags. Each
-        /// tag is a key-value pair.
+        /// The tag key-value pair applied to those Amazon Web Services resources that you want
+        /// to trigger an evaluation for a rule. A maximum of one key-value pair can be provided.
+        /// The tag value is optional, but it cannot be an empty string. The structure to assign
+        /// a tag is: <code>[{"Key":"string","Value":"string"}]</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

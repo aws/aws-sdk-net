@@ -31,54 +31,8 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the CreateBackupSelection operation.
     /// Creates a JSON document that specifies a set of resources to assign to a backup plan.
-    /// Resources can be included by specifying patterns for a <code>ListOfTags</code> and
-    /// selected <code>Resources</code>. 
-    /// 
-    ///  
-    /// <para>
-    /// For example, consider the following patterns:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>Resources: "arn:aws:ec2:region:account-id:volume/volume-id"</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ConditionKey:"department"</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>ConditionValue:"finance"</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>ConditionType:"StringEquals"</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ConditionKey:"importance"</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>ConditionValue:"critical"</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>ConditionType:"StringEquals"</code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes
-    /// that are tagged as <code>"department=finance"</code>, <code>"importance=critical"</code>,
-    /// in addition to an EBS volume with the specified volume ID.
-    /// </para>
-    ///  
-    /// <para>
-    /// Resources and conditions are additive in that all resources that match the pattern
-    /// are selected. This shouldn't be confused with a logical AND, where all conditions
-    /// must match. The matching patterns are logically put together using the OR operator.
-    /// In other words, all patterns that match are selected for backup.
-    /// </para>
+    /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning
+    /// resources programmatically</a>.
     /// </summary>
     public partial class CreateBackupSelectionRequest : AmazonBackupRequest
     {
@@ -128,7 +82,11 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice.
+        /// without the risk of running the operation twice. This parameter is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.
         /// </para>
         /// </summary>
         public string CreatorRequestId

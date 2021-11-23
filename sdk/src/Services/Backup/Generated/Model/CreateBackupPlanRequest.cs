@@ -93,6 +93,10 @@ namespace Amazon.Backup.Model
         /// running the operation twice. If the request includes a <code>CreatorRequestId</code>
         /// that matches an existing backup plan, that plan is returned. This parameter is optional.
         /// </para>
+        ///  
+        /// <para>
+        /// If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.
+        /// </para>
         /// </summary>
         public string CreatorRequestId
         {

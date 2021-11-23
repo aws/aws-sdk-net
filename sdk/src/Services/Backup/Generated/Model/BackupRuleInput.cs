@@ -154,7 +154,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RuleName. 
         /// <para>
-        /// An optional display name for a backup rule.
+        /// A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.' characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

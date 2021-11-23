@@ -119,54 +119,8 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Creates a JSON document that specifies a set of resources to assign to a backup plan.
-        /// Resources can be included by specifying patterns for a <code>ListOfTags</code> and
-        /// selected <code>Resources</code>. 
-        /// 
-        ///  
-        /// <para>
-        /// For example, consider the following patterns:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Resources: "arn:aws:ec2:region:account-id:volume/volume-id"</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ConditionKey:"department"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>ConditionValue:"finance"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>ConditionType:"StringEquals"</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ConditionKey:"importance"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>ConditionValue:"critical"</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>ConditionType:"StringEquals"</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes
-        /// that are tagged as <code>"department=finance"</code>, <code>"importance=critical"</code>,
-        /// in addition to an EBS volume with the specified volume ID.
-        /// </para>
-        ///  
-        /// <para>
-        /// Resources and conditions are additive in that all resources that match the pattern
-        /// are selected. This shouldn't be confused with a logical AND, where all conditions
-        /// must match. The matching patterns are logically put together using the OR operator.
-        /// In other words, all patterns that match are selected for backup.
-        /// </para>
+        /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning
+        /// resources programmatically</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackupSelection service method.</param>
         /// 
@@ -2902,6 +2856,13 @@ namespace Amazon.Backup
         /// update the lifecycle policy that controls the retention period of any recovery point
         /// currently stored in a backup vault. If specified, Vault Lock enforces a minimum and
         /// maximum retention period for future backup and copy jobs that target a backup vault.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Backup Vault Lock has yet to receive a third-party assessment for SEC 17a-4(f) and
+        /// CFTC.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBackupVaultLockConfiguration service method.</param>
         /// 
@@ -3618,6 +3579,10 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
         /// Indicates that a required parameter is missing.

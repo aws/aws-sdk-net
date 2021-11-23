@@ -38,7 +38,27 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class UpdateRegionSettingsRequest : AmazonBackupRequest
     {
+        private Dictionary<string, bool> _resourceTypeManagementPreference = new Dictionary<string, bool>();
         private Dictionary<string, bool> _resourceTypeOptInPreference = new Dictionary<string, bool>();
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypeManagementPreference. 
+        /// <para>
+        /// Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
+        /// Backup's advanced DynamoDB backup features</a> for the Region.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, bool> ResourceTypeManagementPreference
+        {
+            get { return this._resourceTypeManagementPreference; }
+            set { this._resourceTypeManagementPreference = value; }
+        }
+
+        // Check to see if ResourceTypeManagementPreference property is set
+        internal bool IsSetResourceTypeManagementPreference()
+        {
+            return this._resourceTypeManagementPreference != null && this._resourceTypeManagementPreference.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceTypeOptInPreference. 

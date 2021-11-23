@@ -44,30 +44,32 @@ namespace Amazon.Backup.Model
         /// An array of events that indicate the status of jobs to back up resources to the backup
         /// vault.
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using
+        /// Amazon SNS to track Backup events</a>.
+        /// </para>
+        ///  
         /// <para>
         /// The following events are supported:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,
+        ///  <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>, <code>COPY_JOB_FAILED</code>,
+        ///  <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code>
+        /// 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and <code>RECOVERY_POINT_MODIFIED</code>.
+        ///  <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code>
+        /// 
         /// </para>
-        ///  
+        ///  </li> </ul> <note> 
         /// <para>
-        /// To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
-        /// event metadata.
-        /// </para>
-        ///  
-        /// <para>
-        /// Other events in the following list are deprecated.
+        /// Ignore the list below because it includes deprecated events. Refer to the list above.
         /// </para>
         ///  </note>
         /// </summary>

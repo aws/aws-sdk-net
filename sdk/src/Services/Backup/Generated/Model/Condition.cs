@@ -30,8 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>),
-    /// a key, and a value. Conditions are used to filter resources in a selection that is
-    /// assigned to a backup plan.
+    /// a key, and a value. Used to filter resources using their tags and assign them to a
+    /// backup plan. Case sensitive.
     /// </summary>
     public partial class Condition
     {
@@ -42,8 +42,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionKey. 
         /// <para>
-        /// The key in a key-value pair. For example, in <code>"ec2:ResourceTag/Department": "accounting"</code>,
-        /// <code>"ec2:ResourceTag/Department"</code> is the key.
+        /// The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
+        /// <code>Department</code> is the key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +62,11 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionType. 
         /// <para>
-        /// An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
-        /// used to filter resources in a selection.
+        /// An operation applied to a key-value pair used to assign resources to your backup plan.
+        /// Condition only supports <code>StringEquals</code>. For more flexible assignment options,
+        /// incluidng <code>StringLike</code> and the ability to exclude resources from your backup
+        /// plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html">
+        /// <code>BackupSelection</code> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,8 +85,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionValue. 
         /// <para>
-        /// The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
-        /// "accounting"</code>, <code>"accounting"</code> is the value.
+        /// The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
+        /// <code>Accounting</code> is the value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

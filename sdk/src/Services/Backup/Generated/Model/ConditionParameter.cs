@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// 
+    /// Includes information about tags you define to assign tagged resources to a backup
+    /// plan.
     /// </summary>
     public partial class ConditionParameter
     {
@@ -37,7 +38,11 @@ namespace Amazon.Backup.Model
         private string _conditionValue;
 
         /// <summary>
-        /// Gets and sets the property ConditionKey.
+        /// Gets and sets the property ConditionKey. 
+        /// <para>
+        /// The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
+        /// <code>Department</code> is the key.
+        /// </para>
         /// </summary>
         public string ConditionKey
         {
@@ -52,7 +57,11 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConditionValue.
+        /// Gets and sets the property ConditionValue. 
+        /// <para>
+        /// The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
+        /// <code>Accounting</code> is the value.
+        /// </para>
         /// </summary>
         public string ConditionValue
         {

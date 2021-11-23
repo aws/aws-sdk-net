@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about which resources to include or exclude from a backup plan
+    /// using their tags. Conditions are case sensitive.
     /// </summary>
     public partial class Conditions
     {
@@ -39,7 +40,11 @@ namespace Amazon.Backup.Model
         private List<ConditionParameter> _stringNotLike = new List<ConditionParameter>();
 
         /// <summary>
-        /// Gets and sets the property StringEquals.
+        /// Gets and sets the property StringEquals. 
+        /// <para>
+        /// Filters the values of your tagged resources for only those resources that you tagged
+        /// with the same value. Also called "exact matching."
+        /// </para>
         /// </summary>
         public List<ConditionParameter> StringEquals
         {
@@ -54,7 +59,12 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StringLike.
+        /// Gets and sets the property StringLike. 
+        /// <para>
+        /// Filters the values of your tagged resources for matching tag values with the use of
+        /// a wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches
+        /// the tag value "production".
+        /// </para>
         /// </summary>
         public List<ConditionParameter> StringLike
         {
@@ -69,7 +79,11 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StringNotEquals.
+        /// Gets and sets the property StringNotEquals. 
+        /// <para>
+        /// Filters the values of your tagged resources for only those resources that you tagged
+        /// that do not have the same value. Also called "negated matching."
+        /// </para>
         /// </summary>
         public List<ConditionParameter> StringNotEquals
         {
@@ -84,7 +98,11 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StringNotLike.
+        /// Gets and sets the property StringNotLike. 
+        /// <para>
+        /// Filters the values of your tagged resources for non-matching tag values with the use
+        /// of a wildcard character (*) anywhere in the string.
+        /// </para>
         /// </summary>
         public List<ConditionParameter> StringNotLike
         {

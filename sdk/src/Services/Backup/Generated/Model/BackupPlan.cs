@@ -60,7 +60,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlanName. 
         /// <para>
-        /// The display name of a backup plan.
+        /// The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.' characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
