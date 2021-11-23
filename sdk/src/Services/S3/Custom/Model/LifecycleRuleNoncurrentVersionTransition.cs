@@ -25,8 +25,24 @@ namespace Amazon.S3.Model
     /// </summary>
     public class LifecycleRuleNoncurrentVersionTransition
     {
+        private int? _newerNoncurrentVersions;
         private int? noncurrentDays;
         private S3StorageClass storageClass;
+
+        /// <summary>
+        /// Gets and sets the property NewerNoncurrentVersions.
+        /// </summary>
+        public int NewerNoncurrentVersions
+        {
+            get { return this._newerNoncurrentVersions.GetValueOrDefault(); }
+            set { this._newerNoncurrentVersions = value; }
+        }
+
+        // Check to see if NewerNoncurrentVersions property is set
+        internal bool IsSetNewerNoncurrentVersions()
+        {
+            return this._newerNoncurrentVersions.HasValue; 
+        }
 
         /// <summary>
         /// Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated 

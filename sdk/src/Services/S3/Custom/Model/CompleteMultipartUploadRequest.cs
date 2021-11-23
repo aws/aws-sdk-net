@@ -25,7 +25,139 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the CompleteMultipartUpload operation.
-    /// <para>Completes a multipart upload by assembling previously uploaded parts.</para>
+    /// Completes a multipart upload by assembling previously uploaded parts.
+    /// 
+    ///  
+    /// <para>
+    /// You first initiate the multipart upload and then upload all parts using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// operation. After successfully uploading all relevant parts of an upload, you call
+    /// this action to complete the upload. Upon receiving this request, Amazon S3 concatenates
+    /// all the parts in ascending order by part number to create a new object. In the Complete
+    /// Multipart Upload request, you must provide the parts list. You must ensure that the
+    /// parts list is complete. This action concatenates the parts that you provide in the
+    /// list. For each part in the list, you must provide the part number and the <code>ETag</code>
+    /// value, returned after that part was uploaded.
+    /// </para>
+    ///  
+    /// <para>
+    /// Processing of a Complete Multipart Upload request could take several minutes to complete.
+    /// After Amazon S3 begins processing the request, it sends an HTTP response header that
+    /// specifies a 200 OK response. While processing is in progress, Amazon S3 periodically
+    /// sends white space characters to keep the connection from timing out. Because a request
+    /// could fail after the initial 200 OK response has been sent, it is important that you
+    /// check the response body to determine whether the request succeeded.
+    /// </para>
+    ///  
+    /// <para>
+    /// Note that if <code>CompleteMultipartUpload</code> fails, applications should be prepared
+    /// to retry the failed requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
+    /// S3 Error Best Practices</a>.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// You cannot use <code>Content-Type: application/x-www-form-urlencode</code> with Complete
+    /// Multipart Upload requests. It is not allowed by the Amazon S3. Also, if
+    /// you do not provide a <code>Content-Type</code> header, <code>CompleteMultipartUpload</code>
+    /// returns a 200 OK response.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
+    /// Objects Using Multipart Upload</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about permissions required to use the multipart upload API, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+    /// Upload and Permissions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>CompleteMultipartUpload</code> has the following special errors:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Error code: <code>EntityTooSmall</code> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Description: Your proposed upload is smaller than the minimum allowed object size.
+    /// Each part must be at least 5 MB in size, except the last part.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 400 Bad Request
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Error code: <code>InvalidPart</code> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Description: One or more of the specified parts could not be found. The part might
+    /// not have been uploaded, or the specified entity tag might not have matched the part's
+    /// entity tag.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 400 Bad Request
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Error code: <code>InvalidPartOrder</code> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Description: The list of parts was not in ascending order. The parts list must be
+    /// specified in order by part number.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 400 Bad Request
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Error code: <code>NoSuchUpload</code> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Description: The specified multipart upload does not exist. The upload ID might be
+    /// invalid, or the multipart upload might have been aborted or completed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 404 Not Found
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// The following operations are related to <code>CompleteMultipartUpload</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html">AbortMultipartUpload</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html">ListParts</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html">ListMultipartUploads</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CompleteMultipartUploadRequest : AmazonWebServiceRequest
     {

@@ -17,6 +17,10 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model
 {
@@ -28,7 +32,23 @@ namespace Amazon.S3.Model
     /// </summary>
     public class LifecycleRuleNoncurrentVersionExpiration
     {
-        private int? noncurrentDays;
+        private int? _newerNoncurrentVersions;
+        private int? _noncurrentDays;
+
+        /// <summary>
+        /// Gets and sets the property NewerNoncurrentVersions.
+        /// </summary>
+        public int NewerNoncurrentVersions
+        {
+            get { return this._newerNoncurrentVersions.GetValueOrDefault(); }
+            set { this._newerNoncurrentVersions = value; }
+        }
+
+        // Check to see if NewerNoncurrentVersions property is set
+        internal bool IsSetNewerNoncurrentVersions()
+        {
+            return this._newerNoncurrentVersions.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NoncurrentDays. 
@@ -42,15 +62,15 @@ namespace Amazon.S3.Model
         /// </summary>
         public int NoncurrentDays
         {
-            get { return this.noncurrentDays ?? default(int); }
-            set { this.noncurrentDays = value; }
+            get { return this._noncurrentDays.GetValueOrDefault(); }
+            set { this._noncurrentDays = value; }
         }
 
-        // Check to see if Days property is set
+        // Check to see if NoncurrentDays property is set
         internal bool IsSetNoncurrentDays()
         {
-            return this.noncurrentDays.HasValue;
+            return this._noncurrentDays.HasValue; 
         }
-    }
 
+    }
 }

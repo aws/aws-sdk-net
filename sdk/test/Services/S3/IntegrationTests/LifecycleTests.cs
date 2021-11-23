@@ -74,7 +74,8 @@ namespace S3UnitTest
         [TestCleanup]
         public void Cleanup()
         {
-            AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
+            if (!string.IsNullOrEmpty(bucketName))
+                AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
         }
 
         [TestMethod]
@@ -235,6 +236,88 @@ namespace S3UnitTest
             Assert.AreEqual(abortRuleId, listResponse.AbortRuleId);
             Assert.AreEqual(initResponse.AbortDate, listResponse.AbortDate);
             Assert.IsTrue(expectedMinAbortDate < initResponse.AbortDate);
+        }
+
+        /// <summary>
+        /// Tests V2 rules that can not be combined with the request made in
+        /// <see cref="LifecycleTest"/>
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void LifecycleV2Test()
+        {
+            var s3Configuration = Client.GetLifecycleConfiguration(bucketName).Configuration;
+            Assert.IsNotNull(s3Configuration);
+            Assert.IsNotNull(s3Configuration.Rules);
+            Assert.AreEqual(0, s3Configuration.Rules.Count);
+
+            var configuration = new LifecycleConfiguration
+            {
+                Rules = new List<LifecycleRule>
+                {
+                    new LifecycleRule
+                    {
+                        Filter = new LifecycleFilter
+                        {
+                            LifecycleFilterPredicate = new LifecycleAndOperator
+                            {
+                                Operands = new List<LifecycleFilterPredicate>
+                                {
+                                    new LifecycleObjectSizeGreaterThanPredicate
+                                    {
+                                        ObjectSizeGreaterThan = 132000
+                                    },
+                                    new LifecycleObjectSizeLessThanPredicate
+                                    {
+                                        ObjectSizeLessThan = 422000
+                                    }
+                                }
+                            }
+                        },
+                        Transitions = new List<LifecycleTransition>
+                        {
+                            new LifecycleTransition
+                            {
+                                Days = 30,
+                                StorageClass = S3StorageClass.StandardInfrequentAccess
+                            },
+                            new LifecycleTransition
+                            {
+                                Days = 90,
+                                StorageClass = S3StorageClass.Glacier
+                            }
+                        }
+                    }
+                }
+            };
+
+            Client.PutLifecycleConfiguration(new PutLifecycleConfigurationRequest
+            {
+                BucketName = bucketName,
+                Configuration = configuration
+            });
+
+            s3Configuration = S3TestUtils.WaitForConsistency(() =>
+            {
+                var res = Client.GetLifecycleConfiguration(bucketName);
+                return res.Configuration?.Rules?.Count == configuration.Rules.Count ? res.Configuration : null;
+            });
+
+            string abortRuleId = null;
+            Assert.IsNotNull(s3Configuration);
+            Assert.IsNotNull(s3Configuration.Rules);
+            Assert.AreEqual(configuration.Rules.Count, s3Configuration.Rules.Count);
+            for (int i = 0; i < configuration.Rules.Count; i++)
+            {
+                var s3Rule = s3Configuration.Rules[i];
+                var rule = configuration.Rules[i];
+                Assert.IsNotNull(rule);
+                Assert.IsNotNull(s3Rule);
+                if (rule.AbortIncompleteMultipartUpload != null)
+                    abortRuleId = s3Rule.Id;
+
+                AssertRulesAreEqual(rule, s3Rule);
+            }
         }
 
         [TestMethod]
@@ -412,6 +495,20 @@ namespace S3UnitTest
 
                 Assert.AreEqual(expectedTagPredicate.Tag.Key, actualTagPredicate.Tag.Key);
                 Assert.AreEqual(expectedTagPredicate.Tag.Value, actualTagPredicate.Tag.Value);
+            }
+            else if (expected is LifecycleObjectSizeLessThanPredicate)
+            {
+                var expectedTagPredicate = expected as LifecycleObjectSizeLessThanPredicate;
+                var actualTagPredicate = actual as LifecycleObjectSizeLessThanPredicate;
+
+                Assert.AreEqual(expectedTagPredicate.ObjectSizeLessThan, actualTagPredicate.ObjectSizeLessThan);
+            }
+            else if (expected is LifecycleObjectSizeGreaterThanPredicate)
+            {
+                var expectedTagPredicate = expected as LifecycleObjectSizeGreaterThanPredicate;
+                var actualTagPredicate = actual as LifecycleObjectSizeGreaterThanPredicate;
+
+                Assert.AreEqual(expectedTagPredicate.ObjectSizeGreaterThan, actualTagPredicate.ObjectSizeGreaterThan);
             }
             else if (expected is LifecycleAndOperator)
             {

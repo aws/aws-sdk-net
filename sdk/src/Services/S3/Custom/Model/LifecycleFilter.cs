@@ -146,4 +146,68 @@ namespace Amazon.S3.Model
             visitor.Visit(this);
         }
     }
+
+    public class LifecycleObjectSizeGreaterThanPredicate : LifecycleFilterPredicate
+    {
+        private long? _objectSizeGreaterThan;
+
+        /// <summary>
+        /// Gets and sets the property ObjectSizeGreaterThan.
+        /// </summary>
+        public long ObjectSizeGreaterThan
+        {
+            get { return this._objectSizeGreaterThan.GetValueOrDefault(); }
+            set { this._objectSizeGreaterThan = value; }
+        }
+
+        // Check to see if ObjectSizeGreaterThan property is set
+        internal bool IsSetObjectSizeGreaterThan()
+        {
+            return this._objectSizeGreaterThan.HasValue; 
+        }
+
+        /// <summary>
+        /// Accept a visit from an <see cref="ILifecyclePredicateVisitor"/>
+        /// </summary>
+        /// <remarks>
+        /// This method is used internally by the SDK.
+        /// </remarks>
+        /// <param name="visitor"></param>
+        internal override void Accept(ILifecyclePredicateVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+    }
+
+    public class LifecycleObjectSizeLessThanPredicate : LifecycleFilterPredicate
+    {
+        private long? _objectSizeLessThan;
+
+        /// <summary>
+        /// Gets and sets the property ObjectSizeLessThan.
+        /// </summary>
+        public long ObjectSizeLessThan
+        {
+            get { return this._objectSizeLessThan.GetValueOrDefault(); }
+            set { this._objectSizeLessThan = value; }
+        }
+
+        // Check to see if ObjectSizeLessThan property is set
+        internal bool IsSetObjectSizeLessThan()
+        {
+            return this._objectSizeLessThan.HasValue; 
+        }
+
+        /// <summary>
+        /// Accept a visit from an <see cref="ILifecyclePredicateVisitor"/>
+        /// </summary>
+        /// <remarks>
+        /// This method is used internally by the SDK.
+        /// </remarks>
+        /// <param name="visitor"></param>
+        internal override void Accept(ILifecyclePredicateVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+    }
 }

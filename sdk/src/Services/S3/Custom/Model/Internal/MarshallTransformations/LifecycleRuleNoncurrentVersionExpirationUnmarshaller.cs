@@ -37,6 +37,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("NewerNoncurrentVersions", targetDepth))
+                    {
+                        expiration.NewerNoncurrentVersions = IntUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
                     if (context.TestExpression("NoncurrentDays", targetDepth))
                     {
                         expiration.NoncurrentDays = IntUnmarshaller.GetInstance().Unmarshall(context);

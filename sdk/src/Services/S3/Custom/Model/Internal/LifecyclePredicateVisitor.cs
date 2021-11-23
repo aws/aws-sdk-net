@@ -36,6 +36,18 @@ namespace Amazon.S3.Model.Internal
         void Visit(LifecycleTagPredicate lifecycleTagPredicate);
 
         /// <summary>
+        /// Visit a <see cref="LifecycleObjectSizeGreaterThanPredicate"/>
+        /// </summary>
+        /// <param name="lifecycleGreaterThanPredicate"></param>
+        void Visit(LifecycleObjectSizeGreaterThanPredicate lifecycleGreaterThanPredicate);
+
+        /// <summary>
+        /// Visit a <see cref="LifecycleObjectSizeLessThanPredicate"/>
+        /// </summary>
+        /// <param name="lifecycleGreaterLessThanPredicate"></param>
+        void Visit(LifecycleObjectSizeLessThanPredicate lifecycleGreaterLessThanPredicate);
+
+        /// <summary>
         /// Visit a <see cref="LifecycleAndOperator"/>
         /// </summary>
         /// <param name="lifecycleAndOperator"></param>
@@ -68,6 +80,16 @@ namespace Amazon.S3.Model.Internal
                 xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(lifecycleTagPredicate.Tag.Value));
             }
             xmlWriter.WriteEndElement();
+        }
+
+        public void Visit(LifecycleObjectSizeGreaterThanPredicate lifecycleGreaterThanPredicate)
+        {
+            xmlWriter.WriteElementString("ObjectSizeGreaterThan", "", S3Transforms.ToXmlStringValue(lifecycleGreaterThanPredicate.ObjectSizeGreaterThan));
+        }
+
+        public void Visit(LifecycleObjectSizeLessThanPredicate lifecycleGreaterLessThanPredicate)
+        {
+            xmlWriter.WriteElementString("ObjectSizeLessThan", "", S3Transforms.ToXmlStringValue(lifecycleGreaterLessThanPredicate.ObjectSizeLessThan));
         }
 
         public void Visit(LifecycleAndOperator lifecycleAndOperator)

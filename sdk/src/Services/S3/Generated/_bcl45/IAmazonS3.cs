@@ -315,7 +315,13 @@ namespace Amazon.S3
         /// to retry the failed requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
         /// S3 Error Best Practices</a>.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// You cannot use <code>Content-Type: application/x-www-form-urlencoded</code> with Complete
+        /// Multipart Upload requests. Also, if you do not provide a <code>Content-Type</code>
+        /// header, <code>CompleteMultipartUpload</code> returns a 200 OK response.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a>.
@@ -451,7 +457,13 @@ namespace Amazon.S3
         /// to retry the failed requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
         /// S3 Error Best Practices</a>.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// You cannot use <code>Content-Type: application/x-www-form-urlencoded</code> with Complete
+        /// Multipart Upload requests. Also, if you do not provide a <code>Content-Type</code>
+        /// header, <code>CompleteMultipartUpload</code> returns a 200 OK response.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
         /// Objects Using Multipart Upload</a>.
@@ -8165,8 +8177,9 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
-        /// of an object. 
+        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// permission to access a specific version of an object. If you request a specific version,
+        /// you do not need to have the <code>s3:GetObject</code> permission. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8382,8 +8395,9 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
-        /// of an object. 
+        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// permission to access a specific version of an object. If you request a specific version,
+        /// you do not need to have the <code>s3:GetObject</code> permission. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8600,8 +8614,9 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
-        /// of an object. 
+        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// permission to access a specific version of an object. If you request a specific version,
+        /// you do not need to have the <code>s3:GetObject</code> permission. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8817,8 +8832,9 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
-        /// of an object. 
+        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// permission to access a specific version of an object. If you request a specific version,
+        /// you do not need to have the <code>s3:GetObject</code> permission. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9037,8 +9053,9 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
-        /// of an object. 
+        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// permission to access a specific version of an object. If you request a specific version,
+        /// you do not need to have the <code>s3:GetObject</code> permission. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9259,8 +9276,9 @@ namespace Amazon.S3
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You need the <code>s3:GetObjectVersion</code> permission to access a specific version
-        /// of an object. 
+        ///  If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code>
+        /// permission to access a specific version of an object. If you request a specific version,
+        /// you do not need to have the <code>s3:GetObject</code> permission. 
         /// </para>
         ///  </li> <li> 
         /// <para>

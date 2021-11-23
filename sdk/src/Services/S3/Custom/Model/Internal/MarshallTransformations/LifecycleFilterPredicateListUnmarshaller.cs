@@ -38,6 +38,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ObjectSizeGreaterThan", targetDepth))
+                    {
+                        var objectSizeGreaterThan = LongUnmarshaller.Instance.Unmarshall(context);
+                        predicateList.Add(new LifecycleObjectSizeGreaterThanPredicate()
+                        {
+                            ObjectSizeGreaterThan = objectSizeGreaterThan
+                        });
+                    }
+                    if (context.TestExpression("ObjectSizeLessThan", targetDepth))
+                    {
+                        var objectSizeLessThan = LongUnmarshaller.Instance.Unmarshall(context);
+                        predicateList.Add(new LifecycleObjectSizeLessThanPredicate()
+                        {
+                            ObjectSizeLessThan = objectSizeLessThan
+                        });
+                    }
                     if (context.TestExpression("Prefix", targetDepth))
                     {
                         var prefix = StringUnmarshaller.Instance.Unmarshall(context);
