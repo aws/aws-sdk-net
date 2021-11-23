@@ -33,7 +33,27 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ExecuteTransactionResponse : AmazonWebServiceResponse
     {
+        private List<ConsumedCapacity> _consumedCapacity = new List<ConsumedCapacity>();
         private List<ItemResponse> _responses = new List<ItemResponse>();
+
+        /// <summary>
+        /// Gets and sets the property ConsumedCapacity. 
+        /// <para>
+        /// The capacity units consumed by the entire operation. The values of the list are ordered
+        /// according to the ordering of the statements.
+        /// </para>
+        /// </summary>
+        public List<ConsumedCapacity> ConsumedCapacity
+        {
+            get { return this._consumedCapacity; }
+            set { this._consumedCapacity = value; }
+        }
+
+        // Check to see if ConsumedCapacity property is set
+        internal bool IsSetConsumedCapacity()
+        {
+            return this._consumedCapacity != null && this._consumedCapacity.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Responses. 

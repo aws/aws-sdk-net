@@ -38,6 +38,7 @@ namespace Amazon.DynamoDBv2.Model
         private bool? _consistentRead;
         private string _nextToken;
         private List<AttributeValue> _parameters = new List<AttributeValue>();
+        private ReturnConsumedCapacity _returnConsumedCapacity;
         private string _statement;
 
         /// <summary>
@@ -96,6 +97,21 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnConsumedCapacity.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity
+        {
+            get { return this._returnConsumedCapacity; }
+            set { this._returnConsumedCapacity = value; }
+        }
+
+        // Check to see if ReturnConsumedCapacity property is set
+        internal bool IsSetReturnConsumedCapacity()
+        {
+            return this._returnConsumedCapacity != null;
         }
 
         /// <summary>

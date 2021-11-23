@@ -42,7 +42,23 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class BatchExecuteStatementRequest : AmazonDynamoDBRequest
     {
+        private ReturnConsumedCapacity _returnConsumedCapacity;
         private List<BatchStatementRequest> _statements = new List<BatchStatementRequest>();
+
+        /// <summary>
+        /// Gets and sets the property ReturnConsumedCapacity.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity
+        {
+            get { return this._returnConsumedCapacity; }
+            set { this._returnConsumedCapacity = value; }
+        }
+
+        // Check to see if ReturnConsumedCapacity property is set
+        internal bool IsSetReturnConsumedCapacity()
+        {
+            return this._returnConsumedCapacity != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Statements. 

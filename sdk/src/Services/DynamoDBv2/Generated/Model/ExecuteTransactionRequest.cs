@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ExecuteTransactionRequest : AmazonDynamoDBRequest
     {
         private string _clientRequestToken;
+        private ReturnConsumedCapacity _returnConsumedCapacity;
         private List<ParameterizedStatement> _transactStatements = new List<ParameterizedStatement>();
 
         /// <summary>
@@ -66,6 +67,26 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnConsumedCapacity. 
+        /// <para>
+        /// Determines the level of detail about either provisioned or on-demand throughput consumption
+        /// that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+        /// and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.
+        /// </para>
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity
+        {
+            get { return this._returnConsumedCapacity; }
+            set { this._returnConsumedCapacity = value; }
+        }
+
+        // Check to see if ReturnConsumedCapacity property is set
+        internal bool IsSetReturnConsumedCapacity()
+        {
+            return this._returnConsumedCapacity != null;
         }
 
         /// <summary>

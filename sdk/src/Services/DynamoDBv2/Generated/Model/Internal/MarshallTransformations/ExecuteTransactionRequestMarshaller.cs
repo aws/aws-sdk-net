@@ -78,6 +78,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetReturnConsumedCapacity())
+                {
+                    context.Writer.WritePropertyName("ReturnConsumedCapacity");
+                    context.Writer.Write(publicRequest.ReturnConsumedCapacity);
+                }
+
                 if(publicRequest.IsSetTransactStatements())
                 {
                     context.Writer.WritePropertyName("TransactStatements");

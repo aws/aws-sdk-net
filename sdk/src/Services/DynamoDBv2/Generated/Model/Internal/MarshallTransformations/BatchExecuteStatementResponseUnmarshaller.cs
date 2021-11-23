@@ -51,6 +51,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConsumedCapacity", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ConsumedCapacity, ConsumedCapacityUnmarshaller>(ConsumedCapacityUnmarshaller.Instance);
+                    response.ConsumedCapacity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Responses", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<BatchStatementResponse, BatchStatementResponseUnmarshaller>(BatchStatementResponseUnmarshaller.Instance);

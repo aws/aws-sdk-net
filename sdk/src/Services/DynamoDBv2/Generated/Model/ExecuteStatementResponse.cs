@@ -33,8 +33,24 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ExecuteStatementResponse : AmazonWebServiceResponse
     {
+        private ConsumedCapacity _consumedCapacity;
         private List<Dictionary<string, AttributeValue>> _items = new List<Dictionary<string, AttributeValue>>();
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ConsumedCapacity.
+        /// </summary>
+        public ConsumedCapacity ConsumedCapacity
+        {
+            get { return this._consumedCapacity; }
+            set { this._consumedCapacity = value; }
+        }
+
+        // Check to see if ConsumedCapacity property is set
+        internal bool IsSetConsumedCapacity()
+        {
+            return this._consumedCapacity != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Items. 
