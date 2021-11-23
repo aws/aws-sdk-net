@@ -899,7 +899,8 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Only Windows 10 WorkSpace images can be programmatically updated at this time.
+        /// Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can
+        /// be programmatically updated at this time.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -961,7 +962,8 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Only Windows 10 WorkSpace images can be programmatically updated at this time.
+        /// Only Windows 10, Windows Sever 2016, and Windows Server 2019 WorkSpace images can
+        /// be programmatically updated at this time.
         /// </para>
         ///  </li> <li> 
         /// <para>
