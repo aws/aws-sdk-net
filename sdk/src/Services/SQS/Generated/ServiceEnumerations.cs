@@ -231,6 +231,10 @@ namespace Amazon.SQS
         /// </summary>
         public static readonly QueueAttributeName RedrivePolicy = new QueueAttributeName("RedrivePolicy");
         /// <summary>
+        /// Constant SqsManagedSseEnabled for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName SqsManagedSseEnabled = new QueueAttributeName("SqsManagedSseEnabled");
+        /// <summary>
         /// Constant VisibilityTimeout for QueueAttributeName
         /// </summary>
         public static readonly QueueAttributeName VisibilityTimeout = new QueueAttributeName("VisibilityTimeout");

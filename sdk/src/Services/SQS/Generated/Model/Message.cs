@@ -179,7 +179,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MessageId. 
         /// <para>
         /// A unique identifier for the message. A <code>MessageId</code>is considered unique
-        /// across all accounts for an extended period of time.
+        /// across all Amazon Web Services accounts for an extended period of time.
         /// </para>
         /// </summary>
         public string MessageId

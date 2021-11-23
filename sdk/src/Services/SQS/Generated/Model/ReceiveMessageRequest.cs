@@ -167,6 +167,13 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS
+        /// owned encryption keys. Only one server-side encryption option is supported per queue
+        /// (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+        /// or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>MessageDeduplicationId</code> – Returns the value provided by the producer
         /// that calls the <code> <a>SendMessage</a> </code> action.
         /// </para>

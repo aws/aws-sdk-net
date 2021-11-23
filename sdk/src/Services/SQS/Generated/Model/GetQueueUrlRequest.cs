@@ -88,7 +88,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueOwnerAWSAccountId. 
         /// <para>
-        /// The account ID of the account that created the queue.
+        /// The Amazon Web Services account ID of the account that created the queue.
         /// </para>
         /// </summary>
         public string QueueOwnerAWSAccountId
