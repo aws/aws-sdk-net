@@ -43,6 +43,7 @@ namespace Amazon.OpenSearchService.Model
         private CognitoOptions _cognitoOptions;
         private DomainEndpointOptions _domainEndpointOptions;
         private string _domainName;
+        private bool? _dryRun;
         private EBSOptions _ebsOptions;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
@@ -200,6 +201,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// This flag, when set to True, specifies whether the <code>UpdateDomain</code> request
+        /// should return the results of validation checks (DryRunResults) without actually applying
+        /// the change.
+        /// </para>
+        /// </summary>
+        public bool DryRun
+        {
+            get { return this._dryRun.GetValueOrDefault(); }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>
