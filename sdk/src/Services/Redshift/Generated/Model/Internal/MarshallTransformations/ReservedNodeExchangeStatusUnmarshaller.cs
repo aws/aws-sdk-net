@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResizeClusterMessage Object
+    /// Response Unmarshaller for ReservedNodeExchangeStatus Object
     /// </summary>  
-    public class ResizeClusterMessageUnmarshaller : IUnmarshaller<ResizeClusterMessage, XmlUnmarshallerContext>, IUnmarshaller<ResizeClusterMessage, JsonUnmarshallerContext>
+    public class ReservedNodeExchangeStatusUnmarshaller : IUnmarshaller<ReservedNodeExchangeStatus, XmlUnmarshallerContext>, IUnmarshaller<ReservedNodeExchangeStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResizeClusterMessage Unmarshall(XmlUnmarshallerContext context)
+        public ReservedNodeExchangeStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            ResizeClusterMessage unmarshalledObject = new ResizeClusterMessage();
+            ReservedNodeExchangeStatus unmarshalledObject = new ReservedNodeExchangeStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,58 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Classic", targetDepth))
+                    if (context.TestExpression("RequestTime", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.Classic = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.RequestTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ClusterIdentifier", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ClusterIdentifier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ClusterType", targetDepth))
+                    if (context.TestExpression("ReservedNodeExchangeRequestId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ClusterType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ReservedNodeExchangeRequestId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("NodeType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("NumberOfNodes", targetDepth))
+                    if (context.TestExpression("SourceReservedNodeCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SourceReservedNodeCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ReservedNodeId", targetDepth))
+                    if (context.TestExpression("SourceReservedNodeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ReservedNodeId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SourceReservedNodeId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceReservedNodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceReservedNodeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetReservedNodeCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TargetReservedNodeCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TargetReservedNodeOfferingId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TargetReservedNodeOfferingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetReservedNodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetReservedNodeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -111,18 +123,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResizeClusterMessage Unmarshall(JsonUnmarshallerContext context)
+        public ReservedNodeExchangeStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ResizeClusterMessageUnmarshaller _instance = new ResizeClusterMessageUnmarshaller();        
+        private static ReservedNodeExchangeStatusUnmarshaller _instance = new ReservedNodeExchangeStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResizeClusterMessageUnmarshaller Instance
+        public static ReservedNodeExchangeStatusUnmarshaller Instance
         {
             get
             {

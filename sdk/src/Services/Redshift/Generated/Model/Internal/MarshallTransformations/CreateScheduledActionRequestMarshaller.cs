@@ -117,6 +117,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "NumberOfNodes", StringUtils.FromInt(publicRequest.TargetAction.ResizeCluster.NumberOfNodes));
                         }
+                        if(publicRequest.TargetAction.ResizeCluster.IsSetReservedNodeId())
+                        {
+                            request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "ReservedNodeId", StringUtils.FromString(publicRequest.TargetAction.ResizeCluster.ReservedNodeId));
+                        }
+                        if(publicRequest.TargetAction.ResizeCluster.IsSetTargetReservedNodeOfferingId())
+                        {
+                            request.Parameters.Add("TargetAction" + "." + "ResizeCluster" + "." + "TargetReservedNodeOfferingId", StringUtils.FromString(publicRequest.TargetAction.ResizeCluster.TargetReservedNodeOfferingId));
+                        }
                     }
                     if(publicRequest.TargetAction.IsSetResumeCluster())
                     {

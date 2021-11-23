@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ResizeCluster Request Marshaller
+    /// GetReservedNodeExchangeConfigurationOptions Request Marshaller
     /// </summary>       
-    public class ResizeClusterRequestMarshaller : IMarshaller<IRequest, ResizeClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetReservedNodeExchangeConfigurationOptionsRequestMarshaller : IMarshaller<IRequest, GetReservedNodeExchangeConfigurationOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ResizeClusterRequest)input);
+            return this.Marshall((GetReservedNodeExchangeConfigurationOptionsRequest)input);
         }
     
         /// <summary>
@@ -50,48 +50,40 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ResizeClusterRequest publicRequest)
+        public IRequest Marshall(GetReservedNodeExchangeConfigurationOptionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
-            request.Parameters.Add("Action", "ResizeCluster");
+            request.Parameters.Add("Action", "GetReservedNodeExchangeConfigurationOptions");
             request.Parameters.Add("Version", "2012-12-01");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetClassic())
+                if(publicRequest.IsSetActionType())
                 {
-                    request.Parameters.Add("Classic", StringUtils.FromBool(publicRequest.Classic));
+                    request.Parameters.Add("ActionType", StringUtils.FromString(publicRequest.ActionType));
                 }
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
-                if(publicRequest.IsSetClusterType())
+                if(publicRequest.IsSetMarker())
                 {
-                    request.Parameters.Add("ClusterType", StringUtils.FromString(publicRequest.ClusterType));
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-                if(publicRequest.IsSetNodeType())
+                if(publicRequest.IsSetMaxRecords())
                 {
-                    request.Parameters.Add("NodeType", StringUtils.FromString(publicRequest.NodeType));
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-                if(publicRequest.IsSetNumberOfNodes())
+                if(publicRequest.IsSetSnapshotIdentifier())
                 {
-                    request.Parameters.Add("NumberOfNodes", StringUtils.FromInt(publicRequest.NumberOfNodes));
-                }
-                if(publicRequest.IsSetReservedNodeId())
-                {
-                    request.Parameters.Add("ReservedNodeId", StringUtils.FromString(publicRequest.ReservedNodeId));
-                }
-                if(publicRequest.IsSetTargetReservedNodeOfferingId())
-                {
-                    request.Parameters.Add("TargetReservedNodeOfferingId", StringUtils.FromString(publicRequest.TargetReservedNodeOfferingId));
+                    request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));
                 }
             }
             return request;
         }
-                    private static ResizeClusterRequestMarshaller _instance = new ResizeClusterRequestMarshaller();        
+                    private static GetReservedNodeExchangeConfigurationOptionsRequestMarshaller _instance = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();        
 
-        internal static ResizeClusterRequestMarshaller GetInstance()
+        internal static GetReservedNodeExchangeConfigurationOptionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +91,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResizeClusterRequestMarshaller Instance
+        public static GetReservedNodeExchangeConfigurationOptionsRequestMarshaller Instance
         {
             get
             {

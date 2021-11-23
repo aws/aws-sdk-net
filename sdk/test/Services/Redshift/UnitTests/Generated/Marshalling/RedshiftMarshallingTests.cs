@@ -6723,6 +6723,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void DescribeReservedNodeExchangeStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReservedNodeExchangeStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusRequest>();
+            var marshaller = new DescribeReservedNodeExchangeStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeReservedNodeExchangeStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeReservedNodeExchangeStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeReservedNodeExchangeStatus_ReservedNodeExchangeNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReservedNodeExchangeStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusRequest>();
+            var marshaller = new DescribeReservedNodeExchangeStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeExchangeNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeReservedNodeExchangeStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeReservedNodeExchangeStatus_ReservedNodeNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReservedNodeExchangeStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusRequest>();
+            var marshaller = new DescribeReservedNodeExchangeStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeReservedNodeExchangeStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeReservedNodeExchangeStatus_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeReservedNodeExchangeStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusRequest>();
+            var marshaller = new DescribeReservedNodeExchangeStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeReservedNodeExchangeStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void DescribeReservedNodeOfferingsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeReservedNodeOfferings");
@@ -8079,6 +8170,212 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = GetClusterCredentialsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetReservedNodeExchangeConfigurationOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_ClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_ClusterSnapshotNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ClusterSnapshotNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_DependentServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DependentServiceUnavailableException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_InvalidReservedNodeStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidReservedNodeStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_ReservedNodeAlreadyMigratedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeAlreadyMigratedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_ReservedNodeNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_ReservedNodeOfferingNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeOfferingNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptions_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+            var marshaller = new GetReservedNodeExchangeConfigurationOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -10773,6 +11070,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void ResizeCluster_DependentServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResizeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResizeClusterRequest>();
+            var marshaller = new ResizeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DependentServiceUnavailableException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void ResizeCluster_InsufficientClusterCapacityExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ResizeCluster");
@@ -10808,6 +11128,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidClusterStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ResizeCluster_InvalidReservedNodeStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResizeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResizeClusterRequest>();
+            var marshaller = new ResizeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidReservedNodeStateException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -10877,6 +11220,98 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("NumberOfNodesQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ResizeCluster_ReservedNodeAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResizeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResizeClusterRequest>();
+            var marshaller = new ResizeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ResizeCluster_ReservedNodeAlreadyMigratedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResizeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResizeClusterRequest>();
+            var marshaller = new ResizeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeAlreadyMigratedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ResizeCluster_ReservedNodeNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResizeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResizeClusterRequest>();
+            var marshaller = new ResizeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ResizeCluster_ReservedNodeOfferingNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResizeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResizeClusterRequest>();
+            var marshaller = new ResizeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeOfferingNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ResizeClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -11163,6 +11598,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void RestoreFromClusterSnapshot_DependentServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreFromClusterSnapshotRequest>();
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DependentServiceUnavailableException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void RestoreFromClusterSnapshot_HsmClientCertificateNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
@@ -11313,6 +11771,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidElasticIpException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RestoreFromClusterSnapshot_InvalidReservedNodeStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreFromClusterSnapshotRequest>();
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidReservedNodeStateException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
@@ -11485,6 +11966,98 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void RestoreFromClusterSnapshot_ReservedNodeAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreFromClusterSnapshotRequest>();
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeAlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RestoreFromClusterSnapshot_ReservedNodeAlreadyMigratedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreFromClusterSnapshotRequest>();
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeAlreadyMigratedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RestoreFromClusterSnapshot_ReservedNodeNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreFromClusterSnapshotRequest>();
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RestoreFromClusterSnapshot_ReservedNodeOfferingNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreFromClusterSnapshotRequest>();
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ReservedNodeOfferingNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void RestoreFromClusterSnapshot_SnapshotScheduleNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
@@ -11543,6 +12116,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void RestoreFromClusterSnapshot_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreFromClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreFromClusterSnapshotRequest>();
+            var marshaller = new RestoreFromClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreFromClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);

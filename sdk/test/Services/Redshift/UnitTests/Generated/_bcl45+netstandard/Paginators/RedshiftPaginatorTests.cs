@@ -393,6 +393,123 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Redshift")]
+        public void DescribeDataSharesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDataSharesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDataSharesResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDataShares(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDataShares(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDataSharesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDataSharesResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDataShares(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDataShares(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        public void DescribeDataSharesForConsumerTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForConsumerRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDataSharesForConsumerResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDataSharesForConsumerResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDataSharesForConsumer(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDataSharesForConsumer(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDataSharesForConsumerTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForConsumerRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDataSharesForConsumerResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDataSharesForConsumer(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDataSharesForConsumer(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        public void DescribeDataSharesForProducerTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForProducerRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDataSharesForProducerResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDataSharesForProducerResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDataSharesForProducer(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDataSharesForProducer(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDataSharesForProducerTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataSharesForProducerRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDataSharesForProducerResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeDataSharesForProducer(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDataSharesForProducer(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
         public void DescribeDefaultClusterParametersTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeDefaultClusterParametersRequest>();
@@ -744,6 +861,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Redshift")]
+        public void DescribeReservedNodeExchangeStatusTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.DescribeReservedNodeExchangeStatus(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeReservedNodeExchangeStatus(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeReservedNodeExchangeStatusTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeReservedNodeExchangeStatusResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.DescribeReservedNodeExchangeStatus(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeReservedNodeExchangeStatus(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
         public void DescribeReservedNodeOfferingsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeReservedNodeOfferingsRequest>();
@@ -1044,6 +1200,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.DescribeUsageLimits(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.DescribeUsageLimits(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeConfigurationOptionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.GetReservedNodeExchangeConfigurationOptions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetReservedNodeExchangeConfigurationOptions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Redshift")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetReservedNodeExchangeConfigurationOptionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetReservedNodeExchangeConfigurationOptionsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.GetReservedNodeExchangeConfigurationOptions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetReservedNodeExchangeConfigurationOptions(request);
 
             // Should work the first time
             paginator.Responses.ToList();

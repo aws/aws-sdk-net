@@ -318,6 +318,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ReservedNodeExchangeStatus", targetDepth))
+                    {
+                        var unmarshaller = ReservedNodeExchangeStatusUnmarshaller.Instance;
+                        unmarshalledObject.ReservedNodeExchangeStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ResizeInfo", targetDepth))
                     {
                         var unmarshaller = ResizeInfoUnmarshaller.Instance;

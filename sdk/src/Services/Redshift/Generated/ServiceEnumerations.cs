@@ -701,6 +701,122 @@ namespace Amazon.Redshift
 
 
     /// <summary>
+    /// Constants used for properties of type ReservedNodeExchangeActionType.
+    /// </summary>
+    public class ReservedNodeExchangeActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ResizeCluster for ReservedNodeExchangeActionType
+        /// </summary>
+        public static readonly ReservedNodeExchangeActionType ResizeCluster = new ReservedNodeExchangeActionType("resize-cluster");
+        /// <summary>
+        /// Constant RestoreCluster for ReservedNodeExchangeActionType
+        /// </summary>
+        public static readonly ReservedNodeExchangeActionType RestoreCluster = new ReservedNodeExchangeActionType("restore-cluster");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservedNodeExchangeActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservedNodeExchangeActionType FindValue(string value)
+        {
+            return FindValue<ReservedNodeExchangeActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservedNodeExchangeActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservedNodeExchangeStatusType.
+    /// </summary>
+    public class ReservedNodeExchangeStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ReservedNodeExchangeStatusType
+        /// </summary>
+        public static readonly ReservedNodeExchangeStatusType FAILED = new ReservedNodeExchangeStatusType("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ReservedNodeExchangeStatusType
+        /// </summary>
+        public static readonly ReservedNodeExchangeStatusType IN_PROGRESS = new ReservedNodeExchangeStatusType("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for ReservedNodeExchangeStatusType
+        /// </summary>
+        public static readonly ReservedNodeExchangeStatusType PENDING = new ReservedNodeExchangeStatusType("PENDING");
+        /// <summary>
+        /// Constant REQUESTED for ReservedNodeExchangeStatusType
+        /// </summary>
+        public static readonly ReservedNodeExchangeStatusType REQUESTED = new ReservedNodeExchangeStatusType("REQUESTED");
+        /// <summary>
+        /// Constant RETRYING for ReservedNodeExchangeStatusType
+        /// </summary>
+        public static readonly ReservedNodeExchangeStatusType RETRYING = new ReservedNodeExchangeStatusType("RETRYING");
+        /// <summary>
+        /// Constant SUCCEEDED for ReservedNodeExchangeStatusType
+        /// </summary>
+        public static readonly ReservedNodeExchangeStatusType SUCCEEDED = new ReservedNodeExchangeStatusType("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservedNodeExchangeStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservedNodeExchangeStatusType FindValue(string value)
+        {
+            return FindValue<ReservedNodeExchangeStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservedNodeExchangeStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReservedNodeOfferingType.
     /// </summary>
     public class ReservedNodeOfferingType : ConstantClass

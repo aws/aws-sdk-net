@@ -108,6 +108,30 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDataShares operation
+        ///</summary>
+        public IDescribeDataSharesPaginator DescribeDataShares(DescribeDataSharesRequest request) 
+        {
+            return new DescribeDataSharesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDataSharesForConsumer operation
+        ///</summary>
+        public IDescribeDataSharesForConsumerPaginator DescribeDataSharesForConsumer(DescribeDataSharesForConsumerRequest request) 
+        {
+            return new DescribeDataSharesForConsumerPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDataSharesForProducer operation
+        ///</summary>
+        public IDescribeDataSharesForProducerPaginator DescribeDataSharesForProducer(DescribeDataSharesForProducerRequest request) 
+        {
+            return new DescribeDataSharesForProducerPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDefaultClusterParameters operation
         ///</summary>
         public IDescribeDefaultClusterParametersPaginator DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request) 
@@ -180,6 +204,14 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeReservedNodeExchangeStatus operation
+        ///</summary>
+        public IDescribeReservedNodeExchangeStatusPaginator DescribeReservedNodeExchangeStatus(DescribeReservedNodeExchangeStatusRequest request) 
+        {
+            return new DescribeReservedNodeExchangeStatusPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReservedNodeOfferings operation
         ///</summary>
         public IDescribeReservedNodeOfferingsPaginator DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request) 
@@ -241,6 +273,14 @@ namespace Amazon.Redshift.Model
         public IDescribeUsageLimitsPaginator DescribeUsageLimits(DescribeUsageLimitsRequest request) 
         {
             return new DescribeUsageLimitsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetReservedNodeExchangeConfigurationOptions operation
+        ///</summary>
+        public IGetReservedNodeExchangeConfigurationOptionsPaginator GetReservedNodeExchangeConfigurationOptions(GetReservedNodeExchangeConfigurationOptionsRequest request) 
+        {
+            return new GetReservedNodeExchangeConfigurationOptionsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -937,6 +937,22 @@
     <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusRequest.ReservedNodeExchangeRequestId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusRequest.ReservedNodeId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeReservedNodeExchangeStatusResponse.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeReservedNodeOfferingsRequest.Marker</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1162,6 +1178,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.GetClusterCredentialsResponse.DbUser</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsRequest.Marker</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsRequest.SnapshotIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.GetReservedNodeExchangeConfigurationOptionsResponse.Marker</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1463,6 +1495,14 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ResizeClusterRequest.ReservedNodeId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ResizeClusterRequest.TargetReservedNodeOfferingId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.AdditionalInfo</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1519,6 +1559,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ReservedNodeId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1528,6 +1572,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotScheduleIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.TargetReservedNodeOfferingId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2172,6 +2220,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ReservedNode.State</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.ReservedNodeExchangeRequestId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.SourceReservedNodeId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.SourceReservedNodeType</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.TargetReservedNodeOfferingId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ReservedNodeExchangeStatus.TargetReservedNodeType</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

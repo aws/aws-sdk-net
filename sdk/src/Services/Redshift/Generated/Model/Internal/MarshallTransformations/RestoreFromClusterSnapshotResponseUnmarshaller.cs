@@ -144,6 +144,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return DependentServiceRequestThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DependentServiceUnavailableFault"))
+                {
+                    return DependentServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("HsmClientCertificateNotFoundFault"))
                 {
                     return HsmClientCertificateNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -171,6 +175,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidElasticIpFault"))
                 {
                     return InvalidElasticIpExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidReservedNodeState"))
+                {
+                    return InvalidReservedNodeStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRestore"))
                 {
@@ -200,6 +208,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return NumberOfNodesQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeAlreadyExists"))
+                {
+                    return ReservedNodeAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeAlreadyMigrated"))
+                {
+                    return ReservedNodeAlreadyMigratedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeNotFound"))
+                {
+                    return ReservedNodeNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeOfferingNotFound"))
+                {
+                    return ReservedNodeOfferingNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotScheduleNotFound"))
                 {
                     return SnapshotScheduleNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -211,6 +235,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
                 {
                     return UnauthorizedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResizeCluster operation
+    /// Response Unmarshaller for GetReservedNodeExchangeConfigurationOptions operation
     /// </summary>  
-    public class ResizeClusterResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ResizeClusterResponse response = new ResizeClusterResponse();
+            GetReservedNodeExchangeConfigurationOptionsResponse response = new GetReservedNodeExchangeConfigurationOptionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("ResizeClusterResult", 2))
+                    if(context.TestExpression("GetReservedNodeExchangeConfigurationOptionsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ResizeClusterResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetReservedNodeExchangeConfigurationOptionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,17 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("Cluster", targetDepth))
+                    if (context.TestExpression("Marker", targetDepth))
                     {
-                        var unmarshaller = ClusterUnmarshaller.Instance;
-                        response.Cluster = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReservedNodeConfigurationOptionList/ReservedNodeConfigurationOption", targetDepth))
+                    {
+                        var unmarshaller = ReservedNodeConfigurationOptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.ReservedNodeConfigurationOptionList.Add(item);
                         continue;
                     }
                 } 
@@ -116,37 +123,17 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return ClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSnapshotNotFound"))
+                {
+                    return ClusterSnapshotNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DependentServiceUnavailableFault"))
                 {
                     return DependentServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientClusterCapacity"))
-                {
-                    return InsufficientClusterCapacityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
-                {
-                    return InvalidClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidReservedNodeState"))
                 {
                     return InvalidReservedNodeStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededFault"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NumberOfNodesPerClusterLimitExceeded"))
-                {
-                    return NumberOfNodesPerClusterLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NumberOfNodesQuotaExceeded"))
-                {
-                    return NumberOfNodesQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeAlreadyExists"))
-                {
-                    return ReservedNodeAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeAlreadyMigrated"))
                 {
@@ -160,24 +147,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return ReservedNodeOfferingNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
-                {
-                    return UnauthorizedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
                 {
                     return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOptionFault"))
-                {
-                    return UnsupportedOptionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ResizeClusterResponseUnmarshaller _instance = new ResizeClusterResponseUnmarshaller();        
+        private static GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller _instance = new GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller();        
 
-        internal static ResizeClusterResponseUnmarshaller GetInstance()
+        internal static GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -185,7 +164,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResizeClusterResponseUnmarshaller Instance
+        public static GetReservedNodeExchangeConfigurationOptionsResponseUnmarshaller Instance
         {
             get
             {

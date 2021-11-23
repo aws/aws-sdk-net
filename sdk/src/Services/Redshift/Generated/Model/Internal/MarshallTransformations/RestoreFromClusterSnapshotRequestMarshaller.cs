@@ -168,6 +168,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
                 }
+                if(publicRequest.IsSetReservedNodeId())
+                {
+                    request.Parameters.Add("ReservedNodeId", StringUtils.FromString(publicRequest.ReservedNodeId));
+                }
                 if(publicRequest.IsSetSnapshotClusterIdentifier())
                 {
                     request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(publicRequest.SnapshotClusterIdentifier));
@@ -179,6 +183,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSnapshotScheduleIdentifier())
                 {
                     request.Parameters.Add("SnapshotScheduleIdentifier", StringUtils.FromString(publicRequest.SnapshotScheduleIdentifier));
+                }
+                if(publicRequest.IsSetTargetReservedNodeOfferingId())
+                {
+                    request.Parameters.Add("TargetReservedNodeOfferingId", StringUtils.FromString(publicRequest.TargetReservedNodeOfferingId));
                 }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {

@@ -71,6 +71,21 @@ namespace Amazon.Redshift.Model
         IDescribeClusterVersionsPaginator DescribeClusterVersions(DescribeClusterVersionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeDataShares operation
+        ///</summary>
+        IDescribeDataSharesPaginator DescribeDataShares(DescribeDataSharesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDataSharesForConsumer operation
+        ///</summary>
+        IDescribeDataSharesForConsumerPaginator DescribeDataSharesForConsumer(DescribeDataSharesForConsumerRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDataSharesForProducer operation
+        ///</summary>
+        IDescribeDataSharesForProducerPaginator DescribeDataSharesForProducer(DescribeDataSharesForProducerRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDefaultClusterParameters operation
         ///</summary>
         IDescribeDefaultClusterParametersPaginator DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request);
@@ -116,6 +131,11 @@ namespace Amazon.Redshift.Model
         IDescribeOrderableClusterOptionsPaginator DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeReservedNodeExchangeStatus operation
+        ///</summary>
+        IDescribeReservedNodeExchangeStatusPaginator DescribeReservedNodeExchangeStatus(DescribeReservedNodeExchangeStatusRequest request);
+
+        /// <summary>
         /// Paginator for DescribeReservedNodeOfferings operation
         ///</summary>
         IDescribeReservedNodeOfferingsPaginator DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request);
@@ -154,6 +174,11 @@ namespace Amazon.Redshift.Model
         /// Paginator for DescribeUsageLimits operation
         ///</summary>
         IDescribeUsageLimitsPaginator DescribeUsageLimits(DescribeUsageLimitsRequest request);
+
+        /// <summary>
+        /// Paginator for GetReservedNodeExchangeConfigurationOptions operation
+        ///</summary>
+        IGetReservedNodeExchangeConfigurationOptionsPaginator GetReservedNodeExchangeConfigurationOptions(GetReservedNodeExchangeConfigurationOptionsRequest request);
 
         /// <summary>
         /// Paginator for GetReservedNodeExchangeOfferings operation

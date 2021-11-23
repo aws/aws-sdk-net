@@ -92,6 +92,8 @@ namespace Amazon.Redshift.Model
         private string _clusterType;
         private string _nodeType;
         private int? _numberOfNodes;
+        private string _reservedNodeId;
+        private string _targetReservedNodeOfferingId;
 
         /// <summary>
         /// Gets and sets the property Classic. 
@@ -188,6 +190,44 @@ namespace Amazon.Redshift.Model
         internal bool IsSetNumberOfNodes()
         {
             return this._numberOfNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeId. 
+        /// <para>
+        /// The identifier of the reserved node.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ReservedNodeId
+        {
+            get { return this._reservedNodeId; }
+            set { this._reservedNodeId = value; }
+        }
+
+        // Check to see if ReservedNodeId property is set
+        internal bool IsSetReservedNodeId()
+        {
+            return this._reservedNodeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetReservedNodeOfferingId. 
+        /// <para>
+        /// The identifier of the target reserved node offering.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string TargetReservedNodeOfferingId
+        {
+            get { return this._targetReservedNodeOfferingId; }
+            set { this._targetReservedNodeOfferingId = value; }
+        }
+
+        // Check to see if TargetReservedNodeOfferingId property is set
+        internal bool IsSetTargetReservedNodeOfferingId()
+        {
+            return this._targetReservedNodeOfferingId != null;
         }
 
     }
