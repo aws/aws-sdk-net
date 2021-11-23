@@ -410,6 +410,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetNetworkAnalyzerConfigurationRequest.ConfigurationName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>NetworkAnalyzerConfig_Default</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.GetPartnerAccountRequest.PartnerAccountId</property>
     <max>256</max>
   </property-value-rule>
@@ -842,6 +848,12 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.UpdateMulticastGroupRequest.Name</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.UpdateNetworkAnalyzerConfigurationRequest.ConfigurationName</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>NetworkAnalyzerConfig_Default</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.UpdatePartnerAccountRequest.PartnerAccountId</property>
