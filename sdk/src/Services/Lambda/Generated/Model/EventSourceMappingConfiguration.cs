@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
         private bool? _bisectBatchOnFunctionError;
         private DestinationConfig _destinationConfig;
         private string _eventSourceArn;
+        private FilterCriteria _filterCriteria;
         private string _functionArn;
         private List<string> _functionResponseTypes = new List<string>();
         private DateTime? _lastModified;
@@ -142,6 +143,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetEventSourceArn()
         {
             return this._eventSourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterCriteria. 
+        /// <para>
+        /// (Streams and Amazon SQS) A object that defines the filter criteria used to determine
+        /// whether Lambda should process an event. For more information, see Event filtering.
+        /// </para>
+        /// </summary>
+        public FilterCriteria FilterCriteria
+        {
+            get { return this._filterCriteria; }
+            set { this._filterCriteria = value; }
+        }
+
+        // Check to see if FilterCriteria property is set
+        internal bool IsSetFilterCriteria()
+        {
+            return this._filterCriteria != null;
         }
 
         /// <summary>

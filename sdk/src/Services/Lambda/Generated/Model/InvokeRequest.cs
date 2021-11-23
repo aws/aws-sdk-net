@@ -211,6 +211,12 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The JSON that you want to provide to your Lambda function as input.
         /// </para>
+        ///  
+        /// <para>
+        /// You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
+        /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
+        /// 
+        /// </para>
         /// </summary>
         public MemoryStream PayloadStream
         {

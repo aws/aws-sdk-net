@@ -75,6 +75,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.EventSourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FilterCriteria", targetDepth))
+                {
+                    var unmarshaller = FilterCriteriaUnmarshaller.Instance;
+                    response.FilterCriteria = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FunctionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

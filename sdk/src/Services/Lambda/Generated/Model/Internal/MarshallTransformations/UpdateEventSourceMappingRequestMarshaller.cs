@@ -97,6 +97,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Enabled);
                 }
 
+                if(publicRequest.IsSetFilterCriteria())
+                {
+                    context.Writer.WritePropertyName("FilterCriteria");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FilterCriteriaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FilterCriteria, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFunctionName())
                 {
                     context.Writer.WritePropertyName("FunctionName");

@@ -1526,6 +1526,12 @@
     <pattern>^/mnt/[a-zA-Z0-9-_.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.Filter.Pattern</property>
+    <min>0</min>
+    <max>4096</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.FunctionCode.S3Bucket</property>
     <min>3</min>
     <max>63</max>

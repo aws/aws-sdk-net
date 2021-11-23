@@ -76,7 +76,8 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ
-        /// broker. Lambda uses this RabbitMQ host as the event source.
+        /// broker. Lambda uses this RabbitMQ host as the event source. This property cannot be
+        /// specified in an UpdateEventSourceMapping API call.
         /// </para>
         ///  </li> </ul>
         /// </summary>
