@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     continue;
 
                 var type = info.PropertyType;
-                var propertyValue = string.Equals(info.Name, "AccountId") ? "0123456789" : InstantiateType(tcr, type);
+                var propertyValue = string.Equals(info.Name, "AccountId") && type == typeof(string) ? "0123456789" : InstantiateType(tcr, type);
                 info.SetMethod.Invoke(owningObject, new object[] { propertyValue });
             }
         }
