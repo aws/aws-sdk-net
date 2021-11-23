@@ -1111,6 +1111,39 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeManagedJobTemplateRequest.TemplateName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeManagedJobTemplateRequest.TemplateVersion</property>
+    <pattern>^[1-9]+.[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeManagedJobTemplateResponse.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeManagedJobTemplateResponse.Document</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeManagedJobTemplateResponse.TemplateArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeManagedJobTemplateResponse.TemplateName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeManagedJobTemplateResponse.TemplateVersion</property>
+    <pattern>^[1-9]+.[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DescribeMitigationActionRequest.ActionName</property>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
@@ -1749,6 +1782,16 @@
     <property>Amazon.IoT.Model.ListJobTemplatesRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListManagedJobTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListManagedJobTemplatesRequest.TemplateName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListMitigationActionsRequest.MaxResults</property>
@@ -2931,6 +2974,21 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DocumentParameter.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DocumentParameter.Example</property>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DocumentParameter.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DomainConfigurationSummary.DomainConfigurationName</property>
     <min>1</min>
     <max>128</max>
@@ -2958,7 +3016,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ExponentialRolloutRate.IncrementFactor</property>
-    <min>1</min>
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
@@ -3100,6 +3157,26 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.KeyPair.PublicKey</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ManagedJobTemplateSummary.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ManagedJobTemplateSummary.TemplateArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ManagedJobTemplateSummary.TemplateName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ManagedJobTemplateSummary.TemplateVersion</property>
+    <pattern>^[1-9]+.[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.MetricDimension.DimensionName</property>

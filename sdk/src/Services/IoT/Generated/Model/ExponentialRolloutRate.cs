@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model
         /// 1.5, but not 1.55).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Max=5)]
         public double IncrementFactor
         {
             get { return this._incrementFactor.GetValueOrDefault(); }

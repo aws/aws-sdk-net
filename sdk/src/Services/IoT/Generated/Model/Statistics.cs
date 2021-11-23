@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// A map of key-value pairs for all supported statistics. Currently, only count is supported.
+    /// A map of key-value pairs for all supported statistics. For issues with missing or
+    /// unexpected values for this API, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html">
+    /// Fleet indexing troubleshooting guide</a>.
     /// </summary>
     public partial class Statistics
     {
@@ -63,7 +65,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The count of things that match the query.
+        /// The count of things that match the query string criteria and contain a valid aggregation
+        /// field value.
         /// </para>
         /// </summary>
         public int Count

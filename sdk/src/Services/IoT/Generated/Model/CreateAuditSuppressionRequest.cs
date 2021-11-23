@@ -69,7 +69,7 @@ namespace Amazon.IoT.Model
         ///  Each audit supression must have a unique client request token. If you try to create
         /// a new audit suppression with the same token as one that already exists, an exception
         /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate
-        /// a unique client request. 
+        /// a unique client request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

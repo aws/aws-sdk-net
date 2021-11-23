@@ -89,7 +89,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// An IAM role that allows the IoT service principal assumes to access your S3 files.
+        /// An IAM role that allows the IoT service principal to access your S3 files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

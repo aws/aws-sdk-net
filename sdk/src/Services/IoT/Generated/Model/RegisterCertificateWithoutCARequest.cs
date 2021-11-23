@@ -30,7 +30,9 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCertificateWithoutCA operation.
-    /// Register a certificate that does not have a certificate authority (CA).
+    /// Register a certificate that does not have a certificate authority (CA). For supported
+    /// certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+    /// Certificate signing algorithms supported by IoT</a>.
     /// </summary>
     public partial class RegisterCertificateWithoutCARequest : AmazonIoTRequest
     {

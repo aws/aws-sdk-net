@@ -37,6 +37,11 @@ namespace Amazon.IoT.Model
     /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromBillingGroup</a>
     /// action.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This call is asynchronous. It might take several seconds for the detachment to propagate.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RemoveThingFromBillingGroupRequest : AmazonIoTRequest
     {

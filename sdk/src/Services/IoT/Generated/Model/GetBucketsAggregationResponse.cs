@@ -66,8 +66,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TotalCount. 
         /// <para>
-        /// The total number of documents that fit the query string criteria and contain a value
-        /// for the Aggregation field targeted in the request.
+        /// The total number of things that fit the query string criteria.
         /// </para>
         /// </summary>
         public int TotalCount

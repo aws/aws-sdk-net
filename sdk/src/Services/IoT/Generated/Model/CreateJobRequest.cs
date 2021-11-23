@@ -43,6 +43,7 @@ namespace Amazon.IoT.Model
         private AbortConfig _abortConfig;
         private string _description;
         private string _document;
+        private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private string _documentSource;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
@@ -108,6 +109,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetDocument()
         {
             return this._document != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentParameters. 
+        /// <para>
+        /// Parameters of a managed template that you can specify to create the job document.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> DocumentParameters
+        {
+            get { return this._documentParameters; }
+            set { this._documentParameters = value; }
+        }
+
+        // Check to see if DocumentParameters property is set
+        internal bool IsSetDocumentParameters()
+        {
+            return this._documentParameters != null && this._documentParameters.Count > 0; 
         }
 
         /// <summary>

@@ -68,6 +68,11 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The name of the billing group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This call is asynchronous. It might take several seconds for the detachment to propagate.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string BillingGroupName

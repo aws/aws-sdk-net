@@ -38,6 +38,7 @@ namespace Amazon.IoT.Model
         private DateTime? _completedAt;
         private DateTime? _createdAt;
         private string _description;
+        private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private bool? _forceCanceled;
         private string _jobArn;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
@@ -143,6 +144,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentParameters. 
+        /// <para>
+        /// A key-value map that pairs the patterns that need to be replaced in a managed template
+        /// job document schema. You can use the description of each key as a guidance to specify
+        /// the inputs during runtime when creating a job.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> DocumentParameters
+        {
+            get { return this._documentParameters; }
+            set { this._documentParameters = value; }
+        }
+
+        // Check to see if DocumentParameters property is set
+        internal bool IsSetDocumentParameters()
+        {
+            return this._documentParameters != null && this._documentParameters.Count > 0; 
         }
 
         /// <summary>
