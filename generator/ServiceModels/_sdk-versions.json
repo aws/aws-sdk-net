@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.166.0",
+    "ProductVersion" : "3.7.167.0",
     "CoreVersion"    : "3.7.5.2",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -144,7 +144,7 @@
             "InPreview"               : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.7.0.104",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.44.5",
+            "Version" : "3.7.45.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -160,7 +160,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.7.4.9",
+            "Version" : "3.7.4.10",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -168,7 +168,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.7.3.52",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -242,7 +242,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.7.6.1",
+            "Version" : "3.7.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.7.7.0",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -290,7 +290,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.7.9.1",
+            "Version" : "3.7.10.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -314,7 +314,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.7.4.10",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -322,7 +322,7 @@
             "InPreview"               : false
         },
         "SecurityToken"        : {
-            "Version" : "3.7.1.93",
+            "Version" : "3.7.1.94",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -362,7 +362,7 @@
             "InPreview"               : false
         },
         "SQS"                       : {
-            "Version" : "3.7.1.46",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -386,7 +386,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.7.2.29",
+            "Version" : "3.7.2.30",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -466,7 +466,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.7.6.35",
+            "Version" : "3.7.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -570,7 +570,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.7.3.21",
+            "Version" : "3.7.3.22",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1362,7 +1362,7 @@
             "InPreview"               : false
         },
         "Backup"                          : {
-            "Version" : "3.7.4.9",
+            "Version" : "3.7.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1778,7 +1778,7 @@
             "InPreview"               : false
         },
         "Macie2"                          : {
-            "Version" : "3.7.6.12",
+            "Version" : "3.7.6.13",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2018,7 +2018,7 @@
             "InPreview"               : false
         },
         "IoTWireless"                     : {
-            "Version" : "3.7.7.11",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2034,7 +2034,7 @@
             "InPreview"               : false
         },
         "IoTDeviceAdvisor"                : {
-            "Version" : "3.7.1.82",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2114,7 +2114,7 @@
             "InPreview"               : false
         },
         "FinSpaceData"                    : {
-            "Version" : "3.7.1.0",
+            "Version" : "3.7.1.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2226,7 +2226,7 @@
             "InPreview"               : false
         },
         "OpenSearchService"               : {
-            "Version" : "3.7.1.35",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
