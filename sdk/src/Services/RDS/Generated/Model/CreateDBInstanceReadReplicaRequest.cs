@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceReadReplicaRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier of the read replica. This identifier is the unique key that identifies a DB instance. This parameter is stored as a lowercase string.</param>
-        /// <param name="sourceDBInstanceIdentifier">The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas. Constraints: <ul> <li> Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance. </li> <li> Can specify a DB instance that is a MySQL read replica only if the source is running MySQL 5.6 or later. </li> <li> For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>. </li> <li> For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>. </li> <li> Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region replication). </li> <li> The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0. </li> <li> If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier. </li> <li> If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas. </li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier">The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas. Constraints: <ul> <li> Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance. </li> <li> Can specify a DB instance that is a MySQL read replica only if the source is running MySQL 5.6 or later. </li> <li> For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>. </li> <li> For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.Limitations.html">Read Replica Limitations with Microsoft SQL Server</a> in the <i>Amazon RDS User Guide</i>. </li> <li> Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-Region replication). </li> <li> The specified DB instance must have automatic backups enabled, that is, its backup retention period must be greater than 0. </li> <li> If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB instance identifier. </li> <li> If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB instance ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server or RDS Custom, which don't support cross-Region replicas. </li> </ul></param>
         public CreateDBInstanceReadReplicaRequest(string dbInstanceIdentifier, string sourceDBInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -221,10 +221,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
-        /// all database engines. For the full list of DB instance classes, and availability for
-        /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// The compute and memory capacity of the read replica, for example db.m4.large. Not
+        /// all DB instance classes are available in all Amazon Web Services Regions, or for all
+        /// database engines. For the full list of DB instance classes, and availability for your
+        /// engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
         /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
@@ -272,9 +272,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
-        /// uses the <code>DBParameterGroup</code> of source DB instance for a same region read
+        /// uses the <code>DBParameterGroup</code> of source DB instance for a same Region read
         /// replica, or the default <code>DBParameterGroup</code> for the specified DB engine
-        /// for a cross region read replica.
+        /// for a cross-Region read replica.
         /// </para>
         ///  
         /// <para>
@@ -373,7 +373,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
         /// </summary>
@@ -469,7 +469,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -889,7 +889,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         ///  <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon
-        /// RDS doesn't support cross-region read replicas.
+        /// RDS doesn't support cross-Region read replicas.
         /// </para>
         ///  </note> 
         /// <para>
@@ -938,11 +938,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the DB instance is publicly accessible, its DNS endpoint resolves to the private
-        /// IP address from within the DB instance's VPC, and to the public IP address from outside
-        /// of the DB instance's VPC. Access to the DB instance is ultimately controlled by the
-        /// security group it uses, and that public access is not permitted if the security group
-        /// assigned to the DB instance doesn't permit it.
+        /// When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
+        /// Access to the DB cluster is ultimately controlled by the security group it uses. That
+        /// public access isn't permitted if the security group assigned to the DB cluster doesn't
+        /// permit it.
         /// </para>
         ///  
         /// <para>
@@ -1040,7 +1041,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// Can specify a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5
-        /// or later (9.4.7 and higher for cross-region replication).
+        /// or later (9.4.7 and higher for cross-Region replication).
         /// </para>
         ///  </li> <li> 
         /// <para>

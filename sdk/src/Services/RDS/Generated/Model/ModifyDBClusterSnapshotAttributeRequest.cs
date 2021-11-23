@@ -60,11 +60,6 @@ namespace Amazon.RDS.Model
     /// use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
     /// as values for the <code>restore</code> attribute.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// This action only applies to Aurora DB clusters.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ModifyDBClusterSnapshotAttributeRequest : AmazonRDSRequest
     {

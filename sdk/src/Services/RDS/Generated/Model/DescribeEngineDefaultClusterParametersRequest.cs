@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class DescribeEngineDefaultClusterParametersRequest : AmazonRDSRequest

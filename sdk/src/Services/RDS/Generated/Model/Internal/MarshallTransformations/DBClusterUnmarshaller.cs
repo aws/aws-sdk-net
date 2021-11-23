@@ -97,6 +97,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticRestartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -181,6 +187,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DBClusterIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBClusterInstanceClass", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBClusterInstanceClass = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBClusterMembers/DBClusterMember", targetDepth))
@@ -301,6 +313,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.IAMDatabaseAuthenticationEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("KmsKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -317,6 +335,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MonitoringInterval", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MonitoringInterval = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MonitoringRoleArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MonitoringRoleArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MultiAZ", targetDepth))
@@ -337,6 +367,24 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PercentProgress = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PerformanceInsightsEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceInsightsEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PerformanceInsightsKMSKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceInsightsKMSKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PerformanceInsightsRetentionPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceInsightsRetentionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Port", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -353,6 +401,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PubliclyAccessible", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReaderEndpoint", targetDepth))
@@ -390,6 +444,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TagList/Tag", targetDepth))

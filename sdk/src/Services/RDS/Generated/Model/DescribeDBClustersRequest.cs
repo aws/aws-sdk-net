@@ -30,19 +30,29 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusters operation.
-    /// Returns information about provisioned Aurora DB clusters. This API supports pagination.
+    /// Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This
+    /// API supports pagination.
     /// 
     ///  
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
+    /// User Guide.</i> 
     /// </para>
     ///  <note> 
+    /// <para>
+    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This operation can also return information for Amazon Neptune DB instances and Amazon
     /// DocumentDB instances.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeDBClustersRequest : AmazonRDSRequest
     {

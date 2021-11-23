@@ -29,13 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon Aurora DB cluster. 
+    /// Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster. 
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBClusters</code>,
-    /// <code>StopDBCluster</code>, and <code>StartDBCluster</code> actions. 
+    /// For an Amazon Aurora DB cluster, this data type is used as a response element in the
+    /// operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
+    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>,
+    /// <code>StartDBCluster</code>, and <code>StopDBCluster</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// For a Multi-AZ DB cluster, this data type is used as a response element in the operations
+    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
+    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
+    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
+    /// User Guide.</i> 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DBCluster
     {
@@ -46,6 +72,7 @@ namespace Amazon.RDS.Model
         private int? _allocatedStorage;
         private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
         private DateTime? _automaticRestartTime;
+        private bool? _autoMinorVersionUpgrade;
         private List<string> _availabilityZones = new List<string>();
         private long? _backtrackConsumedChangeRecords;
         private long? _backtrackWindow;
@@ -60,6 +87,7 @@ namespace Amazon.RDS.Model
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
+        private string _dbClusterInstanceClass;
         private List<DBClusterMember> _dbClusterMembers = new List<DBClusterMember>();
         private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = new List<DBClusterOptionGroupStatus>();
         private string _dbClusterParameterGroup;
@@ -79,21 +107,29 @@ namespace Amazon.RDS.Model
         private string _hostedZoneId;
         private bool? _httpEndpointEnabled;
         private bool? _iamDatabaseAuthenticationEnabled;
+        private int? _iops;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
+        private int? _monitoringInterval;
+        private string _monitoringRoleArn;
         private bool? _multiAZ;
         private ClusterPendingModifiedValues _pendingModifiedValues;
         private string _percentProgress;
+        private bool? _performanceInsightsEnabled;
+        private string _performanceInsightsKMSKeyId;
+        private int? _performanceInsightsRetentionPeriod;
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private bool? _publiclyAccessible;
         private string _readerEndpoint;
         private List<string> _readReplicaIdentifiers = new List<string>();
         private string _replicationSourceIdentifier;
         private ScalingConfigurationInfo _scalingConfigurationInfo;
         private string _status;
         private bool? _storageEncrypted;
+        private string _storageType;
         private List<Tag> _tagList = new List<Tag>();
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
@@ -234,6 +270,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetAutomaticRestartTime()
         {
             return this._automaticRestartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        /// A value that indicates that minor version patches are applied automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
@@ -500,6 +558,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterInstanceClass. 
+        /// <para>
+        /// The name of the compute and memory capacity class of the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public string DBClusterInstanceClass
+        {
+            get { return this._dbClusterInstanceClass; }
+            set { this._dbClusterInstanceClass = value; }
+        }
+
+        // Check to see if DBClusterInstanceClass property is set
+        internal bool IsSetDBClusterInstanceClass()
+        {
+            return this._dbClusterInstanceClass != null;
         }
 
         /// <summary>
@@ -878,6 +958,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The Provisioned IOPS (I/O operations per second) value.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public int Iops
+        {
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this._iops.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier
@@ -938,6 +1040,52 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MonitoringInterval. 
+        /// <para>
+        /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+        /// for the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public int MonitoringInterval
+        {
+            get { return this._monitoringInterval.GetValueOrDefault(); }
+            set { this._monitoringInterval = value; }
+        }
+
+        // Check to see if MonitoringInterval property is set
+        internal bool IsSetMonitoringInterval()
+        {
+            return this._monitoringInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringRoleArn. 
+        /// <para>
+        /// The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon
+        /// CloudWatch Logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public string MonitoringRoleArn
+        {
+            get { return this._monitoringRoleArn; }
+            set { this._monitoringRoleArn = value; }
+        }
+
+        // Check to see if MonitoringRoleArn property is set
+        internal bool IsSetMonitoringRoleArn()
+        {
+            return this._monitoringRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
         /// Specifies whether the DB cluster has instances in multiple Availability Zones.
@@ -990,6 +1138,79 @@ namespace Amazon.RDS.Model
         internal bool IsSetPercentProgress()
         {
             return this._percentProgress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsEnabled. 
+        /// <para>
+        /// True if Performance Insights is enabled for the DB cluster, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public bool PerformanceInsightsEnabled
+        {
+            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            set { this._performanceInsightsEnabled = value; }
+        }
+
+        // Check to see if PerformanceInsightsEnabled property is set
+        internal bool IsSetPerformanceInsightsEnabled()
+        {
+            return this._performanceInsightsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier for encryption of Performance Insights
+        /// data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
+        /// <para>
+        /// The amount of time, in days, to retain Performance Insights data. Valid values are
+        /// 7 or 731 (2 years).
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public int PerformanceInsightsRetentionPeriod
+        {
+            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            set { this._performanceInsightsRetentionPeriod = value; }
+        }
+
+        // Check to see if PerformanceInsightsRetentionPeriod property is set
+        internal bool IsSetPerformanceInsightsRetentionPeriod()
+        {
+            return this._performanceInsightsRetentionPeriod.HasValue; 
         }
 
         /// <summary>
@@ -1046,6 +1267,46 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PubliclyAccessible. 
+        /// <para>
+        /// Specifies the accessibility options for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB instance's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance
+        /// doesn't permit it.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the DB instance isn't publicly accessible, it is an internal DB instance with
+        /// a DNS name that resolves to a private IP address.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>CreateDBInstance</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public bool PubliclyAccessible
+        {
+            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            set { this._publiclyAccessible = value; }
+        }
+
+        // Check to see if PubliclyAccessible property is set
+        internal bool IsSetPubliclyAccessible()
+        {
+            return this._publiclyAccessible.HasValue; 
         }
 
         /// <summary>
@@ -1162,6 +1423,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type associated with DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

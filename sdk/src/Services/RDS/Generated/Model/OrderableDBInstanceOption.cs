@@ -58,6 +58,7 @@ namespace Amazon.RDS.Model
         private string _storageType;
         private List<string> _supportedActivityStreamModes = new List<string>();
         private List<string> _supportedEngineModes = new List<string>();
+        private bool? _supportsClusters;
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsIAMDatabaseAuthentication;
@@ -415,6 +416,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedEngineModes()
         {
             return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsClusters. 
+        /// <para>
+        /// Whether DB instances can be configured as a Multi-AZ DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Multi-AZ DB clusters feature is in preview and is subject to change.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
+        /// User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public bool SupportsClusters
+        {
+            get { return this._supportsClusters.GetValueOrDefault(); }
+            set { this._supportsClusters = value; }
+        }
+
+        // Check to see if SupportsClusters property is set
+        internal bool IsSetSupportsClusters()
+        {
+            return this._supportsClusters.HasValue; 
         }
 
         /// <summary>

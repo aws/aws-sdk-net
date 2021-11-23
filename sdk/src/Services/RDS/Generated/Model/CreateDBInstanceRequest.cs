@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
         /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>Amazon RDS Custom</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 40 to 65536. </li> </ul>  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
-        /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </param>
+        /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </param>
         /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every Amazon Web Services Region.  Valid Values:  <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>custom-oracle-ee (for RDS Custom instances)</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-ee-cdb</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se2-cdb</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster.   <b>Amazon RDS</b>  Constraints: <ul> <li> Required. </li> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master user. The password can include any printable ASCII character except "/", """, or "@".  <b>Amazon Aurora</b>  Not applicable. The password for the master user is managed by the DB cluster.  <b>MariaDB</b>  Constraints: Must contain from 8 to 41 characters.  <b>Microsoft SQL Server</b>  Constraints: Must contain from 8 to 128 characters.  <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>PostgreSQL</b>  Constraints: Must contain from 8 to 128 characters.</param>
@@ -557,10 +557,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
-        /// all database engines. For the full list of DB instance classes, and availability for
-        /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+        /// The compute and memory capacity of the DB instance, for example db.m4.large. Not all
+        /// DB instance classes are available in all Amazon Web Services Regions, or for all database
+        /// engines. For the full list of DB instance classes, and availability for your engine,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
         /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
@@ -911,7 +911,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
         ///  
@@ -1109,7 +1109,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>
@@ -1291,7 +1291,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
         /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
@@ -1300,7 +1300,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
         /// SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
@@ -1309,7 +1309,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
         /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
@@ -1318,7 +1318,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
         /// Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
@@ -1327,7 +1327,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
         /// RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// </para>
@@ -1348,8 +1348,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance. For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
+        /// allocated for the DB instance. For information about valid <code>Iops</code> values,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+        /// RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User
         /// Guide</i>. 
         /// </para>
         ///  
@@ -2052,11 +2053,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the DB instance is publicly accessible, its DNS endpoint resolves to the private
-        /// IP address from within the DB instance's VPC, and to the public IP address from outside
-        /// of the DB instance's VPC. Access to the DB instance is ultimately controlled by the
-        /// security group it uses, and that public access is not permitted if the security group
-        /// assigned to the DB instance doesn't permit it.
+        /// When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB instance's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance
+        /// doesn't permit it.
         /// </para>
         ///  
         /// <para>
@@ -2075,12 +2077,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the default VPC in the target region doesn’t have an Internet gateway attached
+        /// If the default VPC in the target Region doesn’t have an internet gateway attached
         /// to it, the DB instance is private.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the default VPC in the target region has an Internet gateway attached to it, the
+        /// If the default VPC in the target Region has an internet gateway attached to it, the
         /// DB instance is public.
         /// </para>
         ///  </li> </ul> 
@@ -2090,12 +2092,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the subnets are part of a VPC that doesn’t have an Internet gateway attached to
+        /// If the subnets are part of a VPC that doesn’t have an internet gateway attached to
         /// it, the DB instance is private.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the subnets are part of a VPC that has an Internet gateway attached to it, the
+        /// If the subnets are part of a VPC that has an internet gateway attached to it, the
         /// DB instance is public.
         /// </para>
         ///  </li> </ul>

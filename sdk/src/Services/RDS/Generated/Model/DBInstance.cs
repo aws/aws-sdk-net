@@ -33,8 +33,12 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBInstances</code>
-    /// action. 
+    /// This data type is used as a response element in the operations <code>CreateDBInstance</code>,
+    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
+    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
+    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>,
+    /// <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
+    /// 
     /// </para>
     /// </summary>
     public partial class DBInstance
@@ -1354,11 +1358,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the DB instance is publicly accessible, its DNS endpoint resolves to the private
-        /// IP address from within the DB instance's VPC, and to the public IP address from outside
-        /// of the DB instance's VPC. Access to the DB instance is ultimately controlled by the
-        /// security group it uses, and that public access is not permitted if the security group
-        /// assigned to the DB instance doesn't permit it.
+        /// When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB cluster's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB cluster's VPC.
+        /// Access to the DB cluster is ultimately controlled by the security group it uses. That
+        /// public access isn't permitted if the security group assigned to the DB cluster doesn't
+        /// permit it.
         /// </para>
         ///  
         /// <para>
@@ -1387,9 +1392,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance
         /// is replicated as a read replica. For example, when you create an Aurora read replica
-        /// of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica
-        /// is shown. This output does not contain information about cross region Aurora read
-        /// replicas.
+        /// of an RDS for MySQL DB instance, the Aurora MySQL DB cluster for the Aurora read replica
+        /// is shown. This output doesn't contain information about cross-Region Aurora read replicas.
         /// </para>
         ///  <note> 
         /// <para>

@@ -31,12 +31,6 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the CopyDBClusterParameterGroup operation.
     /// Copies the specified DB cluster parameter group.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This action only applies to Aurora DB clusters.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class CopyDBClusterParameterGroupRequest : AmazonRDSRequest
     {

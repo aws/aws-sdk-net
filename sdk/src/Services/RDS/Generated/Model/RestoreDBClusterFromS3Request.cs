@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
     ///  </note> 
     /// <para>
     /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
     /// </para>
     ///  <note> 
     /// <para>
@@ -331,7 +331,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB cluster has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. 
+        /// protection isn't enabled. 
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -415,7 +415,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of Amazon Web Services Identity and
-        /// Access Management (IAM) accounts to database accounts. By default, mapping is disabled.
+        /// Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
         /// </para>
         ///  
         /// <para>

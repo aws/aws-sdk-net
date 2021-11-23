@@ -30,7 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrderableDBInstanceOptions operation.
-    /// Returns a list of orderable DB instance options for the specified engine.
+    /// Returns a list of orderable DB instance options for the specified DB engine, DB engine
+    /// version, and DB instance class.
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsRequest : AmazonRDSRequest
     {

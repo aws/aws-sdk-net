@@ -90,7 +90,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
+        /// The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,8 +110,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ExcludedMembers. 
         /// <para>
         /// List of DB instance identifiers that aren't part of the custom endpoint group. All
-        /// other eligible instances are reachable through the custom endpoint. Only relevant
-        /// if the list of static members is empty.
+        /// other eligible instances are reachable through the custom endpoint. This parameter
+        /// is relevant only if the list of static members is empty.
         /// </para>
         /// </summary>
         public List<string> ExcludedMembers

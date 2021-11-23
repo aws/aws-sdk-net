@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the RemoveFromGlobalCluster operation.
     /// Detaches an Aurora secondary cluster from an Aurora global database cluster. The
     /// cluster becomes a standalone cluster with read-write capability instead of being read-only
-    /// and receiving data from a primary cluster in a different region. 
+    /// and receiving data from a primary cluster in a different Region. 
     /// 
     ///  <note> 
     /// <para>

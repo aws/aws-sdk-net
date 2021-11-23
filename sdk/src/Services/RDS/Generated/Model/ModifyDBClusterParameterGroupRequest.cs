@@ -35,11 +35,6 @@ namespace Amazon.RDS.Model
     /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
     /// request. 
     /// 
-    ///  
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
-    /// </para>
     ///  <important> 
     /// <para>
     /// After you create a DB cluster parameter group, you should wait at least 5 minutes
@@ -59,9 +54,20 @@ namespace Amazon.RDS.Model
     /// In that case, your application must reopen any connections and retry any transactions
     /// that were active when the parameter changes took effect.
     /// </para>
-    ///  </important> <note> 
+    ///  </important> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
+    /// User Guide.</i> 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>

@@ -255,7 +255,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>.
+        /// The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
         /// all database engines. For the full list of DB instance classes, and availability for
         /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
@@ -452,7 +452,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that indicates whether the DB instance has deletion protection enabled. The
         /// database can't be deleted when deletion protection is enabled. By default, deletion
-        /// protection is disabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+        /// protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>. 
         /// </para>
         /// </summary>
@@ -869,11 +869,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When the DB instance is publicly accessible, its DNS endpoint resolves to the private
-        /// IP address from within the DB instance's VPC, and to the public IP address from outside
-        /// of the DB instance's VPC. Access to the DB instance is ultimately controlled by the
-        /// security group it uses, and that public access is not permitted if the security group
-        /// assigned to the DB instance doesn't permit it.
+        /// When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint
+        /// resolves to the private IP address from within the DB instance's virtual private cloud
+        /// (VPC). It resolves to the public IP address from outside of the DB instance's VPC.
+        /// Access to the DB instance is ultimately controlled by the security group it uses.
+        /// That public access is not permitted if the security group assigned to the DB instance
+        /// doesn't permit it.
         /// </para>
         ///  
         /// <para>

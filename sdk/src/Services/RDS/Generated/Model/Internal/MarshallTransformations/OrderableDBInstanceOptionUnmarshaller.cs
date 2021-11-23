@@ -172,6 +172,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedEngineModes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportsClusters", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsClusters = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsEnhancedMonitoring", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

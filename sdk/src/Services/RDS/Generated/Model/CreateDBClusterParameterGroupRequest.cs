@@ -42,10 +42,19 @@ namespace Amazon.RDS.Model
     /// the database engine used by instances in the DB cluster. To provide custom values
     /// for any of the parameters, you must modify the group after creating it using <code>ModifyDBClusterParameterGroup</code>.
     /// Once you've created a DB cluster parameter group, you need to associate it with your
-    /// DB cluster using <code>ModifyDBCluster</code>. When you associate a new DB cluster
-    /// parameter group with a running DB cluster, you need to reboot the DB instances in
-    /// the DB cluster without failover for the new DB cluster parameter group and associated
-    /// settings to take effect. 
+    /// DB cluster using <code>ModifyDBCluster</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you associate a new DB cluster parameter group with a running Aurora DB cluster,
+    /// reboot the DB instances in the DB cluster without failover for the new DB cluster
+    /// parameter group and associated settings to take effect. 
+    /// </para>
+    ///  
+    /// <para>
+    /// When you associate a new DB cluster parameter group with a running Multi-AZ DB cluster,
+    /// reboot the DB cluster without failover for the new DB cluster parameter group and
+    /// associated settings to take effect. 
     /// </para>
     ///  <important> 
     /// <para>
@@ -63,11 +72,17 @@ namespace Amazon.RDS.Model
     ///  </important> 
     /// <para>
     /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
+    /// User Guide.</i> 
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// The Multi-AZ DB clusters feature is in preview and is subject to change.
     /// </para>
     ///  </note>
     /// </summary>
@@ -89,7 +104,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the name of an existing DB cluster parameter group.
+        /// Must not match the name of an existing DB cluster parameter group.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -136,6 +151,22 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>RDS for MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mysql8.0</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>RDS for PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>postgres12</code> 
+        /// </para>
+        ///  
+        /// <para>
         /// To list all of the available parameter group families for a DB engine, use the following
         /// command:
         /// </para>
@@ -173,6 +204,14 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>aurora-postgresql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>postgres</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
