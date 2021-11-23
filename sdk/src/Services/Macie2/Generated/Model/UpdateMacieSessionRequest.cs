@@ -30,8 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMacieSession operation.
-    /// Suspends or re-enables an Amazon Macie account, or updates the configuration settings
-    /// for a Macie account.
+    /// Suspends or re-enables Amazon Macie, or updates the configuration settings for a Macie
+    /// account.
     /// </summary>
     public partial class UpdateMacieSessionRequest : AmazonMacie2Request
     {

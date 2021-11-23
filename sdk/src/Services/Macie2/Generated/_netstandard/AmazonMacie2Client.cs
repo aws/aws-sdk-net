@@ -1194,7 +1194,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the Amazon Macie configuration settings for an Amazon Web Services organization.
+        /// Retrieves the Amazon Macie configuration settings for an organization in Organizations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1255,7 +1255,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Disables an Amazon Macie account and deletes Macie resources for the account.
+        /// Disables Amazon Macie and deletes all settings and resources for a Macie account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableMacie service method.</param>
         /// <param name="cancellationToken">
@@ -1316,8 +1316,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Disables an account as the delegated Amazon Macie administrator account for an Amazon
-        /// Web Services organization.
+        /// Disables an account as the delegated Amazon Macie administrator account for an organization
+        /// in Organizations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1624,8 +1624,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Designates an account as the delegated Amazon Macie administrator account for an Amazon
-        /// Web Services organization.
+        /// Designates an account as the delegated Amazon Macie administrator account for an organization
+        /// in Organizations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1747,8 +1747,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves (queries) aggregated statistical data for all the S3 buckets that Amazon
-        /// Macie monitors and analyzes.
+        /// Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie
+        /// monitors and analyzes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -2949,7 +2949,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves information about the delegated Amazon Macie administrator account for an
-        /// Amazon Web Services organization.
+        /// organization in Organizations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// <param name="cancellationToken">
@@ -3482,8 +3482,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Suspends or re-enables an Amazon Macie account, or updates the configuration settings
-        /// for a Macie account.
+        /// Suspends or re-enables Amazon Macie, or updates the configuration settings for a Macie
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMacieSession service method.</param>
         /// <param name="cancellationToken">
@@ -3605,7 +3605,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Updates the Amazon Macie configuration settings for an Amazon Web Services organization.
+        /// Updates the Amazon Macie configuration settings for an organization in Organizations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">

@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableMacie operation.
-    /// Disables an Amazon Macie account and deletes Macie resources for the account.
+    /// Disables Amazon Macie and deletes all settings and resources for a Macie account.
     /// </summary>
     public partial class DisableMacieRequest : AmazonMacie2Request
     {

@@ -62,9 +62,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity to assign to a finding if the number of occurrences is greater than or
-        /// equal to the specified threshold (occurrencesThreshold) and, if applicable, is less
-        /// than the threshold for the next consecutive severity level for the custom data identifier.
+        /// The severity to assign to a finding: if the number of occurrences is greater than
+        /// or equal to the specified threshold (occurrencesThreshold); and, if applicable, the
+        /// number of occurrences is less than the threshold for the next consecutive severity
+        /// level for the custom data identifier, moving from LOW to HIGH.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Container for the parameters to the ListOrganizationAdminAccounts operation.
     /// Retrieves information about the delegated Amazon Macie administrator account for an
-    /// Amazon Web Services organization.
+    /// organization in Organizations.
     /// </summary>
     public partial class ListOrganizationAdminAccountsRequest : AmazonMacie2Request
     {

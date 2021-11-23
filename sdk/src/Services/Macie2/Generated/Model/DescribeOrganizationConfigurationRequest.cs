@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationConfiguration operation.
-    /// Retrieves the Amazon Macie configuration settings for an Amazon Web Services organization.
+    /// Retrieves the Amazon Macie configuration settings for an organization in Organizations.
     /// </summary>
     public partial class DescribeOrganizationConfigurationRequest : AmazonMacie2Request
     {

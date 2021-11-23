@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an Amazon Macie membership invitation that was received
-    /// by an account.
+    /// Provides information about an Amazon Macie membership invitation.
     /// </summary>
     public partial class Invitation
     {
@@ -60,8 +59,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property InvitationId. 
         /// <para>
-        /// The unique identifier for the invitation. Amazon Macie uses this identifier to validate
-        /// the inviter account with the invitee account.
+        /// The unique identifier for the invitation.
         /// </para>
         /// </summary>
         public string InvitationId
@@ -97,8 +95,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property RelationshipStatus. 
         /// <para>
-        /// The status of the relationship between the account that sent the invitation (<i>inviter
-        /// account</i>) and the account that received the invitation (<i>invitee account</i>).
+        /// The status of the relationship between the account that sent the invitation and the
+        /// account that received the invitation.
         /// </para>
         /// </summary>
         public RelationshipStatus RelationshipStatus

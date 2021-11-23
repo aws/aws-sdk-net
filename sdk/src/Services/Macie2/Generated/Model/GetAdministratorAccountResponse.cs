@@ -39,8 +39,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Administrator. 
         /// <para>
         /// The Amazon Web Services account ID for the administrator account. If the accounts
-        /// are associated by a Macie membership invitation, this object also provides details
-        /// about the invitation that was sent to establish the relationship between the accounts.
+        /// are associated by an Amazon Macie membership invitation, this object also provides
+        /// details about the invitation that was sent to establish the relationship between the
+        /// accounts.
         /// </para>
         /// </summary>
         public Invitation Administrator

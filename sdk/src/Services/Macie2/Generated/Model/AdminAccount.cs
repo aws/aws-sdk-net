@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the delegated Amazon Macie administrator account for an
-    /// Amazon Web Services organization.
+    /// organization in Organizations.
     /// </summary>
     public partial class AdminAccount
     {
@@ -58,8 +58,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the account as the delegated administrator of Amazon Macie for
-        /// the organization.
+        /// The current status of the account as the delegated Amazon Macie administrator account
+        /// for the organization.
         /// </para>
         /// </summary>
         public AdminStatus Status
