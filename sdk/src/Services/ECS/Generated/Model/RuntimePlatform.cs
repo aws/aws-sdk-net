@@ -30,6 +30,12 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Information about the platform for the Amazon ECS service or task.
+    /// 
+    ///  
+    /// <para>
+    /// For more informataion about <code>RuntimePlatform</code>, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a>
+    /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class RuntimePlatform
     {
@@ -40,6 +46,12 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property CpuArchitecture. 
         /// <para>
         /// The CPU architecture.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>.
+        /// This option is avaiable for tasks that run on Linuc Amazon EC2 instance or Linux containers
+        /// on Fargate.
         /// </para>
         /// </summary>
         public CPUArchitecture CpuArchitecture
