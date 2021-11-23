@@ -31,6 +31,12 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// <summary>
     /// Container for the parameters to the GetSuiteRun operation.
     /// Gets information about a Device Advisor test suite run.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class GetSuiteRunRequest : AmazonIoTDeviceAdvisorRequest
     {
@@ -40,7 +46,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Suite definition Id for the test suite run.
+        /// Suite definition ID for the test suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=36)]
@@ -59,7 +65,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunId. 
         /// <para>
-        /// Suite run Id for the test suite run.
+        /// Suite run ID for the test suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=36)]

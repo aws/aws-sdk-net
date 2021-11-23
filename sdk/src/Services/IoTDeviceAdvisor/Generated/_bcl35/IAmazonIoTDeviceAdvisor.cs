@@ -29,15 +29,16 @@ namespace Amazon.IoTDeviceAdvisor
     /// <summary>
     /// Interface for accessing IoTDeviceAdvisor
     ///
-    /// AWS IoT Core Device Advisor is a cloud-based, fully managed test capability for validating
-    /// IoT devices during device software development. Device Advisor provides pre-built
-    /// tests that you can use to validate IoT devices for reliable and secure connectivity
-    /// with AWS IoT Core before deploying devices to production. By using Device Advisor,
-    /// you can confirm that your devices can connect to AWS IoT Core, follow security best
-    /// practices and, if applicable, receive software updates from IoT Device Management.
-    /// You can also download signed qualification reports to submit to the AWS Partner Network
-    /// to get your device qualified for the AWS Partner Device Catalog without the need to
-    /// send your device in and wait for it to be tested.
+    /// Amazon Web Services IoT Core Device Advisor is a cloud-based, fully managed test capability
+    /// for validating IoT devices during device software development. Device Advisor provides
+    /// pre-built tests that you can use to validate IoT devices for reliable and secure connectivity
+    /// with Amazon Web Services IoT Core before deploying devices to production. By using
+    /// Device Advisor, you can confirm that your devices can connect to Amazon Web Services
+    /// IoT Core, follow security best practices and, if applicable, receive software updates
+    /// from IoT Device Management. You can also download signed qualification reports to
+    /// submit to the Amazon Web Services Partner Network to get your device qualified for
+    /// the Amazon Web Services Partner Device Catalog without the need to send your device
+    /// in and wait for it to be tested.
     /// </summary>
     public partial interface IAmazonIoTDeviceAdvisor : IAmazonService, IDisposable
     {
@@ -57,6 +58,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Creates a Device Advisor test suite.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSuiteDefinition</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSuiteDefinition service method.</param>
         /// 
@@ -103,6 +110,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Deletes a Device Advisor test suite.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSuiteDefinition</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSuiteDefinition service method.</param>
         /// 
@@ -144,11 +157,66 @@ namespace Amazon.IoTDeviceAdvisor
 
         #endregion
         
+        #region  GetEndpoint
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the GetEndpoint service method, as returned by IoTDeviceAdvisor.</returns>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
+        /// Sends Internal Failure Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
+        /// Sends Resource Not Found Exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
+        /// Sends invalid request exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
+        GetEndpointResponse GetEndpoint(GetEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEndpoint operation on AmazonIoTDeviceAdvisorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
+        IAsyncResult BeginGetEndpoint(GetEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEndpoint.</param>
+        /// 
+        /// <returns>Returns a  GetEndpointResult from IoTDeviceAdvisor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
+        GetEndpointResponse EndGetEndpoint(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetSuiteDefinition
 
 
         /// <summary>
         /// Gets information about a Device Advisor test suite.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteDefinition</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSuiteDefinition service method.</param>
         /// 
@@ -198,6 +266,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Gets information about a Device Advisor test suite run.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRun</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSuiteRun service method.</param>
         /// 
@@ -248,6 +322,12 @@ namespace Amazon.IoTDeviceAdvisor
         /// <summary>
         /// Gets a report download link for a successful Device Advisor qualifying test suite
         /// run.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSuiteRunReport service method.</param>
         /// 
@@ -297,6 +377,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Lists the Device Advisor test suites you have created.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuiteDefinitions service method.</param>
         /// 
@@ -344,6 +430,12 @@ namespace Amazon.IoTDeviceAdvisor
         /// <summary>
         /// Lists the runs of the specified Device Advisor test suite. You can list all runs of
         /// the test suite, or the runs of a specific version of the test suite.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuiteRuns service method.</param>
         /// 
@@ -390,6 +482,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Lists the tags attached to an IoT Device Advisor resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -439,6 +537,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Starts a Device Advisor test suite run.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSuiteRun service method.</param>
         /// 
@@ -488,6 +592,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Stops a Device Advisor test suite run that is currently running.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopSuiteRun</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopSuiteRun service method.</param>
         /// 
@@ -537,6 +647,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Adds to and modifies existing tags of an IoT Device Advisor resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TagResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -586,6 +702,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Removes tags from an IoT Device Advisor resource.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UntagResource</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -635,6 +757,12 @@ namespace Amazon.IoTDeviceAdvisor
 
         /// <summary>
         /// Updates a Device Advisor test suite.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSuiteDefinition service method.</param>
         /// 

@@ -40,7 +40,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Date (in Unix epoch time) when the suite run was created.
+        /// Starts a Device Advisor test suite run based on suite create time.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -58,7 +58,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunArn. 
         /// <para>
-        /// Amazon resource name of the started suite run.
+        /// Amazon Resource Name (ARN) of the started suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -77,7 +77,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunId. 
         /// <para>
-        /// Suite Run Id of the started suite run.
+        /// Suite Run ID of the started suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]

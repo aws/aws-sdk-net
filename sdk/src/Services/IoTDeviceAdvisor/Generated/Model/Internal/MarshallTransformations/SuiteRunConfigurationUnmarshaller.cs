@@ -64,6 +64,12 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("parallelRun", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ParallelRun = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("primaryDevice", targetDepth))
                 {
                     var unmarshaller = DeviceUnderTestUnmarshaller.Instance;

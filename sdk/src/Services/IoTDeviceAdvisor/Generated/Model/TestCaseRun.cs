@@ -120,6 +120,41 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <para>
         /// Provides test case run status.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PASS</code>: Test passed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAIL</code>: Test failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING</code>: Test has not started running but is scheduled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RUNNING</code>: Test is running
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>STOPPING</code>: Test is performing cleanup steps. You will see this status
+        /// only if you stop a suite run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>STOPPED</code> Test is stopped. You will see this status only if you stop a
+        /// suite run.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ERORR</code>: Test faced an error when running due to an internal issue.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Status Status
         {
@@ -136,7 +171,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property TestCaseDefinitionId. 
         /// <para>
-        /// Provides test case run definition Id.
+        /// Provides test case run definition ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]
@@ -173,7 +208,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property TestCaseRunId. 
         /// <para>
-        /// Provides test case run Id.
+        /// Provides test case run ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]

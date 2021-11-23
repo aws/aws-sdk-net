@@ -97,7 +97,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Suite definition Id of the test suite.
+        /// Suite definition ID of the test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]

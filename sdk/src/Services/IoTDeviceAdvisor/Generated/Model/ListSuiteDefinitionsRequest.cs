@@ -31,6 +31,12 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// <summary>
     /// Container for the parameters to the ListSuiteDefinitions operation.
     /// Lists the Device Advisor test suites you have created.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteDefinitions</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class ListSuiteDefinitionsRequest : AmazonIoTDeviceAdvisorRequest
     {

@@ -79,7 +79,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionArn. 
         /// <para>
-        /// Amazon Resource name of the updated test suite.
+        /// Amazon Resource Name (ARN) of the updated test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -98,7 +98,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Suite definition Id of the updated test suite.
+        /// Suite definition ID of the updated test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]

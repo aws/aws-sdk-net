@@ -29,36 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags attached to an IoT Device Advisor resource.
-    /// 
-    ///  
-    /// <para>
-    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTagsForResource</a>
-    /// action.
-    /// </para>
+    /// This is the response object from the GetEndpoint operation.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonIoTDeviceAdvisorRequest
+    public partial class GetEndpointResponse : AmazonWebServiceResponse
     {
-        private string _resourceArn;
+        private string _endpoint;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// The ARN of the IoT Device Advisor resource.
-        /// </para>
+        /// Gets and sets the property Endpoint.
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string ResourceArn
+        [AWSProperty(Min=45, Max=75)]
+        public string Endpoint
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
         {
-            return this._resourceArn != null;
+            return this._endpoint != null;
         }
 
     }

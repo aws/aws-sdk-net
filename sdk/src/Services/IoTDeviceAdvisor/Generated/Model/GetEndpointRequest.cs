@@ -29,19 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Information of a test device. Required to provide either a thing ARN or a certificate
-    /// ARN.
+    /// Container for the parameters to the GetEndpoint operation.
+    /// 
     /// </summary>
-    public partial class DeviceUnderTest
+    public partial class GetEndpointRequest : AmazonIoTDeviceAdvisorRequest
     {
         private string _certificateArn;
         private string _thingArn;
 
         /// <summary>
-        /// Gets and sets the property CertificateArn. 
-        /// <para>
-        /// Lists devices certificate ARN.
-        /// </para>
+        /// Gets and sets the property CertificateArn.
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
@@ -57,10 +54,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThingArn. 
-        /// <para>
-        /// Lists devices thing ARN.
-        /// </para>
+        /// Gets and sets the property ThingArn.
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string ThingArn

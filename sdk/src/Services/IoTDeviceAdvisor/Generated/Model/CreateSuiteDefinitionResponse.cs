@@ -59,7 +59,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionArn. 
         /// <para>
-        /// Creates a Device Advisor test suite with Amazon Resource name.
+        /// Creates a Device Advisor test suite with Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

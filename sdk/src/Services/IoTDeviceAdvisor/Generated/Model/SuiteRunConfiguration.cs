@@ -33,8 +33,24 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// </summary>
     public partial class SuiteRunConfiguration
     {
+        private bool? _parallelRun;
         private DeviceUnderTest _primaryDevice;
         private List<string> _selectedTestList = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ParallelRun.
+        /// </summary>
+        public bool ParallelRun
+        {
+            get { return this._parallelRun.GetValueOrDefault(); }
+            set { this._parallelRun = value; }
+        }
+
+        // Check to see if ParallelRun property is set
+        internal bool IsSetParallelRun()
+        {
+            return this._parallelRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PrimaryDevice. 

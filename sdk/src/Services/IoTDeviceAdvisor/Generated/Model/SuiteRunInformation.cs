@@ -30,6 +30,12 @@ namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
     /// Information about the suite run.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SuiteRunInformation</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class SuiteRunInformation
     {
@@ -157,7 +163,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionId. 
         /// <para>
-        /// Suite definition Id of the suite run.
+        /// Suite definition ID of the suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]
@@ -214,7 +220,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteRunId. 
         /// <para>
-        /// Suite run Id of the suite run.
+        /// Suite run ID of the suite run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]

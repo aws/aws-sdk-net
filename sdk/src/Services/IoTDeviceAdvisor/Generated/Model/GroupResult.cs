@@ -40,7 +40,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// Group result Id.
+        /// Group result ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]
