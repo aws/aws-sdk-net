@@ -1615,7 +1615,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Creates a Redis user. For more information,
+        /// For Redis engine version 6.0 onwards: Creates a Redis user. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
@@ -1630,6 +1630,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
         /// The request cannot be processed because it would cause the resource to have more than
@@ -1648,7 +1651,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Creates a Redis user. For more information,
+        /// For Redis engine version 6.0 onwards: Creates a Redis user. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
         /// </summary>
@@ -1666,6 +1669,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
         /// The request cannot be processed because it would cause the resource to have more than
@@ -1687,7 +1693,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
+        /// For Redis engine version 6.0 onwards: Creates a Redis user group. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>
@@ -1702,6 +1708,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
         /// The request cannot be processed because it would cause the resource to have more than
@@ -1723,7 +1732,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
+        /// For Redis engine version 6.0 onwards: Creates a Redis user group. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>
         /// </summary>
@@ -1741,6 +1750,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
         /// The request cannot be processed because it would cause the resource to have more than
@@ -2571,7 +2583,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Deletes a user. The user will be removed from
+        /// For Redis engine version 6.0 onwards: Deletes a user. The user will be removed from
         /// all user groups and in turn removed from all replication groups. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
@@ -2588,6 +2600,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
         /// The user is not in active state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
         /// The user does not exist or could not be found.
         /// </exception>
@@ -2597,7 +2612,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Deletes a user. The user will be removed from
+        /// For Redis engine version 6.0 onwards: Deletes a user. The user will be removed from
         /// all user groups and in turn removed from all replication groups. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
@@ -2616,6 +2631,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
         /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
         /// The user does not exist or could not be found.
@@ -2629,7 +2647,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Deletes a user group. The user group must first
+        /// For Redis engine version 6.0 onwards: Deletes a user group. The user group must first
         /// be disassociated from the replication group before it can be deleted. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
@@ -2643,6 +2661,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
         /// The user group is not in an active state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
         /// The user group was not found or does not exist
         /// </exception>
@@ -2652,7 +2673,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// For Redis engine version 6.x onwards: Deletes a user group. The user group must first
+        /// For Redis engine version 6.0 onwards: Deletes a user group. The user group must first
         /// be disassociated from the replication group before it can be deleted. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
         /// Role Based Access Control (RBAC)</a>.
@@ -2668,6 +2689,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
         /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
         /// The user group was not found or does not exist
@@ -3951,6 +3975,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
         /// The user group was not found or does not exist
         /// </exception>
@@ -3970,6 +3997,9 @@ namespace Amazon.ElastiCache
         /// <returns>The response from the DescribeUserGroups service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
         /// The user group was not found or does not exist
@@ -3991,6 +4021,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
         /// The user does not exist or could not be found.
         /// </exception>
@@ -4010,6 +4043,9 @@ namespace Amazon.ElastiCache
         /// <returns>The response from the DescribeUsers service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
         /// The user does not exist or could not be found.
@@ -5057,6 +5093,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
         /// The user is not in active state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
         /// The user does not exist or could not be found.
         /// </exception>
@@ -5082,6 +5121,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
         /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
         /// The user does not exist or could not be found.
@@ -5114,6 +5156,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
         /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
         /// The user group was not found or does not exist
@@ -5149,6 +5194,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
         /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
         /// The user group was not found or does not exist
@@ -5677,6 +5725,13 @@ namespace Amazon.ElastiCache
         /// failover on a specified node group (called shard in the console) in a replication
         /// group (called cluster in the console).
         /// 
+        ///  
+        /// <para>
+        /// This API is designed for testing the behavior of your application in case of ElastiCache
+        /// failover. It is not designed to be an operational tool for initiating a failover to
+        /// overcome a problem you may have with the cluster. Moreover, in certain conditions
+        /// such as large-scale operational events, Amazon may block this API. 
+        /// </para>
         ///  <p class="title"> <b>Note the following</b> 
         /// </para>
         ///  <ul> <li> 
@@ -5791,6 +5846,13 @@ namespace Amazon.ElastiCache
         /// failover on a specified node group (called shard in the console) in a replication
         /// group (called cluster in the console).
         /// 
+        ///  
+        /// <para>
+        /// This API is designed for testing the behavior of your application in case of ElastiCache
+        /// failover. It is not designed to be an operational tool for initiating a failover to
+        /// overcome a problem you may have with the cluster. Moreover, in certain conditions
+        /// such as large-scale operational events, Amazon may block this API. 
+        /// </para>
         ///  <p class="title"> <b>Note the following</b> 
         /// </para>
         ///  <ul> <li> 

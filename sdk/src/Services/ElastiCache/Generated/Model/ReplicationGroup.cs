@@ -41,6 +41,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheNodeType;
         private bool? _clusterEnabled;
         private Endpoint _configurationEndpoint;
+        private DataTieringStatus _dataTiering;
         private string _description;
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private string _kmsKeyId;
@@ -228,6 +229,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetConfigurationEndpoint()
         {
             return this._configurationEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataTiering. 
+        /// <para>
+        /// Enables data tiering. Data tiering is only supported for replication groups using
+        /// the r6gd node type. This parameter must be set to true when using r6gd nodes. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+        /// tiering</a>.
+        /// </para>
+        /// </summary>
+        public DataTieringStatus DataTiering
+        {
+            get { return this._dataTiering; }
+            set { this._dataTiering = value; }
+        }
+
+        // Check to see if DataTiering property is set
+        internal bool IsSetDataTiering()
+        {
+            return this._dataTiering != null;
         }
 
         /// <summary>

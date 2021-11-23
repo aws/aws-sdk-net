@@ -66,6 +66,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MinimumEngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MinimumEngineVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PendingChanges", targetDepth))
                     {
                         var unmarshaller = UserGroupPendingChangesUnmarshaller.Instance;

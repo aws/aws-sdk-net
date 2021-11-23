@@ -142,6 +142,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
         /// Memcached engine version 1.5.16 onward).
         /// </para>

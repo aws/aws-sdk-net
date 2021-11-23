@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserGroup operation.
-    /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
+    /// For Redis engine version 6.0 onwards: Creates a Redis user group. For more information,
     /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>
     /// </summary>

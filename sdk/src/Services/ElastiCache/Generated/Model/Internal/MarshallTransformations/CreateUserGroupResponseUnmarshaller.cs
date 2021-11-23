@@ -93,6 +93,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         response.Engine = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MinimumEngineVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.MinimumEngineVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PendingChanges", targetDepth))
                     {
                         var unmarshaller = UserGroupPendingChangesUnmarshaller.Instance;
@@ -161,6 +167,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValue"))
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceLinkedRoleNotFoundFault"))
+                {
+                    return ServiceLinkedRoleNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TagQuotaPerResourceExceeded"))
                 {

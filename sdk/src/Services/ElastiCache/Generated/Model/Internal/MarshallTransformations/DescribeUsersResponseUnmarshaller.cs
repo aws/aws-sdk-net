@@ -123,6 +123,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterCombinationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceLinkedRoleNotFoundFault"))
+                {
+                    return ServiceLinkedRoleNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotFound"))
                 {
                     return UserNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

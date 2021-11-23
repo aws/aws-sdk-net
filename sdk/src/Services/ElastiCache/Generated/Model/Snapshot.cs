@@ -42,6 +42,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
         private string _cacheSubnetGroupName;
+        private DataTieringStatus _dataTiering;
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
@@ -101,7 +102,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// This parameter is currently disabled.
+        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
+        /// you want to opt-in to the next minor version upgrade campaign. This parameter is disabled
+        /// for previous versions.  
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -249,6 +252,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
         /// Memcached engine version 1.5.16 onward).
         /// </para>
@@ -359,6 +372,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheSubnetGroupName()
         {
             return this._cacheSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataTiering. 
+        /// <para>
+        /// Enables data tiering. Data tiering is only supported for replication groups using
+        /// the r6gd node type. This parameter must be set to true when using r6gd nodes. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+        /// tiering</a>.
+        /// </para>
+        /// </summary>
+        public DataTieringStatus DataTiering
+        {
+            get { return this._dataTiering; }
+            set { this._dataTiering = value; }
+        }
+
+        // Check to see if DataTiering property is set
+        internal bool IsSetDataTiering()
+        {
+            return this._dataTiering != null;
         }
 
         /// <summary>

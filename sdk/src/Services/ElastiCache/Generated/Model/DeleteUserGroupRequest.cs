@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserGroup operation.
-    /// For Redis engine version 6.x onwards: Deletes a user group. The user group must first
+    /// For Redis engine version 6.0 onwards: Deletes a user group. The user group must first
     /// be disassociated from the replication group before it can be deleted. For more information,
     /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>.

@@ -35,6 +35,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string _arn;
         private string _engine;
+        private string _minimumEngineVersion;
         private UserGroupPendingChanges _pendingChanges;
         private List<string> _replicationGroups = new List<string>();
         private string _status;
@@ -75,6 +76,21 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinimumEngineVersion.
+        /// </summary>
+        public string MinimumEngineVersion
+        {
+            get { return this._minimumEngineVersion; }
+            set { this._minimumEngineVersion = value; }
+        }
+
+        // Check to see if MinimumEngineVersion property is set
+        internal bool IsSetMinimumEngineVersion()
+        {
+            return this._minimumEngineVersion != null;
         }
 
         /// <summary>

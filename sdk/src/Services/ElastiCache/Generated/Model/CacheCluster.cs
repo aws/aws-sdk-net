@@ -159,7 +159,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// This parameter is currently disabled.
+        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
+        /// you want to opt-in to the next minor version upgrade campaign. This parameter is disabled
+        /// for previous versions.  
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -344,6 +346,16 @@ namespace Amazon.ElastiCache.Model
         ///  <ul> <li> 
         /// <para>
         /// Current generation: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
+        /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
+        /// 
         /// </para>
         ///  
         /// <para>
