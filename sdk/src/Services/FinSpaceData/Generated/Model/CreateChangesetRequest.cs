@@ -144,7 +144,9 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For example, you could specify the following for <code>formatParams</code>:
+        ///  For example, you could specify the following for <code>formatParams</code>: <code>
+        /// "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None"
+        /// } </code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
