@@ -94,7 +94,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The type of IP addresses used by the subnets for your load balancer. The possible
         /// values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for
-        /// IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
+        /// IPv4 and IPv6 addresses). 
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

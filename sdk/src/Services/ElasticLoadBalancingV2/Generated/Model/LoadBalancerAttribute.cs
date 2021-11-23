@@ -72,6 +72,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket
         /// for the access logs.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+        /// the load balancer. It is set to <code>false</code> for internet-facing load balancers
+        /// and <code>true</code> for internal load balancers, preventing unintended access to
+        /// your internal load balancer through an internet gateway.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The following attributes are supported by only Application Load Balancers:
