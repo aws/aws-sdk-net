@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZoneId;
         private string _cidrBlock;
         private string _ipv6CidrBlock;
+        private bool? _ipv6Native;
         private string _outpostArn;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _vpcId;
@@ -85,7 +86,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateSubnetRequest with the parameterized properties
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
-        /// <param name="cidrBlock">The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</param>
+        /// <param name="cidrBlock">The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>. This parameter is not supported for an IPv6 only subnet.</param>
         public CreateSubnetRequest(string vpcId, string cidrBlock)
         {
             _vpcId = vpcId;
@@ -152,8 +153,11 @@ namespace Amazon.EC2.Model
         /// We modify the specified CIDR block to its canonical form; for example, if you specify
         /// <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not supported for an IPv6 only subnet.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string CidrBlock
         {
             get { return this._cidrBlock; }
@@ -172,6 +176,10 @@ namespace Amazon.EC2.Model
         /// The IPv6 network range for the subnet, in CIDR notation. The subnet size must use
         /// a /64 prefix length.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required for an IPv6 only subnet.
+        /// </para>
         /// </summary>
         public string Ipv6CidrBlock
         {
@@ -183,6 +191,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlock()
         {
             return this._ipv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Native. 
+        /// <para>
+        /// Indicates whether to create an IPv6 only subnet.
+        /// </para>
+        /// </summary>
+        public bool Ipv6Native
+        {
+            get { return this._ipv6Native.GetValueOrDefault(); }
+            set { this._ipv6Native = value; }
+        }
+
+        // Check to see if Ipv6Native property is set
+        internal bool IsSetIpv6Native()
+        {
+            return this._ipv6Native.HasValue; 
         }
 
         /// <summary>

@@ -109,6 +109,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Ipv6CidrBlockAssociationSet.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ipv6Native", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6Native = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("mapCustomerOwnedIpOnLaunch", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -131,6 +137,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("privateDnsNameOptionsOnLaunch", targetDepth))
+                    {
+                        var unmarshaller = PrivateDnsNameOptionsOnLaunchUnmarshaller.Instance;
+                        unmarshalledObject.PrivateDnsNameOptionsOnLaunch = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))

@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDefaultSubnet Request Marshaller
+    /// ModifyPrivateDnsNameOptions Request Marshaller
     /// </summary>       
-    public class CreateDefaultSubnetRequestMarshaller : IMarshaller<IRequest, CreateDefaultSubnetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyPrivateDnsNameOptionsRequestMarshaller : IMarshaller<IRequest, ModifyPrivateDnsNameOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDefaultSubnetRequest)input);
+            return this.Marshall((ModifyPrivateDnsNameOptionsRequest)input);
         }
     
         /// <summary>
@@ -50,28 +50,36 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDefaultSubnetRequest publicRequest)
+        public IRequest Marshall(ModifyPrivateDnsNameOptionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "CreateDefaultSubnet");
+            request.Parameters.Add("Action", "ModifyPrivateDnsNameOptions");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAvailabilityZone())
+                if(publicRequest.IsSetEnableResourceNameDnsAAAARecord())
                 {
-                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
+                    request.Parameters.Add("EnableResourceNameDnsAAAARecord", StringUtils.FromBool(publicRequest.EnableResourceNameDnsAAAARecord));
                 }
-                if(publicRequest.IsSetIpv6Native())
+                if(publicRequest.IsSetEnableResourceNameDnsARecord())
                 {
-                    request.Parameters.Add("Ipv6Native", StringUtils.FromBool(publicRequest.Ipv6Native));
+                    request.Parameters.Add("EnableResourceNameDnsARecord", StringUtils.FromBool(publicRequest.EnableResourceNameDnsARecord));
+                }
+                if(publicRequest.IsSetInstanceId())
+                {
+                    request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetPrivateDnsHostnameType())
+                {
+                    request.Parameters.Add("PrivateDnsHostnameType", StringUtils.FromString(publicRequest.PrivateDnsHostnameType));
                 }
             }
             return request;
         }
-                    private static CreateDefaultSubnetRequestMarshaller _instance = new CreateDefaultSubnetRequestMarshaller();        
+                    private static ModifyPrivateDnsNameOptionsRequestMarshaller _instance = new ModifyPrivateDnsNameOptionsRequestMarshaller();        
 
-        internal static CreateDefaultSubnetRequestMarshaller GetInstance()
+        internal static ModifyPrivateDnsNameOptionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -79,7 +87,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDefaultSubnetRequestMarshaller Instance
+        public static ModifyPrivateDnsNameOptionsRequestMarshaller Instance
         {
             get
             {

@@ -10880,7 +10880,7 @@ namespace Amazon.EC2
         /// <para>
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
         /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -10917,7 +10917,7 @@ namespace Amazon.EC2
         /// <para>
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
         /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -10955,7 +10955,7 @@ namespace Amazon.EC2
         /// <para>
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
         /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -10996,7 +10996,7 @@ namespace Amazon.EC2
         /// <para>
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+        /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
         /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -18897,8 +18897,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To modify some attributes, the instance must be stopped. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-        /// attributes of a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modify
+        /// a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method.</param>
@@ -18924,8 +18924,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To modify some attributes, the instance must be stopped. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-        /// attributes of a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modify
+        /// a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method.</param>
@@ -19354,6 +19354,34 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyNetworkInterfaceAttribute service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         Task<ModifyNetworkInterfaceAttributeResponse> ModifyNetworkInterfaceAttributeAsync(ModifyNetworkInterfaceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyPrivateDnsNameOptions
+
+
+        /// <summary>
+        /// Modifies the options for instance hostnames for the specified instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPrivateDnsNameOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyPrivateDnsNameOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPrivateDnsNameOptions">REST API Reference for ModifyPrivateDnsNameOptions Operation</seealso>
+        ModifyPrivateDnsNameOptionsResponse ModifyPrivateDnsNameOptions(ModifyPrivateDnsNameOptionsRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the options for instance hostnames for the specified instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyPrivateDnsNameOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyPrivateDnsNameOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPrivateDnsNameOptions">REST API Reference for ModifyPrivateDnsNameOptions Operation</seealso>
+        Task<ModifyPrivateDnsNameOptionsResponse> ModifyPrivateDnsNameOptionsAsync(ModifyPrivateDnsNameOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -20584,8 +20612,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Enables detailed monitoring for a running instance. Otherwise, basic monitoring is
-        /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitor
+        /// your instances using CloudWatch</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -20602,8 +20630,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Enables detailed monitoring for a running instance. Otherwise, basic monitoring is
-        /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitor
+        /// your instances using CloudWatch</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -20899,8 +20927,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-        /// console output and rebooting instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Troubleshoot
+        /// an unreachable instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootInstances service method.</param>
@@ -20924,8 +20952,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-        /// console output and rebooting instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Troubleshoot
+        /// an unreachable instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootInstances service method.</param>
@@ -22840,8 +22868,8 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about configuring your operating system to generate a crash dump
         /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
-        /// a diagnostic interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
-        /// a Diagnostic Interrupt</a> (Windows instances).
+        /// a diagnostic interrupt (for advanced users)</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
+        /// a diagnostic interrupt (for advanced users)</a> (Windows instances).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendDiagnosticInterrupt service method.</param>
@@ -22874,8 +22902,8 @@ namespace Amazon.EC2
         /// <para>
         /// For more information about configuring your operating system to generate a crash dump
         /// when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
-        /// a diagnostic interrupt</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
-        /// a Diagnostic Interrupt</a> (Windows instances).
+        /// a diagnostic interrupt (for advanced users)</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
+        /// a diagnostic interrupt (for advanced users)</a> (Windows instances).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendDiagnosticInterrupt service method.</param>
@@ -22925,8 +22953,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-        /// instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+        /// and start your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
@@ -22970,8 +22998,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-        /// instances</a> in the <i>Amazon EC2 User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop
+        /// and start your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
@@ -23119,7 +23147,7 @@ namespace Amazon.EC2
         /// <para>
         /// When you stop an instance, we attempt to shut it down forcibly after a short while.
         /// If your instance appears stuck in the stopping state after a period of time, there
-        /// may be an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+        /// may be an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
         /// stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -23178,7 +23206,7 @@ namespace Amazon.EC2
         /// <para>
         /// When you stop an instance, we attempt to shut it down forcibly after a short while.
         /// If your instance appears stuck in the stopping state after a period of time, there
-        /// may be an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+        /// may be an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshoot
         /// stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

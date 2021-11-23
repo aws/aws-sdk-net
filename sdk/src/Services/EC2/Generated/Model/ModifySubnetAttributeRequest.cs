@@ -37,8 +37,11 @@ namespace Amazon.EC2.Model
         private bool? _assignIpv6AddressOnCreation;
         private string _customerOwnedIpv4Pool;
         private bool? _enableDns64;
+        private bool? _enableResourceNameDnsAAAARecordOnLaunch;
+        private bool? _enableResourceNameDnsARecordOnLaunch;
         private bool? _mapCustomerOwnedIpOnLaunch;
         private bool? _mapPublicIpOnLaunch;
+        private HostnameType _privateDnsHostnameTypeOnLaunch;
         private string _subnetId;
 
         /// <summary>
@@ -110,6 +113,42 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableResourceNameDnsAAAARecordOnLaunch. 
+        /// <para>
+        /// Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.
+        /// </para>
+        /// </summary>
+        public bool EnableResourceNameDnsAAAARecordOnLaunch
+        {
+            get { return this._enableResourceNameDnsAAAARecordOnLaunch.GetValueOrDefault(); }
+            set { this._enableResourceNameDnsAAAARecordOnLaunch = value; }
+        }
+
+        // Check to see if EnableResourceNameDnsAAAARecordOnLaunch property is set
+        internal bool IsSetEnableResourceNameDnsAAAARecordOnLaunch()
+        {
+            return this._enableResourceNameDnsAAAARecordOnLaunch.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableResourceNameDnsARecordOnLaunch. 
+        /// <para>
+        /// Indicates whether to respond to DNS queries for instance hostnames with DNS A records.
+        /// </para>
+        /// </summary>
+        public bool EnableResourceNameDnsARecordOnLaunch
+        {
+            get { return this._enableResourceNameDnsARecordOnLaunch.GetValueOrDefault(); }
+            set { this._enableResourceNameDnsARecordOnLaunch = value; }
+        }
+
+        // Check to see if EnableResourceNameDnsARecordOnLaunch property is set
+        internal bool IsSetEnableResourceNameDnsARecordOnLaunch()
+        {
+            return this._enableResourceNameDnsARecordOnLaunch.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MapCustomerOwnedIpOnLaunch. 
         /// <para>
         /// Specify <code>true</code> to indicate that network interfaces attached to instances
@@ -150,6 +189,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetMapPublicIpOnLaunch()
         {
             return this._mapPublicIpOnLaunch.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsHostnameTypeOnLaunch. 
+        /// <para>
+        /// The type of hostnames to assign to instances in the subnet at launch. For IPv4 only
+        /// subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6
+        /// only subnets, an instance DNS name must be based on the instance ID. For dual-stack
+        /// subnets, you can specify whether DNS names use the instance IPv4 address or the instance
+        /// ID.
+        /// </para>
+        /// </summary>
+        public HostnameType PrivateDnsHostnameTypeOnLaunch
+        {
+            get { return this._privateDnsHostnameTypeOnLaunch; }
+            set { this._privateDnsHostnameTypeOnLaunch = value; }
+        }
+
+        // Check to see if PrivateDnsHostnameTypeOnLaunch property is set
+        internal bool IsSetPrivateDnsHostnameTypeOnLaunch()
+        {
+            return this._privateDnsHostnameTypeOnLaunch != null;
         }
 
         /// <summary>

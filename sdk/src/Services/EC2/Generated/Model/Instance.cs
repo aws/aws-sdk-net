@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         private string _instanceId;
         private InstanceLifecycleType _instanceLifecycle;
         private InstanceType _instanceType;
+        private string _ipv6Address;
         private string _kernelId;
         private string _keyName;
         private DateTime? _launchTime;
@@ -65,6 +66,7 @@ namespace Amazon.EC2.Model
         private PlatformValues _platform;
         private string _platformDetails;
         private string _privateDnsName;
+        private PrivateDnsNameOptionsResponse _privateDnsNameOptions;
         private string _privateIpAddress;
         private List<ProductCode> _productCodes = new List<ProductCode>();
         private string _publicDnsName;
@@ -452,6 +454,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// The IPv6 address assigned to the instance.
+        /// </para>
+        /// </summary>
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KernelId. 
         /// <para>
         /// The kernel associated with this instance, if applicable.
@@ -675,6 +695,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsName()
         {
             return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsNameOptions. 
+        /// <para>
+        /// The options for the instance hostname.
+        /// </para>
+        /// </summary>
+        public PrivateDnsNameOptionsResponse PrivateDnsNameOptions
+        {
+            get { return this._privateDnsNameOptions; }
+            set { this._privateDnsNameOptions = value; }
+        }
+
+        // Check to see if PrivateDnsNameOptions property is set
+        internal bool IsSetPrivateDnsNameOptions()
+        {
+            return this._privateDnsNameOptions != null;
         }
 
         /// <summary>

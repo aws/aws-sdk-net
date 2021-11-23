@@ -642,6 +642,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "Tenancy", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.Tenancy));
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetPrivateDnsNameOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.IsSetEnableResourceNameDnsAAAARecord())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "PrivateDnsNameOptions" + "." + "EnableResourceNameDnsAAAARecord", StringUtils.FromBool(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.EnableResourceNameDnsAAAARecord));
+                        }
+                        if(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.IsSetEnableResourceNameDnsARecord())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "PrivateDnsNameOptions" + "." + "EnableResourceNameDnsARecord", StringUtils.FromBool(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.EnableResourceNameDnsARecord));
+                        }
+                        if(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.IsSetHostnameType())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "PrivateDnsNameOptions" + "." + "HostnameType", StringUtils.FromString(publicRequest.LaunchTemplateData.PrivateDnsNameOptions.HostnameType));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetRamDiskId())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "RamDiskId", StringUtils.FromString(publicRequest.LaunchTemplateData.RamDiskId));

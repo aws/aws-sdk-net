@@ -175,7 +175,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PartitionNumber. 
         /// <para>
-        /// Reserved for future use.
+        /// The number of the partition in which to place the instance. Valid only if the placement
+        /// group strategy is set to <code>partition</code>.
         /// </para>
         /// </summary>
         public int PartitionNumber

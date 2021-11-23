@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6CidrBlockAssociation. 
         /// <para>
-        /// Information about the IPv6 CIDR block association.
+        /// Information about the IPv6 association.
         /// </para>
         /// </summary>
         public SubnetIpv6CidrBlockAssociation Ipv6CidrBlockAssociation

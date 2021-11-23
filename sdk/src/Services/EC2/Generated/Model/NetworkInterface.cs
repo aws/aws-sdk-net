@@ -41,7 +41,9 @@ namespace Amazon.EC2.Model
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private NetworkInterfaceType _interfaceType;
         private List<Ipv4PrefixSpecification> _ipv4Prefixes = new List<Ipv4PrefixSpecification>();
+        private string _ipv6Address;
         private List<NetworkInterfaceIpv6Address> _ipv6Addresses = new List<NetworkInterfaceIpv6Address>();
+        private bool? _ipv6Native;
         private List<Ipv6PrefixSpecification> _ipv6Prefixes = new List<Ipv6PrefixSpecification>();
         private string _macAddress;
         private string _networkInterfaceId;
@@ -208,6 +210,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6Address. 
+        /// <para>
+        /// The IPv6 globally unique address associated with the network interface.
+        /// </para>
+        /// </summary>
+        public string Ipv6Address
+        {
+            get { return this._ipv6Address; }
+            set { this._ipv6Address = value; }
+        }
+
+        // Check to see if Ipv6Address property is set
+        internal bool IsSetIpv6Address()
+        {
+            return this._ipv6Address != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
         /// The IPv6 addresses associated with the network interface.
@@ -223,6 +243,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6Addresses()
         {
             return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Native. 
+        /// <para>
+        /// Indicates whether this is an IPv6 only network interface.
+        /// </para>
+        /// </summary>
+        public bool Ipv6Native
+        {
+            get { return this._ipv6Native.GetValueOrDefault(); }
+            set { this._ipv6Native = value; }
+        }
+
+        // Check to see if Ipv6Native property is set
+        internal bool IsSetIpv6Native()
+        {
+            return this._ipv6Native.HasValue; 
         }
 
         /// <summary>

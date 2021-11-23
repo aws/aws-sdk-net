@@ -45,33 +45,35 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate the target Spot Instance capacity across the Spot Instance
-        /// pools specified by the EC2 Fleet.
+        /// The strategy that determines how to allocate the target Spot Instance capacity across
+        /// the Spot Instance pools specified by the EC2 Fleet.
         /// </para>
         ///  
         /// <para>
-        /// If the allocation strategy is <code>lowest-price</code>, EC2 Fleet launches instances
-        /// from the Spot Instance pools with the lowest price. This is the default allocation
-        /// strategy.
+        ///  <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools
+        /// with the lowest price.
         /// </para>
         ///  
         /// <para>
-        /// If the allocation strategy is <code>diversified</code>, EC2 Fleet launches instances
-        /// from all of the Spot Instance pools that you specify.
+        ///  <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance
+        /// pools that you specify.
         /// </para>
         ///  
         /// <para>
-        /// If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet
-        /// launches instances from Spot Instance pools with optimal capacity for the number of
-        /// instances that are launching. To give certain instance types a higher chance of launching
-        /// first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance
-        /// type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>.
-        /// You can assign the same priority to different <code>LaunchTemplateOverrides</code>.
-        /// EC2 implements the priorities on a best-effort basis, but optimizes for capacity first.
-        /// <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a
-        /// launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set
-        /// to <code>prioritized</code>, the same priority is applied when fulfilling On-Demand
-        /// capacity.
+        ///  <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from
+        /// Spot Instance pools with optimal capacity for the number of instances that are launching.
+        /// To give certain instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>.
+        /// Set a priority for each instance type by using the <code>Priority</code> parameter
+        /// for <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+        /// <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort
+        /// basis, but optimizes for capacity first. <code>capacity-optimized-prioritized</code>
+        /// is supported only if your fleet uses a launch template. Note that if the On-Demand
+        /// <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same priority
+        /// is applied when fulfilling On-Demand capacity.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>lowest-price</code> 
         /// </para>
         /// </summary>
         public SpotAllocationStrategy AllocationStrategy
@@ -89,7 +91,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceInterruptionBehavior. 
         /// <para>
-        /// The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+        /// The behavior when a Spot Instance is interrupted.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>terminate</code> 
         /// </para>
         /// </summary>
         public SpotInstanceInterruptionBehavior InstanceInterruptionBehavior
@@ -107,10 +113,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstancePoolsToUseCount. 
         /// <para>
-        /// The number of Spot pools across which to allocate your target Spot capacity. Valid
-        /// only when <b>AllocationStrategy</b> is set to <code>lowest-price</code>. EC2 Fleet
-        /// selects the cheapest Spot pools and evenly allocates your target Spot capacity across
-        /// the number of Spot pools that you specify.
+        /// The number of Spot pools across which to allocate your target Spot capacity. Supported
+        /// only when <code>AllocationStrategy</code> is set to <code>lowest-price</code>. EC2
+        /// Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity
+        /// across the number of Spot pools that you specify.
         /// </para>
         ///  
         /// <para>
@@ -178,6 +184,15 @@ namespace Amazon.EC2.Model
         /// The minimum target capacity for Spot Instances in the fleet. If the minimum target
         /// capacity is not reached, the fleet launches no instances.
         /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>instant</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// At least one of the following must be specified: <code>SingleAvailabilityZone</code>
+        /// | <code>SingleInstanceType</code> 
+        /// </para>
         /// </summary>
         public int MinTargetCapacity
         {
@@ -195,6 +210,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleAvailabilityZone. 
         /// <para>
         /// Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+        /// </para>
+        ///  
+        /// <para>
         /// Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
@@ -214,7 +232,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleInstanceType. 
         /// <para>
         /// Indicates that the fleet uses a single instance type to launch all Spot Instances
-        /// in the fleet. Supported only for fleets of type <code>instant</code>.
+        /// in the fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleInstanceType

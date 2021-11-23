@@ -197,6 +197,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Placement = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("privateDnsNameOptions", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplatePrivateDnsNameOptionsUnmarshaller.Instance;
+                        unmarshalledObject.PrivateDnsNameOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ramDiskId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

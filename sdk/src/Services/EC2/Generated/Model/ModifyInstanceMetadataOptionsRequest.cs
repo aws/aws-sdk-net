@@ -49,15 +49,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
-        /// This parameter enables or disables the HTTP metadata endpoint on your instances. If
-        /// the parameter is not specified, the existing state is maintained.
+        /// Enables or disables the HTTP metadata endpoint on your instances. If the parameter
+        /// is not specified, the existing state is maintained.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// If you specify a value of <code>disabled</code>, you will not be able to access your
-        /// instance metadata.
+        /// If you specify a value of <code>disabled</code>, you cannot access your instance metadata.
         /// </para>
-        ///  </note>
         /// </summary>
         public InstanceMetadataEndpointState HttpEndpoint
         {
@@ -74,7 +72,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpProtocolIpv6. 
         /// <para>
-        /// Enables or disables the IPv6 endpoint for the instance metadata service.
+        /// Enables or disables the IPv6 endpoint for the instance metadata service. This setting
+        /// applies only if you have enabled the HTTP metadata endpoint.
         /// </para>
         /// </summary>
         public InstanceMetadataProtocolState HttpProtocolIpv6

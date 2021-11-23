@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an IPv6 CIDR block associated with a subnet.
+    /// Describes an association between a subnet and an IPv6 CIDR block.
     /// </summary>
     public partial class SubnetIpv6CidrBlockAssociation
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The association ID for the CIDR block.
+        /// The ID of the association.
         /// </para>
         /// </summary>
         public string AssociationId
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6CidrBlockState. 
         /// <para>
-        /// Information about the state of the CIDR block.
+        /// The state of the CIDR block.
         /// </para>
         /// </summary>
         public SubnetCidrBlockState Ipv6CidrBlockState

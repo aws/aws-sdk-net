@@ -9248,6 +9248,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyPrivateDnsNameOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyPrivateDnsNameOptions");
+
+            var request = InstantiateClassGenerator.Execute<ModifyPrivateDnsNameOptionsRequest>();
+            var marshaller = new ModifyPrivateDnsNameOptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyPrivateDnsNameOptionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyPrivateDnsNameOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyReservedInstancesMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyReservedInstances");

@@ -43,11 +43,22 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// The order of the launch template overrides to use in fulfilling On-Demand capacity.
-        /// If you specify <code>lowest-price</code>, EC2 Fleet uses price to determine the order,
-        /// launching the lowest price first. If you specify <code>prioritized</code>, EC2 Fleet
-        /// uses the priority that you assigned to each launch template override, launching the
-        /// highest priority first. If you do not specify a value, EC2 Fleet defaults to <code>lowest-price</code>.
+        /// The strategy that determines the order of the launch template overrides to use in
+        /// fulfilling On-Demand capacity.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching
+        /// the lowest price first.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each
+        /// launch template override, launching the highest priority first.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>lowest-price</code> 
         /// </para>
         /// </summary>
         public FleetOnDemandAllocationStrategy AllocationStrategy
@@ -66,6 +77,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CapacityReservationOptions. 
         /// <para>
         /// The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+        /// </para>
+        ///  
+        /// <para>
         /// Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
@@ -105,6 +119,15 @@ namespace Amazon.EC2.Model
         /// The minimum target capacity for On-Demand Instances in the fleet. If the minimum target
         /// capacity is not reached, the fleet launches no instances.
         /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>instant</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// At least one of the following must be specified: <code>SingleAvailabilityZone</code>
+        /// | <code>SingleInstanceType</code> 
+        /// </para>
         /// </summary>
         public int MinTargetCapacity
         {
@@ -122,7 +145,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleAvailabilityZone. 
         /// <para>
         /// Indicates that the fleet launches all On-Demand Instances into a single Availability
-        /// Zone. Supported only for fleets of type <code>instant</code>.
+        /// Zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleAvailabilityZone
@@ -141,7 +168,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SingleInstanceType. 
         /// <para>
         /// Indicates that the fleet uses a single instance type to launch all On-Demand Instances
-        /// in the fleet. Supported only for fleets of type <code>instant</code>.
+        /// in the fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>instant</code>.
         /// </para>
         /// </summary>
         public bool SingleInstanceType

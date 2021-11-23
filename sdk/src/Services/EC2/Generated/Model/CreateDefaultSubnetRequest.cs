@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
     public partial class CreateDefaultSubnetRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private bool? _ipv6Native;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -56,6 +57,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Native. 
+        /// <para>
+        /// Indicates whether to create an IPv6 only subnet. If you already have a default subnet
+        /// for this Availability Zone, you must delete it before you can create an IPv6 only
+        /// subnet.
+        /// </para>
+        /// </summary>
+        public bool Ipv6Native
+        {
+            get { return this._ipv6Native.GetValueOrDefault(); }
+            set { this._ipv6Native = value; }
+        }
+
+        // Check to see if Ipv6Native property is set
+        internal bool IsSetIpv6Native()
+        {
+            return this._ipv6Native.HasValue; 
         }
 
     }

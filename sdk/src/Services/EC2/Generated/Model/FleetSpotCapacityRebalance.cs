@@ -76,6 +76,15 @@ namespace Amazon.EC2.Model
         /// The amount of time (in seconds) that Amazon EC2 waits before terminating the old Spot
         /// Instance after launching a new replacement Spot Instance.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid only when <code>replacementStrategy</code> is set to <code>launch-before-terminate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: Minimum value of <code>120</code> seconds. Maximum value of <code>7200</code>
+        /// seconds.
+        /// </para>
         /// </summary>
         public int TerminationDelay
         {

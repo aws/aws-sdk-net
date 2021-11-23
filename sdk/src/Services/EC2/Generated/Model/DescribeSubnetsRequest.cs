@@ -75,7 +75,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>default-for-az</code> - Indicates whether this is the default subnet for the
-        /// Availability Zone. You can also use <code>defaultForAz</code> as the filter name.
+        /// Availability Zone (<code>true</code> | <code>false</code>). You can also use <code>defaultForAz</code>
+        /// as the filter name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -91,6 +92,11 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
         /// associated with the subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6-native</code> - Indicates whether this is an IPv6 only subnet (<code>true</code>
+        /// | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Ipv6CidrBlock", StringUtils.FromString(publicRequest.Ipv6CidrBlock));
                 }
+                if(publicRequest.IsSetIpv6Native())
+                {
+                    request.Parameters.Add("Ipv6Native", StringUtils.FromBool(publicRequest.Ipv6Native));
+                }
                 if(publicRequest.IsSetOutpostArn())
                 {
                     request.Parameters.Add("OutpostArn", StringUtils.FromString(publicRequest.OutpostArn));

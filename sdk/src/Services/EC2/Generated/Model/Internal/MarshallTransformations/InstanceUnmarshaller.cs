@@ -177,6 +177,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ipv6Address", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("kernelId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -249,6 +255,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PrivateDnsName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("privateDnsNameOptions", targetDepth))
+                    {
+                        var unmarshaller = PrivateDnsNameOptionsResponseUnmarshaller.Instance;
+                        unmarshalledObject.PrivateDnsNameOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("privateIpAddress", targetDepth))

@@ -510,6 +510,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("Placement" + "." + "Tenancy", StringUtils.FromString(publicRequest.Placement.Tenancy));
                     }
                 }
+                if(publicRequest.IsSetPrivateDnsNameOptions())
+                {
+                    if(publicRequest.PrivateDnsNameOptions.IsSetEnableResourceNameDnsAAAARecord())
+                    {
+                        request.Parameters.Add("PrivateDnsNameOptions" + "." + "EnableResourceNameDnsAAAARecord", StringUtils.FromBool(publicRequest.PrivateDnsNameOptions.EnableResourceNameDnsAAAARecord));
+                    }
+                    if(publicRequest.PrivateDnsNameOptions.IsSetEnableResourceNameDnsARecord())
+                    {
+                        request.Parameters.Add("PrivateDnsNameOptions" + "." + "EnableResourceNameDnsARecord", StringUtils.FromBool(publicRequest.PrivateDnsNameOptions.EnableResourceNameDnsARecord));
+                    }
+                    if(publicRequest.PrivateDnsNameOptions.IsSetHostnameType())
+                    {
+                        request.Parameters.Add("PrivateDnsNameOptions" + "." + "HostnameType", StringUtils.FromString(publicRequest.PrivateDnsNameOptions.HostnameType));
+                    }
+                }
                 if(publicRequest.IsSetPrivateIpAddress())
                 {
                     request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(publicRequest.PrivateIpAddress));

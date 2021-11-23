@@ -104,11 +104,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Ipv4Prefixes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ipv6Address", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6AddressesSet/item", targetDepth))
                     {
                         var unmarshaller = NetworkInterfaceIpv6AddressUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6Addresses.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6Native", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6Native = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ipv6PrefixSet/item", targetDepth))

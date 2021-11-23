@@ -141,6 +141,7 @@ namespace Amazon.EC2.Model
         private bool? _monitoring;
         private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
         private Placement _placement;
+        private PrivateDnsNameOptionsRequest _privateDnsNameOptions;
         private string _privateIpAddress;
         private string _ramdiskId;
         private List<string> _securityGroupIds = new List<string>();
@@ -258,7 +259,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CpuOptions. 
         /// <para>
-        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+        /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
         /// CPU options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -824,6 +825,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateDnsNameOptions. 
+        /// <para>
+        /// The options for the instance hostname. The default values are inherited from the subnet.
+        /// </para>
+        /// </summary>
+        public PrivateDnsNameOptionsRequest PrivateDnsNameOptions
+        {
+            get { return this._privateDnsNameOptions; }
+            set { this._privateDnsNameOptions = value; }
+        }
+
+        // Check to see if PrivateDnsNameOptions property is set
+        internal bool IsSetPrivateDnsNameOptions()
+        {
+            return this._privateDnsNameOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
         /// [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address
@@ -978,11 +997,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-        /// commands on your Linux instance at launch</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-        /// User Data</a> (Windows). If you are using a command line tool, base64-encoding is
-        /// performed for you, and you can load the text from a file. Otherwise, you must provide
-        /// base64-encoded text. User data is limited to 16 KB.
+        /// The user data to make available to the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run
+        /// commands on your Linux instance at launch</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html">Run
+        /// commands on your Windows instance at launch</a>. If you are using a command line tool,
+        /// base64-encoding is performed for you, and you can load the text from a file. Otherwise,
+        /// you must provide base64-encoded text. User data is limited to 16 KB.
         /// </para>
         /// </summary>
         public string UserData

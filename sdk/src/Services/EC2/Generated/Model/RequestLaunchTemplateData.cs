@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplatesMonitoringRequest _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> _networkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>();
         private LaunchTemplatePlacementRequest _placement;
+        private LaunchTemplatePrivateDnsNameOptionsRequest _privateDnsNameOptions;
         private string _ramDiskId;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _securityGroups = new List<string>();
@@ -527,6 +528,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPlacement()
         {
             return this._placement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsNameOptions. 
+        /// <para>
+        /// The options for the instance hostname. The default values are inherited from the subnet.
+        /// </para>
+        /// </summary>
+        public LaunchTemplatePrivateDnsNameOptionsRequest PrivateDnsNameOptions
+        {
+            get { return this._privateDnsNameOptions; }
+            set { this._privateDnsNameOptions = value; }
+        }
+
+        // Check to see if PrivateDnsNameOptions property is set
+        internal bool IsSetPrivateDnsNameOptions()
+        {
+            return this._privateDnsNameOptions != null;
         }
 
         /// <summary>

@@ -42,10 +42,12 @@ namespace Amazon.EC2.Model
         private bool? _defaultForAz;
         private bool? _enableDns64;
         private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
+        private bool? _ipv6Native;
         private bool? _mapCustomerOwnedIpOnLaunch;
         private bool? _mapPublicIpOnLaunch;
         private string _outpostArn;
         private string _ownerId;
+        private PrivateDnsNameOptionsOnLaunch _privateDnsNameOptionsOnLaunch;
         private SubnetState _state;
         private string _subnetArn;
         private string _subnetId;
@@ -218,6 +220,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6Native. 
+        /// <para>
+        /// Indicates whether this is an IPv6 only subnet.
+        /// </para>
+        /// </summary>
+        public bool Ipv6Native
+        {
+            get { return this._ipv6Native.GetValueOrDefault(); }
+            set { this._ipv6Native = value; }
+        }
+
+        // Check to see if Ipv6Native property is set
+        internal bool IsSetIpv6Native()
+        {
+            return this._ipv6Native.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MapCustomerOwnedIpOnLaunch. 
         /// <para>
         /// Indicates whether a network interface created in this subnet (including a network
@@ -288,6 +308,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsNameOptionsOnLaunch. 
+        /// <para>
+        /// The type of hostnames to assign to instances in the subnet at launch. An instance
+        /// hostname is based on the IPv4 address or ID of the instance.
+        /// </para>
+        /// </summary>
+        public PrivateDnsNameOptionsOnLaunch PrivateDnsNameOptionsOnLaunch
+        {
+            get { return this._privateDnsNameOptionsOnLaunch; }
+            set { this._privateDnsNameOptionsOnLaunch = value; }
+        }
+
+        // Check to see if PrivateDnsNameOptionsOnLaunch property is set
+        internal bool IsSetPrivateDnsNameOptionsOnLaunch()
+        {
+            return this._privateDnsNameOptionsOnLaunch != null;
         }
 
         /// <summary>
