@@ -36,7 +36,7 @@ namespace Amazon.SecurityToken.Model
     /// without user-specific credentials or configuration. For a comparison of <code>AssumeRoleWithSAML</code>
     /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the STS API operations</a> in the <i>IAM User Guide</i>.
+    /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -234,8 +234,8 @@ namespace Amazon.SecurityToken.Model
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-        /// a URL that Enables Federated Users to Access the Management Console</a> in the <i>IAM
-        /// User Guide</i>.
+        /// a URL that Enables Federated Users to Access the Amazon Web Services Management Console</a>
+        /// in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

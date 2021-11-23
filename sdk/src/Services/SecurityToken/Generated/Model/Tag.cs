@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken.Model
     /// You can pass custom key-value pair attributes when you assume a role or federate a
     /// user. These are called session tags. You can then use the session tags to control
     /// access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-    /// STS Sessions</a> in the <i>IAM User Guide</i>.
+    /// Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class Tag
     {

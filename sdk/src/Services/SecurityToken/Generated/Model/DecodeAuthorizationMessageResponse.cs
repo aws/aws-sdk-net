@@ -40,7 +40,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property DecodedMessage. 
         /// <para>
-        /// An XML document that contains the decoded message.
+        /// The API returns a response with the decoded message.
         /// </para>
         /// </summary>
         public string DecodedMessage

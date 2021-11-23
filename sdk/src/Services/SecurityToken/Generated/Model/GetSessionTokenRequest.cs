@@ -41,7 +41,7 @@ namespace Amazon.SecurityToken.Model
     /// MFA code, then the API returns an access denied error. For a comparison of <code>GetSessionToken</code>
     /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the STS API operations</a> in the <i>IAM User Guide</i>.
+    /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -142,8 +142,8 @@ namespace Amazon.SecurityToken.Model
         /// has a policy that requires MFA authentication. The value is either the serial number
         /// for a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name
         /// (ARN) for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).
-        /// You can find the device for an IAM user by going to the Management Console and viewing
-        /// the user's security credentials. 
+        /// You can find the device for an IAM user by going to the Amazon Web Services Management
+        /// Console and viewing the user's security credentials. 
         /// </para>
         ///  
         /// <para>
