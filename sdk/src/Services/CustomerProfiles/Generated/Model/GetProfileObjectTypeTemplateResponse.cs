@@ -36,6 +36,7 @@ namespace Amazon.CustomerProfiles.Model
         private bool? _allowProfileCreation;
         private Dictionary<string, ObjectTypeField> _fields = new Dictionary<string, ObjectTypeField>();
         private Dictionary<string, List<ObjectTypeKey>> _keys = new Dictionary<string, List<ObjectTypeKey>>();
+        private string _sourceLastUpdatedTimestampFormat;
         private string _sourceName;
         private string _sourceObject;
         private string _templateId;
@@ -96,6 +97,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetKeys()
         {
             return this._keys != null && this._keys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceLastUpdatedTimestampFormat. 
+        /// <para>
+        /// The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
+        /// up.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string SourceLastUpdatedTimestampFormat
+        {
+            get { return this._sourceLastUpdatedTimestampFormat; }
+            set { this._sourceLastUpdatedTimestampFormat = value; }
+        }
+
+        // Check to see if SourceLastUpdatedTimestampFormat property is set
+        internal bool IsSetSourceLastUpdatedTimestampFormat()
+        {
+            return this._sourceLastUpdatedTimestampFormat != null;
         }
 
         /// <summary>

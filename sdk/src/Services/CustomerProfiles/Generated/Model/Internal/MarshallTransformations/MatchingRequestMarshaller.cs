@@ -45,10 +45,43 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MatchingRequest requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutoMerging())
+            {
+                context.Writer.WritePropertyName("AutoMerging");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoMergingMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoMerging, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
                 context.Writer.Write(requestObject.Enabled);
+            }
+
+            if(requestObject.IsSetExportingConfig())
+            {
+                context.Writer.WritePropertyName("ExportingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExportingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExportingConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetJobSchedule())
+            {
+                context.Writer.WritePropertyName("JobSchedule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JobScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.JobSchedule, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

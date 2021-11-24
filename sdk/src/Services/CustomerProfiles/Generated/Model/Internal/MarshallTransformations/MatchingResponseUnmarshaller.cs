@@ -64,10 +64,28 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoMerging", targetDepth))
+                {
+                    var unmarshaller = AutoMergingUnmarshaller.Instance;
+                    unmarshalledObject.AutoMerging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExportingConfig", targetDepth))
+                {
+                    var unmarshaller = ExportingConfigUnmarshaller.Instance;
+                    unmarshalledObject.ExportingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobSchedule", targetDepth))
+                {
+                    var unmarshaller = JobScheduleUnmarshaller.Instance;
+                    unmarshalledObject.JobSchedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -138,6 +138,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSourceLastUpdatedTimestampFormat())
+                {
+                    context.Writer.WritePropertyName("SourceLastUpdatedTimestampFormat");
+                    context.Writer.Write(publicRequest.SourceLastUpdatedTimestampFormat);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

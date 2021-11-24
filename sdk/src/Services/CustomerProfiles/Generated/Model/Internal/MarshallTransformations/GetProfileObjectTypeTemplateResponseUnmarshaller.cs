@@ -69,6 +69,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.Keys = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceLastUpdatedTimestampFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceLastUpdatedTimestampFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

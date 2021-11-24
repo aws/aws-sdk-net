@@ -33,7 +33,28 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class MatchingRequest
     {
+        private AutoMerging _autoMerging;
         private bool? _enabled;
+        private ExportingConfig _exportingConfig;
+        private JobSchedule _jobSchedule;
+
+        /// <summary>
+        /// Gets and sets the property AutoMerging. 
+        /// <para>
+        /// Configuration information about the auto-merging process.
+        /// </para>
+        /// </summary>
+        public AutoMerging AutoMerging
+        {
+            get { return this._autoMerging; }
+            set { this._autoMerging = value; }
+        }
+
+        // Check to see if AutoMerging property is set
+        internal bool IsSetAutoMerging()
+        {
+            return this._autoMerging != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -52,6 +73,43 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportingConfig. 
+        /// <para>
+        /// Configuration information for exporting Identity Resolution results, for example,
+        /// to an S3 bucket.
+        /// </para>
+        /// </summary>
+        public ExportingConfig ExportingConfig
+        {
+            get { return this._exportingConfig; }
+            set { this._exportingConfig = value; }
+        }
+
+        // Check to see if ExportingConfig property is set
+        internal bool IsSetExportingConfig()
+        {
+            return this._exportingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobSchedule. 
+        /// <para>
+        /// The day and time when do you want to start the Identity Resolution Job every week.
+        /// </para>
+        /// </summary>
+        public JobSchedule JobSchedule
+        {
+            get { return this._jobSchedule; }
+            set { this._jobSchedule = value; }
+        }
+
+        // Check to see if JobSchedule property is set
+        internal bool IsSetJobSchedule()
+        {
+            return this._jobSchedule != null;
         }
 
     }

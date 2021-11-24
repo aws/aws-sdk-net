@@ -64,6 +64,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConfidenceScore", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.ConfidenceScore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MatchId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

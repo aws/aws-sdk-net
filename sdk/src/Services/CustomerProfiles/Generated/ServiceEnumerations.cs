@@ -25,6 +25,56 @@ namespace Amazon.CustomerProfiles
 {
 
     /// <summary>
+    /// Constants used for properties of type ConflictResolvingModel.
+    /// </summary>
+    public class ConflictResolvingModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RECENCY for ConflictResolvingModel
+        /// </summary>
+        public static readonly ConflictResolvingModel RECENCY = new ConflictResolvingModel("RECENCY");
+        /// <summary>
+        /// Constant SOURCE for ConflictResolvingModel
+        /// </summary>
+        public static readonly ConflictResolvingModel SOURCE = new ConflictResolvingModel("SOURCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConflictResolvingModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictResolvingModel FindValue(string value)
+        {
+            return FindValue<ConflictResolvingModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictResolvingModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataPullMode.
     /// </summary>
     public class DataPullMode : ConstantClass
@@ -184,6 +234,146 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Gender(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdentityResolutionJobStatus.
+    /// </summary>
+    public class IdentityResolutionJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for IdentityResolutionJobStatus
+        /// </summary>
+        public static readonly IdentityResolutionJobStatus COMPLETED = new IdentityResolutionJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for IdentityResolutionJobStatus
+        /// </summary>
+        public static readonly IdentityResolutionJobStatus FAILED = new IdentityResolutionJobStatus("FAILED");
+        /// <summary>
+        /// Constant FIND_MATCHING for IdentityResolutionJobStatus
+        /// </summary>
+        public static readonly IdentityResolutionJobStatus FIND_MATCHING = new IdentityResolutionJobStatus("FIND_MATCHING");
+        /// <summary>
+        /// Constant MERGING for IdentityResolutionJobStatus
+        /// </summary>
+        public static readonly IdentityResolutionJobStatus MERGING = new IdentityResolutionJobStatus("MERGING");
+        /// <summary>
+        /// Constant PARTIAL_SUCCESS for IdentityResolutionJobStatus
+        /// </summary>
+        public static readonly IdentityResolutionJobStatus PARTIAL_SUCCESS = new IdentityResolutionJobStatus("PARTIAL_SUCCESS");
+        /// <summary>
+        /// Constant PENDING for IdentityResolutionJobStatus
+        /// </summary>
+        public static readonly IdentityResolutionJobStatus PENDING = new IdentityResolutionJobStatus("PENDING");
+        /// <summary>
+        /// Constant PREPROCESSING for IdentityResolutionJobStatus
+        /// </summary>
+        public static readonly IdentityResolutionJobStatus PREPROCESSING = new IdentityResolutionJobStatus("PREPROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentityResolutionJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityResolutionJobStatus FindValue(string value)
+        {
+            return FindValue<IdentityResolutionJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityResolutionJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobScheduleDayOfTheWeek.
+    /// </summary>
+    public class JobScheduleDayOfTheWeek : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for JobScheduleDayOfTheWeek
+        /// </summary>
+        public static readonly JobScheduleDayOfTheWeek FRIDAY = new JobScheduleDayOfTheWeek("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for JobScheduleDayOfTheWeek
+        /// </summary>
+        public static readonly JobScheduleDayOfTheWeek MONDAY = new JobScheduleDayOfTheWeek("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for JobScheduleDayOfTheWeek
+        /// </summary>
+        public static readonly JobScheduleDayOfTheWeek SATURDAY = new JobScheduleDayOfTheWeek("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for JobScheduleDayOfTheWeek
+        /// </summary>
+        public static readonly JobScheduleDayOfTheWeek SUNDAY = new JobScheduleDayOfTheWeek("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for JobScheduleDayOfTheWeek
+        /// </summary>
+        public static readonly JobScheduleDayOfTheWeek THURSDAY = new JobScheduleDayOfTheWeek("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for JobScheduleDayOfTheWeek
+        /// </summary>
+        public static readonly JobScheduleDayOfTheWeek TUESDAY = new JobScheduleDayOfTheWeek("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for JobScheduleDayOfTheWeek
+        /// </summary>
+        public static readonly JobScheduleDayOfTheWeek WEDNESDAY = new JobScheduleDayOfTheWeek("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobScheduleDayOfTheWeek(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobScheduleDayOfTheWeek FindValue(string value)
+        {
+            return FindValue<JobScheduleDayOfTheWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobScheduleDayOfTheWeek(string value)
         {
             return FindValue(value);
         }

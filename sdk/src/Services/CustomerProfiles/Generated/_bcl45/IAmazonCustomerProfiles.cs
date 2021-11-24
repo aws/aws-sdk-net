@@ -148,6 +148,11 @@ namespace Amazon.CustomerProfiles
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
         /// resolution</a>: set <code>Matching</code> to true. 
         /// </para>
+        ///  
+        /// <para>
+        /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+        /// confused deputy prevention</a> for sample policies that you should apply. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -187,6 +192,11 @@ namespace Amazon.CustomerProfiles
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
         /// resolution</a>: set <code>Matching</code> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+        /// confused deputy prevention</a> for sample policies that you should apply. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
@@ -641,6 +651,102 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetAutoMergingPreview
+
+
+        /// <summary>
+        /// Tests the auto-merging settings of your Identity Resolution Job without merging your
+        /// data. It randomly selects a sample of matching groups from the existing matching results,
+        /// and applies the automerging settings that you provided. You can then view the number
+        /// of profiles in the sample, the number of matches, and the number of profiles identified
+        /// to be merged. This enables you to evaluate the accuracy of the attributes in your
+        /// matching list. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't view which profiles are matched and would be merged.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend you use this API to do a dry run of the automerging process
+        /// before running the Identity Resolution Job. Include <b>at least</b> two matching attributes.
+        /// If your matching list includes too few attributes (such as only <code>FirstName</code>
+        /// or only <code>LastName</code>), there may be a large number of matches. This increases
+        /// the chances of erroneous merges.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoMergingPreview service method.</param>
+        /// 
+        /// <returns>The response from the GetAutoMergingPreview service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">REST API Reference for GetAutoMergingPreview Operation</seealso>
+        GetAutoMergingPreviewResponse GetAutoMergingPreview(GetAutoMergingPreviewRequest request);
+
+
+
+        /// <summary>
+        /// Tests the auto-merging settings of your Identity Resolution Job without merging your
+        /// data. It randomly selects a sample of matching groups from the existing matching results,
+        /// and applies the automerging settings that you provided. You can then view the number
+        /// of profiles in the sample, the number of matches, and the number of profiles identified
+        /// to be merged. This enables you to evaluate the accuracy of the attributes in your
+        /// matching list. 
+        /// 
+        ///  
+        /// <para>
+        /// You can't view which profiles are matched and would be merged.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend you use this API to do a dry run of the automerging process
+        /// before running the Identity Resolution Job. Include <b>at least</b> two matching attributes.
+        /// If your matching list includes too few attributes (such as only <code>FirstName</code>
+        /// or only <code>LastName</code>), there may be a large number of matches. This increases
+        /// the chances of erroneous merges.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutoMergingPreview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutoMergingPreview service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">REST API Reference for GetAutoMergingPreview Operation</seealso>
+        Task<GetAutoMergingPreviewResponse> GetAutoMergingPreviewAsync(GetAutoMergingPreviewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDomain
 
 
@@ -696,6 +802,78 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomain">REST API Reference for GetDomain Operation</seealso>
         Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIdentityResolutionJob
+
+
+        /// <summary>
+        /// Returns information about an Identity Resolution Job in a specific domain. 
+        /// 
+        ///  
+        /// <para>
+        /// Identity Resolution Jobs are set up using the Amazon Connect admin console. For more
+        /// information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
+        /// Identity Resolution to consolidate similar profiles</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityResolutionJob service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityResolutionJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">REST API Reference for GetIdentityResolutionJob Operation</seealso>
+        GetIdentityResolutionJobResponse GetIdentityResolutionJob(GetIdentityResolutionJobRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about an Identity Resolution Job in a specific domain. 
+        /// 
+        ///  
+        /// <para>
+        /// Identity Resolution Jobs are set up using the Amazon Connect admin console. For more
+        /// information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
+        /// Identity Resolution to consolidate similar profiles</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityResolutionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIdentityResolutionJob service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">REST API Reference for GetIdentityResolutionJob Operation</seealso>
+        Task<GetIdentityResolutionJobResponse> GetIdentityResolutionJobAsync(GetIdentityResolutionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -776,8 +954,17 @@ namespace Amazon.CustomerProfiles
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon Connect starts a batch process every Saturday at 12AM UTC to identify matching
-        /// profiles. The results are returned up to seven days after the Saturday run.
+        /// The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
+        /// Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution
+        /// Job. If you do not specify a date and time for Identity Resolution Job to run, by
+        /// default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code>
+        /// in the <code>MatchingRequest</code>, you can download the results from S3.
         /// </para>
         ///  </important> 
         /// <para>
@@ -867,8 +1054,17 @@ namespace Amazon.CustomerProfiles
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon Connect starts a batch process every Saturday at 12AM UTC to identify matching
-        /// profiles. The results are returned up to seven days after the Saturday run.
+        /// The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
+        /// Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution
+        /// Job. If you do not specify a date and time for Identity Resolution Job to run, by
+        /// default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code>
+        /// in the <code>MatchingRequest</code>, you can download the results from S3.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1188,6 +1384,66 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListIdentityResolutionJobs
+
+
+        /// <summary>
+        /// Lists all of the Identity Resolution Jobs in your domain. The response sorts the list
+        /// by <code>JobStartTime</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityResolutionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListIdentityResolutionJobs service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">REST API Reference for ListIdentityResolutionJobs Operation</seealso>
+        ListIdentityResolutionJobsResponse ListIdentityResolutionJobs(ListIdentityResolutionJobsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all of the Identity Resolution Jobs in your domain. The response sorts the list
+        /// by <code>JobStartTime</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityResolutionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdentityResolutionJobs service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">REST API Reference for ListIdentityResolutionJobs Operation</seealso>
+        Task<ListIdentityResolutionJobsResponse> ListIdentityResolutionJobsAsync(ListIdentityResolutionJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2064,6 +2320,11 @@ namespace Amazon.CustomerProfiles
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
         /// resolution</a>: set <code>Matching</code> to true. 
         /// </para>
+        ///  
+        /// <para>
+        /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+        /// confused deputy prevention</a> for sample policies that you should apply. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomain service method.</param>
         /// 
@@ -2101,6 +2362,11 @@ namespace Amazon.CustomerProfiles
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
         /// resolution</a>: set <code>Matching</code> to true. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
+        /// confused deputy prevention</a> for sample policies that you should apply. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomain service method.</param>

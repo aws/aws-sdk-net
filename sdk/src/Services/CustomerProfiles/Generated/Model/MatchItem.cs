@@ -33,8 +33,28 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class MatchItem
     {
+        private double? _confidenceScore;
         private string _matchId;
         private List<string> _profileIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ConfidenceScore. 
+        /// <para>
+        /// A number between 0 and 1 that represents the confidence level of assigning profiles
+        /// to a matching group. A score of 1 likely indicates an exact match.
+        /// </para>
+        /// </summary>
+        public double ConfidenceScore
+        {
+            get { return this._confidenceScore.GetValueOrDefault(); }
+            set { this._confidenceScore = value; }
+        }
+
+        // Check to see if ConfidenceScore property is set
+        internal bool IsSetConfidenceScore()
+        {
+            return this._confidenceScore.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MatchId. 
