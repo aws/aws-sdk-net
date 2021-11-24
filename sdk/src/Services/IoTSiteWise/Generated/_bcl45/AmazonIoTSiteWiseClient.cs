@@ -376,6 +376,97 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  AssociateTimeSeriesToAssetProperty
+
+
+        /// <summary>
+        /// Associates a time series (data stream) with an asset property.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTimeSeriesToAssetProperty service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTimeSeriesToAssetProperty service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">REST API Reference for AssociateTimeSeriesToAssetProperty Operation</seealso>
+        public virtual AssociateTimeSeriesToAssetPropertyResponse AssociateTimeSeriesToAssetProperty(AssociateTimeSeriesToAssetPropertyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTimeSeriesToAssetPropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTimeSeriesToAssetPropertyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTimeSeriesToAssetPropertyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a time series (data stream) with an asset property.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTimeSeriesToAssetProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateTimeSeriesToAssetProperty service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">REST API Reference for AssociateTimeSeriesToAssetProperty Operation</seealso>
+        public virtual Task<AssociateTimeSeriesToAssetPropertyResponse> AssociateTimeSeriesToAssetPropertyAsync(AssociateTimeSeriesToAssetPropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTimeSeriesToAssetPropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTimeSeriesToAssetPropertyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateTimeSeriesToAssetPropertyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchAssociateProjectAssets
 
 
@@ -1454,6 +1545,12 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates a project in the specified portal.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Make sure that the project name and description don't contain confidential information.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// 
@@ -1503,6 +1600,12 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates a project in the specified portal.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Make sure that the project name and description don't contain confidential information.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
@@ -2185,6 +2288,149 @@ namespace Amazon.IoTSiteWise
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTimeSeries
+
+
+        /// <summary>
+        /// Deletes a time series (data stream). If you delete a time series that's associated
+        /// with an asset property, the asset property still exists, but the time series will
+        /// no longer be associated with this asset property.
+        /// 
+        ///  
+        /// <para>
+        /// To identify a time series, do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the time series is associated with an asset property, specify one of the following:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>alias</code> of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTimeSeries service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTimeSeries service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">REST API Reference for DeleteTimeSeries Operation</seealso>
+        public virtual DeleteTimeSeriesResponse DeleteTimeSeries(DeleteTimeSeriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTimeSeriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTimeSeriesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTimeSeriesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a time series (data stream). If you delete a time series that's associated
+        /// with an asset property, the asset property still exists, but the time series will
+        /// no longer be associated with this asset property.
+        /// 
+        ///  
+        /// <para>
+        /// To identify a time series, do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the time series is associated with an asset property, specify one of the following:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>alias</code> of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTimeSeries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTimeSeries service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">REST API Reference for DeleteTimeSeries Operation</seealso>
+        public virtual Task<DeleteTimeSeriesResponse> DeleteTimeSeriesAsync(DeleteTimeSeriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTimeSeriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTimeSeriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTimeSeriesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3249,6 +3495,137 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  DescribeTimeSeries
+
+
+        /// <summary>
+        /// Retrieves information about a time series (data stream).
+        /// 
+        ///  
+        /// <para>
+        /// To identify a time series, do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the time series is associated with an asset property, specify one of the following:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>alias</code> of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTimeSeries service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTimeSeries service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">REST API Reference for DescribeTimeSeries Operation</seealso>
+        public virtual DescribeTimeSeriesResponse DescribeTimeSeries(DescribeTimeSeriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTimeSeriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTimeSeriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTimeSeriesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a time series (data stream).
+        /// 
+        ///  
+        /// <para>
+        /// To identify a time series, do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the time series is associated with an asset property, specify one of the following:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>alias</code> of the time series.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTimeSeries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTimeSeries service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">REST API Reference for DescribeTimeSeries Operation</seealso>
+        public virtual Task<DescribeTimeSeriesResponse> DescribeTimeSeriesAsync(DescribeTimeSeriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTimeSeriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTimeSeriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeTimeSeriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateAssets
 
 
@@ -3338,6 +3715,97 @@ namespace Amazon.IoTSiteWise
             options.ResponseUnmarshaller = DisassociateAssetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateAssetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateTimeSeriesFromAssetProperty
+
+
+        /// <summary>
+        /// Disassociates a time series (data stream) from an asset property.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTimeSeriesFromAssetProperty service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTimeSeriesFromAssetProperty service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">REST API Reference for DisassociateTimeSeriesFromAssetProperty Operation</seealso>
+        public virtual DisassociateTimeSeriesFromAssetPropertyResponse DisassociateTimeSeriesFromAssetProperty(DisassociateTimeSeriesFromAssetPropertyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTimeSeriesFromAssetPropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTimeSeriesFromAssetPropertyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTimeSeriesFromAssetPropertyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates a time series (data stream) from an asset property.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTimeSeriesFromAssetProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateTimeSeriesFromAssetProperty service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">REST API Reference for DisassociateTimeSeriesFromAssetProperty Operation</seealso>
+        public virtual Task<DisassociateTimeSeriesFromAssetPropertyResponse> DisassociateTimeSeriesFromAssetPropertyAsync(DisassociateTimeSeriesFromAssetPropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTimeSeriesFromAssetPropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTimeSeriesFromAssetPropertyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateTimeSeriesFromAssetPropertyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4817,6 +5285,89 @@ namespace Amazon.IoTSiteWise
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTimeSeries
+
+
+        /// <summary>
+        /// Retrieves a paginated list of time series (data streams).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTimeSeries service method.</param>
+        /// 
+        /// <returns>The response from the ListTimeSeries service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">REST API Reference for ListTimeSeries Operation</seealso>
+        public virtual ListTimeSeriesResponse ListTimeSeries(ListTimeSeriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTimeSeriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTimeSeriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTimeSeriesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a paginated list of time series (data streams).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTimeSeries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTimeSeries service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">REST API Reference for ListTimeSeries Operation</seealso>
+        public virtual Task<ListTimeSeriesResponse> ListTimeSeriesAsync(ListTimeSeriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTimeSeriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTimeSeriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTimeSeriesResponse>(request, options, cancellationToken);
         }
 
         #endregion

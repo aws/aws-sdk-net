@@ -89,5 +89,10 @@ namespace Amazon.IoTSiteWise.Model
         /// Paginator for ListProjects operation
         ///</summary>
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTimeSeries operation
+        ///</summary>
+        IListTimeSeriesPaginator ListTimeSeries(ListTimeSeriesRequest request);
     }
 }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeStorageConfiguration operation
+    /// Response Unmarshaller for ListTimeSeries operation
     /// </summary>  
-    public class DescribeStorageConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTimeSeriesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,22 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeStorageConfigurationResponse response = new DescribeStorageConfigurationResponse();
+            ListTimeSeriesResponse response = new ListTimeSeriesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configurationStatus", targetDepth))
-                {
-                    var unmarshaller = ConfigurationStatusUnmarshaller.Instance;
-                    response.ConfigurationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("disassociatedDataStorage", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DisassociatedDataStorage = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastUpdateDate", targetDepth))
+                if (context.TestExpression("TimeSeriesSummaries", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdateDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("multiLayerStorage", targetDepth))
-                {
-                    var unmarshaller = MultiLayerStorageUnmarshaller.Instance;
-                    response.MultiLayerStorage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StorageType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<TimeSeriesSummary, TimeSeriesSummaryUnmarshaller>(TimeSeriesSummaryUnmarshaller.Instance);
+                    response.TimeSeriesSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,10 +86,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictingOperationException"))
-                {
-                    return ConflictingOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
                     return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -115,10 +93,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -132,9 +106,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             return new AmazonIoTSiteWiseException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeStorageConfigurationResponseUnmarshaller _instance = new DescribeStorageConfigurationResponseUnmarshaller();        
+        private static ListTimeSeriesResponseUnmarshaller _instance = new ListTimeSeriesResponseUnmarshaller();        
 
-        internal static DescribeStorageConfigurationResponseUnmarshaller GetInstance()
+        internal static ListTimeSeriesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +116,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeStorageConfigurationResponseUnmarshaller Instance
+        public static ListTimeSeriesResponseUnmarshaller Instance
         {
             get
             {

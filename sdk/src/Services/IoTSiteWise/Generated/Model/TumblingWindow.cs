@@ -30,21 +30,21 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and
-    /// contiguous time window. You use this window in metrics to aggregate data from properties
-    /// and other assets.
+    /// contiguous time window. You can use this window in metrics to aggregate data from
+    /// properties and other assets.
     /// 
     ///  
     /// <para>
     /// You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when
-    /// you specify an interval or offset. Note that <code>m</code> represents minutes, and
-    /// <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds
-    /// in <code>offset</code>.
+    /// you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code>
+    /// represents hours, <code>d</code> represents days, and <code>w</code> represents weeks.
+    /// You can also use <code>s</code> to represent seconds in <code>offset</code>.
     /// </para>
     ///  
     /// <para>
     /// The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-    /// 8601 format</a>. For example, <code>PT5S</code> represents five seconds, <code>PT5M</code>
-    /// represents five minutes, and <code>PT5H</code> represents five hours.
+    /// 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code>
+    /// represents 5 minutes, and <code>PT5H</code> represents 5 hours.
     /// </para>
     /// </summary>
     public partial class TumblingWindow
@@ -101,13 +101,13 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you create the metric before or at 6:00 PM (UTC), you get the first aggregation
-        /// result at 6 PM (UTC) on the day when you create the metric.
+        /// If you create the metric before or at 6 PM (UTC), you get the first aggregation result
+        /// at 6 PM (UTC) on the day when you create the metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you create the metric after 6:00 PM (UTC), you get the first aggregation result
-        /// at 6 PM (UTC) the next day.
+        /// If you create the metric after 6 PM (UTC), you get the first aggregation result at
+        /// 6 PM (UTC) the next day.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -120,13 +120,13 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you create the metric before or at 6:00 PM (UTC), you get the first aggregation
-        /// result at 6 PM (UTC) on the day when you create the metric.
+        /// If you create the metric before or at 6 PM (UTC), you get the first aggregation result
+        /// at 6 PM (UTC) on the day when you create the metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you create the metric after 6:00 PM (UTC), you get the first aggregation result
-        /// at 6 PM (UTC) the next day.
+        /// If you create the metric after 6 PM (UTC), you get the first aggregation result at
+        /// 6 PM (UTC) the next day.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -134,7 +134,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>00:03:00</code> for <code>offset</code> and <code>5m</code>
+        /// For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code>
         /// for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first
         /// aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08
         /// PM (UTC). 
@@ -151,13 +151,13 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you create the metric before or at 6:00 PM (PST), you get the first aggregation
-        /// result at 6 PM (PST) on the day when you create the metric.
+        /// If you create the metric before or at 6 PM (PST), you get the first aggregation result
+        /// at 6 PM (PST) on the day when you create the metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you create the metric after 6:00 PM (PST), you get the first aggregation result
-        /// at 6 PM (PST) the next day.
+        /// If you create the metric after 6 PM (PST), you get the first aggregation result at
+        /// 6 PM (PST) the next day.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

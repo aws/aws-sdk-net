@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutStorageConfiguration Request Marshaller
+    /// AssociateTimeSeriesToAssetProperty Request Marshaller
     /// </summary>       
-    public class PutStorageConfigurationRequestMarshaller : IMarshaller<IRequest, PutStorageConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateTimeSeriesToAssetPropertyRequestMarshaller : IMarshaller<IRequest, AssociateTimeSeriesToAssetPropertyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutStorageConfigurationRequest)input);
+            return this.Marshall((AssociateTimeSeriesToAssetPropertyRequest)input);
         }
 
         /// <summary>
@@ -52,56 +52,54 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutStorageConfigurationRequest publicRequest)
+        public IRequest Marshall(AssociateTimeSeriesToAssetPropertyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTSiteWise");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/configuration/account/storage";
+            
+            if (publicRequest.IsSetAlias())
+                request.Parameters.Add("alias", StringUtils.FromString(publicRequest.Alias));
+            
+            if (publicRequest.IsSetAssetId())
+                request.Parameters.Add("assetId", StringUtils.FromString(publicRequest.AssetId));
+            
+            if (publicRequest.IsSetPropertyId())
+                request.Parameters.Add("propertyId", StringUtils.FromString(publicRequest.PropertyId));
+            request.ResourcePath = "/timeseries/associate/";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisassociatedDataStorage())
+                if(publicRequest.IsSetClientToken())
                 {
-                    context.Writer.WritePropertyName("disassociatedDataStorage");
-                    context.Writer.Write(publicRequest.DisassociatedDataStorage);
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
                 }
 
-                if(publicRequest.IsSetMultiLayerStorage())
+                else if(!(publicRequest.IsSetClientToken()))
                 {
-                    context.Writer.WritePropertyName("multiLayerStorage");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MultiLayerStorageMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MultiLayerStorage, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("storageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
             
             request.HostPrefix = $"api.";
 
             return request;
         }
-        private static PutStorageConfigurationRequestMarshaller _instance = new PutStorageConfigurationRequestMarshaller();        
+        private static AssociateTimeSeriesToAssetPropertyRequestMarshaller _instance = new AssociateTimeSeriesToAssetPropertyRequestMarshaller();        
 
-        internal static PutStorageConfigurationRequestMarshaller GetInstance()
+        internal static AssociateTimeSeriesToAssetPropertyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +107,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutStorageConfigurationRequestMarshaller Instance
+        public static AssociateTimeSeriesToAssetPropertyRequestMarshaller Instance
         {
             get
             {

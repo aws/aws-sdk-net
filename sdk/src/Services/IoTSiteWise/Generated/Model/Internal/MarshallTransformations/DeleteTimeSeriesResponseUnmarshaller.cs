@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeStorageConfiguration operation
+    /// Response Unmarshaller for DeleteTimeSeries operation
     /// </summary>  
-    public class DescribeStorageConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteTimeSeriesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,43 +45,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeStorageConfigurationResponse response = new DescribeStorageConfigurationResponse();
+            DeleteTimeSeriesResponse response = new DeleteTimeSeriesResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("configurationStatus", targetDepth))
-                {
-                    var unmarshaller = ConfigurationStatusUnmarshaller.Instance;
-                    response.ConfigurationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("disassociatedDataStorage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DisassociatedDataStorage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdateDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdateDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("multiLayerStorage", targetDepth))
-                {
-                    var unmarshaller = MultiLayerStorageUnmarshaller.Instance;
-                    response.MultiLayerStorage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StorageType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -116,10 +81,6 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -132,9 +93,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             return new AmazonIoTSiteWiseException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeStorageConfigurationResponseUnmarshaller _instance = new DescribeStorageConfigurationResponseUnmarshaller();        
+        private static DeleteTimeSeriesResponseUnmarshaller _instance = new DeleteTimeSeriesResponseUnmarshaller();        
 
-        internal static DescribeStorageConfigurationResponseUnmarshaller GetInstance()
+        internal static DeleteTimeSeriesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +103,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeStorageConfigurationResponseUnmarshaller Instance
+        public static DeleteTimeSeriesResponseUnmarshaller Instance
         {
             get
             {

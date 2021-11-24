@@ -31,6 +31,12 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the CreateProject operation.
     /// Creates a project in the specified portal.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Make sure that the project name and description don't contain confidential information.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateProjectRequest : AmazonIoTSiteWiseRequest
     {

@@ -138,5 +138,13 @@ namespace Amazon.IoTSiteWise.Model
         {
             return new ListProjectsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListTimeSeries operation
+        ///</summary>
+        public IListTimeSeriesPaginator ListTimeSeries(ListTimeSeriesRequest request) 
+        {
+            return new ListTimeSeriesPaginator(this.client, request);
+        }
     }
 }

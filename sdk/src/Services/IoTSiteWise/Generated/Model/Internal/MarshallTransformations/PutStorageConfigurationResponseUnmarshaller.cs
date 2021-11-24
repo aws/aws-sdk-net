@@ -57,6 +57,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.ConfigurationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("disassociatedDataStorage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DisassociatedDataStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("multiLayerStorage", targetDepth))
                 {
                     var unmarshaller = MultiLayerStorageUnmarshaller.Instance;

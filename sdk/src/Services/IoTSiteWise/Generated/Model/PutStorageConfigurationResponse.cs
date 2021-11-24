@@ -34,6 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class PutStorageConfigurationResponse : AmazonWebServiceResponse
     {
         private ConfigurationStatus _configurationStatus;
+        private DisassociatedDataStorageState _disassociatedDataStorage;
         private MultiLayerStorage _multiLayerStorage;
         private StorageType _storageType;
 
@@ -51,6 +52,45 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetConfigurationStatus()
         {
             return this._configurationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisassociatedDataStorage. 
+        /// <para>
+        /// Contains the storage configuration for time series (data streams) that aren't associated
+        /// with asset properties. The <code>disassociatedDataStorage</code> can be one of the
+        /// following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with
+        /// asset properties.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        ///  <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that
+        /// aren't associated with asset properties.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
+        /// streams</a> in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DisassociatedDataStorageState DisassociatedDataStorage
+        {
+            get { return this._disassociatedDataStorage; }
+            set { this._disassociatedDataStorage = value; }
+        }
+
+        // Check to see if DisassociatedDataStorage property is set
+        internal bool IsSetDisassociatedDataStorage()
+        {
+            return this._disassociatedDataStorage != null;
         }
 
         /// <summary>

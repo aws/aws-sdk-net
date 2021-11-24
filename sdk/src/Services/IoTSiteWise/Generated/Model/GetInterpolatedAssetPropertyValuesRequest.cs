@@ -151,30 +151,31 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IntervalWindowInSeconds. 
         /// <para>
-        /// The query interval for the window in seconds. IoT SiteWise computes each interpolated
-        /// value by using data points from the timestamp of each interval minus the window to
-        /// the timestamp of each interval plus the window. If not specified, the window is between
-        /// the start time minus the interval and the end time plus the interval. 
+        /// The query interval for the window, in seconds. IoT SiteWise computes each interpolated
+        /// value by using data points from the timestamp of each interval, minus the window to
+        /// the timestamp of each interval plus the window. If not specified, the window ranges
+        /// between the start time minus the interval and the end time plus the interval.
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
         /// If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
-        /// <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.
+        /// value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If no data point is found during the specified query window, IoT SiteWise won't return
-        /// an interpolated value for the interval. This indicates that there's a gap in the ingested
-        /// data points.
+        /// If a data point isn't found during the specified query window, IoT SiteWise won't
+        /// return an interpolated value for the interval. This indicates that there's a gap in
+        /// the ingested data points.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
         /// For example, you can get the interpolated temperature values for a wind turbine every
         /// 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at
-        /// 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM -
-        /// 2 hours) to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated
-        /// value, uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on
-        /// July 3, 2021 to compute the second interpolated value, and so on. 
+        /// 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus
+        /// 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated
+        /// value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11
+        /// AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and
+        /// so on. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=320000000)]
@@ -347,9 +348,9 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// For example, you can use this operation to return the interpolated temperature values
         /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation
-        /// starts on July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value
-        /// on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM,
-        /// and so on.
+        /// starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on
+        /// July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and
+        /// so on.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -365,10 +366,10 @@ namespace Amazon.IoTSiteWise.Model
         ///  
         /// <para>
         /// For example, you can get the state of an on-off valve every 24 hours over a duration
-        /// of 7 days. If the interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise returns
+        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns
         /// the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9
-        /// AM as the first interpolated value. If no data point is found after 9 AM on July 2,
-        /// 2021, IoT SiteWise uses the same interpolated value for the rest of the days.
+        /// AM as the first interpolated value. If a data point isn't found after 9 AM on July
+        /// 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.
         /// </para>
         ///  </li> </ul>
         /// </summary>
