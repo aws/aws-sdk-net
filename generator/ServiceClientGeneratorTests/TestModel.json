@@ -28,7 +28,7 @@
     }
   },
   "shapes": {
-    "ChildItem": {"type": "string"},
+    "ChildItem": { "type": "string" },
     "DeleteItemInput": {
       "type": "structure",
       "members": {
@@ -57,7 +57,7 @@
     "ListItemsInput": {
       "type": "structure",
       "members": {
-        "NextToken": {"shape": "NextToken"}
+        "NextToken": { "shape": "NextToken" }
       }
     },
     "ListItemsOutput": {
@@ -66,12 +66,19 @@
         "ParentItem": { "shape": "ParentItem" }
       }
     },
-    "NextToken": {"type": "string"},
+    "NextToken": { "type": "string" },
     "ParentItem": {
       "type": "structure",
       "members": {
         "ChildItem": { "shape": "ChildItem" },
+        "SubItem": { "shape": "SubItemShape" },
         "NextToken": { "shape": "NextToken" }
+      }
+    },
+    "SubItemShape": {
+      "type": "structure",
+      "members": {
+        "ChildItem": { "shape": "ChildItem" }
       }
     }
   }

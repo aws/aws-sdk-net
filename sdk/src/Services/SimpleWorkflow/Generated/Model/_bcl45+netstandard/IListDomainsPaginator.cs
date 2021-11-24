@@ -29,5 +29,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListDomainsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Infos
+        /// </summary>
+        IPaginatedEnumerable<DomainInfo> Infos { get; }
     }
 }

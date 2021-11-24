@@ -125,7 +125,7 @@ namespace ServiceClientGenerator
             }
             if (IsJmesPath(node, out var jmesPathChar))
             {
-                return HandleJmesPath(node, (char) jmesPathChar, operation.model.Shapes);
+                return HandleJmesPath(node, (char) jmesPathChar, operation);
 
             }
             if (checkRequest)
@@ -134,7 +134,7 @@ namespace ServiceClientGenerator
             }
             if (checkResponse && configOption == null)
             {
-                configOption = CheckResponseForNode(m => m.ModeledName.Equals(node.ToString()));
+                configOption = CheckResponseForNode(m => m.ModeledName.Equals(node.ToString()) || m.MarshallName.Equals(node.ToString()));
                 /// foundOptionInResponse is used for wrapped result members which need to be
                 /// handled differently for the SWF service.
                 foundOptionInResponse = configOption != null;
@@ -201,7 +201,7 @@ namespace ServiceClientGenerator
 
         /// <summary>
         /// Check if a paginator option is a jmespath expression.
-        /// Currently support only '.' with one level of nesting
+        /// Currently support only '.'
         /// </summary>
         /// <param name="node"> The JsonData node provided in the paginator config </param>
         /// <param name="jmesPathChar"> The character which is contained in the jmespath expression 
@@ -210,7 +210,7 @@ namespace ServiceClientGenerator
         internal static bool IsJmesPath(JsonData node, out char? jmesPathChar)
         {
             var stringNode = node.ToString();
-            string jPattern = "^[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$";
+            string jPattern = "^[a-zA-Z0-9]+\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*$";
             if (System.Text.RegularExpressions.Regex.IsMatch(stringNode, jPattern))
             {
                 jmesPathChar = '.';
@@ -228,18 +228,36 @@ namespace ServiceClientGenerator
         /// <param name="jmesPathChar"> The character which is contained in the jmespath expression 
         /// (currently only supports '.') </param>
         /// <returns></returns>
-        internal static OperationPaginatorConfigOption HandleJmesPath(JsonData node, char jmesPathChar, IEnumerable<Shape> shapes)
+        internal static OperationPaginatorConfigOption HandleJmesPath(JsonData node, char jmesPathChar, Operation operation)
         {
             if (jmesPathChar == '.')
             {
                 var nestedMembers = node.ToString().Split('.');
-                var parentShape = shapes.Single(s => s.Name.Equals(nestedMembers[0], StringComparison.OrdinalIgnoreCase));
-                var childMember = parentShape.Members.SingleOrDefault(m => m.ModeledName.Equals(nestedMembers[1]));
-                if (childMember == null)
+                var currentShape = operation.ResponseStructure;
+                Member currentMember = null;
+                var codePath = new StringBuilder();
+                for(int i = 0; i < nestedMembers.Length; i++)
                 {
-                    return null;
+                    currentMember = currentShape.Members.FirstOrDefault(x => string.Equals(x.ModeledName, nestedMembers[i]));
+                    if (currentMember == null)
+                    {
+                        return null;
+                    }
+
+                    if(codePath.Length > 0)
+                    {
+                        codePath.Append('.');
+                    }
+                    codePath.Append(currentMember.PropertyName);
+
+                    currentShape = currentMember.Shape;
+                    if (currentShape == null)
+                    {
+                        return null;
+                    }
                 }
-                return new OperationPaginatorConfigOption(true, childMember, $"{parentShape.Name}.{childMember.PropertyName}");
+
+                return new OperationPaginatorConfigOption(true, currentMember, $"{codePath}");
             }
             return null;
         }

@@ -41,6 +41,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         public IPaginatedEnumerable<ListDomainsResponse> Responses => new PaginatedResponse<ListDomainsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Infos
+        /// </summary>
+        public IPaginatedEnumerable<DomainInfo> Infos => 
+            new PaginatedResultKeyResponse<ListDomainsResponse, DomainInfo>(this, (i) => i.DomainInfos.Infos);
+
         internal ListDomainsPaginator(IAmazonSimpleWorkflow client, ListDomainsRequest request)
         {
             this._client = client;
