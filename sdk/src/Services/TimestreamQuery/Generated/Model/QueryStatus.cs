@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// Information about the status of the query, including progress and bytes scannned.
+    /// Information about the status of the query, including progress and bytes scanned.
     /// </summary>
     public partial class QueryStatus
     {
@@ -43,7 +43,7 @@ namespace Amazon.TimestreamQuery.Model
         /// The amount of data scanned by the query in bytes that you will be charged for. This
         /// is a cumulative sum and represents the total amount of data that you will be charged
         /// for since the query was started. The charge is applied only once and is either applied
-        /// when the query completes execution or when the query is cancelled. 
+        /// when the query completes running or when the query is cancelled. 
         /// </para>
         /// </summary>
         public long CumulativeBytesMetered

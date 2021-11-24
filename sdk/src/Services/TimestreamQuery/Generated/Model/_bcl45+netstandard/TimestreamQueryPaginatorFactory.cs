@@ -36,6 +36,22 @@ namespace Amazon.TimestreamQuery.Model
         }
 
         /// <summary>
+        /// Paginator for ListScheduledQueries operation
+        ///</summary>
+        public IListScheduledQueriesPaginator ListScheduledQueries(ListScheduledQueriesRequest request) 
+        {
+            return new ListScheduledQueriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTagsForResource operation
+        ///</summary>
+        public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
+        {
+            return new ListTagsForResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for Query operation
         ///</summary>
         public IQueryPaginator Query(QueryRequest request) 

@@ -97,7 +97,7 @@ namespace Amazon.TimestreamQuery.Model
         /// Gets and sets the property ScalarValue. 
         /// <para>
         ///  Indicates if the data point is a scalar value such as integer, string, double, or
-        /// boolean. 
+        /// Boolean. 
         /// </para>
         /// </summary>
         public string ScalarValue
@@ -115,7 +115,7 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property TimeSeriesValue. 
         /// <para>
-        ///  Indicates if the data point is of timeseries data type. 
+        ///  Indicates if the data point is a timeseries data type. 
         /// </para>
         /// </summary>
         public List<TimeSeriesDataPoint> TimeSeriesValue

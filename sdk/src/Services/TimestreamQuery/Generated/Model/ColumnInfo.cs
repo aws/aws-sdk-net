@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// Contains the meta data for query results such as the column names, data types, and
+    /// Contains the metadata for query results such as the column names, data types, and
     /// other attributes.
     /// </summary>
     public partial class ColumnInfo
@@ -59,8 +59,8 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The data type of the result set column. The data type can be a scalar or complex.
-        /// Scalar data types are integers, strings, doubles, booleans, and others. Complex data
+        /// The data type of the result set column. The data type can be a scalar or complex.
+        /// Scalar data types are integers, strings, doubles, Booleans, and others. Complex data
         /// types are types such as arrays, rows, and others. 
         /// </para>
         /// </summary>

@@ -30,10 +30,11 @@ namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelQuery operation.
-    /// Cancels a query that has been issued. Cancellation is guaranteed only if the query
-    /// has not completed execution before the cancellation request was issued. Because cancellation
+    /// Cancels a query that has been issued. Cancellation is provided only if the query
+    /// has not completed running before the cancellation request was issued. Because cancellation
     /// is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>,
-    /// indicating that the query has already been canceled.
+    /// indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/Timestream/latest/developerguide/code-samples.cancel-query.html">code
+    /// sample</a> for details.
     /// </summary>
     public partial class CancelQueryRequest : AmazonTimestreamQueryRequest
     {
@@ -42,8 +43,8 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        ///  The id of the query that needs to be cancelled. <code>QueryID</code> is returned
-        /// as part of QueryResult. 
+        ///  The ID of the query that needs to be cancelled. <code>QueryID</code> is returned
+        /// as part of the query result. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

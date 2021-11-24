@@ -30,7 +30,7 @@ namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
     /// Contains the data type of a column in a query result set. The data type can be scalar
-    /// or complex. The supported scalar data types are integers, boolean, string, double,
+    /// or complex. The supported scalar data types are integers, Boolean, string, double,
     /// timestamp, date, time, and intervals. The supported complex data types are arrays,
     /// rows, and timeseries.
     /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property ScalarType. 
         /// <para>
-        /// Indicates if the column is of type string, integer, boolean, double, timestamp, date,
+        /// Indicates if the column is of type string, integer, Boolean, double, timestamp, date,
         /// time. 
         /// </para>
         /// </summary>

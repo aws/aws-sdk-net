@@ -58,11 +58,161 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TimestreamQuery")]
+        public void CreateScheduledQueryEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateScheduledQuery");
+            var request = InstantiateClassGenerator.Execute<CreateScheduledQueryRequest>();
+            var marshaller = new CreateScheduledQueryEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void DeleteScheduledQueryEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteScheduledQuery");
+            var request = InstantiateClassGenerator.Execute<DeleteScheduledQueryRequest>();
+            var marshaller = new DeleteScheduledQueryEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void DescribeScheduledQueryEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeScheduledQuery");
+            var request = InstantiateClassGenerator.Execute<DescribeScheduledQueryRequest>();
+            var marshaller = new DescribeScheduledQueryEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void ExecuteScheduledQueryEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("ExecuteScheduledQuery");
+            var request = InstantiateClassGenerator.Execute<ExecuteScheduledQueryRequest>();
+            var marshaller = new ExecuteScheduledQueryEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void ListScheduledQueriesEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListScheduledQueries");
+            var request = InstantiateClassGenerator.Execute<ListScheduledQueriesRequest>();
+            var marshaller = new ListScheduledQueriesEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void ListTagsForResourceEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void PrepareQueryEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("PrepareQuery");
+            var request = InstantiateClassGenerator.Execute<PrepareQueryRequest>();
+            var marshaller = new PrepareQueryEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
         public void QueryEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("Query");
             var request = InstantiateClassGenerator.Execute<QueryRequest>();
             var marshaller = new QueryEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void TagResourceEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void UntagResourceEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamQuery")]
+        public void UpdateScheduledQueryEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateScheduledQuery");
+            var request = InstantiateClassGenerator.Execute<UpdateScheduledQueryRequest>();
+            var marshaller = new UpdateScheduledQueryEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
             var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);

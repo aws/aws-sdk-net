@@ -65,6 +65,7 @@ namespace Amazon.TimestreamQuery.Model
         /// next set of results. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -99,7 +100,7 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property QueryStatus. 
         /// <para>
-        /// Information about the status of the query, including progress and bytes scannned.
+        /// Information about the status of the query, including progress and bytes scanned.
         /// </para>
         /// </summary>
         public QueryStatus QueryStatus

@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// The timeseries datatype represents the values of a measure over time. A time series
+    /// The timeseries data type represents the values of a measure over time. A time series
     /// is an array of rows of timestamps and measure values, with rows sorted in ascending
-    /// order of time. A TimeSeriesDataPoint is a single data point in the timeseries. It
-    /// represents a tuple of (time, measure value) in a timeseries.
+    /// order of time. A TimeSeriesDataPoint is a single data point in the time series. It
+    /// represents a tuple of (time, measure value) in a time series.
     /// </summary>
     public partial class TimeSeriesDataPoint
     {
