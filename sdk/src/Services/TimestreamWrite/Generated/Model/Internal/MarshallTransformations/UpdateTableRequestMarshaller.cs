@@ -73,6 +73,17 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
+                if(publicRequest.IsSetMagneticStoreWriteProperties())
+                {
+                    context.Writer.WritePropertyName("MagneticStoreWriteProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MagneticStoreWritePropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MagneticStoreWriteProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRetentionProperties())
                 {
                     context.Writer.WritePropertyName("RetentionProperties");

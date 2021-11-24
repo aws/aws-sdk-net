@@ -36,13 +36,24 @@ namespace Amazon.TimestreamWrite.Model
     /// being collected for example the CPU utilization of an EC2 instance. A record also
     /// contains the measure value and the value type which is the data type of the measure
     /// value. In addition, the record contains the timestamp when the measure was collected
-    /// that the timestamp unit which represents the granularity of the timestamp.
+    /// that the timestamp unit which represents the granularity of the timestamp. 
+    /// 
+    ///  
+    /// <para>
+    ///  Records have a <code>Version</code> field, which is a 64-bit <code>long</code> that
+    /// you can use for updating data points. Writes of a duplicate record with the same dimension,
+    /// timestamp, and measure name but different measure value will only succeed if the <code>Version</code>
+    /// attribute of the record in the write request is higher than that of the existing record.
+    /// Timestream defaults to a <code>Version</code> of <code>1</code> for records without
+    /// the <code>Version</code> field. 
+    /// </para>
     /// </summary>
     public partial class Record
     {
         private List<Dimension> _dimensions = new List<Dimension>();
         private string _measureName;
         private string _measureValue;
+        private List<MeasureValue> _measureValues = new List<MeasureValue>();
         private MeasureValueType _measureValueType;
         private string _time;
         private TimeUnit _timeUnit;
@@ -74,7 +85,7 @@ namespace Amazon.TimestreamWrite.Model
         /// of an EC2 instance or the RPM of a wind turbine are measures. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1)]
         public string MeasureName
         {
             get { return this._measureName; }
@@ -107,9 +118,33 @@ namespace Amazon.TimestreamWrite.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MeasureValues. 
+        /// <para>
+        ///  Contains the list of MeasureValue for time series data points. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code>
+        /// attribute of the Record directly. 
+        /// </para>
+        /// </summary>
+        public List<MeasureValue> MeasureValues
+        {
+            get { return this._measureValues; }
+            set { this._measureValues = value; }
+        }
+
+        // Check to see if MeasureValues property is set
+        internal bool IsSetMeasureValues()
+        {
+            return this._measureValues != null && this._measureValues.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MeasureValueType. 
         /// <para>
-        ///  Contains the data type of the measure value for the time series data point. 
+        ///  Contains the data type of the measure value for the time series data point. Default
+        /// type is <code>DOUBLE</code>. 
         /// </para>
         /// </summary>
         public MeasureValueType MeasureValueType
@@ -150,7 +185,8 @@ namespace Amazon.TimestreamWrite.Model
         /// Gets and sets the property TimeUnit. 
         /// <para>
         ///  The granularity of the timestamp unit. It indicates if the time value is in seconds,
-        /// milliseconds, nanoseconds or other supported values. 
+        /// milliseconds, nanoseconds or other supported values. Default is <code>MILLISECONDS</code>.
+        /// 
         /// </para>
         /// </summary>
         public TimeUnit TimeUnit
@@ -171,8 +207,14 @@ namespace Amazon.TimestreamWrite.Model
         /// 64-bit attribute used for record updates. Write requests for duplicate data with a
         /// higher version number will update the existing measure value and version. In cases
         /// where the measure value is the same, <code>Version</code> will still be updated .
-        /// Default value is to 1.
+        /// Default value is <code>1</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code>
+        /// error.
+        /// </para>
+        ///  </note>
         /// </summary>
         public long Version
         {

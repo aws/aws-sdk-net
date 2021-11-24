@@ -84,7 +84,6 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
         public string DatabaseName
         {
             get { return this._databaseName; }

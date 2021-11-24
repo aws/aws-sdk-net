@@ -47,6 +47,17 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         {
             WriteRecordsResponse response = new WriteRecordsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("RecordsIngested", targetDepth))
+                {
+                    var unmarshaller = RecordsIngestedUnmarshaller.Instance;
+                    response.RecordsIngested = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

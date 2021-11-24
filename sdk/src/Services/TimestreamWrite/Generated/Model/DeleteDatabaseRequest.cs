@@ -34,7 +34,7 @@ namespace Amazon.TimestreamWrite.Model
     /// database is deleted, the time series data from its tables cannot be recovered.</i>
     /// 
     /// 
-    ///  
+    ///  <note> 
     /// <para>
     /// All tables in the database must be deleted first, or a ValidationException error will
     /// be thrown. 
@@ -43,6 +43,11 @@ namespace Amazon.TimestreamWrite.Model
     /// <para>
     /// Due to the nature of distributed retries, the operation can return either success
     /// or a ResourceNotFoundException. Clients should consider them equivalent.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-db.html">code
+    /// sample</a> for details.
     /// </para>
     /// </summary>
     public partial class DeleteDatabaseRequest : AmazonTimestreamWriteRequest
@@ -55,7 +60,7 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database to be deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string DatabaseName
         {
             get { return this._databaseName; }

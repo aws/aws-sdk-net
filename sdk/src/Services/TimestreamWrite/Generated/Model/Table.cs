@@ -39,6 +39,7 @@ namespace Amazon.TimestreamWrite.Model
         private DateTime? _creationTime;
         private string _databaseName;
         private DateTime? _lastUpdatedTime;
+        private MagneticStoreWriteProperties _magneticStoreWriteProperties;
         private RetentionProperties _retentionProperties;
         private string _tableName;
         private TableStatus _tableStatus;
@@ -85,7 +86,6 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database that contains this table.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -117,6 +117,24 @@ namespace Amazon.TimestreamWrite.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MagneticStoreWriteProperties. 
+        /// <para>
+        /// Contains properties to set on the table when enabling magnetic store writes.
+        /// </para>
+        /// </summary>
+        public MagneticStoreWriteProperties MagneticStoreWriteProperties
+        {
+            get { return this._magneticStoreWriteProperties; }
+            set { this._magneticStoreWriteProperties = value; }
+        }
+
+        // Check to see if MagneticStoreWriteProperties property is set
+        internal bool IsSetMagneticStoreWriteProperties()
+        {
+            return this._magneticStoreWriteProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetentionProperties. 
         /// <para>
         /// The retention duration for the memory store and magnetic store.
@@ -140,7 +158,6 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream table.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
         public string TableName
         {
             get { return this._tableName; }

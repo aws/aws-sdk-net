@@ -33,6 +33,13 @@ namespace Amazon.TimestreamWrite.Model
     /// Modifies the KMS key for an existing database. While updating the database, you must
     /// specify the database name and the identifier of the new KMS key to be used (<code>KmsKeyId</code>).
     /// If there are any concurrent <code>UpdateDatabase</code> requests, first writer wins.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-db.html">code
+    /// sample</a> for details.
+    /// </para>
     /// </summary>
     public partial class UpdateDatabaseRequest : AmazonTimestreamWriteRequest
     {
@@ -45,7 +52,7 @@ namespace Amazon.TimestreamWrite.Model
         ///  The name of the database. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string DatabaseName
         {
             get { return this._databaseName; }

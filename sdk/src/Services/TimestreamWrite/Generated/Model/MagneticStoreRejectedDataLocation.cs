@@ -29,34 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDatabase operation.
-    /// Returns information about the database, including the database name, time that the
-    /// database was created, and the total number of tables found within the database. <a
-    /// href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
-    /// quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-db.html">code
-    /// sample</a> for details.
+    /// The location to write error reports for records rejected, asynchronously, during magnetic
+    /// store writes.
     /// </summary>
-    public partial class DescribeDatabaseRequest : AmazonTimestreamWriteRequest
+    public partial class MagneticStoreRejectedDataLocation
     {
-        private string _databaseName;
+        private S3Configuration _s3Configuration;
 
         /// <summary>
-        /// Gets and sets the property DatabaseName. 
+        /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// The name of the Timestream database.
+        /// Configuration of an S3 location to write error reports for records rejected, asynchronously,
+        /// during magnetic store writes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DatabaseName
+        public S3Configuration S3Configuration
         {
-            get { return this._databaseName; }
-            set { this._databaseName = value; }
+            get { return this._s3Configuration; }
+            set { this._s3Configuration = value; }
         }
 
-        // Check to see if DatabaseName property is set
-        internal bool IsSetDatabaseName()
+        // Check to see if S3Configuration property is set
+        internal bool IsSetS3Configuration()
         {
-            return this._databaseName != null;
+            return this._s3Configuration != null;
         }
 
     }

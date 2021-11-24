@@ -39,8 +39,48 @@ namespace Amazon.TimestreamWrite.Model
     /// after writing a batch of data into Timestream, the query results might not reflect
     /// the results of a recently completed write operation. The results may also include
     /// some stale data. If you repeat the query request after a short time, the results should
-    /// return the latest data. Service quotas apply. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-    /// Management</a> in the Timestream Developer Guide.
+    /// return the latest data. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+    /// quotas apply</a>. 
+    /// 
+    ///  
+    /// <para>
+    /// See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.write.html">code
+    /// sample</a> for details.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Upserts</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use the <code>Version</code> parameter in a <code>WriteRecords</code> request
+    /// to update data points. Timestream tracks a version number with each record. <code>Version</code>
+    /// defaults to <code>1</code> when not specified for the record in the request. Timestream
+    /// will update an existing record’s measure value along with its <code>Version</code>
+    /// upon receiving a write request with a higher <code>Version</code> number for that
+    /// record. Upon receiving an update request where the measure value is the same as that
+    /// of the existing record, Timestream still updates <code>Version</code>, if it is greater
+    /// than the existing value of <code>Version</code>. You can update a data point as many
+    /// times as desired, as long as the value of <code>Version</code> continuously increases.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    ///  For example, suppose you write a new record without indicating <code>Version</code>
+    /// in the request. Timestream will store this record, and set <code>Version</code> to
+    /// <code>1</code>. Now, suppose you try to update this record with a <code>WriteRecords</code>
+    /// request of the same record with a different measure value but, like before, do not
+    /// provide <code>Version</code>. In this case, Timestream will reject this update with
+    /// a <code>RejectedRecordsException</code> since the updated record’s version is not
+    /// greater than the existing value of Version. However, if you were to resend the update
+    /// request with <code>Version</code> set to <code>2</code>, Timestream would then succeed
+    /// in updating the record’s value, and the <code>Version</code> would be set to <code>2</code>.
+    /// Next, suppose you sent a <code>WriteRecords</code> request with this same record and
+    /// an identical measure value, but with <code>Version</code> set to <code>3</code>. In
+    /// this case, Timestream would only update <code>Version</code> to <code>3</code>. Any
+    /// further updates would need to send a version number greater than <code>3</code>, or
+    /// the update requests would receive a <code>RejectedRecordsException</code>. 
+    /// </para>
     /// </summary>
     public partial class WriteRecordsRequest : AmazonTimestreamWriteRequest
     {
@@ -52,10 +92,12 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property CommonAttributes. 
         /// <para>
-        /// A record containing the common measure and dimension attributes shared across all
-        /// the records in the request. The measure and dimension attributes specified in here
+        /// A record containing the common measure, dimension, time, and version attributes shared
+        /// across all the records in the request. The measure and dimension attributes specified
         /// will be merged with the measure and dimension attributes in the records object when
-        /// the data is written into Timestream. 
+        /// the data is written into Timestream. Dimensions may not overlap, or a <code>ValidationException</code>
+        /// will be thrown. In other words, a record must contain dimensions with unique names.
+        /// 
         /// </para>
         /// </summary>
         public Record CommonAttributes
@@ -76,7 +118,7 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -92,8 +134,8 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
-        /// An array of records containing the unique dimension and measure attributes for each
-        /// time series data point. 
+        /// An array of records containing the unique measure, dimension, time, and version attributes
+        /// for each time series data point. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -112,10 +154,10 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the Timesream table.
+        /// The name of the Timestream table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string TableName
         {
             get { return this._tableName; }

@@ -33,8 +33,24 @@ namespace Amazon.TimestreamWrite.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  Records with duplicate data where there are multiple records with the same dimensions,
-    /// timestamps, and measure names but different measure values. 
+    /// Records with duplicate data where there are multiple records with the same dimensions,
+    /// timestamps, and measure names but: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Measure values are different
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Version is not present in the request <i>or</i> the value of version in the new record
+    /// is equal to or lower than the existing value
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  In this case, if Timestream rejects data, the <code>ExistingVersion</code> field
+    /// in the <code>RejectedRecords</code> response will indicate the current record’s version.
+    /// To force an update, you can resend the request with a version for the record set to
+    /// a value greater than the <code>ExistingVersion</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -47,8 +63,8 @@ namespace Amazon.TimestreamWrite.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-    /// Management</a> in the Timestream Developer Guide. 
+    ///  For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a>
+    /// in the Timestream Developer Guide. 
     /// </para>
     /// </summary>
     #if !NETSTANDARD

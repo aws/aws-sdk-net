@@ -31,9 +31,9 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Container for the parameters to the DescribeTable operation.
     /// Returns information about the table, including the table name, database name, retention
-    /// duration of the memory store and the magnetic store. Service quotas apply. For more
-    /// information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-    /// Management</a> in the Timestream Developer Guide.
+    /// duration of the memory store and the magnetic store. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+    /// quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-table.html">code
+    /// sample</a> for details.
     /// </summary>
     public partial class DescribeTableRequest : AmazonTimestreamWriteRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -65,7 +65,7 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string TableName
         {
             get { return this._tableName; }

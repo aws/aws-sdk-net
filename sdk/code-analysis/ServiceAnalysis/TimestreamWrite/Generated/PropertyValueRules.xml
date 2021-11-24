@@ -2,8 +2,6 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.CreateDatabaseRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -13,62 +11,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.CreateTableRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.CreateTableRequest.TableName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.DeleteDatabaseRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.DeleteTableRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.DeleteTableRequest.TableName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.DescribeDatabaseRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.DescribeTableRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.DescribeTableRequest.TableName</property>
-    <min>3</min>
-    <max>64</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.ListDatabasesRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.ListTablesRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.ListTablesRequest.MaxResults</property>
@@ -91,45 +43,9 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.UpdateDatabaseRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.UpdateDatabaseRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.UpdateTableRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.UpdateTableRequest.TableName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.WriteRecordsRequest.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.WriteRecordsRequest.TableName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.Database.DatabaseName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Database.KmsKeyId</property>
@@ -139,17 +55,19 @@
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Dimension.Name</property>
     <min>1</min>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.Dimension.Value</property>
+    <property>Amazon.TimestreamWrite.Model.MeasureValue.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.MeasureValue.Value</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Record.MeasureName</property>
     <min>1</min>
-    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Record.MeasureValue</property>
@@ -172,16 +90,21 @@
     <max>8766</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.Table.DatabaseName</property>
+    <property>Amazon.TimestreamWrite.Model.S3Configuration.BucketName</property>
     <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <max>63</max>
+    <pattern>[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.TimestreamWrite.Model.Table.TableName</property>
-    <min>3</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <property>Amazon.TimestreamWrite.Model.S3Configuration.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamWrite.Model.S3Configuration.ObjectKeyPrefix</property>
+    <min>1</min>
+    <max>928</max>
+    <pattern>[a-zA-Z0-9|!\-_*'\(\)]([a-zA-Z0-9]|[!\-_*'\(\)\/.])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamWrite.Model.Tag.Key</property>

@@ -30,9 +30,9 @@ namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatabases operation.
-    /// Returns a list of your Timestream databases. Service quotas apply. For more information,
-    /// see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-    /// Management</a> in the Timestream Developer Guide.
+    /// Returns a list of your Timestream databases. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+    /// quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-db.html">code
+    /// sample</a> for details.
     /// </summary>
     public partial class ListDatabasesRequest : AmazonTimestreamWriteRequest
     {

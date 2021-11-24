@@ -33,6 +33,25 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class WriteRecordsResponse : AmazonWebServiceResponse
     {
+        private RecordsIngested _recordsIngested;
+
+        /// <summary>
+        /// Gets and sets the property RecordsIngested. 
+        /// <para>
+        /// Information on the records ingested by this request.
+        /// </para>
+        /// </summary>
+        public RecordsIngested RecordsIngested
+        {
+            get { return this._recordsIngested; }
+            set { this._recordsIngested = value; }
+        }
+
+        // Check to see if RecordsIngested property is set
+        internal bool IsSetRecordsIngested()
+        {
+            return this._recordsIngested != null;
+        }
 
     }
 }

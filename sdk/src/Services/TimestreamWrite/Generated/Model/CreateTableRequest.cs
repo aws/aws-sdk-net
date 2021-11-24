@@ -31,16 +31,17 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Container for the parameters to the CreateTable operation.
     /// The CreateTable operation adds a new table to an existing database in your account.
-    /// In an AWS account, table names must be at least unique within each Region if they
-    /// are in the same database. You may have identical table names in the same Region if
-    /// the tables are in seperate databases. While creating the table, you must specify the
-    /// table name, database name, and the retention properties. Service quotas apply. For
-    /// more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-    /// Management</a> in the Timestream Developer Guide.
+    /// In an Amazon Web Services account, table names must be at least unique within each
+    /// Region if they are in the same database. You may have identical table names in the
+    /// same Region if the tables are in separate databases. While creating the table, you
+    /// must specify the table name, database name, and the retention properties. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+    /// quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code
+    /// sample</a> for details.
     /// </summary>
     public partial class CreateTableRequest : AmazonTimestreamWriteRequest
     {
         private string _databaseName;
+        private MagneticStoreWriteProperties _magneticStoreWriteProperties;
         private RetentionProperties _retentionProperties;
         private string _tableName;
         private List<Tag> _tags = new List<Tag>();
@@ -51,7 +52,7 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -62,6 +63,24 @@ namespace Amazon.TimestreamWrite.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MagneticStoreWriteProperties. 
+        /// <para>
+        /// Contains properties to set on the table when enabling magnetic store writes.
+        /// </para>
+        /// </summary>
+        public MagneticStoreWriteProperties MagneticStoreWriteProperties
+        {
+            get { return this._magneticStoreWriteProperties; }
+            set { this._magneticStoreWriteProperties = value; }
+        }
+
+        // Check to see if MagneticStoreWriteProperties property is set
+        internal bool IsSetMagneticStoreWriteProperties()
+        {
+            return this._magneticStoreWriteProperties != null;
         }
 
         /// <summary>
@@ -89,7 +108,7 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string TableName
         {
             get { return this._tableName; }

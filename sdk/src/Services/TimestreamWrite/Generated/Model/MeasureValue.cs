@@ -29,45 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Dimension represents the meta data attributes of the time series. For example, the
-    /// name and availability zone of an EC2 instance or the name of the manufacturer of a
-    /// wind turbine are dimensions.
+    /// MeasureValue represents the data attribute of the time series. For example, the CPU
+    /// utilization of an EC2 instance or the RPM of a wind turbine are measures. MeasureValue
+    /// has both name and value. 
+    /// 
+    ///  
+    /// <para>
+    ///  MeasureValue is only allowed for type <code>MULTI</code>. Using <code>MULTI</code>
+    /// type, you can pass multiple data attributes associated with the same time series in
+    /// a single record 
+    /// </para>
     /// </summary>
-    public partial class Dimension
+    public partial class MeasureValue
     {
-        private DimensionValueType _dimensionValueType;
         private string _name;
+        private MeasureValueType _type;
         private string _value;
-
-        /// <summary>
-        /// Gets and sets the property DimensionValueType. 
-        /// <para>
-        /// The data type of the dimension for the time series data point.
-        /// </para>
-        /// </summary>
-        public DimensionValueType DimensionValueType
-        {
-            get { return this._dimensionValueType; }
-            set { this._dimensionValueType = value; }
-        }
-
-        // Check to see if DimensionValueType property is set
-        internal bool IsSetDimensionValueType()
-        {
-            return this._dimensionValueType != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  Dimension represents the meta data attributes of the time series. For example, the
-        /// name and availability zone of an EC2 instance or the name of the manufacturer of a
-        /// wind turbine are dimensions. 
+        ///  Name of the MeasureValue. 
         /// </para>
         ///  
         /// <para>
-        /// For constraints on Dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
-        /// Constraints</a>.
+        ///  For constraints on MeasureValue names, refer to <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">
+        /// Naming Constraints</a> in the Timestream developer guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -84,12 +71,31 @@ namespace Amazon.TimestreamWrite.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The value of the dimension.
+        /// Contains the data type of the MeasureValue for the time series data point.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
+        public MeasureValueType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        ///  Value for the MeasureValue. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Value
         {
             get { return this._value; }

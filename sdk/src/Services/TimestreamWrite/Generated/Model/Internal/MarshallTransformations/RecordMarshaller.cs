@@ -73,6 +73,22 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MeasureValue);
             }
 
+            if(requestObject.IsSetMeasureValues())
+            {
+                context.Writer.WritePropertyName("MeasureValues");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMeasureValuesListValue in requestObject.MeasureValues)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MeasureValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMeasureValuesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetMeasureValueType())
             {
                 context.Writer.WritePropertyName("MeasureValueType");

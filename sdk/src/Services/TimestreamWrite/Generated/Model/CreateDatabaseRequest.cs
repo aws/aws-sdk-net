@@ -32,10 +32,10 @@ namespace Amazon.TimestreamWrite.Model
     /// Container for the parameters to the CreateDatabase operation.
     /// Creates a new Timestream database. If the KMS key is not specified, the database will
     /// be encrypted with a Timestream managed KMS key located in your account. Refer to <a
-    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
-    /// managed KMS keys</a> for more info. Service quotas apply. For more information, see
-    /// <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
-    /// Management</a> in the Timestream Developer Guide.
+    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+    /// Web Services managed KMS keys</a> for more info. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+    /// quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-db.html">code
+    /// sample</a> for details.
     /// </summary>
     public partial class CreateDatabaseRequest : AmazonTimestreamWriteRequest
     {
@@ -49,7 +49,7 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
+        [AWSProperty(Required=true)]
         public string DatabaseName
         {
             get { return this._databaseName; }
@@ -66,8 +66,8 @@ namespace Amazon.TimestreamWrite.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The KMS key for the database. If the KMS key is not specified, the database will be
-        /// encrypted with a Timestream managed KMS key located in your account. Refer to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
-        /// managed KMS keys</a> for more info.
+        /// encrypted with a Timestream managed KMS key located in your account. Refer to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed KMS keys</a> for more info.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -31,6 +31,8 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Container for the parameters to the ListTables operation.
     /// A list of tables, along with the name, status and retention properties of each table.
+    /// See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code
+    /// sample</a> for details.
     /// </summary>
     public partial class ListTablesRequest : AmazonTimestreamWriteRequest
     {
@@ -44,7 +46,6 @@ namespace Amazon.TimestreamWrite.Model
         /// The name of the Timestream database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
         public string DatabaseName
         {
             get { return this._databaseName; }

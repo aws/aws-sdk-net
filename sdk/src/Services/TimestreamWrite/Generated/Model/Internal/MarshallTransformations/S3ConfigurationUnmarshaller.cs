@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Table Object
+    /// Response Unmarshaller for S3Configuration Object
     /// </summary>  
-    public class TableUnmarshaller : IUnmarshaller<Table, XmlUnmarshallerContext>, IUnmarshaller<Table, JsonUnmarshallerContext>
+    public class S3ConfigurationUnmarshaller : IUnmarshaller<S3Configuration, XmlUnmarshallerContext>, IUnmarshaller<S3Configuration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Table IUnmarshaller<Table, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3Configuration IUnmarshaller<S3Configuration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,39 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Table Unmarshall(JsonUnmarshallerContext context)
+        public S3Configuration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Table unmarshalledObject = new Table();
+            S3Configuration unmarshalledObject = new S3Configuration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("BucketName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DatabaseName", targetDepth))
+                if (context.TestExpression("EncryptionOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MagneticStoreWriteProperties", targetDepth))
-                {
-                    var unmarshaller = MagneticStoreWritePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.MagneticStoreWriteProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RetentionProperties", targetDepth))
-                {
-                    var unmarshaller = RetentionPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.RetentionProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TableStatus", targetDepth))
+                if (context.TestExpression("ObjectKeyPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectKeyPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +94,12 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         }
 
 
-        private static TableUnmarshaller _instance = new TableUnmarshaller();        
+        private static S3ConfigurationUnmarshaller _instance = new S3ConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TableUnmarshaller Instance
+        public static S3ConfigurationUnmarshaller Instance
         {
             get
             {
