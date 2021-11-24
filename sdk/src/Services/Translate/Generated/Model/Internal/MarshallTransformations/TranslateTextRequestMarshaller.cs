@@ -67,6 +67,17 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSettings())
+                {
+                    context.Writer.WritePropertyName("Settings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TranslationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceLanguageCode())
                 {
                     context.Writer.WritePropertyName("SourceLanguageCode");

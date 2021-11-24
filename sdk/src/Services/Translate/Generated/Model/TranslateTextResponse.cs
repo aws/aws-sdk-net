@@ -33,10 +33,29 @@ namespace Amazon.Translate.Model
     /// </summary>
     public partial class TranslateTextResponse : AmazonWebServiceResponse
     {
+        private TranslationSettings _appliedSettings;
         private List<AppliedTerminology> _appliedTerminologies = new List<AppliedTerminology>();
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
         private string _translatedText;
+
+        /// <summary>
+        /// Gets and sets the property AppliedSettings. 
+        /// <para>
+        /// Settings that configure the translation output.
+        /// </para>
+        /// </summary>
+        public TranslationSettings AppliedSettings
+        {
+            get { return this._appliedSettings; }
+            set { this._appliedSettings = value; }
+        }
+
+        // Check to see if AppliedSettings property is set
+        internal bool IsSetAppliedSettings()
+        {
+            return this._appliedSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AppliedTerminologies. 

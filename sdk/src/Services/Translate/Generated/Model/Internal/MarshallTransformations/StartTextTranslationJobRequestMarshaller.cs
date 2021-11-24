@@ -123,6 +123,17 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSettings())
+                {
+                    context.Writer.WritePropertyName("Settings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TranslationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceLanguageCode())
                 {
                     context.Writer.WritePropertyName("SourceLanguageCode");

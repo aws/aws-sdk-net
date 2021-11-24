@@ -39,8 +39,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
-        /// terminology.
+        /// The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=400)]
@@ -59,7 +58,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of encryption key used by Amazon Translate to encrypt custom terminologies.
+        /// The type of encryption key used by Amazon Translate to encrypt this object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

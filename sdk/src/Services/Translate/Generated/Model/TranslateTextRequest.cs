@@ -35,10 +35,30 @@ namespace Amazon.Translate.Model
     /// </summary>
     public partial class TranslateTextRequest : AmazonTranslateRequest
     {
+        private TranslationSettings _settings;
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
         private List<string> _terminologyNames = new List<string>();
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// Settings to configure your translation output, including the option to mask profane
+        /// words and phrases.
+        /// </para>
+        /// </summary>
+        public TranslationSettings Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 

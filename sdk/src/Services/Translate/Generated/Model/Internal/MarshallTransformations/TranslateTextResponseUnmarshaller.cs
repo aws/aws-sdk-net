@@ -51,6 +51,12 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppliedSettings", targetDepth))
+                {
+                    var unmarshaller = TranslationSettingsUnmarshaller.Instance;
+                    response.AppliedSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AppliedTerminologies", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AppliedTerminology, AppliedTerminologyUnmarshaller>(AppliedTerminologyUnmarshaller.Instance);

@@ -68,8 +68,8 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Amazon Translate doesn't scan parallel data input files for the risk of CSV injection
-        /// attacks. 
+        /// Amazon Translate doesn't scan all input files for the risk of CSV injection attacks.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -80,8 +80,8 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  
         /// <para>
-        /// Before you download a parallel data input file from Amazon S3, ensure that you recognize
-        /// the file and trust its creator.
+        /// Before you download an input file from Amazon S3, ensure that you recognize the file
+        /// and trust its creator.
         /// </para>
         ///  </important>
         /// </summary>
