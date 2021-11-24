@@ -1,3 +1,25 @@
+### 3.7.168.0 (2021-11-24 19:17 UTC)
+* AutoScaling (3.7.8.0)
+	* Customers can now configure predictive scaling policies to proactively scale EC2 Auto Scaling groups based on any CloudWatch metrics that more accurately represent the load on the group than the four predefined metrics. They can also use math expressions to further customize the metrics.
+* CustomerProfiles (3.7.4.0)
+	* This release introduces a new auto-merging feature for profile matching. The auto-merging configurations can be set via CreateDomain API or UpdateDomain API. You can use GetIdentityResolutionJob API and ListIdentityResolutionJobs API to fetch job status.
+* ElastiCache (3.7.4.1)
+	* Doc only update for ElastiCache
+* Imagebuilder (3.7.4.0)
+	* This release adds support for sharing AMIs with Organizations within an EC2 Image Builder Distribution Configuration.
+* IoTSiteWise (3.7.8.0)
+	* AWS IoT SiteWise now accepts data streams that aren't associated with any asset properties. You can organize data by updating data stream associations.
+* Lambda (3.7.8.0)
+	* Remove Lambda function url apis
+* Proton (3.7.2.0)
+	* This release adds APIs for getting the outputs and provisioned stacks for Environments, Pipelines, and ServiceInstances.  You can now add tags to EnvironmentAccountConnections.  It also adds APIs for working with PR-based provisioning.  Also, it adds APIs for syncing templates with a git repository.
+* TimestreamQuery (3.7.1.0)
+	* Releasing Amazon Timestream Scheduled Queries. It makes real-time analytics more performant and cost-effective for customers by calculating and storing frequently accessed aggregates, and other computations, typically used in operational dashboards, business reports, and other analytics applications
+* TimestreamWrite (3.7.1.0)
+	* This release adds support for multi-measure records and magnetic store writes. Multi-measure records allow customers to store multiple measures in a single table row. Magnetic store writes enable customers to write late arrival data (data with timestamp in the past) directly into the magnetic store.
+* Translate (3.7.3.0)
+	* This release enables customers to use translation settings to mask profane words and phrases in their translation output.
+
 ### 3.7.167.0 (2021-11-23 20:46 UTC)
 * Backup (3.7.5.0)
 	* This release adds new opt-in settings for advanced features for DynamoDB backups

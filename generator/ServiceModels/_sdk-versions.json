@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.167.0",
+    "ProductVersion" : "3.7.168.0",
     "CoreVersion"    : "3.7.5.2",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -14,7 +14,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.7.7.16",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -168,7 +168,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.7.4.0",
+            "Version" : "3.7.4.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -242,7 +242,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.7.7.0",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -954,7 +954,7 @@
             "InPreview"               : false
         },
         "Translate"                       : {
-            "Version" : "3.7.2.7",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1642,7 +1642,7 @@
             "InPreview"               : false
         },
         "Imagebuilder"                    : {
-            "Version" : "3.7.3.35",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1770,7 +1770,7 @@
             "InPreview"               : false
         },
         "IoTSiteWise"                     : {
-            "Version" : "3.7.7.51",
+            "Version" : "3.7.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1850,7 +1850,7 @@
             "InPreview"               : false
         },
         "TimestreamWrite"                 : {
-            "Version" : "3.7.0.103",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1858,7 +1858,7 @@
             "InPreview"               : false
         },
         "TimestreamQuery"                 : {
-            "Version" : "3.7.0.103",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1962,7 +1962,7 @@
             "InPreview"               : false
         },
         "CustomerProfiles"                : {
-            "Version" : "3.7.3.52",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2162,7 +2162,7 @@
             "InPreview"               : false
         },
         "Proton"                          : {
-            "Version" : "3.7.1.71",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
