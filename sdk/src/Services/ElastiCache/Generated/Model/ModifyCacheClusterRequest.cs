@@ -180,8 +180,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
         ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next minor version upgrade campaign. This parameter is disabled
-        /// for previous versions.  
+        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        /// is disabled for previous versions.  
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade

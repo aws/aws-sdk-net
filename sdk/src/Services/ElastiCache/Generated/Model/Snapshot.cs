@@ -103,8 +103,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
         ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next minor version upgrade campaign. This parameter is disabled
-        /// for previous versions.  
+        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        /// is disabled for previous versions.  
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -204,6 +204,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
+        /// engine version 1.5.16 onward):
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>
         /// 
         /// </para>
@@ -244,7 +254,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Memory optimized:
+        /// Memory optimized with data tiering:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -260,6 +270,14 @@ namespace Amazon.ElastiCache.Model
         /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
         /// 
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Memory optimized:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Current generation: 
+        /// </para>
         ///  
         /// <para>
         ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
@@ -272,6 +290,11 @@ namespace Amazon.ElastiCache.Model
         /// <code>cache.r6g.16xlarge</code> 
         /// </para>
         ///  <note> 
+        /// <para>
+        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+        /// Node Types</a> 
+        /// </para>
+        ///  </note> <note> 
         /// <para>
         /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
         /// Node Types</a> 

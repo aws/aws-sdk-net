@@ -79,7 +79,10 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinimumEngineVersion.
+        /// Gets and sets the property MinimumEngineVersion. 
+        /// <para>
+        /// The minimum engine version required, which is Redis 6.0
+        /// </para>
         /// </summary>
         public string MinimumEngineVersion
         {

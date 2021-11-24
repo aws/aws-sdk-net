@@ -160,8 +160,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
         ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
-        /// you want to opt-in to the next minor version upgrade campaign. This parameter is disabled
-        /// for previous versions.  
+        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        /// is disabled for previous versions.  
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -273,14 +273,10 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward).
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-        /// <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-        /// <code>cache.m6g.16xlarge</code> 
+        ///  <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and
+        /// for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -298,6 +294,12 @@ namespace Amazon.ElastiCache.Model
         ///  <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
         /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code> 
         /// </para>
         ///  
         /// <para>
@@ -341,7 +343,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Memory optimized:
+        /// Memory optimized with data tiering:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -356,6 +358,14 @@ namespace Amazon.ElastiCache.Model
         ///  <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
         /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
         /// 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Memory optimized:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Current generation: 
         /// </para>
         ///  
         /// <para>
