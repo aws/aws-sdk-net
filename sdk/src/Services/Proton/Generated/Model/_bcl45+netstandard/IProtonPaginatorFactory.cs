@@ -31,6 +31,16 @@ namespace Amazon.Proton.Model
         IListEnvironmentAccountConnectionsPaginator ListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request);
 
         /// <summary>
+        /// Paginator for ListEnvironmentOutputs operation
+        ///</summary>
+        IListEnvironmentOutputsPaginator ListEnvironmentOutputs(ListEnvironmentOutputsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEnvironmentProvisionedResources operation
+        ///</summary>
+        IListEnvironmentProvisionedResourcesPaginator ListEnvironmentProvisionedResources(ListEnvironmentProvisionedResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
         IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request);
@@ -46,9 +56,39 @@ namespace Amazon.Proton.Model
         IListEnvironmentTemplateVersionsPaginator ListEnvironmentTemplateVersions(ListEnvironmentTemplateVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListRepositories operation
+        ///</summary>
+        IListRepositoriesPaginator ListRepositories(ListRepositoriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRepositorySyncDefinitions operation
+        ///</summary>
+        IListRepositorySyncDefinitionsPaginator ListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListServiceInstanceOutputs operation
+        ///</summary>
+        IListServiceInstanceOutputsPaginator ListServiceInstanceOutputs(ListServiceInstanceOutputsRequest request);
+
+        /// <summary>
+        /// Paginator for ListServiceInstanceProvisionedResources operation
+        ///</summary>
+        IListServiceInstanceProvisionedResourcesPaginator ListServiceInstanceProvisionedResources(ListServiceInstanceProvisionedResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListServiceInstances operation
         ///</summary>
         IListServiceInstancesPaginator ListServiceInstances(ListServiceInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for ListServicePipelineOutputs operation
+        ///</summary>
+        IListServicePipelineOutputsPaginator ListServicePipelineOutputs(ListServicePipelineOutputsRequest request);
+
+        /// <summary>
+        /// Paginator for ListServicePipelineProvisionedResources operation
+        ///</summary>
+        IListServicePipelineProvisionedResourcesPaginator ListServicePipelineProvisionedResources(ListServicePipelineProvisionedResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListServices operation

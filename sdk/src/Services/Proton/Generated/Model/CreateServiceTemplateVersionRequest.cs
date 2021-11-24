@@ -31,8 +31,8 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Container for the parameters to the CreateServiceTemplateVersion operation.
     /// Create a new major or minor version of a service template. A major version of a service
-    /// template is a version that <i>isn't</i> backwards compatible. A minor version of a
-    /// service template is a version that's backwards compatible within its major version.
+    /// template is a version that <i>isn't</i> backward compatible. A minor version of a
+    /// service template is a version that's backward compatible within its major version.
     /// </summary>
     public partial class CreateServiceTemplateVersionRequest : AmazonProtonRequest
     {
@@ -47,8 +47,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// When included, if two identicial requests are made with the same client token, AWS
-        /// Proton returns the service template version that the first request created.
+        /// When included, if two identical requests are made with the same client token, Proton
+        /// returns the service template version that the first request created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -106,11 +106,12 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To create a new minor version of the service template, include a <code>majorVersion</code>.
+        /// To create a new minor version of the service template, include a <code>major Version</code>.
         /// </para>
         ///  
         /// <para>
-        /// To create a new major and minor version of the service template, <i>exclude</i> <code>majorVersion</code>.
+        /// To create a new major and minor version of the service template, <i>exclude</i> <code>major
+        /// Version</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

@@ -44,6 +44,22 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Paginator for ListEnvironmentOutputs operation
+        ///</summary>
+        public IListEnvironmentOutputsPaginator ListEnvironmentOutputs(ListEnvironmentOutputsRequest request) 
+        {
+            return new ListEnvironmentOutputsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEnvironmentProvisionedResources operation
+        ///</summary>
+        public IListEnvironmentProvisionedResourcesPaginator ListEnvironmentProvisionedResources(ListEnvironmentProvisionedResourcesRequest request) 
+        {
+            return new ListEnvironmentProvisionedResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnvironments operation
         ///</summary>
         public IListEnvironmentsPaginator ListEnvironments(ListEnvironmentsRequest request) 
@@ -68,11 +84,59 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Paginator for ListRepositories operation
+        ///</summary>
+        public IListRepositoriesPaginator ListRepositories(ListRepositoriesRequest request) 
+        {
+            return new ListRepositoriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRepositorySyncDefinitions operation
+        ///</summary>
+        public IListRepositorySyncDefinitionsPaginator ListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request) 
+        {
+            return new ListRepositorySyncDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServiceInstanceOutputs operation
+        ///</summary>
+        public IListServiceInstanceOutputsPaginator ListServiceInstanceOutputs(ListServiceInstanceOutputsRequest request) 
+        {
+            return new ListServiceInstanceOutputsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServiceInstanceProvisionedResources operation
+        ///</summary>
+        public IListServiceInstanceProvisionedResourcesPaginator ListServiceInstanceProvisionedResources(ListServiceInstanceProvisionedResourcesRequest request) 
+        {
+            return new ListServiceInstanceProvisionedResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServiceInstances operation
         ///</summary>
         public IListServiceInstancesPaginator ListServiceInstances(ListServiceInstancesRequest request) 
         {
             return new ListServiceInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServicePipelineOutputs operation
+        ///</summary>
+        public IListServicePipelineOutputsPaginator ListServicePipelineOutputs(ListServicePipelineOutputsRequest request) 
+        {
+            return new ListServicePipelineOutputsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListServicePipelineProvisionedResources operation
+        ///</summary>
+        public IListServicePipelineProvisionedResourcesPaginator ListServicePipelineProvisionedResources(ListServicePipelineProvisionedResourcesRequest request) 
+        {
+            return new ListServicePipelineProvisionedResourcesPaginator(this.client, request);
         }
 
         /// <summary>

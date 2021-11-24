@@ -29,19 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The AWS Proton pipeline service role data.
+    /// The Proton pipeline service role and repository data.
     /// </summary>
     public partial class AccountSettings
     {
+        private RepositoryBranch _pipelineProvisioningRepository;
         private string _pipelineServiceRoleArn;
+
+        /// <summary>
+        /// Gets and sets the property PipelineProvisioningRepository. 
+        /// <para>
+        /// The repository that you provide with pull request provisioning.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Provisioning by pull request is currently in feature preview and is only usable with
+        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
+        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public RepositoryBranch PipelineProvisioningRepository
+        {
+            get { return this._pipelineProvisioningRepository; }
+            set { this._pipelineProvisioningRepository = value; }
+        }
+
+        // Check to see if PipelineProvisioningRepository property is set
+        internal bool IsSetPipelineProvisioningRepository()
+        {
+            return this._pipelineProvisioningRepository != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Proton pipeline service role.
+        /// The Amazon Resource Name (ARN) of the Proton pipeline service role.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=0, Max=2048)]
         public string PipelineServiceRoleArn
         {
             get { return this._pipelineServiceRoleArn; }

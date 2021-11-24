@@ -64,6 +64,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("pipelineProvisioningRepository", targetDepth))
+                {
+                    var unmarshaller = RepositoryBranchUnmarshaller.Instance;
+                    unmarshalledObject.PipelineProvisioningRepository = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipelineServiceRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

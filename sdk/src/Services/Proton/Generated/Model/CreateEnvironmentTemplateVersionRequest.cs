@@ -47,8 +47,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// When included, if two identicial requests are made with the same client token, AWS
-        /// Proton returns the environment template version that the first request created.
+        /// When included, if two identical requests are made with the same client token, Proton
+        /// returns the environment template version that the first request created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -86,12 +86,12 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To create a new minor version of the environment template, include a <code>majorVersion</code>.
+        /// To create a new minor version of the environment template, include a <code>major Version</code>.
         /// </para>
         ///  
         /// <para>
         /// To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>majorVersion</code>.
+        /// <code>major Version</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

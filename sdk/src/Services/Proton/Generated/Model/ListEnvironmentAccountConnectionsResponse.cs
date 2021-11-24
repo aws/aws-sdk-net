@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentAccountConnections. 
         /// <para>
-        /// An array of environment account connections with details that's returned by AWS Proton.
+        /// An array of environment account connections with details that's returned by Proton.
         /// 
         /// </para>
         /// </summary>

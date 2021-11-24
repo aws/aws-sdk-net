@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The environment detail data. An AWS Proton environment is a set resources shared across
-    /// an AWS Proton service.
+    /// The environment detail data. An Proton environment is a set resources shared across
+    /// an Proton service.
     /// </summary>
     public partial class Environment
     {
@@ -46,6 +46,7 @@ namespace Amazon.Proton.Model
         private string _name;
         private string _protonServiceRoleArn;
         private Provisioning _provisioning;
+        private RepositoryBranch _provisioningRepository;
         private string _spec;
         private string _templateMajorVersion;
         private string _templateMinorVersion;
@@ -243,8 +244,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton
-        /// to make calls to other services on your behalf.
+        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
+        /// calls to other services on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -277,6 +278,31 @@ namespace Amazon.Proton.Model
         internal bool IsSetProvisioning()
         {
             return this._provisioning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningRepository. 
+        /// <para>
+        /// The repository that you provide with pull request provisioning.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Provisioning by pull request is currently in feature preview and is only usable with
+        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
+        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public RepositoryBranch ProvisioningRepository
+        {
+            get { return this._provisioningRepository; }
+            set { this._provisioningRepository = value; }
+        }
+
+        // Check to see if ProvisioningRepository property is set
+        internal bool IsSetProvisioningRepository()
+        {
+            return this._provisioningRepository != null;
         }
 
         /// <summary>

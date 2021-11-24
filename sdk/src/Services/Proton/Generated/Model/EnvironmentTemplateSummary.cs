@@ -178,7 +178,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RecommendedVersion. 
         /// <para>
-        /// The ID of the recommended version of the environment template.
+        /// The recommended version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

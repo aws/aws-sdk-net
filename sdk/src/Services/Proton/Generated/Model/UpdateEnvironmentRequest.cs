@@ -35,8 +35,8 @@ namespace Amazon.Proton.Model
     ///  
     /// <para>
     /// If the environment is associated with an environment account connection, <i>don't</i>
-    /// update or include the <code>protonServiceRoleArn</code> parameter to update or connect
-    /// to an environment account connection. 
+    /// update or include the <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
+    /// parameter to update or connect to an environment account connection.
     /// </para>
     ///  
     /// <para>
@@ -54,6 +54,17 @@ namespace Amazon.Proton.Model
     /// <para>
     /// You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
     /// parameter and value. You can’t update both.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the environment was provisioned with pull request provisioning, include the <code>provisioningRepository</code>
+    /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
+    /// parameters.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the environment wasn't provisioned with pull request provisioning, omit the <code>provisioningRepository</code>
+    /// parameter.
     /// </para>
     ///  
     /// <para>
@@ -109,6 +120,7 @@ namespace Amazon.Proton.Model
         private string _environmentAccountConnectionId;
         private string _name;
         private string _protonServiceRoleArn;
+        private RepositoryBranchInput _provisioningRepository;
         private string _spec;
         private string _templateMajorVersion;
         private string _templateMinorVersion;
@@ -239,8 +251,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton
-        /// to make API calls to other services your behalf.
+        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
+        /// API calls to other services your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -254,6 +266,31 @@ namespace Amazon.Proton.Model
         internal bool IsSetProtonServiceRoleArn()
         {
             return this._protonServiceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningRepository. 
+        /// <para>
+        /// The repository that you provide with pull request provisioning.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Provisioning by pull request is currently in feature preview and is only usable with
+        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
+        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public RepositoryBranchInput ProvisioningRepository
+        {
+            get { return this._provisioningRepository; }
+            set { this._provisioningRepository = value; }
+        }
+
+        // Check to see if ProvisioningRepository property is set
+        internal bool IsSetProvisioningRepository()
+        {
+            return this._provisioningRepository != null;
         }
 
         /// <summary>
@@ -278,7 +315,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMajorVersion. 
         /// <para>
-        /// The ID of the major version of the environment to update.
+        /// The major version of the environment to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -297,7 +334,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMinorVersion. 
         /// <para>
-        /// The ID of the minor version of the environment to update.
+        /// The minor version of the environment to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

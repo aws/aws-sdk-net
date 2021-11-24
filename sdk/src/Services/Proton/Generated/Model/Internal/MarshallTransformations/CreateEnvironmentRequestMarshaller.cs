@@ -91,6 +91,17 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProtonServiceRoleArn);
                 }
 
+                if(publicRequest.IsSetProvisioningRepository())
+                {
+                    context.Writer.WritePropertyName("provisioningRepository");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RepositoryBranchInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProvisioningRepository, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSpec())
                 {
                     context.Writer.WritePropertyName("spec");

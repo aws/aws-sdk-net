@@ -30,8 +30,8 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentTemplate operation.
-    /// Create an environment template for AWS Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-    /// Templates</a> in the <i>AWS Proton Administrator Guide</i>.
+    /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
+    /// Templates</a> in the <i>Proton Administrator Guide</i>.
     /// 
     ///  
     /// <para>
@@ -39,18 +39,18 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Register and publish a <i>standard</i> environment template that instructs AWS Proton
+    /// Register and publish a <i>standard</i> environment template that instructs Proton
     /// to deploy and manage environment infrastructure.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Register and publish a <i>customer managed</i> environment template that connects
-    /// AWS Proton to your existing provisioned infrastructure that you manage. AWS Proton
-    /// <i>doesn't</i> manage your existing provisioned infrastructure. To create an environment
-    /// template for customer provisioned and managed infrastructure, include the <code>provisioning</code>
+    /// Proton to your existing provisioned infrastructure that you manage. Proton <i>doesn't</i>
+    /// manage your existing provisioned infrastructure. To create an environment template
+    /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
     /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
     /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
-    /// and publish an environment template</a> in the <i>AWS Proton Administrator Guide</i>.
+    /// and publish an environment template</a> in the <i>Proton Administrator Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -104,7 +104,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
         /// <para>
-        /// A customer provided encryption key that AWS Proton uses to encrypt data.
+        /// A customer provided encryption key that Proton uses to encrypt data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -161,10 +161,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for your environment template. For more information, see <i>AWS Proton
-        /// resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-        /// Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-        /// Proton User Guide</a>.
+        /// Create tags for your environment template. For more information, see <i>Proton resources
+        /// and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// User Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
     /// An environment account connection is a secure bi-directional connection between a
     /// <i>management account</i> and an <i>environment account</i> that maintains authorization
     /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-    /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
+    /// account connections</a> in the <i>Proton Administrator guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateEnvironmentAccountConnectionRequest : AmazonProtonRequest
@@ -48,12 +48,13 @@ namespace Amazon.Proton.Model
         private string _environmentName;
         private string _managementAccountId;
         private string _roleArn;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// When included, if two identicial requests are made with the same client token, AWS
-        /// Proton returns the environment account connection that the first request created.
+        /// When included, if two identical requests are made with the same client token, Proton
+        /// returns the environment account connection that the first request created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -72,8 +73,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// The name of the AWS Proton environment that's created in the associated management
-        /// account.
+        /// The name of the Proton environment that's created in the associated management account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -93,10 +93,9 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property ManagementAccountId. 
         /// <para>
         /// The ID of the management account that accepts or rejects the environment account connection.
-        /// You create an manage the AWS Proton environment in this account. If the management
-        /// account accepts the environment account connection, AWS Proton can use the associated
-        /// IAM role to provision environment infrastructure resources in the associated environment
-        /// account.
+        /// You create an manage the Proton environment in this account. If the management account
+        /// accepts the environment account connection, Proton can use the associated IAM role
+        /// to provision environment infrastructure resources in the associated environment account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -116,7 +115,7 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM service role that's created in the environment
-        /// account. AWS Proton uses this role to provision infrastructure resources in the associated
+        /// account. Proton uses this role to provision infrastructure resources in the associated
         /// environment account.
         /// </para>
         /// </summary>
@@ -131,6 +130,26 @@ namespace Amazon.Proton.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

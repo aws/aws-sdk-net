@@ -136,6 +136,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     unmarshalledObject.Provisioning = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("provisioningRepository", targetDepth))
+                {
+                    var unmarshaller = RepositoryBranchUnmarshaller.Instance;
+                    unmarshalledObject.ProvisioningRepository = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("spec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

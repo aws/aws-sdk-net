@@ -30,10 +30,27 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironment operation.
-    /// Deploy a new environment. An AWS Proton environment is created from an environment
-    /// template that defines infrastructure and resources that can be shared across services.
+    /// Deploy a new environment. An Proton environment is created from an environment template
+    /// that defines infrastructure and resources that can be shared across services.
+    /// 
+    ///  <p class="title"> <b>You can provision environments using the following methods:</b>
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Standard provisioning: Proton makes direct calls to provision your resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Pull request provisioning: Proton makes pull requests on your repository to provide
+    /// compiled infrastructure as code (IaC) files that your IaC engine uses to provision
+    /// resources.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-    /// in the <i>AWS Proton Administrator Guide.</i>
+    /// in the <i>Proton Administrator Guide.</i> 
+    /// </para>
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonProtonRequest
     {
@@ -41,6 +58,7 @@ namespace Amazon.Proton.Model
         private string _environmentAccountConnectionId;
         private string _name;
         private string _protonServiceRoleArn;
+        private RepositoryBranchInput _provisioningRepository;
         private string _spec;
         private List<Tag> _tags = new List<Tag>();
         private string _templateMajorVersion;
@@ -72,8 +90,9 @@ namespace Amazon.Proton.Model
         /// The ID of the environment account connection that you provide if you're provisioning
         /// your environment infrastructure resources to an environment account. You must include
         /// either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-        /// parameter and value. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>AWS Proton Administrator guide</i>.
+        /// parameter and value and omit the <code>provisioningRepository</code> parameter and
+        /// values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton Administrator guide</i>.
         /// </para>
         /// </summary>
         public string EnvironmentAccountConnectionId
@@ -110,9 +129,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton
-        /// to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code>
-        /// or <code>protonServiceRoleArn</code> parameter and value.
+        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
+        /// calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code>
+        /// or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code>
+        /// parameter when you use standard provisioning.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -129,11 +149,38 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvisioningRepository. 
+        /// <para>
+        /// The repository that you provide with pull request provisioning. If you provide this
+        /// parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code>
+        /// parameters.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Provisioning by pull request is currently in feature preview and is only usable with
+        /// Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon
+        /// Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public RepositoryBranchInput ProvisioningRepository
+        {
+            get { return this._provisioningRepository; }
+            set { this._provisioningRepository = value; }
+        }
+
+        // Check to see if ProvisioningRepository property is set
+        internal bool IsSetProvisioningRepository()
+        {
+            return this._provisioningRepository != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Spec. 
         /// <para>
         /// A link to a YAML formatted spec file that provides inputs as defined in the environment
         /// template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// in the <i>AWS Proton Administrator Guide</i>.
+        /// in the <i>Proton Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=51200)]
@@ -152,10 +199,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Create tags for your environment. For more information, see <i>AWS Proton resources
-        /// and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS
-        /// Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS
-        /// Proton User Guide</a>.
+        /// Create tags for your environment. For more information, see <i>Proton resources and
+        /// tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
+        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// User Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -174,7 +221,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMajorVersion. 
         /// <para>
-        /// The ID of the major version of the environment template.
+        /// The major version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -193,7 +240,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMinorVersion. 
         /// <para>
-        /// The ID of the minor version of the environment template.
+        /// The minor version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -213,7 +260,7 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property TemplateName. 
         /// <para>
         /// The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-        /// Templates</a> in the <i>AWS Proton Administrator Guide</i>.
+        /// Templates</a> in the <i>Proton Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

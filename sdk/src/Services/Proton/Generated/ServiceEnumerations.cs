@@ -261,6 +261,56 @@ namespace Amazon.Proton
 
 
     /// <summary>
+    /// Constants used for properties of type ProvisionedResourceEngine.
+    /// </summary>
+    public class ProvisionedResourceEngine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDFORMATION for ProvisionedResourceEngine
+        /// </summary>
+        public static readonly ProvisionedResourceEngine CLOUDFORMATION = new ProvisionedResourceEngine("CLOUDFORMATION");
+        /// <summary>
+        /// Constant TERRAFORM for ProvisionedResourceEngine
+        /// </summary>
+        public static readonly ProvisionedResourceEngine TERRAFORM = new ProvisionedResourceEngine("TERRAFORM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProvisionedResourceEngine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProvisionedResourceEngine FindValue(string value)
+        {
+            return FindValue<ProvisionedResourceEngine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProvisionedResourceEngine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Provisioning.
     /// </summary>
     public class Provisioning : ConstantClass
@@ -300,6 +350,234 @@ namespace Amazon.Proton
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Provisioning(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepositoryProvider.
+    /// </summary>
+    public class RepositoryProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BITBUCKET for RepositoryProvider
+        /// </summary>
+        public static readonly RepositoryProvider BITBUCKET = new RepositoryProvider("BITBUCKET");
+        /// <summary>
+        /// Constant GITHUB for RepositoryProvider
+        /// </summary>
+        public static readonly RepositoryProvider GITHUB = new RepositoryProvider("GITHUB");
+        /// <summary>
+        /// Constant GITHUB_ENTERPRISE for RepositoryProvider
+        /// </summary>
+        public static readonly RepositoryProvider GITHUB_ENTERPRISE = new RepositoryProvider("GITHUB_ENTERPRISE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepositoryProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepositoryProvider FindValue(string value)
+        {
+            return FindValue<RepositoryProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepositoryProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepositorySyncStatus.
+    /// </summary>
+    public class RepositorySyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for RepositorySyncStatus
+        /// </summary>
+        public static readonly RepositorySyncStatus FAILED = new RepositorySyncStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RepositorySyncStatus
+        /// </summary>
+        public static readonly RepositorySyncStatus IN_PROGRESS = new RepositorySyncStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INITIATED for RepositorySyncStatus
+        /// </summary>
+        public static readonly RepositorySyncStatus INITIATED = new RepositorySyncStatus("INITIATED");
+        /// <summary>
+        /// Constant QUEUED for RepositorySyncStatus
+        /// </summary>
+        public static readonly RepositorySyncStatus QUEUED = new RepositorySyncStatus("QUEUED");
+        /// <summary>
+        /// Constant SUCCEEDED for RepositorySyncStatus
+        /// </summary>
+        public static readonly RepositorySyncStatus SUCCEEDED = new RepositorySyncStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepositorySyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepositorySyncStatus FindValue(string value)
+        {
+            return FindValue<RepositorySyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepositorySyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceDeploymentStatus.
+    /// </summary>
+    public class ResourceDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ResourceDeploymentStatus
+        /// </summary>
+        public static readonly ResourceDeploymentStatus FAILED = new ResourceDeploymentStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ResourceDeploymentStatus
+        /// </summary>
+        public static readonly ResourceDeploymentStatus IN_PROGRESS = new ResourceDeploymentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for ResourceDeploymentStatus
+        /// </summary>
+        public static readonly ResourceDeploymentStatus SUCCEEDED = new ResourceDeploymentStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceDeploymentStatus FindValue(string value)
+        {
+            return FindValue<ResourceDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceSyncStatus.
+    /// </summary>
+    public class ResourceSyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ResourceSyncStatus
+        /// </summary>
+        public static readonly ResourceSyncStatus FAILED = new ResourceSyncStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ResourceSyncStatus
+        /// </summary>
+        public static readonly ResourceSyncStatus IN_PROGRESS = new ResourceSyncStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INITIATED for ResourceSyncStatus
+        /// </summary>
+        public static readonly ResourceSyncStatus INITIATED = new ResourceSyncStatus("INITIATED");
+        /// <summary>
+        /// Constant SUCCEEDED for ResourceSyncStatus
+        /// </summary>
+        public static readonly ResourceSyncStatus SUCCEEDED = new ResourceSyncStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceSyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceSyncStatus FindValue(string value)
+        {
+            return FindValue<ResourceSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceSyncStatus(string value)
         {
             return FindValue(value);
         }
@@ -398,6 +676,102 @@ namespace Amazon.Proton
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyncType.
+    /// </summary>
+    public class SyncType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEMPLATE_SYNC for SyncType
+        /// </summary>
+        public static readonly SyncType TEMPLATE_SYNC = new SyncType("TEMPLATE_SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyncType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncType FindValue(string value)
+        {
+            return FindValue<SyncType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TemplateType.
+    /// </summary>
+    public class TemplateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENVIRONMENT for TemplateType
+        /// </summary>
+        public static readonly TemplateType ENVIRONMENT = new TemplateType("ENVIRONMENT");
+        /// <summary>
+        /// Constant SERVICE for TemplateType
+        /// </summary>
+        public static readonly TemplateType SERVICE = new TemplateType("SERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TemplateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateType FindValue(string value)
+        {
+            return FindValue<TemplateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateType(string value)
         {
             return FindValue(value);
         }

@@ -32,9 +32,9 @@ namespace Amazon.Proton.Model
     /// Container for the parameters to the CancelServicePipelineDeployment operation.
     /// Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a>
     /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-    /// a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">AWS
-    /// Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">AWS
-    /// Proton User guide</a>.
+    /// a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton
+    /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton
+    /// User guide</a>.
     /// 
     ///  
     /// <para>

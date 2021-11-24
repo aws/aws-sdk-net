@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property AccountSettings. 
         /// <para>
-        /// The AWS Proton pipeline service role detail data that's returned by AWS Proton.
+        /// The Proton pipeline service role detail data that's returned by Proton.
         /// </para>
         /// </summary>
         public AccountSettings AccountSettings

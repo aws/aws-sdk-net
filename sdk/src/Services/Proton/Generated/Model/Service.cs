@@ -69,8 +69,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        /// The name of the code repository branch that holds the code that's deployed in AWS
-        /// Proton.
+        /// The name of the code repository branch that holds the code that's deployed in Proton.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -185,9 +184,8 @@ namespace Amazon.Proton.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the repository connection. For more information,
         /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-        /// up a repository connection</a> in the <i>AWS Proton Administrator Guide</i> and <a
-        /// href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-        /// up with AWS Proton</a> in the <i>AWS Proton User Guide</i>.
+        /// up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
+        /// up with Proton</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -206,7 +204,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RepositoryId. 
         /// <para>
-        /// The ID of the code repository.
+        /// The ID of the source code repository.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

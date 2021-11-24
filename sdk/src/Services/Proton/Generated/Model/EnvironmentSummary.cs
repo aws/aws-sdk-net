@@ -240,8 +240,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Proton service role that allows AWS Proton
-        /// to make calls to other services on your behalf.
+        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
+        /// calls to other services on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -279,7 +279,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMajorVersion. 
         /// <para>
-        /// The ID of the major version of the environment template.
+        /// The major version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -298,7 +298,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMinorVersion. 
         /// <para>
-        /// The ID of the minor version of the environment template.
+        /// The minor version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

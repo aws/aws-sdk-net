@@ -239,8 +239,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMajorVersion. 
         /// <para>
-        /// The ID of the major version of the service template that was used to create the service
-        /// instance.
+        /// The major version of the service template that was used to create the service instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -259,8 +258,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateMinorVersion. 
         /// <para>
-        /// The ID of the minor version of the service template that was used to create the service
-        /// instance.
+        /// The minor version of the service template that was used to create the service instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

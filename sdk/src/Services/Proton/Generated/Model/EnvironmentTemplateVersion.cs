@@ -124,8 +124,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// The ID of the latest major version that's associated with the version of an environment
-        /// template.
+        /// The latest major version that's associated with the version of an environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -144,7 +143,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MinorVersion. 
         /// <para>
-        /// The ID of the minor version of an environment template.
+        /// The minor version of an environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -163,7 +162,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RecommendedMinorVersion. 
         /// <para>
-        /// The ID of the recommended minor version of the environment template.
+        /// The recommended minor version of the environment template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

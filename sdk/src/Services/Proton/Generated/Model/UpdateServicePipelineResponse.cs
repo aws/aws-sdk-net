@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Pipeline. 
         /// <para>
-        /// The pipeline details returned by AWS Proton.
+        /// The pipeline details returned by Proton.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
