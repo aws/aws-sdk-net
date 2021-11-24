@@ -1118,7 +1118,7 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.comAmazonECR/latest/userguide/delete_image.html">Deleting
+        /// To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
         /// an image</a> in the <i>Amazon ECR User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -1173,7 +1173,7 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.comAmazonECR/latest/userguide/delete_image.html">Deleting
+        /// To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
         /// an image</a> in the <i>Amazon ECR User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -3294,9 +3294,9 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
-        /// (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+        /// (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
         /// to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>,
-        /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+        /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
         /// </summary>
@@ -3336,9 +3336,9 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
-        /// (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+        /// (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
         /// to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>,
-        /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+        /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
         /// </summary>

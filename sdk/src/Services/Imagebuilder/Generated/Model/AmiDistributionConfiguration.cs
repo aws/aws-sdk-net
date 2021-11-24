@@ -62,8 +62,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the distribution configuration. Minimum and maximum length are
-        /// in characters.
+        /// The description of the AMI distribution configuration. Minimum and maximum length
+        /// are in characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

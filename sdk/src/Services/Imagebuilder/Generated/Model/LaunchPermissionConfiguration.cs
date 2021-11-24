@@ -38,8 +38,52 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class LaunchPermissionConfiguration
     {
+        private List<string> _organizationalUnitArns = new List<string>();
+        private List<string> _organizationArns = new List<string>();
         private List<string> _userGroups = new List<string>();
         private List<string> _userIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitArns. 
+        /// <para>
+        /// The ARN for an Organizations organizational unit (OU) that you want to share your
+        /// AMI with. For more information about key concepts for Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html">Organizations
+        /// terminology and concepts</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public List<string> OrganizationalUnitArns
+        {
+            get { return this._organizationalUnitArns; }
+            set { this._organizationalUnitArns = value; }
+        }
+
+        // Check to see if OrganizationalUnitArns property is set
+        internal bool IsSetOrganizationalUnitArns()
+        {
+            return this._organizationalUnitArns != null && this._organizationalUnitArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationArns. 
+        /// <para>
+        /// The ARN for an Amazon Web Services Organization that you want to share your AMI with.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+        /// is Organizations?</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public List<string> OrganizationArns
+        {
+            get { return this._organizationArns; }
+            set { this._organizationArns = value; }
+        }
+
+        // Check to see if OrganizationArns property is set
+        internal bool IsSetOrganizationArns()
+        {
+            return this._organizationArns != null && this._organizationArns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property UserGroups. 

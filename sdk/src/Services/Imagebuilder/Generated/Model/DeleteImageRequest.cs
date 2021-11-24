@@ -47,7 +47,7 @@ namespace Amazon.Imagebuilder.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.comAmazonECR/latest/userguide/delete_image.html">Deleting
+    /// To delete a container image from Amazon ECR, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/delete_image.html">Deleting
     /// an image</a> in the <i>Amazon ECR User Guide</i>.
     /// </para>
     ///  </li> </ul>
