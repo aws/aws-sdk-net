@@ -54,6 +54,24 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("CustomizedCapacityMetricSpecification", targetDepth))
+                    {
+                        var unmarshaller = PredictiveScalingCustomizedCapacityMetricUnmarshaller.Instance;
+                        unmarshalledObject.CustomizedCapacityMetricSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomizedLoadMetricSpecification", targetDepth))
+                    {
+                        var unmarshaller = PredictiveScalingCustomizedLoadMetricUnmarshaller.Instance;
+                        unmarshalledObject.CustomizedLoadMetricSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CustomizedScalingMetricSpecification", targetDepth))
+                    {
+                        var unmarshaller = PredictiveScalingCustomizedScalingMetricUnmarshaller.Instance;
+                        unmarshalledObject.CustomizedScalingMetricSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PredefinedLoadMetricSpecification", targetDepth))
                     {
                         var unmarshaller = PredictiveScalingPredefinedLoadMetricUnmarshaller.Instance;

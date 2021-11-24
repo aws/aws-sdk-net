@@ -78,19 +78,81 @@ namespace Amazon.AutoScaling.Model
     /// so that the average number of requests received by each instance is as close to 1000
     /// requests per minute as possible at all times.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about using customized metrics with predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced
+    /// predictive scaling policy configurations using customized metrics</a> in the <i>Amazon
+    /// EC2 Auto Scaling User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class PredictiveScalingMetricSpecification
     {
+        private PredictiveScalingCustomizedCapacityMetric _customizedCapacityMetricSpecification;
+        private PredictiveScalingCustomizedLoadMetric _customizedLoadMetricSpecification;
+        private PredictiveScalingCustomizedScalingMetric _customizedScalingMetricSpecification;
         private PredictiveScalingPredefinedLoadMetric _predefinedLoadMetricSpecification;
         private PredictiveScalingPredefinedMetricPair _predefinedMetricPairSpecification;
         private PredictiveScalingPredefinedScalingMetric _predefinedScalingMetricSpecification;
         private double? _targetValue;
 
         /// <summary>
+        /// Gets and sets the property CustomizedCapacityMetricSpecification. 
+        /// <para>
+        /// The customized capacity metric specification.
+        /// </para>
+        /// </summary>
+        public PredictiveScalingCustomizedCapacityMetric CustomizedCapacityMetricSpecification
+        {
+            get { return this._customizedCapacityMetricSpecification; }
+            set { this._customizedCapacityMetricSpecification = value; }
+        }
+
+        // Check to see if CustomizedCapacityMetricSpecification property is set
+        internal bool IsSetCustomizedCapacityMetricSpecification()
+        {
+            return this._customizedCapacityMetricSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizedLoadMetricSpecification. 
+        /// <para>
+        /// The customized load metric specification.
+        /// </para>
+        /// </summary>
+        public PredictiveScalingCustomizedLoadMetric CustomizedLoadMetricSpecification
+        {
+            get { return this._customizedLoadMetricSpecification; }
+            set { this._customizedLoadMetricSpecification = value; }
+        }
+
+        // Check to see if CustomizedLoadMetricSpecification property is set
+        internal bool IsSetCustomizedLoadMetricSpecification()
+        {
+            return this._customizedLoadMetricSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizedScalingMetricSpecification. 
+        /// <para>
+        /// The customized scaling metric specification.
+        /// </para>
+        /// </summary>
+        public PredictiveScalingCustomizedScalingMetric CustomizedScalingMetricSpecification
+        {
+            get { return this._customizedScalingMetricSpecification; }
+            set { this._customizedScalingMetricSpecification = value; }
+        }
+
+        // Check to see if CustomizedScalingMetricSpecification property is set
+        internal bool IsSetCustomizedScalingMetricSpecification()
+        {
+            return this._customizedScalingMetricSpecification != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PredefinedLoadMetricSpecification. 
         /// <para>
-        /// The load metric specification.
+        /// The predefined load metric specification.
         /// </para>
         /// </summary>
         public PredictiveScalingPredefinedLoadMetric PredefinedLoadMetricSpecification
@@ -108,8 +170,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PredefinedMetricPairSpecification. 
         /// <para>
-        /// The metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate
-        /// scaling metric and load metric to use.
+        /// The predefined metric pair specification from which Amazon EC2 Auto Scaling determines
+        /// the appropriate scaling metric and load metric to use.
         /// </para>
         /// </summary>
         public PredictiveScalingPredefinedMetricPair PredefinedMetricPairSpecification
@@ -127,7 +189,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PredefinedScalingMetricSpecification. 
         /// <para>
-        /// The scaling metric specification.
+        /// The predefined scaling metric specification.
         /// </para>
         /// </summary>
         public PredictiveScalingPredefinedScalingMetric PredefinedScalingMetricSpecification
@@ -147,6 +209,15 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Specifies the target utilization.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Some metrics are based on a count instead of a percentage, such as the request count
+        /// for an Application Load Balancer or the number of messages in an SQS queue. If the
+        /// scaling policy specifies one of these metrics, specify the target utilization as the
+        /// optimal average request or message count per instance during any one-minute interval.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public double TargetValue

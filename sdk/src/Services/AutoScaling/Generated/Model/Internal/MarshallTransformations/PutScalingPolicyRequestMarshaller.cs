@@ -113,6 +113,201 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         int publicRequestPredictiveScalingConfigurationlistValueIndex = 1;
                         foreach(var publicRequestPredictiveScalingConfigurationlistValue in publicRequest.PredictiveScalingConfiguration.MetricSpecifications)
                         {
+                            if(publicRequestPredictiveScalingConfigurationlistValue.IsSetCustomizedCapacityMetricSpecification())
+                            {
+                                if(publicRequestPredictiveScalingConfigurationlistValue.CustomizedCapacityMetricSpecification.IsSetMetricDataQueries())
+                                {
+                                    int publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex = 1;
+                                    foreach(var publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue in publicRequestPredictiveScalingConfigurationlistValue.CustomizedCapacityMetricSpecification.MetricDataQueries)
+                                    {
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.IsSetExpression())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.Expression));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.IsSetId())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.Id));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.IsSetLabel())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.Label));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.IsSetMetricStat())
+                                        {
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.IsSetMetric())
+                                            {
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Metric.IsSetDimensions())
+                                                {
+                                                    int publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValueIndex = 1;
+                                                    foreach(var publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValue in publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Metric.Dimensions)
+                                                    {
+                                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValue.IsSetName())
+                                                        {
+                                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValue.Name));
+                                                        }
+                                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValue.IsSetValue())
+                                                        {
+                                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValue.Value));
+                                                        }
+                                                        publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueMetricStatMetriclistValueIndex++;
+                                                    }
+                                                }
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Metric.IsSetMetricName())
+                                                {
+                                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Metric.MetricName));
+                                                }
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Metric.IsSetNamespace())
+                                                {
+                                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Metric.Namespace));
+                                                }
+                                            }
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.IsSetStat())
+                                            {
+                                                request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Stat));
+                                            }
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.IsSetUnit())
+                                            {
+                                                request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.MetricStat.Unit));
+                                            }
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.IsSetReturnData())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedCapacityMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValue.ReturnData));
+                                        }
+                                        publicRequestPredictiveScalingConfigurationlistValueCustomizedCapacityMetricSpecificationlistValueIndex++;
+                                    }
+                                }
+                            }
+                            if(publicRequestPredictiveScalingConfigurationlistValue.IsSetCustomizedLoadMetricSpecification())
+                            {
+                                if(publicRequestPredictiveScalingConfigurationlistValue.CustomizedLoadMetricSpecification.IsSetMetricDataQueries())
+                                {
+                                    int publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex = 1;
+                                    foreach(var publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue in publicRequestPredictiveScalingConfigurationlistValue.CustomizedLoadMetricSpecification.MetricDataQueries)
+                                    {
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.IsSetExpression())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.Expression));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.IsSetId())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.Id));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.IsSetLabel())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.Label));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.IsSetMetricStat())
+                                        {
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.IsSetMetric())
+                                            {
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Metric.IsSetDimensions())
+                                                {
+                                                    int publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValueIndex = 1;
+                                                    foreach(var publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValue in publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Metric.Dimensions)
+                                                    {
+                                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValue.IsSetName())
+                                                        {
+                                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValue.Name));
+                                                        }
+                                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValue.IsSetValue())
+                                                        {
+                                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValue.Value));
+                                                        }
+                                                        publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueMetricStatMetriclistValueIndex++;
+                                                    }
+                                                }
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Metric.IsSetMetricName())
+                                                {
+                                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Metric.MetricName));
+                                                }
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Metric.IsSetNamespace())
+                                                {
+                                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Metric.Namespace));
+                                                }
+                                            }
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.IsSetStat())
+                                            {
+                                                request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Stat));
+                                            }
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.IsSetUnit())
+                                            {
+                                                request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.MetricStat.Unit));
+                                            }
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.IsSetReturnData())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedLoadMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValue.ReturnData));
+                                        }
+                                        publicRequestPredictiveScalingConfigurationlistValueCustomizedLoadMetricSpecificationlistValueIndex++;
+                                    }
+                                }
+                            }
+                            if(publicRequestPredictiveScalingConfigurationlistValue.IsSetCustomizedScalingMetricSpecification())
+                            {
+                                if(publicRequestPredictiveScalingConfigurationlistValue.CustomizedScalingMetricSpecification.IsSetMetricDataQueries())
+                                {
+                                    int publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex = 1;
+                                    foreach(var publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue in publicRequestPredictiveScalingConfigurationlistValue.CustomizedScalingMetricSpecification.MetricDataQueries)
+                                    {
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.IsSetExpression())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.Expression));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.IsSetId())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.Id));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.IsSetLabel())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.Label));
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.IsSetMetricStat())
+                                        {
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.IsSetMetric())
+                                            {
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Metric.IsSetDimensions())
+                                                {
+                                                    int publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValueIndex = 1;
+                                                    foreach(var publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValue in publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Metric.Dimensions)
+                                                    {
+                                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValue.IsSetName())
+                                                        {
+                                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValue.Name));
+                                                        }
+                                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValue.IsSetValue())
+                                                        {
+                                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValue.Value));
+                                                        }
+                                                        publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueMetricStatMetriclistValueIndex++;
+                                                    }
+                                                }
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Metric.IsSetMetricName())
+                                                {
+                                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Metric.MetricName));
+                                                }
+                                                if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Metric.IsSetNamespace())
+                                                {
+                                                    request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Metric.Namespace));
+                                                }
+                                            }
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.IsSetStat())
+                                            {
+                                                request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Stat));
+                                            }
+                                            if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.IsSetUnit())
+                                            {
+                                                request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.MetricStat.Unit));
+                                            }
+                                        }
+                                        if(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.IsSetReturnData())
+                                        {
+                                            request.Parameters.Add("PredictiveScalingConfiguration" + "." + "MetricSpecifications" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueIndex + "." + "CustomizedScalingMetricSpecification" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValue.ReturnData));
+                                        }
+                                        publicRequestPredictiveScalingConfigurationlistValueCustomizedScalingMetricSpecificationlistValueIndex++;
+                                    }
+                                }
+                            }
                             if(publicRequestPredictiveScalingConfigurationlistValue.IsSetPredefinedLoadMetricSpecification())
                             {
                                 if(publicRequestPredictiveScalingConfigurationlistValue.PredefinedLoadMetricSpecification.IsSetPredefinedMetricType())

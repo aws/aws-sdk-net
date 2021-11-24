@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Timestamps. 
         /// <para>
-        /// The time stamps for the data points, in UTC format.
+        /// The timestamps for the data points, in UTC format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
