@@ -303,7 +303,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FilterCriteria. 
         /// <para>
-        /// (Streams and Amazon SQS) A object that defines the filter criteria used to determine
+        /// (Streams and Amazon SQS) An object that defines the filter criteria that determine
         /// whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
         /// event filtering</a>.
         /// </para>
@@ -365,7 +365,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Streams only) A list of current response type enums applied to the event source mapping.
+        /// (Streams and Amazon SQS) A list of current response type enums applied to the event
+        /// source mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

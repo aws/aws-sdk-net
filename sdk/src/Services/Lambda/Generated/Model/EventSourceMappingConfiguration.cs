@@ -148,8 +148,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FilterCriteria. 
         /// <para>
-        /// (Streams and Amazon SQS) A object that defines the filter criteria used to determine
-        /// whether Lambda should process an event. For more information, see Event filtering.
+        /// (Streams and Amazon SQS) An object that defines the filter criteria that determine
+        /// whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+        /// event filtering</a>.
         /// </para>
         /// </summary>
         public FilterCriteria FilterCriteria

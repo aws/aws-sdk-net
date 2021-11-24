@@ -971,64 +971,6 @@ namespace Amazon.Lambda
 
         #endregion
         
-        #region  CreateFunctionUrlConfig
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateFunctionUrlConfig service method.</param>
-        /// 
-        /// <returns>The response from the CreateFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
-        CreateFunctionUrlConfigResponse CreateFunctionUrlConfig(CreateFunctionUrlConfigRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateFunctionUrlConfig service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
-        Task<CreateFunctionUrlConfigResponse> CreateFunctionUrlConfigAsync(CreateFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  DeleteAlias
 
 
@@ -1541,58 +1483,6 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">REST API Reference for DeleteFunctionEventInvokeConfig Operation</seealso>
         Task<DeleteFunctionEventInvokeConfigResponse> DeleteFunctionEventInvokeConfigAsync(DeleteFunctionEventInvokeConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  DeleteFunctionUrlConfig
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionUrlConfig service method.</param>
-        /// 
-        /// <returns>The response from the DeleteFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
-        DeleteFunctionUrlConfigResponse DeleteFunctionUrlConfig(DeleteFunctionUrlConfigRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionUrlConfig service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
-        Task<DeleteFunctionUrlConfigResponse> DeleteFunctionUrlConfigAsync(DeleteFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2291,58 +2181,6 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">REST API Reference for GetFunctionEventInvokeConfig Operation</seealso>
         Task<GetFunctionEventInvokeConfigResponse> GetFunctionEventInvokeConfigAsync(GetFunctionEventInvokeConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  GetFunctionUrlConfig
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetFunctionUrlConfig service method.</param>
-        /// 
-        /// <returns>The response from the GetFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
-        GetFunctionUrlConfigResponse GetFunctionUrlConfig(GetFunctionUrlConfigRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetFunctionUrlConfig service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
-        Task<GetFunctionUrlConfigResponse> GetFunctionUrlConfigAsync(GetFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3412,58 +3250,6 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
         Task<ListFunctionsByCodeSigningConfigResponse> ListFunctionsByCodeSigningConfigAsync(ListFunctionsByCodeSigningConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  ListFunctionUrlConfigs
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListFunctionUrlConfigs service method.</param>
-        /// 
-        /// <returns>The response from the ListFunctionUrlConfigs service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
-        ListFunctionUrlConfigsResponse ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListFunctionUrlConfigs service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the ListFunctionUrlConfigs service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
-        Task<ListFunctionUrlConfigsResponse> ListFunctionUrlConfigsAsync(ListFunctionUrlConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5210,64 +4996,6 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">REST API Reference for UpdateFunctionEventInvokeConfig Operation</seealso>
         Task<UpdateFunctionEventInvokeConfigResponse> UpdateFunctionEventInvokeConfigAsync(UpdateFunctionEventInvokeConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  UpdateFunctionUrlConfig
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionUrlConfig service method.</param>
-        /// 
-        /// <returns>The response from the UpdateFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
-        UpdateFunctionUrlConfigResponse UpdateFunctionUrlConfig(UpdateFunctionUrlConfigRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionUrlConfig service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UpdateFunctionUrlConfig service method, as returned by Lambda.</returns>
-        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
-        /// One of the parameters in the request is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
-        /// The resource already exists, or another operation is in progress.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
-        /// The resource specified in the request does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.ServiceException">
-        /// The Lambda service encountered an internal error.
-        /// </exception>
-        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// The request throughput limit was exceeded.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
-        Task<UpdateFunctionUrlConfigResponse> UpdateFunctionUrlConfigAsync(UpdateFunctionUrlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

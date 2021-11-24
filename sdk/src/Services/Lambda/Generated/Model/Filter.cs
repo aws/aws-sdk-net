@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// An object that specifies a filter criteria.
+    /// A structure within a <code>FilterCriteria</code> object that defines an event filtering
+    /// pattern.
     /// </summary>
     public partial class Filter
     {
@@ -40,7 +41,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  A filter pattern. For more information on the syntax of a filter pattern, see <a
         /// href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax">
-        /// Filter criteria syntax</a>. 
+        /// Filter rule syntax</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]

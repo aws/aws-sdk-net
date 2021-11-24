@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// An object that contains the filters on the event source.
+    /// An object that contains the filters for an event source.
     /// </summary>
     public partial class FilterCriteria
     {
