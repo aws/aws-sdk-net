@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.168.0",
+    "ProductVersion" : "3.7.168.1",
     "CoreVersion"    : "3.7.5.2",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -354,7 +354,7 @@
             "InPreview"               : false
         },
         "SimpleWorkflow"            : {
-            "Version" : "3.7.0.103",
+            "Version" : "3.7.0.104",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1906,7 +1906,7 @@
             "InPreview"               : false
         },
         "DevOpsGuru"                      : {
-            "Version" : "3.7.5.3",
+            "Version" : "3.7.5.4",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"

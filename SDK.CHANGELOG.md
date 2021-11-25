@@ -1,3 +1,9 @@
+### 3.7.168.1 (2021-11-24 23:51 UTC)
+* DevOpsGuru (3.7.5.4)
+	* Update generator to add in a missing paginator
+* SimpleWorkflow (3.7.0.104)
+	* Update generator to add in a missing paginator
+
 ### 3.7.168.0 (2021-11-24 19:17 UTC)
 * AutoScaling (3.7.8.0)
 	* Customers can now configure predictive scaling policies to proactively scale EC2 Auto Scaling groups based on any CloudWatch metrics that more accurately represent the load on the group than the four predefined metrics. They can also use math expressions to further customize the metrics.
