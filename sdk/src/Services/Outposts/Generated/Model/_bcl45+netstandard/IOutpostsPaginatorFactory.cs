@@ -26,6 +26,16 @@ namespace Amazon.Outposts.Model
     {
 
         /// <summary>
+        /// Paginator for ListCatalogItems operation
+        ///</summary>
+        IListCatalogItemsPaginator ListCatalogItems(ListCatalogItemsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOrders operation
+        ///</summary>
+        IListOrdersPaginator ListOrders(ListOrdersRequest request);
+
+        /// <summary>
         /// Paginator for ListOutposts operation
         ///</summary>
         IListOutpostsPaginator ListOutposts(ListOutpostsRequest request);

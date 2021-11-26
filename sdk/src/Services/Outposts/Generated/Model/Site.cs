@@ -36,6 +36,11 @@ namespace Amazon.Outposts.Model
         private string _accountId;
         private string _description;
         private string _name;
+        private string _notes;
+        private string _operatingAddressCity;
+        private string _operatingAddressCountryCode;
+        private string _operatingAddressStateOrRegion;
+        private RackPhysicalProperties _rackPhysicalProperties;
         private string _siteArn;
         private string _siteId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -86,6 +91,101 @@ namespace Amazon.Outposts.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Notes. 
+        /// <para>
+        ///  Notes about a site. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2000)]
+        public string Notes
+        {
+            get { return this._notes; }
+            set { this._notes = value; }
+        }
+
+        // Check to see if Notes property is set
+        internal bool IsSetNotes()
+        {
+            return this._notes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingAddressCity. 
+        /// <para>
+        ///  City where the hardware is installed and powered on. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string OperatingAddressCity
+        {
+            get { return this._operatingAddressCity; }
+            set { this._operatingAddressCity = value; }
+        }
+
+        // Check to see if OperatingAddressCity property is set
+        internal bool IsSetOperatingAddressCity()
+        {
+            return this._operatingAddressCity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingAddressCountryCode. 
+        /// <para>
+        ///  The ISO-3166 two-letter country code where the hardware is installed and powered
+        /// on. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=2)]
+        public string OperatingAddressCountryCode
+        {
+            get { return this._operatingAddressCountryCode; }
+            set { this._operatingAddressCountryCode = value; }
+        }
+
+        // Check to see if OperatingAddressCountryCode property is set
+        internal bool IsSetOperatingAddressCountryCode()
+        {
+            return this._operatingAddressCountryCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingAddressStateOrRegion. 
+        /// <para>
+        ///  State or region where the hardware is installed and powered on. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string OperatingAddressStateOrRegion
+        {
+            get { return this._operatingAddressStateOrRegion; }
+            set { this._operatingAddressStateOrRegion = value; }
+        }
+
+        // Check to see if OperatingAddressStateOrRegion property is set
+        internal bool IsSetOperatingAddressStateOrRegion()
+        {
+            return this._operatingAddressStateOrRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RackPhysicalProperties. 
+        /// <para>
+        ///  Information about the physical and logistical details for a rack at the site. 
+        /// </para>
+        /// </summary>
+        public RackPhysicalProperties RackPhysicalProperties
+        {
+            get { return this._rackPhysicalProperties; }
+            set { this._rackPhysicalProperties = value; }
+        }
+
+        // Check to see if RackPhysicalProperties property is set
+        internal bool IsSetRackPhysicalProperties()
+        {
+            return this._rackPhysicalProperties != null;
         }
 
         /// <summary>

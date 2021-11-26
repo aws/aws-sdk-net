@@ -36,7 +36,7 @@ namespace Amazon.Outposts.Model
         private string _catalogItemId;
         private string _lineItemId;
         private int? _quantity;
-        private string _status;
+        private LineItemStatus _status;
 
         /// <summary>
         /// Gets and sets the property CatalogItemId. 
@@ -100,8 +100,7 @@ namespace Amazon.Outposts.Model
         /// The status of the line item.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string Status
+        public LineItemStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

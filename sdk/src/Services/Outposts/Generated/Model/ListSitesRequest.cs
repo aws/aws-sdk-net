@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSites operation.
-    /// Lists the sites for the specified AWS account.
+    /// Lists the sites for your Amazon Web Services account.
     /// </summary>
     public partial class ListSitesRequest : AmazonOutpostsRequest
     {

@@ -117,7 +117,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        ///  The ID of the Outpost. 
+        ///  The ID of the Outpost in the order. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -154,8 +154,35 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the order
+        /// The status of the order.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PREPARING</code> - Order is received and being prepared.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To
+        /// get more details, see the <code>LineItem</code> status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>COMPLETED</code> - Order is complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CANCELLED</code> - Order is cancelled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ERROR</code> - Customer should contact support.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
+        /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public OrderStatus Status
         {

@@ -82,6 +82,36 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Notes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Notes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OperatingAddressCity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperatingAddressCity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OperatingAddressCountryCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperatingAddressCountryCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OperatingAddressStateOrRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperatingAddressStateOrRegion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RackPhysicalProperties", targetDepth))
+                {
+                    var unmarshaller = RackPhysicalPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.RackPhysicalProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SiteArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
