@@ -106,7 +106,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CoreNetworkArn.
+        /// Gets and sets the property CoreNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the core network.
+        /// </para>
         /// </summary>
         public string CoreNetworkArn
         {

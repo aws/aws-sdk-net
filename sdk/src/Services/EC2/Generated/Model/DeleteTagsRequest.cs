@@ -96,6 +96,10 @@ namespace Amazon.EC2.Model
         /// We do not delete Amazon Web Services-generated tags (tags that have the <code>aws:</code>
         /// prefix).
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Up to 1000 tags.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
