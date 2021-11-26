@@ -37,7 +37,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced
-    /// predictive scaling policy configurations using customized metrics</a> in the <i>Amazon
+    /// predictive scaling policy configurations using custom metrics</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
@@ -56,12 +56,6 @@ namespace Amazon.AutoScaling.Model
         /// a math expression. This expression can use the <code>Id</code> of the other metrics
         /// to refer to those metrics, and can also use the <code>Id</code> of other expressions
         /// to use the result of those expressions. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For example, to use search expressions, use the SEARCH() function in your metric math
-        /// expression to combine multiple metrics from Auto Scaling groups that use a specific
-        /// name prefix.
         /// </para>
         ///  
         /// <para>
@@ -156,15 +150,15 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use any math expressions, specify <code>True</code> for this value for only
+        /// If you use any math expressions, specify <code>true</code> for this value for only
         /// the final math expression that the metric specification is based on. You must specify
-        /// <code>False</code> for <code>ReturnData</code> for all the other metrics and expressions
+        /// <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions
         /// used in the metric specification.
         /// </para>
         ///  
         /// <para>
         /// If you are only retrieving metrics and not performing any math expressions, do not
-        /// specify anything for <code>ReturnData</code>. This sets it to its default (<code>True</code>).
+        /// specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).
         /// </para>
         /// </summary>
         public bool ReturnData

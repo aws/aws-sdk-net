@@ -40,7 +40,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
+    /// (Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke
     /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
     /// </para>
     ///  </li> <li> 
@@ -61,8 +61,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>If you finish before the timeout period ends, complete the lifecycle action.</b>
-    /// 
+    ///  <b>If you finish before the timeout period ends, send a callback by using the <a>CompleteLifecycleAction</a>
+    /// API call.</b> 
     /// </para>
     ///  </li> </ol> 
     /// <para>

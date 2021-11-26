@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a customized scaling metric for a predictive scaling policy.
+    /// Describes a custom scaling metric for a predictive scaling policy.
     /// </summary>
     public partial class PredictiveScalingCustomizedScalingMetric
     {

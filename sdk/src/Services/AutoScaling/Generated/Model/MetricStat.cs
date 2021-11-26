@@ -96,7 +96,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The unit to use for the returned data points. For a complete list of the units that
         /// CloudWatch supports, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a>
-        /// data type in the <i>Amazon CloudWatch API Reference</i>. 
+        /// data type in the <i>Amazon CloudWatch API Reference</i>.
         /// </para>
         /// </summary>
         public string Unit

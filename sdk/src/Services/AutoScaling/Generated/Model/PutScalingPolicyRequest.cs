@@ -322,12 +322,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PredictiveScalingConfiguration. 
         /// <para>
-        /// A predictive scaling policy. Provides support for only predefined metrics.
+        /// A predictive scaling policy. Provides support for predefined and custom metrics.
         /// </para>
         ///  
         /// <para>
-        /// Predictive scaling works with CPU utilization, network in/out, and the Application
-        /// Load Balancer request count.
+        /// Predefined metrics include CPU utilization, network in/out, and the Application Load
+        /// Balancer request count.
         /// </para>
         ///  
         /// <para>
@@ -402,7 +402,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetTrackingConfiguration. 
         /// <para>
-        /// A target tracking scaling policy. Provides support for predefined or customized metrics.
+        /// A target tracking scaling policy. Provides support for predefined or custom metrics.
         /// </para>
         ///  
         /// <para>

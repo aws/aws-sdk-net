@@ -34,9 +34,9 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance
-    /// when the instance launches (before it is put into service) or as the instance terminates
-    /// (before it is fully terminated).
+    /// A lifecycle hook enables an Auto Scaling group to be aware of events in the Auto Scaling
+    /// instance lifecycle, and then perform a custom action when the corresponding lifecycle
+    /// event occurs.
     /// </para>
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
+    /// (Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke
     /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
     /// </para>
     ///  </li> <li> 
@@ -66,8 +66,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you finish before the timeout period ends, complete the lifecycle action using
-    /// the <a>CompleteLifecycleAction</a> API call.
+    /// If you finish before the timeout period ends, send a callback by using the <a>CompleteLifecycleAction</a>
+    /// API call.
     /// </para>
     ///  </li> </ol> 
     /// <para>

@@ -59,8 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TopicARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
-        /// topic.
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -80,8 +80,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about using customized metrics with predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced
-    /// predictive scaling policy configurations using customized metrics</a> in the <i>Amazon
+    /// For information about using custom metrics with predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html">Advanced
+    /// predictive scaling policy configurations using custom metrics</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
