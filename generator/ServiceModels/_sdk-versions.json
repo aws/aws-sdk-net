@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.168.1",
+    "ProductVersion" : "3.7.169.0",
     "CoreVersion"    : "3.7.5.2",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -14,7 +14,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.7.8.0",
+            "Version" : "3.7.8.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.45.0",
+            "Version" : "3.7.46.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -666,7 +666,7 @@
             "InPreview"               : false
         },
         "Pinpoint"                        : {
-            "Version" : "3.7.3.31",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1714,7 +1714,7 @@
             "InPreview"               : false
         },
         "Outposts"                        : {
-            "Version" : "3.7.3.42",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2034,7 +2034,7 @@
             "InPreview"               : false
         },
         "IoTDeviceAdvisor"                : {
-            "Version" : "3.7.2.0",
+            "Version" : "3.7.2.1",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2090,7 +2090,7 @@
             "InPreview"               : false
         },
         "Mgn"                             : {
-            "Version" : "3.7.1.66",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"

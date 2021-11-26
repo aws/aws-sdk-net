@@ -1,3 +1,17 @@
+### 3.7.169.0 (2021-11-26 19:19 UTC)
+* AutoScaling (3.7.8.1)
+	* Documentation updates for Amazon EC2 Auto Scaling.
+* EC2 (3.7.46.0)
+	* Documentation updates for EC2.
+* IoTDeviceAdvisor (3.7.2.1)
+	* Documentation update for Device Advisor GetEndpoint API
+* Mgn (3.7.2.0)
+	* Application Migration Service now supports an additional replication method that does not require agent installation on each source server. This option is available for source servers running on VMware vCenter versions 6.7 and 7.0.
+* Outposts (3.7.4.0)
+	* This release adds new APIs for working with Outpost sites and orders.
+* Pinpoint (3.7.4.0)
+	* Added a One-Time Password (OTP) management feature. You can use the Amazon Pinpoint API to generate OTP codes and send them to your users as SMS messages. Your apps can then call the API to verify the OTP codes that your users input
+
 ### 3.7.168.1 (2021-11-24 23:51 UTC)
 * DevOpsGuru (3.7.5.4)
 	* Update generator to add in a missing paginator
