@@ -6976,6 +6976,81 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  SendOTPMessage
+
+        /// <summary>
+        /// Send an OTP message
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendOTPMessage service method.</param>
+        /// 
+        /// <returns>The response from the SendOTPMessage service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">REST API Reference for SendOTPMessage Operation</seealso>
+        public virtual SendOTPMessageResponse SendOTPMessage(SendOTPMessageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendOTPMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendOTPMessageResponseUnmarshaller.Instance;
+
+            return Invoke<SendOTPMessageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendOTPMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendOTPMessage operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendOTPMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">REST API Reference for SendOTPMessage Operation</seealso>
+        public virtual IAsyncResult BeginSendOTPMessage(SendOTPMessageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendOTPMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendOTPMessageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendOTPMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendOTPMessage.</param>
+        /// 
+        /// <returns>Returns a  SendOTPMessageResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage">REST API Reference for SendOTPMessage Operation</seealso>
+        public virtual SendOTPMessageResponse EndSendOTPMessage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendOTPMessageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SendUsersMessages
 
         /// <summary>
@@ -8983,6 +9058,81 @@ namespace Amazon.Pinpoint
         public virtual UpdateVoiceTemplateResponse EndUpdateVoiceTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVoiceTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  VerifyOTPMessage
+
+        /// <summary>
+        /// Verify an OTP
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyOTPMessage service method.</param>
+        /// 
+        /// <returns>The response from the VerifyOTPMessage service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">REST API Reference for VerifyOTPMessage Operation</seealso>
+        public virtual VerifyOTPMessageResponse VerifyOTPMessage(VerifyOTPMessageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyOTPMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyOTPMessageResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyOTPMessageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the VerifyOTPMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the VerifyOTPMessage operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyOTPMessage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">REST API Reference for VerifyOTPMessage Operation</seealso>
+        public virtual IAsyncResult BeginVerifyOTPMessage(VerifyOTPMessageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = VerifyOTPMessageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyOTPMessageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  VerifyOTPMessage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyOTPMessage.</param>
+        /// 
+        /// <returns>Returns a  VerifyOTPMessageResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage">REST API Reference for VerifyOTPMessage Operation</seealso>
+        public virtual VerifyOTPMessageResponse EndVerifyOTPMessage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<VerifyOTPMessageResponse>(asyncResult);
         }
 
         #endregion
