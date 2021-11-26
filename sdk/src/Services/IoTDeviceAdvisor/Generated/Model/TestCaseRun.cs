@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Provides test case run.
+    /// Provides the test case run.
     /// </summary>
     public partial class TestCaseRun
     {
@@ -82,7 +82,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property LogUrl. 
         /// <para>
-        /// Provides test case run log Url.
+        /// Provides test case run log URL.
         /// </para>
         /// </summary>
         public string LogUrl
@@ -118,7 +118,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Provides test case run status.
+        /// Provides the test case run status. Status is one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -134,7 +134,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code>: Test is running
+        ///  <code>RUNNING</code>: Test is running.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -171,7 +171,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property TestCaseDefinitionId. 
         /// <para>
-        /// Provides test case run definition ID.
+        /// Provides the test case run definition ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]
@@ -190,7 +190,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property TestCaseDefinitionName. 
         /// <para>
-        /// Provides test case run definition Name.
+        /// Provides the test case run definition name.
         /// </para>
         /// </summary>
         public string TestCaseDefinitionName
@@ -208,7 +208,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property TestCaseRunId. 
         /// <para>
-        /// Provides test case run ID.
+        /// Provides the test case run ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=36)]

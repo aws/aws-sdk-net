@@ -38,7 +38,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         private List<string> _selectedTestList = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ParallelRun.
+        /// Gets and sets the property ParallelRun. 
+        /// <para>
+        /// TRUE if multiple test suites run in parallel.
+        /// </para>
         /// </summary>
         public bool ParallelRun
         {

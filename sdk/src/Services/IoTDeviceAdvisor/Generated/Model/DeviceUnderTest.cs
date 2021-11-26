@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Information of a test device. Required to provide either a thing ARN or a certificate
-    /// ARN.
+    /// Information of a test device. A thing ARN or a certificate ARN is required.
     /// </summary>
     public partial class DeviceUnderTest
     {

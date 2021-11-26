@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Sends invalid request exception.
+    /// Sends a validation exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

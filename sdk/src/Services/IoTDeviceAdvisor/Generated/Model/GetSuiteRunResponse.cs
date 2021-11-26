@@ -84,7 +84,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Date (in Unix epoch time) when the test suite run was started.
+        /// Date (in Unix epoch time) when the test suite run started.
         /// </para>
         /// </summary>
         public DateTime StartTime

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Sends Conflict Exception.
+    /// Sends a Conflict Exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

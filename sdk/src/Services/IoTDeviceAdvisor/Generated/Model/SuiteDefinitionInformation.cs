@@ -60,7 +60,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property DefaultDevices. 
         /// <para>
-        /// Specifies the devices under test for the test suite.
+        /// Specifies the devices that are under test for the test suite.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]

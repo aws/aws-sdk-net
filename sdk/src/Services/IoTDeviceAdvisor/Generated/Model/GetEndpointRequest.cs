@@ -30,7 +30,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEndpoint operation.
-    /// 
+    /// Gets information about an Device Advisor endpoint.
     /// </summary>
     public partial class GetEndpointRequest : AmazonIoTDeviceAdvisorRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         private string _thingArn;
 
         /// <summary>
-        /// Gets and sets the property CertificateArn.
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The certificate ARN of the device. This is an optional parameter.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string CertificateArn
@@ -54,7 +57,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThingArn.
+        /// Gets and sets the property ThingArn. 
+        /// <para>
+        /// The thing ARN of the device. This is an optional parameter.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string ThingArn

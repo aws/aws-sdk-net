@@ -36,7 +36,10 @@ namespace Amazon.IoTDeviceAdvisor.Model
         private string _endpoint;
 
         /// <summary>
-        /// Gets and sets the property Endpoint.
+        /// Gets and sets the property Endpoint. 
+        /// <para>
+        /// The response of an Device Advisor endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=45, Max=75)]
         public string Endpoint

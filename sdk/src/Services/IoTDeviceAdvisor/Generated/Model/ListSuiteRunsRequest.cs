@@ -30,8 +30,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSuiteRuns operation.
-    /// Lists the runs of the specified Device Advisor test suite. You can list all runs of
-    /// the test suite, or the runs of a specific version of the test suite.
+    /// Lists runs of the specified Device Advisor test suite. You can list all runs of the
+    /// test suite, or the runs of a specific version of the test suite.
     /// 
     ///  
     /// <para>
@@ -106,8 +106,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified
-        /// test suite based on suite definition version.
+        /// Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs
+        /// of the specified test suite based on suite definition version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]

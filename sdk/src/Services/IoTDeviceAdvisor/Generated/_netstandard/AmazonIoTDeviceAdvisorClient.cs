@@ -296,10 +296,10 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the CreateSuiteDefinition service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/CreateSuiteDefinition">REST API Reference for CreateSuiteDefinition Operation</seealso>
         public virtual Task<CreateSuiteDefinitionResponse> CreateSuiteDefinitionAsync(CreateSuiteDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -342,10 +342,10 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the DeleteSuiteDefinition service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeleteSuiteDefinition">REST API Reference for DeleteSuiteDefinition Operation</seealso>
         public virtual Task<DeleteSuiteDefinitionResponse> DeleteSuiteDefinitionAsync(DeleteSuiteDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -373,7 +373,7 @@ namespace Amazon.IoTDeviceAdvisor
 
 
         /// <summary>
-        /// 
+        /// Gets information about an Device Advisor endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -382,13 +382,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the GetEndpoint service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         public virtual Task<GetEndpointResponse> GetEndpointAsync(GetEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -431,13 +431,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the GetSuiteDefinition service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteDefinition">REST API Reference for GetSuiteDefinition Operation</seealso>
         public virtual Task<GetSuiteDefinitionResponse> GetSuiteDefinitionAsync(GetSuiteDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -480,13 +480,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the GetSuiteRun service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRun">REST API Reference for GetSuiteRun Operation</seealso>
         public virtual Task<GetSuiteRunResponse> GetSuiteRunAsync(GetSuiteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -530,13 +530,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the GetSuiteRunReport service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRunReport">REST API Reference for GetSuiteRunReport Operation</seealso>
         public virtual Task<GetSuiteRunReportResponse> GetSuiteRunReportAsync(GetSuiteRunReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -579,10 +579,10 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the ListSuiteDefinitions service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteDefinitions">REST API Reference for ListSuiteDefinitions Operation</seealso>
         public virtual Task<ListSuiteDefinitionsResponse> ListSuiteDefinitionsAsync(ListSuiteDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -610,8 +610,8 @@ namespace Amazon.IoTDeviceAdvisor
 
 
         /// <summary>
-        /// Lists the runs of the specified Device Advisor test suite. You can list all runs of
-        /// the test suite, or the runs of a specific version of the test suite.
+        /// Lists runs of the specified Device Advisor test suite. You can list all runs of the
+        /// test suite, or the runs of a specific version of the test suite.
         /// 
         ///  
         /// <para>
@@ -626,10 +626,10 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the ListSuiteRuns service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteRuns">REST API Reference for ListSuiteRuns Operation</seealso>
         public virtual Task<ListSuiteRunsResponse> ListSuiteRunsAsync(ListSuiteRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -672,13 +672,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -721,13 +721,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the StartSuiteRun service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ConflictException">
-        /// Sends Conflict Exception.
+        /// Sends a Conflict Exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StartSuiteRun">REST API Reference for StartSuiteRun Operation</seealso>
         public virtual Task<StartSuiteRunResponse> StartSuiteRunAsync(StartSuiteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -770,13 +770,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the StopSuiteRun service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
         public virtual Task<StopSuiteRunResponse> StopSuiteRunAsync(StopSuiteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -819,13 +819,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the TagResource service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -868,13 +868,13 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the UntagResource service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ResourceNotFoundException">
-        /// Sends Resource Not Found Exception.
+        /// Sends a Resource Not Found exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -917,10 +917,10 @@ namespace Amazon.IoTDeviceAdvisor
         /// 
         /// <returns>The response from the UpdateSuiteDefinition service method, as returned by IoTDeviceAdvisor.</returns>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.InternalServerException">
-        /// Sends Internal Failure Exception.
+        /// Sends an Internal Failure exception.
         /// </exception>
         /// <exception cref="Amazon.IoTDeviceAdvisor.Model.ValidationException">
-        /// Sends invalid request exception.
+        /// Sends a validation exception.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UpdateSuiteDefinition">REST API Reference for UpdateSuiteDefinition Operation</seealso>
         public virtual Task<UpdateSuiteDefinitionResponse> UpdateSuiteDefinitionAsync(UpdateSuiteDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

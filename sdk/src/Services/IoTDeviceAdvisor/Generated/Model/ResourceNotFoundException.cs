@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Sends Resource Not Found Exception.
+    /// Sends a Resource Not Found exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

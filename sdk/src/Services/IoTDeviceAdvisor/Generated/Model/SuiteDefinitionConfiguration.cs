@@ -42,7 +42,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property DevicePermissionRoleArn. 
         /// <para>
-        /// Gets device permission ARN.
+        /// Gets the device permission ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

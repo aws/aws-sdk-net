@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Sends Internal Failure Exception.
+    /// Sends an Internal Failure exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
