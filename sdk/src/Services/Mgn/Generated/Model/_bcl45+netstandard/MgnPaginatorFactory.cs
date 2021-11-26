@@ -66,5 +66,13 @@ namespace Amazon.Mgn.Model
         {
             return new DescribeSourceServersPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for DescribeVcenterClients operation
+        ///</summary>
+        public IDescribeVcenterClientsPaginator DescribeVcenterClients(DescribeVcenterClientsRequest request) 
+        {
+            return new DescribeVcenterClientsPaginator(this.client, request);
+        }
     }
 }

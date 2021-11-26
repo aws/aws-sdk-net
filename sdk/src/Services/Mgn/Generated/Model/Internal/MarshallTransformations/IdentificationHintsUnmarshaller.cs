@@ -82,6 +82,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vmPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VmPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("vmWareUuid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

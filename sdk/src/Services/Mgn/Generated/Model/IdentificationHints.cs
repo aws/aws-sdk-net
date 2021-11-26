@@ -36,6 +36,7 @@ namespace Amazon.Mgn.Model
         private string _awsInstanceID;
         private string _fqdn;
         private string _hostname;
+        private string _vmPath;
         private string _vmWareUuid;
 
         /// <summary>
@@ -93,6 +94,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetHostname()
         {
             return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VmPath. 
+        /// <para>
+        /// vCenter VM path identification hint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string VmPath
+        {
+            get { return this._vmPath; }
+            set { this._vmPath = value; }
+        }
+
+        // Check to see if VmPath property is set
+        internal bool IsSetVmPath()
+        {
+            return this._vmPath != null;
         }
 
         /// <summary>

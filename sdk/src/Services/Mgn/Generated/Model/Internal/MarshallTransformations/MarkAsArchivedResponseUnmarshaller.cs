@@ -81,6 +81,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.LifeCycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReplicationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceProperties", targetDepth))
                 {
                     var unmarshaller = SourcePropertiesUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vcenterClientID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VcenterClientID = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -34,113 +34,147 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceServer Object
+    /// Response Unmarshaller for StartReplication operation
     /// </summary>  
-    public class SourceServerUnmarshaller : IUnmarshaller<SourceServer, XmlUnmarshallerContext>, IUnmarshaller<SourceServer, JsonUnmarshallerContext>
+    public class StartReplicationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SourceServer IUnmarshaller<SourceServer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
-        }
+            StartReplicationResponse response = new StartReplicationResponse();
 
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SourceServer Unmarshall(JsonUnmarshallerContext context)
-        {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
-
-            SourceServer unmarshalledObject = new SourceServer();
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dataReplicationInfo", targetDepth))
                 {
                     var unmarshaller = DataReplicationInfoUnmarshaller.Instance;
-                    unmarshalledObject.DataReplicationInfo = unmarshaller.Unmarshall(context);
+                    response.DataReplicationInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isArchived", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsArchived = unmarshaller.Unmarshall(context);
+                    response.IsArchived = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("launchedInstance", targetDepth))
                 {
                     var unmarshaller = LaunchedInstanceUnmarshaller.Instance;
-                    unmarshalledObject.LaunchedInstance = unmarshaller.Unmarshall(context);
+                    response.LaunchedInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lifeCycle", targetDepth))
                 {
                     var unmarshaller = LifeCycleUnmarshaller.Instance;
-                    unmarshalledObject.LifeCycle = unmarshaller.Unmarshall(context);
+                    response.LifeCycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("replicationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationType = unmarshaller.Unmarshall(context);
+                    response.ReplicationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceProperties", targetDepth))
                 {
                     var unmarshaller = SourcePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.SourceProperties = unmarshaller.Unmarshall(context);
+                    response.SourceProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceServerID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
+                    response.SourceServerID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vcenterClientID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VcenterClientID = unmarshaller.Unmarshall(context);
+                    response.VcenterClientID = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
-            return unmarshalledObject;
+
+            return response;
         }
 
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
 
-        private static SourceServerUnmarshaller _instance = new SourceServerUnmarshaller();        
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UninitializedAccountException"))
+                {
+                    return UninitializedAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+            }
+            return new AmazonMgnException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        }
+
+        private static StartReplicationResponseUnmarshaller _instance = new StartReplicationResponseUnmarshaller();        
+
+        internal static StartReplicationResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceServerUnmarshaller Instance
+        public static StartReplicationResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// This is the response object from the ChangeServerLifeCycleState operation.
+    /// This is the response object from the StartReplication operation.
     /// </summary>
-    public partial class ChangeServerLifeCycleStateResponse : AmazonWebServiceResponse
+    public partial class StartReplicationResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private DataReplicationInfo _dataReplicationInfo;

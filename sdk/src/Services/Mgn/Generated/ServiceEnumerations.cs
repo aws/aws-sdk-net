@@ -129,6 +129,10 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly DataReplicationErrorString FAILED_TO_START_DATA_TRANSFER = new DataReplicationErrorString("FAILED_TO_START_DATA_TRANSFER");
         /// <summary>
+        /// Constant LAST_SNAPSHOT_JOB_FAILED for DataReplicationErrorString
+        /// </summary>
+        public static readonly DataReplicationErrorString LAST_SNAPSHOT_JOB_FAILED = new DataReplicationErrorString("LAST_SNAPSHOT_JOB_FAILED");
+        /// <summary>
         /// Constant NOT_CONVERGING for DataReplicationErrorString
         /// </summary>
         public static readonly DataReplicationErrorString NOT_CONVERGING = new DataReplicationErrorString("NOT_CONVERGING");
@@ -140,6 +144,10 @@ namespace Amazon.Mgn
         /// Constant UNSTABLE_NETWORK for DataReplicationErrorString
         /// </summary>
         public static readonly DataReplicationErrorString UNSTABLE_NETWORK = new DataReplicationErrorString("UNSTABLE_NETWORK");
+        /// <summary>
+        /// Constant UNSUPPORTED_VM_CONFIGURATION for DataReplicationErrorString
+        /// </summary>
+        public static readonly DataReplicationErrorString UNSUPPORTED_VM_CONFIGURATION = new DataReplicationErrorString("UNSUPPORTED_VM_CONFIGURATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -359,9 +367,17 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly DataReplicationState PAUSED = new DataReplicationState("PAUSED");
         /// <summary>
+        /// Constant PENDING_SNAPSHOT_SHIPPING for DataReplicationState
+        /// </summary>
+        public static readonly DataReplicationState PENDING_SNAPSHOT_SHIPPING = new DataReplicationState("PENDING_SNAPSHOT_SHIPPING");
+        /// <summary>
         /// Constant RESCAN for DataReplicationState
         /// </summary>
         public static readonly DataReplicationState RESCAN = new DataReplicationState("RESCAN");
+        /// <summary>
+        /// Constant SHIPPING_SNAPSHOT for DataReplicationState
+        /// </summary>
+        public static readonly DataReplicationState SHIPPING_SNAPSHOT = new DataReplicationState("SHIPPING_SNAPSHOT");
         /// <summary>
         /// Constant STALLED for DataReplicationState
         /// </summary>
@@ -863,6 +879,10 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly LifeCycleState DISCONNECTED = new LifeCycleState("DISCONNECTED");
         /// <summary>
+        /// Constant DISCOVERED for LifeCycleState
+        /// </summary>
+        public static readonly LifeCycleState DISCOVERED = new LifeCycleState("DISCOVERED");
+        /// <summary>
         /// Constant NOT_READY for LifeCycleState
         /// </summary>
         public static readonly LifeCycleState NOT_READY = new LifeCycleState("NOT_READY");
@@ -1128,6 +1148,56 @@ namespace Amazon.Mgn
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplicationConfigurationReplicatedDiskStagingDiskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationType.
+    /// </summary>
+    public class ReplicationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT_BASED for ReplicationType
+        /// </summary>
+        public static readonly ReplicationType AGENT_BASED = new ReplicationType("AGENT_BASED");
+        /// <summary>
+        /// Constant SNAPSHOT_SHIPPING for ReplicationType
+        /// </summary>
+        public static readonly ReplicationType SNAPSHOT_SHIPPING = new ReplicationType("SNAPSHOT_SHIPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationType FindValue(string value)
+        {
+            return FindValue<ReplicationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationType(string value)
         {
             return FindValue(value);
         }

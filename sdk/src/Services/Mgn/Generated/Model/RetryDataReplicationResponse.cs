@@ -38,9 +38,11 @@ namespace Amazon.Mgn.Model
         private bool? _isArchived;
         private LaunchedInstance _launchedInstance;
         private LifeCycle _lifeCycle;
+        private ReplicationType _replicationType;
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _vcenterClientID;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -134,6 +136,24 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationType. 
+        /// <para>
+        /// Source server replication type.
+        /// </para>
+        /// </summary>
+        public ReplicationType ReplicationType
+        {
+            get { return this._replicationType; }
+            set { this._replicationType = value; }
+        }
+
+        // Check to see if ReplicationType property is set
+        internal bool IsSetReplicationType()
+        {
+            return this._replicationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceProperties. 
         /// <para>
         /// Source server properties.
@@ -186,6 +206,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VcenterClientID. 
+        /// <para>
+        /// Source server vCenter client id.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=21, Max=21)]
+        public string VcenterClientID
+        {
+            get { return this._vcenterClientID; }
+            set { this._vcenterClientID = value; }
+        }
+
+        // Check to see if VcenterClientID property is set
+        internal bool IsSetVcenterClientID()
+        {
+            return this._vcenterClientID != null;
         }
 
     }

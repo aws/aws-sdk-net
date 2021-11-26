@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceServer Object
+    /// Response Unmarshaller for VcenterClient Object
     /// </summary>  
-    public class SourceServerUnmarshaller : IUnmarshaller<SourceServer, XmlUnmarshallerContext>, IUnmarshaller<SourceServer, JsonUnmarshallerContext>
+    public class VcenterClientUnmarshaller : IUnmarshaller<VcenterClient, XmlUnmarshallerContext>, IUnmarshaller<VcenterClient, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SourceServer IUnmarshaller<SourceServer, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VcenterClient IUnmarshaller<VcenterClient, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SourceServer Unmarshall(JsonUnmarshallerContext context)
+        public VcenterClient Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SourceServer unmarshalledObject = new SourceServer();
+            VcenterClient unmarshalledObject = new VcenterClient();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,46 +70,28 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dataReplicationInfo", targetDepth))
-                {
-                    var unmarshaller = DataReplicationInfoUnmarshaller.Instance;
-                    unmarshalledObject.DataReplicationInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("isArchived", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsArchived = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchedInstance", targetDepth))
-                {
-                    var unmarshaller = LaunchedInstanceUnmarshaller.Instance;
-                    unmarshalledObject.LaunchedInstance = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lifeCycle", targetDepth))
-                {
-                    var unmarshaller = LifeCycleUnmarshaller.Instance;
-                    unmarshalledObject.LifeCycle = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("replicationType", targetDepth))
+                if (context.TestExpression("datacenterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReplicationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatacenterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceProperties", targetDepth))
-                {
-                    var unmarshaller = SourcePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.SourceProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("hostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastSeenDatetime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastSeenDatetime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceServerTags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.SourceServerTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
@@ -124,18 +106,24 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.VcenterClientID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vcenterUUID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VcenterUUID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static SourceServerUnmarshaller _instance = new SourceServerUnmarshaller();        
+        private static VcenterClientUnmarshaller _instance = new VcenterClientUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceServerUnmarshaller Instance
+        public static VcenterClientUnmarshaller Instance
         {
             get
             {

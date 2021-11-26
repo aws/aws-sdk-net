@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisconnectFromService operation
+    /// Response Unmarshaller for DescribeVcenterClients operation
     /// </summary>  
-    public class DisconnectFromServiceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeVcenterClientsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,22 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DisconnectFromServiceResponse response = new DisconnectFromServiceResponse();
+            DescribeVcenterClientsResponse response = new DescribeVcenterClientsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("items", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VcenterClient, VcenterClientUnmarshaller>(VcenterClientUnmarshaller.Instance);
+                    response.Items = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataReplicationInfo", targetDepth))
-                {
-                    var unmarshaller = DataReplicationInfoUnmarshaller.Instance;
-                    response.DataReplicationInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("isArchived", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.IsArchived = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchedInstance", targetDepth))
-                {
-                    var unmarshaller = LaunchedInstanceUnmarshaller.Instance;
-                    response.LaunchedInstance = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lifeCycle", targetDepth))
-                {
-                    var unmarshaller = LifeCycleUnmarshaller.Instance;
-                    response.LifeCycle = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("replicationType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicationType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceProperties", targetDepth))
-                {
-                    var unmarshaller = SourcePropertiesUnmarshaller.Instance;
-                    response.SourceProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceServerID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceServerID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("vcenterClientID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.VcenterClientID = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -134,10 +86,6 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -146,13 +94,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     return UninitializedAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonMgnException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DisconnectFromServiceResponseUnmarshaller _instance = new DisconnectFromServiceResponseUnmarshaller();        
+        private static DescribeVcenterClientsResponseUnmarshaller _instance = new DescribeVcenterClientsResponseUnmarshaller();        
 
-        internal static DisconnectFromServiceResponseUnmarshaller GetInstance()
+        internal static DescribeVcenterClientsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -160,7 +112,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisconnectFromServiceResponseUnmarshaller Instance
+        public static DescribeVcenterClientsResponseUnmarshaller Instance
         {
             get
             {

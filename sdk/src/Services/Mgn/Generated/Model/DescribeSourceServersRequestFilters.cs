@@ -34,6 +34,8 @@ namespace Amazon.Mgn.Model
     public partial class DescribeSourceServersRequestFilters
     {
         private bool? _isArchived;
+        private List<string> _lifeCycleStates = new List<string>();
+        private List<string> _replicationTypes = new List<string>();
         private List<string> _sourceServerIDs = new List<string>();
 
         /// <summary>
@@ -52,6 +54,44 @@ namespace Amazon.Mgn.Model
         internal bool IsSetIsArchived()
         {
             return this._isArchived.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifeCycleStates. 
+        /// <para>
+        /// Request to filter Source Servers list by life cycle states.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> LifeCycleStates
+        {
+            get { return this._lifeCycleStates; }
+            set { this._lifeCycleStates = value; }
+        }
+
+        // Check to see if LifeCycleStates property is set
+        internal bool IsSetLifeCycleStates()
+        {
+            return this._lifeCycleStates != null && this._lifeCycleStates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationTypes. 
+        /// <para>
+        /// Request to filter Source Servers list by replication type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> ReplicationTypes
+        {
+            get { return this._replicationTypes; }
+            set { this._replicationTypes = value; }
+        }
+
+        // Check to see if ReplicationTypes property is set
+        internal bool IsSetReplicationTypes()
+        {
+            return this._replicationTypes != null && this._replicationTypes.Count > 0; 
         }
 
         /// <summary>

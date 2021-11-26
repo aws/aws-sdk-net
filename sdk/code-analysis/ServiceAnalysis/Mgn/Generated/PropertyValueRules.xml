@@ -18,6 +18,12 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.ChangeServerLifeCycleStateResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.CreateReplicationConfigurationTemplateRequest.BandwidthThrottling</property>
     <min>0</min>
   </property-value-rule>
@@ -87,6 +93,12 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.DeleteVcenterClientRequest.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeJobLogItemsRequest.JobID</property>
     <min>24</min>
     <max>24</max>
@@ -149,6 +161,20 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.DescribeVcenterClientsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DescribeVcenterClientsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DescribeVcenterClientsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.DisconnectFromServiceRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
@@ -166,6 +192,12 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.DisconnectFromServiceResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.FinalizeCutoverRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
@@ -181,6 +213,12 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.FinalizeCutoverResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.GetLaunchConfigurationRequest.SourceServerID</property>
@@ -264,6 +302,12 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.MarkAsArchivedResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.RetryDataReplicationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
@@ -279,6 +323,35 @@
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.RetryDataReplicationResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.StartReplicationRequest.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.StartReplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.StartReplicationResponse.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.StartReplicationResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.TagResourceRequest.ResourceArn</property>
@@ -442,6 +515,29 @@
     <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerReplicationTypeRequest.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerReplicationTypeResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerReplicationTypeResponse.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateSourceServerReplicationTypeResponse.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.AccessDeniedException.Code</property>
     <min>0</min>
     <max>65536</max>
@@ -483,6 +579,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DataReplicationInfo.LagDuration</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DataReplicationInfo.LastSnapshotDateTime</property>
     <min>19</min>
     <max>32</max>
     <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
@@ -554,6 +656,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.IdentificationHints.Hostname</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.IdentificationHints.VmPath</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
@@ -743,6 +850,31 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.ServiceQuotaExceededException.Code</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ServiceQuotaExceededException.QuotaCode</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ServiceQuotaExceededException.ResourceId</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ServiceQuotaExceededException.ResourceType</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ServiceQuotaExceededException.ServiceCode</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.SourceProperties.LastUpdatedDateTime</property>
     <min>19</min>
     <max>32</max>
@@ -791,5 +923,37 @@
     <property>Amazon.Mgn.Model.ValidationExceptionField.Name</property>
     <min>0</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.VcenterClient.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.VcenterClient.DatacenterName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.VcenterClient.Hostname</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.VcenterClient.LastSeenDatetime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.VcenterClient.VcenterClientID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.VcenterClient.VcenterUUID</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

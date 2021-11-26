@@ -44,5 +44,10 @@ namespace Amazon.Mgn.Model
         /// Paginator for DescribeSourceServers operation
         ///</summary>
         IDescribeSourceServersPaginator DescribeSourceServers(DescribeSourceServersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeVcenterClients operation
+        ///</summary>
+        IDescribeVcenterClientsPaginator DescribeVcenterClients(DescribeVcenterClientsRequest request);
     }
 }

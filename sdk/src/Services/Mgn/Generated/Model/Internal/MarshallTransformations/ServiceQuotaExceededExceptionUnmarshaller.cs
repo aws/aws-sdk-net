@@ -34,76 +34,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataReplicationInfo Object
+    /// Response Unmarshaller for ServiceQuotaExceededException Object
     /// </summary>  
-    public class DataReplicationInfoUnmarshaller : IUnmarshaller<DataReplicationInfo, XmlUnmarshallerContext>, IUnmarshaller<DataReplicationInfo, JsonUnmarshallerContext>
+    public class ServiceQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceQuotaExceededException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataReplicationInfo IUnmarshaller<DataReplicationInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public DataReplicationInfo Unmarshall(JsonUnmarshallerContext context)
+        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            DataReplicationInfo unmarshalledObject = new DataReplicationInfo();
+            ServiceQuotaExceededException unmarshalledObject = new ServiceQuotaExceededException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dataReplicationError", targetDepth))
-                {
-                    var unmarshaller = DataReplicationErrorUnmarshaller.Instance;
-                    unmarshalledObject.DataReplicationError = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataReplicationInitiation", targetDepth))
-                {
-                    var unmarshaller = DataReplicationInitiationUnmarshaller.Instance;
-                    unmarshalledObject.DataReplicationInitiation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataReplicationState", targetDepth))
+                if (context.TestExpression("code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataReplicationState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("etaDateTime", targetDepth))
+                if (context.TestExpression("quotaCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EtaDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lagDuration", targetDepth))
+                if (context.TestExpression("resourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LagDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastSnapshotDateTime", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastSnapshotDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("replicatedDisks", targetDepth))
+                if (context.TestExpression("serviceCode", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataReplicationInfoReplicatedDisk, DataReplicationInfoReplicatedDiskUnmarshaller>(DataReplicationInfoReplicatedDiskUnmarshaller.Instance);
-                    unmarshalledObject.ReplicatedDisks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -111,13 +99,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-
-        private static DataReplicationInfoUnmarshaller _instance = new DataReplicationInfoUnmarshaller();        
+        private static ServiceQuotaExceededExceptionUnmarshaller _instance = new ServiceQuotaExceededExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataReplicationInfoUnmarshaller Instance
+        public static ServiceQuotaExceededExceptionUnmarshaller Instance
         {
             get
             {

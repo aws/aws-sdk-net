@@ -38,6 +38,7 @@ namespace Amazon.Mgn.Model
         private DataReplicationState _dataReplicationState;
         private string _etaDateTime;
         private string _lagDuration;
+        private string _lastSnapshotDateTime;
         private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = new List<DataReplicationInfoReplicatedDisk>();
 
         /// <summary>
@@ -130,6 +131,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetLagDuration()
         {
             return this._lagDuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSnapshotDateTime. 
+        /// <para>
+        /// Request to query data replication last snapshot time.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=19, Max=32)]
+        public string LastSnapshotDateTime
+        {
+            get { return this._lastSnapshotDateTime; }
+            set { this._lastSnapshotDateTime = value; }
+        }
+
+        // Check to see if LastSnapshotDateTime property is set
+        internal bool IsSetLastSnapshotDateTime()
+        {
+            return this._lastSnapshotDateTime != null;
         }
 
         /// <summary>

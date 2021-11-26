@@ -580,6 +580,69 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  DeleteVcenterClient
+
+        /// <summary>
+        /// Deletes a single vCenter client by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVcenterClient service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVcenterClient service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Unitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">REST API Reference for DeleteVcenterClient Operation</seealso>
+        public virtual DeleteVcenterClientResponse DeleteVcenterClient(DeleteVcenterClientRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVcenterClientRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVcenterClientResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVcenterClientResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVcenterClient operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVcenterClient operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVcenterClient
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">REST API Reference for DeleteVcenterClient Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVcenterClient(DeleteVcenterClientRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVcenterClientRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVcenterClientResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVcenterClient operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVcenterClient.</param>
+        /// 
+        /// <returns>Returns a  DeleteVcenterClientResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">REST API Reference for DeleteVcenterClient Operation</seealso>
+        public virtual DeleteVcenterClientResponse EndDeleteVcenterClient(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVcenterClientResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeJobLogItems
 
         /// <summary>
@@ -824,6 +887,69 @@ namespace Amazon.Mgn
         public virtual DescribeSourceServersResponse EndDescribeSourceServers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSourceServersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVcenterClients
+
+        /// <summary>
+        /// Lists all vCenter clients.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVcenterClients service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVcenterClients service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Unitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">REST API Reference for DescribeVcenterClients Operation</seealso>
+        public virtual DescribeVcenterClientsResponse DescribeVcenterClients(DescribeVcenterClientsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVcenterClientsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVcenterClientsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVcenterClientsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVcenterClients operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVcenterClients operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVcenterClients
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">REST API Reference for DescribeVcenterClients Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVcenterClients(DescribeVcenterClientsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVcenterClientsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVcenterClientsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVcenterClients operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVcenterClients.</param>
+        /// 
+        /// <returns>Returns a  DescribeVcenterClientsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">REST API Reference for DescribeVcenterClients Operation</seealso>
+        public virtual DescribeVcenterClientsResponse EndDescribeVcenterClients(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVcenterClientsResponse>(asyncResult);
         }
 
         #endregion
@@ -1425,6 +1551,76 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  StartReplication
+
+        /// <summary>
+        /// Starts replication on source server by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplication service method.</param>
+        /// 
+        /// <returns>The response from the StartReplication service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Unitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual StartReplicationResponse StartReplication(StartReplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartReplication operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartReplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual IAsyncResult BeginStartReplication(StartReplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartReplication.</param>
+        /// 
+        /// <returns>Returns a  StartReplicationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
+        public virtual StartReplicationResponse EndStartReplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartReplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartTest
 
         /// <summary>
@@ -1900,6 +2096,73 @@ namespace Amazon.Mgn
         public virtual UpdateReplicationConfigurationTemplateResponse EndUpdateReplicationConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateReplicationConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSourceServerReplicationType
+
+        /// <summary>
+        /// Updates source server Replication Type by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceServerReplicationType service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSourceServerReplicationType service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Unitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">REST API Reference for UpdateSourceServerReplicationType Operation</seealso>
+        public virtual UpdateSourceServerReplicationTypeResponse UpdateSourceServerReplicationType(UpdateSourceServerReplicationTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceServerReplicationTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceServerReplicationTypeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSourceServerReplicationTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSourceServerReplicationType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceServerReplicationType operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSourceServerReplicationType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">REST API Reference for UpdateSourceServerReplicationType Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSourceServerReplicationType(UpdateSourceServerReplicationTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceServerReplicationTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceServerReplicationTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSourceServerReplicationType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSourceServerReplicationType.</param>
+        /// 
+        /// <returns>Returns a  UpdateSourceServerReplicationTypeResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">REST API Reference for UpdateSourceServerReplicationType Operation</seealso>
+        public virtual UpdateSourceServerReplicationTypeResponse EndUpdateSourceServerReplicationType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSourceServerReplicationTypeResponse>(asyncResult);
         }
 
         #endregion
