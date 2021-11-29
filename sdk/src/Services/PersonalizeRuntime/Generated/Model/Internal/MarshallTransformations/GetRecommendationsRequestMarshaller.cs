@@ -117,6 +117,12 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NumResults);
                 }
 
+                if(publicRequest.IsSetRecommenderArn())
+                {
+                    context.Writer.WritePropertyName("recommenderArn");
+                    context.Writer.Write(publicRequest.RecommenderArn);
+                }
+
                 if(publicRequest.IsSetUserId())
                 {
                     context.Writer.WritePropertyName("userId");

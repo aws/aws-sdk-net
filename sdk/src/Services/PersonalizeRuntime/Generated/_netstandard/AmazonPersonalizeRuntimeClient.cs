@@ -301,23 +301,30 @@ namespace Amazon.PersonalizeRuntime
 
 
         /// <summary>
-        /// Returns a list of recommended items. The required input depends on the recipe type
-        /// used to create the solution backing the campaign, as follows:
+        /// Returns a list of recommended items. For campaigns, the campaign's Amazon Resource
+        /// Name (ARN) is required and the required user and item input depends on the recipe
+        /// type used to create the solution backing the campaign as follows:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used
+        /// USER_PERSONALIZATION - <code>userId</code> required, <code>itemId</code> not used
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// USER_PERSONALIZATION - <code>itemId</code> optional, <code>userId</code> required
+        /// RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// Campaigns that are backed by a solution created using a recipe of type PERSONALIZED_RANKING
         /// use the API.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        ///  For recommenders, the recommender's ARN is required and the required item and user
+        /// input depends on the use case (domain-based recipe) backing the recommender. For information
+        /// on use case requirements see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing
+        /// recommender use cases</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendations service method.</param>
         /// <param name="cancellationToken">

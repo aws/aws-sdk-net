@@ -33,6 +33,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PersonalizeRuntime.Model.GetRecommendationsRequest.RecommenderArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PersonalizeRuntime.Model.GetRecommendationsRequest.UserId</property>
     <max>256</max>
   </property-value-rule>

@@ -30,23 +30,30 @@ namespace Amazon.PersonalizeRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRecommendations operation.
-    /// Returns a list of recommended items. The required input depends on the recipe type
-    /// used to create the solution backing the campaign, as follows:
+    /// Returns a list of recommended items. For campaigns, the campaign's Amazon Resource
+    /// Name (ARN) is required and the required user and item input depends on the recipe
+    /// type used to create the solution backing the campaign as follows:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used
+    /// USER_PERSONALIZATION - <code>userId</code> required, <code>itemId</code> not used
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// USER_PERSONALIZATION - <code>itemId</code> optional, <code>userId</code> required
+    /// RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
     /// Campaigns that are backed by a solution created using a recipe of type PERSONALIZED_RANKING
     /// use the API.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    ///  For recommenders, the recommender's ARN is required and the required item and user
+    /// input depends on the use case (domain-based recipe) backing the recommender. For information
+    /// on use case requirements see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing
+    /// recommender use cases</a>. 
+    /// </para>
     /// </summary>
     public partial class GetRecommendationsRequest : AmazonPersonalizeRuntimeRequest
     {
@@ -56,6 +63,7 @@ namespace Amazon.PersonalizeRuntime.Model
         private Dictionary<string, string> _filterValues = new Dictionary<string, string>();
         private string _itemId;
         private int? _numResults;
+        private string _recommenderArn;
         private string _userId;
 
         /// <summary>
@@ -64,7 +72,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string CampaignArn
         {
             get { return this._campaignArn; }
@@ -198,6 +206,27 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetNumResults()
         {
             return this._numResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide
+        /// a recommender ARN if you created a Domain dataset group with a recommender for a domain
+        /// use case.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string RecommenderArn
+        {
+            get { return this._recommenderArn; }
+            set { this._recommenderArn = value; }
+        }
+
+        // Check to see if RecommenderArn property is set
+        internal bool IsSetRecommenderArn()
+        {
+            return this._recommenderArn != null;
         }
 
         /// <summary>
