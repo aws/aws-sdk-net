@@ -816,6 +816,10 @@
       <Project>{8BA725F1-2A4A-492A-9803-8E128983ABEF}</Project>
       <Name>AWSSDK.MigrationHubConfig.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MigrationHubRefactorSpaces/AWSSDK.MigrationHubRefactorSpaces.CodeAnalysis.csproj">
+      <Project>{9E0B513E-EDCF-45C7-BCC0-6CCD59F42564}</Project>
+      <Name>AWSSDK.MigrationHubRefactorSpaces.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MigrationHubStrategyRecommendations/AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis.csproj">
       <Project>{27A60892-7646-4606-91DC-17E930FB0F13}</Project>
       <Name>AWSSDK.MigrationHubStrategyRecommendations.CodeAnalysis</Name>
