@@ -139,6 +139,11 @@
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.AnalyzeIDDetections.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.Block.ColumnIndex</property>
     <min>0</min>
   </property-value-rule>
@@ -211,6 +216,10 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.IdentityDocument.DocumentIndex</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.LineItemGroup.LineItemGroupIndex</property>

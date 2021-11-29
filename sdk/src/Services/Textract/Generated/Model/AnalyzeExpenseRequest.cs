@@ -30,7 +30,8 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// Container for the parameters to the AnalyzeExpense operation.
-    /// Analyzes an input document for financially related relationships between text.
+    /// <code>AnalyzeExpense</code> synchronously analyzes an input document for financially
+    /// related relationships between text.
     /// 
     ///  
     /// <para>

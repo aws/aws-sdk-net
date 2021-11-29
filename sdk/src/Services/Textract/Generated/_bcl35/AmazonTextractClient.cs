@@ -338,7 +338,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
         /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
         /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
@@ -390,7 +390,8 @@ namespace Amazon.Textract
         #region  AnalyzeExpense
 
         /// <summary>
-        /// Analyzes an input document for financially related relationships between text.
+        /// <code>AnalyzeExpense</code> synchronously analyzes an input document for financially
+        /// related relationships between text.
         /// 
         ///  
         /// <para>
@@ -449,7 +450,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
         /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
         /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">REST API Reference for AnalyzeExpense Operation</seealso>
@@ -494,6 +495,102 @@ namespace Amazon.Textract
         public virtual AnalyzeExpenseResponse EndAnalyzeExpense(IAsyncResult asyncResult)
         {
             return EndInvoke<AnalyzeExpenseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AnalyzeID
+
+        /// <summary>
+        /// Analyzes identity documents for relevant information. This information is extracted
+        /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
+        /// field and value of the extracted text.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AnalyzeID service method.</param>
+        /// 
+        /// <returns>The response from the AnalyzeID service method, as returned by Textract.</returns>
+        /// <exception cref="Amazon.Textract.Model.AccessDeniedException">
+        /// You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of
+        /// an authorized user or IAM role to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.BadDocumentException">
+        /// Amazon Textract isn't able to read the document. For more information on the document
+        /// limits in Amazon Textract, see <a>limits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
+        /// The document can't be processed because it's too large. The maximum document size
+        /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
+        /// is 500 MB for PDF files.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
+        /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
+        /// An input parameter violated a constraint. For example, in synchronous operations,
+        /// an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+        /// or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+        /// Validate your parameter before calling the API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidS3ObjectException">
+        /// Amazon Textract is unable to access the S3 object that's specified in the request.
+        /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure
+        /// Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting
+        /// Amazon S3</a>
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Textract.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.ThrottlingException">
+        /// Amazon Textract is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
+        /// The format of the input document isn't supported. Documents for synchronous operations
+        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
+        /// PDF format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
+        public virtual AnalyzeIDResponse AnalyzeID(AnalyzeIDRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AnalyzeIDRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AnalyzeIDResponseUnmarshaller.Instance;
+
+            return Invoke<AnalyzeIDResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AnalyzeID operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AnalyzeID operation on AmazonTextractClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAnalyzeID
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
+        public virtual IAsyncResult BeginAnalyzeID(AnalyzeIDRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AnalyzeIDRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AnalyzeIDResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AnalyzeID operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAnalyzeID.</param>
+        /// 
+        /// <returns>Returns a  AnalyzeIDResult from Textract.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
+        public virtual AnalyzeIDResponse EndAnalyzeID(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AnalyzeIDResponse>(asyncResult);
         }
 
         #endregion
@@ -565,7 +662,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
         /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
         /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
@@ -1083,7 +1180,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
         /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
         /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
@@ -1216,7 +1313,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
         /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
         /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
@@ -1351,7 +1448,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.UnsupportedDocumentException">
         /// The format of the input document isn't supported. Documents for synchronous operations
-        /// can be in PNG or JPEG format. Documents for asynchronous operations can also be in
+        /// can be in PNG or JPEG format only. Documents for asynchronous operations can be in
         /// PDF format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">REST API Reference for StartExpenseAnalysis Operation</seealso>

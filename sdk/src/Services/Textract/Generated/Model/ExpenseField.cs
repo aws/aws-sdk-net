@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// Breakdown of detected information, seperated into the catagories Type, LableDetection,
+    /// Breakdown of detected information, seperated into the catagories Type, LabelDetection,
     /// and ValueDetection
     /// </summary>
     public partial class ExpenseField
