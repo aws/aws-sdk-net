@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Personalize")]
+        public void ListBatchSegmentJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListBatchSegmentJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListBatchSegmentJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListBatchSegmentJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListBatchSegmentJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListBatchSegmentJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListBatchSegmentJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListBatchSegmentJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListBatchSegmentJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListBatchSegmentJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListBatchSegmentJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
         public void ListCampaignsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListCampaignsRequest>();
@@ -381,6 +420,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListRecipes(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListRecipes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
+        public void ListRecommendersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRecommendersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListRecommendersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListRecommendersResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListRecommenders(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListRecommenders(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Personalize")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListRecommendersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRecommendersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListRecommendersResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListRecommenders(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListRecommenders(request);
 
             // Should work the first time
             paginator.Responses.ToList();

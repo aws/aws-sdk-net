@@ -70,6 +70,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

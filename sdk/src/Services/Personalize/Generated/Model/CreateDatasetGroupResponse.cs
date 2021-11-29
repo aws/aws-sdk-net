@@ -34,6 +34,7 @@ namespace Amazon.Personalize.Model
     public partial class CreateDatasetGroupResponse : AmazonWebServiceResponse
     {
         private string _datasetGroupArn;
+        private Domain _domain;
 
         /// <summary>
         /// Gets and sets the property DatasetGroupArn. 
@@ -52,6 +53,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetDatasetGroupArn()
         {
             return this._datasetGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The domain for the new Domain dataset group.
+        /// </para>
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
         }
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.Personalize.Model
     {
         private DateTime? _creationDateTime;
         private string _datasetGroupArn;
+        private Domain _domain;
         private string _failureReason;
         private DateTime? _lastUpdatedDateTime;
         private string _name;
@@ -76,6 +77,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetDatasetGroupArn()
         {
             return this._datasetGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The domain of a Domain dataset group.
+        /// </para>
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
         }
 
         /// <summary>

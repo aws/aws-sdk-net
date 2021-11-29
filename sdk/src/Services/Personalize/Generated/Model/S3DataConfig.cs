@@ -44,6 +44,7 @@ namespace Amazon.Personalize.Model
         /// job.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }

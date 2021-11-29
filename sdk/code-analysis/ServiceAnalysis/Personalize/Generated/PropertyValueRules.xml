@@ -27,6 +27,32 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateBatchSegmentJobRequest.FilterArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateBatchSegmentJobRequest.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateBatchSegmentJobRequest.RoleArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateBatchSegmentJobRequest.SolutionVersionArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateBatchSegmentJobResponse.BatchSegmentJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.CreateCampaignRequest.MinProvisionedTPS</property>
     <min>1</min>
   </property-value-rule>
@@ -94,6 +120,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.CreateDatasetGroupRequest.KmsKeyArn</property>
+    <max>2048</max>
     <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -175,6 +202,27 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateRecommenderRequest.DatasetGroupArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateRecommenderRequest.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateRecommenderRequest.RecipeArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.CreateRecommenderResponse.RecommenderArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.CreateSchemaRequest.Name</property>
     <min>1</min>
     <max>63</max>
@@ -250,6 +298,11 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.DeleteRecommenderRequest.RecommenderArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.DeleteSchemaRequest.SchemaArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
@@ -266,6 +319,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.DescribeBatchInferenceJobRequest.BatchInferenceJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.DescribeBatchSegmentJobRequest.BatchSegmentJobArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
@@ -315,6 +373,11 @@
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.DescribeRecommenderRequest.RecommenderArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.DescribeSchemaRequest.SchemaArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
@@ -346,7 +409,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListBatchInferenceJobsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListBatchInferenceJobsRequest.SolutionVersionArn</property>
@@ -355,7 +418,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListBatchInferenceJobsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListBatchSegmentJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListBatchSegmentJobsRequest.NextToken</property>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListBatchSegmentJobsRequest.SolutionVersionArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListBatchSegmentJobsResponse.NextToken</property>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListCampaignsRequest.MaxResults</property>
@@ -364,7 +445,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListCampaignsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListCampaignsRequest.SolutionArn</property>
@@ -373,7 +454,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListCampaignsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetExportJobsRequest.DatasetArn</property>
@@ -387,11 +468,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetExportJobsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetExportJobsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetGroupsRequest.MaxResults</property>
@@ -400,11 +481,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetGroupsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetGroupsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetImportJobsRequest.DatasetArn</property>
@@ -418,11 +499,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetImportJobsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetImportJobsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetsRequest.DatasetGroupArn</property>
@@ -436,11 +517,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListDatasetsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListEventTrackersRequest.DatasetGroupArn</property>
@@ -454,11 +535,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListEventTrackersRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListEventTrackersResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListFiltersRequest.DatasetGroupArn</property>
@@ -472,11 +553,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListFiltersRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListFiltersResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListRecipesRequest.MaxResults</property>
@@ -485,11 +566,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListRecipesRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListRecipesResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListRecommendersRequest.DatasetGroupArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListRecommendersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListRecommendersRequest.NextToken</property>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.ListRecommendersResponse.NextToken</property>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSchemasRequest.MaxResults</property>
@@ -498,11 +597,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSchemasRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSchemasResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSolutionsRequest.DatasetGroupArn</property>
@@ -516,11 +615,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSolutionsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSolutionsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSolutionVersionsRequest.MaxResults</property>
@@ -529,7 +628,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSolutionVersionsRequest.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSolutionVersionsRequest.SolutionArn</property>
@@ -538,7 +637,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.ListSolutionVersionsResponse.NextToken</property>
-    <max>1300</max>
+    <max>1500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.StopSolutionVersionCreationRequest.SolutionVersionArn</property>
@@ -561,6 +660,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.UpdateCampaignResponse.CampaignArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.UpdateRecommenderRequest.RecommenderArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.UpdateRecommenderResponse.RecommenderArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
   </property-value-rule>
@@ -651,6 +760,56 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.BatchInferenceJobSummary.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJob.BatchSegmentJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJob.FilterArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJob.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJob.RoleArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJob.SolutionVersionArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJob.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJobSummary.BatchSegmentJobArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJobSummary.JobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJobSummary.SolutionVersionArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.BatchSegmentJobSummary.Status</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -797,6 +956,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Personalize.Model.DatasetGroup.KmsKeyArn</property>
+    <max>2048</max>
     <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1132,7 +1292,62 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Personalize.Model.Recommender.DatasetGroupArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.Recommender.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.Recommender.RecipeArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.Recommender.RecommenderArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.Recommender.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.RecommenderSummary.DatasetGroupArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.RecommenderSummary.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.RecommenderSummary.RecipeArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.RecommenderSummary.RecommenderArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.RecommenderSummary.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Personalize.Model.RecommenderUpdateSummary.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Personalize.Model.S3DataConfig.KmsKeyArn</property>
+    <max>2048</max>
     <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>

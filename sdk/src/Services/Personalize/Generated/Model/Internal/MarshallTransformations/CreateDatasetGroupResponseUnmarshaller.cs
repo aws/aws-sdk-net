@@ -57,6 +57,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     response.DatasetGroupArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("domain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Domain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

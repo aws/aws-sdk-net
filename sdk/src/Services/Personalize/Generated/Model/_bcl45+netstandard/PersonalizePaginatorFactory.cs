@@ -44,6 +44,14 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Paginator for ListBatchSegmentJobs operation
+        ///</summary>
+        public IListBatchSegmentJobsPaginator ListBatchSegmentJobs(ListBatchSegmentJobsRequest request) 
+        {
+            return new ListBatchSegmentJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCampaigns operation
         ///</summary>
         public IListCampaignsPaginator ListCampaigns(ListCampaignsRequest request) 
@@ -105,6 +113,14 @@ namespace Amazon.Personalize.Model
         public IListRecipesPaginator ListRecipes(ListRecipesRequest request) 
         {
             return new ListRecipesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecommenders operation
+        ///</summary>
+        public IListRecommendersPaginator ListRecommenders(ListRecommendersRequest request) 
+        {
+            return new ListRecommendersPaginator(this.client, request);
         }
 
         /// <summary>

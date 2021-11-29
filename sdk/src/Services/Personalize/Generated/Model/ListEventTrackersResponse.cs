@@ -61,7 +61,7 @@ namespace Amazon.Personalize.Model
         /// A token for getting the next set of event trackers (if they exist).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1300)]
+        [AWSProperty(Max=1500)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -36,8 +36,9 @@ namespace Amazon.Personalize.Model
     ///  
     /// <para>
     /// Amazon Personalize recognizes three schema variants. Each schema is associated with
-    /// a dataset type and has a set of required field and keywords. You specify a schema
-    /// when you call <a>CreateDataset</a>.
+    /// a dataset type and has a set of required field and keywords. If you are creating a
+    /// schema for a dataset in a Domain dataset group, you provide the domain of the Domain
+    /// dataset group. You specify a schema when you call <a>CreateDataset</a>.
     /// </para>
     ///  <p class="title"> <b>Related APIs</b> 
     /// </para>
@@ -57,8 +58,28 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class CreateSchemaRequest : AmazonPersonalizeRequest
     {
+        private Domain _domain;
         private string _name;
         private string _schema;
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The domain for the schema. If you are creating a schema for a dataset in a Domain
+        /// dataset group, specify the domain you chose when you created the Domain dataset group.
+        /// </para>
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

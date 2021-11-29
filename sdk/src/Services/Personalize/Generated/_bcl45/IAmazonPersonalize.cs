@@ -103,11 +103,71 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  CreateBatchSegmentJob
+
+
+        /// <summary>
+        /// Creates a batch segment job. The operation can handle up to 50 million records and
+        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchSegmentJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateBatchSegmentJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">REST API Reference for CreateBatchSegmentJob Operation</seealso>
+        CreateBatchSegmentJobResponse CreateBatchSegmentJob(CreateBatchSegmentJobRequest request);
+
+
+
+        /// <summary>
+        /// Creates a batch segment job. The operation can handle up to 50 million records and
+        /// the input file must be in JSON format. For more information, see <a>recommendations-batch</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBatchSegmentJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBatchSegmentJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">REST API Reference for CreateBatchSegmentJob Operation</seealso>
+        Task<CreateBatchSegmentJobResponse> CreateBatchSegmentJobAsync(CreateBatchSegmentJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateCampaign
 
 
         /// <summary>
-        /// Creates a campaign by deploying a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// Creates a campaign that deploys a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
         /// and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
         /// APIs, a campaign is specified in the request.
         /// 
@@ -207,7 +267,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates a campaign by deploying a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// Creates a campaign that deploys a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
         /// and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
         /// APIs, a campaign is specified in the request.
         /// 
@@ -593,9 +653,9 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates an empty dataset group. A dataset group contains related datasets that supply
-        /// data for training a model. A dataset group can contain at most three datasets, one
-        /// for each type of dataset:
+        /// Creates an empty dataset group. A dataset group is a container for Amazon Personalize
+        /// resources. A dataset group can contain at most three datasets, one for each type of
+        /// dataset:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -611,8 +671,12 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To train a model (create a solution), a dataset group that contains an <code>Interactions</code>
-        /// dataset is required. Call <a>CreateDataset</a> to add a dataset to the group.
+        ///  A dataset group can be a Domain dataset group, where you specify a domain and use
+        /// pre-configured resources like recommenders, or a Custom dataset group, where you use
+        /// custom resources, such as a solution with a solution version, that you deploy with
+        /// a campaign. If you start with a Domain dataset group, you can still add custom resources
+        /// such as solutions and solution versions trained with recipes for custom use cases
+        /// and deployed with campaigns. 
         /// </para>
         ///  
         /// <para>
@@ -691,9 +755,9 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates an empty dataset group. A dataset group contains related datasets that supply
-        /// data for training a model. A dataset group can contain at most three datasets, one
-        /// for each type of dataset:
+        /// Creates an empty dataset group. A dataset group is a container for Amazon Personalize
+        /// resources. A dataset group can contain at most three datasets, one for each type of
+        /// dataset:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -709,8 +773,12 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To train a model (create a solution), a dataset group that contains an <code>Interactions</code>
-        /// dataset is required. Call <a>CreateDataset</a> to add a dataset to the group.
+        ///  A dataset group can be a Domain dataset group, where you specify a domain and use
+        /// pre-configured resources like recommenders, or a Custom dataset group, where you use
+        /// custom resources, such as a solution with a solution version, that you deploy with
+        /// a campaign. If you start with a Domain dataset group, you can still add custom resources
+        /// such as solutions and solution versions trained with recipes for custom use cases
+        /// and deployed with campaigns. 
         /// </para>
         ///  
         /// <para>
@@ -1153,6 +1221,154 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  CreateRecommender
+
+
+        /// <summary>
+        /// Creates a recommender with the recipe (a Domain dataset group use case) you specify.
+        /// You create recommenders for a Domain dataset group and specify the recommender's Amazon
+        /// Resource Name (ARN) when you make a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// request. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Status</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A recommender can be in one of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETE PENDING &gt; DELETE IN_PROGRESS
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the recommender status, call <a>DescribeRecommender</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before
+        /// asking the recommender for recommendations.
+        /// </para>
+        ///  </note> <p class="title"> <b>Related APIs</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>ListRecommenders</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRecommender</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRecommender</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteRecommender</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommender service method.</param>
+        /// 
+        /// <returns>The response from the CreateRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
+        CreateRecommenderResponse CreateRecommender(CreateRecommenderRequest request);
+
+
+
+        /// <summary>
+        /// Creates a recommender with the recipe (a Domain dataset group use case) you specify.
+        /// You create recommenders for a Domain dataset group and specify the recommender's Amazon
+        /// Resource Name (ARN) when you make a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// request. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Status</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A recommender can be in one of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETE PENDING &gt; DELETE IN_PROGRESS
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get the recommender status, call <a>DescribeRecommender</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before
+        /// asking the recommender for recommendations.
+        /// </para>
+        ///  </note> <p class="title"> <b>Related APIs</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>ListRecommenders</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeRecommender</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateRecommender</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteRecommender</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
+        Task<CreateRecommenderResponse> CreateRecommenderAsync(CreateRecommenderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateSchema
 
 
@@ -1163,8 +1379,9 @@ namespace Amazon.Personalize
         ///  
         /// <para>
         /// Amazon Personalize recognizes three schema variants. Each schema is associated with
-        /// a dataset type and has a set of required field and keywords. You specify a schema
-        /// when you call <a>CreateDataset</a>.
+        /// a dataset type and has a set of required field and keywords. If you are creating a
+        /// schema for a dataset in a Domain dataset group, you provide the domain of the Domain
+        /// dataset group. You specify a schema when you call <a>CreateDataset</a>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
@@ -1206,8 +1423,9 @@ namespace Amazon.Personalize
         ///  
         /// <para>
         /// Amazon Personalize recognizes three schema variants. Each schema is associated with
-        /// a dataset type and has a set of required field and keywords. You specify a schema
-        /// when you call <a>CreateDataset</a>.
+        /// a dataset type and has a set of required field and keywords. If you are creating a
+        /// schema for a dataset in a Domain dataset group, you provide the domain of the Domain
+        /// dataset group. You specify a schema when you call <a>CreateDataset</a>.
         /// </para>
         ///  <p class="title"> <b>Related APIs</b> 
         /// </para>
@@ -1453,9 +1671,10 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Trains or retrains an active solution. A solution is created using the <a>CreateSolution</a>
-        /// operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>.
-        /// A new version of the solution is created every time you call this operation.
+        /// Trains or retrains an active solution in a Custom dataset group. A solution is created
+        /// using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
+        /// <code>CreateSolutionVersion</code>. A new version of the solution is created every
+        /// time you call this operation.
         /// 
         ///  
         /// <para>
@@ -1548,9 +1767,10 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Trains or retrains an active solution. A solution is created using the <a>CreateSolution</a>
-        /// operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>.
-        /// A new version of the solution is created every time you call this operation.
+        /// Trains or retrains an active solution in a Custom dataset group. A solution is created
+        /// using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
+        /// <code>CreateSolutionVersion</code>. A new version of the solution is created every
+        /// time you call this operation.
         /// 
         ///  
         /// <para>
@@ -1915,6 +2135,56 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DeleteRecommender
+
+
+        /// <summary>
+        /// Deactivates and removes a recommender. A deleted recommender can no longer be specified
+        /// in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommender service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
+        DeleteRecommenderResponse DeleteRecommender(DeleteRecommenderRequest request);
+
+
+
+        /// <summary>
+        /// Deactivates and removes a recommender. A deleted recommender can no longer be specified
+        /// in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
+        Task<DeleteRecommenderResponse> DeleteRecommenderAsync(DeleteRecommenderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteSchema
 
 
@@ -2100,6 +2370,50 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
         Task<DescribeBatchInferenceJobResponse> DescribeBatchInferenceJobAsync(DescribeBatchInferenceJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeBatchSegmentJob
+
+
+        /// <summary>
+        /// Gets the properties of a batch segment job including name, Amazon Resource Name (ARN),
+        /// status, input and output configurations, and the ARN of the solution version used
+        /// to generate segments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchSegmentJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBatchSegmentJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchSegmentJob">REST API Reference for DescribeBatchSegmentJob Operation</seealso>
+        DescribeBatchSegmentJobResponse DescribeBatchSegmentJob(DescribeBatchSegmentJobRequest request);
+
+
+
+        /// <summary>
+        /// Gets the properties of a batch segment job including name, Amazon Resource Name (ARN),
+        /// status, input and output configurations, and the ARN of the solution version used
+        /// to generate segments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBatchSegmentJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBatchSegmentJob service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchSegmentJob">REST API Reference for DescribeBatchSegmentJob Operation</seealso>
+        Task<DescribeBatchSegmentJobResponse> DescribeBatchSegmentJobAsync(DescribeBatchSegmentJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2567,6 +2881,90 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  DescribeRecommender
+
+
+        /// <summary>
+        /// Describes the given recommender, including its status.
+        /// 
+        ///  
+        /// <para>
+        /// A recommender can be in one of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETE PENDING &gt; DELETE IN_PROGRESS
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
+        /// the <code>failureReason</code> key, which describes why.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommender service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">REST API Reference for DescribeRecommender Operation</seealso>
+        DescribeRecommenderResponse DescribeRecommender(DescribeRecommenderRequest request);
+
+
+
+        /// <summary>
+        /// Describes the given recommender, including its status.
+        /// 
+        ///  
+        /// <para>
+        /// A recommender can be in one of the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELETE PENDING &gt; DELETE IN_PROGRESS
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
+        /// the <code>failureReason</code> key, which describes why.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">REST API Reference for DescribeRecommender Operation</seealso>
+        Task<DescribeRecommenderResponse> DescribeRecommenderAsync(DescribeRecommenderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSchema
 
 
@@ -2774,6 +3172,48 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
         Task<ListBatchInferenceJobsResponse> ListBatchInferenceJobsAsync(ListBatchInferenceJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBatchSegmentJobs
+
+
+        /// <summary>
+        /// Gets a list of the batch segment jobs that have been performed off of a solution version
+        /// that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBatchSegmentJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListBatchSegmentJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">REST API Reference for ListBatchSegmentJobs Operation</seealso>
+        ListBatchSegmentJobsResponse ListBatchSegmentJobs(ListBatchSegmentJobsRequest request);
+
+
+
+        /// <summary>
+        /// Gets a list of the batch segment jobs that have been performed off of a solution version
+        /// that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBatchSegmentJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBatchSegmentJobs service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">REST API Reference for ListBatchSegmentJobs Operation</seealso>
+        Task<ListBatchSegmentJobsResponse> ListBatchSegmentJobsAsync(ListBatchSegmentJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3095,6 +3535,9 @@ namespace Amazon.Personalize
         /// <param name="request">Container for the necessary parameters to execute the ListRecipes service method.</param>
         /// 
         /// <returns>The response from the ListRecipes service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
         /// The token is not valid.
         /// </exception>
@@ -3113,11 +3556,60 @@ namespace Amazon.Personalize
         /// </param>
         /// 
         /// <returns>The response from the ListRecipes service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
         /// The token is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecipes">REST API Reference for ListRecipes Operation</seealso>
         Task<ListRecipesResponse> ListRecipesAsync(ListRecipesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRecommenders
+
+
+        /// <summary>
+        /// Returns a list of recommenders in a given Domain dataset group. When a Domain dataset
+        /// group is not specified, all the recommenders associated with the account are listed.
+        /// The response provides the properties for each recommender, including the Amazon Resource
+        /// Name (ARN). For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenders service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommenders service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
+        ListRecommendersResponse ListRecommenders(ListRecommendersRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of recommenders in a given Domain dataset group. When a Domain dataset
+        /// group is not specified, all the recommenders associated with the account are listed.
+        /// The response provides the properties for each recommender, including the Amazon Resource
+        /// Name (ARN). For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenders service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
+        Task<ListRecommendersResponse> ListRecommendersAsync(ListRecommendersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3426,6 +3918,52 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         Task<UpdateCampaignResponse> UpdateCampaignAsync(UpdateCampaignRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRecommender
+
+
+        /// <summary>
+        /// Updates the recommender to modify the recommender configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
+        UpdateRecommenderResponse UpdateRecommender(UpdateRecommenderRequest request);
+
+
+
+        /// <summary>
+        /// Updates the recommender to modify the recommender configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecommender service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
+        Task<UpdateRecommenderResponse> UpdateRecommenderAsync(UpdateRecommenderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

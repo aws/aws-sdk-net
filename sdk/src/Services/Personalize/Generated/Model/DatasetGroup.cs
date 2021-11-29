@@ -45,6 +45,7 @@ namespace Amazon.Personalize.Model
     {
         private DateTime? _creationDateTime;
         private string _datasetGroupArn;
+        private Domain _domain;
         private string _failureReason;
         private string _kmsKeyArn;
         private DateTime? _lastUpdatedDateTime;
@@ -90,6 +91,24 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The domain of a Domain dataset group.
+        /// </para>
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// If creating a dataset group fails, provides the reason why.
@@ -114,6 +133,7 @@ namespace Amazon.Personalize.Model
         /// the datasets.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }

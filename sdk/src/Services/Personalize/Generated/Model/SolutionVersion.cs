@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// An object that provides information about a specific version of a <a>Solution</a>.
+    /// An object that provides information about a specific version of a <a>Solution</a>
+    /// in a Custom dataset group.
     /// </summary>
     public partial class SolutionVersion
     {

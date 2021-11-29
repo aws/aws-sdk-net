@@ -30,9 +30,9 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatasetGroup operation.
-    /// Creates an empty dataset group. A dataset group contains related datasets that supply
-    /// data for training a model. A dataset group can contain at most three datasets, one
-    /// for each type of dataset:
+    /// Creates an empty dataset group. A dataset group is a container for Amazon Personalize
+    /// resources. A dataset group can contain at most three datasets, one for each type of
+    /// dataset:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -48,8 +48,12 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To train a model (create a solution), a dataset group that contains an <code>Interactions</code>
-    /// dataset is required. Call <a>CreateDataset</a> to add a dataset to the group.
+    ///  A dataset group can be a Domain dataset group, where you specify a domain and use
+    /// pre-configured resources like recommenders, or a Custom dataset group, where you use
+    /// custom resources, such as a solution with a solution version, that you deploy with
+    /// a campaign. If you start with a Domain dataset group, you can still add custom resources
+    /// such as solutions and solution versions trained with recipes for custom use cases
+    /// and deployed with campaigns. 
     /// </para>
     ///  
     /// <para>
@@ -112,9 +116,31 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class CreateDatasetGroupRequest : AmazonPersonalizeRequest
     {
+        private Domain _domain;
         private string _kmsKeyArn;
         private string _name;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The domain of the dataset group. Specify a domain to create a Domain dataset group.
+        /// The domain you specify determines the default schemas for datasets and the use cases
+        /// available for recommenders. If you don't specify a domain, you create a Custom dataset
+        /// group with solution versions that you deploy with a campaign. 
+        /// </para>
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
@@ -123,6 +149,7 @@ namespace Amazon.Personalize.Model
         /// the datasets.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }

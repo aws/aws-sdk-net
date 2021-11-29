@@ -35,9 +35,30 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListRecipesRequest : AmazonPersonalizeRequest
     {
+        private Domain _domain;
         private int? _maxResults;
         private string _nextToken;
         private RecipeProvider _recipeProvider;
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        ///  Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain
+        /// dataset group use cases) for this domain are included in the response. If you don't
+        /// specify a domain, only non-domain recipes are returned. 
+        /// </para>
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -65,7 +86,7 @@ namespace Amazon.Personalize.Model
         /// next set of recipes (if they exist).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1300)]
+        [AWSProperty(Max=1500)]
         public string NextToken
         {
             get { return this._nextToken; }

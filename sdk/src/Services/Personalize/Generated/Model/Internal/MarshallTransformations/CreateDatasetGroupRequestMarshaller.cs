@@ -67,6 +67,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
                 if(publicRequest.IsSetKmsKeyArn())
                 {
                     context.Writer.WritePropertyName("kmsKeyArn");

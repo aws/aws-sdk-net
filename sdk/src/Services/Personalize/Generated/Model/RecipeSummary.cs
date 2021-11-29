@@ -35,6 +35,7 @@ namespace Amazon.Personalize.Model
     public partial class RecipeSummary
     {
         private DateTime? _creationDateTime;
+        private Domain _domain;
         private DateTime? _lastUpdatedDateTime;
         private string _name;
         private string _recipeArn;
@@ -56,6 +57,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetCreationDateTime()
         {
             return this._creationDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The domain of the recipe (if the recipe is a Domain dataset group use case).
+        /// </para>
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
         }
 
         /// <summary>

@@ -31,6 +31,11 @@ namespace Amazon.Personalize.Model
         IListBatchInferenceJobsPaginator ListBatchInferenceJobs(ListBatchInferenceJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListBatchSegmentJobs operation
+        ///</summary>
+        IListBatchSegmentJobsPaginator ListBatchSegmentJobs(ListBatchSegmentJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListCampaigns operation
         ///</summary>
         IListCampaignsPaginator ListCampaigns(ListCampaignsRequest request);
@@ -69,6 +74,11 @@ namespace Amazon.Personalize.Model
         /// Paginator for ListRecipes operation
         ///</summary>
         IListRecipesPaginator ListRecipes(ListRecipesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecommenders operation
+        ///</summary>
+        IListRecommendersPaginator ListRecommenders(ListRecommendersRequest request);
 
         /// <summary>
         /// Paginator for ListSchemas operation

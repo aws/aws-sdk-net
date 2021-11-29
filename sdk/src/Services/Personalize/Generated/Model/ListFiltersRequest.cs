@@ -83,7 +83,7 @@ namespace Amazon.Personalize.Model
         /// next set of filters (if they exist).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1300)]
+        [AWSProperty(Max=1500)]
         public string NextToken
         {
             get { return this._nextToken; }

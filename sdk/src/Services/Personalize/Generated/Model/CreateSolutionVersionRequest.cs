@@ -30,9 +30,10 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSolutionVersion operation.
-    /// Trains or retrains an active solution. A solution is created using the <a>CreateSolution</a>
-    /// operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>.
-    /// A new version of the solution is created every time you call this operation.
+    /// Trains or retrains an active solution in a Custom dataset group. A solution is created
+    /// using the <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
+    /// <code>CreateSolutionVersion</code>. A new version of the solution is created every
+    /// time you call this operation.
     /// 
     ///  
     /// <para>
