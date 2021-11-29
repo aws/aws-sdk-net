@@ -1,3 +1,13 @@
+### 3.7.170.0 (2021-11-29 07:13 UTC)
+* MigrationHubRefactorSpaces (3.7.0.0)
+	* This is the initial SDK release for AWS Migration Hub Refactor Spaces
+* Personalize (3.7.6.0)
+	* This release adds API support for Recommenders and BatchSegmentJobs.
+* PersonalizeRuntime (3.7.1.0)
+	* This release adds inference support for Recommenders.
+* Textract (3.7.3.0)
+	* This release adds support for synchronously analyzing identity documents through a new API: AnalyzeID
+
 ### 3.7.169.0 (2021-11-26 19:19 UTC)
 * AutoScaling (3.7.8.1)
 	* Documentation updates for Amazon EC2 Auto Scaling.

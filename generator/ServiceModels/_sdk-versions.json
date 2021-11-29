@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.169.0",
+    "ProductVersion" : "3.7.170.0",
     "CoreVersion"    : "3.7.5.2",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1378,7 +1378,7 @@
             "InPreview"               : false
         },
         "Textract"                        : {
-            "Version" : "3.7.2.16",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1434,7 +1434,7 @@
             "InPreview"               : false
         },
         "PersonalizeRuntime"              : {
-            "Version" : "3.7.0.103",
+            "Version" : "3.7.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1442,7 +1442,7 @@
             "InPreview"               : false
         },
         "Personalize"                     : {
-            "Version" : "3.7.5.60",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2323,6 +2323,14 @@
         },
         "AppConfigData"                       : {
             "Version" : "3.7.0.3",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.5.2"
+            },
+            "InPreview"               : false
+        },
+        "MigrationHubRefactorSpaces"          : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
