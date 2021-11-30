@@ -34,8 +34,63 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListLensesRequest : AmazonWellArchitectedRequest
     {
+        private string _lensName;
+        private LensStatusType _lensStatus;
+        private LensType _lensType;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property LensName.
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string LensName
+        {
+            get { return this._lensName; }
+            set { this._lensName = value; }
+        }
+
+        // Check to see if LensName property is set
+        internal bool IsSetLensName()
+        {
+            return this._lensName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensStatus. 
+        /// <para>
+        /// The status of lenses to be returned.
+        /// </para>
+        /// </summary>
+        public LensStatusType LensStatus
+        {
+            get { return this._lensStatus; }
+            set { this._lensStatus = value; }
+        }
+
+        // Check to see if LensStatus property is set
+        internal bool IsSetLensStatus()
+        {
+            return this._lensStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensType. 
+        /// <para>
+        /// The type of lenses to be returned.
+        /// </para>
+        /// </summary>
+        public LensType LensType
+        {
+            get { return this._lensType; }
+            set { this._lensType = value; }
+        }
+
+        // Check to see if LensType property is set
+        internal bool IsSetLensType()
+        {
+            return this._lensType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults.

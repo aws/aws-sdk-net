@@ -34,6 +34,7 @@ namespace Amazon.WellArchitected.Model
     public partial class LensReviewSummary
     {
         private string _lensAlias;
+        private string _lensArn;
         private string _lensName;
         private LensStatus _lensStatus;
         private string _lensVersion;
@@ -43,7 +44,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensAlias.
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string LensAlias
         {
             get { return this._lensAlias; }
@@ -54,6 +55,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensAlias()
         {
             return this._lensAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensArn. 
+        /// <para>
+        /// The ARN for the lens.
+        /// </para>
+        /// </summary>
+        public string LensArn
+        {
+            get { return this._lensArn; }
+            set { this._lensArn = value; }
+        }
+
+        // Check to see if LensArn property is set
+        internal bool IsSetLensArn()
+        {
+            return this._lensArn != null;
         }
 
         /// <summary>
@@ -96,7 +115,7 @@ namespace Amazon.WellArchitected.Model
         /// The version of the lens.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=32)]
         public string LensVersion
         {
             get { return this._lensVersion; }

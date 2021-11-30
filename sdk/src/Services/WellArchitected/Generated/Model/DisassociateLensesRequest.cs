@@ -32,10 +32,14 @@ namespace Amazon.WellArchitected.Model
     /// Container for the parameters to the DisassociateLenses operation.
     /// Disassociate a lens from a workload.
     /// 
+    ///  
+    /// <para>
+    /// Up to 10 lenses can be disassociated from a workload in a single API operation.
+    /// </para>
     ///  <note> 
     /// <para>
-    /// The AWS Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed
-    /// from a workload.
+    /// The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>)
+    /// cannot be removed from a workload.
     /// </para>
     ///  </note>
     /// </summary>

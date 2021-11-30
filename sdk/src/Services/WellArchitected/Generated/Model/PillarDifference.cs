@@ -35,6 +35,7 @@ namespace Amazon.WellArchitected.Model
     {
         private DifferenceStatus _differenceStatus;
         private string _pillarId;
+        private string _pillarName;
         private List<QuestionDifference> _questionDifferences = new List<QuestionDifference>();
 
         /// <summary>
@@ -69,6 +70,22 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetPillarId()
         {
             return this._pillarId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PillarName.
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string PillarName
+        {
+            get { return this._pillarName; }
+            set { this._pillarName = value; }
+        }
+
+        // Check to see if PillarName property is set
+        internal bool IsSetPillarName()
+        {
+            return this._pillarName != null;
         }
 
         /// <summary>

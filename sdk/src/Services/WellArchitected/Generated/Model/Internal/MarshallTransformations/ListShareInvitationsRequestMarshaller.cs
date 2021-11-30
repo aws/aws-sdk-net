@@ -59,11 +59,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetLensNamePrefix())
+                request.Parameters.Add("LensNamePrefix", StringUtils.FromString(publicRequest.LensNamePrefix));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetShareResourceType())
+                request.Parameters.Add("ShareResourceType", StringUtils.FromString(publicRequest.ShareResourceType));
             
             if (publicRequest.IsSetWorkloadNamePrefix())
                 request.Parameters.Add("WorkloadNamePrefix", StringUtils.FromString(publicRequest.WorkloadNamePrefix));

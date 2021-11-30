@@ -64,6 +64,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ImprovementPlans", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ChoiceImprovementPlan, ChoiceImprovementPlanUnmarshaller>(ChoiceImprovementPlanUnmarshaller.Instance);
+                    unmarshalledObject.ImprovementPlans = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImprovementPlanUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

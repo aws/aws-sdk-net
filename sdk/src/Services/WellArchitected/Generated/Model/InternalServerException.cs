@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// There is a problem with the AWS Well-Architected Tool API service.
+    /// There is a problem with the Well-Architected Tool API service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

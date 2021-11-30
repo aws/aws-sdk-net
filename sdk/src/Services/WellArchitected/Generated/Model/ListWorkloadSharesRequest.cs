@@ -76,7 +76,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property SharedWithPrefix. 
         /// <para>
-        /// The AWS account ID or IAM role with which the workload is shared.
+        /// The Amazon Web Services account ID or IAM role with which the workload is shared.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

@@ -36,6 +36,8 @@ namespace Amazon.WellArchitected.Model
         private string _baseLensVersion;
         private string _latestLensVersion;
         private string _lensAlias;
+        private string _lensArn;
+        private string _targetLensVersion;
         private VersionDifferences _versionDifferences;
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.WellArchitected.Model
         /// The base version of the lens.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=32)]
         public string BaseLensVersion
         {
             get { return this._baseLensVersion; }
@@ -63,7 +65,7 @@ namespace Amazon.WellArchitected.Model
         /// The latest version of the lens.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=32)]
         public string LatestLensVersion
         {
             get { return this._latestLensVersion; }
@@ -79,7 +81,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensAlias.
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string LensAlias
         {
             get { return this._lensAlias; }
@@ -90,6 +92,43 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensAlias()
         {
             return this._lensAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensArn. 
+        /// <para>
+        /// The ARN for the lens.
+        /// </para>
+        /// </summary>
+        public string LensArn
+        {
+            get { return this._lensArn; }
+            set { this._lensArn = value; }
+        }
+
+        // Check to see if LensArn property is set
+        internal bool IsSetLensArn()
+        {
+            return this._lensArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLensVersion. 
+        /// <para>
+        /// The target lens version for the lens.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string TargetLensVersion
+        {
+            get { return this._targetLensVersion; }
+            set { this._targetLensVersion = value; }
+        }
+
+        // Check to see if TargetLensVersion property is set
+        internal bool IsSetTargetLensVersion()
+        {
+            return this._targetLensVersion != null;
         }
 
         /// <summary>

@@ -76,6 +76,18 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HelpfulResource", targetDepth))
+                {
+                    var unmarshaller = ChoiceContentUnmarshaller.Instance;
+                    unmarshalledObject.HelpfulResource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImprovementPlan", targetDepth))
+                {
+                    var unmarshaller = ChoiceContentUnmarshaller.Instance;
+                    unmarshalledObject.ImprovementPlan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

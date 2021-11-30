@@ -35,6 +35,8 @@ namespace Amazon.WellArchitected.Model
     {
         private string _choiceId;
         private string _description;
+        private ChoiceContent _helpfulResource;
+        private ChoiceContent _improvementPlan;
         private string _title;
 
         /// <summary>
@@ -67,6 +69,42 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HelpfulResource. 
+        /// <para>
+        /// The choice level helpful resource.
+        /// </para>
+        /// </summary>
+        public ChoiceContent HelpfulResource
+        {
+            get { return this._helpfulResource; }
+            set { this._helpfulResource = value; }
+        }
+
+        // Check to see if HelpfulResource property is set
+        internal bool IsSetHelpfulResource()
+        {
+            return this._helpfulResource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImprovementPlan. 
+        /// <para>
+        /// The choice level improvement plan.
+        /// </para>
+        /// </summary>
+        public ChoiceContent ImprovementPlan
+        {
+            get { return this._improvementPlan; }
+            set { this._improvementPlan = value; }
+        }
+
+        // Check to see if ImprovementPlan property is set
+        internal bool IsSetImprovementPlan()
+        {
+            return this._improvementPlan != null;
         }
 
         /// <summary>

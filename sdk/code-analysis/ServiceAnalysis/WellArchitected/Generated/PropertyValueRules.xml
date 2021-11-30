@@ -5,6 +5,35 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateLensShareRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateLensShareRequest.SharedWith</property>
+    <min>12</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateLensShareResponse.ShareId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateLensVersionRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateLensVersionRequest.LensVersion</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateLensVersionResponse.LensVersion</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateMilestoneRequest.MilestoneName</property>
     <min>3</min>
     <max>100</max>
@@ -75,6 +104,20 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteLensRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteLensShareRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteLensShareRequest.ShareId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteWorkloadRequest.WorkloadId</property>
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -91,9 +134,24 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ExportLensRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ExportLensRequest.LensVersion</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ExportLensResponse.LensJSON</property>
+    <min>2</min>
+    <max>500000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetAnswerRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetAnswerRequest.MilestoneNumber</property>
@@ -112,7 +170,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetAnswerResponse.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetAnswerResponse.MilestoneNumber</property>
@@ -124,9 +182,19 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetLensRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetLensRequest.LensVersion</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensReviewRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensReviewRequest.MilestoneNumber</property>
@@ -149,7 +217,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensReviewReportRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensReviewReportRequest.MilestoneNumber</property>
@@ -172,27 +240,37 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensVersionDifferenceRequest.BaseLensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensVersionDifferenceRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetLensVersionDifferenceRequest.TargetLensVersion</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensVersionDifferenceResponse.BaseLensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensVersionDifferenceResponse.LatestLensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensVersionDifferenceResponse.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetLensVersionDifferenceResponse.TargetLensVersion</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetMilestoneRequest.MilestoneNumber</property>
@@ -212,9 +290,19 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ImportLensRequest.JSONString</property>
+    <min>2</min>
+    <max>500000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ImportLensRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListAnswersRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListAnswersRequest.MaxResults</property>
@@ -238,7 +326,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListAnswersResponse.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListAnswersResponse.MilestoneNumber</property>
@@ -250,6 +338,11 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensesRequest.LensName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensesRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -257,7 +350,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsRequest.MaxResults</property>
@@ -281,7 +374,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsResponse.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsResponse.MilestoneNumber</property>
@@ -316,6 +409,20 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensSharesRequest.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensSharesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensSharesRequest.SharedWithPrefix</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListMilestonesRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -336,6 +443,10 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListNotificationsRequest.WorkloadId</property>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.LensNamePrefix</property>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.MaxResults</property>
@@ -375,7 +486,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateAnswerRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateAnswerRequest.Notes</property>
@@ -393,7 +504,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateAnswerResponse.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateAnswerResponse.WorkloadId</property>
@@ -402,7 +513,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateLensReviewRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateLensReviewRequest.LensNotes</property>
@@ -470,7 +581,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpgradeLensReviewRequest.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpgradeLensReviewRequest.MilestoneName</property>
@@ -480,6 +591,11 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpgradeLensReviewRequest.WorkloadId</property>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Answer.HelpfulResourceDisplayText</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Answer.HelpfulResourceUrl</property>
@@ -560,6 +676,31 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceContent.DisplayText</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceContent.Url</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceImprovementPlan.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceImprovementPlan.DisplayText</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ChoiceImprovementPlan.ImprovementPlanUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ChoiceUpdate.Notes</property>
     <max>250</max>
   </property-value-rule>
@@ -584,9 +725,28 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Lens.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Lens.LensVersion</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Lens.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Lens.ShareInvitationId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReview.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReview.LensName</property>
@@ -596,7 +756,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReview.LensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReview.Notes</property>
@@ -605,12 +765,12 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReviewReport.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReviewSummary.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReviewSummary.LensName</property>
@@ -620,7 +780,16 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReviewSummary.LensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.LensShareSummary.SharedWith</property>
+    <min>12</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.LensShareSummary.ShareId</property>
+    <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensSummary.Description</property>
@@ -630,7 +799,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensSummary.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensSummary.LensName</property>
@@ -640,22 +809,26 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensSummary.LensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.LensSummary.Owner</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensUpgradeSummary.CurrentLensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensUpgradeSummary.LatestLensVersion</property>
     <min>1</min>
-    <max>128</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensUpgradeSummary.LensAlias</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensUpgradeSummary.WorkloadId</property>
@@ -692,6 +865,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.PillarDifference.PillarName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.PillarReviewSummary.Notes</property>
     <max>2084</max>
   </property-value-rule>
@@ -716,12 +894,22 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ShareInvitation.LensAlias</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitation.ShareInvitationId</property>
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitation.WorkloadId</property>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ShareInvitationSummary.LensName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitationSummary.SharedBy</property>

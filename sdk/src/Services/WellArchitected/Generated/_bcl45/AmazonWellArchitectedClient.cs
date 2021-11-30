@@ -38,14 +38,14 @@ namespace Amazon.WellArchitected
     /// <summary>
     /// Implementation for accessing WellArchitected
     ///
-    /// AWS Well-Architected Tool 
+    /// Well-Architected Tool 
     /// <para>
-    /// This is the <i>AWS Well-Architected Tool API Reference</i>. The AWS Well-Architected
-    /// Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">AWS
-    /// Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">AWS
-    /// Management Console</a>. For information about the AWS Well-Architected Tool, see the
-    /// <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">AWS
-    /// Well-Architected Tool User Guide</a>.
+    /// This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic
+    /// access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected
+    /// Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web
+    /// Services Management Console</a>. For information about the Well-Architected Tool,
+    /// see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected
+    /// Tool User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonWellArchitectedClient : AmazonServiceClient, IAmazonWellArchitected
@@ -267,6 +267,24 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// Associate a lens to a workload.
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 lenses can be associated with a workload in a single API operation. A maximum
+        /// of 20 lenses can be associated with a workload.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By accessing and/or applying custom lenses created by another Amazon Web Services
+        /// user or account, you acknowledge that custom lenses created by other users and shared
+        /// with you are Third Party Content as defined in the Amazon Web Services Customer Agreement.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLenses service method.</param>
         /// 
@@ -278,7 +296,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -302,6 +320,24 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// Associate a lens to a workload.
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 lenses can be associated with a workload in a single API operation. A maximum
+        /// of 20 lenses can be associated with a workload.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By accessing and/or applying custom lenses created by another Amazon Web Services
+        /// user or account, you acknowledge that custom lenses created by other users and shared
+        /// with you are Third Party Content as defined in the Amazon Web Services Customer Agreement.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLenses service method.</param>
         /// <param name="cancellationToken">
@@ -316,7 +352,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -339,6 +375,234 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  CreateLensShare
+
+
+        /// <summary>
+        /// Create a lens share.
+        /// 
+        ///  
+        /// <para>
+        /// The owner of a lens can share it with other Amazon Web Services accounts and IAM users
+        /// in the same Amazon Web Services Region. Shared access to a lens is not removed until
+        /// the lens invitation is deleted.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your custom lenses available to those other accounts.
+        /// Those other accounts may continue to access and use your shared custom lenses even
+        /// if you delete the custom lenses from your own Amazon Web Services account or terminate
+        /// your Amazon Web Services account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLensShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateLensShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensShare">REST API Reference for CreateLensShare Operation</seealso>
+        public virtual CreateLensShareResponse CreateLensShare(CreateLensShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLensShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLensShareResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLensShareResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a lens share.
+        /// 
+        ///  
+        /// <para>
+        /// The owner of a lens can share it with other Amazon Web Services accounts and IAM users
+        /// in the same Amazon Web Services Region. Shared access to a lens is not removed until
+        /// the lens invitation is deleted.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your custom lenses available to those other accounts.
+        /// Those other accounts may continue to access and use your shared custom lenses even
+        /// if you delete the custom lenses from your own Amazon Web Services account or terminate
+        /// your Amazon Web Services account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLensShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLensShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensShare">REST API Reference for CreateLensShare Operation</seealso>
+        public virtual Task<CreateLensShareResponse> CreateLensShareAsync(CreateLensShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLensShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLensShareResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLensShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLensVersion
+
+
+        /// <summary>
+        /// Create a new lens version.
+        /// 
+        ///  
+        /// <para>
+        /// A lens can have up to 100 versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// After a lens has been imported, create a new lens version to publish it. The owner
+        /// of a lens can share the lens with other Amazon Web Services accounts and IAM users
+        /// in the same Amazon Web Services Region. Only the owner of a lens can delete it. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLensVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateLensVersion service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensVersion">REST API Reference for CreateLensVersion Operation</seealso>
+        public virtual CreateLensVersionResponse CreateLensVersion(CreateLensVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLensVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLensVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLensVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a new lens version.
+        /// 
+        ///  
+        /// <para>
+        /// A lens can have up to 100 versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// After a lens has been imported, create a new lens version to publish it. The owner
+        /// of a lens can share the lens with other Amazon Web Services accounts and IAM users
+        /// in the same Amazon Web Services Region. Only the owner of a lens can delete it. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLensVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLensVersion service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensVersion">REST API Reference for CreateLensVersion Operation</seealso>
+        public virtual Task<CreateLensVersionResponse> CreateLensVersionAsync(CreateLensVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLensVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLensVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLensVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMilestone
 
 
@@ -355,7 +619,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -396,7 +660,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -430,13 +694,14 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a workload can share the workload with other AWS accounts and IAM users
-        /// in the same AWS Region. Only the owner of a workload can delete it.
+        /// The owner of a workload can share the workload with other Amazon Web Services accounts
+        /// and IAM users in the same Amazon Web Services Region. Only the owner of a workload
+        /// can delete it.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
-        /// a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.
+        /// a Workload</a> in the <i>Well-Architected Tool User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkload service method.</param>
@@ -449,7 +714,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
         /// The user has reached their resource quota.
@@ -476,13 +741,14 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a workload can share the workload with other AWS accounts and IAM users
-        /// in the same AWS Region. Only the owner of a workload can delete it.
+        /// The owner of a workload can share the workload with other Amazon Web Services accounts
+        /// and IAM users in the same Amazon Web Services Region. Only the owner of a workload
+        /// can delete it.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
-        /// a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.
+        /// a Workload</a> in the <i>Well-Architected Tool User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkload service method.</param>
@@ -498,7 +764,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
         /// The user has reached their resource quota.
@@ -529,14 +795,14 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a workload can share it with other AWS accounts and IAM users in the
-        /// same AWS Region. Shared access to a workload is not removed until the workload invitation
-        /// is deleted.
+        /// The owner of a workload can share it with other Amazon Web Services accounts and IAM
+        /// users in the same Amazon Web Services Region. Shared access to a workload is not removed
+        /// until the workload invitation is deleted.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing
-        /// a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.
+        /// a Workload</a> in the <i>Well-Architected Tool User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkloadShare service method.</param>
@@ -549,7 +815,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -579,14 +845,14 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a workload can share it with other AWS accounts and IAM users in the
-        /// same AWS Region. Shared access to a workload is not removed until the workload invitation
-        /// is deleted.
+        /// The owner of a workload can share it with other Amazon Web Services accounts and IAM
+        /// users in the same Amazon Web Services Region. Shared access to a workload is not removed
+        /// until the workload invitation is deleted.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing
-        /// a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.
+        /// a Workload</a> in the <i>Well-Architected Tool User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkloadShare service method.</param>
@@ -602,7 +868,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -628,6 +894,240 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  DeleteLens
+
+
+        /// <summary>
+        /// Delete an existing lens.
+        /// 
+        ///  
+        /// <para>
+        /// Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services
+        /// accounts and IAM users that you shared the lens with can continue to use it, but they
+        /// will no longer be able to apply it to new workloads. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your custom lenses available to those other accounts.
+        /// Those other accounts may continue to access and use your shared custom lenses even
+        /// if you delete the custom lenses from your own Amazon Web Services account or terminate
+        /// your Amazon Web Services account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLens service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLens">REST API Reference for DeleteLens Operation</seealso>
+        public virtual DeleteLensResponse DeleteLens(DeleteLensRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLensResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLensResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete an existing lens.
+        /// 
+        ///  
+        /// <para>
+        /// Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services
+        /// accounts and IAM users that you shared the lens with can continue to use it, but they
+        /// will no longer be able to apply it to new workloads. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your custom lenses available to those other accounts.
+        /// Those other accounts may continue to access and use your shared custom lenses even
+        /// if you delete the custom lenses from your own Amazon Web Services account or terminate
+        /// your Amazon Web Services account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLens service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLens">REST API Reference for DeleteLens Operation</seealso>
+        public virtual Task<DeleteLensResponse> DeleteLensAsync(DeleteLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLensResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLensResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLensShare
+
+
+        /// <summary>
+        /// Delete a lens share.
+        /// 
+        ///  
+        /// <para>
+        /// After the lens share is deleted, Amazon Web Services accounts and IAM users that you
+        /// shared the lens with can continue to use it, but they will no longer be able to apply
+        /// it to new workloads.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your custom lenses available to those other accounts.
+        /// Those other accounts may continue to access and use your shared custom lenses even
+        /// if you delete the custom lenses from your own Amazon Web Services account or terminate
+        /// your Amazon Web Services account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLensShare service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLensShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">REST API Reference for DeleteLensShare Operation</seealso>
+        public virtual DeleteLensShareResponse DeleteLensShare(DeleteLensShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLensShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLensShareResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLensShareResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Delete a lens share.
+        /// 
+        ///  
+        /// <para>
+        /// After the lens share is deleted, Amazon Web Services accounts and IAM users that you
+        /// shared the lens with can continue to use it, but they will no longer be able to apply
+        /// it to new workloads.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge
+        /// that Amazon Web Services will make your custom lenses available to those other accounts.
+        /// Those other accounts may continue to access and use your shared custom lenses even
+        /// if you delete the custom lenses from your own Amazon Web Services account or terminate
+        /// your Amazon Web Services account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLensShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLensShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">REST API Reference for DeleteLensShare Operation</seealso>
+        public virtual Task<DeleteLensShareResponse> DeleteLensShareAsync(DeleteLensShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLensShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLensShareResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLensShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWorkload
 
 
@@ -644,7 +1144,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -682,7 +1182,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -721,7 +1221,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -759,7 +1259,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -788,10 +1288,14 @@ namespace Amazon.WellArchitected
         /// <summary>
         /// Disassociate a lens from a workload.
         /// 
+        ///  
+        /// <para>
+        /// Up to 10 lenses can be disassociated from a workload in a single API operation.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// The AWS Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed
-        /// from a workload.
+        /// The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>)
+        /// cannot be removed from a workload.
         /// </para>
         ///  </note>
         /// </summary>
@@ -805,7 +1309,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -830,10 +1334,14 @@ namespace Amazon.WellArchitected
         /// <summary>
         /// Disassociate a lens from a workload.
         /// 
+        ///  
+        /// <para>
+        /// Up to 10 lenses can be disassociated from a workload in a single API operation.
+        /// </para>
         ///  <note> 
         /// <para>
-        /// The AWS Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed
-        /// from a workload.
+        /// The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>)
+        /// cannot be removed from a workload.
         /// </para>
         ///  </note>
         /// </summary>
@@ -850,7 +1358,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -873,6 +1381,119 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  ExportLens
+
+
+        /// <summary>
+        /// Export an existing lens.
+        /// 
+        ///  
+        /// <para>
+        /// Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+        /// format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only the
+        /// owner of a lens can export it. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not include or gather personal identifiable information (PII) of end users or other
+        /// identifiable individuals in or via your custom lenses. If your custom lens or those
+        /// shared with you and used in your account do include or collect PII you are responsible
+        /// for: ensuring that the included PII is processed in accordance with applicable law,
+        /// providing adequate privacy notices, and obtaining necessary consents for processing
+        /// such data.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportLens service method.</param>
+        /// 
+        /// <returns>The response from the ExportLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">REST API Reference for ExportLens Operation</seealso>
+        public virtual ExportLensResponse ExportLens(ExportLensRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportLensResponseUnmarshaller.Instance;
+
+            return Invoke<ExportLensResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Export an existing lens.
+        /// 
+        ///  
+        /// <para>
+        /// Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+        /// format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only the
+        /// owner of a lens can export it. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not include or gather personal identifiable information (PII) of end users or other
+        /// identifiable individuals in or via your custom lenses. If your custom lens or those
+        /// shared with you and used in your account do include or collect PII you are responsible
+        /// for: ensuring that the included PII is processed in accordance with applicable law,
+        /// providing adequate privacy notices, and obtaining necessary consents for processing
+        /// such data.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportLens service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">REST API Reference for ExportLens Operation</seealso>
+        public virtual Task<ExportLensResponse> ExportLensAsync(ExportLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportLensResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExportLensResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAnswer
 
 
@@ -886,7 +1507,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -921,7 +1542,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -944,6 +1565,77 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  GetLens
+
+
+        /// <summary>
+        /// Get an existing lens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLens service method.</param>
+        /// 
+        /// <returns>The response from the GetLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLens">REST API Reference for GetLens Operation</seealso>
+        public virtual GetLensResponse GetLens(GetLensRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLensResponseUnmarshaller.Instance;
+
+            return Invoke<GetLensResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get an existing lens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLens service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLens">REST API Reference for GetLens Operation</seealso>
+        public virtual Task<GetLensResponse> GetLensAsync(GetLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLensResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLensResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLensReview
 
 
@@ -957,7 +1649,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -992,7 +1684,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1028,7 +1720,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1063,7 +1755,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1099,7 +1791,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1134,7 +1826,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1170,7 +1862,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1205,7 +1897,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1241,7 +1933,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1276,7 +1968,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1299,6 +1991,147 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  ImportLens
+
+
+        /// <summary>
+        /// Import a new lens.
+        /// 
+        ///  
+        /// <para>
+        /// The lens cannot be applied to workloads or shared with other Amazon Web Services accounts
+        /// until it's published with <a>CreateLensVersion</a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+        /// format specification</a> in the <i>Well-Architected Tool User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A custom lens cannot exceed 500 KB in size.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not include or gather personal identifiable information (PII) of end users or other
+        /// identifiable individuals in or via your custom lenses. If your custom lens or those
+        /// shared with you and used in your account do include or collect PII you are responsible
+        /// for: ensuring that the included PII is processed in accordance with applicable law,
+        /// providing adequate privacy notices, and obtaining necessary consents for processing
+        /// such data.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportLens service method.</param>
+        /// 
+        /// <returns>The response from the ImportLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ImportLens">REST API Reference for ImportLens Operation</seealso>
+        public virtual ImportLensResponse ImportLens(ImportLensRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportLensResponseUnmarshaller.Instance;
+
+            return Invoke<ImportLensResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Import a new lens.
+        /// 
+        ///  
+        /// <para>
+        /// The lens cannot be applied to workloads or shared with other Amazon Web Services accounts
+        /// until it's published with <a>CreateLensVersion</a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
+        /// format specification</a> in the <i>Well-Architected Tool User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A custom lens cannot exceed 500 KB in size.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not include or gather personal identifiable information (PII) of end users or other
+        /// identifiable individuals in or via your custom lenses. If your custom lens or those
+        /// shared with you and used in your account do include or collect PII you are responsible
+        /// for: ensuring that the included PII is processed in accordance with applicable law,
+        /// providing adequate privacy notices, and obtaining necessary consents for processing
+        /// such data.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportLens service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportLens service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ImportLens">REST API Reference for ImportLens Operation</seealso>
+        public virtual Task<ImportLensResponse> ImportLensAsync(ImportLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportLensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportLensResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportLensResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAnswers
 
 
@@ -1312,7 +2145,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1347,7 +2180,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1383,7 +2216,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1415,7 +2248,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1448,7 +2281,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1483,7 +2316,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1519,7 +2352,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1554,7 +2387,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1577,6 +2410,77 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  ListLensShares
+
+
+        /// <summary>
+        /// List the lens shares associated with the lens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLensShares service method.</param>
+        /// 
+        /// <returns>The response from the ListLensShares service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensShares">REST API Reference for ListLensShares Operation</seealso>
+        public virtual ListLensSharesResponse ListLensShares(ListLensSharesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLensSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLensSharesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLensSharesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List the lens shares associated with the lens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLensShares service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLensShares service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensShares">REST API Reference for ListLensShares Operation</seealso>
+        public virtual Task<ListLensSharesResponse> ListLensSharesAsync(ListLensSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLensSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLensSharesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLensSharesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMilestones
 
 
@@ -1590,7 +2494,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1625,7 +2529,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1661,7 +2565,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1693,7 +2597,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1726,7 +2630,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1758,7 +2662,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1788,7 +2692,7 @@ namespace Amazon.WellArchitected
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by WellArchitected.</returns>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1814,7 +2718,7 @@ namespace Amazon.WellArchitected
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by WellArchitected.</returns>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1844,7 +2748,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1876,7 +2780,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1909,7 +2813,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1944,7 +2848,7 @@ namespace Amazon.WellArchitected
         /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -1977,7 +2881,7 @@ namespace Amazon.WellArchitected
         /// 
         /// <returns>The response from the TagResource service method, as returned by WellArchitected.</returns>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2003,7 +2907,7 @@ namespace Amazon.WellArchitected
         /// 
         /// <returns>The response from the TagResource service method, as returned by WellArchitected.</returns>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2039,7 +2943,7 @@ namespace Amazon.WellArchitected
         /// 
         /// <returns>The response from the UntagResource service method, as returned by WellArchitected.</returns>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2074,7 +2978,7 @@ namespace Amazon.WellArchitected
         /// 
         /// <returns>The response from the UntagResource service method, as returned by WellArchitected.</returns>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2107,7 +3011,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2145,7 +3049,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2184,7 +3088,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2222,7 +3126,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2261,7 +3165,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2299,7 +3203,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2338,7 +3242,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2376,7 +3280,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2415,7 +3319,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2453,7 +3357,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2492,7 +3396,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.
@@ -2530,7 +3434,7 @@ namespace Amazon.WellArchitected
         /// The resource already exists.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
-        /// There is a problem with the AWS Well-Architected Tool API service.
+        /// There is a problem with the Well-Architected Tool API service.
         /// </exception>
         /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
         /// The requested resource was not found.

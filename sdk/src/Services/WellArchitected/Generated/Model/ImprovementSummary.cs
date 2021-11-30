@@ -33,11 +33,30 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ImprovementSummary
     {
+        private List<ChoiceImprovementPlan> _improvementPlans = new List<ChoiceImprovementPlan>();
         private string _improvementPlanUrl;
         private string _pillarId;
         private string _questionId;
         private string _questionTitle;
         private Risk _risk;
+
+        /// <summary>
+        /// Gets and sets the property ImprovementPlans. 
+        /// <para>
+        /// The improvement plan details.
+        /// </para>
+        /// </summary>
+        public List<ChoiceImprovementPlan> ImprovementPlans
+        {
+            get { return this._improvementPlans; }
+            set { this._improvementPlans = value; }
+        }
+
+        // Check to see if ImprovementPlans property is set
+        internal bool IsSetImprovementPlans()
+        {
+            return this._improvementPlans != null && this._improvementPlans.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ImprovementPlanUrl.

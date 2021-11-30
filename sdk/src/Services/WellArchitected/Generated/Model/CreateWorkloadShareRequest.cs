@@ -34,14 +34,14 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
-    /// The owner of a workload can share it with other AWS accounts and IAM users in the
-    /// same AWS Region. Shared access to a workload is not removed until the workload invitation
-    /// is deleted.
+    /// The owner of a workload can share it with other Amazon Web Services accounts and IAM
+    /// users in the same Amazon Web Services Region. Shared access to a workload is not removed
+    /// until the workload invitation is deleted.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing
-    /// a Workload</a> in the <i>AWS Well-Architected Tool User Guide</i>.
+    /// a Workload</a> in the <i>Well-Architected Tool User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateWorkloadShareRequest : AmazonWellArchitectedRequest

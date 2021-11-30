@@ -34,9 +34,30 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListShareInvitationsRequest : AmazonWellArchitectedRequest
     {
+        private string _lensNamePrefix;
         private int? _maxResults;
         private string _nextToken;
+        private ShareResourceType _shareResourceType;
         private string _workloadNamePrefix;
+
+        /// <summary>
+        /// Gets and sets the property LensNamePrefix. 
+        /// <para>
+        /// An optional string added to the beginning of each lens name returned in the results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string LensNamePrefix
+        {
+            get { return this._lensNamePrefix; }
+            set { this._lensNamePrefix = value; }
+        }
+
+        // Check to see if LensNamePrefix property is set
+        internal bool IsSetLensNamePrefix()
+        {
+            return this._lensNamePrefix != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -70,6 +91,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareResourceType. 
+        /// <para>
+        /// The type of share invitations to be returned.
+        /// </para>
+        /// </summary>
+        public ShareResourceType ShareResourceType
+        {
+            get { return this._shareResourceType; }
+            set { this._shareResourceType = value; }
+        }
+
+        // Check to see if ShareResourceType property is set
+        internal bool IsSetShareResourceType()
+        {
+            return this._shareResourceType != null;
         }
 
         /// <summary>

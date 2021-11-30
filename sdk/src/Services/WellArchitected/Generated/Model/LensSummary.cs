@@ -33,10 +33,31 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class LensSummary
     {
+        private DateTime? _createdAt;
         private string _description;
         private string _lensAlias;
+        private string _lensArn;
         private string _lensName;
+        private LensStatus _lensStatus;
+        private LensType _lensType;
         private string _lensVersion;
+        private string _owner;
+        private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt.
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description.
@@ -57,7 +78,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensAlias.
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string LensAlias
         {
             get { return this._lensAlias; }
@@ -68,6 +89,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensAlias()
         {
             return this._lensAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensArn. 
+        /// <para>
+        /// The ARN of the lens.
+        /// </para>
+        /// </summary>
+        public string LensArn
+        {
+            get { return this._lensArn; }
+            set { this._lensArn = value; }
+        }
+
+        // Check to see if LensArn property is set
+        internal bool IsSetLensArn()
+        {
+            return this._lensArn != null;
         }
 
         /// <summary>
@@ -87,12 +126,48 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LensStatus. 
+        /// <para>
+        /// The status of the lens.
+        /// </para>
+        /// </summary>
+        public LensStatus LensStatus
+        {
+            get { return this._lensStatus; }
+            set { this._lensStatus = value; }
+        }
+
+        // Check to see if LensStatus property is set
+        internal bool IsSetLensStatus()
+        {
+            return this._lensStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensType. 
+        /// <para>
+        /// The type of the lens.
+        /// </para>
+        /// </summary>
+        public LensType LensType
+        {
+            get { return this._lensType; }
+            set { this._lensType = value; }
+        }
+
+        // Check to see if LensType property is set
+        internal bool IsSetLensType()
+        {
+            return this._lensType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LensVersion. 
         /// <para>
         /// The version of the lens.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=32)]
         public string LensVersion
         {
             get { return this._lensVersion; }
@@ -103,6 +178,36 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensVersion()
         {
             return this._lensVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner.
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt.
+        /// </summary>
+        public DateTime UpdatedAt
+        {
+            get { return this._updatedAt.GetValueOrDefault(); }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

@@ -59,6 +59,15 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetLensName())
+                request.Parameters.Add("LensName", StringUtils.FromString(publicRequest.LensName));
+            
+            if (publicRequest.IsSetLensStatus())
+                request.Parameters.Add("LensStatus", StringUtils.FromString(publicRequest.LensStatus));
+            
+            if (publicRequest.IsSetLensType())
+                request.Parameters.Add("LensType", StringUtils.FromString(publicRequest.LensType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

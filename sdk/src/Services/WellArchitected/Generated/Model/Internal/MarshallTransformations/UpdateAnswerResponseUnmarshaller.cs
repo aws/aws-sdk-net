@@ -63,6 +63,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     response.LensAlias = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LensArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LensArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkloadId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

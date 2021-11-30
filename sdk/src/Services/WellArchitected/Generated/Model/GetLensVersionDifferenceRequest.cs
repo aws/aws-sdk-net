@@ -36,6 +36,7 @@ namespace Amazon.WellArchitected.Model
     {
         private string _baseLensVersion;
         private string _lensAlias;
+        private string _targetLensVersion;
 
         /// <summary>
         /// Gets and sets the property BaseLensVersion. 
@@ -43,7 +44,7 @@ namespace Amazon.WellArchitected.Model
         /// The base version of the lens.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=32)]
         public string BaseLensVersion
         {
             get { return this._baseLensVersion; }
@@ -59,7 +60,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensAlias.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string LensAlias
         {
             get { return this._lensAlias; }
@@ -70,6 +71,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensAlias()
         {
             return this._lensAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLensVersion. 
+        /// <para>
+        /// The lens version to target a difference for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string TargetLensVersion
+        {
+            get { return this._targetLensVersion; }
+            set { this._targetLensVersion = value; }
+        }
+
+        // Check to see if TargetLensVersion property is set
+        internal bool IsSetTargetLensVersion()
+        {
+            return this._targetLensVersion != null;
         }
 
     }

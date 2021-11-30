@@ -33,8 +33,45 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ShareInvitation
     {
+        private string _lensAlias;
+        private string _lensArn;
         private string _shareInvitationId;
+        private ShareResourceType _shareResourceType;
         private string _workloadId;
+
+        /// <summary>
+        /// Gets and sets the property LensAlias.
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string LensAlias
+        {
+            get { return this._lensAlias; }
+            set { this._lensAlias = value; }
+        }
+
+        // Check to see if LensAlias property is set
+        internal bool IsSetLensAlias()
+        {
+            return this._lensAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensArn. 
+        /// <para>
+        /// The ARN for the lens.
+        /// </para>
+        /// </summary>
+        public string LensArn
+        {
+            get { return this._lensArn; }
+            set { this._lensArn = value; }
+        }
+
+        // Check to see if LensArn property is set
+        internal bool IsSetLensArn()
+        {
+            return this._lensArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ShareInvitationId. 
@@ -52,6 +89,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetShareInvitationId()
         {
             return this._shareInvitationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareResourceType. 
+        /// <para>
+        /// The resource type of the share invitation.
+        /// </para>
+        /// </summary>
+        public ShareResourceType ShareResourceType
+        {
+            get { return this._shareResourceType; }
+            set { this._shareResourceType = value; }
+        }
+
+        // Check to see if ShareResourceType property is set
+        internal bool IsSetShareResourceType()
+        {
+            return this._shareResourceType != null;
         }
 
         /// <summary>

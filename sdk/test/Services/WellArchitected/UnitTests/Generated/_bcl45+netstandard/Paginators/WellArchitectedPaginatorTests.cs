@@ -198,6 +198,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("WellArchitected")]
+        public void ListLensSharesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListLensSharesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListLensSharesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListLensSharesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListLensShares(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListLensShares(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WellArchitected")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListLensSharesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListLensSharesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListLensSharesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListLensShares(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListLensShares(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("WellArchitected")]
         public void ListMilestonesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListMilestonesRequest>();

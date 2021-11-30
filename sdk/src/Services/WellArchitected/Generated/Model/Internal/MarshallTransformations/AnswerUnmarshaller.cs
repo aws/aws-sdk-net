@@ -76,6 +76,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.Choices = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HelpfulResourceDisplayText", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HelpfulResourceDisplayText = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HelpfulResourceUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

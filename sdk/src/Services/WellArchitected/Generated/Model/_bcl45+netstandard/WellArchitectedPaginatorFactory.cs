@@ -68,6 +68,14 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Paginator for ListLensShares operation
+        ///</summary>
+        public IListLensSharesPaginator ListLensShares(ListLensSharesRequest request) 
+        {
+            return new ListLensSharesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMilestones operation
         ///</summary>
         public IListMilestonesPaginator ListMilestones(ListMilestonesRequest request) 

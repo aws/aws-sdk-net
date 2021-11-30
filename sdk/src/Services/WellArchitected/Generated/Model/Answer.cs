@@ -35,6 +35,7 @@ namespace Amazon.WellArchitected.Model
     {
         private List<ChoiceAnswer> _choiceAnswers = new List<ChoiceAnswer>();
         private List<Choice> _choices = new List<Choice>();
+        private string _helpfulResourceDisplayText;
         private string _helpfulResourceUrl;
         private string _improvementPlanUrl;
         private bool? _isApplicable;
@@ -78,6 +79,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetChoices()
         {
             return this._choices != null && this._choices.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HelpfulResourceDisplayText. 
+        /// <para>
+        /// The helpful resource text to be displayed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string HelpfulResourceDisplayText
+        {
+            get { return this._helpfulResourceDisplayText; }
+            set { this._helpfulResourceDisplayText = value; }
+        }
+
+        // Check to see if HelpfulResourceDisplayText property is set
+        internal bool IsSetHelpfulResourceDisplayText()
+        {
+            return this._helpfulResourceDisplayText != null;
         }
 
         /// <summary>

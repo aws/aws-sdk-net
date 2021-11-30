@@ -35,6 +35,7 @@ namespace Amazon.WellArchitected.Model
     {
         private string _base64String;
         private string _lensAlias;
+        private string _lensArn;
 
         /// <summary>
         /// Gets and sets the property Base64String.
@@ -54,7 +55,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensAlias.
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string LensAlias
         {
             get { return this._lensAlias; }
@@ -65,6 +66,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensAlias()
         {
             return this._lensAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensArn. 
+        /// <para>
+        /// The ARN for the lens.
+        /// </para>
+        /// </summary>
+        public string LensArn
+        {
+            get { return this._lensArn; }
+            set { this._lensArn = value; }
+        }
+
+        // Check to see if LensArn property is set
+        internal bool IsSetLensArn()
+        {
+            return this._lensArn != null;
         }
 
     }

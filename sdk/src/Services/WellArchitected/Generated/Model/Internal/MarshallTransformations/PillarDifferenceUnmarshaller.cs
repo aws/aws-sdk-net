@@ -76,6 +76,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.PillarId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PillarName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PillarName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QuestionDifferences", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<QuestionDifference, QuestionDifferenceUnmarshaller>(QuestionDifferenceUnmarshaller.Instance);

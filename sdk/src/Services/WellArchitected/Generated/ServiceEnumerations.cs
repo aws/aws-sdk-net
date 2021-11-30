@@ -257,6 +257,60 @@ namespace Amazon.WellArchitected
 
 
     /// <summary>
+    /// Constants used for properties of type ImportLensStatus.
+    /// </summary>
+    public class ImportLensStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ImportLensStatus
+        /// </summary>
+        public static readonly ImportLensStatus COMPLETE = new ImportLensStatus("COMPLETE");
+        /// <summary>
+        /// Constant ERROR for ImportLensStatus
+        /// </summary>
+        public static readonly ImportLensStatus ERROR = new ImportLensStatus("ERROR");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImportLensStatus
+        /// </summary>
+        public static readonly ImportLensStatus IN_PROGRESS = new ImportLensStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportLensStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportLensStatus FindValue(string value)
+        {
+            return FindValue<ImportLensStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportLensStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LensStatus.
     /// </summary>
     public class LensStatus : ConstantClass
@@ -267,6 +321,10 @@ namespace Amazon.WellArchitected
         /// </summary>
         public static readonly LensStatus CURRENT = new LensStatus("CURRENT");
         /// <summary>
+        /// Constant DELETED for LensStatus
+        /// </summary>
+        public static readonly LensStatus DELETED = new LensStatus("DELETED");
+        /// <summary>
         /// Constant DEPRECATED for LensStatus
         /// </summary>
         public static readonly LensStatus DEPRECATED = new LensStatus("DEPRECATED");
@@ -274,6 +332,10 @@ namespace Amazon.WellArchitected
         /// Constant NOT_CURRENT for LensStatus
         /// </summary>
         public static readonly LensStatus NOT_CURRENT = new LensStatus("NOT_CURRENT");
+        /// <summary>
+        /// Constant UNSHARED for LensStatus
+        /// </summary>
+        public static readonly LensStatus UNSHARED = new LensStatus("UNSHARED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -304,6 +366,114 @@ namespace Amazon.WellArchitected
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LensStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LensStatusType.
+    /// </summary>
+    public class LensStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for LensStatusType
+        /// </summary>
+        public static readonly LensStatusType ALL = new LensStatusType("ALL");
+        /// <summary>
+        /// Constant DRAFT for LensStatusType
+        /// </summary>
+        public static readonly LensStatusType DRAFT = new LensStatusType("DRAFT");
+        /// <summary>
+        /// Constant PUBLISHED for LensStatusType
+        /// </summary>
+        public static readonly LensStatusType PUBLISHED = new LensStatusType("PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LensStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LensStatusType FindValue(string value)
+        {
+            return FindValue<LensStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LensStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LensType.
+    /// </summary>
+    public class LensType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OFFICIAL for LensType
+        /// </summary>
+        public static readonly LensType AWS_OFFICIAL = new LensType("AWS_OFFICIAL");
+        /// <summary>
+        /// Constant CUSTOM_SELF for LensType
+        /// </summary>
+        public static readonly LensType CUSTOM_SELF = new LensType("CUSTOM_SELF");
+        /// <summary>
+        /// Constant CUSTOM_SHARED for LensType
+        /// </summary>
+        public static readonly LensType CUSTOM_SHARED = new LensType("CUSTOM_SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LensType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LensType FindValue(string value)
+        {
+            return FindValue<LensType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LensType(string value)
         {
             return FindValue(value);
         }
@@ -516,6 +686,56 @@ namespace Amazon.WellArchitected
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ShareInvitationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShareResourceType.
+    /// </summary>
+    public class ShareResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LENS for ShareResourceType
+        /// </summary>
+        public static readonly ShareResourceType LENS = new ShareResourceType("LENS");
+        /// <summary>
+        /// Constant WORKLOAD for ShareResourceType
+        /// </summary>
+        public static readonly ShareResourceType WORKLOAD = new ShareResourceType("WORKLOAD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareResourceType FindValue(string value)
+        {
+            return FindValue<ShareResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareResourceType(string value)
         {
             return FindValue(value);
         }

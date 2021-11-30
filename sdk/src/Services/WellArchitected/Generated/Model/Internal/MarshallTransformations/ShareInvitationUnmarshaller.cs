@@ -64,10 +64,28 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("LensAlias", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LensAlias = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LensArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LensArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ShareInvitationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShareInvitationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShareResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WorkloadId", targetDepth))

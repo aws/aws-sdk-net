@@ -35,6 +35,7 @@ namespace Amazon.WellArchitected.Model
     {
         private List<AnswerSummary> _answerSummaries = new List<AnswerSummary>();
         private string _lensAlias;
+        private string _lensArn;
         private int? _milestoneNumber;
         private string _nextToken;
         private string _workloadId;
@@ -57,7 +58,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensAlias.
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string LensAlias
         {
             get { return this._lensAlias; }
@@ -68,6 +69,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetLensAlias()
         {
             return this._lensAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensArn. 
+        /// <para>
+        /// The ARN for the lens.
+        /// </para>
+        /// </summary>
+        public string LensArn
+        {
+            get { return this._lensArn; }
+            set { this._lensArn = value; }
+        }
+
+        // Check to see if LensArn property is set
+        internal bool IsSetLensArn()
+        {
+            return this._lensArn != null;
         }
 
         /// <summary>

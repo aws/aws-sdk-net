@@ -31,6 +31,24 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Container for the parameters to the AssociateLenses operation.
     /// Associate a lens to a workload.
+    /// 
+    ///  
+    /// <para>
+    /// Up to 10 lenses can be associated with a workload in a single API operation. A maximum
+    /// of 20 lenses can be associated with a workload.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <b>Disclaimer</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// By accessing and/or applying custom lenses created by another Amazon Web Services
+    /// user or account, you acknowledge that custom lenses created by other users and shared
+    /// with you are Third Party Content as defined in the Amazon Web Services Customer Agreement.
+    /// 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AssociateLensesRequest : AmazonWellArchitectedRequest
     {
