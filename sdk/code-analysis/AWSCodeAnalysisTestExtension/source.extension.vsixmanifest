@@ -471,6 +471,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.RDS.CodeAnalysis" Path="|AWSSDK.RDS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.RDSDataService.CodeAnalysis" Path="|AWSSDK.RDSDataService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.RDSDataService.CodeAnalysis" Path="|AWSSDK.RDSDataService.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.RecycleBin.CodeAnalysis" Path="|AWSSDK.RecycleBin.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.RecycleBin.CodeAnalysis" Path="|AWSSDK.RecycleBin.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Redshift.CodeAnalysis" Path="|AWSSDK.Redshift.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Redshift.CodeAnalysis" Path="|AWSSDK.Redshift.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.RedshiftDataAPIService.CodeAnalysis" Path="|AWSSDK.RedshiftDataAPIService.CodeAnalysis|"/>

@@ -545,6 +545,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database management tasks, freeing you up to focus on your applications and business.
 * [AWSSDK.RDSDataService](https://www.nuget.org/packages/AWSSDK.RDSDataService/)
 	* Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.
+* [AWSSDK.RecycleBin](https://www.nuget.org/packages/AWSSDK.RecycleBin/)
+	* This release adds support for Recycle Bin.
 * [AWSSDK.Redshift](https://www.nuget.org/packages/AWSSDK.Redshift/)
 	* Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.
 * [AWSSDK.RedshiftDataAPIService](https://www.nuget.org/packages/AWSSDK.RedshiftDataAPIService/)

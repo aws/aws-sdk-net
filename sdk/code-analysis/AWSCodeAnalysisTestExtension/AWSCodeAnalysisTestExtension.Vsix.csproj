@@ -964,6 +964,10 @@
       <Project>{3819AD30-D26D-4F80-823E-119C8FD0EDA7}</Project>
       <Name>AWSSDK.RDSDataService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/RecycleBin/AWSSDK.RecycleBin.CodeAnalysis.csproj">
+      <Project>{2F9747FB-8C0F-4D4F-84DD-3023140EB137}</Project>
+      <Name>AWSSDK.RecycleBin.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Redshift/AWSSDK.Redshift.CodeAnalysis.csproj">
       <Project>{CCB1A157-6336-4465-8BAC-6812A705B76E}</Project>
       <Name>AWSSDK.Redshift.CodeAnalysis</Name>

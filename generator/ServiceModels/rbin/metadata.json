@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This release adds support for Recycle Bin.",
+  "generate-client-constructors": true
+}
