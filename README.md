@@ -197,6 +197,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.
 * [AWSSDK.CloudWatchLogs](https://www.nuget.org/packages/AWSSDK.CloudWatchLogs/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
+* [AWSSDK.CloudWatchRUM](https://www.nuget.org/packages/AWSSDK.CloudWatchRUM/)
+	* This is the first public release of CloudWatch RUM
 * [AWSSDK.CodeArtifact](https://www.nuget.org/packages/AWSSDK.CodeArtifact/)
 	* Added support for AWS CodeArtifact.
 * [AWSSDK.CodeBuild](https://www.nuget.org/packages/AWSSDK.CodeBuild/)

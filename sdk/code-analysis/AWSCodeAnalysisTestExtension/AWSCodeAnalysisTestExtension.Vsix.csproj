@@ -268,6 +268,10 @@
       <Project>{169A76D6-4DBA-4B0C-BE8F-8B82BEF20297}</Project>
       <Name>AWSSDK.CloudWatchLogs.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudWatchRUM/AWSSDK.CloudWatchRUM.CodeAnalysis.csproj">
+      <Project>{D69A704D-CA5A-4339-BB04-F5842764DF7B}</Project>
+      <Name>AWSSDK.CloudWatchRUM.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeArtifact/AWSSDK.CodeArtifact.CodeAnalysis.csproj">
       <Project>{A8A9A15A-1C05-45C4-BDA3-D8DAADFF739D}</Project>
       <Name>AWSSDK.CodeArtifact.CodeAnalysis</Name>
