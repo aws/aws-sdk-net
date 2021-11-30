@@ -30,6 +30,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetBucketNotificationResponse response = new GetBucketNotificationResponse();
+            context.AllowEmptyElementLookup.Add("EventBridgeConfiguration");
             response.TopicConfigurations = new List<TopicConfiguration>();
 
             while (context.Read())
@@ -70,6 +71,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CloudFunctionConfiguration", targetDepth))
                     {
                         response.LambdaFunctionConfigurations.Add(LambdaFunctionConfigurationUnmarshaller.Instance.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("EventBridgeConfiguration", targetDepth))
+                    {
+                        response.EventBridgeConfiguration = EventBridgeConfigurationUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
                 }

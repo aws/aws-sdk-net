@@ -106,11 +106,14 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutBucketNotificationRequest : AmazonWebServiceRequest
     {
+        private string expectedBucketOwner;
+        private bool? _skipDestinationValidation;
+        private EventBridgeConfiguration _eventBridgeConfiguration;
+
         /// <summary>
         /// Gets and sets the BucketName property.
         /// </summary>
-        public string BucketName { get; set; }
-        private string expectedBucketOwner;
+        public string BucketName { get; set; }        
 
         // Check to see if Bucket property is set
         internal bool IsSetBucketName()
@@ -139,8 +142,6 @@ namespace Amazon.S3.Model
         {
             return this.QueueConfigurations != null && QueueConfigurations.Count > 0;
         }
-
-
 
         /// <summary>
         /// Gets and sets the LambdaFunctionConfigurations property. LambdaFunctionConfigurations are configuration for 
@@ -171,6 +172,41 @@ namespace Amazon.S3.Model
         {
             return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
+
+        /// <summary>
+        /// Gets and sets the property SkipDestinationValidation. 
+        /// <para>
+        /// Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations
+        /// </para>
+        /// </summary>
+        public bool SkipDestinationValidation
+        {
+            get { return this._skipDestinationValidation.GetValueOrDefault(); }
+            set { this._skipDestinationValidation = value; }
+        }
+
+        // Check to see if SkipDestinationValidation property is set
+        internal bool IsSetSkipDestinationValidation()
+        {
+            return this._skipDestinationValidation.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventBridgeConfiguration. 
+        /// <para>
+        /// Enables delivery of all bucket events to Amazon EventBridge.
+        /// </para>
+        /// </summary>
+        public EventBridgeConfiguration EventBridgeConfiguration
+        {
+            get { return this._eventBridgeConfiguration; }
+            set { this._eventBridgeConfiguration = value; }
+        }
+
+        // Check to see if EventBridgeConfiguration property is set
+        internal bool IsSetEventBridgeConfiguration()
+        {
+            return this._eventBridgeConfiguration != null;
+        }
     }
 }
-    

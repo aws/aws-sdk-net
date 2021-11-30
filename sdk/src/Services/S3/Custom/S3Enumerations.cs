@@ -1078,6 +1078,56 @@ namespace Amazon.S3
         public static readonly EventType ReplicationOperationReplicatedAfterThreshold = new EventType("s3:Replication:OperationReplicatedAfterThreshold");
 
         /// <summary>
+        /// Event for Intelligent Tiering
+        /// </summary>
+        public static readonly EventType S3IntelligentTiering = new EventType("s3:IntelligentTiering");
+
+        /// <summary>
+        /// Event for all Lifecycle Expiration events
+        /// </summary>
+        public static readonly EventType S3LifecycleExpirationAll = new EventType("s3:LifecycleExpiration:*");
+
+        /// <summary>
+        /// Event for Lifecycle Expiration deletion
+        /// </summary>
+        public static readonly EventType S3LifecycleExpirationDelete = new EventType("s3:LifecycleExpiration:Delete");
+
+        /// <summary>
+        /// Event for Lifecycle Expiration Delete Marker creation
+        /// </summary>
+        public static readonly EventType S3LifecycleExpirationDeleteMarkerCreated = new EventType("s3:LifecycleExpiration:DeleteMarkerCreated");
+
+        /// <summary>
+        /// Event for Lifecycle Transition
+        /// </summary>
+        public static readonly EventType S3LifecycleTransition = new EventType("s3:LifecycleTransition");
+
+        /// <summary>
+        /// Event for Object Acl puts
+        /// </summary>
+        public static readonly EventType S3ObjectAclPut = new EventType("s3:ObjectAcl:Put");
+
+        /// <summary>
+        /// Event for Object Restore deletes 
+        /// </summary>
+        public static readonly EventType S3ObjectRestoreDelete = new EventType("s3:ObjectRestore:Delete");
+
+        /// <summary>
+        /// Event for all Object Tagging events
+        /// </summary>
+        public static readonly EventType S3ObjectTaggingAll = new EventType("s3:ObjectTagging:*");
+
+        /// <summary>
+        /// Event for Object Tagging deletes
+        /// </summary>
+        public static readonly EventType S3ObjectTaggingDelete = new EventType("s3:ObjectTagging:Delete");
+
+        /// <summary>
+        /// Event for Object Tagging puts
+        /// </summary>
+        public static readonly EventType S3ObjectTaggingPut = new EventType("s3:ObjectTagging:Put");
+
+        /// <summary>
         /// Constructs instance of EventType.
         /// </summary>
         /// <param name="value"></param>

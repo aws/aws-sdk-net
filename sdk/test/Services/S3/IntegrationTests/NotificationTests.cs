@@ -238,5 +238,45 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             }
         }
+
+        /// <summary>
+        /// Tests configuring delivery of bucket events to EventBridge
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void PutAndGetEventBridgeConfigurationTest()
+        {
+            using (var s3Client = new AmazonS3Client())
+            {
+                var bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
+
+                try
+                {
+                    var putRequest = new PutBucketNotificationRequest()
+                    {
+                        BucketName = bucketName,
+                        EventBridgeConfiguration = new EventBridgeConfiguration(),
+                        SkipDestinationValidation = true
+                    };
+
+                    var putResponse = s3Client.PutBucketNotification(putRequest);
+
+                    Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
+
+                    var getRequest = new GetBucketNotificationRequest
+                    {
+                        BucketName = bucketName
+                    };
+
+                    var getResponse = s3Client.GetBucketNotification(getRequest);
+
+                    Assert.IsNotNull(getResponse.EventBridgeConfiguration);
+                }
+                finally 
+                {
+                    AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
+                }
+            }
+        }
     }
 }

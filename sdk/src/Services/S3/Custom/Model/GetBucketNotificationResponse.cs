@@ -88,6 +88,25 @@ namespace Amazon.S3.Model
                 this._lambdaFunctionConfigurations = value;
             }
         }
+
+        private EventBridgeConfiguration _eventBridgeConfiguration;
+        /// <summary>
+        /// Gets and sets the property EventBridgeConfiguration. 
+        /// <para>
+        /// Enables delivery of all bucket events to Amazon EventBridge.
+        /// </para>
+        /// </summary>
+        public EventBridgeConfiguration EventBridgeConfiguration
+        {
+            get { return this._eventBridgeConfiguration; }
+            set { this._eventBridgeConfiguration = value; }
+        }
+
+        // Check to see if EventBridgeConfiguration property is set
+        internal bool IsSetEventBridgeConfiguration()
+        {
+            return this._eventBridgeConfiguration != null;
+        }
     }
 }
     

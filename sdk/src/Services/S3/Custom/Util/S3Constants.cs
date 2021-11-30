@@ -83,7 +83,8 @@ namespace Amazon.S3.Util
             AmzHeaderRequestCharged         = "x-amz-request-charged",
             AmzHeaderTagging                = "x-amz-tagging",
             AmzHeaderTaggingDirective       = "x-amz-tagging-directive",
-            AmzHeaderTaggingCount           = "x-amz-tagging-count";
+            AmzHeaderTaggingCount           = "x-amz-tagging-count",
+            AmzHeaderSkipDestinationValidation = "x-amz-skip-destination-validation";
 
         internal static string
             AmzHeaderRestoreOutputPath      = "x-amz-restore-output-path";

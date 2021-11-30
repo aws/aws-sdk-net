@@ -46,6 +46,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putBucketNotificationRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketNotificationRequest.ExpectedBucketOwner));
 
+             if(putBucketNotificationRequest.IsSetSkipDestinationValidation())
+                request.Headers[S3Constants.AmzHeaderSkipDestinationValidation] = StringUtils.FromBool(putBucketNotificationRequest.SkipDestinationValidation);
+
             if (string.IsNullOrEmpty(putBucketNotificationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketNotificationRequest.BucketName");
 
@@ -126,6 +129,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();
                         }
                     }
+                }
+
+                if (putBucketNotificationRequest.IsSetEventBridgeConfiguration())
+                {
+                    xmlWriter.WriteStartElement("EventBridgeConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteEndElement();
                 }
 
                 xmlWriter.WriteEndElement();
