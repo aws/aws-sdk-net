@@ -1,0 +1,1964 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the evidently-2021-02-01.normal.json service model.
+ */
+
+
+using System;
+using System.Runtime.ExceptionServices;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Net;
+
+using Amazon.CloudWatchEvidently.Model;
+using Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations;
+using Amazon.CloudWatchEvidently.Internal;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
+namespace Amazon.CloudWatchEvidently
+{
+    /// <summary>
+    /// Implementation for accessing CloudWatchEvidently
+    ///
+    /// You can use Amazon CloudWatch Evidently to safely validate new features by serving
+    /// them to a specified percentage of your users while you roll out the feature. You can
+    /// monitor the performance of the new feature to help you decide when to ramp up traffic
+    /// to your users. This helps you reduce risk and identify unintended consequences before
+    /// you fully launch the feature.
+    /// 
+    ///  
+    /// <para>
+    /// You can also conduct A/B experiments to make feature design decisions based on evidence
+    /// and data. An experiment can test as many as five variations at once. Evidently collects
+    /// experiment data and analyzes it using statistical methods. It also provides clear
+    /// recommendations about which variations perform better. You can test both user-facing
+    /// features and backend features.
+    /// </para>
+    /// </summary>
+    public partial class AmazonCloudWatchEvidentlyClient : AmazonServiceClient, IAmazonCloudWatchEvidently
+    {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudWatchEvidentlyMetadata();
+        
+        #region Constructors
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonCloudWatchEvidentlyClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchEvidentlyConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudWatchEvidentlyClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchEvidentlyConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonCloudWatchEvidentlyClient Configuration Object</param>
+        public AmazonCloudWatchEvidentlyClient(AmazonCloudWatchEvidentlyConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonCloudWatchEvidentlyClient(AWSCredentials credentials)
+            : this(credentials, new AmazonCloudWatchEvidentlyConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudWatchEvidentlyClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonCloudWatchEvidentlyConfig{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Credentials and an
+        /// AmazonCloudWatchEvidentlyClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonCloudWatchEvidentlyClient Configuration Object</param>
+        public AmazonCloudWatchEvidentlyClient(AWSCredentials credentials, AmazonCloudWatchEvidentlyConfig clientConfig)
+            : base(credentials, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public AmazonCloudWatchEvidentlyClient(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudWatchEvidentlyConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudWatchEvidentlyClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonCloudWatchEvidentlyConfig() {RegionEndpoint=region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonCloudWatchEvidentlyClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="clientConfig">The AmazonCloudWatchEvidentlyClient Configuration Object</param>
+        public AmazonCloudWatchEvidentlyClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonCloudWatchEvidentlyConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonCloudWatchEvidentlyClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudWatchEvidentlyConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudWatchEvidentlyClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudWatchEvidentlyConfig{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonCloudWatchEvidentlyClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonCloudWatchEvidentlyClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonCloudWatchEvidentlyClient Configuration Object</param>
+        public AmazonCloudWatchEvidentlyClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonCloudWatchEvidentlyConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
+        {
+        }
+
+        #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICloudWatchEvidentlyPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICloudWatchEvidentlyPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CloudWatchEvidentlyPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
+
+        #region Overrides
+
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        } 
+
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
+
+        #endregion
+
+        #region Dispose
+
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+
+        #region  BatchEvaluateFeature
+
+        internal virtual BatchEvaluateFeatureResponse BatchEvaluateFeature(BatchEvaluateFeatureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchEvaluateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchEvaluateFeatureResponseUnmarshaller.Instance;
+
+            return Invoke<BatchEvaluateFeatureResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation assigns feature variation to user sessions. For each user session,
+        /// you pass in an <code>entityID</code> that represents the user. Evidently then checks
+        /// the evaluation rules and assigns the variation.
+        /// 
+        ///  
+        /// <para>
+        /// The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
+        /// matches an override rule, the user is served the variation specified by that rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// Next, if there is a launch of the feature, the user might be assigned to a variation
+        /// in the launch. The chance of this depends on the percentage of users that are allocated
+        /// to that launch. If the user is enrolled in the launch, the variation they are served
+        /// depends on the allocation of the various feature variations used for the launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the user is not assigned to a launch, and there is an ongoing experiment for this
+        /// feature, the user might be assigned to a variation in the experiment. The chance of
+        /// this depends on the percentage of users that are allocated to that experiment. If
+        /// the user is enrolled in the experiment, the variation they are served depends on the
+        /// allocation of the various feature variations used for the experiment. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the user is not assigned to a launch or experiment, they are served the default
+        /// variation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchEvaluateFeature service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchEvaluateFeature service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/BatchEvaluateFeature">REST API Reference for BatchEvaluateFeature Operation</seealso>
+        public virtual Task<BatchEvaluateFeatureResponse> BatchEvaluateFeatureAsync(BatchEvaluateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchEvaluateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchEvaluateFeatureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchEvaluateFeatureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateExperiment
+
+        internal virtual CreateExperimentResponse CreateExperiment(CreateExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExperimentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Evidently <i>experiment</i>. Before you create an experiment, you must
+        /// create the feature to use for the experiment.
+        /// 
+        ///  
+        /// <para>
+        /// An experiment helps you make feature design decisions based on evidence and data.
+        /// An experiment can test as many as five variations at once. Evidently collects experiment
+        /// data and analyzes it by statistical methods, and provides clear recommendations about
+        /// which variations perform better.
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExperiment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
+        public virtual Task<CreateExperimentResponse> CreateExperimentAsync(CreateExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExperimentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFeature
+
+        internal virtual CreateFeatureResponse CreateFeature(CreateFeatureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFeatureResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFeatureResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Evidently <i>feature</i> that you want to launch or test. You can define
+        /// up to five variations of a feature, and use these variations in your launches and
+        /// experiments. A feature must be created in a project. For information about creating
+        /// a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFeature service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFeature service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateFeature">REST API Reference for CreateFeature Operation</seealso>
+        public virtual Task<CreateFeatureResponse> CreateFeatureAsync(CreateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFeatureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFeatureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLaunch
+
+        internal virtual CreateLaunchResponse CreateLaunch(CreateLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLaunchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a <i>launch</i> of a given feature. Before you create a launch, you must create
+        /// the feature to use for the launch.
+        /// 
+        ///  
+        /// <para>
+        /// You can use a launch to safely validate new features by serving them to a specified
+        /// percentage of your users while you roll out the feature. You can monitor the performance
+        /// of the new feature to help you decide when to ramp up traffic to more users. This
+        /// helps you reduce risk and identify unintended consequences before you fully launch
+        /// the feature.
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLaunch service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateLaunch">REST API Reference for CreateLaunch Operation</seealso>
+        public virtual Task<CreateLaunchResponse> CreateLaunchAsync(CreateLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLaunchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateProject
+
+        internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a project, which is the logical object in Evidently that can contain features,
+        /// launches, and experiments. Use projects to group similar features together.
+        /// 
+        ///  
+        /// <para>
+        /// To update an existing project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProject.html">UpdateProject</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteExperiment
+
+        internal virtual DeleteExperimentResponse DeleteExperiment(DeleteExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExperimentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Evidently experiment. The feature used for the experiment is not deleted.
+        /// 
+        ///  
+        /// <para>
+        /// To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExperiment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceUnavailableException">
+        /// The service was unavailable. Retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
+        public virtual Task<DeleteExperimentResponse> DeleteExperimentAsync(DeleteExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExperimentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFeature
+
+        internal virtual DeleteFeatureResponse DeleteFeature(DeleteFeatureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFeatureResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFeatureResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Evidently feature.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFeature service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFeature service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteFeature">REST API Reference for DeleteFeature Operation</seealso>
+        public virtual Task<DeleteFeatureResponse> DeleteFeatureAsync(DeleteFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFeatureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFeatureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLaunch
+
+        internal virtual DeleteLaunchResponse DeleteLaunch(DeleteLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLaunchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Evidently launch. The feature used for the launch is not deleted.
+        /// 
+        ///  
+        /// <para>
+        /// To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLaunch service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteLaunch">REST API Reference for DeleteLaunch Operation</seealso>
+        public virtual Task<DeleteLaunchResponse> DeleteLaunchAsync(DeleteLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLaunchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteProject
+
+        internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Evidently project. Before you can delete a project, you must delete all
+        /// the features that the project contains. To delete a feature, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html">DeleteFeature</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EvaluateFeature
+
+        internal virtual EvaluateFeatureResponse EvaluateFeature(EvaluateFeatureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateFeatureResponseUnmarshaller.Instance;
+
+            return Invoke<EvaluateFeatureResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation assigns a feature variation to one given user session. You pass in
+        /// an <code>entityID</code> that represents the user. Evidently then checks the evaluation
+        /// rules and assigns the variation.
+        /// 
+        ///  
+        /// <para>
+        /// The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
+        /// matches an override rule, the user is served the variation specified by that rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// Next, if there is a launch of the feature, the user might be assigned to a variation
+        /// in the launch. The chance of this depends on the percentage of users that are allocated
+        /// to that launch. If the user is enrolled in the launch, the variation they are served
+        /// depends on the allocation of the various feature variations used for the launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the user is not assigned to a launch, and there is an ongoing experiment for this
+        /// feature, the user might be assigned to a variation in the experiment. The chance of
+        /// this depends on the percentage of users that are allocated to that experiment. If
+        /// the user is enrolled in the experiment, the variation they are served depends on the
+        /// allocation of the various feature variations used for the experiment. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the user is not assigned to a launch or experiment, they are served the default
+        /// variation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateFeature service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EvaluateFeature service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">REST API Reference for EvaluateFeature Operation</seealso>
+        public virtual Task<EvaluateFeatureResponse> EvaluateFeatureAsync(EvaluateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateFeatureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EvaluateFeatureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetExperiment
+
+        internal virtual GetExperimentResponse GetExperiment(GetExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<GetExperimentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the details about one experiment. You must already know the experiment name.
+        /// To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExperiment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
+        public virtual Task<GetExperimentResponse> GetExperimentAsync(GetExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetExperimentResults
+
+        internal virtual GetExperimentResultsResponse GetExperimentResults(GetExperimentResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExperimentResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentResultsResponseUnmarshaller.Instance;
+
+            return Invoke<GetExperimentResultsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the results of a running or completed experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExperimentResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExperimentResults service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">REST API Reference for GetExperimentResults Operation</seealso>
+        public virtual Task<GetExperimentResultsResponse> GetExperimentResultsAsync(GetExperimentResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExperimentResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExperimentResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExperimentResultsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFeature
+
+        internal virtual GetFeatureResponse GetFeature(GetFeatureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFeatureResponseUnmarshaller.Instance;
+
+            return Invoke<GetFeatureResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the details about one feature. You must already know the feature name. To
+        /// retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFeature service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFeature service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetFeature">REST API Reference for GetFeature Operation</seealso>
+        public virtual Task<GetFeatureResponse> GetFeatureAsync(GetFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFeatureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFeatureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLaunch
+
+        internal virtual GetLaunchResponse GetLaunch(GetLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<GetLaunchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the details about one launch. You must already know the launch name. To retrieve
+        /// a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLaunch service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
+        public virtual Task<GetLaunchResponse> GetLaunchAsync(GetLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLaunchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLaunchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetProject
+
+        internal virtual GetProjectResponse GetProject(GetProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
+
+            return Invoke<GetProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the details about one launch. You must already know the project name. To retrieve
+        /// a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProject service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetProject">REST API Reference for GetProject Operation</seealso>
+        public virtual Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExperiments
+
+        internal virtual ListExperimentsResponse ListExperiments(ListExperimentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExperimentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExperimentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns configuration details about all the experiments in the specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperiments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperiments service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
+        public virtual Task<ListExperimentsResponse> ListExperimentsAsync(ListExperimentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExperimentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExperimentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFeatures
+
+        internal virtual ListFeaturesResponse ListFeatures(ListFeaturesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFeaturesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFeaturesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns configuration details about all the features in the specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFeatures service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFeatures service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListFeatures">REST API Reference for ListFeatures Operation</seealso>
+        public virtual Task<ListFeaturesResponse> ListFeaturesAsync(ListFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFeaturesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFeaturesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLaunches
+
+        internal virtual ListLaunchesResponse ListLaunches(ListLaunchesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLaunchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLaunchesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLaunchesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns configuration details about all the launches in the specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLaunches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLaunches service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListLaunches">REST API Reference for ListLaunches Operation</seealso>
+        public virtual Task<ListLaunchesResponse> ListLaunchesAsync(ListLaunchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLaunchesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLaunchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLaunchesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProjects
+
+        internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProjectsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns configuration details about all the projects in the current Region in your
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProjects service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Displays the tags associated with an Evidently resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutProjectEvents
+
+        internal virtual PutProjectEventsResponse PutProjectEvents(PutProjectEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProjectEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProjectEventsResponseUnmarshaller.Instance;
+
+            return Invoke<PutProjectEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends performance events to Evidently. These events can be used to evaluate a launch
+        /// or an experiment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProjectEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutProjectEvents service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/PutProjectEvents">REST API Reference for PutProjectEvents Operation</seealso>
+        public virtual Task<PutProjectEventsResponse> PutProjectEventsAsync(PutProjectEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProjectEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProjectEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutProjectEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartExperiment
+
+        internal virtual StartExperimentResponse StartExperiment(StartExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<StartExperimentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an existing experiment. To create an experiment, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartExperiment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
+        public virtual Task<StartExperimentResponse> StartExperimentAsync(StartExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExperimentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartLaunch
+
+        internal virtual StartLaunchResponse StartLaunch(StartLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<StartLaunchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartLaunch service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartLaunch">REST API Reference for StartLaunch Operation</seealso>
+        public virtual Task<StartLaunchResponse> StartLaunchAsync(StartLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartLaunchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartLaunchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopExperiment
+
+        internal virtual StopExperimentResponse StopExperiment(StopExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<StopExperimentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops an experiment that is currently running. If you stop an experiment, you can't
+        /// resume it or restart it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopExperiment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
+        public virtual Task<StopExperimentResponse> StopExperimentAsync(StopExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopExperimentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopLaunch
+
+        internal virtual StopLaunchResponse StopLaunch(StopLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<StopLaunchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a launch that is currently running. After you stop a launch, you will not be
+        /// able to resume it or restart it. Also, it will not be evaluated as a rule for traffic
+        /// allocation, and the traffic that was allocated to the launch will instead be available
+        /// to the feature's experiment, if there is one. Otherwise, all traffic will be served
+        /// the default variation after the launch is stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopLaunch service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopLaunch">REST API Reference for StopLaunch Operation</seealso>
+        public virtual Task<StopLaunchResponse> StopLaunchAsync(StopLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopLaunchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopLaunchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Assigns one or more tags (key-value pairs) to the specified CloudWatch Evidently resource.
+        /// Projects, features, launches, and experiments can be tagged.
+        /// 
+        ///  
+        /// <para>
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions by granting a user permission to access or change only resources
+        /// with certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+        /// as strings of characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> action with a resource that already has tags.
+        /// If you specify a new tag key for the resource, this tag is appended to the list of
+        /// tags associated with the alarm. If you specify a tag key that is already associated
+        /// with the resource, the new tag value that you specify replaces the previous value
+        /// for that tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateExperiment
+
+        internal virtual UpdateExperimentResponse UpdateExperiment(UpdateExperimentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExperimentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExperimentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an Evidently experiment. 
+        /// 
+        ///  
+        /// <para>
+        /// Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExperiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExperiment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
+        public virtual Task<UpdateExperimentResponse> UpdateExperimentAsync(UpdateExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExperimentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExperimentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFeature
+
+        internal virtual UpdateFeatureResponse UpdateFeature(UpdateFeatureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFeatureResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing feature.
+        /// 
+        ///  
+        /// <para>
+        /// You can't use this operation to update the tags of an existing feature. Instead, use
+        /// <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeature service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFeature service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateFeature">REST API Reference for UpdateFeature Operation</seealso>
+        public virtual Task<UpdateFeatureResponse> UpdateFeatureAsync(UpdateFeatureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFeatureResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLaunch
+
+        internal virtual UpdateLaunchResponse UpdateLaunch(UpdateLaunchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLaunchResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLaunchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a launch of a given feature. 
+        /// 
+        ///  
+        /// <para>
+        /// Don't use this operation to update the tags of an existing launch. Instead, use <a
+        /// href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLaunch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLaunch service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateLaunch">REST API Reference for UpdateLaunch Operation</seealso>
+        public virtual Task<UpdateLaunchResponse> UpdateLaunchAsync(UpdateLaunchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLaunchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLaunchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLaunchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProject
+
+        internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the description of an existing project.
+        /// 
+        ///  
+        /// <para>
+        /// To create a new project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't use this operation to update the data storage options of a project. Instead,
+        /// use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html">UpdateProjectDataDelivery</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't use this operation to update the tags of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProject service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
+        public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProjectDataDelivery
+
+        internal virtual UpdateProjectDataDeliveryResponse UpdateProjectDataDelivery(UpdateProjectDataDeliveryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectDataDeliveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectDataDeliveryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProjectDataDeliveryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the data storage options for this project. If you store evaluation events,
+        /// you an keep them and analyze them on your own. If you choose not to store evaluation
+        /// events, Evidently deletes them after using them to produce metrics and other experiment
+        /// results that you can view.
+        /// 
+        ///  
+        /// <para>
+        /// You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code>
+        /// in the same operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProjectDataDelivery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProjectDataDelivery service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProjectDataDelivery">REST API Reference for UpdateProjectDataDelivery Operation</seealso>
+        public virtual Task<UpdateProjectDataDeliveryResponse> UpdateProjectDataDeliveryAsync(UpdateProjectDataDeliveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProjectDataDeliveryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProjectDataDeliveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProjectDataDeliveryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+    }
+}

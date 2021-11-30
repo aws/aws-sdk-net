@@ -260,6 +260,10 @@
       <Project>{EFFAB166-349C-47BD-9CDC-FD86A0A3E693}</Project>
       <Name>AWSSDK.CloudWatchEvents.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CloudWatchEvidently/AWSSDK.CloudWatchEvidently.CodeAnalysis.csproj">
+      <Project>{94298DB9-FC26-4C9E-BA25-CCB97F9F273A}</Project>
+      <Name>AWSSDK.CloudWatchEvidently.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CloudWatchLogs/AWSSDK.CloudWatchLogs.CodeAnalysis.csproj">
       <Project>{169A76D6-4DBA-4B0C-BE8F-8B82BEF20297}</Project>
       <Name>AWSSDK.CloudWatchLogs.CodeAnalysis</Name>
