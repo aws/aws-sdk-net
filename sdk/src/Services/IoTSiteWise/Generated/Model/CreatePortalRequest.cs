@@ -139,7 +139,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>IAM</code> – The portal uses Identity and Access Management to authenticate
-        /// users and manage user permissions. This option is only available in the China Regions.
+        /// users and manage user permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>

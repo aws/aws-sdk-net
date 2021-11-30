@@ -75,6 +75,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.MultiLayerStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retentionPeriod", targetDepth))
+                {
+                    var unmarshaller = RetentionPeriodUnmarshaller.Instance;
+                    response.RetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("storageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

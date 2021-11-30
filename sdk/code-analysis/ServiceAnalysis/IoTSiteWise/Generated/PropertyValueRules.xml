@@ -1976,6 +1976,10 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.RetentionPeriod.NumberOfDays</property>
+    <min>30</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.TimeInNanos.OffsetInNanos</property>
     <min>0</min>
     <max>999999999</max>
