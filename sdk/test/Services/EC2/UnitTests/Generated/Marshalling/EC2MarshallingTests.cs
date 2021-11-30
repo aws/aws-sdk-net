@@ -6121,6 +6121,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeSnapshotTierStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSnapshotTierStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeSnapshotTierStatusRequest>();
+            var marshaller = new DescribeSnapshotTierStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeSnapshotTierStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeSnapshotTierStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeSpotDatafeedSubscriptionMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeSpotDatafeedSubscription");
@@ -8721,6 +8745,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ListSnapshotsInRecycleBinMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSnapshotsInRecycleBin");
+
+            var request = InstantiateClassGenerator.Execute<ListSnapshotsInRecycleBinRequest>();
+            var marshaller = new ListSnapshotsInRecycleBinRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListSnapshotsInRecycleBinResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyAddressAttributeMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyAddressAttribute");
@@ -9331,6 +9379,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifySnapshotTierMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifySnapshotTier");
+
+            var request = InstantiateClassGenerator.Execute<ModifySnapshotTierRequest>();
+            var marshaller = new ModifySnapshotTierRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifySnapshotTierResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifySnapshotTierResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -10638,6 +10710,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance.Unmarshall(context)
                 as RestoreManagedPrefixListVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void RestoreSnapshotFromRecycleBinMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreSnapshotFromRecycleBin");
+
+            var request = InstantiateClassGenerator.Execute<RestoreSnapshotFromRecycleBinRequest>();
+            var marshaller = new RestoreSnapshotFromRecycleBinRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreSnapshotFromRecycleBinResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void RestoreSnapshotTierMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreSnapshotTier");
+
+            var request = InstantiateClassGenerator.Execute<RestoreSnapshotTierRequest>();
+            var marshaller = new RestoreSnapshotTierRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = RestoreSnapshotTierResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreSnapshotTierResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

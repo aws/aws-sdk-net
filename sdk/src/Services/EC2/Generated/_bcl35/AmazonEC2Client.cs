@@ -17276,6 +17276,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSnapshotTierStatus
+
+        /// <summary>
+        /// Describes the storage tier status of one or more Amazon EBS snapshots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotTierStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSnapshotTierStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
+        public virtual DescribeSnapshotTierStatusResponse DescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSnapshotTierStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSnapshotTierStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotTierStatus operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshotTierStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSnapshotTierStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSnapshotTierStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeSnapshotTierStatusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
+        public virtual DescribeSnapshotTierStatusResponse EndDescribeSnapshotTierStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSnapshotTierStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSpotDatafeedSubscription
 
         /// <summary>
@@ -24123,6 +24177,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ListSnapshotsInRecycleBin
+
+        /// <summary>
+        /// Lists one or more snapshots that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotsInRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the ListSnapshotsInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
+        public virtual ListSnapshotsInRecycleBinResponse ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<ListSnapshotsInRecycleBinResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSnapshotsInRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotsInRecycleBin operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSnapshotsInRecycleBin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
+        public virtual IAsyncResult BeginListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSnapshotsInRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSnapshotsInRecycleBin.</param>
+        /// 
+        /// <returns>Returns a  ListSnapshotsInRecycleBinResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
+        public virtual ListSnapshotsInRecycleBinResponse EndListSnapshotsInRecycleBin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSnapshotsInRecycleBinResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyAddressAttribute
 
         /// <summary>
@@ -25888,6 +25996,64 @@ namespace Amazon.EC2
         public virtual ModifySnapshotAttributeResponse EndModifySnapshotAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifySnapshotAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifySnapshotTier
+
+        /// <summary>
+        /// Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a
+        /// full snapshot that includes all of the blocks of data that were written to the volume
+        /// at the time the snapshot was created, and moved from the standard tier to the archive
+        /// tier. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive
+        /// Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotTier service method.</param>
+        /// 
+        /// <returns>The response from the ModifySnapshotTier service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
+        public virtual ModifySnapshotTierResponse ModifySnapshotTier(ModifySnapshotTierRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySnapshotTierResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySnapshotTier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotTier operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySnapshotTier
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
+        public virtual IAsyncResult BeginModifySnapshotTier(ModifySnapshotTierRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifySnapshotTier operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySnapshotTier.</param>
+        /// 
+        /// <returns>Returns a  ModifySnapshotTierResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
+        public virtual ModifySnapshotTierResponse EndModifySnapshotTier(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifySnapshotTierResponse>(asyncResult);
         }
 
         #endregion
@@ -29570,6 +29736,125 @@ namespace Amazon.EC2
         public virtual RestoreManagedPrefixListVersionResponse EndRestoreManagedPrefixListVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreManagedPrefixListVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RestoreSnapshotFromRecycleBin
+
+        /// <summary>
+        /// Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
+        /// snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotFromRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the RestoreSnapshotFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
+        public virtual RestoreSnapshotFromRecycleBinResponse RestoreSnapshotFromRecycleBin(RestoreSnapshotFromRecycleBinRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreSnapshotFromRecycleBinResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreSnapshotFromRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotFromRecycleBin operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreSnapshotFromRecycleBin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
+        public virtual IAsyncResult BeginRestoreSnapshotFromRecycleBin(RestoreSnapshotFromRecycleBinRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreSnapshotFromRecycleBin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreSnapshotFromRecycleBin.</param>
+        /// 
+        /// <returns>Returns a  RestoreSnapshotFromRecycleBinResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
+        public virtual RestoreSnapshotFromRecycleBinResponse EndRestoreSnapshotFromRecycleBin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreSnapshotFromRecycleBinResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RestoreSnapshotTier
+
+        /// <summary>
+        /// Restores an archived Amazon EBS snapshot for use temporarily or permanently, or modifies
+        /// the restore period or restore type for a snapshot that was previously temporarily
+        /// restored.
+        /// 
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot">
+        /// Restore an archived snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period">
+        /// modify the restore period or restore type for a temporarily restored snapshot</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotTier service method.</param>
+        /// 
+        /// <returns>The response from the RestoreSnapshotTier service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
+        public virtual RestoreSnapshotTierResponse RestoreSnapshotTier(RestoreSnapshotTierRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreSnapshotTierResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreSnapshotTier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotTier operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreSnapshotTier
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
+        public virtual IAsyncResult BeginRestoreSnapshotTier(RestoreSnapshotTierRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreSnapshotTier operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreSnapshotTier.</param>
+        /// 
+        /// <returns>Returns a  RestoreSnapshotTierResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
+        public virtual RestoreSnapshotTierResponse EndRestoreSnapshotTier(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RestoreSnapshotTierResponse>(asyncResult);
         }
 
         #endregion

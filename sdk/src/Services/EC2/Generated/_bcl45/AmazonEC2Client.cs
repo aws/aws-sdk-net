@@ -16994,6 +16994,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeSnapshotTierStatus
+
+
+        /// <summary>
+        /// Describes the storage tier status of one or more Amazon EBS snapshots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotTierStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSnapshotTierStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
+        public virtual DescribeSnapshotTierStatusResponse DescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSnapshotTierStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the storage tier status of one or more Amazon EBS snapshots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotTierStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSnapshotTierStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
+        public virtual Task<DescribeSnapshotTierStatusResponse> DescribeSnapshotTierStatusAsync(DescribeSnapshotTierStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeSnapshotTierStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSpotDatafeedSubscription
 
 
@@ -23362,6 +23403,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ListSnapshotsInRecycleBin
+
+
+        /// <summary>
+        /// Lists one or more snapshots that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotsInRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the ListSnapshotsInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
+        public virtual ListSnapshotsInRecycleBinResponse ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<ListSnapshotsInRecycleBinResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists one or more snapshots that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSnapshotsInRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSnapshotsInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
+        public virtual Task<ListSnapshotsInRecycleBinResponse> ListSnapshotsInRecycleBinAsync(ListSnapshotsInRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSnapshotsInRecycleBinResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyAddressAttribute
 
 
@@ -25087,6 +25169,55 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifySnapshotAttributeResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifySnapshotAttributeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifySnapshotTier
+
+
+        /// <summary>
+        /// Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a
+        /// full snapshot that includes all of the blocks of data that were written to the volume
+        /// at the time the snapshot was created, and moved from the standard tier to the archive
+        /// tier. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive
+        /// Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotTier service method.</param>
+        /// 
+        /// <returns>The response from the ModifySnapshotTier service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
+        public virtual ModifySnapshotTierResponse ModifySnapshotTier(ModifySnapshotTierRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySnapshotTierResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a
+        /// full snapshot that includes all of the blocks of data that were written to the volume
+        /// at the time the snapshot was created, and moved from the standard tier to the archive
+        /// tier. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive
+        /// Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotTier service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifySnapshotTier service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
+        public virtual Task<ModifySnapshotTierResponse> ModifySnapshotTierAsync(ModifySnapshotTierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifySnapshotTierResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -28632,6 +28763,110 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance;
             
             return InvokeAsync<RestoreManagedPrefixListVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreSnapshotFromRecycleBin
+
+
+        /// <summary>
+        /// Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
+        /// snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotFromRecycleBin service method.</param>
+        /// 
+        /// <returns>The response from the RestoreSnapshotFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
+        public virtual RestoreSnapshotFromRecycleBinResponse RestoreSnapshotFromRecycleBin(RestoreSnapshotFromRecycleBinRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreSnapshotFromRecycleBinResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
+        /// snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotFromRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreSnapshotFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
+        public virtual Task<RestoreSnapshotFromRecycleBinResponse> RestoreSnapshotFromRecycleBinAsync(RestoreSnapshotFromRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreSnapshotFromRecycleBinResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreSnapshotTier
+
+
+        /// <summary>
+        /// Restores an archived Amazon EBS snapshot for use temporarily or permanently, or modifies
+        /// the restore period or restore type for a snapshot that was previously temporarily
+        /// restored.
+        /// 
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot">
+        /// Restore an archived snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period">
+        /// modify the restore period or restore type for a temporarily restored snapshot</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotTier service method.</param>
+        /// 
+        /// <returns>The response from the RestoreSnapshotTier service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
+        public virtual RestoreSnapshotTierResponse RestoreSnapshotTier(RestoreSnapshotTierRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreSnapshotTierResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Restores an archived Amazon EBS snapshot for use temporarily or permanently, or modifies
+        /// the restore period or restore type for a snapshot that was previously temporarily
+        /// restored.
+        /// 
+        ///  
+        /// <para>
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot">
+        /// Restore an archived snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period">
+        /// modify the restore period or restore type for a temporarily restored snapshot</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotTier service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreSnapshotTier service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
+        public virtual Task<RestoreSnapshotTierResponse> RestoreSnapshotTierAsync(RestoreSnapshotTierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreSnapshotTierResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -524,6 +524,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSnapshotTierStatus operation
+        ///</summary>
+        public IDescribeSnapshotTierStatusPaginator DescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request) 
+        {
+            return new DescribeSnapshotTierStatusPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSpotFleetRequests operation
         ///</summary>
         public IDescribeSpotFleetRequestsPaginator DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request) 
@@ -857,6 +865,14 @@ namespace Amazon.EC2.Model
         public IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request) 
         {
             return new GetVpnConnectionDeviceTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSnapshotsInRecycleBin operation
+        ///</summary>
+        public IListSnapshotsInRecycleBinPaginator ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request) 
+        {
+            return new ListSnapshotsInRecycleBinPaginator(this.client, request);
         }
 
         /// <summary>

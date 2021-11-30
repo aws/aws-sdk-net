@@ -29,50 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a snapshot.
+    /// This is the response object from the RestoreSnapshotFromRecycleBin operation.
     /// </summary>
-    public partial class Snapshot
+    public partial class RestoreSnapshotFromRecycleBinResponse : AmazonWebServiceResponse
     {
-        private string _dataEncryptionKeyId;
         private string _description;
         private bool? _encrypted;
-        private string _kmsKeyId;
         private string _outpostArn;
-        private string _ownerAlias;
         private string _ownerId;
         private string _progress;
-        private DateTime? _restoreExpiryTime;
         private string _snapshotId;
         private DateTime? _startTime;
         private SnapshotState _state;
-        private string _stateMessage;
-        private StorageTier _storageTier;
-        private List<Tag> _tags = new List<Tag>();
         private string _volumeId;
         private int? _volumeSize;
-
-        /// <summary>
-        /// Gets and sets the property DataEncryptionKeyId. 
-        /// <para>
-        /// The data encryption key identifier for the snapshot. This value is a unique identifier
-        /// that corresponds to the data encryption key that was used to encrypt the original
-        /// volume or snapshot copy. Because data encryption keys are inherited by volumes created
-        /// from snapshots, and vice versa, if snapshots share the same data encryption key identifier,
-        /// then they belong to the same volume/snapshot lineage. This parameter is only returned
-        /// by <a>DescribeSnapshots</a>.
-        /// </para>
-        /// </summary>
-        public string DataEncryptionKeyId
-        {
-            get { return this._dataEncryptionKeyId; }
-            set { this._dataEncryptionKeyId = value; }
-        }
-
-        // Check to see if DataEncryptionKeyId property is set
-        internal bool IsSetDataEncryptionKeyId()
-        {
-            return this._dataEncryptionKeyId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -111,25 +81,6 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyId. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was
-        /// used to protect the volume encryption key for the parent volume.
-        /// </para>
-        /// </summary>
-        public string KmsKeyId
-        {
-            get { return this._kmsKeyId; }
-            set { this._kmsKeyId = value; }
-        }
-
-        // Check to see if KmsKeyId property is set
-        internal bool IsSetKmsKeyId()
-        {
-            return this._kmsKeyId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
         /// The ARN of the Outpost on which the snapshot is stored. For more information, see
@@ -147,26 +98,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetOutpostArn()
         {
             return this._outpostArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OwnerAlias. 
-        /// <para>
-        /// The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>).
-        /// This is not the user-configured Amazon Web Services account alias set using the IAM
-        /// console.
-        /// </para>
-        /// </summary>
-        public string OwnerAlias
-        {
-            get { return this._ownerAlias; }
-            set { this._ownerAlias = value; }
-        }
-
-        // Check to see if OwnerAlias property is set
-        internal bool IsSetOwnerAlias()
-        {
-            return this._ownerAlias != null;
         }
 
         /// <summary>
@@ -206,28 +137,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestoreExpiryTime. 
-        /// <para>
-        /// Only for archived snapshots that are temporarily restored. Indicates the date and
-        /// time when a temporarily restored snapshot will be automatically re-archived.
-        /// </para>
-        /// </summary>
-        public DateTime RestoreExpiryTime
-        {
-            get { return this._restoreExpiryTime.GetValueOrDefault(); }
-            set { this._restoreExpiryTime = value; }
-        }
-
-        // Check to see if RestoreExpiryTime property is set
-        internal bool IsSetRestoreExpiryTime()
-        {
-            return this._restoreExpiryTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property SnapshotId. 
         /// <para>
-        /// The ID of the snapshot. Each snapshot receives a unique identifier when it is created.
+        /// The ID of the snapshot.
         /// </para>
         /// </summary>
         public string SnapshotId
@@ -263,7 +175,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The snapshot state.
+        /// The state of the snapshot.
         /// </para>
         /// </summary>
         public SnapshotState State
@@ -279,71 +191,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateMessage. 
-        /// <para>
-        /// Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation
-        /// fails (for example, if the proper Key Management Service (KMS) permissions are not
-        /// obtained) this field displays error state details to help you diagnose why the error
-        /// occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
-        /// </para>
-        /// </summary>
-        public string StateMessage
-        {
-            get { return this._stateMessage; }
-            set { this._stateMessage = value; }
-        }
-
-        // Check to see if StateMessage property is set
-        internal bool IsSetStateMessage()
-        {
-            return this._stateMessage != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StorageTier. 
-        /// <para>
-        /// The storage tier in which the snapshot is stored. <code>standard</code> indicates
-        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-        /// for use. <code>archive</code> indicates that the snapshot is currently archived and
-        /// that it must be restored before it can be used.
-        /// </para>
-        /// </summary>
-        public StorageTier StorageTier
-        {
-            get { return this._storageTier; }
-            set { this._storageTier = value; }
-        }
-
-        // Check to see if StorageTier property is set
-        internal bool IsSetStorageTier()
-        {
-            return this._storageTier != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Any tags assigned to the snapshot.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the volume that was used to create the snapshot. Snapshots created by the
-        /// <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for
-        /// any purpose.
+        /// The ID of the volume that was used to create the snapshot.
         /// </para>
         /// </summary>
         public string VolumeId

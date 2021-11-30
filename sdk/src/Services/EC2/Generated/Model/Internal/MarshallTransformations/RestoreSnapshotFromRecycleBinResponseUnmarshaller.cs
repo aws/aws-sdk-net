@@ -32,163 +32,124 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Snapshot Object
+    /// Response Unmarshaller for RestoreSnapshotFromRecycleBin operation
     /// </summary>  
-    public class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext>
+    public class RestoreSnapshotFromRecycleBinResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
+        /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public Snapshot Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            Snapshot unmarshalledObject = new Snapshot();
+            RestoreSnapshotFromRecycleBinResponse response = new RestoreSnapshotFromRecycleBinResponse();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+               targetDepth = 2;
+
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("dataEncryptionKeyId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DataEncryptionKeyId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
+
                     if (context.TestExpression("description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        response.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("encrypted", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("kmsKeyId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                        response.Encrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("outpostArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ownerAlias", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerAlias = unmarshaller.Unmarshall(context);
+                        response.OutpostArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        response.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("progress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Progress = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("restoreExpiryTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.RestoreExpiryTime = unmarshaller.Unmarshall(context);
+                        response.Progress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("snapshotId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
+                        response.SnapshotId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("startTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                        response.StartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("statusMessage", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StateMessage = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("storageTier", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StorageTier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        var unmarshaller = TagUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Tags.Add(item);
+                        response.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("volumeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
+                        response.VolumeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("volumeSize", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
+                        response.VolumeSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                } 
             }
 
-            return unmarshalledObject;
+            return response;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public Snapshot Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return null;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+        private static RestoreSnapshotFromRecycleBinResponseUnmarshaller _instance = new RestoreSnapshotFromRecycleBinResponseUnmarshaller();        
 
-
-        private static SnapshotUnmarshaller _instance = new SnapshotUnmarshaller();        
+        internal static RestoreSnapshotFromRecycleBinResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SnapshotUnmarshaller Instance
+        public static RestoreSnapshotFromRecycleBinResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

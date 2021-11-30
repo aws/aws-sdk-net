@@ -7071,6 +7071,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G58xlarge = new InstanceType("g5.8xlarge");
         /// <summary>
+        /// Constant G5g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G5g16xlarge = new InstanceType("g5g.16xlarge");
+        /// <summary>
+        /// Constant G5g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G5g2xlarge = new InstanceType("g5g.2xlarge");
+        /// <summary>
+        /// Constant G5g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G5g4xlarge = new InstanceType("g5g.4xlarge");
+        /// <summary>
+        /// Constant G5g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G5g8xlarge = new InstanceType("g5g.8xlarge");
+        /// <summary>
+        /// Constant G5gMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType G5gMetal = new InstanceType("g5g.metal");
+        /// <summary>
+        /// Constant G5gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G5gXlarge = new InstanceType("g5g.xlarge");
+        /// <summary>
         /// Constant G5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G5Xlarge = new InstanceType("g5.xlarge");
@@ -7494,6 +7518,46 @@ namespace Amazon.EC2
         /// Constant M5znXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M5znXlarge = new InstanceType("m5zn.xlarge");
+        /// <summary>
+        /// Constant M6a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a12xlarge = new InstanceType("m6a.12xlarge");
+        /// <summary>
+        /// Constant M6a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a16xlarge = new InstanceType("m6a.16xlarge");
+        /// <summary>
+        /// Constant M6a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a24xlarge = new InstanceType("m6a.24xlarge");
+        /// <summary>
+        /// Constant M6a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a2xlarge = new InstanceType("m6a.2xlarge");
+        /// <summary>
+        /// Constant M6a32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a32xlarge = new InstanceType("m6a.32xlarge");
+        /// <summary>
+        /// Constant M6a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a48xlarge = new InstanceType("m6a.48xlarge");
+        /// <summary>
+        /// Constant M6a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a4xlarge = new InstanceType("m6a.4xlarge");
+        /// <summary>
+        /// Constant M6a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6a8xlarge = new InstanceType("m6a.8xlarge");
+        /// <summary>
+        /// Constant M6aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6aLarge = new InstanceType("m6a.large");
+        /// <summary>
+        /// Constant M6aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6aXlarge = new InstanceType("m6a.xlarge");
         /// <summary>
         /// Constant M6g12xlarge for InstanceType
         /// </summary>
@@ -12244,6 +12308,14 @@ namespace Amazon.EC2
         /// Constant Pending for SnapshotState
         /// </summary>
         public static readonly SnapshotState Pending = new SnapshotState("pending");
+        /// <summary>
+        /// Constant Recoverable for SnapshotState
+        /// </summary>
+        public static readonly SnapshotState Recoverable = new SnapshotState("recoverable");
+        /// <summary>
+        /// Constant Recovering for SnapshotState
+        /// </summary>
+        public static readonly SnapshotState Recovering = new SnapshotState("recovering");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -12787,6 +12859,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type StorageTier.
+    /// </summary>
+    public class StorageTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Archive for StorageTier
+        /// </summary>
+        public static readonly StorageTier Archive = new StorageTier("archive");
+        /// <summary>
+        /// Constant Standard for StorageTier
+        /// </summary>
+        public static readonly StorageTier Standard = new StorageTier("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageTier FindValue(string value)
+        {
+            return FindValue<StorageTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SubnetCidrBlockStateCode.
     /// </summary>
     public class SubnetCidrBlockStateCode : ConstantClass
@@ -13069,6 +13191,52 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TargetStorageTier.
+    /// </summary>
+    public class TargetStorageTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Archive for TargetStorageTier
+        /// </summary>
+        public static readonly TargetStorageTier Archive = new TargetStorageTier("archive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetStorageTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetStorageTier FindValue(string value)
+        {
+            return FindValue<TargetStorageTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetStorageTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TelemetryStatus.
     /// </summary>
     public class TelemetryStatus : ConstantClass
@@ -13166,6 +13334,84 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Tenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TieringOperationStatus.
+    /// </summary>
+    public class TieringOperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ArchivalCompleted for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus ArchivalCompleted = new TieringOperationStatus("archival-completed");
+        /// <summary>
+        /// Constant ArchivalFailed for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus ArchivalFailed = new TieringOperationStatus("archival-failed");
+        /// <summary>
+        /// Constant ArchivalInProgress for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus ArchivalInProgress = new TieringOperationStatus("archival-in-progress");
+        /// <summary>
+        /// Constant PermanentRestoreCompleted for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus PermanentRestoreCompleted = new TieringOperationStatus("permanent-restore-completed");
+        /// <summary>
+        /// Constant PermanentRestoreFailed for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus PermanentRestoreFailed = new TieringOperationStatus("permanent-restore-failed");
+        /// <summary>
+        /// Constant PermanentRestoreInProgress for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus PermanentRestoreInProgress = new TieringOperationStatus("permanent-restore-in-progress");
+        /// <summary>
+        /// Constant TemporaryRestoreCompleted for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus TemporaryRestoreCompleted = new TieringOperationStatus("temporary-restore-completed");
+        /// <summary>
+        /// Constant TemporaryRestoreFailed for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus TemporaryRestoreFailed = new TieringOperationStatus("temporary-restore-failed");
+        /// <summary>
+        /// Constant TemporaryRestoreInProgress for TieringOperationStatus
+        /// </summary>
+        public static readonly TieringOperationStatus TemporaryRestoreInProgress = new TieringOperationStatus("temporary-restore-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TieringOperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TieringOperationStatus FindValue(string value)
+        {
+            return FindValue<TieringOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TieringOperationStatus(string value)
         {
             return FindValue(value);
         }

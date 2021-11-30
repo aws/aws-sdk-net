@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Snapshot Object
+    /// Response Unmarshaller for SnapshotTierStatus Object
     /// </summary>  
-    public class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext>
+    public class SnapshotTierStatusUnmarshaller : IUnmarshaller<SnapshotTierStatus, XmlUnmarshallerContext>, IUnmarshaller<SnapshotTierStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Snapshot Unmarshall(XmlUnmarshallerContext context)
+        public SnapshotTierStatus Unmarshall(XmlUnmarshallerContext context)
         {
-            Snapshot unmarshalledObject = new Snapshot();
+            SnapshotTierStatus unmarshalledObject = new SnapshotTierStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,52 +54,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("dataEncryptionKeyId", targetDepth))
+                    if (context.TestExpression("archivalCompleteTime", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DataEncryptionKeyId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ArchivalCompleteTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("description", targetDepth))
+                    if (context.TestExpression("lastTieringOperationStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LastTieringOperationStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("encrypted", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("kmsKeyId", targetDepth))
+                    if (context.TestExpression("lastTieringOperationStatusDetail", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LastTieringOperationStatusDetail = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("outpostArn", targetDepth))
+                    if (context.TestExpression("lastTieringProgress", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.LastTieringProgress = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ownerAlias", targetDepth))
+                    if (context.TestExpression("lastTieringStartTime", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerAlias = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastTieringStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("progress", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Progress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("restoreExpiryTime", targetDepth))
@@ -114,22 +102,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("startTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("statusMessage", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StateMessage = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("storageTier", targetDepth))
@@ -151,12 +127,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("volumeSize", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -172,18 +142,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Snapshot Unmarshall(JsonUnmarshallerContext context)
+        public SnapshotTierStatus Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SnapshotUnmarshaller _instance = new SnapshotUnmarshaller();        
+        private static SnapshotTierStatusUnmarshaller _instance = new SnapshotTierStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SnapshotUnmarshaller Instance
+        public static SnapshotTierStatusUnmarshaller Instance
         {
             get
             {

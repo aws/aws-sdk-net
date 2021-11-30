@@ -331,6 +331,11 @@ namespace Amazon.EC2.Model
         IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSnapshotTierStatus operation
+        ///</summary>
+        IDescribeSnapshotTierStatusPaginator DescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSpotFleetRequests operation
         ///</summary>
         IDescribeSpotFleetRequestsPaginator DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request);
@@ -539,6 +544,11 @@ namespace Amazon.EC2.Model
         /// Paginator for GetVpnConnectionDeviceTypes operation
         ///</summary>
         IGetVpnConnectionDeviceTypesPaginator GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSnapshotsInRecycleBin operation
+        ///</summary>
+        IListSnapshotsInRecycleBinPaginator ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request);
 
         /// <summary>
         /// Paginator for SearchLocalGatewayRoutes operation
