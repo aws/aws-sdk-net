@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationSummary Object
+    /// Response Unmarshaller for RecommendationPreferencesDetail Object
     /// </summary>  
-    public class RecommendationSummaryUnmarshaller : IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>, IUnmarshaller<RecommendationSummary, JsonUnmarshallerContext>
+    public class RecommendationPreferencesDetailUnmarshaller : IUnmarshaller<RecommendationPreferencesDetail, XmlUnmarshallerContext>, IUnmarshaller<RecommendationPreferencesDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationSummary IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecommendationPreferencesDetail IUnmarshaller<RecommendationPreferencesDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationSummary Unmarshall(JsonUnmarshallerContext context)
+        public RecommendationPreferencesDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationSummary unmarshalledObject = new RecommendationSummary();
+            RecommendationPreferencesDetail unmarshalledObject = new RecommendationPreferencesDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("enhancedInfrastructureMetrics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnhancedInfrastructureMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("currentPerformanceRiskRatings", targetDepth))
-                {
-                    var unmarshaller = CurrentPerformanceRiskRatingsUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRiskRatings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recommendationResourceType", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("savingsOpportunity", targetDepth))
+                if (context.TestExpression("scope", targetDepth))
                 {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("summaries", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Summary, SummaryUnmarshaller>(SummaryUnmarshaller.Instance);
-                    unmarshalledObject.Summaries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ScopeUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationSummaryUnmarshaller _instance = new RecommendationSummaryUnmarshaller();        
+        private static RecommendationPreferencesDetailUnmarshaller _instance = new RecommendationPreferencesDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationSummaryUnmarshaller Instance
+        public static RecommendationPreferencesDetailUnmarshaller Instance
         {
             get
             {

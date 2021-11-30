@@ -36,6 +36,7 @@ namespace Amazon.ComputeOptimizer.Model
         private VolumeConfiguration _configuration;
         private double? _performanceRisk;
         private int? _rank;
+        private SavingsOpportunity _savingsOpportunity;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -107,6 +108,25 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetRank()
         {
             return this._rank.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsOpportunity. 
+        /// <para>
+        /// An object that describes the savings opportunity for the EBS volume recommendation
+        /// option. Savings opportunity includes the estimated monthly savings amount and percentage.
+        /// </para>
+        /// </summary>
+        public SavingsOpportunity SavingsOpportunity
+        {
+            get { return this._savingsOpportunity; }
+            set { this._savingsOpportunity = value; }
+        }
+
+        // Check to see if SavingsOpportunity property is set
+        internal bool IsSetSavingsOpportunity()
+        {
+            return this._savingsOpportunity != null;
         }
 
     }

@@ -35,6 +35,8 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private string _accountId;
         private string _currentInstanceType;
+        private CurrentPerformanceRisk _currentPerformanceRisk;
+        private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private Finding _finding;
         private List<string> _findingReasonCodes = new List<string>();
         private string _instanceArn;
@@ -79,6 +81,43 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentInstanceType()
         {
             return this._currentInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentPerformanceRisk. 
+        /// <para>
+        /// The risk of the current instance not meeting the performance needs of its workloads.
+        /// The higher the risk, the more likely the current Lambda function requires more memory.
+        /// </para>
+        /// </summary>
+        public CurrentPerformanceRisk CurrentPerformanceRisk
+        {
+            get { return this._currentPerformanceRisk; }
+            set { this._currentPerformanceRisk = value; }
+        }
+
+        // Check to see if CurrentPerformanceRisk property is set
+        internal bool IsSetCurrentPerformanceRisk()
+        {
+            return this._currentPerformanceRisk != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveRecommendationPreferences. 
+        /// <para>
+        /// An object that describes the effective recommendation preferences for the instance.
+        /// </para>
+        /// </summary>
+        public EffectiveRecommendationPreferences EffectiveRecommendationPreferences
+        {
+            get { return this._effectiveRecommendationPreferences; }
+            set { this._effectiveRecommendationPreferences = value; }
+        }
+
+        // Check to see if EffectiveRecommendationPreferences property is set
+        internal bool IsSetEffectiveRecommendationPreferences()
+        {
+            return this._effectiveRecommendationPreferences != null;
         }
 
         /// <summary>
@@ -329,7 +368,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The timestamp of when the instance recommendation was last refreshed.
+        /// The timestamp of when the instance recommendation was last generated.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp

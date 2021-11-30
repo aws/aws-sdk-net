@@ -29,19 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>,
-    /// <a>GetEC2InstanceRecommendations</a>, and <a>GetEC2RecommendationProjectedMetrics</a>
-    /// request.
+    /// Describes the effective recommendation preferences for a resource.
     /// </summary>
-    public partial class RecommendationPreferences
+    public partial class EffectiveRecommendationPreferences
     {
         private List<string> _cpuVendorArchitectures = new List<string>();
+        private EnhancedInfrastructureMetrics _enhancedInfrastructureMetrics;
 
         /// <summary>
         /// Gets and sets the property CpuVendorArchitectures. 
         /// <para>
-        /// Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling
-        /// group recommendations.
+        /// Describes the CPU vendor and architecture for an instance or Auto Scaling group recommendations.
         /// </para>
         ///  
         /// <para>
@@ -76,6 +74,30 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCpuVendorArchitectures()
         {
             return this._cpuVendorArchitectures != null && this._cpuVendorArchitectures.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnhancedInfrastructureMetrics. 
+        /// <para>
+        /// Describes the activation status of the enhanced infrastructure metrics preference.
+        /// </para>
+        ///  
+        /// <para>
+        /// A status of <code>Active</code> confirms that the preference is applied in the latest
+        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not
+        /// yet applied.
+        /// </para>
+        /// </summary>
+        public EnhancedInfrastructureMetrics EnhancedInfrastructureMetrics
+        {
+            get { return this._enhancedInfrastructureMetrics; }
+            set { this._enhancedInfrastructureMetrics = value; }
+        }
+
+        // Check to see if EnhancedInfrastructureMetrics property is set
+        internal bool IsSetEnhancedInfrastructureMetrics()
+        {
+            return this._enhancedInfrastructureMetrics != null;
         }
 
     }

@@ -82,6 +82,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Rank = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("savingsOpportunity", targetDepth))
+                {
+                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

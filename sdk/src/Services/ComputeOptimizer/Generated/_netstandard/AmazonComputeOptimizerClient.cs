@@ -251,6 +251,71 @@ namespace Amazon.ComputeOptimizer
         #endregion
 
 
+        #region  DeleteRecommendationPreferences
+
+        internal virtual DeleteRecommendationPreferencesResponse DeleteRecommendationPreferences(DeleteRecommendationPreferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommendationPreferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a recommendation preference, such as enhanced infrastructure metrics.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommendationPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecommendationPreferences service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DeleteRecommendationPreferences">REST API Reference for DeleteRecommendationPreferences Operation</seealso>
+        public virtual Task<DeleteRecommendationPreferencesResponse> DeleteRecommendationPreferencesAsync(DeleteRecommendationPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRecommendationPreferencesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeRecommendationExportJobs
 
         internal virtual DescribeRecommendationExportJobsResponse DescribeRecommendationExportJobs(DescribeRecommendationExportJobsRequest request)
@@ -877,6 +942,74 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
         
+        #region  GetEffectiveRecommendationPreferences
+
+        internal virtual GetEffectiveRecommendationPreferencesResponse GetEffectiveRecommendationPreferences(GetEffectiveRecommendationPreferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<GetEffectiveRecommendationPreferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the recommendation preferences that are in effect for a given resource, such
+        /// as enhanced infrastructure metrics. Considers all applicable preferences that you
+        /// might have set at the resource, account, and organization level.
+        /// 
+        ///  
+        /// <para>
+        /// When you create a recommendation preference, you can set its status to <code>Active</code>
+        /// or <code>Inactive</code>. Use this action to view the recommendation preferences that
+        /// are in effect, or <code>Active</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectiveRecommendationPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEffectiveRecommendationPreferences service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEffectiveRecommendationPreferences">REST API Reference for GetEffectiveRecommendationPreferences Operation</seealso>
+        public virtual Task<GetEffectiveRecommendationPreferencesResponse> GetEffectiveRecommendationPreferencesAsync(GetEffectiveRecommendationPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEffectiveRecommendationPreferencesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEnrollmentStatus
 
         internal virtual GetEnrollmentStatusResponse GetEnrollmentStatus(GetEnrollmentStatusRequest request)
@@ -1064,6 +1197,77 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
         
+        #region  GetRecommendationPreferences
+
+        internal virtual GetRecommendationPreferencesResponse GetRecommendationPreferences(GetRecommendationPreferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommendationPreferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns existing recommendation preferences, such as enhanced infrastructure metrics.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <code>scope</code> parameter to specify which preferences to return. You can
+        /// specify to return preferences for an organization, a specific account ID, or a specific
+        /// EC2 instance or Auto Scaling group Amazon Resource Name (ARN).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendationPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommendationPreferences service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationPreferences">REST API Reference for GetRecommendationPreferences Operation</seealso>
+        public virtual Task<GetRecommendationPreferencesResponse> GetRecommendationPreferencesAsync(GetRecommendationPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRecommendationPreferencesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRecommendationSummaries
 
         internal virtual GetRecommendationSummariesResponse GetRecommendationSummaries(GetRecommendationSummariesRequest request)
@@ -1139,6 +1343,72 @@ namespace Amazon.ComputeOptimizer
             options.ResponseUnmarshaller = GetRecommendationSummariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRecommendationSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutRecommendationPreferences
+
+        internal virtual PutRecommendationPreferencesResponse PutRecommendationPreferences(PutRecommendationPreferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return Invoke<PutRecommendationPreferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new recommendation preference or updates an existing recommendation preference,
+        /// such as enhanced infrastructure metrics.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+        /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRecommendationPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRecommendationPreferences service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// The value supplied for the input parameter is out of range or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) Amazon Web Services access key
+        /// ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PutRecommendationPreferences">REST API Reference for PutRecommendationPreferences Operation</seealso>
+        public virtual Task<PutRecommendationPreferencesResponse> PutRecommendationPreferencesAsync(PutRecommendationPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRecommendationPreferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRecommendationPreferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRecommendationPreferencesResponse>(request, options, cancellationToken);
         }
 
         #endregion

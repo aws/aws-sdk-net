@@ -35,6 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private string _accountId;
         private VolumeConfiguration _currentConfiguration;
+        private CurrentPerformanceRisk _currentPerformanceRisk;
         private EBSFinding _finding;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
@@ -79,6 +80,26 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CurrentPerformanceRisk. 
+        /// <para>
+        /// The risk of the current EBS volume not meeting the performance needs of its workloads.
+        /// The higher the risk, the more likely the current EBS volume doesn't have sufficient
+        /// capacity.
+        /// </para>
+        /// </summary>
+        public CurrentPerformanceRisk CurrentPerformanceRisk
+        {
+            get { return this._currentPerformanceRisk; }
+            set { this._currentPerformanceRisk = value; }
+        }
+
+        // Check to see if CurrentPerformanceRisk property is set
+        internal bool IsSetCurrentPerformanceRisk()
+        {
+            return this._currentPerformanceRisk != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
         /// The finding classification of the volume.
@@ -117,7 +138,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The timestamp of when the volume recommendation was last refreshed.
+        /// The timestamp of when the volume recommendation was last generated.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp

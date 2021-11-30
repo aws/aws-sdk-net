@@ -34,7 +34,9 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class RecommendationSummary
     {
         private string _accountId;
+        private CurrentPerformanceRiskRatings _currentPerformanceRiskRatings;
         private RecommendationSourceType _recommendationResourceType;
+        private SavingsOpportunity _savingsOpportunity;
         private List<Summary> _summaries = new List<Summary>();
 
         /// <summary>
@@ -56,9 +58,27 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CurrentPerformanceRiskRatings. 
+        /// <para>
+        /// An object that describes the performance risk ratings for a given resource type.
+        /// </para>
+        /// </summary>
+        public CurrentPerformanceRiskRatings CurrentPerformanceRiskRatings
+        {
+            get { return this._currentPerformanceRiskRatings; }
+            set { this._currentPerformanceRiskRatings = value; }
+        }
+
+        // Check to see if CurrentPerformanceRiskRatings property is set
+        internal bool IsSetCurrentPerformanceRiskRatings()
+        {
+            return this._currentPerformanceRiskRatings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RecommendationResourceType. 
         /// <para>
-        /// The resource type of the recommendation.
+        /// The resource type that the recommendation summary applies to.
         /// </para>
         /// </summary>
         public RecommendationSourceType RecommendationResourceType
@@ -71,6 +91,25 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetRecommendationResourceType()
         {
             return this._recommendationResourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsOpportunity. 
+        /// <para>
+        /// An object that describes the savings opportunity for a given resource type. Savings
+        /// opportunity includes the estimated monthly savings amount and percentage.
+        /// </para>
+        /// </summary>
+        public SavingsOpportunity SavingsOpportunity
+        {
+            get { return this._savingsOpportunity; }
+            set { this._savingsOpportunity = value; }
+        }
+
+        // Check to see if SavingsOpportunity property is set
+        internal bool IsSetSavingsOpportunity()
+        {
+            return this._savingsOpportunity != null;
         }
 
         /// <summary>

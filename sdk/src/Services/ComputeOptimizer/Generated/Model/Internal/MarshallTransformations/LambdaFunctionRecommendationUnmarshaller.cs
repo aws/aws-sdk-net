@@ -76,6 +76,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentMemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("currentPerformanceRisk", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("finding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

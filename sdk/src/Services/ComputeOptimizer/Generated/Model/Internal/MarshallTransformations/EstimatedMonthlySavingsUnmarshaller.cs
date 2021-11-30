@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationSummary Object
+    /// Response Unmarshaller for EstimatedMonthlySavings Object
     /// </summary>  
-    public class RecommendationSummaryUnmarshaller : IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>, IUnmarshaller<RecommendationSummary, JsonUnmarshallerContext>
+    public class EstimatedMonthlySavingsUnmarshaller : IUnmarshaller<EstimatedMonthlySavings, XmlUnmarshallerContext>, IUnmarshaller<EstimatedMonthlySavings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationSummary IUnmarshaller<RecommendationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EstimatedMonthlySavings IUnmarshaller<EstimatedMonthlySavings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationSummary Unmarshall(JsonUnmarshallerContext context)
+        public EstimatedMonthlySavings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationSummary unmarshalledObject = new RecommendationSummary();
+            EstimatedMonthlySavings unmarshalledObject = new EstimatedMonthlySavings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("currency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Currency = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("currentPerformanceRiskRatings", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = CurrentPerformanceRiskRatingsUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRiskRatings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recommendationResourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationResourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("savingsOpportunity", targetDepth))
-                {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("summaries", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Summary, SummaryUnmarshaller>(SummaryUnmarshaller.Instance);
-                    unmarshalledObject.Summaries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationSummaryUnmarshaller _instance = new RecommendationSummaryUnmarshaller();        
+        private static EstimatedMonthlySavingsUnmarshaller _instance = new EstimatedMonthlySavingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationSummaryUnmarshaller Instance
+        public static EstimatedMonthlySavingsUnmarshaller Instance
         {
             get
             {

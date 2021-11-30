@@ -35,6 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private string _accountId;
         private int? _currentMemorySize;
+        private CurrentPerformanceRisk _currentPerformanceRisk;
         private LambdaFunctionRecommendationFinding _finding;
         private List<string> _findingReasonCodes = new List<string>();
         private string _functionArn;
@@ -79,6 +80,26 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentMemorySize()
         {
             return this._currentMemorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentPerformanceRisk. 
+        /// <para>
+        /// The risk of the current Lambda function not meeting the performance needs of its workloads.
+        /// The higher the risk, the more likely the current Lambda function configuration is
+        /// underperforming in its workload.
+        /// </para>
+        /// </summary>
+        public CurrentPerformanceRisk CurrentPerformanceRisk
+        {
+            get { return this._currentPerformanceRisk; }
+            set { this._currentPerformanceRisk = value; }
+        }
+
+        // Check to see if CurrentPerformanceRisk property is set
+        internal bool IsSetCurrentPerformanceRisk()
+        {
+            return this._currentPerformanceRisk != null;
         }
 
         /// <summary>
@@ -229,7 +250,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The timestamp of when the function recommendation was last refreshed.
+        /// The timestamp of when the function recommendation was last generated.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp
