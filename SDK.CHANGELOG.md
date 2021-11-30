@@ -1,3 +1,27 @@
+### 3.7.171.0 (2021-11-30 01:05 UTC)
+* CloudWatchEvidently (3.7.0.0)
+	* Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.
+* CloudWatchRUM (3.7.0.0)
+	* This is the first public release of CloudWatch RUM
+* ComputeOptimizer (3.7.4.0)
+	* Adds support for the enhanced infrastructure metrics paid feature. Also adds support for two new sets of resource efficiency metrics, including savings opportunity metrics and performance improvement opportunity metrics.
+* EC2 (3.7.47.0)
+	* This release adds support for G5g and M6a instances. This release also adds support for Amazon EBS Snapshots Archive, a feature that enables you to archive your EBS snapshots; and Recycle Bin, a feature that enables you to protect your EBS snapshots against accidental deletion.
+* ECR (3.7.2.0)
+	* This release adds supports for pull through cache rules and enhanced scanning.
+* Inspector2 (3.7.0.0)
+	* This release adds support for the new Amazon Inspector API. The new Amazon Inspector can automatically discover and scan Amazon EC2 instances and Amazon ECR container images for software vulnerabilities and unintended network exposure, and report centralized findings across multiple AWS accounts.
+* IoTSiteWise (3.7.9.0)
+	* AWS IoT SiteWise now supports retention configuration for the hot tier storage.
+* RecycleBin (3.7.0.0)
+	* This release adds support for Recycle Bin.
+* S3 (3.7.6.0)
+	* Amazon S3 Event Notifications adds Amazon EventBridge as a destination and supports additional event types. The PutBucketNotificationConfiguration API can now skip validation of Amazon SQS, Amazon SNS and AWS Lambda destinations.
+* SimpleSystemsManagement (3.7.11.0)
+	* Added two new attributes to DescribeInstanceInformation called SourceId and SourceType along with new string filters SourceIds and SourceTypes to filter instance records.
+* WellArchitected (3.7.2.0)
+	* This update provides support for Well-Architected API users to use custom lens features.
+
 ### 3.7.170.0 (2021-11-29 07:13 UTC)
 * MigrationHubRefactorSpaces (3.7.0.0)
 	* This is the initial SDK release for AWS Migration Hub Refactor Spaces

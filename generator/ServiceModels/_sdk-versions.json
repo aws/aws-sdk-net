@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.170.0",
+    "ProductVersion" : "3.7.171.0",
     "CoreVersion"    : "3.7.5.2",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.46.0",
+            "Version" : "3.7.47.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -314,7 +314,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.7.5.0",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -370,7 +370,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.7.10.0",
+            "Version" : "3.7.11.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -490,7 +490,7 @@
             "InPreview"               : false
         },
         "ECR"                             : {
-            "Version" : "3.7.1.35",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1666,7 +1666,7 @@
             "InPreview"               : false
         },
         "ComputeOptimizer"                : {
-            "Version" : "3.7.3.48",
+            "Version" : "3.7.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -1770,7 +1770,7 @@
             "InPreview"               : false
         },
         "IoTSiteWise"                     : {
-            "Version" : "3.7.8.0",
+            "Version" : "3.7.9.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2050,7 +2050,7 @@
             "InPreview"               : false
         },
         "WellArchitected"                 : {
-            "Version" : "3.7.1.61",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.2"
@@ -2330,6 +2330,38 @@
             "InPreview"               : false
         },
         "MigrationHubRefactorSpaces"          : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.5.2"
+            },
+            "InPreview"               : false
+        },
+        "Inspector2"                          : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.5.2"
+            },
+            "InPreview"               : false
+        },
+        "CloudWatchEvidently"                 : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.5.2"
+            },
+            "InPreview"               : false
+        },
+        "CloudWatchRUM"                       : {
+            "Version" : "3.7.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.5.2"
+            },
+            "InPreview"               : false
+        },
+        "RecycleBin"                          : {
             "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
