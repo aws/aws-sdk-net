@@ -240,6 +240,59 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  BatchGetRepositoryScanningConfiguration
+
+
+        /// <summary>
+        /// Gets the scanning configuration for one or more repositories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRepositoryScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetRepositoryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetRepositoryScanningConfiguration">REST API Reference for BatchGetRepositoryScanningConfiguration Operation</seealso>
+        BatchGetRepositoryScanningConfigurationResponse BatchGetRepositoryScanningConfiguration(BatchGetRepositoryScanningConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetRepositoryScanningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRepositoryScanningConfiguration operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetRepositoryScanningConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetRepositoryScanningConfiguration">REST API Reference for BatchGetRepositoryScanningConfiguration Operation</seealso>
+        IAsyncResult BeginBatchGetRepositoryScanningConfiguration(BatchGetRepositoryScanningConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetRepositoryScanningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetRepositoryScanningConfiguration.</param>
+        /// 
+        /// <returns>Returns a  BatchGetRepositoryScanningConfigurationResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetRepositoryScanningConfiguration">REST API Reference for BatchGetRepositoryScanningConfiguration Operation</seealso>
+        BatchGetRepositoryScanningConfigurationResponse EndBatchGetRepositoryScanningConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CompleteLayerUpload
 
 
@@ -321,6 +374,67 @@ namespace Amazon.ECR
         /// <returns>Returns a  CompleteLayerUploadResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         CompleteLayerUploadResponse EndCompleteLayerUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePullThroughCacheRule
+
+
+        /// <summary>
+        /// Creates a pull through cache rule. A pull through cache rule provides a way to cache
+        /// images from an external public registry in your Amazon ECR private registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePullThroughCacheRule service method.</param>
+        /// 
+        /// <returns>The response from the CreatePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleAlreadyExistsException">
+        /// A pull through cache rule with these settings already exists for the private registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnsupportedUpstreamRegistryException">
+        /// The specified upstream registry isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">REST API Reference for CreatePullThroughCacheRule Operation</seealso>
+        CreatePullThroughCacheRuleResponse CreatePullThroughCacheRule(CreatePullThroughCacheRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePullThroughCacheRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePullThroughCacheRule operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePullThroughCacheRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">REST API Reference for CreatePullThroughCacheRule Operation</seealso>
+        IAsyncResult BeginCreatePullThroughCacheRule(CreatePullThroughCacheRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePullThroughCacheRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePullThroughCacheRule.</param>
+        /// 
+        /// <returns>Returns a  CreatePullThroughCacheRuleResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">REST API Reference for CreatePullThroughCacheRule Operation</seealso>
+        CreatePullThroughCacheRuleResponse EndCreatePullThroughCacheRule(IAsyncResult asyncResult);
 
         #endregion
         
@@ -440,6 +554,59 @@ namespace Amazon.ECR
         /// <returns>Returns a  DeleteLifecyclePolicyResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         DeleteLifecyclePolicyResponse EndDeleteLifecyclePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePullThroughCacheRule
+
+
+        /// <summary>
+        /// Deletes a pull through cache rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePullThroughCacheRule service method.</param>
+        /// 
+        /// <returns>The response from the DeletePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeletePullThroughCacheRule">REST API Reference for DeletePullThroughCacheRule Operation</seealso>
+        DeletePullThroughCacheRuleResponse DeletePullThroughCacheRule(DeletePullThroughCacheRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePullThroughCacheRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePullThroughCacheRule operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePullThroughCacheRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeletePullThroughCacheRule">REST API Reference for DeletePullThroughCacheRule Operation</seealso>
+        IAsyncResult BeginDeletePullThroughCacheRule(DeletePullThroughCacheRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePullThroughCacheRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePullThroughCacheRule.</param>
+        /// 
+        /// <returns>Returns a  DeletePullThroughCacheRuleResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeletePullThroughCacheRule">REST API Reference for DeletePullThroughCacheRule Operation</seealso>
+        DeletePullThroughCacheRuleResponse EndDeletePullThroughCacheRule(IAsyncResult asyncResult);
 
         #endregion
         
@@ -751,6 +918,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         DescribeImageScanFindingsResponse DescribeImageScanFindings(DescribeImageScanFindingsRequest request);
 
@@ -779,6 +949,59 @@ namespace Amazon.ECR
         /// <returns>Returns a  DescribeImageScanFindingsResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         DescribeImageScanFindingsResponse EndDescribeImageScanFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribePullThroughCacheRules
+
+
+        /// <summary>
+        /// Returns the pull through cache rules for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePullThroughCacheRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribePullThroughCacheRules service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">REST API Reference for DescribePullThroughCacheRules Operation</seealso>
+        DescribePullThroughCacheRulesResponse DescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePullThroughCacheRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePullThroughCacheRules operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePullThroughCacheRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">REST API Reference for DescribePullThroughCacheRules Operation</seealso>
+        IAsyncResult BeginDescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePullThroughCacheRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePullThroughCacheRules.</param>
+        /// 
+        /// <returns>Returns a  DescribePullThroughCacheRulesResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">REST API Reference for DescribePullThroughCacheRules Operation</seealso>
+        DescribePullThroughCacheRulesResponse EndDescribePullThroughCacheRules(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1169,6 +1392,55 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  GetRegistryScanningConfiguration
+
+
+        /// <summary>
+        /// Retrieves the scanning configuration for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">REST API Reference for GetRegistryScanningConfiguration Operation</seealso>
+        GetRegistryScanningConfigurationResponse GetRegistryScanningConfiguration(GetRegistryScanningConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegistryScanningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryScanningConfiguration operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRegistryScanningConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">REST API Reference for GetRegistryScanningConfiguration Operation</seealso>
+        IAsyncResult BeginGetRegistryScanningConfiguration(GetRegistryScanningConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRegistryScanningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRegistryScanningConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetRegistryScanningConfigurationResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">REST API Reference for GetRegistryScanningConfiguration Operation</seealso>
+        GetRegistryScanningConfigurationResponse EndGetRegistryScanningConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRepositoryPolicy
 
 
@@ -1510,6 +1782,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
         PutImageScanningConfigurationResponse PutImageScanningConfiguration(PutImageScanningConfigurationRequest request);
 
@@ -1702,6 +1977,55 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  PutRegistryScanningConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the scanning configuration for your private registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">REST API Reference for PutRegistryScanningConfiguration Operation</seealso>
+        PutRegistryScanningConfigurationResponse PutRegistryScanningConfiguration(PutRegistryScanningConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRegistryScanningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryScanningConfiguration operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRegistryScanningConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">REST API Reference for PutRegistryScanningConfiguration Operation</seealso>
+        IAsyncResult BeginPutRegistryScanningConfiguration(PutRegistryScanningConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRegistryScanningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRegistryScanningConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutRegistryScanningConfigurationResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">REST API Reference for PutRegistryScanningConfiguration Operation</seealso>
+        PutRegistryScanningConfigurationResponse EndPutRegistryScanningConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutReplicationConfiguration
 
 
@@ -1849,6 +2173,9 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.UnsupportedImageTypeException">
         /// The image is of a type that cannot be scanned.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
         StartImageScanResponse StartImageScan(StartImageScanRequest request);

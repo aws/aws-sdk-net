@@ -120,6 +120,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("ECR")]
+        public void DescribePullThroughCacheRulesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribePullThroughCacheRulesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribePullThroughCacheRulesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribePullThroughCacheRulesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribePullThroughCacheRules(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribePullThroughCacheRules(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ECR")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribePullThroughCacheRulesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribePullThroughCacheRulesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribePullThroughCacheRulesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribePullThroughCacheRules(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribePullThroughCacheRules(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ECR")]
         public void DescribeRepositoriesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeRepositoriesRequest>();

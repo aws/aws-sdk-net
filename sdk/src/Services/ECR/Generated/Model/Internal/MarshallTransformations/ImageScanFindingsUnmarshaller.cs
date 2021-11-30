@@ -64,6 +64,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("enhancedFindings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EnhancedImageScanFinding, EnhancedImageScanFindingUnmarshaller>(EnhancedImageScanFindingUnmarshaller.Instance);
+                    unmarshalledObject.EnhancedFindings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("findings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ImageScanFinding, ImageScanFindingUnmarshaller>(ImageScanFindingUnmarshaller.Instance);

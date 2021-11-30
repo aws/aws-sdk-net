@@ -36,6 +36,11 @@ namespace Amazon.ECR.Model
         IDescribeImageScanFindingsPaginator DescribeImageScanFindings(DescribeImageScanFindingsRequest request);
 
         /// <summary>
+        /// Paginator for DescribePullThroughCacheRules operation
+        ///</summary>
+        IDescribePullThroughCacheRulesPaginator DescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeRepositories operation
         ///</summary>
         IDescribeRepositoriesPaginator DescribeRepositories(DescribeRepositoriesRequest request);

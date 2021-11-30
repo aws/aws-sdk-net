@@ -52,6 +52,14 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
+        /// Paginator for DescribePullThroughCacheRules operation
+        ///</summary>
+        public IDescribePullThroughCacheRulesPaginator DescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request) 
+        {
+            return new DescribePullThroughCacheRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeRepositories operation
         ///</summary>
         public IDescribeRepositoriesPaginator DescribeRepositories(DescribeRepositoriesRequest request) 

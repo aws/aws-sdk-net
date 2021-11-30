@@ -515,6 +515,73 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  BatchGetRepositoryScanningConfiguration
+
+
+        /// <summary>
+        /// Gets the scanning configuration for one or more repositories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRepositoryScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetRepositoryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetRepositoryScanningConfiguration">REST API Reference for BatchGetRepositoryScanningConfiguration Operation</seealso>
+        public virtual BatchGetRepositoryScanningConfigurationResponse BatchGetRepositoryScanningConfiguration(BatchGetRepositoryScanningConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetRepositoryScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRepositoryScanningConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetRepositoryScanningConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the scanning configuration for one or more repositories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRepositoryScanningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRepositoryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetRepositoryScanningConfiguration">REST API Reference for BatchGetRepositoryScanningConfiguration Operation</seealso>
+        public virtual Task<BatchGetRepositoryScanningConfigurationResponse> BatchGetRepositoryScanningConfigurationAsync(BatchGetRepositoryScanningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetRepositoryScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRepositoryScanningConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetRepositoryScanningConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CompleteLayerUpload
 
 
@@ -640,6 +707,89 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
             
             return InvokeAsync<CompleteLayerUploadResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePullThroughCacheRule
+
+
+        /// <summary>
+        /// Creates a pull through cache rule. A pull through cache rule provides a way to cache
+        /// images from an external public registry in your Amazon ECR private registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePullThroughCacheRule service method.</param>
+        /// 
+        /// <returns>The response from the CreatePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleAlreadyExistsException">
+        /// A pull through cache rule with these settings already exists for the private registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnsupportedUpstreamRegistryException">
+        /// The specified upstream registry isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">REST API Reference for CreatePullThroughCacheRule Operation</seealso>
+        public virtual CreatePullThroughCacheRuleResponse CreatePullThroughCacheRule(CreatePullThroughCacheRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePullThroughCacheRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePullThroughCacheRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a pull through cache rule. A pull through cache rule provides a way to cache
+        /// images from an external public registry in your Amazon ECR private registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePullThroughCacheRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleAlreadyExistsException">
+        /// A pull through cache rule with these settings already exists for the private registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnsupportedUpstreamRegistryException">
+        /// The specified upstream registry isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">REST API Reference for CreatePullThroughCacheRule Operation</seealso>
+        public virtual Task<CreatePullThroughCacheRuleResponse> CreatePullThroughCacheRuleAsync(CreatePullThroughCacheRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePullThroughCacheRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePullThroughCacheRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -800,6 +950,73 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteLifecyclePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePullThroughCacheRule
+
+
+        /// <summary>
+        /// Deletes a pull through cache rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePullThroughCacheRule service method.</param>
+        /// 
+        /// <returns>The response from the DeletePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeletePullThroughCacheRule">REST API Reference for DeletePullThroughCacheRule Operation</seealso>
+        public virtual DeletePullThroughCacheRuleResponse DeletePullThroughCacheRule(DeletePullThroughCacheRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePullThroughCacheRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePullThroughCacheRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a pull through cache rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePullThroughCacheRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePullThroughCacheRule service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeletePullThroughCacheRule">REST API Reference for DeletePullThroughCacheRule Operation</seealso>
+        public virtual Task<DeletePullThroughCacheRuleResponse> DeletePullThroughCacheRuleAsync(DeletePullThroughCacheRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePullThroughCacheRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePullThroughCacheRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePullThroughCacheRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1199,6 +1416,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         public virtual DescribeImageScanFindingsResponse DescribeImageScanFindings(DescribeImageScanFindingsRequest request)
         {
@@ -1236,6 +1456,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         public virtual Task<DescribeImageScanFindingsResponse> DescribeImageScanFindingsAsync(DescribeImageScanFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1244,6 +1467,73 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = DescribeImageScanFindingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeImageScanFindingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePullThroughCacheRules
+
+
+        /// <summary>
+        /// Returns the pull through cache rules for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePullThroughCacheRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribePullThroughCacheRules service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">REST API Reference for DescribePullThroughCacheRules Operation</seealso>
+        public virtual DescribePullThroughCacheRulesResponse DescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePullThroughCacheRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePullThroughCacheRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePullThroughCacheRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the pull through cache rules for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePullThroughCacheRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePullThroughCacheRules service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.PullThroughCacheRuleNotFoundException">
+        /// The pull through cache rule was not found. Specify a valid pull through cache rule
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">REST API Reference for DescribePullThroughCacheRules Operation</seealso>
+        public virtual Task<DescribePullThroughCacheRulesResponse> DescribePullThroughCacheRulesAsync(DescribePullThroughCacheRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePullThroughCacheRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePullThroughCacheRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePullThroughCacheRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1749,6 +2039,65 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  GetRegistryScanningConfiguration
+
+
+        /// <summary>
+        /// Retrieves the scanning configuration for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">REST API Reference for GetRegistryScanningConfiguration Operation</seealso>
+        public virtual GetRegistryScanningConfigurationResponse GetRegistryScanningConfiguration(GetRegistryScanningConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegistryScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryScanningConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistryScanningConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the scanning configuration for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryScanningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">REST API Reference for GetRegistryScanningConfiguration Operation</seealso>
+        public virtual Task<GetRegistryScanningConfigurationResponse> GetRegistryScanningConfigurationAsync(GetRegistryScanningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegistryScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryScanningConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRegistryScanningConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRepositoryPolicy
 
 
@@ -2217,6 +2566,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
         public virtual PutImageScanningConfigurationResponse PutImageScanningConfiguration(PutImageScanningConfigurationRequest request)
         {
@@ -2246,6 +2598,9 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
         public virtual Task<PutImageScanningConfigurationResponse> PutImageScanningConfigurationAsync(PutImageScanningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2464,6 +2819,65 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  PutRegistryScanningConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the scanning configuration for your private registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryScanningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">REST API Reference for PutRegistryScanningConfiguration Operation</seealso>
+        public virtual PutRegistryScanningConfigurationResponse PutRegistryScanningConfiguration(PutRegistryScanningConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRegistryScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRegistryScanningConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutRegistryScanningConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates the scanning configuration for your private registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryScanningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">REST API Reference for PutRegistryScanningConfiguration Operation</seealso>
+        public virtual Task<PutRegistryScanningConfigurationResponse> PutRegistryScanningConfigurationAsync(PutRegistryScanningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRegistryScanningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRegistryScanningConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutRegistryScanningConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutReplicationConfiguration
 
 
@@ -2649,6 +3063,9 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.UnsupportedImageTypeException">
         /// The image is of a type that cannot be scanned.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
         public virtual StartImageScanResponse StartImageScan(StartImageScanRequest request)
         {
@@ -2692,6 +3109,9 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.UnsupportedImageTypeException">
         /// The image is of a type that cannot be scanned.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
         public virtual Task<StartImageScanResponse> StartImageScanAsync(StartImageScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

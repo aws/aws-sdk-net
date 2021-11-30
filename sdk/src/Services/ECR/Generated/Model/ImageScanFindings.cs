@@ -33,10 +33,29 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class ImageScanFindings
     {
+        private List<EnhancedImageScanFinding> _enhancedFindings = new List<EnhancedImageScanFinding>();
         private List<ImageScanFinding> _findings = new List<ImageScanFinding>();
         private Dictionary<string, int> _findingSeverityCounts = new Dictionary<string, int>();
         private DateTime? _imageScanCompletedAt;
         private DateTime? _vulnerabilitySourceUpdatedAt;
+
+        /// <summary>
+        /// Gets and sets the property EnhancedFindings. 
+        /// <para>
+        /// Details about the enhanced scan findings from Amazon Inspector.
+        /// </para>
+        /// </summary>
+        public List<EnhancedImageScanFinding> EnhancedFindings
+        {
+            get { return this._enhancedFindings; }
+            set { this._enhancedFindings = value; }
+        }
+
+        // Check to see if EnhancedFindings property is set
+        internal bool IsSetEnhancedFindings()
+        {
+            return this._enhancedFindings != null && this._enhancedFindings.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Findings. 

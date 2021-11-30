@@ -65,7 +65,7 @@ namespace Amazon.ECR.Model
         /// Web Services managed KMS key for Amazon ECR, or specify your own KMS key, which you
         /// already created. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
         /// data using server-side encryption with an KMS key stored in Key Management Service
-        /// (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.
+        /// (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.ECR.Model
         /// with Amazon S3-managed encryption keys which encrypts the images in the repository
         /// using an AES-256 encryption algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Protecting
         /// data using server-side encryption with Amazon S3-managed encryption keys (SSE-S3)</a>
-        /// in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.
+        /// in the <i>Amazon Simple Storage Service Console Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
