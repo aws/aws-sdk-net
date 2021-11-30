@@ -1,0 +1,13 @@
+{
+    "shapeModifiers": {
+      "ListFindingAggregationsResponse": {
+        "modify": [
+          {
+            "responses": {
+              "emitPropertyName": "aggregations"
+            }
+          }
+        ]
+      }
+    }
+}

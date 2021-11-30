@@ -1,0 +1,78 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the inspector2-2020-06-08.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Inspector2.Model
+{
+    /// <summary>
+    /// Details about the port range associated with a finding.
+    /// </summary>
+    public partial class PortRange
+    {
+        private int? _begin;
+        private int? _end;
+
+        /// <summary>
+        /// Gets and sets the property Begin. 
+        /// <para>
+        /// The beginning port in a port range.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=65535)]
+        public int Begin
+        {
+            get { return this._begin.GetValueOrDefault(); }
+            set { this._begin = value; }
+        }
+
+        // Check to see if Begin property is set
+        internal bool IsSetBegin()
+        {
+            return this._begin.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property End. 
+        /// <para>
+        /// The ending port in a port range.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=65535)]
+        public int End
+        {
+            get { return this._end.GetValueOrDefault(); }
+            set { this._end = value; }
+        }
+
+        // Check to see if End property is set
+        internal bool IsSetEnd()
+        {
+            return this._end.HasValue; 
+        }
+
+    }
+}

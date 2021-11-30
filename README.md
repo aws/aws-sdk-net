@@ -355,6 +355,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.
 * [AWSSDK.Inspector](https://www.nuget.org/packages/AWSSDK.Inspector/)
 	* Amazon Inspector identifies security issues in your application deployments.
+* [AWSSDK.Inspector2](https://www.nuget.org/packages/AWSSDK.Inspector2/)
+	* This release adds support for the new Amazon Inspector API. The new Amazon Inspector can automatically discover and scan Amazon EC2 instances and Amazon ECR container images for software vulnerabilities and unintended network exposure, and report centralized findings across multiple AWS accounts.
 * [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
 	* AWS IoT allows you to leverage AWS to build your Internet of Things.
 * [AWSSDK.IoT1ClickDevicesService](https://www.nuget.org/packages/AWSSDK.IoT1ClickDevicesService/)
