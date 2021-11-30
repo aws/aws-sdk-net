@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An invocation is copy of a command sent to a specific instance. A command can apply
-    /// to one or more instances. A command invocation applies to one instance. For example,
-    /// if a user runs SendCommand against three instances, then a command invocation is created
-    /// for each requested instance ID. A command invocation returns status and detail information
-    /// about a command you ran.
+    /// An invocation is a copy of a command sent to a specific managed node. A command can
+    /// apply to one or more managed nodes. A command invocation applies to one managed node.
+    /// For example, if a user runs <code>SendCommand</code> against three managed nodes,
+    /// then a command invocation is created for each requested managed node ID. A command
+    /// invocation returns status and detail information about a command you ran.
     /// </summary>
     public partial class CommandInvocation
     {
@@ -169,7 +169,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID in which this invocation was requested.
+        /// The managed node ID in which this invocation was requested.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -187,7 +187,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceName. 
         /// <para>
-        /// The fully qualified host name of the managed instance.
+        /// The fully qualified host name of the managed node.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -206,8 +206,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotificationConfig. 
         /// <para>
-        /// Configurations for sending notifications about command status changes on a per instance
-        /// basis.
+        /// Configurations for sending notifications about command status changes on a per managed
+        /// node basis.
         /// </para>
         /// </summary>
         public NotificationConfig NotificationConfig
@@ -225,7 +225,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RequestedDateTime. 
         /// <para>
-        /// The time and date the request was sent to this instance.
+        /// The time and date the request was sent to this managed node.
         /// </para>
         /// </summary>
         public DateTime RequestedDateTime
@@ -245,7 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The Identity and Access Management (IAM) service role that Run Command, a capability
         /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications
-        /// about command status changes on a per instance basis.
+        /// about command status changes on a per managed node basis.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -323,21 +323,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// A detailed status of the command execution for each invocation (each instance targeted
-        /// by the command). StatusDetails includes more information than Status because it includes
-        /// states resulting from error and concurrency control parameters. StatusDetails can
-        /// show different results than Status. For more information about these statuses, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// A detailed status of the command execution for each invocation (each managed node
+        /// targeted by the command). StatusDetails includes more information than Status because
+        /// it includes states resulting from error and concurrency control parameters. StatusDetails
+        /// can show different results than Status. For more information about these statuses,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
         /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// StatusDetails can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command hasn't been sent to the instance.
+        /// Pending: The command hasn't been sent to the managed node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
@@ -347,20 +347,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Execution Timed Out: Command execution started on the instance, but the execution
+        /// Execution Timed Out: Command execution started on the managed node, but the execution
         /// wasn't complete before the execution timeout expired. Execution timeouts count against
         /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The command wasn't successful on the instance. For a plugin, this indicates
+        /// Failed: The command wasn't successful on the managed node. For a plugin, this indicates
         /// that the result code wasn't zero. For a command invocation, this indicates that the
         /// result code for one or more plugins wasn't zero. Invocation failures count against
         /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
@@ -371,10 +371,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Undeliverable: The command can't be delivered to the instance. The instance might
-        /// not exist or might not be responding. Undeliverable invocations don't count against
-        /// the parent command's MaxErrors limit and don't contribute to whether the parent command
-        /// status is Success or Incomplete. This is a terminal state.
+        /// Undeliverable: The command can't be delivered to the managed node. The managed node
+        /// might not exist or might not be responding. Undeliverable invocations don't count
+        /// against the parent command's MaxErrors limit and don't contribute to whether the parent
+        /// command status is Success or Incomplete. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

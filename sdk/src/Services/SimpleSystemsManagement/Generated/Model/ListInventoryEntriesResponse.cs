@@ -43,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CaptureTime. 
         /// <para>
-        /// The time that inventory information was collected for the instance(s).
+        /// The time that inventory information was collected for the managed node(s).
         /// </para>
         /// </summary>
         public string CaptureTime
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of inventory items on the instance(s).
+        /// A list of inventory items on the managed node(s).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
@@ -80,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID targeted by the request to query inventory information.
+        /// The managed node ID targeted by the request to query inventory information.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -117,7 +117,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
-        /// The inventory schema version used by the instance(s).
+        /// The inventory schema version used by the managed node(s).
         /// </para>
         /// </summary>
         public string SchemaVersion

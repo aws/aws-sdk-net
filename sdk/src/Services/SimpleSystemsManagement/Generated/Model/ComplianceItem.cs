@@ -124,7 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// An ID for the resource. For a managed instance, this is the instance ID.
+        /// An ID for the resource. For a managed node, this is the node ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

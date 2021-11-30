@@ -96,12 +96,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// (Optional) Lists commands issued against this instance ID.
+        /// (Optional) Lists commands issued against this managed node ID.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can't specify an instance ID in the same command that you specify <code>Status</code>
-        /// = <code>Pending</code>. This is because the command hasn't reached the instance yet.
+        /// You can't specify a managed node ID in the same command that you specify <code>Status</code>
+        /// = <code>Pending</code>. This is because the command hasn't reached the managed node
+        /// yet.
         /// </para>
         ///  </note>
         /// </summary>

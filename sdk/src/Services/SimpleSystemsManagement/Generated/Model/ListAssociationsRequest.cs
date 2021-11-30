@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the ListAssociations operation.
     /// Returns all State Manager associations in the current Amazon Web Services account
     /// and Amazon Web Services Region. You can limit the results to a specific State Manager
-    /// association document or instance by specifying a filter. State Manager is a capability
+    /// association document or managed node by specifying a filter. State Manager is a capability
     /// of Amazon Web Services Systems Manager.
     /// </summary>
     public partial class ListAssociationsRequest : AmazonSimpleSystemsManagementRequest
@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates ListAssociationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="associationFilterList">One or more filters. Use a filter to return a more specific list of results. <note> Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned. </note></param>
+        /// <param name="associationFilterList">One or more filters. Use a filter to return a more specific list of results. <note> Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned. </note></param>
         public ListAssociationsRequest(List<AssociationFilter> associationFilterList)
         {
             _associationFilterList = associationFilterList;
@@ -64,8 +64,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Filtering associations using the <code>InstanceID</code> attribute only returns legacy
         /// associations created using the <code>InstanceID</code> attribute. Associations targeting
-        /// the instance that are part of the Target Attributes <code>ResourceGroup</code> or
-        /// <code>Tags</code> aren't returned.
+        /// the managed node that are part of the Target Attributes <code>ResourceGroup</code>
+        /// or <code>Tags</code> aren't returned.
         /// </para>
         ///  </note>
         /// </summary>

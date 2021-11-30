@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancePatchStates. 
         /// <para>
-        /// The high-level patch state for the requested instances. 
+        /// The high-level patch state for the requested managed nodes. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

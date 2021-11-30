@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceAssociationsStatus operation.
-    /// The status of the associations for the instance(s).
+    /// The status of the associations for the managed node(s).
     /// </summary>
     public partial class DescribeInstanceAssociationsStatusRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance IDs for which you want association status information.
+        /// The managed node IDs for which you want association status information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The filters to describe or get information about your managed instances.
+    /// The filters to describe or get information about your managed nodes.
     /// </summary>
     public partial class InstanceInformationStringFilter
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The filter key name to describe your instances. For example:
+        /// The filter key name to describe your managed nodes. For example:
         /// </para>
         ///  
         /// <para>

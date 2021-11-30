@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about the state of a patch on a particular instance as it relates to the
-    /// patch baseline used to patch the instance.
+    /// Information about the state of a patch on a particular managed node as it relates
+    /// to the patch baseline used to patch the node.
     /// </summary>
     public partial class PatchComplianceData
     {
@@ -84,8 +84,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstalledTime. 
         /// <para>
-        /// The date/time the patch was installed on the instance. Not all operating systems provide
-        /// this level of information.
+        /// The date/time the patch was installed on the managed node. Not all operating systems
+        /// provide this level of information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,7 +143,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the patch on the instance, such as INSTALLED or FAILED.
+        /// The state of the patch on the managed node, such as INSTALLED or FAILED.
         /// </para>
         ///  
         /// <para>

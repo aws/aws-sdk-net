@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The command ID and instance ID you specified didn't match any invocations. Verify
-    /// the command ID and the instance ID and try again.
+    /// The command ID and managed node ID you specified didn't match any invocations. Verify
+    /// the command ID and the managed node ID and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

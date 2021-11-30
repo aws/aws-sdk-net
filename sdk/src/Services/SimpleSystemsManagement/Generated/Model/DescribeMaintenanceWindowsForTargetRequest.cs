@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMaintenanceWindowsForTarget operation.
-    /// Retrieves information about the maintenance window targets or tasks that an instance
-    /// is associated with.
+    /// Retrieves information about the maintenance window targets or tasks that a managed
+    /// node is associated with.
     /// </summary>
     public partial class DescribeMaintenanceWindowsForTargetRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The instance ID or key-value pair to retrieve information about.
+        /// The managed node ID or key-value pair to retrieve information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5)]

@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported keys for Windows Server instance patches include the following:
+        /// Supported keys for Windows Server managed node patches include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -127,7 +127,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// Supported keys for Linux instance patches include the following:
+        /// Supported keys for Linux managed node patches include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

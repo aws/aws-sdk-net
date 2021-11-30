@@ -84,7 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// Inventory filter values. Example: inventory filter where instance IDs are specified
+        /// Inventory filter values. Example: inventory filter where managed node IDs are specified
         /// as values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal</code>.
         /// 
         /// </para>

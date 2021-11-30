@@ -57,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceAssociationStatusAggregatedCount. 
         /// <para>
-        /// The number of associations for the instance(s).
+        /// The number of associations for the managed node(s).
         /// </para>
         /// </summary>
         public Dictionary<string, int> InstanceAssociationStatusAggregatedCount

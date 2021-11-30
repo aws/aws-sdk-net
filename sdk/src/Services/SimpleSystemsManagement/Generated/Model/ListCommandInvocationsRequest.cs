@@ -30,11 +30,11 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCommandInvocations operation.
-    /// An invocation is copy of a command sent to a specific instance. A command can apply
-    /// to one or more instances. A command invocation applies to one instance. For example,
-    /// if a user runs <code>SendCommand</code> against three instances, then a command invocation
-    /// is created for each requested instance ID. <code>ListCommandInvocations</code> provide
-    /// status about command execution.
+    /// An invocation is copy of a command sent to a specific managed node. A command can
+    /// apply to one or more managed nodes. A command invocation applies to one managed node.
+    /// For example, if a user runs <code>SendCommand</code> against three managed nodes,
+    /// then a command invocation is created for each requested managed node ID. <code>ListCommandInvocations</code>
+    /// provide status about command execution.
     /// </summary>
     public partial class ListCommandInvocationsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// (Optional) The command execution details for a specific instance ID.
+        /// (Optional) The command execution details for a specific managed node ID.
         /// </para>
         /// </summary>
         public string InstanceId

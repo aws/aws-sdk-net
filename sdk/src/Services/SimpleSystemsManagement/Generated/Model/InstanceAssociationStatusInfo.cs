@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Status information about the instance association.
+    /// Status information about the association.
     /// </summary>
     public partial class InstanceAssociationStatusInfo
     {
@@ -67,7 +67,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AssociationName. 
         /// <para>
-        /// The name of the association applied to the instance.
+        /// The name of the association applied to the managed node.
         /// </para>
         /// </summary>
         public string AssociationName
@@ -85,7 +85,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AssociationVersion. 
         /// <para>
-        /// The version of the association applied to the instance.
+        /// The version of the association applied to the managed node.
         /// </para>
         /// </summary>
         public string AssociationVersion
@@ -103,7 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DetailedStatus. 
         /// <para>
-        /// Detailed status information about the instance association.
+        /// Detailed status information about the association.
         /// </para>
         /// </summary>
         public string DetailedStatus
@@ -158,7 +158,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionDate. 
         /// <para>
-        /// The date the instance association ran. 
+        /// The date the association ran. 
         /// </para>
         /// </summary>
         public DateTime ExecutionDate
@@ -195,7 +195,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID where the association was created.
+        /// The managed node ID where the association was created.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -249,7 +249,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status information about the instance association.
+        /// Status information about the association.
         /// </para>
         /// </summary>
         public string Status

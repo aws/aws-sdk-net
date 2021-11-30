@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the DescribeActivations operation.
     /// Describes details about the activation, such as the date and time the activation was
     /// created, its expiration date, the Identity and Access Management (IAM) role assigned
-    /// to the instances in the activation, and the number of instances registered by using
+    /// to the managed nodes in the activation, and the number of nodes registered by using
     /// this activation.
     /// </summary>
     public partial class DescribeActivationsRequest : AmazonSimpleSystemsManagementRequest

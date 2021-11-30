@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Describes an association of a Amazon Web Services Systems Manager document (SSM document)
-    /// and an instance.
+    /// and a managed node.
     /// </summary>
     public partial class Association
     {
@@ -121,7 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -213,8 +213,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The instances targeted by the request to create an association. You can target all
-        /// instances in an Amazon Web Services account by specifying the <code>InstanceIds</code>
+        /// The managed nodes targeted by the request to create an association. You can target
+        /// all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code>
         /// key with a value of <code>*</code>.
         /// </para>
         /// </summary>

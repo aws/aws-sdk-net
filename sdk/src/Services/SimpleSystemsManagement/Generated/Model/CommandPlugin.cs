@@ -108,7 +108,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>i-02573cafcfEXAMPLE</code> is the instance ID;
+        ///  <code>i-02573cafcfEXAMPLE</code> is the managed node ID;
         /// </para>
         ///  
         /// <para>
@@ -150,7 +150,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>i-02573cafcfEXAMPLE</code> is the instance ID;
+        ///  <code>i-02573cafcfEXAMPLE</code> is the managed node ID;
         /// </para>
         ///  
         /// <para>
@@ -313,11 +313,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command hasn't been sent to the instance.
+        /// Pending: The command hasn't been sent to the managed node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
@@ -327,20 +327,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Execution Timed Out: Command execution started on the instance, but the execution
+        /// Execution Timed Out: Command execution started on the managed node, but the execution
         /// wasn't complete before the execution timeout expired. Execution timeouts count against
         /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The command wasn't successful on the instance. For a plugin, this indicates
+        /// Failed: The command wasn't successful on the managed node. For a plugin, this indicates
         /// that the result code wasn't zero. For a command invocation, this indicates that the
         /// result code for one or more plugins wasn't zero. Invocation failures count against
         /// the MaxErrors limit of the parent command. This is a terminal state.
@@ -351,10 +351,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Undeliverable: The command can't be delivered to the instance. The instance might
-        /// not exist, or it might not be responding. Undeliverable invocations don't count against
-        /// the parent command's MaxErrors limit, and they don't contribute to whether the parent
-        /// command status is Success or Incomplete. This is a terminal state.
+        /// Undeliverable: The command can't be delivered to the managed node. The managed node
+        /// might not exist, or it might not be responding. Undeliverable invocations don't count
+        /// against the parent command's MaxErrors limit, and they don't contribute to whether
+        /// the parent command status is Success or Incomplete. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

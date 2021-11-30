@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Associations. 
         /// <para>
-        /// The associations for the requested instance.
+        /// The associations for the requested managed node.
         /// </para>
         /// </summary>
         public List<InstanceAssociation> Associations

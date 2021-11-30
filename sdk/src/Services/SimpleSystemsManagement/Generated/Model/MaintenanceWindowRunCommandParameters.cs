@@ -182,8 +182,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotificationConfig. 
         /// <para>
-        /// Configurations for sending notifications about command status changes on a per-instance
-        /// basis.
+        /// Configurations for sending notifications about command status changes on a per-managed
+        /// node basis.
         /// </para>
         /// </summary>
         public NotificationConfig NotificationConfig

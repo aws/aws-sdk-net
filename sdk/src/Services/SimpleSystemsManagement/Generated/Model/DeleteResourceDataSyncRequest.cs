@@ -31,8 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteResourceDataSync operation.
     /// Deletes a resource data sync configuration. After the configuration is deleted, changes
-    /// to data on managed instances are no longer synced to or from the target. Deleting
-    /// a sync configuration doesn't delete data.
+    /// to data on managed nodes are no longer synced to or from the target. Deleting a sync
+    /// configuration doesn't delete data.
     /// </summary>
     public partial class DeleteResourceDataSyncRequest : AmazonSimpleSystemsManagementRequest
     {

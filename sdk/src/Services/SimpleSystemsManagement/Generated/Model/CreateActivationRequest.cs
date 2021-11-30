@@ -31,19 +31,19 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateActivation operation.
     /// Generates an activation code and activation ID you can use to register your on-premises
-    /// server or virtual machine (VM) with Amazon Web Services Systems Manager. Registering
-    /// these machines with Systems Manager makes it possible to manage them using Systems
-    /// Manager capabilities. You use the activation code and ID when installing SSM Agent
-    /// on machines in your hybrid environment. For more information about requirements for
-    /// managing on-premises instances and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+    /// servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager.
+    /// Registering these machines with Systems Manager makes it possible to manage them using
+    /// Systems Manager capabilities. You use the activation code and ID when installing SSM
+    /// Agent on machines in your hybrid environment. For more information about requirements
+    /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
     /// up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon
     /// Web Services Systems Manager User Guide</i>. 
     /// 
     ///  <note> 
     /// <para>
-    /// On-premises servers or VMs that are registered with Systems Manager and Amazon Elastic
-    /// Compute Cloud (Amazon EC2) instances that you manage with Systems Manager are all
-    /// called <i>managed instances</i>.
+    /// Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises
+    /// servers and VMs that are configured for Systems Manager are all called <i>managed
+    /// nodes</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DefaultInstanceName. 
         /// <para>
-        /// The name of the registered, managed instance as it will appear in the Amazon Web Services
+        /// The name of the registered, managed node as it will appear in the Amazon Web Services
         /// Systems Manager console or when you use the Amazon Web Services command line tools
         /// to list Systems Manager resources.
         /// </para>
@@ -132,9 +132,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property IamRole. 
         /// <para>
         /// The name of the Identity and Access Management (IAM) role that you want to assign
-        /// to the managed instance. This IAM role must provide AssumeRole permissions for the
-        /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+        /// to the managed node. This IAM role must provide AssumeRole permissions for the Amazon
+        /// Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
         /// an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
         /// </para>
@@ -155,8 +155,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RegistrationLimit. 
         /// <para>
-        /// Specify the maximum number of managed instances you want to register. The default
-        /// value is <code>1</code>.
+        /// Specify the maximum number of managed nodes you want to register. The default value
+        /// is <code>1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -216,11 +216,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </important> 
         /// <para>
         /// You can't add tags to or delete tags from an existing activation. You can tag your
-        /// on-premises servers and VMs after they connect to Systems Manager for the first time
-        /// and are assigned a managed instance ID. This means they are listed in the Amazon Web
-        /// Services Systems Manager console with an ID that is prefixed with "mi-". For information
-        /// about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
-        /// information about how to remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.
+        /// on-premises servers, edge devices, and VMs after they connect to Systems Manager for
+        /// the first time and are assigned a managed node ID. This means they are listed in the
+        /// Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-".
+        /// For information about how to add tags to your managed nodes, see <a>AddTagsToResource</a>.
+        /// For information about how to remove tags from your managed nodes, see <a>RemoveTagsFromResource</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]

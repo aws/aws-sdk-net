@@ -33,7 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You don't have permission to access the instance.
+    /// You don't have permission to access the managed node.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The instance isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+    /// The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
     /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
     /// and <code>Terminated</code>.
     /// </para>

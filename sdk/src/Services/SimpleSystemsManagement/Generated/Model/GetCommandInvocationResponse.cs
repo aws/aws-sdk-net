@@ -222,8 +222,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the managed instance targeted by the command. A managed instance can be
-        /// an EC2 instance or an instance in your hybrid environment that is configured for Systems
+        /// The ID of the managed node targeted by the command. A <i>managed node</i> can be an
+        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server
+        /// or VM in your hybrid environment that is configured for Amazon Web Services Systems
         /// Manager.
         /// </para>
         /// </summary>
@@ -263,8 +264,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ResponseCode. 
         /// <para>
         /// The error level response code for the plugin script. If the response code is <code>-1</code>,
-        /// then the command hasn't started running on the instance, or it wasn't received by
-        /// the instance.
+        /// then the command hasn't started running on the managed node, or it wasn't received
+        /// by the node.
         /// </para>
         /// </summary>
         public int ResponseCode
@@ -390,19 +391,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command hasn't been sent to the instance.
+        /// Pending: The command hasn't been sent to the managed node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to the instance but hasn't reached a terminal
+        /// In Progress: The command has been sent to the managed node but hasn't reached a terminal
         /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Delayed: The system attempted to send the command to the target, but the target wasn't
-        /// available. The instance might not be available because of network issues, because
-        /// the instance was stopped, or for similar reasons. The system will try to send the
-        /// command again.
+        /// available. The managed node might not be available because of network issues, because
+        /// the node was stopped, or for similar reasons. The system will try to send the command
+        /// again.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -410,23 +411,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
         /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Execution Timed Out: The command started to run on the instance, but the execution
+        /// Execution Timed Out: The command started to run on the managed node, but the execution
         /// wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code>
         /// limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failed: The command wasn't run successfully on the instance. For a plugin, this indicates
-        /// that the result code wasn't zero. For a command invocation, this indicates that the
-        /// result code for one or more plugins wasn't zero. Invocation failures count against
-        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// Failed: The command wasn't run successfully on the managed node. For a plugin, this
+        /// indicates that the result code wasn't zero. For a command invocation, this indicates
+        /// that the result code for one or more plugins wasn't zero. Invocation failures count
+        /// against the <code>MaxErrors</code> limit of the parent command. This is a terminal
+        /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -434,7 +436,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Undeliverable: The command can't be delivered to the instance. The instance might
+        /// Undeliverable: The command can't be delivered to the managed node. The node might
         /// not exist or might not be responding. Undeliverable invocations don't count against
         /// the parent command's <code>MaxErrors</code> limit and don't contribute to whether
         /// the parent command status is Success or Incomplete. This is a terminal state.

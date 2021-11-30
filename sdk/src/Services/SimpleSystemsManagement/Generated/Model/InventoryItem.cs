@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information collected from managed instances based on your inventory policy document
+    /// Information collected from managed nodes based on your inventory policy document
     /// </summary>
     public partial class InventoryItem
     {

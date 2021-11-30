@@ -30,13 +30,13 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDocument operation.
-    /// Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance
-    /// associations to the document.
+    /// Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed
+    /// node associations to the document.
     /// 
     ///  
     /// <para>
     /// Before you delete the document, we recommend that you use <a>DeleteAssociation</a>
-    /// to disassociate all instances that are associated with the document.
+    /// to disassociate all managed nodes that are associated with the document.
     /// </para>
     /// </summary>
     public partial class DeleteDocumentRequest : AmazonSimpleSystemsManagementRequest

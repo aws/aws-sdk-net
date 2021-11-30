@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstancePatchStates operation.
-    /// Retrieves the high-level patch state of one or more instances.
+    /// Retrieves the high-level patch state of one or more managed nodes.
     /// </summary>
     public partial class DescribeInstancePatchStatesRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The ID of the instance for which patch state information should be retrieved.
+        /// The ID of the managed node for which patch state information should be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of instances to return (per page).
+        /// The maximum number of managed nodes to return (per page).
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=100)]

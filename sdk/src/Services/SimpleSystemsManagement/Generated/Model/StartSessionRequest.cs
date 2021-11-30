@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the StartSession operation.
-    /// Initiates a connection to a target (for example, an instance) for a Session Manager
+    /// Initiates a connection to a target (for example, a managed node) for a Session Manager
     /// session. Returns a URL and token that can be used to open a WebSocket connection for
     /// sending input and receiving outputs.
     /// 
@@ -62,7 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the SSM document to define the parameters and plugin settings for the
         /// session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a>
         /// API to verify the document exists before attempting to start a session. If no document
-        /// name is provided, a shell to the instance is launched by default.
+        /// name is provided, a shell to the managed node is launched by default.
         /// </para>
         /// </summary>
         public string DocumentName
@@ -118,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The instance to connect to for the session.
+        /// The managed node to connect to for the session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=400)]

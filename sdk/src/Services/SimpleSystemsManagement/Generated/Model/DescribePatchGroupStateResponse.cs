@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// The number of instances in the patch group.
+        /// The number of managed nodes in the patch group.
         /// </para>
         /// </summary>
         public int Instances
@@ -67,10 +67,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithCriticalNonCompliantPatches. 
         /// <para>
-        /// The number of instances where patches that are specified as <code>Critical</code>
+        /// The number of managed nodes where patches that are specified as <code>Critical</code>
         /// for compliance reporting in the patch baseline aren't installed. These patches might
         /// be missing, have failed installation, were rejected, or were installed but awaiting
-        /// a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+        /// a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public int InstancesWithCriticalNonCompliantPatches
@@ -88,7 +88,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithFailedPatches. 
         /// <para>
-        /// The number of instances with patches from the patch baseline that failed to install.
+        /// The number of managed nodes with patches from the patch baseline that failed to install.
         /// </para>
         /// </summary>
         public int InstancesWithFailedPatches
@@ -106,7 +106,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithInstalledOtherPatches. 
         /// <para>
-        /// The number of instances with patches installed that aren't defined in the patch baseline.
+        /// The number of managed nodes with patches installed that aren't defined in the patch
+        /// baseline.
         /// </para>
         /// </summary>
         public int InstancesWithInstalledOtherPatches
@@ -124,7 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithInstalledPatches. 
         /// <para>
-        /// The number of instances with installed patches.
+        /// The number of managed nodes with installed patches.
         /// </para>
         /// </summary>
         public int InstancesWithInstalledPatches
@@ -142,8 +143,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithInstalledPendingRebootPatches. 
         /// <para>
-        /// The number of instances with patches installed by Patch Manager that haven't been
-        /// rebooted after the patch installation. The status of these instances is <code>NON_COMPLIANT</code>.
+        /// The number of managed nodes with patches installed by Patch Manager that haven't been
+        /// rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public int InstancesWithInstalledPendingRebootPatches
@@ -161,7 +162,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithInstalledRejectedPatches. 
         /// <para>
-        /// The number of instances with patches installed that are specified in a <code>RejectedPatches</code>
+        /// The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code>
         /// list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed
         /// before they were added to a <code>RejectedPatches</code> list.
         /// </para>
@@ -188,7 +189,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithMissingPatches. 
         /// <para>
-        /// The number of instances with missing patches from the patch baseline.
+        /// The number of managed nodes with missing patches from the patch baseline.
         /// </para>
         /// </summary>
         public int InstancesWithMissingPatches
@@ -206,7 +207,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithNotApplicablePatches. 
         /// <para>
-        /// The number of instances with patches that aren't applicable.
+        /// The number of managed nodes with patches that aren't applicable.
         /// </para>
         /// </summary>
         public int InstancesWithNotApplicablePatches
@@ -224,9 +225,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithOtherNonCompliantPatches. 
         /// <para>
-        /// The number of instances with patches installed that are specified as other than <code>Critical</code>
-        /// or <code>Security</code> but aren't compliant with the patch baseline. The status
-        /// of these instances is <code>NON_COMPLIANT</code>.
+        /// The number of managed nodes with patches installed that are specified as other than
+        /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch
+        /// baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public int InstancesWithOtherNonCompliantPatches
@@ -244,10 +245,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithSecurityNonCompliantPatches. 
         /// <para>
-        /// The number of instances where patches that are specified as <code>Security</code>
+        /// The number of managed nodes where patches that are specified as <code>Security</code>
         /// in a patch advisory aren't installed. These patches might be missing, have failed
-        /// installation, were rejected, or were installed but awaiting a required instance reboot.
-        /// The status of these instances is <code>NON_COMPLIANT</code>.
+        /// installation, were rejected, or were installed but awaiting a required managed node
+        /// reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public int InstancesWithSecurityNonCompliantPatches
@@ -265,7 +266,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstancesWithUnreportedNotApplicablePatches. 
         /// <para>
-        /// The number of instances with <code>NotApplicable</code> patches beyond the supported
+        /// The number of managed nodes with <code>NotApplicable</code> patches beyond the supported
         /// limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon
         /// Web Services Systems Manager.
         /// </para>

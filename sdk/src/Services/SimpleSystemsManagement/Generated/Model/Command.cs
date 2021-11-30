@@ -231,7 +231,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The instance IDs against which this command was requested.
+        /// The managed node IDs against which this command was requested.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -250,9 +250,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The maximum number of instances that are allowed to run the command at the same time.
-        /// You can specify a number of instances, such as 10, or a percentage of instances, such
-        /// as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
+        /// The maximum number of managed nodes that are allowed to run the command at the same
+        /// time. You can specify a number of managed nodes, such as 10, or a percentage of nodes,
+        /// such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
         /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
@@ -460,12 +460,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pending: The command hasn't been sent to any instances.
+        /// Pending: The command hasn't been sent to any managed nodes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In Progress: The command has been sent to at least one instance but hasn't reached
-        /// a final state on all instances.
+        /// In Progress: The command has been sent to at least one managed node but hasn't reached
+        /// a final state on all managed nodes.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -488,7 +488,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Incomplete: The command was attempted on all instances and one or more invocations
+        /// Incomplete: The command was attempted on all managed nodes and one or more invocations
         /// doesn't have a value of Success but not enough invocations failed for the status to
         /// be Failed. This is a terminal state.
         /// </para>
@@ -498,9 +498,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Rate Exceeded: The number of instances targeted by the command exceeded the account
+        /// Rate Exceeded: The number of managed nodes targeted by the command exceeded the account
         /// limit for pending invocations. The system has canceled the command before running
-        /// it on any instance. This is a terminal state.
+        /// it on any managed node. This is a terminal state.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -538,9 +538,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// An array of search criteria that targets instances using a Key,Value combination that
-        /// you specify. Targets is required if you don't provide one or more instance IDs in
-        /// the call.
+        /// An array of search criteria that targets managed nodes using a Key,Value combination
+        /// that you specify. Targets is required if you don't provide one or more managed node
+        /// IDs in the call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

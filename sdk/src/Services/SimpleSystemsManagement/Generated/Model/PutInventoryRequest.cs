@@ -30,8 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutInventory operation.
-    /// Bulk update custom inventory items on one more instance. The request adds an inventory
-    /// item, if it doesn't already exist, or updates an inventory item, if it does exist.
+    /// Bulk update custom inventory items on one or more managed nodes. The request adds
+    /// an inventory item, if it doesn't already exist, or updates an inventory item, if it
+    /// does exist.
     /// </summary>
     public partial class PutInventoryRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// An instance ID where you want to add or update inventory items.
+        /// An managed node ID where you want to add or update inventory items.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The inventory items that you want to add or update on instances.
+        /// The inventory items that you want to add or update on managed nodes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]

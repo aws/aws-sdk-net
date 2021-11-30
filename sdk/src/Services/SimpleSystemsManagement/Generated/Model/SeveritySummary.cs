@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The number of managed instances found for each patch severity level defined in the
-    /// request filter.
+    /// The number of managed nodes found for each patch severity level defined in the request
+    /// filter.
     /// </summary>
     public partial class SeveritySummary
     {

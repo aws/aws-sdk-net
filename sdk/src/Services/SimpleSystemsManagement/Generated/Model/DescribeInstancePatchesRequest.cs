@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstancePatches operation.
-    /// Retrieves information about the patches on the specified instance and their state
-    /// relative to the patch baseline being used for the instance.
+    /// Retrieves information about the patches on the specified managed node and their state
+    /// relative to the patch baseline being used for the node.
     /// </summary>
     public partial class DescribeInstancePatchesRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -100,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance whose patch state information should be retrieved.
+        /// The ID of the managed node whose patch state information should be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

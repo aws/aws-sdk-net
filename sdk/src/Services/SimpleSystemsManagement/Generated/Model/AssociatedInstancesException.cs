@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You must disassociate a document from all instances before you can delete it.
+    /// You must disassociate a document from all managed nodes before you can delete it.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

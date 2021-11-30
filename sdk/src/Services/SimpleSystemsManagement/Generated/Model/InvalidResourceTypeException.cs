@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The resource type isn't valid. For example, if you are attempting to tag an instance,
-    /// the instance must be a registered, managed instance.
+    /// The resource type isn't valid. For example, if you are attempting to tag an EC2 instance,
+    /// the instance must be a registered managed node.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

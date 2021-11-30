@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AdvisoryIds. 
         /// <para>
         /// The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to
-        /// Linux-based instances only.
+        /// Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public List<string> AdvisoryIds
@@ -80,8 +80,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Arch. 
         /// <para>
         /// The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>,
-        /// the architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances
-        /// only.
+        /// the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed
+        /// nodes only.
         /// </para>
         /// </summary>
         public string Arch
@@ -100,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property BugzillaIds. 
         /// <para>
         /// The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based
-        /// instances only.
+        /// managed nodes only.
         /// </para>
         /// </summary>
         public List<string> BugzillaIds
@@ -156,7 +156,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property CVEIds. 
         /// <para>
         /// The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>.
-        /// Applies to Linux-based instances only.
+        /// Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public List<string> CVEIds
@@ -193,7 +193,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Epoch. 
         /// <para>
         /// The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
-        /// the epoch value is <code>20180914-2</code>. Applies to Linux-based instances only.
+        /// the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public int Epoch
@@ -309,7 +309,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the patch. Applies to Linux-based instances only.
+        /// The name of the patch. Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public string Name
@@ -366,7 +366,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Release. 
         /// <para>
         /// The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
-        /// the release is <code>2.amaz1</code>. Applies to Linux-based instances only.
+        /// the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public string Release
@@ -404,7 +404,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The source patch repository for the operating system and version, such as <code>trusty-security</code>
         /// for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04
-        /// LTE. Applies to Linux-based instances only.
+        /// LTE. Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public string Repository
@@ -477,8 +477,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>,
-        /// the version number is indicated by <code>-1</code>. Applies to Linux-based instances
-        /// only.
+        /// the version number is indicated by <code>-1</code>. Applies to Linux-based managed
+        /// nodes only.
         /// </para>
         /// </summary>
         public string Version

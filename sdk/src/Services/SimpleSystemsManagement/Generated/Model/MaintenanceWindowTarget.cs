@@ -120,11 +120,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets, either instances or tags.
+        /// The targets, either managed nodes or tags.
         /// </para>
         ///  
         /// <para>
-        /// Specify instances using the following format:
+        /// Specify managed nodes using the following format:
         /// </para>
         ///  
         /// <para>

@@ -352,9 +352,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags) to modify. Instances are specified using the
-        /// format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified
-        /// using the format <code> Key=tag_name,Values=tag_value</code>. 
+        /// The targets (either managed nodes or tags) to modify. Managed nodes are specified
+        /// using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags
+        /// are specified using the format <code> Key=tag_name,Values=tag_value</code>. 
         /// </para>
         ///  <note> 
         /// <para>

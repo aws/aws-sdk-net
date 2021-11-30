@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateAssociationStatus operation.
     /// Updates the status of the Amazon Web Services Systems Manager document (SSM document)
-    /// associated with the specified instance.
+    /// associated with the specified managed node.
     /// 
     ///  
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates UpdateAssociationStatusRequest with the parameterized properties
         /// </summary>
         /// <param name="associationStatus">The association status.</param>
-        /// <param name="instanceId">The instance ID.</param>
+        /// <param name="instanceId">The managed node ID.</param>
         /// <param name="name">The name of the SSM document.</param>
         public UpdateAssociationStatusRequest(AssociationStatus associationStatus, string instanceId, string name)
         {
@@ -87,7 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

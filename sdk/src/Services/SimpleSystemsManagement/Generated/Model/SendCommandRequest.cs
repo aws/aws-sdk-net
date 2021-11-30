@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the SendCommand operation.
-    /// Runs commands on one or more managed instances.
+    /// Runs commands on one or more managed nodes.
     /// </summary>
     public partial class SendCommandRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
         /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <note> If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error.  </note></param>
-        /// <param name="instanceIds">The IDs of the instances where the command should run. Specifying instance IDs is most useful when you are targeting a limited number of instances, though you can specify up to 50 IDs. To target a larger number of instances, or if you prefer not to list individual instance IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the instances to send commands to, you can a send command to tens, hundreds, or thousands of instances at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="instanceIds">The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs. To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
@@ -219,16 +219,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The IDs of the instances where the command should run. Specifying instance IDs is
-        /// most useful when you are targeting a limited number of instances, though you can specify
-        /// up to 50 IDs.
+        /// The IDs of the managed nodes where the command should run. Specifying managed node
+        /// IDs is most useful when you are targeting a limited number of managed nodes, though
+        /// you can specify up to 50 IDs.
         /// </para>
         ///  
         /// <para>
-        /// To target a larger number of instances, or if you prefer not to list individual instance
-        /// IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
-        /// which accepts tag key-value pairs to identify the instances to send commands to, you
-        /// can a send command to tens, hundreds, or thousands of instances at once.
+        /// To target a larger number of managed nodes, or if you prefer not to list individual
+        /// node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
+        /// which accepts tag key-value pairs to identify the managed nodes to send commands to,
+        /// you can a send command to tens, hundreds, or thousands of nodes at once.
         /// </para>
         ///  
         /// <para>
@@ -253,9 +253,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// (Optional) The maximum number of instances that are allowed to run the command at
-        /// the same time. You can specify a number such as 10 or a percentage such as 10%. The
-        /// default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>,
+        /// (Optional) The maximum number of managed nodes that are allowed to run the command
+        /// at the same time. You can specify a number such as 10 or a percentage such as 10%.
+        /// The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
         /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
@@ -414,15 +414,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// An array of search criteria that targets instances using a <code>Key,Value</code>
+        /// An array of search criteria that targets managed nodes using a <code>Key,Value</code>
         /// combination that you specify. Specifying targets is most useful when you want to send
-        /// a command to a large number of instances at once. Using <code>Targets</code>, which
-        /// accepts tag key-value pairs to identify instances, you can send a command to tens,
-        /// hundreds, or thousands of instances at once.
+        /// a command to a large number of managed nodes at once. Using <code>Targets</code>,
+        /// which accepts tag key-value pairs to identify managed nodes, you can send a command
+        /// to tens, hundreds, or thousands of nodes at once.
         /// </para>
         ///  
         /// <para>
-        /// To send a command to a smaller number of instances, you can use the <code>InstanceIds</code>
+        /// To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code>
         /// option instead.
         /// </para>
         ///  

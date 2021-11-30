@@ -30,17 +30,17 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAssociation operation.
-    /// A State Manager association defines the state that you want to maintain on your instances.
-    /// For example, an association can specify that anti-virus software must be installed
-    /// and running on your instances, or that certain ports must be closed. For static targets,
-    /// the association specifies a schedule for when the configuration is reapplied. For
-    /// dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services
-    /// autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager
-    /// applies the configuration when new instances are added to the group. The association
-    /// also specifies actions to take when applying the configuration. For example, an association
-    /// for anti-virus software might run once a day. If the software isn't installed, then
-    /// State Manager installs it. If the software is installed, but the service isn't running,
-    /// then the association might instruct State Manager to start the service.
+    /// A State Manager association defines the state that you want to maintain on your managed
+    /// nodes. For example, an association can specify that anti-virus software must be installed
+    /// and running on your managed nodes, or that certain ports must be closed. For static
+    /// targets, the association specifies a schedule for when the configuration is reapplied.
+    /// For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web
+    /// Services autoscaling group, State Manager, a capability of Amazon Web Services Systems
+    /// Manager applies the configuration when new managed nodes are added to the group. The
+    /// association also specifies actions to take when applying the configuration. For example,
+    /// an association for anti-virus software might run once a day. If the software isn't
+    /// installed, then State Manager installs it. If the software is installed, but the service
+    /// isn't running, then the association might instruct State Manager to start the service.
     /// </summary>
     public partial class CreateAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -69,8 +69,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateAssociationRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceId">The instance ID. <note>  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
-        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the instance. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="instanceId">The managed node ID. <note>  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
+        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         public CreateAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -198,17 +198,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
-        /// use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code>
-        /// with Systems Manager documents (SSM documents) that use schema version 2.0 or later
-        /// will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't
-        /// use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>,
-        /// <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>.
-        /// To use these parameters, you must use the <code>Targets</code> parameter.
+        ///  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an
+        /// association, use the <code>Targets</code> parameter. Requests that include the parameter
+        /// <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema
+        /// version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
+        /// you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+        /// <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>,
+        /// or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code>
+        /// parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -234,9 +235,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If a new instance starts and attempts to run an association while Systems Manager
+        /// If a new managed node starts and attempts to run an association while Systems Manager
         /// is running <code>MaxConcurrency</code> associations, the association is allowed to
-        /// run. During the next association interval, the new instance will process its association
+        /// run. During the next association interval, the new managed node will process its association
         /// within the limit specified for <code>MaxConcurrency</code>.
         /// </para>
         /// </summary>
@@ -261,7 +262,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// of errors, for example 10, or a percentage of the target set, for example 10%. If
         /// you specify 3, for example, the system stops sending requests when the fourth error
         /// is received. If you specify 0, then the system stops sending requests after the first
-        /// error is returned. If you run an association on 50 instances and set <code>MaxError</code>
+        /// error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code>
         /// to 10%, then the system stops sending the request when the sixth error is received.
         /// </para>
         ///  
@@ -289,7 +290,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the instance.
+        /// information for the managed node.
         /// </para>
         ///  
         /// <para>
@@ -448,11 +449,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets for the association. You can target instances by using tags, Amazon Web
-        /// Services resource groups, all instances in an Amazon Web Services account, or individual
-        /// instance IDs. You can target all instances in an Amazon Web Services account by specifying
-        /// the <code>InstanceIds</code> key with a value of <code>*</code>. For more information
-        /// about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+        /// The targets for the association. You can target managed nodes by using tags, Amazon
+        /// Web Services resource groups, all managed nodes in an Amazon Web Services account,
+        /// or individual managed node IDs. You can target all managed nodes in an Amazon Web
+        /// Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>.
+        /// For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
         /// targets and rate controls with State Manager associations</a> in the <i>Amazon Web
         /// Services Systems Manager User Guide</i>.
         /// </para>

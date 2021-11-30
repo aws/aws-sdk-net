@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates CancelCommandRequest with the parameterized properties
         /// </summary>
         /// <param name="commandId">The ID of the command you want to cancel.</param>
-        /// <param name="instanceIds">(Optional) A list of instance IDs on which you want to cancel the command. If not provided, the command is canceled on every instance on which it was requested.</param>
+        /// <param name="instanceIds">(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</param>
         public CancelCommandRequest(string commandId, List<string> instanceIds)
         {
             _commandId = commandId;
@@ -85,8 +85,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// (Optional) A list of instance IDs on which you want to cancel the command. If not
-        /// provided, the command is canceled on every instance on which it was requested.
+        /// (Optional) A list of managed node IDs on which you want to cancel the command. If
+        /// not provided, the command is canceled on every node on which it was requested.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

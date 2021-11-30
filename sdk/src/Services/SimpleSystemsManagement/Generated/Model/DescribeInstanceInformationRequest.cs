@@ -30,22 +30,22 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceInformation operation.
-    /// Describes one or more of your instances, including information about the operating
-    /// system platform, the version of SSM Agent installed on the instance, instance status,
+    /// Describes one or more of your managed nodes, including information about the operating
+    /// system platform, the version of SSM Agent installed on the managed node, node status,
     /// and so on.
     /// 
     ///  
     /// <para>
-    /// If you specify one or more instance IDs, it returns information for those instances.
-    /// If you don't specify instance IDs, it returns information for all your instances.
-    /// If you specify an instance ID that isn't valid or an instance that you don't own,
-    /// you receive an error.
+    /// If you specify one or more managed node IDs, it returns information for those managed
+    /// nodes. If you don't specify node IDs, it returns information for all your managed
+    /// nodes. If you specify a node ID that isn't valid or a node that you don't own, you
+    /// receive an error.
     /// </para>
     ///  <note> 
     /// <para>
     /// The <code>IamRole</code> field for this API operation is the Identity and Access Management
-    /// (IAM) role assigned to on-premises instances. This call doesn't return the IAM role
-    /// for EC2 instances.
+    /// (IAM) role assigned to on-premises managed nodes. This call doesn't return the IAM
+    /// role for EC2 instances.
     /// </para>
     ///  </note>
     /// </summary>
@@ -59,9 +59,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters. Use a filter to return a more specific list of instances. You
-        /// can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data
-        /// type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
+        /// One or more filters. Use a filter to return a more specific list of managed nodes.
+        /// You can filter based on tags applied to EC2 instances. Use this <code>Filters</code>
+        /// data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -81,8 +81,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property InstanceInformationFilterList. 
         /// <para>
         /// This is a legacy method. We recommend that you don't use this method. Instead, use
-        /// the <code>Filters</code> data type. <code>Filters</code> enables you to return instance
-        /// information by filtering based on tags applied to managed instances.
+        /// the <code>Filters</code> data type. <code>Filters</code> enables you to return node
+        /// information by filtering based on tags applied to managed nodes.
         /// </para>
         ///  <note> 
         /// <para>

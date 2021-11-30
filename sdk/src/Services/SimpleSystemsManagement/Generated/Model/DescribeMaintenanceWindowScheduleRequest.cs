@@ -121,7 +121,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The instance ID or key-value pair to retrieve information about.
+        /// The managed node ID or key-value pair to retrieve information about.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

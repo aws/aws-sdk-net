@@ -154,7 +154,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource ID, for example, the instance ID where the association ran.
+        /// The resource ID, for example, the managed node ID where the association ran.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -173,7 +173,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type, for example, instance.
+        /// The resource type, for example, EC2.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -107,8 +107,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApprovedPatchesEnableNonSecurity. 
         /// <para>
         /// Indicates whether the list of approved patches includes non-security updates that
-        /// should be applied to the instances. The default value is <code>false</code>. Applies
-        /// to Linux instances only.
+        /// should be applied to the managed nodes. The default value is <code>false</code>. Applies
+        /// to Linux managed nodes only.
         /// </para>
         /// </summary>
         public bool ApprovedPatchesEnableNonSecurity
@@ -205,8 +205,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// Information about the patches to use to update the instances, including target operating
-        /// systems and source repositories. Applies to Linux instances only.
+        /// Information about the patches to use to update the managed nodes, including target
+        /// operating systems and source repositories. Applies to Linux managed nodes only.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceInformationList. 
         /// <para>
-        /// The instance information list.
+        /// The managed node information list.
         /// </para>
         /// </summary>
         public List<InstanceInformation> InstanceInformationList

@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Target: Specify an instance to which session connections have been made.
+        /// Target: Specify a managed node to which session connections have been made.
         /// </para>
         ///  </li> <li> 
         /// <para>

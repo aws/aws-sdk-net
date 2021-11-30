@@ -137,7 +137,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property LoggingInfo. 
         /// <para>
         /// A structure containing information about an Amazon Simple Storage Service (Amazon
-        /// S3) bucket to write instance-level logs to. 
+        /// S3) bucket to write managed node-level logs to. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -294,7 +294,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or maintenance window targets).
+        /// The targets (either managed nodes or maintenance window targets).
         /// </para>
         ///  <note> 
         /// <para>
@@ -307,7 +307,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Specify instances using the following format: 
+        /// Specify managed nodes using the following format: 
         /// </para>
         ///  
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEffectiveInstanceAssociations operation.
-    /// All associations for the instance(s).
+    /// All associations for the managed node(s).
     /// </summary>
     public partial class DescribeEffectiveInstanceAssociationsRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID for which you want to view all associations.
+        /// The managed node ID for which you want to view all associations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

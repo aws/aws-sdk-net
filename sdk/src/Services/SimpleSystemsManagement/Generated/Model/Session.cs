@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about a Session Manager connection to an instance.
+    /// Information about a Session Manager connection to a managed node.
     /// </summary>
     public partial class Session
     {
@@ -234,7 +234,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The instance that the Session Manager session connected to.
+        /// The managed node that the Session Manager session connected to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]

@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConnectionStatus operation.
-    /// Retrieves the Session Manager connection status for an instance to determine whether
+    /// Retrieves the Session Manager connection status for a managed node to determine whether
     /// it is running and ready to receive Session Manager connections.
     /// </summary>
     public partial class GetConnectionStatusRequest : AmazonSimpleSystemsManagementRequest
@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=400)]

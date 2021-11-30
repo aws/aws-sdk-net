@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// An activation registers one or more on-premises servers or virtual machines (VMs)
     /// with Amazon Web Services so that you can configure those servers or VMs using Run
     /// Command. A server or VM that has been registered with Amazon Web Services Systems
-    /// Manager is called a managed instance.
+    /// Manager is called a managed node.
     /// </summary>
     public partial class Activation
     {
@@ -86,7 +86,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DefaultInstanceName. 
         /// <para>
-        /// A name for the managed instance when it is created.
+        /// A name for the managed node when it is created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -124,7 +124,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
-        /// The date when this activation can no longer be used to register managed instances.
+        /// The date when this activation can no longer be used to register managed nodes.
         /// </para>
         /// </summary>
         public DateTime ExpirationDate
@@ -160,7 +160,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IamRole. 
         /// <para>
-        /// The Identity and Access Management (IAM) role to assign to the managed instance.
+        /// The Identity and Access Management (IAM) role to assign to the managed node.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -179,7 +179,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RegistrationLimit. 
         /// <para>
-        /// The maximum number of managed instances that can be registered using this activation.
+        /// The maximum number of managed nodes that can be registered using this activation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -198,7 +198,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RegistrationsCount. 
         /// <para>
-        /// The number of managed instances already registered with this activation.
+        /// The number of managed nodes already registered with this activation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

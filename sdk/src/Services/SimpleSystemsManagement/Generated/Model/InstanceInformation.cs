@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a filter for a specific list of instances.
+    /// Describes a filter for a specific list of managed nodes.
     /// </summary>
     public partial class InstanceInformation
     {
@@ -52,6 +52,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _platformVersion;
         private DateTime? _registrationDate;
         private ResourceType _resourceType;
+        private string _sourceId;
+        private SourceType _sourceType;
 
         /// <summary>
         /// Gets and sets the property ActivationId. 
@@ -75,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The version of SSM Agent running on your Linux instance. 
+        /// The version of SSM Agent running on your Linux managed node. 
         /// </para>
         /// </summary>
         public string AgentVersion
@@ -129,7 +131,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ComputerName. 
         /// <para>
-        /// The fully qualified host name of the managed instance.
+        /// The fully qualified host name of the managed node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -149,10 +151,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property IamRole. 
         /// <para>
         /// The Identity and Access Management (IAM) role assigned to the on-premises Systems
-        /// Manager managed instance. This call doesn't return the IAM role for Amazon Elastic
-        /// Compute Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance,
-        /// use the Amazon EC2 <code>DescribeInstances</code> operation. For information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+        /// Manager managed node. This call doesn't return the IAM role for Amazon Elastic Compute
+        /// Cloud (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use the
+        /// Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
         /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
         /// in the <i>Amazon Web Services CLI Command Reference</i>.
         /// </para>
@@ -173,7 +174,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID. 
+        /// The managed node ID. 
         /// </para>
         /// </summary>
         public string InstanceId
@@ -191,7 +192,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IPAddress. 
         /// <para>
-        /// The IP address of the managed instance.
+        /// The IP address of the managed node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=46)]
@@ -210,10 +211,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IsLatestVersion. 
         /// <para>
-        /// Indicates whether the latest version of SSM Agent is running on your Linux Managed
-        /// Instance. This field doesn't indicate whether or not the latest version is installed
-        /// on Windows managed instances, because some older versions of Windows Server use the
-        /// EC2Config service to process Systems Manager requests.
+        /// Indicates whether the latest version of SSM Agent is running on your Linux managed
+        /// node. This field doesn't indicate whether or not the latest version is installed on
+        /// Windows managed nodes, because some older versions of Windows Server use the EC2Config
+        /// service to process Systems Manager requests.
         /// </para>
         /// </summary>
         public bool IsLatestVersion
@@ -285,15 +286,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name assigned to an on-premises server or virtual machine (VM) when it is activated
-        /// as a Systems Manager managed instance. The name is specified as the <code>DefaultInstanceName</code>
-        /// property using the <a>CreateActivation</a> command. It is applied to the managed instance
+        /// The name assigned to an on-premises server, edge device, or virtual machine (VM) when
+        /// it is activated as a Systems Manager managed node. The name is specified as the <code>DefaultInstanceName</code>
+        /// property using the <a>CreateActivation</a> command. It is applied to the managed node
         /// by specifying the Activation Code and Activation ID when you install SSM Agent on
-        /// the instance, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install
+        /// the node, as explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install
         /// SSM Agent for a hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
-        /// SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2
-        /// instance, use the Amazon EC2 <code>DescribeInstances</code> operation. For information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
+        /// SSM Agent for a hybrid environment (Windows)</a>. To retrieve the <code>Name</code>
+        /// tag of an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> operation.
+        /// For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
         /// in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
         /// in the <i>Amazon Web Services CLI Command Reference</i>.
         /// </para>
@@ -336,7 +337,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformName. 
         /// <para>
-        /// The name of the operating system platform running on your instance. 
+        /// The name of the operating system platform running on your managed node. 
         /// </para>
         /// </summary>
         public string PlatformName
@@ -372,7 +373,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The version of the OS platform running on your instance. 
+        /// The version of the OS platform running on your managed node. 
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -390,7 +391,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RegistrationDate. 
         /// <para>
-        /// The date the server or VM was registered with Amazon Web Services as a managed instance.
+        /// The date the server or VM was registered with Amazon Web Services as a managed node.
         /// </para>
         /// </summary>
         public DateTime RegistrationDate
@@ -421,6 +422,45 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceId. 
+        /// <para>
+        /// The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is
+        /// the Thing name. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string SourceId
+        {
+            get { return this._sourceId; }
+            set { this._sourceId = value; }
+        }
+
+        // Check to see if SourceId property is set
+        internal bool IsSetSourceId()
+        {
+            return this._sourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of the source resource. For IoT Greengrass devices, <code>SourceType</code>
+        /// is <code>AWS::IoT::Thing</code>. 
+        /// </para>
+        /// </summary>
+        public SourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
     }

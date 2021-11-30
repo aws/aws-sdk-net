@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// Collection of inventory entities such as a collection of instance inventory. 
+        /// Collection of inventory entities such as a collection of managed node inventory. 
         /// </para>
         /// </summary>
         public List<InventoryResultEntity> Entities

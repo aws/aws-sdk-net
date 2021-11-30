@@ -58,9 +58,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceComplianceSummaryItems. 
         /// <para>
-        /// A summary count for specified or targeted managed instances. Summary count includes
-        /// information about compliant and non-compliant State Manager associations, patch status,
-        /// or custom items according to the filter criteria that you specify. 
+        /// A summary count for specified or targeted managed nodes. Summary count includes information
+        /// about compliant and non-compliant State Manager associations, patch status, or custom
+        /// items according to the filter criteria that you specify. 
         /// </para>
         /// </summary>
         public List<ResourceComplianceSummaryItem> ResourceComplianceSummaryItems

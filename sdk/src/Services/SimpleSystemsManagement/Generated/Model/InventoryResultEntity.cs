@@ -57,9 +57,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// ID of the inventory result entity. For example, for managed instance inventory the
-        /// result will be the managed instance ID. For EC2 instance inventory, the result will
-        /// be the instance ID. 
+        /// ID of the inventory result entity. For example, for managed node inventory the result
+        /// will be the managed node ID. For EC2 instance inventory, the result will be the instance
+        /// ID. 
         /// </para>
         /// </summary>
         public string Id

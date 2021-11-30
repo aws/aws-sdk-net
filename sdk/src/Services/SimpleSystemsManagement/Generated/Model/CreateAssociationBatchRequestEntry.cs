@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Describes the association of a Amazon Web Services Systems Manager document (SSM document)
-    /// and an instance.
+    /// and a managed node.
     /// </summary>
     public partial class CreateAssociationBatchRequestEntry
     {
@@ -171,17 +171,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
-        /// use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code>
-        /// with Systems Manager documents (SSM documents) that use schema version 2.0 or later
-        /// will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't
-        /// use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>,
-        /// <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>.
-        /// To use these parameters, you must use the <code>Targets</code> parameter.
+        ///  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an
+        /// association, use the <code>Targets</code> parameter. Requests that include the parameter
+        /// <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema
+        /// version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
+        /// you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+        /// <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>,
+        /// or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code>
+        /// parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -207,9 +208,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If a new instance starts and attempts to run an association while Systems Manager
+        /// If a new managed node starts and attempts to run an association while Systems Manager
         /// is running <code>MaxConcurrency</code> associations, the association is allowed to
-        /// run. During the next association interval, the new instance will process its association
+        /// run. During the next association interval, the new managed node will process its association
         /// within the limit specified for <code>MaxConcurrency</code>.
         /// </para>
         /// </summary>
@@ -234,7 +235,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// of errors, for example 10, or a percentage of the target set, for example 10%. If
         /// you specify 3, for example, the system stops sending requests when the fourth error
         /// is received. If you specify 0, then the system stops sending requests after the first
-        /// error is returned. If you run an association on 50 instances and set <code>MaxError</code>
+        /// error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code>
         /// to 10%, then the system stops sending the request when the sixth error is received.
         /// </para>
         ///  
@@ -261,8 +262,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document that contains the configuration information for the instance.
-        /// You can specify Command or Automation runbooks.
+        /// The name of the SSM document that contains the configuration information for the managed
+        /// node. You can specify Command or Automation runbooks.
         /// </para>
         ///  
         /// <para>
@@ -418,7 +419,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The instances targeted by the request.
+        /// The managed nodes targeted by the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

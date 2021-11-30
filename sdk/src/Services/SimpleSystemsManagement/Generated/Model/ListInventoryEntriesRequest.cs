@@ -62,7 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID for which you want inventory information.
+        /// The managed node ID for which you want inventory information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about an Amazon Simple Storage Service (Amazon S3) bucket to write instance-level
-    /// logs to.
+    /// Information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed
+    /// node-level logs to.
     /// 
     ///  <note> 
     /// <para>

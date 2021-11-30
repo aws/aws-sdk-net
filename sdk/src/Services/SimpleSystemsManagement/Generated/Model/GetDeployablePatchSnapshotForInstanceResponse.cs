@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Product. 
         /// <para>
         /// Returns the specific operating system (for example Windows Server 2012 or Amazon Linux
-        /// 2015.09) on the instance for the specified patch snapshot.
+        /// 2015.09) on the managed node for the specified patch snapshot.
         /// </para>
         /// </summary>
         public string Product

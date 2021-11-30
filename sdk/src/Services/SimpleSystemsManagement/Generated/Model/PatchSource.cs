@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about the patches to use to update the instances, including target operating
-    /// systems and source repository. Applies to Linux instances only.
+    /// Information about the patches to use to update the managed nodes, including target
+    /// operating systems and source repository. Applies to Linux managed nodes only.
     /// </summary>
     public partial class PatchSource
     {

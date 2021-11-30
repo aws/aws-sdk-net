@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You can't specify an instance ID in more than one association.
+    /// You can't specify a managed node ID in more than one association.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

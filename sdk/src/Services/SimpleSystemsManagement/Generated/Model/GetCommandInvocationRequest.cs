@@ -35,8 +35,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     ///  <code>GetCommandInvocation</code> only gives the execution status of a plugin in
-    /// a document. To get the command execution status on a specific instance, use <a>ListCommandInvocations</a>.
-    /// To get the command execution status across instances, use <a>ListCommands</a>.
+    /// a document. To get the command execution status on a specific managed node, use <a>ListCommandInvocations</a>.
+    /// To get the command execution status across managed nodes, use <a>ListCommands</a>.
     /// </para>
     /// </summary>
     public partial class GetCommandInvocationRequest : AmazonSimpleSystemsManagementRequest
@@ -67,9 +67,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// (Required) The ID of the managed instance targeted by the command. A managed instance
-        /// can be an Amazon Elastic Compute Cloud (Amazon EC2) instance or an instance in your
-        /// hybrid environment that is configured for Amazon Web Services Systems Manager.
+        /// (Required) The ID of the managed node targeted by the command. A <i>managed node</i>
+        /// can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises
+        /// server or VM in your hybrid environment that is configured for Amazon Web Services
+        /// Systems Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

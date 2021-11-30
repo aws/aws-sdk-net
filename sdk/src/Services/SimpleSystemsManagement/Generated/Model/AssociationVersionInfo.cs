@@ -212,9 +212,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If a new instance starts and attempts to run an association while Systems Manager
+        /// If a new managed node starts and attempts to run an association while Systems Manager
         /// is running <code>MaxConcurrency</code> associations, the association is allowed to
-        /// run. During the next association interval, the new instance will process its association
+        /// run. During the next association interval, the new managed node will process its association
         /// within the limit specified for <code>MaxConcurrency</code>.
         /// </para>
         /// </summary>
@@ -239,7 +239,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// of errors, for example 10, or a percentage of the target set, for example 10%. If
         /// you specify 3, for example, the system stops sending requests when the fourth error
         /// is received. If you specify 0, then the system stops sending requests after the first
-        /// error is returned. If you run an association on 50 instances and set <code>MaxError</code>
+        /// error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code>
         /// to 10%, then the system stops sending the request when the sixth error is received.
         /// </para>
         ///  

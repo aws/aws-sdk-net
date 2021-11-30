@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a filter for a specific list of instances. You can filter instances information
+    /// Describes a filter for a specific list of managed nodes. You can filter node information
     /// by using tags. You specify tags by using a key-value mapping.
     /// 
     ///  

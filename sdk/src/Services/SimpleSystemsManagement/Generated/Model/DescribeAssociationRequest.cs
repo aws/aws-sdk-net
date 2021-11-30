@@ -30,9 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssociation operation.
-    /// Describes the association for the specified target or instance. If you created the
-    /// association by using the <code>Targets</code> parameter, then you must retrieve the
-    /// association by using the association ID.
+    /// Describes the association for the specified target or managed node. If you created
+    /// the association by using the <code>Targets</code> parameter, then you must retrieve
+    /// the association by using the association ID.
     /// </summary>
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates DescribeAssociationRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceId">The instance ID.</param>
+        /// <param name="instanceId">The managed node ID.</param>
         /// <param name="name">The name of the SSM document.</param>
         public DescribeAssociationRequest(string instanceId, string name)
         {
@@ -80,8 +80,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Specify the association version to retrieve. To view the latest version, either specify
         /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of
-        /// all associations for an instance, use <a>ListAssociations</a>. To get a list of versions
-        /// for a specific association, use <a>ListAssociationVersions</a>. 
+        /// all associations for a managed node, use <a>ListAssociations</a>. To get a list of
+        /// versions for a specific association, use <a>ListAssociationVersions</a>. 
         /// </para>
         /// </summary>
         public string AssociationVersion
@@ -99,7 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         /// </summary>
         public string InstanceId

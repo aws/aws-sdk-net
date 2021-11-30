@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     /// ExecutionTime. The time the patch, association, or custom compliance item was applied
-    /// to the instance.
+    /// to the managed node.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -201,7 +201,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Specify an ID for this resource. For a managed instance, this is the instance ID.
+        /// Specify an ID for this resource. For a managed node, this is the node ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -31,8 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateManagedInstanceRole operation.
     /// Changes the Identity and Access Management (IAM) role that is assigned to the on-premises
-    /// instance or virtual machines (VM). IAM roles are first assigned to these hybrid instances
-    /// during the activation process. For more information, see <a>CreateActivation</a>.
+    /// server, edge device, or virtual machines (VM). IAM roles are first assigned to these
+    /// hybrid nodes during the activation process. For more information, see <a>CreateActivation</a>.
     /// </summary>
     public partial class UpdateManagedInstanceRoleRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the managed instance where you want to update the role.
+        /// The ID of the managed node where you want to update the role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=124)]

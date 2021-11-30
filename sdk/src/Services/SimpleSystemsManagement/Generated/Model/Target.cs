@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An array of search criteria that targets instances using a key-value pair that you
-    /// specify.
+    /// An array of search criteria that targets managed nodes using a key-value pair that
+    /// you specify.
     /// 
     ///  <note> 
     /// <para>
@@ -47,32 +47,32 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
-    /// </code> 
+    ///  <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;,&lt;instance-id-3&gt;</code>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i>
-    /// </code> 
+    ///  <code>Key=tag:&lt;my-tag-key&gt;,Values=&lt;my-tag-value-1&gt;,&lt;my-tag-value-2&gt;</code>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> 
+    ///  <code>Key=tag-key,Values=&lt;my-tag-key-1&gt;,&lt;my-tag-key-2&gt;</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i>
-    /// </code> 
+    ///  <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=&lt;resource-group-name&gt;</code>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i>
-    /// </code> 
+    ///  <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=&lt;resource-type-1&gt;,&lt;resource-type-2&gt;</code>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Automation targets only</b>: <code>Key=ResourceGroup;Values=<i>resource-group-name</i>
-    /// </code> 
+    ///  <b>Automation targets only</b>: <code>Key=ResourceGroup;Values=&lt;resource-group-name&gt;</code>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -103,8 +103,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-    /// </code> 
+    ///  <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -118,8 +118,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=<i>*</i>
-    /// </code> 
+    ///  <b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=*</code>
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -128,7 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about how to send commands that target instances using <code>Key,Value</code>
+    /// For more information about how to send commands that target managed nodes using <code>Key,Value</code>
     /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
     /// multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
@@ -141,7 +141,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// User-defined criteria for sending commands that target instances that meet the criteria.
+        /// User-defined criteria for sending commands that target managed nodes that meet the
+        /// criteria.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=163)]

@@ -88,8 +88,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invocation</code>: For commands sent to multiple instances, receive notification
-        /// on a per-instance basis when the status of a command changes. 
+        ///  <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification
+        /// on a per-node basis when the status of a command changes. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

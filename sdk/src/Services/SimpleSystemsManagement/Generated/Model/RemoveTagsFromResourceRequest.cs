@@ -70,9 +70,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The ManagedInstance type for this API operation is only for on-premises managed instances.
-        /// Specify the name of the managed instance in the following format: mi-ID_number. For
-        /// example, mi-1a2b3c4d5e6f.
+        /// The <code>ManagedInstance</code> type for this API operation is only for on-premises
+        /// managed nodes. Specify the name of the managed node in the following format: mi-ID_number.
+        /// For example, mi-1a2b3c4d5e6f.
         /// </para>
         ///  </note>
         /// </summary>
@@ -97,8 +97,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <note> 
         /// <para>
         /// The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed instances. Specify the name of the managed instance in the following format:
-        /// <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.
+        /// managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i>
+        /// </code>. For example, <code>mi-1a2b3c4d5e6f</code>.
         /// </para>
         ///  </note>
         /// </summary>

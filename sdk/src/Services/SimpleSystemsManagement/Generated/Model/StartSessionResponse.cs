@@ -59,8 +59,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StreamUrl. 
         /// <para>
-        /// A URL back to SSM Agent on the instance that the Session Manager client uses to send
-        /// commands and receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+        /// A URL back to SSM Agent on the managed node that the Session Manager client uses to
+        /// send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
         /// 
         /// </para>
         ///  
@@ -92,7 +92,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TokenValue. 
         /// <para>
         /// An encrypted token value containing session and caller information. Used to authenticate
-        /// the connection to the instance.
+        /// the connection to the managed node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]

@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstancePatchStatesForPatchGroup operation.
-    /// Retrieves the high-level patch state for the instances in the specified patch group.
+    /// Retrieves the high-level patch state for the managed nodes in the specified patch
+    /// group.
     /// </summary>
     public partial class DescribeInstancePatchStatesForPatchGroupRequest : AmazonSimpleSystemsManagementRequest
     {

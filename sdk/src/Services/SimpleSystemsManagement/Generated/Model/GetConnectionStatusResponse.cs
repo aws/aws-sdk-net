@@ -39,7 +39,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the connection to the instance. For example, 'Connected' or 'Not Connected'.
+        /// The status of the connection to the managed node. For example, 'Connected' or 'Not
+        /// Connected'.
         /// </para>
         /// </summary>
         public ConnectionStatus Status
@@ -57,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The ID of the instance to check connection status. 
+        /// The ID of the managed node to check connection status. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]

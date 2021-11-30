@@ -41,8 +41,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AssociationStatusAggregatedCount. 
         /// <para>
         /// Returns the number of targets for the association status. For example, if you created
-        /// an association with two instances, and one of them was successful, this would return
-        /// the count of instances by status.
+        /// an association with two managed nodes, and one of them was successful, this would
+        /// return the count of managed nodes by status.
         /// </para>
         /// </summary>
         public Dictionary<string, int> AssociationStatusAggregatedCount

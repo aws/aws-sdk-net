@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// One or more association documents on the instance.
+    /// One or more association documents on the managed node.
     /// </summary>
     public partial class InstanceAssociation
     {
@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AssociationVersion. 
         /// <para>
-        /// Version information for the association on the instance.
+        /// Version information for the association on the managed node.
         /// </para>
         /// </summary>
         public string AssociationVersion
@@ -77,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the association document for the instance(s).
+        /// The content of the association document for the managed node(s).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -96,7 +96,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID.
+        /// The managed node ID.
         /// </para>
         /// </summary>
         public string InstanceId

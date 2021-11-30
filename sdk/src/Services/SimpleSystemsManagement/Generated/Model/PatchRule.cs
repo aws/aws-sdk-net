@@ -107,9 +107,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property EnableNonSecurity. 
         /// <para>
-        /// For instances identified by the approval rule filters, enables a patch baseline to
-        /// apply non-security updates available in the specified repository. The default value
-        /// is <code>false</code>. Applies to Linux instances only.
+        /// For managed nodes identified by the approval rule filters, enables a patch baseline
+        /// to apply non-security updates available in the specified repository. The default value
+        /// is <code>false</code>. Applies to Linux managed nodes only.
         /// </para>
         /// </summary>
         public bool EnableNonSecurity
