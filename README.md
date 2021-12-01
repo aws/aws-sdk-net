@@ -153,6 +153,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.
 * [AWSSDK.Backup](https://www.nuget.org/packages/AWSSDK.Backup/)
 	* AWS Backup is a fully managed backup service that makes it easy to centralize and automate the back up of data across AWS services in the cloud as well as on-premises.
+* [AWSSDK.BackupGateway](https://www.nuget.org/packages/AWSSDK.BackupGateway/)
+	* Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
 * [AWSSDK.Braket](https://www.nuget.org/packages/AWSSDK.Braket/)

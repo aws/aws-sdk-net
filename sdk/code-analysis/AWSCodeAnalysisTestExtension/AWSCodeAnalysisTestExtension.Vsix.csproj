@@ -180,6 +180,10 @@
       <Project>{83939F73-E4F1-47AE-B04B-133FD3489D32}</Project>
       <Name>AWSSDK.Backup.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/BackupGateway/AWSSDK.BackupGateway.CodeAnalysis.csproj">
+      <Project>{5FFE394A-30FB-4A47-BFC8-F3667019CF92}</Project>
+      <Name>AWSSDK.BackupGateway.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Batch/AWSSDK.Batch.CodeAnalysis.csproj">
       <Project>{8672DE1E-8F7B-480C-9A87-C75AA468FFEB}</Project>
       <Name>AWSSDK.Batch.CodeAnalysis</Name>
