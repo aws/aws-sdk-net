@@ -61,6 +61,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDeviceDefenderIndexingMode())
+            {
+                context.Writer.WritePropertyName("deviceDefenderIndexingMode");
+                context.Writer.Write(requestObject.DeviceDefenderIndexingMode);
+            }
+
             if(requestObject.IsSetManagedFields())
             {
                 context.Writer.WritePropertyName("managedFields");
@@ -75,6 +81,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNamedShadowIndexingMode())
+            {
+                context.Writer.WritePropertyName("namedShadowIndexingMode");
+                context.Writer.Write(requestObject.NamedShadowIndexingMode);
             }
 
             if(requestObject.IsSetThingConnectivityIndexingMode())

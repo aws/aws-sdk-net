@@ -1713,6 +1713,56 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceDefenderIndexingMode.
+    /// </summary>
+    public class DeviceDefenderIndexingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OFF for DeviceDefenderIndexingMode
+        /// </summary>
+        public static readonly DeviceDefenderIndexingMode OFF = new DeviceDefenderIndexingMode("OFF");
+        /// <summary>
+        /// Constant VIOLATIONS for DeviceDefenderIndexingMode
+        /// </summary>
+        public static readonly DeviceDefenderIndexingMode VIOLATIONS = new DeviceDefenderIndexingMode("VIOLATIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceDefenderIndexingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceDefenderIndexingMode FindValue(string value)
+        {
+            return FindValue<DeviceDefenderIndexingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceDefenderIndexingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DimensionType.
     /// </summary>
     public class DimensionType : ConstantClass
@@ -2826,6 +2876,56 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NamedShadowIndexingMode.
+    /// </summary>
+    public class NamedShadowIndexingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OFF for NamedShadowIndexingMode
+        /// </summary>
+        public static readonly NamedShadowIndexingMode OFF = new NamedShadowIndexingMode("OFF");
+        /// <summary>
+        /// Constant ON for NamedShadowIndexingMode
+        /// </summary>
+        public static readonly NamedShadowIndexingMode ON = new NamedShadowIndexingMode("ON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NamedShadowIndexingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NamedShadowIndexingMode FindValue(string value)
+        {
+            return FindValue<NamedShadowIndexingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NamedShadowIndexingMode(string value)
         {
             return FindValue(value);
         }

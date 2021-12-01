@@ -35,7 +35,9 @@ namespace Amazon.IoT.Model
     public partial class ThingIndexingConfiguration
     {
         private List<Field> _customFields = new List<Field>();
+        private DeviceDefenderIndexingMode _deviceDefenderIndexingMode;
         private List<Field> _managedFields = new List<Field>();
+        private NamedShadowIndexingMode _namedShadowIndexingMode;
         private ThingConnectivityIndexingMode _thingConnectivityIndexingMode;
         private ThingIndexingMode _thingIndexingMode;
 
@@ -58,6 +60,38 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeviceDefenderIndexingMode. 
+        /// <para>
+        /// Device Defender indexing mode. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// VIOLATIONS – Your thing index contains Device Defender violations. To enable Device
+        /// Defender indexing, <i>deviceDefenderIndexingMode</i> must not be set to OFF.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OFF - Device Defender indexing is disabled.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Device Defender violations, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html">Device
+        /// Defender Detect.</a> 
+        /// </para>
+        /// </summary>
+        public DeviceDefenderIndexingMode DeviceDefenderIndexingMode
+        {
+            get { return this._deviceDefenderIndexingMode; }
+            set { this._deviceDefenderIndexingMode = value; }
+        }
+
+        // Check to see if DeviceDefenderIndexingMode property is set
+        internal bool IsSetDeviceDefenderIndexingMode()
+        {
+            return this._deviceDefenderIndexingMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ManagedFields. 
         /// <para>
         /// Contains fields that are indexed and whose types are already known by the Fleet Indexing
@@ -74,6 +108,38 @@ namespace Amazon.IoT.Model
         internal bool IsSetManagedFields()
         {
             return this._managedFields != null && this._managedFields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamedShadowIndexingMode. 
+        /// <para>
+        /// Named shadow indexing mode. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ON – Your thing index contains named shadow. To enable thing named shadow indexing,
+        /// <i>namedShadowIndexingMode</i> must not be set to OFF.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OFF - Named shadow indexing is disabled.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+        /// Device Shadow service.</a> 
+        /// </para>
+        /// </summary>
+        public NamedShadowIndexingMode NamedShadowIndexingMode
+        {
+            get { return this._namedShadowIndexingMode; }
+            set { this._namedShadowIndexingMode = value; }
+        }
+
+        // Check to see if NamedShadowIndexingMode property is set
+        internal bool IsSetNamedShadowIndexingMode()
+        {
+            return this._namedShadowIndexingMode != null;
         }
 
         /// <summary>

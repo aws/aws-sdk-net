@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private ThingConnectivity _connectivity;
+        private string _deviceDefender;
         private string _shadow;
         private List<string> _thingGroupNames = new List<string>();
         private string _thingId;
@@ -78,9 +79,37 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeviceDefender. 
+        /// <para>
+        /// Contains Device Defender data.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+        /// Defender</a>. 
+        /// </para>
+        /// </summary>
+        public string DeviceDefender
+        {
+            get { return this._deviceDefender; }
+            set { this._deviceDefender = value; }
+        }
+
+        // Check to see if DeviceDefender property is set
+        internal bool IsSetDeviceDefender()
+        {
+            return this._deviceDefender != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Shadow. 
         /// <para>
-        /// The shadow.
+        /// The unnamed shadow and named shadow.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+        /// Device Shadow service.</a> 
         /// </para>
         /// </summary>
         public string Shadow

@@ -76,6 +76,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Connectivity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceDefender", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceDefender = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("shadow", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

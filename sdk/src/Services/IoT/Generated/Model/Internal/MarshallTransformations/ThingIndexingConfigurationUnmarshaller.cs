@@ -70,10 +70,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceDefenderIndexingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceDefenderIndexingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("managedFields", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
                     unmarshalledObject.ManagedFields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("namedShadowIndexingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NamedShadowIndexingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("thingConnectivityIndexingMode", targetDepth))
