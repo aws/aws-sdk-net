@@ -34,6 +34,7 @@ namespace Amazon.Snowball.Model
     public partial class DescribeReturnShippingLabelResponse : AmazonWebServiceResponse
     {
         private DateTime? _expirationDate;
+        private string _returnShippingLabelURI;
         private ShippingLabelStatus _status;
 
         /// <summary>
@@ -55,9 +56,29 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReturnShippingLabelURI. 
+        /// <para>
+        /// The pre-signed Amazon S3 URI used to download the return shipping label.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string ReturnShippingLabelURI
+        {
+            get { return this._returnShippingLabelURI; }
+            set { this._returnShippingLabelURI = value; }
+        }
+
+        // Check to see if ReturnShippingLabelURI property is set
+        internal bool IsSetReturnShippingLabelURI()
+        {
+            return this._returnShippingLabelURI != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status information of the task on a Snow device that is being returned to AWS.
+        /// The status information of the task on a Snow device that is being returned to Amazon
+        /// Web Services.
         /// </para>
         /// </summary>
         public ShippingLabelStatus Status

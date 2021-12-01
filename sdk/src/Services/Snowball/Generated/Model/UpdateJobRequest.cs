@@ -147,8 +147,9 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property OnDeviceServiceConfiguration. 
         /// <para>
         /// Specifies the service or services on the Snow Family device that your transferred
-        /// data will be exported from or imported into. AWS Snow Family supports Amazon S3 and
-        /// NFS (Network File System).
+        /// data will be exported from or imported into. Amazon Web Services Snow Family supports
+        /// Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway
+        /// service Tape Gateway type.
         /// </para>
         /// </summary>
         public OnDeviceServiceConfiguration OnDeviceServiceConfiguration
@@ -186,8 +187,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The new role Amazon Resource Name (ARN) that you want to associate with this job.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
-        /// Identity and Access Management (IAM) API action.
+        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity
+        /// and Access Management (IAM) API action.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

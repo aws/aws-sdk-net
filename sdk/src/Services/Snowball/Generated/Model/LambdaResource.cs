@@ -58,8 +58,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LambdaArn. 
         /// <para>
-        /// An Amazon Resource Name (ARN) that represents an AWS Lambda function to be triggered
-        /// by PUT object actions on the associated local Amazon S3 resource.
+        /// An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by
+        /// PUT object actions on the associated local Amazon S3 resource.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

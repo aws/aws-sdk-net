@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+    /// The provided Key Management Service key lacks the permissions to perform the specified
     /// <a>CreateJob</a> or <a>UpdateJob</a> action.
     /// </summary>
     #if !NETSTANDARD

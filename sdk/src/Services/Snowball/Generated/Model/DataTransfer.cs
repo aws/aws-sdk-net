@@ -30,8 +30,8 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Defines the real-time status of a Snow device's data transfer while the device is
-    /// at AWS. This data is only available while a job has a <code>JobState</code> value
-    /// of <code>InProgress</code>, for both import and export jobs.
+    /// at Amazon Web Services. This data is only available while a job has a <code>JobState</code>
+    /// value of <code>InProgress</code>, for both import and export jobs.
     /// </summary>
     public partial class DataTransfer
     {

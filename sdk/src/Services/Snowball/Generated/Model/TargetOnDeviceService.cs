@@ -30,8 +30,8 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// An object that represents the service or services on the Snow Family device that your
-    /// transferred data will be exported from or imported into. AWS Snow Family supports
-    /// Amazon S3 and NFS (Network File System).
+    /// transferred data will be exported from or imported into. Amazon Web Services Snow
+    /// Family supports Amazon S3 and NFS (Network File System).
     /// </summary>
     public partial class TargetOnDeviceService
     {

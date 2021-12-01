@@ -42,7 +42,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property InboundShipment. 
         /// <para>
         /// The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
-        /// returned to AWS for a particular job.
+        /// returned to Amazon Web Services for a particular job.
         /// </para>
         /// </summary>
         public Shipment InboundShipment

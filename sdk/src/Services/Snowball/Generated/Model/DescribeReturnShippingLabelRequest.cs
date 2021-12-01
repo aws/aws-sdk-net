@@ -30,7 +30,8 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReturnShippingLabel operation.
-    /// Information on the shipping label of a Snow device that is being returned to AWS.
+    /// Information on the shipping label of a Snow device that is being returned to Amazon
+    /// Web Services.
     /// </summary>
     public partial class DescribeReturnShippingLabelRequest : AmazonSnowballRequest
     {

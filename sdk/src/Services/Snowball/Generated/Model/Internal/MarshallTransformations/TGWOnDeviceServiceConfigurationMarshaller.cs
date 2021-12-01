@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OnDeviceServiceConfiguration Marshaller
+    /// TGWOnDeviceServiceConfiguration Marshaller
     /// </summary>       
-    public class OnDeviceServiceConfigurationMarshaller : IRequestMarshaller<OnDeviceServiceConfiguration, JsonMarshallerContext> 
+    public class TGWOnDeviceServiceConfigurationMarshaller : IRequestMarshaller<TGWOnDeviceServiceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TGWOnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetNFSOnDeviceService())
+            if(requestObject.IsSetStorageLimit())
             {
-                context.Writer.WritePropertyName("NFSOnDeviceService");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NFSOnDeviceServiceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.NFSOnDeviceService, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("StorageLimit");
+                context.Writer.Write(requestObject.StorageLimit);
             }
 
-            if(requestObject.IsSetTGWOnDeviceService())
+            if(requestObject.IsSetStorageUnit())
             {
-                context.Writer.WritePropertyName("TGWOnDeviceService");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TGWOnDeviceServiceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TGWOnDeviceService, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("StorageUnit");
+                context.Writer.Write(requestObject.StorageUnit);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static OnDeviceServiceConfigurationMarshaller Instance = new OnDeviceServiceConfigurationMarshaller();
+        public readonly static TGWOnDeviceServiceConfigurationMarshaller Instance = new TGWOnDeviceServiceConfigurationMarshaller();
 
     }
 }

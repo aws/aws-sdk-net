@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The tax documents required in your AWS Region.
+    /// The tax documents required in your Amazon Web Services Region.
     /// </summary>
     public partial class TaxDocuments
     {

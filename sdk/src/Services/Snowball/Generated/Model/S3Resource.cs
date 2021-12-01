@@ -85,8 +85,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property TargetOnDeviceServices. 
         /// <para>
         /// Specifies the service or services on the Snow Family device that your transferred
-        /// data will be exported from or imported into. AWS Snow Family supports Amazon S3 and
-        /// NFS (Network File System).
+        /// data will be exported from or imported into. Amazon Web Services Snow Family supports
+        /// Amazon S3 and NFS (Network File System).
         /// </para>
         /// </summary>
         public List<TargetOnDeviceService> TargetOnDeviceServices

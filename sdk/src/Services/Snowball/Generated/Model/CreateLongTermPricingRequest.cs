@@ -32,7 +32,7 @@ namespace Amazon.Snowball.Model
     /// Container for the parameters to the CreateLongTermPricing operation.
     /// Creates a job with the long-term usage option for a device. The long-term usage is
     /// a 1-year or 3-year long-term pricing type for the device. You are billed upfront,
-    /// and AWS provides discounts for long-term pricing.
+    /// and Amazon Web Services provides discounts for long-term pricing.
     /// </summary>
     public partial class CreateLongTermPricingRequest : AmazonSnowballRequest
     {
@@ -81,7 +81,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snow Family device to use for the long-term pricing job.
+        /// The type of Snow Family Devices to use for the long-term pricing job.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

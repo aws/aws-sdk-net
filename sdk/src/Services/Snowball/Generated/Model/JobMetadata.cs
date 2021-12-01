@@ -118,7 +118,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property DataTransferProgress. 
         /// <para>
         /// A value that defines the real-time status of a Snow device's data transfer while the
-        /// device is at AWS. This data is only available while a job has a <code>JobState</code>
+        /// device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code>
         /// value of <code>InProgress</code>, for both import and export jobs.
         /// </para>
         /// </summary>
@@ -267,9 +267,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated
+        /// The Amazon Resource Name (ARN) for the Key Management Service (KMS) key associated
         /// with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-        /// API action in AWS KMS.
+        /// API action in KMS.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -328,8 +328,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property OnDeviceServiceConfiguration. 
         /// <para>
-        /// Represents metadata and configuration settings for services on an AWS Snow Family
-        /// device.
+        /// Represents metadata and configuration settings for services on an Amazon Web Services
+        /// Snow Family device.
         /// </para>
         /// </summary>
         public OnDeviceServiceConfiguration OnDeviceServiceConfiguration
@@ -388,7 +388,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The role ARN associated with this job. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// API action in AWS Identity and Access Management (IAM).
+        /// API action in Identity and Access Management.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -470,7 +470,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property TaxDocuments. 
         /// <para>
-        /// The metadata associated with the tax documents required in your AWS Region.
+        /// The metadata associated with the tax documents required in your Amazon Web Services
+        /// Region.
         /// </para>
         /// </summary>
         public TaxDocuments TaxDocuments

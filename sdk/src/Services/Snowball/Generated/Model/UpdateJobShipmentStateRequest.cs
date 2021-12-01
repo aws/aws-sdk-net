@@ -67,7 +67,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>RETURNED</code> when you have returned the device to AWS.
+        /// Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

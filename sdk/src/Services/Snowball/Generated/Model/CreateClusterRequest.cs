@@ -139,7 +139,7 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code>
         /// values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-        /// API action in AWS Key Management Service (AWS KMS). 
+        /// API action in Key Management Service (KMS). 
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -178,8 +178,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property OnDeviceServiceConfiguration. 
         /// <para>
         /// Specifies the service or services on the Snow Family device that your transferred
-        /// data will be exported from or imported into. AWS Snow Family supports Amazon S3 and
-        /// NFS (Network File System).
+        /// data will be exported from or imported into. Amazon Web Services Snow Family device
+        /// clusters support Amazon S3 and NFS (Network File System).
         /// </para>
         /// </summary>
         public OnDeviceServiceConfiguration OnDeviceServiceConfiguration
@@ -219,7 +219,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property Resources. 
         /// <para>
         /// The resources associated with the cluster job. These resources include Amazon S3 buckets
-        /// and optional AWS Lambda functions written in the Python language. 
+        /// and optional Lambda functions written in the Python language. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -240,7 +240,7 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code>
         /// values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// API action in AWS Identity and Access Management (IAM).
+        /// API action in Identity and Access Management (IAM).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]
@@ -321,12 +321,12 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snow Family device to use for this cluster. 
+        /// The type of Snow Family Devices to use for this cluster. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device
-        /// type.
+        /// For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code>
+        /// device type.
         /// </para>
         ///  </note> 
         /// <para>
@@ -351,7 +351,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property TaxDocuments. 
         /// <para>
-        /// The tax documents required in your AWS Region.
+        /// The tax documents required in your Amazon Web Services Region.
         /// </para>
         /// </summary>
         public TaxDocuments TaxDocuments

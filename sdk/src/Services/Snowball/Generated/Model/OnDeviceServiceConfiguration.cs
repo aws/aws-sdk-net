@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// An object that represents metadata and configuration settings for services on an AWS
-    /// Snow Family device.
+    /// An object that represents the metadata and configuration settings for services on
+    /// an Amazon Web Services Snow Family device.
     /// </summary>
     public partial class OnDeviceServiceConfiguration
     {
         private NFSOnDeviceServiceConfiguration _nfsOnDeviceService;
+        private TGWOnDeviceServiceConfiguration _tgwOnDeviceService;
 
         /// <summary>
         /// Gets and sets the property NFSOnDeviceService. 
         /// <para>
-        /// Represents the NFS service on a Snow Family device.
+        /// Represents the NFS (Network File System) service on a Snow Family device.
         /// </para>
         /// </summary>
         public NFSOnDeviceServiceConfiguration NFSOnDeviceService
@@ -52,6 +53,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetNFSOnDeviceService()
         {
             return this._nfsOnDeviceService != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TGWOnDeviceService. 
+        /// <para>
+        /// Represents the Storage Gateway service Tape Gateway type on a Snow Family device.
+        /// </para>
+        /// </summary>
+        public TGWOnDeviceServiceConfiguration TGWOnDeviceService
+        {
+            get { return this._tgwOnDeviceService; }
+            set { this._tgwOnDeviceService = value; }
+        }
+
+        // Check to see if TGWOnDeviceService property is set
+        internal bool IsSetTGWOnDeviceService()
+        {
+            return this._tgwOnDeviceService != null;
         }
 
     }

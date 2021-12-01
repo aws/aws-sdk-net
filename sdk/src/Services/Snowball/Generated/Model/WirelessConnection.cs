@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Configures the wireless connection on an AWS Snowcone device.
+    /// Configures the wireless connection on an Snowcone device.
     /// </summary>
     public partial class WirelessConnection
     {
@@ -38,7 +38,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property IsWifiEnabled. 
         /// <para>
-        /// Enables the Wi-Fi adapter on an AWS Snowcone device.
+        /// Enables the Wi-Fi adapter on an Snowcone device.
         /// </para>
         /// </summary>
         public bool IsWifiEnabled

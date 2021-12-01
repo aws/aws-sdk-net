@@ -38,7 +38,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property EventResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an AWS Lambda
+        /// The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an Lambda
         /// function's event trigger associated with this job.
         /// </para>
         /// </summary>

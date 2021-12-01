@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket,
-    /// an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that
-    /// is associated with a particular job.
+    /// Contains an array of Amazon Web Services resource objects. Each object represents
+    /// an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on
+    /// Amazon EC2 that is associated with a particular job.
     /// </summary>
     public partial class JobResource
     {

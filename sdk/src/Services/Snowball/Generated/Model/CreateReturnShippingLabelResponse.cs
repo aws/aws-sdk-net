@@ -38,7 +38,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status information of the task on a Snow device that is being returned to AWS.
+        /// The status information of the task on a Snow device that is being returned to Amazon
+        /// Web Services.
         /// </para>
         /// </summary>
         public ShippingLabelStatus Status

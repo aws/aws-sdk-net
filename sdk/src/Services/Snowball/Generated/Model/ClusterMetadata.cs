@@ -186,7 +186,7 @@ namespace Amazon.Snowball.Model
         /// <para>
         /// The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster.
         /// This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-        /// API action in AWS Key Management Service (AWS KMS).
+        /// API action in Key Management Service (KMS.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -224,8 +224,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property OnDeviceServiceConfiguration. 
         /// <para>
-        /// Represents metadata and configuration settings for services on an AWS Snow Family
-        /// device.
+        /// Represents metadata and configuration settings for services on an Amazon Web Services
+        /// Snow Family device.
         /// </para>
         /// </summary>
         public OnDeviceServiceConfiguration OnDeviceServiceConfiguration
@@ -263,7 +263,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// API action in AWS Identity and Access Management (IAM).
+        /// API action in Identity and Access Management (IAM).
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -322,12 +322,12 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snow device to use for this cluster. 
+        /// The type of Snowcone device to use for this cluster. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device
-        /// type.
+        /// For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code>
+        /// device type.
         /// </para>
         ///  </note>
         /// </summary>
@@ -346,7 +346,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property TaxDocuments. 
         /// <para>
-        /// The tax documents required in your AWS Region.
+        /// The tax documents required in your Amazon Web Services Region.
         /// </para>
         /// </summary>
         public TaxDocuments TaxDocuments

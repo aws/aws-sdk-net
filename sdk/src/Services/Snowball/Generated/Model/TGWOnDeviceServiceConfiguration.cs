@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// An object that represents the metadata and configuration settings for the NFS (Network
-    /// File System) service on an Amazon Web Services Snow Family device.
+    /// An object that represents the metadata and configuration settings for the Storage
+    /// Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.
     /// </summary>
-    public partial class NFSOnDeviceServiceConfiguration
+    public partial class TGWOnDeviceServiceConfiguration
     {
         private int? _storageLimit;
         private StorageUnit _storageUnit;
@@ -40,7 +40,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property StorageLimit. 
         /// <para>
-        /// The maximum NFS storage for one Snow Family device.
+        /// The maximum number of virtual tapes to store on one Snow Family device. Due to physical
+        /// resource limitations, this value must be set to 80 for Snowball Edge.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -59,11 +60,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property StorageUnit. 
         /// <para>
-        /// The scale unit of the NFS storage on the device.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: TB.
+        /// The scale unit of the virtual tapes on the device.
         /// </para>
         /// </summary>
         public StorageUnit StorageUnit

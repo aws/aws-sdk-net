@@ -31,7 +31,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// The address is either outside the serviceable area for your region, or an error occurred.
     /// Check the address with your region's carrier and try again. If the issue persists,
-    /// contact AWS Support.
+    /// contact Amazon Web Services Support.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -31,14 +31,14 @@ namespace Amazon.Snowball
     /// <summary>
     /// Interface for accessing Snowball
     ///
-    /// AWS Snow Family is a petabyte-scale data transport solution that uses secure devices
-    /// to transfer large amounts of data between your on-premises data centers and Amazon
-    /// Simple Storage Service (Amazon S3). The Snow commands described here provide access
-    /// to the same functionality that is available in the AWS Snow Family Management Console,
-    /// which enables you to create and manage jobs for a Snow device. To transfer data locally
-    /// with a Snow device, you'll need to use the Snowball Edge client or the Amazon S3 API
-    /// Interface for Snowball or AWS OpsHub for Snow Family. For more information, see the
-    /// <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+    /// The Amazon Web Services Snow Family provides a petabyte-scale data transport solution
+    /// that uses secure devices to transfer large amounts of data between your on-premises
+    /// data centers and Amazon Simple Storage Service (Amazon S3). The Snow Family commands
+    /// described here provide access to the same functionality that is available in the Amazon
+    /// Web Services Snow Family Management Console, which enables you to create and manage
+    /// jobs for a Snow Family device. To transfer data locally with a Snow Family device,
+    /// you'll need to use the Snowball Edge client or the Amazon S3 API Interface for Snowball
+    /// or OpsHub for Snow Family. For more information, see the <a href="https://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
     /// Guide</a>.
     /// </summary>
     public partial interface IAmazonSnowball : IAmazonService, IDisposable
@@ -69,7 +69,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
@@ -96,7 +96,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
@@ -125,7 +125,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
@@ -154,7 +154,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
@@ -181,7 +181,7 @@ namespace Amazon.Snowball
         /// <exception cref="Amazon.Snowball.Model.UnsupportedAddressException">
         /// The address is either outside the serviceable area for your region, or an error occurred.
         /// Check the address with your region's carrier and try again. If the issue persists,
-        /// contact AWS Support.
+        /// contact Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         CreateAddressResponse CreateAddress(CreateAddressRequest request);
@@ -207,7 +207,7 @@ namespace Amazon.Snowball
         /// <exception cref="Amazon.Snowball.Model.UnsupportedAddressException">
         /// The address is either outside the serviceable area for your region, or an error occurred.
         /// Check the address with your region's carrier and try again. If the issue persists,
-        /// contact AWS Support.
+        /// contact Amazon Web Services Support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         Task<CreateAddressResponse> CreateAddressAsync(CreateAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -239,7 +239,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
@@ -272,7 +272,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
@@ -285,10 +285,10 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// Creates a job to import or export data between Amazon S3 and your on-premises data
-        /// center. Your AWS account must have the right trust policies and permissions in place
-        /// to create a job for a Snow device. If you're creating a job for a node in a cluster,
-        /// you only need to provide the <code>clusterId</code> value; the other job attributes
-        /// are inherited from the cluster. 
+        /// center. Your Amazon Web Services account must have the right trust policies and permissions
+        /// in place to create a job for a Snow device. If you're creating a job for a node in
+        /// a cluster, you only need to provide the <code>clusterId</code> value; the other job
+        /// attributes are inherited from the cluster. 
         /// 
         ///  <note> 
         /// <para>
@@ -300,12 +300,11 @@ namespace Amazon.Snowball
         /// </para>
         ///  
         /// <para>
-        /// Availability of device types differ by AWS Region. For more information about Region
-        /// availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
-        /// Regional Services</a>.
+        /// Availability of device types differ by Amazon Web Services Region. For more information
+        /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
+        /// Web Services Regional Services</a>.
         /// </para>
-        ///  </note>  <p class="title"> <b>AWS Snow Family device types and their capacities.</b>
-        /// 
+        ///  </note>  <p class="title"> <b>Snow Family Devices and their capacities.</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -393,8 +392,8 @@ namespace Amazon.Snowball
         /// </para>
         ///  <note> 
         /// <para>
-        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
-        /// 
+        /// This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services
+        /// Region 
         /// </para>
         ///  </note> </li> </ul>  </li> <li> 
         /// <para>
@@ -410,8 +409,8 @@ namespace Amazon.Snowball
         /// </para>
         ///  <note> 
         /// <para>
-        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
-        /// 
+        /// This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services
+        /// Region. 
         /// </para>
         ///  </note> </li> </ul>  </li> </ul>
         /// </summary>
@@ -437,7 +436,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
@@ -447,10 +446,10 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// Creates a job to import or export data between Amazon S3 and your on-premises data
-        /// center. Your AWS account must have the right trust policies and permissions in place
-        /// to create a job for a Snow device. If you're creating a job for a node in a cluster,
-        /// you only need to provide the <code>clusterId</code> value; the other job attributes
-        /// are inherited from the cluster. 
+        /// center. Your Amazon Web Services account must have the right trust policies and permissions
+        /// in place to create a job for a Snow device. If you're creating a job for a node in
+        /// a cluster, you only need to provide the <code>clusterId</code> value; the other job
+        /// attributes are inherited from the cluster. 
         /// 
         ///  <note> 
         /// <para>
@@ -462,12 +461,11 @@ namespace Amazon.Snowball
         /// </para>
         ///  
         /// <para>
-        /// Availability of device types differ by AWS Region. For more information about Region
-        /// availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
-        /// Regional Services</a>.
+        /// Availability of device types differ by Amazon Web Services Region. For more information
+        /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
+        /// Web Services Regional Services</a>.
         /// </para>
-        ///  </note>  <p class="title"> <b>AWS Snow Family device types and their capacities.</b>
-        /// 
+        ///  </note>  <p class="title"> <b>Snow Family Devices and their capacities.</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -555,8 +553,8 @@ namespace Amazon.Snowball
         /// </para>
         ///  <note> 
         /// <para>
-        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
-        /// 
+        /// This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services
+        /// Region 
         /// </para>
         ///  </note> </li> </ul>  </li> <li> 
         /// <para>
@@ -572,8 +570,8 @@ namespace Amazon.Snowball
         /// </para>
         ///  <note> 
         /// <para>
-        /// This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
-        /// 
+        /// This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services
+        /// Region. 
         /// </para>
         ///  </note> </li> </ul>  </li> </ul>
         /// </summary>
@@ -602,7 +600,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
@@ -616,7 +614,7 @@ namespace Amazon.Snowball
         /// <summary>
         /// Creates a job with the long-term usage option for a device. The long-term usage is
         /// a 1-year or 3-year long-term pricing type for the device. You are billed upfront,
-        /// and AWS provides discounts for long-term pricing.
+        /// and Amazon Web Services provides discounts for long-term pricing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLongTermPricing service method.</param>
         /// 
@@ -633,7 +631,7 @@ namespace Amazon.Snowball
         /// <summary>
         /// Creates a job with the long-term usage option for a device. The long-term usage is
         /// a 1-year or 3-year long-term pricing type for the device. You are billed upfront,
-        /// and AWS provides discounts for long-term pricing.
+        /// and Amazon Web Services provides discounts for long-term pricing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLongTermPricing service method.</param>
         /// <param name="cancellationToken">
@@ -654,7 +652,8 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// Creates a shipping label that will be used to return the Snow device to AWS.
+        /// Creates a shipping label that will be used to return the Snow device to Amazon Web
+        /// Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReturnShippingLabel service method.</param>
         /// 
@@ -679,7 +678,7 @@ namespace Amazon.Snowball
         /// <exception cref="Amazon.Snowball.Model.ReturnShippingLabelAlreadyExistsException">
         /// You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
         /// return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code>
-        /// to get the url.
+        /// to get the URL.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">REST API Reference for CreateReturnShippingLabel Operation</seealso>
         CreateReturnShippingLabelResponse CreateReturnShippingLabel(CreateReturnShippingLabelRequest request);
@@ -687,7 +686,8 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// Creates a shipping label that will be used to return the Snow device to AWS.
+        /// Creates a shipping label that will be used to return the Snow device to Amazon Web
+        /// Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReturnShippingLabel service method.</param>
         /// <param name="cancellationToken">
@@ -715,7 +715,7 @@ namespace Amazon.Snowball
         /// <exception cref="Amazon.Snowball.Model.ReturnShippingLabelAlreadyExistsException">
         /// You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid
         /// return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code>
-        /// to get the url.
+        /// to get the URL.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateReturnShippingLabel">REST API Reference for CreateReturnShippingLabel Operation</seealso>
         Task<CreateReturnShippingLabelResponse> CreateReturnShippingLabelAsync(CreateReturnShippingLabelRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -890,7 +890,8 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// Information on the shipping label of a Snow device that is being returned to AWS.
+        /// Information on the shipping label of a Snow device that is being returned to Amazon
+        /// Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReturnShippingLabel service method.</param>
         /// 
@@ -913,7 +914,8 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// Information on the shipping label of a Snow device that is being returned to AWS.
+        /// Information on the shipping label of a Snow device that is being returned to Amazon
+        /// Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReturnShippingLabel service method.</param>
         /// <param name="cancellationToken">
@@ -1118,7 +1120,8 @@ namespace Amazon.Snowball
         ///  
         /// <para>
         /// The default service limit for the number of Snow devices that you can have at one
-        /// time is 1. If you want to increase your service limit, contact AWS Support.
+        /// time is 1. If you want to increase your service limit, contact Amazon Web Services
+        /// Support.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
@@ -1136,7 +1139,8 @@ namespace Amazon.Snowball
         ///  
         /// <para>
         /// The default service limit for the number of Snow devices that you can have at one
-        /// time is 1. If you want to increase your service limit, contact AWS Support.
+        /// time is 1. If you want to increase your service limit, contact Amazon Web Services
+        /// Support.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
@@ -1293,10 +1297,10 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-        /// that are owned by your AWS account that would be supported for use on a Snow device.
-        /// Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates HVM, Ubuntu
-        /// Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available on the
-        /// AWS Marketplace.
+        /// that are owned by your Amazon Web Services accountthat would be supported for use
+        /// on a Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with
+        /// Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
+        /// available on the Amazon Web Services Marketplace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages service method.</param>
         /// 
@@ -1317,10 +1321,10 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-        /// that are owned by your AWS account that would be supported for use on a Snow device.
-        /// Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates HVM, Ubuntu
-        /// Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available on the
-        /// AWS Marketplace.
+        /// that are owned by your Amazon Web Services accountthat would be supported for use
+        /// on a Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with
+        /// Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
+        /// available on the Amazon Web Services Marketplace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages service method.</param>
         /// <param name="cancellationToken">
@@ -1464,7 +1468,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
@@ -1502,7 +1506,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
@@ -1545,7 +1549,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
@@ -1588,7 +1592,7 @@ namespace Amazon.Snowball
         /// last request, and try again.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
-        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// The provided Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>

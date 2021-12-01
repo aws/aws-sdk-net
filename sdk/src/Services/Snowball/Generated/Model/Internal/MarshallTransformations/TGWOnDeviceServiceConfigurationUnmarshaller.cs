@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OnDeviceServiceConfiguration Object
+    /// Response Unmarshaller for TGWOnDeviceServiceConfiguration Object
     /// </summary>  
-    public class OnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OnDeviceServiceConfiguration, JsonUnmarshallerContext>
+    public class TGWOnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<TGWOnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TGWOnDeviceServiceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OnDeviceServiceConfiguration IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TGWOnDeviceServiceConfiguration IUnmarshaller<TGWOnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TGWOnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OnDeviceServiceConfiguration unmarshalledObject = new OnDeviceServiceConfiguration();
+            TGWOnDeviceServiceConfiguration unmarshalledObject = new TGWOnDeviceServiceConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NFSOnDeviceService", targetDepth))
+                if (context.TestExpression("StorageLimit", targetDepth))
                 {
-                    var unmarshaller = NFSOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NFSOnDeviceService = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TGWOnDeviceService", targetDepth))
+                if (context.TestExpression("StorageUnit", targetDepth))
                 {
-                    var unmarshaller = TGWOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TGWOnDeviceService = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageUnit = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         }
 
 
-        private static OnDeviceServiceConfigurationUnmarshaller _instance = new OnDeviceServiceConfigurationUnmarshaller();        
+        private static TGWOnDeviceServiceConfigurationUnmarshaller _instance = new TGWOnDeviceServiceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OnDeviceServiceConfigurationUnmarshaller Instance
+        public static TGWOnDeviceServiceConfigurationUnmarshaller Instance
         {
             get
             {

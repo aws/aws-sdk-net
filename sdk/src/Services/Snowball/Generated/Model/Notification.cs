@@ -93,8 +93,8 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  
         /// <para>
-        /// You can subscribe email addresses to an Amazon SNS topic through the AWS Management
-        /// Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
+        /// You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services
+        /// Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
         /// Amazon Simple Notification Service (Amazon SNS) API action.
         /// </para>
         /// </summary>
