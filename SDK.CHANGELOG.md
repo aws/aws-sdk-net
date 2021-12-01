@@ -1,3 +1,42 @@
+### 3.7.172.0 (2021-12-01 00:53 UTC)
+* AccessAnalyzer (3.7.2.0)
+	* AWS IAM Access Analyzer now supports policy validation for resource policies attached to S3 buckets and access points. You can run additional policy checks by specifying the S3 resource type you want to attach to your resource policy.
+* BackupGateway (3.7.0.0)
+	* Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.
+* EC2 (3.7.48.0)
+	* This release adds support for Is4gen and Im4gn instances. This release also adds a new subnet attribute, enableLniAtDeviceIndex, to support local network interfaces, which are logical networking components that connect an EC2 instance to your on-premises network.
+* FSx (3.7.6.0)
+	* This release adds support for the FSx for OpenZFS file system type, FSx for Lustre file systems with the Persistent_2 deployment type, and FSx for Lustre file systems with Amazon S3 data repository associations and automatic export policies.
+* Glue (3.7.10.0)
+	* Support for DataLake transactions
+* IoT (3.7.8.0)
+	* Added the ability to enable/disable IoT Fleet Indexing for Device Defender and Named Shadow information, and search them through IoT Fleet Indexing APIs.
+* IoTTwinMaker (3.7.0.0)
+	* AWS IoT TwinMaker makes it faster and easier to create, visualize and monitor digital twins of real-world systems like buildings, factories and industrial equipment to optimize operations. Learn more: https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/Welcome.html (New Service) (Preview)
+* Kafka (3.7.5.0)
+	* This release adds three new V2 APIs. CreateClusterV2 for creating both provisioned and serverless clusters. DescribeClusterV2 for getting information about provisioned and serverless clusters and ListClustersV2 for listing all clusters (both provisioned and serverless) in your account.
+* Kinesis (3.7.1.0)
+	* Amazon Kinesis Data Streams now supports on demand streams.
+* LakeFormation (3.7.2.0)
+	* This release adds support for row and cell-based access control in Lake Formation. It also adds support for Lake Formation Governed Tables, which support ACID transactions and automatic storage optimizations.
+* Outposts (3.7.5.0)
+	* This release adds the SupportedHardwareType parameter to CreateOutpost.
+* RedshiftDataAPIService (3.7.5.0)
+	* Data API now supports serverless queries.
+* S3 (3.7.7.0)
+	* Introduce Amazon S3 Glacier Instant Retrieval storage class and a new setting in S3 Object Ownership to disable ACLs for bucket and the objects in it.
+* Snowball (3.7.3.0)
+	* Tapeball is to integrate tape gateway onto snowball, it enables customer to transfer local data on the tape to snowball,and then ingest the data into tape gateway on the cloud.
+* StorageGateway (3.7.4.0)
+	* Added gateway type VTL_SNOW. Added new SNOWBALL HostEnvironment for gateways running on a Snowball device. Added new field HostEnvironmentId to serve as an identifier for the HostEnvironment on which the gateway is running.
+* WorkSpacesWeb (3.7.0.0)
+	* This is the initial SDK release for Amazon WorkSpaces Web. Amazon WorkSpaces Web is a low-cost, fully managed WorkSpace built to deliver secure web-based workloads and software-as-a-service (SaaS) application access to users within existing web browsers.
+* Core 3.7.5.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.171.0 (2021-11-30 01:05 UTC)
 * CloudWatchEvidently (3.7.0.0)
 	* Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.
