@@ -1,0 +1,3332 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the workspaces-web-2020-07-08.normal.json service model.
+ */
+
+
+using System;
+using System.Collections.Generic;
+using System.Net;
+
+using Amazon.WorkSpacesWeb.Model;
+using Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations;
+using Amazon.WorkSpacesWeb.Internal;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
+namespace Amazon.WorkSpacesWeb
+{
+    /// <summary>
+    /// Implementation for accessing WorkSpacesWeb
+    ///
+    /// WorkSpaces Web is a low cost, fully managed WorkSpace built specifically to facilitate
+    /// secure, web-based workloads. WorkSpaces Web makes it easy for customers to safely
+    /// provide their employees with access to internal websites and SaaS web applications
+    /// without the administrative burden of appliances or specialized client software. WorkSpaces
+    /// Web provides simple policy tools tailored for user interactions, while offloading
+    /// common tasks like capacity management, scaling, and maintaining browser images.
+    /// </summary>
+    public partial class AmazonWorkSpacesWebClient : AmazonServiceClient, IAmazonWorkSpacesWeb
+    {
+        private static IServiceMetadata serviceMetadata = new AmazonWorkSpacesWebMetadata();
+
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private IWorkSpacesWebPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IWorkSpacesWebPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new WorkSpacesWebPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
+        #region Constructors
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonWorkSpacesWebClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesWebConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonWorkSpacesWebClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesWebConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonWorkSpacesWebClient Configuration Object</param>
+        public AmazonWorkSpacesWebClient(AmazonWorkSpacesWebConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public AmazonWorkSpacesWebClient(AWSCredentials credentials)
+            : this(credentials, new AmazonWorkSpacesWebConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonWorkSpacesWebClient(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new AmazonWorkSpacesWebConfig{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Credentials and an
+        /// AmazonWorkSpacesWebClient Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The AmazonWorkSpacesWebClient Configuration Object</param>
+        public AmazonWorkSpacesWebClient(AWSCredentials credentials, AmazonWorkSpacesWebConfig clientConfig)
+            : base(credentials, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public AmazonWorkSpacesWebClient(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonWorkSpacesWebConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonWorkSpacesWebClient(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new AmazonWorkSpacesWebConfig() {RegionEndpoint=region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonWorkSpacesWebClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="clientConfig">The AmazonWorkSpacesWebClient Configuration Object</param>
+        public AmazonWorkSpacesWebClient(string awsAccessKeyId, string awsSecretAccessKey, AmazonWorkSpacesWebConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig)
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonWorkSpacesWebClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonWorkSpacesWebConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonWorkSpacesWebClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonWorkSpacesWebConfig{RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesWebClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonWorkSpacesWebClient Configuration object. 
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonWorkSpacesWebClient Configuration Object</param>
+        public AmazonWorkSpacesWebClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonWorkSpacesWebConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig)
+        {
+        }
+
+        #endregion
+
+        #region Overrides
+
+        
+        /// <summary>
+        /// Creates the signer for the service.
+        /// </summary>
+        protected override AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
+
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
+
+        #endregion
+
+        #region Dispose
+
+        /// <summary>
+        /// Disposes the service client.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+
+        #region  AssociateBrowserSettings
+
+        /// <summary>
+        /// Associates a browser settings resource with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBrowserSettings service method.</param>
+        /// 
+        /// <returns>The response from the AssociateBrowserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateBrowserSettings">REST API Reference for AssociateBrowserSettings Operation</seealso>
+        public virtual AssociateBrowserSettingsResponse AssociateBrowserSettings(AssociateBrowserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateBrowserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateBrowserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateBrowserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateBrowserSettings">REST API Reference for AssociateBrowserSettings Operation</seealso>
+        public virtual IAsyncResult BeginAssociateBrowserSettings(AssociateBrowserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateBrowserSettings.</param>
+        /// 
+        /// <returns>Returns a  AssociateBrowserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateBrowserSettings">REST API Reference for AssociateBrowserSettings Operation</seealso>
+        public virtual AssociateBrowserSettingsResponse EndAssociateBrowserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateBrowserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateNetworkSettings
+
+        /// <summary>
+        /// Associates a network settings resource with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNetworkSettings service method.</param>
+        /// 
+        /// <returns>The response from the AssociateNetworkSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateNetworkSettings">REST API Reference for AssociateNetworkSettings Operation</seealso>
+        public virtual AssociateNetworkSettingsResponse AssociateNetworkSettings(AssociateNetworkSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateNetworkSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNetworkSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateNetworkSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateNetworkSettings">REST API Reference for AssociateNetworkSettings Operation</seealso>
+        public virtual IAsyncResult BeginAssociateNetworkSettings(AssociateNetworkSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateNetworkSettings.</param>
+        /// 
+        /// <returns>Returns a  AssociateNetworkSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateNetworkSettings">REST API Reference for AssociateNetworkSettings Operation</seealso>
+        public virtual AssociateNetworkSettingsResponse EndAssociateNetworkSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateNetworkSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateTrustStore
+
+        /// <summary>
+        /// Associates a trust store with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTrustStore service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateTrustStore">REST API Reference for AssociateTrustStore Operation</seealso>
+        public virtual AssociateTrustStoreResponse AssociateTrustStore(AssociateTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTrustStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTrustStore operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateTrustStore">REST API Reference for AssociateTrustStore Operation</seealso>
+        public virtual IAsyncResult BeginAssociateTrustStore(AssociateTrustStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTrustStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateTrustStore.</param>
+        /// 
+        /// <returns>Returns a  AssociateTrustStoreResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateTrustStore">REST API Reference for AssociateTrustStore Operation</seealso>
+        public virtual AssociateTrustStoreResponse EndAssociateTrustStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateUserSettings
+
+        /// <summary>
+        /// Associates a user settings resource with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserSettings service method.</param>
+        /// 
+        /// <returns>The response from the AssociateUserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserSettings">REST API Reference for AssociateUserSettings Operation</seealso>
+        public virtual AssociateUserSettingsResponse AssociateUserSettings(AssociateUserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateUserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateUserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserSettings">REST API Reference for AssociateUserSettings Operation</seealso>
+        public virtual IAsyncResult BeginAssociateUserSettings(AssociateUserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateUserSettings.</param>
+        /// 
+        /// <returns>Returns a  AssociateUserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserSettings">REST API Reference for AssociateUserSettings Operation</seealso>
+        public virtual AssociateUserSettingsResponse EndAssociateUserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateUserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateBrowserSettings
+
+        /// <summary>
+        /// Creates a browser settings resource that can be associated with a web portal. Once
+        /// associated with a web portal, browser settings control how the browser will behave
+        /// once a user starts a streaming session for the web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBrowserSettings service method.</param>
+        /// 
+        /// <returns>The response from the CreateBrowserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateBrowserSettings">REST API Reference for CreateBrowserSettings Operation</seealso>
+        public virtual CreateBrowserSettingsResponse CreateBrowserSettings(CreateBrowserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBrowserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBrowserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBrowserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateBrowserSettings">REST API Reference for CreateBrowserSettings Operation</seealso>
+        public virtual IAsyncResult BeginCreateBrowserSettings(CreateBrowserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBrowserSettings.</param>
+        /// 
+        /// <returns>Returns a  CreateBrowserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateBrowserSettings">REST API Reference for CreateBrowserSettings Operation</seealso>
+        public virtual CreateBrowserSettingsResponse EndCreateBrowserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBrowserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateIdentityProvider
+
+        /// <summary>
+        /// Creates an identity provider resource that is then associated with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateIdentityProvider service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIdentityProvider">REST API Reference for CreateIdentityProvider Operation</seealso>
+        public virtual CreateIdentityProviderResponse CreateIdentityProvider(CreateIdentityProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIdentityProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIdentityProvider operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIdentityProvider">REST API Reference for CreateIdentityProvider Operation</seealso>
+        public virtual IAsyncResult BeginCreateIdentityProvider(CreateIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateIdentityProviderResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIdentityProvider">REST API Reference for CreateIdentityProvider Operation</seealso>
+        public virtual CreateIdentityProviderResponse EndCreateIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateNetworkSettings
+
+        /// <summary>
+        /// Creates a network settings resource that can be associated with a web portal. Once
+        /// associated with a web portal, network settings define how streaming instances will
+        /// connect with your specified VPC.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkSettings service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateNetworkSettings">REST API Reference for CreateNetworkSettings Operation</seealso>
+        public virtual CreateNetworkSettingsResponse CreateNetworkSettings(CreateNetworkSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateNetworkSettings">REST API Reference for CreateNetworkSettings Operation</seealso>
+        public virtual IAsyncResult BeginCreateNetworkSettings(CreateNetworkSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkSettings.</param>
+        /// 
+        /// <returns>Returns a  CreateNetworkSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateNetworkSettings">REST API Reference for CreateNetworkSettings Operation</seealso>
+        public virtual CreateNetworkSettingsResponse EndCreateNetworkSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNetworkSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePortal
+
+        /// <summary>
+        /// Creates a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortal service method.</param>
+        /// 
+        /// <returns>The response from the CreatePortal service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        public virtual CreatePortalResponse CreatePortal(CreatePortalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePortalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortal operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        public virtual IAsyncResult BeginCreatePortal(CreatePortalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePortal.</param>
+        /// 
+        /// <returns>Returns a  CreatePortalResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        public virtual CreatePortalResponse EndCreatePortal(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePortalResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrustStore
+
+        /// <summary>
+        /// Creates a trust store that can be associated with a web portal. A trust store contains
+        /// certificate authority (CA) certificates. Once associated with a web portal, the browser
+        /// in a streaming session will recognize certificates that have been issued using any
+        /// of the CAs in the trust store. If your organization has internal websites that use
+        /// certificates issued by private CAs, you should add the private CA certificate to the
+        /// trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrustStore service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        public virtual CreateTrustStoreResponse CreateTrustStore(CreateTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrustStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrustStore(CreateTrustStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrustStore.</param>
+        /// 
+        /// <returns>Returns a  CreateTrustStoreResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        public virtual CreateTrustStoreResponse EndCreateTrustStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateUserSettings
+
+        /// <summary>
+        /// Creates a user settings resource that can be associated with a web portal. Once associated
+        /// with a web portal, user settings control how users can transfer data between a streaming
+        /// session and the their local devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserSettings service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserSettings">REST API Reference for CreateUserSettings Operation</seealso>
+        public virtual CreateUserSettingsResponse CreateUserSettings(CreateUserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserSettings">REST API Reference for CreateUserSettings Operation</seealso>
+        public virtual IAsyncResult BeginCreateUserSettings(CreateUserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserSettings.</param>
+        /// 
+        /// <returns>Returns a  CreateUserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserSettings">REST API Reference for CreateUserSettings Operation</seealso>
+        public virtual CreateUserSettingsResponse EndCreateUserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBrowserSettings
+
+        /// <summary>
+        /// Deletes browser settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBrowserSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBrowserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteBrowserSettings">REST API Reference for DeleteBrowserSettings Operation</seealso>
+        public virtual DeleteBrowserSettingsResponse DeleteBrowserSettings(DeleteBrowserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBrowserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBrowserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBrowserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBrowserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteBrowserSettings">REST API Reference for DeleteBrowserSettings Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBrowserSettings(DeleteBrowserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBrowserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBrowserSettings.</param>
+        /// 
+        /// <returns>Returns a  DeleteBrowserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteBrowserSettings">REST API Reference for DeleteBrowserSettings Operation</seealso>
+        public virtual DeleteBrowserSettingsResponse EndDeleteBrowserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBrowserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteIdentityProvider
+
+        /// <summary>
+        /// Deletes the identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIdentityProvider service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIdentityProvider">REST API Reference for DeleteIdentityProvider Operation</seealso>
+        public virtual DeleteIdentityProviderResponse DeleteIdentityProvider(DeleteIdentityProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIdentityProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIdentityProvider">REST API Reference for DeleteIdentityProvider Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIdentityProvider(DeleteIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  DeleteIdentityProviderResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIdentityProvider">REST API Reference for DeleteIdentityProvider Operation</seealso>
+        public virtual DeleteIdentityProviderResponse EndDeleteIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkSettings
+
+        /// <summary>
+        /// Deletes network settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteNetworkSettings">REST API Reference for DeleteNetworkSettings Operation</seealso>
+        public virtual DeleteNetworkSettingsResponse DeleteNetworkSettings(DeleteNetworkSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteNetworkSettings">REST API Reference for DeleteNetworkSettings Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNetworkSettings(DeleteNetworkSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkSettings.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteNetworkSettings">REST API Reference for DeleteNetworkSettings Operation</seealso>
+        public virtual DeleteNetworkSettingsResponse EndDeleteNetworkSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNetworkSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePortal
+
+        /// <summary>
+        /// Deletes a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortal service method.</param>
+        /// 
+        /// <returns>The response from the DeletePortal service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        public virtual DeletePortalResponse DeletePortal(DeletePortalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePortalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortal operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        public virtual IAsyncResult BeginDeletePortal(DeletePortalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePortal.</param>
+        /// 
+        /// <returns>Returns a  DeletePortalResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        public virtual DeletePortalResponse EndDeletePortal(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePortalResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTrustStore
+
+        /// <summary>
+        /// Deletes the trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrustStore service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        public virtual DeleteTrustStoreResponse DeleteTrustStore(DeleteTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrustStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTrustStore(DeleteTrustStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrustStore.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrustStoreResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        public virtual DeleteTrustStoreResponse EndDeleteTrustStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUserSettings
+
+        /// <summary>
+        /// Deletes user settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserSettings">REST API Reference for DeleteUserSettings Operation</seealso>
+        public virtual DeleteUserSettingsResponse DeleteUserSettings(DeleteUserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserSettings">REST API Reference for DeleteUserSettings Operation</seealso>
+        public virtual IAsyncResult BeginDeleteUserSettings(DeleteUserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserSettings.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserSettings">REST API Reference for DeleteUserSettings Operation</seealso>
+        public virtual DeleteUserSettingsResponse EndDeleteUserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateBrowserSettings
+
+        /// <summary>
+        /// Disassociates browser settings from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBrowserSettings service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateBrowserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateBrowserSettings">REST API Reference for DisassociateBrowserSettings Operation</seealso>
+        public virtual DisassociateBrowserSettingsResponse DisassociateBrowserSettings(DisassociateBrowserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateBrowserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateBrowserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateBrowserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateBrowserSettings">REST API Reference for DisassociateBrowserSettings Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateBrowserSettings(DisassociateBrowserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateBrowserSettings.</param>
+        /// 
+        /// <returns>Returns a  DisassociateBrowserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateBrowserSettings">REST API Reference for DisassociateBrowserSettings Operation</seealso>
+        public virtual DisassociateBrowserSettingsResponse EndDisassociateBrowserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateBrowserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateNetworkSettings
+
+        /// <summary>
+        /// Disassociates network settings from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNetworkSettings service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateNetworkSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateNetworkSettings">REST API Reference for DisassociateNetworkSettings Operation</seealso>
+        public virtual DisassociateNetworkSettingsResponse DisassociateNetworkSettings(DisassociateNetworkSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateNetworkSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNetworkSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateNetworkSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateNetworkSettings">REST API Reference for DisassociateNetworkSettings Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateNetworkSettings(DisassociateNetworkSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateNetworkSettings.</param>
+        /// 
+        /// <returns>Returns a  DisassociateNetworkSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateNetworkSettings">REST API Reference for DisassociateNetworkSettings Operation</seealso>
+        public virtual DisassociateNetworkSettingsResponse EndDisassociateNetworkSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateNetworkSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateTrustStore
+
+        /// <summary>
+        /// Disassociates a trust store from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTrustStore service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateTrustStore">REST API Reference for DisassociateTrustStore Operation</seealso>
+        public virtual DisassociateTrustStoreResponse DisassociateTrustStore(DisassociateTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTrustStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTrustStore operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateTrustStore">REST API Reference for DisassociateTrustStore Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateTrustStore(DisassociateTrustStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTrustStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateTrustStore.</param>
+        /// 
+        /// <returns>Returns a  DisassociateTrustStoreResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateTrustStore">REST API Reference for DisassociateTrustStore Operation</seealso>
+        public virtual DisassociateTrustStoreResponse EndDisassociateTrustStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateUserSettings
+
+        /// <summary>
+        /// Disassociates user settings from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserSettings service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateUserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserSettings">REST API Reference for DisassociateUserSettings Operation</seealso>
+        public virtual DisassociateUserSettingsResponse DisassociateUserSettings(DisassociateUserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateUserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateUserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserSettings">REST API Reference for DisassociateUserSettings Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateUserSettings(DisassociateUserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateUserSettings.</param>
+        /// 
+        /// <returns>Returns a  DisassociateUserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserSettings">REST API Reference for DisassociateUserSettings Operation</seealso>
+        public virtual DisassociateUserSettingsResponse EndDisassociateUserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateUserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBrowserSettings
+
+        /// <summary>
+        /// Gets browser settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBrowserSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetBrowserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetBrowserSettings">REST API Reference for GetBrowserSettings Operation</seealso>
+        public virtual GetBrowserSettingsResponse GetBrowserSettings(GetBrowserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBrowserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBrowserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBrowserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBrowserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetBrowserSettings">REST API Reference for GetBrowserSettings Operation</seealso>
+        public virtual IAsyncResult BeginGetBrowserSettings(GetBrowserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBrowserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBrowserSettings.</param>
+        /// 
+        /// <returns>Returns a  GetBrowserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetBrowserSettings">REST API Reference for GetBrowserSettings Operation</seealso>
+        public virtual GetBrowserSettingsResponse EndGetBrowserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBrowserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetIdentityProvider
+
+        /// <summary>
+        /// Gets the identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetIdentityProvider service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIdentityProvider">REST API Reference for GetIdentityProvider Operation</seealso>
+        public virtual GetIdentityProviderResponse GetIdentityProvider(GetIdentityProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetIdentityProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityProvider operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIdentityProvider">REST API Reference for GetIdentityProvider Operation</seealso>
+        public virtual IAsyncResult BeginGetIdentityProvider(GetIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  GetIdentityProviderResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIdentityProvider">REST API Reference for GetIdentityProvider Operation</seealso>
+        public virtual GetIdentityProviderResponse EndGetIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetNetworkSettings
+
+        /// <summary>
+        /// Gets the network settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetNetworkSettings">REST API Reference for GetNetworkSettings Operation</seealso>
+        public virtual GetNetworkSettingsResponse GetNetworkSettings(GetNetworkSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetNetworkSettings">REST API Reference for GetNetworkSettings Operation</seealso>
+        public virtual IAsyncResult BeginGetNetworkSettings(GetNetworkSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkSettings.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetNetworkSettings">REST API Reference for GetNetworkSettings Operation</seealso>
+        public virtual GetNetworkSettingsResponse EndGetNetworkSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetNetworkSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPortal
+
+        /// <summary>
+        /// Gets the web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortal service method.</param>
+        /// 
+        /// <returns>The response from the GetPortal service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        public virtual GetPortalResponse GetPortal(GetPortalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalResponseUnmarshaller.Instance;
+
+            return Invoke<GetPortalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPortal operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        public virtual IAsyncResult BeginGetPortal(GetPortalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPortal.</param>
+        /// 
+        /// <returns>Returns a  GetPortalResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        public virtual GetPortalResponse EndGetPortal(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPortalResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPortalServiceProviderMetadata
+
+        /// <summary>
+        /// Gets the service provider metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalServiceProviderMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetPortalServiceProviderMetadata service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetPortalServiceProviderMetadata">REST API Reference for GetPortalServiceProviderMetadata Operation</seealso>
+        public virtual GetPortalServiceProviderMetadataResponse GetPortalServiceProviderMetadata(GetPortalServiceProviderMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPortalServiceProviderMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalServiceProviderMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetPortalServiceProviderMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPortalServiceProviderMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalServiceProviderMetadata operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPortalServiceProviderMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetPortalServiceProviderMetadata">REST API Reference for GetPortalServiceProviderMetadata Operation</seealso>
+        public virtual IAsyncResult BeginGetPortalServiceProviderMetadata(GetPortalServiceProviderMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPortalServiceProviderMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalServiceProviderMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPortalServiceProviderMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPortalServiceProviderMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetPortalServiceProviderMetadataResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetPortalServiceProviderMetadata">REST API Reference for GetPortalServiceProviderMetadata Operation</seealso>
+        public virtual GetPortalServiceProviderMetadataResponse EndGetPortalServiceProviderMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPortalServiceProviderMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTrustStore
+
+        /// <summary>
+        /// Gets the trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustStore service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        public virtual GetTrustStoreResponse GetTrustStore(GetTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrustStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        public virtual IAsyncResult BeginGetTrustStore(GetTrustStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrustStore.</param>
+        /// 
+        /// <returns>Returns a  GetTrustStoreResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        public virtual GetTrustStoreResponse EndGetTrustStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTrustStoreCertificate
+
+        /// <summary>
+        /// Gets the trust store certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreCertificate service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustStoreCertificate service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetTrustStoreCertificate">REST API Reference for GetTrustStoreCertificate Operation</seealso>
+        public virtual GetTrustStoreCertificateResponse GetTrustStoreCertificate(GetTrustStoreCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrustStoreCertificateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrustStoreCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStoreCertificate operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrustStoreCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetTrustStoreCertificate">REST API Reference for GetTrustStoreCertificate Operation</seealso>
+        public virtual IAsyncResult BeginGetTrustStoreCertificate(GetTrustStoreCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrustStoreCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrustStoreCertificate.</param>
+        /// 
+        /// <returns>Returns a  GetTrustStoreCertificateResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetTrustStoreCertificate">REST API Reference for GetTrustStoreCertificate Operation</seealso>
+        public virtual GetTrustStoreCertificateResponse EndGetTrustStoreCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTrustStoreCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUserSettings
+
+        /// <summary>
+        /// Gets user settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetUserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserSettings">REST API Reference for GetUserSettings Operation</seealso>
+        public virtual GetUserSettingsResponse GetUserSettings(GetUserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserSettings">REST API Reference for GetUserSettings Operation</seealso>
+        public virtual IAsyncResult BeginGetUserSettings(GetUserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUserSettings.</param>
+        /// 
+        /// <returns>Returns a  GetUserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserSettings">REST API Reference for GetUserSettings Operation</seealso>
+        public virtual GetUserSettingsResponse EndGetUserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBrowserSettings
+
+        /// <summary>
+        /// Retrieves a list of browser settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBrowserSettings service method.</param>
+        /// 
+        /// <returns>The response from the ListBrowserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListBrowserSettings">REST API Reference for ListBrowserSettings Operation</seealso>
+        public virtual ListBrowserSettingsResponse ListBrowserSettings(ListBrowserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBrowserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBrowserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBrowserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBrowserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListBrowserSettings">REST API Reference for ListBrowserSettings Operation</seealso>
+        public virtual IAsyncResult BeginListBrowserSettings(ListBrowserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBrowserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBrowserSettings.</param>
+        /// 
+        /// <returns>Returns a  ListBrowserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListBrowserSettings">REST API Reference for ListBrowserSettings Operation</seealso>
+        public virtual ListBrowserSettingsResponse EndListBrowserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBrowserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIdentityProviders
+
+        /// <summary>
+        /// Retrieves a list of identity providers for a specific web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListIdentityProviders service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIdentityProviders">REST API Reference for ListIdentityProviders Operation</seealso>
+        public virtual ListIdentityProvidersResponse ListIdentityProviders(ListIdentityProvidersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentityProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityProvidersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIdentityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIdentityProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIdentityProviders">REST API Reference for ListIdentityProviders Operation</seealso>
+        public virtual IAsyncResult BeginListIdentityProviders(ListIdentityProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIdentityProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIdentityProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIdentityProviders.</param>
+        /// 
+        /// <returns>Returns a  ListIdentityProvidersResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIdentityProviders">REST API Reference for ListIdentityProviders Operation</seealso>
+        public virtual ListIdentityProvidersResponse EndListIdentityProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIdentityProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkSettings
+
+        /// <summary>
+        /// Retrieves a list of network settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkSettings service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListNetworkSettings">REST API Reference for ListNetworkSettings Operation</seealso>
+        public virtual ListNetworkSettingsResponse ListNetworkSettings(ListNetworkSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListNetworkSettings">REST API Reference for ListNetworkSettings Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkSettings(ListNetworkSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkSettings.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListNetworkSettings">REST API Reference for ListNetworkSettings Operation</seealso>
+        public virtual ListNetworkSettingsResponse EndListNetworkSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPortals
+
+        /// <summary>
+        /// Retrieves a list or web portals.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPortals service method.</param>
+        /// 
+        /// <returns>The response from the ListPortals service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        public virtual ListPortalsResponse ListPortals(ListPortalsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPortalsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPortals operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPortals operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPortals
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        public virtual IAsyncResult BeginListPortals(ListPortalsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPortals operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPortals.</param>
+        /// 
+        /// <returns>Returns a  ListPortalsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        public virtual ListPortalsResponse EndListPortals(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPortalsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Retrieves a list of tags for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrustStoreCertificates
+
+        /// <summary>
+        /// Retrieves a list of trust store certificates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStoreCertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListTrustStoreCertificates service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTrustStoreCertificates">REST API Reference for ListTrustStoreCertificates Operation</seealso>
+        public virtual ListTrustStoreCertificatesResponse ListTrustStoreCertificates(ListTrustStoreCertificatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustStoreCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustStoreCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrustStoreCertificatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrustStoreCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStoreCertificates operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrustStoreCertificates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTrustStoreCertificates">REST API Reference for ListTrustStoreCertificates Operation</seealso>
+        public virtual IAsyncResult BeginListTrustStoreCertificates(ListTrustStoreCertificatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustStoreCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustStoreCertificatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrustStoreCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrustStoreCertificates.</param>
+        /// 
+        /// <returns>Returns a  ListTrustStoreCertificatesResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTrustStoreCertificates">REST API Reference for ListTrustStoreCertificates Operation</seealso>
+        public virtual ListTrustStoreCertificatesResponse EndListTrustStoreCertificates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrustStoreCertificatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTrustStores
+
+        /// <summary>
+        /// Retrieves a list of trust stores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores service method.</param>
+        /// 
+        /// <returns>The response from the ListTrustStores service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        public virtual ListTrustStoresResponse ListTrustStores(ListTrustStoresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrustStoresResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrustStores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrustStores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        public virtual IAsyncResult BeginListTrustStores(ListTrustStoresRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrustStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustStoresResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrustStores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrustStores.</param>
+        /// 
+        /// <returns>Returns a  ListTrustStoresResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        public virtual ListTrustStoresResponse EndListTrustStores(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrustStoresResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListUserSettings
+
+        /// <summary>
+        /// Retrieves a list of user settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserSettings service method.</param>
+        /// 
+        /// <returns>The response from the ListUserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserSettings">REST API Reference for ListUserSettings Operation</seealso>
+        public virtual ListUserSettingsResponse ListUserSettings(ListUserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserSettings">REST API Reference for ListUserSettings Operation</seealso>
+        public virtual IAsyncResult BeginListUserSettings(ListUserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserSettings.</param>
+        /// 
+        /// <returns>Returns a  ListUserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserSettings">REST API Reference for ListUserSettings Operation</seealso>
+        public virtual ListUserSettingsResponse EndListUserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds or overwrites one or more tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.TooManyTagsException">
+        /// There are too many tags.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes one or more tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateBrowserSettings
+
+        /// <summary>
+        /// Updates browser settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBrowserSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBrowserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateBrowserSettings">REST API Reference for UpdateBrowserSettings Operation</seealso>
+        public virtual UpdateBrowserSettingsResponse UpdateBrowserSettings(UpdateBrowserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBrowserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBrowserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBrowserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateBrowserSettings">REST API Reference for UpdateBrowserSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateBrowserSettings(UpdateBrowserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBrowserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBrowserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBrowserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBrowserSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateBrowserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateBrowserSettings">REST API Reference for UpdateBrowserSettings Operation</seealso>
+        public virtual UpdateBrowserSettingsResponse EndUpdateBrowserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateBrowserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateIdentityProvider
+
+        /// <summary>
+        /// Updates the identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIdentityProvider service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIdentityProvider">REST API Reference for UpdateIdentityProvider Operation</seealso>
+        public virtual UpdateIdentityProviderResponse UpdateIdentityProvider(UpdateIdentityProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdentityProviderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIdentityProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIdentityProvider">REST API Reference for UpdateIdentityProvider Operation</seealso>
+        public virtual IAsyncResult BeginUpdateIdentityProvider(UpdateIdentityProviderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIdentityProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIdentityProvider.</param>
+        /// 
+        /// <returns>Returns a  UpdateIdentityProviderResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIdentityProvider">REST API Reference for UpdateIdentityProvider Operation</seealso>
+        public virtual UpdateIdentityProviderResponse EndUpdateIdentityProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkSettings
+
+        /// <summary>
+        /// Updates network settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNetworkSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateNetworkSettings">REST API Reference for UpdateNetworkSettings Operation</seealso>
+        public virtual UpdateNetworkSettingsResponse UpdateNetworkSettings(UpdateNetworkSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNetworkSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateNetworkSettings">REST API Reference for UpdateNetworkSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNetworkSettings(UpdateNetworkSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNetworkSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNetworkSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateNetworkSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateNetworkSettings">REST API Reference for UpdateNetworkSettings Operation</seealso>
+        public virtual UpdateNetworkSettingsResponse EndUpdateNetworkSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNetworkSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePortal
+
+        /// <summary>
+        /// Updates a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortal service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePortal service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        public virtual UpdatePortalResponse UpdatePortal(UpdatePortalRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePortalResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortal operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePortal
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePortal(UpdatePortalRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePortal operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePortal.</param>
+        /// 
+        /// <returns>Returns a  UpdatePortalResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        public virtual UpdatePortalResponse EndUpdatePortal(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePortalResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateTrustStore
+
+        /// <summary>
+        /// Updates the trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrustStore service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        public virtual UpdateTrustStoreResponse UpdateTrustStore(UpdateTrustStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrustStoreResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTrustStore(UpdateTrustStoreRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustStoreResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrustStore.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrustStoreResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        public virtual UpdateTrustStoreResponse EndUpdateTrustStore(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateUserSettings
+
+        /// <summary>
+        /// Updates the user settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserSettings">REST API Reference for UpdateUserSettings Operation</seealso>
+        public virtual UpdateUserSettingsResponse UpdateUserSettings(UpdateUserSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserSettings">REST API Reference for UpdateUserSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateUserSettings(UpdateUserSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUserSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateUserSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserSettings">REST API Reference for UpdateUserSettings Operation</seealso>
+        public virtual UpdateUserSettingsResponse EndUpdateUserSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUserSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+    }
+}

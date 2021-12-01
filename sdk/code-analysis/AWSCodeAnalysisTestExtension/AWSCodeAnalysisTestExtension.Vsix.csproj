@@ -1232,6 +1232,10 @@
       <Project>{59D2738F-B594-4863-B5A7-1ACF80A71885}</Project>
       <Name>AWSSDK.WorkSpaces.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WorkSpacesWeb/AWSSDK.WorkSpacesWeb.CodeAnalysis.csproj">
+      <Project>{4D0C0F30-FEE9-4C5F-AD1B-CABE4E390588}</Project>
+      <Name>AWSSDK.WorkSpacesWeb.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/XRay/AWSSDK.XRay.CodeAnalysis.csproj">
       <Project>{5D84DBCB-DBE7-41C6-8DC2-D4BC1ABE0BE7}</Project>
       <Name>AWSSDK.XRay.CodeAnalysis</Name>
