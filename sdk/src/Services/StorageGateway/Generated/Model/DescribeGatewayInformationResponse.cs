@@ -47,6 +47,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayTimezone;
         private string _gatewayType;
         private HostEnvironment _hostEnvironment;
+        private string _hostEnvironmentId;
         private string _lastSoftwareUpdate;
         private string _nextUpdateAvailabilityDate;
         private string _softwareUpdatesEndDate;
@@ -304,7 +305,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property HostEnvironment. 
         /// <para>
-        /// The type of hypervisor environment used by the host.
+        /// The type of hardware or software platform on which the gateway is running.
         /// </para>
         /// </summary>
         public HostEnvironment HostEnvironment
@@ -317,6 +318,27 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetHostEnvironment()
         {
             return this._hostEnvironment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostEnvironmentId. 
+        /// <para>
+        /// A unique identifier for the specific instance of the host platform running the gateway.
+        /// This value is only available for certain host environments, and its format depends
+        /// on the host environment type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string HostEnvironmentId
+        {
+            get { return this._hostEnvironmentId; }
+            set { this._hostEnvironmentId = value; }
+        }
+
+        // Check to see if HostEnvironmentId property is set
+        internal bool IsSetHostEnvironmentId()
+        {
+            return this._hostEnvironmentId != null;
         }
 
         /// <summary>

@@ -106,6 +106,18 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HostEnvironment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HostEnvironment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HostEnvironmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HostEnvironmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

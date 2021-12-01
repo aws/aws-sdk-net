@@ -615,6 +615,10 @@ namespace Amazon.StorageGateway
         /// </summary>
         public static readonly HostEnvironment OTHER = new HostEnvironment("OTHER");
         /// <summary>
+        /// Constant SNOWBALL for HostEnvironment
+        /// </summary>
+        public static readonly HostEnvironment SNOWBALL = new HostEnvironment("SNOWBALL");
+        /// <summary>
         /// Constant VMWARE for HostEnvironment
         /// </summary>
         public static readonly HostEnvironment VMWARE = new HostEnvironment("VMWARE");

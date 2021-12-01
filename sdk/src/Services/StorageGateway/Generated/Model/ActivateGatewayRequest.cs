@@ -164,8 +164,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code>
-        /// | <code>FILE_FSX_SMB|</code> 
+        /// Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code>
+        /// | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]

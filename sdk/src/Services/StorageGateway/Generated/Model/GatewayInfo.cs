@@ -40,6 +40,8 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayName;
         private string _gatewayOperationalState;
         private string _gatewayType;
+        private HostEnvironment _hostEnvironment;
+        private string _hostEnvironmentId;
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
@@ -175,6 +177,45 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayType()
         {
             return this._gatewayType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostEnvironment. 
+        /// <para>
+        /// The type of hardware or software platform on which the gateway is running.
+        /// </para>
+        /// </summary>
+        public HostEnvironment HostEnvironment
+        {
+            get { return this._hostEnvironment; }
+            set { this._hostEnvironment = value; }
+        }
+
+        // Check to see if HostEnvironment property is set
+        internal bool IsSetHostEnvironment()
+        {
+            return this._hostEnvironment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostEnvironmentId. 
+        /// <para>
+        /// A unique identifier for the specific instance of the host platform running the gateway.
+        /// This value is only available for certain host environments, and its format depends
+        /// on the host environment type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string HostEnvironmentId
+        {
+            get { return this._hostEnvironmentId; }
+            set { this._hostEnvironmentId = value; }
+        }
+
+        // Check to see if HostEnvironmentId property is set
+        internal bool IsSetHostEnvironmentId()
+        {
+            return this._hostEnvironmentId != null;
         }
 
     }
