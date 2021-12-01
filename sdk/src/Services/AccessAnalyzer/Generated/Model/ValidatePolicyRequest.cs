@@ -41,6 +41,7 @@ namespace Amazon.AccessAnalyzer.Model
         private string _nextToken;
         private string _policyDocument;
         private PolicyType _policyType;
+        private ValidatePolicyResourceType _validatePolicyResourceType;
 
         /// <summary>
         /// Gets and sets the property Locale. 
@@ -142,6 +143,34 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetPolicyType()
         {
             return this._policyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidatePolicyResourceType. 
+        /// <para>
+        /// The type of resource to attach to your resource policy. Specify a value for the policy
+        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>.
+        /// For example, to validate a resource policy to attach to an Amazon S3 bucket, you can
+        /// choose <code>AWS::S3::Bucket</code> for the policy validation resource type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For resource types not supported as valid values, IAM Access Analyzer runs policy
+        /// checks that apply to all resource policies. For example, to validate a resource policy
+        /// to attach to a KMS key, do not specify a value for the policy validation resource
+        /// type and IAM Access Analyzer will run policy checks that apply to all resource policies.
+        /// </para>
+        /// </summary>
+        public ValidatePolicyResourceType ValidatePolicyResourceType
+        {
+            get { return this._validatePolicyResourceType; }
+            set { this._validatePolicyResourceType = value; }
+        }
+
+        // Check to see if ValidatePolicyResourceType property is set
+        internal bool IsSetValidatePolicyResourceType()
+        {
+            return this._validatePolicyResourceType != null;
         }
 
     }

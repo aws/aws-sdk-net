@@ -89,6 +89,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PolicyType);
                 }
 
+                if(publicRequest.IsSetValidatePolicyResourceType())
+                {
+                    context.Writer.WritePropertyName("validatePolicyResourceType");
+                    context.Writer.Write(publicRequest.ValidatePolicyResourceType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

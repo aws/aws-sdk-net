@@ -1097,6 +1097,64 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type ValidatePolicyResourceType.
+    /// </summary>
+    public class ValidatePolicyResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSS3AccessPoint for ValidatePolicyResourceType
+        /// </summary>
+        public static readonly ValidatePolicyResourceType AWSS3AccessPoint = new ValidatePolicyResourceType("AWS::S3::AccessPoint");
+        /// <summary>
+        /// Constant AWSS3Bucket for ValidatePolicyResourceType
+        /// </summary>
+        public static readonly ValidatePolicyResourceType AWSS3Bucket = new ValidatePolicyResourceType("AWS::S3::Bucket");
+        /// <summary>
+        /// Constant AWSS3MultiRegionAccessPoint for ValidatePolicyResourceType
+        /// </summary>
+        public static readonly ValidatePolicyResourceType AWSS3MultiRegionAccessPoint = new ValidatePolicyResourceType("AWS::S3::MultiRegionAccessPoint");
+        /// <summary>
+        /// Constant AWSS3ObjectLambdaAccessPoint for ValidatePolicyResourceType
+        /// </summary>
+        public static readonly ValidatePolicyResourceType AWSS3ObjectLambdaAccessPoint = new ValidatePolicyResourceType("AWS::S3ObjectLambda::AccessPoint");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidatePolicyResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidatePolicyResourceType FindValue(string value)
+        {
+            return FindValue<ValidatePolicyResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidatePolicyResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
