@@ -19,12 +19,101 @@ using System.Text;
 
 namespace Amazon.S3.Model
 {
-	
-	public partial class PutBucketIntelligentTieringConfigurationRequest : AmazonWebServiceRequest
-	{
+    /// <summary>
+    /// Container for the parameters to the PutBucketIntelligentTieringConfiguration operation.
+    /// Puts a S3 Intelligent-Tiering configuration to the specified bucket. You can have
+    /// up to 1,000 S3 Intelligent-Tiering configurations per bucket.
+    /// 
+    ///  
+    /// <para>
+    /// The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
+    /// automatically moving data to the most cost-effective storage access tier, without
+    /// performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic
+    /// cost savings in three low latency and high throughput access tiers. To get the lowest
+    /// storage cost on data that can be accessed in minutes to hours, you can choose to activate
+    /// additional archiving capabilities.
+    /// </para>
+    ///  
+    /// <para>
+    /// The S3 Intelligent-Tiering storage class is the ideal storage class for data with
+    /// unknown, changing, or unpredictable access patterns, independent of object size or
+    /// retention period. If the size of an object is less than 128 KB, it is not monitored
+    /// and not eligible for auto-tiering. Smaller objects can be stored, but they are always
+    /// charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage
+    /// class for automatically optimizing frequently and infrequently accessed objects</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Operations related to <code>PutBucketIntelligentTieringConfiguration</code> include:
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html">DeleteBucketIntelligentTieringConfiguration</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// You only need S3 Intelligent-Tiering enabled on a bucket if you want to automatically
+    /// move objects stored in the S3 Intelligent-Tiering storage class to the Archive Access
+    /// or Deep Archive Access tier.
+    /// </para>
+    ///  </note> <p class="title"> <b>Special Errors</b> 
+    /// </para>
+    ///  <ul> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Code:</i> InvalidArgument
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Cause:</i> Invalid Argument
+    /// </para>
+    ///  </li> </ul> </li> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Code:</i> TooManyConfigurations
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Cause:</i> You are attempting to create a new configuration but have already reached
+    /// the 1,000-configuration limit. 
+    /// </para>
+    ///  </li> </ul> </li> <li> <p class="title"> <b>HTTP 403 Forbidden Error</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Code:</i> AccessDenied
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
+    /// <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the configuration
+    /// on the bucket. 
+    /// </para>
+    ///  </li> </ul> </li> </ul>
+    /// </summary>
+    public partial class PutBucketIntelligentTieringConfigurationRequest : AmazonWebServiceRequest
+    {
         private string bucketName;
-		private string intelligentTieringId;
-		private IntelligentTieringConfiguration intelligentTieringConfiguration;
+        private string intelligentTieringId;
+        private IntelligentTieringConfiguration intelligentTieringConfiguration;
 
         /// <summary>
         /// <para>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</para>

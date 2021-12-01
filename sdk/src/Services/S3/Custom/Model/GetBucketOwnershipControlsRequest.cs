@@ -22,6 +22,29 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketOwnershipControls operation.
+    /// Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation,
+    /// you must have the <code>s3:GetBucketOwnershipControls</code> permission. For more
+    /// information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html">Specifying
+    /// permissions in a policy</a>. 
+    /// 
+    ///  
+    /// <para>
+    /// For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Using
+    /// Object Ownership</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>GetBucketOwnershipControls</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>PutBucketOwnershipControls</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteBucketOwnershipControls</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetBucketOwnershipControlsRequest : AmazonWebServiceRequest
     {

@@ -62,9 +62,26 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// When creating a bucket using this operation, you can optionally specify the accounts
-    /// or groups that should be granted specific permissions on the bucket. There are two
-    /// ways to grant the appropriate permissions using the request headers.
+    ///  <b>Access control lists (ACLs)</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// When creating a bucket using this operation, you can optionally configure the bucket
+    /// ACL to specify the accounts or groups that should be granted specific permissions
+    /// on the bucket.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// If your CreateBucket request includes the <code>BucketOwnerEnforced</code> value for
+    /// the <code>x-amz-object-ownership</code> header, your request can either not specify
+    /// an ACL or specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
+    /// canned ACL or an equivalent ACL expressed in the XML format. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+    /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// There are two ways to grant the appropriate permissions using the request headers.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -78,7 +95,7 @@ namespace Amazon.S3.Model
     /// Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
     /// <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
     /// headers. These headers map to the set of permissions Amazon S3 supports in an ACL.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html">Access
     /// control list (ACL) overview</a>.
     /// </para>
     ///  
@@ -162,19 +179,30 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is
-    /// public-read, public-read-write, authenticated-read, or if you specify access permissions
-    /// explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code>
-    /// permissions are needed. If the ACL the <code>CreateBucket</code> request is private,
-    /// only <code>s3:CreateBucket</code> permission is needed. 
+    /// In addition to <code>s3:CreateBucket</code>, the following permissions are required
+    /// when your CreateBucket includes specific headers:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code>
-    /// request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code>
-    /// permissions are required.
+    ///  <b>ACLs</b> - If your <code>CreateBucket</code> request specifies ACL permissions
+    /// and the ACL is public-read, public-read-write, authenticated-read, or if you specify
+    /// access permissions explicitly through any other ACL, both <code>s3:CreateBucket</code>
+    /// and <code>s3:PutBucketAcl</code> permissions are needed. If the ACL the <code>CreateBucket</code>
+    /// request is private or doesn't specify any ACLs, only <code>s3:CreateBucket</code>
+    /// permission is needed. 
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Object Lock</b> - If <code>ObjectLockEnabledForBucket</code> is set to true in
+    /// your <code>CreateBucket</code> request, <code>s3:PutBucketObjectLockConfiguration</code>
+    /// and <code>s3:PutBucketVersioning</code> permissions are required.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>S3 Object Ownership</b> - If your CreateBucket request includes the the <code>x-amz-object-ownership</code>
+    /// header, <code>s3:PutBucketOwnershipControls</code> permission is required.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// The following operations are related to <code>CreateBucket</code>:
     /// </para>
@@ -198,6 +226,8 @@ namespace Amazon.S3.Model
         private bool useClientRegion = true;
         private S3CannedACL cannedAcl;
         private bool? _objectLockEnabledForBucket;
+        private ObjectOwnership _objectOwnership;
+
 
         /// <summary>
         /// The canned ACL to apply to the bucket.
@@ -302,6 +332,21 @@ namespace Amazon.S3.Model
         internal bool IsSetObjectLockEnabledForBucket()
         {
             return this._objectLockEnabledForBucket.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectOwnership.
+        /// </summary>
+        public ObjectOwnership ObjectOwnership
+        {
+            get { return this._objectOwnership; }
+            set { this._objectOwnership = value; }
+        }
+
+        // Check to see if ObjectOwnership property is set
+        internal bool IsSetObjectOwnership()
+        {
+            return this._objectOwnership != null;
         }
     }
 }

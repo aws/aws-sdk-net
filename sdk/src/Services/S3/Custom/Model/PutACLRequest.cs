@@ -52,7 +52,16 @@ namespace Amazon.S3.Model
     /// that updates a bucket ACL using the request body, then you can continue to use that
     /// approach.
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, ACLs
+    /// are disabled and no longer affect permissions. You must use policies to grant access
+    /// to your bucket and the objects in it. Requests to set ACLs or update ACLs fail and
+    /// return the <code>AccessControlListNotSupported</code> error code. Requests to read
+    /// ACLs are still supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+    /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </important> 
     /// <para>
     ///  <b>Access Permissions</b> 
     /// </para>

@@ -28,7 +28,11 @@ namespace Amazon.S3.Model
         private OwnershipControls ownershipControls;
 
         /// <summary>
-        /// The OwnershipControls (BucketOwnerPreferred or ObjectWriter) currently in effect for this Amazon S3 bucket
+        /// Gets and sets the property OwnershipControls. 
+        /// <para>
+        /// The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or
+        /// ObjectWriter) currently in effect for this Amazon S3 bucket.
+        /// </para>
         /// </summary>
         public OwnershipControls OwnershipControls
         {

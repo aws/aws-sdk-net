@@ -53,6 +53,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(putBucketRequest.IsSetObjectLockEnabledForBucket())
                 request.Headers.Add("x-amz-bucket-object-lock-enabled", S3Transforms.ToStringValue(putBucketRequest.ObjectLockEnabledForBucket));
 
+            if (putBucketRequest.IsSetObjectOwnership())
+                request.Headers["x-amz-object-ownership"] = putBucketRequest.ObjectOwnership;
+
             if (string.IsNullOrEmpty(putBucketRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequest.BucketName");
 

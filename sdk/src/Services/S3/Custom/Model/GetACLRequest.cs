@@ -25,7 +25,28 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetACL operation.
-    /// <para>Returns the access control list (ACL) of an object.</para>
+    /// This implementation of the <code>GET</code> action uses the <code>acl</code> subresource
+    /// to return the access control list (ACL) of a bucket. To use <code>GET</code> to return
+    /// the ACL of the bucket, you must have <code>READ_ACP</code> access to the bucket. If
+    /// <code>READ_ACP</code> permission is granted to the anonymous user, you can return
+    /// the ACL of the bucket without using an authorization header.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests
+    /// to read ACLs are still supported and return the <code>bucket-owner-full-control</code>
+    /// ACL with the owner being the account that created the bucket. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
+    /// Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </note> <p class="title"> <b>Related Resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetACLRequest : AmazonWebServiceRequest
     {

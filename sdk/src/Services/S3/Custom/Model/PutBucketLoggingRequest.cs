@@ -36,7 +36,15 @@ namespace Amazon.S3.Model
     /// request element to grant access to other people. The <code>Permissions</code> request
     /// element specifies the kind of access the grantee has to the logs.
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// If the target bucket for log delivery uses the bucket owner enforced setting for S3
+    /// Object Ownership, you can't use the <code>Grantee</code> request element to grant
+    /// access to others. Permissions can only be granted using policies. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+    /// for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </important> 
     /// <para>
     ///  <b>Grantee Values</b> 
     /// </para>
@@ -93,8 +101,8 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about server access logging, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html">Server
-    /// Access Logging</a>. 
+    /// For more information about server access logging, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html">Server
+    /// Access Logging</a> in the <i>Amazon S3 User Guide</i>. 
     /// </para>
     ///  
     /// <para>

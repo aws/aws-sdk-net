@@ -612,6 +612,11 @@ namespace Amazon.S3
         public static readonly S3StorageClass Glacier = new S3StorageClass("GLACIER");
 
         /// <summary>
+        /// Constant GLACIER_IR for ObjectStorageClass
+        /// </summary>
+        public static readonly S3StorageClass GlacierInstantRetrieval= new S3StorageClass("GLACIER_IR");
+
+        /// <summary>
         /// IntelligentTiering makes it easy to lower your overall cost of storage by automatically placing data in the storage
         /// class that best matches the access patterns for the storage. With IntelligentTiering, you don’t need to define
         /// and manage individual policies for lifecycle data management or write code to transition objects
@@ -2284,6 +2289,11 @@ namespace Amazon.S3
 
         }
 
+        /// <summary>
+        /// Constant BucketOwnerEnforced for ObjectOwnership
+        /// </summary>
+        public static readonly ObjectOwnership BucketOwnerEnforced = new ObjectOwnership("BucketOwnerEnforced");
+        
         /// <summary>
         /// Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the bucket-owner-full-control canned ACL
         /// </summary>

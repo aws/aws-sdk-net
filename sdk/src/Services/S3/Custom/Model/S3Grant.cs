@@ -17,7 +17,15 @@ using Amazon.S3.Model.Internal.MarshallTransformations;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Grant
+    /// <summary>
+    /// Container for granting information.
+    /// 
+    ///  
+    /// <para>
+    /// Buckets that use the bucket owner enforced setting for Object Ownership don't support
+    /// target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+    /// server access log delivery</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
     /// </summary>
     public class S3Grant
     {

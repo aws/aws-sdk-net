@@ -193,6 +193,24 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
+    /// If the bucket that you're copying objects to uses the bucket owner enforced setting
+    /// for S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets
+    /// that use this setting only accept PUT requests that don't specify an ACL or PUT requests
+    /// that specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
+    /// canned ACL or an equivalent form of this ACL expressed in the XML format.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
+    /// Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If your bucket uses the bucket owner enforced setting for Object Ownership, all objects
+    /// written to the bucket by any account will be owned by the bucket owner.
+    /// </para>
+    ///  </note> 
+    /// <para>
     ///  <b>Storage Class Options</b> 
     /// </para>
     ///  

@@ -44,6 +44,12 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// A collection of grants.
+        /// 
+        /// <para>
+        /// Buckets that use the bucket owner enforced setting for Object Ownership don't support
+        /// target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+        /// for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
         /// </summary>
         public List<S3Grant> Grants
         {
