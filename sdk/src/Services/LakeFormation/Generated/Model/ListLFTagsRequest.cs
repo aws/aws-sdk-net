@@ -30,7 +30,7 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLFTags operation.
-    /// Lists tags that the requester has permission to view.
+    /// Lists LF-tags that the requester has permission to view.
     /// </summary>
     public partial class ListLFTagsRequest : AmazonLakeFormationRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -100,10 +100,11 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceShareType. 
         /// <para>
-        /// If resource share type is <code>ALL</code>, returns both in-account tags and shared
-        /// tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>,
-        /// returns all share tags that the requester can view. If no resource share type is passed,
-        /// lists tags in the given catalog ID that the requester has permission to view.
+        /// If resource share type is <code>ALL</code>, returns both in-account LF-tags and shared
+        /// LF-tags that the requester has permission to view. If resource share type is <code>FOREIGN</code>,
+        /// returns all share LF-tags that the requester can view. If no resource share type is
+        /// passed, lists LF-tags in the given catalog ID that the requester has permission to
+        /// view.
         /// </para>
         /// </summary>
         public ResourceShareType ResourceShareType

@@ -55,13 +55,11 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetEffectivePermissionsForPathRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LakeFormation");
-            string target = "AWSLakeFormation.GetEffectivePermissionsForPath";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            request.ResourcePath = "/GetEffectivePermissionsForPath";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

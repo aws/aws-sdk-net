@@ -81,6 +81,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("LakeFormation")]
+        public void GetTableObjectsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetTableObjectsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetTableObjectsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetTableObjectsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetTableObjects(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetTableObjects(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetTableObjectsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetTableObjectsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetTableObjectsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetTableObjects(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetTableObjects(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        public void GetWorkUnitsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetWorkUnitsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetWorkUnitsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetWorkUnitsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetWorkUnits(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetWorkUnits(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetWorkUnitsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetWorkUnitsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetWorkUnitsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetWorkUnits(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetWorkUnits(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        public void ListDataCellsFilterTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDataCellsFilterRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDataCellsFilterResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDataCellsFilterResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDataCellsFilter(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDataCellsFilter(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDataCellsFilterTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDataCellsFilterRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDataCellsFilterResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDataCellsFilter(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDataCellsFilter(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        public void ListLFTagsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListLFTagsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListLFTagsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListLFTagsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListLFTags(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListLFTags(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListLFTagsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListLFTagsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListLFTagsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListLFTags(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListLFTags(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
         public void ListPermissionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListPermissionsRequest>();
@@ -147,6 +303,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListResources(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListResources(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        public void ListTableStorageOptimizersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTableStorageOptimizersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListTableStorageOptimizersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListTableStorageOptimizersResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListTableStorageOptimizers(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListTableStorageOptimizers(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListTableStorageOptimizersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTableStorageOptimizersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListTableStorageOptimizersResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListTableStorageOptimizers(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListTableStorageOptimizers(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        public void ListTransactionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListTransactionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListTransactionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListTransactions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListTransactions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListTransactionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTransactionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListTransactionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListTransactions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListTransactions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        public void SearchDatabasesByLFTagsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchDatabasesByLFTagsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<SearchDatabasesByLFTagsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<SearchDatabasesByLFTagsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.SearchDatabasesByLFTags(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.SearchDatabasesByLFTags(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void SearchDatabasesByLFTagsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchDatabasesByLFTagsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<SearchDatabasesByLFTagsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.SearchDatabasesByLFTags(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.SearchDatabasesByLFTags(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        public void SearchTablesByLFTagsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchTablesByLFTagsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<SearchTablesByLFTagsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<SearchTablesByLFTagsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.SearchTablesByLFTags(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.SearchTablesByLFTags(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LakeFormation")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void SearchTablesByLFTagsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<SearchTablesByLFTagsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<SearchTablesByLFTagsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.SearchTablesByLFTags(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.SearchTablesByLFTags(request);
 
             // Should work the first time
             paginator.Responses.ToList();

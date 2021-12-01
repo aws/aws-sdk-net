@@ -76,6 +76,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.Database = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataCellsFilter", targetDepth))
+                {
+                    var unmarshaller = DataCellsFilterResourceUnmarshaller.Instance;
+                    unmarshalledObject.DataCellsFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataLocation", targetDepth))
                 {
                     var unmarshaller = DataLocationResourceUnmarshaller.Instance;

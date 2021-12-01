@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure containing the name of a column resource and the tags attached to it.
+    /// A structure containing the name of a column resource and the LF-tags attached to it.
     /// </summary>
     public partial class ColumnLFTag
     {
@@ -39,7 +39,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTags. 
         /// <para>
-        /// The tags attached to a column resource.
+        /// The LF-tags attached to a column resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

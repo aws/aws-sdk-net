@@ -67,6 +67,17 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDataCellsFilter())
+            {
+                context.Writer.WritePropertyName("DataCellsFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataCellsFilterResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataCellsFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDataLocation())
             {
                 context.Writer.WritePropertyName("DataLocation");

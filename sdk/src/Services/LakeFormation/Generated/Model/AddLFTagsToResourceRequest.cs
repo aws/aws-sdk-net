@@ -30,7 +30,7 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the AddLFTagsToResource operation.
-    /// Attaches one or more tags to an existing resource.
+    /// Attaches one or more LF-tags to an existing resource.
     /// </summary>
     public partial class AddLFTagsToResourceRequest : AmazonLakeFormationRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -62,7 +62,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTags. 
         /// <para>
-        /// The tags to attach to the resource.
+        /// The LF-tags to attach to the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -81,7 +81,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The resource to which to attach a tag.
+        /// The database, table, or column resource to which to attach an LF-tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

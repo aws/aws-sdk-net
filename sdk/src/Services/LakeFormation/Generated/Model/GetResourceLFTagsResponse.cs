@@ -40,7 +40,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTagOnDatabase. 
         /// <para>
-        /// A list of tags applied to a database resource.
+        /// A list of LF-tags applied to a database resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -59,7 +59,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTagsOnColumns. 
         /// <para>
-        /// A list of tags applied to a column resource.
+        /// A list of LF-tags applied to a column resource.
         /// </para>
         /// </summary>
         public List<ColumnLFTag> LFTagsOnColumns
@@ -77,7 +77,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTagsOnTable. 
         /// <para>
-        /// A list of tags applied to a table resource.
+        /// A list of LF-tags applied to a table resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

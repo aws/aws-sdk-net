@@ -51,7 +51,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -70,8 +70,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DataLakeSettings. 
         /// <para>
-        /// A structure representing a list of AWS Lake Formation principals designated as data
-        /// lake administrators.
+        /// A structure representing a list of Lake Formation principals designated as data lake
+        /// administrators.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

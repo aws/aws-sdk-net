@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure containing a list of tag conditions that apply to a resource's tag policy.
+    /// A structure containing a list of LF-tag conditions that apply to a resource's LF-tag
+    /// policy.
     /// </summary>
     public partial class LFTagPolicyResource
     {
@@ -42,7 +43,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -61,7 +62,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// A list of tag conditions that apply to the resource's tag policy.
+        /// A list of LF-tag conditions that apply to the resource's LF-tag policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -80,7 +81,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type for which the tag policy applies.
+        /// The resource type for which the LF-tag policy applies.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,8 +39,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The identifier for the Data Catalog where the location is registered with AWS Lake
-        /// Formation. By default, it is the account ID of the caller.
+        /// The identifier for the Data Catalog where the location is registered with Lake Formation.
+        /// By default, it is the account ID of the caller.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

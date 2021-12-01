@@ -31,6 +31,26 @@ namespace Amazon.LakeFormation.Model
         IGetEffectivePermissionsForPathPaginator GetEffectivePermissionsForPath(GetEffectivePermissionsForPathRequest request);
 
         /// <summary>
+        /// Paginator for GetTableObjects operation
+        ///</summary>
+        IGetTableObjectsPaginator GetTableObjects(GetTableObjectsRequest request);
+
+        /// <summary>
+        /// Paginator for GetWorkUnits operation
+        ///</summary>
+        IGetWorkUnitsPaginator GetWorkUnits(GetWorkUnitsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataCellsFilter operation
+        ///</summary>
+        IListDataCellsFilterPaginator ListDataCellsFilter(ListDataCellsFilterRequest request);
+
+        /// <summary>
+        /// Paginator for ListLFTags operation
+        ///</summary>
+        IListLFTagsPaginator ListLFTags(ListLFTagsRequest request);
+
+        /// <summary>
         /// Paginator for ListPermissions operation
         ///</summary>
         IListPermissionsPaginator ListPermissions(ListPermissionsRequest request);
@@ -39,5 +59,25 @@ namespace Amazon.LakeFormation.Model
         /// Paginator for ListResources operation
         ///</summary>
         IListResourcesPaginator ListResources(ListResourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTableStorageOptimizers operation
+        ///</summary>
+        IListTableStorageOptimizersPaginator ListTableStorageOptimizers(ListTableStorageOptimizersRequest request);
+
+        /// <summary>
+        /// Paginator for ListTransactions operation
+        ///</summary>
+        IListTransactionsPaginator ListTransactions(ListTransactionsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchDatabasesByLFTags operation
+        ///</summary>
+        ISearchDatabasesByLFTagsPaginator SearchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchTablesByLFTags operation
+        ///</summary>
+        ISearchTablesByLFTagsPaginator SearchTablesByLFTags(SearchTablesByLFTagsRequest request);
     }
 }

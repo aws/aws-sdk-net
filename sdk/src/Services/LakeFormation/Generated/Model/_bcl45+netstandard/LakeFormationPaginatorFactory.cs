@@ -44,6 +44,38 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
+        /// Paginator for GetTableObjects operation
+        ///</summary>
+        public IGetTableObjectsPaginator GetTableObjects(GetTableObjectsRequest request) 
+        {
+            return new GetTableObjectsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetWorkUnits operation
+        ///</summary>
+        public IGetWorkUnitsPaginator GetWorkUnits(GetWorkUnitsRequest request) 
+        {
+            return new GetWorkUnitsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataCellsFilter operation
+        ///</summary>
+        public IListDataCellsFilterPaginator ListDataCellsFilter(ListDataCellsFilterRequest request) 
+        {
+            return new ListDataCellsFilterPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLFTags operation
+        ///</summary>
+        public IListLFTagsPaginator ListLFTags(ListLFTagsRequest request) 
+        {
+            return new ListLFTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPermissions operation
         ///</summary>
         public IListPermissionsPaginator ListPermissions(ListPermissionsRequest request) 
@@ -57,6 +89,38 @@ namespace Amazon.LakeFormation.Model
         public IListResourcesPaginator ListResources(ListResourcesRequest request) 
         {
             return new ListResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTableStorageOptimizers operation
+        ///</summary>
+        public IListTableStorageOptimizersPaginator ListTableStorageOptimizers(ListTableStorageOptimizersRequest request) 
+        {
+            return new ListTableStorageOptimizersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTransactions operation
+        ///</summary>
+        public IListTransactionsPaginator ListTransactions(ListTransactionsRequest request) 
+        {
+            return new ListTransactionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchDatabasesByLFTags operation
+        ///</summary>
+        public ISearchDatabasesByLFTagsPaginator SearchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request) 
+        {
+            return new SearchDatabasesByLFTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchTablesByLFTags operation
+        ///</summary>
+        public ISearchTablesByLFTagsPaginator SearchTablesByLFTags(SearchTablesByLFTagsRequest request) 
+        {
+            return new SearchTablesByLFTagsPaginator(this.client, request);
         }
     }
 }

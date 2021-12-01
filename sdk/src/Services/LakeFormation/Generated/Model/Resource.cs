@@ -35,6 +35,7 @@ namespace Amazon.LakeFormation.Model
     {
         private CatalogResource _catalog;
         private DatabaseResource _database;
+        private DataCellsFilterResource _dataCellsFilter;
         private DataLocationResource _dataLocation;
         private LFTagKeyResource _lfTag;
         private LFTagPolicyResource _lfTagPolicy;
@@ -46,7 +47,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         public CatalogResource Catalog
@@ -82,6 +83,24 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataCellsFilter. 
+        /// <para>
+        /// A data cell filter.
+        /// </para>
+        /// </summary>
+        public DataCellsFilterResource DataCellsFilter
+        {
+            get { return this._dataCellsFilter; }
+            set { this._dataCellsFilter = value; }
+        }
+
+        // Check to see if DataCellsFilter property is set
+        internal bool IsSetDataCellsFilter()
+        {
+            return this._dataCellsFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DataLocation. 
         /// <para>
         /// The location of an Amazon S3 path where permissions are granted or revoked. 
@@ -102,7 +121,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTag. 
         /// <para>
-        /// The tag key and values attached to a resource.
+        /// The LF-tag key and values attached to a resource.
         /// </para>
         /// </summary>
         public LFTagKeyResource LFTag
@@ -120,7 +139,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTagPolicy. 
         /// <para>
-        /// A list of tag conditions that define a resource's tag policy.
+        /// A list of LF-tag conditions that define a resource's LF-tag policy.
         /// </para>
         /// </summary>
         public LFTagPolicyResource LFTagPolicy

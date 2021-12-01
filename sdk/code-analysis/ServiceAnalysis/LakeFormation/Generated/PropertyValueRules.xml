@@ -16,6 +16,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CancelTransactionRequest.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CommitTransactionRequest.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.CreateLFTagRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -27,6 +39,26 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteDataCellsFilterRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteDataCellsFilterRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteDataCellsFilterRequest.TableCatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteDataCellsFilterRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.DeleteLFTagRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -36,6 +68,39 @@
     <min>1</min>
     <max>128</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteObjectsOnCancelRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteObjectsOnCancelRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteObjectsOnCancelRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteObjectsOnCancelRequest.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DescribeTransactionRequest.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ExtendTransactionRequest.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetDataLakeSettingsRequest.CatalogId</property>
@@ -75,14 +140,86 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetQueryStateRequest.QueryId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetQueryStatisticsRequest.QueryId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetResourceLFTagsRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsRequest.NextToken</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsRequest.PartitionPredicate</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsRequest.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetTableObjectsResponse.NextToken</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetWorkUnitResultsRequest.QueryId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetWorkUnitResultsRequest.WorkUnitId</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetWorkUnitResultsRequest.WorkUnitToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetWorkUnitsRequest.QueryId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.GrantPermissionsRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListDataCellsFilterRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.ListLFTagsRequest.CatalogId</property>
@@ -100,6 +237,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListPermissionsRequest.IncludeRelated</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.ListPermissionsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -108,6 +250,44 @@
     <property>Amazon.LakeFormation.Model.ListResourcesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTableStorageOptimizersRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTableStorageOptimizersRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTableStorageOptimizersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTableStorageOptimizersRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTransactionsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTransactionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTransactionsRequest.NextToken</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListTransactionsResponse.NextToken</property>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.PutDataLakeSettingsRequest.CatalogId</property>
@@ -149,6 +329,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.StartQueryPlanningRequest.QueryString</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.StartTransactionResponse.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.UpdateLFTagRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -162,6 +352,53 @@
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.UpdateResourceRequest.RoleArn</property>
     <pattern>arn:aws:iam::[0-9]*:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateTableObjectsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateTableObjectsRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateTableObjectsRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateTableObjectsRequest.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateTableStorageOptimizerRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateTableStorageOptimizerRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateTableStorageOptimizerRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.AddObjectInput.ETag</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.AddObjectInput.Uri</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.BatchPermissionsRequestEntry.Id</property>
@@ -184,6 +421,46 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilter.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilter.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilter.TableCatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilter.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilterResource.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilterResource.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilterResource.TableCatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilterResource.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.DataLakePrincipal.DataLakePrincipalIdentifier</property>
     <min>1</min>
     <max>255</max>
@@ -192,6 +469,17 @@
     <property>Amazon.LakeFormation.Model.DataLocationResource.CatalogId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteObjectInput.ETag</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteObjectInput.Uri</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.ErrorDetail.ErrorCode</property>
@@ -236,8 +524,39 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.QueryPlanningContext.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.QueryPlanningContext.DatabaseName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.QueryPlanningContext.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.ResourceInfo.RoleArn</property>
     <pattern>arn:aws:iam::[0-9]*:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.RowFilter.FilterExpression</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.TableObject.ETag</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.TableObject.Uri</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.TableResource.CatalogId</property>
@@ -268,5 +587,22 @@
     <property>Amazon.LakeFormation.Model.TableWithColumnsResource.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.TransactionDescription.TransactionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.VirtualObject.ETag</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.VirtualObject.Uri</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

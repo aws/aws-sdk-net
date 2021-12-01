@@ -30,8 +30,7 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeResource operation.
-    /// Retrieves the current data access role for the given resource registered in AWS Lake
-    /// Formation.
+    /// Retrieves the current data access role for the given resource registered in Lake Formation.
     /// </summary>
     public partial class DescribeResourceRequest : AmazonLakeFormationRequest
     {

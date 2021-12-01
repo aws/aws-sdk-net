@@ -47,6 +47,7 @@ namespace Amazon.LakeFormation.Model
     public partial class ListPermissionsRequest : AmazonLakeFormationRequest
     {
         private string _catalogId;
+        private string _includeRelated;
         private int? _maxResults;
         private string _nextToken;
         private DataLakePrincipal _principal;
@@ -58,7 +59,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -72,6 +73,25 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetCatalogId()
         {
             return this._catalogId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeRelated. 
+        /// <para>
+        /// Indicates that related permissions should be included in the results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public string IncludeRelated
+        {
+            get { return this._includeRelated; }
+            set { this._includeRelated = value; }
+        }
+
+        // Check to see if IncludeRelated property is set
+        internal bool IsSetIncludeRelated()
+        {
+            return this._includeRelated != null;
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DataLakePrincipalIdentifier. 
         /// <para>
-        /// An identifier for the AWS Lake Formation principal.
+        /// An identifier for the Lake Formation principal.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

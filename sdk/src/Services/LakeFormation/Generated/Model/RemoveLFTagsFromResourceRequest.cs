@@ -30,7 +30,7 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveLFTagsFromResource operation.
-    /// Removes a tag from the resource. Only database, table, or tableWithColumns resource
+    /// Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource
     /// are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code>
     /// to specify column input.
     /// </summary>
@@ -45,7 +45,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -64,7 +64,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTags. 
         /// <para>
-        /// The tags to be removed from the resource.
+        /// The LF-tags to be removed from the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -83,7 +83,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The resource where you want to remove a tag.
+        /// The database, table, or column resource where you want to remove an LF-tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

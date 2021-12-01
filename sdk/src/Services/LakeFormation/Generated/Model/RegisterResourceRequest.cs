@@ -43,7 +43,7 @@ namespace Amazon.LakeFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// The following request registers a new location and gives AWS Lake Formation permission
+    /// The following request registers a new location and gives Lake Formation permission
     /// to use the service-linked role to access that location.
     /// </para>
     ///  
@@ -106,7 +106,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property UseServiceLinkedRole. 
         /// <para>
-        /// Designates an AWS Identity and Access Management (IAM) service-linked role by registering
+        /// Designates an Identity and Access Management (IAM) service-linked role by registering
         /// this role with the Data Catalog. A service-linked role is a unique type of IAM role
         /// that is linked directly to Lake Formation.
         /// </para>

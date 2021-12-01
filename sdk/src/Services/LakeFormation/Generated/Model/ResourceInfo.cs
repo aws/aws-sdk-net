@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure containing information about an AWS Lake Formation resource.
+    /// A structure containing information about an Lake Formation resource.
     /// </summary>
     public partial class ResourceInfo
     {

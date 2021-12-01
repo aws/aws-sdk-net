@@ -31,7 +31,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Container for the parameters to the SearchTablesByLFTags operation.
     /// This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s.
-    /// This will be used by admins who want to grant user permissions on certain LFTags.
+    /// This will be used by admins who want to grant user permissions on certain LF-tags.
     /// Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find
     /// all resources where the given <code>LFTag</code>s are valid to verify whether the
     /// returned resources can be shared.
@@ -48,7 +48,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -39,7 +39,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DatabaseList. 
         /// <para>
-        /// A list of databases that meet the tag conditions.
+        /// A list of databases that meet the LF-tag conditions.
         /// </para>
         /// </summary>
         public List<TaggedDatabase> DatabaseList

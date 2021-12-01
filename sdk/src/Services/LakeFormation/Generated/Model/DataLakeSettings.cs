@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure representing a list of AWS Lake Formation principals designated as data
-    /// lake administrators and lists of principal permission entries for default create database
+    /// A structure representing a list of Lake Formation principals designated as data lake
+    /// administrators and lists of principal permission entries for default create database
     /// and default create table permissions.
     /// </summary>
     public partial class DataLakeSettings
@@ -43,8 +43,26 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property CreateDatabaseDefaultPermissions. 
         /// <para>
-        /// A structure representing a list of up to three principal permissions entries for default
-        /// create database permissions.
+        /// Specifies whether access control on newly created database is managed by Lake Formation
+        /// permissions or exclusively by IAM permissions. You can override this default setting
+        /// when you create a database.
+        /// </para>
+        ///  
+        /// <para>
+        /// A null value indicates access control by Lake Formation permissions. A value that
+        /// assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions.
+        /// This is referred to as the setting "Use only IAM access control," and is for backward
+        /// compatibility with the Glue permission model implemented by IAM permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only permitted values are an empty array or an array that contains a single JSON
+        /// object that grants ALL to IAM_ALLOWED_PRINCIPALS.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+        /// the Default Security Settings for Your Data Lake</a>.
         /// </para>
         /// </summary>
         public List<PrincipalPermissions> CreateDatabaseDefaultPermissions
@@ -62,8 +80,25 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property CreateTableDefaultPermissions. 
         /// <para>
-        /// A structure representing a list of up to three principal permissions entries for default
-        /// create table permissions.
+        /// Specifies whether access control on newly created table is managed by Lake Formation
+        /// permissions or exclusively by IAM permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// A null value indicates access control by Lake Formation permissions. A value that
+        /// assigns ALL to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions.
+        /// This is referred to as the setting "Use only IAM access control," and is for backward
+        /// compatibility with the Glue permission model implemented by IAM permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only permitted values are an empty array or an array that contains a single JSON
+        /// object that grants ALL to IAM_ALLOWED_PRINCIPALS.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing
+        /// the Default Security Settings for Your Data Lake</a>.
         /// </para>
         /// </summary>
         public List<PrincipalPermissions> CreateTableDefaultPermissions
@@ -81,8 +116,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DataLakeAdmins. 
         /// <para>
-        /// A list of AWS Lake Formation principals. Supported principals are IAM users or IAM
-        /// roles.
+        /// A list of Lake Formation principals. Supported principals are IAM users or IAM roles.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -103,7 +137,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// A list of the resource-owning account IDs that the caller's account can use to share
         /// their user access details (user ARNs). The user ARNs can be logged in the resource
-        /// owner's AWS CloudTrail log.
+        /// owner's CloudTrail log.
         /// </para>
         ///  
         /// <para>

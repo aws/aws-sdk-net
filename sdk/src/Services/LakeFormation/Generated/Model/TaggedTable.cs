@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure describing a table resource with tags.
+    /// A structure describing a table resource with LF-tags.
     /// </summary>
     public partial class TaggedTable
     {
@@ -41,7 +41,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTagOnDatabase. 
         /// <para>
-        /// A list of tags attached to the database where the table resides.
+        /// A list of LF-tags attached to the database where the table resides.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -60,7 +60,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTagsOnColumns. 
         /// <para>
-        /// A list of tags attached to columns in the table.
+        /// A list of LF-tags attached to columns in the table.
         /// </para>
         /// </summary>
         public List<ColumnLFTag> LFTagsOnColumns
@@ -78,7 +78,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTagsOnTable. 
         /// <para>
-        /// A list of tags attached to the table.
+        /// A list of LF-tags attached to the table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -97,7 +97,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Table. 
         /// <para>
-        /// A table that has tags attached to it.
+        /// A table that has LF-tags attached to it.
         /// </para>
         /// </summary>
         public TableResource Table

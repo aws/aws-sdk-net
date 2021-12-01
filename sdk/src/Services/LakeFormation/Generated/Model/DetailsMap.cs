@@ -34,8 +34,8 @@ namespace Amazon.LakeFormation.Model
     /// 
     ///  
     /// <para>
-    /// If a catalog resource is shared through AWS Resource Access Manager (AWS RAM), then
-    /// there will exist a corresponding RAM resource share ARN.
+    /// If a catalog resource is shared through Resource Access Manager (RAM), then there
+    /// will exist a corresponding RAM resource share ARN.
     /// </para>
     /// </summary>
     public partial class DetailsMap
@@ -45,8 +45,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceShare. 
         /// <para>
-        /// A resource share ARN for a catalog resource shared through AWS Resource Access Manager
-        /// (AWS RAM).
+        /// A resource share ARN for a catalog resource shared through RAM.
         /// </para>
         /// </summary>
         public List<string> ResourceShare

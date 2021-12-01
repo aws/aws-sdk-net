@@ -39,7 +39,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTags. 
         /// <para>
-        /// A list of tags that the requested has permission to view.
+        /// A list of LF-tags that the requested has permission to view.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

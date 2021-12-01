@@ -30,11 +30,11 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLFTag operation.
-    /// Updates the list of possible values for the specified tag key. If the tag does not
-    /// exist, the operation throws an EntityNotFoundException. The values in the delete key
-    /// values will be deleted from list of possible values. If any value in the delete key
-    /// values is attached to a resource, then API errors out with a 400 Exception - "Update
-    /// not allowed". Untag the attribute before deleting the tag key's value.
+    /// Updates the list of possible values for the specified LF-tag key. If the LF-tag does
+    /// not exist, the operation throws an EntityNotFoundException. The values in the delete
+    /// key values will be deleted from list of possible values. If any value in the delete
+    /// key values is attached to a resource, then API errors out with a 400 Exception - "Update
+    /// not allowed". Untag the attribute before deleting the LF-tag key's value.
     /// </summary>
     public partial class UpdateLFTagRequest : AmazonLakeFormationRequest
     {
@@ -48,7 +48,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -67,7 +67,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property TagKey. 
         /// <para>
-        /// The key-name for the tag for which to add or delete values.
+        /// The key-name for the LF-tag for which to add or delete values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -86,7 +86,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property TagValuesToAdd. 
         /// <para>
-        /// A list of tag values to add from the tag.
+        /// A list of LF-tag values to add from the LF-tag.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -105,7 +105,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property TagValuesToDelete. 
         /// <para>
-        /// A list of tag values to delete from the tag.
+        /// A list of LF-tag values to delete from the LF-tag.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

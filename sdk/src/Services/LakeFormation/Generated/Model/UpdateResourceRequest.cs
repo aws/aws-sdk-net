@@ -31,7 +31,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Container for the parameters to the UpdateResource operation.
     /// Updates the data access role used for vending access to the given (registered) resource
-    /// in AWS Lake Formation.
+    /// in Lake Formation.
     /// </summary>
     public partial class UpdateResourceRequest : AmazonLakeFormationRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The new role to use for the given resource registered in AWS Lake Formation.
+        /// The new role to use for the given resource registered in Lake Formation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

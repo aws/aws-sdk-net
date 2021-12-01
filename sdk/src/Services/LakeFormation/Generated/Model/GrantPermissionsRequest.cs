@@ -52,7 +52,7 @@ namespace Amazon.LakeFormation.Model
         /// <para>
         /// The identifier for the Data Catalog. By default, the account ID. The Data Catalog
         /// is the persistent metadata store. It contains database definitions, table definitions,
-        /// and other control information to manage your AWS Lake Formation environment. 
+        /// and other control information to manage your Lake Formation environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -71,11 +71,10 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// The permissions granted to the principal on the resource. AWS Lake Formation defines
-        /// privileges to grant and revoke access to metadata in the Data Catalog and data organized
-        /// in underlying data storage such as Amazon S3. AWS Lake Formation requires that each
-        /// principal be authorized to perform a specific task on AWS Lake Formation resources.
-        /// 
+        /// The permissions granted to the principal on the resource. Lake Formation defines privileges
+        /// to grant and revoke access to metadata in the Data Catalog and data organized in underlying
+        /// data storage such as Amazon S3. Lake Formation requires that each principal be authorized
+        /// to perform a specific task on Lake Formation resources. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,8 +139,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The resource to which permissions are to be granted. Resources in AWS Lake Formation
-        /// are the Data Catalog, databases, and tables.
+        /// The resource to which permissions are to be granted. Resources in Lake Formation are
+        /// the Data Catalog, databases, and tables.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

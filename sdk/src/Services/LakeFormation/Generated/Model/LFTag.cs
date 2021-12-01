@@ -30,8 +30,8 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// A structure that allows an admin to grant user permissions on certain conditions.
-    /// For example, granting a role access to all columns not tagged 'PII' of tables tagged
-    /// 'Prod'.
+    /// For example, granting a role access to all columns that do not have the LF-tag 'PII'
+    /// in tables that have the LF-tag 'Prod'.
     /// </summary>
     public partial class LFTag
     {
@@ -41,7 +41,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property TagKey. 
         /// <para>
-        /// The key-name for the tag.
+        /// The key-name for the LF-tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

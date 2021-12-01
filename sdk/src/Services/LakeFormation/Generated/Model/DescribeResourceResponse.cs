@@ -38,7 +38,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceInfo. 
         /// <para>
-        /// A structure containing information about an AWS Lake Formation resource.
+        /// A structure containing information about an Lake Formation resource.
         /// </para>
         /// </summary>
         public ResourceInfo ResourceInfo

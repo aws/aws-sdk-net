@@ -57,7 +57,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property TableList. 
         /// <para>
-        /// A list of tables that meet the tag conditions.
+        /// A list of tables that meet the LF-tag conditions.
         /// </para>
         /// </summary>
         public List<TaggedTable> TableList

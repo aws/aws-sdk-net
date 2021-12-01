@@ -40,7 +40,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// An error that occurred with the attachment or detachment of the tag.
+        /// An error that occurred with the attachment or detachment of the LF-tag.
         /// </para>
         /// </summary>
         public ErrorDetail Error
@@ -58,7 +58,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTag. 
         /// <para>
-        /// The key-name of the tag.
+        /// The key-name of the LF-tag.
         /// </para>
         /// </summary>
         public LFTagPair LFTag
