@@ -648,6 +648,10 @@
       <Project>{E1340219-BBFF-4AFA-AB2E-0AEB09614F70}</Project>
       <Name>AWSSDK.IoTThingsGraph.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTTwinMaker/AWSSDK.IoTTwinMaker.CodeAnalysis.csproj">
+      <Project>{8E3ACC9F-1037-421B-94CD-6C217056D66D}</Project>
+      <Name>AWSSDK.IoTTwinMaker.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTWireless/AWSSDK.IoTWireless.CodeAnalysis.csproj">
       <Project>{81AABF2B-4A9F-4E8D-9E46-56564BD36920}</Project>
       <Name>AWSSDK.IoTWireless.CodeAnalysis</Name>

@@ -313,6 +313,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTSiteWise.CodeAnalysis" Path="|AWSSDK.IoTSiteWise.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTThingsGraph.CodeAnalysis" Path="|AWSSDK.IoTThingsGraph.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTThingsGraph.CodeAnalysis" Path="|AWSSDK.IoTThingsGraph.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTTwinMaker.CodeAnalysis" Path="|AWSSDK.IoTTwinMaker.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTTwinMaker.CodeAnalysis" Path="|AWSSDK.IoTTwinMaker.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTWireless.CodeAnalysis" Path="|AWSSDK.IoTWireless.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTWireless.CodeAnalysis" Path="|AWSSDK.IoTWireless.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IVS.CodeAnalysis" Path="|AWSSDK.IVS.CodeAnalysis|"/>
