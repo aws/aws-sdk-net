@@ -45,10 +45,10 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// The stream name identifies the stream. The name is scoped to the AWS account used
-    /// by the application. It is also scoped by AWS Region. That is, two streams in two different
-    /// accounts can have the same name, and two streams in the same account, but in two different
-    /// Regions, can have the same name.
+    /// The stream name identifies the stream. The name is scoped to the Amazon Web Services
+    /// account used by the application. It is also scoped by Amazon Web Services Region.
+    /// That is, two streams in two different accounts can have the same name, and two streams
+    /// in the same account, but in two different Regions, can have the same name.
     /// </para>
     ///  
     /// <para>
@@ -73,14 +73,14 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+    /// For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
     /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-    /// AWS Support</a>.
+    /// Amazon Web Services Support</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can use <code>DescribeStream</code> to check the stream status, which is returned
+    /// You can use <a>DescribeStreamSummary</a> to check the stream status, which is returned
     /// in <code>StreamStatus</code>.
     /// </para>
     ///  
@@ -91,6 +91,7 @@ namespace Amazon.Kinesis.Model
     public partial class CreateStreamRequest : AmazonKinesisRequest
     {
         private int? _shardCount;
+        private StreamModeDetails _streamModeDetails;
         private string _streamName;
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.Kinesis.Model
         /// of the number of shards; more shards are required for greater provisioned throughput.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public int ShardCount
         {
             get { return this._shardCount.GetValueOrDefault(); }
@@ -114,12 +115,33 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamModeDetails. 
+        /// <para>
+        ///  Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+        /// you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b>
+        /// capacity mode for your data streams.
+        /// </para>
+        /// </summary>
+        public StreamModeDetails StreamModeDetails
+        {
+            get { return this._streamModeDetails; }
+            set { this._streamModeDetails = value; }
+        }
+
+        // Check to see if StreamModeDetails property is set
+        internal bool IsSetStreamModeDetails()
+        {
+            return this._streamModeDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// A name to identify the stream. The stream name is scoped to the AWS account used by
-        /// the application that creates the stream. It is also scoped by AWS Region. That is,
-        /// two streams in two different AWS accounts can have the same name. Two streams in the
-        /// same AWS account but in two different Regions can also have the same name.
+        /// A name to identify the stream. The stream name is scoped to the Amazon Web Services
+        /// account used by the application that creates the stream. It is also scoped by Amazon
+        /// Web Services Region. That is, two streams in two different Amazon Web Services accounts
+        /// can have the same name. Two streams in the same Amazon Web Services account but in
+        /// two different Regions can also have the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

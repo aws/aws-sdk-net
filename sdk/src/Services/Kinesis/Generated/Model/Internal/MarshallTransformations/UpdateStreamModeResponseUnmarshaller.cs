@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateShardCount operation
+    /// Response Unmarshaller for UpdateStreamMode operation
     /// </summary>  
-    public class UpdateShardCountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateStreamModeResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateShardCountResponse response = new UpdateShardCountResponse();
+            UpdateStreamModeResponse response = new UpdateStreamModeResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("CurrentShardCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.CurrentShardCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StreamName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetShardCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.TargetShardCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -108,17 +85,13 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonKinesisException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateShardCountResponseUnmarshaller _instance = new UpdateShardCountResponseUnmarshaller();        
+        private static UpdateStreamModeResponseUnmarshaller _instance = new UpdateStreamModeResponseUnmarshaller();        
 
-        internal static UpdateShardCountResponseUnmarshaller GetInstance()
+        internal static UpdateStreamModeResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +99,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateShardCountResponseUnmarshaller Instance
+        public static UpdateStreamModeResponseUnmarshaller Instance
         {
             get
             {

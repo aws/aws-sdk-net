@@ -31,7 +31,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// The request was denied due to request throttling. For more information about throttling,
     /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-    /// in the <i>AWS Key Management Service Developer Guide</i>.
+    /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

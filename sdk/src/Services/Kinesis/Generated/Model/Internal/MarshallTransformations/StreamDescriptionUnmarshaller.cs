@@ -112,6 +112,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     unmarshalledObject.StreamCreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StreamModeDetails", targetDepth))
+                {
+                    var unmarshaller = StreamModeDetailsUnmarshaller.Instance;
+                    unmarshalledObject.StreamModeDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

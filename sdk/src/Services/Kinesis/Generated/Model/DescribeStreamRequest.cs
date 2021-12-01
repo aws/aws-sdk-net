@@ -32,7 +32,14 @@ namespace Amazon.Kinesis.Model
     /// Container for the parameters to the DescribeStream operation.
     /// Describes the specified Kinesis data stream.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// This API has been revised. It's highly recommended that you use the <a>DescribeStreamSummary</a>
+    /// API to get a summarized description of the specified Kinesis data stream and the <a>ListShards</a>
+    /// API to list the shards in a specified data stream and obtain information about each
+    /// shard. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The information returned includes the stream name, Amazon Resource Name (ARN), creation
     /// time, enhanced metric configuration, and shard map. The shard map is an array of shard
@@ -69,6 +76,16 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The shard ID of the shard to start with.
         /// </para>
+        ///  
+        /// <para>
+        /// Specify this parameter to indicate that you want to describe the stream starting with
+        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this parameter, the default behavior for <code>DescribeStream</code>
+        /// is to describe the stream starting with the first shard in the stream.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string ExclusiveStartShardId
@@ -87,7 +104,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of shards to return in a single call. The default value is 100.
-        /// If you specify a value greater than 100, at most 100 shards are returned.
+        /// If you specify a value greater than 100, at most 100 results are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

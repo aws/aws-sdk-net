@@ -33,8 +33,48 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class DescribeLimitsResponse : AmazonWebServiceResponse
     {
+        private int? _onDemandStreamCount;
+        private int? _onDemandStreamCountLimit;
         private int? _openShardCount;
         private int? _shardLimit;
+
+        /// <summary>
+        /// Gets and sets the property OnDemandStreamCount. 
+        /// <para>
+        ///  Indicates the number of data streams with the on-demand capacity mode.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000000)]
+        public int OnDemandStreamCount
+        {
+            get { return this._onDemandStreamCount.GetValueOrDefault(); }
+            set { this._onDemandStreamCount = value; }
+        }
+
+        // Check to see if OnDemandStreamCount property is set
+        internal bool IsSetOnDemandStreamCount()
+        {
+            return this._onDemandStreamCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandStreamCountLimit. 
+        /// <para>
+        ///  The maximum number of data streams with the on-demand capacity mode. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=1000000)]
+        public int OnDemandStreamCountLimit
+        {
+            get { return this._onDemandStreamCountLimit.GetValueOrDefault(); }
+            set { this._onDemandStreamCountLimit = value; }
+        }
+
+        // Check to see if OnDemandStreamCountLimit property is set
+        internal bool IsSetOnDemandStreamCountLimit()
+        {
+            return this._onDemandStreamCountLimit.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property OpenShardCount. 

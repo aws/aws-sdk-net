@@ -50,7 +50,7 @@ namespace Amazon.Kinesis.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>KMS</code>: Use server-side encryption on the records in the stream using a
-        /// customer-managed AWS KMS key.
+        /// customer-managed Amazon Web Services KMS key.
         /// </para>
         ///  </li> </ul>
         /// </summary>

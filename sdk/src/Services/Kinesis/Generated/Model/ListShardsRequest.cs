@@ -31,8 +31,14 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Container for the parameters to the ListShards operation.
     /// Lists the shards in a stream and provides information about each shard. This operation
-    /// has a limit of 100 transactions per second per data stream.
+    /// has a limit of 1000 transactions per second per data stream.
     /// 
+    ///  
+    /// <para>
+    /// This action does not list expired shards. For information about expired shards, see
+    /// <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data
+    /// Routing, Data Persistence, and Shard State after a Reshard</a>. 
+    /// </para>
     ///  <important> 
     /// <para>
     /// This API is a new operation that is used by the Amazon Kinesis Client Library (KCL).
@@ -84,8 +90,8 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
-        /// which is also the default.
+        /// The maximum number of shards to return in a single call. The default value is 1000.
+        /// If you specify a value greater than 1000, at most 1000 results are returned. 
         /// </para>
         ///  
         /// <para>
@@ -153,7 +159,36 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShardFilter.
+        /// Gets and sets the property ShardFilter. 
+        /// <para>
+        /// Enables you to filter out the response of the <code>ListShards</code> API. You can
+        /// only specify one filter at a time. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
+        /// the <code>Type</code> is the required property and must be specified. If you specify
+        /// the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or <code>AT_LATEST</code>
+        /// types, you do not need to specify either the <code>ShardId</code> or the <code>Timestamp</code>
+        /// optional properties. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
+        /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property
+        /// is identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of
+        /// the <code>ListShards</code> API. When <code>ShardId</code> property is specified,
+        /// the response includes the shards starting with the shard whose ID immediately follows
+        /// the <code>ShardId</code> that you provided. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
+        /// you must also provide the value for the optional <code>Timestamp</code> property.
+        /// If you specify the AT_TIMESTAMP type, then all shards that were open at the provided
+        /// timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards starting
+        /// from the provided timestamp to TIP are returned. 
+        /// </para>
         /// </summary>
         public ShardFilter ShardFilter
         {

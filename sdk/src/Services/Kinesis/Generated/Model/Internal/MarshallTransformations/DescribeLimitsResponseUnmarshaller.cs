@@ -51,6 +51,18 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("OnDemandStreamCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.OnDemandStreamCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OnDemandStreamCountLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.OnDemandStreamCountLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OpenShardCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

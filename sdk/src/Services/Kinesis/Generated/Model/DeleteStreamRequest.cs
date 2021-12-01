@@ -53,7 +53,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <a>DescribeStream</a> operation to check the state of the stream,
+    /// You can use the <a>DescribeStreamSummary</a> operation to check the state of the stream,
     /// which is returned in <code>StreamStatus</code>.
     /// </para>
     ///  

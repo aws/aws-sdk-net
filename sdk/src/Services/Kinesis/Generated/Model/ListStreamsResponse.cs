@@ -58,8 +58,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property StreamNames. 
         /// <para>
-        /// The names of the streams that are associated with the AWS account making the <code>ListStreams</code>
-        /// request.
+        /// The names of the streams that are associated with the Amazon Web Services account
+        /// making the <code>ListStreams</code> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

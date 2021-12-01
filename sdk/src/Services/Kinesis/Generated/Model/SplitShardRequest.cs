@@ -53,9 +53,9 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use <a>DescribeStream</a> to determine the shard ID and hash key values for
-    /// the <code>ShardToSplit</code> and <code>NewStartingHashKey</code> parameters that
-    /// are specified in the <code>SplitShard</code> request.
+    /// You can use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine
+    /// the shard ID and hash key values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code>
+    /// parameters that are specified in the <code>SplitShard</code> request.
     /// </para>
     ///  
     /// <para>
@@ -67,24 +67,22 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use <code>DescribeStream</code> to check the status of the stream, which is
-    /// returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
-    /// state, you can call <code>SplitShard</code>. If a stream is in <code>CREATING</code>
-    /// or <code>UPDATING</code> or <code>DELETING</code> states, <code>DescribeStream</code>
-    /// returns a <code>ResourceInUseException</code>.
+    /// You can use <a>DescribeStreamSummary</a> to check the status of the stream, which
+    /// is returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
+    /// state, you can call <code>SplitShard</code>. 
     /// </para>
     ///  
     /// <para>
-    /// If the specified stream does not exist, <code>DescribeStream</code> returns a <code>ResourceNotFoundException</code>.
+    /// If the specified stream does not exist, <a>DescribeStreamSummary</a> returns a <code>ResourceNotFoundException</code>.
     /// If you try to create more shards than are authorized for your account, you receive
     /// a <code>LimitExceededException</code>. 
     /// </para>
     ///  
     /// <para>
-    /// For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+    /// For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
     /// Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-    /// AWS Support</a>.
+    /// Amazon Web Services Support</a>.
     /// </para>
     ///  
     /// <para>

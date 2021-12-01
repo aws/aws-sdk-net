@@ -41,6 +41,7 @@ namespace Amazon.Kinesis.Model
         private int? _retentionPeriodHours;
         private string _streamARN;
         private DateTime? _streamCreationTimestamp;
+        private StreamModeDetails _streamModeDetails;
         private string _streamName;
         private StreamStatus _streamStatus;
 
@@ -112,10 +113,10 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified ARN to either an alias or a key,
-        /// or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis
-        /// Data Streams by specifying the alias <code>aws/kinesis</code>.
+        /// The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified ARN to either an
+        /// alias or a key, or an alias name prefixed by "alias/".You can also use a master key
+        /// owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -229,6 +230,26 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamCreationTimestamp()
         {
             return this._streamCreationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamModeDetails. 
+        /// <para>
+        ///  Specifies the capacity mode to which you want to set your data stream. Currently,
+        /// in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode
+        /// and a <b>provisioned</b> capacity mode for your data streams. 
+        /// </para>
+        /// </summary>
+        public StreamModeDetails StreamModeDetails
+        {
+            get { return this._streamModeDetails; }
+            set { this._streamModeDetails = value; }
+        }
+
+        // Check to see if StreamModeDetails property is set
+        internal bool IsSetStreamModeDetails()
+        {
+            return this._streamModeDetails != null;
         }
 
         /// <summary>

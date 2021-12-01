@@ -47,6 +47,16 @@
     <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.DescribeLimitsResponse.OnDemandStreamCount</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DescribeLimitsResponse.OnDemandStreamCountLimit</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.DescribeLimitsResponse.OpenShardCount</property>
     <min>0</min>
     <max>1000000</max>
@@ -383,6 +393,12 @@
   <property-value-rule>
     <property>Amazon.Kinesis.Model.UpdateShardCountResponse.TargetShardCount</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateStreamModeRequest.StreamARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:kinesis:.*:\d{12}:stream/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ChildShard.ShardId</property>

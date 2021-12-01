@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// 
+    /// Output parameter of the GetRecords API. The existing child shard of the current shard.
     /// </summary>
     public partial class ChildShard
     {
@@ -54,7 +54,10 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParentShards.
+        /// Gets and sets the property ParentShards. 
+        /// <para>
+        /// The current shard that is the parent of the existing child shard.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> ParentShards
@@ -70,7 +73,10 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShardId.
+        /// Gets and sets the property ShardId. 
+        /// <para>
+        /// The shard ID of the existing child shard of the current shard.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ShardId

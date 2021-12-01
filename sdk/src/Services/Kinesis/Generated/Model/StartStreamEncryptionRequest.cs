@@ -30,8 +30,8 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the StartStreamEncryption operation.
-    /// Enables or updates server-side encryption using an AWS KMS key for a specified stream.
-    /// 
+    /// Enables or updates server-side encryption using an Amazon Web Services KMS key for
+    /// a specified stream. 
     /// 
     ///  
     /// <para>
@@ -45,8 +45,8 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// API Limits: You can successfully apply a new AWS KMS key for server-side encryption
-    /// 25 times in a rolling 24-hour period.
+    /// API Limits: You can successfully apply a new Amazon Web Services KMS key for server-side
+    /// encryption 25 times in a rolling 24-hour period.
     /// </para>
     ///  
     /// <para>
@@ -84,10 +84,10 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master
-        /// key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
+        /// The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource
+        /// Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You
+        /// can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

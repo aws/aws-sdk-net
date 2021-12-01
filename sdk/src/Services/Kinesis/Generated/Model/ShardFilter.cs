@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// 
+    /// The request parameter used to filter out the response of the <code>ListShards</code>
+    /// API.
     /// </summary>
     public partial class ShardFilter
     {
@@ -38,7 +39,12 @@ namespace Amazon.Kinesis.Model
         private ShardFilterType _type;
 
         /// <summary>
-        /// Gets and sets the property ShardId.
+        /// Gets and sets the property ShardId. 
+        /// <para>
+        /// The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code>
+        /// parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard
+        /// type is specified.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string ShardId
@@ -54,7 +60,13 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is
+        /// a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00
+        /// or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or
+        /// <code>AT_TIMESTAMP</code> shard types are specified.
+        /// </para>
         /// </summary>
         public DateTime Timestamp
         {
@@ -69,7 +81,50 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The shard type specified in the <code>ShardFilter</code> parameter. This is a required
+        /// property of the <code>ShardFilter</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify the following valid values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with
+        /// the shard whose ID immediately follows the <code>ShardId</code> that you provided.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open
+        /// at <code>TRIM_HORIZON</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards
+        /// within the retention period of the data stream (trim to tip).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AT_LATEST</code> - the response includes only the currently open shards of
+        /// the data stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp
+        /// is less than or equal to the given timestamp and end timestamp is greater than or
+        /// equal to the given timestamp or still open. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp
+        /// is greater than or equal to the given timestamp and also all open shards. Corrected
+        /// to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is
+        /// less than the <code>TRIM_HORIZON</code> value.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ShardFilterType Type

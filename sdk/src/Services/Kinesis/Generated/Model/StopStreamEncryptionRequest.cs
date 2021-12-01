@@ -83,10 +83,10 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The GUID for the customer-managed AWS KMS key to use for encryption. This value can
-        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
-        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master
-        /// key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
+        /// The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
+        /// This value can be a globally unique identifier, a fully specified Amazon Resource
+        /// Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You
+        /// can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -52,10 +52,8 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Adds or updates tags for the specified Kinesis data stream. Each time you invoke this
-        /// operation, you can specify up to 10 tags. If you want to add more than 10 tags to
-        /// your stream, you can invoke this operation multiple times. In total, each stream can
-        /// have up to 50 tags.
+        /// Adds or updates tags for the specified Kinesis data stream. You can assign up to 50
+        /// tags to a data stream.
         /// 
         ///  
         /// <para>
@@ -135,10 +133,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// The stream name identifies the stream. The name is scoped to the AWS account used
-        /// by the application. It is also scoped by AWS Region. That is, two streams in two different
-        /// accounts can have the same name, and two streams in the same account, but in two different
-        /// Regions, can have the same name.
+        /// The stream name identifies the stream. The name is scoped to the Amazon Web Services
+        /// account used by the application. It is also scoped by Amazon Web Services Region.
+        /// That is, two streams in two different accounts can have the same name, and two streams
+        /// in the same account, but in two different Regions, can have the same name.
         /// </para>
         ///  
         /// <para>
@@ -163,14 +161,14 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+        /// For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
         /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-        /// AWS Support</a>.
+        /// Amazon Web Services Support</a>.
         /// </para>
         ///  
         /// <para>
-        /// You can use <code>DescribeStream</code> to check the stream status, which is returned
+        /// You can use <a>DescribeStreamSummary</a> to check the stream status, which is returned
         /// in <code>StreamStatus</code>.
         /// </para>
         ///  
@@ -349,7 +347,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You can use the <a>DescribeStream</a> operation to check the state of the stream,
+        /// You can use the <a>DescribeStreamSummary</a> operation to check the state of the stream,
         /// which is returned in <code>StreamStatus</code>.
         /// </para>
         ///  
@@ -523,7 +521,14 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Describes the specified Kinesis data stream.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This API has been revised. It's highly recommended that you use the <a>DescribeStreamSummary</a>
+        /// API to get a summarized description of the specified Kinesis data stream and the <a>ListShards</a>
+        /// API to list the shards in a specified data stream and obtain information about each
+        /// shard. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The information returned includes the stream name, Amazon Resource Name (ARN), creation
         /// time, enhanced metric configuration, and shard map. The shard map is an array of shard
@@ -863,14 +868,16 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// The size of the data returned by <a>GetRecords</a> varies depending on the utilization
-        /// of the shard. The maximum size of data that <a>GetRecords</a> can return is 10 MiB.
-        /// If a call returns this amount of data, subsequent calls made within the next 5 seconds
-        /// throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
-        /// provisioned throughput on the stream, subsequent calls made within the next 1 second
-        /// throw <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a> doesn't
-        /// return any data when it throws an exception. For this reason, we recommend that you
-        /// wait 1 second between calls to <a>GetRecords</a>. However, it's possible that the
-        /// application will get exceptions for longer than 1 second.
+        /// of the shard. It is recommended that consumer applications retrieve records via the
+        /// <code>GetRecords</code> command using the 5 TPS limit to remain caught up. Retrieving
+        /// records less frequently can lead to consumer applications falling behind. The maximum
+        /// size of data that <a>GetRecords</a> can return is 10 MiB. If a call returns this amount
+        /// of data, subsequent calls made within the next 5 seconds throw <code>ProvisionedThroughputExceededException</code>.
+        /// If there is insufficient provisioned throughput on the stream, subsequent calls made
+        /// within the next 1 second throw <code>ProvisionedThroughputExceededException</code>.
+        /// <a>GetRecords</a> doesn't return any data when it throws an exception. For this reason,
+        /// we recommend that you wait 1 second between calls to <a>GetRecords</a>. However, it's
+        /// possible that the application will get exceptions for longer than 1 second.
         /// </para>
         ///  
         /// <para>
@@ -914,26 +921,27 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-        /// Developer Guide</i>.
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate for the stream is too high, or the requested data is too large for
         /// the available throughput. Reduce the frequency or size of your requests. For more
         /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error
-        /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
+        /// Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1037,7 +1045,8 @@ namespace Amazon.Kinesis
         /// the available throughput. Reduce the frequency or size of your requests. For more
         /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error
-        /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
+        /// Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1079,7 +1088,7 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Increases the Kinesis data stream's retention period, which is the length of time
         /// data records are accessible after they are added to the stream. The maximum value
-        /// of a stream's retention period is 168 hours (7 days).
+        /// of a stream's retention period is 8760 hours (365 days).
         /// 
         ///  
         /// <para>
@@ -1116,7 +1125,7 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Increases the Kinesis data stream's retention period, which is the length of time
         /// data records are accessible after they are added to the stream. The maximum value
-        /// of a stream's retention period is 168 hours (7 days).
+        /// of a stream's retention period is 8760 hours (365 days).
         /// 
         ///  
         /// <para>
@@ -1182,8 +1191,14 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Lists the shards in a stream and provides information about each shard. This operation
-        /// has a limit of 100 transactions per second per data stream.
+        /// has a limit of 1000 transactions per second per data stream.
         /// 
+        ///  
+        /// <para>
+        /// This action does not list expired shards. For information about expired shards, see
+        /// <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data
+        /// Routing, Data Persistence, and Shard State after a Reshard</a>. 
+        /// </para>
         ///  <important> 
         /// <para>
         /// This API is a new operation that is used by the Amazon Kinesis Client Library (KCL).
@@ -1320,7 +1335,7 @@ namespace Amazon.Kinesis
         /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
         /// You can limit the number of returned streams using the <code>Limit</code> parameter.
         /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
-        /// uses the default limit, which is currently 10.
+        /// uses the default limit, which is currently 100.
         /// </para>
         ///  
         /// <para>
@@ -1354,7 +1369,7 @@ namespace Amazon.Kinesis
         /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
         /// You can limit the number of returned streams using the <code>Limit</code> parameter.
         /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
-        /// uses the default limit, which is currently 10.
+        /// uses the default limit, which is currently 100.
         /// </para>
         ///  
         /// <para>
@@ -1492,8 +1507,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You can use <a>DescribeStream</a> to check the state of the stream, which is returned
-        /// in <code>StreamStatus</code>.
+        /// You can use <a>DescribeStreamSummary</a> to check the state of the stream, which is
+        /// returned in <code>StreamStatus</code>.
         /// </para>
         ///  
         /// <para>
@@ -1505,8 +1520,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You use <a>DescribeStream</a> to determine the shard IDs that are specified in the
-        /// <code>MergeShards</code> request. 
+        /// You use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine the
+        /// shard IDs that are specified in the <code>MergeShards</code> request. 
         /// </para>
         ///  
         /// <para>
@@ -1536,6 +1551,9 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         MergeShardsResponse MergeShards(MergeShardsRequest request);
@@ -1651,26 +1669,27 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-        /// Developer Guide</i>.
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate for the stream is too high, or the requested data is too large for
         /// the available throughput. Reduce the frequency or size of your requests. For more
         /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error
-        /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
+        /// Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1815,26 +1834,27 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-        /// Developer Guide</i>.
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ProvisionedThroughputExceededException">
         /// The request rate for the stream is too high, or the requested data is too large for
         /// the available throughput. Reduce the frequency or size of your requests. For more
         /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error
-        /// Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
+        /// Retries and Exponential Backoff in Amazon Web Services</a> in the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2039,9 +2059,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You can use <a>DescribeStream</a> to determine the shard ID and hash key values for
-        /// the <code>ShardToSplit</code> and <code>NewStartingHashKey</code> parameters that
-        /// are specified in the <code>SplitShard</code> request.
+        /// You can use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine
+        /// the shard ID and hash key values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code>
+        /// parameters that are specified in the <code>SplitShard</code> request.
         /// </para>
         ///  
         /// <para>
@@ -2053,24 +2073,22 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You can use <code>DescribeStream</code> to check the status of the stream, which is
-        /// returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
-        /// state, you can call <code>SplitShard</code>. If a stream is in <code>CREATING</code>
-        /// or <code>UPDATING</code> or <code>DELETING</code> states, <code>DescribeStream</code>
-        /// returns a <code>ResourceInUseException</code>.
+        /// You can use <a>DescribeStreamSummary</a> to check the status of the stream, which
+        /// is returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
+        /// state, you can call <code>SplitShard</code>. 
         /// </para>
         ///  
         /// <para>
-        /// If the specified stream does not exist, <code>DescribeStream</code> returns a <code>ResourceNotFoundException</code>.
+        /// If the specified stream does not exist, <a>DescribeStreamSummary</a> returns a <code>ResourceNotFoundException</code>.
         /// If you try to create more shards than are authorized for your account, you receive
         /// a <code>LimitExceededException</code>. 
         /// </para>
         ///  
         /// <para>
-        /// For the default shard limit for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+        /// For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
         /// Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
-        /// AWS Support</a>.
+        /// Amazon Web Services Support</a>.
         /// </para>
         ///  
         /// <para>
@@ -2100,6 +2118,9 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         SplitShardResponse SplitShard(SplitShardRequest request);
@@ -2136,8 +2157,8 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Enables or updates server-side encryption using an AWS KMS key for a specified stream.
-        /// 
+        /// Enables or updates server-side encryption using an Amazon Web Services KMS key for
+        /// a specified stream. 
         /// 
         ///  
         /// <para>
@@ -2151,8 +2172,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// API Limits: You can successfully apply a new AWS KMS key for server-side encryption
-        /// 25 times in a rolling 24-hour period.
+        /// API Limits: You can successfully apply a new Amazon Web Services KMS key for server-side
+        /// encryption 25 times in a rolling 24-hour period.
         /// </para>
         ///  
         /// <para>
@@ -2178,19 +2199,19 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
         /// The request was rejected because the state of the specified resource isn't valid for
         /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-        /// Developer Guide</i>.
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
         /// The request was rejected because the specified entity or resource can't be found.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
-        /// The AWS access key ID needs a subscription for the service.
+        /// The Amazon Web Services access key ID needs a subscription for the service.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
         /// The request was denied due to request throttling. For more information about throttling,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
-        /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
@@ -2359,11 +2380,12 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Scale up to more than 500 shards in a stream
+        /// Scale up to more than 10000 shards in a stream
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Scale a stream with more than 500 shards down unless the result is less than 500 shards
+        /// Scale a stream with more than 10000 shards down unless the result is less than 10000
+        /// shards
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2371,7 +2393,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the default limits for an AWS account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
+        /// For the default limits for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request an
         /// increase in the call rate limit, the shard limit for this API, or your overall shard
         /// limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis">limits
@@ -2395,6 +2417,9 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         UpdateShardCountResponse UpdateShardCount(UpdateShardCountRequest request);
@@ -2424,6 +2449,63 @@ namespace Amazon.Kinesis
         /// <returns>Returns a  UpdateShardCountResult from Kinesis.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         UpdateShardCountResponse EndUpdateShardCount(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateStreamMode
+
+
+        /// <summary>
+        /// Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
+        /// you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b>
+        /// capacity mode for your data stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamMode service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStreamMode service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
+        UpdateStreamModeResponse UpdateStreamMode(UpdateStreamModeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStreamMode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamMode operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStreamMode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
+        IAsyncResult BeginUpdateStreamMode(UpdateStreamModeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStreamMode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStreamMode.</param>
+        /// 
+        /// <returns>Returns a  UpdateStreamModeResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
+        UpdateStreamModeResponse EndUpdateStreamMode(IAsyncResult asyncResult);
 
         #endregion
         

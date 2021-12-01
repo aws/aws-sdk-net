@@ -49,7 +49,8 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of consumers that you want a single call of <code>ListStreamConsumers</code>
-        /// to return.
+        /// to return. The default value is 100. If you specify a value greater than 100, at most
+        /// 100 results are returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -117,7 +118,7 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The ARN of the Kinesis data stream for which you want to list the registered consumers.
         /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

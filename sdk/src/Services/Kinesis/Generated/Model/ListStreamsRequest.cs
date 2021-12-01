@@ -37,7 +37,7 @@ namespace Amazon.Kinesis.Model
     /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
     /// You can limit the number of returned streams using the <code>Limit</code> parameter.
     /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
-    /// uses the default limit, which is currently 10.
+    /// uses the default limit, which is currently 100.
     /// </para>
     ///  
     /// <para>
@@ -81,7 +81,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of streams to list.
+        /// The maximum number of streams to list. The default value is 100. If you specify a
+        /// value greater than 100, at most 100 results are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

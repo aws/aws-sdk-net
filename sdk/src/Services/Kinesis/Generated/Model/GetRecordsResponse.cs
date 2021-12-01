@@ -39,7 +39,11 @@ namespace Amazon.Kinesis.Model
         private List<Record> _records = new List<Record>();
 
         /// <summary>
-        /// Gets and sets the property ChildShards.
+        /// Gets and sets the property ChildShards. 
+        /// <para>
+        /// The list of the current shard's child shards, returned in the <code>GetRecords</code>
+        /// API's response only when the end of the current shard is reached.
+        /// </para>
         /// </summary>
         public List<ChildShard> ChildShards
         {
