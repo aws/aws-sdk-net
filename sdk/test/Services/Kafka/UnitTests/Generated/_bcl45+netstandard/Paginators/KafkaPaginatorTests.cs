@@ -120,6 +120,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Kafka")]
+        public void ListClustersV2Test_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListClustersV2Request>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListClustersV2Response>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListClustersV2Response>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListClustersV2(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListClustersV2(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Kafka")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListClustersV2Test__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListClustersV2Request>();
+
+            var response = InstantiateClassGenerator.Execute<ListClustersV2Response>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListClustersV2(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListClustersV2(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Kafka")]
         public void ListConfigurationRevisionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListConfigurationRevisionsRequest>();

@@ -227,6 +227,67 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  CreateClusterV2
+
+
+        /// <summary>
+        /// Creates a new MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateClusterV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">REST API Reference for CreateClusterV2 Operation</seealso>
+        CreateClusterV2Response CreateClusterV2(CreateClusterV2Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateClusterV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterV2 operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClusterV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">REST API Reference for CreateClusterV2 Operation</seealso>
+        IAsyncResult BeginCreateClusterV2(CreateClusterV2Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateClusterV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterV2.</param>
+        /// 
+        /// <returns>Returns a  CreateClusterV2Result from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">REST API Reference for CreateClusterV2 Operation</seealso>
+        CreateClusterV2Response EndCreateClusterV2(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateConfiguration
 
 
@@ -500,6 +561,62 @@ namespace Amazon.Kafka
         /// <returns>Returns a  DescribeClusterOperationResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
         DescribeClusterOperationResponse EndDescribeClusterOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeClusterV2
+
+
+        /// <summary>
+        /// Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">REST API Reference for DescribeClusterV2 Operation</seealso>
+        DescribeClusterV2Response DescribeClusterV2(DescribeClusterV2Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterV2 operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">REST API Reference for DescribeClusterV2 Operation</seealso>
+        IAsyncResult BeginDescribeClusterV2(DescribeClusterV2Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterV2.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterV2Result from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">REST API Reference for DescribeClusterV2 Operation</seealso>
+        DescribeClusterV2Response EndDescribeClusterV2(IAsyncResult asyncResult);
 
         #endregion
         
@@ -837,6 +954,58 @@ namespace Amazon.Kafka
         /// <returns>Returns a  ListClustersResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse EndListClusters(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListClustersV2
+
+
+        /// <summary>
+        /// Returns a list of all the MSK clusters in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClustersV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListClustersV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">REST API Reference for ListClustersV2 Operation</seealso>
+        ListClustersV2Response ListClustersV2(ListClustersV2Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClustersV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClustersV2 operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClustersV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">REST API Reference for ListClustersV2 Operation</seealso>
+        IAsyncResult BeginListClustersV2(ListClustersV2Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClustersV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClustersV2.</param>
+        /// 
+        /// <returns>Returns a  ListClustersV2Result from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">REST API Reference for ListClustersV2 Operation</seealso>
+        ListClustersV2Response EndListClustersV2(IAsyncResult asyncResult);
 
         #endregion
         

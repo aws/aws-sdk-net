@@ -423,6 +423,61 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  CreateClusterV2
+
+        internal virtual CreateClusterV2Response CreateClusterV2(CreateClusterV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateClusterV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">REST API Reference for CreateClusterV2 Operation</seealso>
+        public virtual Task<CreateClusterV2Response> CreateClusterV2Async(CreateClusterV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateClusterV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConfiguration
 
         internal virtual CreateConfigurationResponse CreateConfiguration(CreateConfigurationRequest request)
@@ -665,6 +720,56 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeClusterOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeClusterV2
+
+        internal virtual DescribeClusterV2Response DescribeClusterV2(DescribeClusterV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">REST API Reference for DescribeClusterV2 Operation</seealso>
+        public virtual Task<DescribeClusterV2Response> DescribeClusterV2Async(DescribeClusterV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterV2Response>(request, options, cancellationToken);
         }
 
         #endregion
@@ -966,6 +1071,52 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListClustersV2
+
+        internal virtual ListClustersV2Response ListClustersV2(ListClustersV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListClustersV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of all the MSK clusters in the current Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClustersV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClustersV2 service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">REST API Reference for ListClustersV2 Operation</seealso>
+        public virtual Task<ListClustersV2Response> ListClustersV2Async(ListClustersV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClustersV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClustersV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClustersV2Response>(request, options, cancellationToken);
         }
 
         #endregion
