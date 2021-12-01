@@ -102,6 +102,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.EnableDns64 = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enableLniAtDeviceIndex", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.EnableLniAtDeviceIndex = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ipv6CidrBlockAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = SubnetIpv6CidrBlockAssociationUnmarshaller.Instance;

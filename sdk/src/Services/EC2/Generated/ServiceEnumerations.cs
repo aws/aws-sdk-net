@@ -7199,6 +7199,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I3Xlarge = new InstanceType("i3.xlarge");
         /// <summary>
+        /// Constant Im4gn16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Im4gn16xlarge = new InstanceType("im4gn.16xlarge");
+        /// <summary>
+        /// Constant Im4gn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Im4gn2xlarge = new InstanceType("im4gn.2xlarge");
+        /// <summary>
+        /// Constant Im4gn4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Im4gn4xlarge = new InstanceType("im4gn.4xlarge");
+        /// <summary>
+        /// Constant Im4gn8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Im4gn8xlarge = new InstanceType("im4gn.8xlarge");
+        /// <summary>
+        /// Constant Im4gnLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Im4gnLarge = new InstanceType("im4gn.large");
+        /// <summary>
+        /// Constant Im4gnXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Im4gnXlarge = new InstanceType("im4gn.xlarge");
+        /// <summary>
         /// Constant Inf124xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Inf124xlarge = new InstanceType("inf1.24xlarge");
@@ -7214,6 +7238,30 @@ namespace Amazon.EC2
         /// Constant Inf1Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Inf1Xlarge = new InstanceType("inf1.xlarge");
+        /// <summary>
+        /// Constant Is4gen2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Is4gen2xlarge = new InstanceType("is4gen.2xlarge");
+        /// <summary>
+        /// Constant Is4gen4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Is4gen4xlarge = new InstanceType("is4gen.4xlarge");
+        /// <summary>
+        /// Constant Is4gen8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Is4gen8xlarge = new InstanceType("is4gen.8xlarge");
+        /// <summary>
+        /// Constant Is4genLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Is4genLarge = new InstanceType("is4gen.large");
+        /// <summary>
+        /// Constant Is4genMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType Is4genMedium = new InstanceType("is4gen.medium");
+        /// <summary>
+        /// Constant Is4genXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Is4genXlarge = new InstanceType("is4gen.xlarge");
         /// <summary>
         /// Constant M1Large for InstanceType
         /// </summary>

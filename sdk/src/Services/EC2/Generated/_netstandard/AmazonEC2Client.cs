@@ -18474,6 +18474,36 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies a subnet attribute. You can only modify one attribute at a time.
+        /// 
+        ///  
+        /// <para>
+        /// Use this action to modify subnets on Amazon Web Services Outposts.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To modify a subnet on an Outpost rack, set both <code>MapCustomerOwnedIpOnLaunch</code>
+        /// and <code>CustomerOwnedIpv4Pool</code>. These two parameters act as a single attribute.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To modify a subnet on an Outpost server, set either <code>EnableLniAtDeviceIndex</code>
+        /// or <code>DisableLniAtDeviceIndex</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Amazon Web Services Outposts, see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/outposts/latest/userguide/how-servers-work.html">Outpost
+        /// servers</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/outposts/latest/userguide/how-racks-work.html">Outpost
+        /// racks</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySubnetAttribute service method.</param>
         /// <param name="cancellationToken">

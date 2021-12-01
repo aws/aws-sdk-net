@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private string _customerOwnedIpv4Pool;
         private bool? _defaultForAz;
         private bool? _enableDns64;
+        private int? _enableLniAtDeviceIndex;
         private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
         private bool? _ipv6Native;
         private bool? _mapCustomerOwnedIpOnLaunch;
@@ -199,6 +200,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnableDns64()
         {
             return this._enableDns64.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableLniAtDeviceIndex. 
+        /// <para>
+        ///  Indicates the device position for local network interfaces in this subnet. For example,
+        /// <code>1</code> indicates local network interfaces in this subnet are the secondary
+        /// network interface (eth1). 
+        /// </para>
+        /// </summary>
+        public int EnableLniAtDeviceIndex
+        {
+            get { return this._enableLniAtDeviceIndex.GetValueOrDefault(); }
+            set { this._enableLniAtDeviceIndex = value; }
+        }
+
+        // Check to see if EnableLniAtDeviceIndex property is set
+        internal bool IsSetEnableLniAtDeviceIndex()
+        {
+            return this._enableLniAtDeviceIndex.HasValue; 
         }
 
         /// <summary>
