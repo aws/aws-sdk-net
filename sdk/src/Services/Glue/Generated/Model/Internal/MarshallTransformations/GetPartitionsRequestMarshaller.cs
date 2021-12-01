@@ -103,6 +103,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetQueryAsOfTime())
+                {
+                    context.Writer.WritePropertyName("QueryAsOfTime");
+                    context.Writer.Write(publicRequest.QueryAsOfTime);
+                }
+
                 if(publicRequest.IsSetSegment())
                 {
                     context.Writer.WritePropertyName("Segment");
@@ -118,6 +124,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("TableName");
                     context.Writer.Write(publicRequest.TableName);
+                }
+
+                if(publicRequest.IsSetTransactionId())
+                {
+                    context.Writer.WritePropertyName("TransactionId");
+                    context.Writer.Write(publicRequest.TransactionId);
                 }
 
         

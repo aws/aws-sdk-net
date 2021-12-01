@@ -39,6 +39,8 @@ namespace Amazon.Glue.Model
         private string _expression;
         private int? _maxResults;
         private string _nextToken;
+        private DateTime? _queryAsOfTime;
+        private string _transactionId;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -135,6 +137,44 @@ namespace Amazon.Glue.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryAsOfTime. 
+        /// <para>
+        /// The time as of when to read the table contents. If not set, the most recent transaction
+        /// commit time will be used. Cannot be specified along with <code>TransactionId</code>.
+        /// </para>
+        /// </summary>
+        public DateTime QueryAsOfTime
+        {
+            get { return this._queryAsOfTime.GetValueOrDefault(); }
+            set { this._queryAsOfTime = value; }
+        }
+
+        // Check to see if QueryAsOfTime property is set
+        internal bool IsSetQueryAsOfTime()
+        {
+            return this._queryAsOfTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The transaction ID at which to read the table contents.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TransactionId
+        {
+            get { return this._transactionId; }
+            set { this._transactionId = value; }
+        }
+
+        // Check to see if TransactionId property is set
+        internal bool IsSetTransactionId()
+        {
+            return this._transactionId != null;
         }
 
     }

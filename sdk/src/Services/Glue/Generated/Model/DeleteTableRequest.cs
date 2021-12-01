@@ -51,6 +51,7 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private string _name;
+        private string _transactionId;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -110,6 +111,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The transaction ID at which to delete the table contents.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TransactionId
+        {
+            get { return this._transactionId; }
+            set { this._transactionId = value; }
+        }
+
+        // Check to see if TransactionId property is set
+        internal bool IsSetTransactionId()
+        {
+            return this._transactionId != null;
         }
 
     }

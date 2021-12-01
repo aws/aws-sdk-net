@@ -96,6 +96,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTransactionId())
+                {
+                    context.Writer.WritePropertyName("TransactionId");
+                    context.Writer.Write(publicRequest.TransactionId);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

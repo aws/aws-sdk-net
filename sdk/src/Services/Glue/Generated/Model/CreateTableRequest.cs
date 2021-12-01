@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private string _databaseName;
         private List<PartitionIndex> _partitionIndexes = new List<PartitionIndex>();
         private TableInput _tableInput;
+        private string _transactionId;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -117,6 +118,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetTableInput()
         {
             return this._tableInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The ID of the transaction.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string TransactionId
+        {
+            get { return this._transactionId; }
+            set { this._transactionId = value; }
+        }
+
+        // Check to see if TransactionId property is set
+        internal bool IsSetTransactionId()
+        {
+            return this._transactionId != null;
         }
 
     }
