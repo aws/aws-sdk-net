@@ -44,6 +44,7 @@ namespace Amazon.Outposts.Model
         private string _description;
         private string _name;
         private string _siteId;
+        private SupportedHardwareType _supportedHardwareType;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -124,6 +125,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetSiteId()
         {
             return this._siteId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedHardwareType. 
+        /// <para>
+        ///  The type of hardware for this Outpost. 
+        /// </para>
+        /// </summary>
+        public SupportedHardwareType SupportedHardwareType
+        {
+            get { return this._supportedHardwareType; }
+            set { this._supportedHardwareType = value; }
+        }
+
+        // Check to see if SupportedHardwareType property is set
+        internal bool IsSetSupportedHardwareType()
+        {
+            return this._supportedHardwareType != null;
         }
 
         /// <summary>

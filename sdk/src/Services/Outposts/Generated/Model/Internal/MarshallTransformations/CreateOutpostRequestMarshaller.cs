@@ -95,6 +95,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SiteId);
                 }
 
+                if(publicRequest.IsSetSupportedHardwareType())
+                {
+                    context.Writer.WritePropertyName("SupportedHardwareType");
+                    context.Writer.Write(publicRequest.SupportedHardwareType);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
