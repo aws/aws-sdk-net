@@ -36,12 +36,13 @@ namespace Amazon.FSx.Model
         private string _fileSystemId;
         private FileSystemLifecycle _lifecycle;
         private DeleteFileSystemLustreResponse _lustreResponse;
+        private DeleteFileSystemOpenZFSResponse _openZFSResponse;
         private DeleteFileSystemWindowsResponse _windowsResponse;
 
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system being deleted.
+        /// The ID of the file system that's being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=11, Max=21)]
@@ -60,7 +61,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The file system lifecycle for the deletion request. Should be <code>DELETING</code>.
+        /// The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code>
+        /// operation is successful, this status is <code>DELETING</code>.
         /// </para>
         /// </summary>
         public FileSystemLifecycle Lifecycle
@@ -88,6 +90,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetLustreResponse()
         {
             return this._lustreResponse != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenZFSResponse. 
+        /// <para>
+        /// The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        public DeleteFileSystemOpenZFSResponse OpenZFSResponse
+        {
+            get { return this._openZFSResponse; }
+            set { this._openZFSResponse = value; }
+        }
+
+        // Check to see if OpenZFSResponse property is set
+        internal bool IsSetOpenZFSResponse()
+        {
+            return this._openZFSResponse != null;
         }
 
         /// <summary>

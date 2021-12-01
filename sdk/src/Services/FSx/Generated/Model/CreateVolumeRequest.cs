@@ -30,13 +30,14 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVolume operation.
-    /// Creates an Amazon FSx for NetApp ONTAP storage volume.
+    /// Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.
     /// </summary>
     public partial class CreateVolumeRequest : AmazonFSxRequest
     {
         private string _clientRequestToken;
         private string _name;
         private CreateOntapVolumeConfiguration _ontapConfiguration;
+        private CreateOpenZFSVolumeConfiguration _openZFSConfiguration;
         private List<Tag> _tags = new List<Tag>();
         private VolumeType _volumeType;
 
@@ -59,7 +60,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the name of the volume you're creating.
+        /// Specifies the name of the volume that you're creating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=203)]
@@ -78,7 +79,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property OntapConfiguration. 
         /// <para>
-        /// Specifies the <code>ONTAP</code> configuration to use in creating the volume.
+        /// Specifies the configuration to use when creating the ONTAP volume.
         /// </para>
         /// </summary>
         public CreateOntapVolumeConfiguration OntapConfiguration
@@ -91,6 +92,24 @@ namespace Amazon.FSx.Model
         internal bool IsSetOntapConfiguration()
         {
             return this._ontapConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenZFSConfiguration. 
+        /// <para>
+        /// Specifies the configuration to use when creating the OpenZFS volume.
+        /// </para>
+        /// </summary>
+        public CreateOpenZFSVolumeConfiguration OpenZFSConfiguration
+        {
+            get { return this._openZFSConfiguration; }
+            set { this._openZFSConfiguration = value; }
+        }
+
+        // Check to see if OpenZFSConfiguration property is set
+        internal bool IsSetOpenZFSConfiguration()
+        {
+            return this._openZFSConfiguration != null;
         }
 
         /// <summary>
@@ -112,8 +131,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// Specifies the type of volume to create; <code>ONTAP</code> is the only valid volume
-        /// type.
+        /// Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code>
+        /// are the only valid volume types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

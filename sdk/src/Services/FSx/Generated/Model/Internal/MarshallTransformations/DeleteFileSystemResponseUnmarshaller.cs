@@ -69,6 +69,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     response.LustreResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OpenZFSResponse", targetDepth))
+                {
+                    var unmarshaller = DeleteFileSystemOpenZFSResponseUnmarshaller.Instance;
+                    response.OpenZFSResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WindowsResponse", targetDepth))
                 {
                     var unmarshaller = DeleteFileSystemWindowsResponseUnmarshaller.Instance;

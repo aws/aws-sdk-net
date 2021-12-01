@@ -89,6 +89,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOpenZFSConfiguration())
+                {
+                    context.Writer.WritePropertyName("OpenZFSConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeleteVolumeOpenZFSConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OpenZFSConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVolumeId())
                 {
                     context.Writer.WritePropertyName("VolumeId");

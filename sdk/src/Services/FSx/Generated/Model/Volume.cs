@@ -29,20 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes an Amazon FSx for NetApp ONTAP volume.
+    /// Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.
     /// </summary>
     public partial class Volume
     {
+        private List<AdministrativeAction> _administrativeActions = new List<AdministrativeAction>();
         private DateTime? _creationTime;
         private string _fileSystemId;
         private VolumeLifecycle _lifecycle;
         private LifecycleTransitionReason _lifecycleTransitionReason;
         private string _name;
         private OntapVolumeConfiguration _ontapConfiguration;
+        private OpenZFSVolumeConfiguration _openZFSConfiguration;
         private string _resourceARN;
         private List<Tag> _tags = new List<Tag>();
         private string _volumeId;
         private VolumeType _volumeType;
+
+        /// <summary>
+        /// Gets and sets the property AdministrativeActions. 
+        /// <para>
+        /// A list of administrative actions for the file system that are in process or waiting
+        /// to be processed. Administrative actions describe changes to the Amazon FSx system
+        /// that you initiated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<AdministrativeAction> AdministrativeActions
+        {
+            get { return this._administrativeActions; }
+            set { this._administrativeActions = value; }
+        }
+
+        // Check to see if AdministrativeActions property is set
+        internal bool IsSetAdministrativeActions()
+        {
+            return this._administrativeActions != null && this._administrativeActions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime.
@@ -82,7 +105,11 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code> - The volume is fully available for use.
+        ///  <code>AVAILABLE</code> - The volume is fully available for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATED</code> - The volume has been created.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -102,7 +129,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon FSx has not started creating the volume.
+        ///  <code>PENDING</code> - Amazon FSx hasn't started creating the volume.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -121,7 +148,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property LifecycleTransitionReason. 
         /// <para>
-        /// Describes why the volume lifecycle state changed.
+        /// The reason why the volume lifecycle status changed.
         /// </para>
         /// </summary>
         public LifecycleTransitionReason LifecycleTransitionReason
@@ -168,6 +195,24 @@ namespace Amazon.FSx.Model
         internal bool IsSetOntapConfiguration()
         {
             return this._ontapConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenZFSConfiguration. 
+        /// <para>
+        /// The configuration of an Amazon FSx for OpenZFS volume.
+        /// </para>
+        /// </summary>
+        public OpenZFSVolumeConfiguration OpenZFSConfiguration
+        {
+            get { return this._openZFSConfiguration; }
+            set { this._openZFSConfiguration = value; }
+        }
+
+        // Check to see if OpenZFSConfiguration property is set
+        internal bool IsSetOpenZFSConfiguration()
+        {
+            return this._openZFSConfiguration != null;
         }
 
         /// <summary>
@@ -224,7 +269,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The type of volume; <code>ONTAP</code> is the only valid volume type.
+        /// The type of the volume.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

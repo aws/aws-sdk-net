@@ -37,15 +37,17 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// You can use cross-Region backup copies for cross-region disaster recovery. You periodically
-    /// take backups and copy them to another Region so that in the event of a disaster in
-    /// the primary Region, you can restore from backup and recover availability quickly in
-    /// the other Region. You can make cross-Region copies only within your Amazon Web Services
-    /// partition.
+    /// You can use cross-Region backup copies for cross-Region disaster recovery. You can
+    /// periodically take backups and copy them to another Region so that in the event of
+    /// a disaster in the primary Region, you can restore from backup and recover availability
+    /// quickly in the other Region. You can make cross-Region copies only within your Amazon
+    /// Web Services partition. A partition is a grouping of Regions. Amazon Web Services
+    /// currently has three partitions: <code>aws</code> (Standard Regions), <code>aws-cn</code>
+    /// (China Regions), and <code>aws-us-gov</code> (Amazon Web Services GovCloud [US] Regions).
     /// </para>
     ///  
     /// <para>
-    ///  You can also use backup copies to clone your file data set to another Region or within
+    /// You can also use backup copies to clone your file dataset to another Region or within
     /// the same Region.
     /// </para>
     ///  
@@ -59,9 +61,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information on creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
-    /// Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
-    /// backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+    /// For more information about creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
+    /// Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
+    /// backups</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html#copy-backups">Copying
+    /// backups</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CopyBackupRequest : AmazonFSxRequest
@@ -92,16 +95,17 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property CopyTags. 
         /// <para>
-        /// A boolean flag indicating whether tags from the source backup should be copied to
-        /// the backup copy. This value defaults to false.
+        /// A Boolean flag indicating whether tags from the source backup should be copied to
+        /// the backup copy. This value defaults to <code>false</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>CopyTags</code> to true and the source backup has existing tags,
-        /// you can use the <code>Tags</code> parameter to create new tags, provided that the
-        /// sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags
-        /// are merged. If there are tag conflicts (for example, two tags with the same key but
-        /// different values), the tags created with the <code>Tags</code> parameter take precedence.
+        /// If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing
+        /// tags, you can use the <code>Tags</code> parameter to create new tags, provided that
+        /// the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of
+        /// tags are merged. If there are tag conflicts (for example, two tags with the same key
+        /// but different values), the tags created with the <code>Tags</code> parameter take
+        /// precedence.
         /// </para>
         /// </summary>
         public bool CopyTags
@@ -135,7 +139,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SourceBackupId. 
         /// <para>
-        /// The ID of the source backup. Specifies the ID of the backup that is being copied.
+        /// The ID of the source backup. Specifies the ID of the backup that's being copied.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=128)]
@@ -156,8 +160,8 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services
         /// Region from which the backup is being copied. The source and destination Regions must
-        /// be in the same Amazon Web Services partition. If you don't specify a Region, it defaults
-        /// to the Region where the request is sent from (in-Region copy).
+        /// be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code>
+        /// defaults to the Region where the request is sent from (in-Region copy).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

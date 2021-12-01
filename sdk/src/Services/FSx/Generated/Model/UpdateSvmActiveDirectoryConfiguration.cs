@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Updates the Microsoft Active Directory (AD) configuration of an SVM joined to an AD.
-    /// Pleae note, account credentials are not returned in the response payload.
+    /// Please note, account credentials are not returned in the response payload.
     /// </summary>
     public partial class UpdateSvmActiveDirectoryConfiguration
     {

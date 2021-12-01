@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The Region provided for <code>Source Region</code> is invalid or is in a different
+    /// The Region provided for <code>SourceRegion</code> is not valid or is in a different
     /// Amazon Web Services partition.
     /// </summary>
     #if !NETSTANDARD

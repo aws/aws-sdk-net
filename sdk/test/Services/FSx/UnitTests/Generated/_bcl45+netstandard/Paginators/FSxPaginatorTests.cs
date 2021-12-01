@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("FSx")]
+        public void DescribeDataRepositoryAssociationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataRepositoryAssociationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeDataRepositoryAssociationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeDataRepositoryAssociationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeDataRepositoryAssociations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeDataRepositoryAssociations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeDataRepositoryAssociationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeDataRepositoryAssociationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeDataRepositoryAssociationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeDataRepositoryAssociations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeDataRepositoryAssociations(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
         public void DescribeDataRepositoryTasksTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeDataRepositoryTasksRequest>();
@@ -186,6 +225,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.DescribeFileSystems(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.DescribeFileSystems(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        public void DescribeSnapshotsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeSnapshotsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeSnapshotsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeSnapshotsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeSnapshots(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeSnapshots(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeSnapshotsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeSnapshotsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeSnapshotsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeSnapshots(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeSnapshots(request);
 
             // Should work the first time
             paginator.Responses.ToList();

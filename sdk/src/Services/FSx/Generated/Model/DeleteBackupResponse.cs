@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for <code>DeleteBackup</code> operation.
+    /// The response object for the <code>DeleteBackup</code> operation.
     /// </summary>
     public partial class DeleteBackupResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property BackupId. 
         /// <para>
-        /// The ID of the backup deleted.
+        /// The ID of the backup that was deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=128)]
@@ -58,7 +58,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The lifecycle of the backup. Should be <code>DELETED</code>.
+        /// The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is
+        /// successful, the status is <code>DELETED</code>.
         /// </para>
         /// </summary>
         public BackupLifecycle Lifecycle

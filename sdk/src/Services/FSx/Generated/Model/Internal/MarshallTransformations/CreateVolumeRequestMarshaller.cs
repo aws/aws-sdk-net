@@ -95,6 +95,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOpenZFSConfiguration())
+                {
+                    context.Writer.WritePropertyName("OpenZFSConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateOpenZFSVolumeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OpenZFSConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

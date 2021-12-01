@@ -30,16 +30,16 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFileSystemFromBackup operation.
-    /// Creates a new Amazon FSx for Lustre or Amazon FSx for Windows File Server file system
-    /// from an existing Amazon FSx backup.
+    /// Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or Amazon
+    /// FSx for OpenZFS file system from an existing Amazon FSx backup.
     /// 
     ///  
     /// <para>
     /// If a file system with the specified client request token exists and the parameters
     /// match, this operation returns the description of the file system. If a client request
-    /// token specified by the file system exists and the parameters don't match, this call
-    /// returns <code>IncompatibleParameterError</code>. If a file system with the specified
-    /// client request token doesn't exist, this operation does the following:
+    /// token with the specified by the file system exists and the parameters don't match,
+    /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
+    /// specified client request token doesn't exist, this operation does the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Parameters like Active Directory, default share name, automatic backup, and backup
+    /// Parameters like the Active Directory, default share name, automatic backup, and backup
     /// settings default to the parameters of the file system that was backed up, unless overridden.
     /// You can explicitly supply other settings.
     /// </para>
@@ -63,14 +63,15 @@ namespace Amazon.FSx.Model
     /// when an initial call fails in a way that makes it unclear whether a file system was
     /// created. Examples are if a transport level timeout occurred, or your connection was
     /// reset. If you use the same client request token and the initial call created a file
-    /// system, the client receives success as long as the parameters are the same.
+    /// system, the client receives a success message as long as the parameters are the same.
     /// </para>
     ///  <note> 
     /// <para>
     /// The <code>CreateFileSystemFromBackup</code> call returns while the file system's lifecycle
     /// state is still <code>CREATING</code>. You can check the file-system creation status
-    /// by calling the <a>DescribeFileSystems</a> operation, which returns the file system
-    /// state along with other information.
+    /// by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">
+    /// DescribeFileSystems</a> operation, which returns the file system state along with
+    /// other information.
     /// </para>
     ///  </note>
     /// </summary>
@@ -81,6 +82,7 @@ namespace Amazon.FSx.Model
         private string _fileSystemTypeVersion;
         private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
+        private CreateFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private StorageType _storageType;
         private List<string> _subnetIds = new List<string>();
@@ -127,8 +129,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemTypeVersion. 
         /// <para>
-        /// Sets the version for the Amazon FSx for Lustre file system you're creating from a
-        /// backup. Valid values are <code>2.10</code> and <code>2.12</code>.
+        /// Sets the version for the Amazon FSx for Lustre file system that you're creating from
+        /// a backup. Valid values are <code>2.10</code> and <code>2.12</code>.
         /// </para>
         ///  
         /// <para>
@@ -183,11 +185,29 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpenZFSConfiguration. 
+        /// <para>
+        /// The OpenZFS configuration for the file system that's being created. 
+        /// </para>
+        /// </summary>
+        public CreateFileSystemOpenZFSConfiguration OpenZFSConfiguration
+        {
+            get { return this._openZFSConfiguration; }
+            set { this._openZFSConfiguration = value; }
+        }
+
+        // Check to see if OpenZFSConfiguration property is set
+        internal bool IsSetOpenZFSConfiguration()
+        {
+            return this._openZFSConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// A list of IDs for the security groups that apply to the specified network interfaces
         /// created for file system access. These security groups apply to all network interfaces.
-        /// This value isn't returned in later DescribeFileSystem requests.
+        /// This value isn't returned in later <code>DescribeFileSystem</code> requests.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -206,30 +226,30 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Sets the storage type for the Windows file system you're creating from a backup. Valid
-        /// values are <code>SSD</code> and <code>HDD</code>.
+        /// Sets the storage type for the Windows or OpenZFS file system that you're creating
+        /// from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows
-        /// deployment types.
+        /// Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all
+        /// Windows and OpenZFS deployment types.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code>
-        /// and <code>MULTI_AZ_1</code> Windows file system deployment types. 
+        /// Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code>
+        /// and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Default value is <code>SSD</code>. 
+        ///  The default value is <code>SSD</code>. 
         /// </para>
         ///  <note> 
         /// <para>
         /// HDD and SSD storage types have different minimum storage capacity requirements. A
         /// restored file system's storage capacity is tied to the file system that was backed
         /// up. You can create a file system that uses HDD storage from a backup of a file system
-        /// that used SSD storage only if the original SSD file system had a storage capacity
-        /// of at least 2000 GiB. 
+        /// that used SSD storage if the original SSD file system had a storage capacity of at
+        /// least 2000 GiB.
         /// </para>
         ///  </note>
         /// </summary>
@@ -256,9 +276,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types
-        /// and Lustre file systems, provide exactly one subnet ID. The file server is launched
-        /// in that subnet's Availability Zone.
+        /// Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment
+        /// types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID.
+        /// The file server is launched in that subnet's Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=50)]

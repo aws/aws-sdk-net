@@ -38,7 +38,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message describing the backup creation failure.
+        /// A message describing the backup-creation failure.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

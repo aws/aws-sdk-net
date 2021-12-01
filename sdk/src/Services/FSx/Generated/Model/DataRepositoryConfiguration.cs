@@ -31,6 +31,12 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// The data repository configuration object for Lustre file systems returned in the response
     /// of the <code>CreateFileSystem</code> operation.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is not supported for file systems with the <code>Persistent_2</code>
+    /// deployment type. Instead, use .
+    /// </para>
     /// </summary>
     public partial class DataRepositoryConfiguration
     {
@@ -66,13 +72,16 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file
         /// and directory listings of any new objects added to the S3 bucket and any existing
-        /// objects that are changed in the S3 bucket after you choose this option. 
+        /// objects that are changed in the S3 bucket after you choose this option.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-        /// import updates from your S3 bucket</a>.
+        ///  <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports
+        /// file and directory listings of any new objects added to the S3 bucket, any existing
+        /// objects that are changed in the S3 bucket, and any objects that were deleted in the
+        /// S3 bucket.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AutoImportPolicyType AutoImportPolicy
         {
@@ -196,6 +205,10 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <code>UPDATING</code> - The data repository is undergoing a customer initiated update
         /// and availability may be impacted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - The data repository is in a terminal state that cannot be recovered.
         /// </para>
         ///  </li> </ul>
         /// </summary>

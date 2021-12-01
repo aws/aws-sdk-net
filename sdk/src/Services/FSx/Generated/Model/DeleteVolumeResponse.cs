@@ -40,7 +40,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// Describes the lifecycle state of the volume being deleted.
+        /// The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code>
+        /// operation is successful, this value is <code>DELETING</code>.
         /// </para>
         /// </summary>
         public VolumeLifecycle Lifecycle
@@ -58,8 +59,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property OntapResponse. 
         /// <para>
-        /// Returned after a <code>DeleteVolume request, showing the status of the delete request.</code>
-        /// 
+        /// Returned after a <code>DeleteVolume</code> request, showing the status of the delete
+        /// request.
         /// </para>
         /// </summary>
         public DeleteVolumeOntapResponse OntapResponse
@@ -77,7 +78,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the volume being deleted.
+        /// The ID of the volume that's being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=23, Max=23)]

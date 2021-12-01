@@ -69,6 +69,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DataCompressionType);
             }
 
+            if(requestObject.IsSetLogConfiguration())
+            {
+                context.Writer.WritePropertyName("LogConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LustreLogCreateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");

@@ -30,12 +30,15 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVolume operation.
-    /// Updates an Amazon FSx for NetApp ONTAP volume's configuration.
+    /// Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
+    /// volume.
     /// </summary>
     public partial class UpdateVolumeRequest : AmazonFSxRequest
     {
         private string _clientRequestToken;
+        private string _name;
         private UpdateOntapVolumeConfiguration _ontapConfiguration;
+        private UpdateOpenZFSVolumeConfiguration _openZFSConfiguration;
         private string _volumeId;
 
         /// <summary>
@@ -55,9 +58,30 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>.
+        /// Child volume names must be unique among their parent volume's children. The name of
+        /// the volume is part of the mount string for the OpenZFS volume. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=203)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OntapConfiguration. 
         /// <para>
-        /// The <code>ONTAP</code> configuration of the volume you are updating.
+        /// The configuration of the ONTAP volume that you are updating.
         /// </para>
         /// </summary>
         public UpdateOntapVolumeConfiguration OntapConfiguration
@@ -73,9 +97,27 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpenZFSConfiguration. 
+        /// <para>
+        /// The configuration of the OpenZFS volume that you are updating.
+        /// </para>
+        /// </summary>
+        public UpdateOpenZFSVolumeConfiguration OpenZFSConfiguration
+        {
+            get { return this._openZFSConfiguration; }
+            set { this._openZFSConfiguration = value; }
+        }
+
+        // Check to see if OpenZFSConfiguration property is set
+        internal bool IsSetOpenZFSConfiguration()
+        {
+            return this._openZFSConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// Specifies the volume that you want to update, formatted <code>fsvol-0123456789abcdef0</code>.
+        /// The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=23, Max=23)]

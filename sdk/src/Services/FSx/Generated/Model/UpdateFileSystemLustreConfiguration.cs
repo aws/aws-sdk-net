@@ -38,6 +38,7 @@ namespace Amazon.FSx.Model
         private int? _automaticBackupRetentionDays;
         private string _dailyAutomaticBackupStartTime;
         private DataCompressionType _dataCompressionType;
+        private LustreLogCreateConfiguration _logConfiguration;
         private string _weeklyMaintenanceStartTime;
 
         /// <summary>
@@ -65,12 +66,20 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file
         /// and directory listings of any new objects added to the S3 bucket and any existing
-        /// objects that are changed in the S3 bucket after you choose this option. 
+        /// objects that are changed in the S3 bucket after you choose this option.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports
+        /// file and directory listings of any new objects added to the S3 bucket, any existing
+        /// objects that are changed in the S3 bucket, and any objects that were deleted in the
+        /// S3 bucket.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
-        /// import updates from your S3 bucket</a>.
+        /// The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
+        /// with the <code>Persistent_2</code> deployment type. Instead, use to update a data
+        /// repository association on your <code>Persistent_2</code> file system.
         /// </para>
         /// </summary>
         public AutoImportPolicyType AutoImportPolicy
@@ -152,6 +161,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetDataCompressionType()
         {
             return this._dataCompressionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The Lustre logging configuration used when updating an Amazon FSx for Lustre file
+        /// system. When logging is enabled, Lustre logs error and warning events for data repositories
+        /// associated with your file system to Amazon CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public LustreLogCreateConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
         }
 
         /// <summary>

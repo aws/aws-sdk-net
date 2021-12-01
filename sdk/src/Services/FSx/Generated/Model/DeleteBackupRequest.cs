@@ -30,13 +30,13 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBackup operation.
-    /// Deletes an Amazon FSx backup, deleting its contents. After deletion, the backup no
-    /// longer exists, and its data is gone.
+    /// Deletes an Amazon FSx backup. After deletion, the backup no longer exists, and its
+    /// data is gone.
     /// 
     ///  
     /// <para>
-    /// The <code>DeleteBackup</code> call returns instantly. The backup will not show up
-    /// in later <code>DescribeBackups</code> calls.
+    /// The <code>DeleteBackup</code> call returns instantly. The backup won't show up in
+    /// later <code>DescribeBackups</code> calls.
     /// </para>
     ///  <important> 
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property BackupId. 
         /// <para>
-        /// The ID of the backup you want to delete.
+        /// The ID of the backup that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=128)]
@@ -72,7 +72,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion.
-        /// This is automatically filled on your behalf when using the CLI or SDK.
+        /// This parameter is automatically filled on your behalf when using the CLI or SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

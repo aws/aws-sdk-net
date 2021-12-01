@@ -68,6 +68,12 @@ namespace Amazon.FSx.Model
         /// on your behalf when the <code>DeleteFileSystem</code> operation is invoked. (Default
         /// = true)
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>fsx:CreateBackup</code> permission is required if you set <code>SkipFinalBackup</code>
+        /// to <code>false</code> in order to delete the file system and take a final backup.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool SkipFinalBackup
         {

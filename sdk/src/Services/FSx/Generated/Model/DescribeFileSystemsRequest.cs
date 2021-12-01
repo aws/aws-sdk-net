@@ -45,14 +45,15 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  
     /// <para>
-    /// This action is used in an iterative process to retrieve a list of your file system
+    /// This operation is used in an iterative process to retrieve a list of your file system
     /// descriptions. <code>DescribeFileSystems</code> is called first without a <code>NextToken</code>value.
-    /// Then the action continues to be called with the <code>NextToken</code> parameter set
-    /// to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code>.
+    /// Then the operation continues to be called with the <code>NextToken</code> parameter
+    /// set to the value of the last <code>NextToken</code> value until a response has no
+    /// <code>NextToken</code>.
     /// </para>
     ///  
     /// <para>
-    /// When using this action, keep the following in mind:
+    /// When using this operation, keep the following in mind:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -118,8 +119,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
-        /// operation (String). If a token present, the action continues the list from where the
-        /// returning call left off.
+        /// operation (String). If a token present, the operation continues the list from where
+        /// the returning call left off.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

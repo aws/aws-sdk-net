@@ -30,13 +30,38 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFileSystem operation.
-    /// Creates a new, empty Amazon FSx file system.
+    /// Creates a new, empty Amazon FSx file system. You can create the following supported
+    /// Amazon FSx file systems using the <code>CreateFileSystem</code> API operation:
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Amazon FSx for Lustre
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon FSx for NetApp ONTAP
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon FSx for Windows File Server
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// This operation requires a client request token in the request that Amazon FSx uses
+    /// to ensure idempotent creation. This means that calling the operation multiple times
+    /// with the same client request token has no effect. By using the idempotent operation,
+    /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
+    /// an extra file system. This approach can be useful when an initial call fails in a
+    /// way that makes it unclear whether a file system was created. Examples are if a transport
+    /// level timeout occurred, or your connection was reset. If you use the same client request
+    /// token and the initial call created a file system, the client receives success as long
+    /// as the parameters are the same.
+    /// </para>
     ///  
     /// <para>
     /// If a file system with the specified client request token exists and the parameters
     /// match, <code>CreateFileSystem</code> returns the description of the existing file
-    /// system. If a file system specified client request token exists and the parameters
+    /// system. If a file system with the specified client request token exists and the parameters
     /// don't match, this call returns <code>IncompatibleParameterError</code>. If a file
     /// system with the specified client request token doesn't exist, <code>CreateFileSystem</code>
     /// does the following: 
@@ -57,17 +82,17 @@ namespace Amazon.FSx.Model
     /// with the same client request token has no effect. By using the idempotent operation,
     /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
     /// an extra file system. This approach can be useful when an initial call fails in a
-    /// way that makes it unclear whether a file system was created. Examples are if a transport
-    /// level timeout occurred, or your connection was reset. If you use the same client request
-    /// token and the initial call created a file system, the client receives success as long
-    /// as the parameters are the same.
+    /// way that makes it unclear whether a file system was created. Examples are if a transport-level
+    /// timeout occurred, or your connection was reset. If you use the same client request
+    /// token and the initial call created a file system, the client receives a success message
+    /// as long as the parameters are the same.
     /// </para>
     ///  <note> 
     /// <para>
     /// The <code>CreateFileSystem</code> call returns while the file system's lifecycle state
     /// is still <code>CREATING</code>. You can check the file-system creation status by calling
-    /// the <a>DescribeFileSystems</a> operation, which returns the file system state along
-    /// with other information.
+    /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
+    /// operation, which returns the file system state along with other information.
     /// </para>
     ///  </note>
     /// </summary>
@@ -79,6 +104,7 @@ namespace Amazon.FSx.Model
         private string _kmsKeyId;
         private CreateFileSystemLustreConfiguration _lustreConfiguration;
         private CreateFileSystemOntapConfiguration _ontapConfiguration;
+        private CreateFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private int? _storageCapacity;
         private StorageType _storageType;
@@ -111,7 +137,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property FileSystemType. 
         /// <para>
         /// The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>,
-        /// <code>LUSTRE</code>, and <code>ONTAP</code>.
+        /// <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,21 +156,29 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemTypeVersion. 
         /// <para>
-        /// Sets the version of the Amazon FSx for Lustre file system you're creating. Valid values
-        /// are <code>2.10</code> and <code>2.12</code>.
+        /// (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system
+        /// that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Set the value to <code>2.10</code> to create a Lustre 2.10 file system.
+        /// 2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the value to <code>2.12</code> to create a Lustre 2.12 file system.
+        /// 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when
+        /// setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default value is <code>2.10</code>.
+        /// Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set
+        /// to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code>
+        /// Lustre deployment type, the <code>CreateFileSystem</code> operation fails.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public string FileSystemTypeVersion
@@ -206,6 +240,24 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpenZFSConfiguration. 
+        /// <para>
+        /// The OpenZFS configuration for the file system that's being created.
+        /// </para>
+        /// </summary>
+        public CreateFileSystemOpenZFSConfiguration OpenZFSConfiguration
+        {
+            get { return this._openZFSConfiguration; }
+            set { this._openZFSConfiguration = value; }
+        }
+
+        // Check to see if OpenZFSConfiguration property is set
+        internal bool IsSetOpenZFSConfiguration()
+        {
+            return this._openZFSConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// A list of IDs specifying the security groups to apply to all network interfaces created
@@ -229,20 +281,23 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// Sets the storage capacity of the file system that you're creating.
+        /// Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).
         /// </para>
         ///  
         /// <para>
-        /// For Lustre file systems:
+        ///  <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can
+        /// configure depends on the value that you set for <code>StorageType</code> and the Lustre
+        /// <code>DeploymentType</code>, as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid
-        /// values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.
+        /// For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code>
+        /// deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB,
+        /// and increments of 2400 GiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000
+        /// For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000
         /// GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
         /// </para>
         ///  </li> <li> 
@@ -252,23 +307,27 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For Windows file systems:
+        ///  <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure
+        /// is from 1024 GiB up to 196,608 GiB (192 TiB).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can
+        /// configure is from 64 GiB up to 524,288 GiB (512 TiB).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>FSx for Windows File Server file systems</b> - The amount of storage capacity
+        /// that you can configure depends on the value that you set for <code>StorageType</code>
+        /// as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>StorageType=SSD</code>, valid values are 32 GiB - 65,536 GiB (64 TiB).
+        /// For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64 TiB).
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For ONTAP file systems:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Valid values are 1024 GiB - 196,608 GiB (192 TiB).
+        /// For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -288,13 +347,13 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Sets the storage type for the file system you're creating. Valid values are <code>SSD</code>
+        /// Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code>
         /// and <code>HDD</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all
-        /// Windows, Lustre, and ONTAP deployment types.
+        /// Windows, Lustre, ONTAP, and OpenZFS deployment types.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -304,9 +363,10 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-        /// Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
-        /// Storage Options</a> in the <i>Amazon FSx for Lustre User Guide</i>. 
+        /// Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
+        /// Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple
+        /// storage options</a> in the <i>FSx for Lustre User Guide</i>. 
         /// </para>
         /// </summary>
         public StorageType StorageType
@@ -325,20 +385,21 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// Specifies the IDs of the subnets that the file system will be accessible from. For
-        /// Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment types, provide exactly
-        /// two subnet IDs, one for the preferred file server and one for the standby file server.
-        /// You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration
+        /// Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet
+        /// IDs, one for the preferred file server and one for the standby file server. You specify
+        /// one of these subnets as the preferred subnet using the <code>WindowsConfiguration
         /// &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code>
-        /// properties. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
+        /// properties. For more information about Multi-AZ file system configuration, see <a
+        /// href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
         /// Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon
         /// FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
         /// Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment
-        /// types and Lustre file systems, provide exactly one subnet ID. The file server is launched
-        /// in that subnet's Availability Zone.
+        /// For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment
+        /// types, provide exactly one subnet ID. The file server is launched in that subnet's
+        /// Availability Zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=50)]
@@ -357,7 +418,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to apply to the file system being created. The key value of the <code>Name</code>
+        /// The tags to apply to the file system that's being created. The key value of the <code>Name</code>
         /// tag appears in the console as the file system name.
         /// </para>
         /// </summary>
@@ -377,7 +438,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property WindowsConfiguration. 
         /// <para>
-        /// The Microsoft Windows configuration for the file system being created. 
+        /// The Microsoft Windows configuration for the file system that's being created. 
         /// </para>
         /// </summary>
         public CreateFileSystemWindowsConfiguration WindowsConfiguration

@@ -30,33 +30,35 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFileSystem operation.
-    /// Deletes a file system, deleting its contents. After deletion, the file system no longer
-    /// exists, and its data is gone. Any existing automatic backups will also be deleted.
+    /// Deletes a file system. After deletion, the file system no longer exists, and its data
+    /// is gone. Any existing automatic backups and snapshots are also deleted.
     /// 
     ///  
     /// <para>
     /// To delete an Amazon FSx for NetApp ONTAP file system, first delete all the volumes
-    /// and SVMs on the file system. Then provide a <code>FileSystemId</code> value to the
-    /// <code>DeleFileSystem</code> operation.
+    /// and storage virtual machines (SVMs) on the file system. Then provide a <code>FileSystemId</code>
+    /// value to the <code>DeleFileSystem</code> operation.
     /// </para>
     ///  
     /// <para>
     /// By default, when you delete an Amazon FSx for Windows File Server file system, a final
-    /// backup is created upon deletion. This final backup is not subject to the file system's
+    /// backup is created upon deletion. This final backup isn't subject to the file system's
     /// retention policy, and must be manually deleted.
     /// </para>
     ///  
     /// <para>
-    /// The <code>DeleteFileSystem</code> action returns while the file system has the <code>DELETING</code>
-    /// status. You can check the file system deletion status by calling the <a>DescribeFileSystems</a>
-    /// action, which returns a list of file systems in your account. If you pass the file
-    /// system ID for a deleted file system, the <a>DescribeFileSystems</a> returns a <code>FileSystemNotFound</code>
-    /// error.
+    /// The <code>DeleteFileSystem</code> operation returns while the file system has the
+    /// <code>DELETING</code> status. You can check the file system deletion status by calling
+    /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
+    /// operation, which returns a list of file systems in your account. If you pass the file
+    /// system ID for a deleted file system, the <code>DescribeFileSystems</code> operation
+    /// returns a <code>FileSystemNotFound</code> error.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a
-    /// data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state.
+    /// If a data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state,
+    /// deleting an Amazon FSx for Lustre file system will fail with an HTTP status code 400
+    /// (Bad Request).
     /// </para>
     ///  </note> <important> 
     /// <para>
@@ -69,13 +71,14 @@ namespace Amazon.FSx.Model
         private string _clientRequestToken;
         private string _fileSystemId;
         private DeleteFileSystemLustreConfiguration _lustreConfiguration;
+        private DeleteFileSystemOpenZFSConfiguration _openZFSConfiguration;
         private DeleteFileSystemWindowsConfiguration _windowsConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion.
-        /// This is automatically filled on your behalf when using the Command Line Interface
+        /// This token is automatically filled on your behalf when using the Command Line Interface
         /// (CLI) or an Amazon Web Services SDK.
         /// </para>
         /// </summary>
@@ -95,7 +98,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system you want to delete.
+        /// The ID of the file system that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=11, Max=21)]
@@ -124,6 +127,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetLustreConfiguration()
         {
             return this._lustreConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenZFSConfiguration. 
+        /// <para>
+        /// The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        public DeleteFileSystemOpenZFSConfiguration OpenZFSConfiguration
+        {
+            get { return this._openZFSConfiguration; }
+            set { this._openZFSConfiguration = value; }
+        }
+
+        // Check to see if OpenZFSConfiguration property is set
+        internal bool IsSetOpenZFSConfiguration()
+        {
+            return this._openZFSConfiguration != null;
         }
 
         /// <summary>

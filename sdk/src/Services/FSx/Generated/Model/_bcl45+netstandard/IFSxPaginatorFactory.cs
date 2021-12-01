@@ -31,6 +31,11 @@ namespace Amazon.FSx.Model
         IDescribeBackupsPaginator DescribeBackups(DescribeBackupsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeDataRepositoryAssociations operation
+        ///</summary>
+        IDescribeDataRepositoryAssociationsPaginator DescribeDataRepositoryAssociations(DescribeDataRepositoryAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDataRepositoryTasks operation
         ///</summary>
         IDescribeDataRepositoryTasksPaginator DescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request);
@@ -44,6 +49,11 @@ namespace Amazon.FSx.Model
         /// Paginator for DescribeFileSystems operation
         ///</summary>
         IDescribeFileSystemsPaginator DescribeFileSystems(DescribeFileSystemsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSnapshots operation
+        ///</summary>
+        IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request);
 
         /// <summary>
         /// Paginator for DescribeStorageVirtualMachines operation

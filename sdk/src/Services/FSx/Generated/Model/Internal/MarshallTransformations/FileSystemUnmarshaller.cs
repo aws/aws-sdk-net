@@ -136,6 +136,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.OntapConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OpenZFSConfiguration", targetDepth))
+                {
+                    var unmarshaller = OpenZFSFileSystemConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OpenZFSConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

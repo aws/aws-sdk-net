@@ -78,6 +78,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
                 if(publicRequest.IsSetOntapConfiguration())
                 {
                     context.Writer.WritePropertyName("OntapConfiguration");
@@ -85,6 +91,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
 
                     var marshaller = UpdateOntapVolumeConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.OntapConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOpenZFSConfiguration())
+                {
+                    context.Writer.WritePropertyName("OpenZFSConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateOpenZFSVolumeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OpenZFSConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }

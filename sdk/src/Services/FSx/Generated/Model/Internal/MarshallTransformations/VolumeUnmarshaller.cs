@@ -64,6 +64,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdministrativeActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AdministrativeAction, AdministrativeActionUnmarshaller>(AdministrativeActionUnmarshaller.Instance);
+                    unmarshalledObject.AdministrativeActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = OntapVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OntapConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OpenZFSConfiguration", targetDepth))
+                {
+                    var unmarshaller = OpenZFSVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.OpenZFSConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourceARN", targetDepth))

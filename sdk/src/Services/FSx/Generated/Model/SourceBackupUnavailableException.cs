@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The request was rejected because the lifecycle status of the source backup is not
-    /// <code>AVAILABLE</code>.
+    /// The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

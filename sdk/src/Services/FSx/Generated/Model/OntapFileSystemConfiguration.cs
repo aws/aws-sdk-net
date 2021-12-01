@@ -190,7 +190,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacity.
         /// </summary>
-        [AWSProperty(Min=8, Max=2048)]
+        [AWSProperty(Min=8, Max=4096)]
         public int ThroughputCapacity
         {
             get { return this._throughputCapacity.GetValueOrDefault(); }

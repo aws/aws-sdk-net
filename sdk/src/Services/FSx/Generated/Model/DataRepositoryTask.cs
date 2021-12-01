@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// A description of the data repository task. You use data repository tasks to perform
-    /// bulk transfer operations between your Amazon FSx file system and its linked data repository.
+    /// bulk transfer operations between your Amazon FSx file system and a linked data repository.
     /// </summary>
     public partial class DataRepositoryTask
     {
@@ -305,9 +305,19 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data repository task; EXPORT_TO_REPOSITORY is the only type currently
-        /// supported.
+        /// The type of data repository task.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+        /// file system from to a linked S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata
+        /// changes from a linked S3 bucket to your Lustre file system.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataRepositoryTaskType Type

@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumes operation.
-    /// Describes one or more Amazon FSx for NetApp ONTAP volumes.
+    /// Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volumes.
     /// </summary>
     public partial class DescribeVolumesRequest : AmazonFSxRequest
     {
@@ -42,7 +42,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Enter a filter name:value pair to view a select set of volumes.
+        /// Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set
+        /// of volumes.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]
@@ -93,7 +94,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumeIds. 
         /// <para>
-        /// IDs of the volumes whose descriptions you want to retrieve.
+        /// The IDs of the volumes whose descriptions you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

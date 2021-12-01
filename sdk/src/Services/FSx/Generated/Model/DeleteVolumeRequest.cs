@@ -30,15 +30,13 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVolume operation.
-    /// Deletes an Amazon FSx for NetApp ONTAP volume. When deleting a volume, you have the
-    /// option of creating a final backup. If you create a final backup, you have the option
-    /// to apply Tags to the backup. You need to have <code>fsx:TagResource</code> permission
-    /// in order to apply tags to the backup.
+    /// Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.
     /// </summary>
     public partial class DeleteVolumeRequest : AmazonFSxRequest
     {
         private string _clientRequestToken;
         private DeleteVolumeOntapConfiguration _ontapConfiguration;
+        private DeleteVolumeOpenZFSConfiguration _openZFSConfiguration;
         private string _volumeId;
 
         /// <summary>
@@ -60,8 +58,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property OntapConfiguration. 
         /// <para>
-        /// For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume,
-        /// and apply tags to the backup.
+        /// For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume
+        /// and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code>
+        /// permission.
         /// </para>
         /// </summary>
         public DeleteVolumeOntapConfiguration OntapConfiguration
@@ -77,9 +76,28 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpenZFSConfiguration. 
+        /// <para>
+        /// For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and
+        /// snapshots.
+        /// </para>
+        /// </summary>
+        public DeleteVolumeOpenZFSConfiguration OpenZFSConfiguration
+        {
+            get { return this._openZFSConfiguration; }
+            set { this._openZFSConfiguration = value; }
+        }
+
+        // Check to see if OpenZFSConfiguration property is set
+        internal bool IsSetOpenZFSConfiguration()
+        {
+            return this._openZFSConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the volume you are deleting.
+        /// The ID of the volume that you are deleting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=23, Max=23)]

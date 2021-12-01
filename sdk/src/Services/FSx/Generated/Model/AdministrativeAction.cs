@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes a specific Amazon FSx administrative action for the current Windows or Lustre
-    /// file system.
+    /// Describes a specific Amazon FSx administrative action for the current Windows, Lustre,
+    /// or OpenZFS file system.
     /// </summary>
     public partial class AdministrativeAction
     {
@@ -40,6 +40,7 @@ namespace Amazon.FSx.Model
         private DateTime? _requestTime;
         private Status _status;
         private FileSystem _targetFileSystemValues;
+        private Snapshot _targetSnapshotValues;
         private Volume _targetVolumeValues;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ProgressPercent. 
         /// <para>
-        /// Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative
+        /// The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative
         /// action. Does not apply to any other administrative action type.
         /// </para>
         /// </summary>
@@ -95,7 +96,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property RequestTime. 
         /// <para>
-        /// Time that the administrative action request was received.
+        /// The time that the administrative action request was received.
         /// </para>
         /// </summary>
         public DateTime RequestTime
@@ -133,12 +134,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon
+        ///  <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon
         /// FSx has updated the file system with the new storage capacity, and is now performing
-        /// the storage optimization process. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-        /// storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+        /// the storage-optimization process. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -171,6 +169,21 @@ namespace Amazon.FSx.Model
         internal bool IsSetTargetFileSystemValues()
         {
             return this._targetFileSystemValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetSnapshotValues.
+        /// </summary>
+        public Snapshot TargetSnapshotValues
+        {
+            get { return this._targetSnapshotValues; }
+            set { this._targetSnapshotValues = value; }
+        }
+
+        // Check to see if TargetSnapshotValues property is set
+        internal bool IsSetTargetSnapshotValues()
+        {
+            return this._targetSnapshotValues != null;
         }
 
         /// <summary>

@@ -106,6 +106,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DriveCacheType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogConfiguration", targetDepth))
+                {
+                    var unmarshaller = LustreLogConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MountName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -44,6 +44,14 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeDataRepositoryAssociations operation
+        ///</summary>
+        public IDescribeDataRepositoryAssociationsPaginator DescribeDataRepositoryAssociations(DescribeDataRepositoryAssociationsRequest request) 
+        {
+            return new DescribeDataRepositoryAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDataRepositoryTasks operation
         ///</summary>
         public IDescribeDataRepositoryTasksPaginator DescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request) 
@@ -65,6 +73,14 @@ namespace Amazon.FSx.Model
         public IDescribeFileSystemsPaginator DescribeFileSystems(DescribeFileSystemsRequest request) 
         {
             return new DescribeFileSystemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSnapshots operation
+        ///</summary>
+        public IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request) 
+        {
+            return new DescribeSnapshotsPaginator(this.client, request);
         }
 
         /// <summary>

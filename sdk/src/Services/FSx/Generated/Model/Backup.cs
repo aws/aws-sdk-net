@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A backup of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system,
-    /// or of an Amazon FSx for NetApp ONTAP volume.
+    /// A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system,
+    /// Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.
     /// </summary>
     public partial class Backup
     {
@@ -92,8 +92,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DirectoryInformation. 
         /// <para>
-        /// The configuration of the self-managed Microsoft Active Directory (AD) to which the
-        /// Windows File Server instance is joined.
+        /// The configuration of the self-managed Microsoft Active Directory directory to which
+        /// the Windows File Server instance is joined.
         /// </para>
         /// </summary>
         public ActiveDirectoryBackupAttributes DirectoryInformation
@@ -111,7 +111,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FailureDetails. 
         /// <para>
-        /// Details explaining any failures that occur when creating a backup.
+        /// Details explaining any failures that occurred when creating a backup.
         /// </para>
         /// </summary>
         public BackupFailureDetails FailureDetails
@@ -129,7 +129,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystem. 
         /// <para>
-        /// Metadata of the file system associated with the backup. This metadata is persisted
+        /// The metadata of the file system associated with the backup. This metadata is persisted
         /// even if the file system is deleted.
         /// </para>
         /// </summary>
@@ -178,7 +178,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon
-        /// FSx has not started creating the backup.
+        /// FSx hasn't started creating the backup.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -187,7 +187,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only;
-        /// Amazon FSx is transferring the backup to S3.
+        /// Amazon FSx is transferring the backup to Amazon S3.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -195,11 +195,11 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
+        ///  <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Amazon FSx could not complete the backup.
+        ///  <code>FAILED</code> - Amazon FSx couldn't finish the backup.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -270,7 +270,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Specifies the resource type that is backed up.
+        /// Specifies the resource type that's backed up.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -323,7 +323,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags associated with a particular file system.
+        /// The tags associated with a particular file system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -342,7 +342,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the file system backup.
+        /// The type of the file-system backup.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

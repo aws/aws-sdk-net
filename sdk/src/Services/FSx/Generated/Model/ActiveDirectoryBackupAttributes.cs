@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The Microsoft AD attributes of the Amazon FSx for Windows File Server file system.
+    /// The Microsoft Active Directory attributes of the Amazon FSx for Windows File Server
+    /// file system.
     /// </summary>
     public partial class ActiveDirectoryBackupAttributes
     {
@@ -60,7 +61,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The fully qualified domain name of the self-managed AD directory.
+        /// The fully qualified domain name of the self-managed Active Directory directory.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

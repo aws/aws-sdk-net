@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A structure providing details of any failures that occur when creating the file system
-    /// has failed.
+    /// A structure providing details of any failures that occurred when creating a file system.
     /// </summary>
     public partial class FileSystemFailureDetails
     {

@@ -146,15 +146,17 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// You can use cross-Region backup copies for cross-region disaster recovery. You periodically
-        /// take backups and copy them to another Region so that in the event of a disaster in
-        /// the primary Region, you can restore from backup and recover availability quickly in
-        /// the other Region. You can make cross-Region copies only within your Amazon Web Services
-        /// partition.
+        /// You can use cross-Region backup copies for cross-Region disaster recovery. You can
+        /// periodically take backups and copy them to another Region so that in the event of
+        /// a disaster in the primary Region, you can restore from backup and recover availability
+        /// quickly in the other Region. You can make cross-Region copies only within your Amazon
+        /// Web Services partition. A partition is a grouping of Regions. Amazon Web Services
+        /// currently has three partitions: <code>aws</code> (Standard Regions), <code>aws-cn</code>
+        /// (China Regions), and <code>aws-us-gov</code> (Amazon Web Services GovCloud [US] Regions).
         /// </para>
         ///  
         /// <para>
-        ///  You can also use backup copies to clone your file data set to another Region or within
+        /// You can also use backup copies to clone your file dataset to another Region or within
         /// the same Region.
         /// </para>
         ///  
@@ -168,9 +170,10 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// For more information on creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
-        /// Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
-        /// backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+        /// For more information about creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
+        /// Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
+        /// backups</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html#copy-backups">Copying
+        /// backups</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyBackup service method.</param>
@@ -198,22 +201,21 @@ namespace Amazon.FSx
         /// A generic error indicating a server-side failure.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidDestinationKmsKeyException">
-        /// The Key Management Service (KMS) key of the destination backup is invalid.
+        /// The Key Management Service (KMS) key of the destination backup is not valid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidRegionException">
-        /// The Region provided for <code>Source Region</code> is invalid or is in a different
+        /// The Region provided for <code>SourceRegion</code> is not valid or is in a different
         /// Amazon Web Services partition.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidSourceKmsKeyException">
-        /// The Key Management Service (KMS) key of the source backup is invalid.
+        /// The Key Management Service (KMS) key of the source backup is not valid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
         /// An error indicating that a particular service limit was exceeded. You can increase
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.SourceBackupUnavailableException">
-        /// The request was rejected because the lifecycle status of the source backup is not
-        /// <code>AVAILABLE</code>.
+        /// The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -228,23 +230,24 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a backup of an existing Amazon FSx for Windows File Server or Amazon FSx for
-        /// Lustre file system, or of an Amazon FSx for NetApp ONTAP volume. Creating regular
-        /// backups is a best practice, enabling you to restore a file system or volume from a
-        /// backup if an issue arises with the original file system or volume.
+        /// Creates a backup of an existing Amazon FSx for Windows File Server file system, Amazon
+        /// FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for
+        /// OpenZFS file system. We recommend creating regular backups so that you can restore
+        /// a file system or volume from a backup if an issue arises with the original file system
+        /// or volume.
         /// 
         ///  
         /// <para>
         /// For Amazon FSx for Lustre file systems, you can create a backup only for file systems
-        /// with the following configuration:
+        /// that have the following configuration:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// a Persistent deployment type
+        /// A Persistent deployment type
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// is <i>not</i> linked to a data repository.
+        /// Are <i>not</i> linked to a data repository
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -265,13 +268,18 @@ namespace Amazon.FSx
         /// For Amazon FSx for NetApp ONTAP, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working
         /// with FSx for NetApp ONTAP backups</a>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon FSx for OpenZFS, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html">Working
+        /// with FSx for OpenZFS backups</a>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If a backup with the specified client request token exists, and the parameters match,
-        /// this operation returns the description of the existing backup. If a backup specified
-        /// client request token exists, and the parameters don't match, this operation returns
-        /// <code>IncompatibleParameterError</code>. If a backup with the specified client request
-        /// token doesn't exist, <code>CreateBackup</code> does the following: 
+        /// If a backup with the specified client request token exists and the parameters match,
+        /// this operation returns the description of the existing backup. If a backup with the
+        /// specified client request token exists and the parameters don't match, this operation
+        /// returns <code>IncompatibleParameterError</code>. If a backup with the specified client
+        /// request token doesn't exist, <code>CreateBackup</code> does the following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -294,8 +302,8 @@ namespace Amazon.FSx
         /// <para>
         /// The <code>CreateBackup</code> operation returns while the backup's lifecycle state
         /// is still <code>CREATING</code>. You can check the backup creation status by calling
-        /// the <a>DescribeBackups</a> operation, which returns the backup state along with other
-        /// information.
+        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html">DescribeBackups</a>
+        /// operation, which returns the backup state along with other information.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackup service method.</param>
@@ -337,6 +345,58 @@ namespace Amazon.FSx
 
         #endregion
                 
+        #region  CreateDataRepositoryAssociation
+
+
+
+        /// <summary>
+        /// Creates an Amazon FSx for Lustre data repository association (DRA). A data repository
+        /// association is a link between a directory on the file system and an Amazon S3 bucket
+        /// or prefix. You can have a maximum of 8 data repository associations on a file system.
+        /// Data repository associations are supported only for file systems with the <code>Persistent_2</code>
+        /// deployment type.
+        /// 
+        ///  
+        /// <para>
+        /// Each data repository association must have a unique Amazon FSx file system directory
+        /// and a unique S3 bucket or prefix associated with it. You can configure a data repository
+        /// association for automatic import only, for automatic export only, or for both. To
+        /// learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
+        /// your file system to an S3 bucket</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataRepositoryAssociation service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
+        /// The requested operation is not supported for this resource or API.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryAssociation">REST API Reference for CreateDataRepositoryAssociation Operation</seealso>
+        Task<CreateDataRepositoryAssociationResponse> CreateDataRepositoryAssociationAsync(CreateDataRepositoryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDataRepositoryTask
 
 
@@ -344,13 +404,13 @@ namespace Amazon.FSx
         /// <summary>
         /// Creates an Amazon FSx for Lustre data repository task. You use data repository tasks
         /// to perform bulk operations between your Amazon FSx file system and its linked data
-        /// repository. An example of a data repository task is exporting any data and metadata
+        /// repositories. An example of a data repository task is exporting any data and metadata
         /// changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
-        /// from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
+        /// from your FSx file system to a linked data repository. A <code>CreateDataRepositoryTask</code>
         /// operation will fail if a data repository is not linked to the FSx file system. To
         /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
         /// Repository Tasks</a>. To learn more about linking a data repository to your file system,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
         /// your file system to an S3 bucket</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryTask service method.</param>
@@ -394,13 +454,38 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a new, empty Amazon FSx file system.
+        /// Creates a new, empty Amazon FSx file system. You can create the following supported
+        /// Amazon FSx file systems using the <code>CreateFileSystem</code> API operation:
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon FSx for Lustre
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for NetApp ONTAP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon FSx for Windows File Server
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation requires a client request token in the request that Amazon FSx uses
+        /// to ensure idempotent creation. This means that calling the operation multiple times
+        /// with the same client request token has no effect. By using the idempotent operation,
+        /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
+        /// an extra file system. This approach can be useful when an initial call fails in a
+        /// way that makes it unclear whether a file system was created. Examples are if a transport
+        /// level timeout occurred, or your connection was reset. If you use the same client request
+        /// token and the initial call created a file system, the client receives success as long
+        /// as the parameters are the same.
+        /// </para>
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
         /// match, <code>CreateFileSystem</code> returns the description of the existing file
-        /// system. If a file system specified client request token exists and the parameters
+        /// system. If a file system with the specified client request token exists and the parameters
         /// don't match, this call returns <code>IncompatibleParameterError</code>. If a file
         /// system with the specified client request token doesn't exist, <code>CreateFileSystem</code>
         /// does the following: 
@@ -421,17 +506,17 @@ namespace Amazon.FSx
         /// with the same client request token has no effect. By using the idempotent operation,
         /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
         /// an extra file system. This approach can be useful when an initial call fails in a
-        /// way that makes it unclear whether a file system was created. Examples are if a transport
-        /// level timeout occurred, or your connection was reset. If you use the same client request
-        /// token and the initial call created a file system, the client receives success as long
-        /// as the parameters are the same.
+        /// way that makes it unclear whether a file system was created. Examples are if a transport-level
+        /// timeout occurred, or your connection was reset. If you use the same client request
+        /// token and the initial call created a file system, the client receives a success message
+        /// as long as the parameters are the same.
         /// </para>
         ///  <note> 
         /// <para>
         /// The <code>CreateFileSystem</code> call returns while the file system's lifecycle state
         /// is still <code>CREATING</code>. You can check the file-system creation status by calling
-        /// the <a>DescribeFileSystems</a> operation, which returns the file system state along
-        /// with other information.
+        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
+        /// operation, which returns the file system state along with other information.
         /// </para>
         ///  </note>
         /// </summary>
@@ -485,16 +570,16 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates a new Amazon FSx for Lustre or Amazon FSx for Windows File Server file system
-        /// from an existing Amazon FSx backup.
+        /// Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or Amazon
+        /// FSx for OpenZFS file system from an existing Amazon FSx backup.
         /// 
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
         /// match, this operation returns the description of the file system. If a client request
-        /// token specified by the file system exists and the parameters don't match, this call
-        /// returns <code>IncompatibleParameterError</code>. If a file system with the specified
-        /// client request token doesn't exist, this operation does the following:
+        /// token with the specified by the file system exists and the parameters don't match,
+        /// this call returns <code>IncompatibleParameterError</code>. If a file system with the
+        /// specified client request token doesn't exist, this operation does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -507,7 +592,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Parameters like Active Directory, default share name, automatic backup, and backup
+        /// Parameters like the Active Directory, default share name, automatic backup, and backup
         /// settings default to the parameters of the file system that was backed up, unless overridden.
         /// You can explicitly supply other settings.
         /// </para>
@@ -518,14 +603,15 @@ namespace Amazon.FSx
         /// when an initial call fails in a way that makes it unclear whether a file system was
         /// created. Examples are if a transport level timeout occurred, or your connection was
         /// reset. If you use the same client request token and the initial call created a file
-        /// system, the client receives success as long as the parameters are the same.
+        /// system, the client receives a success message as long as the parameters are the same.
         /// </para>
         ///  <note> 
         /// <para>
         /// The <code>CreateFileSystemFromBackup</code> call returns while the file system's lifecycle
         /// state is still <code>CREATING</code>. You can check the file-system creation status
-        /// by calling the <a>DescribeFileSystems</a> operation, which returns the file system
-        /// state along with other information.
+        /// by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">
+        /// DescribeFileSystems</a> operation, which returns the file system state along with
+        /// other information.
         /// </para>
         ///  </note>
         /// </summary>
@@ -568,6 +654,73 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         Task<CreateFileSystemFromBackupResponse> CreateFileSystemFromBackupAsync(CreateFileSystemFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateSnapshot
+
+
+
+        /// <summary>
+        /// Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots,
+        /// you can easily undo file changes and compare file versions by restoring the volume
+        /// to a previous version.
+        /// 
+        ///  
+        /// <para>
+        /// If a snapshot with the specified client request token exists, and the parameters match,
+        /// this operation returns the description of the existing snapshot. If a snapshot with
+        /// the specified client request token exists, and the parameters don't match, this operation
+        /// returns <code>IncompatibleParameterError</code>. If a snapshot with the specified
+        /// client request token doesn't exist, <code>CreateSnapshot</code> does the following:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle state
+        /// of <code>CREATING</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Returns the description of the snapshot.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// By using the idempotent operation, you can retry a <code>CreateSnapshot</code> operation
+        /// without the risk of creating an extra snapshot. This approach can be useful when an
+        /// initial call fails in a way that makes it unclear whether a snapshot was created.
+        /// If you use the same client request token and the initial call created a snapshot,
+        /// the operation returns a successful result because all the parameters are the same.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
+        /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
+        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+        /// operation, which returns the snapshot state along with other information. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSnapshot service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
+        Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -618,7 +771,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates an Amazon FSx for NetApp ONTAP storage volume.
+        /// Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
         /// <param name="cancellationToken">
@@ -709,13 +862,13 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes an Amazon FSx backup, deleting its contents. After deletion, the backup no
-        /// longer exists, and its data is gone.
+        /// Deletes an Amazon FSx backup. After deletion, the backup no longer exists, and its
+        /// data is gone.
         /// 
         ///  
         /// <para>
-        /// The <code>DeleteBackup</code> call returns instantly. The backup will not show up
-        /// in later <code>DescribeBackups</code> calls.
+        /// The <code>DeleteBackup</code> call returns instantly. The backup won't show up in
+        /// later <code>DescribeBackups</code> calls.
         /// </para>
         ///  <important> 
         /// <para>
@@ -758,38 +911,81 @@ namespace Amazon.FSx
 
         #endregion
                 
+        #region  DeleteDataRepositoryAssociation
+
+
+
+        /// <summary>
+        /// Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting
+        /// the data repository association unlinks the file system from the Amazon S3 bucket.
+        /// When deleting a data repository association, you have the option of deleting the data
+        /// in the file system that corresponds to the data repository association. Data repository
+        /// associations are supported only for file systems with the <code>Persistent_2</code>
+        /// deployment type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataRepositoryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataRepositoryAssociation service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.DataRepositoryAssociationNotFoundException">
+        /// No data repository associations were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteDataRepositoryAssociation">REST API Reference for DeleteDataRepositoryAssociation Operation</seealso>
+        Task<DeleteDataRepositoryAssociationResponse> DeleteDataRepositoryAssociationAsync(DeleteDataRepositoryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteFileSystem
 
 
 
         /// <summary>
-        /// Deletes a file system, deleting its contents. After deletion, the file system no longer
-        /// exists, and its data is gone. Any existing automatic backups will also be deleted.
+        /// Deletes a file system. After deletion, the file system no longer exists, and its data
+        /// is gone. Any existing automatic backups and snapshots are also deleted.
         /// 
         ///  
         /// <para>
         /// To delete an Amazon FSx for NetApp ONTAP file system, first delete all the volumes
-        /// and SVMs on the file system. Then provide a <code>FileSystemId</code> value to the
-        /// <code>DeleFileSystem</code> operation.
+        /// and storage virtual machines (SVMs) on the file system. Then provide a <code>FileSystemId</code>
+        /// value to the <code>DeleFileSystem</code> operation.
         /// </para>
         ///  
         /// <para>
         /// By default, when you delete an Amazon FSx for Windows File Server file system, a final
-        /// backup is created upon deletion. This final backup is not subject to the file system's
+        /// backup is created upon deletion. This final backup isn't subject to the file system's
         /// retention policy, and must be manually deleted.
         /// </para>
         ///  
         /// <para>
-        /// The <code>DeleteFileSystem</code> action returns while the file system has the <code>DELETING</code>
-        /// status. You can check the file system deletion status by calling the <a>DescribeFileSystems</a>
-        /// action, which returns a list of file systems in your account. If you pass the file
-        /// system ID for a deleted file system, the <a>DescribeFileSystems</a> returns a <code>FileSystemNotFound</code>
-        /// error.
+        /// The <code>DeleteFileSystem</code> operation returns while the file system has the
+        /// <code>DELETING</code> status. You can check the file system deletion status by calling
+        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
+        /// operation, which returns a list of file systems in your account. If you pass the file
+        /// system ID for a deleted file system, the <code>DescribeFileSystems</code> operation
+        /// returns a <code>FileSystemNotFound</code> error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a
-        /// data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state.
+        /// If a data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state,
+        /// deleting an Amazon FSx for Lustre file system will fail with an HTTP status code 400
+        /// (Bad Request).
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -823,6 +1019,41 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         Task<DeleteFileSystemResponse> DeleteFileSystemAsync(DeleteFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteSnapshot
+
+
+
+        /// <summary>
+        /// Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and
+        /// its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system
+        /// backup. 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears
+        /// with the lifecycle status of <code>DELETING</code> until the deletion is complete.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSnapshot service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotNotFoundException">
+        /// No Amazon FSx snapshots were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
+        Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -865,10 +1096,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Deletes an Amazon FSx for NetApp ONTAP volume. When deleting a volume, you have the
-        /// option of creating a final backup. If you create a final backup, you have the option
-        /// to apply Tags to the backup. You need to have <code>fsx:TagResource</code> permission
-        /// in order to apply tags to the backup.
+        /// Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
         /// <param name="cancellationToken">
@@ -900,7 +1128,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code>
+        /// Returns the description of a specific Amazon FSx backup, if a <code>BackupIds</code>
         /// value is provided for that backup. Otherwise, it returns all backups owned by your
         /// Amazon Web Services account in the Amazon Web Services Region of the endpoint that
         /// you're calling.
@@ -910,29 +1138,30 @@ namespace Amazon.FSx
         /// When retrieving all backups, you can optionally specify the <code>MaxResults</code>
         /// parameter to limit the number of backups in a response. If more backups remain, Amazon
         /// FSx returns a <code>NextToken</code> value in the response. In this case, send a later
-        /// request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
-        /// from the last response.
+        /// request with the <code>NextToken</code> request parameter set to the value of the
+        /// <code>NextToken</code> value from the last response.
         /// </para>
         ///  
         /// <para>
-        /// This action is used in an iterative process to retrieve a list of your backups. <code>DescribeBackups</code>
-        /// is called first without a <code>NextToken</code>value. Then the action continues to
-        /// be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code>
-        /// value until a response has no <code>NextToken</code>.
+        /// This operation is used in an iterative process to retrieve a list of your backups.
+        /// <code>DescribeBackups</code> is called first without a <code>NextToken</code> value.
+        /// Then the operation continues to be called with the <code>NextToken</code> parameter
+        /// set to the value of the last <code>NextToken</code> value until a response has no
+        /// <code>NextToken</code> value.
         /// </para>
         ///  
         /// <para>
-        /// When using this action, keep the following in mind:
+        /// When using this operation, keep the following in mind:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The implementation might return fewer than <code>MaxResults</code> backup descriptions
-        /// while still including a <code>NextToken</code> value.
+        /// The operation might return fewer than the <code>MaxResults</code> value of backup
+        /// descriptions while still including a <code>NextToken</code> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The order of backups returned in the response of one <code>DescribeBackups</code>
-        /// call and the order of backups returned across the responses of a multi-call iteration
+        /// The order of the backups returned in the response of one <code>DescribeBackups</code>
+        /// call and the order of the backups returned across the responses of a multi-call iteration
         /// is unspecified.
         /// </para>
         ///  </li> </ul>
@@ -960,6 +1189,62 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeDataRepositoryAssociations
+
+
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx for Lustre data repository associations,
+        /// if one or more <code>AssociationIds</code> values are provided in the request, or
+        /// if filters are used in the request. Data repository associations are supported only
+        /// for file systems with the <code>Persistent_2</code> deployment type.
+        /// 
+        ///  
+        /// <para>
+        /// You can use filters to narrow the response to include just data repository associations
+        /// for specific file systems (use the <code>file-system-id</code> filter with the ID
+        /// of the file system) or data repository associations for a specific repository type
+        /// (use the <code>data-repository-type</code> filter with a value of <code>S3</code>).
+        /// If you don't use filters, the response returns all data repository associations owned
+        /// by your Amazon Web Services account in the Amazon Web Services Region of the endpoint
+        /// that you're calling.
+        /// </para>
+        ///  
+        /// <para>
+        /// When retrieving all data repository associations, you can paginate the response by
+        /// using the optional <code>MaxResults</code> parameter to limit the number of data repository
+        /// associations returned in a response. If more data repository associations remain,
+        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
+        /// a later request with the <code>NextToken</code> request parameter set to the value
+        /// of <code>NextToken</code> from the last response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataRepositoryAssociations service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.DataRepositoryAssociationNotFoundException">
+        /// No data repository associations were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InvalidDataRepositoryTypeException">
+        /// You have filtered the response to a data repository type that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryAssociations">REST API Reference for DescribeDataRepositoryAssociations Operation</seealso>
+        Task<DescribeDataRepositoryAssociationsResponse> DescribeDataRepositoryAssociationsAsync(DescribeDataRepositoryAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1057,14 +1342,15 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// This action is used in an iterative process to retrieve a list of your file system
+        /// This operation is used in an iterative process to retrieve a list of your file system
         /// descriptions. <code>DescribeFileSystems</code> is called first without a <code>NextToken</code>value.
-        /// Then the action continues to be called with the <code>NextToken</code> parameter set
-        /// to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code>.
+        /// Then the operation continues to be called with the <code>NextToken</code> parameter
+        /// set to the value of the last <code>NextToken</code> value until a response has no
+        /// <code>NextToken</code>.
         /// </para>
         ///  
         /// <para>
-        /// When using this action, keep the following in mind:
+        /// When using this operation, keep the following in mind:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1096,6 +1382,68 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         Task<DescribeFileSystemsResponse> DescribeFileSystemsAsync(DescribeFileSystemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeSnapshots
+
+
+
+        /// <summary>
+        /// Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code>
+        /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
+        /// Web Services account in the Amazon Web Services Region of the endpoint that you're
+        /// calling.
+        /// 
+        ///  
+        /// <para>
+        /// When retrieving all snapshots, you can optionally specify the <code>MaxResults</code>
+        /// parameter to limit the number of snapshots in a response. If more backups remain,
+        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
+        /// a later request with the <code>NextToken</code> request parameter set to the value
+        /// of <code>NextToken</code> from the last response. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this operation in an iterative process to retrieve a list of your snapshots. <code>DescribeSnapshots</code>
+        /// is called first without a <code>NextToken</code> value. Then the operation continues
+        /// to be called with the <code>NextToken</code> parameter set to the value of the last
+        /// <code>NextToken</code> value until a response has no <code>NextToken</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this operation, keep the following in mind:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The operation might return fewer than the <code>MaxResults</code> value of snapshot
+        /// descriptions while still including a <code>NextToken</code> value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The order of snapshots returned in the response of one <code>DescribeSnapshots</code>
+        /// call and the order of backups returned across the responses of a multi-call iteration
+        /// is unspecified. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSnapshots service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotNotFoundException">
+        /// No Amazon FSx snapshots were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
+        Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1131,7 +1479,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Describes one or more Amazon FSx for NetApp ONTAP volumes.
+        /// Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volumes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
         /// <param name="cancellationToken">
@@ -1258,6 +1606,69 @@ namespace Amazon.FSx
 
         #endregion
                 
+        #region  ReleaseFileSystemNfsV3Locks
+
+
+
+        /// <summary>
+        /// Releases the file system lock from an Amazon FSx for OpenZFS file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseFileSystemNfsV3Locks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReleaseFileSystemNfsV3Locks service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ReleaseFileSystemNfsV3Locks">REST API Reference for ReleaseFileSystemNfsV3Locks Operation</seealso>
+        Task<ReleaseFileSystemNfsV3LocksResponse> ReleaseFileSystemNfsV3LocksAsync(ReleaseFileSystemNfsV3LocksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RestoreVolumeFromSnapshot
+
+
+
+        /// <summary>
+        /// Returns an Amazon FSx for OpenZFS volume to the state saved by the specified snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreVolumeFromSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreVolumeFromSnapshot service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.VolumeNotFoundException">
+        /// No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">REST API Reference for RestoreVolumeFromSnapshot Operation</seealso>
+        Task<RestoreVolumeFromSnapshotResponse> RestoreVolumeFromSnapshotAsync(RestoreVolumeFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 
@@ -1326,6 +1737,44 @@ namespace Amazon.FSx
 
         #endregion
                 
+        #region  UpdateDataRepositoryAssociation
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing data repository association on an Amazon
+        /// FSx for Lustre file system. Data repository associations are supported only for file
+        /// systems with the <code>Persistent_2</code> deployment type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataRepositoryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataRepositoryAssociation service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.DataRepositoryAssociationNotFoundException">
+        /// No data repository associations were found based upon the supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.IncompatibleParameterErrorException">
+        /// The error returned when a second request is received with the same client request
+        /// token but different parameters settings. A client request token should always uniquely
+        /// identify a single request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.ServiceLimitExceededException">
+        /// An error indicating that a particular service limit was exceeded. You can increase
+        /// some service limits by contacting Amazon Web Services Support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateDataRepositoryAssociation">REST API Reference for UpdateDataRepositoryAssociation Operation</seealso>
+        Task<UpdateDataRepositoryAssociationResponse> UpdateDataRepositoryAssociationAsync(UpdateDataRepositoryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateFileSystem
 
 
@@ -1341,79 +1790,111 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AuditLogConfiguration
+        ///  <code>AuditLogConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AutomaticBackupRetentionDays
+        ///  <code>AutomaticBackupRetentionDays</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DailyAutomaticBackupStartTime
+        ///  <code>DailyAutomaticBackupStartTime</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SelfManagedActiveDirectoryConfiguration
+        ///  <code>SelfManagedActiveDirectoryConfiguration</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// StorageCapacity
+        ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ThroughputCapacity
+        ///  <code>ThroughputCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WeeklyMaintenanceStartTime
+        ///  <code>WeeklyMaintenanceStartTime</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For Amazon FSx for Lustre file systems, you can update the following properties:
+        /// For FSx for Lustre file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AutoImportPolicy
+        ///  <code>AutoImportPolicy</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AutomaticBackupRetentionDays
+        ///  <code>AutomaticBackupRetentionDays</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DailyAutomaticBackupStartTime
+        ///  <code>DailyAutomaticBackupStartTime</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DataCompressionType
+        ///  <code>DataCompressionType</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// StorageCapacity
+        ///  <code>StorageCapacity</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WeeklyMaintenanceStartTime
+        ///  <code>WeeklyMaintenanceStartTime</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
+        /// For FSx for ONTAP file systems, you can update the following properties:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AutomaticBackupRetentionDays
+        ///  <code>AutomaticBackupRetentionDays</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DailyAutomaticBackupStartTime
+        ///  <code>DailyAutomaticBackupStartTime</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FsxAdminPassword
+        ///  <code>FsxAdminPassword</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WeeklyMaintenanceStartTime
+        ///  <code>WeeklyMaintenanceStartTime</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the Amazon FSx for OpenZFS file systems, you can update the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AutomaticBackupRetentionDays</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CopyTagsToBackups</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CopyTagsToVolumes</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DailyAutomaticBackupStartTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DiskIopsConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ThroughputCapacity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>WeeklyMaintenanceStartTime</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1449,6 +1930,33 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         Task<UpdateFileSystemResponse> UpdateFileSystemAsync(UpdateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSnapshot
+
+
+
+        /// <summary>
+        /// Updates the name of a snapshot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSnapshot service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.SnapshotNotFoundException">
+        /// No Amazon FSx snapshots were found based on the supplied parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
+        Task<UpdateSnapshotResponse> UpdateSnapshotAsync(UpdateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1492,7 +2000,8 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Updates an Amazon FSx for NetApp ONTAP volume's configuration.
+        /// Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
+        /// volume.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVolume service method.</param>
         /// <param name="cancellationToken">

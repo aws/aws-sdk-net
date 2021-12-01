@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration of an Amazon FSx for NetApp ONTAP volume
+    /// The configuration of an Amazon FSx for NetApp ONTAP volume.
     /// </summary>
     public partial class OntapVolumeConfiguration
     {
@@ -80,10 +80,12 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property JunctionPath. 
         /// <para>
-        /// Specifies the directory that NAS clients use to mount the volume, along with the SVM
-        /// DNS name or IP address. You can create a <code>JunctionPath</code> directly below
-        /// a parent volume junction or on a directory within a volume. A <code>JunctionPath</code>
-        /// for a volume named vol3 might be /vol1/vol2/vol3, or /vol1/dir2/vol3, or even /dir1/dir2/vol3..
+        /// Specifies the directory that network-attached storage (NAS) clients use to mount the
+        /// volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name
+        /// or IP address. You can create a <code>JunctionPath</code> directly below a parent
+        /// volume junction or on a directory within a volume. A <code>JunctionPath</code> for
+        /// a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>,
+        /// or even <code>/dir1/dir2/vol3</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -106,13 +108,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RW</code> specifies a read-write volume. <code>RW</code> is the default.
+        ///  <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DP</code> specifies a data protection volume. You can protect data by replicating
-        /// it to data protection mirror copies and use data protection mirror copies to recover
-        /// data when a disaster occurs.
+        ///  <code>DP</code> specifies a data-protection volume. You can protect data by replicating
+        /// it to data-protection mirror copies. If a disaster occurs, you can use these data-protection
+        /// mirror copies to recover data.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -212,15 +214,16 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageVirtualMachineRoot. 
         /// <para>
-        /// A boolean flag indicating whether this volume is the root volume for its storage virtual
+        /// A Boolean flag indicating whether this volume is the root volume for its storage virtual
         /// machine (SVM). Only one volume on an SVM can be the root volume. This value defaults
-        /// to false. If this value is true, then this is the SVM root volume.
+        /// to <code>false</code>. If this value is <code>true</code>, then this is the SVM root
+        /// volume.
         /// </para>
         ///  
         /// <para>
         /// This flag is useful when you're deleting an SVM, because you must first delete all
-        /// non-root volumes. This flag, when set to false, helps you identify which volumes to
-        /// delete before you can delete the SVM.
+        /// non-root volumes. This flag, when set to <code>false</code>, helps you identify which
+        /// volumes to delete before you can delete the SVM.
         /// </para>
         /// </summary>
         public bool StorageVirtualMachineRoot
@@ -256,7 +259,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property UUID. 
         /// <para>
-        /// The volume's UUID (universally unique identifier).
+        /// The volume's universally unique identifier (UUID).
         /// </para>
         /// </summary>
         [AWSProperty(Max=36)]
