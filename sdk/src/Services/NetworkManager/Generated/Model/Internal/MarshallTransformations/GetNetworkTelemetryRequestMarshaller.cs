@@ -68,6 +68,9 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAwsRegion())
                 request.Parameters.Add("awsRegion", StringUtils.FromString(publicRequest.AwsRegion));
             
+            if (publicRequest.IsSetCoreNetworkId())
+                request.Parameters.Add("coreNetworkId", StringUtils.FromString(publicRequest.CoreNetworkId));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

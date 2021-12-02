@@ -47,6 +47,7 @@ namespace Amazon.NetworkManager.Model
         /// Constraints: Maximum length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }

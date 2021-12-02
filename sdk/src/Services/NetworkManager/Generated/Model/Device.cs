@@ -90,6 +90,7 @@ namespace Amazon.NetworkManager.Model
         /// The description of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -108,6 +109,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Resource Name (ARN) of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string DeviceArn
         {
             get { return this._deviceArn; }
@@ -126,6 +128,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -144,6 +147,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -180,6 +184,7 @@ namespace Amazon.NetworkManager.Model
         /// The device model.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Model
         {
             get { return this._model; }
@@ -198,6 +203,7 @@ namespace Amazon.NetworkManager.Model
         /// The device serial number.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string SerialNumber
         {
             get { return this._serialNumber; }
@@ -216,6 +222,7 @@ namespace Amazon.NetworkManager.Model
         /// The site ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string SiteId
         {
             get { return this._siteId; }
@@ -270,6 +277,7 @@ namespace Amazon.NetworkManager.Model
         /// The device type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Type
         {
             get { return this._type; }
@@ -288,6 +296,7 @@ namespace Amazon.NetworkManager.Model
         /// The device vendor.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Vendor
         {
             get { return this._vendor; }

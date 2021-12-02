@@ -43,7 +43,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the connection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -62,7 +62,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }

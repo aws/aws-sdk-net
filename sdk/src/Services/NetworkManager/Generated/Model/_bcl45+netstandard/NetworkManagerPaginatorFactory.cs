@@ -52,6 +52,22 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for GetConnectPeerAssociations operation
+        ///</summary>
+        public IGetConnectPeerAssociationsPaginator GetConnectPeerAssociations(GetConnectPeerAssociationsRequest request) 
+        {
+            return new GetConnectPeerAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCoreNetworkChangeSet operation
+        ///</summary>
+        public IGetCoreNetworkChangeSetPaginator GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request) 
+        {
+            return new GetCoreNetworkChangeSetPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetCustomerGatewayAssociations operation
         ///</summary>
         public IGetCustomerGatewayAssociationsPaginator GetCustomerGatewayAssociations(GetCustomerGatewayAssociationsRequest request) 
@@ -137,6 +153,38 @@ namespace Amazon.NetworkManager.Model
         public IGetTransitGatewayRegistrationsPaginator GetTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request) 
         {
             return new GetTransitGatewayRegistrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAttachments operation
+        ///</summary>
+        public IListAttachmentsPaginator ListAttachments(ListAttachmentsRequest request) 
+        {
+            return new ListAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConnectPeers operation
+        ///</summary>
+        public IListConnectPeersPaginator ListConnectPeers(ListConnectPeersRequest request) 
+        {
+            return new ListConnectPeersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCoreNetworkPolicyVersions operation
+        ///</summary>
+        public IListCoreNetworkPolicyVersionsPaginator ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request) 
+        {
+            return new ListCoreNetworkPolicyVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCoreNetworks operation
+        ///</summary>
+        public IListCoreNetworksPaginator ListCoreNetworks(ListCoreNetworksRequest request) 
+        {
+            return new ListCoreNetworksPaginator(this.client, request);
         }
     }
 }

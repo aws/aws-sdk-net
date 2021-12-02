@@ -87,6 +87,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -124,6 +125,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the AWS account that created the route analysis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string OwnerAccountId
         {
             get { return this._ownerAccountId; }
@@ -160,6 +162,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the route analysis.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string RouteAnalysisId
         {
             get { return this._routeAnalysisId; }

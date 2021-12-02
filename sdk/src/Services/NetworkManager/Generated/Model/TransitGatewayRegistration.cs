@@ -43,6 +43,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -79,6 +80,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Resource Name (ARN) of the transit gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string TransitGatewayArn
         {
             get { return this._transitGatewayArn; }

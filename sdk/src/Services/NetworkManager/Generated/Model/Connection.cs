@@ -51,6 +51,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the second device in the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string ConnectedDeviceId
         {
             get { return this._connectedDeviceId; }
@@ -69,6 +70,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the link for the second device in the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string ConnectedLinkId
         {
             get { return this._connectedLinkId; }
@@ -87,6 +89,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Resource Name (ARN) of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string ConnectionArn
         {
             get { return this._connectionArn; }
@@ -105,6 +108,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string ConnectionId
         {
             get { return this._connectionId; }
@@ -141,6 +145,7 @@ namespace Amazon.NetworkManager.Model
         /// The description of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -159,6 +164,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the first device in the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -177,6 +183,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -195,6 +202,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the link for the first device in the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string LinkId
         {
             get { return this._linkId; }

@@ -42,6 +42,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string From
         {
             get { return this._from; }
@@ -60,6 +61,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string To
         {
             get { return this._to; }

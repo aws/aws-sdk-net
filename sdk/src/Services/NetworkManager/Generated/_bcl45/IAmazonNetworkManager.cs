@@ -44,6 +44,172 @@ namespace Amazon.NetworkManager
         INetworkManagerPaginatorFactory Paginators { get; }
 
         
+        #region  AcceptAttachment
+
+
+        /// <summary>
+        /// Accepts a core network attachment request. 
+        /// 
+        ///  
+        /// <para>
+        /// Once the attachment request is accepted by a core network owner, the attachment is
+        /// created and connected to a core network.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
+        AcceptAttachmentResponse AcceptAttachment(AcceptAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Accepts a core network attachment request. 
+        /// 
+        ///  
+        /// <para>
+        /// Once the attachment request is accepted by a core network owner, the attachment is
+        /// created and connected to a core network.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
+        Task<AcceptAttachmentResponse> AcceptAttachmentAsync(AcceptAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateConnectPeer
+
+
+        /// <summary>
+        /// Associates a core network Connect peer with a device and optionally, with a link.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a link, it must be associated with the specified device. You can only
+        /// associate core network Connect peers that have been created on a core network Connect
+        /// attachment on a core network. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the AssociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
+        AssociateConnectPeerResponse AssociateConnectPeer(AssociateConnectPeerRequest request);
+
+
+
+        /// <summary>
+        /// Associates a core network Connect peer with a device and optionally, with a link.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a link, it must be associated with the specified device. You can only
+        /// associate core network Connect peers that have been created on a core network Connect
+        /// attachment on a core network. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
+        Task<AssociateConnectPeerResponse> AssociateConnectPeerAsync(AssociateConnectPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateCustomerGateway
 
 
@@ -318,6 +484,88 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateConnectAttachment
+
+
+        /// <summary>
+        /// Creates a core network Connect attachment from a specified core network attachment.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A core network Connect attachment is a GRE-based tunnel attachment that you can use
+        /// to establish a connection between a core network and an appliance. A core network
+        /// Connect attachment uses an existing VPC attachment as the underlying transport mechanism.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
+        CreateConnectAttachmentResponse CreateConnectAttachment(CreateConnectAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Creates a core network Connect attachment from a specified core network attachment.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A core network Connect attachment is a GRE-based tunnel attachment that you can use
+        /// to establish a connection between a core network and an appliance. A core network
+        /// Connect attachment uses an existing VPC attachment as the underlying transport mechanism.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
+        Task<CreateConnectAttachmentResponse> CreateConnectAttachmentAsync(CreateConnectAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateConnection
 
 
@@ -385,6 +633,150 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateConnectPeer
+
+
+        /// <summary>
+        /// Creates a core network connect peer for a specified core network connect attachment
+        /// between a core network and an appliance. The peer address and transit gateway address
+        /// must be the same IP address family (IPv4 or IPv6).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
+        CreateConnectPeerResponse CreateConnectPeer(CreateConnectPeerRequest request);
+
+
+
+        /// <summary>
+        /// Creates a core network connect peer for a specified core network connect attachment
+        /// between a core network and an appliance. The peer address and transit gateway address
+        /// must be the same IP address family (IPv4 or IPv6).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
+        Task<CreateConnectPeerResponse> CreateConnectPeerAsync(CreateConnectPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateCoreNetwork
+
+
+        /// <summary>
+        /// Creates a core network as part of your global network, and optionally, with a core
+        /// network policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the CreateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
+        CreateCoreNetworkResponse CreateCoreNetwork(CreateCoreNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Creates a core network as part of your global network, and optionally, with a core
+        /// network policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
+        Task<CreateCoreNetworkResponse> CreateCoreNetworkAsync(CreateCoreNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -672,6 +1064,204 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateSiteToSiteVpnAttachment
+
+
+        /// <summary>
+        /// Creates a site-to-site VPN attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSiteToSiteVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
+        CreateSiteToSiteVpnAttachmentResponse CreateSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Creates a site-to-site VPN attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSiteToSiteVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
+        Task<CreateSiteToSiteVpnAttachmentResponse> CreateSiteToSiteVpnAttachmentAsync(CreateSiteToSiteVpnAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateVpcAttachment
+
+
+        /// <summary>
+        /// Creates a VPC attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
+        CreateVpcAttachmentResponse CreateVpcAttachment(CreateVpcAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Creates a VPC attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
+        Task<CreateVpcAttachmentResponse> CreateVpcAttachmentAsync(CreateVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAttachment
+
+
+        /// <summary>
+        /// Deletes an attachment. Supports all attachment types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        DeleteAttachmentResponse DeleteAttachment(DeleteAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an attachment. Supports all attachment types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        Task<DeleteAttachmentResponse> DeleteAttachmentAsync(DeleteAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteConnection
 
 
@@ -735,6 +1325,206 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteConnectPeer
+
+
+        /// <summary>
+        /// Deletes a Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
+        DeleteConnectPeerResponse DeleteConnectPeer(DeleteConnectPeerRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
+        Task<DeleteConnectPeerResponse> DeleteConnectPeerAsync(DeleteConnectPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCoreNetwork
+
+
+        /// <summary>
+        /// Deletes a core network along with all core network policies. This can only be done
+        /// if there are no attachments on a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
+        DeleteCoreNetworkResponse DeleteCoreNetwork(DeleteCoreNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a core network along with all core network policies. This can only be done
+        /// if there are no attachments on a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
+        Task<DeleteCoreNetworkResponse> DeleteCoreNetworkAsync(DeleteCoreNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCoreNetworkPolicyVersion
+
+
+        /// <summary>
+        /// Deletes a policy version from a core network. You can't delete the current LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
+        DeleteCoreNetworkPolicyVersionResponse DeleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a policy version from a core network. You can't delete the current LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPolicyVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
+        Task<DeleteCoreNetworkPolicyVersionResponse> DeleteCoreNetworkPolicyVersionAsync(DeleteCoreNetworkPolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -942,6 +1732,68 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes a resource policy for the specified resource. This revokes the access of the
+        /// principals specified in the resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a resource policy for the specified resource. This revokes the access of the
+        /// principals specified in the resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteSite
 
 
@@ -1137,6 +1989,72 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DescribeGlobalNetworks">REST API Reference for DescribeGlobalNetworks Operation</seealso>
         Task<DescribeGlobalNetworksResponse> DescribeGlobalNetworksAsync(DescribeGlobalNetworksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateConnectPeer
+
+
+        /// <summary>
+        /// Disassociates a core network Connect peer from a device and a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
+        DisassociateConnectPeerResponse DisassociateConnectPeer(DisassociateConnectPeerRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates a core network Connect peer from a device and a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
+        Task<DisassociateConnectPeerResponse> DisassociateConnectPeerAsync(DisassociateConnectPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1340,6 +2258,132 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  ExecuteCoreNetworkChangeSet
+
+
+        /// <summary>
+        /// Executes a change set on your core network. Deploys changes globally based on the
+        /// policy submitted..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteCoreNetworkChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
+        ExecuteCoreNetworkChangeSetResponse ExecuteCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest request);
+
+
+
+        /// <summary>
+        /// Executes a change set on your core network. Deploys changes globally based on the
+        /// policy submitted..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteCoreNetworkChangeSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
+        Task<ExecuteCoreNetworkChangeSetResponse> ExecuteCoreNetworkChangeSetAsync(ExecuteCoreNetworkChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetConnectAttachment
+
+
+        /// <summary>
+        /// Returns information about a core network Connect attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
+        GetConnectAttachmentResponse GetConnectAttachment(GetConnectAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a core network Connect attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
+        Task<GetConnectAttachmentResponse> GetConnectAttachmentAsync(GetConnectAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetConnections
 
 
@@ -1395,6 +2439,306 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">REST API Reference for GetConnections Operation</seealso>
         Task<GetConnectionsResponse> GetConnectionsAsync(GetConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetConnectPeer
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
+        GetConnectPeerResponse GetConnectPeer(GetConnectPeerRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
+        Task<GetConnectPeerResponse> GetConnectPeerAsync(GetConnectPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetConnectPeerAssociations
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeerAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectPeerAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
+        GetConnectPeerAssociationsResponse GetConnectPeerAssociations(GetConnectPeerAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeerAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectPeerAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
+        Task<GetConnectPeerAssociationsResponse> GetConnectPeerAssociationsAsync(GetConnectPeerAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCoreNetwork
+
+
+        /// <summary>
+        /// Returns information about a core network. By default it returns the LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the GetCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
+        GetCoreNetworkResponse GetCoreNetwork(GetCoreNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a core network. By default it returns the LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
+        Task<GetCoreNetworkResponse> GetCoreNetworkAsync(GetCoreNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCoreNetworkChangeSet
+
+
+        /// <summary>
+        /// Returns a change set between the LIVE core network policy and a submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
+        GetCoreNetworkChangeSetResponse GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request);
+
+
+
+        /// <summary>
+        /// Returns a change set between the LIVE core network policy and a submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
+        Task<GetCoreNetworkChangeSetResponse> GetCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCoreNetworkPolicy
+
+
+        /// <summary>
+        /// Gets details about a core network policy. You can get details about your current live
+        /// policy or any previous policy version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
+        GetCoreNetworkPolicyResponse GetCoreNetworkPolicy(GetCoreNetworkPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Gets details about a core network policy. You can get details about your current live
+        /// policy or any previous policy version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
+        Task<GetCoreNetworkPolicyResponse> GetCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1950,6 +3294,58 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Returns information about a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRouteAnalysis
 
 
@@ -2063,6 +3459,64 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSites">REST API Reference for GetSites Operation</seealso>
         Task<GetSitesResponse> GetSitesAsync(GetSitesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSiteToSiteVpnAttachment
+
+
+        /// <summary>
+        /// Returns information about a site-to-site VPN attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSiteToSiteVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
+        GetSiteToSiteVpnAttachmentResponse GetSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a site-to-site VPN attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSiteToSiteVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
+        Task<GetSiteToSiteVpnAttachmentResponse> GetSiteToSiteVpnAttachmentAsync(GetSiteToSiteVpnAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2192,6 +3646,278 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetVpcAttachment
+
+
+        /// <summary>
+        /// Returns information about a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
+        GetVpcAttachmentResponse GetVpcAttachment(GetVpcAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
+        Task<GetVpcAttachmentResponse> GetVpcAttachmentAsync(GetVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAttachments
+
+
+        /// <summary>
+        /// Returns a list of core network attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachments service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        ListAttachmentsResponse ListAttachments(ListAttachmentsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of core network attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttachments service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        Task<ListAttachmentsResponse> ListAttachmentsAsync(ListAttachmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListConnectPeers
+
+
+        /// <summary>
+        /// Returns a list of core network Connect peers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectPeers service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectPeers service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
+        ListConnectPeersResponse ListConnectPeers(ListConnectPeersRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of core network Connect peers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectPeers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectPeers service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
+        Task<ListConnectPeersResponse> ListConnectPeersAsync(ListConnectPeersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCoreNetworkPolicyVersions
+
+
+        /// <summary>
+        /// Returns a list of core network policy versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPolicyVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkPolicyVersions service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
+        ListCoreNetworkPolicyVersionsResponse ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of core network policy versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPolicyVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkPolicyVersions service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
+        Task<ListCoreNetworkPolicyVersionsResponse> ListCoreNetworkPolicyVersionsAsync(ListCoreNetworkPolicyVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCoreNetworks
+
+
+        /// <summary>
+        /// Returns a list of owned and shared core networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworks service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworks service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
+        ListCoreNetworksResponse ListCoreNetworks(ListCoreNetworksRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of owned and shared core networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCoreNetworks service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
+        Task<ListCoreNetworksResponse> ListCoreNetworksAsync(ListCoreNetworksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -2247,6 +3973,146 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutCoreNetworkPolicy
+
+
+        /// <summary>
+        /// Creates a new, immutable version of a core network policy. A subsequent change set
+        /// is created showing the differences between the LIVE policy and the submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCoreNetworkPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
+        PutCoreNetworkPolicyResponse PutCoreNetworkPolicy(PutCoreNetworkPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new, immutable version of a core network policy. A subsequent change set
+        /// is created showing the differences between the LIVE policy and the submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCoreNetworkPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
+        Task<PutCoreNetworkPolicyResponse> PutCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates or updates a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2319,6 +4185,142 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">REST API Reference for RegisterTransitGateway Operation</seealso>
         Task<RegisterTransitGatewayResponse> RegisterTransitGatewayAsync(RegisterTransitGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RejectAttachment
+
+
+        /// <summary>
+        /// Rejects a core network attachment request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
+        RejectAttachmentResponse RejectAttachment(RejectAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Rejects a core network attachment request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
+        Task<RejectAttachmentResponse> RejectAttachmentAsync(RejectAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RestoreCoreNetworkPolicyVersion
+
+
+        /// <summary>
+        /// Restores a previous policy version as a new, immutable version of a core network policy.
+        /// A subsequent change set is created showing the differences between the LIVE policy
+        /// and restored policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreCoreNetworkPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the RestoreCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
+        RestoreCoreNetworkPolicyVersionResponse RestoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request);
+
+
+
+        /// <summary>
+        /// Restores a previous policy version as a new, immutable version of a core network policy.
+        /// A subsequent change set is created showing the differences between the LIVE policy
+        /// and restored policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreCoreNetworkPolicyVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
+        Task<RestoreCoreNetworkPolicyVersionResponse> RestoreCoreNetworkPolicyVersionAsync(RestoreCoreNetworkPolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2595,6 +4597,72 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateCoreNetwork
+
+
+        /// <summary>
+        /// Updates the description of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
+        UpdateCoreNetworkResponse UpdateCoreNetwork(UpdateCoreNetworkRequest request);
+
+
+
+        /// <summary>
+        /// Updates the description of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
+        Task<UpdateCoreNetworkResponse> UpdateCoreNetworkAsync(UpdateCoreNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2939,6 +5007,72 @@ namespace Amazon.NetworkManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateSite">REST API Reference for UpdateSite Operation</seealso>
         Task<UpdateSiteResponse> UpdateSiteAsync(UpdateSiteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateVpcAttachment
+
+
+        /// <summary>
+        /// Updates a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
+        UpdateVpcAttachmentResponse UpdateVpcAttachment(UpdateVpcAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Updates a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
+        Task<UpdateVpcAttachmentResponse> UpdateVpcAttachmentAsync(UpdateVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

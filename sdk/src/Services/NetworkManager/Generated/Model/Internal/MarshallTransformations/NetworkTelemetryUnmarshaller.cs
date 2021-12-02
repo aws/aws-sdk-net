@@ -82,6 +82,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CoreNetworkId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CoreNetworkId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Health", targetDepth))
                 {
                     var unmarshaller = ConnectionHealthUnmarshaller.Instance;

@@ -51,6 +51,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CoreNetworkSegmentEdge", targetDepth))
+                {
+                    var unmarshaller = CoreNetworkSegmentEdgeIdentifierUnmarshaller.Instance;
+                    response.CoreNetworkSegmentEdge = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkRoutes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<NetworkRoute, NetworkRouteUnmarshaller>(NetworkRouteUnmarshaller.Instance);

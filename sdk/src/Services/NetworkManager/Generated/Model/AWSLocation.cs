@@ -42,6 +42,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Resource Name (ARN) of the subnet that the device is located in.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string SubnetArn
         {
             get { return this._subnetArn; }
@@ -61,6 +62,7 @@ namespace Amazon.NetworkManager.Model
         /// Zone, Wavelength Zone, or an Outpost.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Zone
         {
             get { return this._zone; }

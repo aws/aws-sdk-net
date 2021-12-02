@@ -33,7 +33,26 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class RouteTableIdentifier
     {
+        private CoreNetworkSegmentEdgeIdentifier _coreNetworkSegmentEdge;
         private string _transitGatewayRouteTableArn;
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkSegmentEdge. 
+        /// <para>
+        /// The segment edge in a core network.
+        /// </para>
+        /// </summary>
+        public CoreNetworkSegmentEdgeIdentifier CoreNetworkSegmentEdge
+        {
+            get { return this._coreNetworkSegmentEdge; }
+            set { this._coreNetworkSegmentEdge = value; }
+        }
+
+        // Check to see if CoreNetworkSegmentEdge property is set
+        internal bool IsSetCoreNetworkSegmentEdge()
+        {
+            return this._coreNetworkSegmentEdge != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TransitGatewayRouteTableArn. 
@@ -41,6 +60,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the transit gateway route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string TransitGatewayRouteTableArn
         {
             get { return this._transitGatewayRouteTableArn; }

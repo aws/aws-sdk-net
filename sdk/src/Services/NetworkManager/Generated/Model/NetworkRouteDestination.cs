@@ -33,9 +33,50 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class NetworkRouteDestination
     {
+        private string _coreNetworkAttachmentId;
+        private string _edgeLocation;
         private string _resourceId;
         private string _resourceType;
+        private string _segmentName;
         private string _transitGatewayAttachmentId;
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkAttachmentId. 
+        /// <para>
+        /// The ID of a core network attachment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public string CoreNetworkAttachmentId
+        {
+            get { return this._coreNetworkAttachmentId; }
+            set { this._coreNetworkAttachmentId = value; }
+        }
+
+        // Check to see if CoreNetworkAttachmentId property is set
+        internal bool IsSetCoreNetworkAttachmentId()
+        {
+            return this._coreNetworkAttachmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EdgeLocation. 
+        /// <para>
+        /// The edge location for the network destination.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string EdgeLocation
+        {
+            get { return this._edgeLocation; }
+            set { this._edgeLocation = value; }
+        }
+
+        // Check to see if EdgeLocation property is set
+        internal bool IsSetEdgeLocation()
+        {
+            return this._edgeLocation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
@@ -43,6 +84,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -61,6 +103,7 @@ namespace Amazon.NetworkManager.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }
@@ -74,11 +117,31 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SegmentName. 
+        /// <para>
+        /// The name of the segment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string SegmentName
+        {
+            get { return this._segmentName; }
+            set { this._segmentName = value; }
+        }
+
+        // Check to see if SegmentName property is set
+        internal bool IsSetSegmentName()
+        {
+            return this._segmentName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TransitGatewayAttachmentId. 
         /// <para>
         /// The ID of the transit gateway attachment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string TransitGatewayAttachmentId
         {
             get { return this._transitGatewayAttachmentId; }

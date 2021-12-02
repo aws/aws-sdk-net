@@ -64,7 +64,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -102,6 +102,7 @@ namespace Amazon.NetworkManager.Model
         /// The token for the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

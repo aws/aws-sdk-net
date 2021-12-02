@@ -47,6 +47,7 @@ namespace Amazon.NetworkManager.Model
         /// by describing the resource using its Describe API call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Definition
         {
             get { return this._definition; }
@@ -83,6 +84,7 @@ namespace Amazon.NetworkManager.Model
         /// The value for the Name tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string NameTag
         {
             get { return this._nameTag; }
@@ -101,6 +103,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string RegisteredGatewayArn
         {
             get { return this._registeredGatewayArn; }
@@ -119,6 +122,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -137,6 +141,7 @@ namespace Amazon.NetworkManager.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

@@ -35,6 +35,7 @@ namespace Amazon.NetworkManager.Model
     {
         private string _accountId;
         private string _awsRegion;
+        private string _coreNetworkId;
         private string _definition;
         private DateTime? _definitionTimestamp;
         private Dictionary<string, string> _metadata = new Dictionary<string, string>();
@@ -50,6 +51,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -68,6 +70,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Web Services Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string AwsRegion
         {
             get { return this._awsRegion; }
@@ -81,12 +84,32 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CoreNetworkId. 
+        /// <para>
+        /// a core network ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public string CoreNetworkId
+        {
+            get { return this._coreNetworkId; }
+            set { this._coreNetworkId = value; }
+        }
+
+        // Check to see if CoreNetworkId property is set
+        internal bool IsSetCoreNetworkId()
+        {
+            return this._coreNetworkId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
         /// Information about the resource, in JSON format. Network Manager gets this information
         /// by describing the resource using its Describe API call.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Definition
         {
             get { return this._definition; }
@@ -141,6 +164,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string RegisteredGatewayArn
         {
             get { return this._registeredGatewayArn; }
@@ -159,6 +183,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -177,6 +202,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ResourceId
         {
             get { return this._resourceId; }
@@ -260,6 +286,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

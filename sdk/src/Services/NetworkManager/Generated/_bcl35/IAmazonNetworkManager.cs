@@ -46,6 +46,141 @@ namespace Amazon.NetworkManager
 
 
         
+        #region  AcceptAttachment
+
+
+        /// <summary>
+        /// Accepts a core network attachment request. 
+        /// 
+        ///  
+        /// <para>
+        /// Once the attachment request is accepted by a core network owner, the attachment is
+        /// created and connected to a core network.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
+        AcceptAttachmentResponse AcceptAttachment(AcceptAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
+        IAsyncResult BeginAcceptAttachment(AcceptAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptAttachment.</param>
+        /// 
+        /// <returns>Returns a  AcceptAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
+        AcceptAttachmentResponse EndAcceptAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateConnectPeer
+
+
+        /// <summary>
+        /// Associates a core network Connect peer with a device and optionally, with a link.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a link, it must be associated with the specified device. You can only
+        /// associate core network Connect peers that have been created on a core network Connect
+        /// attachment on a core network. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the AssociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
+        AssociateConnectPeerResponse AssociateConnectPeer(AssociateConnectPeerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectPeer operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateConnectPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
+        IAsyncResult BeginAssociateConnectPeer(AssociateConnectPeerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateConnectPeer.</param>
+        /// 
+        /// <returns>Returns a  AssociateConnectPeerResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
+        AssociateConnectPeerResponse EndAssociateConnectPeer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateCustomerGateway
 
 
@@ -261,6 +396,73 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateConnectAttachment
+
+
+        /// <summary>
+        /// Creates a core network Connect attachment from a specified core network attachment.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A core network Connect attachment is a GRE-based tunnel attachment that you can use
+        /// to establish a connection between a core network and an appliance. A core network
+        /// Connect attachment uses an existing VPC attachment as the underlying transport mechanism.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
+        CreateConnectAttachmentResponse CreateConnectAttachment(CreateConnectAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
+        IAsyncResult BeginCreateConnectAttachment(CreateConnectAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
+        CreateConnectAttachmentResponse EndCreateConnectAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateConnection
 
 
@@ -319,6 +521,130 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  CreateConnectionResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         CreateConnectionResponse EndCreateConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateConnectPeer
+
+
+        /// <summary>
+        /// Creates a core network connect peer for a specified core network connect attachment
+        /// between a core network and an appliance. The peer address and transit gateway address
+        /// must be the same IP address family (IPv4 or IPv6).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
+        CreateConnectPeerResponse CreateConnectPeer(CreateConnectPeerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectPeer operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
+        IAsyncResult BeginCreateConnectPeer(CreateConnectPeerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectPeer.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectPeerResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
+        CreateConnectPeerResponse EndCreateConnectPeer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateCoreNetwork
+
+
+        /// <summary>
+        /// Creates a core network as part of your global network, and optionally, with a core
+        /// network policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the CreateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
+        CreateCoreNetworkResponse CreateCoreNetwork(CreateCoreNetworkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetwork operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCoreNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
+        IAsyncResult BeginCreateCoreNetwork(CreateCoreNetworkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCoreNetwork.</param>
+        /// 
+        /// <returns>Returns a  CreateCoreNetworkResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
+        CreateCoreNetworkResponse EndCreateCoreNetwork(IAsyncResult asyncResult);
 
         #endregion
         
@@ -568,6 +894,183 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateSiteToSiteVpnAttachment
+
+
+        /// <summary>
+        /// Creates a site-to-site VPN attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSiteToSiteVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
+        CreateSiteToSiteVpnAttachmentResponse CreateSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSiteToSiteVpnAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSiteToSiteVpnAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSiteToSiteVpnAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
+        IAsyncResult BeginCreateSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSiteToSiteVpnAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSiteToSiteVpnAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateSiteToSiteVpnAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
+        CreateSiteToSiteVpnAttachmentResponse EndCreateSiteToSiteVpnAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateVpcAttachment
+
+
+        /// <summary>
+        /// Creates a VPC attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
+        CreateVpcAttachmentResponse CreateVpcAttachment(CreateVpcAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
+        IAsyncResult BeginCreateVpcAttachment(CreateVpcAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
+        CreateVpcAttachmentResponse EndCreateVpcAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAttachment
+
+
+        /// <summary>
+        /// Deletes an attachment. Supports all attachment types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        DeleteAttachmentResponse DeleteAttachment(DeleteAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        IAsyncResult BeginDeleteAttachment(DeleteAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttachment.</param>
+        /// 
+        /// <returns>Returns a  DeleteAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        DeleteAttachmentResponse EndDeleteAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteConnection
 
 
@@ -624,6 +1127,184 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  DeleteConnectionResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         DeleteConnectionResponse EndDeleteConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConnectPeer
+
+
+        /// <summary>
+        /// Deletes a Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
+        DeleteConnectPeerResponse DeleteConnectPeer(DeleteConnectPeerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectPeer operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
+        IAsyncResult BeginDeleteConnectPeer(DeleteConnectPeerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectPeer.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectPeerResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
+        DeleteConnectPeerResponse EndDeleteConnectPeer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCoreNetwork
+
+
+        /// <summary>
+        /// Deletes a core network along with all core network policies. This can only be done
+        /// if there are no attachments on a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
+        DeleteCoreNetworkResponse DeleteCoreNetwork(DeleteCoreNetworkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetwork operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCoreNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
+        IAsyncResult BeginDeleteCoreNetwork(DeleteCoreNetworkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCoreNetwork.</param>
+        /// 
+        /// <returns>Returns a  DeleteCoreNetworkResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
+        DeleteCoreNetworkResponse EndDeleteCoreNetwork(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCoreNetworkPolicyVersion
+
+
+        /// <summary>
+        /// Deletes a policy version from a core network. You can't delete the current LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
+        DeleteCoreNetworkPolicyVersionResponse DeleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCoreNetworkPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPolicyVersion operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCoreNetworkPolicyVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
+        IAsyncResult BeginDeleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCoreNetworkPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCoreNetworkPolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteCoreNetworkPolicyVersionResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
+        DeleteCoreNetworkPolicyVersionResponse EndDeleteCoreNetworkPolicyVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -807,6 +1488,63 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes a resource policy for the specified resource. This revokes the access of the
+        /// principals specified in the resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteSite
 
 
@@ -981,6 +1719,65 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  DescribeGlobalNetworksResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DescribeGlobalNetworks">REST API Reference for DescribeGlobalNetworks Operation</seealso>
         DescribeGlobalNetworksResponse EndDescribeGlobalNetworks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateConnectPeer
+
+
+        /// <summary>
+        /// Disassociates a core network Connect peer from a device and a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
+        DisassociateConnectPeerResponse DisassociateConnectPeer(DisassociateConnectPeerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectPeer operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateConnectPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
+        IAsyncResult BeginDisassociateConnectPeer(DisassociateConnectPeerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateConnectPeer.</param>
+        /// 
+        /// <returns>Returns a  DisassociateConnectPeerResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
+        DisassociateConnectPeerResponse EndDisassociateConnectPeer(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1162,6 +1959,121 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  ExecuteCoreNetworkChangeSet
+
+
+        /// <summary>
+        /// Executes a change set on your core network. Deploys changes globally based on the
+        /// policy submitted..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteCoreNetworkChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
+        ExecuteCoreNetworkChangeSetResponse ExecuteCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteCoreNetworkChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteCoreNetworkChangeSet operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteCoreNetworkChangeSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
+        IAsyncResult BeginExecuteCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteCoreNetworkChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteCoreNetworkChangeSet.</param>
+        /// 
+        /// <returns>Returns a  ExecuteCoreNetworkChangeSetResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
+        ExecuteCoreNetworkChangeSetResponse EndExecuteCoreNetworkChangeSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectAttachment
+
+
+        /// <summary>
+        /// Returns information about a core network Connect attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
+        GetConnectAttachmentResponse GetConnectAttachment(GetConnectAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
+        IAsyncResult BeginGetConnectAttachment(GetConnectAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectAttachment.</param>
+        /// 
+        /// <returns>Returns a  GetConnectAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
+        GetConnectAttachmentResponse EndGetConnectAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetConnections
 
 
@@ -1214,6 +2126,286 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  GetConnectionsResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnections">REST API Reference for GetConnections Operation</seealso>
         GetConnectionsResponse EndGetConnections(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectPeer
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
+        GetConnectPeerResponse GetConnectPeer(GetConnectPeerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeer operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
+        IAsyncResult BeginGetConnectPeer(GetConnectPeerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectPeer.</param>
+        /// 
+        /// <returns>Returns a  GetConnectPeerResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
+        GetConnectPeerResponse EndGetConnectPeer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectPeerAssociations
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeerAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectPeerAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
+        GetConnectPeerAssociationsResponse GetConnectPeerAssociations(GetConnectPeerAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectPeerAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeerAssociations operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectPeerAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
+        IAsyncResult BeginGetConnectPeerAssociations(GetConnectPeerAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectPeerAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectPeerAssociations.</param>
+        /// 
+        /// <returns>Returns a  GetConnectPeerAssociationsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
+        GetConnectPeerAssociationsResponse EndGetConnectPeerAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCoreNetwork
+
+
+        /// <summary>
+        /// Returns information about a core network. By default it returns the LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the GetCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
+        GetCoreNetworkResponse GetCoreNetwork(GetCoreNetworkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetwork operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoreNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
+        IAsyncResult BeginGetCoreNetwork(GetCoreNetworkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCoreNetwork.</param>
+        /// 
+        /// <returns>Returns a  GetCoreNetworkResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
+        GetCoreNetworkResponse EndGetCoreNetwork(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCoreNetworkChangeSet
+
+
+        /// <summary>
+        /// Returns a change set between the LIVE core network policy and a submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeSet service method.</param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
+        GetCoreNetworkChangeSetResponse GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCoreNetworkChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeSet operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoreNetworkChangeSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
+        IAsyncResult BeginGetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCoreNetworkChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCoreNetworkChangeSet.</param>
+        /// 
+        /// <returns>Returns a  GetCoreNetworkChangeSetResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
+        GetCoreNetworkChangeSetResponse EndGetCoreNetworkChangeSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCoreNetworkPolicy
+
+
+        /// <summary>
+        /// Gets details about a core network policy. You can get details about your current live
+        /// policy or any previous policy version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
+        GetCoreNetworkPolicyResponse GetCoreNetworkPolicy(GetCoreNetworkPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCoreNetworkPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkPolicy operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoreNetworkPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
+        IAsyncResult BeginGetCoreNetworkPolicy(GetCoreNetworkPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCoreNetworkPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCoreNetworkPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetCoreNetworkPolicyResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
+        GetCoreNetworkPolicyResponse EndGetCoreNetworkPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1727,6 +2919,58 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Returns information about a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRouteAnalysis
 
 
@@ -1834,6 +3078,61 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  GetSitesResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSites">REST API Reference for GetSites Operation</seealso>
         GetSitesResponse EndGetSites(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSiteToSiteVpnAttachment
+
+
+        /// <summary>
+        /// Returns information about a site-to-site VPN attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSiteToSiteVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
+        GetSiteToSiteVpnAttachmentResponse GetSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSiteToSiteVpnAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSiteToSiteVpnAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSiteToSiteVpnAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
+        IAsyncResult BeginGetSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSiteToSiteVpnAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSiteToSiteVpnAttachment.</param>
+        /// 
+        /// <returns>Returns a  GetSiteToSiteVpnAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
+        GetSiteToSiteVpnAttachmentResponse EndGetSiteToSiteVpnAttachment(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1952,6 +3251,272 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetVpcAttachment
+
+
+        /// <summary>
+        /// Returns information about a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
+        GetVpcAttachmentResponse GetVpcAttachment(GetVpcAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
+        IAsyncResult BeginGetVpcAttachment(GetVpcAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  GetVpcAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
+        GetVpcAttachmentResponse EndGetVpcAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAttachments
+
+
+        /// <summary>
+        /// Returns a list of core network attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachments service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        ListAttachmentsResponse ListAttachments(ListAttachmentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        IAsyncResult BeginListAttachments(ListAttachmentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachments.</param>
+        /// 
+        /// <returns>Returns a  ListAttachmentsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        ListAttachmentsResponse EndListAttachments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConnectPeers
+
+
+        /// <summary>
+        /// Returns a list of core network Connect peers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectPeers service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectPeers service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
+        ListConnectPeersResponse ListConnectPeers(ListConnectPeersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectPeers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectPeers operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectPeers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
+        IAsyncResult BeginListConnectPeers(ListConnectPeersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectPeers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectPeers.</param>
+        /// 
+        /// <returns>Returns a  ListConnectPeersResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
+        ListConnectPeersResponse EndListConnectPeers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCoreNetworkPolicyVersions
+
+
+        /// <summary>
+        /// Returns a list of core network policy versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPolicyVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkPolicyVersions service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
+        ListCoreNetworkPolicyVersionsResponse ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCoreNetworkPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPolicyVersions operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoreNetworkPolicyVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
+        IAsyncResult BeginListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCoreNetworkPolicyVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCoreNetworkPolicyVersions.</param>
+        /// 
+        /// <returns>Returns a  ListCoreNetworkPolicyVersionsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
+        ListCoreNetworkPolicyVersionsResponse EndListCoreNetworkPolicyVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCoreNetworks
+
+
+        /// <summary>
+        /// Returns a list of owned and shared core networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworks service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworks service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
+        ListCoreNetworksResponse ListCoreNetworks(ListCoreNetworksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCoreNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworks operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCoreNetworks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
+        IAsyncResult BeginListCoreNetworks(ListCoreNetworksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCoreNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCoreNetworks.</param>
+        /// 
+        /// <returns>Returns a  ListCoreNetworksResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
+        ListCoreNetworksResponse EndListCoreNetworks(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -2004,6 +3569,128 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  ListTagsForResourceResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutCoreNetworkPolicy
+
+
+        /// <summary>
+        /// Creates a new, immutable version of a core network policy. A subsequent change set
+        /// is created showing the differences between the LIVE policy and the submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCoreNetworkPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
+        PutCoreNetworkPolicyResponse PutCoreNetworkPolicy(PutCoreNetworkPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutCoreNetworkPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutCoreNetworkPolicy operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutCoreNetworkPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
+        IAsyncResult BeginPutCoreNetworkPolicy(PutCoreNetworkPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutCoreNetworkPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutCoreNetworkPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutCoreNetworkPolicyResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
+        PutCoreNetworkPolicyResponse EndPutCoreNetworkPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates or updates a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2066,6 +3753,126 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  RegisterTransitGatewayResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RegisterTransitGateway">REST API Reference for RegisterTransitGateway Operation</seealso>
         RegisterTransitGatewayResponse EndRegisterTransitGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RejectAttachment
+
+
+        /// <summary>
+        /// Rejects a core network attachment request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
+        RejectAttachmentResponse RejectAttachment(RejectAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
+        IAsyncResult BeginRejectAttachment(RejectAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectAttachment.</param>
+        /// 
+        /// <returns>Returns a  RejectAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
+        RejectAttachmentResponse EndRejectAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RestoreCoreNetworkPolicyVersion
+
+
+        /// <summary>
+        /// Restores a previous policy version as a new, immutable version of a core network policy.
+        /// A subsequent change set is created showing the differences between the LIVE policy
+        /// and restored policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreCoreNetworkPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the RestoreCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
+        RestoreCoreNetworkPolicyVersionResponse RestoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreCoreNetworkPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreCoreNetworkPolicyVersion operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreCoreNetworkPolicyVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
+        IAsyncResult BeginRestoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreCoreNetworkPolicyVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreCoreNetworkPolicyVersion.</param>
+        /// 
+        /// <returns>Returns a  RestoreCoreNetworkPolicyVersionResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
+        RestoreCoreNetworkPolicyVersionResponse EndRestoreCoreNetworkPolicyVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2308,6 +4115,65 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  UpdateConnectionResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         UpdateConnectionResponse EndUpdateConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateCoreNetwork
+
+
+        /// <summary>
+        /// Updates the description of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCoreNetwork service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
+        UpdateCoreNetworkResponse UpdateCoreNetwork(UpdateCoreNetworkRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCoreNetwork operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCoreNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
+        IAsyncResult BeginUpdateCoreNetwork(UpdateCoreNetworkRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCoreNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCoreNetwork.</param>
+        /// 
+        /// <returns>Returns a  UpdateCoreNetworkResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
+        UpdateCoreNetworkResponse EndUpdateCoreNetwork(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2610,6 +4476,65 @@ namespace Amazon.NetworkManager
         /// <returns>Returns a  UpdateSiteResult from NetworkManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateSite">REST API Reference for UpdateSite Operation</seealso>
         UpdateSiteResponse EndUpdateSite(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateVpcAttachment
+
+
+        /// <summary>
+        /// Updates a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
+        UpdateVpcAttachmentResponse UpdateVpcAttachment(UpdateVpcAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
+        IAsyncResult BeginUpdateVpcAttachment(UpdateVpcAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  UpdateVpcAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
+        UpdateVpcAttachmentResponse EndUpdateVpcAttachment(IAsyncResult asyncResult);
 
         #endregion
         

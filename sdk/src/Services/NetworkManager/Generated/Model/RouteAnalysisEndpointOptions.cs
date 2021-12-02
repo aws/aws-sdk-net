@@ -43,6 +43,7 @@ namespace Amazon.NetworkManager.Model
         /// The IP address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string IpAddress
         {
             get { return this._ipAddress; }
@@ -61,6 +62,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the transit gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string TransitGatewayArn
         {
             get { return this._transitGatewayArn; }
@@ -79,6 +81,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the transit gateway attachment.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string TransitGatewayAttachmentArn
         {
             get { return this._transitGatewayAttachmentArn; }

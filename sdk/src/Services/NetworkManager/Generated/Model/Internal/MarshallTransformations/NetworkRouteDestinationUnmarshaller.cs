@@ -64,6 +64,18 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CoreNetworkAttachmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CoreNetworkAttachmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EdgeLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EdgeLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +86,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SegmentName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SegmentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TransitGatewayAttachmentId", targetDepth))

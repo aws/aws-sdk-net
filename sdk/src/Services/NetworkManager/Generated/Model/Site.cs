@@ -66,6 +66,7 @@ namespace Amazon.NetworkManager.Model
         /// The description of the site.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -84,6 +85,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -120,6 +122,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Resource Name (ARN) of the site.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string SiteArn
         {
             get { return this._siteArn; }
@@ -138,6 +141,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the site.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string SiteId
         {
             get { return this._siteId; }

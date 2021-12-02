@@ -260,6 +260,129 @@ namespace Amazon.NetworkManager
         #endregion
 
 
+        #region  AcceptAttachment
+
+        internal virtual AcceptAttachmentResponse AcceptAttachment(AcceptAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Accepts a core network attachment request. 
+        /// 
+        ///  
+        /// <para>
+        /// Once the attachment request is accepted by a core network owner, the attachment is
+        /// created and connected to a core network.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AcceptAttachment">REST API Reference for AcceptAttachment Operation</seealso>
+        public virtual Task<AcceptAttachmentResponse> AcceptAttachmentAsync(AcceptAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateConnectPeer
+
+        internal virtual AssociateConnectPeerResponse AssociateConnectPeer(AssociateConnectPeerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectPeerResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateConnectPeerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a core network Connect peer with a device and optionally, with a link.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// If you specify a link, it must be associated with the specified device. You can only
+        /// associate core network Connect peers that have been created on a core network Connect
+        /// attachment on a core network. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AssociateConnectPeer">REST API Reference for AssociateConnectPeer Operation</seealso>
+        public virtual Task<AssociateConnectPeerResponse> AssociateConnectPeerAsync(AssociateConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateConnectPeerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateCustomerGateway
 
         internal virtual AssociateCustomerGatewayResponse AssociateCustomerGateway(AssociateCustomerGatewayRequest request)
@@ -457,6 +580,67 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateConnectAttachment
+
+        internal virtual CreateConnectAttachmentResponse CreateConnectAttachment(CreateConnectAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a core network Connect attachment from a specified core network attachment.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// A core network Connect attachment is a GRE-based tunnel attachment that you can use
+        /// to establish a connection between a core network and an appliance. A core network
+        /// Connect attachment uses an existing VPC attachment as the underlying transport mechanism.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectAttachment">REST API Reference for CreateConnectAttachment Operation</seealso>
+        public virtual Task<CreateConnectAttachmentResponse> CreateConnectAttachmentAsync(CreateConnectAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConnectAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConnection
 
         internal virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
@@ -508,6 +692,118 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateConnectPeer
+
+        internal virtual CreateConnectPeerResponse CreateConnectPeer(CreateConnectPeerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectPeerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectPeerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a core network connect peer for a specified core network connect attachment
+        /// between a core network and an appliance. The peer address and transit gateway address
+        /// must be the same IP address family (IPv4 or IPv6).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateConnectPeer">REST API Reference for CreateConnectPeer Operation</seealso>
+        public virtual Task<CreateConnectPeerResponse> CreateConnectPeerAsync(CreateConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConnectPeerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCoreNetwork
+
+        internal virtual CreateCoreNetworkResponse CreateCoreNetwork(CreateCoreNetworkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoreNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCoreNetworkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a core network as part of your global network, and optionally, with a core
+        /// network policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetwork">REST API Reference for CreateCoreNetwork Operation</seealso>
+        public virtual Task<CreateCoreNetworkResponse> CreateCoreNetworkAsync(CreateCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoreNetworkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCoreNetworkResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -734,6 +1030,165 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateSiteToSiteVpnAttachment
+
+        internal virtual CreateSiteToSiteVpnAttachmentResponse CreateSiteToSiteVpnAttachment(CreateSiteToSiteVpnAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSiteToSiteVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSiteToSiteVpnAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a site-to-site VPN attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSiteToSiteVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">REST API Reference for CreateSiteToSiteVpnAttachment Operation</seealso>
+        public virtual Task<CreateSiteToSiteVpnAttachmentResponse> CreateSiteToSiteVpnAttachmentAsync(CreateSiteToSiteVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSiteToSiteVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSiteToSiteVpnAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVpcAttachment
+
+        internal virtual CreateVpcAttachmentResponse CreateVpcAttachment(CreateVpcAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a VPC attachment on an edge location of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateVpcAttachment">REST API Reference for CreateVpcAttachment Operation</seealso>
+        public virtual Task<CreateVpcAttachmentResponse> CreateVpcAttachmentAsync(CreateVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAttachment
+
+        internal virtual DeleteAttachmentResponse DeleteAttachment(DeleteAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an attachment. Supports all attachment types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteAttachment">REST API Reference for DeleteAttachment Operation</seealso>
+        public virtual Task<DeleteAttachmentResponse> DeleteAttachmentAsync(DeleteAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConnection
 
         internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
@@ -783,6 +1238,166 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConnectPeer
+
+        internal virtual DeleteConnectPeerResponse DeleteConnectPeer(DeleteConnectPeerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectPeerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectPeerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteConnectPeer">REST API Reference for DeleteConnectPeer Operation</seealso>
+        public virtual Task<DeleteConnectPeerResponse> DeleteConnectPeerAsync(DeleteConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectPeerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCoreNetwork
+
+        internal virtual DeleteCoreNetworkResponse DeleteCoreNetwork(DeleteCoreNetworkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoreNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCoreNetworkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a core network along with all core network policies. This can only be done
+        /// if there are no attachments on a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetwork">REST API Reference for DeleteCoreNetwork Operation</seealso>
+        public virtual Task<DeleteCoreNetworkResponse> DeleteCoreNetworkAsync(DeleteCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoreNetworkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCoreNetworkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCoreNetworkPolicyVersion
+
+        internal virtual DeleteCoreNetworkPolicyVersionResponse DeleteCoreNetworkPolicyVersion(DeleteCoreNetworkPolicyVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoreNetworkPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCoreNetworkPolicyVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a policy version from a core network. You can't delete the current LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPolicyVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPolicyVersion">REST API Reference for DeleteCoreNetworkPolicyVersion Operation</seealso>
+        public virtual Task<DeleteCoreNetworkPolicyVersionResponse> DeleteCoreNetworkPolicyVersionAsync(DeleteCoreNetworkPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoreNetworkPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCoreNetworkPolicyVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -949,6 +1564,57 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a resource policy for the specified resource. This revokes the access of the
+        /// principals specified in the resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSite
 
         internal virtual DeleteSiteResponse DeleteSite(DeleteSiteRequest request)
@@ -1104,6 +1770,59 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = DescribeGlobalNetworksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeGlobalNetworksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateConnectPeer
+
+        internal virtual DisassociateConnectPeerResponse DisassociateConnectPeer(DisassociateConnectPeerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectPeerResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateConnectPeerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a core network Connect peer from a device and a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DisassociateConnectPeer">REST API Reference for DisassociateConnectPeer Operation</seealso>
+        public virtual Task<DisassociateConnectPeerResponse> DisassociateConnectPeerAsync(DisassociateConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateConnectPeerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1268,6 +1987,109 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  ExecuteCoreNetworkChangeSet
+
+        internal virtual ExecuteCoreNetworkChangeSetResponse ExecuteCoreNetworkChangeSet(ExecuteCoreNetworkChangeSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteCoreNetworkChangeSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteCoreNetworkChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteCoreNetworkChangeSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Executes a change set on your core network. Deploys changes globally based on the
+        /// policy submitted..
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteCoreNetworkChangeSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ExecuteCoreNetworkChangeSet">REST API Reference for ExecuteCoreNetworkChangeSet Operation</seealso>
+        public virtual Task<ExecuteCoreNetworkChangeSetResponse> ExecuteCoreNetworkChangeSetAsync(ExecuteCoreNetworkChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteCoreNetworkChangeSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteCoreNetworkChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteCoreNetworkChangeSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnectAttachment
+
+        internal virtual GetConnectAttachmentResponse GetConnectAttachment(GetConnectAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a core network Connect attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectAttachment">REST API Reference for GetConnectAttachment Operation</seealso>
+        public virtual Task<GetConnectAttachmentResponse> GetConnectAttachmentAsync(GetConnectAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConnections
 
         internal virtual GetConnectionsResponse GetConnections(GetConnectionsRequest request)
@@ -1313,6 +2135,256 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = GetConnectionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConnectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnectPeer
+
+        internal virtual GetConnectPeerResponse GetConnectPeer(GetConnectPeerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectPeerResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectPeerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectPeer service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeer">REST API Reference for GetConnectPeer Operation</seealso>
+        public virtual Task<GetConnectPeerResponse> GetConnectPeerAsync(GetConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectPeerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnectPeerAssociations
+
+        internal virtual GetConnectPeerAssociationsResponse GetConnectPeerAssociations(GetConnectPeerAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectPeerAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectPeerAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectPeerAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a core network Connect peer associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectPeerAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectPeerAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetConnectPeerAssociations">REST API Reference for GetConnectPeerAssociations Operation</seealso>
+        public virtual Task<GetConnectPeerAssociationsResponse> GetConnectPeerAssociationsAsync(GetConnectPeerAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectPeerAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectPeerAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectPeerAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCoreNetwork
+
+        internal virtual GetCoreNetworkResponse GetCoreNetwork(GetCoreNetworkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoreNetworkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a core network. By default it returns the LIVE policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">REST API Reference for GetCoreNetwork Operation</seealso>
+        public virtual Task<GetCoreNetworkResponse> GetCoreNetworkAsync(GetCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCoreNetworkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCoreNetworkChangeSet
+
+        internal virtual GetCoreNetworkChangeSetResponse GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkChangeSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoreNetworkChangeSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a change set between the LIVE core network policy and a submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkChangeSet service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeSet">REST API Reference for GetCoreNetworkChangeSet Operation</seealso>
+        public virtual Task<GetCoreNetworkChangeSetResponse> GetCoreNetworkChangeSetAsync(GetCoreNetworkChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkChangeSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCoreNetworkChangeSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCoreNetworkPolicy
+
+        internal virtual GetCoreNetworkPolicyResponse GetCoreNetworkPolicy(GetCoreNetworkPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoreNetworkPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets details about a core network policy. You can get details about your current live
+        /// policy or any previous policy version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkPolicy">REST API Reference for GetCoreNetworkPolicy Operation</seealso>
+        public virtual Task<GetCoreNetworkPolicyResponse> GetCoreNetworkPolicyAsync(GetCoreNetworkPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCoreNetworkPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1773,6 +2845,52 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRouteAnalysis
 
         internal virtual GetRouteAnalysisResponse GetRouteAnalysis(GetRouteAnalysisRequest request)
@@ -1867,6 +2985,55 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = GetSitesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSitesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSiteToSiteVpnAttachment
+
+        internal virtual GetSiteToSiteVpnAttachmentResponse GetSiteToSiteVpnAttachment(GetSiteToSiteVpnAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSiteToSiteVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetSiteToSiteVpnAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a site-to-site VPN attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSiteToSiteVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSiteToSiteVpnAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetSiteToSiteVpnAttachment">REST API Reference for GetSiteToSiteVpnAttachment Operation</seealso>
+        public virtual Task<GetSiteToSiteVpnAttachmentResponse> GetSiteToSiteVpnAttachmentAsync(GetSiteToSiteVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSiteToSiteVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSiteToSiteVpnAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSiteToSiteVpnAttachmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1974,6 +3141,242 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetVpcAttachment
+
+        internal virtual GetVpcAttachmentResponse GetVpcAttachment(GetVpcAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetVpcAttachment">REST API Reference for GetVpcAttachment Operation</seealso>
+        public virtual Task<GetVpcAttachmentResponse> GetVpcAttachmentAsync(GetVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVpcAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAttachments
+
+        internal virtual ListAttachmentsResponse ListAttachments(ListAttachmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachmentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of core network attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttachments service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        public virtual Task<ListAttachmentsResponse> ListAttachmentsAsync(ListAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAttachmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConnectPeers
+
+        internal virtual ListConnectPeersResponse ListConnectPeers(ListConnectPeersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectPeersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectPeersResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectPeersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of core network Connect peers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectPeers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectPeers service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListConnectPeers">REST API Reference for ListConnectPeers Operation</seealso>
+        public virtual Task<ListConnectPeersResponse> ListConnectPeersAsync(ListConnectPeersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectPeersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectPeersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectPeersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCoreNetworkPolicyVersions
+
+        internal virtual ListCoreNetworkPolicyVersionsResponse ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworkPolicyVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworkPolicyVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCoreNetworkPolicyVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of core network policy versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPolicyVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkPolicyVersions service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPolicyVersions">REST API Reference for ListCoreNetworkPolicyVersions Operation</seealso>
+        public virtual Task<ListCoreNetworkPolicyVersionsResponse> ListCoreNetworkPolicyVersionsAsync(ListCoreNetworkPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworkPolicyVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworkPolicyVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCoreNetworkPolicyVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCoreNetworks
+
+        internal virtual ListCoreNetworksResponse ListCoreNetworks(ListCoreNetworksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworksResponseUnmarshaller.Instance;
+
+            return Invoke<ListCoreNetworksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of owned and shared core networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCoreNetworks service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworks">REST API Reference for ListCoreNetworks Operation</seealso>
+        public virtual Task<ListCoreNetworksResponse> ListCoreNetworksAsync(ListCoreNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCoreNetworksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -2019,6 +3422,116 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutCoreNetworkPolicy
+
+        internal virtual PutCoreNetworkPolicyResponse PutCoreNetworkPolicy(PutCoreNetworkPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutCoreNetworkPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutCoreNetworkPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutCoreNetworkPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new, immutable version of a core network policy. A subsequent change set
+        /// is created showing the differences between the LIVE policy and the submitted policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCoreNetworkPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutCoreNetworkPolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.CoreNetworkPolicyException">
+        /// Describes a core network policy exception.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutCoreNetworkPolicy">REST API Reference for PutCoreNetworkPolicy Operation</seealso>
+        public virtual Task<PutCoreNetworkPolicyResponse> PutCoreNetworkPolicyAsync(PutCoreNetworkPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutCoreNetworkPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutCoreNetworkPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutCoreNetworkPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2075,6 +3588,114 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = RegisterTransitGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterTransitGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RejectAttachment
+
+        internal virtual RejectAttachmentResponse RejectAttachment(RejectAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<RejectAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Rejects a core network attachment request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RejectAttachment">REST API Reference for RejectAttachment Operation</seealso>
+        public virtual Task<RejectAttachmentResponse> RejectAttachmentAsync(RejectAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreCoreNetworkPolicyVersion
+
+        internal virtual RestoreCoreNetworkPolicyVersionResponse RestoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreCoreNetworkPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreCoreNetworkPolicyVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restores a previous policy version as a new, immutable version of a core network policy.
+        /// A subsequent change set is created showing the differences between the LIVE policy
+        /// and restored policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreCoreNetworkPolicyVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreCoreNetworkPolicyVersion service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RestoreCoreNetworkPolicyVersion">REST API Reference for RestoreCoreNetworkPolicyVersion Operation</seealso>
+        public virtual Task<RestoreCoreNetworkPolicyVersionResponse> RestoreCoreNetworkPolicyVersionAsync(RestoreCoreNetworkPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreCoreNetworkPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreCoreNetworkPolicyVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2293,6 +3914,59 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCoreNetwork
+
+        internal virtual UpdateCoreNetworkResponse UpdateCoreNetwork(UpdateCoreNetworkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCoreNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCoreNetworkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the description of a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCoreNetwork service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCoreNetwork service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateCoreNetwork">REST API Reference for UpdateCoreNetwork Operation</seealso>
+        public virtual Task<UpdateCoreNetworkResponse> UpdateCoreNetworkAsync(UpdateCoreNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCoreNetworkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCoreNetworkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCoreNetworkResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2565,6 +4239,59 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = UpdateSiteResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSiteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVpcAttachment
+
+        internal virtual UpdateVpcAttachmentResponse UpdateVpcAttachment(UpdateVpcAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVpcAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVpcAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateVpcAttachment">REST API Reference for UpdateVpcAttachment Operation</seealso>
+        public virtual Task<UpdateVpcAttachmentResponse> UpdateVpcAttachmentAsync(UpdateVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVpcAttachmentResponse>(request, options, cancellationToken);
         }
 
         #endregion

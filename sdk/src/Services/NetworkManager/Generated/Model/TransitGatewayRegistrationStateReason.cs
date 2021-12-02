@@ -60,6 +60,7 @@ namespace Amazon.NetworkManager.Model
         /// The message for the state reason.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Message
         {
             get { return this._message; }

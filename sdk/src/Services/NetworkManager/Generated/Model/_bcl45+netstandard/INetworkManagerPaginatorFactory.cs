@@ -36,6 +36,16 @@ namespace Amazon.NetworkManager.Model
         IGetConnectionsPaginator GetConnections(GetConnectionsRequest request);
 
         /// <summary>
+        /// Paginator for GetConnectPeerAssociations operation
+        ///</summary>
+        IGetConnectPeerAssociationsPaginator GetConnectPeerAssociations(GetConnectPeerAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for GetCoreNetworkChangeSet operation
+        ///</summary>
+        IGetCoreNetworkChangeSetPaginator GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request);
+
+        /// <summary>
         /// Paginator for GetCustomerGatewayAssociations operation
         ///</summary>
         IGetCustomerGatewayAssociationsPaginator GetCustomerGatewayAssociations(GetCustomerGatewayAssociationsRequest request);
@@ -89,5 +99,25 @@ namespace Amazon.NetworkManager.Model
         /// Paginator for GetTransitGatewayRegistrations operation
         ///</summary>
         IGetTransitGatewayRegistrationsPaginator GetTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAttachments operation
+        ///</summary>
+        IListAttachmentsPaginator ListAttachments(ListAttachmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConnectPeers operation
+        ///</summary>
+        IListConnectPeersPaginator ListConnectPeers(ListConnectPeersRequest request);
+
+        /// <summary>
+        /// Paginator for ListCoreNetworkPolicyVersions operation
+        ///</summary>
+        IListCoreNetworkPolicyVersionsPaginator ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCoreNetworks operation
+        ///</summary>
+        IListCoreNetworksPaginator ListCoreNetworks(ListCoreNetworksRequest request);
     }
 }

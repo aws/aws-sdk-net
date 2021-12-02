@@ -45,6 +45,7 @@ namespace Amazon.NetworkManager.Model
         /// A unique identifier for the route, such as a CIDR block.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }
@@ -81,6 +82,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the prefix list.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string PrefixListId
         {
             get { return this._prefixListId; }

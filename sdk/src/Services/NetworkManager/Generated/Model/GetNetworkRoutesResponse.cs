@@ -33,10 +33,29 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetNetworkRoutesResponse : AmazonWebServiceResponse
     {
+        private CoreNetworkSegmentEdgeIdentifier _coreNetworkSegmentEdge;
         private List<NetworkRoute> _networkRoutes = new List<NetworkRoute>();
         private string _routeTableArn;
         private DateTime? _routeTableTimestamp;
         private RouteTableType _routeTableType;
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkSegmentEdge. 
+        /// <para>
+        /// Describes a core network segment edge.
+        /// </para>
+        /// </summary>
+        public CoreNetworkSegmentEdgeIdentifier CoreNetworkSegmentEdge
+        {
+            get { return this._coreNetworkSegmentEdge; }
+            set { this._coreNetworkSegmentEdge = value; }
+        }
+
+        // Check to see if CoreNetworkSegmentEdge property is set
+        internal bool IsSetCoreNetworkSegmentEdge()
+        {
+            return this._coreNetworkSegmentEdge != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NetworkRoutes. 
@@ -62,6 +81,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string RouteTableArn
         {
             get { return this._routeTableArn; }

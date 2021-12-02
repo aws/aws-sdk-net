@@ -87,6 +87,7 @@ namespace Amazon.NetworkManager.Model
         /// The description of the link.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -105,6 +106,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -123,6 +125,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Resource Name (ARN) of the link.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string LinkArn
         {
             get { return this._linkArn; }
@@ -141,6 +144,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the link.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string LinkId
         {
             get { return this._linkId; }
@@ -159,6 +163,7 @@ namespace Amazon.NetworkManager.Model
         /// The provider of the link.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Provider
         {
             get { return this._provider; }
@@ -177,6 +182,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the site.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string SiteId
         {
             get { return this._siteId; }
@@ -231,6 +237,7 @@ namespace Amazon.NetworkManager.Model
         /// The type of the link.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Type
         {
             get { return this._type; }

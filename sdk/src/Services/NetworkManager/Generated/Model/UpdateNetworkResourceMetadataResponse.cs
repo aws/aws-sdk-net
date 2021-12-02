@@ -60,6 +60,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

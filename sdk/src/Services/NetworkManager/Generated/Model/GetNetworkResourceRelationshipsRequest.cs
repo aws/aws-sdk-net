@@ -36,6 +36,7 @@ namespace Amazon.NetworkManager.Model
     {
         private string _accountId;
         private string _awsRegion;
+        private string _coreNetworkId;
         private string _globalNetworkId;
         private int? _maxResults;
         private string _nextToken;
@@ -49,6 +50,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -67,6 +69,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Web Services Region.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string AwsRegion
         {
             get { return this._awsRegion; }
@@ -80,12 +83,31 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CoreNetworkId. 
+        /// <para>
+        /// The ID of a core network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public string CoreNetworkId
+        {
+            get { return this._coreNetworkId; }
+            set { this._coreNetworkId = value; }
+        }
+
+        // Check to see if CoreNetworkId property is set
+        internal bool IsSetCoreNetworkId()
+        {
+            return this._coreNetworkId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GlobalNetworkId. 
         /// <para>
         /// The ID of the global network.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -123,6 +145,7 @@ namespace Amazon.NetworkManager.Model
         /// The token for the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -141,6 +164,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the registered gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string RegisteredGatewayArn
         {
             get { return this._registeredGatewayArn; }
@@ -159,6 +183,7 @@ namespace Amazon.NetworkManager.Model
         /// The ARN of the gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1500)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -242,6 +267,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

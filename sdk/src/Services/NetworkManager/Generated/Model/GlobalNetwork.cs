@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// Describes a global network.
+    /// Describes a global network. This is a single private network acting as a high-level
+    /// container for your network objects, including an Amazon Web Services-manged Core Network.
     /// </summary>
     public partial class GlobalNetwork
     {
@@ -64,6 +65,7 @@ namespace Amazon.NetworkManager.Model
         /// The description of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -82,6 +84,7 @@ namespace Amazon.NetworkManager.Model
         /// The Amazon Resource Name (ARN) of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public string GlobalNetworkArn
         {
             get { return this._globalNetworkArn; }
@@ -100,6 +103,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }

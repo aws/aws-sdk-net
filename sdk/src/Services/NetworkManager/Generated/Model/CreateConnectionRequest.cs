@@ -50,7 +50,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the second device in the connection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string ConnectedDeviceId
         {
             get { return this._connectedDeviceId; }
@@ -69,6 +69,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the link for the second device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string ConnectedLinkId
         {
             get { return this._connectedLinkId; }
@@ -91,6 +92,7 @@ namespace Amazon.NetworkManager.Model
         /// Length Constraints: Maximum length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -109,7 +111,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the first device in the connection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -128,7 +130,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -147,6 +149,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the link for the first device.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=50)]
         public string LinkId
         {
             get { return this._linkId; }

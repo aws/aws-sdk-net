@@ -60,6 +60,7 @@ namespace Amazon.NetworkManager.Model
         /// The resource type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ResourceType
         {
             get { return this._resourceType; }

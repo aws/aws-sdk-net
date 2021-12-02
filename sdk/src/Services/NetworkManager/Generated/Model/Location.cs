@@ -43,6 +43,7 @@ namespace Amazon.NetworkManager.Model
         /// The physical address.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Address
         {
             get { return this._address; }
@@ -61,6 +62,7 @@ namespace Amazon.NetworkManager.Model
         /// The latitude.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Latitude
         {
             get { return this._latitude; }
@@ -79,6 +81,7 @@ namespace Amazon.NetworkManager.Model
         /// The longitude.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Longitude
         {
             get { return this._longitude; }

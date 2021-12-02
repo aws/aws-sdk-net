@@ -60,6 +60,7 @@ namespace Amazon.NetworkManager.Model
         /// The token to use for the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

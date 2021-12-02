@@ -46,7 +46,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the device.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string DeviceId
         {
             get { return this._deviceId; }
@@ -65,7 +65,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -84,7 +84,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the link.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string LinkId
         {
             get { return this._linkId; }

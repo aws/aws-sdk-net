@@ -50,6 +50,7 @@ namespace Amazon.NetworkManager.Model
         /// Constraints: Maximum length of 256 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -68,7 +69,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the global network.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string GlobalNetworkId
         {
             get { return this._globalNetworkId; }
@@ -118,7 +119,7 @@ namespace Amazon.NetworkManager.Model
         /// The ID of your site.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public string SiteId
         {
             get { return this._siteId; }

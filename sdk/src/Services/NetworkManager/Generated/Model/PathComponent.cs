@@ -43,6 +43,7 @@ namespace Amazon.NetworkManager.Model
         /// The destination CIDR block in the route table.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }

@@ -130,7 +130,10 @@ namespace Amazon.NetworkManager.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property Context.
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// The specified resource could not be found.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Context
         {

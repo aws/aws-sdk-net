@@ -25,6 +25,320 @@ namespace Amazon.NetworkManager
 {
 
     /// <summary>
+    /// Constants used for properties of type AttachmentState.
+    /// </summary>
+    public class AttachmentState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState AVAILABLE = new AttachmentState("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState CREATING = new AttachmentState("CREATING");
+        /// <summary>
+        /// Constant DELETING for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState DELETING = new AttachmentState("DELETING");
+        /// <summary>
+        /// Constant FAILED for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState FAILED = new AttachmentState("FAILED");
+        /// <summary>
+        /// Constant PENDING_ATTACHMENT_ACCEPTANCE for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState PENDING_ATTACHMENT_ACCEPTANCE = new AttachmentState("PENDING_ATTACHMENT_ACCEPTANCE");
+        /// <summary>
+        /// Constant PENDING_NETWORK_UPDATE for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState PENDING_NETWORK_UPDATE = new AttachmentState("PENDING_NETWORK_UPDATE");
+        /// <summary>
+        /// Constant PENDING_TAG_ACCEPTANCE for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState PENDING_TAG_ACCEPTANCE = new AttachmentState("PENDING_TAG_ACCEPTANCE");
+        /// <summary>
+        /// Constant REJECTED for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState REJECTED = new AttachmentState("REJECTED");
+        /// <summary>
+        /// Constant UPDATING for AttachmentState
+        /// </summary>
+        public static readonly AttachmentState UPDATING = new AttachmentState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentState FindValue(string value)
+        {
+            return FindValue<AttachmentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttachmentType.
+    /// </summary>
+    public class AttachmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECT for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType CONNECT = new AttachmentType("CONNECT");
+        /// <summary>
+        /// Constant SITE_TO_SITE_VPN for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType SITE_TO_SITE_VPN = new AttachmentType("SITE_TO_SITE_VPN");
+        /// <summary>
+        /// Constant VPC for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType VPC = new AttachmentType("VPC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentType FindValue(string value)
+        {
+            return FindValue<AttachmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChangeAction.
+    /// </summary>
+    public class ChangeAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD for ChangeAction
+        /// </summary>
+        public static readonly ChangeAction ADD = new ChangeAction("ADD");
+        /// <summary>
+        /// Constant MODIFY for ChangeAction
+        /// </summary>
+        public static readonly ChangeAction MODIFY = new ChangeAction("MODIFY");
+        /// <summary>
+        /// Constant REMOVE for ChangeAction
+        /// </summary>
+        public static readonly ChangeAction REMOVE = new ChangeAction("REMOVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeAction FindValue(string value)
+        {
+            return FindValue<ChangeAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChangeSetState.
+    /// </summary>
+    public class ChangeSetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXECUTING for ChangeSetState
+        /// </summary>
+        public static readonly ChangeSetState EXECUTING = new ChangeSetState("EXECUTING");
+        /// <summary>
+        /// Constant EXECUTION_SUCCEEDED for ChangeSetState
+        /// </summary>
+        public static readonly ChangeSetState EXECUTION_SUCCEEDED = new ChangeSetState("EXECUTION_SUCCEEDED");
+        /// <summary>
+        /// Constant FAILED_GENERATION for ChangeSetState
+        /// </summary>
+        public static readonly ChangeSetState FAILED_GENERATION = new ChangeSetState("FAILED_GENERATION");
+        /// <summary>
+        /// Constant OUT_OF_DATE for ChangeSetState
+        /// </summary>
+        public static readonly ChangeSetState OUT_OF_DATE = new ChangeSetState("OUT_OF_DATE");
+        /// <summary>
+        /// Constant PENDING_GENERATION for ChangeSetState
+        /// </summary>
+        public static readonly ChangeSetState PENDING_GENERATION = new ChangeSetState("PENDING_GENERATION");
+        /// <summary>
+        /// Constant READY_TO_EXECUTE for ChangeSetState
+        /// </summary>
+        public static readonly ChangeSetState READY_TO_EXECUTE = new ChangeSetState("READY_TO_EXECUTE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeSetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeSetState FindValue(string value)
+        {
+            return FindValue<ChangeSetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeSetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChangeType.
+    /// </summary>
+    public class ChangeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT_MAPPING for ChangeType
+        /// </summary>
+        public static readonly ChangeType ATTACHMENT_MAPPING = new ChangeType("ATTACHMENT_MAPPING");
+        /// <summary>
+        /// Constant ATTACHMENT_ROUTE_PROPAGATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType ATTACHMENT_ROUTE_PROPAGATION = new ChangeType("ATTACHMENT_ROUTE_PROPAGATION");
+        /// <summary>
+        /// Constant ATTACHMENT_ROUTE_STATIC for ChangeType
+        /// </summary>
+        public static readonly ChangeType ATTACHMENT_ROUTE_STATIC = new ChangeType("ATTACHMENT_ROUTE_STATIC");
+        /// <summary>
+        /// Constant CORE_NETWORK_EDGE for ChangeType
+        /// </summary>
+        public static readonly ChangeType CORE_NETWORK_EDGE = new ChangeType("CORE_NETWORK_EDGE");
+        /// <summary>
+        /// Constant CORE_NETWORK_SEGMENT for ChangeType
+        /// </summary>
+        public static readonly ChangeType CORE_NETWORK_SEGMENT = new ChangeType("CORE_NETWORK_SEGMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeType FindValue(string value)
+        {
+            return FindValue<ChangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionState.
     /// </summary>
     public class ConnectionState : ConstantClass
@@ -176,6 +490,230 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectPeerAssociationState.
+    /// </summary>
+    public class ConnectPeerAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ConnectPeerAssociationState
+        /// </summary>
+        public static readonly ConnectPeerAssociationState AVAILABLE = new ConnectPeerAssociationState("AVAILABLE");
+        /// <summary>
+        /// Constant DELETED for ConnectPeerAssociationState
+        /// </summary>
+        public static readonly ConnectPeerAssociationState DELETED = new ConnectPeerAssociationState("DELETED");
+        /// <summary>
+        /// Constant DELETING for ConnectPeerAssociationState
+        /// </summary>
+        public static readonly ConnectPeerAssociationState DELETING = new ConnectPeerAssociationState("DELETING");
+        /// <summary>
+        /// Constant PENDING for ConnectPeerAssociationState
+        /// </summary>
+        public static readonly ConnectPeerAssociationState PENDING = new ConnectPeerAssociationState("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectPeerAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectPeerAssociationState FindValue(string value)
+        {
+            return FindValue<ConnectPeerAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectPeerAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectPeerState.
+    /// </summary>
+    public class ConnectPeerState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ConnectPeerState
+        /// </summary>
+        public static readonly ConnectPeerState AVAILABLE = new ConnectPeerState("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for ConnectPeerState
+        /// </summary>
+        public static readonly ConnectPeerState CREATING = new ConnectPeerState("CREATING");
+        /// <summary>
+        /// Constant DELETING for ConnectPeerState
+        /// </summary>
+        public static readonly ConnectPeerState DELETING = new ConnectPeerState("DELETING");
+        /// <summary>
+        /// Constant FAILED for ConnectPeerState
+        /// </summary>
+        public static readonly ConnectPeerState FAILED = new ConnectPeerState("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectPeerState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectPeerState FindValue(string value)
+        {
+            return FindValue<ConnectPeerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectPeerState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CoreNetworkPolicyAlias.
+    /// </summary>
+    public class CoreNetworkPolicyAlias : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LATEST for CoreNetworkPolicyAlias
+        /// </summary>
+        public static readonly CoreNetworkPolicyAlias LATEST = new CoreNetworkPolicyAlias("LATEST");
+        /// <summary>
+        /// Constant LIVE for CoreNetworkPolicyAlias
+        /// </summary>
+        public static readonly CoreNetworkPolicyAlias LIVE = new CoreNetworkPolicyAlias("LIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CoreNetworkPolicyAlias(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoreNetworkPolicyAlias FindValue(string value)
+        {
+            return FindValue<CoreNetworkPolicyAlias>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoreNetworkPolicyAlias(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CoreNetworkState.
+    /// </summary>
+    public class CoreNetworkState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for CoreNetworkState
+        /// </summary>
+        public static readonly CoreNetworkState AVAILABLE = new CoreNetworkState("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for CoreNetworkState
+        /// </summary>
+        public static readonly CoreNetworkState CREATING = new CoreNetworkState("CREATING");
+        /// <summary>
+        /// Constant DELETING for CoreNetworkState
+        /// </summary>
+        public static readonly CoreNetworkState DELETING = new CoreNetworkState("DELETING");
+        /// <summary>
+        /// Constant UPDATING for CoreNetworkState
+        /// </summary>
+        public static readonly CoreNetworkState UPDATING = new CoreNetworkState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CoreNetworkState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoreNetworkState FindValue(string value)
+        {
+            return FindValue<CoreNetworkState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoreNetworkState(string value)
         {
             return FindValue(value);
         }
@@ -719,6 +1257,10 @@ namespace Amazon.NetworkManager
     {
 
         /// <summary>
+        /// Constant CORE_NETWORK_SEGMENT for RouteTableType
+        /// </summary>
+        public static readonly RouteTableType CORE_NETWORK_SEGMENT = new RouteTableType("CORE_NETWORK_SEGMENT");
+        /// <summary>
         /// Constant TRANSIT_GATEWAY_ROUTE_TABLE for RouteTableType
         /// </summary>
         public static readonly RouteTableType TRANSIT_GATEWAY_ROUTE_TABLE = new RouteTableType("TRANSIT_GATEWAY_ROUTE_TABLE");
@@ -980,6 +1522,52 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransitGatewayRegistrationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TunnelProtocol.
+    /// </summary>
+    public class TunnelProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GRE for TunnelProtocol
+        /// </summary>
+        public static readonly TunnelProtocol GRE = new TunnelProtocol("GRE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TunnelProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TunnelProtocol FindValue(string value)
+        {
+            return FindValue<TunnelProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TunnelProtocol(string value)
         {
             return FindValue(value);
         }
