@@ -32,6 +32,12 @@ namespace Amazon.Kendra.Model
     /// Container for the parameters to the SubmitFeedback operation.
     /// Enables you to provide feedback to Amazon Kendra to improve the performance of your
     /// index.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>SubmitFeedback</code> is currently not supported in the Amazon Web Services
+    /// GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class SubmitFeedbackRequest : AmazonKendraRequest
     {

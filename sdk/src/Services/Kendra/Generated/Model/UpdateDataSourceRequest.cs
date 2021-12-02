@@ -35,6 +35,7 @@ namespace Amazon.Kendra.Model
     public partial class UpdateDataSourceRequest : AmazonKendraRequest
     {
         private DataSourceConfiguration _configuration;
+        private CustomDocumentEnrichmentConfiguration _customDocumentEnrichmentConfiguration;
         private string _description;
         private string _id;
         private string _indexId;
@@ -44,7 +45,10 @@ namespace Amazon.Kendra.Model
         private string _schedule;
 
         /// <summary>
-        /// Gets and sets the property Configuration.
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Configuration information for an Amazon Kendra data source.
+        /// </para>
         /// </summary>
         public DataSourceConfiguration Configuration
         {
@@ -56,6 +60,31 @@ namespace Amazon.Kendra.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDocumentEnrichmentConfiguration. 
+        /// <para>
+        /// Configuration information for altering document metadata and content during the document
+        /// ingestion process when you update a data source.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.
+        /// </para>
+        /// </summary>
+        public CustomDocumentEnrichmentConfiguration CustomDocumentEnrichmentConfiguration
+        {
+            get { return this._customDocumentEnrichmentConfiguration; }
+            set { this._customDocumentEnrichmentConfiguration = value; }
+        }
+
+        // Check to see if CustomDocumentEnrichmentConfiguration property is set
+        internal bool IsSetCustomDocumentEnrichmentConfiguration()
+        {
+            return this._customDocumentEnrichmentConfiguration != null;
         }
 
         /// <summary>
@@ -164,7 +193,7 @@ namespace Amazon.Kendra.Model
         /// resources on your behalf.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

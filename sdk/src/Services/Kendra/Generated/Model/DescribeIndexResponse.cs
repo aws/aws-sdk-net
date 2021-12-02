@@ -230,7 +230,7 @@ namespace Amazon.Kendra.Model
         /// to write to your Amazon Cloudwatch logs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -322,7 +322,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
         /// Shows whether you have enabled the configuration for fetching access levels of groups
-        /// and users from an AWS Single Sign-On identity source.
+        /// and users from an Amazon Web Services Single Sign On identity source.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

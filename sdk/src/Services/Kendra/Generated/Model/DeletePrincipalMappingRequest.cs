@@ -47,6 +47,11 @@ namespace Amazon.Kendra.Model
     /// You can update your internal list of users or sub groups and input this list when
     /// calling <code>PutPrincipalMapping</code>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web
+    /// Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class DeletePrincipalMappingRequest : AmazonKendraRequest
     {

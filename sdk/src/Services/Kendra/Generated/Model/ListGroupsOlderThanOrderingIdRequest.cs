@@ -32,6 +32,12 @@ namespace Amazon.Kendra.Model
     /// Container for the parameters to the ListGroupsOlderThanOrderingId operation.
     /// Provides a list of groups that are mapped to users before a given ordering or timestamp
     /// identifier.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>ListGroupsOlderThanOrderingId</code> is currently not supported in the Amazon
+    /// Web Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class ListGroupsOlderThanOrderingIdRequest : AmazonKendraRequest
     {

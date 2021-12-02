@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Configuration information for a Amazon Kendra data source.
+    /// Configuration information for an Amazon Kendra data source.
     /// </summary>
     public partial class DataSourceConfiguration
     {

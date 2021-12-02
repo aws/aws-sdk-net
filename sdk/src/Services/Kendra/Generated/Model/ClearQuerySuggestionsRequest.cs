@@ -40,6 +40,11 @@ namespace Amazon.Kendra.Model
     /// suggestions, then please allow Amazon Kendra to collect enough queries to learn new
     /// suggestions.
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>ClearQuerySuggestions</code> is currently not supported in the Amazon Web Services
+    /// GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class ClearQuerySuggestionsRequest : AmazonKendraRequest
     {

@@ -182,7 +182,7 @@ namespace Amazon.Kendra.Model
         /// Roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1284)]
+        [AWSProperty(Required=true, Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

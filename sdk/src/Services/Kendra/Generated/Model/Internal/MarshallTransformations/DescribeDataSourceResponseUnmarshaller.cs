@@ -63,6 +63,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomDocumentEnrichmentConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomDocumentEnrichmentConfigurationUnmarshaller.Instance;
+                    response.CustomDocumentEnrichmentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

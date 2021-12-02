@@ -52,6 +52,30 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Paginator for ListEntityPersonas operation
+        ///</summary>
+        public IListEntityPersonasPaginator ListEntityPersonas(ListEntityPersonasRequest request) 
+        {
+            return new ListEntityPersonasPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExperienceEntities operation
+        ///</summary>
+        public IListExperienceEntitiesPaginator ListExperienceEntities(ListExperienceEntitiesRequest request) 
+        {
+            return new ListExperienceEntitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExperiences operation
+        ///</summary>
+        public IListExperiencesPaginator ListExperiences(ListExperiencesRequest request) 
+        {
+            return new ListExperiencesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListIndices operation
         ///</summary>
         public IListIndicesPaginator ListIndices(ListIndicesRequest request) 

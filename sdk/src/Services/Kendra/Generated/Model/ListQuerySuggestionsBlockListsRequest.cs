@@ -37,6 +37,11 @@ namespace Amazon.Kendra.Model
     /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
     /// for Amazon Kendra</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>ListQuerySuggestionsBlockLists</code> is currently not supported in the Amazon
+    /// Web Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class ListQuerySuggestionsBlockListsRequest : AmazonKendraRequest
     {

@@ -37,6 +37,11 @@ namespace Amazon.Kendra.Model
     /// A deleted block list might not take effect right away. Amazon Kendra needs to refresh
     /// the entire suggestions list to add back the queries that were previously blocked.
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+    /// Web Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class DeleteQuerySuggestionsBlockListRequest : AmazonKendraRequest
     {

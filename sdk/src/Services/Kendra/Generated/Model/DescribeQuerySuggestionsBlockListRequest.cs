@@ -36,6 +36,11 @@ namespace Amazon.Kendra.Model
     /// <para>
     /// This is used to check the current settings that are applied to a block list.
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
+    /// Amazon Web Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class DescribeQuerySuggestionsBlockListRequest : AmazonKendraRequest
     {

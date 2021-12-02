@@ -48,6 +48,11 @@ namespace Amazon.Kendra.Model
     /// Amazon Kendra supports partial updates, so you only need to provide the fields you
     /// want to update.
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+    /// Web Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class UpdateQuerySuggestionsBlockListRequest : AmazonKendraRequest
     {
@@ -141,7 +146,7 @@ namespace Amazon.Kendra.Model
         /// in S3.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

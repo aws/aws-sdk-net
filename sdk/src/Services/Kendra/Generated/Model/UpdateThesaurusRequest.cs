@@ -123,7 +123,7 @@ namespace Amazon.Kendra.Model
         /// The updated role ARN of the thesaurus.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

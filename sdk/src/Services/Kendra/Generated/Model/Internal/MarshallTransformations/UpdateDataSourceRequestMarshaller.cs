@@ -78,6 +78,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCustomDocumentEnrichmentConfiguration())
+                {
+                    context.Writer.WritePropertyName("CustomDocumentEnrichmentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomDocumentEnrichmentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomDocumentEnrichmentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

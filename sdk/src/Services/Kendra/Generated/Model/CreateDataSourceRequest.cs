@@ -42,11 +42,18 @@ namespace Amazon.Kendra.Model
     ///  <code>CreateDataSource</code> is a synchronous operation. The operation returns 200
     /// if the data source was successfully created. Otherwise, an exception is raised.
     /// </para>
+    ///  
+    /// <para>
+    /// Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
+    /// data sources are the only supported data sources in the Amazon Web Services GovCloud
+    /// (US-West) region.
+    /// </para>
     /// </summary>
     public partial class CreateDataSourceRequest : AmazonKendraRequest
     {
         private string _clientToken;
         private DataSourceConfiguration _configuration;
+        private CustomDocumentEnrichmentConfiguration _customDocumentEnrichmentConfiguration;
         private string _description;
         private string _indexId;
         private string _languageCode;
@@ -103,6 +110,31 @@ namespace Amazon.Kendra.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDocumentEnrichmentConfiguration. 
+        /// <para>
+        /// Configuration information for altering document metadata and content during the document
+        /// ingestion process when you create a data source.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.
+        /// </para>
+        /// </summary>
+        public CustomDocumentEnrichmentConfiguration CustomDocumentEnrichmentConfiguration
+        {
+            get { return this._customDocumentEnrichmentConfiguration; }
+            set { this._customDocumentEnrichmentConfiguration = value; }
+        }
+
+        // Check to see if CustomDocumentEnrichmentConfiguration property is set
+        internal bool IsSetCustomDocumentEnrichmentConfiguration()
+        {
+            return this._customDocumentEnrichmentConfiguration != null;
         }
 
         /// <summary>
@@ -203,7 +235,7 @@ namespace Amazon.Kendra.Model
         /// The <code>RoleArn</code> parameter is required for all other data sources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

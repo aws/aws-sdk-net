@@ -42,6 +42,150 @@ namespace Amazon.Kendra
         IKendraPaginatorFactory Paginators { get; }
 
         
+        #region  AssociateEntitiesToExperience
+
+
+        /// <summary>
+        /// Grants users or groups in your Amazon Web Services SSO identity source access to your
+        /// Amazon Kendra experience. You can create an Amazon Kendra experience such as a search
+        /// application. For more information on creating a search application experience, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEntitiesToExperience service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEntitiesToExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">REST API Reference for AssociateEntitiesToExperience Operation</seealso>
+        AssociateEntitiesToExperienceResponse AssociateEntitiesToExperience(AssociateEntitiesToExperienceRequest request);
+
+
+
+        /// <summary>
+        /// Grants users or groups in your Amazon Web Services SSO identity source access to your
+        /// Amazon Kendra experience. You can create an Amazon Kendra experience such as a search
+        /// application. For more information on creating a search application experience, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEntitiesToExperience service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEntitiesToExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience">REST API Reference for AssociateEntitiesToExperience Operation</seealso>
+        Task<AssociateEntitiesToExperienceResponse> AssociateEntitiesToExperienceAsync(AssociateEntitiesToExperienceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociatePersonasToEntities
+
+
+        /// <summary>
+        /// Defines the specific permissions of users or groups in your Amazon Web Services SSO
+        /// identity source with access to your Amazon Kendra experience. You can create an Amazon
+        /// Kendra experience such as a search application. For more information on creating a
+        /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePersonasToEntities service method.</param>
+        /// 
+        /// <returns>The response from the AssociatePersonasToEntities service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">REST API Reference for AssociatePersonasToEntities Operation</seealso>
+        AssociatePersonasToEntitiesResponse AssociatePersonasToEntities(AssociatePersonasToEntitiesRequest request);
+
+
+
+        /// <summary>
+        /// Defines the specific permissions of users or groups in your Amazon Web Services SSO
+        /// identity source with access to your Amazon Kendra experience. You can create an Amazon
+        /// Kendra experience such as a search application. For more information on creating a
+        /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePersonasToEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociatePersonasToEntities service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities">REST API Reference for AssociatePersonasToEntities Operation</seealso>
+        Task<AssociatePersonasToEntitiesResponse> AssociatePersonasToEntitiesAsync(AssociatePersonasToEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchDeleteDocument
 
 
@@ -328,6 +472,11 @@ namespace Amazon.Kendra
         /// suggestions, then please allow Amazon Kendra to collect enough queries to learn new
         /// suggestions.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>ClearQuerySuggestions</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClearQuerySuggestions service method.</param>
         /// 
@@ -365,6 +514,11 @@ namespace Amazon.Kendra
         /// to the query log from the time you cleared suggestions. If you do not see any new
         /// suggestions, then please allow Amazon Kendra to collect enough queries to learn new
         /// suggestions.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ClearQuerySuggestions</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClearQuerySuggestions service method.</param>
@@ -412,6 +566,12 @@ namespace Amazon.Kendra
         ///  <code>CreateDataSource</code> is a synchronous operation. The operation returns 200
         /// if the data source was successfully created. Otherwise, an exception is raised.
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
+        /// data sources are the only supported data sources in the Amazon Web Services GovCloud
+        /// (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// 
@@ -458,6 +618,12 @@ namespace Amazon.Kendra
         ///  <code>CreateDataSource</code> is a synchronous operation. The operation returns 200
         /// if the data source was successfully created. Otherwise, an exception is raised.
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
+        /// data sources are the only supported data sources in the Amazon Web Services GovCloud
+        /// (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -491,6 +657,80 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateExperience
+
+
+        /// <summary>
+        /// Creates an Amazon Kendra experience such as a search application. For more information
+        /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExperience service method.</param>
+        /// 
+        /// <returns>The response from the CreateExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">REST API Reference for CreateExperience Operation</seealso>
+        CreateExperienceResponse CreateExperience(CreateExperienceRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Amazon Kendra experience such as a search application. For more information
+        /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExperience service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience">REST API Reference for CreateExperience Operation</seealso>
+        Task<CreateExperienceResponse> CreateExperienceAsync(CreateExperienceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -673,6 +913,11 @@ namespace Amazon.Kendra
         /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
         /// for Amazon Kendra</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuerySuggestionsBlockList service method.</param>
         /// 
@@ -720,6 +965,11 @@ namespace Amazon.Kendra
         /// <para>
         /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
         /// for Amazon Kendra</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuerySuggestionsBlockList service method.</param>
@@ -898,6 +1148,74 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DeleteExperience
+
+
+        /// <summary>
+        /// Deletes your Amazon Kendra experience such as a search application. For more information
+        /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExperience service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">REST API Reference for DeleteExperience Operation</seealso>
+        DeleteExperienceResponse DeleteExperience(DeleteExperienceRequest request);
+
+
+
+        /// <summary>
+        /// Deletes your Amazon Kendra experience such as a search application. For more information
+        /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExperience service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience">REST API Reference for DeleteExperience Operation</seealso>
+        Task<DeleteExperienceResponse> DeleteExperienceAsync(DeleteExperienceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteFaq
 
 
@@ -1051,6 +1369,11 @@ namespace Amazon.Kendra
         /// You can update your internal list of users or sub groups and input this list when
         /// calling <code>PutPrincipalMapping</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web
+        /// Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePrincipalMapping service method.</param>
         /// 
@@ -1096,6 +1419,11 @@ namespace Amazon.Kendra
         /// You can update your internal list of users or sub groups and input this list when
         /// calling <code>PutPrincipalMapping</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web
+        /// Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePrincipalMapping service method.</param>
         /// <param name="cancellationToken">
@@ -1137,6 +1465,11 @@ namespace Amazon.Kendra
         /// A deleted block list might not take effect right away. Amazon Kendra needs to refresh
         /// the entire suggestions list to add back the queries that were previously blocked.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQuerySuggestionsBlockList service method.</param>
         /// 
@@ -1171,6 +1504,11 @@ namespace Amazon.Kendra
         /// <para>
         /// A deleted block list might not take effect right away. Amazon Kendra needs to refresh
         /// the entire suggestions list to add back the queries that were previously blocked.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQuerySuggestionsBlockList service method.</param>
@@ -1324,6 +1662,68 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DescribeExperience
+
+
+        /// <summary>
+        /// Gets information about your Amazon Kendra experience such as a search application.
+        /// For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExperience service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">REST API Reference for DescribeExperience Operation</seealso>
+        DescribeExperienceResponse DescribeExperience(DescribeExperienceRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about your Amazon Kendra experience such as a search application.
+        /// For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExperience service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience">REST API Reference for DescribeExperience Operation</seealso>
+        Task<DescribeExperienceResponse> DescribeExperienceAsync(DescribeExperienceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeFaq
 
 
@@ -1449,6 +1849,12 @@ namespace Amazon.Kendra
         /// processing or yet to be processed, when actions were last updated, when actions were
         /// received by Amazon Kendra, the latest action that should process and apply after other
         /// actions, and useful error messages if an action could not be processed.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DescribePrincipalMapping</code> is currently not supported in the Amazon Web
+        /// Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalMapping service method.</param>
         /// 
@@ -1479,6 +1885,12 @@ namespace Amazon.Kendra
         /// processing or yet to be processed, when actions were last updated, when actions were
         /// received by Amazon Kendra, the latest action that should process and apply after other
         /// actions, and useful error messages if an action could not be processed.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>DescribePrincipalMapping</code> is currently not supported in the Amazon Web
+        /// Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalMapping service method.</param>
         /// <param name="cancellationToken">
@@ -1516,6 +1928,11 @@ namespace Amazon.Kendra
         /// <para>
         /// This is used to check the current settings that are applied to a block list.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
+        /// Amazon Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsBlockList service method.</param>
         /// 
@@ -1546,6 +1963,11 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// This is used to check the current settings that are applied to a block list.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the
+        /// Amazon Web Services GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsBlockList service method.</param>
@@ -1584,6 +2006,11 @@ namespace Amazon.Kendra
         /// <para>
         /// This is used to check the current settings applied to query suggestions.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsConfig service method.</param>
         /// 
@@ -1614,6 +2041,11 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// This is used to check the current settings applied to query suggestions.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQuerySuggestionsConfig service method.</param>
@@ -1700,11 +2132,149 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DisassociateEntitiesFromExperience
+
+
+        /// <summary>
+        /// Prevents users or groups in your Amazon Web Services SSO identity source from accessing
+        /// your Amazon Kendra experience. You can create an Amazon Kendra experience such as
+        /// a search application. For more information on creating a search application experience,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEntitiesFromExperience service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEntitiesFromExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">REST API Reference for DisassociateEntitiesFromExperience Operation</seealso>
+        DisassociateEntitiesFromExperienceResponse DisassociateEntitiesFromExperience(DisassociateEntitiesFromExperienceRequest request);
+
+
+
+        /// <summary>
+        /// Prevents users or groups in your Amazon Web Services SSO identity source from accessing
+        /// your Amazon Kendra experience. You can create an Amazon Kendra experience such as
+        /// a search application. For more information on creating a search application experience,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEntitiesFromExperience service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEntitiesFromExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience">REST API Reference for DisassociateEntitiesFromExperience Operation</seealso>
+        Task<DisassociateEntitiesFromExperienceResponse> DisassociateEntitiesFromExperienceAsync(DisassociateEntitiesFromExperienceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociatePersonasFromEntities
+
+
+        /// <summary>
+        /// Removes the specific permissions of users or groups in your Amazon Web Services SSO
+        /// identity source with access to your Amazon Kendra experience. You can create an Amazon
+        /// Kendra experience such as a search application. For more information on creating a
+        /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePersonasFromEntities service method.</param>
+        /// 
+        /// <returns>The response from the DisassociatePersonasFromEntities service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">REST API Reference for DisassociatePersonasFromEntities Operation</seealso>
+        DisassociatePersonasFromEntitiesResponse DisassociatePersonasFromEntities(DisassociatePersonasFromEntitiesRequest request);
+
+
+
+        /// <summary>
+        /// Removes the specific permissions of users or groups in your Amazon Web Services SSO
+        /// identity source with access to your Amazon Kendra experience. You can create an Amazon
+        /// Kendra experience such as a search application. For more information on creating a
+        /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePersonasFromEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociatePersonasFromEntities service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities">REST API Reference for DisassociatePersonasFromEntities Operation</seealso>
+        Task<DisassociatePersonasFromEntitiesResponse> DisassociatePersonasFromEntitiesAsync(DisassociatePersonasFromEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetQuerySuggestions
 
 
         /// <summary>
         /// Fetches the queries that are suggested to your users.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQuerySuggestions service method.</param>
         /// 
@@ -1737,6 +2307,12 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Fetches the queries that are suggested to your users.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQuerySuggestions service method.</param>
         /// <param name="cancellationToken">
@@ -1767,6 +2343,60 @@ namespace Amazon.Kendra
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions">REST API Reference for GetQuerySuggestions Operation</seealso>
         Task<GetQuerySuggestionsResponse> GetQuerySuggestionsAsync(GetQuerySuggestionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSnapshots
+
+
+        /// <summary>
+        /// Retrieves search metrics data. The data provides a snapshot of how your users interact
+        /// with your search application and how effective the application is.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSnapshots service method.</param>
+        /// 
+        /// <returns>The response from the GetSnapshots service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InvalidRequestException">
+        /// The input to the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">REST API Reference for GetSnapshots Operation</seealso>
+        GetSnapshotsResponse GetSnapshots(GetSnapshotsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves search metrics data. The data provides a snapshot of how your users interact
+        /// with your search application and how effective the application is.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSnapshots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSnapshots service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InvalidRequestException">
+        /// The input to the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots">REST API Reference for GetSnapshots Operation</seealso>
+        Task<GetSnapshotsResponse> GetSnapshotsAsync(GetSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1892,6 +2522,194 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  ListEntityPersonas
+
+
+        /// <summary>
+        /// Lists specific permissions of users and groups with access to your Amazon Kendra experience.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityPersonas service method.</param>
+        /// 
+        /// <returns>The response from the ListEntityPersonas service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">REST API Reference for ListEntityPersonas Operation</seealso>
+        ListEntityPersonasResponse ListEntityPersonas(ListEntityPersonasRequest request);
+
+
+
+        /// <summary>
+        /// Lists specific permissions of users and groups with access to your Amazon Kendra experience.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityPersonas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityPersonas service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas">REST API Reference for ListEntityPersonas Operation</seealso>
+        Task<ListEntityPersonasResponse> ListEntityPersonasAsync(ListEntityPersonasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListExperienceEntities
+
+
+        /// <summary>
+        /// Lists users or groups in your Amazon Web Services SSO identity source that are granted
+        /// access to your Amazon Kendra experience. You can create an Amazon Kendra experience
+        /// such as a search application. For more information on creating a search application
+        /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperienceEntities service method.</param>
+        /// 
+        /// <returns>The response from the ListExperienceEntities service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">REST API Reference for ListExperienceEntities Operation</seealso>
+        ListExperienceEntitiesResponse ListExperienceEntities(ListExperienceEntitiesRequest request);
+
+
+
+        /// <summary>
+        /// Lists users or groups in your Amazon Web Services SSO identity source that are granted
+        /// access to your Amazon Kendra experience. You can create an Amazon Kendra experience
+        /// such as a search application. For more information on creating a search application
+        /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperienceEntities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperienceEntities service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities">REST API Reference for ListExperienceEntities Operation</seealso>
+        Task<ListExperienceEntitiesResponse> ListExperienceEntitiesAsync(ListExperienceEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListExperiences
+
+
+        /// <summary>
+        /// Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra experience
+        /// such as a search application. For more information on creating a search application
+        /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperiences service method.</param>
+        /// 
+        /// <returns>The response from the ListExperiences service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">REST API Reference for ListExperiences Operation</seealso>
+        ListExperiencesResponse ListExperiences(ListExperiencesRequest request);
+
+
+
+        /// <summary>
+        /// Lists one or more Amazon Kendra experiences. You can create an Amazon Kendra experience
+        /// such as a search application. For more information on creating a search application
+        /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExperiences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExperiences service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences">REST API Reference for ListExperiences Operation</seealso>
+        Task<ListExperiencesResponse> ListExperiencesAsync(ListExperiencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListFaqs
 
 
@@ -1956,6 +2774,12 @@ namespace Amazon.Kendra
         /// <summary>
         /// Provides a list of groups that are mapped to users before a given ordering or timestamp
         /// identifier.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>ListGroupsOlderThanOrderingId</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupsOlderThanOrderingId service method.</param>
         /// 
@@ -1986,6 +2810,12 @@ namespace Amazon.Kendra
         /// <summary>
         /// Provides a list of groups that are mapped to users before a given ordering or timestamp
         /// identifier.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>ListGroupsOlderThanOrderingId</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupsOlderThanOrderingId service method.</param>
         /// <param name="cancellationToken">
@@ -2079,6 +2909,11 @@ namespace Amazon.Kendra
         /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
         /// for Amazon Kendra</a>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>ListQuerySuggestionsBlockLists</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQuerySuggestionsBlockLists service method.</param>
         /// 
@@ -2110,6 +2945,11 @@ namespace Amazon.Kendra
         /// <para>
         /// For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
         /// for Amazon Kendra</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ListQuerySuggestionsBlockLists</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQuerySuggestionsBlockLists service method.</param>
@@ -2283,6 +3123,11 @@ namespace Amazon.Kendra
         /// If more than five <code>PUT</code> actions for a group are currently processing, a
         /// validation exception is thrown.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPrincipalMapping service method.</param>
         /// 
@@ -2336,6 +3181,11 @@ namespace Amazon.Kendra
         /// <para>
         /// If more than five <code>PUT</code> actions for a group are currently processing, a
         /// validation exception is thrown.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPrincipalMapping service method.</param>
@@ -2642,6 +3492,12 @@ namespace Amazon.Kendra
         /// <summary>
         /// Enables you to provide feedback to Amazon Kendra to improve the performance of your
         /// index.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>SubmitFeedback</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitFeedback service method.</param>
         /// 
@@ -2672,6 +3528,12 @@ namespace Amazon.Kendra
         /// <summary>
         /// Enables you to provide feedback to Amazon Kendra to improve the performance of your
         /// index.
+        /// 
+        ///  
+        /// <para>
+        ///  <code>SubmitFeedback</code> is currently not supported in the Amazon Web Services
+        /// GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitFeedback service method.</param>
         /// <param name="cancellationToken">
@@ -2884,6 +3746,74 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  UpdateExperience
+
+
+        /// <summary>
+        /// Updates your Amazon Kendra experience such as a search application. For more information
+        /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExperience service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">REST API Reference for UpdateExperience Operation</seealso>
+        UpdateExperienceResponse UpdateExperience(UpdateExperienceRequest request);
+
+
+
+        /// <summary>
+        /// Updates your Amazon Kendra experience such as a search application. For more information
+        /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// a search experience with no code</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExperience service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExperience service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience">REST API Reference for UpdateExperience Operation</seealso>
+        Task<UpdateExperienceResponse> UpdateExperienceAsync(UpdateExperienceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateIndex
 
 
@@ -2976,6 +3906,11 @@ namespace Amazon.Kendra
         /// Amazon Kendra supports partial updates, so you only need to provide the fields you
         /// want to update.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsBlockList service method.</param>
         /// 
@@ -3021,6 +3956,11 @@ namespace Amazon.Kendra
         /// <para>
         /// Amazon Kendra supports partial updates, so you only need to provide the fields you
         /// want to update.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsBlockList service method.</param>
@@ -3078,6 +4018,11 @@ namespace Amazon.Kendra
         /// <para>
         /// You can still enable/disable query suggestions at any time.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsConfig service method.</param>
         /// 
@@ -3127,6 +4072,11 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// You can still enable/disable query suggestions at any time.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the Amazon
+        /// Web Services GovCloud (US-West) region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuerySuggestionsConfig service method.</param>

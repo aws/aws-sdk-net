@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code> &lt;EqualTo&gt;</code> 
+    ///  <code> &lt;EqualsTo&gt;</code> 
     /// </para>
     ///  </li> </ol> 
     /// <para>

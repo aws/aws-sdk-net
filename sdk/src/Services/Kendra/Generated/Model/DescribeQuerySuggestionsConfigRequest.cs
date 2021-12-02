@@ -36,6 +36,11 @@ namespace Amazon.Kendra.Model
     /// <para>
     /// This is used to check the current settings applied to query suggestions.
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>DescribeQuerySuggestionsConfig</code> is currently not supported in the Amazon
+    /// Web Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class DescribeQuerySuggestionsConfigRequest : AmazonKendraRequest
     {

@@ -71,6 +71,92 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type ConditionOperator.
+    /// </summary>
+    public class ConditionOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BeginsWith for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator BeginsWith = new ConditionOperator("BeginsWith");
+        /// <summary>
+        /// Constant Contains for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator Contains = new ConditionOperator("Contains");
+        /// <summary>
+        /// Constant Equals for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator Equals = new ConditionOperator("Equals");
+        /// <summary>
+        /// Constant Exists for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator Exists = new ConditionOperator("Exists");
+        /// <summary>
+        /// Constant GreaterThan for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator GreaterThan = new ConditionOperator("GreaterThan");
+        /// <summary>
+        /// Constant GreaterThanOrEquals for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator GreaterThanOrEquals = new ConditionOperator("GreaterThanOrEquals");
+        /// <summary>
+        /// Constant LessThan for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator LessThan = new ConditionOperator("LessThan");
+        /// <summary>
+        /// Constant LessThanOrEquals for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator LessThanOrEquals = new ConditionOperator("LessThanOrEquals");
+        /// <summary>
+        /// Constant NotContains for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator NotContains = new ConditionOperator("NotContains");
+        /// <summary>
+        /// Constant NotEquals for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator NotEquals = new ConditionOperator("NotEquals");
+        /// <summary>
+        /// Constant NotExists for ConditionOperator
+        /// </summary>
+        public static readonly ConditionOperator NotExists = new ConditionOperator("NotExists");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConditionOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConditionOperator FindValue(string value)
+        {
+            return FindValue<ConditionOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConditionOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfluenceAttachmentFieldName.
     /// </summary>
     public class ConfluenceAttachmentFieldName : ConstantClass
@@ -895,6 +981,102 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointType.
+    /// </summary>
+    public class EndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOME for EndpointType
+        /// </summary>
+        public static readonly EndpointType HOME = new EndpointType("HOME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointType FindValue(string value)
+        {
+            return FindValue<EndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EntityType.
+    /// </summary>
+    public class EntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUP for EntityType
+        /// </summary>
+        public static readonly EntityType GROUP = new EntityType("GROUP");
+        /// <summary>
+        /// Constant USER for EntityType
+        /// </summary>
+        public static readonly EntityType USER = new EntityType("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityType FindValue(string value)
+        {
+            return FindValue<EntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCode.
     /// </summary>
     public class ErrorCode : ConstantClass
@@ -938,6 +1120,64 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExperienceStatus.
+    /// </summary>
+    public class ExperienceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ExperienceStatus
+        /// </summary>
+        public static readonly ExperienceStatus ACTIVE = new ExperienceStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ExperienceStatus
+        /// </summary>
+        public static readonly ExperienceStatus CREATING = new ExperienceStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ExperienceStatus
+        /// </summary>
+        public static readonly ExperienceStatus DELETING = new ExperienceStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ExperienceStatus
+        /// </summary>
+        public static readonly ExperienceStatus FAILED = new ExperienceStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExperienceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExperienceStatus FindValue(string value)
+        {
+            return FindValue<ExperienceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExperienceStatus(string value)
         {
             return FindValue(value);
         }
@@ -1227,6 +1467,72 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type Interval.
+    /// </summary>
+    public class Interval : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONE_MONTH_AGO for Interval
+        /// </summary>
+        public static readonly Interval ONE_MONTH_AGO = new Interval("ONE_MONTH_AGO");
+        /// <summary>
+        /// Constant ONE_WEEK_AGO for Interval
+        /// </summary>
+        public static readonly Interval ONE_WEEK_AGO = new Interval("ONE_WEEK_AGO");
+        /// <summary>
+        /// Constant THIS_MONTH for Interval
+        /// </summary>
+        public static readonly Interval THIS_MONTH = new Interval("THIS_MONTH");
+        /// <summary>
+        /// Constant THIS_WEEK for Interval
+        /// </summary>
+        public static readonly Interval THIS_WEEK = new Interval("THIS_WEEK");
+        /// <summary>
+        /// Constant TWO_MONTHS_AGO for Interval
+        /// </summary>
+        public static readonly Interval TWO_MONTHS_AGO = new Interval("TWO_MONTHS_AGO");
+        /// <summary>
+        /// Constant TWO_WEEKS_AGO for Interval
+        /// </summary>
+        public static readonly Interval TWO_WEEKS_AGO = new Interval("TWO_WEEKS_AGO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Interval(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Interval FindValue(string value)
+        {
+            return FindValue<Interval>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Interval(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyLocation.
     /// </summary>
     public class KeyLocation : ConstantClass
@@ -1270,6 +1576,72 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyLocation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricType.
+    /// </summary>
+    public class MetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGG_QUERY_DOC_METRICS for MetricType
+        /// </summary>
+        public static readonly MetricType AGG_QUERY_DOC_METRICS = new MetricType("AGG_QUERY_DOC_METRICS");
+        /// <summary>
+        /// Constant DOCS_BY_CLICK_COUNT for MetricType
+        /// </summary>
+        public static readonly MetricType DOCS_BY_CLICK_COUNT = new MetricType("DOCS_BY_CLICK_COUNT");
+        /// <summary>
+        /// Constant QUERIES_BY_COUNT for MetricType
+        /// </summary>
+        public static readonly MetricType QUERIES_BY_COUNT = new MetricType("QUERIES_BY_COUNT");
+        /// <summary>
+        /// Constant QUERIES_BY_ZERO_CLICK_RATE for MetricType
+        /// </summary>
+        public static readonly MetricType QUERIES_BY_ZERO_CLICK_RATE = new MetricType("QUERIES_BY_ZERO_CLICK_RATE");
+        /// <summary>
+        /// Constant QUERIES_BY_ZERO_RESULT_RATE for MetricType
+        /// </summary>
+        public static readonly MetricType QUERIES_BY_ZERO_RESULT_RATE = new MetricType("QUERIES_BY_ZERO_RESULT_RATE");
+        /// <summary>
+        /// Constant TREND_QUERY_DOC_METRICS for MetricType
+        /// </summary>
+        public static readonly MetricType TREND_QUERY_DOC_METRICS = new MetricType("TREND_QUERY_DOC_METRICS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricType FindValue(string value)
+        {
+            return FindValue<MetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricType(string value)
         {
             return FindValue(value);
         }
@@ -1370,6 +1742,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Order(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Persona.
+    /// </summary>
+    public class Persona : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OWNER for Persona
+        /// </summary>
+        public static readonly Persona OWNER = new Persona("OWNER");
+        /// <summary>
+        /// Constant VIEWER for Persona
+        /// </summary>
+        public static readonly Persona VIEWER = new Persona("VIEWER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Persona(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Persona FindValue(string value)
+        {
+            return FindValue<Persona>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Persona(string value)
         {
             return FindValue(value);
         }

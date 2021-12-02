@@ -147,11 +147,11 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">AWS
-        /// Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>.
-        /// Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can
-        /// also set up a new Amazon WorkDocs directory in the AWS Directory Service console and
-        /// enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.
+        /// You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory
+        /// Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
+        /// WorkDocs site directory has an ID, which is the organization ID. You can also set
+        /// up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon
+        /// WorkDocs site for the directory in the Amazon WorkDocs console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

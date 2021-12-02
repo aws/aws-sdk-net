@@ -184,7 +184,7 @@ namespace Amazon.Kendra.Model
         /// The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials
         /// should be a user/password pair. If you use SharePoint Server, you also need to provide
         /// the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-        /// a Microsoft SharePoint Data Source</a>. For more information about Secrets Manager,
+        /// a Microsoft SharePoint Data Source</a>. For more information about Secrets Manager
         /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
         /// What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.
         /// </para>

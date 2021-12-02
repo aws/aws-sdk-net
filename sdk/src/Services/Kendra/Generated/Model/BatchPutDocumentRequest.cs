@@ -48,9 +48,35 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchPutDocumentRequest : AmazonKendraRequest
     {
+        private CustomDocumentEnrichmentConfiguration _customDocumentEnrichmentConfiguration;
         private List<Document> _documents = new List<Document>();
         private string _indexId;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property CustomDocumentEnrichmentConfiguration. 
+        /// <para>
+        /// Configuration information for altering your document metadata and content during the
+        /// document ingestion process when you use the <code>BatchPutDocument</code> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on how to create, modify and delete document metadata, or make
+        /// other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing
+        /// document metadata during the ingestion process</a>.
+        /// </para>
+        /// </summary>
+        public CustomDocumentEnrichmentConfiguration CustomDocumentEnrichmentConfiguration
+        {
+            get { return this._customDocumentEnrichmentConfiguration; }
+            set { this._customDocumentEnrichmentConfiguration = value; }
+        }
+
+        // Check to see if CustomDocumentEnrichmentConfiguration property is set
+        internal bool IsSetCustomDocumentEnrichmentConfiguration()
+        {
+            return this._customDocumentEnrichmentConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Documents. 
@@ -126,7 +152,7 @@ namespace Amazon.Kendra.Model
         /// Roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

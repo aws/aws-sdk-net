@@ -123,7 +123,7 @@ namespace Amazon.Kendra.Model
         /// The Amazon Resource Name (arn) of the secret.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string SecretManagerArn
         {
             get { return this._secretManagerArn; }

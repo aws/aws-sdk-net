@@ -209,7 +209,7 @@ namespace Amazon.Kendra.Model
         /// Token Service) assume role permissions to Amazon Kendra.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }

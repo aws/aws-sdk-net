@@ -31,6 +31,12 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the GetQuerySuggestions operation.
     /// Fetches the queries that are suggested to your users.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services
+    /// GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class GetQuerySuggestionsRequest : AmazonKendraRequest
     {

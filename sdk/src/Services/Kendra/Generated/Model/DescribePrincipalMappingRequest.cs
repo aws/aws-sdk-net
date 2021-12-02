@@ -35,6 +35,12 @@ namespace Amazon.Kendra.Model
     /// processing or yet to be processed, when actions were last updated, when actions were
     /// received by Amazon Kendra, the latest action that should process and apply after other
     /// actions, and useful error messages if an action could not be processed.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>DescribePrincipalMapping</code> is currently not supported in the Amazon Web
+    /// Services GovCloud (US-West) region.
+    /// </para>
     /// </summary>
     public partial class DescribePrincipalMappingRequest : AmazonKendraRequest
     {

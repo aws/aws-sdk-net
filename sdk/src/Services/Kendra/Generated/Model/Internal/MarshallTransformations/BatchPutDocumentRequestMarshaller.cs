@@ -67,6 +67,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomDocumentEnrichmentConfiguration())
+                {
+                    context.Writer.WritePropertyName("CustomDocumentEnrichmentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomDocumentEnrichmentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomDocumentEnrichmentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDocuments())
                 {
                     context.Writer.WritePropertyName("Documents");
