@@ -48,7 +48,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property AnomalyReportedTimeRange. 
         /// <para>
-        ///  A <code>AnomalyReportedTimeRange</code> object that specifies the time range between
+        ///  An <code>AnomalyReportedTimeRange</code> object that specifies the time range between
         /// when the anomaly is opened and the time when it is closed. 
         /// </para>
         /// </summary>
@@ -170,7 +170,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        ///  The severity of a proactive anomaly. 
+        /// The severity of the anomaly. The severity of anomalies that generate an insight determine
+        /// that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+        /// insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.
         /// </para>
         /// </summary>
         public AnomalySeverity Severity

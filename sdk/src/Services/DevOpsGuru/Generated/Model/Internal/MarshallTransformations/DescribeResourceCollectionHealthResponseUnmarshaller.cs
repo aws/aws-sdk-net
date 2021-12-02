@@ -69,6 +69,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     response.Service = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TagHealth, TagHealthUnmarshaller>(TagHealthUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

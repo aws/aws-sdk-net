@@ -39,8 +39,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// This is enum of the status showing whether the metric value pair list has Partial
-        /// or Complete data or there was an error.
+        /// This is an enum of the status showing whether the metric value pair list has partial
+        /// or complete data, or if there was an error.
         /// </para>
         /// </summary>
         public CloudWatchMetricDataStatusCode StatusCode
@@ -58,7 +58,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property TimestampMetricValuePairList. 
         /// <para>
-        /// This is a list of cloudwatch metric values at given timestamp.
+        /// This is a list of Amazon CloudWatch metric values at given timestamp.
         /// </para>
         /// </summary>
         public List<TimestampMetricValuePair> TimestampMetricValuePairList

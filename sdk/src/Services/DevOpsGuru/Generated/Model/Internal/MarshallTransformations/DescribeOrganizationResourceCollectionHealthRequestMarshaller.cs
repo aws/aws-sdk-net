@@ -59,7 +59,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/organization/health/resource-collection/";
+            request.ResourcePath = "/organization/health/resource-collection";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

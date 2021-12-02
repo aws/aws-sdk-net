@@ -70,6 +70,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnomalyReportedTimeRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AnomalyResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AnomalyResource, AnomalyResourceUnmarshaller>(AnomalyResourceUnmarshaller.Instance);
+                    unmarshalledObject.AnomalyResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AnomalyTimeRange", targetDepth))
                 {
                     var unmarshaller = AnomalyTimeRangeUnmarshaller.Instance;
@@ -82,10 +88,28 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatedInsightId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CausalAnomalyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CausalAnomalyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourceCollection", targetDepth))
@@ -110,6 +134,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

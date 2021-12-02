@@ -57,7 +57,11 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the resource. 
+        ///  The type of the resource. Resource types take the same form that is used by Amazon
+        /// Web Services CloudFormation resource type identifiers, <code>service-provider::service-name::data-type-name</code>.
+        /// For example, <code>AWS::RDS::DBCluster</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the <i>Amazon Web Services
+        /// CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string Type

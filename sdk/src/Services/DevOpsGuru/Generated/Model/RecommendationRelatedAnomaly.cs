@@ -33,8 +33,28 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class RecommendationRelatedAnomaly
     {
+        private string _anomalyId;
         private List<RecommendationRelatedAnomalyResource> _resources = new List<RecommendationRelatedAnomalyResource>();
         private List<RecommendationRelatedAnomalySourceDetail> _sourceDetails = new List<RecommendationRelatedAnomalySourceDetail>();
+
+        /// <summary>
+        /// Gets and sets the property AnomalyId. 
+        /// <para>
+        /// The ID of an anomaly that generated the insight with this recommendation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string AnomalyId
+        {
+            get { return this._anomalyId; }
+            set { this._anomalyId = value; }
+        }
+
+        // Check to see if AnomalyId property is set
+        internal bool IsSetAnomalyId()
+        {
+            return this._anomalyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Resources. 

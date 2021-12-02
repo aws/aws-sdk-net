@@ -47,6 +47,12 @@ namespace Amazon.DevOpsGuru.Model
         public IPaginatedEnumerable<string> StackNames => 
             new PaginatedResultKeyResponse<GetResourceCollectionResponse, string>(this, (i) => i.ResourceCollection.CloudFormation.StackNames);
 
+        /// <summary>
+        /// Enumerable containing all of the Tags
+        /// </summary>
+        public IPaginatedEnumerable<TagCollectionFilter> Tags => 
+            new PaginatedResultKeyResponse<GetResourceCollectionResponse, TagCollectionFilter>(this, (i) => i.ResourceCollection.Tags);
+
         internal GetResourceCollectionPaginator(IAmazonDevOpsGuru client, GetResourceCollectionRequest request)
         {
             this._client = client;

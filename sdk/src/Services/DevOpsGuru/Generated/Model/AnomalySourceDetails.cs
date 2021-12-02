@@ -30,17 +30,17 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Details about the source of the anomalous operational data that triggered the anomaly.
-    /// The one supported source is Amazon CloudWatch metrics.
     /// </summary>
     public partial class AnomalySourceDetails
     {
         private List<CloudWatchMetricsDetail> _cloudWatchMetrics = new List<CloudWatchMetricsDetail>();
+        private List<PerformanceInsightsMetricsDetail> _performanceInsightsMetrics = new List<PerformanceInsightsMetricsDetail>();
 
         /// <summary>
         /// Gets and sets the property CloudWatchMetrics. 
         /// <para>
-        ///  An array of <code>CloudWatchMetricsDetail</code> object that contains information
-        /// about the analyzed metrics that displayed anomalous behavior. 
+        /// An array of <code>CloudWatchMetricsDetail</code> objects that contain information
+        /// about analyzed CloudWatch metrics that show anomalous behavior. 
         /// </para>
         /// </summary>
         public List<CloudWatchMetricsDetail> CloudWatchMetrics
@@ -53,6 +53,25 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetCloudWatchMetrics()
         {
             return this._cloudWatchMetrics != null && this._cloudWatchMetrics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsMetrics. 
+        /// <para>
+        /// An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information
+        /// about analyzed Performance Insights metrics that show anomalous behavior.
+        /// </para>
+        /// </summary>
+        public List<PerformanceInsightsMetricsDetail> PerformanceInsightsMetrics
+        {
+            get { return this._performanceInsightsMetrics; }
+            set { this._performanceInsightsMetrics = value; }
+        }
+
+        // Check to see if PerformanceInsightsMetrics property is set
+        internal bool IsSetPerformanceInsightsMetrics()
+        {
+            return this._performanceInsightsMetrics != null && this._performanceInsightsMetrics.Count > 0; 
         }
 
     }

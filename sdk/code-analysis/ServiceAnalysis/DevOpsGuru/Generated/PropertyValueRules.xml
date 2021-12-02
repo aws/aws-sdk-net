@@ -16,7 +16,7 @@
     <property>Amazon.DevOpsGuru.Model.DescribeAnomalyRequest.Id</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[\w-]*$</pattern>
+    <pattern>^[\w~.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.DescribeFeedbackRequest.InsightId</property>
@@ -264,6 +264,12 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.AnomalyResource.Type</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z]+[a-zA-Z0-9-_:]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.CloudFormationHealth.StackName</property>
     <min>1</min>
     <max>128</max>
@@ -323,6 +329,11 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.PerformanceInsightsMetricDimensionGroup.Limit</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ProactiveAnomaly.AssociatedInsightId</property>
     <min>1</min>
     <max>100</max>
@@ -332,7 +343,7 @@
     <property>Amazon.DevOpsGuru.Model.ProactiveAnomaly.Id</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[\w-]*$</pattern>
+    <pattern>^[\w~.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ProactiveAnomalySummary.AssociatedInsightId</property>
@@ -344,7 +355,7 @@
     <property>Amazon.DevOpsGuru.Model.ProactiveAnomalySummary.Id</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[\w-]*$</pattern>
+    <pattern>^[\w~.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ProactiveInsight.Id</property>
@@ -406,10 +417,16 @@
     <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ReactiveAnomaly.CausalAnomalyId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w~.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ReactiveAnomaly.Id</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[\w-]*$</pattern>
+    <pattern>^[\w~.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ReactiveAnomalySummary.AssociatedInsightId</property>
@@ -418,10 +435,16 @@
     <pattern>^[\w-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ReactiveAnomalySummary.CausalAnomalyId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w~.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ReactiveAnomalySummary.Id</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[\w-]*$</pattern>
+    <pattern>^[\w~.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ReactiveInsight.Id</property>
@@ -477,6 +500,12 @@
     <pattern>^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.RecommendationRelatedAnomaly.AnomalyId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w~.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ServiceResourceCost.Type</property>
     <min>1</min>
     <max>256</max>
@@ -487,5 +516,41 @@
     <min>36</min>
     <max>1024</max>
     <pattern>^arn:aws[a-z0-9-]*:sns:[a-z0-9-]+:\d{12}:[^:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.TagCollection.AppBoundaryKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.TagCollectionFilter.AppBoundaryKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.TagCostEstimationResourceCollectionFilter.AppBoundaryKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.TagHealth.AppBoundaryKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.TagHealth.TagValue</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*|\*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.UpdateTagCollectionFilter.AppBoundaryKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>

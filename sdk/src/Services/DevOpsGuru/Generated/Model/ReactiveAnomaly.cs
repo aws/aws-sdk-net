@@ -34,18 +34,23 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ReactiveAnomaly
     {
         private AnomalyReportedTimeRange _anomalyReportedTimeRange;
+        private List<AnomalyResource> _anomalyResources = new List<AnomalyResource>();
         private AnomalyTimeRange _anomalyTimeRange;
         private string _associatedInsightId;
+        private string _causalAnomalyId;
+        private string _description;
         private string _id;
+        private string _name;
         private ResourceCollection _resourceCollection;
         private AnomalySeverity _severity;
         private AnomalySourceDetails _sourceDetails;
         private AnomalyStatus _status;
+        private AnomalyType _type;
 
         /// <summary>
         /// Gets and sets the property AnomalyReportedTimeRange. 
         /// <para>
-        ///  A <code>AnomalyReportedTimeRange</code> object that specifies the time range between
+        ///  An <code>AnomalyReportedTimeRange</code> object that specifies the time range between
         /// when the anomaly is opened and the time when it is closed. 
         /// </para>
         /// </summary>
@@ -59,6 +64,25 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetAnomalyReportedTimeRange()
         {
             return this._anomalyReportedTimeRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnomalyResources. 
+        /// <para>
+        /// The Amazon Web Services resources in which anomalous behavior was detected by DevOps
+        /// Guru.
+        /// </para>
+        /// </summary>
+        public List<AnomalyResource> AnomalyResources
+        {
+            get { return this._anomalyResources; }
+            set { this._anomalyResources = value; }
+        }
+
+        // Check to see if AnomalyResources property is set
+        internal bool IsSetAnomalyResources()
+        {
+            return this._anomalyResources != null && this._anomalyResources.Count > 0; 
         }
 
         /// <summary>
@@ -97,6 +121,44 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CausalAnomalyId. 
+        /// <para>
+        /// The ID of the causal anomaly that is associated with this reactive anomaly. The ID
+        /// of a `CAUSAL` anomaly is always `NULL`.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string CausalAnomalyId
+        {
+            get { return this._causalAnomalyId; }
+            set { this._causalAnomalyId = value; }
+        }
+
+        // Check to see if CausalAnomalyId property is set
+        internal bool IsSetCausalAnomalyId()
+        {
+            return this._causalAnomalyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the reactive anomaly.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the reactive anomaly. 
@@ -113,6 +175,24 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the reactive anomaly.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
@@ -133,7 +213,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the anomaly. 
+        /// The severity of the anomaly. The severity of anomalies that generate an insight determine
+        /// that insight's severity. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+        /// insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.
         /// </para>
         /// </summary>
         public AnomalySeverity Severity
@@ -183,6 +265,34 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the reactive anomaly. It can be one of the following types.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CAUSAL</code> - the anomaly can cause a new insight.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONTEXTUAL</code> - the anomaly contains additional information about an insight
+        /// or its causal anomaly.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AnomalyType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

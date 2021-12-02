@@ -59,11 +59,12 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ResourceCollection. 
         /// <para>
-        ///  The requested list of Amazon Web Services resource collections. The one type of Amazon
-        /// Web Services resource collection supported is Amazon Web Services CloudFormation stacks.
-        /// DevOps Guru can be configured to analyze only the Amazon Web Services resources that
-        /// are defined in the stacks. You can specify up to 500 Amazon Web Services CloudFormation
-        /// stacks. 
+        ///  The requested list of Amazon Web Services resource collections. The two types of
+        /// Amazon Web Services resource collections supported are Amazon Web Services CloudFormation
+        /// stacks and Amazon Web Services resources that contain the same Amazon Web Services
+        /// tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that
+        /// are defined in the stacks or that are tagged using the same tag <i>key</i>. You can
+        /// specify up to 500 Amazon Web Services CloudFormation stacks. 
         /// </para>
         /// </summary>
         public ResourceCollectionFilter ResourceCollection

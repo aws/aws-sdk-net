@@ -70,6 +70,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PerformanceInsightsMetrics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PerformanceInsightsMetricsDetail, PerformanceInsightsMetricsDetailUnmarshaller>(PerformanceInsightsMetricsDetailUnmarshaller.Instance);
+                    unmarshalledObject.PerformanceInsightsMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -46,7 +46,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account.
+        /// The ID of the Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -167,7 +167,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        ///  An array of severity values used to search for insights. 
+        ///  An array of severity values used to search for insights. For more information, see
+        /// <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+        /// insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.
         /// </para>
         /// </summary>
         public InsightSeverity Severity

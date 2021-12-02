@@ -33,6 +33,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ReactiveInsightSummary
     {
+        private List<string> _associatedResourceArns = new List<string>();
         private string _id;
         private InsightTimeRange _insightTimeRange;
         private string _name;
@@ -40,6 +41,25 @@ namespace Amazon.DevOpsGuru.Model
         private ServiceCollection _serviceCollection;
         private InsightSeverity _severity;
         private InsightStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedResourceArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the Amazon Web Services resources that generated
+        /// this insight.
+        /// </para>
+        /// </summary>
+        public List<string> AssociatedResourceArns
+        {
+            get { return this._associatedResourceArns; }
+            set { this._associatedResourceArns = value; }
+        }
+
+        // Check to see if AssociatedResourceArns property is set
+        internal bool IsSetAssociatedResourceArns()
+        {
+            return this._associatedResourceArns != null && this._associatedResourceArns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -130,7 +150,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        ///  The severity of a reactive insight. 
+        /// The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+        /// insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.
         /// </para>
         /// </summary>
         public InsightSeverity Severity
