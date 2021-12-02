@@ -33,6 +33,7 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class Protection
     {
+        private ApplicationLayerAutomaticResponseConfiguration _applicationLayerAutomaticResponseConfiguration;
         private List<string> _healthCheckIds = new List<string>();
         private string _id;
         private string _name;
@@ -40,9 +41,30 @@ namespace Amazon.Shield.Model
         private string _resourceArn;
 
         /// <summary>
+        /// Gets and sets the property ApplicationLayerAutomaticResponseConfiguration. 
+        /// <para>
+        /// The automatic application layer DDoS mitigation settings for the protection. This
+        /// configuration determines whether Shield Advanced automatically manages rules in the
+        /// web ACL in order to respond to application layer events that Shield Advanced determines
+        /// to be DDoS attacks. 
+        /// </para>
+        /// </summary>
+        public ApplicationLayerAutomaticResponseConfiguration ApplicationLayerAutomaticResponseConfiguration
+        {
+            get { return this._applicationLayerAutomaticResponseConfiguration; }
+            set { this._applicationLayerAutomaticResponseConfiguration = value; }
+        }
+
+        // Check to see if ApplicationLayerAutomaticResponseConfiguration property is set
+        internal bool IsSetApplicationLayerAutomaticResponseConfiguration()
+        {
+            return this._applicationLayerAutomaticResponseConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthCheckIds. 
         /// <para>
-        /// The unique identifier (ID) for the Route 53 health check that's associated with the
+        /// The unique identifier (ID) for the Route 53 health check that's associated with the
         /// protection. 
         /// </para>
         /// </summary>
@@ -64,7 +86,7 @@ namespace Amazon.Shield.Model
         /// The unique identifier (ID) of the protection.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=36)]
+        [AWSProperty(Min=36, Max=36)]
         public string Id
         {
             get { return this._id; }

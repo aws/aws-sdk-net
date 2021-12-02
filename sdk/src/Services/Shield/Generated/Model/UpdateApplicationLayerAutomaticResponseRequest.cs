@@ -29,45 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeProtection operation.
-    /// Lists the details of a <a>Protection</a> object.
+    /// Container for the parameters to the UpdateApplicationLayerAutomaticResponse operation.
+    /// Updates an existing Shield Advanced automatic application layer DDoS mitigation configuration
+    /// for the specified resource.
     /// </summary>
-    public partial class DescribeProtectionRequest : AmazonShieldRequest
+    public partial class UpdateApplicationLayerAutomaticResponseRequest : AmazonShieldRequest
     {
-        private string _protectionId;
+        private ResponseAction _action;
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ProtectionId. 
+        /// Gets and sets the property Action. 
         /// <para>
-        /// The unique identifier (ID) for the <a>Protection</a> object that is described. When
-        /// submitting the <code>DescribeProtection</code> request you must provide either the
-        /// <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
+        /// Specifies the action setting that Shield Advanced should use in the WAF rules that
+        /// it creates on behalf of the protected resource in response to DDoS attacks. You specify
+        /// this as part of the configuration for the automatic application layer DDoS mitigation
+        /// feature, when you enable or update automatic mitigation. Shield Advanced creates the
+        /// WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have
+        /// associated with the resource. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
-        public string ProtectionId
+        [AWSProperty(Required=true)]
+        public ResponseAction Action
         {
-            get { return this._protectionId; }
-            set { this._protectionId = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if ProtectionId property is set
-        internal bool IsSetProtectionId()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._protectionId != null;
+            return this._action != null;
         }
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a>
-        /// object that is described. When submitting the <code>DescribeProtection</code> request
-        /// you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
-        /// but not both.
+        /// The ARN (Amazon Resource Name) of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

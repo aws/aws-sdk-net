@@ -86,9 +86,8 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  
         /// <para>
-        /// For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
-        /// view metrics for top contributors in Amazon CloudWatch metrics. For more information,
-        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+        /// For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors
+        /// in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
         /// metrics and alarms</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -107,7 +106,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
+        /// The time the attack ended, in Unix time in seconds. 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -162,8 +161,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time the attack started, in Unix time in seconds. For more information see <a
-        /// href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
+        /// The time the attack started, in Unix time in seconds. 
         /// </para>
         /// </summary>
         public DateTime StartTime

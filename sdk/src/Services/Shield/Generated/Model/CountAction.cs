@@ -29,30 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// This is the response object from the CreateProtection operation.
+    /// Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code>
+    /// action. 
+    /// 
+    ///  
+    /// <para>
+    /// This is only used in the context of the <code>ResponseAction</code> setting. 
+    /// </para>
+    ///  
+    /// <para>
+    /// JSON specification: <code>"Count": {}</code> 
+    /// </para>
     /// </summary>
-    public partial class CreateProtectionResponse : AmazonWebServiceResponse
+    public partial class CountAction
     {
-        private string _protectionId;
-
-        /// <summary>
-        /// Gets and sets the property ProtectionId. 
-        /// <para>
-        /// The unique identifier (ID) for the <a>Protection</a> object that is created.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=36, Max=36)]
-        public string ProtectionId
-        {
-            get { return this._protectionId; }
-            set { this._protectionId = value; }
-        }
-
-        // Check to see if ProtectionId property is set
-        internal bool IsSetProtectionId()
-        {
-            return this._protectionId != null;
-        }
 
     }
 }

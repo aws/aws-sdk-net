@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// This is the response object from the CreateProtection operation.
+    /// This is the response object from the DisableApplicationLayerAutomaticResponse operation.
     /// </summary>
-    public partial class CreateProtectionResponse : AmazonWebServiceResponse
+    public partial class DisableApplicationLayerAutomaticResponseResponse : AmazonWebServiceResponse
     {
-        private string _protectionId;
-
-        /// <summary>
-        /// Gets and sets the property ProtectionId. 
-        /// <para>
-        /// The unique identifier (ID) for the <a>Protection</a> object that is created.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=36, Max=36)]
-        public string ProtectionId
-        {
-            get { return this._protectionId; }
-            set { this._protectionId = value; }
-        }
-
-        // Check to see if ProtectionId property is set
-        internal bool IsSetProtectionId()
-        {
-            return this._protectionId != null;
-        }
 
     }
 }

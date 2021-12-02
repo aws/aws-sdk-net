@@ -78,7 +78,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
+        /// The end time of the attack, in Unix time in seconds. 
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -114,8 +114,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time of the attack, in Unix time in seconds. For more information see <a
-        /// href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
+        /// The start time of the attack, in Unix time in seconds. 
         /// </para>
         /// </summary>
         public DateTime StartTime

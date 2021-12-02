@@ -29,29 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// This is the response object from the CreateProtection operation.
+    /// Container for the parameters to the DisableApplicationLayerAutomaticResponse operation.
+    /// Disable the Shield Advanced automatic application layer DDoS mitigation feature for
+    /// the resource. This stops Shield Advanced from creating, verifying, and applying WAF
+    /// rules for attacks that it detects for the resource.
     /// </summary>
-    public partial class CreateProtectionResponse : AmazonWebServiceResponse
+    public partial class DisableApplicationLayerAutomaticResponseRequest : AmazonShieldRequest
     {
-        private string _protectionId;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ProtectionId. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The unique identifier (ID) for the <a>Protection</a> object that is created.
+        /// The ARN (Amazon Resource Name) of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
-        public string ProtectionId
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string ResourceArn
         {
-            get { return this._protectionId; }
-            set { this._protectionId = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ProtectionId property is set
-        internal bool IsSetProtectionId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._protectionId != null;
+            return this._resourceArn != null;
         }
 
     }

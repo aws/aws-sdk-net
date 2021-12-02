@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Protection Object
+    /// Response Unmarshaller for ApplicationLayerAutomaticResponseConfiguration Object
     /// </summary>  
-    public class ProtectionUnmarshaller : IUnmarshaller<Protection, XmlUnmarshallerContext>, IUnmarshaller<Protection, JsonUnmarshallerContext>
+    public class ApplicationLayerAutomaticResponseConfigurationUnmarshaller : IUnmarshaller<ApplicationLayerAutomaticResponseConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ApplicationLayerAutomaticResponseConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Protection IUnmarshaller<Protection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ApplicationLayerAutomaticResponseConfiguration IUnmarshaller<ApplicationLayerAutomaticResponseConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Protection Unmarshall(JsonUnmarshallerContext context)
+        public ApplicationLayerAutomaticResponseConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Protection unmarshalledObject = new Protection();
+            ApplicationLayerAutomaticResponseConfiguration unmarshalledObject = new ApplicationLayerAutomaticResponseConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationLayerAutomaticResponseConfiguration", targetDepth))
+                if (context.TestExpression("Action", targetDepth))
                 {
-                    var unmarshaller = ApplicationLayerAutomaticResponseConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationLayerAutomaticResponseConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ResponseActionUnmarshaller.Instance;
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.HealthCheckIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProtectionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProtectionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProtectionUnmarshaller _instance = new ProtectionUnmarshaller();        
+        private static ApplicationLayerAutomaticResponseConfigurationUnmarshaller _instance = new ApplicationLayerAutomaticResponseConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProtectionUnmarshaller Instance
+        public static ApplicationLayerAutomaticResponseConfigurationUnmarshaller Instance
         {
             get
             {

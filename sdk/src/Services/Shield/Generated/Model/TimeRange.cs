@@ -39,7 +39,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property FromInclusive. 
         /// <para>
-        /// The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
+        /// The start time, in Unix time in seconds. 
         /// </para>
         /// </summary>
         public DateTime FromInclusive
@@ -57,7 +57,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property ToExclusive. 
         /// <para>
-        /// The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
+        /// The end time, in Unix time in seconds. 
         /// </para>
         /// </summary>
         public DateTime ToExclusive

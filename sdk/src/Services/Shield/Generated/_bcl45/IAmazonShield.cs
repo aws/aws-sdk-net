@@ -61,8 +61,8 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
-        /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -115,8 +115,8 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
-        /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -181,13 +181,13 @@ namespace Amazon.Shield
         /// </para>
         ///  
         /// <para>
-        /// Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a
-        /// href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
-        /// managed policy to the role you will specify in the request. For more information see
-        /// <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
-        /// and Detaching IAM Policies</a>. The role must also trust the service principal <code>
-        /// drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
-        /// JSON Policy Elements: Principal</a>.
+        /// Prior to making the <code>AssociateDRTRole</code> request, you must attach the <code>AWSShieldDRTAccessPolicy</code>
+        /// managed policy to the role that you'll specify in the request. You can access this
+        /// policy in the IAM console at <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>.
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding
+        /// and removing IAM identity permissions</a>. The role must also trust the service principal
+        /// <code>drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
+        /// JSON policy elements: Principal</a>.
         /// </para>
         ///  
         /// <para>
@@ -200,13 +200,13 @@ namespace Amazon.Shield
         /// <para>
         /// You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code>
         /// request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-        /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>. 
+        /// a user permissions to pass a role to an Amazon Web Services service</a>. 
         /// </para>
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTRole</code> request,
-        /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -259,13 +259,13 @@ namespace Amazon.Shield
         /// </para>
         ///  
         /// <para>
-        /// Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a
-        /// href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
-        /// managed policy to the role you will specify in the request. For more information see
-        /// <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
-        /// and Detaching IAM Policies</a>. The role must also trust the service principal <code>
-        /// drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
-        /// JSON Policy Elements: Principal</a>.
+        /// Prior to making the <code>AssociateDRTRole</code> request, you must attach the <code>AWSShieldDRTAccessPolicy</code>
+        /// managed policy to the role that you'll specify in the request. You can access this
+        /// policy in the IAM console at <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>.
+        /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding
+        /// and removing IAM identity permissions</a>. The role must also trust the service principal
+        /// <code>drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
+        /// JSON policy elements: Principal</a>.
         /// </para>
         ///  
         /// <para>
@@ -278,13 +278,13 @@ namespace Amazon.Shield
         /// <para>
         /// You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code>
         /// request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
-        /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>. 
+        /// a user permissions to pass a role to an Amazon Web Services service</a>. 
         /// </para>
         ///  
         /// <para>
         /// To use the services of the SRT and make an <code>AssociateDRTRole</code> request,
-        /// you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
-        /// Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+        /// you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+        /// Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
         /// </summary>
@@ -331,11 +331,11 @@ namespace Amazon.Shield
         /// <summary>
         /// Adds health-based detection to the Shield Advanced protection for a resource. Shield
         /// Advanced health-based detection uses the health of your Amazon Web Services resource
-        /// to improve responsiveness and accuracy in attack detection and mitigation. 
+        /// to improve responsiveness and accuracy in attack detection and response. 
         /// 
         ///  
         /// <para>
-        /// You define the health check in Route 53 and then associate it with your Shield Advanced
+        /// You define the health check in Route 53 and then associate it with your Shield Advanced
         /// protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
         /// Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
@@ -350,6 +350,10 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
         /// Exception that indicates that the parameters passed to the API are invalid. If available,
         /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidResourceException">
+        /// Exception that indicates that the resource is invalid. You might not have access to
+        /// the resource, or the resource might not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
@@ -370,11 +374,11 @@ namespace Amazon.Shield
         /// <summary>
         /// Adds health-based detection to the Shield Advanced protection for a resource. Shield
         /// Advanced health-based detection uses the health of your Amazon Web Services resource
-        /// to improve responsiveness and accuracy in attack detection and mitigation. 
+        /// to improve responsiveness and accuracy in attack detection and response. 
         /// 
         ///  
         /// <para>
-        /// You define the health check in Route 53 and then associate it with your Shield Advanced
+        /// You define the health check in Route 53 and then associate it with your Shield Advanced
         /// protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
         /// Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
@@ -392,6 +396,10 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
         /// Exception that indicates that the parameters passed to the API are invalid. If available,
         /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidResourceException">
+        /// Exception that indicates that the resource is invalid. You might not have access to
+        /// the resource, or the resource might not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
         /// Exception that indicates that the operation would exceed a limit.
@@ -525,15 +533,16 @@ namespace Amazon.Shield
         /// <summary>
         /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
         /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
-        /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+        /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
         /// 
         ///  
         /// <para>
-        /// You can add protection to only a single resource with each CreateProtection request.
-        /// If you want to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
-        /// console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-        /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-        /// Shield Advanced Protection to more Amazon Web Services Resources</a>.
+        /// You can add protection to only a single resource with each <code>CreateProtection</code>
+        /// request. You can add protection to multiple resources at once through the Shield Advanced
+        /// console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+        /// For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+        /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding
+        /// Shield Advanced protection to Amazon Web Services resources</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProtection service method.</param>
@@ -577,15 +586,16 @@ namespace Amazon.Shield
         /// <summary>
         /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
         /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
-        /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+        /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
         /// 
         ///  
         /// <para>
-        /// You can add protection to only a single resource with each CreateProtection request.
-        /// If you want to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
-        /// console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-        /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-        /// Shield Advanced Protection to more Amazon Web Services Resources</a>.
+        /// You can add protection to only a single resource with each <code>CreateProtection</code>
+        /// request. You can add protection to multiple resources at once through the Shield Advanced
+        /// console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+        /// For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+        /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding
+        /// Shield Advanced protection to Amazon Web Services resources</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProtection service method.</param>
@@ -1275,6 +1285,76 @@ namespace Amazon.Shield
 
         #endregion
         
+        #region  DisableApplicationLayerAutomaticResponse
+
+
+        /// <summary>
+        /// Disable the Shield Advanced automatic application layer DDoS mitigation feature for
+        /// the resource. This stops Shield Advanced from creating, verifying, and applying WAF
+        /// rules for attacks that it detects for the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableApplicationLayerAutomaticResponse service method.</param>
+        /// 
+        /// <returns>The response from the DisableApplicationLayerAutomaticResponse service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableApplicationLayerAutomaticResponse">REST API Reference for DisableApplicationLayerAutomaticResponse Operation</seealso>
+        DisableApplicationLayerAutomaticResponseResponse DisableApplicationLayerAutomaticResponse(DisableApplicationLayerAutomaticResponseRequest request);
+
+
+
+        /// <summary>
+        /// Disable the Shield Advanced automatic application layer DDoS mitigation feature for
+        /// the resource. This stops Shield Advanced from creating, verifying, and applying WAF
+        /// rules for attacks that it detects for the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableApplicationLayerAutomaticResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableApplicationLayerAutomaticResponse service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableApplicationLayerAutomaticResponse">REST API Reference for DisableApplicationLayerAutomaticResponse Operation</seealso>
+        Task<DisableApplicationLayerAutomaticResponseResponse> DisableApplicationLayerAutomaticResponseAsync(DisableApplicationLayerAutomaticResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableProactiveEngagement
 
 
@@ -1349,16 +1429,6 @@ namespace Amazon.Shield
         /// <summary>
         /// Removes the Shield Response Team's (SRT) access to the specified Amazon S3 bucket
         /// containing the logs that you shared previously.
-        /// 
-        ///  
-        /// <para>
-        /// To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to
-        /// the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-        /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-        /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-        /// but had been previously and had granted the SRT access to your account, you can submit
-        /// a <code>DisassociateDRTLogBucket</code> request to remove this access.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDRTLogBucket service method.</param>
         /// 
@@ -1396,16 +1466,6 @@ namespace Amazon.Shield
         /// <summary>
         /// Removes the Shield Response Team's (SRT) access to the specified Amazon S3 bucket
         /// containing the logs that you shared previously.
-        /// 
-        ///  
-        /// <para>
-        /// To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to
-        /// the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-        /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-        /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-        /// but had been previously and had granted the SRT access to your account, you can submit
-        /// a <code>DisassociateDRTLogBucket</code> request to remove this access.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDRTLogBucket service method.</param>
         /// <param name="cancellationToken">
@@ -1448,16 +1508,6 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Removes the Shield Response Team's (SRT) access to your Amazon Web Services account.
-        /// 
-        ///  
-        /// <para>
-        /// To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the
-        /// <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-        /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-        /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-        /// but had been previously and had granted the SRT access to your account, you can submit
-        /// a <code>DisassociateDRTRole</code> request to remove this access.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDRTRole service method.</param>
         /// 
@@ -1484,16 +1534,6 @@ namespace Amazon.Shield
 
         /// <summary>
         /// Removes the Shield Response Team's (SRT) access to your Amazon Web Services account.
-        /// 
-        ///  
-        /// <para>
-        /// To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the
-        /// <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-        /// plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-        /// Support plan</a>. However, if you are not subscribed to one of these support plans,
-        /// but had been previously and had granted the SRT access to your account, you can submit
-        /// a <code>DisassociateDRTRole</code> request to remove this access.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDRTRole service method.</param>
         /// <param name="cancellationToken">
@@ -1527,12 +1567,12 @@ namespace Amazon.Shield
         /// <summary>
         /// Removes health-based detection from the Shield Advanced protection for a resource.
         /// Shield Advanced health-based detection uses the health of your Amazon Web Services
-        /// resource to improve responsiveness and accuracy in attack detection and mitigation.
+        /// resource to improve responsiveness and accuracy in attack detection and response.
         /// 
         /// 
         ///  
         /// <para>
-        /// You define the health check in Route 53 and then associate or disassociate it with
+        /// You define the health check in Route 53 and then associate or disassociate it with
         /// your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
         /// Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
@@ -1547,6 +1587,10 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
         /// Exception that indicates that the parameters passed to the API are invalid. If available,
         /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidResourceException">
+        /// Exception that indicates that the resource is invalid. You might not have access to
+        /// the resource, or the resource might not exist.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
@@ -1564,12 +1608,12 @@ namespace Amazon.Shield
         /// <summary>
         /// Removes health-based detection from the Shield Advanced protection for a resource.
         /// Shield Advanced health-based detection uses the health of your Amazon Web Services
-        /// resource to improve responsiveness and accuracy in attack detection and mitigation.
+        /// resource to improve responsiveness and accuracy in attack detection and response.
         /// 
         /// 
         ///  
         /// <para>
-        /// You define the health check in Route 53 and then associate or disassociate it with
+        /// You define the health check in Route 53 and then associate or disassociate it with
         /// your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
         /// Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
@@ -1588,6 +1632,10 @@ namespace Amazon.Shield
         /// Exception that indicates that the parameters passed to the API are invalid. If available,
         /// this exception includes details in additional properties.
         /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidResourceException">
+        /// Exception that indicates that the resource is invalid. You might not have access to
+        /// the resource, or the resource might not exist.
+        /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.
         /// Retrieve the resource and then retry your request.
@@ -1598,6 +1646,146 @@ namespace Amazon.Shield
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck">REST API Reference for DisassociateHealthCheck Operation</seealso>
         Task<DisassociateHealthCheckResponse> DisassociateHealthCheckAsync(DisassociateHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableApplicationLayerAutomaticResponse
+
+
+        /// <summary>
+        /// Enable the Shield Advanced automatic application layer DDoS mitigation for the resource.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is available for Amazon CloudFront distributions only.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This causes Shield Advanced to create, verify, and apply WAF rules for DDoS attacks
+        /// that it detects for the resource. Shield Advanced applies the rules in a Shield rule
+        /// group inside the web ACL that you've associated with the resource. For information
+        /// about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
+        /// Advanced automatic application layer DDoS mitigation</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't use this action to make changes to automatic mitigation settings when it's already
+        /// enabled for a resource. Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this feature, you must associate a web ACL with the protected resource. The
+        /// web ACL must be created using the latest version of WAF (v2). You can associate the
+        /// web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+        /// Started with Shield Advanced</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also do this through the WAF console or the WAF API, but you must manage Shield
+        /// Advanced automatic mitigation through Shield Advanced. For information about WAF,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableApplicationLayerAutomaticResponse service method.</param>
+        /// 
+        /// <returns>The response from the EnableApplicationLayerAutomaticResponse service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
+        /// Exception that indicates that the operation would exceed a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableApplicationLayerAutomaticResponse">REST API Reference for EnableApplicationLayerAutomaticResponse Operation</seealso>
+        EnableApplicationLayerAutomaticResponseResponse EnableApplicationLayerAutomaticResponse(EnableApplicationLayerAutomaticResponseRequest request);
+
+
+
+        /// <summary>
+        /// Enable the Shield Advanced automatic application layer DDoS mitigation for the resource.
+        /// 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is available for Amazon CloudFront distributions only.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This causes Shield Advanced to create, verify, and apply WAF rules for DDoS attacks
+        /// that it detects for the resource. Shield Advanced applies the rules in a Shield rule
+        /// group inside the web ACL that you've associated with the resource. For information
+        /// about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
+        /// Advanced automatic application layer DDoS mitigation</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't use this action to make changes to automatic mitigation settings when it's already
+        /// enabled for a resource. Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this feature, you must associate a web ACL with the protected resource. The
+        /// web ACL must be created using the latest version of WAF (v2). You can associate the
+        /// web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+        /// Started with Shield Advanced</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also do this through the WAF console or the WAF API, but you must manage Shield
+        /// Advanced automatic mitigation through Shield Advanced. For information about WAF,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
+        /// Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableApplicationLayerAutomaticResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableApplicationLayerAutomaticResponse service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.LimitsExceededException">
+        /// Exception that indicates that the operation would exceed a limit.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableApplicationLayerAutomaticResponse">REST API Reference for EnableApplicationLayerAutomaticResponse Operation</seealso>
+        Task<EnableApplicationLayerAutomaticResponseResponse> EnableApplicationLayerAutomaticResponseAsync(EnableApplicationLayerAutomaticResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1769,8 +1957,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
-        /// the request using the NextToken value that was returned in the response.
+        /// Exception that indicates that the <code>NextToken</code> specified in the request
+        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
+        /// in the prior response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1795,8 +1984,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
-        /// the request using the NextToken value that was returned in the response.
+        /// Exception that indicates that the <code>NextToken</code> specified in the request
+        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
+        /// in the prior response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1821,8 +2011,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
-        /// the request using the NextToken value that was returned in the response.
+        /// Exception that indicates that the <code>NextToken</code> specified in the request
+        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
+        /// in the prior response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1847,8 +2038,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
-        /// the request using the NextToken value that was returned in the response.
+        /// Exception that indicates that the <code>NextToken</code> specified in the request
+        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
+        /// in the prior response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1873,8 +2065,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
-        /// the request using the NextToken value that was returned in the response.
+        /// Exception that indicates that the <code>NextToken</code> specified in the request
+        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
+        /// in the prior response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1899,8 +2092,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the NextToken specified in the request is invalid. Submit
-        /// the request using the NextToken value that was returned in the response.
+        /// Exception that indicates that the <code>NextToken</code> specified in the request
+        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
+        /// in the prior response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -2082,6 +2276,74 @@ namespace Amazon.Shield
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateApplicationLayerAutomaticResponse
+
+
+        /// <summary>
+        /// Updates an existing Shield Advanced automatic application layer DDoS mitigation configuration
+        /// for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationLayerAutomaticResponse service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApplicationLayerAutomaticResponse service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateApplicationLayerAutomaticResponse">REST API Reference for UpdateApplicationLayerAutomaticResponse Operation</seealso>
+        UpdateApplicationLayerAutomaticResponseResponse UpdateApplicationLayerAutomaticResponse(UpdateApplicationLayerAutomaticResponseRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing Shield Advanced automatic application layer DDoS mitigation configuration
+        /// for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationLayerAutomaticResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApplicationLayerAutomaticResponse service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.InternalErrorException">
+        /// Exception that indicates that a problem occurred with the service infrastructure.
+        /// You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidOperationException">
+        /// Exception that indicates that the operation would not cause any change to occur.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
+        /// Exception that indicates that the parameters passed to the API are invalid. If available,
+        /// this exception includes details in additional properties.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
+        /// Exception that indicates that the resource state has been modified by another client.
+        /// Retrieve the resource and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
+        /// Exception indicating the specified resource does not exist. If available, this exception
+        /// includes details in additional properties.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateApplicationLayerAutomaticResponse">REST API Reference for UpdateApplicationLayerAutomaticResponse Operation</seealso>
+        Task<UpdateApplicationLayerAutomaticResponseResponse> UpdateApplicationLayerAutomaticResponseAsync(UpdateApplicationLayerAutomaticResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

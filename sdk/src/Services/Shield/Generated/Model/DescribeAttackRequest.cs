@@ -39,7 +39,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property AttackId. 
         /// <para>
-        /// The unique identifier (ID) for the attack that to be described.
+        /// The unique identifier (ID) for the attack.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

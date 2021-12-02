@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisassociateHealthCheck operation
+    /// Response Unmarshaller for EnableApplicationLayerAutomaticResponse operation
     /// </summary>  
-    public class DisassociateHealthCheckResponseUnmarshaller : JsonResponseUnmarshaller
+    public class EnableApplicationLayerAutomaticResponseResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DisassociateHealthCheckResponse response = new DisassociateHealthCheckResponse();
+            EnableApplicationLayerAutomaticResponseResponse response = new EnableApplicationLayerAutomaticResponseResponse();
 
 
             return response;
@@ -73,13 +73,17 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                 {
                     return InternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOperationException"))
+                {
+                    return InvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitsExceededException"))
                 {
-                    return InvalidResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return LimitsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OptimisticLockException"))
                 {
@@ -93,9 +97,9 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             return new AmazonShieldException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DisassociateHealthCheckResponseUnmarshaller _instance = new DisassociateHealthCheckResponseUnmarshaller();        
+        private static EnableApplicationLayerAutomaticResponseResponseUnmarshaller _instance = new EnableApplicationLayerAutomaticResponseResponseUnmarshaller();        
 
-        internal static DisassociateHealthCheckResponseUnmarshaller GetInstance()
+        internal static EnableApplicationLayerAutomaticResponseResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +107,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisassociateHealthCheckResponseUnmarshaller Instance
+        public static EnableApplicationLayerAutomaticResponseResponseUnmarshaller Instance
         {
             get
             {

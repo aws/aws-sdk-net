@@ -47,9 +47,8 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  
         /// <para>
-        /// For infrastructure layer events (L3 and L4 events) after January 25, 2021, you can
-        /// view metrics for top contributors in Amazon CloudWatch metrics. For more information,
-        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
+        /// For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors
+        /// in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield
         /// metrics and alarms</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -88,7 +87,9 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property TopContributors. 
         /// <para>
-        /// Contributor objects for the top five contributors to a Shield event. 
+        /// Contributor objects for the top five contributors to a Shield event. A contributor
+        /// is a source of traffic that Shield Advanced identifies as responsible for some or
+        /// all of an event.
         /// </para>
         /// </summary>
         public List<Contributor> TopContributors

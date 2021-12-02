@@ -32,15 +32,16 @@ namespace Amazon.Shield.Model
     /// Container for the parameters to the CreateProtection operation.
     /// Enables Shield Advanced for a specific Amazon Web Services resource. The resource
     /// can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global
-    /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
+    /// Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
     /// 
     ///  
     /// <para>
-    /// You can add protection to only a single resource with each CreateProtection request.
-    /// If you want to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">WAF
-    /// console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-    /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
-    /// Shield Advanced Protection to more Amazon Web Services Resources</a>.
+    /// You can add protection to only a single resource with each <code>CreateProtection</code>
+    /// request. You can add protection to multiple resources at once through the Shield Advanced
+    /// console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
+    /// For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
+    /// Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding
+    /// Shield Advanced protection to Amazon Web Services resources</a>.
     /// </para>
     /// </summary>
     public partial class CreateProtectionRequest : AmazonShieldRequest
@@ -99,7 +100,7 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+        /// For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
         /// 
         /// </para>
         ///  </li> <li> 

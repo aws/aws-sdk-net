@@ -39,9 +39,10 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>.
-        /// For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>,
-        /// the <code>Name</code> could be <code>United States</code>.
+        /// The name of the contributor. The type of name that you'll find here depends on the
+        /// <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where
+        /// this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code>
+        /// is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.
         /// </para>
         /// </summary>
         public string Name
