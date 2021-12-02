@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Describes a resource share.
+    /// Describes a resource share in RAM.
     /// </summary>
     public partial class ResourceShare
     {
@@ -66,7 +66,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time when the resource share was created.
+        /// The date and time when the resource share was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -89,9 +89,10 @@ namespace Amazon.RAM.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created
-        /// from an Amazon Web Services Identity and Access Management (Amazon Web Services IAM)
-        /// policy attached to a resource. These resource shares are visible only to the Amazon
-        /// Web Services account that created it. They cannot be modified in RAM.
+        /// from an Identity and Access Management (IAM) resource-based permission policy attached
+        /// to the resource. This type of resource share is visible only to the Amazon Web Services
+        /// account that created it. You can't modify it in RAM unless you promote it. For more
+        /// information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -101,8 +102,9 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>STANDARD</code> - Indicates that the resource share was created in RAM using
-        /// the console or APIs. These resource shares are visible to all principals. They can
-        /// be modified in RAM.
+        /// the console or APIs. These resource shares are visible to all principals you share
+        /// the resource share with. You can modify these resource shares in RAM using the console
+        /// or APIs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -121,7 +123,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The time when the resource share was last updated.
+        /// The date and time when the resource share was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -175,7 +177,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share
         /// </para>
         /// </summary>
         public string ResourceShareArn
@@ -193,7 +196,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the resource share.
+        /// The current status of the resource share.
         /// </para>
         /// </summary>
         public ResourceShareStatus Status
@@ -229,7 +232,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the resource share.
+        /// The tag key and value pairs attached to the resource share.
         /// </para>
         /// </summary>
         public List<Tag> Tags

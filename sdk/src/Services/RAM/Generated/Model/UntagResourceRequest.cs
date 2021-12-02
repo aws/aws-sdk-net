@@ -30,7 +30,7 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from the specified resource share that you own.
+    /// Removes the specified tag key and value pairs from the specified resource share.
     /// </summary>
     public partial class UntagResourceRequest : AmazonRAMRequest
     {
@@ -40,7 +40,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The
+        /// tags are removed from the resource share, not the resources in the resource share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +61,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag keys of the tags to remove.
+        /// Specifies a list of one or more tag keys that you want to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

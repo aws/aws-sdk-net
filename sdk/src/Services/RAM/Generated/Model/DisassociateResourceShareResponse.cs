@@ -39,8 +39,10 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// The idempotency identifier associated with this request. If you want to repeat the
+        /// same operation in an idempotent manner then you must include this value in the <code>clientToken</code>
+        /// request parameter of that later call. All other parameters must also have the same
+        /// values that you used in the first call.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -58,7 +60,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareAssociations. 
         /// <para>
-        /// Information about the associations.
+        /// An array of objects that contain information about the updated associations for this
+        /// resource share.
         /// </para>
         /// </summary>
         public List<ResourceShareAssociation> ResourceShareAssociations

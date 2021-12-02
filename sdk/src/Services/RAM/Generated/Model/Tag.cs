@@ -29,7 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Information about a tag.
+    /// A structure containing a tag. A tag is metadata that you can attach to your resources
+    /// to help organize and categorize them. You can also use them to help you secure your
+    /// resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+    /// access to Amazon Web Services resources using tags</a>.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class Tag
     {
@@ -39,7 +49,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the tag.
+        /// The key, or name, attached to the tag. Every tag must have a key. Key names are case
+        /// sensitive.
         /// </para>
         /// </summary>
         public string Key
@@ -57,7 +68,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the tag.
+        /// The string value attached to the tag. The value can be an empty string. Key values
+        /// are case sensitive.
         /// </para>
         /// </summary>
         public string Value

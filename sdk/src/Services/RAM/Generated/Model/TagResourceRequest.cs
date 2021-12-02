@@ -30,7 +30,9 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds the specified tags to the specified resource share that you own.
+    /// Adds the specified tag keys and values to the specified resource share. The tags are
+    /// attached only to the resource share, not to the resources that are in the resource
+    /// share.
     /// </summary>
     public partial class TagResourceRequest : AmazonRAMRequest
     {
@@ -40,7 +42,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share that you want to add tags to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +62,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// A list of one or more tag key and value pairs. The tag key must be present and not
+        /// be an empty string. The tag value must be present but can be an empty string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

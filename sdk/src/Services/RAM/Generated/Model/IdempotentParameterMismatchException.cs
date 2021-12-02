@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.
+    /// The client token input parameter was matched one used with a previous call to the
+    /// operation, but at least one of the other input parameters is different from the previous
+    /// call.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

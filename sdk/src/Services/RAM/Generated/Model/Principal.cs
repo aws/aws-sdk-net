@@ -42,7 +42,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time when the principal was associated with the resource share.
+        /// The date and time when the principal was associated with the resource share.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -97,7 +97,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The time when the association was last updated.
+        /// The date and time when the association was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -115,7 +115,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of a resource share the principal is associated with.
         /// </para>
         /// </summary>
         public string ResourceShareArn

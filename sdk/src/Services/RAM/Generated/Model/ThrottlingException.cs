@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// This request would exceed the limit for resource shares for your account.
+    /// You exceeded the rate at which you are allowed to perform this operation. Please try
+    /// again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ResourceShareLimitExceededException : AmazonRAMException
+    public partial class ThrottlingException : AmazonRAMException
     {
 
         /// <summary>
-        /// Constructs a new ResourceShareLimitExceededException with the specified error
+        /// Constructs a new ThrottlingException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ResourceShareLimitExceededException(string message) 
+        public ThrottlingException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ResourceShareLimitExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ResourceShareLimitExceededException(string message, Exception innerException) 
+        public ThrottlingException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceShareLimitExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="innerException"></param>
-        public ResourceShareLimitExceededException(Exception innerException) 
+        public ThrottlingException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ResourceShareLimitExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,30 +72,30 @@ namespace Amazon.RAM.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceShareLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ThrottlingException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ResourceShareLimitExceededException
+        /// Construct instance of ThrottlingException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ResourceShareLimitExceededException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ThrottlingException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ResourceShareLimitExceededException class with serialized data.
+        /// Constructs a new instance of the ThrottlingException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ResourceShareLimitExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

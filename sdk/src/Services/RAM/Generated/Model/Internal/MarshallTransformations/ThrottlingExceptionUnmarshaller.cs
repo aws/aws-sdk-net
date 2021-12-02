@@ -34,66 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceNameAndResourceType Object
+    /// Response Unmarshaller for ThrottlingException Object
     /// </summary>  
-    public class ServiceNameAndResourceTypeUnmarshaller : IUnmarshaller<ServiceNameAndResourceType, XmlUnmarshallerContext>, IUnmarshaller<ServiceNameAndResourceType, JsonUnmarshallerContext>
+    public class ThrottlingExceptionUnmarshaller : IErrorResponseUnmarshaller<ThrottlingException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceNameAndResourceType IUnmarshaller<ServiceNameAndResourceType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ThrottlingException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ServiceNameAndResourceType Unmarshall(JsonUnmarshallerContext context)
+        public ThrottlingException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            ServiceNameAndResourceType unmarshalledObject = new ServiceNameAndResourceType();
+            ThrottlingException unmarshalledObject = new ThrottlingException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("resourceRegionScope", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceRegionScope = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
-
-        private static ServiceNameAndResourceTypeUnmarshaller _instance = new ServiceNameAndResourceTypeUnmarshaller();        
+        private static ThrottlingExceptionUnmarshaller _instance = new ThrottlingExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceNameAndResourceTypeUnmarshaller Instance
+        public static ThrottlingExceptionUnmarshaller Instance
         {
             get
             {

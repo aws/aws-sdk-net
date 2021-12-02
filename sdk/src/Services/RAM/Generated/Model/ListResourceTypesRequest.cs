@@ -30,18 +30,25 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceTypes operation.
-    /// Lists the shareable resource types supported by RAM.
+    /// Lists the resource types that can be shared by RAM.
     /// </summary>
     public partial class ListResourceTypesRequest : AmazonRAMRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private ResourceRegionScopeFilter _resourceRegionScope;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// Specifies the total number of results that you want included on each page of the response.
+        /// If you do not include this parameter, it defaults to a value that is specific to the
+        /// operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+        /// response element is returned with a value (not null). Include the specified value
+        /// as the <code>NextToken</code> request parameter in the next call to the operation
+        /// to get the next part of the results. Note that the service might return fewer results
+        /// than the maximum even when there are more results available. You should check <code>NextToken</code>
+        /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -60,7 +67,10 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// Specifies that you want to receive the next page of results. Valid only if you received
+        /// a <code>NextToken</code> response in the previous request. If you did, it indicates
+        /// that more output is available. Set this parameter to the value provided by the previous
+        /// call's <code>NextToken</code> response to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -73,6 +83,42 @@ namespace Amazon.RAM.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceRegionScope. 
+        /// <para>
+        /// Specifies that you want the results to include only resources that have the specified
+        /// scope.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ALL</code> – the results include both global and regional resources or resource
+        /// types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GLOBAL</code> – the results include only global resources or resource types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REGIONAL</code> – the results include only regional resources or resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default value is <code>ALL</code>.
+        /// </para>
+        /// </summary>
+        public ResourceRegionScopeFilter ResourceRegionScope
+        {
+            get { return this._resourceRegionScope; }
+            set { this._resourceRegionScope = value; }
+        }
+
+        // Check to see if ResourceRegionScope property is set
+        internal bool IsSetResourceRegionScope()
+        {
+            return this._resourceRegionScope != null;
         }
 
     }

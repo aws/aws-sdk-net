@@ -30,7 +30,10 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateResourceSharePermission operation.
-    /// Associates a permission with a resource share.
+    /// Adds or replaces the RAM permission for a resource type included in a resource share.
+    /// You can have exactly one permission associated with each resource type in the resource
+    /// share. You can add a new RAM permission only if there are currently no resources of
+    /// that resource type currently in the resource share.
     /// </summary>
     public partial class AssociateResourceSharePermissionRequest : AmazonRAMRequest
     {
@@ -43,8 +46,17 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the request. This lets you safely retry the request without accidentally performing
+        /// the same operation a second time. Passing the same value to a later call to an operation
+        /// requires that you also pass the same value for all other parameters. We recommend
+        /// that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+        /// type of value.</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide this value, then Amazon Web Services generates a random one for
+        /// you.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -62,8 +74,12 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the RAM permission to associate with the resource
-        /// share.
+        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the RAM permission to associate with the resource share.
+        /// To find the ARN for a permission, use either the <a>ListPermissions</a> operation
+        /// or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
+        /// library</a> page in the RAM console and then choose the name of the permission. The
+        /// ARN is displayed on the detail page.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +98,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionVersion. 
         /// <para>
-        /// The version of the RAM permissions to associate with the resource share.
+        /// Specifies the version of the RAM permission to associate with the resource share.
+        /// If you don't specify this parameter, the operation uses the version designated as
+        /// the default.
         /// </para>
         /// </summary>
         public int PermissionVersion
@@ -100,10 +118,19 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// Indicates whether the permission should replace the permissions that are currently
+        /// Specifies whether the specified permission should replace or add to the existing permission
         /// associated with the resource share. Use <code>true</code> to replace the current permissions.
-        /// Use <code>false</code> to add the permission to the current permission.
+        /// Use <code>false</code> to add the permission to the current permission. The default
+        /// value is <code>false</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A resource share can have only one permission per resource type. If a resource share
+        /// already has a permission for the specified resource type and you don't set <code>replace</code>
+        /// to <code>true</code> then the operation returns an error. This helps prevent accidental
+        /// overwriting of a permission.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool Replace
         {
@@ -120,7 +147,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

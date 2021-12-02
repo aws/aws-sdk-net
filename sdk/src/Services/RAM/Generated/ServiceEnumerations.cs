@@ -75,6 +75,110 @@ namespace Amazon.RAM
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceRegionScope.
+    /// </summary>
+    public class ResourceRegionScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLOBAL for ResourceRegionScope
+        /// </summary>
+        public static readonly ResourceRegionScope GLOBAL = new ResourceRegionScope("GLOBAL");
+        /// <summary>
+        /// Constant REGIONAL for ResourceRegionScope
+        /// </summary>
+        public static readonly ResourceRegionScope REGIONAL = new ResourceRegionScope("REGIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceRegionScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceRegionScope FindValue(string value)
+        {
+            return FindValue<ResourceRegionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceRegionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceRegionScopeFilter.
+    /// </summary>
+    public class ResourceRegionScopeFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResourceRegionScopeFilter
+        /// </summary>
+        public static readonly ResourceRegionScopeFilter ALL = new ResourceRegionScopeFilter("ALL");
+        /// <summary>
+        /// Constant GLOBAL for ResourceRegionScopeFilter
+        /// </summary>
+        public static readonly ResourceRegionScopeFilter GLOBAL = new ResourceRegionScopeFilter("GLOBAL");
+        /// <summary>
+        /// Constant REGIONAL for ResourceRegionScopeFilter
+        /// </summary>
+        public static readonly ResourceRegionScopeFilter REGIONAL = new ResourceRegionScopeFilter("REGIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceRegionScopeFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceRegionScopeFilter FindValue(string value)
+        {
+            return FindValue<ResourceRegionScopeFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceRegionScopeFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceShareAssociationStatus.
     /// </summary>
     public class ResourceShareAssociationStatus : ConstantClass

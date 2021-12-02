@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The invitation is expired.
+    /// The specified invitation is expired.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

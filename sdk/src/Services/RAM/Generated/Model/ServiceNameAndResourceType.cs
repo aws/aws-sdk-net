@@ -29,18 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Information about the shareable resource types and the Amazon Web Services services
-    /// to which they belong.
+    /// Information about a shareable resource type and the Amazon Web Services service to
+    /// which resources of that type belong.
     /// </summary>
     public partial class ServiceNameAndResourceType
     {
+        private ResourceRegionScope _resourceRegionScope;
         private string _resourceType;
         private string _serviceName;
 
         /// <summary>
+        /// Gets and sets the property ResourceRegionScope. 
+        /// <para>
+        /// Specifies the scope of visibility of resources of this type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>REGIONAL</b> – The resource can be accessed only by using requests that target
+        /// the Amazon Web Services Region in which the resource exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceRegionScope ResourceRegionScope
+        {
+            get { return this._resourceRegionScope; }
+            set { this._resourceRegionScope = value; }
+        }
+
+        // Check to see if ResourceRegionScope property is set
+        internal bool IsSetResourceRegionScope()
+        {
+            return this._resourceRegionScope != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The shareable resource types.
+        /// The type of the resource.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -58,7 +87,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the Amazon Web Services services to which the resources belong.
+        /// The name of the Amazon Web Services service to which resources of this type belong.
         /// </para>
         /// </summary>
         public string ServiceName

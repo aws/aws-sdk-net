@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Information about a permission that is associated with a resource share.
+    /// Information about an RAM permission that is associated with a resource share and any
+    /// of its resources of a specified type.
     /// </summary>
     public partial class ResourceSharePermissionSummary
     {
@@ -46,7 +47,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the permission.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the permission you want information about.
         /// </para>
         /// </summary>
         public string Arn
@@ -82,8 +84,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property DefaultVersion. 
         /// <para>
-        /// Specifies whether the version of the permission is set to the default version for
-        /// this permission.
+        /// Specifies whether the version of the permission represented in this structure is the
+        /// default version for this permission.
         /// </para>
         /// </summary>
         public bool DefaultVersion
@@ -101,8 +103,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property IsResourceTypeDefault. 
         /// <para>
-        /// Specifies whether the version of the permission is set to the default version for
-        /// this resource type.
+        /// Specifies whether the version of the permission represented in this structure is the
+        /// default version for all resources of this resource type.
         /// </para>
         /// </summary>
         public bool IsResourceTypeDefault
@@ -138,7 +140,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the permission.
+        /// The name of this permission.
         /// </para>
         /// </summary>
         public string Name
@@ -156,7 +158,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to which the permission applies.
+        /// The type of resource to which this permission applies.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -192,7 +194,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The identifier for the version of the permission.
+        /// The version of the permission represented in this structure.
         /// </para>
         /// </summary>
         public string Version

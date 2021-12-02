@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Describes a resource associated with a resource share.
+    /// Describes a resource associated with a resource share in RAM.
     /// </summary>
     public partial class Resource
     {
@@ -37,6 +37,7 @@ namespace Amazon.RAM.Model
         private DateTime? _creationTime;
         private DateTime? _lastUpdatedTime;
         private string _resourceGroupArn;
+        private ResourceRegionScope _resourceRegionScope;
         private string _resourceShareArn;
         private ResourceStatus _status;
         private string _statusMessage;
@@ -45,7 +46,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource.
         /// </para>
         /// </summary>
         public string Arn
@@ -63,7 +65,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time when the resource was associated with the resource share.
+        /// The date and time when the resource was associated with the resource share.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -81,7 +83,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The time when the association was last updated.
+        /// The date an time when the association was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -99,8 +101,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource group. This value is returned only
-        /// if the resource is a resource group.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource group. This value is available only if the
+        /// resource is part of a resource group.
         /// </para>
         /// </summary>
         public string ResourceGroupArn
@@ -116,9 +119,38 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceRegionScope. 
+        /// <para>
+        /// Specifies the scope of visibility of this resource:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>REGIONAL</b> – The resource can be accessed only by using requests that target
+        /// the Amazon Web Services Region in which the resource exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceRegionScope ResourceRegionScope
+        {
+            get { return this._resourceRegionScope; }
+            set { this._resourceRegionScope = value; }
+        }
+
+        // Check to see if ResourceRegionScope property is set
+        internal bool IsSetResourceRegionScope()
+        {
+            return this._resourceRegionScope != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share this resource is associated with.
         /// </para>
         /// </summary>
         public string ResourceShareArn
@@ -136,7 +168,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the resource.
+        /// The current status of the resource.
         /// </para>
         /// </summary>
         public ResourceStatus Status
@@ -172,7 +204,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The resource type.
+        /// The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+        /// 
         /// </para>
         /// </summary>
         public string Type

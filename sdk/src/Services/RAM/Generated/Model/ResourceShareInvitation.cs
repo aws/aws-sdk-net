@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Describes an invitation to join a resource share.
+    /// Describes an invitation for an Amazon Web Services account to join a resource share.
     /// </summary>
     public partial class ResourceShareInvitation
     {
@@ -82,7 +82,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ReceiverArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the IAM user or role that received the invitation.
         /// </para>
         /// </summary>
         public string ReceiverArn
@@ -100,7 +101,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share
         /// </para>
         /// </summary>
         public string ResourceShareArn
@@ -118,9 +120,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareAssociations. 
         /// <para>
-        /// To view the resources associated with a pending resource share invitation, use <a
-        /// href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
-        /// ListPendingInvitationResources</a>.
+        /// To view the resources associated with a pending resource share invitation, use <a>ListPendingInvitationResources</a>.
         /// </para>
         /// </summary>
         [Obsolete("This member has been deprecated. Use ListPendingInvitationResources.")]
@@ -139,7 +139,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareInvitationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the invitation.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the invitation.
         /// </para>
         /// </summary>
         public string ResourceShareInvitationArn
@@ -193,7 +194,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the invitation.
+        /// The current status of the invitation.
         /// </para>
         /// </summary>
         public ResourceShareInvitationStatus Status

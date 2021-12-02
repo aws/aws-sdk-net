@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// An Amazon Resource Name (ARN) was not found.
+    /// The specified Amazon Resource Name (ARN) was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

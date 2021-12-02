@@ -30,9 +30,9 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResourceShare operation.
-    /// Creates a resource share. You must provide a list of the Amazon Resource Names (ARNs)
-    /// for the resources you want to share. You must also specify who you want to share the
-    /// resources with, and the permissions that you grant them.
+    /// Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names (ARNs)</a> for the resources that you want to share, a list of principals
+    /// you want to share the resources with, and the permissions to grant those principals.
     /// 
     ///  <note> 
     /// <para>
@@ -55,8 +55,11 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AllowExternalPrincipals. 
         /// <para>
-        /// Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.
+        /// Specifies whether principals outside your organization in Organizations can be associated
+        /// with a resource share. A value of <code>true</code> lets you share with individual
+        /// Amazon Web Services accounts that are <i>not</i> in your organization. A value of
+        /// <code>false</code> only has meaning if your account is a member of an Amazon Web Services
+        /// Organization. The default value is <code>true</code>.
         /// </para>
         /// </summary>
         public bool AllowExternalPrincipals
@@ -74,8 +77,17 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the request. This lets you safely retry the request without accidentally performing
+        /// the same operation a second time. Passing the same value to a later call to an operation
+        /// requires that you also pass the same value for all other parameters. We recommend
+        /// that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+        /// type of value.</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide this value, then Amazon Web Services generates a random one for
+        /// you.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -93,7 +105,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the resource share.
+        /// Specifies the name of the resource share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,10 +124,11 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the permissions to associate with the resource
-        /// share. If you do not specify an ARN for the permission, RAM automatically attaches
-        /// the default version of the permission for each resource type. Only one permission
-        /// can be associated with each resource type in a resource share.
+        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs)</a> of the RAM permission to associate with the resource share.
+        /// If you do not specify an ARN for the permission, RAM automatically attaches the default
+        /// version of the permission for each resource type. You can associate only one permission
+        /// with each resource type included in the resource share.
         /// </para>
         /// </summary>
         public List<string> PermissionArns
@@ -133,33 +146,40 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The principals to associate with the resource share. The possible values are:
+        /// Specifies a list of one or more principals to associate with the resource share.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can include the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An Amazon Web Services account ID
+        /// An Amazon Web Services account ID, for example: <code>123456789012</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon Resource Name (ARN) of an organization in Organizations
+        /// An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an organizational unit (OU) in Organizations
+        /// An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM role
+        /// An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM user
+        /// An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Not all resource types can be shared with IAM roles and IAM users. For more information,
+        /// Not all resource types can be shared with IAM roles and users. For more information,
         /// see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
-        /// with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.
+        /// with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -178,7 +198,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The ARNs of the resources to associate with the resource share.
+        /// Specifies a list of one or more ARNs of the resources to associate with the resource
+        /// share.
         /// </para>
         /// </summary>
         public List<string> ResourceArns
@@ -196,7 +217,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// Specifies one or more tags to attach to the resource share itself. It doesn't attach
+        /// the tags to the resources associated with the resource share.
         /// </para>
         /// </summary>
         public List<Tag> Tags

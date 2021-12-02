@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Describes an association with a resource share.
+    /// Describes an association with a resource share and either a principal or a resource.
     /// </summary>
     public partial class ResourceShareAssociation
     {
@@ -46,30 +46,39 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AssociatedEntity. 
         /// <para>
-        /// The associated entity. For resource associations, this is the Amazon Resource Name
-        /// (ARN) of the resource. For principal associations, this is one of the following:
+        /// The associated entity. This can be either of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An Amazon Web Services account ID
+        /// For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an organization in Organizations
+        /// For principal associations, this is one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The ID of an Amazon Web Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an organizational unit (OU) in Organizations
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of an organization in Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM role
+        /// The ARN of an organizational unit (OU) in Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM user
+        /// The ARN of an IAM role
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN of an IAM user
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public string AssociatedEntity
         {
@@ -86,7 +95,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property AssociationType. 
         /// <para>
-        /// The association type.
+        /// The type of entity included in this association.
         /// </para>
         /// </summary>
         public ResourceShareAssociationType AssociationType
@@ -104,7 +113,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time when the association was created.
+        /// The date and time when the association was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -141,7 +150,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The time when the association was last updated.
+        /// The date and time when the association was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -159,7 +168,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share.
         /// </para>
         /// </summary>
         public string ResourceShareArn
@@ -195,7 +205,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the association.
+        /// The current status of the association.
         /// </para>
         /// </summary>
         public ResourceShareAssociationStatus Status

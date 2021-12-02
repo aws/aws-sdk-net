@@ -39,8 +39,11 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// If present, this value indicates that more output is available than is included in
+        /// the current response. Use this value in the <code>NextToken</code> request parameter
+        /// in a subsequent call to the operation to get the next part of the output. You should
+        /// repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
+        /// This indicates that this is the last page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -58,7 +61,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// The permissions associated with the resource share.
+        /// An array of objects that describe the permissions associated with the resource share.
         /// </para>
         /// </summary>
         public List<ResourceSharePermissionSummary> Permissions

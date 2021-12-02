@@ -34,10 +34,11 @@ namespace Amazon.RAM
     /// This is the <i>Resource Access Manager API Reference</i>. This documentation provides
     /// descriptions and syntax for each of the actions and data types in RAM. RAM is a service
     /// that helps you securely share your Amazon Web Services resources across Amazon Web
-    /// Services accounts and within your organization or organizational units (OUs) in Organizations.
-    /// For supported resource types, you can also share resources with IAM roles and IAM
-    /// users. If you have multiple Amazon Web Services accounts, you can use RAM to share
-    /// those resources with other accounts.
+    /// Services accounts. If you have multiple Amazon Web Services accounts, you can use
+    /// RAM to share those resources with other accounts. If you use Organizations to manage
+    /// your accounts, then you share your resources with your organization or organizational
+    /// units (OUs). For supported resource types, you can also share resources with individual
+    /// Identity and Access Management (IAM) roles an users. 
     /// 
     ///  
     /// <para>
@@ -69,6 +70,9 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Accepts an invitation to a resource share from another Amazon Web Services account.
+        /// After you accept the invitation, the resources included in the resource share are
+        /// available to interact with in the relevant Amazon Web Services Management Consoles
+        /// and tools.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptResourceShareInvitation service method.</param>
         /// <param name="cancellationToken">
@@ -77,11 +81,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the AcceptResourceShareInvitation service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// A client token input parameter was reused with an operation, but at least one of the
-        /// other input parameters is different from the previous call to the operation.
+        /// The client token input parameter was matched one used with a previous call to the
+        /// operation, but at least one of the other input parameters is different from the previous
+        /// call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
@@ -90,16 +95,16 @@ namespace Amazon.RAM
         /// The requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyAcceptedException">
-        /// The invitation was already accepted.
+        /// The specified invitation was already accepted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
-        /// The invitation was already rejected.
+        /// The specified invitation was already rejected.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
-        /// The invitation is expired.
+        /// The specified invitation is expired.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -117,7 +122,10 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Associates the specified resource share with the specified principals and resources.
+        /// Adds the specified list of principals and list of resources to a resource share. Principals
+        /// that already have access to this resource share immediately receive access to the
+        /// added resources. Newly added principals immediately receive access to the resources
+        /// shared in this resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResourceShare service method.</param>
         /// <param name="cancellationToken">
@@ -126,11 +134,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the AssociateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// A client token input parameter was reused with an operation, but at least one of the
-        /// other input parameters is different from the previous call to the operation.
+        /// The client token input parameter was matched one used with a previous call to the
+        /// operation, but at least one of the other input parameters is different from the previous
+        /// call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -145,13 +154,17 @@ namespace Amazon.RAM
         /// The requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// The requested resource share exceeds the limit for your account.
+        /// This request would exceed the limit for resource shares for your account.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The service is not available.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ThrottlingException">
+        /// You exceeded the rate at which you are allowed to perform this operation. Please try
+        /// again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// A specified resource was not found.
@@ -166,7 +179,10 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Associates a permission with a resource share.
+        /// Adds or replaces the RAM permission for a resource type included in a resource share.
+        /// You can have exactly one permission associated with each resource type in the resource
+        /// share. You can add a new RAM permission only if there are currently no resources of
+        /// that resource type currently in the resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResourceSharePermission service method.</param>
         /// <param name="cancellationToken">
@@ -175,7 +191,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the AssociateResourceSharePermission service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -205,9 +221,9 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Creates a resource share. You must provide a list of the Amazon Resource Names (ARNs)
-        /// for the resources you want to share. You must also specify who you want to share the
-        /// resources with, and the permissions that you grant them.
+        /// Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs)</a> for the resources that you want to share, a list of principals
+        /// you want to share the resources with, and the permissions to grant those principals.
         /// 
         ///  <note> 
         /// <para>
@@ -224,11 +240,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the CreateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// A client token input parameter was reused with an operation, but at least one of the
-        /// other input parameters is different from the previous call to the operation.
+        /// The client token input parameter was matched one used with a previous call to the
+        /// operation, but at least one of the other input parameters is different from the previous
+        /// call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -243,7 +260,7 @@ namespace Amazon.RAM
         /// The requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// The requested resource share exceeds the limit for your account.
+        /// This request would exceed the limit for resource shares for your account.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -252,7 +269,7 @@ namespace Amazon.RAM
         /// The service is not available.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
-        /// The specified tag is a reserved word and cannot be used.
+        /// The specified tag key is a reserved word and can't be used.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// A specified resource was not found.
@@ -267,7 +284,9 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Deletes the specified resource share.
+        /// Deletes the specified resource share. This doesn't delete any of the resources that
+        /// were associated with the resource share; it only stops the sharing of those resources
+        /// outside of the Amazon Web Services account that created them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceShare service method.</param>
         /// <param name="cancellationToken">
@@ -276,11 +295,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the DeleteResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// A client token input parameter was reused with an operation, but at least one of the
-        /// other input parameters is different from the previous call to the operation.
+        /// The client token input parameter was matched one used with a previous call to the
+        /// operation, but at least one of the other input parameters is different from the previous
+        /// call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -322,11 +342,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the DisassociateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// A client token input parameter was reused with an operation, but at least one of the
-        /// other input parameters is different from the previous call to the operation.
+        /// The client token input parameter was matched one used with a previous call to the
+        /// operation, but at least one of the other input parameters is different from the previous
+        /// call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -341,7 +362,7 @@ namespace Amazon.RAM
         /// The requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// The requested resource share exceeds the limit for your account.
+        /// This request would exceed the limit for resource shares for your account.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -362,7 +383,10 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Disassociates an RAM permission from a resource share.
+        /// Disassociates an RAM permission from a resource share. Permission changes take effect
+        /// immediately. You can remove a RAM permission from a resource share only if there are
+        /// currently no resources of the relevant resource type currently attached to the resource
+        /// share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceSharePermission service method.</param>
         /// <param name="cancellationToken">
@@ -371,7 +395,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the DisassociateResourceSharePermission service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -404,11 +428,18 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Enables resource sharing within your organization in Organizations.
+        /// Enables resource sharing within your organization in Organizations. Calling this operation
+        /// enables RAM to retrieve information about the organization and its structure. This
+        /// lets you share resources with all of the accounts in an organization by specifying
+        /// the organization's ID, or all of the accounts in an organizational unit (OU) by specifying
+        /// the OU's ID. Until you enable sharing within the organization, you can specify only
+        /// individual Amazon Web Services accounts, or for supported resource types, IAM users
+        /// and roles.
         /// 
         ///  
         /// <para>
-        /// The caller must be the master account for the organization.
+        /// You must call this operation from an IAM user or role in the organization's management
+        /// account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSharingWithAwsOrganization service method.</param>
@@ -472,7 +503,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the policies for the specified resources that you own and have shared.
+        /// Retrieves the resource policies for the specified resources that you own and have
+        /// shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
         /// <param name="cancellationToken">
@@ -481,7 +513,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourcePolicies service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -490,7 +522,7 @@ namespace Amazon.RAM
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceArnNotFoundException">
-        /// An Amazon Resource Name (ARN) was not found.
+        /// The specified Amazon Resource Name (ARN) was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -508,7 +540,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the resources or principals for the resource shares that you own.
+        /// Retrieves the resource and principal associations for resource shares that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -517,7 +549,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShareAssociations service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -547,7 +579,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the invitations that you have received for resource shares.
+        /// Retrieves details about invitations that you have received for resource shares.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -556,10 +588,10 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShareInvitations service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidMaxResultsException">
-        /// The specified value for MaxResults is not valid.
+        /// The specified value for <code>MaxResults</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -568,7 +600,7 @@ namespace Amazon.RAM
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -589,8 +621,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Gets the resource shares that you own or the resource shares that are shared with
-        /// you.
+        /// Retrieves details about the resource shares that you own or that are shared with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShares service method.</param>
         /// <param name="cancellationToken">
@@ -599,7 +630,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShares service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -626,8 +657,9 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the resources in a resource share that is shared with you but that the invitation
-        /// is still pending for.
+        /// Lists the resources in a resource share that is shared with you but for which the
+        /// invitation is still <code>PENDING</code>. That means that you haven't accepted or
+        /// rejected the invitation and the invitation hasn't expired.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPendingInvitationResources service method.</param>
         /// <param name="cancellationToken">
@@ -636,7 +668,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPendingInvitationResources service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -648,13 +680,13 @@ namespace Amazon.RAM
         /// A required input parameter is missing.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
-        /// The invitation was already rejected.
+        /// The specified invitation was already rejected.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
-        /// The invitation is expired.
+        /// The specified invitation is expired.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -672,7 +704,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the RAM permissions.
+        /// Retrieves a list of available RAM permissions that you can use for the supported resource
+        /// types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
         /// <param name="cancellationToken">
@@ -681,7 +714,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPermissions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -705,7 +738,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the principals that you have shared resources with or that have shared resources
+        /// Lists the principals that you are sharing resources with or that are sharing resources
         /// with you.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
@@ -715,7 +748,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPrincipals service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -752,7 +785,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResources service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -791,7 +824,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResourceSharePermissions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -821,7 +854,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Lists the shareable resource types supported by RAM.
+        /// Lists the resource types that can be shared by RAM.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -830,7 +863,7 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResourceTypes service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for NextToken is not valid.
+        /// The specified value for <code>NextToken</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.
@@ -851,23 +884,16 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Resource shares that were created by attaching a policy to a resource are visible
-        /// only to the resource share owner, and the resource share cannot be modified in RAM.
+        /// When you attach a resource-based permission policy to a resource, it automatically
+        /// creates a resource share. However, resource shares created this way are visible only
+        /// to the resource share owner, and the resource share can't be modified in RAM.
         /// 
         ///  
         /// <para>
-        /// Use this API action to promote the resource share. When you promote the resource share,
-        /// it becomes:
+        /// You can use this operation to promote the resource share to a full RAM resource share.
+        /// When you promote a resource share, you can then manage the resource share in RAM and
+        /// it becomes visible to all of the principals you shared it with.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Visible to all principals that it is shared with.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Modifiable in RAM.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PromoteResourceShareCreatedFromPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -888,7 +914,7 @@ namespace Amazon.RAM
         /// The requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// The requested resource share exceeds the limit for your account.
+        /// This request would exceed the limit for resource shares for your account.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -918,11 +944,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the RejectResourceShareInvitation service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// A client token input parameter was reused with an operation, but at least one of the
-        /// other input parameters is different from the previous call to the operation.
+        /// The client token input parameter was matched one used with a previous call to the
+        /// operation, but at least one of the other input parameters is different from the previous
+        /// call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The format of an Amazon Resource Name (ARN) is not valid.
@@ -931,16 +958,16 @@ namespace Amazon.RAM
         /// The requested operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyAcceptedException">
-        /// The invitation was already accepted.
+        /// The specified invitation was already accepted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
-        /// The invitation was already rejected.
+        /// The specified invitation was already rejected.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The Amazon Resource Name (ARN) for an invitation was not found.
+        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
-        /// The invitation is expired.
+        /// The specified invitation is expired.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -958,7 +985,9 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Adds the specified tags to the specified resource share that you own.
+        /// Adds the specified tag keys and values to the specified resource share. The tags are
+        /// attached only to the resource share, not to the resources that are in the resource
+        /// share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -973,7 +1002,7 @@ namespace Amazon.RAM
         /// The format of an Amazon Resource Name (ARN) is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceArnNotFoundException">
-        /// An Amazon Resource Name (ARN) was not found.
+        /// The specified Amazon Resource Name (ARN) was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
         /// The service could not respond to the request due to an internal problem.
@@ -982,10 +1011,10 @@ namespace Amazon.RAM
         /// The service is not available.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagLimitExceededException">
-        /// The requested tags exceed the limit for your account.
+        /// This request would exceed the limit for tags for your account.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
-        /// The specified tag is a reserved word and cannot be used.
+        /// The specified tag key is a reserved word and can't be used.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// A specified resource was not found.
@@ -1000,7 +1029,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Removes the specified tags from the specified resource share that you own.
+        /// Removes the specified tag key and value pairs from the specified resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1027,7 +1056,7 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Updates the specified resource share that you own.
+        /// Modifies some of the properties of the specified resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResourceShare service method.</param>
         /// <param name="cancellationToken">
@@ -1036,11 +1065,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the UpdateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// A client token input parameter was reused with an operation, but at least one of the
-        /// other input parameters is different from the previous call to the operation.
+        /// The client token input parameter was matched one used with a previous call to the
+        /// operation, but at least one of the other input parameters is different from the previous
+        /// call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// A client token is not valid.
+        /// The client token is not valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// A parameter is not valid.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The Amazon Resource Name (ARN) for an invitation was not found.
+    /// The specified Amazon Resource Name (ARN) for an invitation was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

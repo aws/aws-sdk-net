@@ -30,7 +30,10 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateResourceSharePermission operation.
-    /// Disassociates an RAM permission from a resource share.
+    /// Disassociates an RAM permission from a resource share. Permission changes take effect
+    /// immediately. You can remove a RAM permission from a resource share only if there are
+    /// currently no resources of the relevant resource type currently attached to the resource
+    /// share.
     /// </summary>
     public partial class DisassociateResourceSharePermissionRequest : AmazonRAMRequest
     {
@@ -41,8 +44,17 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the request. This lets you safely retry the request without accidentally performing
+        /// the same operation a second time. Passing the same value to a later call to an operation
+        /// requires that you also pass the same value for all other parameters. We recommend
+        /// that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+        /// type of value.</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide this value, then Amazon Web Services generates a random one for
+        /// you.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -60,8 +72,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property PermissionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the permission to disassociate from the resource
-        /// share.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the permission to disassociate from the resource share.
+        /// Changes to permissions take effect immediately.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +93,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource share.
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resoure Name (ARN)</a> of the resource share from which you want to disassociate a
+        /// permission.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

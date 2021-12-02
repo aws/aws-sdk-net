@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Used to filter information based on tags.
+    /// A tag key and optional list of possible values that you can use to filter results
+    /// for tagged resources.
     /// </summary>
     public partial class TagFilter
     {
@@ -39,7 +40,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property TagKey. 
         /// <para>
-        /// The tag key.
+        /// The tag key. This must have a valid string value and can't be empty.
         /// </para>
         /// </summary>
         public string TagKey
@@ -57,7 +58,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property TagValues. 
         /// <para>
-        /// The tag values.
+        /// A list of zero or more tag values. If no values are provided, then the filter matches
+        /// any tag with the specified key, regardless of its value.
         /// </para>
         /// </summary>
         public List<string> TagValues

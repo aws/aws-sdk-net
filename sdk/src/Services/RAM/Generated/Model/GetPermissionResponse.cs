@@ -38,7 +38,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Permission. 
         /// <para>
-        /// Information about the permission.
+        /// An object that contains information about the permission.
         /// </para>
         /// </summary>
         public ResourceSharePermissionDetail Permission

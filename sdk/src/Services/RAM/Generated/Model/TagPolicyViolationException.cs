@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The specified tag is a reserved word and cannot be used.
+    /// The specified tag key is a reserved word and can't be used.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

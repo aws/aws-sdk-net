@@ -100,6 +100,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResourceOwner);
                 }
 
+                if(publicRequest.IsSetResourceRegionScope())
+                {
+                    context.Writer.WritePropertyName("resourceRegionScope");
+                    context.Writer.Write(publicRequest.ResourceRegionScope);
+                }
+
                 if(publicRequest.IsSetResourceShareArns())
                 {
                     context.Writer.WritePropertyName("resourceShareArns");

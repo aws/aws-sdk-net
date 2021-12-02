@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The invitation was already rejected.
+    /// The specified invitation was already rejected.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

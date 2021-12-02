@@ -77,6 +77,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetResourceRegionScope())
+                {
+                    context.Writer.WritePropertyName("resourceRegionScope");
+                    context.Writer.Write(publicRequest.ResourceRegionScope);
+                }
+
                 if(publicRequest.IsSetResourceShareInvitationArn())
                 {
                     context.Writer.WritePropertyName("resourceShareInvitationArn");
