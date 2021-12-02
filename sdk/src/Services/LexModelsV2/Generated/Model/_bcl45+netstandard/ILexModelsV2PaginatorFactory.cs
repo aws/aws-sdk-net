@@ -41,6 +41,11 @@ namespace Amazon.LexModelsV2.Model
         IListBotLocalesPaginator ListBotLocales(ListBotLocalesRequest request);
 
         /// <summary>
+        /// Paginator for ListBotRecommendations operation
+        ///</summary>
+        IListBotRecommendationsPaginator ListBotRecommendations(ListBotRecommendationsRequest request);
+
+        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         IListBotsPaginator ListBots(ListBotsRequest request);
@@ -74,6 +79,11 @@ namespace Amazon.LexModelsV2.Model
         /// Paginator for ListIntents operation
         ///</summary>
         IListIntentsPaginator ListIntents(ListIntentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecommendedIntents operation
+        ///</summary>
+        IListRecommendedIntentsPaginator ListRecommendedIntents(ListRecommendedIntentsRequest request);
 
         /// <summary>
         /// Paginator for ListSlots operation

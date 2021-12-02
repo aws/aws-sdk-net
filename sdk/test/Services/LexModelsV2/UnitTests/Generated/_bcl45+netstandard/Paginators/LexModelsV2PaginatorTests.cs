@@ -159,6 +159,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("LexModelsV2")]
+        public void ListBotRecommendationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListBotRecommendationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListBotRecommendationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListBotRecommendationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListBotRecommendations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListBotRecommendations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LexModelsV2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListBotRecommendationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListBotRecommendationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListBotRecommendationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListBotRecommendations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListBotRecommendations(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LexModelsV2")]
         public void ListBotsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListBotsRequest>();
@@ -420,6 +459,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListIntents(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListIntents(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LexModelsV2")]
+        public void ListRecommendedIntentsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRecommendedIntentsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListRecommendedIntentsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListRecommendedIntentsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListRecommendedIntents(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListRecommendedIntents(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LexModelsV2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListRecommendedIntentsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListRecommendedIntentsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListRecommendedIntentsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListRecommendedIntents(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListRecommendedIntents(request);
 
             // Should work the first time
             paginator.Responses.ToList();

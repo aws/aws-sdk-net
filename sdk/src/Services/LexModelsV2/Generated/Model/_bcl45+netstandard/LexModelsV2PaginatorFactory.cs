@@ -60,6 +60,14 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListBotRecommendations operation
+        ///</summary>
+        public IListBotRecommendationsPaginator ListBotRecommendations(ListBotRecommendationsRequest request) 
+        {
+            return new ListBotRecommendationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBots operation
         ///</summary>
         public IListBotsPaginator ListBots(ListBotsRequest request) 
@@ -113,6 +121,14 @@ namespace Amazon.LexModelsV2.Model
         public IListIntentsPaginator ListIntents(ListIntentsRequest request) 
         {
             return new ListIntentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecommendedIntents operation
+        ///</summary>
+        public IListRecommendedIntentsPaginator ListRecommendedIntents(ListRecommendedIntentsRequest request) 
+        {
+            return new ListRecommendedIntentsPaginator(this.client, request);
         }
 
         /// <summary>
