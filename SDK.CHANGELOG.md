@@ -1,3 +1,11 @@
+### 3.7.174.0 (2021-12-02 19:12 UTC)
+* AmplifyUIBuilder (3.7.0.0)
+	* This release introduces the actions and data types for the new Amplify UI Builder API. The Amplify UI Builder API provides a programmatic interface for creating and configuring user interface (UI) component libraries and themes for use in Amplify applications.
+* NetworkManager (3.7.2.0)
+	* This release adds API support for AWS Cloud WAN.
+* RAM (3.7.2.0)
+	* This release adds the ability to use the new ResourceRegionScope parameter on List operations that return lists of resources or resource types. This new parameter filters the results by letting you differentiate between global or regional resource types.
+
 ### 3.7.173.0 (2021-12-02 00:09 UTC)
 * DevOpsGuru (3.7.6.0)
 	* DevOps Guru now provides detailed, database-specific analyses of performance issues and recommends corrective actions for Amazon Aurora database instances with Performance Insights turned on. You can also use AWS tags to choose which resources to analyze and define your applications.

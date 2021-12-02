@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.173.0",
+    "ProductVersion" : "3.7.174.0",
     "CoreVersion"    : "3.7.5.4",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -1202,7 +1202,7 @@
             "InPreview"               : false
         },
         "RAM"                             : {
-            "Version" : "3.7.1.77",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.4"
@@ -1674,7 +1674,7 @@
             "InPreview"               : false
         },
         "NetworkManager"                  : {
-            "Version" : "3.7.1.16",
+            "Version" : "3.7.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.4"
@@ -2387,6 +2387,14 @@
         },
         "BackupGateway"                       : {
             "Version" : "3.7.0.1",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.7.5.4"
+            },
+            "InPreview"               : false
+        },
+        "AmplifyUIBuilder"                    : {
+            "Version" : "3.7.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.4"
