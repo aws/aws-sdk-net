@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
+        private string _lineageGroupArn;
         private MetadataProperties _metadataProperties;
         private List<TrialComponentMetricSummary> _metrics = new List<TrialComponentMetricSummary>();
         private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
@@ -177,6 +178,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LineageGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the lineage group resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string LineageGroupArn
+        {
+            get { return this._lineageGroupArn; }
+            set { this._lineageGroupArn = value; }
+        }
+
+        // Check to see if LineageGroupArn property is set
+        internal bool IsSetLineageGroupArn()
+        {
+            return this._lineageGroupArn != null;
         }
 
         /// <summary>

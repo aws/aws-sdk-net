@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
         private ModelDigests _modelDigests;
+        private string _modelPackageVersionArn;
         private OutputConfig _outputConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
@@ -287,6 +288,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelDigests()
         {
             return this._modelDigests != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the versioned model package that was provided to
+        /// SageMaker Neo when you initiated a compilation job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ModelPackageVersionArn
+        {
+            get { return this._modelPackageVersionArn; }
+            set { this._modelPackageVersionArn = value; }
+        }
+
+        // Check to see if ModelPackageVersionArn property is set
+        internal bool IsSetModelPackageVersionArn()
+        {
+            return this._modelPackageVersionArn != null;
         }
 
         /// <summary>

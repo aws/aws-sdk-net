@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalInferenceSpecifications", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AdditionalInferenceSpecificationDefinition, AdditionalInferenceSpecificationDefinitionUnmarshaller>(AdditionalInferenceSpecificationDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalInferenceSpecifications = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ApprovalDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.CustomerMetadataProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Domain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DriftCheckBaselines", targetDepth))
+                {
+                    var unmarshaller = DriftCheckBaselinesUnmarshaller.Instance;
+                    unmarshalledObject.DriftCheckBaselines = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InferenceSpecification", targetDepth))
@@ -172,6 +190,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelPackageVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SamplePayloadUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SamplePayloadUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceAlgorithmSpecification", targetDepth))
                 {
                     var unmarshaller = SourceAlgorithmSpecificationUnmarshaller.Instance;
@@ -182,6 +206,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Task", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Task = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValidationSpecification", targetDepth))

@@ -84,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetModelPackageVersionArn())
+                {
+                    context.Writer.WritePropertyName("ModelPackageVersionArn");
+                    context.Writer.Write(publicRequest.ModelPackageVersionArn);
+                }
+
                 if(publicRequest.IsSetOutputConfig())
                 {
                     context.Writer.WritePropertyName("OutputConfig");

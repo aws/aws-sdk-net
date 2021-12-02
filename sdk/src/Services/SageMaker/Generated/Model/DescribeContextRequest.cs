@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the context to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=120)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string ContextName
         {
             get { return this._contextName; }

@@ -1620,6 +1620,54 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateInferenceRecommendationsJob
+
+
+        /// <summary>
+        /// Starts a recommendation job. You can create either an instance recommendation or load
+        /// test job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceRecommendationsJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">REST API Reference for CreateInferenceRecommendationsJob Operation</seealso>
+        CreateInferenceRecommendationsJobResponse CreateInferenceRecommendationsJob(CreateInferenceRecommendationsJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInferenceRecommendationsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceRecommendationsJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInferenceRecommendationsJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">REST API Reference for CreateInferenceRecommendationsJob Operation</seealso>
+        IAsyncResult BeginCreateInferenceRecommendationsJob(CreateInferenceRecommendationsJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInferenceRecommendationsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInferenceRecommendationsJob.</param>
+        /// 
+        /// <returns>Returns a  CreateInferenceRecommendationsJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">REST API Reference for CreateInferenceRecommendationsJob Operation</seealso>
+        CreateInferenceRecommendationsJobResponse EndCreateInferenceRecommendationsJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateLabelingJob
 
 
@@ -5887,6 +5935,50 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeInferenceRecommendationsJob
+
+
+        /// <summary>
+        /// Provides the results of the Inference Recommender job. One or more recommendation
+        /// jobs are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceRecommendationsJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">REST API Reference for DescribeInferenceRecommendationsJob Operation</seealso>
+        DescribeInferenceRecommendationsJobResponse DescribeInferenceRecommendationsJob(DescribeInferenceRecommendationsJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInferenceRecommendationsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceRecommendationsJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInferenceRecommendationsJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">REST API Reference for DescribeInferenceRecommendationsJob Operation</seealso>
+        IAsyncResult BeginDescribeInferenceRecommendationsJob(DescribeInferenceRecommendationsJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInferenceRecommendationsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInferenceRecommendationsJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeInferenceRecommendationsJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">REST API Reference for DescribeInferenceRecommendationsJob Operation</seealso>
+        DescribeInferenceRecommendationsJobResponse EndDescribeInferenceRecommendationsJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeLabelingJob
 
 
@@ -5927,6 +6019,51 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  DescribeLabelingJobResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob">REST API Reference for DescribeLabelingJob Operation</seealso>
         DescribeLabelingJobResponse EndDescribeLabelingJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeLineageGroup
+
+
+        /// <summary>
+        /// Provides a list of properties for the requested lineage group. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+        /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLineageGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLineageGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">REST API Reference for DescribeLineageGroup Operation</seealso>
+        DescribeLineageGroupResponse DescribeLineageGroup(DescribeLineageGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLineageGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLineageGroup operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLineageGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">REST API Reference for DescribeLineageGroup Operation</seealso>
+        IAsyncResult BeginDescribeLineageGroup(DescribeLineageGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLineageGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLineageGroup.</param>
+        /// 
+        /// <returns>Returns a  DescribeLineageGroupResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">REST API Reference for DescribeLineageGroup Operation</seealso>
+        DescribeLineageGroupResponse EndDescribeLineageGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7101,6 +7238,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  GetLineageGroupPolicy
+
+
+        /// <summary>
+        /// The resource policy for the lineage group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetLineageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">REST API Reference for GetLineageGroupPolicy Operation</seealso>
+        GetLineageGroupPolicyResponse GetLineageGroupPolicy(GetLineageGroupPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLineageGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageGroupPolicy operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLineageGroupPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">REST API Reference for GetLineageGroupPolicy Operation</seealso>
+        IAsyncResult BeginGetLineageGroupPolicy(GetLineageGroupPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLineageGroupPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLineageGroupPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetLineageGroupPolicyResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">REST API Reference for GetLineageGroupPolicy Operation</seealso>
+        GetLineageGroupPolicyResponse EndGetLineageGroupPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetModelPackageGroupPolicy
 
 
@@ -8259,6 +8439,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListInferenceRecommendationsJobs
+
+
+        /// <summary>
+        /// Lists recommendation jobs that satisfy various filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceRecommendationsJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">REST API Reference for ListInferenceRecommendationsJobs Operation</seealso>
+        ListInferenceRecommendationsJobsResponse ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInferenceRecommendationsJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInferenceRecommendationsJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">REST API Reference for ListInferenceRecommendationsJobs Operation</seealso>
+        IAsyncResult BeginListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInferenceRecommendationsJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInferenceRecommendationsJobs.</param>
+        /// 
+        /// <returns>Returns a  ListInferenceRecommendationsJobsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">REST API Reference for ListInferenceRecommendationsJobs Operation</seealso>
+        ListInferenceRecommendationsJobsResponse EndListInferenceRecommendationsJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListLabelingJobs
 
 
@@ -8342,6 +8562,48 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListLineageGroups
+
+
+        /// <summary>
+        /// A list of lineage groups shared with your Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+        /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListLineageGroups service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
+        ListLineageGroupsResponse ListLineageGroups(ListLineageGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLineageGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageGroups operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLineageGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
+        IAsyncResult BeginListLineageGroups(ListLineageGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLineageGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLineageGroups.</param>
+        /// 
+        /// <returns>Returns a  ListLineageGroupsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
+        ListLineageGroupsResponse EndListLineageGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListModelBiasJobDefinitions
 
 
@@ -8419,6 +8681,47 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  ListModelExplainabilityJobDefinitionsResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">REST API Reference for ListModelExplainabilityJobDefinitions Operation</seealso>
         ListModelExplainabilityJobDefinitionsResponse EndListModelExplainabilityJobDefinitions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListModelMetadata
+
+
+        /// <summary>
+        /// Lists the domain, framework, task, and model name of standard machine learning models
+        /// found in common model zoos.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelMetadata service method.</param>
+        /// 
+        /// <returns>The response from the ListModelMetadata service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">REST API Reference for ListModelMetadata Operation</seealso>
+        ListModelMetadataResponse ListModelMetadata(ListModelMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListModelMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListModelMetadata operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListModelMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">REST API Reference for ListModelMetadata Operation</seealso>
+        IAsyncResult BeginListModelMetadata(ListModelMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListModelMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListModelMetadata.</param>
+        /// 
+        /// <returns>Returns a  ListModelMetadataResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">REST API Reference for ListModelMetadata Operation</seealso>
+        ListModelMetadataResponse EndListModelMetadata(IAsyncResult asyncResult);
 
         #endregion
         
@@ -9547,6 +9850,51 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  QueryLineage
+
+
+        /// <summary>
+        /// Use this action to inspect your lineage and discover relationships between entities.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
+        /// Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryLineage service method.</param>
+        /// 
+        /// <returns>The response from the QueryLineage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">REST API Reference for QueryLineage Operation</seealso>
+        QueryLineageResponse QueryLineage(QueryLineageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryLineage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryLineage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryLineage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">REST API Reference for QueryLineage Operation</seealso>
+        IAsyncResult BeginQueryLineage(QueryLineageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryLineage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryLineage.</param>
+        /// 
+        /// <returns>Returns a  QueryLineageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">REST API Reference for QueryLineage Operation</seealso>
+        QueryLineageResponse EndQueryLineage(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RegisterDevices
 
 
@@ -10163,6 +10511,49 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  StopHyperParameterTuningJobResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
         StopHyperParameterTuningJobResponse EndStopHyperParameterTuningJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopInferenceRecommendationsJob
+
+
+        /// <summary>
+        /// Stops an Inference Recommender job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceRecommendationsJob service method.</param>
+        /// 
+        /// <returns>The response from the StopInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">REST API Reference for StopInferenceRecommendationsJob Operation</seealso>
+        StopInferenceRecommendationsJobResponse StopInferenceRecommendationsJob(StopInferenceRecommendationsJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopInferenceRecommendationsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceRecommendationsJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopInferenceRecommendationsJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">REST API Reference for StopInferenceRecommendationsJob Operation</seealso>
+        IAsyncResult BeginStopInferenceRecommendationsJob(StopInferenceRecommendationsJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopInferenceRecommendationsJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInferenceRecommendationsJob.</param>
+        /// 
+        /// <returns>Returns a  StopInferenceRecommendationsJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">REST API Reference for StopInferenceRecommendationsJob Operation</seealso>
+        StopInferenceRecommendationsJobResponse EndStopInferenceRecommendationsJob(IAsyncResult asyncResult);
 
         #endregion
         

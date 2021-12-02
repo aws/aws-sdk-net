@@ -1612,8 +1612,7 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         /// If you choose a private or vendor workforce, the default value is 30 days (2592,000
-        /// seconds) for non-AL mode. For most users, the maximum is also 30 days. If you want
-        /// to change this limit, contact Amazon Web Services Support.
+        /// seconds) for non-AL mode. For most users, the maximum is also 30 days.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1695,8 +1694,7 @@ namespace Amazon.SageMaker.Model
         /// For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D
         /// point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
         /// frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode.
-        /// For most users, the maximum is also 30 days. If you want to change these limits, contact
-        /// Amazon Web Services Support.
+        /// For most users, the maximum is also 30 days.
         /// </para>
         ///  </li> </ul>
         /// </summary>

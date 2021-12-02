@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CurrentServerlessConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
+                    unmarshalledObject.CurrentServerlessConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CurrentWeight", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.DesiredInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DesiredServerlessConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
+                    unmarshalledObject.DesiredServerlessConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DesiredWeight", targetDepth))

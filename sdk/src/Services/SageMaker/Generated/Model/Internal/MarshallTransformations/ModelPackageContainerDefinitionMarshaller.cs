@@ -65,6 +65,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFramework())
+            {
+                context.Writer.WritePropertyName("Framework");
+                context.Writer.Write(requestObject.Framework);
+            }
+
+            if(requestObject.IsSetFrameworkVersion())
+            {
+                context.Writer.WritePropertyName("FrameworkVersion");
+                context.Writer.Write(requestObject.FrameworkVersion);
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("Image");
@@ -81,6 +93,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ModelDataUrl");
                 context.Writer.Write(requestObject.ModelDataUrl);
+            }
+
+            if(requestObject.IsSetModelInput())
+            {
+                context.Writer.WritePropertyName("ModelInput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelInput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetNearestModelName())
+            {
+                context.Writer.WritePropertyName("NearestModelName");
+                context.Writer.Write(requestObject.NearestModelName);
             }
 
             if(requestObject.IsSetProductId())

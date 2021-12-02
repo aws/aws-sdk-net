@@ -76,6 +76,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Framework", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Framework = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FrameworkVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FrameworkVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +104,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelDataUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelInput", targetDepth))
+                {
+                    var unmarshaller = ModelInputUnmarshaller.Instance;
+                    unmarshalledObject.ModelInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NearestModelName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NearestModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProductId", targetDepth))

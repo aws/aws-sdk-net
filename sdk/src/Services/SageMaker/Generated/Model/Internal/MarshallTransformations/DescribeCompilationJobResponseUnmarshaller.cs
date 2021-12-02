@@ -123,6 +123,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ModelDigests = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelPackageVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelPackageVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputConfig", targetDepth))
                 {
                     var unmarshaller = OutputConfigUnmarshaller.Instance;

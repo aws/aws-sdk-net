@@ -38,9 +38,11 @@ namespace Amazon.SageMaker.Model
     {
         private ProductionVariantAcceleratorType _acceleratorType;
         private int? _currentInstanceCount;
+        private ProductionVariantServerlessConfig _currentServerlessConfig;
         private float? _currentWeight;
         private List<DeployedImage> _deployedImages = new List<DeployedImage>();
         private int? _desiredInstanceCount;
+        private ProductionVariantServerlessConfig _desiredServerlessConfig;
         private float? _desiredWeight;
         private ProductionVariantInstanceType _instanceType;
         private string _variantName;
@@ -84,6 +86,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCurrentInstanceCount()
         {
             return this._currentInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentServerlessConfig. 
+        /// <para>
+        /// The serverless configuration for the endpoint.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
+        /// change. We do not recommend using this feature in production environments.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ProductionVariantServerlessConfig CurrentServerlessConfig
+        {
+            get { return this._currentServerlessConfig; }
+            set { this._currentServerlessConfig = value; }
+        }
+
+        // Check to see if CurrentServerlessConfig property is set
+        internal bool IsSetCurrentServerlessConfig()
+        {
+            return this._currentServerlessConfig != null;
         }
 
         /// <summary>
@@ -143,6 +169,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDesiredInstanceCount()
         {
             return this._desiredInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredServerlessConfig. 
+        /// <para>
+        /// The serverless configuration requested for this deployment, as specified in the endpoint
+        /// configuration for the endpoint.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
+        /// change. We do not recommend using this feature in production environments.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ProductionVariantServerlessConfig DesiredServerlessConfig
+        {
+            get { return this._desiredServerlessConfig; }
+            set { this._desiredServerlessConfig = value; }
+        }
+
+        // Check to see if DesiredServerlessConfig property is set
+        internal bool IsSetDesiredServerlessConfig()
+        {
+            return this._desiredServerlessConfig != null;
         }
 
         /// <summary>

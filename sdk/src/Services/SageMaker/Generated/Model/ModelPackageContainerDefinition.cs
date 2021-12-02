@@ -35,9 +35,13 @@ namespace Amazon.SageMaker.Model
     {
         private string _containerHostname;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private string _framework;
+        private string _frameworkVersion;
         private string _image;
         private string _imageDigest;
         private string _modelDataUrl;
+        private ModelInput _modelInput;
+        private string _nearestModelName;
         private string _productId;
 
         /// <summary>
@@ -78,6 +82,43 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Framework. 
+        /// <para>
+        /// The machine learning framework of the model package container image.
+        /// </para>
+        /// </summary>
+        public string Framework
+        {
+            get { return this._framework; }
+            set { this._framework = value; }
+        }
+
+        // Check to see if Framework property is set
+        internal bool IsSetFramework()
+        {
+            return this._framework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FrameworkVersion. 
+        /// <para>
+        /// The framework version of the Model Package Container Image.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=10)]
+        public string FrameworkVersion
+        {
+            get { return this._frameworkVersion; }
+            set { this._frameworkVersion = value; }
+        }
+
+        // Check to see if FrameworkVersion property is set
+        internal bool IsSetFrameworkVersion()
+        {
+            return this._frameworkVersion != null;
         }
 
         /// <summary>
@@ -151,6 +192,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelDataUrl()
         {
             return this._modelDataUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelInput. 
+        /// <para>
+        /// A structure with Model Input details.
+        /// </para>
+        /// </summary>
+        public ModelInput ModelInput
+        {
+            get { return this._modelInput; }
+            set { this._modelInput = value; }
+        }
+
+        // Check to see if ModelInput property is set
+        internal bool IsSetModelInput()
+        {
+            return this._modelInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NearestModelName. 
+        /// <para>
+        /// The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference
+        /// Recommender model that matches your model. You can find a list of benchmarked models
+        /// by calling <code>ListModelMetadata</code>.
+        /// </para>
+        /// </summary>
+        public string NearestModelName
+        {
+            get { return this._nearestModelName; }
+            set { this._nearestModelName = value; }
+        }
+
+        // Check to see if NearestModelName property is set
+        internal bool IsSetNearestModelName()
+        {
+            return this._nearestModelName != null;
         }
 
         /// <summary>

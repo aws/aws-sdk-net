@@ -64,6 +64,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("PostTrainingReport", targetDepth))
+                {
+                    var unmarshaller = MetricsSourceUnmarshaller.Instance;
+                    unmarshalledObject.PostTrainingReport = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreTrainingReport", targetDepth))
+                {
+                    var unmarshaller = MetricsSourceUnmarshaller.Instance;
+                    unmarshalledObject.PreTrainingReport = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Report", targetDepth))
                 {
                     var unmarshaller = MetricsSourceUnmarshaller.Instance;

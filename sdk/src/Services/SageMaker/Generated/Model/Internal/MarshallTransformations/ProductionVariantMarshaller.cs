@@ -86,6 +86,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ModelName);
             }
 
+            if(requestObject.IsSetServerlessConfig())
+            {
+                context.Writer.WritePropertyName("ServerlessConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProductionVariantServerlessConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServerlessConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVariantName())
             {
                 context.Writer.WritePropertyName("VariantName");

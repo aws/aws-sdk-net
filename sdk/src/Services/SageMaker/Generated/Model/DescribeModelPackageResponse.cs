@@ -33,11 +33,14 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeModelPackageResponse : AmazonWebServiceResponse
     {
+        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecifications = new List<AdditionalInferenceSpecificationDefinition>();
         private string _approvalDescription;
         private bool? _certifyForMarketplace;
         private UserContext _createdBy;
         private DateTime? _creationTime;
         private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
+        private string _domain;
+        private DriftCheckBaselines _driftCheckBaselines;
         private InferenceSpecification _inferenceSpecification;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
@@ -51,8 +54,31 @@ namespace Amazon.SageMaker.Model
         private ModelPackageStatus _modelPackageStatus;
         private ModelPackageStatusDetails _modelPackageStatusDetails;
         private int? _modelPackageVersion;
+        private string _samplePayloadUrl;
         private SourceAlgorithmSpecification _sourceAlgorithmSpecification;
+        private string _task;
         private ModelPackageValidationSpecification _validationSpecification;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInferenceSpecifications. 
+        /// <para>
+        /// An array of additional Inference Specification objects. Each additional Inference
+        /// Specification specifies artifacts based on this model package that can be used on
+        /// inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=15)]
+        public List<AdditionalInferenceSpecificationDefinition> AdditionalInferenceSpecifications
+        {
+            get { return this._additionalInferenceSpecifications; }
+            set { this._additionalInferenceSpecifications = value; }
+        }
+
+        // Check to see if AdditionalInferenceSpecifications property is set
+        internal bool IsSetAdditionalInferenceSpecifications()
+        {
+            return this._additionalInferenceSpecifications != null && this._additionalInferenceSpecifications.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApprovalDescription. 
@@ -142,6 +168,46 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCustomerMetadataProperties()
         {
             return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// The machine learning domain of the model package you specified. Common machine learning
+        /// domains include computer vision and natural language processing.
+        /// </para>
+        /// </summary>
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriftCheckBaselines. 
+        /// <para>
+        /// Represents the drift check baselines that can be used when the model monitor is set
+        /// using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+        /// Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker
+        /// Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        public DriftCheckBaselines DriftCheckBaselines
+        {
+            get { return this._driftCheckBaselines; }
+            set { this._driftCheckBaselines = value; }
+        }
+
+        // Check to see if DriftCheckBaselines property is set
+        internal bool IsSetDriftCheckBaselines()
+        {
+            return this._driftCheckBaselines != null;
         }
 
         /// <summary>
@@ -381,6 +447,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SamplePayloadUrl. 
+        /// <para>
+        /// The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored.
+        /// This path points to a single gzip compressed tar archive (.tar.gz suffix).
+        /// </para>
+        /// </summary>
+        public string SamplePayloadUrl
+        {
+            get { return this._samplePayloadUrl; }
+            set { this._samplePayloadUrl = value; }
+        }
+
+        // Check to see if SamplePayloadUrl property is set
+        internal bool IsSetSamplePayloadUrl()
+        {
+            return this._samplePayloadUrl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceAlgorithmSpecification. 
         /// <para>
         /// Details about the algorithm that was used to create the model package.
@@ -396,6 +481,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSourceAlgorithmSpecification()
         {
             return this._sourceAlgorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Task. 
+        /// <para>
+        /// The machine learning task you specified that your model package accomplishes. Common
+        /// machine learning tasks include object detection and image classification.
+        /// </para>
+        /// </summary>
+        public string Task
+        {
+            get { return this._task; }
+            set { this._task = value; }
+        }
+
+        // Check to see if Task property is set
+        internal bool IsSetTask()
+        {
+            return this._task != null;
         }
 
         /// <summary>

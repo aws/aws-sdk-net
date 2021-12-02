@@ -79,6 +79,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _compilationJobName;
         private InputConfig _inputConfig;
+        private string _modelPackageVersionArn;
         private OutputConfig _outputConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
@@ -112,7 +113,6 @@ namespace Amazon.SageMaker.Model
         /// of the expected data inputs, and the framework in which the model was trained.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public InputConfig InputConfig
         {
             get { return this._inputConfig; }
@@ -123,6 +123,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInputConfig()
         {
             return this._inputConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code>
+        /// or an <code>InputConfig</code> object in the request syntax. The presence of both
+        /// objects in the <code>CreateCompilationJob</code> request will return an exception.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ModelPackageVersionArn
+        {
+            get { return this._modelPackageVersionArn; }
+            set { this._modelPackageVersionArn = value; }
+        }
+
+        // Check to see if ModelPackageVersionArn property is set
+        internal bool IsSetModelPackageVersionArn()
+        {
+            return this._modelPackageVersionArn != null;
         }
 
         /// <summary>

@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServerlessConfig", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
+                    unmarshalledObject.ServerlessConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VariantName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

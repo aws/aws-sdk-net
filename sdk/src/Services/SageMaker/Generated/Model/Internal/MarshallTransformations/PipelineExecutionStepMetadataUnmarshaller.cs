@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Callback = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClarifyCheck", targetDepth))
+                {
+                    var unmarshaller = ClarifyCheckStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.ClarifyCheck = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Condition", targetDepth))
                 {
                     var unmarshaller = ConditionStepMetadataUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProcessingJobStepMetadataUnmarshaller.Instance;
                     unmarshalledObject.ProcessingJob = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("QualityCheck", targetDepth))
+                {
+                    var unmarshaller = QualityCheckStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.QualityCheck = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RegisterModel", targetDepth))

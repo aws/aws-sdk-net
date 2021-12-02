@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _description;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
+        private string _lineageGroupArn;
         private MetadataProperties _metadataProperties;
         private Dictionary<string, string> _properties = new Dictionary<string, string>();
         private ActionSource _source;
@@ -71,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the action.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=120)]
+        [AWSProperty(Min=1, Max=256)]
         public string ActionName
         {
             get { return this._actionName; }
@@ -186,6 +187,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LineageGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the lineage group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string LineageGroupArn
+        {
+            get { return this._lineageGroupArn; }
+            set { this._lineageGroupArn = value; }
+        }
+
+        // Check to see if LineageGroupArn property is set
+        internal bool IsSetLineageGroupArn()
+        {
+            return this._lineageGroupArn != null;
         }
 
         /// <summary>

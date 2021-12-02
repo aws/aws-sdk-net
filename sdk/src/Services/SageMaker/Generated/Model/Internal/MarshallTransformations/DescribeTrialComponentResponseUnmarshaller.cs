@@ -93,6 +93,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LineageGroupArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LineageGroupArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MetadataProperties", targetDepth))
                 {
                     var unmarshaller = MetadataPropertiesUnmarshaller.Instance;

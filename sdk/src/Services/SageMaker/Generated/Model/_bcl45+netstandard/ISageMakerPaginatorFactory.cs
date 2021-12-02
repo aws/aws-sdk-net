@@ -151,6 +151,11 @@ namespace Amazon.SageMaker.Model
         IListImageVersionsPaginator ListImageVersions(ListImageVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListInferenceRecommendationsJobs operation
+        ///</summary>
+        IListInferenceRecommendationsJobsPaginator ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         IListLabelingJobsPaginator ListLabelingJobs(ListLabelingJobsRequest request);
@@ -161,6 +166,11 @@ namespace Amazon.SageMaker.Model
         IListLabelingJobsForWorkteamPaginator ListLabelingJobsForWorkteam(ListLabelingJobsForWorkteamRequest request);
 
         /// <summary>
+        /// Paginator for ListLineageGroups operation
+        ///</summary>
+        IListLineageGroupsPaginator ListLineageGroups(ListLineageGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListModelBiasJobDefinitions operation
         ///</summary>
         IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request);
@@ -169,6 +179,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListModelExplainabilityJobDefinitions operation
         ///</summary>
         IListModelExplainabilityJobDefinitionsPaginator ListModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelMetadata operation
+        ///</summary>
+        IListModelMetadataPaginator ListModelMetadata(ListModelMetadataRequest request);
 
         /// <summary>
         /// Paginator for ListModelPackageGroups operation
@@ -294,6 +309,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListWorkteams operation
         ///</summary>
         IListWorkteamsPaginator ListWorkteams(ListWorkteamsRequest request);
+
+        /// <summary>
+        /// Paginator for QueryLineage operation
+        ///</summary>
+        IQueryLineagePaginator QueryLineage(QueryLineageRequest request);
 
         /// <summary>
         /// Paginator for Search operation

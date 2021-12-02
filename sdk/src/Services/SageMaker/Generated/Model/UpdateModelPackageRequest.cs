@@ -34,11 +34,35 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateModelPackageRequest : AmazonSageMakerRequest
     {
+        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecificationsToAdd = new List<AdditionalInferenceSpecificationDefinition>();
         private string _approvalDescription;
         private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
         private List<string> _customerMetadataPropertiesToRemove = new List<string>();
         private ModelApprovalStatus _modelApprovalStatus;
         private string _modelPackageArn;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInferenceSpecificationsToAdd. 
+        /// <para>
+        /// An array of additional Inference Specification objects to be added to the existing
+        /// array additional Inference Specification. Total number of additional Inference Specifications
+        /// can not exceed 15. Each additional Inference Specification specifies artifacts based
+        /// on this model package that can be used on inference endpoints. Generally used with
+        /// SageMaker Neo to store the compiled artifacts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=15)]
+        public List<AdditionalInferenceSpecificationDefinition> AdditionalInferenceSpecificationsToAdd
+        {
+            get { return this._additionalInferenceSpecificationsToAdd; }
+            set { this._additionalInferenceSpecificationsToAdd = value; }
+        }
+
+        // Check to see if AdditionalInferenceSpecificationsToAdd property is set
+        internal bool IsSetAdditionalInferenceSpecificationsToAdd()
+        {
+            return this._additionalInferenceSpecificationsToAdd != null && this._additionalInferenceSpecificationsToAdd.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApprovalDescription. 

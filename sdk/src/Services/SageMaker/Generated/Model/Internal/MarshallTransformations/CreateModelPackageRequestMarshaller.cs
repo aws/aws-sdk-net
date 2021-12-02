@@ -67,6 +67,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalInferenceSpecifications())
+                {
+                    context.Writer.WritePropertyName("AdditionalInferenceSpecifications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalInferenceSpecificationsListValue in publicRequest.AdditionalInferenceSpecifications)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AdditionalInferenceSpecificationDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAdditionalInferenceSpecificationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetCertifyForMarketplace())
                 {
                     context.Writer.WritePropertyName("CertifyForMarketplace");
@@ -95,6 +111,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                             context.Writer.Write(publicRequestCustomerMetadataPropertiesValue);
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
+                if(publicRequest.IsSetDriftCheckBaselines())
+                {
+                    context.Writer.WritePropertyName("DriftCheckBaselines");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DriftCheckBaselinesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DriftCheckBaselines, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 
@@ -155,6 +188,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelPackageName);
                 }
 
+                if(publicRequest.IsSetSamplePayloadUrl())
+                {
+                    context.Writer.WritePropertyName("SamplePayloadUrl");
+                    context.Writer.Write(publicRequest.SamplePayloadUrl);
+                }
+
                 if(publicRequest.IsSetSourceAlgorithmSpecification())
                 {
                     context.Writer.WritePropertyName("SourceAlgorithmSpecification");
@@ -180,6 +219,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTask())
+                {
+                    context.Writer.WritePropertyName("Task");
+                    context.Writer.Write(publicRequest.Task);
                 }
 
                 if(publicRequest.IsSetValidationSpecification())

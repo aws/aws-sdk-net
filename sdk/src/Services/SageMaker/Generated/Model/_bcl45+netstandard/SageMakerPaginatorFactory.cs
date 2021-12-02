@@ -236,6 +236,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListInferenceRecommendationsJobs operation
+        ///</summary>
+        public IListInferenceRecommendationsJobsPaginator ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request) 
+        {
+            return new ListInferenceRecommendationsJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         public IListLabelingJobsPaginator ListLabelingJobs(ListLabelingJobsRequest request) 
@@ -252,6 +260,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListLineageGroups operation
+        ///</summary>
+        public IListLineageGroupsPaginator ListLineageGroups(ListLineageGroupsRequest request) 
+        {
+            return new ListLineageGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelBiasJobDefinitions operation
         ///</summary>
         public IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request) 
@@ -265,6 +281,14 @@ namespace Amazon.SageMaker.Model
         public IListModelExplainabilityJobDefinitionsPaginator ListModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request) 
         {
             return new ListModelExplainabilityJobDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListModelMetadata operation
+        ///</summary>
+        public IListModelMetadataPaginator ListModelMetadata(ListModelMetadataRequest request) 
+        {
+            return new ListModelMetadataPaginator(this.client, request);
         }
 
         /// <summary>
@@ -465,6 +489,14 @@ namespace Amazon.SageMaker.Model
         public IListWorkteamsPaginator ListWorkteams(ListWorkteamsRequest request) 
         {
             return new ListWorkteamsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for QueryLineage operation
+        ///</summary>
+        public IQueryLineagePaginator QueryLineage(QueryLineageRequest request) 
+        {
+            return new QueryLineagePaginator(this.client, request);
         }
 
         /// <summary>

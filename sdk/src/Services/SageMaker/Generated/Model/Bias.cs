@@ -33,7 +33,39 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class Bias
     {
+        private MetricsSource _postTrainingReport;
+        private MetricsSource _preTrainingReport;
         private MetricsSource _report;
+
+        /// <summary>
+        /// Gets and sets the property PostTrainingReport.
+        /// </summary>
+        public MetricsSource PostTrainingReport
+        {
+            get { return this._postTrainingReport; }
+            set { this._postTrainingReport = value; }
+        }
+
+        // Check to see if PostTrainingReport property is set
+        internal bool IsSetPostTrainingReport()
+        {
+            return this._postTrainingReport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreTrainingReport.
+        /// </summary>
+        public MetricsSource PreTrainingReport
+        {
+            get { return this._preTrainingReport; }
+            set { this._preTrainingReport = value; }
+        }
+
+        // Check to see if PreTrainingReport property is set
+        internal bool IsSetPreTrainingReport()
+        {
+            return this._preTrainingReport != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Report. 

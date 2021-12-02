@@ -67,6 +67,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalInferenceSpecificationsToAdd())
+                {
+                    context.Writer.WritePropertyName("AdditionalInferenceSpecificationsToAdd");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalInferenceSpecificationsToAddListValue in publicRequest.AdditionalInferenceSpecificationsToAdd)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AdditionalInferenceSpecificationDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAdditionalInferenceSpecificationsToAddListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetApprovalDescription())
                 {
                     context.Writer.WritePropertyName("ApprovalDescription");

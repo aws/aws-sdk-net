@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
         private string _modelName;
+        private ProductionVariantServerlessConfig _serverlessConfig;
         private string _variantName;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.SageMaker.Model
         /// Number of instances to launch initially.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public int InitialInstanceCount
         {
             get { return this._initialInstanceCount.GetValueOrDefault(); }
@@ -130,7 +131,6 @@ namespace Amazon.SageMaker.Model
         /// The ML compute instance type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProductionVariantInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -161,6 +161,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessConfig. 
+        /// <para>
+        /// The serverless configuration for an endpoint. Specifies a serverless endpoint configuration
+        /// instead of an instance-based endpoint configuration.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Serverless Inference is in preview release for Amazon SageMaker and is subject to
+        /// change. We do not recommend using this feature in production environments.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ProductionVariantServerlessConfig ServerlessConfig
+        {
+            get { return this._serverlessConfig; }
+            set { this._serverlessConfig = value; }
+        }
+
+        // Check to see if ServerlessConfig property is set
+        internal bool IsSetServerlessConfig()
+        {
+            return this._serverlessConfig != null;
         }
 
         /// <summary>

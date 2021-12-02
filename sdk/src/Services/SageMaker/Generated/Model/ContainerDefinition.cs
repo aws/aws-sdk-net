@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _image;
         private ImageConfig _imageConfig;
+        private string _inferenceSpecificationName;
         private ContainerMode _mode;
         private string _modelDataUrl;
         private string _modelPackageName;
@@ -139,6 +140,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImageConfig()
         {
             return this._imageConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceSpecificationName. 
+        /// <para>
+        /// The inference specification name in the model package version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string InferenceSpecificationName
+        {
+            get { return this._inferenceSpecificationName; }
+            set { this._inferenceSpecificationName = value; }
+        }
+
+        // Check to see if InferenceSpecificationName property is set
+        internal bool IsSetInferenceSpecificationName()
+        {
+            return this._inferenceSpecificationName != null;
         }
 
         /// <summary>

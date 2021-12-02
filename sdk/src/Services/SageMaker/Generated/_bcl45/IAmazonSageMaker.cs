@@ -1826,6 +1826,50 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateInferenceRecommendationsJob
+
+
+        /// <summary>
+        /// Starts a recommendation job. You can create either an instance recommendation or load
+        /// test job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceRecommendationsJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">REST API Reference for CreateInferenceRecommendationsJob Operation</seealso>
+        CreateInferenceRecommendationsJobResponse CreateInferenceRecommendationsJob(CreateInferenceRecommendationsJobRequest request);
+
+
+
+        /// <summary>
+        /// Starts a recommendation job. You can create either an instance recommendation or load
+        /// test job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceRecommendationsJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceRecommendationsJob">REST API Reference for CreateInferenceRecommendationsJob Operation</seealso>
+        Task<CreateInferenceRecommendationsJobResponse> CreateInferenceRecommendationsJobAsync(CreateInferenceRecommendationsJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateLabelingJob
 
 
@@ -5940,6 +5984,42 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeInferenceRecommendationsJob
+
+
+        /// <summary>
+        /// Provides the results of the Inference Recommender job. One or more recommendation
+        /// jobs are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceRecommendationsJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">REST API Reference for DescribeInferenceRecommendationsJob Operation</seealso>
+        DescribeInferenceRecommendationsJobResponse DescribeInferenceRecommendationsJob(DescribeInferenceRecommendationsJobRequest request);
+
+
+
+        /// <summary>
+        /// Provides the results of the Inference Recommender job. One or more recommendation
+        /// jobs are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInferenceRecommendationsJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceRecommendationsJob">REST API Reference for DescribeInferenceRecommendationsJob Operation</seealso>
+        Task<DescribeInferenceRecommendationsJobResponse> DescribeInferenceRecommendationsJobAsync(DescribeInferenceRecommendationsJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeLabelingJob
 
 
@@ -5971,6 +6051,44 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob">REST API Reference for DescribeLabelingJob Operation</seealso>
         Task<DescribeLabelingJobResponse> DescribeLabelingJobAsync(DescribeLabelingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeLineageGroup
+
+
+        /// <summary>
+        /// Provides a list of properties for the requested lineage group. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+        /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLineageGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLineageGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">REST API Reference for DescribeLineageGroup Operation</seealso>
+        DescribeLineageGroupResponse DescribeLineageGroup(DescribeLineageGroupRequest request);
+
+
+
+        /// <summary>
+        /// Provides a list of properties for the requested lineage group. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+        /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLineageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLineageGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">REST API Reference for DescribeLineageGroup Operation</seealso>
+        Task<DescribeLineageGroupResponse> DescribeLineageGroupAsync(DescribeLineageGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6912,6 +7030,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  GetLineageGroupPolicy
+
+
+        /// <summary>
+        /// The resource policy for the lineage group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageGroupPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetLineageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">REST API Reference for GetLineageGroupPolicy Operation</seealso>
+        GetLineageGroupPolicyResponse GetLineageGroupPolicy(GetLineageGroupPolicyRequest request);
+
+
+
+        /// <summary>
+        /// The resource policy for the lineage group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLineageGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLineageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetLineageGroupPolicy">REST API Reference for GetLineageGroupPolicy Operation</seealso>
+        Task<GetLineageGroupPolicyResponse> GetLineageGroupPolicyAsync(GetLineageGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetModelPackageGroupPolicy
 
 
@@ -7772,6 +7924,34 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListInferenceRecommendationsJobs
+
+
+        /// <summary>
+        /// Lists recommendation jobs that satisfy various filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceRecommendationsJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">REST API Reference for ListInferenceRecommendationsJobs Operation</seealso>
+        ListInferenceRecommendationsJobsResponse ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request);
+
+
+
+        /// <summary>
+        /// Lists recommendation jobs that satisfy various filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInferenceRecommendationsJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">REST API Reference for ListInferenceRecommendationsJobs Operation</seealso>
+        Task<ListInferenceRecommendationsJobsResponse> ListInferenceRecommendationsJobsAsync(ListInferenceRecommendationsJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListLabelingJobs
 
 
@@ -7834,6 +8014,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListLineageGroups
+
+
+        /// <summary>
+        /// A list of lineage groups shared with your Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+        /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListLineageGroups service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
+        ListLineageGroupsResponse ListLineageGroups(ListLineageGroupsRequest request);
+
+
+
+        /// <summary>
+        /// A list of lineage groups shared with your Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
+        /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLineageGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLineageGroups service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
+        Task<ListLineageGroupsResponse> ListLineageGroupsAsync(ListLineageGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListModelBiasJobDefinitions
 
 
@@ -7887,6 +8099,36 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListModelExplainabilityJobDefinitions service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">REST API Reference for ListModelExplainabilityJobDefinitions Operation</seealso>
         Task<ListModelExplainabilityJobDefinitionsResponse> ListModelExplainabilityJobDefinitionsAsync(ListModelExplainabilityJobDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListModelMetadata
+
+
+        /// <summary>
+        /// Lists the domain, framework, task, and model name of standard machine learning models
+        /// found in common model zoos.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelMetadata service method.</param>
+        /// 
+        /// <returns>The response from the ListModelMetadata service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">REST API Reference for ListModelMetadata Operation</seealso>
+        ListModelMetadataResponse ListModelMetadata(ListModelMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Lists the domain, framework, task, and model name of standard machine learning models
+        /// found in common model zoos.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelMetadata service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelMetadata">REST API Reference for ListModelMetadata Operation</seealso>
+        Task<ListModelMetadataResponse> ListModelMetadataAsync(ListModelMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8788,6 +9030,44 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  QueryLineage
+
+
+        /// <summary>
+        /// Use this action to inspect your lineage and discover relationships between entities.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
+        /// Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryLineage service method.</param>
+        /// 
+        /// <returns>The response from the QueryLineage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">REST API Reference for QueryLineage Operation</seealso>
+        QueryLineageResponse QueryLineage(QueryLineageRequest request);
+
+
+
+        /// <summary>
+        /// Use this action to inspect your lineage and discover relationships between entities.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
+        /// Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryLineage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryLineage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QueryLineage">REST API Reference for QueryLineage Operation</seealso>
+        Task<QueryLineageResponse> QueryLineageAsync(QueryLineageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RegisterDevices
 
 
@@ -9347,6 +9627,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
         Task<StopHyperParameterTuningJobResponse> StopHyperParameterTuningJobAsync(StopHyperParameterTuningJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopInferenceRecommendationsJob
+
+
+        /// <summary>
+        /// Stops an Inference Recommender job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceRecommendationsJob service method.</param>
+        /// 
+        /// <returns>The response from the StopInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">REST API Reference for StopInferenceRecommendationsJob Operation</seealso>
+        StopInferenceRecommendationsJobResponse StopInferenceRecommendationsJob(StopInferenceRecommendationsJobRequest request);
+
+
+
+        /// <summary>
+        /// Stops an Inference Recommender job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopInferenceRecommendationsJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopInferenceRecommendationsJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceRecommendationsJob">REST API Reference for StopInferenceRecommendationsJob Operation</seealso>
+        Task<StopInferenceRecommendationsJobResponse> StopInferenceRecommendationsJobAsync(StopInferenceRecommendationsJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

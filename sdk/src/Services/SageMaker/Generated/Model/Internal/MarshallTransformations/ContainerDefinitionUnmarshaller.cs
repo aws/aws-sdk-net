@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InferenceSpecificationName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InferenceSpecificationName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
