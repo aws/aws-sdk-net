@@ -1,3 +1,28 @@
+### 3.7.173.0 (2021-12-02 00:09 UTC)
+* DevOpsGuru (3.7.6.0)
+	* DevOps Guru now provides detailed, database-specific analyses of performance issues and recommends corrective actions for Amazon Aurora database instances with Performance Insights turned on. You can also use AWS tags to choose which resources to analyze and define your applications.
+* DirectConnect (3.7.4.0)
+	* Adds SiteLink support to private and transit virtual interfaces. SiteLink is a new Direct Connect feature that allows routing between Direct Connect points of presence.
+* DynamoDBv2 (3.7.2.0)
+	* Add support for Table Classes and introduce the Standard Infrequent Access table class.
+* EC2 (3.7.49.0)
+	* This release adds support for Amazon VPC IP Address Manager (IPAM), which enables you to plan, track, and monitor IP addresses for your workloads. This release also adds support for VPC Network Access Analyzer, which enables you to analyze network access to resources in your Virtual Private Clouds.
+* Kendra (3.7.11.0)
+	* Experience Builder allows customers to build search applications without writing code. Analytics Dashboard provides quality and usability metrics for Kendra indexes. Custom Document Enrichment allows customers to build a custom ingestion pipeline to pre-process documents and generate metadata.
+* LexModelsV2 (3.7.9.0)
+	* This release introduces a new feature, Automated Chatbot Designer, that helps customers automatically create a bot design from existing conversation transcripts. The feature uses machine learning to discover most common intents and the information needed to fulfill them.
+* SageMaker (3.7.22.0)
+	* This release enables - 1/ Inference endpoint configuration recommendations and ability to run custom load tests to meet performance needs. 2/ Deploy serverless inference endpoints. 3/ Query, filter and retrieve end-to-end ML lineage graph, and incorporate model quality/bias detection in ML workflow.
+* SageMakerRuntime (3.7.2.0)
+	* Adding new exception types for InvokeEndpoint
+* Shield (3.7.2.0)
+	* This release adds API support for Automatic Application Layer DDoS Mitigation for AWS Shield Advanced. Customers can now enable automatic DDoS mitigation in count or block mode for layer 7 protected resources.
+* Core 3.7.5.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.172.0 (2021-12-01 00:53 UTC)
 * AccessAnalyzer (3.7.2.0)
 	* AWS IAM Access Analyzer now supports policy validation for resource policies attached to S3 buckets and access points. You can run additional policy checks by specifying the S3 resource type you want to attach to your resource policy.
