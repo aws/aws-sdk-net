@@ -154,6 +154,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTableClass())
+                {
+                    context.Writer.WritePropertyName("TableClass");
+                    context.Writer.Write(publicRequest.TableClass);
+                }
+
                 if(publicRequest.IsSetTableName())
                 {
                     context.Writer.WritePropertyName("TableName");

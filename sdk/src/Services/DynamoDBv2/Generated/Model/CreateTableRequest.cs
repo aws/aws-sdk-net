@@ -64,6 +64,7 @@ namespace Amazon.DynamoDBv2.Model
         private ProvisionedThroughput _provisionedThroughput;
         private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
+        private TableClass _tableClass;
         private string _tableName;
         private List<Tag> _tags = new List<Tag>();
 
@@ -448,6 +449,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetStreamSpecification()
         {
             return this._streamSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableClass. 
+        /// <para>
+        /// The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.
+        /// </para>
+        /// </summary>
+        public TableClass TableClass
+        {
+            get { return this._tableClass; }
+            set { this._tableClass = value; }
+        }
+
+        // Check to see if TableClass property is set
+        internal bool IsSetTableClass()
+        {
+            return this._tableClass != null;
         }
 
         /// <summary>

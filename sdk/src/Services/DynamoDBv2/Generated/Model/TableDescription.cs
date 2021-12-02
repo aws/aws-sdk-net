@@ -50,6 +50,7 @@ namespace Amazon.DynamoDBv2.Model
         private SSEDescription _sseDescription;
         private StreamSpecification _streamSpecification;
         private string _tableArn;
+        private TableClassSummary _tableClassSummary;
         private string _tableId;
         private string _tableName;
         private long? _tableSizeBytes;
@@ -602,6 +603,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableArn()
         {
             return this._tableArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableClassSummary. 
+        /// <para>
+        /// Contains details of the table class.
+        /// </para>
+        /// </summary>
+        public TableClassSummary TableClassSummary
+        {
+            get { return this._tableClassSummary; }
+            set { this._tableClassSummary = value; }
+        }
+
+        // Check to see if TableClassSummary property is set
+        internal bool IsSetTableClassSummary()
+        {
+            return this._tableClassSummary != null;
         }
 
         /// <summary>

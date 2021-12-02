@@ -84,6 +84,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RegionName);
             }
 
+            if(requestObject.IsSetTableClassOverride())
+            {
+                context.Writer.WritePropertyName("TableClassOverride");
+                context.Writer.Write(requestObject.TableClassOverride);
+            }
+
         }
 
         /// <summary>

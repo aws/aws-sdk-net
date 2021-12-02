@@ -112,6 +112,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReplicaStatusPercentProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicaTableClassSummary", targetDepth))
+                {
+                    var unmarshaller = TableClassSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaTableClassSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         private ReplicaStatus _replicaStatus;
         private string _replicaStatusDescription;
         private string _replicaStatusPercentProgress;
+        private TableClassSummary _replicaTableClassSummary;
 
         /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexes. 
@@ -225,6 +226,21 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReplicaStatusPercentProgress()
         {
             return this._replicaStatusPercentProgress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaTableClassSummary.
+        /// </summary>
+        public TableClassSummary ReplicaTableClassSummary
+        {
+            get { return this._replicaTableClassSummary; }
+            set { this._replicaTableClassSummary = value; }
+        }
+
+        // Check to see if ReplicaTableClassSummary property is set
+        internal bool IsSetReplicaTableClassSummary()
+        {
+            return this._replicaTableClassSummary != null;
         }
 
     }

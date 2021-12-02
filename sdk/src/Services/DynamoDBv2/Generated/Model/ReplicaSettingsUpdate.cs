@@ -37,6 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<ReplicaGlobalSecondaryIndexSettingsUpdate> _replicaGlobalSecondaryIndexSettingsUpdate = new List<ReplicaGlobalSecondaryIndexSettingsUpdate>();
         private AutoScalingSettingsUpdate _replicaProvisionedReadCapacityAutoScalingSettingsUpdate;
         private long? _replicaProvisionedReadCapacityUnits;
+        private TableClass _replicaTableClass;
 
         /// <summary>
         /// Gets and sets the property RegionName. 
@@ -115,6 +116,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReplicaProvisionedReadCapacityUnits()
         {
             return this._replicaProvisionedReadCapacityUnits.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaTableClass. 
+        /// <para>
+        /// Replica-specific table class. If not specified, uses the source table's table class.
+        /// </para>
+        /// </summary>
+        public TableClass ReplicaTableClass
+        {
+            get { return this._replicaTableClass; }
+            set { this._replicaTableClass = value; }
+        }
+
+        // Check to see if ReplicaTableClass property is set
+        internal bool IsSetReplicaTableClass()
+        {
+            return this._replicaTableClass != null;
         }
 
     }

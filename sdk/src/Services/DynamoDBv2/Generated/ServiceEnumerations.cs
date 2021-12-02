@@ -1741,6 +1741,56 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type TableClass.
+    /// </summary>
+    public class TableClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STANDARD for TableClass
+        /// </summary>
+        public static readonly TableClass STANDARD = new TableClass("STANDARD");
+        /// <summary>
+        /// Constant STANDARD_INFREQUENT_ACCESS for TableClass
+        /// </summary>
+        public static readonly TableClass STANDARD_INFREQUENT_ACCESS = new TableClass("STANDARD_INFREQUENT_ACCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TableClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableClass FindValue(string value)
+        {
+            return FindValue<TableClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TableStatus.
     /// </summary>
     public class TableStatus : ConstantClass

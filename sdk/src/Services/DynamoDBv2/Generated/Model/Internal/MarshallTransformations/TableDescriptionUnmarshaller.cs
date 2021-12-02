@@ -166,6 +166,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TableClassSummary", targetDepth))
+                {
+                    var unmarshaller = TableClassSummaryUnmarshaller.Instance;
+                    unmarshalledObject.TableClassSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TableId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -41,6 +41,7 @@ namespace Amazon.DynamoDBv2.Model
         private AutoScalingSettingsDescription _replicaProvisionedWriteCapacityAutoScalingSettings;
         private long? _replicaProvisionedWriteCapacityUnits;
         private ReplicaStatus _replicaStatus;
+        private TableClassSummary _replicaTableClassSummary;
 
         /// <summary>
         /// Gets and sets the property RegionName. 
@@ -208,6 +209,21 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReplicaStatus()
         {
             return this._replicaStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaTableClassSummary.
+        /// </summary>
+        public TableClassSummary ReplicaTableClassSummary
+        {
+            get { return this._replicaTableClassSummary; }
+            set { this._replicaTableClassSummary = value; }
+        }
+
+        // Check to see if ReplicaTableClassSummary property is set
+        internal bool IsSetReplicaTableClassSummary()
+        {
+            return this._replicaTableClassSummary != null;
         }
 
     }

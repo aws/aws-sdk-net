@@ -37,6 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _kmsMasterKeyId;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
         private string _regionName;
+        private TableClass _tableClassOverride;
 
         /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexes. 
@@ -114,6 +115,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetRegionName()
         {
             return this._regionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableClassOverride. 
+        /// <para>
+        /// Replica-specific table class. If not specified, uses the source table's table class.
+        /// </para>
+        /// </summary>
+        public TableClass TableClassOverride
+        {
+            get { return this._tableClassOverride; }
+            set { this._tableClassOverride = value; }
+        }
+
+        // Check to see if TableClassOverride property is set
+        internal bool IsSetTableClassOverride()
+        {
+            return this._tableClassOverride != null;
         }
 
     }

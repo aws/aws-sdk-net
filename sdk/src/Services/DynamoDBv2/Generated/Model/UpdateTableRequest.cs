@@ -72,6 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<ReplicationGroupUpdate> _replicaUpdates = new List<ReplicationGroupUpdate>();
         private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
+        private TableClass _tableClass;
         private string _tableName;
 
         /// <summary>
@@ -272,6 +273,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetStreamSpecification()
         {
             return this._streamSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableClass. 
+        /// <para>
+        /// The table class of the table to be updated. Valid values are <code>STANDARD</code>
+        /// and <code>STANDARD_INFREQUENT_ACCESS</code>.
+        /// </para>
+        /// </summary>
+        public TableClass TableClass
+        {
+            get { return this._tableClass; }
+            set { this._tableClass = value; }
+        }
+
+        // Check to see if TableClass property is set
+        internal bool IsSetTableClass()
+        {
+            return this._tableClass != null;
         }
 
         /// <summary>

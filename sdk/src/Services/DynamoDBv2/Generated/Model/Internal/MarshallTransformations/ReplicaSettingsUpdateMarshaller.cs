@@ -84,6 +84,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReplicaProvisionedReadCapacityUnits);
             }
 
+            if(requestObject.IsSetReplicaTableClass())
+            {
+                context.Writer.WritePropertyName("ReplicaTableClass");
+                context.Writer.Write(requestObject.ReplicaTableClass);
+            }
+
         }
 
         /// <summary>
