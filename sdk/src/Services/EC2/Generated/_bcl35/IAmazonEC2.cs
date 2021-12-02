@@ -566,6 +566,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AllocateIpamPoolCidr
+
+
+        /// <summary>
+        /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
+        /// an IPAM pool to another resource or IPAM pool. For more information, see <a href="/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+        /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
+        /// 
+        /// <returns>The response from the AllocateIpamPoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">REST API Reference for AllocateIpamPoolCidr Operation</seealso>
+        AllocateIpamPoolCidrResponse AllocateIpamPoolCidr(AllocateIpamPoolCidrRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AllocateIpamPoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateIpamPoolCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">REST API Reference for AllocateIpamPoolCidr Operation</seealso>
+        IAsyncResult BeginAllocateIpamPoolCidr(AllocateIpamPoolCidrRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AllocateIpamPoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocateIpamPoolCidr.</param>
+        /// 
+        /// <returns>Returns a  AllocateIpamPoolCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">REST API Reference for AllocateIpamPoolCidr Operation</seealso>
+        AllocateIpamPoolCidrResponse EndAllocateIpamPoolCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ApplySecurityGroupsToClientVpnTargetNetwork
 
 
@@ -3472,6 +3514,155 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpam
+
+
+        /// <summary>
+        /// Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that you can
+        /// use to automate your IP address management workflows including assigning, tracking,
+        /// troubleshooting, and auditing IP addresses across Amazon Web Services Regions and
+        /// accounts throughout your Amazon Web Services Organization.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpam service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">REST API Reference for CreateIpam Operation</seealso>
+        CreateIpamResponse CreateIpam(CreateIpamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpam operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpam
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">REST API Reference for CreateIpam Operation</seealso>
+        IAsyncResult BeginCreateIpam(CreateIpamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpam.</param>
+        /// 
+        /// <returns>Returns a  CreateIpamResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">REST API Reference for CreateIpam Operation</seealso>
+        CreateIpamResponse EndCreateIpam(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateIpamPool
+
+
+        /// <summary>
+        /// Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM, a pool
+        /// is a collection of contiguous IP addresses CIDRs. Pools enable you to organize your
+        /// IP addresses according to your routing and security needs. For example, if you have
+        /// separate routing and security needs for development and production applications, you
+        /// can create a pool for each.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a
+        /// top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPool service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
+        CreateIpamPoolResponse CreateIpamPool(CreateIpamPoolRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPool operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpamPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
+        IAsyncResult BeginCreateIpamPool(CreateIpamPoolRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpamPool.</param>
+        /// 
+        /// <returns>Returns a  CreateIpamPoolResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
+        CreateIpamPoolResponse EndCreateIpamPool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateIpamScope
+
+
+        /// <summary>
+        /// Create an IPAM scope. In IPAM, a scope is the highest-level container within IPAM.
+        /// An IPAM contains two default scopes. Each scope represents the IP space for a single
+        /// network. The private scope is intended for all private IP address space. The public
+        /// scope is intended for all public IP address space. Scopes enable you to reuse IP addresses
+        /// across multiple unconnected networks without causing IP address overlap or conflict.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/add-scope-ipam.html">Add a scope</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamScope service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">REST API Reference for CreateIpamScope Operation</seealso>
+        CreateIpamScopeResponse CreateIpamScope(CreateIpamScopeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpamScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamScope operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpamScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">REST API Reference for CreateIpamScope Operation</seealso>
+        IAsyncResult BeginCreateIpamScope(CreateIpamScopeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpamScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpamScope.</param>
+        /// 
+        /// <returns>Returns a  CreateIpamScopeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">REST API Reference for CreateIpamScope Operation</seealso>
+        CreateIpamScopeResponse EndCreateIpamScope(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateKeyPair
 
 
@@ -3919,6 +4110,54 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNetworkInsightsAccessScope
+
+
+        /// <summary>
+        /// Creates a Network Access Scope.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Web Services Network Access Analyzer enables cloud networking and cloud operations
+        /// teams to verify that their networks on Amazon Web Services conform to their network
+        /// security and governance objectives. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/">Amazon
+        /// Web Services Network Access Analyzer Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsAccessScope service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkInsightsAccessScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">REST API Reference for CreateNetworkInsightsAccessScope Operation</seealso>
+        CreateNetworkInsightsAccessScopeResponse CreateNetworkInsightsAccessScope(CreateNetworkInsightsAccessScopeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkInsightsAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsAccessScope operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkInsightsAccessScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">REST API Reference for CreateNetworkInsightsAccessScope Operation</seealso>
+        IAsyncResult BeginCreateNetworkInsightsAccessScope(CreateNetworkInsightsAccessScopeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNetworkInsightsAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkInsightsAccessScope.</param>
+        /// 
+        /// <returns>Returns a  CreateNetworkInsightsAccessScopeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">REST API Reference for CreateNetworkInsightsAccessScope Operation</seealso>
+        CreateNetworkInsightsAccessScopeResponse EndCreateNetworkInsightsAccessScope(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateNetworkInsightsPath
 
 
@@ -4111,6 +4350,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreatePlacementGroupResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         CreatePlacementGroupResponse EndCreatePlacementGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePublicIpv4Pool
+
+
+        /// <summary>
+        /// Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address pool required
+        /// for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage
+        /// with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools
+        /// only. To monitor the status of pool creation, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicIpv4Pool service method.</param>
+        /// 
+        /// <returns>The response from the CreatePublicIpv4Pool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">REST API Reference for CreatePublicIpv4Pool Operation</seealso>
+        CreatePublicIpv4PoolResponse CreatePublicIpv4Pool(CreatePublicIpv4PoolRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePublicIpv4Pool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicIpv4Pool operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePublicIpv4Pool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">REST API Reference for CreatePublicIpv4Pool Operation</seealso>
+        IAsyncResult BeginCreatePublicIpv4Pool(CreatePublicIpv4PoolRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePublicIpv4Pool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePublicIpv4Pool.</param>
+        /// 
+        /// <returns>Returns a  CreatePublicIpv4PoolResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">REST API Reference for CreatePublicIpv4Pool Operation</seealso>
+        CreatePublicIpv4PoolResponse EndCreatePublicIpv4Pool(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6579,6 +6861,158 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteIpam
+
+
+        /// <summary>
+        /// Delete an IPAM. Deleting an IPAM removes all monitored data associated with the IPAM
+        /// including the historical data for CIDRs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an IPAM if there are CIDRs provisioned to pools or if there are
+        /// allocations in the pools within the IPAM. To deprovision pool CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
+        /// To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpam service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
+        DeleteIpamResponse DeleteIpam(DeleteIpamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpam operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpam
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
+        IAsyncResult BeginDeleteIpam(DeleteIpamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpam.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpamResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
+        DeleteIpamResponse EndDeleteIpam(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteIpamPool
+
+
+        /// <summary>
+        /// Delete an IPAM pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an IPAM pool if there are allocations in it or CIDRs provisioned
+        /// to it. To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+        /// To deprovision pool CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/delete-pool-ipam.html">Delete
+        /// a pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
+        DeleteIpamPoolResponse DeleteIpamPool(DeleteIpamPoolRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPool operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpamPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
+        IAsyncResult BeginDeleteIpamPool(DeleteIpamPoolRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpamPool.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpamPoolResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
+        DeleteIpamPoolResponse EndDeleteIpamPool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteIpamScope
+
+
+        /// <summary>
+        /// Delete the scope for an IPAM. You cannot delete the default scopes.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/delete-scope-ipam.html">Delete
+        /// a scope</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamScope service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">REST API Reference for DeleteIpamScope Operation</seealso>
+        DeleteIpamScopeResponse DeleteIpamScope(DeleteIpamScopeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpamScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamScope operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpamScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">REST API Reference for DeleteIpamScope Operation</seealso>
+        IAsyncResult BeginDeleteIpamScope(DeleteIpamScopeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpamScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpamScope.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpamScopeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">REST API Reference for DeleteIpamScope Operation</seealso>
+        DeleteIpamScopeResponse EndDeleteIpamScope(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteKeyPair
 
 
@@ -6946,6 +7380,86 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteNetworkInsightsAccessScope
+
+
+        /// <summary>
+        /// Deletes the specified Network Access Scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAccessScope service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsAccessScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">REST API Reference for DeleteNetworkInsightsAccessScope Operation</seealso>
+        DeleteNetworkInsightsAccessScopeResponse DeleteNetworkInsightsAccessScope(DeleteNetworkInsightsAccessScopeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkInsightsAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAccessScope operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkInsightsAccessScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">REST API Reference for DeleteNetworkInsightsAccessScope Operation</seealso>
+        IAsyncResult BeginDeleteNetworkInsightsAccessScope(DeleteNetworkInsightsAccessScopeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkInsightsAccessScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkInsightsAccessScope.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkInsightsAccessScopeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">REST API Reference for DeleteNetworkInsightsAccessScope Operation</seealso>
+        DeleteNetworkInsightsAccessScopeResponse EndDeleteNetworkInsightsAccessScope(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteNetworkInsightsAccessScopeAnalysis
+
+
+        /// <summary>
+        /// Deletes the specified Network Access Scope analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAccessScopeAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsAccessScopeAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">REST API Reference for DeleteNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        DeleteNetworkInsightsAccessScopeAnalysisResponse DeleteNetworkInsightsAccessScopeAnalysis(DeleteNetworkInsightsAccessScopeAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkInsightsAccessScopeAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAccessScopeAnalysis operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkInsightsAccessScopeAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">REST API Reference for DeleteNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        IAsyncResult BeginDeleteNetworkInsightsAccessScopeAnalysis(DeleteNetworkInsightsAccessScopeAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkInsightsAccessScopeAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkInsightsAccessScopeAnalysis.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkInsightsAccessScopeAnalysisResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">REST API Reference for DeleteNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        DeleteNetworkInsightsAccessScopeAnalysisResponse EndDeleteNetworkInsightsAccessScopeAnalysis(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteNetworkInsightsAnalysis
 
 
@@ -7148,6 +7662,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeletePlacementGroupResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         DeletePlacementGroupResponse EndDeletePlacementGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePublicIpv4Pool
+
+
+        /// <summary>
+        /// Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool required for
+        /// the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with
+        /// IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicIpv4Pool service method.</param>
+        /// 
+        /// <returns>The response from the DeletePublicIpv4Pool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">REST API Reference for DeletePublicIpv4Pool Operation</seealso>
+        DeletePublicIpv4PoolResponse DeletePublicIpv4Pool(DeletePublicIpv4PoolRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicIpv4Pool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicIpv4Pool operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePublicIpv4Pool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">REST API Reference for DeletePublicIpv4Pool Operation</seealso>
+        IAsyncResult BeginDeletePublicIpv4Pool(DeletePublicIpv4PoolRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePublicIpv4Pool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePublicIpv4Pool.</param>
+        /// 
+        /// <returns>Returns a  DeletePublicIpv4PoolResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">REST API Reference for DeletePublicIpv4Pool Operation</seealso>
+        DeletePublicIpv4PoolResponse EndDeletePublicIpv4Pool(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8573,6 +9129,89 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeprovisionByoipCidrResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
         DeprovisionByoipCidrResponse EndDeprovisionByoipCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeprovisionIpamPoolCidr
+
+
+        /// <summary>
+        /// Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a
+        /// pool that has a source pool, the CIDR is recycled back into the source pool. For more
+        /// information, see <a href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision
+        /// pool CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionIpamPoolCidr service method.</param>
+        /// 
+        /// <returns>The response from the DeprovisionIpamPoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">REST API Reference for DeprovisionIpamPoolCidr Operation</seealso>
+        DeprovisionIpamPoolCidrResponse DeprovisionIpamPoolCidr(DeprovisionIpamPoolCidrRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprovisionIpamPoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionIpamPoolCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprovisionIpamPoolCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">REST API Reference for DeprovisionIpamPoolCidr Operation</seealso>
+        IAsyncResult BeginDeprovisionIpamPoolCidr(DeprovisionIpamPoolCidrRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeprovisionIpamPoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprovisionIpamPoolCidr.</param>
+        /// 
+        /// <returns>Returns a  DeprovisionIpamPoolCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">REST API Reference for DeprovisionIpamPoolCidr Operation</seealso>
+        DeprovisionIpamPoolCidrResponse EndDeprovisionIpamPoolCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeprovisionPublicIpv4PoolCidr
+
+
+        /// <summary>
+        /// Deprovision a CIDR from a public IPv4 pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionPublicIpv4PoolCidr service method.</param>
+        /// 
+        /// <returns>The response from the DeprovisionPublicIpv4PoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">REST API Reference for DeprovisionPublicIpv4PoolCidr Operation</seealso>
+        DeprovisionPublicIpv4PoolCidrResponse DeprovisionPublicIpv4PoolCidr(DeprovisionPublicIpv4PoolCidrRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprovisionPublicIpv4PoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionPublicIpv4PoolCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprovisionPublicIpv4PoolCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">REST API Reference for DeprovisionPublicIpv4PoolCidr Operation</seealso>
+        IAsyncResult BeginDeprovisionPublicIpv4PoolCidr(DeprovisionPublicIpv4PoolCidrRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeprovisionPublicIpv4PoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprovisionPublicIpv4PoolCidr.</param>
+        /// 
+        /// <returns>Returns a  DeprovisionPublicIpv4PoolCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">REST API Reference for DeprovisionPublicIpv4PoolCidr Operation</seealso>
+        DeprovisionPublicIpv4PoolCidrResponse EndDeprovisionPublicIpv4PoolCidr(IAsyncResult asyncResult);
 
         #endregion
         
@@ -11343,6 +11982,132 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIpamPools
+
+
+        /// <summary>
+        /// Get information about your IPAM pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPools service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamPools service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
+        DescribeIpamPoolsResponse DescribeIpamPools(DescribeIpamPoolsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamPools operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPools operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamPools
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
+        IAsyncResult BeginDescribeIpamPools(DescribeIpamPoolsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamPools operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamPools.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamPoolsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
+        DescribeIpamPoolsResponse EndDescribeIpamPools(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIpams
+
+
+        /// <summary>
+        /// Get information about your IPAM pools.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
+        /// IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpams service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpams service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">REST API Reference for DescribeIpams Operation</seealso>
+        DescribeIpamsResponse DescribeIpams(DescribeIpamsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpams operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpams
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">REST API Reference for DescribeIpams Operation</seealso>
+        IAsyncResult BeginDescribeIpams(DescribeIpamsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpams operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpams.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">REST API Reference for DescribeIpams Operation</seealso>
+        DescribeIpamsResponse EndDescribeIpams(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeIpamScopes
+
+
+        /// <summary>
+        /// Get information about your IPAM scopes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamScopes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamScopes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">REST API Reference for DescribeIpamScopes Operation</seealso>
+        DescribeIpamScopesResponse DescribeIpamScopes(DescribeIpamScopesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpamScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamScopes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpamScopes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">REST API Reference for DescribeIpamScopes Operation</seealso>
+        IAsyncResult BeginDescribeIpamScopes(DescribeIpamScopesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpamScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpamScopes.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpamScopesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">REST API Reference for DescribeIpamScopes Operation</seealso>
+        DescribeIpamScopesResponse EndDescribeIpamScopes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeIpv6Pools
 
 
@@ -11952,6 +12717,86 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeNetworkAclsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         DescribeNetworkAclsResponse EndDescribeNetworkAcls(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeNetworkInsightsAccessScopeAnalyses
+
+
+        /// <summary>
+        /// Describes the specified Network Access Scope analyses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAccessScopeAnalyses service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsAccessScopeAnalyses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">REST API Reference for DescribeNetworkInsightsAccessScopeAnalyses Operation</seealso>
+        DescribeNetworkInsightsAccessScopeAnalysesResponse DescribeNetworkInsightsAccessScopeAnalyses(DescribeNetworkInsightsAccessScopeAnalysesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNetworkInsightsAccessScopeAnalyses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAccessScopeAnalyses operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkInsightsAccessScopeAnalyses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">REST API Reference for DescribeNetworkInsightsAccessScopeAnalyses Operation</seealso>
+        IAsyncResult BeginDescribeNetworkInsightsAccessScopeAnalyses(DescribeNetworkInsightsAccessScopeAnalysesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNetworkInsightsAccessScopeAnalyses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkInsightsAccessScopeAnalyses.</param>
+        /// 
+        /// <returns>Returns a  DescribeNetworkInsightsAccessScopeAnalysesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">REST API Reference for DescribeNetworkInsightsAccessScopeAnalyses Operation</seealso>
+        DescribeNetworkInsightsAccessScopeAnalysesResponse EndDescribeNetworkInsightsAccessScopeAnalyses(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeNetworkInsightsAccessScopes
+
+
+        /// <summary>
+        /// Describes the specified Network Access Scopes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAccessScopes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsAccessScopes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">REST API Reference for DescribeNetworkInsightsAccessScopes Operation</seealso>
+        DescribeNetworkInsightsAccessScopesResponse DescribeNetworkInsightsAccessScopes(DescribeNetworkInsightsAccessScopesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNetworkInsightsAccessScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAccessScopes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkInsightsAccessScopes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">REST API Reference for DescribeNetworkInsightsAccessScopes Operation</seealso>
+        IAsyncResult BeginDescribeNetworkInsightsAccessScopes(DescribeNetworkInsightsAccessScopesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNetworkInsightsAccessScopes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkInsightsAccessScopes.</param>
+        /// 
+        /// <returns>Returns a  DescribeNetworkInsightsAccessScopesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">REST API Reference for DescribeNetworkInsightsAccessScopes Operation</seealso>
+        DescribeNetworkInsightsAccessScopesResponse EndDescribeNetworkInsightsAccessScopes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -15733,6 +16578,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableIpamOrganizationAdminAccount
+
+
+        /// <summary>
+        /// Disable the IPAM account. For more information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable
+        /// integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamOrganizationAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisableIpamOrganizationAdminAccount service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
+        DisableIpamOrganizationAdminAccountResponse DisableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableIpamOrganizationAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamOrganizationAdminAccount operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableIpamOrganizationAdminAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
+        IAsyncResult BeginDisableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableIpamOrganizationAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableIpamOrganizationAdminAccount.</param>
+        /// 
+        /// <returns>Returns a  DisableIpamOrganizationAdminAccountResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
+        DisableIpamOrganizationAdminAccountResponse EndDisableIpamOrganizationAdminAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableSerialConsoleAccess
 
 
@@ -16621,6 +17507,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  EnableImageDeprecationResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
         EnableImageDeprecationResponse EndEnableImageDeprecation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableIpamOrganizationAdminAccount
+
+
+        /// <summary>
+        /// Enable an Organizations member account as the IPAM admin account. You cannot select
+        /// the Organizations management account as the IPAM admin account. For more information,
+        /// see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamOrganizationAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the EnableIpamOrganizationAdminAccount service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
+        EnableIpamOrganizationAdminAccountResponse EnableIpamOrganizationAdminAccount(EnableIpamOrganizationAdminAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableIpamOrganizationAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamOrganizationAdminAccount operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableIpamOrganizationAdminAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
+        IAsyncResult BeginEnableIpamOrganizationAdminAccount(EnableIpamOrganizationAdminAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableIpamOrganizationAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableIpamOrganizationAdminAccount.</param>
+        /// 
+        /// <returns>Returns a  EnableIpamOrganizationAdminAccountResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
+        EnableIpamOrganizationAdminAccountResponse EndEnableIpamOrganizationAdminAccount(IAsyncResult asyncResult);
 
         #endregion
         
@@ -17684,6 +18613,168 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetIpamAddressHistory
+
+
+        /// <summary>
+        /// Retrieve historical information about a CIDR within an IPAM scope. For more information,
+        /// see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP
+        /// addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamAddressHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamAddressHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">REST API Reference for GetIpamAddressHistory Operation</seealso>
+        GetIpamAddressHistoryResponse GetIpamAddressHistory(GetIpamAddressHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamAddressHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamAddressHistory operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamAddressHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">REST API Reference for GetIpamAddressHistory Operation</seealso>
+        IAsyncResult BeginGetIpamAddressHistory(GetIpamAddressHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamAddressHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamAddressHistory.</param>
+        /// 
+        /// <returns>Returns a  GetIpamAddressHistoryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">REST API Reference for GetIpamAddressHistory Operation</seealso>
+        GetIpamAddressHistoryResponse EndGetIpamAddressHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIpamPoolAllocations
+
+
+        /// <summary>
+        /// Get a list of all the CIDR allocations in an IPAM pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolAllocations service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamPoolAllocations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">REST API Reference for GetIpamPoolAllocations Operation</seealso>
+        GetIpamPoolAllocationsResponse GetIpamPoolAllocations(GetIpamPoolAllocationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamPoolAllocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolAllocations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamPoolAllocations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">REST API Reference for GetIpamPoolAllocations Operation</seealso>
+        IAsyncResult BeginGetIpamPoolAllocations(GetIpamPoolAllocationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamPoolAllocations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamPoolAllocations.</param>
+        /// 
+        /// <returns>Returns a  GetIpamPoolAllocationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">REST API Reference for GetIpamPoolAllocations Operation</seealso>
+        GetIpamPoolAllocationsResponse EndGetIpamPoolAllocations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIpamPoolCidrs
+
+
+        /// <summary>
+        /// Get the CIDRs provisioned to an IPAM pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolCidrs service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamPoolCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">REST API Reference for GetIpamPoolCidrs Operation</seealso>
+        GetIpamPoolCidrsResponse GetIpamPoolCidrs(GetIpamPoolCidrsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamPoolCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolCidrs operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamPoolCidrs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">REST API Reference for GetIpamPoolCidrs Operation</seealso>
+        IAsyncResult BeginGetIpamPoolCidrs(GetIpamPoolCidrsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamPoolCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamPoolCidrs.</param>
+        /// 
+        /// <returns>Returns a  GetIpamPoolCidrsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">REST API Reference for GetIpamPoolCidrs Operation</seealso>
+        GetIpamPoolCidrsResponse EndGetIpamPoolCidrs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetIpamResourceCidrs
+
+
+        /// <summary>
+        /// Get information about the resources in a scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamResourceCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
+        GetIpamResourceCidrsResponse GetIpamResourceCidrs(GetIpamResourceCidrsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpamResourceCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpamResourceCidrs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
+        IAsyncResult BeginGetIpamResourceCidrs(GetIpamResourceCidrsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpamResourceCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpamResourceCidrs.</param>
+        /// 
+        /// <returns>Returns a  GetIpamResourceCidrsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
+        GetIpamResourceCidrsResponse EndGetIpamResourceCidrs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetLaunchTemplateData
 
 
@@ -17812,6 +18903,86 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetManagedPrefixListEntriesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
         GetManagedPrefixListEntriesResponse EndGetManagedPrefixListEntries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetNetworkInsightsAccessScopeAnalysisFindings
+
+
+        /// <summary>
+        /// Gets the findings for the specified Network Access Scope analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkInsightsAccessScopeAnalysisFindings service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkInsightsAccessScopeAnalysisFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">REST API Reference for GetNetworkInsightsAccessScopeAnalysisFindings Operation</seealso>
+        GetNetworkInsightsAccessScopeAnalysisFindingsResponse GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkInsightsAccessScopeAnalysisFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkInsightsAccessScopeAnalysisFindings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkInsightsAccessScopeAnalysisFindings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">REST API Reference for GetNetworkInsightsAccessScopeAnalysisFindings Operation</seealso>
+        IAsyncResult BeginGetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkInsightsAccessScopeAnalysisFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkInsightsAccessScopeAnalysisFindings.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkInsightsAccessScopeAnalysisFindingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">REST API Reference for GetNetworkInsightsAccessScopeAnalysisFindings Operation</seealso>
+        GetNetworkInsightsAccessScopeAnalysisFindingsResponse EndGetNetworkInsightsAccessScopeAnalysisFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetNetworkInsightsAccessScopeContent
+
+
+        /// <summary>
+        /// Gets the content for the specified Network Access Scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkInsightsAccessScopeContent service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkInsightsAccessScopeContent service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">REST API Reference for GetNetworkInsightsAccessScopeContent Operation</seealso>
+        GetNetworkInsightsAccessScopeContentResponse GetNetworkInsightsAccessScopeContent(GetNetworkInsightsAccessScopeContentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkInsightsAccessScopeContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkInsightsAccessScopeContent operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkInsightsAccessScopeContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">REST API Reference for GetNetworkInsightsAccessScopeContent Operation</seealso>
+        IAsyncResult BeginGetNetworkInsightsAccessScopeContent(GetNetworkInsightsAccessScopeContentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkInsightsAccessScopeContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkInsightsAccessScopeContent.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkInsightsAccessScopeContentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">REST API Reference for GetNetworkInsightsAccessScopeContent Operation</seealso>
+        GetNetworkInsightsAccessScopeContentResponse EndGetNetworkInsightsAccessScopeContent(IAsyncResult asyncResult);
 
         #endregion
         
@@ -19761,6 +20932,182 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyIpam
+
+
+        /// <summary>
+        /// Modify the configurations of an IPAM.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpam service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
+        ModifyIpamResponse ModifyIpam(ModifyIpamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpam operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpam
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
+        IAsyncResult BeginModifyIpam(ModifyIpamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpam.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpamResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
+        ModifyIpamResponse EndModifyIpam(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyIpamPool
+
+
+        /// <summary>
+        /// Modify the configurations of an IPAM pool.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPool service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
+        ModifyIpamPoolResponse ModifyIpamPool(ModifyIpamPoolRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPool operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpamPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
+        IAsyncResult BeginModifyIpamPool(ModifyIpamPoolRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpamPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpamPool.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpamPoolResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
+        ModifyIpamPoolResponse EndModifyIpamPool(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyIpamResourceCidr
+
+
+        /// <summary>
+        /// Modify a resource CIDR. You can use this action to transfer resource CIDRs between
+        /// scopes and ignore resource CIDRs that you do not want to manage. If set to false,
+        /// the resource will not be tracked for overlap, it cannot be auto-imported into a pool,
+        /// and it will be removed from any pool it has an allocation in.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/move-resource-ipam.html">Move
+        /// resource CIDRs between scopes</a> and <a href="/vpc/latest/ipam/change-monitoring-state-ipam.html">Change
+        /// the monitoring state of resource CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceCidr service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamResourceCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">REST API Reference for ModifyIpamResourceCidr Operation</seealso>
+        ModifyIpamResourceCidrResponse ModifyIpamResourceCidr(ModifyIpamResourceCidrRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpamResourceCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpamResourceCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">REST API Reference for ModifyIpamResourceCidr Operation</seealso>
+        IAsyncResult BeginModifyIpamResourceCidr(ModifyIpamResourceCidrRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpamResourceCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpamResourceCidr.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpamResourceCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">REST API Reference for ModifyIpamResourceCidr Operation</seealso>
+        ModifyIpamResourceCidrResponse EndModifyIpamResourceCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyIpamScope
+
+
+        /// <summary>
+        /// Modify an IPAM scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamScope service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">REST API Reference for ModifyIpamScope Operation</seealso>
+        ModifyIpamScopeResponse ModifyIpamScope(ModifyIpamScopeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyIpamScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamScope operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIpamScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">REST API Reference for ModifyIpamScope Operation</seealso>
+        IAsyncResult BeginModifyIpamScope(ModifyIpamScopeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyIpamScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIpamScope.</param>
+        /// 
+        /// <returns>Returns a  ModifyIpamScopeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">REST API Reference for ModifyIpamScope Operation</seealso>
+        ModifyIpamScopeResponse EndModifyIpamScope(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyLaunchTemplate
 
 
@@ -21338,6 +22685,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  MoveByoipCidrToIpam
+
+
+        /// <summary>
+        /// Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveByoipCidrToIpam service method.</param>
+        /// 
+        /// <returns>The response from the MoveByoipCidrToIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
+        MoveByoipCidrToIpamResponse MoveByoipCidrToIpam(MoveByoipCidrToIpamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the MoveByoipCidrToIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the MoveByoipCidrToIpam operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMoveByoipCidrToIpam
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
+        IAsyncResult BeginMoveByoipCidrToIpam(MoveByoipCidrToIpamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  MoveByoipCidrToIpam operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMoveByoipCidrToIpam.</param>
+        /// 
+        /// <returns>Returns a  MoveByoipCidrToIpamResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
+        MoveByoipCidrToIpamResponse EndMoveByoipCidrToIpam(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ProvisionByoipCidr
 
 
@@ -21394,6 +22781,99 @@ namespace Amazon.EC2
         /// <returns>Returns a  ProvisionByoipCidrResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         ProvisionByoipCidrResponse EndProvisionByoipCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ProvisionIpamPoolCidr
+
+
+        /// <summary>
+        /// Provision a CIDR to an IPAM pool. You can use thsi action to provision new CIDRs to
+        /// a top-level pool or to transfer a CIDR from a top-level pool to a pool within it.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision
+        /// CIDRs to pools</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionIpamPoolCidr service method.</param>
+        /// 
+        /// <returns>The response from the ProvisionIpamPoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">REST API Reference for ProvisionIpamPoolCidr Operation</seealso>
+        ProvisionIpamPoolCidrResponse ProvisionIpamPoolCidr(ProvisionIpamPoolCidrRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ProvisionIpamPoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionIpamPoolCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndProvisionIpamPoolCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">REST API Reference for ProvisionIpamPoolCidr Operation</seealso>
+        IAsyncResult BeginProvisionIpamPoolCidr(ProvisionIpamPoolCidrRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ProvisionIpamPoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginProvisionIpamPoolCidr.</param>
+        /// 
+        /// <returns>Returns a  ProvisionIpamPoolCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">REST API Reference for ProvisionIpamPoolCidr Operation</seealso>
+        ProvisionIpamPoolCidrResponse EndProvisionIpamPoolCidr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ProvisionPublicIpv4PoolCidr
+
+
+        /// <summary>
+        /// Provision a CIDR to a public IPv4 pool.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionPublicIpv4PoolCidr service method.</param>
+        /// 
+        /// <returns>The response from the ProvisionPublicIpv4PoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
+        ProvisionPublicIpv4PoolCidrResponse ProvisionPublicIpv4PoolCidr(ProvisionPublicIpv4PoolCidrRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ProvisionPublicIpv4PoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionPublicIpv4PoolCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndProvisionPublicIpv4PoolCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
+        IAsyncResult BeginProvisionPublicIpv4PoolCidr(ProvisionPublicIpv4PoolCidrRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ProvisionPublicIpv4PoolCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginProvisionPublicIpv4PoolCidr.</param>
+        /// 
+        /// <returns>Returns a  ProvisionPublicIpv4PoolCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
+        ProvisionPublicIpv4PoolCidrResponse EndProvisionPublicIpv4PoolCidr(IAsyncResult asyncResult);
 
         #endregion
         
@@ -22197,6 +23677,50 @@ namespace Amazon.EC2
         /// <returns>Returns a  ReleaseHostsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         ReleaseHostsResponse EndReleaseHosts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ReleaseIpamPoolAllocation
+
+
+        /// <summary>
+        /// Release an allocation within an IPAM pool. You can only use this action to release
+        /// manual allocations. To remove an allocation for a resource without deleting the resource,
+        /// set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
+        /// For more information, see <a href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
+        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseIpamPoolAllocation service method.</param>
+        /// 
+        /// <returns>The response from the ReleaseIpamPoolAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">REST API Reference for ReleaseIpamPoolAllocation Operation</seealso>
+        ReleaseIpamPoolAllocationResponse ReleaseIpamPoolAllocation(ReleaseIpamPoolAllocationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReleaseIpamPoolAllocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseIpamPoolAllocation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReleaseIpamPoolAllocation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">REST API Reference for ReleaseIpamPoolAllocation Operation</seealso>
+        IAsyncResult BeginReleaseIpamPoolAllocation(ReleaseIpamPoolAllocationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReleaseIpamPoolAllocation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReleaseIpamPoolAllocation.</param>
+        /// 
+        /// <returns>Returns a  ReleaseIpamPoolAllocationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">REST API Reference for ReleaseIpamPoolAllocation Operation</seealso>
+        ReleaseIpamPoolAllocationResponse EndReleaseIpamPoolAllocation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -23732,6 +25256,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  StartInstancesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         StartInstancesResponse EndStartInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartNetworkInsightsAccessScopeAnalysis
+
+
+        /// <summary>
+        /// Starts analyzing the specified Network Access Scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkInsightsAccessScopeAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkInsightsAccessScopeAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">REST API Reference for StartNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        StartNetworkInsightsAccessScopeAnalysisResponse StartNetworkInsightsAccessScopeAnalysis(StartNetworkInsightsAccessScopeAnalysisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkInsightsAccessScopeAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkInsightsAccessScopeAnalysis operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkInsightsAccessScopeAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">REST API Reference for StartNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        IAsyncResult BeginStartNetworkInsightsAccessScopeAnalysis(StartNetworkInsightsAccessScopeAnalysisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkInsightsAccessScopeAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkInsightsAccessScopeAnalysis.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkInsightsAccessScopeAnalysisResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">REST API Reference for StartNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        StartNetworkInsightsAccessScopeAnalysisResponse EndStartNetworkInsightsAccessScopeAnalysis(IAsyncResult asyncResult);
 
         #endregion
         

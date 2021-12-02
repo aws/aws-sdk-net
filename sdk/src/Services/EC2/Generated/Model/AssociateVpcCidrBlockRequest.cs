@@ -51,8 +51,12 @@ namespace Amazon.EC2.Model
     {
         private bool? _amazonProvidedIpv6CidrBlock;
         private string _cidrBlock;
+        private string _ipv4IpamPoolId;
+        private int? _ipv4NetmaskLength;
         private string _ipv6CidrBlock;
         private string _ipv6CidrBlockNetworkBorderGroup;
+        private string _ipv6IpamPoolId;
+        private int? _ipv6NetmaskLength;
         private string _ipv6Pool;
         private string _vpcId;
 
@@ -91,6 +95,46 @@ namespace Amazon.EC2.Model
         internal bool IsSetCidrBlock()
         {
             return this._cidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4IpamPoolId. 
+        /// <para>
+        /// Associate a CIDR allocated from an IPv4 IPAM pool to a VPC. For more information about
+        /// Amazon VPC IP Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string Ipv4IpamPoolId
+        {
+            get { return this._ipv4IpamPoolId; }
+            set { this._ipv4IpamPoolId = value; }
+        }
+
+        // Check to see if Ipv4IpamPoolId property is set
+        internal bool IsSetIpv4IpamPoolId()
+        {
+            return this._ipv4IpamPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4NetmaskLength. 
+        /// <para>
+        /// The netmask length of the IPv4 CIDR you would like to associate from an Amazon VPC
+        /// IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public int Ipv4NetmaskLength
+        {
+            get { return this._ipv4NetmaskLength.GetValueOrDefault(); }
+            set { this._ipv4NetmaskLength = value; }
+        }
+
+        // Check to see if Ipv4NetmaskLength property is set
+        internal bool IsSetIpv4NetmaskLength()
+        {
+            return this._ipv4NetmaskLength.HasValue; 
         }
 
         /// <summary>
@@ -142,6 +186,46 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpv6CidrBlockNetworkBorderGroup()
         {
             return this._ipv6CidrBlockNetworkBorderGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6IpamPoolId. 
+        /// <para>
+        /// Associates a CIDR allocated from an IPv6 IPAM pool to a VPC. For more information
+        /// about Amazon VPC IP Address Manager (IPAM), see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string Ipv6IpamPoolId
+        {
+            get { return this._ipv6IpamPoolId; }
+            set { this._ipv6IpamPoolId = value; }
+        }
+
+        // Check to see if Ipv6IpamPoolId property is set
+        internal bool IsSetIpv6IpamPoolId()
+        {
+            return this._ipv6IpamPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6NetmaskLength. 
+        /// <para>
+        /// The netmask length of the IPv6 CIDR you would like to associate from an Amazon VPC
+        /// IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public int Ipv6NetmaskLength
+        {
+            get { return this._ipv6NetmaskLength.GetValueOrDefault(); }
+            set { this._ipv6NetmaskLength = value; }
+        }
+
+        // Check to see if Ipv6NetmaskLength property is set
+        internal bool IsSetIpv6NetmaskLength()
+        {
+            return this._ipv6NetmaskLength.HasValue; 
         }
 
         /// <summary>

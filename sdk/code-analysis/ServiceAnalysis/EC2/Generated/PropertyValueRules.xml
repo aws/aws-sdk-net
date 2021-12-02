@@ -15,6 +15,21 @@
     <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateIpamPoolRequest.AllocationDefaultNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateIpamPoolRequest.AllocationMaxNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateIpamPoolRequest.AllocationMinNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
@@ -191,6 +206,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPoolsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamScopesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpv6PoolsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -255,6 +285,16 @@
     <property>Amazon.EC2.Model.DescribeNetworkAclsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNetworkInsightsAccessScopeAnalysesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNetworkInsightsAccessScopesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeNetworkInsightsAnalysesRequest.MaxResults</property>
@@ -462,12 +502,37 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamAddressHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPoolAllocationsRequest.MaxResults</property>
+    <min>1000</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPoolCidrsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamResourceCidrsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetManagedPrefixListAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetManagedPrefixListEntriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetNetworkInsightsAccessScopeAnalysisFindingsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -520,6 +585,21 @@
     <property>Amazon.EC2.Model.ListSnapshotsInRecycleBinRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyIpamPoolRequest.AllocationDefaultNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyIpamPoolRequest.AllocationMaxNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyIpamPoolRequest.AllocationMinNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.ModifyLaunchTemplateRequest.LaunchTemplateName</property>
@@ -639,6 +719,51 @@
     <max>23</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.Ipam.IpamArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPool.AllocationDefaultNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPool.AllocationMaxNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPool.AllocationMinNetmaskLength</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPool.IpamArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPool.IpamPoolArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPool.IpamScopeArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamScope.IpamArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamScope.IpamScopeArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplate.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
@@ -681,6 +806,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.ManagedPrefixList.PrefixListArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsAccessScope.NetworkInsightsAccessScopeArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsAccessScopeAnalysis.NetworkInsightsAccessScopeAnalysisArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

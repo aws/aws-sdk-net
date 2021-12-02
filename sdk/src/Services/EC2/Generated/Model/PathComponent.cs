@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class PathComponent
     {
         private AnalysisAclRule _aclRule;
+        private AnalysisComponent _attachedTo;
         private AnalysisComponent _component;
         private AnalysisComponent _destinationVpc;
         private AnalysisPacketHeader _inboundHeader;
@@ -61,6 +62,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAclRule()
         {
             return this._aclRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachedTo. 
+        /// <para>
+        /// The resource to which the path component is attached.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent AttachedTo
+        {
+            get { return this._attachedTo; }
+            set { this._attachedTo = value; }
+        }
+
+        // Check to see if AttachedTo property is set
+        internal bool IsSetAttachedTo()
+        {
+            return this._attachedTo != null;
         }
 
         /// <summary>

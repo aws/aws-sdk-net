@@ -66,6 +66,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CidrBlock", StringUtils.FromString(publicRequest.CidrBlock));
                 }
+                if(publicRequest.IsSetIpv4IpamPoolId())
+                {
+                    request.Parameters.Add("Ipv4IpamPoolId", StringUtils.FromString(publicRequest.Ipv4IpamPoolId));
+                }
+                if(publicRequest.IsSetIpv4NetmaskLength())
+                {
+                    request.Parameters.Add("Ipv4NetmaskLength", StringUtils.FromInt(publicRequest.Ipv4NetmaskLength));
+                }
                 if(publicRequest.IsSetIpv6CidrBlock())
                 {
                     request.Parameters.Add("Ipv6CidrBlock", StringUtils.FromString(publicRequest.Ipv6CidrBlock));
@@ -73,6 +81,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIpv6CidrBlockNetworkBorderGroup())
                 {
                     request.Parameters.Add("Ipv6CidrBlockNetworkBorderGroup", StringUtils.FromString(publicRequest.Ipv6CidrBlockNetworkBorderGroup));
+                }
+                if(publicRequest.IsSetIpv6IpamPoolId())
+                {
+                    request.Parameters.Add("Ipv6IpamPoolId", StringUtils.FromString(publicRequest.Ipv6IpamPoolId));
+                }
+                if(publicRequest.IsSetIpv6NetmaskLength())
+                {
+                    request.Parameters.Add("Ipv6NetmaskLength", StringUtils.FromInt(publicRequest.Ipv6NetmaskLength));
                 }
                 if(publicRequest.IsSetIpv6Pool())
                 {

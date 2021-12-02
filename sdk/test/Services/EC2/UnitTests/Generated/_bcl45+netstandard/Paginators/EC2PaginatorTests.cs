@@ -1290,6 +1290,123 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
+        public void DescribeIpamPoolsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeIpamPoolsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeIpamPoolsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeIpamPoolsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeIpamPools(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeIpamPools(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeIpamPoolsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeIpamPoolsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeIpamPoolsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeIpamPools(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeIpamPools(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void DescribeIpamsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeIpamsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeIpamsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeIpamsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeIpams(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeIpams(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeIpamsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeIpamsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeIpamsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeIpams(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeIpams(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void DescribeIpamScopesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeIpamScopesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeIpamScopesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeIpamScopesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeIpamScopes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeIpamScopes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeIpamScopesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeIpamScopesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeIpamScopesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeIpamScopes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeIpamScopes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void DescribeIpv6PoolsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeIpv6PoolsRequest>();
@@ -1785,6 +1902,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.DescribeNetworkAcls(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.DescribeNetworkAcls(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void DescribeNetworkInsightsAccessScopeAnalysesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopeAnalysesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopeAnalysesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopeAnalysesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeNetworkInsightsAccessScopeAnalyses(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeNetworkInsightsAccessScopeAnalyses(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeNetworkInsightsAccessScopeAnalysesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopeAnalysesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopeAnalysesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeNetworkInsightsAccessScopeAnalyses(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeNetworkInsightsAccessScopeAnalyses(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void DescribeNetworkInsightsAccessScopesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeNetworkInsightsAccessScopes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeNetworkInsightsAccessScopes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeNetworkInsightsAccessScopesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeNetworkInsightsAccessScopesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeNetworkInsightsAccessScopes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeNetworkInsightsAccessScopes(request);
 
             // Should work the first time
             paginator.Responses.ToList();
@@ -3735,6 +3930,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetInstanceTypesFromInstanceRequirements(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetInstanceTypesFromInstanceRequirements(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void GetIpamAddressHistoryTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamAddressHistoryRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetIpamAddressHistoryResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetIpamAddressHistoryResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetIpamAddressHistory(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetIpamAddressHistory(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetIpamAddressHistoryTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamAddressHistoryRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetIpamAddressHistoryResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetIpamAddressHistory(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetIpamAddressHistory(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void GetIpamPoolAllocationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamPoolAllocationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetIpamPoolAllocationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetIpamPoolAllocationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetIpamPoolAllocations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetIpamPoolAllocations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetIpamPoolAllocationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamPoolAllocationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetIpamPoolAllocationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetIpamPoolAllocations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetIpamPoolAllocations(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void GetIpamPoolCidrsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamPoolCidrsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetIpamPoolCidrsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetIpamPoolCidrsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetIpamPoolCidrs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetIpamPoolCidrs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetIpamPoolCidrsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamPoolCidrsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetIpamPoolCidrsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetIpamPoolCidrs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetIpamPoolCidrs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void GetIpamResourceCidrsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamResourceCidrsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetIpamResourceCidrsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetIpamResourceCidrsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetIpamResourceCidrs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetIpamResourceCidrs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetIpamResourceCidrsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetIpamResourceCidrsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetIpamResourceCidrsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetIpamResourceCidrs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetIpamResourceCidrs(request);
 
             // Should work the first time
             paginator.Responses.ToList();

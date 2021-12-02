@@ -292,6 +292,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeIpamPools operation
+        ///</summary>
+        public IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request) 
+        {
+            return new DescribeIpamPoolsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpams operation
+        ///</summary>
+        public IDescribeIpamsPaginator DescribeIpams(DescribeIpamsRequest request) 
+        {
+            return new DescribeIpamsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpamScopes operation
+        ///</summary>
+        public IDescribeIpamScopesPaginator DescribeIpamScopes(DescribeIpamScopesRequest request) 
+        {
+            return new DescribeIpamScopesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeIpv6Pools operation
         ///</summary>
         public IDescribeIpv6PoolsPaginator DescribeIpv6Pools(DescribeIpv6PoolsRequest request) 
@@ -393,6 +417,22 @@ namespace Amazon.EC2.Model
         public IDescribeNetworkAclsPaginator DescribeNetworkAcls(DescribeNetworkAclsRequest request) 
         {
             return new DescribeNetworkAclsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeNetworkInsightsAccessScopeAnalyses operation
+        ///</summary>
+        public IDescribeNetworkInsightsAccessScopeAnalysesPaginator DescribeNetworkInsightsAccessScopeAnalyses(DescribeNetworkInsightsAccessScopeAnalysesRequest request) 
+        {
+            return new DescribeNetworkInsightsAccessScopeAnalysesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeNetworkInsightsAccessScopes operation
+        ///</summary>
+        public IDescribeNetworkInsightsAccessScopesPaginator DescribeNetworkInsightsAccessScopes(DescribeNetworkInsightsAccessScopesRequest request) 
+        {
+            return new DescribeNetworkInsightsAccessScopesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -793,6 +833,38 @@ namespace Amazon.EC2.Model
         public IGetInstanceTypesFromInstanceRequirementsPaginator GetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request) 
         {
             return new GetInstanceTypesFromInstanceRequirementsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamAddressHistory operation
+        ///</summary>
+        public IGetIpamAddressHistoryPaginator GetIpamAddressHistory(GetIpamAddressHistoryRequest request) 
+        {
+            return new GetIpamAddressHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPoolAllocations operation
+        ///</summary>
+        public IGetIpamPoolAllocationsPaginator GetIpamPoolAllocations(GetIpamPoolAllocationsRequest request) 
+        {
+            return new GetIpamPoolAllocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPoolCidrs operation
+        ///</summary>
+        public IGetIpamPoolCidrsPaginator GetIpamPoolCidrs(GetIpamPoolCidrsRequest request) 
+        {
+            return new GetIpamPoolCidrsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamResourceCidrs operation
+        ///</summary>
+        public IGetIpamResourceCidrsPaginator GetIpamResourceCidrs(GetIpamResourceCidrsRequest request) 
+        {
+            return new GetIpamResourceCidrsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AclRule = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("attachedTo", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.AttachedTo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("component", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;

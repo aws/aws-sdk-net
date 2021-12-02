@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private string _arn;
         private string _id;
+        private string _name;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -70,6 +71,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the analysis component.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
     }

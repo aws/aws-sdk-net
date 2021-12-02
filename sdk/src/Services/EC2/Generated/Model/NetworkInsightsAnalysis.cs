@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private AnalysisStatus _status;
         private string _statusMessage;
         private List<Tag> _tags = new List<Tag>();
+        private string _warningMessage;
 
         /// <summary>
         /// Gets and sets the property AlternatePathHints. 
@@ -282,6 +283,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarningMessage. 
+        /// <para>
+        /// The warning message.
+        /// </para>
+        /// </summary>
+        public string WarningMessage
+        {
+            get { return this._warningMessage; }
+            set { this._warningMessage = value; }
+        }
+
+        // Check to see if WarningMessage property is set
+        internal bool IsSetWarningMessage()
+        {
+            return this._warningMessage != null;
         }
 
     }

@@ -759,6 +759,42 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AllocateIpamPoolCidr
+
+        internal virtual AllocateIpamPoolCidrResponse AllocateIpamPoolCidr(AllocateIpamPoolCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateIpamPoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateIpamPoolCidrResponseUnmarshaller.Instance;
+
+            return Invoke<AllocateIpamPoolCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
+        /// an IPAM pool to another resource or IPAM pool. For more information, see <a href="/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+        /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AllocateIpamPoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">REST API Reference for AllocateIpamPoolCidr Operation</seealso>
+        public virtual Task<AllocateIpamPoolCidrResponse> AllocateIpamPoolCidrAsync(AllocateIpamPoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AllocateIpamPoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AllocateIpamPoolCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AllocateIpamPoolCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ApplySecurityGroupsToClientVpnTargetNetwork
 
         internal virtual ApplySecurityGroupsToClientVpnTargetNetworkResponse ApplySecurityGroupsToClientVpnTargetNetwork(ApplySecurityGroupsToClientVpnTargetNetworkRequest request)
@@ -3352,6 +3388,137 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpam
+
+        internal virtual CreateIpamResponse CreateIpam(CreateIpamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create an IPAM. Amazon VCP IP Address Manager (IPAM) is a VPC feature that you can
+        /// use to automate your IP address management workflows including assigning, tracking,
+        /// troubleshooting, and auditing IP addresses across Amazon Web Services Regions and
+        /// accounts throughout your Amazon Web Services Organization.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">REST API Reference for CreateIpam Operation</seealso>
+        public virtual Task<CreateIpamResponse> CreateIpamAsync(CreateIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIpamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIpamPool
+
+        internal virtual CreateIpamPoolResponse CreateIpamPool(CreateIpamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpamPoolResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM, a pool
+        /// is a collection of contiguous IP addresses CIDRs. Pools enable you to organize your
+        /// IP addresses according to your routing and security needs. For example, if you have
+        /// separate routing and security needs for development and production applications, you
+        /// can create a pool for each.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a
+        /// top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
+        public virtual Task<CreateIpamPoolResponse> CreateIpamPoolAsync(CreateIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamPoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIpamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIpamScope
+
+        internal virtual CreateIpamScopeResponse CreateIpamScope(CreateIpamScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamScopeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpamScopeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create an IPAM scope. In IPAM, a scope is the highest-level container within IPAM.
+        /// An IPAM contains two default scopes. Each scope represents the IP space for a single
+        /// network. The private scope is intended for all private IP address space. The public
+        /// scope is intended for all public IP address space. Scopes enable you to reuse IP addresses
+        /// across multiple unconnected networks without causing IP address overlap or conflict.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/add-scope-ipam.html">Add a scope</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">REST API Reference for CreateIpamScope Operation</seealso>
+        public virtual Task<CreateIpamScopeResponse> CreateIpamScopeAsync(CreateIpamScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpamScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpamScopeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIpamScopeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateKeyPair
 
         internal virtual CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
@@ -3745,6 +3912,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNetworkInsightsAccessScope
+
+        internal virtual CreateNetworkInsightsAccessScopeResponse CreateNetworkInsightsAccessScope(CreateNetworkInsightsAccessScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkInsightsAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkInsightsAccessScopeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a Network Access Scope.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Web Services Network Access Analyzer enables cloud networking and cloud operations
+        /// teams to verify that their networks on Amazon Web Services conform to their network
+        /// security and governance objectives. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/network-access-analyzer/">Amazon
+        /// Web Services Network Access Analyzer Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsAccessScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNetworkInsightsAccessScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">REST API Reference for CreateNetworkInsightsAccessScope Operation</seealso>
+        public virtual Task<CreateNetworkInsightsAccessScopeResponse> CreateNetworkInsightsAccessScopeAsync(CreateNetworkInsightsAccessScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkInsightsAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNetworkInsightsAccessScopeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNetworkInsightsPath
 
         internal virtual CreateNetworkInsightsPathResponse CreateNetworkInsightsPath(CreateNetworkInsightsPathRequest request)
@@ -3912,6 +4121,43 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreatePlacementGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePlacementGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePublicIpv4Pool
+
+        internal virtual CreatePublicIpv4PoolResponse CreatePublicIpv4Pool(CreatePublicIpv4PoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicIpv4PoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicIpv4PoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePublicIpv4PoolResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address pool required
+        /// for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage
+        /// with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools
+        /// only. To monitor the status of pool creation, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicIpv4Pool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePublicIpv4Pool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">REST API Reference for CreatePublicIpv4Pool Operation</seealso>
+        public virtual Task<CreatePublicIpv4PoolResponse> CreatePublicIpv4PoolAsync(CreatePublicIpv4PoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePublicIpv4PoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePublicIpv4PoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePublicIpv4PoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6105,6 +6351,140 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteIpam
+
+        internal virtual DeleteIpamResponse DeleteIpam(DeleteIpamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete an IPAM. Deleting an IPAM removes all monitored data associated with the IPAM
+        /// including the historical data for CIDRs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an IPAM if there are CIDRs provisioned to pools or if there are
+        /// allocations in the pools within the IPAM. To deprovision pool CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
+        /// To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/delete-ipam.html">Delete an IPAM</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
+        public virtual Task<DeleteIpamResponse> DeleteIpamAsync(DeleteIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIpamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIpamPool
+
+        internal virtual DeleteIpamPoolResponse DeleteIpamPool(DeleteIpamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpamPoolResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete an IPAM pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an IPAM pool if there are allocations in it or CIDRs provisioned
+        /// to it. To release allocations, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>.
+        /// To deprovision pool CIDRs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionIpamPoolCidr.html">DeprovisionIpamPoolCidr</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/delete-pool-ipam.html">Delete
+        /// a pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
+        public virtual Task<DeleteIpamPoolResponse> DeleteIpamPoolAsync(DeleteIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIpamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIpamScope
+
+        internal virtual DeleteIpamScopeResponse DeleteIpamScope(DeleteIpamScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamScopeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpamScopeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the scope for an IPAM. You cannot delete the default scopes.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/delete-scope-ipam.html">Delete
+        /// a scope</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">REST API Reference for DeleteIpamScope Operation</seealso>
+        public virtual Task<DeleteIpamScopeResponse> DeleteIpamScopeAsync(DeleteIpamScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpamScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpamScopeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIpamScopeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteKeyPair
 
         internal virtual DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
@@ -6418,6 +6798,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteNetworkInsightsAccessScope
+
+        internal virtual DeleteNetworkInsightsAccessScopeResponse DeleteNetworkInsightsAccessScope(DeleteNetworkInsightsAccessScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkInsightsAccessScopeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified Network Access Scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAccessScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsAccessScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">REST API Reference for DeleteNetworkInsightsAccessScope Operation</seealso>
+        public virtual Task<DeleteNetworkInsightsAccessScopeResponse> DeleteNetworkInsightsAccessScopeAsync(DeleteNetworkInsightsAccessScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsAccessScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNetworkInsightsAccessScopeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkInsightsAccessScopeAnalysis
+
+        internal virtual DeleteNetworkInsightsAccessScopeAnalysisResponse DeleteNetworkInsightsAccessScopeAnalysis(DeleteNetworkInsightsAccessScopeAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkInsightsAccessScopeAnalysisResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified Network Access Scope analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAccessScopeAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsAccessScopeAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">REST API Reference for DeleteNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        public virtual Task<DeleteNetworkInsightsAccessScopeAnalysisResponse> DeleteNetworkInsightsAccessScopeAnalysisAsync(DeleteNetworkInsightsAccessScopeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteNetworkInsightsAccessScopeAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNetworkInsightsAnalysis
 
         internal virtual DeleteNetworkInsightsAnalysisResponse DeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request)
@@ -6589,6 +7037,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeletePlacementGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePlacementGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePublicIpv4Pool
+
+        internal virtual DeletePublicIpv4PoolResponse DeletePublicIpv4Pool(DeletePublicIpv4PoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicIpv4PoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicIpv4PoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublicIpv4PoolResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool required for
+        /// the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with
+        /// IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicIpv4Pool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePublicIpv4Pool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">REST API Reference for DeletePublicIpv4Pool Operation</seealso>
+        public virtual Task<DeletePublicIpv4PoolResponse> DeletePublicIpv4PoolAsync(DeletePublicIpv4PoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePublicIpv4PoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePublicIpv4PoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePublicIpv4PoolResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7833,6 +8317,77 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeprovisionByoipCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeprovisionIpamPoolCidr
+
+        internal virtual DeprovisionIpamPoolCidrResponse DeprovisionIpamPoolCidr(DeprovisionIpamPoolCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprovisionIpamPoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprovisionIpamPoolCidrResponseUnmarshaller.Instance;
+
+            return Invoke<DeprovisionIpamPoolCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a
+        /// pool that has a source pool, the CIDR is recycled back into the source pool. For more
+        /// information, see <a href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision
+        /// pool CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionIpamPoolCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeprovisionIpamPoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">REST API Reference for DeprovisionIpamPoolCidr Operation</seealso>
+        public virtual Task<DeprovisionIpamPoolCidrResponse> DeprovisionIpamPoolCidrAsync(DeprovisionIpamPoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprovisionIpamPoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprovisionIpamPoolCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeprovisionIpamPoolCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeprovisionPublicIpv4PoolCidr
+
+        internal virtual DeprovisionPublicIpv4PoolCidrResponse DeprovisionPublicIpv4PoolCidr(DeprovisionPublicIpv4PoolCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprovisionPublicIpv4PoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprovisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
+
+            return Invoke<DeprovisionPublicIpv4PoolCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deprovision a CIDR from a public IPv4 pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionPublicIpv4PoolCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeprovisionPublicIpv4PoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">REST API Reference for DeprovisionPublicIpv4PoolCidr Operation</seealso>
+        public virtual Task<DeprovisionPublicIpv4PoolCidrResponse> DeprovisionPublicIpv4PoolCidrAsync(DeprovisionPublicIpv4PoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeprovisionPublicIpv4PoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeprovisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeprovisionPublicIpv4PoolCidrResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10412,6 +10967,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIpamPools
+
+        internal virtual DescribeIpamPoolsResponse DescribeIpamPools(DescribeIpamPoolsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoolsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamPoolsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about your IPAM pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPools service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamPools service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
+        public virtual Task<DescribeIpamPoolsResponse> DescribeIpamPoolsAsync(DescribeIpamPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoolsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoolsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamPoolsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpams
+
+        internal virtual DescribeIpamsResponse DescribeIpams(DescribeIpamsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about your IPAM pools.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
+        /// IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpams service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpams service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">REST API Reference for DescribeIpams Operation</seealso>
+        public virtual Task<DescribeIpamsResponse> DescribeIpamsAsync(DescribeIpamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpamScopes
+
+        internal virtual DescribeIpamScopesResponse DescribeIpamScopes(DescribeIpamScopesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamScopesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamScopesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about your IPAM scopes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamScopes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamScopes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">REST API Reference for DescribeIpamScopes Operation</seealso>
+        public virtual Task<DescribeIpamScopesResponse> DescribeIpamScopesAsync(DescribeIpamScopesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIpamScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamScopesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamScopesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIpv6Pools
 
         internal virtual DescribeIpv6PoolsResponse DescribeIpv6Pools(DescribeIpv6PoolsRequest request)
@@ -10958,6 +11621,74 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeNetworkAclsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeNetworkAclsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeNetworkInsightsAccessScopeAnalyses
+
+        internal virtual DescribeNetworkInsightsAccessScopeAnalysesResponse DescribeNetworkInsightsAccessScopeAnalyses(DescribeNetworkInsightsAccessScopeAnalysesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsAccessScopeAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopeAnalysesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkInsightsAccessScopeAnalysesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified Network Access Scope analyses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAccessScopeAnalyses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsAccessScopeAnalyses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">REST API Reference for DescribeNetworkInsightsAccessScopeAnalyses Operation</seealso>
+        public virtual Task<DescribeNetworkInsightsAccessScopeAnalysesResponse> DescribeNetworkInsightsAccessScopeAnalysesAsync(DescribeNetworkInsightsAccessScopeAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsAccessScopeAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopeAnalysesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNetworkInsightsAccessScopeAnalysesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeNetworkInsightsAccessScopes
+
+        internal virtual DescribeNetworkInsightsAccessScopesResponse DescribeNetworkInsightsAccessScopes(DescribeNetworkInsightsAccessScopesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsAccessScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkInsightsAccessScopesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified Network Access Scopes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAccessScopes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsAccessScopes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">REST API Reference for DescribeNetworkInsightsAccessScopes Operation</seealso>
+        public virtual Task<DescribeNetworkInsightsAccessScopesResponse> DescribeNetworkInsightsAccessScopesAsync(DescribeNetworkInsightsAccessScopesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsAccessScopesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNetworkInsightsAccessScopesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14545,6 +15276,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableIpamOrganizationAdminAccount
+
+        internal virtual DisableIpamOrganizationAdminAccountResponse DisableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableIpamOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DisableIpamOrganizationAdminAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disable the IPAM account. For more information, see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable
+        /// integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableIpamOrganizationAdminAccount service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
+        public virtual Task<DisableIpamOrganizationAdminAccountResponse> DisableIpamOrganizationAdminAccountAsync(DisableIpamOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableIpamOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableIpamOrganizationAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableSerialConsoleAccess
 
         internal virtual DisableSerialConsoleAccessResponse DisableSerialConsoleAccess(DisableSerialConsoleAccessRequest request)
@@ -15318,6 +16084,43 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = EnableImageDeprecationResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableImageDeprecationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableIpamOrganizationAdminAccount
+
+        internal virtual EnableIpamOrganizationAdminAccountResponse EnableIpamOrganizationAdminAccount(EnableIpamOrganizationAdminAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableIpamOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
+
+            return Invoke<EnableIpamOrganizationAdminAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enable an Organizations member account as the IPAM admin account. You cannot select
+        /// the Organizations management account as the IPAM admin account. For more information,
+        /// see <a href="/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableIpamOrganizationAdminAccount service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
+        public virtual Task<EnableIpamOrganizationAdminAccountResponse> EnableIpamOrganizationAdminAccountAsync(EnableIpamOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableIpamOrganizationAdminAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableIpamOrganizationAdminAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -16244,6 +17047,144 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetIpamAddressHistory
+
+        internal virtual GetIpamAddressHistoryResponse GetIpamAddressHistory(GetIpamAddressHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamAddressHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamAddressHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamAddressHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve historical information about a CIDR within an IPAM scope. For more information,
+        /// see <a href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP
+        /// addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamAddressHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamAddressHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">REST API Reference for GetIpamAddressHistory Operation</seealso>
+        public virtual Task<GetIpamAddressHistoryResponse> GetIpamAddressHistoryAsync(GetIpamAddressHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamAddressHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamAddressHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamAddressHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamPoolAllocations
+
+        internal virtual GetIpamPoolAllocationsResponse GetIpamPoolAllocations(GetIpamPoolAllocationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamPoolAllocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPoolAllocationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamPoolAllocationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get a list of all the CIDR allocations in an IPAM pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolAllocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPoolAllocations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">REST API Reference for GetIpamPoolAllocations Operation</seealso>
+        public virtual Task<GetIpamPoolAllocationsResponse> GetIpamPoolAllocationsAsync(GetIpamPoolAllocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamPoolAllocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPoolAllocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamPoolAllocationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamPoolCidrs
+
+        internal virtual GetIpamPoolCidrsResponse GetIpamPoolCidrs(GetIpamPoolCidrsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamPoolCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPoolCidrsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamPoolCidrsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the CIDRs provisioned to an IPAM pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolCidrs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPoolCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">REST API Reference for GetIpamPoolCidrs Operation</seealso>
+        public virtual Task<GetIpamPoolCidrsResponse> GetIpamPoolCidrsAsync(GetIpamPoolCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamPoolCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamPoolCidrsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamPoolCidrsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIpamResourceCidrs
+
+        internal virtual GetIpamResourceCidrsResponse GetIpamResourceCidrs(GetIpamResourceCidrsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamResourceCidrsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpamResourceCidrsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about the resources in a scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamResourceCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
+        public virtual Task<GetIpamResourceCidrsResponse> GetIpamResourceCidrsAsync(GetIpamResourceCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpamResourceCidrsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpamResourceCidrsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIpamResourceCidrsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLaunchTemplateData
 
         internal virtual GetLaunchTemplateDataResponse GetLaunchTemplateData(GetLaunchTemplateDataRequest request)
@@ -16353,6 +17294,74 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetManagedPrefixListEntriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkInsightsAccessScopeAnalysisFindings
+
+        internal virtual GetNetworkInsightsAccessScopeAnalysisFindingsResponse GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkInsightsAccessScopeAnalysisFindingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the findings for the specified Network Access Scope analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkInsightsAccessScopeAnalysisFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkInsightsAccessScopeAnalysisFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">REST API Reference for GetNetworkInsightsAccessScopeAnalysisFindings Operation</seealso>
+        public virtual Task<GetNetworkInsightsAccessScopeAnalysisFindingsResponse> GetNetworkInsightsAccessScopeAnalysisFindingsAsync(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkInsightsAccessScopeAnalysisFindingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkInsightsAccessScopeContent
+
+        internal virtual GetNetworkInsightsAccessScopeContentResponse GetNetworkInsightsAccessScopeContent(GetNetworkInsightsAccessScopeContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkInsightsAccessScopeContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeContentResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkInsightsAccessScopeContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the content for the specified Network Access Scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkInsightsAccessScopeContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkInsightsAccessScopeContent service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">REST API Reference for GetNetworkInsightsAccessScopeContent Operation</seealso>
+        public virtual Task<GetNetworkInsightsAccessScopeContentResponse> GetNetworkInsightsAccessScopeContentAsync(GetNetworkInsightsAccessScopeContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetNetworkInsightsAccessScopeContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetNetworkInsightsAccessScopeContentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -18069,6 +19078,158 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyIpam
+
+        internal virtual ModifyIpamResponse ModifyIpam(ModifyIpamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modify the configurations of an IPAM.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
+        public virtual Task<ModifyIpamResponse> ModifyIpamAsync(ModifyIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIpamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyIpamPool
+
+        internal virtual ModifyIpamPoolResponse ModifyIpamPool(ModifyIpamPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamPoolResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modify the configurations of an IPAM pool.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/mod-pool-ipam.html">Modify a pool</a>
+        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
+        public virtual Task<ModifyIpamPoolResponse> ModifyIpamPoolAsync(ModifyIpamPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIpamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyIpamResourceCidr
+
+        internal virtual ModifyIpamResourceCidrResponse ModifyIpamResourceCidr(ModifyIpamResourceCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceCidrResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamResourceCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modify a resource CIDR. You can use this action to transfer resource CIDRs between
+        /// scopes and ignore resource CIDRs that you do not want to manage. If set to false,
+        /// the resource will not be tracked for overlap, it cannot be auto-imported into a pool,
+        /// and it will be removed from any pool it has an allocation in.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/move-resource-ipam.html">Move
+        /// resource CIDRs between scopes</a> and <a href="/vpc/latest/ipam/change-monitoring-state-ipam.html">Change
+        /// the monitoring state of resource CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamResourceCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">REST API Reference for ModifyIpamResourceCidr Operation</seealso>
+        public virtual Task<ModifyIpamResourceCidrResponse> ModifyIpamResourceCidrAsync(ModifyIpamResourceCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamResourceCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamResourceCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIpamResourceCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyIpamScope
+
+        internal virtual ModifyIpamScopeResponse ModifyIpamScope(ModifyIpamScopeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamScopeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamScopeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modify an IPAM scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamScope service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamScope service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">REST API Reference for ModifyIpamScope Operation</seealso>
+        public virtual Task<ModifyIpamScopeResponse> ModifyIpamScopeAsync(ModifyIpamScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIpamScopeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamScopeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIpamScopeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyLaunchTemplate
 
         internal virtual ModifyLaunchTemplateResponse ModifyLaunchTemplate(ModifyLaunchTemplateRequest request)
@@ -19460,6 +20621,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  MoveByoipCidrToIpam
+
+        internal virtual MoveByoipCidrToIpamResponse MoveByoipCidrToIpam(MoveByoipCidrToIpamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveByoipCidrToIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
+
+            return Invoke<MoveByoipCidrToIpamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveByoipCidrToIpam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MoveByoipCidrToIpam service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
+        public virtual Task<MoveByoipCidrToIpamResponse> MoveByoipCidrToIpamAsync(MoveByoipCidrToIpamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveByoipCidrToIpamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MoveByoipCidrToIpamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ProvisionByoipCidr
 
         internal virtual ProvisionByoipCidrResponse ProvisionByoipCidr(ProvisionByoipCidrRequest request)
@@ -19509,6 +20704,87 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
 
             return InvokeAsync<ProvisionByoipCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ProvisionIpamPoolCidr
+
+        internal virtual ProvisionIpamPoolCidrResponse ProvisionIpamPoolCidr(ProvisionIpamPoolCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProvisionIpamPoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProvisionIpamPoolCidrResponseUnmarshaller.Instance;
+
+            return Invoke<ProvisionIpamPoolCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provision a CIDR to an IPAM pool. You can use thsi action to provision new CIDRs to
+        /// a top-level pool or to transfer a CIDR from a top-level pool to a pool within it.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision
+        /// CIDRs to pools</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionIpamPoolCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ProvisionIpamPoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">REST API Reference for ProvisionIpamPoolCidr Operation</seealso>
+        public virtual Task<ProvisionIpamPoolCidrResponse> ProvisionIpamPoolCidrAsync(ProvisionIpamPoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProvisionIpamPoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProvisionIpamPoolCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ProvisionIpamPoolCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ProvisionPublicIpv4PoolCidr
+
+        internal virtual ProvisionPublicIpv4PoolCidrResponse ProvisionPublicIpv4PoolCidr(ProvisionPublicIpv4PoolCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProvisionPublicIpv4PoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
+
+            return Invoke<ProvisionPublicIpv4PoolCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provision a CIDR to a public IPv4 pool.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionPublicIpv4PoolCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ProvisionPublicIpv4PoolCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
+        public virtual Task<ProvisionPublicIpv4PoolCidrResponse> ProvisionPublicIpv4PoolCidrAsync(ProvisionPublicIpv4PoolCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ProvisionPublicIpv4PoolCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ProvisionPublicIpv4PoolCidrResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -20222,6 +21498,44 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ReleaseHostsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReleaseHostsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReleaseIpamPoolAllocation
+
+        internal virtual ReleaseIpamPoolAllocationResponse ReleaseIpamPoolAllocation(ReleaseIpamPoolAllocationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReleaseIpamPoolAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReleaseIpamPoolAllocationResponseUnmarshaller.Instance;
+
+            return Invoke<ReleaseIpamPoolAllocationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Release an allocation within an IPAM pool. You can only use this action to release
+        /// manual allocations. To remove an allocation for a resource without deleting the resource,
+        /// set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
+        /// For more information, see <a href="/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
+        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseIpamPoolAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReleaseIpamPoolAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">REST API Reference for ReleaseIpamPoolAllocation Operation</seealso>
+        public virtual Task<ReleaseIpamPoolAllocationResponse> ReleaseIpamPoolAllocationAsync(ReleaseIpamPoolAllocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReleaseIpamPoolAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReleaseIpamPoolAllocationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReleaseIpamPoolAllocationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -21577,6 +22891,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = StartInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNetworkInsightsAccessScopeAnalysis
+
+        internal virtual StartNetworkInsightsAccessScopeAnalysisResponse StartNetworkInsightsAccessScopeAnalysis(StartNetworkInsightsAccessScopeAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkInsightsAccessScopeAnalysisResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts analyzing the specified Network Access Scope.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkInsightsAccessScopeAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNetworkInsightsAccessScopeAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">REST API Reference for StartNetworkInsightsAccessScopeAnalysis Operation</seealso>
+        public virtual Task<StartNetworkInsightsAccessScopeAnalysisResponse> StartNetworkInsightsAccessScopeAnalysisAsync(StartNetworkInsightsAccessScopeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartNetworkInsightsAccessScopeAnalysisResponse>(request, options, cancellationToken);
         }
 
         #endregion
