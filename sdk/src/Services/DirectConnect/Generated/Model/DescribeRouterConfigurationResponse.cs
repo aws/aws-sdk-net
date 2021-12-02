@@ -95,7 +95,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaceName. 
         /// <para>
-        /// The name of the virtual interface assigned by the customer network.
+        /// Provides the details about a virtual interface's router.
         /// </para>
         /// </summary>
         public string VirtualInterfaceName

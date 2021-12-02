@@ -39,6 +39,7 @@ namespace Amazon.DirectConnect.Model
         private string _authKey;
         private string _customerAddress;
         private string _directConnectGatewayId;
+        private bool? _enableSiteLink;
         private int? _mtu;
         private List<Tag> _tags = new List<Tag>();
         private string _virtualInterfaceName;
@@ -155,6 +156,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetDirectConnectGatewayId()
         {
             return this._directConnectGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSiteLink. 
+        /// <para>
+        /// Indicates whether to enable or disable SiteLink.
+        /// </para>
+        /// </summary>
+        public bool EnableSiteLink
+        {
+            get { return this._enableSiteLink.GetValueOrDefault(); }
+            set { this._enableSiteLink = value; }
+        }
+
+        // Check to see if EnableSiteLink property is set
+        internal bool IsSetEnableSiteLink()
+        {
+            return this._enableSiteLink.HasValue; 
         }
 
         /// <summary>

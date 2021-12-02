@@ -51,6 +51,7 @@ namespace Amazon.DirectConnect.Model
         private string _ownerAccount;
         private string _region;
         private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
+        private bool? _siteLinkEnabled;
         private List<Tag> _tags = new List<Tag>();
         private string _virtualGatewayId;
         private string _virtualInterfaceId;
@@ -389,6 +390,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetRouteFilterPrefixes()
         {
             return this._routeFilterPrefixes != null && this._routeFilterPrefixes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SiteLinkEnabled. 
+        /// <para>
+        /// Indicates whether SiteLink is enabled.
+        /// </para>
+        /// </summary>
+        public bool SiteLinkEnabled
+        {
+            get { return this._siteLinkEnabled.GetValueOrDefault(); }
+            set { this._siteLinkEnabled = value; }
+        }
+
+        // Check to see if SiteLinkEnabled property is set
+        internal bool IsSetSiteLinkEnabled()
+        {
+            return this._siteLinkEnabled.HasValue; 
         }
 
         /// <summary>

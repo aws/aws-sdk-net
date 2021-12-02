@@ -44,8 +44,28 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class UpdateVirtualInterfaceAttributesRequest : AmazonDirectConnectRequest
     {
+        private bool? _enableSiteLink;
         private int? _mtu;
         private string _virtualInterfaceId;
+        private string _virtualInterfaceName;
+
+        /// <summary>
+        /// Gets and sets the property EnableSiteLink. 
+        /// <para>
+        /// Indicates whether to enable or disable SiteLink.
+        /// </para>
+        /// </summary>
+        public bool EnableSiteLink
+        {
+            get { return this._enableSiteLink.GetValueOrDefault(); }
+            set { this._enableSiteLink = value; }
+        }
+
+        // Check to see if EnableSiteLink property is set
+        internal bool IsSetEnableSiteLink()
+        {
+            return this._enableSiteLink.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Mtu. 
@@ -83,6 +103,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetVirtualInterfaceId()
         {
             return this._virtualInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualInterfaceName. 
+        /// <para>
+        /// The name of the virtual private interface.
+        /// </para>
+        /// </summary>
+        public string VirtualInterfaceName
+        {
+            get { return this._virtualInterfaceName; }
+            set { this._virtualInterfaceName = value; }
+        }
+
+        // Check to see if VirtualInterfaceName property is set
+        internal bool IsSetVirtualInterfaceName()
+        {
+            return this._virtualInterfaceName != null;
         }
 
     }

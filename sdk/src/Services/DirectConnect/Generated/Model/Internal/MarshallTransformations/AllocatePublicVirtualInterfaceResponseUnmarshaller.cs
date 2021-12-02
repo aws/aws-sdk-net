@@ -159,6 +159,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.RouteFilterPrefixes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("siteLinkEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.SiteLinkEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

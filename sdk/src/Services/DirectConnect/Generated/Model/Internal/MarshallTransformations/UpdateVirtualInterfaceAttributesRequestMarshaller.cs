@@ -67,6 +67,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnableSiteLink())
+                {
+                    context.Writer.WritePropertyName("enableSiteLink");
+                    context.Writer.Write(publicRequest.EnableSiteLink);
+                }
+
                 if(publicRequest.IsSetMtu())
                 {
                     context.Writer.WritePropertyName("mtu");
@@ -77,6 +83,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("virtualInterfaceId");
                     context.Writer.Write(publicRequest.VirtualInterfaceId);
+                }
+
+                if(publicRequest.IsSetVirtualInterfaceName())
+                {
+                    context.Writer.WritePropertyName("virtualInterfaceName");
+                    context.Writer.Write(publicRequest.VirtualInterfaceName);
                 }
 
         
