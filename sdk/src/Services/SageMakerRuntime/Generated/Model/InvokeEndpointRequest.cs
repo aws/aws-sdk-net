@@ -47,9 +47,9 @@ namespace Amazon.SageMakerRuntime.Model
     /// </para>
     ///  
     /// <para>
-    /// Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
-    /// 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-    /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+    /// Calls to <code>InvokeEndpoint</code> are authenticated by using Amazon Web Services
+    /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+    /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
     /// </para>
     ///  
     /// <para>
@@ -162,8 +162,8 @@ namespace Amazon.SageMakerRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker
-        /// Python SDK.
+        /// This feature is currently supported in the Amazon Web Services SDKs but not in the
+        /// Amazon SageMaker Python SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

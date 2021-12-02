@@ -79,6 +79,10 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalDependencyException"))
+                {
+                    return InternalDependencyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailure"))
                 {
                     return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -86,6 +90,10 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ModelError"))
                 {
                     return ModelErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ModelNotReadyException"))
+                {
+                    return ModelNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailable"))
                 {

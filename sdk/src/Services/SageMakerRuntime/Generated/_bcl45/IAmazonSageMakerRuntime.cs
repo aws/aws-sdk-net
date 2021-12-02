@@ -59,9 +59,9 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
-        /// 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// Calls to <code>InvokeEndpoint</code> are authenticated by using Amazon Web Services
+        /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -81,11 +81,19 @@ namespace Amazon.SageMakerRuntime
         /// <param name="request">Container for the necessary parameters to execute the InvokeEndpoint service method.</param>
         /// 
         /// <returns>The response from the InvokeEndpoint service method, as returned by SageMakerRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.InternalDependencyException">
+        /// Your request caused an exception with an internal dependency. Contact customer support.
+        /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ModelErrorException">
         /// Model (owned by the customer in the container) returned 4xx or 5xx error code.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ModelNotReadyException">
+        /// Either a serverless endpoint variant's resources are still being provisioned, or a
+        /// multi-model endpoint is still downloading or loading the target model. Wait and try
+        /// your request again.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
         /// The service is unavailable. Try your call again.
@@ -116,9 +124,9 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
-        /// 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// Calls to <code>InvokeEndpoint</code> are authenticated by using Amazon Web Services
+        /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -141,11 +149,19 @@ namespace Amazon.SageMakerRuntime
         /// </param>
         /// 
         /// <returns>The response from the InvokeEndpoint service method, as returned by SageMakerRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.InternalDependencyException">
+        /// Your request caused an exception with an internal dependency. Contact customer support.
+        /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ModelErrorException">
         /// Model (owned by the customer in the container) returned 4xx or 5xx error code.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerRuntime.Model.ModelNotReadyException">
+        /// Either a serverless endpoint variant's resources are still being provisioned, or a
+        /// multi-model endpoint is still downloading or loading the target model. Wait and try
+        /// your request again.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
         /// The service is unavailable. Try your call again.
@@ -181,9 +197,9 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using AWS Signature
-        /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services
+        /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeEndpointAsync service method.</param>
@@ -223,9 +239,9 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using AWS Signature
-        /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services
+        /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeEndpointAsync service method.</param>

@@ -79,6 +79,41 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpoint_InternalDependencyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var marshaller = new InvokeEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpoint", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalDependencyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Content-Type","Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalDependencyException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
         public void InvokeEndpoint_InternalFailureExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("InvokeEndpoint");
@@ -134,6 +169,41 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ModelErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = InvokeEndpointResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SageMakerRuntime")]
+        public void InvokeEndpoint_ModelNotReadyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("InvokeEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<InvokeEndpointRequest>();
+            var marshaller = new InvokeEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("InvokeEndpoint", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ModelNotReadyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Content-Type","Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
+                    {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ModelNotReadyException"},
                 }
             };
 

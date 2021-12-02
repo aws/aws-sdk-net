@@ -104,8 +104,8 @@ namespace Amazon.SageMakerRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker
-        /// Python SDK.
+        /// This feature is currently supported in the Amazon Web Services SDKs but not in the
+        /// Amazon SageMaker Python SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
