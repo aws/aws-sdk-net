@@ -698,6 +698,14 @@ namespace Amazon.Rekognition
         /// Constant Male for KnownGenderType
         /// </summary>
         public static readonly KnownGenderType Male = new KnownGenderType("Male");
+        /// <summary>
+        /// Constant Nonbinary for KnownGenderType
+        /// </summary>
+        public static readonly KnownGenderType Nonbinary = new KnownGenderType("Nonbinary");
+        /// <summary>
+        /// Constant Unlisted for KnownGenderType
+        /// </summary>
+        public static readonly KnownGenderType Unlisted = new KnownGenderType("Unlisted");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The known gender identity for the celebrity that matches the provided ID.
+    /// The known gender identity for the celebrity that matches the provided ID. The known
+    /// gender identity can be Male, Female, Nonbinary, or Unlisted.
     /// </summary>
     public partial class KnownGender
     {
