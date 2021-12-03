@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.174.0",
+    "ProductVersion" : "3.7.175.0",
     "CoreVersion"    : "3.7.5.4",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -610,7 +610,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.7.5.16",
+            "Version" : "3.7.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.5.4"

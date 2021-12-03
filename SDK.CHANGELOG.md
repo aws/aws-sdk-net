@@ -1,3 +1,7 @@
+### 3.7.175.0 (2021-12-03 19:12 UTC)
+* Rekognition (3.7.6.0)
+	* This release added new KnownGender types for Celebrity Recognition.
+
 ### 3.7.174.0 (2021-12-02 19:12 UTC)
 * AmplifyUIBuilder (3.7.0.0)
 	* This release introduces the actions and data types for the new Amplify UI Builder API. The Amplify UI Builder API provides a programmatic interface for creating and configuring user interface (UI) component libraries and themes for use in Amplify applications.
