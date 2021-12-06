@@ -1,3 +1,11 @@
+### 3.7.176.0 (2021-12-06 19:13 UTC)
+* AppSync (3.7.3.0)
+	* AWS AppSync now supports custom domain names, allowing you to associate a domain name that you own with an AppSync API in your account.
+* LocationService (3.7.6.0)
+	* This release adds support for Accuracy position filtering, position metadata and autocomplete for addresses and points of interest based on partial or misspelled free-form text.
+* Route53 (3.7.2.0)
+	* Add PriorRequestNotComplete exception to UpdateHostedZoneComment API
+
 ### 3.7.175.0 (2021-12-03 19:12 UTC)
 * Rekognition (3.7.6.0)
 	* This release added new KnownGender types for Celebrity Recognition.
