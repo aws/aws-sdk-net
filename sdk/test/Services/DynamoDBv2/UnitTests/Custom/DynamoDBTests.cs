@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.Auth.AccessControlPolicy;
-using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
+﻿using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.DataModel;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using ThirdParty.Json.LitJson;
 
 namespace AWSSDK_DotNet35.UnitTests
@@ -45,6 +38,84 @@ namespace AWSSDK_DotNet35.UnitTests
 
             Assert.AreEqual("Test", config.TableNamePrefix);
         }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        [DynamicData(nameof(DocumentDataSource), DynamicDataSourceType.Property)]
+        public void TestValidConversions(Document document)
+        {
+            var convertedModel = new SampleModel
+            {
+                Name = document.GetOrDefault("preExistentkey"),
+                Weight = (int)document.GetOrDefault("stableKey"),
+                Active = document.GetOrDefault("newlyAddedKey")
+            };
+
+            Assert.IsNotNull(convertedModel);
+            Assert.AreEqual(convertedModel.Name, document.GetOrDefault("preExistentkey").AsString());
+            Assert.AreEqual(convertedModel.Weight, document.GetOrDefault("stableKey").AsInt());
+            Assert.AreEqual(convertedModel.Active, document.GetOrDefault("newlyAddedKey")?.AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestInvalidConversion()
+        {
+            var document = new Document()
+            {
+                { "preExistentkey", "value 3"},
+                { "stableKey", 5 }
+            };
+
+            Assert.ThrowsException<InvalidOperationException>(() => 
+            {
+                var convertedModel = new SampleModel
+                {
+                    Name = document.GetOrDefault("preExistentkey"),
+                    Weight = (int)document.GetOrDefault("stableKey"),
+                    RandomProperty = (bool)document.GetOrDefault("newlyAddedKey")
+                };
+            });
+        }
+
+        private class SampleModel
+        {
+            public string Name { get; set; }
+            public int Weight { get; set; }
+            public string Active { get; set; }
+            public bool RandomProperty { get; set; }
+        }
+
+        static IEnumerable<Document[]> DocumentDataSource 
+             => new[] 
+            {
+                new Document[]
+                {
+                    new Document()
+                    {
+                        { "preExistentkey", "value 1"},
+                        { "stableKey", 10 },
+                        { "newlyAddedKey" , null }
+                    }
+                },
+                new Document[]
+                {
+                    new Document()
+                    {
+                        { "preExistentkey", "value 2"},
+                        { "stableKey", 20 },
+                        { "newlyAddedKey" , true }
+                    }
+                },
+                new Document[]
+                {
+                    new Document()
+                    {
+                        { "preExistentkey", "value 3"},
+                        { "stableKey", 5 }
+                    } 
+                }
+            };
 
         private static List<Type> GetSubTypes(Type baseType)
         {
@@ -130,5 +201,14 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.IsNull(doc["Name"].AsPrimitive().Value);
         }
 
+    }
+
+    static class DocumentExtensions
+    {
+        public static DynamoDBEntry GetOrDefault(this Document document, string key)
+        {
+            document.TryGetValue(key, out DynamoDBEntry value);
+            return value;
+        }
     }
 }

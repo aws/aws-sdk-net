@@ -232,6 +232,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Boolean value of DynamoDBEntry</returns>
         public static explicit operator Boolean(DynamoDBEntry p)
         {
+            if(p == null) throw new InvalidOperationException("Unable to convert a null entry to bool");
+
             return p.AsBoolean();
         }
 
@@ -259,6 +261,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Byte value of DynamoDBEntry</returns>
         public static explicit operator Byte(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to byte");
+
             return p.AsByte();
         }
 
@@ -289,6 +293,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static explicit operator SByte(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to sbyte");
+
             return p.AsSByte();
         }
 
@@ -319,6 +325,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static explicit operator UInt16(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to uint16");
+
             return p.AsUShort();
         }
 
@@ -346,6 +354,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Int16 value of DynamoDBEntry</returns>
         public static explicit operator Int16(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to int16");
+
             return p.AsShort();
         }
 
@@ -376,6 +386,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static explicit operator UInt32(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to uint32");
+
             return p.AsUInt();
         }
 
@@ -403,6 +415,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Int32 value of DynamoDBEntry</returns>
         public static explicit operator Int32(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to int32");
+
             return p.AsInt();
         }
 
@@ -433,6 +447,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         [CLSCompliant(false)]
         public static explicit operator UInt64(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to uint64");
+
             return p.AsULong();
         }
 
@@ -460,6 +476,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Int64 value of DynamoDBEntry</returns>
         public static explicit operator Int64(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to int64");
+
             return p.AsLong();
         }
 
@@ -487,6 +505,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Single value of DynamoDBEntry</returns>
         public static explicit operator Single(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to single");
+            
             return p.AsSingle();
         }
 
@@ -514,6 +534,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Double value of DynamoDBEntry</returns>
         public static explicit operator Double(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to double");
+
             return p.AsDouble();
         }
 
@@ -541,6 +563,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Decimal value of DynamoDBEntry</returns>
         public static explicit operator Decimal(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to decimal");
+
             return p.AsDecimal();
         }
 
@@ -568,6 +592,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Char value of DynamoDBEntry</returns>
         public static explicit operator Char(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to char");
+
             return p.AsChar();
         }
 
@@ -598,7 +624,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>String value of DynamoDBEntry</returns>
         public static implicit operator String(DynamoDBEntry p)
         {
-            return p.AsString();
+            return p?.AsString();
         }
 
         /// <summary>
@@ -625,6 +651,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DateTime value of DynamoDBEntry</returns>
         public static explicit operator DateTime(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to DateTime");
+
             return p.AsDateTime();
         }
 
@@ -652,6 +680,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Guid value of DynamoDBEntry</returns>
         public static explicit operator Guid(DynamoDBEntry p)
         {
+            if (p == null) throw new InvalidOperationException("Unable to convert a null entry to Guid");
+            
             return p.AsGuid();
         }
 
@@ -679,7 +709,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>byte[] value of DynamoDBEntry</returns>
         public static explicit operator byte[](DynamoDBEntry p)
         {
-            return p.AsByteArray();
+            return p?.AsByteArray();
         }
 
         /// <summary>
@@ -706,7 +736,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>MemoryStream value of DynamoDBEntry</returns>
         public static explicit operator MemoryStream(DynamoDBEntry p)
         {
-            return p.AsMemoryStream();
+            return p?.AsMemoryStream();
         }
 
         #endregion
@@ -763,7 +793,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Primitive[] value of DynamoDBEntry</returns>
         public static explicit operator Primitive[](DynamoDBEntry p)
         {
-            return p.AsArrayOfPrimitive();
+            return p?.AsArrayOfPrimitive();
         }
 
         /// <summary>
@@ -790,7 +820,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;Primitive&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<Primitive>(DynamoDBEntry p)
         {
-            return p.AsListOfPrimitive();
+            return p?.AsListOfPrimitive();
         }
 
         /// <summary>
@@ -817,7 +847,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;Primitive&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<Primitive>(DynamoDBEntry p)
         {
-            return p.AsHashSetOfPrimitive();
+            return p?.AsHashSetOfPrimitive();
         }
 
 
@@ -836,7 +866,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(List<Document> data)
         {
-            return new DynamoDBList(data.Cast<DynamoDBEntry>());
+            return new DynamoDBList(data?.Cast<DynamoDBEntry>());
         }
         /// <summary>
         /// Explicitly convert DynamoDBEntry to List&lt;Document&gt;
@@ -845,7 +875,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;Document&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<Document>(DynamoDBEntry p)
         {
-            return p.AsListOfDocument();
+            return p?.AsListOfDocument();
         }
 
 
@@ -873,7 +903,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>String[] value of DynamoDBEntry</returns>
         public static explicit operator String[](DynamoDBEntry p)
         {
-            return p.AsArrayOfString();
+            return p?.AsArrayOfString();
         }
 
         /// <summary>
@@ -900,7 +930,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;String&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<String>(DynamoDBEntry p)
         {
-            return p.AsListOfString();
+            return p?.AsListOfString();
         }
 
         /// <summary>
@@ -927,7 +957,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;String&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<String>(DynamoDBEntry p)
         {
-            return p.AsHashSetOfString();
+            return p?.AsHashSetOfString();
         }
 
 
@@ -955,7 +985,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;byte[]&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<byte[]>(DynamoDBEntry p)
         {
-            return p.AsListOfByteArray();
+            return p?.AsListOfByteArray();
         }
 
         /// <summary>
@@ -982,7 +1012,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;byte[]&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<byte[]>(DynamoDBEntry p)
         {
-            return p.AsHashSetOfByteArray();
+            return p?.AsHashSetOfByteArray();
         }
 
 
@@ -1010,7 +1040,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List&lt;MemoryStream&gt; value of DynamoDBEntry</returns>
         public static explicit operator List<MemoryStream>(DynamoDBEntry p)
         {
-            return p.AsListOfMemoryStream();
+            return p?.AsListOfMemoryStream();
         }
 
         /// <summary>
@@ -1037,7 +1067,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>HashSet&lt;MemoryStream&gt; value of DynamoDBEntry</returns>
         public static explicit operator HashSet<MemoryStream>(DynamoDBEntry p)
         {
-            return p.AsHashSetOfMemoryStream();
+            return p?.AsHashSetOfMemoryStream();
         }
 
         #endregion
