@@ -33,9 +33,29 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class ListDevicePositionsResponseEntry
     {
+        private PositionalAccuracy _accuracy;
         private string _deviceId;
         private List<double> _position = new List<double>();
+        private Dictionary<string, string> _positionProperties = new Dictionary<string, string>();
         private DateTime? _sampleTime;
+
+        /// <summary>
+        /// Gets and sets the property Accuracy. 
+        /// <para>
+        /// The accuracy of the device position.
+        /// </para>
+        /// </summary>
+        public PositionalAccuracy Accuracy
+        {
+            get { return this._accuracy; }
+            set { this._accuracy = value; }
+        }
+
+        // Check to see if Accuracy property is set
+        internal bool IsSetAccuracy()
+        {
+            return this._accuracy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeviceId. 
@@ -73,6 +93,25 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPosition()
         {
             return this._position != null && this._position.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PositionProperties. 
+        /// <para>
+        /// The properties associated with the position.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public Dictionary<string, string> PositionProperties
+        {
+            get { return this._positionProperties; }
+            set { this._positionProperties = value; }
+        }
+
+        // Check to see if PositionProperties property is set
+        internal bool IsSetPositionProperties()
+        {
+            return this._positionProperties != null && this._positionProperties.Count > 0; 
         }
 
         /// <summary>

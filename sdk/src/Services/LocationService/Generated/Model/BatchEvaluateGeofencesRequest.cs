@@ -53,6 +53,11 @@ namespace Amazon.LocationService.Model
     /// The last geofence that a device was observed within is tracked for 30 days after the
     /// most recent device position update.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Geofence evaluation uses the given device position. It does not account for the optional
+    /// <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class BatchEvaluateGeofencesRequest : AmazonLocationServiceRequest

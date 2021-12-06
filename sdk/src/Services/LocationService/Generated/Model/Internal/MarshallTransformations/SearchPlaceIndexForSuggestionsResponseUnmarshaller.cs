@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDevicePosition operation
+    /// Response Unmarshaller for SearchPlaceIndexForSuggestions operation
     /// </summary>  
-    public class GetDevicePositionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class SearchPlaceIndexForSuggestionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,46 +45,22 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDevicePositionResponse response = new GetDevicePositionResponse();
+            SearchPlaceIndexForSuggestionsResponse response = new SearchPlaceIndexForSuggestionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Accuracy", targetDepth))
+                if (context.TestExpression("Results", targetDepth))
                 {
-                    var unmarshaller = PositionalAccuracyUnmarshaller.Instance;
-                    response.Accuracy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<SearchForSuggestionsResult, SearchForSuggestionsResultUnmarshaller>(SearchForSuggestionsResultUnmarshaller.Instance);
+                    response.Results = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeviceId", targetDepth))
+                if (context.TestExpression("Summary", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Position", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    response.Position = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PositionProperties", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.PositionProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ReceivedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.ReceivedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SampleTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.SampleTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SearchPlaceIndexForSuggestionsSummaryUnmarshaller.Instance;
+                    response.Summary = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -134,9 +110,9 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             return new AmazonLocationServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetDevicePositionResponseUnmarshaller _instance = new GetDevicePositionResponseUnmarshaller();        
+        private static SearchPlaceIndexForSuggestionsResponseUnmarshaller _instance = new SearchPlaceIndexForSuggestionsResponseUnmarshaller();        
 
-        internal static GetDevicePositionResponseUnmarshaller GetInstance()
+        internal static SearchPlaceIndexForSuggestionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +120,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDevicePositionResponseUnmarshaller Instance
+        public static SearchPlaceIndexForSuggestionsResponseUnmarshaller Instance
         {
             get
             {

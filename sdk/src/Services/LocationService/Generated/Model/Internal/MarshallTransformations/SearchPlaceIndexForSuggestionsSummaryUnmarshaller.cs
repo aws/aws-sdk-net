@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DevicePosition Object
+    /// Response Unmarshaller for SearchPlaceIndexForSuggestionsSummary Object
     /// </summary>  
-    public class DevicePositionUnmarshaller : IUnmarshaller<DevicePosition, XmlUnmarshallerContext>, IUnmarshaller<DevicePosition, JsonUnmarshallerContext>
+    public class SearchPlaceIndexForSuggestionsSummaryUnmarshaller : IUnmarshaller<SearchPlaceIndexForSuggestionsSummary, XmlUnmarshallerContext>, IUnmarshaller<SearchPlaceIndexForSuggestionsSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DevicePosition IUnmarshaller<DevicePosition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SearchPlaceIndexForSuggestionsSummary IUnmarshaller<SearchPlaceIndexForSuggestionsSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,57 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DevicePosition Unmarshall(JsonUnmarshallerContext context)
+        public SearchPlaceIndexForSuggestionsSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DevicePosition unmarshalledObject = new DevicePosition();
+            SearchPlaceIndexForSuggestionsSummary unmarshalledObject = new SearchPlaceIndexForSuggestionsSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Accuracy", targetDepth))
-                {
-                    var unmarshaller = PositionalAccuracyUnmarshaller.Instance;
-                    unmarshalledObject.Accuracy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeviceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Position", targetDepth))
+                if (context.TestExpression("BiasPosition", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BiasPosition = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PositionProperties", targetDepth))
+                if (context.TestExpression("DataSource", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.PositionProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ReceivedTime", targetDepth))
+                if (context.TestExpression("FilterBBox", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReceivedTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.FilterBBox = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SampleTime", targetDepth))
+                if (context.TestExpression("FilterCountries", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SampleTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FilterCountries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Language", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Language = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxResults", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Text", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +112,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static DevicePositionUnmarshaller _instance = new DevicePositionUnmarshaller();        
+        private static SearchPlaceIndexForSuggestionsSummaryUnmarshaller _instance = new SearchPlaceIndexForSuggestionsSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DevicePositionUnmarshaller Instance
+        public static SearchPlaceIndexForSuggestionsSummaryUnmarshaller Instance
         {
             get
             {

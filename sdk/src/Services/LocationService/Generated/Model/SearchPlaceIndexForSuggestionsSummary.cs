@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A summary of the request sent by using <code>SearchPlaceIndexForText</code>.
+    /// A summary of the request sent by using <code>SearchPlaceIndexForSuggestions</code>.
     /// </summary>
-    public partial class SearchPlaceIndexForTextSummary
+    public partial class SearchPlaceIndexForSuggestionsSummary
     {
         private List<double> _biasPosition = new List<double>();
         private string _dataSource;
@@ -39,7 +39,6 @@ namespace Amazon.LocationService.Model
         private List<string> _filterCountries = new List<string>();
         private string _language;
         private int? _maxResults;
-        private List<double> _resultBBox = new List<double>();
         private string _text;
 
         /// <summary>
@@ -169,7 +168,6 @@ namespace Amazon.LocationService.Model
         /// Contains the optional result count limit specified in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -183,34 +181,9 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResultBBox. 
-        /// <para>
-        /// The bounding box that fully contains all search results.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
-        /// is contained within <code>FilterBBox</code>.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Min=4, Max=4)]
-        public List<double> ResultBBox
-        {
-            get { return this._resultBBox; }
-            set { this._resultBBox = value; }
-        }
-
-        // Check to see if ResultBBox property is set
-        internal bool IsSetResultBBox()
-        {
-            return this._resultBBox != null && this._resultBBox.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The search text specified in the request.
+        /// The free-form partial text input specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

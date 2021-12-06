@@ -64,6 +64,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Accuracy", targetDepth))
+                {
+                    var unmarshaller = PositionalAccuracyUnmarshaller.Instance;
+                    unmarshalledObject.Accuracy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PositionProperties", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.PositionProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SampleTime", targetDepth))

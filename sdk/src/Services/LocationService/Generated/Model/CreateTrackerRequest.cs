@@ -106,6 +106,16 @@ namespace Amazon.LocationService.Model
         /// Distance-based filtering can also reduce the effects of GPS noise when displaying
         /// device trajectories on a map. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AccuracyBased</code> - If the device has moved less than the measured accuracy,
+        /// location updates are ignored. For example, if two consecutive updates from a device
+        /// have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device
+        /// has moved less than 15 m. Ignored location updates are neither evaluated against linked
+        /// geofence collections, nor stored. This can reduce the effects of GPS noise when displaying
+        /// device trajectories on a map, and can help control your costs by reducing the number
+        /// of geofence evaluations. 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// This field is optional. If not specified, the default value is <code>TimeBased</code>.

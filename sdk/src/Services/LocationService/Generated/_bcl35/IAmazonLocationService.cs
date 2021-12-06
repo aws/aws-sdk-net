@@ -268,6 +268,11 @@ namespace Amazon.LocationService
         /// The last geofence that a device was observed within is tracked for 30 days after the
         /// most recent device position update.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Geofence evaluation uses the given device position. It does not account for the optional
+        /// <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEvaluateGeofences service method.</param>
@@ -452,9 +457,23 @@ namespace Amazon.LocationService
         /// updates are evaluated against linked geofence collections, and location data is stored
         /// at a maximum of one position per 30 second interval. If your update frequency is more
         /// often than every 30 seconds, only one update per 30 seconds is stored for each unique
-        /// device ID. When <code>PositionFiltering</code> is set to <code>DistanceBased</code>
-        /// filtering, location data is stored and evaluated against linked geofence collections
-        /// only if the device has moved more than 30 m (98.4 ft).
+        /// device ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering,
+        /// location data is stored and evaluated against linked geofence collections only if
+        /// the device has moved more than 30 m (98.4 ft).
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering,
+        /// location data is stored and evaluated against linked geofence collections only if
+        /// the device has moved more than the measured accuracy. For example, if two consecutive
+        /// updates from a device have a horizontal accuracy of 5 m and 10 m, the second update
+        /// is neither stored or evaluated if the device has moved less than 15 m. If <code>PositionFiltering</code>
+        /// is set to <code>AccuracyBased</code> filtering, Amazon Location uses the default value
+        /// <code>{ "Horizontal": 0}</code> when accuracy is not provided on a <code>DevicePositionUpdate</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -723,6 +742,7 @@ namespace Amazon.LocationService
         /// Creates a place index resource in your AWS account. Use a place index resource to
         /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
         /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
+        /// operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
@@ -2607,6 +2627,79 @@ namespace Amazon.LocationService
         /// <returns>Returns a  SearchPlaceIndexForPositionResult from LocationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForPosition">REST API Reference for SearchPlaceIndexForPosition Operation</seealso>
         SearchPlaceIndexForPositionResponse EndSearchPlaceIndexForPosition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchPlaceIndexForSuggestions
+
+
+        /// <summary>
+        /// Generates suggestions for addresses and points of interest based on partial or misspelled
+        /// free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy
+        /// matching.
+        /// 
+        ///  
+        /// <para>
+        /// Optional parameters let you narrow your search results by bounding box or country,
+        /// or bias your search toward a specific position on the globe.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can search for suggested place names near a specified position by using <code>BiasPosition</code>,
+        /// or filter results within a bounding box by using <code>FilterBBox</code>. These parameters
+        /// are mutually exclusive; using both <code>BiasPosition</code> and <code>FilterBBox</code>
+        /// in the same command returns an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForSuggestions service method.</param>
+        /// 
+        /// <returns>The response from the SearchPlaceIndexForSuggestions service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForSuggestions">REST API Reference for SearchPlaceIndexForSuggestions Operation</seealso>
+        SearchPlaceIndexForSuggestionsResponse SearchPlaceIndexForSuggestions(SearchPlaceIndexForSuggestionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchPlaceIndexForSuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForSuggestions operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchPlaceIndexForSuggestions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForSuggestions">REST API Reference for SearchPlaceIndexForSuggestions Operation</seealso>
+        IAsyncResult BeginSearchPlaceIndexForSuggestions(SearchPlaceIndexForSuggestionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchPlaceIndexForSuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchPlaceIndexForSuggestions.</param>
+        /// 
+        /// <returns>Returns a  SearchPlaceIndexForSuggestionsResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForSuggestions">REST API Reference for SearchPlaceIndexForSuggestions Operation</seealso>
+        SearchPlaceIndexForSuggestionsResponse EndSearchPlaceIndexForSuggestions(IAsyncResult asyncResult);
 
         #endregion
         

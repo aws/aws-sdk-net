@@ -45,6 +45,17 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DevicePositionUpdate requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccuracy())
+            {
+                context.Writer.WritePropertyName("Accuracy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PositionalAccuracyMarshaller.Instance;
+                marshaller.Marshall(requestObject.Accuracy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDeviceId())
             {
                 context.Writer.WritePropertyName("DeviceId");
@@ -60,6 +71,20 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectPositionListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetPositionProperties())
+            {
+                context.Writer.WritePropertyName("PositionProperties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectPositionPropertiesKvp in requestObject.PositionProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectPositionPropertiesKvp.Key);
+                    var requestObjectPositionPropertiesValue = requestObjectPositionPropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectPositionPropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetSampleTime())

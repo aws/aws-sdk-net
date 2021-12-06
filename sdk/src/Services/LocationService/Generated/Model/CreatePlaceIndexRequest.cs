@@ -33,6 +33,7 @@ namespace Amazon.LocationService.Model
     /// Creates a place index resource in your AWS account. Use a place index resource to
     /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
     /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
+    /// operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
     /// operation.
     /// </summary>
     public partial class CreatePlaceIndexRequest : AmazonLocationServiceRequest
