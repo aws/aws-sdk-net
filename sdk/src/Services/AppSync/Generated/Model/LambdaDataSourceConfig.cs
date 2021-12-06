@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes an Amazon Web Services Lambda data source configuration.
+    /// Describes an Lambda data source configuration.
     /// </summary>
     public partial class LambdaDataSourceConfig
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionArn. 
         /// <para>
-        /// The ARN for the Lambda function.
+        /// The Amazon Resource Name (ARN) for the Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

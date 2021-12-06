@@ -65,8 +65,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito
-        /// user pools, or Amazon Web Services Lambda.
+        /// The authentication type: API key, Identity and Access Management (IAM), OpenID Connect
+        /// (OIDC), Amazon Cognito user pools, or Lambda.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaAuthorizerConfig. 
         /// <para>
-        /// Configuration for Amazon Web Services Lambda function authorization.
+        /// Configuration for Lambda function authorization.
         /// </para>
         /// </summary>
         public LambdaAuthorizerConfig LambdaAuthorizerConfig
@@ -140,7 +140,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectConfig. 
         /// <para>
-        /// The OpenID Connect configuration.
+        /// The OIDC configuration.
         /// </para>
         /// </summary>
         public OpenIDConnectConfig OpenIDConnectConfig
@@ -195,7 +195,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property XrayEnabled. 
         /// <para>
-        /// A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+        /// A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.
         /// </para>
         /// </summary>
         public bool XrayEnabled

@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model
     /// 
     ///  
     /// <para>
-    /// A function is a reusable entity. Multiple functions can be used to compose the resolver
+    /// A function is a reusable entity. You can use multiple functions to compose the resolver
     /// logic.
     /// </para>
     /// </summary>
@@ -108,8 +108,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// The <code>version</code> of the request mapping template. Currently the supported
-        /// value is 2018-05-29. 
+        /// The <code>version</code> of the request mapping template. Currently, the supported
+        /// value is 2018-05-29.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -167,7 +167,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ResponseMappingTemplate. 
         /// <para>
-        /// The <code>Function</code> response mapping template. 
+        /// The <code>Function</code> response mapping template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]

@@ -61,7 +61,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DeltaSyncConfig. 
         /// <para>
-        /// The <code>DeltaSyncConfig</code> for a versioned datasource.
+        /// The <code>DeltaSyncConfig</code> for a versioned data source.
         /// </para>
         /// </summary>
         public DeltaSyncConfig DeltaSyncConfig

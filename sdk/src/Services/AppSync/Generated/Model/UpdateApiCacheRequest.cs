@@ -70,7 +70,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiId. 
         /// <para>
-        /// The GraphQL API Id.
+        /// The GraphQL API ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,7 +93,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are between 1 and 3600 seconds.
+        /// Valid values are 1–3,600 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

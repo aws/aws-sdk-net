@@ -122,8 +122,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// The <code>version</code> of the request mapping template. Currently the supported
-        /// value is 2018-05-29. 
+        /// The <code>version</code> of the request mapping template. Currently, the supported
+        /// value is 2018-05-29.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,7 +181,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ResponseMappingTemplate. 
         /// <para>
-        /// The <code>Function</code> request mapping template. 
+        /// The <code>Function</code> request mapping template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]

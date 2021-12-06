@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// You are not authorized to perform this operation.
+    /// You aren't authorized to perform this operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

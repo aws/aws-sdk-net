@@ -61,8 +61,8 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS HTTP
-        /// endpoint.
+        ///  <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon Relational
+        /// Database Service (Amazon RDS) HTTP endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>

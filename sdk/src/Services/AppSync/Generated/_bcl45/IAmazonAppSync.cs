@@ -39,6 +39,62 @@ namespace Amazon.AppSync
 
 
         
+        #region  AssociateApi
+
+
+        /// <summary>
+        /// Maps an endpoint to your custom domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApi service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateApi">REST API Reference for AssociateApi Operation</seealso>
+        AssociateApiResponse AssociateApi(AssociateApiRequest request);
+
+
+
+        /// <summary>
+        /// Maps an endpoint to your custom domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateApi">REST API Reference for AssociateApi Operation</seealso>
+        Task<AssociateApiResponse> AssociateApiAsync(AssociateApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateApiCache
 
 
@@ -64,7 +120,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">REST API Reference for CreateApiCache Operation</seealso>
         CreateApiCacheResponse CreateApiCache(CreateApiCacheRequest request);
@@ -96,7 +152,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">REST API Reference for CreateApiCache Operation</seealso>
         Task<CreateApiCacheResponse> CreateApiCacheAsync(CreateApiCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -107,7 +163,7 @@ namespace Amazon.AppSync
 
 
         /// <summary>
-        /// Creates a unique key that you can distribute to clients who are executing your API.
+        /// Creates a unique key that you can distribute to clients who invoke your API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// 
@@ -134,7 +190,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request);
@@ -142,7 +198,7 @@ namespace Amazon.AppSync
 
 
         /// <summary>
-        /// Creates a unique key that you can distribute to clients who are executing your API.
+        /// Creates a unique key that you can distribute to clients who invoke your API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -172,7 +228,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         Task<CreateApiKeyResponse> CreateApiKeyAsync(CreateApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -204,7 +260,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request);
@@ -236,10 +292,58 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDomainName
+
+
+        /// <summary>
+        /// Creates a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainName service method.</param>
+        /// 
+        /// <returns>The response from the CreateDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
+        CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request);
+
+
+
+        /// <summary>
+        /// Creates a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomainName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
+        Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -251,7 +355,7 @@ namespace Amazon.AppSync
         /// 
         ///  
         /// <para>
-        /// A function is a reusable entity. Multiple functions can be used to compose the resolver
+        /// A function is a reusable entity. You can use multiple functions to compose the resolver
         /// logic.
         /// </para>
         /// </summary>
@@ -270,7 +374,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         CreateFunctionResponse CreateFunction(CreateFunctionRequest request);
@@ -282,7 +386,7 @@ namespace Amazon.AppSync
         /// 
         ///  
         /// <para>
-        /// A function is a reusable entity. Multiple functions can be used to compose the resolver
+        /// A function is a reusable entity. You can use multiple functions to compose the resolver
         /// logic.
         /// </para>
         /// </summary>
@@ -304,7 +408,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -338,7 +442,7 @@ namespace Amazon.AppSync
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateGraphqlApi">REST API Reference for CreateGraphqlApi Operation</seealso>
         CreateGraphqlApiResponse CreateGraphqlApi(CreateGraphqlApiRequest request);
@@ -372,7 +476,7 @@ namespace Amazon.AppSync
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateGraphqlApi">REST API Reference for CreateGraphqlApi Operation</seealso>
         Task<CreateGraphqlApiResponse> CreateGraphqlApiAsync(CreateGraphqlApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -387,7 +491,7 @@ namespace Amazon.AppSync
         /// 
         ///  
         /// <para>
-        /// A resolver converts incoming requests into a format that a data source can understand
+        /// A resolver converts incoming requests into a format that a data source can understand,
         /// and converts the data source's responses into GraphQL.
         /// </para>
         /// </summary>
@@ -406,7 +510,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">REST API Reference for CreateResolver Operation</seealso>
         CreateResolverResponse CreateResolver(CreateResolverRequest request);
@@ -418,7 +522,7 @@ namespace Amazon.AppSync
         /// 
         ///  
         /// <para>
-        /// A resolver converts incoming requests into a format that a data source can understand
+        /// A resolver converts incoming requests into a format that a data source can understand,
         /// and converts the data source's responses into GraphQL.
         /// </para>
         /// </summary>
@@ -440,7 +544,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver">REST API Reference for CreateResolver Operation</seealso>
         Task<CreateResolverResponse> CreateResolverAsync(CreateResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -472,7 +576,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateType">REST API Reference for CreateType Operation</seealso>
         CreateTypeResponse CreateType(CreateTypeRequest request);
@@ -504,7 +608,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateType">REST API Reference for CreateType Operation</seealso>
         Task<CreateTypeResponse> CreateTypeAsync(CreateTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -536,7 +640,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">REST API Reference for DeleteApiCache Operation</seealso>
         DeleteApiCacheResponse DeleteApiCache(DeleteApiCacheRequest request);
@@ -568,7 +672,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">REST API Reference for DeleteApiCache Operation</seealso>
         Task<DeleteApiCacheResponse> DeleteApiCacheAsync(DeleteApiCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -596,7 +700,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request);
@@ -624,7 +728,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         Task<DeleteApiKeyResponse> DeleteApiKeyAsync(DeleteApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -656,7 +760,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request);
@@ -688,10 +792,74 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDomainName
+
+
+        /// <summary>
+        /// Deletes a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
+        DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
+        Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -716,7 +884,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request);
@@ -744,7 +912,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -761,7 +929,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the DeleteGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -779,7 +947,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi">REST API Reference for DeleteGraphqlApi Operation</seealso>
         DeleteGraphqlApiResponse DeleteGraphqlApi(DeleteGraphqlApiRequest request);
@@ -796,7 +964,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the DeleteGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -814,7 +982,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi">REST API Reference for DeleteGraphqlApi Operation</seealso>
         Task<DeleteGraphqlApiResponse> DeleteGraphqlApiAsync(DeleteGraphqlApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -842,7 +1010,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver">REST API Reference for DeleteResolver Operation</seealso>
         DeleteResolverResponse DeleteResolver(DeleteResolverRequest request);
@@ -870,7 +1038,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver">REST API Reference for DeleteResolver Operation</seealso>
         Task<DeleteResolverResponse> DeleteResolverAsync(DeleteResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -902,7 +1070,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteType">REST API Reference for DeleteType Operation</seealso>
         DeleteTypeResponse DeleteType(DeleteTypeRequest request);
@@ -934,10 +1102,74 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteType">REST API Reference for DeleteType Operation</seealso>
         Task<DeleteTypeResponse> DeleteTypeAsync(DeleteTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateApi
+
+
+        /// <summary>
+        /// Removes an <code>ApiAssociation</code> object from a custom domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApi service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateApi">REST API Reference for DisassociateApi Operation</seealso>
+        DisassociateApiResponse DisassociateApi(DisassociateApiRequest request);
+
+
+
+        /// <summary>
+        /// Removes an <code>ApiAssociation</code> object from a custom domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateApi">REST API Reference for DisassociateApi Operation</seealso>
+        Task<DisassociateApiResponse> DisassociateApiAsync(DisassociateApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -966,7 +1198,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">REST API Reference for FlushApiCache Operation</seealso>
         FlushApiCacheResponse FlushApiCache(FlushApiCacheRequest request);
@@ -998,10 +1230,66 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">REST API Reference for FlushApiCache Operation</seealso>
         Task<FlushApiCacheResponse> FlushApiCacheAsync(FlushApiCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetApiAssociation
+
+
+        /// <summary>
+        /// Retrieves an <code>ApiAssociation</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiAssociation">REST API Reference for GetApiAssociation Operation</seealso>
+        GetApiAssociationResponse GetApiAssociation(GetApiAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves an <code>ApiAssociation</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApiAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiAssociation">REST API Reference for GetApiAssociation Operation</seealso>
+        Task<GetApiAssociationResponse> GetApiAssociationAsync(GetApiAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1030,7 +1318,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">REST API Reference for GetApiCache Operation</seealso>
         GetApiCacheResponse GetApiCache(GetApiCacheRequest request);
@@ -1062,7 +1350,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">REST API Reference for GetApiCache Operation</seealso>
         Task<GetApiCacheResponse> GetApiCacheAsync(GetApiCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1094,7 +1382,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         GetDataSourceResponse GetDataSource(GetDataSourceRequest request);
@@ -1126,10 +1414,66 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDomainName
+
+
+        /// <summary>
+        /// Retrieves a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainName service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
+        GetDomainNameResponse GetDomainName(GetDomainNameRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
+        Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1151,7 +1495,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
         GetFunctionResponse GetFunction(GetFunctionRequest request);
@@ -1176,7 +1520,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
         Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1193,7 +1537,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the GetGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -1207,7 +1551,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi">REST API Reference for GetGraphqlApi Operation</seealso>
         GetGraphqlApiResponse GetGraphqlApi(GetGraphqlApiRequest request);
@@ -1224,7 +1568,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the GetGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -1238,7 +1582,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi">REST API Reference for GetGraphqlApi Operation</seealso>
         Task<GetGraphqlApiResponse> GetGraphqlApiAsync(GetGraphqlApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1265,7 +1609,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema">REST API Reference for GetIntrospectionSchema Operation</seealso>
         GetIntrospectionSchemaResponse GetIntrospectionSchema(GetIntrospectionSchemaRequest request);
@@ -1292,7 +1636,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema">REST API Reference for GetIntrospectionSchema Operation</seealso>
         Task<GetIntrospectionSchemaResponse> GetIntrospectionSchemaAsync(GetIntrospectionSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1317,7 +1661,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetResolver">REST API Reference for GetResolver Operation</seealso>
         GetResolverResponse GetResolver(GetResolverRequest request);
@@ -1342,7 +1686,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetResolver">REST API Reference for GetResolver Operation</seealso>
         Task<GetResolverResponse> GetResolverAsync(GetResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1370,7 +1714,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSchemaCreationStatus">REST API Reference for GetSchemaCreationStatus Operation</seealso>
         GetSchemaCreationStatusResponse GetSchemaCreationStatus(GetSchemaCreationStatusRequest request);
@@ -1398,7 +1742,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSchemaCreationStatus">REST API Reference for GetSchemaCreationStatus Operation</seealso>
         Task<GetSchemaCreationStatusResponse> GetSchemaCreationStatusAsync(GetSchemaCreationStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1430,7 +1774,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetType">REST API Reference for GetType Operation</seealso>
         GetTypeResponse GetType(GetTypeRequest request);
@@ -1462,7 +1806,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetType">REST API Reference for GetType Operation</seealso>
         Task<GetTypeResponse> GetTypeAsync(GetTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1499,7 +1843,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">REST API Reference for ListApiKeys Operation</seealso>
         ListApiKeysResponse ListApiKeys(ListApiKeysRequest request);
@@ -1536,7 +1880,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">REST API Reference for ListApiKeys Operation</seealso>
         Task<ListApiKeysResponse> ListApiKeysAsync(ListApiKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1564,7 +1908,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request);
@@ -1592,10 +1936,58 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDomainNames
+
+
+        /// <summary>
+        /// Lists multiple custom domain names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainNames service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainNames service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
+        ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request);
+
+
+
+        /// <summary>
+        /// Lists multiple custom domain names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainNames service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainNames service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
+        Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1620,7 +2012,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         ListFunctionsResponse ListFunctions(ListFunctionsRequest request);
@@ -1648,7 +2040,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1672,7 +2064,7 @@ namespace Amazon.AppSync
         /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">REST API Reference for ListGraphqlApis Operation</seealso>
         ListGraphqlApisResponse ListGraphqlApis(ListGraphqlApisRequest request);
@@ -1696,7 +2088,7 @@ namespace Amazon.AppSync
         /// An internal AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">REST API Reference for ListGraphqlApis Operation</seealso>
         Task<ListGraphqlApisResponse> ListGraphqlApisAsync(ListGraphqlApisRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1724,7 +2116,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolvers">REST API Reference for ListResolvers Operation</seealso>
         ListResolversResponse ListResolvers(ListResolversRequest request);
@@ -1752,7 +2144,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolvers">REST API Reference for ListResolvers Operation</seealso>
         Task<ListResolversResponse> ListResolversAsync(ListResolversRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1780,7 +2172,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
         ListResolversByFunctionResponse ListResolversByFunction(ListResolversByFunctionRequest request);
@@ -1808,7 +2200,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
         Task<ListResolversByFunctionResponse> ListResolversByFunctionAsync(ListResolversByFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1825,7 +2217,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -1842,7 +2234,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1859,7 +2251,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -1876,7 +2268,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1908,7 +2300,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypes">REST API Reference for ListTypes Operation</seealso>
         ListTypesResponse ListTypes(ListTypesRequest request);
@@ -1940,7 +2332,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypes">REST API Reference for ListTypes Operation</seealso>
         Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1977,7 +2369,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">REST API Reference for StartSchemaCreation Operation</seealso>
         StartSchemaCreationResponse StartSchemaCreation(StartSchemaCreationRequest request);
@@ -2014,7 +2406,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">REST API Reference for StartSchemaCreation Operation</seealso>
         Task<StartSchemaCreationResponse> StartSchemaCreationAsync(StartSchemaCreationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2031,7 +2423,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the TagResource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -2048,7 +2440,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -2065,7 +2457,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the TagResource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -2082,7 +2474,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2099,7 +2491,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the UntagResource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -2116,7 +2508,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -2133,7 +2525,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the UntagResource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -2150,7 +2542,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2182,7 +2574,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">REST API Reference for UpdateApiCache Operation</seealso>
         UpdateApiCacheResponse UpdateApiCache(UpdateApiCacheRequest request);
@@ -2214,7 +2606,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">REST API Reference for UpdateApiCache Operation</seealso>
         Task<UpdateApiCacheResponse> UpdateApiCacheAsync(UpdateApiCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2225,7 +2617,7 @@ namespace Amazon.AppSync
 
 
         /// <summary>
-        /// Updates an API key. The key can be updated while it is not deleted.
+        /// Updates an API key. You can update the key as long as it's not deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey service method.</param>
         /// 
@@ -2249,7 +2641,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request);
@@ -2257,7 +2649,7 @@ namespace Amazon.AppSync
 
 
         /// <summary>
-        /// Updates an API key. The key can be updated while it is not deleted.
+        /// Updates an API key. You can update the key as long as it's not deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -2284,7 +2676,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2316,7 +2708,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request);
@@ -2348,10 +2740,74 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDomainName
+
+
+        /// <summary>
+        /// Updates a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
+        UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request);
+
+
+
+        /// <summary>
+        /// Updates a custom <code>DomainName</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDomainName service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
+        Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2376,7 +2832,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request);
@@ -2404,7 +2860,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
         Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2421,7 +2877,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the UpdateGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -2439,7 +2895,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi">REST API Reference for UpdateGraphqlApi Operation</seealso>
         UpdateGraphqlApiResponse UpdateGraphqlApi(UpdateGraphqlApiRequest request);
@@ -2456,7 +2912,7 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the UpdateGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
-        /// You do not have access to perform this operation on this resource.
+        /// You don't have access to perform this operation on this resource.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -2474,7 +2930,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi">REST API Reference for UpdateGraphqlApi Operation</seealso>
         Task<UpdateGraphqlApiResponse> UpdateGraphqlApiAsync(UpdateGraphqlApiRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2502,7 +2958,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver">REST API Reference for UpdateResolver Operation</seealso>
         UpdateResolverResponse UpdateResolver(UpdateResolverRequest request);
@@ -2530,7 +2986,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver">REST API Reference for UpdateResolver Operation</seealso>
         Task<UpdateResolverResponse> UpdateResolverAsync(UpdateResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2562,7 +3018,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateType">REST API Reference for UpdateType Operation</seealso>
         UpdateTypeResponse UpdateType(UpdateTypeRequest request);
@@ -2594,7 +3050,7 @@ namespace Amazon.AppSync
         /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
-        /// You are not authorized to perform this operation.
+        /// You aren't authorized to perform this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateType">REST API Reference for UpdateType Operation</seealso>
         Task<UpdateTypeResponse> UpdateTypeAsync(UpdateTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the
-    /// Conflict Handler.
+    /// The <code>LambdaConflictHandlerConfig</code> object when configuring <code>LAMBDA</code>
+    /// as the Conflict Handler.
     /// </summary>
     public partial class LambdaConflictHandlerConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaConflictHandlerArn. 
         /// <para>
-        /// The Arn for the Lambda function to use as the Conflict Handler.
+        /// The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.
         /// </para>
         /// </summary>
         public string LambdaConflictHandlerArn

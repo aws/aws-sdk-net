@@ -146,7 +146,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// Amazon Web Services Lambda settings.
+        /// Lambda settings.
         /// </para>
         /// </summary>
         public LambdaDataSourceConfig LambdaConfig
@@ -219,8 +219,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The Identity and Access Management service role ARN for the data source. The system
-        /// assumes this role when accessing the data source.
+        /// The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for
+        /// the data source. The system assumes this role when accessing the data source.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

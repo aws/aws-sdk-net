@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// The Amazon RDS HTTP endpoint configuration.
+    /// The Amazon Relational Database Service (Amazon RDS) HTTP endpoint configuration.
     /// </summary>
     public partial class RdsHttpEndpointConfig
     {
@@ -42,7 +42,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// Amazon Web Services Region for RDS HTTP endpoint.
+        /// Amazon Web Services Region for Amazon RDS HTTP endpoint.
         /// </para>
         /// </summary>
         public string AwsRegion
@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsSecretStoreArn. 
         /// <para>
-        /// Amazon Web Services secret store ARN for database credentials.
+        /// Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.
         /// </para>
         /// </summary>
         public string AwsSecretStoreArn
@@ -96,7 +96,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DbClusterIdentifier. 
         /// <para>
-        /// Amazon RDS cluster ARN.
+        /// Amazon RDS cluster Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string DbClusterIdentifier

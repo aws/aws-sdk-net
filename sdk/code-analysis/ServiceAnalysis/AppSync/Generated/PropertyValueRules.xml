@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.AssociateApiRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.CreateDataSourceRequest.Name</property>
     <min>1</min>
     <max>65536</max>
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateDomainNameRequest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z-]*:(acm|iam):[a-z0-9-]*:\d{12}:(certificate|server-certificate)/[0-9A-Za-z_/-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateDomainNameRequest.Description</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateDomainNameRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateFunctionRequest.DataSourceName</property>
@@ -63,6 +87,12 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.DeleteDomainNameRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.DeleteFunctionRequest.FunctionId</property>
     <min>1</min>
     <max>65536</max>
@@ -87,10 +117,28 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.DisassociateApiRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.GetApiAssociationRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.GetDataSourceRequest.Name</property>
     <min>1</min>
     <max>65536</max>
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.GetDomainNameRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.GetFunctionRequest.FunctionId</property>
@@ -146,6 +194,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListDataSourcesResponse.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListDomainNamesRequest.MaxResults</property>
+    <min>0</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListDomainNamesRequest.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListDomainNamesResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
     <pattern>[\\S]+</pattern>
@@ -260,6 +325,18 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateDomainNameRequest.Description</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateDomainNameRequest.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateFunctionRequest.DataSourceName</property>
     <min>1</min>
     <max>65536</max>
@@ -322,10 +399,34 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.ApiAssociation.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.DataSource.Name</property>
     <min>1</min>
     <max>65536</max>
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.DomainNameConfig.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[a-z-]*:(acm|iam):[a-z0-9-]*:\d{12}:(certificate|server-certificate)/[0-9A-Za-z_/-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.DomainNameConfig.Description</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.DomainNameConfig.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.FunctionConfiguration.DataSourceName</property>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// The caching configuration for a resolver that has caching enabled.
+    /// The caching configuration for a resolver that has caching activated.
     /// </summary>
     public partial class CachingConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property CachingKeys. 
         /// <para>
-        /// The caching keys for a resolver that has caching enabled.
+        /// The caching keys for a resolver that has caching activated.
         /// </para>
         ///  
         /// <para>
@@ -62,11 +62,11 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Ttl. 
         /// <para>
-        /// The TTL in seconds for a resolver that has caching enabled.
+        /// The TTL in seconds for a resolver that has caching activated.
         /// </para>
         ///  
         /// <para>
-        /// Valid values are between 1 and 3600 seconds.
+        /// Valid values are 1–3,600 seconds.
         /// </para>
         /// </summary>
         public long Ttl

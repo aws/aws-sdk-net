@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// The CloudWatch Logs configuration.
+    /// The Amazon CloudWatch Logs configuration.
     /// </summary>
     public partial class LogConfig
     {
@@ -40,8 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
-        /// The service role that AppSync will assume to publish to Amazon CloudWatch logs in
-        /// your account. 
+        /// The service role that AppSync assumes to publish to CloudWatch logs in your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +78,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FieldLogLevel. 
         /// <para>
-        /// The field logging level. Values can be NONE, ERROR, or ALL. 
+        /// The field logging level. Values can be NONE, ERROR, or ALL.
         /// </para>
         ///  <ul> <li> 
         /// <para>

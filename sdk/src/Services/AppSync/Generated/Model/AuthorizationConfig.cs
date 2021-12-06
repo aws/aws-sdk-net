@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// The authorization config in case the HTTP endpoint requires authorization.
+    /// The authorization configuration in case the HTTP endpoint requires authorization.
     /// </summary>
     public partial class AuthorizationConfig
     {
@@ -39,11 +39,11 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthorizationType. 
         /// <para>
-        /// The authorization type required by the HTTP endpoint.
+        /// The authorization type that the HTTP endpoint requires.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>AWS_IAM</b>: The authorization type is Sigv4.
+        ///  <b>AWS_IAM</b>: The authorization type is Signature Version 4 (SigV4).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsIamConfig. 
         /// <para>
-        /// The Identity and Access Management settings.
+        /// The Identity and Access Management (IAM) settings.
         /// </para>
         /// </summary>
         public AwsIamConfig AwsIamConfig

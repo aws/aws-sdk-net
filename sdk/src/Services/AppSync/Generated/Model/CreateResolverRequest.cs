@@ -34,7 +34,7 @@ namespace Amazon.AppSync.Model
     /// 
     ///  
     /// <para>
-    /// A resolver converts incoming requests into a format that a data source can understand
+    /// A resolver converts incoming requests into a format that a data source can understand,
     /// and converts the data source's responses into GraphQL.
     /// </para>
     /// </summary>
@@ -134,13 +134,13 @@ namespace Amazon.AppSync.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type.
-        /// A UNIT resolver enables you to execute a GraphQL query against a single data source.
+        /// You can use a UNIT resolver to run a GraphQL query against a single data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute
-        /// a series of <code>Function</code> in a serial manner. You can use a pipeline resolver
-        /// to execute a GraphQL query against multiple data sources.
+        ///  <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke
+        /// a series of <code>Function</code> objects in a serial manner. You can use a pipeline
+        /// resolver to run a GraphQL query against multiple data sources.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -177,7 +177,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property RequestMappingTemplate. 
         /// <para>
-        /// The mapping template to be used for requests.
+        /// The mapping template to use for requests.
         /// </para>
         ///  
         /// <para>
@@ -187,7 +187,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// VTL request mapping templates are optional when using a Lambda data source. For all
+        /// VTL request mapping templates are optional when using an Lambda data source. For all
         /// other data sources, VTL request and response mapping templates are required.
         /// </para>
         /// </summary>
@@ -207,7 +207,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ResponseMappingTemplate. 
         /// <para>
-        /// The mapping template to be used for responses from the data source.
+        /// The mapping template to use for responses from the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
@@ -226,7 +226,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property SyncConfig. 
         /// <para>
-        /// The <code>SyncConfig</code> for a resolver attached to a versioned datasource.
+        /// The <code>SyncConfig</code> for a resolver attached to a versioned data source.
         /// </para>
         /// </summary>
         public SyncConfig SyncConfig

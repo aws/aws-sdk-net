@@ -86,7 +86,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN.
+        /// The Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string Arn
@@ -122,7 +122,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaAuthorizerConfig. 
         /// <para>
-        /// Configuration for Amazon Web Services Lambda function authorization.
+        /// Configuration for Lambda function authorization.
         /// </para>
         /// </summary>
         public LambdaAuthorizerConfig LambdaAuthorizerConfig
@@ -250,7 +250,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property WafWebAclArn. 
         /// <para>
-        /// The ARN of the WAF ACL associated with this <code>GraphqlApi</code>, if one exists.
+        /// The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>,
+        /// if one exists.
         /// </para>
         /// </summary>
         public string WafWebAclArn
@@ -268,7 +269,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property XrayEnabled. 
         /// <para>
-        /// A flag representing whether X-Ray tracing is enabled for this <code>GraphqlApi</code>.
+        /// A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.
         /// </para>
         /// </summary>
         public bool XrayEnabled

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// A function is a reusable entity. Multiple functions can be used to compose the resolver
+    /// A function is a reusable entity. You can use multiple functions to compose the resolver
     /// logic.
     /// </summary>
     public partial class FunctionConfiguration
@@ -84,7 +84,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The ARN of the <code>Function</code> object.
+        /// The Amazon Resource Name (ARN) of the <code>Function</code> object.
         /// </para>
         /// </summary>
         public string FunctionArn
@@ -120,7 +120,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// The version of the request mapping template. Currently only the 2018-05-29 version
+        /// The version of the request mapping template. Currently, only the 2018-05-29 version
         /// of the template is supported.
         /// </para>
         /// </summary>

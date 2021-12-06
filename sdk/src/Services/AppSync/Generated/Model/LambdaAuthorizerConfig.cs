@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// A <code>LambdaAuthorizerConfig</code> holds configuration on how to authorize AppSync
-    /// API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an
-    /// AppSync API may have only one Lambda authorizer configured at a time.
+    /// A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API access
+    /// when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API
+    /// can have only one Lambda authorizer configured at a time.
     /// </summary>
     public partial class LambdaAuthorizerConfig
     {
@@ -63,14 +63,15 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthorizerUri. 
         /// <para>
-        /// The ARN of the Lambda function to be called for authorization. This may be a standard
-        /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. 
+        /// The Amazon Resource Name (ARN) of the Lambda function to be called for authorization.
+        /// This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias
+        /// ARN. 
         /// </para>
         ///  
         /// <para>
-        ///  <i>Note</i>: This Lambda function must have the following resource-based policy assigned
-        /// to it. When configuring Lambda authorizers in the Console, this is done for you. To
-        /// do so with the Amazon Web Services CLI, run the following:
+        ///  <b>Note</b>: This Lambda function must have the following resource-based policy assigned
+        /// to it. When configuring Lambda authorizers in the console, this is done for you. To
+        /// use the Command Line Interface (CLI), run the following:
         /// </para>
         ///  
         /// <para>
