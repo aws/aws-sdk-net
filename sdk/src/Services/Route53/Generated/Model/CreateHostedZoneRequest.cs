@@ -150,8 +150,13 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify only one Amazon VPC when you create a private hosted zone. To associate
-        /// additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
+        /// You can specify only one Amazon VPC when you create a private hosted zone. If you
+        /// are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code>
+        /// and <code>VPCRegion</code> are also required.
+        /// </para>
+        ///  
+        /// <para>
+        /// To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
         /// after you create a hosted zone.
         /// </para>
         /// </summary>

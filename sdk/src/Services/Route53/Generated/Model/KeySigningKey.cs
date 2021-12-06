@@ -77,13 +77,13 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property KmsArn. 
         /// <para>
-        /// The Amazon resource name (ARN) used to identify the customer managed customer master
-        /// key (CMK) in Key Management Service (KMS). The <code>KmsArn</code> must be unique
-        /// for each key-signing key (KSK) in a single hosted zone.
+        /// The Amazon resource name (ARN) used to identify the customer managed key in Key Management
+        /// Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK)
+        /// in a single hosted zone.
         /// </para>
         ///  
         /// <para>
-        /// You must configure the CMK as follows:
+        /// You must configure the customer managed key as follows:
         /// </para>
         ///  <dl> <dt>Status</dt> <dd> 
         /// <para>
@@ -124,7 +124,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// For more information about working with the customer managed CMK in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
+        /// For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
         /// Management Service concepts</a>.
         /// </para>
         /// </summary>
@@ -359,8 +359,8 @@ namespace Amazon.Route53.Model
         ///  </dd> <dt>ACTION_NEEDED</dt> <dd> 
         /// <para>
         /// There is a problem with the KSK that requires you to take action to resolve. For example,
-        /// the customer managed customer master key (CMK) might have been deleted, or the permissions
-        /// for the customer managed CMK might have been changed.
+        /// the customer managed key might have been deleted, or the permissions for the customer
+        /// managed key might have been changed.
         /// </para>
         ///  </dd> <dt>INTERNAL_FAILURE</dt> <dd> 
         /// <para>

@@ -33,6 +33,17 @@ namespace Amazon.Route53.Model
     /// Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate
     /// it. The KSK must be deactivated before you can delete it regardless of whether the
     /// hosted zone is enabled for DNSSEC signing.
+    /// 
+    ///  
+    /// <para>
+    /// You can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeactivateKeySigningKey.html">DeactivateKeySigningKey</a>
+    /// to deactivate the key before you delete it.
+    /// </para>
+    ///  
+    /// <para>
+    /// Use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetDNSSEC.html">GetDNSSEC</a>
+    /// to verify that the KSK is in an <code>INACTIVE</code> status.
+    /// </para>
     /// </summary>
     public partial class DeleteKeySigningKeyRequest : AmazonRoute53Request
     {
