@@ -162,6 +162,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateAuthorizerRequest.AuthorizerFunctionArn</property>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateAuthorizerRequest.AuthorizerName</property>
@@ -206,6 +207,8 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateCertificateFromCsrRequest.CertificateSigningRequest</property>
     <min>1</min>
+    <max>4096</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateCertificateFromCsrResponse.CertificateId</property>
@@ -217,6 +220,7 @@
     <property>Amazon.IoT.Model.CreateCertificateFromCsrResponse.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateCustomMetricRequest.ClientRequestToken</property>
@@ -268,6 +272,7 @@
     <property>Amazon.IoT.Model.CreateDomainConfigurationRequest.DomainName</property>
     <min>1</min>
     <max>253</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateDomainConfigurationRequest.ValidationCertificateArn</property>
@@ -439,6 +444,7 @@
     <property>Amazon.IoT.Model.CreateKeysAndCertificateResponse.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateMitigationActionRequest.ActionName</property>
@@ -473,10 +479,22 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreatePolicyRequest.PolicyDocument</property>
+    <min>0</min>
+    <max>404600</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreatePolicyResponse.PolicyDocument</property>
+    <min>0</min>
+    <max>404600</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyResponse.PolicyName</property>
@@ -489,10 +507,22 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreatePolicyVersionRequest.PolicyDocument</property>
+    <min>0</min>
+    <max>404600</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyVersionRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreatePolicyVersionResponse.PolicyDocument</property>
+    <min>0</min>
+    <max>404600</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyVersionResponse.PolicyVersionId</property>
@@ -514,6 +544,7 @@
     <property>Amazon.IoT.Model.CreateProvisioningClaimResponse.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateProvisioningTemplateRequest.Description</property>
@@ -527,6 +558,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateProvisioningTemplateRequest.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateProvisioningTemplateRequest.TemplateName</property>
     <min>1</min>
     <max>36</max>
@@ -537,6 +574,12 @@
     <min>1</min>
     <max>36</max>
     <pattern>^[0-9A-Za-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateProvisioningTemplateVersionRequest.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateProvisioningTemplateVersionRequest.TemplateName</property>
@@ -1003,10 +1046,12 @@
     <property>Amazon.IoT.Model.DescribeDomainConfigurationResponse.DomainName</property>
     <min>1</min>
     <max>253</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeEndpointRequest.EndpointType</property>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeFleetMetricRequest.MetricName</property>
@@ -1176,6 +1221,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeProvisioningTemplateResponse.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DescribeProvisioningTemplateResponse.TemplateName</property>
     <min>1</min>
     <max>36</max>
@@ -1186,6 +1237,12 @@
     <min>1</min>
     <max>36</max>
     <pattern>^[0-9A-Za-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeProvisioningTemplateVersionResponse.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeRoleAliasRequest.RoleAlias</property>
@@ -1316,6 +1373,12 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeThingRegistrationTaskResponse.TaskId</property>
     <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeThingRegistrationTaskResponse.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeThingTypeRequest.ThingTypeName</property>
@@ -1451,6 +1514,12 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.GetPolicyResponse.PolicyDocument</property>
+    <min>0</min>
+    <max>404600</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyResponse.PolicyName</property>
     <min>1</min>
     <max>128</max>
@@ -1465,6 +1534,12 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyVersionRequest.PolicyVersionId</property>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetPolicyVersionResponse.PolicyDocument</property>
+    <min>0</min>
+    <max>404600</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyVersionResponse.PolicyName</property>
@@ -2127,11 +2202,13 @@
     <property>Amazon.IoT.Model.RegisterCACertificateRequest.CaCertificate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RegisterCACertificateRequest.VerificationCertificate</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RegisterCACertificateResponse.CertificateId</property>
@@ -2143,11 +2220,13 @@
     <property>Amazon.IoT.Model.RegisterCertificateRequest.CaCertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RegisterCertificateRequest.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RegisterCertificateResponse.CertificateId</property>
@@ -2159,6 +2238,7 @@
     <property>Amazon.IoT.Model.RegisterCertificateWithoutCARequest.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RegisterCertificateWithoutCAResponse.CertificateId</property>
@@ -2167,9 +2247,16 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.RegisterThingRequest.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.RegisterThingResponse.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RejectCertificateTransferRequest.CertificateId</property>
@@ -2180,6 +2267,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.RejectCertificateTransferRequest.RejectReason</property>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RemoveThingFromBillingGroupRequest.BillingGroupName</property>
@@ -2312,6 +2400,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.StartThingRegistrationTaskRequest.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.StartThingRegistrationTaskResponse.TaskId</property>
     <max>40</max>
   </property-value-rule>
@@ -2329,6 +2423,7 @@
     <property>Amazon.IoT.Model.TestInvokeAuthorizerRequest.Token</property>
     <min>1</min>
     <max>6144</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TestInvokeAuthorizerRequest.TokenSignature</property>
@@ -2357,6 +2452,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.TransferCertificateRequest.TransferMessage</property>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateAccountAuditConfigurationRequest.RoleArn</property>
@@ -2370,6 +2466,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateAuthorizerRequest.AuthorizerFunctionArn</property>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateAuthorizerRequest.AuthorizerName</property>
@@ -2777,6 +2874,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.AuthorizerDescription.AuthorizerFunctionArn</property>
     <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.AuthorizerDescription.AuthorizerName</property>
@@ -2879,6 +2977,7 @@
     <property>Amazon.IoT.Model.CACertificateDescription.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CACertificateDescription.CustomerVersion</property>
@@ -2912,6 +3011,7 @@
     <property>Amazon.IoT.Model.CertificateDescription.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.CustomerVersion</property>
@@ -2995,6 +3095,12 @@
     <pattern>[\w.:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.EffectivePolicy.PolicyDocument</property>
+    <min>0</min>
+    <max>404600</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.EffectivePolicy.PolicyName</property>
     <min>1</min>
     <max>128</max>
@@ -3051,6 +3157,7 @@
     <property>Amazon.IoT.Model.HttpContext.QueryString</property>
     <min>1</min>
     <max>4096</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.HttpUrlDestinationConfiguration.ConfirmationUrl</property>
@@ -3207,6 +3314,7 @@
     <property>Amazon.IoT.Model.MqttContext.ClientId</property>
     <min>1</min>
     <max>65535</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.MqttContext.Password</property>
@@ -3217,6 +3325,7 @@
     <property>Amazon.IoT.Model.MqttContext.Username</property>
     <min>1</min>
     <max>65535</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.OpenSearchAction.Endpoint</property>
@@ -3253,6 +3362,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.OutgoingCertificate.TransferMessage</property>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.OutgoingCertificate.TransferredTo</property>
@@ -3337,6 +3447,12 @@
     <property>Amazon.IoT.Model.RegistrationConfig.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegistrationConfig.TemplateBody</property>
+    <min>0</min>
+    <max>10240</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RepublishAction.Qos</property>
@@ -3578,6 +3694,7 @@
     <property>Amazon.IoT.Model.TlsContext.ServerName</property>
     <min>1</min>
     <max>253</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TopicRule.RuleName</property>
@@ -3594,10 +3711,12 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.TransferData.RejectReason</property>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TransferData.TransferMessage</property>
     <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ValidationError.ErrorMessage</property>

@@ -61,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The IAM policy document.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=404600)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

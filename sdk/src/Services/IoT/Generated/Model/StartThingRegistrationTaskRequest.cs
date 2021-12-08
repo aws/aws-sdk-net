@@ -109,7 +109,7 @@ namespace Amazon.IoT.Model
         /// The provisioning template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10240)]
         public string TemplateBody
         {
             get { return this._templateBody; }

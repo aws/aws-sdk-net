@@ -72,7 +72,7 @@ namespace Amazon.IoT.Model
         /// Devices That Have Device Certificates</a> for more information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10240)]
         public string TemplateBody
         {
             get { return this._templateBody; }

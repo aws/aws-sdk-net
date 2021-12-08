@@ -197,6 +197,7 @@ namespace Amazon.IoT.Model
         /// The JSON formatted contents of the fleet provisioning template.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10240)]
         public string TemplateBody
         {
             get { return this._templateBody; }

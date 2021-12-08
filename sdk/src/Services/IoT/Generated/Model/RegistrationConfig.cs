@@ -61,6 +61,7 @@ namespace Amazon.IoT.Model
         /// The template body.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10240)]
         public string TemplateBody
         {
             get { return this._templateBody; }

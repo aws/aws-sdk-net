@@ -74,6 +74,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthorizerFunctionArn);
                 }
 
+                if(publicRequest.IsSetEnableCachingForHttp())
+                {
+                    context.Writer.WritePropertyName("enableCachingForHttp");
+                    context.Writer.Write(publicRequest.EnableCachingForHttp);
+                }
+
                 if(publicRequest.IsSetStatus())
                 {
                     context.Writer.WritePropertyName("status");

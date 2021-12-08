@@ -62,6 +62,7 @@ namespace Amazon.IoT.Model
         /// The JSON document that describes the policy.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=404600)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }
