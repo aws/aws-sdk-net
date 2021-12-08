@@ -79,6 +79,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DestinationName);
                 }
 
+                if(publicRequest.IsSetForceUpdate())
+                {
+                    context.Writer.WritePropertyName("forceUpdate");
+                    context.Writer.Write(publicRequest.ForceUpdate);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

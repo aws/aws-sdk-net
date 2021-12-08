@@ -2528,6 +2528,9 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// A parameter is specified incorrectly.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
@@ -2568,6 +2571,9 @@ namespace Amazon.CloudWatchLogs
         /// <returns>The response from the PutQueryDefinition service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
         /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
