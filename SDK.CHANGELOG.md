@@ -1,3 +1,26 @@
+### 3.7.177.0 (2021-12-08 19:32 UTC)
+* AWSHealth (3.7.1.63)
+	* Documentation updates for AWS Health
+* AWSSupport (3.7.0.107)
+	* Documentation updates for AWS Support.
+* CloudWatchLogs (3.7.2.0)
+	* This release adds AWS Organizations support as condition key in destination policy for cross account Subscriptions in CloudWatch Logs.
+* ComprehendMedical (3.7.2.0)
+	* This release adds a new set of APIs (synchronous and batch) to support the SNOMED-CT ontology.
+* IoT (3.7.9.0)
+	* This release allows customer to enable caching of custom authorizer on HTTP protocol for clients that use persistent or Keep-Alive connection in order to reduce the number of Lambda invocations.
+* LookoutforVision (3.7.1.0)
+	* This release adds new APIs for packaging an Amazon Lookout for Vision model as an AWS IoT Greengrass component.
+* Outposts (3.7.6.0)
+	* This release adds the UpdateOutpost API.
+* SageMaker (3.7.23.0)
+	* This release added a new Ambarella device(amba_cv2) compilation support for Sagemaker Neo.
+* Core 3.7.5.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.7.176.0 (2021-12-06 19:13 UTC)
 * AppSync (3.7.3.0)
 	* AWS AppSync now supports custom domain names, allowing you to associate a domain name that you own with an AppSync API in your account.
