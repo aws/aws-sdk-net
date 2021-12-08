@@ -1,5 +1,6 @@
 <#@ template language="C#" inherits="Generators.BaseGenerator" #>
 <#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
@@ -120,6 +121,67 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach (var member in this.Operation.ResponseHeaderMembers)
 			{
+				if (member.Shape.IsMap)
+				{
+#>
+			//Map of headers with prefix "<#=member.MarshallLocationName#>".
+<#+ 
+					// Dictionary<string, string>
+					if (member.ModelShape.ValueShape.IsString)
+					{
+#>
+            var headersFor<#=member.PropertyName#> = new Dictionary<string, string>();
+			foreach (var name<#=member.PropertyName#> in context.ResponseData.GetHeaderNames())
+			{
+				var keyToUse = name<#=member.PropertyName#>;
+				if("<#=member.MarshallLocationName#>".Length > 0 && keyToUse.StartsWith("<#=member.MarshallLocationName#>")) {
+					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
+				}
+
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				{
+					headersFor<#=member.PropertyName#>.Add(
+						keyToUse,
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+					);
+				}
+			}
+			if(headersFor<#=member.PropertyName#>.Count > 0)
+				response.<#=member.PropertyName#> = headersFor<#=member.PropertyName#>;
+<#+
+                    }
+                    // Dictionary<string, List<string>>
+                    else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+                    {
+#>
+			 var headersFor<#=member.PropertyName#> = new Dictionary<string, List<string>>();
+			foreach (var name<#=member.PropertyName#> in context.ResponseData.GetHeaderNames())
+			{
+				var keyToUse = name<#=member.PropertyName#>;
+				if("<#=member.MarshallLocationName#>".Length > 0 && keyToUse.StartsWith("<#=member.MarshallLocationName#>")) {
+					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
+				}
+
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				{
+					headersFor<#=member.PropertyName#>.Add(
+						keyToUse,
+						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+					);
+				}
+			}
+			if(headersFor<#=member.PropertyName#>.Count > 0)
+				response.<#=member.PropertyName#> = headersFor<#=member.PropertyName#>;
+<#+
+                    }
+                    else
+                    {
+                        throw new InvalidDataException("[{member.ModelName}]: Invalid header map shapes.  Header Maps must have a value of either a string or a list of strings: {member.ModelShape.ValueShape.Name}");
+                    }
+#>
+<#+
+					continue;
+				}
 #>
 			if (context.ResponseData.IsHeaderPresent("<#=member.MarshallLocationName#>"))
 <#+
@@ -140,6 +202,68 @@ using Amazon.Runtime.Internal.Util;
 				response.<#=member.PropertyName#> = context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>");
 <#+
 					}
+				}
+				else if (member.Shape.IsMap)
+				{
+#>
+			//Map of headers with prefix "<#=member.MarshallLocationName#>".
+
+<#+ 
+					// Dictionary<string, string>
+                    if (member.ModelShape.ValueShape.IsString)
+                    {
+#>
+            var headersFor<#=member.PropertyName#> = new Dictionary<string, string>();
+			foreach (var name<#=member.PropertyName#> in context.ResponseData.GetHeaderNames())
+			{
+				var keyToUse = name<#=member.PropertyName#>;
+				if("<#=member.MarshallLocationName#>".Length > 0 && keyToUse.StartsWith("<#=member.MarshallLocationName#>")) {
+					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
+				}
+
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				{
+					headersFor<#=member.PropertyName#>.Add(
+						keyToUse,
+						context.ResponseData.GetHeaderValue($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}")
+					);
+				}
+			}
+			if(headersFor<#=member.PropertyName#>.Count > 0)
+				response.<#=member.PropertyName#> = headersFor<#=member.PropertyName#>;
+<#+
+                    }
+                    // Dictionary<string, List<string>>
+                    else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+                    {
+#>
+			 var headersFor<#=member.PropertyName#> = new Dictionary<string, List<string>>();
+			foreach (var name<#=member.PropertyName#> in context.ResponseData.GetHeaderNames())
+			{
+				var keyToUse = name<#=member.PropertyName#>;
+				if("<#=member.MarshallLocationName#>".Length > 0 && keyToUse.StartsWith("<#=member.MarshallLocationName#>")) {
+					keyToUse = keyToUse.Substring("<#=member.MarshallLocationName#>".Length);
+				}
+
+				if (context.ResponseData.IsHeaderPresent($"<#=member.MarshallLocationName#>{name<#=member.PropertyName#>}"))
+				{
+					headersFor<#=member.PropertyName#>.Add(
+						keyToUse,
+						context.ResponseData.GetHeaderValue($"{nameResponseHeaders}").Split(',').ToList()
+					);
+				}
+			}
+			if(headersFor<#=member.PropertyName#>.Count > 0)
+				response.<#=member.PropertyName#> = headersFor<#=member.PropertyName#>;
+<#+
+                    }
+                    else
+                    {
+                        throw new InvalidDataException("[{member.ModelName}]: Invalid header map shapes.  Header Maps must have a value of either a string or a list of strings: {member.ModelShape.ValueShape.Name}");
+                    }
+#>
+
+<#+
 				}
 				else if (member.Shape.IsInt)
 				{

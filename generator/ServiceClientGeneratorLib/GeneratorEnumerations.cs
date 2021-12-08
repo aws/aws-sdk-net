@@ -14,7 +14,7 @@ namespace ServiceClientGenerator
     /// <summary>
     /// Where the properties of the request should be placed
     /// </summary>
-    public enum MarshallLocation { Header, Uri, QueryString, StatusCode, Body };
+    public enum MarshallLocation { Header, Uri, QueryString, StatusCode, Body, Headers };
 
     /// <summary>
     /// What type of Model is being generated

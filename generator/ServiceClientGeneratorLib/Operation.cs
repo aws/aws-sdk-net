@@ -272,7 +272,7 @@ namespace ServiceClientGenerator
                 return this.RequestStructure == null ?
                     new List<Member>() :
                     this.RequestStructure.Members.Where(
-                        m => m.MarshallLocation == MarshallLocation.Header).ToList();
+                        m => m.MarshallLocation == MarshallLocation.Header || m.MarshallLocation == MarshallLocation.Headers).ToList();
             }
         }
 
@@ -286,7 +286,7 @@ namespace ServiceClientGenerator
                 return this.ResponseStructure == null ?
                     new List<Member>() :
                     this.ResponseStructure.Members.Where(
-                        m => m.MarshallLocation == MarshallLocation.Header).ToList();
+                        m => m.MarshallLocation == MarshallLocation.Header || m.MarshallLocation == MarshallLocation.Headers).ToList();
             }
         }
 

@@ -1,5 +1,6 @@
 <#@ template language="C#" inherits="Generators.BaseGenerator" #>
 <#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
@@ -51,12 +52,41 @@ using Amazon.Runtime.Internal.Util;
             }
             else
             {
-				if(member.IsList || member.IsMap)
+				if (member.IsList)
 				{
-					throw new NotImplementedException("Marshalling lists and maps as header value is not implemented");
+					throw new InvalidDataException("[{member.ModelName}]: Marshalling lists as header value is not allowed.  Header values can be a Map of Strings or a Map of List of Strings");
 				}
 
-				if(member.Shape.IsString)
+                if (member.IsMap)
+                {
+#>
+                //Map of headers with prefix "<#=member.MarshallLocationName#>".
+                foreach (var kvp<#=member.PropertyName#> in <#=variableName#>.<#=member.PropertyName#>)
+                {
+<#+ 
+                    // Dictionary<string, string>
+                    if (member.ModelShape.ValueShape.IsString)
+                    {
+#>
+                     request.Headers[$"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}"] = kvp<#=member.PropertyName#>.Value;
+<#+
+                    }
+                    // Dictionary<string, List<string>>
+                    else if (member.ModelShape.ValueShape?.ListShape?.IsString == true)
+                    {
+#>
+                    request.Headers[$"<#=member.MarshallLocationName#>{kvp<#=member.PropertyName#>.Key}"] = string.Join(",", kvp<#=member.PropertyName#>.Value.ToArray());
+<#+
+                    }
+                    else
+                    {
+                        throw new InvalidDataException("[{member.ModelName}]: Invalid header map shapes.  Header Maps must have a value of either a string or a list of strings: {member.ModelShape.ValueShape.Name}");
+                    }
+#>
+                }
+<#+
+				}
+				else if(member.Shape.IsString)
 				{
 #>
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=variableName#>.<#=member.PropertyName#>;
