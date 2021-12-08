@@ -29,23 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// An extracted segment of the text that is an attribute of an entity, or otherwise
-    /// related to an entity, such as the dosage of a medication taken. It contains information
-    /// about the attribute such as id, begin and end offset within the input text, and the
-    /// segment of the input text.
+    /// The extracted attributes that relate to an entity. An extracted segment of the text
+    /// that is an attribute of an entity, or otherwise related to an entity, such as the
+    /// dosage of a medication taken.
     /// </summary>
-    public partial class Attribute
+    public partial class SNOMEDCTAttribute
     {
         private int? _beginOffset;
-        private EntityType _category;
+        private SNOMEDCTEntityCategory _category;
         private int? _endOffset;
         private int? _id;
         private float? _relationshipScore;
-        private RelationshipType _relationshipType;
+        private SNOMEDCTRelationshipType _relationshipType;
         private float? _score;
+        private List<SNOMEDCTConcept> _snomedctConcepts = new List<SNOMEDCTConcept>();
         private string _text;
-        private List<Trait> _traits = new List<Trait>();
-        private EntitySubType _type;
+        private List<SNOMEDCTTrait> _traits = new List<SNOMEDCTTrait>();
+        private SNOMEDCTAttributeType _type;
 
         /// <summary>
         /// Gets and sets the property BeginOffset. 
@@ -69,10 +69,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        ///  The category of attribute. 
+        ///  The category of the detected attribute. Possible categories include MEDICAL_CONDITION,
+        /// ANATOMY, and TEST_TREATMENT_PROCEDURE. 
         /// </para>
         /// </summary>
-        public EntityType Category
+        public SNOMEDCTEntityCategory Category
         {
             get { return this._category; }
             set { this._category = value; }
@@ -88,7 +89,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property EndOffset. 
         /// <para>
         ///  The 0-based character offset in the input text that shows where the attribute ends.
-        /// The offset returns the UTF-8 code point in the string.
+        /// The offset returns the UTF-8 code point in the string. 
         /// </para>
         /// </summary>
         public int EndOffset
@@ -125,7 +126,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property RelationshipScore. 
         /// <para>
-        ///  The level of confidence that Comprehend Medical; has that this attribute is correctly
+        ///  The level of confidence that Comprehend Medical has that this attribute is correctly
         /// related to this entity. 
         /// </para>
         /// </summary>
@@ -144,12 +145,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property RelationshipType. 
         /// <para>
-        /// The type of relationship between the entity and attribute. Type for the relationship
-        /// is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
-        /// <code>Date_Expression</code>. 
+        ///  The type of relationship that exists between the entity and the related attribute.
+        /// 
         /// </para>
         /// </summary>
-        public RelationshipType RelationshipType
+        public SNOMEDCTRelationshipType RelationshipType
         {
             get { return this._relationshipType; }
             set { this._relationshipType = value; }
@@ -164,8 +164,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        ///  The level of confidence that Comprehend Medical; has that the segment of text is
-        /// correctly recognized as an attribute. 
+        ///  The level of confidence that Comprehend Medical has that the segment of text is correctly
+        /// recognized as an attribute. 
         /// </para>
         /// </summary>
         public float Score
@@ -181,9 +181,28 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SNOMEDCTConcepts. 
+        /// <para>
+        ///  The SNOMED-CT concepts specific to an attribute, along with a score indicating the
+        /// likelihood of the match. 
+        /// </para>
+        /// </summary>
+        public List<SNOMEDCTConcept> SNOMEDCTConcepts
+        {
+            get { return this._snomedctConcepts; }
+            set { this._snomedctConcepts = value; }
+        }
+
+        // Check to see if SNOMEDCTConcepts property is set
+        internal bool IsSetSNOMEDCTConcepts()
+        {
+            return this._snomedctConcepts != null && this._snomedctConcepts.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        ///  The segment of input text extracted as this attribute.
+        ///  The segment of input text extracted as this attribute. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -202,10 +221,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Traits. 
         /// <para>
-        ///  Contextual information for this attribute. 
+        ///  Contextual information for an attribute. Examples include signs, symptoms, diagnosis,
+        /// and negation. 
         /// </para>
         /// </summary>
-        public List<Trait> Traits
+        public List<SNOMEDCTTrait> Traits
         {
             get { return this._traits; }
             set { this._traits = value; }
@@ -220,10 +240,11 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of attribute. 
+        ///  The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME,
+        /// TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. 
         /// </para>
         /// </summary>
-        public EntitySubType Type
+        public SNOMEDCTAttributeType Type
         {
             get { return this._type; }
             set { this._type = value; }

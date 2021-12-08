@@ -29,32 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePHIDetectionJob operation.
-    /// Gets the properties associated with a protected health information (PHI) detection
-    /// job. Use this operation to get the status of a detection job.
+    /// This is the response object from the DescribeSNOMEDCTInferenceJob operation.
     /// </summary>
-    public partial class DescribePHIDetectionJobRequest : AmazonComprehendMedicalRequest
+    public partial class DescribeSNOMEDCTInferenceJobResponse : AmazonWebServiceResponse
     {
-        private string _jobId;
+        private ComprehendMedicalAsyncJobProperties _comprehendMedicalAsyncJobProperties;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.
-        /// </para>
+        /// Gets and sets the property ComprehendMedicalAsyncJobProperties.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string JobId
+        public ComprehendMedicalAsyncJobProperties ComprehendMedicalAsyncJobProperties
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._comprehendMedicalAsyncJobProperties; }
+            set { this._comprehendMedicalAsyncJobProperties = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if ComprehendMedicalAsyncJobProperties property is set
+        internal bool IsSetComprehendMedicalAsyncJobProperties()
         {
-            return this._jobId != null;
+            return this._comprehendMedicalAsyncJobProperties != null;
         }
 
     }

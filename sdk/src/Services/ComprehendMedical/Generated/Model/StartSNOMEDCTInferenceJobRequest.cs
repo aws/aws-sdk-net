@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartPHIDetectionJob operation.
-    /// Starts an asynchronous job to detect protected health information (PHI). Use the <code>DescribePHIDetectionJob</code>
-    /// operation to track the status of a job.
+    /// Container for the parameters to the StartSNOMEDCTInferenceJob operation.
+    /// Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT
+    /// ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a
+    /// job.
     /// </summary>
-    public partial class StartPHIDetectionJobRequest : AmazonComprehendMedicalRequest
+    public partial class StartSNOMEDCTInferenceJobRequest : AmazonComprehendMedicalRequest
     {
         private string _clientRequestToken;
         private string _dataAccessRoleArn;
@@ -46,8 +47,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for the request. If you don't set the client request token, Comprehend
-        /// Medical; generates one.
+        ///  A unique identifier for the request. If you don't set the client request token, Amazon
+        /// Comprehend Medical generates one. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -66,10 +67,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Comprehend Medical; read access to your input data. For more information,
-        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-        /// Role-Based Permissions Required for Asynchronous Operations</a>.
+        ///  The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+        /// that grants Amazon Comprehend Medical read access to your input data. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -86,10 +85,7 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputDataConfig. 
-        /// <para>
-        /// Specifies the format and location of the input data for the job.
-        /// </para>
+        /// Gets and sets the property InputDataConfig.
         /// </summary>
         [AWSProperty(Required=true)]
         public InputDataConfig InputDataConfig
@@ -107,7 +103,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The identifier of the job.
+        ///  The user generated name the asynchronous InferSNOMEDCT job. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -126,8 +122,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// An AWS Key Management Service key to encrypt your output files. If you do not specify
-        /// a key, the files are written in plain text.
+        ///  An AWS Key Management Service key used to encrypt your output files. If you do not
+        /// specify a key, the files are written in plain text. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -146,7 +142,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. All documents must be in the same language.
+        ///  The language of the input documents. All documents must be in the same language.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,10 +160,7 @@ namespace Amazon.ComprehendMedical.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputDataConfig. 
-        /// <para>
-        /// Specifies where to send the output files.
-        /// </para>
+        /// Gets and sets the property OutputDataConfig.
         /// </summary>
         [AWSProperty(Required=true)]
         public OutputDataConfig OutputDataConfig

@@ -29,32 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePHIDetectionJob operation.
-    /// Gets the properties associated with a protected health information (PHI) detection
-    /// job. Use this operation to get the status of a detection job.
+    /// The number of characters in the input text to be analyzed.
     /// </summary>
-    public partial class DescribePHIDetectionJobRequest : AmazonComprehendMedicalRequest
+    public partial class Characters
     {
-        private string _jobId;
+        private int? _originalTextCharacters;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property OriginalTextCharacters. 
         /// <para>
-        /// The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.
+        ///  The number of characters present in the input text document as processed by Comprehend
+        /// Medical. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string JobId
+        public int OriginalTextCharacters
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._originalTextCharacters.GetValueOrDefault(); }
+            set { this._originalTextCharacters = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if OriginalTextCharacters property is set
+        internal bool IsSetOriginalTextCharacters()
         {
-            return this._jobId != null;
+            return this._originalTextCharacters.HasValue; 
         }
 
     }

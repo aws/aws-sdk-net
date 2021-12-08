@@ -29,25 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// This is the response object from the DetectPHI operation.
+    /// This is the response object from the InferSNOMEDCT operation.
     /// </summary>
-    public partial class DetectPHIResponse : AmazonWebServiceResponse
+    public partial class InferSNOMEDCTResponse : AmazonWebServiceResponse
     {
-        private List<Entity> _entities = new List<Entity>();
+        private Characters _characters;
+        private List<SNOMEDCTEntity> _entities = new List<SNOMEDCTEntity>();
         private string _modelVersion;
         private string _paginationToken;
+        private SNOMEDCTDetails _snomedctDetails;
+
+        /// <summary>
+        /// Gets and sets the property Characters. 
+        /// <para>
+        ///  The number of characters in the input request documentation. 
+        /// </para>
+        /// </summary>
+        public Characters Characters
+        {
+            get { return this._characters; }
+            set { this._characters = value; }
+        }
+
+        // Check to see if Characters property is set
+        internal bool IsSetCharacters()
+        {
+            return this._characters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        ///  The collection of PHI entities extracted from the input text and their associated
-        /// information. For each entity, the response provides the entity text, the entity category,
-        /// where the entity text begins and ends, and the level of confidence that Comprehend
-        /// Medical; has in its detection. 
+        ///  The collection of medical concept entities extracted from the input text and their
+        /// associated information. For each entity, the response provides the entity text, the
+        /// entity category, where the entity text begins and ends, and the level of confidence
+        /// that Comprehend Medical has in the detection and analysis. Attributes and traits of
+        /// the entity are also returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<Entity> Entities
+        public List<SNOMEDCTEntity> Entities
         {
             get { return this._entities; }
             set { this._entities = value; }
@@ -62,12 +83,12 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property ModelVersion. 
         /// <para>
-        /// The version of the model used to analyze the documents. The version number looks like
-        /// X.X.X. You can use this information to track the model used for a particular batch
-        /// of documents.
+        ///  The version of the model used to analyze the documents, in the format n.n.n You can
+        /// use this information to track the model used for a particular batch of documents.
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public string ModelVersion
         {
             get { return this._modelVersion; }
@@ -83,8 +104,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        ///  If the result of the previous request to <code>DetectPHI</code> was truncated, include
-        /// the <code>PaginationToken</code> to fetch the next page of PHI entities. 
+        ///  If the result of the request is truncated, the pagination token can be used to fetch
+        /// the next page of entities. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -98,6 +119,25 @@ namespace Amazon.ComprehendMedical.Model
         internal bool IsSetPaginationToken()
         {
             return this._paginationToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SNOMEDCTDetails. 
+        /// <para>
+        ///  The details of the SNOMED-CT revision, including the edition, language, and version
+        /// date. 
+        /// </para>
+        /// </summary>
+        public SNOMEDCTDetails SNOMEDCTDetails
+        {
+            get { return this._snomedctDetails; }
+            set { this._snomedctDetails = value; }
+        }
+
+        // Check to see if SNOMEDCTDetails property is set
+        internal bool IsSetSNOMEDCTDetails()
+        {
+            return this._snomedctDetails != null;
         }
 
     }

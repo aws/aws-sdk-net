@@ -29,22 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePHIDetectionJob operation.
-    /// Gets the properties associated with a protected health information (PHI) detection
-    /// job. Use this operation to get the status of a detection job.
+    /// This is the response object from the StopSNOMEDCTInferenceJob operation.
     /// </summary>
-    public partial class DescribePHIDetectionJobRequest : AmazonComprehendMedicalRequest
+    public partial class StopSNOMEDCTInferenceJobResponse : AmazonWebServiceResponse
     {
         private string _jobId;
 
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.
+        ///  The identifier generated for the job. To get the status of job, use this identifier
+        /// with the DescribeSNOMEDCTInferenceJob operation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=32)]
         public string JobId
         {
             get { return this._jobId; }

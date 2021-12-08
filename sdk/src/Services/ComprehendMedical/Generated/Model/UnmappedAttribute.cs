@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// An attribute that we extracted, but were unable to relate to an entity.
+    /// An attribute that was extracted, but Comprehend Medical; was unable to relate to
+    /// an entity.
     /// </summary>
     public partial class UnmappedAttribute
     {
@@ -57,8 +58,9 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION",
-        /// "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". 
+        ///  The type of the unmapped attribute, could be one of the following values: "MEDICATION",
+        /// "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION".
+        /// 
         /// </para>
         /// </summary>
         public EntityType Type

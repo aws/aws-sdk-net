@@ -125,6 +125,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType DURATION = new EntitySubType("DURATION");
         /// <summary>
+        /// Constant DX_NAME for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType DX_NAME = new EntitySubType("DX_NAME");
+        /// <summary>
         /// Constant EMAIL for EntitySubType
         /// </summary>
         public static readonly EntitySubType EMAIL = new EntitySubType("EMAIL");
@@ -141,6 +145,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType GENERIC_NAME = new EntitySubType("GENERIC_NAME");
         /// <summary>
+        /// Constant ID for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType ID = new EntitySubType("ID");
+        /// <summary>
         /// Constant IDENTIFIER for EntitySubType
         /// </summary>
         public static readonly EntitySubType IDENTIFIER = new EntitySubType("IDENTIFIER");
@@ -148,6 +156,10 @@ namespace Amazon.ComprehendMedical
         /// Constant NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType NAME = new EntitySubType("NAME");
+        /// <summary>
+        /// Constant PHONE_OR_FAX for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType PHONE_OR_FAX = new EntitySubType("PHONE_OR_FAX");
         /// <summary>
         /// Constant PROCEDURE_NAME for EntitySubType
         /// </summary>
@@ -184,6 +196,10 @@ namespace Amazon.ComprehendMedical
         /// Constant TEST_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType TEST_NAME = new EntitySubType("TEST_NAME");
+        /// <summary>
+        /// Constant TEST_UNIT for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TEST_UNIT = new EntitySubType("TEST_UNIT");
         /// <summary>
         /// Constant TEST_UNITS for EntitySubType
         /// </summary>
@@ -783,6 +799,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly RelationshipType SYSTEM_ORGAN_SITE = new RelationshipType("SYSTEM_ORGAN_SITE");
         /// <summary>
+        /// Constant TEST_UNIT for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType TEST_UNIT = new RelationshipType("TEST_UNIT");
+        /// <summary>
         /// Constant TEST_UNITS for RelationshipType
         /// </summary>
         public static readonly RelationshipType TEST_UNITS = new RelationshipType("TEST_UNITS");
@@ -1036,6 +1056,308 @@ namespace Amazon.ComprehendMedical
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RxNormTraitName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTAttributeType.
+    /// </summary>
+    public class SNOMEDCTAttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACUITY for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType ACUITY = new SNOMEDCTAttributeType("ACUITY");
+        /// <summary>
+        /// Constant DIRECTION for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType DIRECTION = new SNOMEDCTAttributeType("DIRECTION");
+        /// <summary>
+        /// Constant QUALITY for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType QUALITY = new SNOMEDCTAttributeType("QUALITY");
+        /// <summary>
+        /// Constant SYSTEM_ORGAN_SITE for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType SYSTEM_ORGAN_SITE = new SNOMEDCTAttributeType("SYSTEM_ORGAN_SITE");
+        /// <summary>
+        /// Constant TEST_UNIT for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType TEST_UNIT = new SNOMEDCTAttributeType("TEST_UNIT");
+        /// <summary>
+        /// Constant TEST_VALUE for SNOMEDCTAttributeType
+        /// </summary>
+        public static readonly SNOMEDCTAttributeType TEST_VALUE = new SNOMEDCTAttributeType("TEST_VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTAttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTAttributeType FindValue(string value)
+        {
+            return FindValue<SNOMEDCTAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTEntityCategory.
+    /// </summary>
+    public class SNOMEDCTEntityCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANATOMY for SNOMEDCTEntityCategory
+        /// </summary>
+        public static readonly SNOMEDCTEntityCategory ANATOMY = new SNOMEDCTEntityCategory("ANATOMY");
+        /// <summary>
+        /// Constant MEDICAL_CONDITION for SNOMEDCTEntityCategory
+        /// </summary>
+        public static readonly SNOMEDCTEntityCategory MEDICAL_CONDITION = new SNOMEDCTEntityCategory("MEDICAL_CONDITION");
+        /// <summary>
+        /// Constant TEST_TREATMENT_PROCEDURE for SNOMEDCTEntityCategory
+        /// </summary>
+        public static readonly SNOMEDCTEntityCategory TEST_TREATMENT_PROCEDURE = new SNOMEDCTEntityCategory("TEST_TREATMENT_PROCEDURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTEntityCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTEntityCategory FindValue(string value)
+        {
+            return FindValue<SNOMEDCTEntityCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTEntityCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTEntityType.
+    /// </summary>
+    public class SNOMEDCTEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DX_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType DX_NAME = new SNOMEDCTEntityType("DX_NAME");
+        /// <summary>
+        /// Constant PROCEDURE_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType PROCEDURE_NAME = new SNOMEDCTEntityType("PROCEDURE_NAME");
+        /// <summary>
+        /// Constant TEST_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType TEST_NAME = new SNOMEDCTEntityType("TEST_NAME");
+        /// <summary>
+        /// Constant TREATMENT_NAME for SNOMEDCTEntityType
+        /// </summary>
+        public static readonly SNOMEDCTEntityType TREATMENT_NAME = new SNOMEDCTEntityType("TREATMENT_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTEntityType FindValue(string value)
+        {
+            return FindValue<SNOMEDCTEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTRelationshipType.
+    /// </summary>
+    public class SNOMEDCTRelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACUITY for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType ACUITY = new SNOMEDCTRelationshipType("ACUITY");
+        /// <summary>
+        /// Constant DIRECTION for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType DIRECTION = new SNOMEDCTRelationshipType("DIRECTION");
+        /// <summary>
+        /// Constant QUALITY for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType QUALITY = new SNOMEDCTRelationshipType("QUALITY");
+        /// <summary>
+        /// Constant SYSTEM_ORGAN_SITE for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType SYSTEM_ORGAN_SITE = new SNOMEDCTRelationshipType("SYSTEM_ORGAN_SITE");
+        /// <summary>
+        /// Constant TEST_UNITS for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType TEST_UNITS = new SNOMEDCTRelationshipType("TEST_UNITS");
+        /// <summary>
+        /// Constant TEST_VALUE for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType TEST_VALUE = new SNOMEDCTRelationshipType("TEST_VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTRelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTRelationshipType FindValue(string value)
+        {
+            return FindValue<SNOMEDCTRelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTRelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SNOMEDCTTraitName.
+    /// </summary>
+    public class SNOMEDCTTraitName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIAGNOSIS for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName DIAGNOSIS = new SNOMEDCTTraitName("DIAGNOSIS");
+        /// <summary>
+        /// Constant NEGATION for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName NEGATION = new SNOMEDCTTraitName("NEGATION");
+        /// <summary>
+        /// Constant SIGN for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName SIGN = new SNOMEDCTTraitName("SIGN");
+        /// <summary>
+        /// Constant SYMPTOM for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName SYMPTOM = new SNOMEDCTTraitName("SYMPTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SNOMEDCTTraitName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SNOMEDCTTraitName FindValue(string value)
+        {
+            return FindValue<SNOMEDCTTraitName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SNOMEDCTTraitName(string value)
         {
             return FindValue(value);
         }

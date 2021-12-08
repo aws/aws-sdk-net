@@ -29,32 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePHIDetectionJob operation.
-    /// Gets the properties associated with a protected health information (PHI) detection
-    /// job. Use this operation to get the status of a detection job.
+    /// Container for the parameters to the InferSNOMEDCT operation.
+    /// InferSNOMEDCT detects possible medical concepts as entities and links them to codes
+    /// from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology
     /// </summary>
-    public partial class DescribePHIDetectionJobRequest : AmazonComprehendMedicalRequest
+    public partial class InferSNOMEDCTRequest : AmazonComprehendMedicalRequest
     {
-        private string _jobId;
+        private string _text;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property Text. 
         /// <para>
-        /// The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.
+        ///  The input text to be analyzed using InferSNOMEDCT. The text should be a string with
+        /// 1 to 10000 characters. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string JobId
+        [AWSProperty(Required=true, Min=1, Max=10000)]
+        public string Text
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._text; }
+            set { this._text = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if Text property is set
+        internal bool IsSetText()
         {
-            return this._jobId != null;
+            return this._text != null;
         }
 
     }

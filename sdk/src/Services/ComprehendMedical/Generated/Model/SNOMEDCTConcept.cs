@@ -29,37 +29,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>,
-    /// <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.
+    /// The SNOMED-CT concepts that the entity could refer to, along with a score indicating
+    /// the likelihood of the match.
     /// </summary>
-    public partial class ICD10CMTrait
+    public partial class SNOMEDCTConcept
     {
-        private ICD10CMTraitName _name;
+        private string _code;
+        private string _description;
         private float? _score;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Code. 
         /// <para>
-        /// Provides a name or contextual description about the trait.
+        ///  The numeric ID for the SNOMED-CT concept. 
         /// </para>
         /// </summary>
-        public ICD10CMTraitName Name
+        [AWSProperty(Min=1)]
+        public string Code
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._name != null;
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  The description of the SNOMED-CT concept. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// The level of confidence that Comprehend Medical; has that the segment of text is correctly
-        /// recognized as a trait.
+        ///  The level of confidence Comprehend Medical has that the entity should be linked to
+        /// the identified SNOMED-CT concept. 
         /// </para>
         /// </summary>
         public float Score

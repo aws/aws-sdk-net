@@ -29,32 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribePHIDetectionJob operation.
-    /// Gets the properties associated with a protected health information (PHI) detection
-    /// job. Use this operation to get the status of a detection job.
+    /// Contextual information for an entity.
     /// </summary>
-    public partial class DescribePHIDetectionJobRequest : AmazonComprehendMedicalRequest
+    public partial class SNOMEDCTTrait
     {
-        private string _jobId;
+        private SNOMEDCTTraitName _name;
+        private float? _score;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.
+        ///  The name or contextual description of a detected trait. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string JobId
+        public SNOMEDCTTraitName Name
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._jobId != null;
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Score. 
+        /// <para>
+        ///  The level of confidence that Comprehend Medical has in the accuracy of a detected
+        /// trait. 
+        /// </para>
+        /// </summary>
+        public float Score
+        {
+            get { return this._score.GetValueOrDefault(); }
+            set { this._score = value; }
+        }
+
+        // Check to see if Score property is set
+        internal bool IsSetScore()
+        {
+            return this._score.HasValue; 
         }
 
     }

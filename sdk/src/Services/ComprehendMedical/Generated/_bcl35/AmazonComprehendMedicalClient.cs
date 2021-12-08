@@ -35,8 +35,8 @@ namespace Amazon.ComprehendMedical
     /// <summary>
     /// Implementation for accessing ComprehendMedical
     ///
-    /// Amazon Comprehend Medical extracts structured information from unstructured clinical
-    /// text. Use these actions to gain insight in your documents.
+    /// Comprehend Medical; extracts structured information from unstructured clinical text.
+    /// Use these actions to gain insight in your documents.
     /// </summary>
     public partial class AmazonComprehendMedicalClient : AmazonServiceClient, IAmazonComprehendMedical
     {
@@ -522,6 +522,77 @@ namespace Amazon.ComprehendMedical
 
         #endregion
         
+        #region  DescribeSNOMEDCTInferenceJob
+
+        /// <summary>
+        /// Gets the properties associated with an InferSNOMEDCT job. Use this operation to get
+        /// the status of an inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSNOMEDCTInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeSNOMEDCTInferenceJob">REST API Reference for DescribeSNOMEDCTInferenceJob Operation</seealso>
+        public virtual DescribeSNOMEDCTInferenceJobResponse DescribeSNOMEDCTInferenceJob(DescribeSNOMEDCTInferenceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSNOMEDCTInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSNOMEDCTInferenceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSNOMEDCTInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSNOMEDCTInferenceJob operation on AmazonComprehendMedicalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSNOMEDCTInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeSNOMEDCTInferenceJob">REST API Reference for DescribeSNOMEDCTInferenceJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSNOMEDCTInferenceJob(DescribeSNOMEDCTInferenceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSNOMEDCTInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSNOMEDCTInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSNOMEDCTInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeSNOMEDCTInferenceJobResult from ComprehendMedical.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeSNOMEDCTInferenceJob">REST API Reference for DescribeSNOMEDCTInferenceJob Operation</seealso>
+        public virtual DescribeSNOMEDCTInferenceJobResponse EndDescribeSNOMEDCTInferenceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSNOMEDCTInferenceJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DetectEntities
 
         /// <summary>
@@ -550,8 +621,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -647,8 +718,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -727,8 +798,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -808,8 +879,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -889,8 +960,8 @@ namespace Amazon.ComprehendMedical
         /// and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
-        /// The Amazon Comprehend Medical service is temporarily unavailable. Please wait and
-        /// then retry your request.
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
         /// </exception>
         /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -943,6 +1014,85 @@ namespace Amazon.ComprehendMedical
         public virtual InferRxNormResponse EndInferRxNorm(IAsyncResult asyncResult)
         {
             return EndInvoke<InferRxNormResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  InferSNOMEDCT
+
+        /// <summary>
+        /// InferSNOMEDCT detects possible medical concepts as entities and links them to codes
+        /// from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InferSNOMEDCT service method.</param>
+        /// 
+        /// <returns>The response from the InferSNOMEDCT service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidEncodingException">
+        /// The input text was not in valid UTF-8 character encoding. Check your text then retry
+        /// your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ServiceUnavailableException">
+        /// The Comprehend Medical; service is temporarily unavailable. Please wait and then
+        /// retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TextSizeLimitExceededException">
+        /// The size of the text you submitted exceeds the size limit. Reduce the size of the
+        /// text or use a smaller document and then retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferSNOMEDCT">REST API Reference for InferSNOMEDCT Operation</seealso>
+        public virtual InferSNOMEDCTResponse InferSNOMEDCT(InferSNOMEDCTRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InferSNOMEDCTRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InferSNOMEDCTResponseUnmarshaller.Instance;
+
+            return Invoke<InferSNOMEDCTResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InferSNOMEDCT operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InferSNOMEDCT operation on AmazonComprehendMedicalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInferSNOMEDCT
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferSNOMEDCT">REST API Reference for InferSNOMEDCT Operation</seealso>
+        public virtual IAsyncResult BeginInferSNOMEDCT(InferSNOMEDCTRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InferSNOMEDCTRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InferSNOMEDCTResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InferSNOMEDCT operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInferSNOMEDCT.</param>
+        /// 
+        /// <returns>Returns a  InferSNOMEDCTResult from ComprehendMedical.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferSNOMEDCT">REST API Reference for InferSNOMEDCT Operation</seealso>
+        public virtual InferSNOMEDCTResponse EndInferSNOMEDCT(IAsyncResult asyncResult)
+        {
+            return EndInvoke<InferSNOMEDCTResponse>(asyncResult);
         }
 
         #endregion
@@ -1223,6 +1373,76 @@ namespace Amazon.ComprehendMedical
         public virtual ListRxNormInferenceJobsResponse EndListRxNormInferenceJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRxNormInferenceJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSNOMEDCTInferenceJobs
+
+        /// <summary>
+        /// Gets a list of InferSNOMEDCT jobs a user has submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSNOMEDCTInferenceJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListSNOMEDCTInferenceJobs service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ValidationException">
+        /// The filter that you specified for the operation is invalid. Check the filter values
+        /// that you entered and try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListSNOMEDCTInferenceJobs">REST API Reference for ListSNOMEDCTInferenceJobs Operation</seealso>
+        public virtual ListSNOMEDCTInferenceJobsResponse ListSNOMEDCTInferenceJobs(ListSNOMEDCTInferenceJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSNOMEDCTInferenceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSNOMEDCTInferenceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSNOMEDCTInferenceJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSNOMEDCTInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSNOMEDCTInferenceJobs operation on AmazonComprehendMedicalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSNOMEDCTInferenceJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListSNOMEDCTInferenceJobs">REST API Reference for ListSNOMEDCTInferenceJobs Operation</seealso>
+        public virtual IAsyncResult BeginListSNOMEDCTInferenceJobs(ListSNOMEDCTInferenceJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSNOMEDCTInferenceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSNOMEDCTInferenceJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSNOMEDCTInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSNOMEDCTInferenceJobs.</param>
+        /// 
+        /// <returns>Returns a  ListSNOMEDCTInferenceJobsResult from ComprehendMedical.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListSNOMEDCTInferenceJobs">REST API Reference for ListSNOMEDCTInferenceJobs Operation</seealso>
+        public virtual ListSNOMEDCTInferenceJobsResponse EndListSNOMEDCTInferenceJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSNOMEDCTInferenceJobsResponse>(asyncResult);
         }
 
         #endregion
@@ -1514,6 +1734,78 @@ namespace Amazon.ComprehendMedical
 
         #endregion
         
+        #region  StartSNOMEDCTInferenceJob
+
+        /// <summary>
+        /// Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT
+        /// ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a
+        /// job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSNOMEDCTInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the StartSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartSNOMEDCTInferenceJob">REST API Reference for StartSNOMEDCTInferenceJob Operation</seealso>
+        public virtual StartSNOMEDCTInferenceJobResponse StartSNOMEDCTInferenceJob(StartSNOMEDCTInferenceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSNOMEDCTInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartSNOMEDCTInferenceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSNOMEDCTInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSNOMEDCTInferenceJob operation on AmazonComprehendMedicalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSNOMEDCTInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartSNOMEDCTInferenceJob">REST API Reference for StartSNOMEDCTInferenceJob Operation</seealso>
+        public virtual IAsyncResult BeginStartSNOMEDCTInferenceJob(StartSNOMEDCTInferenceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSNOMEDCTInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSNOMEDCTInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSNOMEDCTInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  StartSNOMEDCTInferenceJobResult from ComprehendMedical.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartSNOMEDCTInferenceJob">REST API Reference for StartSNOMEDCTInferenceJob Operation</seealso>
+        public virtual StartSNOMEDCTInferenceJobResponse EndStartSNOMEDCTInferenceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSNOMEDCTInferenceJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopEntitiesDetectionV2Job
 
         /// <summary>
@@ -1770,6 +2062,76 @@ namespace Amazon.ComprehendMedical
         public virtual StopRxNormInferenceJobResponse EndStopRxNormInferenceJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StopRxNormInferenceJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopSNOMEDCTInferenceJob
+
+        /// <summary>
+        /// Stops an InferSNOMEDCT inference job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSNOMEDCTInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the StopSNOMEDCTInferenceJob service method, as returned by ComprehendMedical.</returns>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.ResourceNotFoundException">
+        /// The resource identified by the specified Amazon Resource Name (ARN) was not found.
+        /// Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.ComprehendMedical.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again. Contact customer support for more information about
+        /// a service limit increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopSNOMEDCTInferenceJob">REST API Reference for StopSNOMEDCTInferenceJob Operation</seealso>
+        public virtual StopSNOMEDCTInferenceJobResponse StopSNOMEDCTInferenceJob(StopSNOMEDCTInferenceJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSNOMEDCTInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopSNOMEDCTInferenceJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopSNOMEDCTInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopSNOMEDCTInferenceJob operation on AmazonComprehendMedicalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopSNOMEDCTInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopSNOMEDCTInferenceJob">REST API Reference for StopSNOMEDCTInferenceJob Operation</seealso>
+        public virtual IAsyncResult BeginStopSNOMEDCTInferenceJob(StopSNOMEDCTInferenceJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopSNOMEDCTInferenceJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopSNOMEDCTInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopSNOMEDCTInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  StopSNOMEDCTInferenceJobResult from ComprehendMedical.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopSNOMEDCTInferenceJob">REST API Reference for StopSNOMEDCTInferenceJob Operation</seealso>
+        public virtual StopSNOMEDCTInferenceJobResponse EndStopSNOMEDCTInferenceJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopSNOMEDCTInferenceJobResponse>(asyncResult);
         }
 
         #endregion
