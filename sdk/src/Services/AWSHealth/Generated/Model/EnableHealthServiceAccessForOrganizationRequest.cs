@@ -45,10 +45,10 @@ namespace Amazon.AWSHealth.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You must have a Business or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
+    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a> to use the Health API. If you call the Health API from an
-    /// Amazon Web Services account that doesn't have a Business or Enterprise Support plan,
-    /// you receive a <code>SubscriptionRequiredException</code> error.
+    /// Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
+    /// Support plan, you receive a <code>SubscriptionRequiredException</code> error.
     /// </para>
     ///  </li> <li> 
     /// <para>
