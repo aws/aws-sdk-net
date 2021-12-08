@@ -169,6 +169,64 @@ namespace Amazon.LookoutforVision
 
 
     /// <summary>
+    /// Constants used for properties of type ModelPackagingJobStatus.
+    /// </summary>
+    public class ModelPackagingJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for ModelPackagingJobStatus
+        /// </summary>
+        public static readonly ModelPackagingJobStatus CREATED = new ModelPackagingJobStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for ModelPackagingJobStatus
+        /// </summary>
+        public static readonly ModelPackagingJobStatus FAILED = new ModelPackagingJobStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ModelPackagingJobStatus
+        /// </summary>
+        public static readonly ModelPackagingJobStatus RUNNING = new ModelPackagingJobStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for ModelPackagingJobStatus
+        /// </summary>
+        public static readonly ModelPackagingJobStatus SUCCEEDED = new ModelPackagingJobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelPackagingJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelPackagingJobStatus FindValue(string value)
+        {
+            return FindValue<ModelPackagingJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelPackagingJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelStatus.
     /// </summary>
     public class ModelStatus : ConstantClass
@@ -261,6 +319,10 @@ namespace Amazon.LookoutforVision
         /// </summary>
         public static readonly ResourceType MODEL = new ResourceType("MODEL");
         /// <summary>
+        /// Constant MODEL_PACKAGE_JOB for ResourceType
+        /// </summary>
+        public static readonly ResourceType MODEL_PACKAGE_JOB = new ResourceType("MODEL_PACKAGE_JOB");
+        /// <summary>
         /// Constant PROJECT for ResourceType
         /// </summary>
         public static readonly ResourceType PROJECT = new ResourceType("PROJECT");
@@ -298,6 +360,194 @@ namespace Amazon.LookoutforVision
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetDevice.
+    /// </summary>
+    public class TargetDevice : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Jetson_xavier for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Jetson_xavier = new TargetDevice("jetson_xavier");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetDevice(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetDevice FindValue(string value)
+        {
+            return FindValue<TargetDevice>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetDevice(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetPlatformAccelerator.
+    /// </summary>
+    public class TargetPlatformAccelerator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NVIDIA for TargetPlatformAccelerator
+        /// </summary>
+        public static readonly TargetPlatformAccelerator NVIDIA = new TargetPlatformAccelerator("NVIDIA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetPlatformAccelerator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetPlatformAccelerator FindValue(string value)
+        {
+            return FindValue<TargetPlatformAccelerator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetPlatformAccelerator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetPlatformArch.
+    /// </summary>
+    public class TargetPlatformArch : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARM64 for TargetPlatformArch
+        /// </summary>
+        public static readonly TargetPlatformArch ARM64 = new TargetPlatformArch("ARM64");
+        /// <summary>
+        /// Constant X86_64 for TargetPlatformArch
+        /// </summary>
+        public static readonly TargetPlatformArch X86_64 = new TargetPlatformArch("X86_64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetPlatformArch(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetPlatformArch FindValue(string value)
+        {
+            return FindValue<TargetPlatformArch>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetPlatformArch(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetPlatformOs.
+    /// </summary>
+    public class TargetPlatformOs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINUX for TargetPlatformOs
+        /// </summary>
+        public static readonly TargetPlatformOs LINUX = new TargetPlatformOs("LINUX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetPlatformOs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetPlatformOs FindValue(string value)
+        {
+            return FindValue<TargetPlatformOs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetPlatformOs(string value)
         {
             return FindValue(value);
         }

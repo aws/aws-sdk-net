@@ -82,7 +82,7 @@
     <property>Amazon.LookoutforVision.Model.DeleteModelRequest.ModelVersion</property>
     <min>1</min>
     <max>10</max>
-    <pattern>([1-9][0-9]*|latest)</pattern>
+    <pattern>([1-9][0-9]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutforVision.Model.DeleteModelRequest.ProjectName</property>
@@ -122,6 +122,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutforVision.Model.DescribeModelRequest.ProjectName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.DescribeModelPackagingJobRequest.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.DescribeModelPackagingJobRequest.ProjectName</property>
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
@@ -190,6 +202,27 @@
     <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ListModelPackagingJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ListModelPackagingJobsRequest.NextToken</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ListModelPackagingJobsRequest.ProjectName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ListModelPackagingJobsResponse.NextToken</property>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutforVision.Model.ListModelsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -251,6 +284,42 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.StartModelPackagingJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.StartModelPackagingJobRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.StartModelPackagingJobRequest.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.StartModelPackagingJobRequest.ModelVersion</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>([1-9][0-9]*|latest)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.StartModelPackagingJobRequest.ProjectName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.StartModelPackagingJobResponse.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutforVision.Model.StopModelRequest.ClientToken</property>
@@ -322,6 +391,46 @@
     <pattern>train|test</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.GreengrassConfiguration.CompilerOptions</property>
+    <min>3</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.GreengrassConfiguration.ComponentDescription</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.GreengrassConfiguration.ComponentName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.GreengrassConfiguration.ComponentVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^([0-9]{1,6})\.([0-9]{1,6})\.([0-9]{1,6})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.GreengrassOutputDetails.ComponentName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.GreengrassOutputDetails.ComponentVersion</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^([0-9]{1,6})\.([0-9]{1,6})\.([0-9]{1,6})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.GreengrassOutputDetails.ComponentVersionArn</property>
+    <pattern>arn:[^:]*:greengrass:[^:]*:aws:components:[^:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutforVision.Model.ImageSource.Type</property>
     <pattern>direct</pattern>
   </property-value-rule>
@@ -372,6 +481,66 @@
     <min>1</min>
     <max>10</max>
     <pattern>([1-9][0-9]*|latest)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingDescription.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingDescription.ModelPackagingJobDescription</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingDescription.ModelPackagingMethod</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingDescription.ModelVersion</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>([1-9][0-9]*|latest)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingDescription.ProjectName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingJobMetadata.JobName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingJobMetadata.ModelPackagingJobDescription</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9-_. ()':,;?]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingJobMetadata.ModelPackagingMethod</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingJobMetadata.ModelVersion</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>([1-9][0-9]*|latest)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelPackagingJobMetadata.ProjectName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutforVision.Model.OutputS3Object.Bucket</property>

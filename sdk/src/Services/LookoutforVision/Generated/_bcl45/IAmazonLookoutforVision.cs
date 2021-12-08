@@ -514,10 +514,10 @@ namespace Amazon.LookoutforVision
         ///  
         /// <para>
         /// It might take a few seconds to delete a model. To determine if a model has been deleted,
-        /// call <a>ListProjects</a> and check if the version of the model (<code>ModelVersion</code>)
+        /// call <a>ListModels</a> and check if the version of the model (<code>ModelVersion</code>)
         /// is in the <code>Models</code> array. 
         /// </para>
-        ///  
+        ///   
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code>
         /// operation.
@@ -558,10 +558,10 @@ namespace Amazon.LookoutforVision
         ///  
         /// <para>
         /// It might take a few seconds to delete a model. To determine if a model has been deleted,
-        /// call <a>ListProjects</a> and check if the version of the model (<code>ModelVersion</code>)
+        /// call <a>ListModels</a> and check if the version of the model (<code>ModelVersion</code>)
         /// is in the <code>Models</code> array. 
         /// </para>
-        ///  
+        ///   
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code>
         /// operation.
@@ -860,6 +860,90 @@ namespace Amazon.LookoutforVision
 
         #endregion
         
+        #region  DescribeModelPackagingJob
+
+
+        /// <summary>
+        /// Describes an Amazon Lookout for Vision model packaging job. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Using your Amazon Lookout for Vision model on an edge
+        /// device</i> in the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackagingJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeModelPackagingJob service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DescribeModelPackagingJob">REST API Reference for DescribeModelPackagingJob Operation</seealso>
+        DescribeModelPackagingJobResponse DescribeModelPackagingJob(DescribeModelPackagingJobRequest request);
+
+
+
+        /// <summary>
+        /// Describes an Amazon Lookout for Vision model packaging job. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Using your Amazon Lookout for Vision model on an edge
+        /// device</i> in the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackagingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelPackagingJob service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DescribeModelPackagingJob">REST API Reference for DescribeModelPackagingJob Operation</seealso>
+        Task<DescribeModelPackagingJobResponse> DescribeModelPackagingJobAsync(DescribeModelPackagingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeProject
 
 
@@ -1130,12 +1214,103 @@ namespace Amazon.LookoutforVision
 
         #endregion
         
+        #region  ListModelPackagingJobs
+
+
+        /// <summary>
+        /// Lists the model packaging jobs created for an Amazon Lookout for Vision project.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:ListModelPackagingJobs</code>
+        /// operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Using your Amazon Lookout for Vision model on an edge
+        /// device</i> in the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelPackagingJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListModelPackagingJobs service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ListModelPackagingJobs">REST API Reference for ListModelPackagingJobs Operation</seealso>
+        ListModelPackagingJobsResponse ListModelPackagingJobs(ListModelPackagingJobsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the model packaging jobs created for an Amazon Lookout for Vision project.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:ListModelPackagingJobs</code>
+        /// operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Using your Amazon Lookout for Vision model on an edge
+        /// device</i> in the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelPackagingJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelPackagingJobs service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ListModelPackagingJobs">REST API Reference for ListModelPackagingJobs Operation</seealso>
+        Task<ListModelPackagingJobsResponse> ListModelPackagingJobsAsync(ListModelPackagingJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListModels
 
 
         /// <summary>
         /// Lists the versions of a model in an Amazon Lookout for Vision project.
         /// 
+        ///  
+        /// <para>
+        /// The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code>
+        /// might take a while to appear in the response from <code>ListProjects</code>.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:ListModels</code>
@@ -1173,6 +1348,11 @@ namespace Amazon.LookoutforVision
         /// <summary>
         /// Lists the versions of a model in an Amazon Lookout for Vision project.
         /// 
+        ///  
+        /// <para>
+        /// The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code>
+        /// might take a while to appear in the response from <code>ListProjects</code>.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:ListModels</code>
@@ -1218,6 +1398,12 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
+        /// The <code>ListProjects</code> operation is eventually consistent. Recent calls to
+        /// <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear
+        /// in the response from <code>ListProjects</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:ListProjects</code>
         /// operation.
         /// </para>
@@ -1253,6 +1439,12 @@ namespace Amazon.LookoutforVision
         /// <summary>
         /// Lists the Amazon Lookout for Vision projects in your AWS account.
         /// 
+        ///  
+        /// <para>
+        /// The <code>ListProjects</code> operation is eventually consistent. Recent calls to
+        /// <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear
+        /// in the response from <code>ListProjects</code>.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:ListProjects</code>
@@ -1483,6 +1675,178 @@ namespace Amazon.LookoutforVision
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StartModel">REST API Reference for StartModel Operation</seealso>
         Task<StartModelResponse> StartModelAsync(StartModelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartModelPackagingJob
+
+
+        /// <summary>
+        /// Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates
+        /// an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component
+        /// to deploy your model to an edge device managed by Greengrass. 
+        /// 
+        ///  
+        /// <para>
+        /// Use the <a>DescribeModelPackagingJob</a> API to determine the current status of the
+        /// job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To deploy the component to the target device, use the component name and component
+        /// version with the AWS IoT Greengrass <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>lookoutvision:StartModelPackagingJobs</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>s3:PutObject</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>s3:GetBucketLocation</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>greengrass:CreateComponentVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>greengrass:DescribeComponent</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the
+        /// component.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <i>Using your Amazon Lookout for Vision model on an edge
+        /// device</i> in the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartModelPackagingJob service method.</param>
+        /// 
+        /// <returns>The response from the StartModelPackagingJob service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ConflictException">
+        /// The update or deletion of a resource caused an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ServiceQuotaExceededException">
+        /// A service quota was exceeded the allowed limit. For more information, see Limits in
+        /// Amazon Lookout for Vision in the Amazon Lookout for Vision Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StartModelPackagingJob">REST API Reference for StartModelPackagingJob Operation</seealso>
+        StartModelPackagingJobResponse StartModelPackagingJob(StartModelPackagingJobRequest request);
+
+
+
+        /// <summary>
+        /// Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates
+        /// an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component
+        /// to deploy your model to an edge device managed by Greengrass. 
+        /// 
+        ///  
+        /// <para>
+        /// Use the <a>DescribeModelPackagingJob</a> API to determine the current status of the
+        /// job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To deploy the component to the target device, use the component name and component
+        /// version with the AWS IoT Greengrass <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>lookoutvision:StartModelPackagingJobs</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>s3:PutObject</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>s3:GetBucketLocation</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>greengrass:CreateComponentVersion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>greengrass:DescribeComponent</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the
+        /// component.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <i>Using your Amazon Lookout for Vision model on an edge
+        /// device</i> in the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartModelPackagingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartModelPackagingJob service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ConflictException">
+        /// The update or deletion of a resource caused an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ServiceQuotaExceededException">
+        /// A service quota was exceeded the allowed limit. For more information, see Limits in
+        /// Amazon Lookout for Vision in the Amazon Lookout for Vision Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/StartModelPackagingJob">REST API Reference for StartModelPackagingJob Operation</seealso>
+        Task<StartModelPackagingJobResponse> StartModelPackagingJobAsync(StartModelPackagingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1756,11 +2120,27 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Adds one or more JSON Line entries to a dataset. A JSON Line includes information
-        /// about an image used for training or testing an Amazon Lookout for Vision model. The
-        /// following is an example JSON Line.
+        /// Adds or updates one or more JSON Line entries in a dataset. A JSON Line includes information
+        /// about an image used for training or testing an Amazon Lookout for Vision model.
         /// 
         ///  
+        /// <para>
+        /// To update an existing JSON Line, use the <code>source-ref</code> field to identify
+        /// the JSON Line. The JSON line that you supply replaces the existing JSON line. Any
+        /// existing annotations that are not in the new JSON line are removed from the dataset.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Defining JSON lines for anomaly classification</i> in
+        /// the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The images you reference in the <code>source-ref</code> field of a JSON line, must
+        /// be in the same S3 bucket as the existing images in the dataset. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Updating a dataset might take a while to complete. To check the current status, call
         /// <a>DescribeDataset</a> and check the <code>Status</code> field in the response.
@@ -1800,11 +2180,27 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Adds one or more JSON Line entries to a dataset. A JSON Line includes information
-        /// about an image used for training or testing an Amazon Lookout for Vision model. The
-        /// following is an example JSON Line.
+        /// Adds or updates one or more JSON Line entries in a dataset. A JSON Line includes information
+        /// about an image used for training or testing an Amazon Lookout for Vision model.
         /// 
         ///  
+        /// <para>
+        /// To update an existing JSON Line, use the <code>source-ref</code> field to identify
+        /// the JSON Line. The JSON line that you supply replaces the existing JSON line. Any
+        /// existing annotations that are not in the new JSON line are removed from the dataset.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Defining JSON lines for anomaly classification</i> in
+        /// the Amazon Lookout for Vision Developer Guide. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The images you reference in the <code>source-ref</code> field of a JSON line, must
+        /// be in the same S3 bucket as the existing images in the dataset. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Updating a dataset might take a while to complete. To check the current status, call
         /// <a>DescribeDataset</a> and check the <code>Status</code> field in the response.

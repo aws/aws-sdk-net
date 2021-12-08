@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Sumary information for an Amazon Lookout for Vision dataset.
+    /// Summary information for an Amazon Lookout for Vision dataset. For more information,
+    /// see <a>DescribeDataset</a> and <a>ProjectDescription</a>.
     /// </summary>
     public partial class DatasetMetadata
     {

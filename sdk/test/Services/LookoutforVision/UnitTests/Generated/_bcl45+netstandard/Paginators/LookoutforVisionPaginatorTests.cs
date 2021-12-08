@@ -81,6 +81,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("LookoutforVision")]
+        public void ListModelPackagingJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelPackagingJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListModelPackagingJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListModelPackagingJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListModelPackagingJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListModelPackagingJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LookoutforVision")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListModelPackagingJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelPackagingJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListModelPackagingJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListModelPackagingJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListModelPackagingJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("LookoutforVision")]
         public void ListModelsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListModelsRequest>();

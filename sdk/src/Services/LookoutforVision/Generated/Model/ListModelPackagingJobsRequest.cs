@@ -29,21 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListModels operation.
-    /// Lists the versions of a model in an Amazon Lookout for Vision project.
+    /// Container for the parameters to the ListModelPackagingJobs operation.
+    /// Lists the model packaging jobs created for an Amazon Lookout for Vision project.
+    /// 
     /// 
     ///  
     /// <para>
-    /// The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code>
-    /// might take a while to appear in the response from <code>ListProjects</code>.
+    /// This operation requires permissions to perform the <code>lookoutvision:ListModelPackagingJobs</code>
+    /// operation. 
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:ListModels</code>
-    /// operation.
+    /// For more information, see <i>Using your Amazon Lookout for Vision model on an edge
+    /// device</i> in the Amazon Lookout for Vision Developer Guide. 
     /// </para>
     /// </summary>
-    public partial class ListModelsRequest : AmazonLookoutforVisionRequest
+    public partial class ListModelPackagingJobsRequest : AmazonLookoutforVisionRequest
     {
         private int? _maxResults;
         private string _nextToken;
@@ -54,7 +55,7 @@ namespace Amazon.LookoutforVision.Model
         /// <para>
         /// The maximum number of results to return per paginated call. The largest value you
         /// can specify is 100. If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.
+        /// error occurs. The default value is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -73,9 +74,9 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous response was incomplete (because there is more data to retrieve),
+        /// If the previous response was incomplete (because there is more results to retrieve),
         /// Amazon Lookout for Vision returns a pagination token in the response. You can use
-        /// this pagination token to retrieve the next set of models.
+        /// this pagination token to retrieve the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -94,7 +95,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The name of the project that contains the model versions that you want to list.
+        ///  The name of the project for which you want to list the model packaging jobs. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

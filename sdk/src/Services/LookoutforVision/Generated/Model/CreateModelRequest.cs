@@ -71,13 +71,23 @@ namespace Amazon.LookoutforVision.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// ClientToken is an idempotency token that ensures a call to <code>CreateModel</code>
-        /// completes only once. You choose the value to pass. For example, An issue, such as
-        /// an network outage, might prevent you from getting a response from <code>CreateModel</code>.
-        /// In this case, safely retry your call to <code>CreateModel</code> by using the same
-        /// <code>ClientToken</code> parameter value. An error occurs if the other input parameters
-        /// are not the same as in the first request. Using a different value for <code>ClientToken</code>
-        /// is considered a new call to <code>CreateModel</code>. An idempotency token is active
-        /// for 8 hours.
+        /// completes only once. You choose the value to pass. For example, An issue might prevent
+        /// you from getting a response from <code>CreateModel</code>. In this case, safely retry
+        /// your call to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter
+        /// value. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using
+        /// inserts a value for you. This prevents retries after a network error from starting
+        /// multiple training jobs. You'll need to provide your own value for other use cases.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// An error occurs if the other input parameters are not the same as in the first request.
+        /// Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>.
+        /// An idempotency token is active for 8 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -115,10 +125,10 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
-        /// The key is used to encrypt training and test images copied into the service for model
-        /// training. Your source images are unaffected. If this parameter is not specified, the
-        /// copied images are encrypted by a key that AWS owns and manages.
+        /// The identifier for your AWS KMS key. The key is used to encrypt training and test
+        /// images copied into the service for model training. Your source images are unaffected.
+        /// If this parameter is not specified, the copied images are encrypted by a key that
+        /// AWS owns and manages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

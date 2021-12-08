@@ -16,33 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the lookoutvision-2020-11-20.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Paginators for the LookoutforVision service
+    /// Paginator for the ListModelPackagingJobs operation
     ///</summary>
-    public interface ILookoutforVisionPaginatorFactory
+    public interface IListModelPackagingJobsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListModelPackagingJobsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListDatasetEntries operation
-        ///</summary>
-        IListDatasetEntriesPaginator ListDatasetEntries(ListDatasetEntriesRequest request);
-
-        /// <summary>
-        /// Paginator for ListModelPackagingJobs operation
-        ///</summary>
-        IListModelPackagingJobsPaginator ListModelPackagingJobs(ListModelPackagingJobsRequest request);
-
-        /// <summary>
-        /// Paginator for ListModels operation
-        ///</summary>
-        IListModelsPaginator ListModels(ListModelsRequest request);
-
-        /// <summary>
-        /// Paginator for ListProjects operation
-        ///</summary>
-        IListProjectsPaginator ListProjects(ListProjectsRequest request);
+        /// Enumerable containing all of the ModelPackagingJobs
+        /// </summary>
+        IPaginatedEnumerable<ModelPackagingJobMetadata> ModelPackagingJobs { get; }
     }
 }

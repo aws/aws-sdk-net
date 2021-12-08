@@ -44,6 +44,14 @@ namespace Amazon.LookoutforVision.Model
         }
 
         /// <summary>
+        /// Paginator for ListModelPackagingJobs operation
+        ///</summary>
+        public IListModelPackagingJobsPaginator ListModelPackagingJobs(ListModelPackagingJobsRequest request) 
+        {
+            return new ListModelPackagingJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModels operation
         ///</summary>
         public IListModelsPaginator ListModels(ListModelsRequest request) 

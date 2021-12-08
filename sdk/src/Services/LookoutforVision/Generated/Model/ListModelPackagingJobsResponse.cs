@@ -29,53 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProjects operation.
-    /// Lists the Amazon Lookout for Vision projects in your AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// The <code>ListProjects</code> operation is eventually consistent. Recent calls to
-    /// <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear
-    /// in the response from <code>ListProjects</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:ListProjects</code>
-    /// operation.
-    /// </para>
+    /// This is the response object from the ListModelPackagingJobs operation.
     /// </summary>
-    public partial class ListProjectsRequest : AmazonLookoutforVisionRequest
+    public partial class ListModelPackagingJobsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ModelPackagingJobMetadata> _modelPackagingJobs = new List<ModelPackagingJobMetadata>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ModelPackagingJobs. 
         /// <para>
-        /// The maximum number of results to return per paginated call. The largest value you
-        /// can specify is 100. If you specify a value greater than 100, a ValidationException
-        /// error occurs. The default value is 100.
+        ///  A list of the model packaging jobs created for the specified Amazon Lookout for Vision
+        /// project. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public List<ModelPackagingJobMetadata> ModelPackagingJobs
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._modelPackagingJobs; }
+            set { this._modelPackagingJobs = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ModelPackagingJobs property is set
+        internal bool IsSetModelPackagingJobs()
         {
-            return this._maxResults.HasValue; 
+            return this._modelPackagingJobs != null && this._modelPackagingJobs.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous response was incomplete (because there is more data to retrieve),
+        /// If the previous response was incomplete (because there is more results to retrieve),
         /// Amazon Lookout for Vision returns a pagination token in the response. You can use
-        /// this pagination token to retrieve the next set of projects.
+        /// this pagination token to retrieve the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
