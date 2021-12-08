@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// A list of custom SageMaker images that are configured to run as a KernelGateway app.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Max=200)]
         public List<CustomImage> CustomImages
         {
             get { return this._customImages; }

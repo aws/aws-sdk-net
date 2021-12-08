@@ -9925,6 +9925,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetDevice Aisage = new TargetDevice("aisage");
         /// <summary>
+        /// Constant Amba_cv2 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Amba_cv2 = new TargetDevice("amba_cv2");
+        /// <summary>
         /// Constant Amba_cv22 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Amba_cv22 = new TargetDevice("amba_cv22");

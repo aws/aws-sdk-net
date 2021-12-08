@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class PipelineExecutionStep
     {
+        private int? _attemptCount;
         private CacheHitResult _cacheHitResult;
         private DateTime? _endTime;
         private string _failureReason;
@@ -40,6 +41,21 @@ namespace Amazon.SageMaker.Model
         private DateTime? _startTime;
         private string _stepName;
         private StepStatus _stepStatus;
+
+        /// <summary>
+        /// Gets and sets the property AttemptCount.
+        /// </summary>
+        public int AttemptCount
+        {
+            get { return this._attemptCount.GetValueOrDefault(); }
+            set { this._attemptCount = value; }
+        }
+
+        // Check to see if AttemptCount property is set
+        internal bool IsSetAttemptCount()
+        {
+            return this._attemptCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CacheHitResult. 
