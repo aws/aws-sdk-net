@@ -39,7 +39,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property SeverityLevels. 
         /// <para>
         /// The available severity levels for the support case. Available severity levels are
-        /// defined by your service level agreement with AWS.
+        /// defined by your service level agreement with Amazon Web Services.
         /// </para>
         /// </summary>
         public List<SeverityLevel> SeverityLevels

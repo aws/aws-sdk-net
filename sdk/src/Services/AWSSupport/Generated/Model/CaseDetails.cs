@@ -45,13 +45,15 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>displayId</b> - The identifier for the case on pages in the AWS Support Center.
+    ///  <b>displayId</b> - The identifier for the case on pages in the Amazon Web Services
+    /// Support Center.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>language</b> - The ISO 639-1 code for the language in which AWS provides support.
-    /// AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters
-    /// must be passed explicitly for operations that take them.
+    ///  <b>language</b> - The ISO 639-1 code for the language in which Amazon Web Services
+    /// provides support. Amazon Web Services Support currently supports English ("en") and
+    /// Japanese ("ja"). Language parameters must be passed explicitly for operations that
+    /// take them.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,8 +67,8 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>serviceCode</b> - The identifier for the AWS service that corresponds to the service
-    /// code defined in the call to <a>DescribeServices</a>.
+    ///  <b>serviceCode</b> - The identifier for the Amazon Web Services service that corresponds
+    /// to the service code defined in the call to <a>DescribeServices</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,7 +79,8 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>status</b> - The status of the case in the AWS Support Center. Valid values:
+    ///  <b>status</b> - The status of the case in the Amazon Web Services Support Center.
+    /// Valid values:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -192,7 +195,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property DisplayId. 
         /// <para>
-        /// The ID displayed for the case in the AWS Support Center. This is a numeric string.
+        /// The ID displayed for the case in the Amazon Web Services Support Center. This is a
+        /// numeric string.
         /// </para>
         /// </summary>
         public string DisplayId
@@ -210,9 +214,9 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently
-        /// supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly
-        /// for operations that take them.
+        /// The ISO 639-1 code for the language in which Amazon Web Services provides support.
+        /// Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         /// </para>
         /// </summary>
         public string Language
@@ -230,8 +234,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property RecentCommunications. 
         /// <para>
-        /// The five most recent communications between you and AWS Support Center, including
-        /// the IDs of any attachments to the communications. Also includes a <code>nextToken</code>
+        /// The five most recent communications between you and Amazon Web Services Support Center,
+        /// including the IDs of any attachments to the communications. Also includes a <code>nextToken</code>
         /// that you can use to retrieve earlier communications.
         /// </para>
         /// </summary>
@@ -250,8 +254,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code for the AWS service. You can get a list of codes and the corresponding service
-        /// names by calling <a>DescribeServices</a>.
+        /// The code for the Amazon Web Services service. You can get a list of codes and the
+        /// corresponding service names by calling <a>DescribeServices</a>.
         /// </para>
         /// </summary>
         public string ServiceCode
@@ -334,7 +338,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The subject line for the case in the AWS Support Center.
+        /// The subject line for the case in the Amazon Web Services Support Center.
         /// </para>
         /// </summary>
         public string Subject
@@ -370,7 +374,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property TimeCreated. 
         /// <para>
-        /// The time that the case was created in the AWS Support Center.
+        /// The time that the case was created in the Amazon Web Services Support Center.
         /// </para>
         /// </summary>
         public string TimeCreated

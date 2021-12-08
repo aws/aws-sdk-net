@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Information about an AWS service returned by the <a>DescribeServices</a> operation.
+    /// Information about an Amazon Web Services service returned by the <a>DescribeServices</a>
+    /// operation.
     /// </summary>
     public partial class Service
     {
@@ -42,7 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// A list of categories that describe the type of support issue a case describes. Categories
         /// consist of a category name and a category code. Category names and codes are passed
-        /// to AWS Support when you call <a>CreateCase</a>.
+        /// to Amazon Web Services Support when you call <a>CreateCase</a>.
         /// </para>
         /// </summary>
         public List<Category> Categories
@@ -60,8 +61,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The code for an AWS service returned by the <a>DescribeServices</a> response. The
-        /// <code>name</code> element contains the corresponding friendly name.
+        /// The code for an Amazon Web Services service returned by the <a>DescribeServices</a>
+        /// response. The <code>name</code> element contains the corresponding friendly name.
         /// </para>
         /// </summary>
         public string Code
@@ -79,8 +80,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name for an AWS service. The <code>code</code> element contains the corresponding
-        /// code.
+        /// The friendly name for an Amazon Web Services service. The <code>code</code> element
+        /// contains the corresponding code.
         /// </para>
         /// </summary>
         public string Name

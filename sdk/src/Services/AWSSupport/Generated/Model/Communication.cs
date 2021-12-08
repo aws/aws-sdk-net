@@ -62,7 +62,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The text of the communication between the customer and AWS Support.
+        /// The text of the communication between the customer and Amazon Web Services Support.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8000)]
@@ -103,8 +103,8 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The identity of the account that submitted, or responded to, the support case. Customer
         /// entries include the role or IAM user as well as the email address. For example, "AdminRole
-        /// (Role) &lt;janedoe@example.com&gt;. Entries from the AWS Support team display "Amazon
-        /// Web Services," and don't show an email address. 
+        /// (Role) &lt;janedoe@example.com&gt;. Entries from the Amazon Web Services Support team
+        /// display "Amazon Web Services," and don't show an email address. 
         /// </para>
         /// </summary>
         public string SubmittedBy

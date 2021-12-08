@@ -30,18 +30,18 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCase operation.
-    /// Creates a case in the AWS Support Center. This operation is similar to how you create
-    /// a case in the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+    /// Creates a case in the Amazon Web Services Support Center. This operation is similar
+    /// to how you create a case in the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
     /// Case</a> page.
     /// 
     ///  
     /// <para>
-    /// The AWS Support API doesn't support requesting service limit increases. You can submit
-    /// a service limit increase in the following ways: 
+    /// The Amazon Web Services Support API doesn't support requesting service limit increases.
+    /// You can submit a service limit increase in the following ways: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Submit a request from the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+    /// Submit a request from the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
     /// Case</a> page.
     /// </para>
     ///  </li> <li> 
@@ -51,27 +51,29 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// A successful <code>CreateCase</code> request returns an AWS Support case number. You
-    /// can use the <a>DescribeCases</a> operation and specify the case number to get existing
-    /// AWS Support cases. After you create a case, use the <a>AddCommunicationToCase</a>
-    /// operation to add additional communication or attachments to an existing case.
+    /// A successful <code>CreateCase</code> request returns an Amazon Web Services Support
+    /// case number. You can use the <a>DescribeCases</a> operation and specify the case number
+    /// to get existing Amazon Web Services Support cases. After you create a case, use the
+    /// <a>AddCommunicationToCase</a> operation to add additional communication or attachments
+    /// to an existing case.
     /// </para>
     ///  
     /// <para>
     /// The <code>caseId</code> is separate from the <code>displayId</code> that appears in
-    /// the <a href="https://console.aws.amazon.com/support">AWS Support Center</a>. Use the
-    /// <a>DescribeCases</a> operation to get the <code>displayId</code>.
+    /// the <a href="https://console.aws.amazon.com/support">Amazon Web Services Support Center</a>.
+    /// Use the <a>DescribeCases</a> operation to get the <code>displayId</code>.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business or Enterprise Support plan to use the AWS Support API. 
+    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+    /// Amazon Web Services Support API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you call the AWS Support API from an account that does not have a Business or Enterprise
-    /// Support plan, the <code>SubscriptionRequiredException</code> error message appears.
-    /// For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
-    /// Support</a>.
+    /// If you call the Amazon Web Services Support API from an account that does not have
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+    /// Web Services Support</a>.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -110,8 +112,8 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property CategoryCode. 
         /// <para>
         /// The category of problem for the support case. You also use the <a>DescribeServices</a>
-        /// operation to get the category code for a service. Each AWS service defines its own
-        /// set of category codes.
+        /// operation to get the category code for a service. Each Amazon Web Services service
+        /// defines its own set of category codes.
         /// </para>
         /// </summary>
         public string CategoryCode
@@ -129,10 +131,10 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property CcEmailAddresses. 
         /// <para>
-        /// A list of email addresses that AWS Support copies on case correspondence. AWS Support
-        /// identifies the account that creates the case when you specify your AWS credentials
-        /// in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">AWS SDKs</a>.
-        /// 
+        /// A list of email addresses that Amazon Web Services Support copies on case correspondence.
+        /// Amazon Web Services Support identifies the account that creates the case when you
+        /// specify your Amazon Web Services credentials in an HTTP POST method or use the <a
+        /// href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -152,7 +154,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property CommunicationBody. 
         /// <para>
         /// The communication body text that describes the issue. This text appears in the <b>Description</b>
-        /// field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+        /// field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
         /// Case</a> page.
         /// </para>
         /// </summary>
@@ -191,9 +193,9 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The language in which AWS Support handles the case. You must specify the ISO 639-1
-        /// code for the <code>language</code> parameter if you want support in that language.
-        /// Currently, English ("en") and Japanese ("ja") are supported.
+        /// The language in which Amazon Web Services Support handles the case. You must specify
+        /// the ISO 639-1 code for the <code>language</code> parameter if you want support in
+        /// that language. Currently, English ("en") and Japanese ("ja") are supported.
         /// </para>
         /// </summary>
         public string Language
@@ -211,8 +213,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code for the AWS service. You can use the <a>DescribeServices</a> operation to
-        /// get the possible <code>serviceCode</code> values.
+        /// The code for the Amazon Web Services service. You can use the <a>DescribeServices</a>
+        /// operation to get the possible <code>serviceCode</code> values.
         /// </para>
         /// </summary>
         public string ServiceCode
@@ -231,17 +233,19 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property SeverityCode. 
         /// <para>
         /// A value that indicates the urgency of the case. This value determines the response
-        /// time according to your service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a>
-        /// operation to get the possible values for <code>severityCode</code>. 
+        /// time according to your service level agreement with Amazon Web Services Support. You
+        /// can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
+        /// <code>severityCode</code>. 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a>SeverityLevel</a> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-        /// a Severity</a> in the <i>AWS Support User Guide</i>.
+        /// a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The availability of severity levels depends on the support plan for the AWS account.
+        /// The availability of severity levels depends on the support plan for the Amazon Web
+        /// Services account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -261,7 +265,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Subject. 
         /// <para>
         /// The title of the support case. The title appears in the <b>Subject</b> field on the
-        /// AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+        /// Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
         /// Case</a> page.
         /// </para>
         /// </summary>

@@ -30,8 +30,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckRefreshStatuses operation.
-    /// Returns the refresh status of the AWS Trusted Advisor checks that have the specified
-    /// check IDs. You can get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a>
+    /// Returns the refresh status of the Trusted Advisor checks that have the specified check
+    /// IDs. You can get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a>
     /// operation.
     /// 
     ///  
@@ -43,14 +43,15 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business or Enterprise Support plan to use the AWS Support API. 
+    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+    /// Amazon Web Services Support API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you call the AWS Support API from an account that does not have a Business or Enterprise
-    /// Support plan, the <code>SubscriptionRequiredException</code> error message appears.
-    /// For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
-    /// Support</a>.
+    /// If you call the Amazon Web Services Support API from an account that does not have
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+    /// Web Services Support</a>.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>

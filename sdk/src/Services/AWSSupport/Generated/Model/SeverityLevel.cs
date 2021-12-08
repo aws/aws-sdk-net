@@ -31,7 +31,7 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// A code and name pair that represents the severity level of a support case. The available
     /// values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
-    /// a severity</a> in the <i>AWS Support User Guide</i>.
+    /// a severity</a> in the <i>Amazon Web Services Support User Guide</i>.
     /// </summary>
     public partial class SeverityLevel
     {
@@ -68,9 +68,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The values returned by the API are different from the values that appear in the AWS
-        /// Support Center. For example, the API uses the code <code>low</code>, but the name
-        /// appears as General guidance in Support Center. 
+        /// The values returned by the API are different from the values that appear in the Amazon
+        /// Web Services Support Center. For example, the API uses the code <code>low</code>,
+        /// but the name appears as General guidance in Support Center. 
         /// </para>
         ///  
         /// <para>
@@ -99,7 +99,7 @@ namespace Amazon.AWSSupport.Model
         ///  </li> </ul> </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
-        /// a severity</a> in the <i>AWS Support User Guide</i>.
+        /// a severity</a> in the <i>Amazon Web Services Support User Guide</i>.
         /// </para>
         /// </summary>
         public string Name

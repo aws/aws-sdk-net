@@ -30,14 +30,14 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServices operation.
-    /// Returns the current list of AWS services and a list of service categories for each
-    /// service. You then use service names and categories in your <a>CreateCase</a> requests.
-    /// Each AWS service has its own set of categories.
+    /// Returns the current list of Amazon Web Services services and a list of service categories
+    /// for each service. You then use service names and categories in your <a>CreateCase</a>
+    /// requests. Each Amazon Web Services service has its own set of categories.
     /// 
     ///  
     /// <para>
     /// The service codes and category codes correspond to the values that appear in the <b>Service</b>
-    /// and <b>Category</b> lists on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+    /// and <b>Category</b> lists on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
     /// Case</a> page. The values in those fields don't necessarily match the service codes
     /// and categories returned by the <code>DescribeServices</code> operation. Always use
     /// the service codes and categories that the <code>DescribeServices</code> operation
@@ -45,14 +45,15 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business or Enterprise Support plan to use the AWS Support API. 
+    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+    /// Amazon Web Services Support API. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you call the AWS Support API from an account that does not have a Business or Enterprise
-    /// Support plan, the <code>SubscriptionRequiredException</code> error message appears.
-    /// For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
-    /// Support</a>.
+    /// If you call the Amazon Web Services Support API from an account that does not have
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+    /// Web Services Support</a>.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -64,9 +65,9 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently
-        /// supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly
-        /// for operations that take them.
+        /// The ISO 639-1 code for the language in which Amazon Web Services provides support.
+        /// Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         /// </para>
         /// </summary>
         public string Language
@@ -84,7 +85,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property ServiceCodeList. 
         /// <para>
-        /// A JSON-formatted list of service codes available for AWS services.
+        /// A JSON-formatted list of service codes available for Amazon Web Services services.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
