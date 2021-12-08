@@ -1160,6 +1160,55 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  UpdateOutpost
+
+        internal virtual UpdateOutpostResponse UpdateOutpost(UpdateOutpostRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOutpostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOutpostResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOutpostResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOutpost service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOutpost service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateOutpost">REST API Reference for UpdateOutpost Operation</seealso>
+        public virtual Task<UpdateOutpostResponse> UpdateOutpostAsync(UpdateOutpostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOutpostRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOutpostResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateOutpostResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateSite
 
         internal virtual UpdateSiteResponse UpdateSite(UpdateSiteRequest request)

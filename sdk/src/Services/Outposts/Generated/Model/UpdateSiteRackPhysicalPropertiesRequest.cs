@@ -276,7 +276,10 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SiteId.
+        /// Gets and sets the property SiteId. 
+        /// <para>
+        ///  The ID or the Amazon Resource Name (ARN) of the site. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId

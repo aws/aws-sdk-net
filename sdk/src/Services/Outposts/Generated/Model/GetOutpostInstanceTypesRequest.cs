@@ -73,7 +73,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OutpostId. 
         /// <para>
-        ///  The ID of the Outpost. 
+        ///  The ID or the Amazon Resource Name (ARN) of the Outpost. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=180)]

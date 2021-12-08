@@ -29,30 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteSite operation.
-    /// Deletes the site.
+    /// This is the response object from the UpdateOutpost operation.
     /// </summary>
-    public partial class DeleteSiteRequest : AmazonOutpostsRequest
+    public partial class UpdateOutpostResponse : AmazonWebServiceResponse
     {
-        private string _siteId;
+        private Outpost _outpost;
 
         /// <summary>
-        /// Gets and sets the property SiteId. 
-        /// <para>
-        ///  The ID or the Amazon Resource Name (ARN) of the site. 
-        /// </para>
+        /// Gets and sets the property Outpost.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string SiteId
+        public Outpost Outpost
         {
-            get { return this._siteId; }
-            set { this._siteId = value; }
+            get { return this._outpost; }
+            set { this._outpost = value; }
         }
 
-        // Check to see if SiteId property is set
-        internal bool IsSetSiteId()
+        // Check to see if Outpost property is set
+        internal bool IsSetOutpost()
         {
-            return this._siteId != null;
+            return this._outpost != null;
         }
 
     }

@@ -29,55 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateOutpost operation.
-    /// Creates an Outpost.
-    /// 
-    ///  
-    /// <para>
-    /// You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
-    /// </para>
+    /// Container for the parameters to the UpdateOutpost operation.
+    /// Updates an Outpost.
     /// </summary>
-    public partial class CreateOutpostRequest : AmazonOutpostsRequest
+    public partial class UpdateOutpostRequest : AmazonOutpostsRequest
     {
-        private string _availabilityZone;
-        private string _availabilityZoneId;
         private string _description;
         private string _name;
-        private string _siteId;
+        private string _outpostId;
         private SupportedHardwareType _supportedHardwareType;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property AvailabilityZone.
-        /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string AvailabilityZone
-        {
-            get { return this._availabilityZone; }
-            set { this._availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this._availabilityZone != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AvailabilityZoneId.
-        /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string AvailabilityZoneId
-        {
-            get { return this._availabilityZoneId; }
-            set { this._availabilityZoneId = value; }
-        }
-
-        // Check to see if AvailabilityZoneId property is set
-        internal bool IsSetAvailabilityZoneId()
-        {
-            return this._availabilityZoneId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Description.
@@ -98,7 +58,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property Name.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -112,22 +72,22 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SiteId. 
+        /// Gets and sets the property OutpostId. 
         /// <para>
-        ///  The ID or the Amazon Resource Name (ARN) of the site. 
+        ///  The ID or the Amazon Resource Name (ARN) of the Outpost. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string SiteId
+        [AWSProperty(Required=true, Min=1, Max=180)]
+        public string OutpostId
         {
-            get { return this._siteId; }
-            set { this._siteId = value; }
+            get { return this._outpostId; }
+            set { this._outpostId = value; }
         }
 
-        // Check to see if SiteId property is set
-        internal bool IsSetSiteId()
+        // Check to see if OutpostId property is set
+        internal bool IsSetOutpostId()
         {
-            return this._siteId != null;
+            return this._outpostId != null;
         }
 
         /// <summary>
@@ -146,25 +106,6 @@ namespace Amazon.Outposts.Model
         internal bool IsSetSupportedHardwareType()
         {
             return this._supportedHardwareType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags to apply to the Outpost.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
