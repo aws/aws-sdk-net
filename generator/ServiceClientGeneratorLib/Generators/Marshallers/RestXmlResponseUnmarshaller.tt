@@ -28,16 +28,17 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     var payload= this.Operation.ResponsePayloadMember;
     var shouldMarshallPayload = (payload != null && payload.IsStructure);
     var payloadIsStream = (payload != null && !shouldMarshallPayload);
-    if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
+    if (this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
-        if(this.Operation.AllowEmptyResult){
+        if (this.Operation.AllowEmptyResult)
+        {
 #>
             if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)
                 return response;
 <#
         }
 
-		foreach(var marshallName in this.Structure.FindMarshallNamesWithoutMembers())
+		foreach (var marshallName in this.Structure.FindMarshallNamesWithoutMembers())
 		{
 #>
 			context.AllowEmptyElementLookup.Add("<#=marshallName#>");
@@ -90,7 +91,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             return response;
 		}		
 <#
-    if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
+    if ( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
 #>
 
@@ -123,11 +124,11 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#    
         foreach (var member in this.Operation.ResponseBodyMembers)
         {
-			if(member.Shape.IsList)
+			if (member.Shape.IsList)
 			{
 				var listMarshallName = member.Shape.ListMarshallName ?? "member";
 
-                if(member.Shape.IsFlattened)
+                if (member.Shape.IsFlattened)
                 {
 #>
 					if (context.TestExpression("<#=listMarshallName#>", targetDepth))

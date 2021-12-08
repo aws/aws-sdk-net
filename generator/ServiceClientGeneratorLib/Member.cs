@@ -999,7 +999,7 @@ namespace ServiceClientGenerator
                     // Fallback to shape's TimestampFormat if not specified at member level
                     // Fallback to marshall location/protocol rules if not specified at shape level
                     resolvedTimestampFormat = this.Shape.GetTimestampFormat(this.MarshallLocation);                    
-                }                
+                }    
                 return resolvedTimestampFormat;
             }
         }

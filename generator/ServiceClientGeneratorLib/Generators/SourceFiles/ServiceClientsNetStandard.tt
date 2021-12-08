@@ -405,7 +405,7 @@ namespace <#=this.Config.Namespace#>
             options.EndpointDiscoveryMarshaller = <#=operation.Name#>EndpointDiscoveryMarshaller.Instance;
             options.EndpointOperation = EndpointOperation;
 <#
-            }            
+            }
 #>
 
             return Invoke<<#=operation.Name#>Response>(request, options);
@@ -457,7 +457,7 @@ namespace <#=this.Config.Namespace#>
             options.EndpointDiscoveryMarshaller = <#=operation.Name#>EndpointDiscoveryMarshaller.Instance;
             options.EndpointOperation = EndpointOperation;
 <#
-            }            
+            }
 #>
 
             return InvokeAsync<<#=operation.Name#>Response>(request, options, cancellationToken);

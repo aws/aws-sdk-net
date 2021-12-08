@@ -262,7 +262,7 @@ namespace ServiceClientGenerator
             {
                 fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
                 ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName);
-            }            
+            }
 
             // Test that simple customizations were generated correctly
             GenerateCustomizationTests();

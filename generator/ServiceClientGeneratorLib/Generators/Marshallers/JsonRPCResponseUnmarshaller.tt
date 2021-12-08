@@ -30,9 +30,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     var payload = this.Operation.ResponsePayloadMember;
     var unmarshallPayload = payload != null && payload.IsStructure;
     var payloadIsStream= payload != null && !unmarshallPayload;
-    if( this.Operation.ResponseHasBodyMembers || payload != null )
+    if (this.Operation.ResponseHasBodyMembers || payload != null)
     {
-        if(this.Operation.AllowEmptyResult){
+        if (this.Operation.AllowEmptyResult)
+        {
             throw new NotImplementedException("AllowEmptyResult is not implemented for JSON unmarshallers");
         }
         else if (payloadIsStream)
@@ -77,7 +78,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             response.<#=payload.PropertyName#> = unmarshaller.Unmarshall(context);
 <#
         }
-		else if(this.IsWrapped)
+		else if (this.IsWrapped)
 		{
 #>
 			response.<#=this.WrappedResultMember#> = <#=this.Structure.Name#>Unmarshaller.Instance.Unmarshall(context);
