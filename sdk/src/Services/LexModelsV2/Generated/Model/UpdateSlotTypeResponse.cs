@@ -37,6 +37,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botVersion;
         private DateTime? _creationDateTime;
         private string _description;
+        private ExternalSourceSetting _externalSourceSetting;
         private DateTime? _lastUpdatedDateTime;
         private string _localeId;
         private string _parentSlotTypeSignature;
@@ -118,6 +119,21 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalSourceSetting.
+        /// </summary>
+        public ExternalSourceSetting ExternalSourceSetting
+        {
+            get { return this._externalSourceSetting; }
+            set { this._externalSourceSetting = value; }
+        }
+
+        // Check to see if ExternalSourceSetting property is set
+        internal bool IsSetExternalSourceSetting()
+        {
+            return this._externalSourceSetting != null;
         }
 
         /// <summary>

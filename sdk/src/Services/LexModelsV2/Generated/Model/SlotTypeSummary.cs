@@ -36,6 +36,7 @@ namespace Amazon.LexModelsV2.Model
         private string _description;
         private DateTime? _lastUpdatedDateTime;
         private string _parentSlotTypeSignature;
+        private SlotTypeCategory _slotTypeCategory;
         private string _slotTypeId;
         private string _slotTypeName;
 
@@ -93,6 +94,42 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetParentSlotTypeSignature()
         {
             return this._parentSlotTypeSignature != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlotTypeCategory. 
+        /// <para>
+        /// Indicates the type of the slot type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Custom</code> - A slot type that you created using custom values. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
+        /// custom slot types</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric
+        /// built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to define
+        /// values. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using
+        /// a custom grammar slot type</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SlotTypeCategory SlotTypeCategory
+        {
+            get { return this._slotTypeCategory; }
+            set { this._slotTypeCategory = value; }
+        }
+
+        // Check to see if SlotTypeCategory property is set
+        internal bool IsSetSlotTypeCategory()
+        {
+            return this._slotTypeCategory != null;
         }
 
         /// <summary>

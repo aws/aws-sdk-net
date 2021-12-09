@@ -80,6 +80,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetExternalSourceSetting())
+                {
+                    context.Writer.WritePropertyName("externalSourceSetting");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExternalSourceSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExternalSourceSetting, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetParentSlotTypeSignature())
                 {
                     context.Writer.WritePropertyName("parentSlotTypeSignature");

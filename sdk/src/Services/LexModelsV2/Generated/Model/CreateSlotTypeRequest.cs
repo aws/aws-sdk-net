@@ -43,6 +43,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botId;
         private string _botVersion;
         private string _description;
+        private ExternalSourceSetting _externalSourceSetting;
         private string _localeId;
         private string _parentSlotTypeSignature;
         private string _slotTypeName;
@@ -105,6 +106,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalSourceSetting. 
+        /// <para>
+        /// Sets the type of external information used to create the slot type.
+        /// </para>
+        /// </summary>
+        public ExternalSourceSetting ExternalSourceSetting
+        {
+            get { return this._externalSourceSetting; }
+            set { this._externalSourceSetting = value; }
+        }
+
+        // Check to see if ExternalSourceSetting property is set
+        internal bool IsSetExternalSourceSetting()
+        {
+            return this._externalSourceSetting != null;
         }
 
         /// <summary>
@@ -214,7 +233,6 @@ namespace Amazon.LexModelsV2.Model
         /// is <code>OriginalValue</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SlotValueSelectionSetting ValueSelectionSetting
         {
             get { return this._valueSelectionSetting; }

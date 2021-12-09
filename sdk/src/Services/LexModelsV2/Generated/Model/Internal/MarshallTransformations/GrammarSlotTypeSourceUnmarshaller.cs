@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SlotTypeSummary Object
+    /// Response Unmarshaller for GrammarSlotTypeSource Object
     /// </summary>  
-    public class SlotTypeSummaryUnmarshaller : IUnmarshaller<SlotTypeSummary, XmlUnmarshallerContext>, IUnmarshaller<SlotTypeSummary, JsonUnmarshallerContext>
+    public class GrammarSlotTypeSourceUnmarshaller : IUnmarshaller<GrammarSlotTypeSource, XmlUnmarshallerContext>, IUnmarshaller<GrammarSlotTypeSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SlotTypeSummary IUnmarshaller<SlotTypeSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GrammarSlotTypeSource IUnmarshaller<GrammarSlotTypeSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SlotTypeSummary Unmarshall(JsonUnmarshallerContext context)
+        public GrammarSlotTypeSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SlotTypeSummary unmarshalledObject = new SlotTypeSummary();
+            GrammarSlotTypeSource unmarshalledObject = new GrammarSlotTypeSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("kmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parentSlotTypeSignature", targetDepth))
+                if (context.TestExpression("s3BucketName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParentSlotTypeSignature = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("slotTypeCategory", targetDepth))
+                if (context.TestExpression("s3ObjectKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotTypeCategory = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("slotTypeId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotTypeId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("slotTypeName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotTypeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3ObjectKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SlotTypeSummaryUnmarshaller _instance = new SlotTypeSummaryUnmarshaller();        
+        private static GrammarSlotTypeSourceUnmarshaller _instance = new GrammarSlotTypeSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SlotTypeSummaryUnmarshaller Instance
+        public static GrammarSlotTypeSourceUnmarshaller Instance
         {
             get
             {

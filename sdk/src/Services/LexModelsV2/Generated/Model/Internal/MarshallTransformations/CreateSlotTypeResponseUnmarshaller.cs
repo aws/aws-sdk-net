@@ -75,6 +75,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("externalSourceSetting", targetDepth))
+                {
+                    var unmarshaller = ExternalSourceSettingUnmarshaller.Instance;
+                    response.ExternalSourceSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("localeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

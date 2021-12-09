@@ -43,6 +43,7 @@ namespace Amazon.LexModelsV2.Model
         private string _localeId;
         private string _localeName;
         private double? _nluIntentConfidenceThreshold;
+        private List<string> _recommendedActions = new List<string>();
         private VoiceSettings _voiceSettings;
 
         /// <summary>
@@ -231,6 +232,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetNluIntentConfidenceThreshold()
         {
             return this._nluIntentConfidenceThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendedActions. 
+        /// <para>
+        /// Recommended actions to take to resolve an error in the <code>failureReasons</code>
+        /// field.
+        /// </para>
+        /// </summary>
+        public List<string> RecommendedActions
+        {
+            get { return this._recommendedActions; }
+            set { this._recommendedActions = value; }
+        }
+
+        // Check to see if RecommendedActions property is set
+        internal bool IsSetRecommendedActions()
+        {
+            return this._recommendedActions != null && this._recommendedActions.Count > 0; 
         }
 
         /// <summary>
