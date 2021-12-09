@@ -47,8 +47,8 @@ namespace Amazon.Route53Domains.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about how to transfer a domain from one AWS account to another, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+    /// For information about how to transfer a domain from one Amazon Web Services account
+    /// to another, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
     /// 
     /// </para>
     ///  </li> <li> 
@@ -270,7 +270,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the admin contact.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>true</code> 
         /// </para>
@@ -296,7 +301,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the registrant contact (domain owner).
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>true</code> 
         /// </para>
@@ -322,7 +332,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the technical contact.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <code>true</code> 
         /// </para>

@@ -116,5 +116,83 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
             paginator.Responses.ToList();
         }
 
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Domains")]
+        public void ListPricesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPricesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPricesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPricesResponse>();
+            secondResponse.NextPageMarker = null;
+
+            _mockClient.SetupSequence(x => x.ListPrices(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPrices(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Domains")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPricesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPricesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPricesResponse>();
+            response.NextPageMarker = null;
+
+            _mockClient.Setup(x => x.ListPrices(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPrices(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Domains")]
+        public void ViewBillingTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ViewBillingRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ViewBillingResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ViewBillingResponse>();
+            secondResponse.NextPageMarker = null;
+
+            _mockClient.SetupSequence(x => x.ViewBilling(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ViewBilling(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Domains")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ViewBillingTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ViewBillingRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ViewBillingResponse>();
+            response.NextPageMarker = null;
+
+            _mockClient.Setup(x => x.ViewBilling(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ViewBilling(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
     }
 }

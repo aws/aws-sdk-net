@@ -33,6 +33,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.DeleteDomainRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.DeleteDomainResponse.OperationId</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.DeleteTagsForDomainRequest.DomainName</property>
     <max>255</max>
   </property-value-rule>
@@ -125,6 +133,23 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.ListPricesRequest.Marker</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.ListPricesRequest.MaxItems</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.ListPricesRequest.Tld</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.ListPricesResponse.NextPageMarker</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.ListTagsForDomainRequest.DomainName</property>
     <max>255</max>
   </property-value-rule>
@@ -209,6 +234,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.TransferDomainToAnotherAwsAccountRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
     <pattern>^(\d{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -237,6 +264,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.UpdateDomainNameserversRequest.DomainName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.UpdateDomainNameserversRequest.FIAuthKey</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -308,6 +340,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Domains.Model.DomainPrice.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Domains.Model.DomainSuggestion.DomainName</property>
     <max>255</max>
   </property-value-rule>
@@ -327,5 +364,20 @@
   <property-value-rule>
     <property>Amazon.Route53Domains.Model.OperationSummary.OperationId</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.PriceWithCurrency.Currency</property>
+    <min>3</min>
+    <max>3</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Domains.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

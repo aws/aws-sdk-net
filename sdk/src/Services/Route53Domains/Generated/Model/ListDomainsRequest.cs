@@ -31,21 +31,42 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Container for the parameters to the ListDomains operation.
     /// This operation returns all the domain names registered with Amazon Route 53 for the
-    /// current AWS account.
+    /// current Amazon Web Services account if no filtering conditions are used.
     /// </summary>
     public partial class ListDomainsRequest : AmazonRoute53DomainsRequest
     {
+        private List<FilterCondition> _filterConditions = new List<FilterCondition>();
         private string _marker;
         private int? _maxItems;
+        private SortCondition _sortCondition;
+
+        /// <summary>
+        /// Gets and sets the property FilterConditions. 
+        /// <para>
+        /// A complex type that contains information about the filters applied during the <code>ListDomains</code>
+        /// request. The filter conditions can include domain name and domain expiration.
+        /// </para>
+        /// </summary>
+        public List<FilterCondition> FilterConditions
+        {
+            get { return this._filterConditions; }
+            set { this._filterConditions = value; }
+        }
+
+        // Check to see if FilterConditions property is set
+        internal bool IsSetFilterConditions()
+        {
+            return this._filterConditions != null && this._filterConditions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
         /// For an initial request for a list of domains, omit this element. If the number of
-        /// domains that are associated with the current AWS account is greater than the value
-        /// that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return
-        /// additional domains. Get the value of <code>NextPageMarker</code> from the previous
-        /// response, and submit another request that includes the value of <code>NextPageMarker</code>
+        /// domains that are associated with the current Amazon Web Services account is greater
+        /// than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
+        /// to return additional domains. Get the value of <code>NextPageMarker</code> from the
+        /// previous response, and submit another request that includes the value of <code>NextPageMarker</code>
         /// in the <code>Marker</code> element.
         /// </para>
         ///  
@@ -87,6 +108,25 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetMaxItems()
         {
             return this._maxItems.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortCondition. 
+        /// <para>
+        /// A complex type that contains information about the requested ordering of domains in
+        /// the returned list.
+        /// </para>
+        /// </summary>
+        public SortCondition SortCondition
+        {
+            get { return this._sortCondition; }
+            set { this._sortCondition = value; }
+        }
+
+        // Check to see if SortCondition property is set
+        internal bool IsSetSortCondition()
+        {
+            return this._sortCondition != null;
         }
 
     }

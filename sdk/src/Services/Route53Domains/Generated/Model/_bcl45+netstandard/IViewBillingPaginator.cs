@@ -16,33 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the route53domains-2014-05-15.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Paginators for the Route53Domains service
+    /// Paginator for the ViewBilling operation
     ///</summary>
-    public interface IRoute53DomainsPaginatorFactory
+    public interface IViewBillingPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ViewBillingResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListDomains operation
-        ///</summary>
-        IListDomainsPaginator ListDomains(ListDomainsRequest request);
-
-        /// <summary>
-        /// Paginator for ListOperations operation
-        ///</summary>
-        IListOperationsPaginator ListOperations(ListOperationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListPrices operation
-        ///</summary>
-        IListPricesPaginator ListPrices(ListPricesRequest request);
-
-        /// <summary>
-        /// Paginator for ViewBilling operation
-        ///</summary>
-        IViewBillingPaginator ViewBilling(ViewBillingRequest request);
+        /// Enumerable containing all of the BillingRecords
+        /// </summary>
+        IPaginatedEnumerable<BillingRecord> BillingRecords { get; }
     }
 }

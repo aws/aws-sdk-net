@@ -29,32 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDomainDetail operation.
-    /// This operation returns detailed information about a specified domain that is associated
-    /// with the current Amazon Web Services account. Contact information for the domain is
-    /// also returned as part of the output.
+    /// This is the response object from the DeleteDomain operation.
     /// </summary>
-    public partial class GetDomainDetailRequest : AmazonRoute53DomainsRequest
+    public partial class DeleteDomainResponse : AmazonWebServiceResponse
     {
-        private string _domainName;
+        private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property OperationId. 
         /// <para>
-        /// The name of the domain that you want to get detailed information about.
+        /// Identifier for tracking the progress of the request. To query the operation status,
+        /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
-        public string DomainName
+        [AWSProperty(Max=255)]
+        public string OperationId
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._operationId; }
+            set { this._operationId = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
         {
-            return this._domainName != null;
+            return this._operationId != null;
         }
 
     }

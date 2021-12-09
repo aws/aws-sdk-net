@@ -93,6 +93,10 @@ namespace Amazon.Route53Domains
     {
 
         /// <summary>
+        /// Constant AC for CountryCode
+        /// </summary>
+        public static readonly CountryCode AC = new CountryCode("AC");
+        /// <summary>
         /// Constant AD for CountryCode
         /// </summary>
         public static readonly CountryCode AD = new CountryCode("AD");
@@ -153,6 +157,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode AW = new CountryCode("AW");
         /// <summary>
+        /// Constant AX for CountryCode
+        /// </summary>
+        public static readonly CountryCode AX = new CountryCode("AX");
+        /// <summary>
         /// Constant AZ for CountryCode
         /// </summary>
         public static readonly CountryCode AZ = new CountryCode("AZ");
@@ -209,6 +217,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode BO = new CountryCode("BO");
         /// <summary>
+        /// Constant BQ for CountryCode
+        /// </summary>
+        public static readonly CountryCode BQ = new CountryCode("BQ");
+        /// <summary>
         /// Constant BR for CountryCode
         /// </summary>
         public static readonly CountryCode BR = new CountryCode("BR");
@@ -220,6 +232,10 @@ namespace Amazon.Route53Domains
         /// Constant BT for CountryCode
         /// </summary>
         public static readonly CountryCode BT = new CountryCode("BT");
+        /// <summary>
+        /// Constant BV for CountryCode
+        /// </summary>
+        public static readonly CountryCode BV = new CountryCode("BV");
         /// <summary>
         /// Constant BW for CountryCode
         /// </summary>
@@ -293,6 +309,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode CV = new CountryCode("CV");
         /// <summary>
+        /// Constant CW for CountryCode
+        /// </summary>
+        public static readonly CountryCode CW = new CountryCode("CW");
+        /// <summary>
         /// Constant CX for CountryCode
         /// </summary>
         public static readonly CountryCode CX = new CountryCode("CX");
@@ -340,6 +360,10 @@ namespace Amazon.Route53Domains
         /// Constant EG for CountryCode
         /// </summary>
         public static readonly CountryCode EG = new CountryCode("EG");
+        /// <summary>
+        /// Constant EH for CountryCode
+        /// </summary>
+        public static readonly CountryCode EH = new CountryCode("EH");
         /// <summary>
         /// Constant ER for CountryCode
         /// </summary>
@@ -393,6 +417,14 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode GE = new CountryCode("GE");
         /// <summary>
+        /// Constant GF for CountryCode
+        /// </summary>
+        public static readonly CountryCode GF = new CountryCode("GF");
+        /// <summary>
+        /// Constant GG for CountryCode
+        /// </summary>
+        public static readonly CountryCode GG = new CountryCode("GG");
+        /// <summary>
         /// Constant GH for CountryCode
         /// </summary>
         public static readonly CountryCode GH = new CountryCode("GH");
@@ -413,6 +445,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode GN = new CountryCode("GN");
         /// <summary>
+        /// Constant GP for CountryCode
+        /// </summary>
+        public static readonly CountryCode GP = new CountryCode("GP");
+        /// <summary>
         /// Constant GQ for CountryCode
         /// </summary>
         public static readonly CountryCode GQ = new CountryCode("GQ");
@@ -420,6 +456,10 @@ namespace Amazon.Route53Domains
         /// Constant GR for CountryCode
         /// </summary>
         public static readonly CountryCode GR = new CountryCode("GR");
+        /// <summary>
+        /// Constant GS for CountryCode
+        /// </summary>
+        public static readonly CountryCode GS = new CountryCode("GS");
         /// <summary>
         /// Constant GT for CountryCode
         /// </summary>
@@ -440,6 +480,10 @@ namespace Amazon.Route53Domains
         /// Constant HK for CountryCode
         /// </summary>
         public static readonly CountryCode HK = new CountryCode("HK");
+        /// <summary>
+        /// Constant HM for CountryCode
+        /// </summary>
+        public static readonly CountryCode HM = new CountryCode("HM");
         /// <summary>
         /// Constant HN for CountryCode
         /// </summary>
@@ -477,6 +521,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode IN = new CountryCode("IN");
         /// <summary>
+        /// Constant IO for CountryCode
+        /// </summary>
+        public static readonly CountryCode IO = new CountryCode("IO");
+        /// <summary>
         /// Constant IQ for CountryCode
         /// </summary>
         public static readonly CountryCode IQ = new CountryCode("IQ");
@@ -492,6 +540,10 @@ namespace Amazon.Route53Domains
         /// Constant IT for CountryCode
         /// </summary>
         public static readonly CountryCode IT = new CountryCode("IT");
+        /// <summary>
+        /// Constant JE for CountryCode
+        /// </summary>
+        public static readonly CountryCode JE = new CountryCode("JE");
         /// <summary>
         /// Constant JM for CountryCode
         /// </summary>
@@ -645,6 +697,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode MP = new CountryCode("MP");
         /// <summary>
+        /// Constant MQ for CountryCode
+        /// </summary>
+        public static readonly CountryCode MQ = new CountryCode("MQ");
+        /// <summary>
         /// Constant MR for CountryCode
         /// </summary>
         public static readonly CountryCode MR = new CountryCode("MR");
@@ -692,6 +748,10 @@ namespace Amazon.Route53Domains
         /// Constant NE for CountryCode
         /// </summary>
         public static readonly CountryCode NE = new CountryCode("NE");
+        /// <summary>
+        /// Constant NF for CountryCode
+        /// </summary>
+        public static readonly CountryCode NF = new CountryCode("NF");
         /// <summary>
         /// Constant NG for CountryCode
         /// </summary>
@@ -769,6 +829,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode PR = new CountryCode("PR");
         /// <summary>
+        /// Constant PS for CountryCode
+        /// </summary>
+        public static readonly CountryCode PS = new CountryCode("PS");
+        /// <summary>
         /// Constant PT for CountryCode
         /// </summary>
         public static readonly CountryCode PT = new CountryCode("PT");
@@ -784,6 +848,10 @@ namespace Amazon.Route53Domains
         /// Constant QA for CountryCode
         /// </summary>
         public static readonly CountryCode QA = new CountryCode("QA");
+        /// <summary>
+        /// Constant RE for CountryCode
+        /// </summary>
+        public static readonly CountryCode RE = new CountryCode("RE");
         /// <summary>
         /// Constant RO for CountryCode
         /// </summary>
@@ -833,6 +901,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode SI = new CountryCode("SI");
         /// <summary>
+        /// Constant SJ for CountryCode
+        /// </summary>
+        public static readonly CountryCode SJ = new CountryCode("SJ");
+        /// <summary>
         /// Constant SK for CountryCode
         /// </summary>
         public static readonly CountryCode SK = new CountryCode("SK");
@@ -857,6 +929,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly CountryCode SR = new CountryCode("SR");
         /// <summary>
+        /// Constant SS for CountryCode
+        /// </summary>
+        public static readonly CountryCode SS = new CountryCode("SS");
+        /// <summary>
         /// Constant ST for CountryCode
         /// </summary>
         public static readonly CountryCode ST = new CountryCode("ST");
@@ -864,6 +940,10 @@ namespace Amazon.Route53Domains
         /// Constant SV for CountryCode
         /// </summary>
         public static readonly CountryCode SV = new CountryCode("SV");
+        /// <summary>
+        /// Constant SX for CountryCode
+        /// </summary>
+        public static readonly CountryCode SX = new CountryCode("SX");
         /// <summary>
         /// Constant SY for CountryCode
         /// </summary>
@@ -880,6 +960,10 @@ namespace Amazon.Route53Domains
         /// Constant TD for CountryCode
         /// </summary>
         public static readonly CountryCode TD = new CountryCode("TD");
+        /// <summary>
+        /// Constant TF for CountryCode
+        /// </summary>
+        public static readonly CountryCode TF = new CountryCode("TF");
         /// <summary>
         /// Constant TG for CountryCode
         /// </summary>
@@ -912,6 +996,10 @@ namespace Amazon.Route53Domains
         /// Constant TO for CountryCode
         /// </summary>
         public static readonly CountryCode TO = new CountryCode("TO");
+        /// <summary>
+        /// Constant TP for CountryCode
+        /// </summary>
+        public static readonly CountryCode TP = new CountryCode("TP");
         /// <summary>
         /// Constant TR for CountryCode
         /// </summary>
@@ -1189,6 +1277,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly ExtraParamName ES_LEGAL_FORM = new ExtraParamName("ES_LEGAL_FORM");
         /// <summary>
+        /// Constant EU_COUNTRY_OF_CITIZENSHIP for ExtraParamName
+        /// </summary>
+        public static readonly ExtraParamName EU_COUNTRY_OF_CITIZENSHIP = new ExtraParamName("EU_COUNTRY_OF_CITIZENSHIP");
+        /// <summary>
         /// Constant FI_BUSINESS_NUMBER for ExtraParamName
         /// </summary>
         public static readonly ExtraParamName FI_BUSINESS_NUMBER = new ExtraParamName("FI_BUSINESS_NUMBER");
@@ -1270,6 +1362,56 @@ namespace Amazon.Route53Domains
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExtraParamName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListDomainsAttributeName.
+    /// </summary>
+    public class ListDomainsAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DomainName for ListDomainsAttributeName
+        /// </summary>
+        public static readonly ListDomainsAttributeName DomainName = new ListDomainsAttributeName("DomainName");
+        /// <summary>
+        /// Constant Expiry for ListDomainsAttributeName
+        /// </summary>
+        public static readonly ListDomainsAttributeName Expiry = new ListDomainsAttributeName("Expiry");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListDomainsAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListDomainsAttributeName FindValue(string value)
+        {
+            return FindValue<ListDomainsAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListDomainsAttributeName(string value)
         {
             return FindValue(value);
         }
@@ -1453,6 +1595,60 @@ namespace Amazon.Route53Domains
 
 
     /// <summary>
+    /// Constants used for properties of type Operator.
+    /// </summary>
+    public class Operator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEGINS_WITH for Operator
+        /// </summary>
+        public static readonly Operator BEGINS_WITH = new Operator("BEGINS_WITH");
+        /// <summary>
+        /// Constant GE for Operator
+        /// </summary>
+        public static readonly Operator GE = new Operator("GE");
+        /// <summary>
+        /// Constant LE for Operator
+        /// </summary>
+        public static readonly Operator LE = new Operator("LE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Operator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Operator FindValue(string value)
+        {
+            return FindValue<Operator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Operator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReachabilityStatus.
     /// </summary>
     public class ReachabilityStatus : ConstantClass
@@ -1500,6 +1696,56 @@ namespace Amazon.Route53Domains
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReachabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASC = new SortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESC = new SortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

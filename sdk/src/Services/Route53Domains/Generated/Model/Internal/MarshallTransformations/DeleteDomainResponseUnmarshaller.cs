@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RejectDomainTransferFromAnotherAwsAccount operation
+    /// Response Unmarshaller for DeleteDomain operation
     /// </summary>  
-    public class RejectDomainTransferFromAnotherAwsAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDomainResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RejectDomainTransferFromAnotherAwsAccountResponse response = new RejectDomainTransferFromAnotherAwsAccountResponse();
+            DeleteDomainResponse response = new DeleteDomainResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -80,13 +80,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateRequest"))
+                {
+                    return DuplicateRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
                 {
                     return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationLimitExceeded"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TLDRulesViolation"))
                 {
-                    return OperationLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TLDRulesViolationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
                 {
@@ -96,9 +100,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             return new AmazonRoute53DomainsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RejectDomainTransferFromAnotherAwsAccountResponseUnmarshaller _instance = new RejectDomainTransferFromAnotherAwsAccountResponseUnmarshaller();        
+        private static DeleteDomainResponseUnmarshaller _instance = new DeleteDomainResponseUnmarshaller();        
 
-        internal static RejectDomainTransferFromAnotherAwsAccountResponseUnmarshaller GetInstance()
+        internal static DeleteDomainResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +110,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RejectDomainTransferFromAnotherAwsAccountResponseUnmarshaller Instance
+        public static DeleteDomainResponseUnmarshaller Instance
         {
             get
             {

@@ -35,11 +35,16 @@ namespace Amazon.Route53Domains.Model
     /// with contact information for Amazon Registrar (for .com, .net, and .org domains) or
     /// with contact information for our registrar associate, Gandi.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You must specify the same privacy setting for the administrative, registrant, and
+    /// technical contacts.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This operation affects only the contact information for the specified contact type
-    /// (registrant, administrator, or tech). If the request succeeds, Amazon Route 53 returns
-    /// an operation ID that you can use with <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+    /// (administrative, registrant, or technical). If the request succeeds, Amazon Route
+    /// 53 returns an operation ID that you can use with <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
     /// to track the progress and completion of the action. If the request doesn't complete
     /// successfully, the domain registrant will be notified by email.
     /// </para>
@@ -71,6 +76,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the admin contact.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool AdminPrivacy
         {
@@ -112,6 +123,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the registrant contact (domain owner).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool RegistrantPrivacy
         {
@@ -134,6 +151,12 @@ namespace Amazon.Route53Domains.Model
         /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
         /// the information that you entered for the technical contact.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, registrant, and
+        /// technical contacts.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool TechPrivacy
         {

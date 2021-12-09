@@ -29,32 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDomainDetail operation.
-    /// This operation returns detailed information about a specified domain that is associated
-    /// with the current Amazon Web Services account. Contact information for the domain is
-    /// also returned as part of the output.
+    /// Currency-specific price information.
     /// </summary>
-    public partial class GetDomainDetailRequest : AmazonRoute53DomainsRequest
+    public partial class PriceWithCurrency
     {
-        private string _domainName;
+        private string _currency;
+        private double? _price;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property Currency. 
         /// <para>
-        /// The name of the domain that you want to get detailed information about.
+        /// The currency specifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
-        public string DomainName
+        [AWSProperty(Required=true, Min=3, Max=3)]
+        public string Currency
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._currency; }
+            set { this._currency = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if Currency property is set
+        internal bool IsSetCurrency()
         {
-            return this._domainName != null;
+            return this._currency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Price. 
+        /// <para>
+        /// The price of a domain, in a specific currency.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public double Price
+        {
+            get { return this._price.GetValueOrDefault(); }
+            set { this._price = value; }
+        }
+
+        // Check to see if Price property is set
+        internal bool IsSetPrice()
+        {
+            return this._price.HasValue; 
         }
 
     }

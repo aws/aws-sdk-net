@@ -29,19 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDomainDetail operation.
-    /// This operation returns detailed information about a specified domain that is associated
-    /// with the current Amazon Web Services account. Contact information for the domain is
-    /// also returned as part of the output.
+    /// Container for the parameters to the DeleteDomain operation.
+    /// This operation deletes the specified domain. This action is permanent. For more information,
+    /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-delete.html">Deleting
+    /// a domain name registration</a>.
+    /// 
+    ///  
+    /// <para>
+    /// To transfer the domain registration to another registrar, use the transfer process
+    /// that’s provided by the registrar to which you want to transfer the registration. Otherwise,
+    /// the following apply:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    /// You can’t get a refund for the cost of a deleted domain registration.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The registry for the top-level domain might hold the domain name for a brief time
+    /// before releasing it for other users to register (varies by registry). 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When the registration has been deleted, we'll send you a confirmation to the registrant
+    /// contact. The email will come from <code>noreply@domainnameverification.net</code>
+    /// or <code>noreply@registrar.amazon.com</code>.
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
-    public partial class GetDomainDetailRequest : AmazonRoute53DomainsRequest
+    public partial class DeleteDomainRequest : AmazonRoute53DomainsRequest
     {
         private string _domainName;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain that you want to get detailed information about.
+        /// Name of the domain to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

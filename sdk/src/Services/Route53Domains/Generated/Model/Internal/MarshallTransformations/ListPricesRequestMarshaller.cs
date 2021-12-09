@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDomains Request Marshaller
+    /// ListPrices Request Marshaller
     /// </summary>       
-    public class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListPricesRequestMarshaller : IMarshaller<IRequest, ListPricesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDomainsRequest)input);
+            return this.Marshall((ListPricesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDomainsRequest publicRequest)
+        public IRequest Marshall(ListPricesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");
-            string target = "Route53Domains_v20140515.ListDomains";
+            string target = "Route53Domains_v20140515.ListPrices";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";            
@@ -67,22 +67,6 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterConditions())
-                {
-                    context.Writer.WritePropertyName("FilterConditions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterConditionsListValue in publicRequest.FilterConditions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterConditionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 if(publicRequest.IsSetMarker())
                 {
                     context.Writer.WritePropertyName("Marker");
@@ -95,15 +79,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxItems);
                 }
 
-                if(publicRequest.IsSetSortCondition())
+                if(publicRequest.IsSetTld())
                 {
-                    context.Writer.WritePropertyName("SortCondition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortCondition, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("Tld");
+                    context.Writer.Write(publicRequest.Tld);
                 }
 
         
@@ -115,9 +94,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListDomainsRequestMarshaller _instance = new ListDomainsRequestMarshaller();        
+        private static ListPricesRequestMarshaller _instance = new ListPricesRequestMarshaller();        
 
-        internal static ListDomainsRequestMarshaller GetInstance()
+        internal static ListPricesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +104,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDomainsRequestMarshaller Instance
+        public static ListPricesRequestMarshaller Instance
         {
             get
             {

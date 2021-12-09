@@ -176,7 +176,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DnsSec. 
         /// <para>
-        /// Reserved for future use.
+        /// Deprecated.
         /// </para>
         /// </summary>
         public string DnsSec

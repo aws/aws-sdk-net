@@ -29,30 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListOperations operation.
-    /// Returns information about all of the operations that return an operation ID and that
-    /// have ever been performed on domains that were registered by the current account. 
+    /// Container for the parameters to the ListPrices operation.
+    /// Lists the following prices for either all the TLDs supported by Route 53, or the specified
+    /// TLD:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// This command runs only in the us-east-1 Region.
+    /// Registration
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Transfer
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Owner change
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Domain renewal
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Domain restoration
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class ListOperationsRequest : AmazonRoute53DomainsRequest
+    public partial class ListPricesRequest : AmazonRoute53DomainsRequest
     {
         private string _marker;
         private int? _maxItems;
-        private DateTime? _submittedSince;
+        private string _tld;
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// For an initial request for a list of operations, omit this element. If the number
-        /// of operations that are not yet complete is greater than the value that you specified
-        /// for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations.
-        /// Get the value of <code>NextPageMarker</code> from the previous response, and submit
-        /// another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code>
-        /// element.
+        /// For an initial request for a list of prices, omit this element. If the number of prices
+        /// that are not yet complete is greater than the value that you specified for <code>MaxItems</code>,
+        /// you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code>
+        /// from the previous response, and submit another request that includes the value of
+        /// <code>NextPageMarker</code> in the <code>Marker</code> element. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -71,11 +91,11 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Number of domains to be returned.
+        /// Number of <code>Prices</code> to be returned.
         /// </para>
         ///  
         /// <para>
-        /// Default: 20
+        /// Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -92,23 +112,27 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubmittedSince. 
+        /// Gets and sets the property Tld. 
         /// <para>
-        /// An optional parameter that lets you get information about all the operations that
-        /// you submitted after a specified date and time. Specify the date and time in Unix time
-        /// format and Coordinated Universal time (UTC).
+        /// The TLD for which you want to receive the pricing information. For example. <code>.net</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported
+        /// by Route 53 is returned.
         /// </para>
         /// </summary>
-        public DateTime SubmittedSince
+        [AWSProperty(Min=1, Max=255)]
+        public string Tld
         {
-            get { return this._submittedSince.GetValueOrDefault(); }
-            set { this._submittedSince = value; }
+            get { return this._tld; }
+            set { this._tld = value; }
         }
 
-        // Check to see if SubmittedSince property is set
-        internal bool IsSetSubmittedSince()
+        // Check to see if Tld property is set
+        internal bool IsSetTld()
         {
-            return this._submittedSince.HasValue; 
+            return this._tld != null;
         }
 
     }

@@ -39,7 +39,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Domains. 
         /// <para>
-        /// A summary of domains.
+        /// A list of domains.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

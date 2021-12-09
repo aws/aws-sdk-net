@@ -60,8 +60,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// To finish transferring a domain to another AWS account, the account that the domain
-        /// is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
+        /// To finish transferring a domain to another Amazon Web Services account, the account
+        /// that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
         /// request. The request must include the value of the <code>Password</code> element that
         /// was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
         /// </para>

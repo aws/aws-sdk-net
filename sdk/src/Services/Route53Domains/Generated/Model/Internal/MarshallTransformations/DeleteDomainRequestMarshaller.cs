@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDomains Request Marshaller
+    /// DeleteDomain Request Marshaller
     /// </summary>       
-    public class ListDomainsRequestMarshaller : IMarshaller<IRequest, ListDomainsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteDomainRequestMarshaller : IMarshaller<IRequest, DeleteDomainRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDomainsRequest)input);
+            return this.Marshall((DeleteDomainRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDomainsRequest publicRequest)
+        public IRequest Marshall(DeleteDomainRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Route53Domains");
-            string target = "Route53Domains_v20140515.ListDomains";
+            string target = "Route53Domains_v20140515.DeleteDomain";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-05-15";            
@@ -67,43 +67,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilterConditions())
+                if(publicRequest.IsSetDomainName())
                 {
-                    context.Writer.WritePropertyName("FilterConditions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFilterConditionsListValue in publicRequest.FilterConditions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFilterConditionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMarker())
-                {
-                    context.Writer.WritePropertyName("Marker");
-                    context.Writer.Write(publicRequest.Marker);
-                }
-
-                if(publicRequest.IsSetMaxItems())
-                {
-                    context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems);
-                }
-
-                if(publicRequest.IsSetSortCondition())
-                {
-                    context.Writer.WritePropertyName("SortCondition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SortConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SortCondition, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("DomainName");
+                    context.Writer.Write(publicRequest.DomainName);
                 }
 
         
@@ -115,9 +82,9 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListDomainsRequestMarshaller _instance = new ListDomainsRequestMarshaller();        
+        private static DeleteDomainRequestMarshaller _instance = new DeleteDomainRequestMarshaller();        
 
-        internal static ListDomainsRequestMarshaller GetInstance()
+        internal static DeleteDomainRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +92,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDomainsRequestMarshaller Instance
+        public static DeleteDomainRequestMarshaller Instance
         {
             get
             {
