@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConnectors operation.
-    /// Describes the connectors registered with the AWS SMS.
+    /// Describes the connectors registered with the Server Migration Service.
     /// </summary>
     public partial class GetConnectorsRequest : AmazonServerMigrationServiceRequest
     {

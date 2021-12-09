@@ -30,7 +30,8 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the NotifyAppValidationOutput operation.
-    /// Provides information to AWS SMS about whether application validation is successful.
+    /// Provides information to Server Migration Service about whether application validation
+    /// is successful.
     /// </summary>
     public partial class NotifyAppValidationOutputRequest : AmazonServerMigrationServiceRequest
     {

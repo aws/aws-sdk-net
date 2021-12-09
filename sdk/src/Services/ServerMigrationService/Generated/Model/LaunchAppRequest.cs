@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the LaunchApp operation.
-    /// Launches the specified application as a stack in AWS CloudFormation.
+    /// Launches the specified application as a stack in CloudFormation.
     /// </summary>
     public partial class LaunchAppRequest : AmazonServerMigrationServiceRequest
     {

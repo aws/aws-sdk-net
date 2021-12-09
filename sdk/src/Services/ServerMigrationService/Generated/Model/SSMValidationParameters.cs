@@ -43,7 +43,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command to run the validation script
+        /// The command to run the validation script.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64000)]

@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportAppCatalog operation.
-    /// Allows application import from AWS Migration Hub.
+    /// Allows application import from Migration Hub.
     /// </summary>
     public partial class ImportAppCatalogRequest : AmazonServerMigrationServiceRequest
     {
@@ -40,9 +40,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Gets and sets the property RoleName. 
         /// <para>
         /// The name of the service role. If you omit this parameter, we create a service-linked
-        /// role for AWS Migration Hub in your account. Otherwise, the role that you provide must
+        /// role for Migration Hub in your account. Otherwise, the role that you provide must
         /// have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-        /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.
+        /// and trust policy</a> described in the <i>Migration Hub User Guide</i>.
         /// </para>
         /// </summary>
         public string RoleName

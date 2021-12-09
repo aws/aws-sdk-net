@@ -30,8 +30,8 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateTemplate operation.
-    /// Generates an AWS CloudFormation template based on the current launch configuration
-    /// and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.
+    /// Generates an CloudFormation template based on the current launch configuration and
+    /// writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.
     /// </summary>
     public partial class GenerateTemplateRequest : AmazonServerMigrationServiceRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// The ID of the application associated with the AWS CloudFormation template.
+        /// The ID of the application associated with the CloudFormation template.
         /// </para>
         /// </summary>
         public string AppId
@@ -59,7 +59,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property TemplateFormat. 
         /// <para>
-        /// The format for generating the AWS CloudFormation template.
+        /// The format for generating the CloudFormation template.
         /// </para>
         /// </summary>
         public OutputFormat TemplateFormat

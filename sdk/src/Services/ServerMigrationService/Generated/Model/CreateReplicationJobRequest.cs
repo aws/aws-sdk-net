@@ -31,8 +31,8 @@ namespace Amazon.ServerMigrationService.Model
     /// <summary>
     /// Container for the parameters to the CreateReplicationJob operation.
     /// Creates a replication job. The replication job schedules periodic replication runs
-    /// to replicate your server to AWS. Each replication run creates an Amazon Machine Image
-    /// (AMI).
+    /// to replicate your server to Amazon Web Services. Each replication run creates an Amazon
+    /// Machine Image (AMI).
     /// </summary>
     public partial class CreateReplicationJobRequest : AmazonServerMigrationServiceRequest
     {
@@ -181,7 +181,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the IAM role to be used by the AWS SMS.
+        /// The name of the IAM role to be used by the Server Migration Service.
         /// </para>
         /// </summary>
         public string RoleName

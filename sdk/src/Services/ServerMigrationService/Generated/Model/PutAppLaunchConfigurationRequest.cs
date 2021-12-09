@@ -79,8 +79,8 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of service role in the customer's account that AWS CloudFormation uses to
-        /// launch the application.
+        /// The name of service role in the customer's account that CloudFormation uses to launch
+        /// the application.
         /// </para>
         /// </summary>
         public string RoleName

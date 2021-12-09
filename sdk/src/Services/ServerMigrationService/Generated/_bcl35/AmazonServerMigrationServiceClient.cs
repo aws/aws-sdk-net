@@ -35,21 +35,39 @@ namespace Amazon.ServerMigrationService
     /// <summary>
     /// Implementation for accessing ServerMigrationService
     ///
-    /// AWS Server Migration Service 
+    /// <important> 
     /// <para>
-    /// AWS Server Migration Service (AWS SMS) makes it easier and faster for you to migrate
-    /// your on-premises workloads to AWS. To learn more about AWS SMS, see the following
-    /// resources:
+    ///  <b>Product update</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// As of March 31, 2022, Amazon Web Services will discontinue Server Migration Service
+    /// (Amazon Web Services SMS). Going forward, we recommend <a href="http://aws.amazon.com/application-migration-service">Amazon
+    /// Web Services Application Migration Service</a> (Amazon Web Services MGN) as the primary
+    /// migration service for lift-and-shift migrations.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can initiate new migration jobs in Server Migration Service until January 1, 2022.
+    /// Complete these active migration projects by March 31, 2022. For more information,
+    /// see <a href="http://aws.amazon.com/application-migration-service/when-to-choose-aws-mgn/">When
+    /// to Choose AWS Application Migration Service</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Server Migration Service (Server Migration Service) makes it easier and faster for
+    /// you to migrate your on-premises workloads to Amazon Web Services. To learn more about
+    /// Server Migration Service, see the following resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/server-migration-service/">AWS Server Migration Service
+    ///  <a href="http://aws.amazon.com/server-migration-service/">Server Migration Service
     /// product page</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">AWS
-    /// Server Migration Service User Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">Server
+    /// Migration Service User Guide</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -346,8 +364,8 @@ namespace Amazon.ServerMigrationService
 
         /// <summary>
         /// Creates a replication job. The replication job schedules periodic replication runs
-        /// to replicate your server to AWS. Each replication run creates an Amazon Machine Image
-        /// (AMI).
+        /// to replicate your server to Amazon Web Services. Each replication run creates an Amazon
+        /// Machine Image (AMI).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationJob service method.</param>
         /// 
@@ -430,7 +448,8 @@ namespace Amazon.ServerMigrationService
 
         /// <summary>
         /// Deletes the specified application. Optionally deletes the launched stack associated
-        /// with the application and all AWS SMS replication jobs for servers in the application.
+        /// with the application and all Server Migration Service replication jobs for servers
+        /// in the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
         /// 
@@ -714,9 +733,9 @@ namespace Amazon.ServerMigrationService
         /// 
         ///  
         /// <para>
-        /// After you delete a replication job, there are no further replication runs. AWS deletes
-        /// the contents of the Amazon S3 bucket used to store AWS SMS artifacts. The AMIs created
-        /// by the replication runs are not deleted.
+        /// After you delete a replication job, there are no further replication runs. Amazon
+        /// Web Services deletes the contents of the Amazon S3 bucket used to store Server Migration
+        /// Service artifacts. The AMIs created by the replication runs are not deleted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationJob service method.</param>
@@ -854,7 +873,7 @@ namespace Amazon.ServerMigrationService
         #region  DisassociateConnector
 
         /// <summary>
-        /// Disassociates the specified connector from AWS SMS.
+        /// Disassociates the specified connector from Server Migration Service.
         /// 
         ///  
         /// <para>
@@ -998,8 +1017,8 @@ namespace Amazon.ServerMigrationService
         #region  GenerateTemplate
 
         /// <summary>
-        /// Generates an AWS CloudFormation template based on the current launch configuration
-        /// and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.
+        /// Generates an CloudFormation template based on the current launch configuration and
+        /// writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateTemplate service method.</param>
         /// 
@@ -1420,7 +1439,7 @@ namespace Amazon.ServerMigrationService
         #region  GetConnectors
 
         /// <summary>
-        /// Describes the connectors registered with the AWS SMS.
+        /// Describes the connectors registered with the Server Migration Service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectors service method.</param>
         /// 
@@ -1678,7 +1697,7 @@ namespace Amazon.ServerMigrationService
         #region  ImportAppCatalog
 
         /// <summary>
-        /// Allows application import from AWS Migration Hub.
+        /// Allows application import from Migration Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportAppCatalog service method.</param>
         /// 
@@ -1825,7 +1844,7 @@ namespace Amazon.ServerMigrationService
         #region  LaunchApp
 
         /// <summary>
-        /// Launches the specified application as a stack in AWS CloudFormation.
+        /// Launches the specified application as a stack in CloudFormation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LaunchApp service method.</param>
         /// 
@@ -1965,7 +1984,8 @@ namespace Amazon.ServerMigrationService
         #region  NotifyAppValidationOutput
 
         /// <summary>
-        /// Provides information to AWS SMS about whether application validation is successful.
+        /// Provides information to Server Migration Service about whether application validation
+        /// is successful.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyAppValidationOutput service method.</param>
         /// 

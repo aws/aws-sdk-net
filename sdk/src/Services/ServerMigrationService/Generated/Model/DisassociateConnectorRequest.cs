@@ -30,7 +30,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateConnector operation.
-    /// Disassociates the specified connector from AWS SMS.
+    /// Disassociates the specified connector from Server Migration Service.
     /// 
     ///  
     /// <para>
